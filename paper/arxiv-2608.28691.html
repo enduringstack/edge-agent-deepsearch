@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Defending Wearable VLMs Against Private Attribute Inference</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Defending Wearable VLMs Against Private Attribute Inference</h1>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-26 · Zhimin Li; Pan Wang; Jingxian Chen; Yuantao Tang; Anthony Chen; Qian Lou; Jingtong Hu / arXiv</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这项工作针对可穿戴视觉语言模型的隐私泄漏，在视觉 token 离开可信设备前进行处理，阻止下游组件推断佩戴者或旁人的敏感属性。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 3,221 条图文问答基准上，TGAP 将隐私属性识别准确率从 56.7% 降至 7.4%，绝对下降 49.3 个百分点，同时保持 74.4% 的宽松口径任务效用。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">TGAP 在大模型之前对视觉 token 学习残差变换，联合使用效用保持、身份正则、语义隐私抑制和图像驱动表征抑制，避免粗粒度遮罩造成的效用损失。</span></div>
+<div class="score-reason">评分依据：直接面向可穿戴设备的分割式多模态推理与 token 传输隐私，端侧相关性高；新基准和轻量 token 变换均有量化验证，贡献度中等。</div>
+<div class="source"><a href="https://arxiv.org/abs/2608.28691" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

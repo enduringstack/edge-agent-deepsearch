@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>When Tool Outputs Become Commands: Separating Action Induction from Runtime Authorization in Tool-Augmented LLM Agents</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>When Tool Outputs Become Commands: Separating Action Induction from Runtime Authorization in Tool-Augmented LLM Agents</h1>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-27 · Xiaokun Guo; Zhen Xu; Dongdong Huo; Yanqiu Zhang; Wei Wang; Qinfu Yang; Dongjin Yu; Yu Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:语音</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">SARA 是工具增强智能体的运行时安全机制，把工具输出诱导出的动作与真正允许执行的权限分开，防止不可信观察内容变成命令。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 AgentDojo 和 AgentDyn 的四个主要设置中，攻击成功率均不超过 0.63%，同时保持有竞争力的任务完成能力，并在更多智能体骨干上持续降低攻击成功率。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">它用隔离上下文的动作探针记录动作来源，执行前只依据用户目标和已授权成功执行的证据核对目标、调用链与参数，并禁止历史重复自动提升权限。</span></div>
+<div class="score-reason">评分依据：工具调用授权是智能体安全运行栈的重要环节，对本地和端侧 Agent 均可迁移；贡献在于从运行时架构上分离诱导与授权，但未专门评测端侧部署。</div>
+<div class="source"><a href="https://arxiv.org/abs/2608.27146" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>
