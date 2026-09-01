@@ -103,6 +103,8 @@ DeepSeek / Moonshot / Zhipu / Minimax / 百川 等**模型实验室经常先发�
 
 # 关键技术分支（搜词与打标参考）
 
+发布前检查 `weekly_summary.overview` 中的周范围，并在静态构建后确认 `data/weeks/<label>.json` 的 `label/title/range` 与本次 collection manifest 的 7 日窗口完全一致。overview 支持 `MM-DD~MM-DD` 与 `YYYY-MM-DD~YYYY-MM-DD`，但不能缺失范围或回退成运行日单日。
+
 - **核心架构**：Agentic AI / Mobile-Embedded Agent / Cognitive Edge / Multi-Agent on Edge
 - **轻量化**：量化(GPTQ/AWQ/KV量化) / 剪枝稀疏(SparseGPT/Wanda) / 蒸馏 / 高效注意力 / 投机解码(Medusa/EAGLE)
 - **脉冲/神经形态**：SNN(脉冲神经网络) / neuromorphic / 事件驱动低功耗推理（Loihi/SpiNNaker/TrueNorth/天机），与端侧低功耗相邻

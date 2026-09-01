@@ -40,6 +40,7 @@
 29. **社区雷达隔离门**：`data/community_radar.json` 必须覆盖以运行日为末日的 7 个自然日，并为 X / Bluesky / Reddit / Hacker News / Mastodon / GitHub Discussions / Hugging Face / YouTube-Bilibili / 厂商论坛逐一写 `found` / `no_match` / `limited` / `unavailable` 与说明。条目必须使用可打开的讨论或发布直达 URL、可核验日期、中文名称/总结/价值判断、设备范围和核验状态。X 未登录公开检索不足时写 `limited`，不得用论坛转述冒充 X 原帖；视频只收官方频道或可回链一手项目的演示。社媒/论坛 URL 不得进入正式 `paper_url`；晋升正式周报必须重新回链一手材料并满足正式来源契约。`gate_release` 校验源数据、内联周快照和正式/社区层隔离。
 30. **HF 规范 ID 与跨源去重**：HF Daily Papers 的论文链接可能是 `huggingface.co/papers/<arxiv-id>`，不保证同时给出 `arxiv.org/abs/`。组装器必须从两种链接提取规范 arXiv ID，先与 arXiv 全量候选去重，再保留只在 HF 日榜进入当前编辑窗口的候选。不得把链接域名差异当成两篇论文，也不得因此漏收。
 31. **内部流程词必须按完整语义匹配**：机械门要拦“自动初评”“主 Agent 待复核”等流程话术，但不得把正常的“自主Agent闭环”误判为内部标记。修改占位词正则时，validate 与 `gate_release` 必须各有“应拦流程词”和“应放行读者文案”成对测试。
+32. **周归档范围必须与采集窗口一致**：`weekly_summary.overview` 可使用 `MM-DD~MM-DD` 或 `YYYY-MM-DD~YYYY-MM-DD`，静态构建后必须核对最新 `data/weeks/<label>.json` 的 `label/title/range` 与 collection manifest 的 7 日窗口一致；不得因解析失败回退成运行日单日归档。
 
 ## 评分口径参考
 
