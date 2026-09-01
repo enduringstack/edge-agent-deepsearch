@@ -492,6 +492,11 @@ def normalize_paper(raw: dict, today: date, seen_ids: set[str], vocab: dict[str,
         )
 
     paper_url = validate_url(text_value(paper.get("paper_url")), "paper_url", paper_id)
+    arxiv_match = ARXIV_URL_RE.match(paper_url)
+    if "arxiv.org" in urlparse(paper_url).netloc.lower():
+        arxiv_token = arxiv_match.group(1) if arxiv_match else ""
+        if not re.fullmatch(r"\d{4}\.\d{4,5}(?:v\d+)?(?:\.pdf)?", arxiv_token):
+            raise ValidationError(f"{paper_id}: paper_url is dead/404 (invalid arXiv id)")
     if not skip_network and not is_link_alive(paper_url):
         raise ValidationError(f"{paper_id}: paper_url is dead/404")
     # arXiv papers: verify the JSON date against the real submitted date to

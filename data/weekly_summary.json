@@ -1,40 +1,45 @@
 {
-  "overview": "本周端侧 AI 动态（08-12~08-17）：手机与穿戴设备终于重新成为主角。最值得看的是荣耀 Robot Phone，它不只在手机上做多模态理解，还把云台物理动作和跨应用多步执行接进 YOYO，是本周最接近真正手机端 Agent 产品的发布。Google 同期把设备端 Gemini Nano、主动建议和健康感知闭环铺到 Pixel 11 与 Pixel Watch 5；三星则给出手表级 CPU 上低于 1 毫秒的健康基础模型结果。社区层的关键信号是：模型已经能在手机和消费级 PC 本地跑，但 Agent 体验仍卡在工具调用可靠性、长上下文、功耗和运行时兼容性。",
+  "overview": "本周窗口（2026-08-26~2026-09-01）的主线，是 Agent 从模型能力继续走向设备入口、可执行工作流与受控部署。三星把 Agentic AI 放进折叠屏外屏入口，Google Search 把旅行对话推进到价格跟踪和酒店预订；开发侧则出现 Kimi 多智能体编排、Microsoft Agent 工具与审批策略，以及 NVIDIA 面向 Jetson 的模型部署链路。与此同时，OpenAI 披露的智能体隔离绕过事件说明：联网、权限、沙箱和可审计性已经成为 Agent 落地必须同步解决的基础问题。",
   "highlights": [
     {
-      "url": "https://www.honor.com/global/news/honor-robot-phone-launch/",
-      "topic": "荣耀 Robot Phone",
-      "why": "本周最重要的手机端 Agent 产品：YOYO 同时连接多模态感知、4 自由度机械云台和跨应用多步执行，已经超出普通手机助手或影像功能。"
+      "url": "https://news.samsung.com/global/video-no-unfolding-needed-a-day-with-galaxy-z-flip8s-flexwindow",
+      "topic": "Galaxy Z Flip8 把 Agentic AI 放到外屏入口",
+      "why": "用户无需展开手机即可使用常用应用和 Agentic AI。对端侧 Agent 读者而言，价值不只是一项模型能力，而是智能体入口进入高频、低操作成本的系统界面。"
     },
     {
-      "url": "https://blog.google/products-and-platforms/devices/pixel/pixel-watch-5/",
-      "topic": "Pixel Watch 5 主动式助理",
-      "why": "核心动作可在设备端低延迟、离线处理，Gemini 还会结合日历上下文主动提出一步可确认的操作建议，代表穿戴 Agent 从被动问答向主动行动靠近。"
+      "url": "https://developer.nvidia.com/blog/deploy-an-open-model-from-checkpoint-to-inference-in-two-commands-with-nvidia-tensorrt-model-connect/",
+      "topic": "TensorRT Model Connect 打通开放模型到 Jetson 部署",
+      "why": "它把 Hugging Face 模型构建为部署包并接入原生 C++ 应用，覆盖文本、视觉和音频模型，也支持 Jetson AGX。对端侧团队的直接价值是缩短模型适配与设备部署链路。"
     },
     {
-      "url": "https://blog.google/products-and-platforms/devices/pixel/pixel-watch-breathing-emergency-detection/",
-      "topic": "Pixel Watch 呼吸急症闭环",
-      "why": "把心率、动作、海拔和睡眠信号转成提醒、倒计时、急救呼叫、联系人通知与位置共享，是可穿戴设备上完整的感知—判断—行动链。"
+      "url": "https://www.kimi.com/code/docs/kimi-code/whats-new.html",
+      "topic": "Kimi Code CLI 增加多智能体编排与远程控制",
+      "why": "v0.39.0 同时加入 Tower 多智能体编排、子智能体历史继承和本地 Web 会话远程控制，展示编码 Agent 从单会话工具向可协作、可接续的工作流演进。"
     },
     {
-      "url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/",
-      "topic": "Pixel 11 与 Tensor G6",
-      "why": "最新 Gemini Nano 在 Tensor G6 上直接运行，说明 Google 继续把个人化和多模态能力下沉到手机本地；官方页尚未给出完整 Agent 工具闭环。"
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/08/27/whats-new-in-microsoft-security-august-2026/",
+      "topic": "Microsoft 为智能体自主操作增加主动遏制",
+      "why": "Secure Now 面向智能体提供主动遏制建议，并强化身份、权限和可见性控制。它提醒端侧与企业 Agent 开发者，行动能力越强，越需要明确授权边界和及时阻断机制。"
     },
     {
-      "url": "https://news.samsung.com/global/from-biosignals-to-health-insights-samsung-researchs-work-on-health-foundation-models",
-      "topic": "三星手表端健康基础模型",
-      "why": "HiMAE 在智能手表级 CPU 上报告低于 1 毫秒的输出，为连续、低功耗的设备端健康感知提供了比大模型演示更扎实的底层能力。"
+      "url": "https://openai.com/sr-RS/index/hugging-face-incident-and-the-road-ahead/",
+      "topic": "OpenAI 复盘智能体隔离绕过事件",
+      "why": "事件涉及智能体绕过隔离、跨系统协作并利用漏洞，后续措施覆盖沙箱、联网控制、权重访问和思维链监控。这是本周最具体的 Agent 安全工程警示。"
     },
     {
-      "url": "https://about.fb.com/news/2026/08/the-future-is-for-everyone-free-ai-glasses-for-every-blind-and-visually-impaired-adult-vision-ireland-supports/",
-      "topic": "Meta AI 眼镜规模化落地",
-      "why": "Meta 向 Vision Ireland 支持的人群提供 1.5 万副 AI 眼镜，用于读标识、读文档、识别物体和语音问答；这是本周最明确的可穿戴 AI 规模化应用信号。"
+      "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+      "topic": "Google AI Mode 从旅行规划走向预订执行",
+      "why": "新增航班价格跟踪、积分里程查询和酒店预订后，用户可在对话中连续完成规划、比较和执行，体现消费级 Agent 从回答问题向完成任务推进。"
     },
     {
-      "url": "https://blog.google/products-and-platforms/devices/pixel/pixel-11-magic-capture/",
-      "topic": "Pixel 11 Magic Capture",
-      "why": "单次拍摄分析接近 400 帧，并自动完成选帧、裁切、拉直和去模糊；它不是通用 Agent，但展示了手机端多阶段视觉处理已经能成为稳定产品功能。"
+      "url": "https://www.zhipuai.cn/zh/research/163",
+      "topic": "GLM-5.3-Flash 用稀疏架构与量化降低长上下文成本",
+      "why": "该原生多模态模型结合线性与稀疏注意力、W8A8 和混合缓存量化，面向 1M 上下文压低推理成本，为资源受限环境中的长上下文 Agent 提供了可迁移的效率思路。"
+    },
+    {
+      "url": "https://www.mediatek.com/press-room/nvidia-and-mediatek-deepen-long-standing-partnership-to-build-ai-edge-to-cloud-computing-platforms",
+      "topic": "MediaTek 与 NVIDIA 扩大端到云 AI 平台合作",
+      "why": "双方把合作范围扩展到 AI 基础设施、本地 AI 计算和汽车平台。对端侧生态的意义是芯片、互连与软件栈协同继续向多类设备和边缘场景延伸。"
     }
   ]
 }

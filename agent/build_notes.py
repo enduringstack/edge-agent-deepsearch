@@ -126,7 +126,11 @@ def ingest_collection(coll: dict) -> dict:
         try:
             shutil.copy2(p, dest / p.name)
             if reference_limited:
-                preserved = dest / p.relative_to(src)
+                # macOS exposes the same temporary directory through both
+                # /var and /private/var.  Referenced images are resolved by
+                # ``referenced_markdown_images``, so normalize the source root
+                # before computing the preserved relative path as well.
+                preserved = dest / p.relative_to(src.resolve())
                 preserved.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(p, preserved)
         except OSError:

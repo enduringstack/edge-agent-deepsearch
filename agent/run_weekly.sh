@@ -8,7 +8,7 @@ cd "$(dirname "$0")/.."
 # ── 配置 ──
 PORT=8001
 SERVER="http://127.0.0.1:${PORT}"
-GH_USER="1152024415-crypto"
+GH_USER="enduringstack"
 GH_REPO="edge-agent-deepsearch"
 LIVE_URL="https://${GH_USER}.github.io/${GH_REPO}/"
 LOCAL_URL="http://127.0.0.1:${PORT}/"
@@ -169,12 +169,12 @@ info "Step 10/10: 部署..."
 sleep 15
 git fetch origin gh-pages 2>/dev/null
 TMP=$(mktemp -d)
-git worktree add --detach "$tmp" origin/gh-pages 2>/dev/null
-cp -r site/* "$tmp"/ 2>/dev/null
-cd "$tmp" && git add -A 2>/dev/null
+git worktree add --detach "$TMP" origin/gh-pages 2>/dev/null
+cp -r site/* "$TMP"/ 2>/dev/null
+cd "$TMP" && git add -A 2>/dev/null
 (git diff --cached --quiet && echo "auto-deploy 已推" || (git commit -m "deploy: 周调研自动部署" 2>/dev/null && git push origin HEAD:gh-pages 2>/dev/null)) 2>/dev/null
 cd "$(dirname "$0")/.."
-git worktree remove --force "$tmp" 2>/dev/null
+git worktree remove --force "$TMP" 2>/dev/null
 
 echo ""
 echo -e "${GREEN}══════════════════════════════════════════════════${NC}"

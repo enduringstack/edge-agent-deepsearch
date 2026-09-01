@@ -19,6 +19,14 @@ class ParseWeekMetaTest(unittest.TestCase):
         self.assertEqual(m["range"]["start"], "2026-06-26")
         self.assertEqual(m["range"]["end"], "2026-07-03")
 
+    def test_parses_full_iso_range_from_overview(self):
+        ov = "本周窗口（2026-08-26~2026-09-01）的主线是端侧 Agent。"
+        m = weeks.parse_week_meta(ov, "2026-09-01")
+        self.assertEqual(m["label"], "2026-08-26")
+        self.assertEqual(m["title"], "08-26~09-01")
+        self.assertEqual(m["range"]["start"], "2026-08-26")
+        self.assertEqual(m["range"]["end"], "2026-09-01")
+
     def test_cross_year_window_rolls_end_year_forward(self):
         # A Dec-26~01-02 window read on 2026-01-05 spans year boundary:
         # start is in the previous year (2025-12-26), end in the current (2026-01-02).

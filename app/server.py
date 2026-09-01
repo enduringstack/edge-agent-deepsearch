@@ -253,7 +253,9 @@ class Handler(BaseHTTPRequestHandler):
             try:
                 payload = community.load_community(ROOT / "data" / "community_radar.json")
             except community.CommunityValidationError:
-                payload = community.empty_community("社区雷达数据未通过校验，本周暂不展示线索。")
+                payload = community.empty_community(
+                    note="社区雷达数据未通过校验，本周暂不展示线索。"
+                )
             self.send_json(200, payload)
             return
         if parsed.path == "/api/weeks":

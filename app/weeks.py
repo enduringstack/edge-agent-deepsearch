@@ -17,7 +17,9 @@ ROOT = Path(__file__).resolve().parents[1]
 # touching the real committed archive under data/weeks/. Set EDGE_WEEKS_DIR.
 WEEKS_DIR = Path(os.environ.get("EDGE_WEEKS_DIR") or (ROOT / "data" / "weeks"))
 
-_RANGE_RE = re.compile(r"(\d{2})-(\d{2})~(\d{2})-(\d{2})")
+_RANGE_RE = re.compile(
+    r"(?:(\d{4})-)?(\d{2})-(\d{2})~(?:(\d{4})-)?(\d{2})-(\d{2})"
+)
 
 
 def parse_week_meta(overview: str, fallback_iso: str) -> dict:
@@ -39,11 +41,15 @@ def parse_week_meta(overview: str, fallback_iso: str) -> dict:
             "title": fallback_iso,
             "range": {"start": fallback_iso, "end": fallback_iso},
         }
-    sm, sd, em, ed = m.groups()
+    explicit_start_year, sm, sd, explicit_end_year, em, ed = m.groups()
     start_md = (int(sm), int(sd))
     end_md = (int(em), int(ed))
-    start_year = year - 1 if start_md > today_md else year
-    end_year = start_year + 1 if end_md < start_md else start_year
+    start_year = int(explicit_start_year) if explicit_start_year else (
+        year - 1 if start_md > today_md else year
+    )
+    end_year = int(explicit_end_year) if explicit_end_year else (
+        start_year + 1 if end_md < start_md else start_year
+    )
     start = f"{start_year:04d}-{sm}-{sd}"
     end = f"{end_year:04d}-{em}-{ed}"
     title = f"{sm}-{sd}~{em}-{ed}"
