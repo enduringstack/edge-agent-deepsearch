@@ -561,6 +561,37 @@ class CollectionManifestTests(unittest.TestCase):
 
         self.assertIn("pages_fetched", str(ctx.exception))
 
+    def test_accepts_complete_official_oai_pmh_category_scan(self):
+        module = self._module()
+        manifest = self._valid_manifest(module)
+        manifest["sources"]["arxiv"].update({
+            "collection_transport": "official-oai-pmh",
+            "categories_completed": sorted(module.REQUIRED_ARXIV_CATEGORIES),
+            "pagination_complete": True,
+            "pages_fetched": 1,
+        })
+
+        self.assertEqual(
+            module.validate_collection_manifest(manifest, today=date(2026, 8, 5)),
+            manifest,
+        )
+
+    def test_rejects_incomplete_official_oai_pmh_category_scan(self):
+        module = self._module()
+        manifest = self._valid_manifest(module)
+        categories = sorted(module.REQUIRED_ARXIV_CATEGORIES)
+        manifest["sources"]["arxiv"].update({
+            "collection_transport": "official-oai-pmh",
+            "categories_completed": categories[:-1],
+            "pagination_complete": True,
+            "pages_fetched": 2,
+        })
+
+        with self.assertRaises(module.CollectionCoverageError) as ctx:
+            module.validate_collection_manifest(manifest, today=date(2026, 8, 5))
+
+        self.assertIn(categories[-1], str(ctx.exception))
+
     def test_rejects_vendor_manifest_missing_a_required_vendor(self):
         module = self._module()
         manifest = self._valid_manifest(module)

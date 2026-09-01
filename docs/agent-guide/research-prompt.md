@@ -38,11 +38,15 @@
 
 三个 MCP + websearch 互补。**不定硬数量目标或上限**——检索层尽量多收，只有硬边界失败才删除；“是否值得优先看”由主 agent 推荐决定。四类来源必须同时更新 `research_runs/collection-manifest.json`，覆盖不完整时不得组装或发布。
 
+开始检索前先读取 `data/weeks/manifest.json`，比较最新归档 `range.end` 与计划窗口 `range.start`。若中间有缺口，先拆成连续、不重叠的 7 个自然日窗口逐周完成采集、编辑与验证，再处理当前周；不得直接跳到“今天向前 7 天”。扩展已有历史窗口时按论文 `id` 合并旧数据，不能整周覆盖。
+
 ## arXiv MCP（`search_papers`，全量结构化搜索，主力）
 多轮 query，`sort_by="submittedDate"`，窗口由运行日动态计算为含当日的最近 7 个自然日。大类扫描必须覆盖 `cs.AI/cs.LG/cs.CL/cs.RO/cs.AR/cs.DC/cs.ET/cs.SY/cs.NE` 并分页，不能只取每个 query 前 100 条。建议 query：
 1. `"on-device agent"` 2. `"edge computing agent"` 3. `"mobile LLM inference"` 4. `"NPU agent"` 5. `"agent memory edge"` 6. `"tool use edge device"` 7. `"federated agent"` 8. `"quantization agent mobile"` 9. `"spiking neural network"`（SNN/脉冲网络/neuromorphic，端侧低功耗相邻方向）
 **自适应**：某 query 返回过少就自行放宽/换词（去掉引号精确匹配、换同义词、扩 category、放宽到 `cs.ET/cs.DC` 等），不必死守固定 query。正常返回多就继续。
 取每篇的 submittedDate 作为 `date`（不许自填）。
+
+若 Query API 持续 429/不可用，可使用官方 OAI-PMH `ListRecords` 作为本质不同的备用传输：覆盖 `cs.AI/cs.LG/cs.CL/cs.RO/cs.AR/cs.DC/cs.ET/cs.SY/cs.NE`，跟随 resumption token 自然翻页至空，manifest 写 `collection_transport=official-oai-pmh`、完整 `categories_completed`、真实 `pages_fetched` 和 `pagination_complete=true`。OAI datestamp 可能是更新事件，不能直接当首投日期；组装后仍须由 arXiv API 复核 submitted/updated，旧稿没有实质修订说明就删除。
 
 ## HuggingFace Daily Papers MCP（`get_papers_by_date`，社区精选）
 窗口内 7 个日期每天调一次 `get_papers_by_date(date=YYYY-MM-DD)`；votes 只用于排序参考，不能作为删除门槛。把 `dates_checked` 全量写入 collection manifest；某天 0 条也必须记录为已检查。

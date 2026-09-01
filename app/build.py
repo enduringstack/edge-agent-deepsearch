@@ -145,6 +145,9 @@ def mirror(server: str, site: Path = SITE) -> int:
     print(f"[BUILD] index.html ({len(papers)} papers, week={current_label})")
 
     # 3) render site/week/<label>.html for every PAST week
+    # Import lazily: app.server imports this module for deploy orchestration,
+    # so a top-level import would create a circular dependency.
+    from app.server import render_detail
     for entry in manifest:
         if entry["current"]:
             continue
@@ -160,6 +163,14 @@ def mirror(server: str, site: Path = SITE) -> int:
             community=rec.get("community") or {"coverage": [], "items": []},
         )
         (site / "week" / f"{entry['label']}.html").write_text(page, encoding="utf-8")
+        for archived_paper in rec.get("papers") or []:
+            archived_id = str(archived_paper.get("id") or "")
+            if not archived_id:
+                continue
+            archived_detail = rewrite_detail(render_detail(archived_paper))
+            (site / "paper" / f"{archived_id}.html").write_text(
+                archived_detail, encoding="utf-8"
+            )
         print(f"[BUILD] week/{entry['label']}.html")
 
     # 4) detail pages (unchanged from before)

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import http.client
 import json
 import sqlite3
 import subprocess
@@ -939,6 +940,13 @@ class AutoDeployGateTests(unittest.TestCase):
 
 
 class DeadLinkValidationTests(unittest.TestCase):
+    def test_remote_disconnect_is_treated_as_transient_network_failure(self):
+        with mock.patch(
+            "urllib.request.urlopen",
+            side_effect=http.client.RemoteDisconnected("remote closed"),
+        ):
+            self.assertTrue(research_run.is_link_alive("https://example.com/paper"))
+
     def test_rejects_dead_paper_url(self):
         dead_url = "https://arxiv.org/abs/this-does-not-exist-404-xxx"
         if research_run.is_link_alive(dead_url):

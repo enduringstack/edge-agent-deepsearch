@@ -28,6 +28,12 @@ REQUIRED_ARXIV_SWEEPS = frozenset({
     "recent-updates",
 })
 
+REQUIRED_ARXIV_CATEGORIES = frozenset({
+    sweep.removesuffix("-broad")
+    for sweep in REQUIRED_ARXIV_SWEEPS
+    if sweep.endswith("-broad")
+})
+
 REQUIRED_GITHUB_PROJECTS = frozenset({
     "ggml-org/llama.cpp",
     "pytorch/executorch",
@@ -170,19 +176,42 @@ def validate_collection_manifest(manifest: dict, today: str | date | None = None
         raise CollectionCoverageError("collection manifest sources must be an object")
 
     arxiv = _require_source(sources, "arxiv")
-    missing_arxiv = _missing(REQUIRED_ARXIV_SWEEPS, arxiv.get("queries_completed"))
-    if missing_arxiv:
-        raise CollectionCoverageError(f"arxiv broad sweeps missing: {', '.join(missing_arxiv)}")
     pages_fetched = arxiv.get("pages_fetched")
-    if (
-        not isinstance(pages_fetched, int)
-        or isinstance(pages_fetched, bool)
-        or pages_fetched < len(REQUIRED_ARXIV_SWEEPS)
-    ):
-        raise CollectionCoverageError(
-            f"arxiv pages_fetched must be at least {len(REQUIRED_ARXIV_SWEEPS)} "
-            "so every required broad sweep has a response page"
+    if arxiv.get("collection_transport") == "official-oai-pmh":
+        missing_categories = _missing(
+            REQUIRED_ARXIV_CATEGORIES, arxiv.get("categories_completed")
         )
+        if missing_categories:
+            raise CollectionCoverageError(
+                f"arxiv OAI-PMH categories missing: {', '.join(missing_categories)}"
+            )
+        if arxiv.get("pagination_complete") is not True:
+            raise CollectionCoverageError(
+                "arxiv OAI-PMH pagination_complete must be true"
+            )
+        if (
+            not isinstance(pages_fetched, int)
+            or isinstance(pages_fetched, bool)
+            or pages_fetched < 1
+        ):
+            raise CollectionCoverageError(
+                "arxiv OAI-PMH pages_fetched must include at least one response page"
+            )
+    else:
+        missing_arxiv = _missing(REQUIRED_ARXIV_SWEEPS, arxiv.get("queries_completed"))
+        if missing_arxiv:
+            raise CollectionCoverageError(
+                f"arxiv broad sweeps missing: {', '.join(missing_arxiv)}"
+            )
+        if (
+            not isinstance(pages_fetched, int)
+            or isinstance(pages_fetched, bool)
+            or pages_fetched < len(REQUIRED_ARXIV_SWEEPS)
+        ):
+            raise CollectionCoverageError(
+                f"arxiv pages_fetched must be at least {len(REQUIRED_ARXIV_SWEEPS)} "
+                "so every required broad sweep has a response page"
+            )
 
     huggingface = _require_source(sources, "huggingface")
     expected_hf = {day.isoformat() for day in expected_dates}

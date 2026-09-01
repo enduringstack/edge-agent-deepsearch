@@ -241,6 +241,22 @@ class MirrorBuildTest(unittest.TestCase):
         # Publish one validated paper to the running test server.
         payload = research_run.validate_payload(run_payload(valid_paper()), today=TODAY)
         publish_results.publish_payload(self.base_url, payload, token=TEST_PUBLISH_TOKEN)
+        archived = valid_paper(
+            id="archived-edge-paper",
+            title="Archived Edge Paper",
+            date="2026-06-25",
+        )
+        weeks_mod.write_archive(
+            {
+                "label": "2026-06-25",
+                "title": "06-25~07-01",
+                "range": {"start": "2026-06-25", "end": "2026-07-01"},
+            },
+            [archived],
+            {"overview": "历史窗口（06-25~07-01）", "highlights": []},
+            {"items": []},
+            {"coverage": [], "items": []},
+        )
 
         # Run build.py against the ephemeral server URL.
         result = subprocess.run(
@@ -275,6 +291,15 @@ class MirrorBuildTest(unittest.TestCase):
         detail_html = detail_path.read_text(encoding="utf-8")
         self.assertIn("Fresh Edge Agent Paper", detail_html)
         self.assertIn('href="../index.html"', detail_html)
+
+        archived_detail = self.site_dir / "paper" / "archived-edge-paper.html"
+        self.assertTrue(
+            archived_detail.exists(),
+            "historical archives must generate their own static detail pages",
+        )
+        self.assertIn(
+            "Archived Edge Paper", archived_detail.read_text(encoding="utf-8")
+        )
 
 
 class RenderPageTest(unittest.TestCase):

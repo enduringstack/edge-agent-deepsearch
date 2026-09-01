@@ -13,6 +13,7 @@ Schema (方案 B, 2 维评分 + 多标签 + source_tier):
 from __future__ import annotations
 
 import json
+import http.client
 import re
 import socket
 import sys
@@ -320,6 +321,9 @@ def is_link_alive(url: str, timeout: int = 5) -> bool:
                 print(f"warning: link check timed out for {url} (treating as alive)", file=sys.stderr)
                 return True
             print(f"warning: link check skipped for {url} (network unavailable)", file=sys.stderr)
+            return True
+        except (http.client.RemoteDisconnected, ConnectionResetError):
+            print(f"warning: link check skipped for {url} (remote disconnected)", file=sys.stderr)
             return True
     return False
 

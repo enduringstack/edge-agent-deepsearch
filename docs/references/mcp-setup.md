@@ -43,6 +43,7 @@ github MCP 走 GitHub API，需要 Personal Access Token（PAT）否则严重限
 
 ### arxiv MCP（`blazickjp/arxiv-mcp-server`）
 - `search_papers(query, max_results, sort_by, category, author)`：按关键词搜 arXiv。若 MCP 不支持翻页，使用 `agent/arxiv_curl_sweep.py` 的 HTTP API 分页兜底；不能把单次前 100 条当成一周全量。
+- Query API 持续 429 时，可使用官方 OAI-PMH `ListRecords` 备用传输。必须覆盖九个规范 cs 学科并跟随 resumption token 到自然结束；manifest 明确记录 OAI 传输、学科集合、真实页数和完成标记。OAI datestamp 只做召回，最终日期仍由 arXiv API 复核。
 - `download_paper(paper_id)`：下载 PDF 到本地缓存。
 - `read_paper(paper_id)`：读论文全文（markdown）。
 - 自动限速 3 秒间隔 + 24 小时缓存，符合 arXiv API 规范。

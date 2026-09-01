@@ -41,6 +41,8 @@
 30. **HF 规范 ID 与跨源去重**：HF Daily Papers 的论文链接可能是 `huggingface.co/papers/<arxiv-id>`，不保证同时给出 `arxiv.org/abs/`。组装器必须从两种链接提取规范 arXiv ID，先与 arXiv 全量候选去重，再保留只在 HF 日榜进入当前编辑窗口的候选。不得把链接域名差异当成两篇论文，也不得因此漏收。
 31. **内部流程词必须按完整语义匹配**：机械门要拦“自动初评”“主 Agent 待复核”等流程话术，但不得把正常的“自主Agent闭环”误判为内部标记。修改占位词正则时，validate 与 `gate_release` 必须各有“应拦流程词”和“应放行读者文案”成对测试。
 32. **周归档范围必须与采集窗口一致**：`weekly_summary.overview` 可使用 `MM-DD~MM-DD` 或 `YYYY-MM-DD~YYYY-MM-DD`，静态构建后必须核对最新 `data/weeks/<label>.json` 的 `label/title/range` 与 collection manifest 的 7 日窗口一致；不得因解析失败回退成运行日单日归档。
+33. **arXiv 官方 OAI-PMH 备用覆盖**：Query API 持续限流时可改用官方 OAI-PMH `ListRecords`，manifest 固定写 `collection_transport=official-oai-pmh`、九个规范 `categories_completed`、真实 `pages_fetched` 与 `pagination_complete=true`。必须跟随 resumption token 到自然结束；不得把 OAI 页数冒充十个 Query sweep。OAI datestamp 只用于召回，最终论文日期仍按 arXiv API submitted/updated 复核。
+34. **周归档必须连续且历史详情可达**：开始本周采集前，读取 `data/weeks/manifest.json` 中最新归档的 `range.end`；若它与新窗口 `range.start` 之间存在空档，必须按不重叠的连续 7 日窗口逐周补档。扩展已有窗口时按论文 `id` 合并旧归档，不得直接覆盖。静态构建必须为当前和所有历史归档中的论文生成 `site/paper/<id>.html`，并由内链门确认无 404。
 
 ## 评分口径参考
 
