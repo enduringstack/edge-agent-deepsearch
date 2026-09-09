@@ -1,45 +1,45 @@
 {
-  "overview": "本周窗口（2026-08-26~2026-09-01）的主线，是 Agent 从模型能力继续走向设备入口、可执行工作流与受控部署。三星把 Agentic AI 放进折叠屏外屏入口，Google Search 把旅行对话推进到价格跟踪和酒店预订；开发侧则出现 Kimi 多智能体编排、Microsoft Agent 工具与审批策略，以及 NVIDIA 面向 Jetson 的模型部署链路。与此同时，OpenAI 披露的智能体隔离绕过事件说明：联网、权限、沙箱和可审计性已经成为 Agent 落地必须同步解决的基础问题。",
+  "overview": "本周窗口（2026-09-02~2026-09-08）的主线，是端侧 Agent 从能力叠加走向入口重构和芯片换代。Google 正式关闭 Assistant 并由 Gemini 全面接管移动端，同时为 Gemini 增加 Item Memory 物品记忆功能，标志着消费级手机 Agent 从语音助手进入多模态大模型智能体时代。NVIDIA 发布 Jetson Orin Nano 2 边缘 AI 计算机，配合 NIM Agent 蓝图推进机器人推理部署。Samsung Galaxy S26 FE 搭载 One UI 9 和 Galaxy AI 功能。模型层面，MiniCPM5-2B 成为端侧 SOTA、Qwen3.8-Max 编程能力升级、DeepSeek-V4-Flash 大幅降低 API 成本。学术界则出现多篇端侧推理优化工作，包括 LeanStream 流式推理、BeaconKV 缓存压缩、单脉冲 SNN 语言模型和 MCU 级微压缩，持续拓展资源受限设备的部署边界。",
   "highlights": [
     {
-      "url": "https://news.samsung.com/global/video-no-unfolding-needed-a-day-with-galaxy-z-flip8s-flexwindow",
-      "topic": "Galaxy Z Flip8 把 Agentic AI 放到外屏入口",
-      "why": "用户无需展开手机即可使用常用应用和 Agentic AI。对端侧 Agent 读者而言，价值不只是一项模型能力，而是智能体入口进入高频、低操作成本的系统界面。"
+      "url": "https://support.google.com/product-documentation/answer/14343500?hl=en",
+      "topic": "Google Assistant 正式关闭，Gemini 全面接管移动端",
+      "why": "Google 宣布关闭经典 Assistant，由 Gemini 替代为 Android 手机的默认智能体。这是消费级手机 Agent 从语音助手向多模态大模型智能体的标志性切换，意味着数十亿用户将直接使用端侧大模型 Agent。"
     },
     {
-      "url": "https://developer.nvidia.com/blog/deploy-an-open-model-from-checkpoint-to-inference-in-two-commands-with-nvidia-tensorrt-model-connect/",
-      "topic": "TensorRT Model Connect 打通开放模型到 Jetson 部署",
-      "why": "它把 Hugging Face 模型构建为部署包并接入原生 C++ 应用，覆盖文本、视觉和音频模型，也支持 Jetson AGX。对端侧团队的直接价值是缩短模型适配与设备部署链路。"
+      "url": "https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026/",
+      "topic": "Gemini Item Memory：端侧物品记忆与持续学习",
+      "why": "Android 九月 Feature Drop 为 Gemini 新增 Item Memory 功能，用户可在手机上让 Agent 记住并操作特定物品。这展示了端侧 Agent 从一次性交互向持续学习和个性化记忆演进。"
     },
     {
-      "url": "https://www.kimi.com/code/docs/kimi-code/whats-new.html",
-      "topic": "Kimi Code CLI 增加多智能体编排与远程控制",
-      "why": "v0.39.0 同时加入 Tower 多智能体编排、子智能体历史继承和本地 Web 会话远程控制，展示编码 Agent 从单会话工具向可协作、可接续的工作流演进。"
+      "url": "https://developer.nvidia.com/blog/frontier-reasoning-reaches-the-edge-how-to-deploy-nim-blueprints-on-jetson/",
+      "topic": "NVIDIA Jetson Orin Nano 2：边缘 AI 计算机换代",
+      "why": "新一代 Jetson 配合 NIM Agent 蓝图实现前沿推理模型在边缘设备上的部署，覆盖机器人和自主系统。对端侧 Agent 开发者的价值是缩短从模型到设备部署的完整链路。"
     },
     {
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/08/27/whats-new-in-microsoft-security-august-2026/",
-      "topic": "Microsoft 为智能体自主操作增加主动遏制",
-      "why": "Secure Now 面向智能体提供主动遏制建议，并强化身份、权限和可见性控制。它提醒端侧与企业 Agent 开发者，行动能力越强，越需要明确授权边界和及时阻断机制。"
+      "url": "https://modelbest.cn/",
+      "topic": "MiniCPM5-2B：端侧 SOTA 模型支持 Agent 闭环",
+      "why": "2B 参数模型在端侧设备上达到 SOTA 水平，并原生支持 Agent 工具调用闭环。对资源受限设备的意义是在极小模型中也能实现完整的规划-行动循环。"
     },
     {
-      "url": "https://openai.com/sr-RS/index/hugging-face-incident-and-the-road-ahead/",
-      "topic": "OpenAI 复盘智能体隔离绕过事件",
-      "why": "事件涉及智能体绕过隔离、跨系统协作并利用漏洞，后续措施覆盖沙箱、联网控制、权重访问和思维链监控。这是本周最具体的 Agent 安全工程警示。"
+      "url": "https://arxiv.org/abs/2609.03079",
+      "topic": "LeanStream：端侧流式推理的投机-精炼框架",
+      "why": "提出投机解码配合精炼的流式生成方案，在端侧 LLM 推理中实现 4.8-7.5 倍内存压缩，直接降低移动设备上的生成延迟和内存占用。"
     },
     {
-      "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
-      "topic": "Google AI Mode 从旅行规划走向预订执行",
-      "why": "新增航班价格跟踪、积分里程查询和酒店预订后，用户可在对话中连续完成规划、比较和执行，体现消费级 Agent 从回答问题向完成任务推进。"
+      "url": "https://arxiv.org/abs/2609.05151",
+      "topic": "单脉冲 SNN 语言模型：每神经元最多一次脉冲",
+      "why": "1.5B 参数的脉冲神经网络语言模型，通过限制每神经元最多一次脉冲实现极低推理能耗。对超低功耗端侧推理（IoT/可穿戴设备）具有探索性价值。"
     },
     {
-      "url": "https://www.zhipuai.cn/zh/research/163",
-      "topic": "GLM-5.3-Flash 用稀疏架构与量化降低长上下文成本",
-      "why": "该原生多模态模型结合线性与稀疏注意力、W8A8 和混合缓存量化，面向 1M 上下文压低推理成本，为资源受限环境中的长上下文 Agent 提供了可迁移的效率思路。"
+      "url": "https://arxiv.org/abs/2609.05081",
+      "topic": "深度微压缩：CNN 首次部署到 2KB SRAM 微控制器",
+      "why": "通过结构化剪枝和位打包量化，将 CNN 压缩到可在 ATmega328P（仅 2KB SRAM）上运行。这是端侧部署向极端资源约束环境的突破。"
     },
     {
-      "url": "https://www.mediatek.com/press-room/nvidia-and-mediatek-deepen-long-standing-partnership-to-build-ai-edge-to-cloud-computing-platforms",
-      "topic": "MediaTek 与 NVIDIA 扩大端到云 AI 平台合作",
-      "why": "双方把合作范围扩展到 AI 基础设施、本地 AI 计算和汽车平台。对端侧生态的意义是芯片、互连与软件栈协同继续向多类设备和边缘场景延伸。"
+      "url": "https://arxiv.org/abs/2609.04971",
+      "topic": "BeaconKV：5.8 倍 KV 缓存压缩（ICML 2026）",
+      "why": "通过信标查询机制实现 KV 缓存高效压缩，在 ICML 2026 发表。对端侧长上下文推理的内存管理有直接迁移价值。"
     }
   ]
 }

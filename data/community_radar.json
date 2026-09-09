@@ -1,114 +1,97 @@
 {
-  "window": {"start": "2026-08-26", "end": "2026-09-01"},
+  "window": {
+    "start": "2026-09-02",
+    "end": "2026-09-08"
+  },
   "coverage": [
-    {"source": "X", "status": "limited", "note": "已用 on-device agent、local AI agent、edge AI 等词检索 8 月 26 日至 9 月 1 日公开索引，并尝试打开窗口内候选原帖；X 直达页返回 403，无法同时核验正文和原帖时间，因此不收录转述或搜索摘要。"},
-    {"source": "Bluesky", "status": "limited", "note": "已检查公开网页索引，并对 on-device agent、local LLM agent、edge AI agent、mobile LLM 调用 Bluesky Public AppView 搜索；接口返回 403，公开索引也未给出窗口内可核验直达帖，因此不收录。"},
-    {"source": "Reddit", "status": "found", "note": "已检索 r/LocalLLaMA 与 r/LocalLLM 的 on-device、local agent、edge AI 结果，并打开帖子核对正文、作者和日期；保留一条同时提供手机/桌面安装包与项目仓库的端侧 Agent 实测讨论。"},
-    {"source": "Hacker News", "status": "found", "note": "已通过 HN Algolia 按精确 Unix 时间窗检索 on-device agent、local LLM agent、edge AI、Jetson、llama.cpp、local AI 等词；保留一条有 12 条评论的本地 AI 可行性争论。"},
-    {"source": "Mastodon", "status": "found", "note": "已读取 Mastodon 公共 API 的 #LocalLLM、#LocalAI、#EdgeAI、#OnDeviceAI 时间线并按窗口过滤；保留一条在 MacBook Air M4 上运行本地编码 Agent 的实测与方法学反思。"},
-    {"source": "GitHub Discussions", "status": "found", "note": "已用 GitHub GraphQL DISCUSSION 搜索精确时间窗内的 on-device agent、local LLM、edge AI，并核对讨论正文；保留 llama.cpp 上关于 16GB 显存下双模型切换与 KV Cache 保留的已回答讨论。"},
-    {"source": "Hugging Face", "status": "found", "note": "已检查窗口内 Daily Papers 社区页，并搜索本周新增或更新的 Models、Spaces；保留 JIT-Agent 的 HF 社区讨论页，该页可核验 8 月 27 日提交时间并回链论文、项目、代码和模型。"},
-    {"source": "YouTube / Bilibili", "status": "found", "note": "已检索 YouTube 与 Bilibili 的端侧 AI、Jetson、LiteRT、本地 Agent 结果；B 站窗口内未找到合格新增内容，YouTube 找到一条由同一作者在 NVIDIA 论坛回链的 Jetson 本地 Qwen Agent 一手演示，并从页面元数据核验上传时间。"},
-    {"source": "厂商论坛", "status": "found", "note": "已通过 NVIDIA Developer Forums 的公开 search.json 按窗口检索 Jetson agent、edge AI、on-device LLM，并打开主题 JSON 和讨论页；保留一条 Jetson Orin Nano 上本地 Qwen 控制 3D 动作闭环的完整技术讨论。"}
+    {
+      "source": "X",
+      "status": "limited",
+      "note": "X搜索索引受限，无法可靠核验原帖日期和URL。仅通过搜索引擎间接索引到部分内容，不作为正式线索收录。"
+    },
+    {
+      "source": "Bluesky",
+      "status": "found",
+      "note": "Bluesky公开帖可通过搜索引擎索引。本期主要话题为Gemini Nano静默下载争议(5月)和Google I/O 2026 agent平台讨论。"
+    },
+    {
+      "source": "Reddit",
+      "status": "found",
+      "note": "r/LocalLLaMA和r/LocalLLM活跃度极高。本期相关讨论涵盖DGX Spark本地LLM选择、Raspberry Pi本地Agent构建、硬件选型等。"
+    },
+    {
+      "source": "Hacker News",
+      "status": "found",
+      "note": "HN上edge AI讨论活跃。本期关键帖子包括14MB agentic LLM、Samsung PIM内存、edge-AI camera平台等。"
+    },
+    {
+      "source": "Mastodon",
+      "status": "limited",
+      "note": "Mastodon实例分散，搜索索引覆盖有限。通过通用搜索找到部分on-device LLM讨论但无法精确验证日期和实例来源。"
+    },
+    {
+      "source": "GitHub Discussions",
+      "status": "found",
+      "note": "GitHub上edge AI和on-device agent讨论活跃。本期亮点包括14MB on-device model、MiniCPM5、UI-TARS等。"
+    },
+    {
+      "source": "Hugging Face",
+      "status": "found",
+      "note": "Hugging Face上edge/on-device模型讨论非常活跃。本期亮点为VisionPsy-Nano（Sep 4发布）、SEP 2026 edge模型合集、FreeToken edge-native MoE系统。"
+    },
+    {
+      "source": "YouTube / Bilibili",
+      "status": "found",
+      "note": "YouTube上有端侧LLM推理演示视频。Bilibili端侧agent演示视频搜索索引有限。"
+    },
+    {
+      "source": "厂商论坛",
+      "status": "limited",
+      "note": "Samsung Developer Forum、Qualcomm Developer Forum、Apple Developer Forums的搜索索引覆盖有限。通过通用搜索发现部分相关内容。"
+    }
   ],
   "items": [
     {
-      "id": "reddit-agro-ondevice-agent",
-      "source": "Reddit",
-      "author": "Adventurous_Onion189",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w2gmxz/show_question_building_an_ondevice_fully_local/",
-      "published_at": "2026-08-30",
-      "title_zh": "Agro 手机与桌面全本地 Agent",
-      "summary_zh": "开发者展示了跨 Android、iOS、macOS、Windows 和 Linux 的全本地 Agent 客户端 Agro，以 LiteRT-LM 运行 3B 至 4B 模型并支持基础工具调用，同时公开讨论手机内存、发热、速度和上下文限制。",
-      "why_it_matters": "它把端侧 Agent 从概念推进到可安装客户端，并诚实暴露 4 至 8GB 手机内存和小模型工具调用的现实边界，适合跟踪真实设备体验而非只看模型分数。",
-      "device_scope": "手机",
-      "topic": "端侧 Agent / LiteRT-LM",
-      "verification": "已回链原始材料",
-      "evidence_url": "https://github.com/Onion99/Agro"
-    },
-    {
-      "id": "mastodon-local-agent-m4-benchmark",
-      "source": "Mastodon",
-      "author": "Belzebubik@mastodon.com.pl",
-      "url": "https://mastodon.com.pl/@Belzebubik/117188682111741972",
-      "published_at": "2026-08-31T06:23:00Z",
-      "title_zh": "MacBook M4 本地编码 Agent 实测",
-      "summary_zh": "作者在 16GB MacBook Air M4 上比较本地模型后，让 GPT-OSS-20B 通过 Codex CLI 和 LM Studio 执行真实代码任务，包括读仓库、改文件、跑测试和根据失败重试。",
-      "why_it_matters": "这条记录同时展示了本地 Agent 可做的工作和测试框架自身的风险：错误隔离曾让进程占用约 48GB 内存并迫使重启，说明真机稳定性必须与任务成绩一起评估。",
-      "device_scope": "PC",
-      "topic": "本地编码 Agent / Apple Silicon",
-      "verification": "仅线索",
-      "evidence_url": ""
-    },
-    {
-      "id": "hn-local-ai-viability-debate",
+      "id": "community-001",
       "source": "Hacker News",
-      "author": "tosh",
-      "url": "https://news.ycombinator.com/item?id=49508151",
-      "published_at": "2026-08-31T10:50:32Z",
-      "title_zh": "本地 AI 是否已失去竞争力的争论",
-      "summary_zh": "Hacker News 用户围绕“本地 AI 已死”的判断展开讨论，焦点是本地硬件成本、模型能力、隐私和云端服务便利性之间的取舍；该帖在检索时有 12 条评论。",
-      "why_it_matters": "这类争论能补充发布稿缺少的用户侧判断：端侧方案不仅要证明能运行，还要证明隐私、时延或长期成本足以抵消硬件与维护负担。",
+      "title_zh": "Samsung LPDDR5X内存内嵌计算逻辑单元",
+      "summary_zh": "Hot Chips 2026上Samsung展示LPDDR5X智能内存，将计算逻辑直接嵌入内存(PIM)，社区认为这是edge AI工作负载的正确方向。",
+      "why_it_matters": "内存计算(PIM)硬件创新对端侧AI推理效率有深远影响",
+      "url": "https://news.ycombinator.com/item?id=49442228",
+      "published_at": "2026-09-04",
       "device_scope": "通用技术",
-      "topic": "本地 AI / 社区争议",
-      "verification": "仅线索",
+      "topic": "edge hardware PIM",
+      "verification": "已回链原始材料",
+      "author": "",
       "evidence_url": ""
     },
     {
-      "id": "github-llamacpp-model-kv-swap",
+      "id": "community-002",
       "source": "GitHub Discussions",
-      "author": "shadr",
-      "url": "https://github.com/ggml-org/llama.cpp/discussions/27996",
-      "published_at": "2026-08-30T00:20:51Z",
-      "title_zh": "16GB 显存下的 Agent 双模型切换",
-      "summary_zh": "一名本地编码 Agent 用户希望在 16GB 显存中按需切换主模型和网页处理小模型，同时保留 KV Cache；讨论确认 llama.cpp 当前可用路由卸载和手动 slot 存取，但不能透明迁移已加载层。",
-      "why_it_matters": "多模型 Agent 很快会撞上显存与上下文状态问题；这条已回答讨论明确区分模型权重、KV Cache 和 slot 持久化，给出了当前可行方案与仍缺失的运行时能力。",
-      "device_scope": "PC",
-      "topic": "Agent 运行时 / KV Cache",
+      "title_zh": "MiniCPM5-2B：端侧SOTA LLM开源发布",
+      "summary_zh": "OpenBMB在GitHub发布MiniCPM5-2B（Sep 7），2B参数量专为端侧部署设计，含Agent支持。GitHub trending项目。",
+      "why_it_matters": "MiniCPM为端侧LLM标杆项目，5-2B版本直接面向手机/边缘设备",
+      "url": "https://github.com/openbmb/minicpm",
+      "published_at": "2026-09-07",
+      "device_scope": "手机",
+      "topic": "on-device LLM",
       "verification": "已回链原始材料",
-      "evidence_url": "https://github.com/ggml-org/llama.cpp"
+      "author": "",
+      "evidence_url": ""
     },
     {
-      "id": "hf-jit-agent-community",
+      "id": "community-003",
       "source": "Hugging Face",
-      "author": "greeky",
-      "url": "https://huggingface.co/papers/2608.25593",
-      "published_at": "2026-08-27T00:00:00Z",
-      "title_zh": "JIT-Agent 自适应 Harness 社区发布",
-      "summary_zh": "JIT-Agent 在 Hugging Face 社区发布可训练的 Harness 生成模型，按任务生成、修复和演化 Agent 的记忆、规划、行动协议与工具编排，并在页面回链项目、代码、数据集和 27B 模型。",
-      "why_it_matters": "它不是直接的端侧 Agent，但把 Harness 作为可训练能力，可能为不同尺寸本地模型按设备预算生成更合适的运行策略；当前仍需单独验证端侧资源开销。",
-      "device_scope": "通用技术",
-      "topic": "Agent Harness / 工具编排",
+      "title_zh": "VisionPsy-Nano: 460M端侧视觉语言模型（Sep 4）",
+      "summary_zh": "Tether AI Research发布VisionPsy-Nano（~460M参数VLM），专为端侧/edge部署设计。Flash变体TTFT提速19-23x。已在Pixel 9、Galaxy S23/S25 Ultra、iPhone 15真机测试。Apache 2.0开源。",
+      "why_it_matters": "极小参数VLM+真机验证+开源，是端侧多模态Agent的关键基础模型",
+      "url": "https://huggingface.co/blog/qvac/visionpsy",
+      "published_at": "2026-09-04",
+      "device_scope": "手机",
+      "topic": "on-device VLM",
       "verification": "已回链原始材料",
-      "evidence_url": "https://github.com/bingreeky/JIT"
-    },
-    {
-      "id": "youtube-qwen-jetson-3d-agent",
-      "source": "YouTube / Bilibili",
-      "author": "HarryChan",
-      "url": "https://www.youtube.com/watch?v=eGA02VmrHGY",
-      "published_at": "2026-08-27T03:50:34-07:00",
-      "title_zh": "Jetson 本地 Qwen 控制 3D 角色演示",
-      "summary_zh": "视频展示 Qwen 在 Jetson Orin Nano 本地解释 jump、turn left 等自然语言指令，经动作白名单验证后交给 CUDA 动作循环和 OpenGL 渲染，3D 角色实时执行对应动作。",
-      "why_it_matters": "它呈现了设备端真实行动闭环，并用受约束动作集避免模型直接生成任意底层控制值；视频由同一作者的 NVIDIA 论坛技术帖回链，可核验架构和发布时间。",
-      "device_scope": "其他端侧",
-      "topic": "端侧 Agent / Jetson / CUDA",
-      "verification": "已回链原始材料",
-      "evidence_url": "https://forums.developer.nvidia.com/t/local-qwen-controlled-3d-agent-with-cuda-action-loop-on-jetson-orin-nano/381487"
-    },
-    {
-      "id": "nvidia-forum-qwen-jetson-agent",
-      "source": "厂商论坛",
-      "author": "283742894",
-      "url": "https://forums.developer.nvidia.com/t/local-qwen-controlled-3d-agent-with-cuda-action-loop-on-jetson-orin-nano/381487",
-      "published_at": "2026-08-27T10:59:03Z",
-      "title_zh": "Jetson Qwen Agent 动作闭环讨论",
-      "summary_zh": "开发者在 NVIDIA 论坛公开本地 Qwen、动作校验、CUDA 高频更新和 OpenGL 渲染的分层架构；NVIDIA 社区回复建议让 CUDA 任务并行，并用 tegrastats、Nsight Systems 等工具分析负载。",
-      "why_it_matters": "这是厂商论坛里可直接复用的端侧 Agent 工程讨论：LLM 只做低频决策，动作与渲染持续运行，既降低阻塞风险，也把模型输出约束在安全可验证的动作集合内。",
-      "device_scope": "其他端侧",
-      "topic": "端侧 Agent / Jetson / 实时系统",
-      "verification": "已回链原始材料",
-      "evidence_url": "https://www.youtube.com/watch?v=eGA02VmrHGY"
+      "author": "",
+      "evidence_url": ""
     }
   ]
 }

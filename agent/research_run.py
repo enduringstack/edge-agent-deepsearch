@@ -354,7 +354,8 @@ def fetch_arxiv_dates(url: str, timeout: int = 8) -> tuple[date | None, date | N
         req = urllib.request.Request(api_url, headers=headers)
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             body = resp.read().decode("utf-8", errors="ignore")
-    except (urllib.error.URLError, TimeoutError, socket.timeout):
+    except (urllib.error.URLError, TimeoutError, socket.timeout,
+            http.client.RemoteDisconnected, ConnectionResetError, OSError):
         return None, None
 
     def parse_atom_date(field: str) -> date | None:
