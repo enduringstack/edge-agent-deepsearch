@@ -1,0 +1,301 @@
+[
+  {
+    "id": "2609.11906",
+    "title": "AccelForge: Comprehensive Modeling and Co-Design Framework for AI Accelerators",
+    "date": "2026-09-10",
+    "published_date": "2026-09-10",
+    "updated_date": "2026-09-10",
+    "date_basis": "submitted",
+    "abstract": "Tensor algebra workloads, of which deep neural networks are prominent examples, are energy-intensive workloads in modern datacenter and edge deployments, making accelerators necessary to achieve energy efficiency and high throughput. To quickly evaluate and iterate on accelerator designs, we need an accelerator modeling framework that captures salient attributes of devices, circuits, architectures, workloads, as well as optimizing the mapping of the workload onto the hardware. In this paper, we introduce AccelForge, which improves upon existing accelerator modeling frameworks in capabilities, speed, and ease-of-use. AccelForge unifies and multiple works into one framework, and it includes (1) composable user-defined and user-modifiable models of devices, circuits, and architectures, (2) fast mappers that enable accurate evaluation in orders of magnitude less (computer and human) time, and (3) easy-to-use and easy-to-extend, yet still high performance, Python implementations of both the model and mapper to enable rapid research and extension to novel optimizations.",
+    "authors": "Tanner Andrulis; Michael Gilbert; Vivienne Sze; Joel S. Emer",
+    "categories": [
+      "https://arxiv.org/pdf/2609.11906v1"
+    ]
+  },
+  {
+    "id": "2609.11744",
+    "title": "Building py-kvcache: A Performance Characterization of External KV Caching for vLLM with NVMe SSDs",
+    "date": "2026-09-10",
+    "published_date": "2026-09-10",
+    "updated_date": "2026-09-10",
+    "date_basis": "submitted",
+    "abstract": "Prefix caching can reduce the time to first token (TTFT) of long-context LLM requests by reusing previously computed key-value (KV) states, but for short prefixes or fast GPUs, recomputation can be faster than loading from an external cache. We characterize this tradeoff in vLLM across GPU, CPU, and NVMe tiers using synthetic workloads, long-context benchmarks, production traces, and find that cache performance depends on transfer granularity, intermediate memory use, and when transfers enter the request schedule, not only on device bandwidth. These findings motivate py-kvcache, a vLLM KV Offload connector with asynchronous direct I/O, bounded shared staging, and scheduler-aware preloading, which starts disk reads while requests are still waiting, overlapping with compute. At 80k tokens, py-kvcache loading from disk is 2.0x faster than LMCache, with preloading contributing 1.34x. With GPU, CPU, and disk caching enabled, it is 1.23x faster than LMCache and within approximately 4% of the native vLLM KV Offload implementation. LongBench and SCBench show that these benefits extend to irregular prefix chains and multi-turn workloads. Bailian trace replays improve TTFT on a weaker GPU, but on an H100 the average request falls below the break-even point and GPU memory alone retains enough prefixes. External KV caching should therefore be treated as a setup specific admission decision. The py-kvcacheimplementation is available at: https://github.com/atlarge-research/py-kvcache.",
+    "authors": "Joseph Kanichai; Tiziano De Matteis; Animesh Trivedi",
+    "categories": [
+      "https://arxiv.org/pdf/2609.11744v1"
+    ]
+  },
+  {
+    "id": "2609.11649",
+    "title": "From Grid to Chip: Power Architecture, Stability, and Flexibility of AI Data Centers",
+    "date": "2026-09-10",
+    "published_date": "2026-09-10",
+    "updated_date": "2026-09-10",
+    "date_basis": "submitted",
+    "abstract": "The rapid growth of artificial intelligence (AI) computing is transforming data centers into large, dynamic electrical loads. Their deployment is primarily constrained by energy availability and grid-connection capacity, which is further aggravated by the ability of power-delivery architectures, control systems, and computing workloads to operate reliably during fast grid disturbances. This article presents a technological perspective on AI data centers as grid-interactive computing systems. First, it reviews grid-integration bottlenecks, evolving connection policies, grid-code requirements, which has fostered new technological trends via spatio-temporal flexibility available through workload orchestration, cooling systems, on-site resources, and energy storage. Second, it maps the evolution of power-delivery architectures from medium-voltage grid interfaces to chip-level, discussing higher-voltage DC distribution, solid-state transformers, wide-bandgap devices, advanced chip-level power delivery, and liquid cooling. Third, it establishes a three-level stability framework spanning rack-level DC-bus dynamics, facility-level converter interactions, and system-level grid-coupled behavior. The framework connects dominant instability mechanisms, including constant power load effects, impedance interactions, forced oscillations, and operating-mode transitions, with suitable modeling, assessment, and mitigation approaches. Synthesizing these topics, this article highlights grid-to-chip co-design as a central requirement for scalable AI infrastructure, linking computing workloads, power-delivery systems, energy buffers, and grid operation.",
+    "authors": "Yubo Song; Rui Kong; Takuro Umihara; Pooya Davari; Frede Blaabjerg; Subham Sahoo",
+    "categories": [
+      "https://arxiv.org/pdf/2609.11649v1"
+    ]
+  },
+  {
+    "id": "2609.11372",
+    "title": "RAMamba-Net: A Reliability-Aware and Mamba-Based Multimodal Fusion Network for Auditory Attention Detection",
+    "date": "2026-09-10",
+    "published_date": "2026-09-10",
+    "updated_date": "2026-09-10",
+    "date_basis": "submitted",
+    "abstract": "Auditory attention decoding (AAD) identifies the attended speaker from physiological signals, supporting neuro-steered hearing devices and natural human-machine interaction. Electroencephalography (EEG) is the dominant modality for AAD but provides incomplete evidence in naturalistic audio-visual scenes, motivating EEG and electrooculography (EOG) fusion. Existing approaches remain limited by weak cross-modal interaction, inefficient temporal modeling, and low robustness to sample variations. To address the limitations, we propose RAMamba-Net, a reliability-aware Mamba-based multimodal fusion network for AAD. RAMamba-Net employs a Mamba-enhanced band-aware convolutional Transformer to capture band-specific EEG patterns and long-range temporal dynamics. A dual-branch temporal-spatial encoder models EOG temporal and inter-channel dependencies. Cross-modal attention enables explicit modality interaction. Then, a reliability-aware module is introduced to estimate sample-wise modality weights for feature and prediction consistency, thereby enhancing multimodal fusion. Experiments on two AAD benchmarks demonstrate that RAMamba-Net effectively exploits complementary EEG-EOG information, yielding accuracy gains of 5.76% over unimodal baselines, together with more robust decoding and discriminative representations. Further analyses show that explicit cross-modal interaction improves multimodal alignment, while the reliability-aware module suppresses unreliable modality evidence and is robust to signal perturbation and parameter variation.",
+    "authors": "Xingyi He; Ziwei Wang; Dongrui Wu",
+    "categories": [
+      "https://arxiv.org/pdf/2609.11372v1"
+    ]
+  },
+  {
+    "id": "2609.11231",
+    "title": "A Voice-Interactive Multi-Agent System for Smart Operating Rooms: Architecture Design and Key Technologies",
+    "date": "2026-09-10",
+    "published_date": "2026-09-10",
+    "updated_date": "2026-09-10",
+    "date_basis": "submitted",
+    "abstract": "This paper presents SurgicalRoomAgent, a voice-interactive multi-agent system for smart operating rooms based on large language models (LLMs). The system achieves natural language understanding, device control, intraoperative recording, and surgical report generation through a layered architecture comprising a voice interaction pipeline (wake, ASR, turn detection, agent reasoning, TTS) and an agent core (skill registry, task planner, device manager). Three key technologies are investigated: (1) KV Cache prefix warming for low-latency inference, reducing recomputation overhead from approximately 500 ms to tens of milliseconds via byte-level Longest Common Prefix reuse; (2) streaming partial JSON parsing with early parallel task execution, reducing end-to-end latency by approximately 30%; and (3) progressive skill prompt disclosure, which dynamically filters system prompts based on user role, connected devices, and surgical phase to maximize information density within limited context windows. The system is implemented using the Qwen3-27B model with llama.cpp/sglang inference engines. Experimental analysis demonstrates effective operation within a 16,384-token context limit and multi-device parallel control response times meeting OR real-time requirements.",
+    "authors": "Tianxiang Zhou",
+    "categories": [
+      "https://arxiv.org/pdf/2609.11231v1"
+    ]
+  },
+  {
+    "id": "2609.11145",
+    "title": "The Computing Channel: How Modulation Programs the Airwaves",
+    "date": "2026-09-10",
+    "published_date": "2026-09-10",
+    "updated_date": "2026-09-10",
+    "date_basis": "submitted",
+    "abstract": "Distributed computing and distributed artificial intelligence require frequent exchanges of intermediate results, although many applications need only an aggregate rather than messages from individual devices. Conventional systems recover each message before computing the aggregate, whereas over-the-air computation (OAC) exploits simultaneous transmission to obtain it directly. However, dominant OAC implementations rely on analog signaling, creating a mismatch with finite-precision data and digital communication procedures. This article presents digital function-oriented communication, in which finite-alphabet symbol representations and receiver decisions are jointly designed so that multiple-access superposition encodes the desired function without recovering individual inputs. We introduce its computational-constellation principle, main design approaches, extensions, and implementation challenges. Federated edge learning illustrates how the framework can reduce user-dependent data-bearing resources while operating directly on quantized model updates.",
+    "authors": "Saeed Razavikia; Carlo Fischione",
+    "categories": [
+      "https://arxiv.org/pdf/2609.11145v1"
+    ]
+  },
+  {
+    "id": "2609.11071",
+    "title": "Coherent Floquet quantum reservoirs for molecular property prediction",
+    "date": "2026-09-10",
+    "published_date": "2026-09-10",
+    "updated_date": "2026-09-10",
+    "date_basis": "submitted",
+    "abstract": "Quantum reservoir computing (QRC) uses quantum dynamics to represent input histories for prediction through a trained classical readout. Discrete time crystals (DTCs) exhibit robust subharmonic responses under periodic driving, and previous work has used their dynamics to construct DTC-QRC. Here we construct a DTC-based reservoir architecture to predict molecular properties from structural and dynamical observations. Coherent Floquet evolution processes local molecular graph events and surface-hopping frames, while controlled reset regulates the contribution of earlier inputs. Measurements at the end of each input sequence yield a feature vector of fixed dimension. Trained classical decoders use this vector for inhibitor-activity and blood--brain-barrier permeability classification and electronic-gap forecasting, while the reservoir parameters remain fixed during training. With matched input lengths and output widths, DTC-QRC outperforms echo-state networks on long-prefix graph classification and the studied ethene gap forecasting tasks. Dephasing lowers performance in both applications, consistent with a role for coherent propagation. Experiments on the Quafu superconducting quantum cloud platform show that pair observables retain task information under device noise. The architecture provides a common framework for molecular screening and time-resolved property prediction using quantum reservoir computing.",
+    "authors": "Luofei Wang; Da Zhang; Congren Wang; Yiming Li; Yuxiao Yang; Xuan Zhang; Xuefeng Cui; Zhang-Qi Yin",
+    "categories": [
+      "https://arxiv.org/pdf/2609.11071v1"
+    ]
+  },
+  {
+    "id": "2609.11058",
+    "title": "EMMI: Edge Multi-Modal Intelligence for Communication-Efficient MLLM Inference via Fused Representation Compression",
+    "date": "2026-09-10",
+    "published_date": "2026-09-10",
+    "updated_date": "2026-09-10",
+    "date_basis": "submitted",
+    "abstract": "Recent advances in multimodal large language mod- els (MLLMs) have opened new opportunities for edge intelligence by enabling reasoning across heterogeneous sensor modalities, such as vision, text, and telemetry data. However, deploying these capabilities on resource-constrained edge platforms remains challenging due to the substantial computational, memory, and communication demands of modern MLLMs. Rather than transmitting raw sensor observations or partitioning neural networks at intermediate layers, Edge Multi-Modal Intelligence (EMMI) communicates a compact representation between edge devices and server resources, enabling communication-efficient edge MLLM inference. To achieve this, EMMI performs modality-specific encoding, cross-modal representation fusion, and learned compression at the edge, transmitting only a compact latent representation to server-side resources for high-capacity MLLM reasoning. This representation-centric design reduces communication overhead, preserves local data privacy, and provides a fixed-size interface between heterogeneous edge devices and server-side MLLMs. Evaluation on a representative multimodal benchmark demonstrates that EMMI can reduce the communication payload by 32x while maintaining comparable downstream accuracy, resulting in up to a 3.4x reduction in estimated end-to-end inference latency under bandwidth-constrained edge conditions.",
+    "authors": "Motahare Mounesan; Irfan Khan",
+    "categories": [
+      "https://arxiv.org/pdf/2609.11058v1"
+    ]
+  },
+  {
+    "id": "2609.10882",
+    "title": "Fractional-order hardware for neuromorphic computing: Is the order really the problem?",
+    "date": "2026-09-09",
+    "published_date": "2026-09-09",
+    "updated_date": "2026-09-09",
+    "date_basis": "submitted",
+    "abstract": "Does a neuromorphic system need a true power-law memory kernel, and if so, can anyone build one? Neuromorphic systems process signals spanning many timescales at once, from milliseconds to tens of seconds. Integer-order circuits buy each additional timescale with an additional state variable. Fractional-order dynamics offer a different bargain: one operator whose power-law kernel carries a continuum of timescales, tuned by one parameter, the order alpha. A fractional derivative is non-local, so evaluating it costs storage and arithmetic that grow with the retained history, where an integer-order derivative costs a constant. This review organizes the hardware literature around that cost. We derive the retained history needed to hold the truncation error below a tolerance epsilon, show that it scales as epsilon^(-1/alpha), and set beside it a second and independent limit on the direct form: in fixed point the weights themselves underflow, so word length caps the usable history however long the buffer is. The two limits move at very different rates with the order, and where they cross decides whether a word length can serve an order at all. We use both to sort published hardware into three strategies, note a fourth the numerical literature has developed and this hardware has not, and survey digital, analog and device work. Along the way we ask whether the field is worried about the right obstacle. It is not. Fabricated constant-phase devices already span the orders two groups identify as task-optimal, so the order gap has largely closed, leaving a residual gap near 0.1 and at the lower order describing cortical adaptation. What remains is a frequency-band gap of about three decades at the low end. That corner is not empty, since double-layer electrodes work there, but every device in it is discrete, and no integrable thin-film element has been characterized there.",
+    "authors": "Christof Teuscher",
+    "categories": [
+      "https://arxiv.org/pdf/2609.10882v1"
+    ]
+  },
+  {
+    "id": "2609.10861",
+    "title": "REACH: Controller-Managed Long-Span ECC for HBM AI Inference",
+    "date": "2026-09-09",
+    "published_date": "2026-09-09",
+    "updated_date": "2026-09-09",
+    "date_basis": "submitted",
+    "abstract": "High-Bandwidth Memory (HBM) cost motivates stronger controller protection that can support a wider range of device error rates. Long-span error-correcting codes provide stronger protection at a comparable code rate, but a direct implementation couples small accesses to span-wide state and requires costly decoding at HBM bandwidth. Read-dominated LLM decode offers a favorable setting: sequential reads support span aggregation, while sparse writes limit parity-update traffic. This paper presents REACH, a controller microarchitecture that uses established inner codes to correct common errors and identify unresolved chunks, reserving a long outer code for known-erasure repair. Differential parity bounds write traffic, and a co-designed endpoint preserves 32\\,B transactions without an extra data burst. Ramulator2 sustains 1.88\\,TB/s of application traffic at the highest error stress, while separate full-interface sizing supports a 2.69\\,TB/s application target using ASAP7-synthesized kernels. At this analytical target, REACH's nominal composition uses 55.8\\% less controller area and 57.7\\% less modeled power than the evaluated mean-work direct-long design, showing the benefit of reserving long-span recovery for exceptional requests.",
+    "authors": "Rui Xie; Yunhua Fang; Asad Ul Haq; Linsen Ma; Sanchari Sen; Swagath Venkataramani; Liu Liu; Tong Zhang",
+    "categories": [
+      "https://arxiv.org/pdf/2609.10861v1"
+    ]
+  },
+  {
+    "id": "2609.10790",
+    "title": "Composable CXL Memory as a Kubernetes-Native Shared Memory for LLM Serving",
+    "date": "2026-09-09",
+    "published_date": "2026-09-09",
+    "updated_date": "2026-09-09",
+    "date_basis": "submitted",
+    "abstract": "We present a Kubernetes Dynamic Resource Allocation (DRA) driver that makes composable CXL memory a schedulable cluster resource, and evaluate the resulting shared-memory tier for cross-node KV-cache reuse in LLM serving. The driver composes CXL regions on demand, materializes them as DAX devices on each participating host, and injects them into pods under a single Container Device Interface (CDI) name so that pods on different nodes access the same physical region. A shared-memory connector for vLLM/llm-d uses that region as a KV-cache tier with a slot directory embedded inside the shared medium, which eliminates the need for an external metadata service. On a two-node cluster with a 512\\,GiB CXL appliance and Qwen2.5-7B-Instruct, cross-node prefix reuse reduces TTFT by 5.5$\\times$--36.6$\\times$ at an external hit rate of 95.4--99.5\\,\\%, while node-local tiers (GPU prefix caching, CPU-DRAM offload) fall back to full recompute. The sharing gap, defined as the latency ratio between cross-node and same-node reuse, is 1--4\\%, indicating that cross-node reuse incurs little additional latency relative to same-node reuse on our testbed. Both replicas run full engines; the study demonstrates memory disaggregation rather than prefill/decode disaggregation. We report this as a feasibility study rather than a performance evaluation.",
+    "authors": "Hongjian Fan; Kevin Zhang; David Habinsky; Sean Dykstra",
+    "categories": [
+      "https://arxiv.org/pdf/2609.10790v1"
+    ]
+  },
+  {
+    "id": "2609.10451",
+    "title": "JarvisGUI: Towards Cross-Device GUI Agents with Dynamic Task Composition",
+    "date": "2026-09-09",
+    "published_date": "2026-09-09",
+    "updated_date": "2026-09-09",
+    "date_basis": "submitted",
+    "abstract": "Real-world GUI usage frequently involves workflows that span multiple devices and platforms, requiring the transfer of intermediate results, maintenance of shared state, and coordination across heterogeneous environments. However, existing GUI benchmarks overwhelmingly evaluate agents on single-device, statically defined tasks, thus leaving such cross-device capabilities largely unexamined, resulting in an overly optimistic assessment of agents' readiness for real-world usage. We introduce JarvisGUI, a dynamic benchmark that evaluates GUI agents on cross-device workflows requiring coordinated interaction across heterogeneous platforms, including Android, Windows, and Ubuntu. Specifically, JarvisGUI formulates GUI tasks as input-output transformations under a lightweight type system, which allows us to automatically compose multi-step, cross-device workflows and dynamically evaluate agent performance within a unified framework. By evaluating agents in virtual environments spanning multiple operating systems, JarvisGUI reveals that state-of-the-art open-source GUI agents struggle with the state-transfer awareness, cross-platform contextual reasoning, and long-horizon dependency management required for real-world workflows, exposing a critical capability gap invisible to existing benchmarks.",
+    "authors": "Zixiang Chen; Yuheng Lu; Zihao Cheng; Zeming Liu; Jizeng Bai; Ziye Huang; Zhiyin Lin; Zihan Li",
+    "categories": [
+      "https://arxiv.org/pdf/2609.10451v1"
+    ]
+  },
+  {
+    "id": "2609.10347",
+    "title": "CertiFlash: A Formal Verification Framework for Flash Translation Layers in Computational Solid State Drives",
+    "date": "2026-09-09",
+    "published_date": "2026-09-09",
+    "updated_date": "2026-09-09",
+    "date_basis": "submitted",
+    "abstract": "Data-intensive applications move large amounts of data from storage to the compute unit, incurring significant data movement overhead. Storage-centric computing reduces this overhead by moving computation near or inside solid-state drives (SSDs). Enabling it requires modifying SSD policies, e.g., address translation and garbage collection, which are part of the Flash Translation Layer (FTL), the SSD's firmware. Modifying the FTL is error-prone. Because FTL logic has direct access to security-critical device components, even a functionally correct FTL can leak data between tenants, drop integrity tags, or assign a flash block to the wrong tenant. We show that a faulty FTL can corrupt the device state at five surfaces inside the SSD, and demonstrate them on a DaisyPlus OpenSSD. Prior work verifies individual FTL designs, but has two limitations. (1) It establishes only functional correctness, so a modified FTL can violate isolation, integrity, and ownership and still pass verification. (2) It is tied to a single FTL design, so every modification requires redoing every proof. We propose CertiFlash, a formal verification framework for FTLs, mechanized in the Rocq proof assistant, that gives designers a machine-checked proof of security and correctness. CertiFlash models an FTL as a deterministic state machine with a single global invariant over mapping, isolation, integrity, ownership, and allocation. We prove once, over a general FTL model, that (i) every FTL operation preserves the invariant and (ii) the model refines an idealized block device. For a new design, a designer discharges five hypotheses about its own operations instead of redoing either proof. Across four case studies, a designer adds 27 to 3,231 lines against a 16,489-line framework, significantly reducing the verification effort. CertiFlash is open source.",
+    "authors": "Harshita Gupta; Mayank Kabra; Rakesh Nadig; Nika Mansouri Ghiasi; Sahand Divsalar; F. Nisa Bostanci; Ataberk Olgun; Konstantinos Kanellopoulos",
+    "categories": [
+      "https://arxiv.org/pdf/2609.10347v1"
+    ]
+  },
+  {
+    "id": "2609.10181",
+    "title": "Can AI Agents Deliver Verifiable Network-Wide Outcomes Across Authority Boundaries?",
+    "date": "2026-09-09",
+    "published_date": "2026-09-09",
+    "updated_date": "2026-09-09",
+    "date_basis": "submitted",
+    "abstract": "AI agents are increasingly involved in network automation, where they can initiate configuration changes through mediated operational interfaces and assess the resulting state. Nonetheless, operational networks usually span many devices and administrative domains. Realizing an operator's intent requires coordinating agents with distinct authority scopes that define the resources they can access, the operations they can invoke, and the network state they can observe. This division limits the blast radius of an erroneous action but fragments the evidence needed to assess the network-wide outcome. Successful execution of a configuration action proposed by one agent does not establish that remote devices responded as intended or that routing changes reached the required devices. A valid observation may also become stale after a subsequent change. Before the coordinated operation can be declared complete, a trusted assurance layer must collect current observations from the required scopes and determine whether they collectively support the operator's intended network-wide outcome. To address the completion admission problem, we present EvidenceNet, a runtime assurance layer for deciding whether coordinated agent operations have achieved an operator's network intent. Its broker collects the post-change observations required by a completion contract, and its admission gate checks that the evidence comes from the required scopes, remains current, and satisfies the task rules. A verifier agent provides an additional assessment of the observation content. Experiments on live routing networks show that post-change state checks recognize successful outcomes that configuration-action records alone cannot establish. Controlled interventions further show that EvidenceNet rejects completion when otherwise satisfactory observations have the wrong source, have been substituted, or are stale.",
+    "authors": "Tianzhu Zhang; Chih-Kai Huang; Meikang Qiu",
+    "categories": [
+      "https://arxiv.org/pdf/2609.10181v1"
+    ]
+  },
+  {
+    "id": "2609.10151",
+    "title": "CEDD-optimizer: Enabling Cost-Efficient Dataset Distillation on Geographically Distributed Edge Systems",
+    "date": "2026-09-09",
+    "published_date": "2026-09-09",
+    "updated_date": "2026-09-09",
+    "date_basis": "submitted",
+    "abstract": "Centralized learning is a fundamental paradigm in modern AI, in which data are collected from distributed edge devices and aggregated at a central host for model training. However, this pipeline is often bottlenecked by the substantial communication overhead of data collection. Dataset Distillation (DD), with its high compression ratio, is therefore attractive for centralized learning on distributed data. Yet, the cost efficiency of DD in non-uniform edge environments remains largely unexplored. Geographically distributed edge devices face different energy and data-transfer prices, while key DD hyperparameters, such as the target compression ratio and number of distillation steps, substantially affect energy use, transfer overhead, and downstream test accuracy. These hyperparameters must therefore be tuned both locally and globally. We propose the Cost-Efficient Dataset Distillation optimizer (CEDD-optimizer), a hyperparameter-tuning framework for cost-efficient distributed DD. It minimizes total cost under a training-quality constraint by optimizing hyperparameter settings across edge devices while accounting for environmental non-uniformity. The framework comprises two modules: CEDD-calibrator and CEDD-solver. CEDD-calibrator identifies parameters for our energy and training-quality models: the former is determined through offline calibration, whereas the latter is estimated online through a three-step tuning scheme. Based on these models, CEDD-solver solves the cost-minimization problem to steer and improve the distributed DD workflow. Experiments across various image datasets show that our approach achieves up to a 20.8 improvement over the baseline DD method under the same quality constraint.",
+    "authors": "Dai Liu; Eishi Arima; Martin Schulz",
+    "categories": [
+      "https://arxiv.org/pdf/2609.10151v1"
+    ]
+  },
+  {
+    "id": "2609.10141",
+    "title": "The Sample Complexity of Quantum Entanglement Allocation",
+    "date": "2026-09-09",
+    "published_date": "2026-09-09",
+    "updated_date": "2026-09-09",
+    "date_basis": "submitted",
+    "abstract": "How many past requests are needed to decide which qubits should share entanglement? We show that the answer depends on the allocation choices created by the queries: a larger memory can require no more data. The memory stores a classical bit and answers requests through a fixed detector that preserves coherence within each measured sector. For independent commuting $X$- and $Z$-type Pauli queries, we characterize the full attainable prediction-contrast region and construct encodings that preserve the bit at every nonzero vertex. With sharp reports, a $d$-qubit path and groups of at most $k$ qubits have minimax excess error after $m$ requests proportional to $k^{-1}\\min\\{1,\\sqrt{d\\log(k+1)/m}\\}$, uniformly for $2\\leq k<d$. Connected biclique regions can grow without increasing sample demand when depth, region count and connections per region stay bounded. Preparation noise introduces a separate calibration requirement. We derive an exact tradeoff with extra fresh detector calls and transfer the learning law to structured transaction co-location. Population-risk experiments test the statistical predictions. We also compare encodings on a native 15-qubit device and learned partitions on public purchase baskets. The full chain wins on the device; frequency grouping outperforms basket search in the largest-capacity retail setting.",
+    "authors": "Nathan Roll",
+    "categories": [
+      "https://arxiv.org/pdf/2609.10141v1"
+    ]
+  },
+  {
+    "id": "2609.10018",
+    "title": "Elastoformer: Enabling Dynamic Adaptivity via Elastic Model Transformation",
+    "date": "2026-09-09",
+    "published_date": "2026-09-09",
+    "updated_date": "2026-09-09",
+    "date_basis": "submitted",
+    "abstract": "EdgeAI systems are increasingly employing computer vision applications to enable intelligent, on-device decision-making in real-time. However, these deployments face highly dynamic operational conditions, with fluctuating constraints on latency, power availability, and memory resources. Deep Neural Networks (DNN), which follow fixed computational execution flows, lack the flexibility to adapt to such variability, resulting in inefficient and suboptimal performance in edge scenarios. This underscores the need for architectures that are not only efficient but also dynamically scalable at runtime. In this paper, we propose Elastoformer: A framework that transforms conventional neural networks (NN) into Elastic NN capable of real-time elastic inference. Unlike the conventional bag-of-models approach, which requires maintaining multiple independent models for different operating conditions, Elastoformer offers a single, modular solution that dynamically switches between multiple modes of operation at runtime, adapting efficiently to the changing computational budgets of edge devices without the overhead of managing separate models. Experiments reveal that our framework achieves up to 85% reduction in computation FLOPs, 50% reduction in latency and 76% reduction in memory overhead, while showcasing the architecture agnostic nature of the framework across both Vision Transformers and CNNs. Our code is available at https://github.com/sudaksh14/Elastoformer.",
+    "authors": "Sudaksh Kalra; Dolly Sapra",
+    "categories": [
+      "https://arxiv.org/pdf/2609.10018v1"
+    ]
+  },
+  {
+    "id": "2609.09990",
+    "title": "Analytic Gradients and Nonadiabatic Couplings for Device-Resident DMRG-QD-NEVPT2 Through Conical Intersections on a Consumer GPU",
+    "date": "2026-09-09",
+    "published_date": "2026-09-09",
+    "updated_date": "2026-09-09",
+    "date_basis": "submitted",
+    "abstract": "Nonadiabatic dynamics through a conical intersection needs both static and dynamic correlation and, at every geometry, an excited-state gradient and interstate nonadiabatic coupling (NACME); analytic multireference derivatives at this level have been cluster-scale. We report device-resident \\mbox{DMRG-QD-NEVPT2} with analytic derivatives, on B2PLYP double-hybrid Kohn--Sham orbitals: a density-matrix-renormalization-group reference supplies the static correlation, and quasi-degenerate NEVPT2 adds the dynamic correlation through a multi-state effective Hamiltonian that stays valid \\emph{through} the intersection, where single-state perturbation theory fails. Each gradient and NACME is one reverse-mode transpose of a contraction graph that carries the DMRG sweep as a gauge-free, tape-free node and reduces to active-space RDM contractions with Cholesky factors. The whole construction runs on a consumer 8\\,GB GPU. The DMRG reference is FCI-in-active-space to $10^{-15}$ and the single-precision leg is spectroscopically inert ($<10^{-6}$\\,eV); the correction yields smooth adiabats and a non-vanishing, $1/ΔE$-divergent NACME through the twisted-ethene intersection---where adiabatic linear-response TDDFT returns zero---and restores the dynamic correlation the ionic $ππ^*$ states require. DMRG-NEVPT2 and quasi-degenerate NEVPT2 are each established; the contribution is the entire stack---multi-state through a conical intersection, with analytic gradients and couplings---made device-resident on commodity hardware. Multireference companion to our density-functional realization of the same engine.",
+    "authors": "Rubén Darío Guerrero",
+    "categories": [
+      "https://arxiv.org/pdf/2609.09990v1"
+    ]
+  },
+  {
+    "id": "2609.09980",
+    "title": "Fidelity-Aware Scheduling of Quantum Circuits on Multi-QPU Systems",
+    "date": "2026-09-09",
+    "published_date": "2026-09-09",
+    "updated_date": "2026-09-09",
+    "date_basis": "submitted",
+    "abstract": "High Performance Computing-Quantum Computing (HPCQC) platforms expose multiple Quantum Processing Units (QPUs) that may differ in size, topology, native gates, and noise characteristics. For current noisy devices, errors compound along the compiled circuits quickly, and minimizing them, that is, maximizing the circuits' execution fidelity, is essential for reliable results. Fidelity depends on the compilation to a specific target device: the same high-level circuit may produce different executables and, therefore, different expected fidelities across QPUs. We present a low-overhead fidelity-aware scheduling framework for multi-QPU systems based on a Graph Neural Network (GNN) that estimates, before compilation, the expected fidelity of each circuit on each available QPU. Then, a tunable scheduler uses these estimates to control the trade-off between execution fidelity and parallelism. Results show that this framework allows for approximating an exhaustive fidelity-based assignment, saving computational resources compared to a brute-force approach that compiles each circuit on every device.",
+    "authors": "Innocenzo Fulginiti; Antonio Tudisco; Salvatore Zammuto; Patrick Hopf; Deborah Volpe; Helmut Seidl; Giovanna Turvani; Robert Wille",
+    "categories": [
+      "https://arxiv.org/pdf/2609.09980v1"
+    ]
+  },
+  {
+    "id": "2609.09885",
+    "title": "Decision Transformer for UAV-Mounted RIS-Assisted Dynamic D2D Communications",
+    "date": "2026-09-09",
+    "published_date": "2026-09-09",
+    "updated_date": "2026-09-09",
+    "date_basis": "submitted",
+    "abstract": "This paper studies unmanned aerial vehicle (UAV)-mouted reconfigurable intelligent surface (RIS)-assisted device-to-device (D2D) communication with stochastic link activation. It models UAV motion and attitude, time-varying Rician angles, and angle-dependent RIS reflection. A joint optimization of UAV trajectory, attitude, and RIS phases is formulated to maximize average sum rate under mobility, energy, and hardware constraints. The problem is addressed using deep reinforcement learning and a Decision Transformer trained on expert trajectories from multiple scenarios. Results demonstrate effective cross-scenario generalization, with zero-shot transfer outperforming direct DRL transfer and online fine-tuning achieving competitive performance with fewer interactions.",
+    "authors": "Yaxuan Liu",
+    "categories": [
+      "https://arxiv.org/pdf/2609.09885v1"
+    ]
+  },
+  {
+    "id": "2609.09800",
+    "title": "HBFSim: Fast and Faithful Simulation of High-Bandwidth Flash Under Real GPU Execution",
+    "date": "2026-09-09",
+    "published_date": "2026-09-09",
+    "updated_date": "2026-09-09",
+    "date_basis": "submitted",
+    "abstract": "Serving a large language model (LLM) is limited by memory capacity. High-Bandwidth Flash (HBF) stacks NAND flash inside the accelerator package, one tier below high-bandwidth memory (HBM); the specification was published on August 3, 2026, and the first inference devices are expected to sample in early 2027. Decisions about capacity and data placement cannot wait for silicon. No existing method settles those decisions: a storage simulator replaying a recorded access sequence never executes the workload, a GPU simulator does not run the real compute kernels, and a cycle-accurate simulator cannot finish one LLM inference run. We present HBFSim, the first evaluation platform that applies HBF timing, capacity, and thermal effects to a real inference workload while that workload executes on a real GPU. HBFSim rewrites PTX, the intermediate code NVIDIA's compiler emits, and gates kernel launches; issue is separated from consumption, so real hardware supplies the computation that hides an access. Timing comes from measurements of a real device rather than a parameter sheet, and junction temperature sets both the rate HBF sustains and the retention deadline that forces refresh writes. HBFSim matches the measured device exactly at all six calibration breakpoints, with zero unsafe launches, and an unmodified vLLM 0.15.1 serving Qwen3-30B-A3B returns the token identifiers of the uninstrumented baseline. The device fast path serves the same Qwen3-30B-A3B case in 2s against 44s on the detailed reference path, 20.8x faster. Before HBF parts sample, HBFSim lets a designer measure a capacity or placement decision under a real workload instead of assuming one.",
+    "authors": "Yanpeng Hu; Yiwei Yang; Yuanwu Zhu; Yusheng Zheng; Wei Zhang; Andi Quinn",
+    "categories": [
+      "https://arxiv.org/pdf/2609.09800v1"
+    ]
+  },
+  {
+    "id": "2609.09700",
+    "title": "AppetiteCheck: Feasibility of Momentary Vagus Nerve Stimulation as an Implicit Intervention for Eating Behavior",
+    "date": "2026-09-09",
+    "published_date": "2026-09-09",
+    "updated_date": "2026-09-09",
+    "date_basis": "submitted",
+    "abstract": "Overeating and emotional eating are common health issues that affect people even without an eating disorder. The vagus nerve plays a critical role in the gut-brain axis, and implanted vagus nerve stimulators have been associated with reduced appetite. In this paper, we propose transcutaneous cervical vagus nerve stimulation (tcVNS) as a ubiquitous system to provide immediate, low-effort intervention during an eating episode. In a study with 24 participants, we evaluated a mobile, handheld tcVNS device during a single episode of distracted snacking. We found that participants ate 9.6% less and 23.6% more slowly during vagus nerve stimulation than during sham stimulation. Post-snacking satiety was the same in both conditions, while heart rate was lower during vagus nerve stimulation. The stimulation was described as subtle and barely noticeable. Overall, these results provide evidence for the feasibility of non-invasive vagus nerve stimulation as a low-attention intervention for managing eating behavior -- one that can be packaged inside ubiquitous interactive systems. As such, we extend the design space of implicit interfaces toward physiological intervention, motivating future ubiquitous systems that pair eating-related sensing with low-attention interventions.",
+    "authors": "Tan Gemicioglu; Jas Brooks; Pedro Lopes; Tanzeem Choudhury",
+    "categories": [
+      "https://arxiv.org/pdf/2609.09700v1"
+    ]
+  },
+  {
+    "id": "2609.09662",
+    "title": "PELM: Power Efficient On-Device LLM Inference with Speculative Decoding and Dynamic Voltage Frequency Scaling",
+    "date": "2026-09-09",
+    "published_date": "2026-09-09",
+    "updated_date": "2026-09-09",
+    "date_basis": "submitted",
+    "abstract": "Deploying Large Language Models (LLMs) directly on mobile platforms at the edge is gaining traction due to a myriad of benefits, such as increased privacy, personalization, and reduced latency. However, LLMs have heavy computational requirements, which are difficult for resource-constrained mobile and edge platforms to fulfill. In addition to limited compute resources, mobile and edge systems often have a compact form factor and lack physical mechanisms to dissipate heat generated from high processor usage rates (e.g., fans) to prevent throttling and reduced processing power, which LLMs can easily cause. To mitigate these effects, prior works have proposed various power governing strategies, such as dynamic voltage and frequency scaling (DVFS), for reducing power and heat generation for heavy computational tasks on mobile platforms. Recently, DVFS methods tailored for mobile LLMs have also been proposed. However, these methods mostly focus on optimizing hardware parameters and processor frequencies, and they fall short under some thermally constrained scenarios. Drawing from recent advances in machine learning, we identify and take advantage of the key insight that not all tokens require full-depth inference to maintain high-quality generation. Motivated by this, we present PELM, a solution that augments traditional DVFS processor frequency tuning with two additional workload-specific knobs: 1) speculative decoding and 2) variable verification depth to expand the optimization space to multiple dimensions for more power efficient on-device LLM inference. In extensive evaluations across hardware platforms and datasets, PELM demonstrates superior performance compared to state-of-the-art power governing methods, with up to 23.1% speedup and 52.4% reduction in energy consumption, while maintaining comparable task performance. The source code is available at https://github.com/imec-nu/PELM.",
+    "authors": "Weisi Yang; Stephen Xia",
+    "categories": [
+      "https://arxiv.org/pdf/2609.09662v1"
+    ]
+  }
+]

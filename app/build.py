@@ -84,6 +84,7 @@ def render_page(
         html = re.sub(r'href="notes\.html"', f'href="{weeks_base}notes.html"', html)
         html = re.sub(r'href="snn\.html"', f'href="{weeks_base}snn.html"', html)
         html = re.sub(r'href="waic\.html"', f'href="{weeks_base}waic.html"', html)
+        html = re.sub(r'href="events\.html"', f'href="{weeks_base}events.html"', html)
     return html
 
 

@@ -270,6 +270,7 @@ INDEX_HTML = """<!doctype html>
           <a class="nav-link" href="notes.html">调研笔记 ↗</a>
           <a class="nav-link" href="snn.html">SNN 洞察 ↗</a>
           <a class="nav-link" href="waic.html">WAIC ↗</a>
+          <a class="nav-link" href="events.html">专项报告 ↗</a>
         </nav>
         <label><span class="sr-only">切换周</span><select class="week-switch" id="week-switch" title="切换周"></select></label>
       </div>

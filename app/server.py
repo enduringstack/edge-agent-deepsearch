@@ -54,7 +54,7 @@ def _deploy_to_ghpages() -> None:
         if build.returncode != 0:
             print(f"[DEPLOY] build.py failed: {build.stderr.strip()}", flush=True)
             return
-        for script_name in ("build_notes.py", "build_snn.py", "build_waic.py"):
+        for script_name in ("build_notes.py", "build_snn.py", "build_waic.py", "build_event.py"):
             auxiliary = subprocess.run(
                 [sys.executable, str(ROOT / "agent" / script_name)],
                 cwd=str(ROOT), capture_output=True, text=True, timeout=60,
