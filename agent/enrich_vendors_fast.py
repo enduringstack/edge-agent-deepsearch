@@ -15,7 +15,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-INPUT = ROOT / "data" / "_vendors_collected.json"
+INPUT = ROOT / "data" / "_vendors_verified.json"
 OUTPUT = ROOT / "research_runs" / "candidates-vendor.json"
 
 UA = "Mozilla/5.0 (compatible; edge-agent-vendor-enricher/1.0)"
