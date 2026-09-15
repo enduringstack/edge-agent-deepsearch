@@ -94,6 +94,9 @@ INDEX_HTML = """<!doctype html>
     .weekly-more{border-top:1px solid var(--hair);margin-top:2px}
     .weekly-more summary{list-style:none;cursor:pointer;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10px;color:var(--rust);padding:8px 0 0}
     .weekly-more summary::-webkit-details-marker{display:none}
+    .weekly-more[open] summary .more-label{display:none}
+    .weekly-more[open] summary .less-label{display:inline}
+    .weekly-more summary .less-label{display:none}
 
     /* complete library */
     .all-research{scroll-margin-top:12px}
@@ -391,7 +394,7 @@ INDEX_HTML = """<!doctype html>
       const rest=w.highlights.slice(WEEKLY_PREVIEW);
       el.innerHTML=`<header class="section-head"><div><p class="eyebrow">本周编辑判断</p><h2>本周判断</h2></div><p class="section-note">编辑综述负责说明变化，外部动态负责提供可核验入口；两者都不替代下方完整资料库。</p></header>`+
         `<div class="weekly-grid"><article class="weekly-overview"><div class="weekly-label">本周一句话与判断</div><p class="weekly-ov">${escapeHtml(w.overview||'')}</p></article><div class="weekly-stories"><h3>外部动态</h3>`+
-        rows(first,0)+(rest.length?`<details class="weekly-more"><summary>展开其余 ${rest.length} 条热点 ↓</summary>${rows(rest,WEEKLY_PREVIEW)}</details>`:"")+
+        rows(first,0)+(rest.length?`<details class="weekly-more"><summary><span class="more-label">展开其余 ${rest.length} 条热点 ↓</span><span class="less-label">收起 ↑</span></summary>${rows(rest,WEEKLY_PREVIEW)}</details>`:"")+
         `</div></div>`;
     }
     function range(){
