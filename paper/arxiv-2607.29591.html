@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ResKV: Reconstructing Omitted Attention Contributions for Fixed-Budget KV Cache Compression</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>ResKV: Reconstructing Omitted Attention Contributions for Fixed-Budget KV Cache Compression</h1>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-07-31 · Yuhang Zhan; Lisi Chen; Shuo Shang / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">KV cache 压缩对高效长上下文推理是刚需。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LongBench 和 RULER、多种模型与缓存预算上，相同保留预算下普遍优于代表性压缩基线，同时保持压缩解码的峰值内存和吞吐效率。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">残差条目与主缓存一起参加同一次 softmax 归一化；离线代理分配每层每头的残差预算，解码时再用动态门按查询调整残差贡献。</span></div>
+<div class="score-reason">评分依据：固定 KV 预算直接对应端侧长上下文的内存约束；通过残差缓存重建注意力质量，并同时验证内存与解码吞吐，创新和实用性兼具。</div>
+<div class="source"><a href="https://arxiv.org/abs/2607.29591" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RADAR · Siri Recap 技术深潜</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    *{box-sizing:border-box}
+    :root{
+      --bg:#f5f5f7;--panel:#ffffff;--ink:#1d1d1f;--muted:#6e6e73;--faint:#86868b;
+      --rule:#d2d2d7;--hair:#e8e8ed;--highlight:#0071e3;--accent:#1d1d1f;
+      --green:#34c759;--amber:#ff9500;--red:#ff3b30;--purple:#af52de;
+      --blue:#007aff;--teal:#5ac8fa;
+    }
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans","PingFang SC","Noto Sans SC",system-ui,sans-serif;font-size:14.5px;line-height:1.7}
+    main{max-width:1240px;margin:0 auto;padding:18px 22px 80px}
+    a{color:var(--highlight);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .scope{background:var(--panel);border:1px solid var(--rule);border-radius:8px;padding:16px 20px;margin-bottom:16px}
+    h1{margin:0;font-family:"IBM Plex Mono",monospace;font-size:20px;font-weight:600;letter-spacing:1.5px}
+    h1 .sub{font-family:"IBM Plex Sans",sans-serif;font-weight:500;font-size:13px;color:var(--muted);letter-spacing:0;margin-left:8px}
+    .back{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--faint)}
+    .sweep{height:2px;margin:12px -20px -16px;background:linear-gradient(90deg,transparent,var(--hair) 20%,var(--hair) 80%,transparent);position:relative;overflow:hidden}
+    .sweep::after{content:"";position:absolute;inset:0;width:30%;background:linear-gradient(90deg,transparent,var(--highlight),transparent);animation:sweep 3.2s linear infinite}
+    @keyframes sweep{0%{transform:translateX(-100%)}100%{transform:translateX(400%)}}
+    @media(prefers-reduced-motion:reduce){.sweep::after{animation:none;opacity:.5}}
+    .layout{display:grid;grid-template-columns:230px 1fr;gap:16px;align-items:start}
+    .toc{background:var(--panel);border:1px solid var(--rule);border-radius:8px;padding:12px 10px;position:sticky;top:12px;max-height:calc(100vh - 24px);overflow:auto}
+    .toc-title{font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--faint);text-transform:uppercase;letter-spacing:.5px;padding:4px 6px 8px;border-bottom:1px solid var(--hair);margin-bottom:6px}
+    .toc a{display:block;padding:4px 8px;font-size:12.5px;color:var(--muted);border-radius:3px;line-height:1.4;transition:background .15s}
+    .toc a:hover{background:var(--hair);color:var(--ink)}
+    .toc a.active{background:#e8f0fe;color:var(--highlight);font-weight:600}
+    .art{background:var(--panel);border:1px solid var(--rule);border-radius:8px;padding:28px 34px;min-height:60vh}
+    .art:empty::before{content:"loading6";color:var(--faint);font-family:"IBM Plex Mono",monospace}
+    .art h1{font-family:"IBM Plex Sans",sans-serif;font-size:28px;letter-spacing:-.02em;margin:0 0 8px;border-bottom:2px solid var(--highlight);padding-bottom:10px;display:inline-block}
+    .art h2{font-size:20px;margin:32px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--hair);scroll-margin-top:20px;color:var(--ink);font-weight:700;letter-spacing:-.01em}
+    .art h3{font-size:16px;margin:22px 0 8px;color:var(--ink);font-weight:600}
+    .art h4{font-size:14px;margin:16px 0 6px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;font-family:"IBM Plex Mono",monospace}
+    .art p{margin:8px 0}
+    .art ul,.art ol{margin:8px 0;padding-left:22px}
+    .art li{margin:4px 0}
+    .art blockquote{margin:12px 0;padding:10px 18px;border-left:3px solid var(--highlight);background:#f0f5ff;color:var(--muted);border-radius:0 6px 6px 0;font-size:13.5px}
+    .art code{font-family:"IBM Plex Mono",monospace;font-size:12.5px;background:var(--hair);padding:1px 5px;border-radius:3px}
+    .art pre{background:#1d1d1f;color:#f5f5f7;padding:14px 18px;border-radius:8px;overflow:auto;margin:12px 0}
+    .art pre code{background:none;padding:0;color:inherit;font-size:12.5px}
+    .art img{max-width:100%;height:auto;border:1px solid var(--hair);border-radius:6px;margin:10px 0}
+    .art table{border-collapse:collapse;margin:12px 0;width:100%;font-size:13px}
+    .art th,.art td{border:1px solid var(--rule);padding:8px 12px;text-align:left}
+    .art th{background:var(--bg);font-weight:600;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.3px}
+    .art hr{border:none;border-top:1px solid var(--rule);margin:24px 0}
+    .art strong{color:var(--ink)}
+    @media(max-width:760px){
+      .layout{grid-template-columns:1fr}
+      .toc{position:static;max-height:none}
+      .art{padding:18px 16px}
+      .art h1{font-size:22px}
+      .art h2{font-size:17px}
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="scope">
+      <h1>RADAR<span class="sub">专项报告</span></h1>
+      <a class="back" href="events.html">&larr; 全部专项</a>
+      <div class="sweep"></div>
+    </header>
+    <div class="layout">
+      <aside class="toc" id="toc"></aside>
+      <article class="art" id="art"></article>
+    </div>
+  </main>
+  <script id="__MD__" type="text/markdown"># Siri Recap 技术深潜 · 一只手表背后的 AI 全栈
+
+> **切入点:** Apple Watch Series 12 上的 Siri Recap 功能  
+> **展开路径:** 产品场景 → Watch 端采集 → Watch↔iPhone 加密传输 → iPhone 端转写压缩 → PCC 云端摘要 → 安全哲学  
+> **核心论点:** 一个看似简单的"对话摘要"功能，串联了 Watch、iPhone、PCC 三个硬件平台的安全隔离与协作  
+> **信息来源:** Apple《Audio Intelligence Privacy Overview》(September 2026) 为第一手来源
+
+---
+
+## 一、从一个场景开始：Siri Recap
+
+### 1.1 用户体验
+
+你戴着 Apple Watch Series 12 参加了一个 15 分钟的站会。会后你抬起手腕，Siri App 的 Recaps 标签页显示：
+
+> **Siri Recap · 刚刚的对话**  
+> - 项目 A 的上线时间推迟到下周三  
+> - 你需要负责更新 API 文档  
+> - 前端有一个 P0 bug 需要今天修复
+
+你没有录音，没有打开手机。手表和手机协作完成了全部工作。
+
+### 1.2 Siri Recap 是什么，不是什么
+
+根据 Apple 官方定义，Siri Recap：
+
+- ✅ 生成对话的 **高层级摘要**（title + summary + key points）
+- ✅ 由 Apple Intelligence 生成，类似会后笔记
+- ❌ **不创建任何录音文件**
+- ❌ **不生成逐字逐句的转录**
+- ❌ **不识别和标注发言者**
+- ❌ 不存在可以被分享、转发、请求的录音，因为录音不存在
+
+> *"Audio Intelligence features do not create audio recordings that can be accessed by the operating system, apps, the user, or Apple. There is no recording to share, forward, or produce if requested by any party, because no recording exists."*  
+> — Apple《Audio Intelligence Privacy Overview》, September 2026
+
+---
+
+## 二、完整数据流：Watch → iPhone → PCC → 返回
+
+### 2.1 全链路架构
+
+这是 Apple 官方文档描述的 Siri Recap 完整处理链路：
+
+```
+步骤 1: 语音检测 (Apple Watch)
+┌─────────────────────────────────────────┐
+│  S11 Always-On Processor                │
+│  轻量 AI 模型检测是否有人在说话          │
+│  不转录，不录音，只判断"有没有对话"      │
+└──────────────────┬──────────────────────┘
+                   │ 检测到对话
+                   ▼
+步骤 2: 音频缓冲 (Apple Watch)
+┌─────────────────────────────────────────┐
+│  S11 Secure Exclave (Watch)             │
+│  原始音频进入硬件隔离缓冲区              │
+│  不可被 watchOS、App、用户、Apple 访问   │
+└──────────────────┬──────────────────────┘
+                   │ 加密传输（audio-verified pairing）
+                   ▼
+步骤 3: 加密传输 (Watch → iPhone)
+┌─────────────────────────────────────────┐
+│  Watch Secure Exclave                   │
+│      │ 加密原始音频                      │
+│      ▼                                  │
+│  iPhone Secure Exclave (A18+)           │
+│  传输完成后，Watch 端音频立即删除        │
+│  只有配对的 iPhone 能解密                │
+└──────────────────┬──────────────────────┘
+                   │
+                   ▼
+步骤 4: 端侧转写与压缩 (iPhone)
+┌─────────────────────────────────────────┐
+│  iPhone Secure Exclave                  │
+│  1. 解密音频                            │
+│  2. On-device ASR：音频 → 文字          │
+│  3. On-device LM：压缩到原文 1/2 以下    │
+│     去除语气、填充词、冗余内容            │
+│  4. 安全模型：过滤潜在有害内容           │
+│  5. 原始音频立即永久删除                 │
+│  6. 只保留压缩文本                       │
+└──────────────────┬──────────────────────┘
+                   │ 压缩文本 + 上下文信息（加密）
+                   ▼
+步骤 5: PCC 摘要生成 (云端)
+┌─────────────────────────────────────────┐
+│  Private Cloud Compute                  │
+│  Apple Foundation Models 生成：          │
+│  - 标题 (Title)                          │
+│  - 摘要 (Summary)                        │
+│  - 关键要点 (Key Points)                 │
+│  过滤敏感信息（财务、证件号、认证数据）   │
+│  处理完成后立即删除，不存储              │
+└──────────────────┬──────────────────────┘
+                   │ 加密返回
+                   ▼
+步骤 6: 结果展示 (iPhone + Watch)
+┌─────────────────────────────────────────┐
+│  Siri App · Recaps 标签页               │
+│  7 天后自动删除（除非手动保存）          │
+│  保存到 iCloud 时端到端加密同步          │
+└─────────────────────────────────────────┘
+```
+
+### 2.2 每个环节的技术细节
+
+| 环节 | 处理位置 | 数据形态 | 谁能访问 |
+|------|----------|----------|----------|
+| 语音检测 | S11 Always-On Processor | 原始音频流（实时丢弃） | 无人 |
+| 音频缓冲 | Watch Secure Exclave | 原始音频（硬件隔离） | 无人 |
+| 加密传输 | Watch → iPhone Secure Exclave | 加密音频 | 只有配对的 iPhone |
+| 转写+压缩 | iPhone Secure Exclave | 压缩文本（<原文 1/2） | 无人（处理后音频删除） |
+| 摘要生成 | PCC (Private Cloud Compute) | Title + Summary + Key Points | 处理期间无人可访问 |
+| 结果存储 | Siri App | 摘要文本 | 仅用户 |
+| iCloud 同步 | 端到端加密 | 摘要文本 | 仅用户（Apple 无密钥） |
+
+### 2.3 关键设计决策
+
+Apple 在这个流程中做了几个 **反直觉** 的设计选择：
+
+**为什么不在 Watch 上直接做 ASR？**  
+Watch 的 S11 芯片算力有限，且需要极低功耗。Apple 选择让 Watch 只做采集和缓冲，把重计算交给算力更强的 iPhone。
+
+**为什么摘要不在端侧完成，而要走 PCC？**  
+生成高质量的 title + summary + key points 需要更大的模型。Apple 选择让压缩文本（而非原始音频）上云，在 PCC 上用更大的 Foundation Model 生成摘要。这平衡了质量与隐私——上云的是已经去除了语气词、冗余内容的压缩文本，而非原始对话。
+
+**为什么 Watch 上的音频要传到 iPhone，而不是直接上 PCC？**  
+iPhone 的 Secure Exclave 有更强的端侧处理能力，可以先做 ASR + 压缩，大幅减小上云的数据量。同时 iPhone 可以提供上下文信息（Now Playing、Calendar、位置标签）。
+
+---
+
+## 三、Watch 端：S11 芯片与 Secure Exclave
+
+### 3.1 S11 芯片在 Siri Recap 中的角色
+
+根据 Apple 官方文档，S11 芯片在 Siri Recap 中承担两个任务：
+
+| 组件 | 任务 | 说明 |
+|------|------|------|
+| **Always-On Processor** | 语音活动检测 | 轻量 AI 模型判断是否有人在说话。不转录，不录音。 |
+| **Secure Exclave** | 音频缓冲 + 加密 | 原始音频在硬件隔离缓冲区中缓冲，加密后传输到 iPhone。 |
+
+> **重要：** S11 的 Secure Exclave **不运行** ASR 或摘要模型。它的职责是安全地缓冲和传输原始音频。
+
+### 3.2 Secure Exclave 是什么
+
+Apple 官方定义：
+
+> *"The S11 chip in Apple Watch Series 12 and Apple Watch Ultra 4 includes a Secure Exclave: a hardware-isolated compartment built into the silicon to process sensor data separately from the rest of the system. Data that is processed and analyzed in the Secure Exclave cannot be accessed by watchOS, apps, the user, or Apple."*  
+> — Apple《Audio Intelligence Privacy Overview》, September 2026
+
+| 属性 | 说明 |
+|------|------|
+| **本质** | 嵌入芯片硅片中的硬件隔离区域 |
+| **首次出现** | A18 (iPhone 16) / M4 芯片 (2024)；S11 (Apple Watch) 为 2026 |
+| **隔离级别** | 操作系统、App、用户、Apple 均无法访问 |
+| **核心原则** | 传感器数据（音频）在隔离区域内处理，不离开安全边界 |
+
+### 3.3 Watch ↔ iPhone 的安全配对
+
+Apple 为 Watch 和 iPhone 的 Secure Exclave 之间建立了专门的加密通道：
+
+| 机制 | 说明 |
+|------|------|
+| **Audio-Verified Pairing** | 在蓝牙配对之上，额外使用音频验证机制建立 Watch↔iPhone 连接 |
+| **加密通道** | 配对过程中建立安全加密通道，Watch Secure Exclave 加密音频后传输 |
+| **唯一性** | Watch 的环境数据只能发送到配对 iPhone 的 Secure Exclave，不能到其他设备 |
+| **密钥轮换** | 加密密钥设备绑定、时间绑定，定期轮换，自动过期 |
+| **丢失保护** | 通过 Find My 远程擦除时，Secure Exclave 的配对密钥立即失效 |
+| **传输失败处理** | 如果 iPhone 不在范围内，Watch 在连接恢复后重试；如果无法恢复，密钥过期后加密音频永久删除 |
+
+### 3.4 Audio Intelligence 在 Watch 上的四大功能
+
+S11 芯片的 Secure Exclave 支撑了四个 Audio Intelligence 功能：
+
+| 功能 | Watch 端处理 | 是否需要 iPhone |
+|------|-------------|----------------|
+| **Siri Recap** | 语音检测 + 音频缓冲 + 加密传输 | ✅ 需要 iPhone 做 ASR + PCC 做摘要 |
+| **Live Rewind** | 15 秒滚动音频缓冲 | ✅ 需要 iPhone 做 ASR（数字表冠双击触发） |
+| **Shazam** | 音频缓冲 + 生成声学签名 | ✅ 声学签名发到 Shazam 服务器识别歌曲 |
+| **Sound Recognition** | 音频缓冲 + 声音识别 | ❌ 完全在 Watch 端完成，不需要 iPhone |
+
+> **Sound Recognition 是唯一完全在 Watch 端完成的功能。** Siri Recap、Live Rewind、Shazam 都需要将数据安全传输到 iPhone 或外部服务器进一步处理。
+
+---
+
+## 四、iPhone 端：Secure Exclave 中的转写与压缩
+
+### 4.1 iPhone Secure Exclave
+
+Siri Recap 的 ASR（语音转文字）和文本压缩在 **iPhone 的 Secure Exclave** 中完成。Apple 官方文档明确列出了支持 Secure Exclave 的 iPhone 型号：
+
+- iPhone 16
+- iPhone 16 Pro
+- iPhone 17e
+- iPhone Air
+- 以及后续型号
+
+### 4.2 iPhone Secure Exclave 中的处理流程
+
+根据 Apple 文档，iPhone Secure Exclave 内完成以下步骤：
+
+```
+iPhone Secure Exclave 内部处理流程：
+
+1. 解密 ──── 从 Watch Secure Exclave 接收的加密音频
+              │
+              ▼
+2. ASR ────── On-device speech recognition
+              音频 → 文字
+              │
+              ▼
+3. 压缩 ──── On-device language model
+              将文字压缩到原文 1/2 以下
+              去除：语气标记、非关键用语、填充词、冗余内容
+              保留：讨论的主题
+              │
+              ▼
+4. 安全过滤 ── Safety model
+              过滤潜在有害用语
+              │
+              ▼
+5. 删除 ──── 原始音频立即永久删除
+              只保留压缩文本
+```
+
+### 4.3 压缩文本的设计哲学
+
+Apple 对压缩文本有一个关键设计目标：**保留对话核心含义，去除可还原对话原貌的细节。**
+
+> *"This is designed to distill the conversation to its core meaning, removing content suggestive of conversation tone, non-essential language, filler words, and redundancies, while preserving the topics discussed."*  
+> — Apple《Audio Intelligence Privacy Overview》, September 2026
+
+这意味着：
+- 压缩后的文本 **无法还原** 原始对话
+- 语气暗示被去除（无法推断情绪）
+- 填充词被去除（"嗯"、"啊"等）
+- 冗余被去除
+- 只保留主题
+
+### 4.4 上云前的上下文增强
+
+压缩文本发送到 PCC 时，会附带一些上下文信息以提高摘要质量：
+
+| 上下文类型 | 示例 | 是否包含精确信息 |
+|-----------|------|-----------------|
+| **Now Playing 数据** | 正在播放的音乐/播客 | 否，帮助判断音频是否来自媒体 |
+| **Calendar 数据** | 日程标题 | 否，帮助生成准确的摘要标题 |
+| **高层级位置标签** | home / work / school | 否 |
+| **地区信息** | 城市、州/省、国家 | 否 |
+| **POI 类别** | "grocery store"、"park" | 否，不含具体 POI 名称 |
+| **精确位置** | GPS 坐标 | ❌ 不包含 |
+| **具体 POI 名称** | "星巴克 xx 路店" | ❌ 不包含 |
+
+---
+
+## 五、PCC 端：Private Cloud Compute 生成摘要
+
+### 5.1 PCC 在 Siri Recap 中的角色
+
+根据 Apple 官方文档，**最终的摘要生成（title + summary + key points）在 Private Cloud Compute 上完成**，使用的是 **Apple Foundation Models**。
+
+> *"Apple Foundation Models running on Private Cloud Compute generate a title and a summary with key points."*  
+> — Apple《Audio Intelligence Privacy Overview》, September 2026
+
+### 5.2 PCC 处理流程
+
+```
+Private Cloud Compute 内部处理：
+
+1. 解密 ──── 接收来自 iPhone 的加密压缩文本 + 上下文
+              │
+              ▼
+2. 摘要生成 ── Apple Foundation Models 生成：
+              - Title（标题）
+              - Summary（摘要）
+              - Key Points（关键要点）
+              │
+              ▼
+3. 敏感信息过滤 ── 设计中排除以下信息出现在摘要中：
+              - 财务数据
+              - 政府签发的身份证件号
+              - 认证数据（密码、token 等）
+              - 特定个人标识符
+              │
+              ▼
+4. 加密返回 ── 摘要加密后发回 iPhone 和 Watch
+              │
+              ▼
+5. 立即删除 ── PCC 上的数据立即删除，不存储
+```
+
+### 5.3 PCC 的安全保证
+
+Apple 对 PCC 的安全承诺：
+
+> *"Data in Private Cloud Compute is never stored or accessible by Apple or anyone else. It is used only to fulfill your request. Independent security experts can verify this promise at any time."*  
+> — Apple《Audio Intelligence Privacy Overview》, September 2026
+
+| 保证 | 说明 |
+|------|------|
+| **不存储** | 处理后数据立即删除，PCC 上不保留任何副本 |
+| **不可访问** | 即使在处理期间，Apple 也无法访问 PCC 中的数据 |
+| **可验证** | 独立安全专家可以随时审计验证 |
+| **每日用量限制** | Siri Recap 的 PCC 调用有每日用量上限 |
+
+### 5.4 PCC 的完整安全架构
+
+根据 Apple Security Blog 的 PCC 文档（security.apple.com/blog/private-cloud-compute/），PCC 基于六大安全支柱：
+
+| 支柱 | 说明 |
+|------|------|
+| **Apple Silicon 服务器** | PCC 运行在 Apple 自研服务器芯片上，硬件信任根与设备一致 |
+| **无状态处理** | 请求完成后所有数据立即销毁 |
+| **不用于训练** | 用户数据永远不用于模型训练 |
+| **端到端加密** | 设备与 PCC 之间全程加密 |
+| **可验证透明度** | 安全研究员可独立审计 PCC 软件栈 |
+| **匿名化路由** | PCC 服务器无法将请求与用户身份关联 |
+
+---
+
+## 六、端到端加密与 iCloud 同步
+
+### 6.1 摘要的生命周期
+
+```
+PCC 返回摘要 → iPhone + Watch Siri App
+                    │
+         ┌──────────┼──────────┐
+         │                     │
+    不保存（默认）          手动保存
+         │                     │
+   7 天后自动删除        iCloud 端到端加密同步
+                              │
+                              ▼
+                     所有登录 iCloud 的设备可见
+                     Apple 无解密密钥
+                     删除时从所有设备 + iCloud 永久移除
+```
+
+### 6.2 iCloud 同步条件
+
+根据 Apple 文档，Siri Recap 的 iCloud 同步需要：
+- iCloud 已启用双因素认证
+- 设备设置了密码
+- 同步内容为端到端加密
+- Apple 不持有加密密钥
+
+---
+
+## 七、用户控制与隐私设计
+
+### 7.1 Siri Recap 的用户控制
+
+Apple 提供了多层控制：
+
+| 控制层级 | 说明 |
+|----------|------|
+| **Opt-in** | 设置 Apple Watch 时必须主动开启 |
+| **随时开关** | Watch 上的 Siri 设置 / iPhone 上 Watch App 的 Siri 设置 |
+| **时间控制** | 可设置仅工作时段激活、夜间不激活等 |
+| **地点控制** | 可设置仅在工作地点激活等 |
+| **手动控制** | Control Center 随时手动开关 |
+| **删除** | 可在 Siri App 中编辑或删除任何摘要 |
+
+### 7.2 Siri Recap 如何尊重周围人
+
+| 设计 | 说明 |
+|------|------|
+| **不创建录音** | 不存在可被分享的原始音频 |
+| **不生成逐字转录** | 无法从摘要还原对话原貌 |
+| **不标注发言者** | 摘要不识别"谁说了什么" |
+| **无音频信号** | 因为没有保留原始音频，所以不存在音频泄露风险 |
+
+### 7.3 Live Rewind 的额外安全措施
+
+Live Rewind（回听最近 15 秒）相比 Siri Recap 有更严格的提醒机制：
+- ** audible chime**：激活时播放提示音（即使手表静音或连接耳机）
+- **全屏动画**：Watch 屏幕显示全屏动画 + 麦克风指示器
+- **每次都需要操作**：每次使用都需要双击数字表冠
+
+---
+
+## 八、全景总结：三层架构
+
+### 8.1 Siri Recap 的技术栈总览
+
+| 层级 | 硬件/平台 | 职责 |
+|------|-----------|------|
+| **采集层** | Apple Watch (S11) | 语音检测 + Secure Exclave 缓冲 + 加密传输 |
+| **转写层** | iPhone (A18+/Secure Exclave) | ASR 转写 + 文本压缩 + 安全过滤 + 上下文增强 |
+| **摘要层** | PCC (Apple Silicon 服务器) | Foundation Models 生成 title + summary + key points |
+| **展示层** | Siri App (Watch + iPhone) | 结果展示 + iCloud E2EE 同步 |
+
+### 8.2 安全设计三原则
+
+**原则一：音频不离开安全边界**  
+原始音频在 Watch Secure Exclave 缓冲 → 加密传输到 iPhone Secure Exclave → 转写后立即删除。原始音频从不暴露给操作系统、App 或用户。
+
+**原则二：上云的只是压缩文本**  
+到达 PCC 的不是原始音频，而是已经去除了语气、冗余、填充词的压缩文本。即使 PCC 被攻破，攻击者拿到的也不是完整对话。
+
+**原则三：结果不保留对话原貌**  
+Siri Recap 输出的是高层级摘要，不包含逐字转录、不标注发言者、无法还原原始对话。7 天后自动删除。
+
+### 8.3 与传统"录音+转录+摘要"方案的对比
+
+| | 传统方案 | Siri Recap |
+|---|---------|-----------|
+| 录音 | 创建音频文件 | ❌ 不创建任何录音 |
+| 转录 | 逐字逐句 | ❌ 压缩到 <1/2 + 安全过滤 |
+| 摘要 | 端侧或通用云端 | PCC (Apple Foundation Models) |
+| 发言者识别 | 通常有 | ❌ 明确不做 |
+| 数据留存 | 通常长期保存 | 7 天自动删除 |
+| 云端数据 | 可能用于训练 | ❌ PCC 不存储、不训练 |
+
+### 8.4 一只手表里的协作
+
+Siri Recap 的核心不是"一只手表做 AI"，而是 **三个平台的安全协作**：
+
+- **Watch (S11)**：安全采集，绝不泄露原始音频
+- **iPhone (Secure Exclave)**：安全转写，音频处理后立即销毁
+- **PCC (Apple Silicon)**：安全摘要，处理后立即删除
+
+三层硬件隔离 + 加密传输 + 端到端加密同步 = 即使 Apple 自己，也无法访问你的对话内容。
+
+---
+
+*本报告主要基于 Apple《Audio Intelligence Privacy Overview》(September 2026) 整理，辅以 Apple Security Blog 的 PCC 文档。所有技术细节均可在原始文档中查证。*
+</script>
+  <script>
+    var md = document.getElementById('__MD__').textContent;
+    document.getElementById('art').innerHTML = marked.parse(md);
+    function buildToc() {
+      var art = document.getElementById('art');
+      var toc = document.getElementById('toc');
+      var headings = art.querySelectorAll('h2');
+      if (!headings.length) { toc.style.display = 'none'; return; }
+      toc.innerHTML = '<div class="toc-title">目录 Contents</div>';
+      headings.forEach(function(h, i) {
+        var id = 'section-' + i;
+        h.id = id;
+        var a = document.createElement('a');
+        a.href = '#' + id;
+        a.textContent = h.textContent;
+        toc.appendChild(a);
+      });
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) {
+            if (e.isIntersecting) {
+              toc.querySelectorAll('a').forEach(function(a) { a.classList.remove('active'); });
+              var link = toc.querySelector('a[href="#' + e.target.id + '"]');
+              if (link) link.classList.add('active');
+            }
+          });
+        }, { rootMargin: '-20% 0px -70% 0px' });
+        headings.forEach(function(h) { obs.observe(h); });
+      }
+    }
+    buildToc();
+  </script>
+</body>
+</html>
