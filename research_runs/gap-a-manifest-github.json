@@ -1,0 +1,184 @@
+{
+  "source": "github",
+  "status": "complete",
+  "window_start": "2026-08-12",
+  "window_end": "2026-08-18",
+  "release_projects_checked": [
+    "HKUDS/nanobot",
+    "PowerInfer/PowerInfer",
+    "Tencent/ncnn",
+    "YINGLINGH/limioryn",
+    "alibaba/MNN",
+    "apple/coremltools",
+    "ggml-org/llama.cpp",
+    "google-ai-edge/litert",
+    "google-ai-edge/mediapipe",
+    "microsoft/Orchard",
+    "microsoft/onnxruntime",
+    "ml-explore/mlx",
+    "mlc-ai/mlc-llm",
+    "openvinotoolkit/openvino",
+    "pytorch/executorch"
+  ],
+  "release_project_checks": {
+    "HKUDS/nanobot": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/HKUDS/nanobot/releases",
+        "https://api.github.com/repos/HKUDS/nanobot/commits"
+      ],
+      "note": "窗口内提交以消息通道、智能体运行器和界面修复为主，无重大 release 或大规模代码投放。"
+    },
+    "PowerInfer/PowerInfer": {
+      "status": "unavailable",
+      "sources_succeeded": [],
+      "note": "GitHub REST 仓库、release 与 commit 端点均返回 404，未推测其更新状态。"
+    },
+    "Tencent/ncnn": {
+      "status": "found",
+      "sources_succeeded": [
+        "https://api.github.com/repos/Tencent/ncnn/releases",
+        "https://api.github.com/repos/Tencent/ncnn/commits"
+      ],
+      "note": "8 月 17 日 KV cache allocator 提交涉及 42 个文件、新增 2747 行，作为重大推理内存管理更新收录。"
+    },
+    "YINGLINGH/limioryn": {
+      "status": "found",
+      "sources_succeeded": [
+        "https://api.github.com/repos/YINGLINGH/limioryn/releases",
+        "https://api.github.com/repos/YINGLINGH/limioryn/commits"
+      ],
+      "note": "8 月 14 日加入六智能体 MVP，新增 992 行；结合该白名单新框架的真实设备执行定位，作为重要功能更新收录。"
+    },
+    "alibaba/MNN": {
+      "status": "found",
+      "sources_succeeded": [
+        "https://api.github.com/repos/alibaba/MNN/releases",
+        "https://api.github.com/repos/alibaba/MNN/commits"
+      ],
+      "note": "收录 8 月 14 日初始 RKNN 后端和 8 月 17 日 Qwen3-VL Hexagon 分块量化；普通小修与单一输入功能未凑数。"
+    },
+    "apple/coremltools": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/apple/coremltools/releases",
+        "https://api.github.com/repos/apple/coremltools/commits"
+      ],
+      "note": "窗口内为常规 PyTorch 转换算子兼容提交，无重大 release。"
+    },
+    "ggml-org/llama.cpp": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/ggml-org/llama.cpp/releases",
+        "https://api.github.com/repos/ggml-org/llama.cpp/commits"
+      ],
+      "note": "窗口内 GitHub release 均为 b 系列每日 CI build，按白名单规则排除。"
+    },
+    "google-ai-edge/litert": {
+      "status": "found",
+      "sources_succeeded": [
+        "https://api.github.com/repos/google-ai-edge/litert/releases",
+        "https://api.github.com/repos/google-ai-edge/litert/commits"
+      ],
+      "note": "8 月 13 日发布 v2.2.0，包含 Intel NPU、Qualcomm、MediaTek、WebGPU、KV cache 和 LLM 性能更新。"
+    },
+    "google-ai-edge/mediapipe": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/google-ai-edge/mediapipe/releases",
+        "https://api.github.com/repos/google-ai-edge/mediapipe/commits"
+      ],
+      "note": "窗口内为内部同步与常规组件提交，无重大 release 或大规模公开代码投放。"
+    },
+    "microsoft/Orchard": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/microsoft/Orchard/releases",
+        "https://api.github.com/repos/microsoft/Orchard/commits"
+      ],
+      "note": "release 与 commits 检查未发现窗口内更新。"
+    },
+    "microsoft/onnxruntime": {
+      "status": "found",
+      "sources_succeeded": [
+        "https://api.github.com/repos/microsoft/onnxruntime/releases",
+        "https://api.github.com/repos/microsoft/onnxruntime/commits"
+      ],
+      "note": "收录 8 月 12 日 v1.29.0 与 8 月 17 日首个 CUDA Plugin EP 0.1.0；v1.28.1 补丁版按规则排除。"
+    },
+    "ml-explore/mlx": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/ml-explore/mlx/releases",
+        "https://api.github.com/repos/ml-explore/mlx/commits"
+      ],
+      "note": "v0.32.1 为补丁版本，窗口内其余为常规算子与修复提交，按规则排除。"
+    },
+    "mlc-ai/mlc-llm": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/mlc-ai/mlc-llm/releases",
+        "https://api.github.com/repos/mlc-ai/mlc-llm/commits"
+      ],
+      "note": "窗口内只有单个常规提交，无重大 release。"
+    },
+    "openvinotoolkit/openvino": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/openvinotoolkit/openvino/releases",
+        "https://api.github.com/repos/openvinotoolkit/openvino/commits"
+      ],
+      "note": "未发现窗口 A 内的重大 release；常规主干提交不单独收录。"
+    },
+    "pytorch/executorch": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/pytorch/executorch/releases",
+        "https://api.github.com/repos/pytorch/executorch/commits"
+      ],
+      "note": "v1.4.1 是修复 wheel 路径和量化 PreLU 的补丁版；正文复述旧 v1.4 功能，不作为本窗新重大更新。"
+    }
+  },
+  "trending_checked": true,
+  "trending_method": "GitHub repository search over the exact historical creation-date window; release scan was performed separately.",
+  "trending_queries": [
+    "agent",
+    "on-device AI",
+    "edge AI inference",
+    "mobile LLM"
+  ],
+  "trending_candidate_count": 48,
+  "candidate_count": 7,
+  "artifact_path": "/Users/cannkit/Desktop/codeagent/weeklydeepsearch/research_runs/gap-a-candidates-github.json",
+  "artifact_sha256": "7a26cdb0aa8c2a30023599d6f48e09dda0ecd413cf3e49b0d68517d3c33376a6",
+  "candidate_refs": [
+    "c639e58cc1fc8ba5741f06bf01e6894653a8554b42f068b1fdf9f39db5f411df",
+    "141b448a4d6cb8a233b6e82679a3038f8aa5a17e0d8725b6f06cec5dd326fa53",
+    "e144187625a7102b4199c808577c178b41aab3da1e1bfdcbab1cac17a874b0ac",
+    "5476f710c7a9b93b41ceca9650c2383dbedf3d31df2fef7bb68e73efab7a5319",
+    "5f48a148105dddfd364fe14d97d48cc17c983fc51731a58d110dc9b5070f10d6",
+    "426e23f9560038e59191e4c18e1e762808f24ef8a5ea978cf127d1270f8c7259",
+    "90b59ced12752751d92f464462181ef10c4910dfa0de622e78e37543fb603443"
+  ],
+  "candidate_identity_refs": [
+    "0a82ee3d6a18f4c20138fa9e361c4722763c21cdceadd809a94cdd0f63631a08",
+    "29304bb0753622011e2edaedb86879543ed230587ce535ecbd6f271a6ea105f4",
+    "34d18c696b5ee24b47b52520de83e93cec7035c2c1c18b15d3e035e2dd80ddf1",
+    "b176e4985aec6c42b888a9abd441b28c0c7dadf8b0cedbc9fa2197b1f632de98",
+    "e60bc5765a5809c5a26bbe7fdab8671c61f3fd83b079eb691e6898a35593758c",
+    "f169f494ab2acd9d95570ed1701954d231e55da8c3ad3847c972fc76bb6e2d41",
+    "c75597c4a5cdcd524247607ba0383b72756ed40dc01dff012eb04b346a08452b"
+  ],
+  "candidate_lineage": {
+    "c639e58cc1fc8ba5741f06bf01e6894653a8554b42f068b1fdf9f39db5f411df": "0a82ee3d6a18f4c20138fa9e361c4722763c21cdceadd809a94cdd0f63631a08",
+    "141b448a4d6cb8a233b6e82679a3038f8aa5a17e0d8725b6f06cec5dd326fa53": "29304bb0753622011e2edaedb86879543ed230587ce535ecbd6f271a6ea105f4",
+    "e144187625a7102b4199c808577c178b41aab3da1e1bfdcbab1cac17a874b0ac": "34d18c696b5ee24b47b52520de83e93cec7035c2c1c18b15d3e035e2dd80ddf1",
+    "5476f710c7a9b93b41ceca9650c2383dbedf3d31df2fef7bb68e73efab7a5319": "b176e4985aec6c42b888a9abd441b28c0c7dadf8b0cedbc9fa2197b1f632de98",
+    "5f48a148105dddfd364fe14d97d48cc17c983fc51731a58d110dc9b5070f10d6": "e60bc5765a5809c5a26bbe7fdab8671c61f3fd83b079eb691e6898a35593758c",
+    "426e23f9560038e59191e4c18e1e762808f24ef8a5ea978cf127d1270f8c7259": "f169f494ab2acd9d95570ed1701954d231e55da8c3ad3847c972fc76bb6e2d41",
+    "90b59ced12752751d92f464462181ef10c4910dfa0de622e78e37543fb603443": "c75597c4a5cdcd524247607ba0383b72756ed40dc01dff012eb04b346a08452b"
+  },
+  "retrieval_transport": "GitHub public REST API fallback described in docs/references/mcp-setup.md",
+  "retrieved_at": "2026-09-01T11:58:00+08:00",
+  "notes": "Trending 仅作为新仓线索审计，未知小仓未进入 canonical candidates；正式候选仅来自白名单项目的重大 release 或经提交规模和功能语义核验的重大更新。"
+}

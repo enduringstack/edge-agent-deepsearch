@@ -1,0 +1,166 @@
+{
+  "source": "github",
+  "status": "complete",
+  "window_start": "2026-08-19",
+  "window_end": "2026-08-25",
+  "release_projects_checked": [
+    "HKUDS/nanobot",
+    "PowerInfer/PowerInfer",
+    "Tencent/ncnn",
+    "YINGLINGH/limioryn",
+    "alibaba/MNN",
+    "apple/coremltools",
+    "ggml-org/llama.cpp",
+    "google-ai-edge/litert",
+    "google-ai-edge/mediapipe",
+    "microsoft/Orchard",
+    "microsoft/onnxruntime",
+    "ml-explore/mlx",
+    "mlc-ai/mlc-llm",
+    "openvinotoolkit/openvino",
+    "pytorch/executorch"
+  ],
+  "release_project_checks": {
+    "HKUDS/nanobot": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/HKUDS/nanobot/releases",
+        "https://api.github.com/repos/HKUDS/nanobot/commits"
+      ],
+      "note": "窗口内为智能体运行器、定时任务、PWA 与配置修复，无重大 release。"
+    },
+    "PowerInfer/PowerInfer": {
+      "status": "unavailable",
+      "sources_succeeded": [],
+      "note": "GitHub REST 仓库、release 与 commit 端点均返回 404，未推测其更新状态。"
+    },
+    "Tencent/ncnn": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/Tencent/ncnn/releases",
+        "https://api.github.com/repos/Tencent/ncnn/commits"
+      ],
+      "note": "窗口内没有重大 release 或大规模代码投放。"
+    },
+    "YINGLINGH/limioryn": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/YINGLINGH/limioryn/releases",
+        "https://api.github.com/repos/YINGLINGH/limioryn/commits"
+      ],
+      "note": "窗口内无 release，commits 查询未返回更新。"
+    },
+    "alibaba/MNN": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/alibaba/MNN/releases",
+        "https://api.github.com/repos/alibaba/MNN/commits"
+      ],
+      "note": "窗口内为 Vulkan、Metal 与 AWQ 等单点优化或修复，无符合门槛的重大 release。"
+    },
+    "apple/coremltools": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/apple/coremltools/releases",
+        "https://api.github.com/repos/apple/coremltools/commits"
+      ],
+      "note": "窗口内为常规 PyTorch 转换修复，无重大 release。"
+    },
+    "ggml-org/llama.cpp": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/ggml-org/llama.cpp/releases",
+        "https://api.github.com/repos/ggml-org/llama.cpp/commits"
+      ],
+      "note": "窗口内 release 均为 b 系列每日 CI build；0.3.0 版本号提交没有独立重大 release 说明，均不收录。"
+    },
+    "google-ai-edge/litert": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/google-ai-edge/litert/releases",
+        "https://api.github.com/repos/google-ai-edge/litert/commits"
+      ],
+      "note": "窗口内为 Objective-C API、Android 配置和量化等常规主干提交，无重大 release。"
+    },
+    "google-ai-edge/mediapipe": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/google-ai-edge/mediapipe/releases",
+        "https://api.github.com/repos/google-ai-edge/mediapipe/commits"
+      ],
+      "note": "窗口内为内部同步与常规修复，无重大 release。"
+    },
+    "microsoft/Orchard": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/microsoft/Orchard/releases",
+        "https://api.github.com/repos/microsoft/Orchard/commits"
+      ],
+      "note": "release 与 commits 检查未发现窗口内更新。"
+    },
+    "microsoft/onnxruntime": {
+      "status": "found",
+      "sources_succeeded": [
+        "https://api.github.com/repos/microsoft/onnxruntime/releases",
+        "https://api.github.com/repos/microsoft/onnxruntime/commits"
+      ],
+      "note": "8 月 24 日发布 WebGPU Plugin EP 0.3.0，新增 PagedAttention、量化 KV cache 与生成式模型性能优化。"
+    },
+    "ml-explore/mlx": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/ml-explore/mlx/releases",
+        "https://api.github.com/repos/ml-explore/mlx/commits"
+      ],
+      "note": "v0.32.2 是补丁版，窗口内其余为常规量化和内核修复，按规则排除。"
+    },
+    "mlc-ai/mlc-llm": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/mlc-ai/mlc-llm/releases",
+        "https://api.github.com/repos/mlc-ai/mlc-llm/commits"
+      ],
+      "note": "窗口内无 release 或重大提交。"
+    },
+    "openvinotoolkit/openvino": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/openvinotoolkit/openvino/releases",
+        "https://api.github.com/repos/openvinotoolkit/openvino/commits"
+      ],
+      "note": "窗口内虽有 NPU、KV cache、FP4 与 GGUF 等主干功能提交，但没有单次满足大规模代码投放门槛的重大 release。"
+    },
+    "pytorch/executorch": {
+      "status": "no_match",
+      "sources_succeeded": [
+        "https://api.github.com/repos/pytorch/executorch/releases",
+        "https://api.github.com/repos/pytorch/executorch/commits"
+      ],
+      "note": "窗口内为 Arduino 示例小版本和后端常规提交，无项目级重大 release。"
+    }
+  },
+  "trending_checked": true,
+  "trending_method": "GitHub repository search over the exact historical creation-date window; release scan was performed separately.",
+  "trending_queries": [
+    "agent",
+    "on-device AI",
+    "edge AI inference",
+    "mobile LLM"
+  ],
+  "trending_candidate_count": 55,
+  "candidate_count": 1,
+  "artifact_path": "/Users/cannkit/Desktop/codeagent/weeklydeepsearch/research_runs/gap-b-candidates-github.json",
+  "artifact_sha256": "bae0f7dc8c6b5a4f2c283dfa54bf91bcaf7b71f9ac30febae2b6a0e18d85d7a8",
+  "candidate_refs": [
+    "b1cd1c3fb159ffbb0a5ae4f4d3ed219f323f996c3959d547771a43ef43e209f5"
+  ],
+  "candidate_identity_refs": [
+    "42143400c92820e710c569d15bd86b4f00d25e11b6c86bb2a1a62302fddb02ea"
+  ],
+  "candidate_lineage": {
+    "b1cd1c3fb159ffbb0a5ae4f4d3ed219f323f996c3959d547771a43ef43e209f5": "42143400c92820e710c569d15bd86b4f00d25e11b6c86bb2a1a62302fddb02ea"
+  },
+  "retrieval_transport": "GitHub public REST API fallback described in docs/references/mcp-setup.md",
+  "retrieved_at": "2026-09-01T11:58:00+08:00",
+  "notes": "Trending 仅作为新仓线索审计，未知小仓未进入 canonical candidates；正式候选仅来自白名单项目的重大 release 或经提交规模和功能语义核验的重大更新。"
+}

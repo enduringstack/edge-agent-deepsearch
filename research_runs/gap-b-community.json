@@ -1,0 +1,83 @@
+{
+  "window": {
+    "start": "2026-08-19",
+    "end": "2026-08-25"
+  },
+  "coverage": [
+    {
+      "source": "X",
+      "status": "limited",
+      "note": "已检索 2026-08-19 至 2026-08-25 的 on-device agent、local AI agent 与 edge AI 公开索引；历史原帖无法在无需登录条件下同时核验正文和日期，因此不收搜索摘要。"
+    },
+    {
+      "source": "Bluesky",
+      "status": "limited",
+      "note": "已检查 2026-08-19 至 2026-08-25 的公开网页索引；历史检索结果不足以提供可打开且日期可核验的端侧 AI 直达帖，故标记受限。"
+    },
+    {
+      "source": "Reddit",
+      "status": "limited",
+      "note": "已检索 LocalLLaMA、LocalLLM 等公开历史结果，但 Reddit 历史页面与索引无法稳定同时核验帖子正文和发布日期，因此未收录转述。"
+    },
+    {
+      "source": "Hacker News",
+      "status": "found",
+      "note": "已通过 HN Algolia 使用精确 Unix 时间范围检索本地 Agent、设备端 AI 和边缘推理，并打开保留条目的 HN 讨论直达页核验时间。"
+    },
+    {
+      "source": "Mastodon",
+      "status": "limited",
+      "note": "已检索 LocalAI、LocalLLM、EdgeAI 和 OnDeviceAI 历史公开索引；未获得可稳定打开并核验 2026-08-19 至 2026-08-25 日期的原帖。"
+    },
+    {
+      "source": "GitHub Discussions",
+      "status": "no_match",
+      "note": "已检索窗口内 on-device agent、local LLM 与 edge AI Discussions，未找到同时满足日期、主题和讨论直达页要求的新增线索。"
+    },
+    {
+      "source": "Hugging Face",
+      "status": "found",
+      "note": "已检查 2026-08-19 至 2026-08-25 的 Daily Papers 社区页面，保留可核验发布日期并回链 arXiv 原文的端侧或 Agent 推理条目。"
+    },
+    {
+      "source": "YouTube / Bilibili",
+      "status": "no_match",
+      "note": "已检索官方频道及可回链一手项目的演示，未找到能同时核验上传日期位于 2026-08-19 至 2026-08-25、主题相关且来源合格的新视频。"
+    },
+    {
+      "source": "厂商论坛",
+      "status": "no_match",
+      "note": "已检索 NVIDIA、Qualcomm、Samsung 等厂商公开论坛和开发者社区，未找到日期与主题均满足本窗口要求的可复核新讨论。"
+    }
+  ],
+  "items": [
+    {
+      "id": "hn-android-mcp-local-pii",
+      "source": "Hacker News",
+      "author": "daniele_dll",
+      "url": "https://news.ycombinator.com/item?id=49362047",
+      "published_at": "2026-08-19T14:23:13Z",
+      "title_zh": "Android MCP 应用控制与本地隐私处理",
+      "summary_zh": "开发者在 Show HN 发布 Android Remote Control MCP，可让 AI 驱动 Android 应用，不需要 root，并在本地对个人敏感信息进行遮蔽。",
+      "why_it_matters": "它同时碰到手机 Agent 的工具控制和隐私边界两个核心问题；项目已给出代码仓库，但仍需验证不同应用和系统版本上的稳定性。",
+      "device_scope": "手机",
+      "topic": "手机 Agent / MCP / 隐私",
+      "verification": "已回链原始材料",
+      "evidence_url": "https://github.com/danielealbano/android-remote-control-mcp/"
+    },
+    {
+      "id": "hf-skillforge-project-agent",
+      "source": "Hugging Face",
+      "author": "Hugging Face Daily Papers 社区",
+      "url": "https://huggingface.co/papers/2608.18933",
+      "published_at": "2026-08-19T00:00:00Z",
+      "title_zh": "SkillForge 项目专属问题修复 Agent",
+      "summary_zh": "Hugging Face Daily Papers 收录 SkillForge，研究智能体如何通过自蒸馏学习项目专属知识，并用于真实仓库中的问题修复任务。",
+      "why_it_matters": "项目专属技能可减少本地编码 Agent 反复读取仓库和试错的成本；它不是端侧部署成果，后续仍需核验小模型上的内存、延迟和修复成功率。",
+      "device_scope": "通用技术",
+      "topic": "编码 Agent / 项目技能 / 自蒸馏",
+      "verification": "已回链原始材料",
+      "evidence_url": "https://arxiv.org/abs/2608.18933"
+    }
+  ]
+}

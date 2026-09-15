@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Selective Forgetting: A Graph-Based Memory Framework for Long-Term LLM Agents</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Selective Forgetting: A Graph-Based Memory Framework for Long-Term LLM Agents</h1>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-29 · Theo Rusu; Sourena Khanzadeh; Manar Alalfi / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这项工作检验图结构是否真的能改善对话记忆，并提出选择性遗忘策略，在尽量不损伤回答质量的前提下缩小长期记忆。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">图记忆的 token F1 为 0.417，低于扁平向量记忆的 0.468；在定位指定助手轮次时分别为 0.607 和 0.911。选择性遗忘删除了 9.8% 的节点、减少 9.5% 的存储字节，token F1 变化仅为 0.001，评审正确率下降 1.6 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">系统把记忆表示成带类型的节点和边，进行两跳检索，并依据新近度、访问频率、中心性和年龄的加权分数周期性裁剪节点。</span></div>
+<div class="score-reason">评分依据：受控遗忘能帮助资源受限 Agent 管理长期内存，但研究没有设备端部署，相关性中等；论文给出了图记忆的负面证据及可量化裁剪方案，贡献度中等。</div>
+<div class="source"><a href="https://arxiv.org/abs/2608.28978" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

@@ -1,0 +1,83 @@
+{
+  "window": {
+    "start": "2026-08-12",
+    "end": "2026-08-18"
+  },
+  "coverage": [
+    {
+      "source": "X",
+      "status": "limited",
+      "note": "已检索 2026-08-12 至 2026-08-18 的 on-device agent、local AI agent 与 edge AI 公开索引；历史原帖无法在无需登录条件下同时核验正文和日期，因此不收搜索摘要。"
+    },
+    {
+      "source": "Bluesky",
+      "status": "limited",
+      "note": "已检查 2026-08-12 至 2026-08-18 的公开网页索引；历史检索结果不足以提供可打开且日期可核验的端侧 AI 直达帖，故标记受限。"
+    },
+    {
+      "source": "Reddit",
+      "status": "limited",
+      "note": "已检索 LocalLLaMA、LocalLLM 等公开历史结果，但 Reddit 历史页面与索引无法稳定同时核验帖子正文和发布日期，因此未收录转述。"
+    },
+    {
+      "source": "Hacker News",
+      "status": "found",
+      "note": "已通过 HN Algolia 使用精确 Unix 时间范围检索本地 Agent、设备端 AI 和边缘推理，并打开保留条目的 HN 讨论直达页核验时间。"
+    },
+    {
+      "source": "Mastodon",
+      "status": "limited",
+      "note": "已检索 LocalAI、LocalLLM、EdgeAI 和 OnDeviceAI 历史公开索引；未获得可稳定打开并核验 2026-08-12 至 2026-08-18 日期的原帖。"
+    },
+    {
+      "source": "GitHub Discussions",
+      "status": "no_match",
+      "note": "已检索窗口内 on-device agent、local LLM 与 edge AI Discussions，未找到同时满足日期、主题和讨论直达页要求的新增线索。"
+    },
+    {
+      "source": "Hugging Face",
+      "status": "found",
+      "note": "已检查 2026-08-12 至 2026-08-18 的 Daily Papers 社区页面，保留可核验发布日期并回链 arXiv 原文的端侧或 Agent 推理条目。"
+    },
+    {
+      "source": "YouTube / Bilibili",
+      "status": "no_match",
+      "note": "已检索官方频道及可回链一手项目的演示，未找到能同时核验上传日期位于 2026-08-12 至 2026-08-18、主题相关且来源合格的新视频。"
+    },
+    {
+      "source": "厂商论坛",
+      "status": "no_match",
+      "note": "已检索 NVIDIA、Qualcomm、Samsung 等厂商公开论坛和开发者社区，未找到日期与主题均满足本窗口要求的可复核新讨论。"
+    }
+  ],
+  "items": [
+    {
+      "id": "hn-magnitude-local-coding-agent",
+      "source": "Hacker News",
+      "author": "xabd",
+      "url": "https://news.ycombinator.com/item?id=49348114",
+      "published_at": "2026-08-18T16:25:35Z",
+      "title_zh": "Magnitude 本地离线编码 Agent 讨论",
+      "summary_zh": "Hacker News 的 Show HN 条目发布 Magnitude：一个可调用本地模型、离线运行的开源编码 Agent，并链接项目介绍页供社区讨论。",
+      "why_it_matters": "它反映 PC 用户对无需云端的编码 Agent 的持续需求；是否能在真实仓库稳定完成修改和测试，仍需要进一步实测。",
+      "device_scope": "PC",
+      "topic": "本地编码 Agent / 离线模型",
+      "verification": "仅线索",
+      "evidence_url": "https://digitalescapetools.com/tools/tool.html?id=magnitude"
+    },
+    {
+      "id": "hf-freetoken-edge-moe",
+      "source": "Hugging Face",
+      "author": "Hugging Face Daily Papers 社区",
+      "url": "https://huggingface.co/papers/2608.16157",
+      "published_at": "2026-08-17T00:00:00Z",
+      "title_zh": "FreeToken 边缘原生 MoE 服务",
+      "summary_zh": "Hugging Face Daily Papers 收录 FreeToken，讨论根据带宽条件自适应执行的边缘原生 MoE 服务，并从社区页回链论文原文。",
+      "why_it_matters": "MoE 在边缘设备上首先受内存与带宽约束，这项线索值得继续核验其设备配置、延迟和能耗是否真正优于固定执行方案。",
+      "device_scope": "其他端侧",
+      "topic": "边缘推理 / MoE / 带宽自适应",
+      "verification": "已回链原始材料",
+      "evidence_url": "https://arxiv.org/abs/2608.16157"
+    }
+  ]
+}

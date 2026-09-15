@@ -1,0 +1,54 @@
+[
+  {
+    "title": "llama.cpp b10840-b10858 (nightly pre-releases)",
+    "paper_url": "https://github.com/ggml-org/llama.cpp/releases",
+    "date": "2026-09-08",
+    "source_tier": "开源大项目",
+    "abstract": "Weekly nightly builds: Vulkan fused UNARY+MUL ops, DeepSeek-V4 hyper-connection fused ops for Strix Halo, Kimi-K3 recurrent-state rollback, Hexagon RELU/LEAKY_RELU, gfx90c HIP AMD support, CUDA branchless Q4_K/Q5_K unpack, chat template refactor. No major versioned release.",
+    "tags": [
+      "方向:高效推理"
+    ],
+    "open_source": true,
+    "edge_agent_scope": "待核实",
+    "edge_agent_evidence": "",
+    "recommendation": "纳入",
+    "recommendation_reason": "持续Vulkan/Hexagon/CUDA后端优化，端侧推理引擎核心项目",
+    "title_zh": "",
+    "effects": "",
+    "mechanism": "",
+    "score_reason": "",
+    "score_relevance": 5,
+    "score_contribution": 4,
+    "authors": "ggml-org",
+    "venue": "GitHub",
+    "repo": "ggml-org/llama.cpp",
+    "tag": "",
+    "release_url": "https://github.com/ggml-org/llama.cpp/releases"
+  },
+  {
+    "title": "ONNX Runtime v1.28.2",
+    "paper_url": "https://github.com/microsoft/onnxruntime/releases",
+    "date": "2026-09-03",
+    "source_tier": "开源大项目",
+    "abstract": "Patch release: Fixed Compile API callback serialization issue causing duplicate graph nodes/inputs/outputs in optimized models.",
+    "tags": [
+      "方向:高效推理"
+    ],
+    "open_source": true,
+    "edge_agent_scope": "待核实",
+    "edge_agent_evidence": "",
+    "recommendation": "排除",
+    "recommendation_reason": "v1.28.2仅为patch修复，非重大版本更新",
+    "title_zh": "",
+    "effects": "",
+    "mechanism": "",
+    "score_reason": "",
+    "score_relevance": 4,
+    "score_contribution": 2,
+    "authors": "microsoft",
+    "venue": "GitHub",
+    "repo": "microsoft/onnxruntime",
+    "tag": "",
+    "release_url": "https://github.com/microsoft/onnxruntime/releases"
+  }
+]

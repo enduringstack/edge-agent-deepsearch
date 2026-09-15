@@ -1,0 +1,206 @@
+{
+  "source": "vendors",
+  "status": "complete",
+  "window_start": "2026-08-26",
+  "window_end": "2026-09-01",
+  "vendors_checked": [
+    "Anthropic",
+    "Apple",
+    "Baichuan",
+    "DeepSeek",
+    "Google",
+    "Honor",
+    "Huawei",
+    "MediaTek",
+    "Meta",
+    "Microsoft",
+    "MiniMax",
+    "Mistral",
+    "ModelBest",
+    "Moonshot",
+    "NVIDIA",
+    "OPPO",
+    "OpenAI",
+    "Qualcomm",
+    "Qwen",
+    "Samsung",
+    "StepFun",
+    "Xiaomi",
+    "Zhipu",
+    "vivo"
+  ],
+  "vendor_checks": {
+    "Apple": {
+      "status": "no_match",
+      "sources_attempted": ["https://www.apple.com/newsroom/topics/apple-intelligence/", "https://machinelearning.apple.com/"],
+      "sources_succeeded": ["https://www.apple.com/newsroom/topics/apple-intelligence/", "https://machinelearning.apple.com/"],
+      "candidate_count": 0,
+      "note": "官方 Apple Intelligence 新闻页和机器学习研究页可访问；最近明确日期为 2026-08-25 或更早，未用月级日期或抓取时间补入窗口。"
+    },
+    "Samsung": {
+      "status": "found",
+      "sources_attempted": ["https://news.samsung.com/global/", "https://news.samsung.com/global/latest"],
+      "sources_succeeded": ["https://news.samsung.com/global/", "https://news.samsung.com/global/latest"],
+      "candidate_count": 3,
+      "note": "全球 Newsroom 正文核验到 9 月 1 日 Galaxy Book6，以及 8 月 27 日 Galaxy S26 FE 和 Z Flip8 FlexWindow AI 动态。"
+    },
+    "Huawei": {
+      "status": "no_match",
+      "sources_attempted": ["https://www.huawei.com/en/media-center/", "https://www.huawei.com/en/news/"],
+      "sources_succeeded": ["https://www.huawei.com/en/media-center/"],
+      "candidate_count": 0,
+      "note": "媒体中心可访问；相关的 SingleRAN 22.1 发布于 2026-08-20，早于本窗口，未收录。"
+    },
+    "Qualcomm": {
+      "status": "no_match",
+      "sources_attempted": ["https://www.qualcomm.com/news/onq", "https://www.qualcomm.com/developer/artificial-intelligence"],
+      "sources_succeeded": ["https://www.qualcomm.com/developer/artificial-intelligence"],
+      "candidate_count": 0,
+      "note": "官方端侧 AI 开发页可访问，但没有正文日期落在本窗口的新增直达动态；8 月 5 日 Snapdragon PC 智能体文章已越窗。"
+    },
+    "MediaTek": {
+      "status": "found",
+      "sources_attempted": ["https://www.mediatek.com/press-room", "https://www.mediatek.com/technology/artificial-intelligence"],
+      "sources_succeeded": ["https://www.mediatek.com/press-room/nvidia-and-mediatek-deepen-long-standing-partnership-to-build-ai-edge-to-cloud-computing-platforms"],
+      "candidate_count": 1,
+      "note": "正文核验到 2026-08-31 与 NVIDIA 扩大边缘到云 AI 平台合作。"
+    },
+    "Xiaomi": {
+      "status": "no_match",
+      "sources_attempted": ["https://www.mi.com/global/", "https://ir.mi.com/events/event-details/2026-interim-results-announcement"],
+      "sources_succeeded": ["https://www.mi.com/global/", "https://ir.mi.com/events/event-details/2026-interim-results-announcement"],
+      "candidate_count": 0,
+      "note": "官网与投资者页面可访问；含 Hyper XiaoAi 2.0 的中期业绩材料对应 8 月 18 日发布，POCO 活动条款不属于技术动态，均未收录。"
+    },
+    "OPPO": {
+      "status": "no_match",
+      "sources_attempted": ["https://www.oppo.com/en/newsroom/", "https://www.oppo.com/in/newsroom/"],
+      "sources_succeeded": ["https://www.oppo.com/en/newsroom/"],
+      "candidate_count": 0,
+      "note": "官方 Newsroom 可访问；检索到的 Reno16 与 ColorOS 月度内容发布于 8 月 20 日或更早，窗口内无合格 AI 技术动态。"
+    },
+    "vivo": {
+      "status": "no_match",
+      "sources_attempted": ["https://www.vivo.com/en/about-vivo/news/", "https://www.vivo.com.cn/about-vivo/news"],
+      "sources_succeeded": ["https://www.vivo.com/en/about-vivo/news/"],
+      "candidate_count": 0,
+      "note": "官方新闻页可访问，窗口内未发现具备正文发布日期的 BlueLM、端侧推理或智能体技术动态。"
+    },
+    "Honor": {
+      "status": "no_match",
+      "sources_attempted": ["https://www.honor.com/global/news/", "https://www.honor.com/global/news/archive/"],
+      "sources_succeeded": ["https://www.honor.com/global/news/"],
+      "candidate_count": 0,
+      "note": "全球新闻页可访问；Robot Phone 发布于 8 月 12 日，窗口内仅有促销条款等非技术内容，未收录。"
+    },
+    "Google": {
+      "status": "found",
+      "sources_attempted": ["https://blog.google/innovation-and-ai/", "https://blog.google/products-and-platforms/products/search/"],
+      "sources_succeeded": ["https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/", "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/"],
+      "candidate_count": 2,
+      "note": "正文核验到 8 月 27 日 Gemini Omni 1.1 Flash 和 Search AI Mode 旅行执行能力更新。"
+    },
+    "Microsoft": {
+      "status": "found",
+      "sources_attempted": ["https://www.microsoft.com/en-us/security/blog/topic/ai-and-machine-learning/", "https://techcommunity.microsoft.com/category/azure/blog/azuredevcommunityblog"],
+      "sources_succeeded": ["https://www.microsoft.com/en-us/security/blog/2026/08/27/whats-new-in-microsoft-security-august-2026/", "https://techcommunity.microsoft.com/blog/azuredevcommunityblog/%F0%9F%9A%80-foundry-toolkit-for-vs-code-%E2%80%94-august-2026-update/4551138", "https://techcommunity.microsoft.com/blog/microsoftsentinelblog/what%E2%80%99s-new-in-microsoft-sentinel-august-2026/4551405"],
+      "candidate_count": 3,
+      "note": "核验到 8 月 27 日智能体安全治理、8 月 28 日 Foundry Toolkit 智能体开发更新和 8 月 31 日 Sentinel AI playbook 生成器。"
+    },
+    "OpenAI": {
+      "status": "found",
+      "sources_attempted": ["https://openai.com/research/index/", "https://openai.com/news/"],
+      "sources_succeeded": ["https://openai.com/index/hugging-face-incident-and-the-road-ahead/"],
+      "candidate_count": 1,
+      "note": "正文核验到 2026-08-26 Hugging Face 智能体安全事件完整调查与后续措施。"
+    },
+    "Anthropic": {
+      "status": "no_match",
+      "sources_attempted": ["https://www.anthropic.com/news", "https://www.anthropic.com/research"],
+      "sources_succeeded": ["https://www.anthropic.com/news"],
+      "candidate_count": 0,
+      "note": "官方 News 页面可访问，窗口内未检索到具备正文日期且符合主题边界的新动态。"
+    },
+    "Meta": {
+      "status": "no_match",
+      "sources_attempted": ["https://ai.meta.com/", "https://about.fb.com/news/"],
+      "sources_succeeded": ["https://ai.meta.com/"],
+      "candidate_count": 0,
+      "note": "Meta AI 官方页可访问；最新模型动态为 8 月 5 日 Muse Code 与 Muse Spark 1.2，早于窗口。"
+    },
+    "NVIDIA": {
+      "status": "found",
+      "sources_attempted": ["https://developer.nvidia.com/blog/recent-posts", "https://developer.nvidia.com/blog/blog/category/generative-ai/"],
+      "sources_succeeded": ["https://developer.nvidia.com/blog/run-nvidia-bionemo-nim-microservices-for-protein-structure-prediction-in-claude-science/", "https://developer.nvidia.com/blog/deploy-an-open-model-from-checkpoint-to-inference-in-two-commands-with-nvidia-tensorrt-model-connect/", "https://developer.nvidia.com/blog/how-to-train-a-cross-embodiment-robot-navigation-policy-with-ai-agents/", "https://developer.nvidia.com/blog/experiment-with-qwen3-8-flash-next-on-nvidia-gb300-nvl72-for-agentic-coding/"],
+      "candidate_count": 4,
+      "note": "核验到 8 月 26 日两篇、8 月 28 日一篇和 8 月 31 日一篇官方技术博客，覆盖智能体、机器人、原生推理部署与科学工具调用。"
+    },
+    "Mistral": {
+      "status": "no_match",
+      "sources_attempted": ["https://mistral.ai/news", "https://mistral.ai/research"],
+      "sources_succeeded": ["https://mistral.ai/news"],
+      "candidate_count": 0,
+      "note": "官方 News 页面可访问，窗口内未发现具备正文发布日期的模型、推理或智能体发布。"
+    },
+    "ModelBest": {
+      "status": "no_match",
+      "sources_attempted": ["https://modelbest.cn/", "https://modelbest.cn/en"],
+      "sources_succeeded": ["https://modelbest.cn/"],
+      "candidate_count": 0,
+      "note": "官方网站可访问，窗口内未发现 MiniCPM 或端侧模型的可核验直达发布页。"
+    },
+    "Qwen": {
+      "status": "found",
+      "sources_attempted": ["https://qwenlm.github.io/blog/", "https://www.alibabacloud.com/blog"],
+      "sources_succeeded": ["https://www.alibabacloud.com/blog/qwen3-8-27b-practical-guide-control-reasoning-depth-and-extend-context-to-1m-tokens_603509", "https://www.alibabacloud.com/blog/alibaba-releases-qwen3-8-flash-with-innovative-model-architecture-delivering-optimal-price-performance_603503", "https://www.alibabacloud.com/blog/qwen3-8-flash-next-a-new-architecture-towards-ultimate-cost-efficiency_603501", "https://www.alibabacloud.com/blog/alibaba-launches-qwenwork-international-edition-extending-its-all-in-one-workplace-ai-agent-to-global-markets_603500"],
+      "candidate_count": 4,
+      "note": "阿里云官方直达页核验到 8 月 26 至 28 日 QwenWork、Qwen3.8-Flash/Flash-Next 和 27B 部署指南。"
+    },
+    "StepFun": {
+      "status": "no_match",
+      "sources_attempted": ["https://www.stepfun.com/", "https://platform.stepfun.com/"],
+      "sources_succeeded": ["https://www.stepfun.com/"],
+      "candidate_count": 0,
+      "note": "官方网站可访问，但窗口内未发现带正文发布日期的 STEP 系列、STEPX 或端侧智能体新发布。"
+    },
+    "DeepSeek": {
+      "status": "no_match",
+      "sources_attempted": ["https://www.deepseek.com/", "https://api-docs.deepseek.com/news/"],
+      "sources_succeeded": ["https://api-docs.deepseek.com/news/"],
+      "candidate_count": 0,
+      "note": "官方更新页可访问，窗口内未发现模型、推理内核或部署技术的新直达发布。"
+    },
+    "Moonshot": {
+      "status": "found",
+      "sources_attempted": ["https://www.moonshot.cn/", "https://www.kimi.com/code/docs/kimi-code/whats-new.html"],
+      "sources_succeeded": ["https://www.kimi.com/code/docs/kimi-code/whats-new.html"],
+      "candidate_count": 1,
+      "note": "Kimi Code 官方更新日志正文核验到 2026-08-27 v0.39.0 多智能体编排与远程本地会话功能。"
+    },
+    "Zhipu": {
+      "status": "found",
+      "sources_attempted": ["https://www.zhipuai.cn/zh/research", "https://docs.bigmodel.cn/cn/update/new-releases"],
+      "sources_succeeded": ["https://www.zhipuai.cn/zh/research/163"],
+      "candidate_count": 1,
+      "note": "官方研究直达页核验到 2026-08-26 GLM-5.3-Flash 上线并开源。"
+    },
+    "MiniMax": {
+      "status": "found",
+      "sources_attempted": ["https://www.minimax.io/news", "https://platform.minimax.io/"],
+      "sources_succeeded": ["https://www.minimax.io/news/minimax-announces-first-half-2026-financial-results-1787744160"],
+      "candidate_count": 1,
+      "note": "官方新闻直达页核验到 2026-08-26 半年业绩，其中披露 M3、H3、MiniMax Code 与推理效率进展。"
+    },
+    "Baichuan": {
+      "status": "no_match",
+      "sources_attempted": ["https://www.baichuan-ai.com/"],
+      "sources_succeeded": ["https://www.baichuan-ai.com/"],
+      "candidate_count": 0,
+      "note": "官方网站可访问；检索到的百小医隐私政策日期为 8 月 25 日且不属于技术发布，窗口内无合格动态。"
+    }
+  },
+  "candidate_count": 21,
+  "artifact_path": "research_runs/candidates-vendor.json",
+  "retrieved_at": "2026-09-01T10:40:00+08:00",
+  "notes": "所有候选均来自官方白名单域名的具体直达页，并以页面正文日期核验；未使用 sitemap lastmod、搜索抓取时间、地区镜像或二手转述。自动搜集阶段统一保留 title_zh 为空、recommendation=纳入、edge_agent_scope=待核实。"
+}

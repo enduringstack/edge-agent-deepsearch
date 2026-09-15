@@ -1,0 +1,38 @@
+{
+  "source": "huggingface",
+  "status": "complete",
+  "window_start": "2026-08-26",
+  "window_end": "2026-09-01",
+  "dates_checked": [
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28",
+    "2026-08-29",
+    "2026-08-30",
+    "2026-08-31",
+    "2026-09-01"
+  ],
+  "api_endpoint_template": "https://huggingface.co/api/daily_papers?date=YYYY-MM-DD",
+  "sources_used": [
+    "https://huggingface.co/api/daily_papers?date=2026-08-26",
+    "https://huggingface.co/api/daily_papers?date=2026-08-27",
+    "https://huggingface.co/api/daily_papers?date=2026-08-28",
+    "https://huggingface.co/api/daily_papers?date=2026-08-29",
+    "https://huggingface.co/api/daily_papers?date=2026-08-30",
+    "https://huggingface.co/api/daily_papers?date=2026-08-31",
+    "https://huggingface.co/api/daily_papers?date=2026-09-01"
+  ],
+  "daily_counts": {
+    "2026-08-26": 26,
+    "2026-08-27": 33,
+    "2026-08-28": 23,
+    "2026-08-29": 0,
+    "2026-08-30": 0,
+    "2026-08-31": 31,
+    "2026-09-01": 0
+  },
+  "candidate_count": 113,
+  "retrieval_transport": "Hugging Face public HTTP API fallback described in docs/references/mcp-setup.md",
+  "retrieved_at": "2026-09-01T10:14:47+08:00",
+  "notes": "逐日调用直达 API；0 条日期仍保留为已检查证据。候选使用 huggingface.co/papers/<arxiv-id> 规范直达页，全部保持自动搜集阶段状态。"
+}
