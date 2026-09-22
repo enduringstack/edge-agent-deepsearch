@@ -1,40 +1,35 @@
 {
-  "overview": "本周端侧 AI 动态（08-12~08-17）：手机与穿戴设备终于重新成为主角。最值得看的是荣耀 Robot Phone，它不只在手机上做多模态理解，还把云台物理动作和跨应用多步执行接进 YOYO，是本周最接近真正手机端 Agent 产品的发布。Google 同期把设备端 Gemini Nano、主动建议和健康感知闭环铺到 Pixel 11 与 Pixel Watch 5；三星则给出手表级 CPU 上低于 1 毫秒的健康基础模型结果。社区层的关键信号是：模型已经能在手机和消费级 PC 本地跑，但 Agent 体验仍卡在工具调用可靠性、长上下文、功耗和运行时兼容性。",
+  "overview": "本周端侧 AI 动态（08-19~08-25）：主线是端侧推理栈从「能跑」走向「说得清跑在哪、跑多快、耗多少电」。联发科发布 MT8875，把超过 12.8 TOPS 的生成式 AI 算力和 5G 集成进一颗 4 纳米物联网平台；llama.cpp 启用语义化版本号推出稳定版，ONNX Runtime 的 WebGPU 插件补上 PagedAttention。研究侧最有分量的是 FreeToken，把笔记本和工作站当成弹性推理平台，直接承载本机运行的编码与工具调用智能体。另有两份实测：苹果神经引擎落位研究验证了模型到底跑没跑在 NPU 上，跨三代 Jetson 的 Hydra 公开 10.7 万条逐提示记录。Google 的 Gemma 4 挑战赛获奖作品说明，离线优先路线已能支撑真实应用。",
   "highlights": [
     {
-      "url": "https://www.honor.com/global/news/honor-robot-phone-launch/",
-      "topic": "荣耀 Robot Phone",
-      "why": "本周最重要的手机端 Agent 产品：YOYO 同时连接多模态感知、4 自由度机械云台和跨应用多步执行，已经超出普通手机助手或影像功能。"
+      "url": "https://www.mediatek.com/tek-talk-blogs/mediatek-mt8875-our-next-gen-5g-iot-platform-for-genai-applications",
+      "topic": "联发科 MT8875 端侧生成式 AI 平台",
+      "why": "把超过 12.8 TOPS 的生成式 AI 加速和 5G 集成进一颗 4 纳米 IoT 芯片，算力是上一代两倍，是本周最明确的端侧 AI 硬件代际更新。"
     },
     {
-      "url": "https://blog.google/products-and-platforms/devices/pixel/pixel-watch-5/",
-      "topic": "Pixel Watch 5 主动式助理",
-      "why": "核心动作可在设备端低延迟、离线处理，Gemini 还会结合日历上下文主动提出一步可确认的操作建议，代表穿戴 Agent 从被动问答向主动行动靠近。"
+      "url": "https://huggingface.co/papers/2608.16157",
+      "topic": "FreeToken 个人电脑 MoE 推理系统",
+      "why": "把 8GB 显存笔记本能跑的模型推到 35B、单卡工作站推到 753B，并且明确围绕本机运行的编码与工具调用智能体来调度资源，是本周最有分量的 PC 端侧 Agent 基础设施。"
     },
     {
-      "url": "https://blog.google/products-and-platforms/devices/pixel/pixel-watch-breathing-emergency-detection/",
-      "topic": "Pixel Watch 呼吸急症闭环",
-      "why": "把心率、动作、海拔和睡眠信号转成提醒、倒计时、急救呼叫、联系人通知与位置共享，是可穿戴设备上完整的感知—判断—行动链。"
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/winning-entries-gemma-4-good-challenge/",
+      "topic": "Gemma 4 获奖项目的离线优先部署",
+      "why": "1600 多份作品中的获奖项目普遍用 LiteRT、Cactus、Ollama、llama.cpp 做本地部署，有的完全离线运行、有的在边缘端保住科研数据隐私，是开源小模型真正落到端侧的一手样本。"
     },
     {
-      "url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/",
-      "topic": "Pixel 11 与 Tensor G6",
-      "why": "最新 Gemini Nano 在 Tensor G6 上直接运行，说明 Google 继续把个人化和多模态能力下沉到手机本地；官方页尚未给出完整 Agent 工具闭环。"
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.2.0",
+      "topic": "llama.cpp 启用稳定版本体系",
+      "why": "端侧最常用的本地推理引擎终于把稳定版和每日构建分成两条标签线，下游 App 和发行版选版本不用再赌 nightly。"
     },
     {
-      "url": "https://news.samsung.com/global/from-biosignals-to-health-insights-samsung-researchs-work-on-health-foundation-models",
-      "topic": "三星手表端健康基础模型",
-      "why": "HiMAE 在智能手表级 CPU 上报告低于 1 毫秒的输出，为连续、低功耗的设备端健康感知提供了比大模型演示更扎实的底层能力。"
+      "url": "https://arxiv.org/abs/2608.22110",
+      "topic": "苹果神经引擎算子落位实测",
+      "why": "用 ANE 内存控制器的字节计数器验证模型实际跑在哪，并发现融合写法能上 NPU、算术等价的分解写法只能落 CPU，给端侧部署提供了可复现的验证方法。"
     },
     {
-      "url": "https://about.fb.com/news/2026/08/the-future-is-for-everyone-free-ai-glasses-for-every-blind-and-visually-impaired-adult-vision-ireland-supports/",
-      "topic": "Meta AI 眼镜规模化落地",
-      "why": "Meta 向 Vision Ireland 支持的人群提供 1.5 万副 AI 眼镜，用于读标识、读文档、识别物体和语音问答；这是本周最明确的可穿戴 AI 规模化应用信号。"
-    },
-    {
-      "url": "https://blog.google/products-and-platforms/devices/pixel/pixel-11-magic-capture/",
-      "topic": "Pixel 11 Magic Capture",
-      "why": "单次拍摄分析接近 400 帧，并自动完成选帧、裁切、拉直和去模糊；它不是通用 Agent，但展示了手机端多阶段视觉处理已经能成为稳定产品功能。"
+      "url": "https://arxiv.org/abs/2608.25053",
+      "topic": "Hydra 边缘 SoC 推理刻画框架",
+      "why": "横跨三代 Jetson、13 个模型和五种执行格式的 10.7 万条逐提示记录公开可用，并指出只看总时延会掩盖后端带来的关键部署差异。"
     }
   ]
 }
