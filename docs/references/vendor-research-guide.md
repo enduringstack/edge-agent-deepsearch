@@ -92,6 +92,20 @@ arXiv 自身搜索只匹配标题和摘要，不直接按作者 affiliation 过�
 
 ---
 
+## 发布日期核不到时怎么办
+
+厂商官方页常见三种"日期不可见"，处理口径不同：
+
+| 情况 | 典型站点 | 处理 |
+|---|---|---|
+| 模板关掉了日期显示，但文章自己的 CMS 载荷带发布日 | Qualcomm OnQ / developer blog（`showDate: ""`） | 取 `<article-url>.model.json` 的 `pagePublishDate`（epoch 毫秒），与 URL 路径 `/YYYY/MM/` 交叉印证后可用。这是一手正文数据 |
+| 整站 JS 渲染，只拿得到标题；或 curl 返回的 canonical 指向另一篇 | qualcomm.com 部分页面、openai.com（403）、apple.com / samsung.com newsroom | **丢弃**。URL 能开 ≠ 内容对题，更 ≠ 日期可核 |
+| sitemap `lastmod` 是本周，正文日期却是几个月前 | Anthropic、Mistral、MediaTek tek-talk、Honor 各地区镜像 | **丢弃**。`lastmod` 是发现层信号，常青页模板一动就刷新 |
+
+sitemap 只用于**发现**，不用于**定日期**。一次回填里 176 条厂商 sitemap 命中最后只有 6 条经得起正文日期核验，这个比例是正常的，不是漏采。
+
+---
+
 ## 与其他文档的关系
 
 - `vendor-whitelist.md`：官方域名白名单和 affiliation 关键标识，是评分和收录的硬约束来源。本文件只补充检索方法，不重复定义白名单，不改它。

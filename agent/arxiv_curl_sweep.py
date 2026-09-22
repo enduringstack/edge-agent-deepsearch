@@ -71,10 +71,47 @@ QUERIES = [
 ]
 
 
-def query_specs(only_updates: bool = False) -> list[tuple[str, str, str, str]]:
-    submitted = [(label, query, "submittedDate", "submitted") for label, query in QUERIES]
-    updated = [("recent-updates", CATS, "lastUpdatedDate", "updated")]
-    return updated if only_updates else submitted + updated
+CAT_LIST = [
+    "cs.AI", "cs.LG", "cs.CL", "cs.RO", "cs.AR", "cs.DC", "cs.ET", "cs.SY", "cs.NE",
+]
+
+
+def window_filter(date_basis: str, window_start: date, window_end: date) -> str:
+    """arXiv ``submittedDate`` range clause, or "" when the sweep can't use one.
+
+    The legacy API hard-fails with HTTP 500 at start=10000, so a sweep that has
+    to page back to an older window eventually dies. Bounding the query by date
+    keeps a submitted sweep inside the reachable range regardless of how far
+    back the window is.
+
+    The API does NOT honour a ``lastUpdatedDate`` range — it returns the same
+    result set as ``submittedDate`` for the same bounds — so the revision sweep
+    cannot be bounded this way and must page instead. It is split per category
+    (see ``query_specs``) to keep each sweep under the 10000-row ceiling.
+    """
+    if date_basis != "submitted":
+        return ""
+    lo = window_start.strftime("%Y%m%d") + "0000"
+    hi = window_end.strftime("%Y%m%d") + "2359"
+    return f"submittedDate:[{lo} TO {hi}]"
+
+
+def query_specs(
+    only_updates: bool = False,
+    labels: list[str] | None = None,
+) -> list[tuple[str, list[str], str, str]]:
+    submitted = [(label, [query], "submittedDate", "submitted") for label, query in QUERIES]
+    # One sweep per category: a single nine-category sweep exceeds the API's
+    # 10000-row ceiling for any window more than a few days back.
+    updated = [("recent-updates", [f"cat:{cat}" for cat in CAT_LIST], "lastUpdatedDate", "updated")]
+    specs = updated if only_updates else submitted + updated
+    if labels:
+        wanted = {label.strip() for label in labels if label.strip()}
+        unknown = wanted - {spec[0] for spec in specs}
+        if unknown:
+            raise SystemExit(f"unknown sweep labels: {', '.join(sorted(unknown))}")
+        specs = [spec for spec in specs if spec[0] in wanted]
+    return specs
 
 
 class PaginationLimitError(RuntimeError):
@@ -88,8 +125,11 @@ def build_api_url(
     sort_by: str = "submittedDate",
 ) -> str:
     normalized_query = query.strip()
-    is_category_sweep = normalized_query == CATS or bool(
-        re.fullmatch(r"cat:[A-Za-z0-9.-]+", normalized_query)
+    base_query = re.sub(
+        r"\s+AND\s+(?:submittedDate|lastUpdatedDate):\[[^\]]*\]$", "", normalized_query
+    )
+    is_category_sweep = base_query == CATS or bool(
+        re.fullmatch(r"cat:[A-Za-z0-9.-]+", base_query)
     )
     full = normalized_query if is_category_sweep else f"{normalized_query} AND {CATS}"
     sq = urllib.parse.quote(full, safe="")  # encode everything incl. quotes/parens/spaces
@@ -100,8 +140,8 @@ def build_api_url(
     )
 
 
-def curl_url(url: str) -> str:
-    for attempt in range(4):
+def curl_url(url: str, attempts: int = 8) -> str:
+    for attempt in range(attempts):
         try:
             r = subprocess.run(["curl", "-sL", "--max-time", "40", "-w", "\n%{http_code}", url],
                                capture_output=True, text=True, timeout=50)
@@ -117,7 +157,7 @@ def curl_url(url: str) -> str:
         if code == "200" and body.strip():
             return body
         if code == "429":
-            wait = 30 * (attempt + 1)
+            wait = min(30 * (attempt + 1), 300)
             print(f"  [429] rate-limited, waiting {wait}s (attempt {attempt+1})", file=sys.stderr)
             time.sleep(wait)
             continue
@@ -218,6 +258,12 @@ def main(argv=None):
         action="store_true",
         help="Merge only the lastUpdatedDate sweep into an already-complete candidate artifact.",
     )
+    parser.add_argument(
+        "--labels",
+        help="Comma-separated sweep labels to re-run and merge into the existing artifact. "
+             "Use to recover the queries a previous sweep recorded as failed, instead of "
+             "discarding a complete window and starting over.",
+    )
     parser.add_argument("--manifest", default=str(MANIFEST))
     args = parser.parse_args(argv)
     run_date = parse_collection_date(args.today)
@@ -229,15 +275,18 @@ def main(argv=None):
         existing = {p["id"].replace("arxiv-", "") for p in d["papers"]}
         print(f"existing in run: {len(existing)} ids")
 
+    retry_labels = [label for label in (args.labels or "").split(",") if label.strip()]
+    merge_mode = args.only_updates or bool(retry_labels)
+
     previous_coverage = {}
-    if args.only_updates and Path(args.manifest).exists():
+    if merge_mode and Path(args.manifest).exists():
         try:
             previous_manifest = json.loads(Path(args.manifest).read_text(encoding="utf-8"))
             previous_coverage = previous_manifest.get("sources", {}).get("arxiv", {})
         except (OSError, json.JSONDecodeError):
             previous_coverage = {}
     seen = {}
-    if args.only_updates and OUT.exists():
+    if merge_mode and OUT.exists():
         try:
             seen = {entry["id"]: entry for entry in json.loads(OUT.read_text(encoding="utf-8"))}
         except (OSError, json.JSONDecodeError, KeyError, TypeError):
@@ -246,7 +295,7 @@ def main(argv=None):
     failed_queries = list(previous_coverage.get("queries_failed") or [])
     pages_fetched = int(previous_coverage.get("pages_fetched") or 0)
     # The lastUpdatedDate sweep catches meaningful revisions of older papers.
-    for label, q, sort_by, date_basis in query_specs(args.only_updates):
+    for label, sub_queries, sort_by, date_basis in query_specs(args.only_updates, retry_labels):
         page_counter = 0
 
         def counted_fetch(query, start, page_size):
@@ -260,28 +309,50 @@ def main(argv=None):
             pages_fetched += 1
             return entries
 
-        try:
-            in_win = collect_query_pages(
-                q,
-                fetch_page=counted_fetch,
-                window_start=window_start,
-                window_end=window_end,
-                page_size=args.page_size,
-                max_pages=args.max_pages,
-            )
-        except RuntimeError as exc:
-            print(f"  [ERR] {label}: {exc}", file=sys.stderr)
-            failed_queries.append(label)
+        in_win = []
+        sweep_failed = False
+        for sub_query in sub_queries:
+            clause = window_filter(date_basis, window_start, window_end)
+            bounded = f"{sub_query} AND {clause}" if clause else sub_query
+            try:
+                in_win.extend(collect_query_pages(
+                    bounded,
+                    fetch_page=counted_fetch,
+                    window_start=window_start,
+                    window_end=window_end,
+                    page_size=args.page_size,
+                    max_pages=args.max_pages,
+                ))
+            except RuntimeError as exc:
+                print(f"  [ERR] {label} ({sub_query}): {exc}", file=sys.stderr)
+                sweep_failed = True
+                break
+            if len(sub_queries) > 1:
+                time.sleep(4)
+        if sweep_failed:
+            if label not in failed_queries:
+                failed_queries.append(label)
             continue
         if label not in completed_queries:
             completed_queries.append(label)
         failed_queries = [failed for failed in failed_queries if failed != label]
+        seen_failed = []
+        for failed in failed_queries:
+            if failed not in seen_failed:
+                seen_failed.append(failed)
+        failed_queries = seen_failed
         new = [e for e in in_win if e["id"] not in existing]
         for e in new:
             if e["id"] not in seen:
                 seen[e["id"]] = e
         print(f"  {label:22s} pages={page_counter:2d} in_win={len(in_win):4d} new={len(new):4d}")
         time.sleep(4)  # polite pacing for arxiv API
+
+    deduped_failed = []
+    for failed in failed_queries:
+        if failed not in deduped_failed and failed not in completed_queries:
+            deduped_failed.append(failed)
+    failed_queries = deduped_failed
 
     cands = list(seen.values())
     cands.sort(key=lambda e: e["date"], reverse=True)

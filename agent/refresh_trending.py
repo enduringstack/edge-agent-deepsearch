@@ -7,6 +7,7 @@ then converts to the top20 file the page reads. The main agent runs this during
 weekly collection before Chinese rewriting; deployment must not overwrite the
 translated descriptions with fresh English text.
 """
+import argparse
 import json
 import sys
 from pathlib import Path
@@ -14,9 +15,20 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "agent"))
 
-import collect_github_trending  # noqa: E402
+parser = argparse.ArgumentParser(description="Refresh data/github_trending_top20.json.")
+parser.add_argument("--today", help="Override collection date as YYYY-MM-DD")
+parser.add_argument(
+    "--no-collect",
+    action="store_true",
+    help="Convert the existing data/_github_trending.json instead of re-fetching. "
+         "Use when rebuilding a past window, or when the collector already ran.",
+)
+args = parser.parse_args()
 
-collect_github_trending.main()  # writes data/_github_trending.json
+if not args.no_collect:
+    import collect_github_trending  # noqa: E402
+
+    collect_github_trending.main(["--today", args.today] if args.today else None)
 
 src = ROOT / "data" / "_github_trending.json"
 d = json.loads(src.read_text(encoding="utf-8"))
