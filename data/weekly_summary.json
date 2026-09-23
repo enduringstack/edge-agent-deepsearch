@@ -1,35 +1,35 @@
 {
-  "overview": "本周端侧 AI 动态（08-26~09-01）：主线是打地基，不是出新品。厂商侧最实的一条是 NVIDIA 与联发科把合作推进到本地 AI 计算，共同做面向消费级 PC 和边缘系统的 Spark 系列芯片；Anthropic 则开放模型硬件标准，把智能体操作物理设备的接口统一起来。研究侧值得看的是真机工作：mzCache 在安卓上治理多任务内存压力，首个 token 等待缩短 2.1 到 5.5 倍；单片机上的前向自适应让整数量化视觉模型在 ESP32-S3 现场纠偏，只多花 8.3 毫焦。安全侧连出两条坏消息：激光探测能从端侧加速器直接读出权重和激活，量化还可能被埋进只在压缩后才激活的后门。能耗侧则有反直觉结论，INT4 会因为把推理链拉长而净增能耗。社区层同样围着本地推理转。",
+  "overview": "本周端侧 AI 动态（09-02~09-08）：主线是「Agent 还在云上，推理正在往端上挪」。厂商侧，Meta 9 月 8 日发布面向大众的个人智能体 Muse，官方稿明确写它跑在云端专属虚拟机里、手机只是入口；谷歌 9 月 2 日更新 Gemini 3.8 Flash，卖点仍是同等价格下更强的 agent 能力，两条都说明最热的 Agent 产品还没下沉到设备。真正的端侧进展集中在推理栈：EStream 用统一专家图加闪存分页，第一次把 MoE 预填充完整跑在手机 NPU 上；LeanStream 用「先投机再修正」把端侧大模型的内存占用压到原来的五分之一到七分之一；Deep Microcompression 甚至在 2KB SRAM 的单片机上跑通了标准 CNN。开源侧，MNN 合入一大批手机 ARM CPU 上的 flash attention 优化，ONNX Runtime 给 WebGPU 加了 int8 分块 KV 缓存量化并给出显存与吞吐的完整折中。学术侧还有一条值得留意的线：多篇工作开始实测「端侧小模型到底能不能当 agent 用」，结论普遍偏冷。",
   "highlights": [
     {
-      "url": "https://www.mediatek.com/press-room/nvidia-and-mediatek-deepen-long-standing-partnership-to-build-ai-edge-to-cloud-computing-platforms",
-      "topic": "英伟达联发科押注本地 AI 计算",
-      "why": "两家把合作从车用推进到消费级 PC 和边缘系统的 Spark 系列芯片，并配 35 亿美元可转债绑定，是本周最实的端侧算力供给信号。"
+      "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+      "topic": "Meta 发布个人智能体 Muse",
+      "why": "本周最大的 Agent 产品事件，而且官方把「运行在云端专属虚拟机、手机只是入口」写得毫不含糊，正好用来标定端侧 Agent 还差几步。"
     },
     {
-      "url": "https://www.anthropic.com/news/model-hardware-standard-research-preview",
-      "topic": "Anthropic 开放模型硬件标准",
-      "why": "把智能体发现和操作物理仪器的接口统一成一套规范，接入新硬件从数周压到数小时，是智能体走向物理世界的基础设施动作。"
+      "url": "https://arxiv.org/abs/2609.06551",
+      "topic": "手机 NPU 上跑通 MoE 预填充",
+      "why": "同时解开了「NPU 计算图编译期固定」和「手机内存装不下全部专家」两个死结，是端侧大模型能否用上 MoE 的关键一步。"
     },
     {
-      "url": "https://arxiv.org/abs/2609.01338",
-      "topic": "mzCache 手机端推理内存管理",
-      "why": "针对安卓多任务下模型被系统踢出内存这一真实失败模式，在真机上把首个 token 的等待压掉 2.1 到 5.5 倍，已被 MobiCom 2026 接收。"
+      "url": "https://arxiv.org/abs/2609.03079",
+      "topic": "端侧流式推理把内存降到五分之一",
+      "why": "在保持此前最好吞吐的前提下内存降 4.8 到 7.5 倍、吞吐再升 1.6 倍，是手机和嵌入式上跑大模型最实在的一类系统进展。"
     },
     {
-      "url": "https://arxiv.org/abs/2608.25321",
-      "topic": "激光探测窃取端侧芯片模型",
-      "why": "在真实 FPGA 加速器上用激光电压成像读出词嵌入、注意力和量化权重，说明模型放到端上并不自动等于安全。"
+      "url": "https://github.com/alibaba/MNN/commit/9bae5883e43f43d9e8ce243488e7e4af7407b374",
+      "topic": "MNN 手机 ARM CPU 注意力大幅优化",
+      "why": "本周开源端侧引擎里动作最大的一次提交，连异构 SoC 的线程调度悬崖都一起处理了，直接影响手机上的体感速度。"
     },
     {
-      "url": "https://arxiv.org/abs/2609.01683",
-      "topic": "单片机上的前向自适应",
-      "why": "让不能反向传播的整数量化视觉模型在 ESP32-S3 上现场纠偏，恢复 20.9 个准确率点而只多花 8.3 毫焦和 21.9 毫秒。"
+      "url": "https://github.com/microsoft/onnxruntime/commit/c7c640854b00858587d3fb2484a06ac6ee8f89a3",
+      "topic": "ONNX Runtime WebGPU 支持 int8 KV 缓存量化",
+      "why": "把 Q8 省 7.8% 显存只掉 2.1% 吞吐、Q4 省 13.4% 显存掉 7.5% 吞吐的账算清楚了，本地跑长上下文可以照着选。"
     },
     {
-      "url": "https://arxiv.org/abs/2609.05512",
-      "topic": "INT4 反而更费电",
-      "why": "硬件级能耗实测显示低比特量化会把推理链拉长，25% 的功率下降可能变成净能耗上升，只看功率的端侧优化会被误导。"
+      "url": "https://arxiv.org/abs/2609.07370",
+      "topic": "2B 以下小模型工具调用实测偏冷",
+      "why": "1000 条原始回复里只有 5 条能直接当 JSON 解析，说明端侧 agent 目前几乎完全靠输出修复兜着，是落地前必须知道的前提。"
     }
   ]
 }
