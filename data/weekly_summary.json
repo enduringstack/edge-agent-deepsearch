@@ -1,35 +1,35 @@
 {
-  "overview": "本周端侧 AI 动态（09-02~09-08）：主线是「Agent 还在云上，推理正在往端上挪」。厂商侧，Meta 9 月 8 日发布面向大众的个人智能体 Muse，官方稿明确写它跑在云端专属虚拟机里、手机只是入口；谷歌 9 月 2 日更新 Gemini 3.8 Flash，卖点仍是同等价格下更强的 agent 能力，两条都说明最热的 Agent 产品还没下沉到设备。真正的端侧进展集中在推理栈：EStream 用统一专家图加闪存分页，第一次把 MoE 预填充完整跑在手机 NPU 上；LeanStream 用「先投机再修正」把端侧大模型的内存占用压到原来的五分之一到七分之一；Deep Microcompression 甚至在 2KB SRAM 的单片机上跑通了标准 CNN。开源侧，MNN 合入一大批手机 ARM CPU 上的 flash attention 优化，ONNX Runtime 给 WebGPU 加了 int8 分块 KV 缓存量化并给出显存与吞吐的完整折中。学术侧还有一条值得留意的线：多篇工作开始实测「端侧小模型到底能不能当 agent 用」，结论普遍偏冷。",
+  "overview": "本周端侧 AI 动态（09-09~09-15）：主线是硬件和运行时同时把「智能体跑在设备上」当成正式目标。联发科发布 2nm 的天玑 9600 Pro，用双 NPU 加智能体 AI 引擎把端侧可跑模型推到 30B，多核功耗降 61%、大模型预填充提速 51%；高通同周讲清下一代 Hexagon NPU 为何要为智能体重做架构，靠专攻 Transformer 的 Element Accelerator 和扩大 50% 的共享内存把更多流程留在片上。学术侧重心落在同一处：手机上用投机解码的验证窗口掩盖 MoE 专家的闪存搬运，手机 GPU 与多簇 CPU 的算子级协同调度，以及把投机解码和动态调频绑在一起解决发热与续航。同时有几篇实测在泼冷水——同一个 INT8 模型换硬件既可能慢 1.7 倍也可能输出不一致。开源侧 llama.cpp 0.4.1 扩了 Hexagon、Vulkan 等端侧后端并新增三值 MoE 架构，ONNX Runtime 1.30.0 补上 INT4 分页 KV 缓存和 Arm64 融合算子。",
   "highlights": [
     {
-      "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
-      "topic": "Meta 发布个人智能体 Muse",
-      "why": "本周最大的 Agent 产品事件，而且官方把「运行在云端专属虚拟机、手机只是入口」写得毫不含糊，正好用来标定端侧 Agent 还差几步。"
+      "url": "https://www.mediatek.com/press-room/mediatek-dimensity-9600-pro-sets-new-standard-for-flagship-smartphone-chips",
+      "topic": "天玑 9600 Pro 把端侧模型推到 30B",
+      "why": "本周唯一给出手机端可跑模型规模和 NPU 功耗数字的旗舰芯片发布，双 NPU 加智能体 AI 引擎的分工直接决定下一代手机端侧模型的能力上限。"
     },
     {
-      "url": "https://arxiv.org/abs/2609.06551",
-      "topic": "手机 NPU 上跑通 MoE 预填充",
-      "why": "同时解开了「NPU 计算图编译期固定」和「手机内存装不下全部专家」两个死结，是端侧大模型能否用上 MoE 的关键一步。"
+      "url": "https://www.qualcomm.com/news/onq/2026/09/hexagon-npu-agentic-ai-architecture",
+      "topic": "高通把智能体需求写进 NPU 架构",
+      "why": "官方第一次系统解释「为什么智能体时代的手机需要换一套 NPU 架构」，Element Accelerator 和扩大 50% 的共享内存说明端侧瓶颈已经从算力转向片上数据驻留。"
     },
     {
-      "url": "https://arxiv.org/abs/2609.03079",
-      "topic": "端侧流式推理把内存降到五分之一",
-      "why": "在保持此前最好吞吐的前提下内存降 4.8 到 7.5 倍、吞吐再升 1.6 倍，是手机和嵌入式上跑大模型最实在的一类系统进展。"
+      "url": "https://arxiv.org/abs/2609.14643",
+      "topic": "手机上跑 30B MoE 的运行时",
+      "why": "用投机解码的多 token 验证窗口掩盖闪存搬运，在两个真实移动平台上比按需卸载快 4.83 倍，是本周把手机端侧大模型从演示推向可用的最硬一篇。"
     },
     {
-      "url": "https://github.com/alibaba/MNN/commit/9bae5883e43f43d9e8ce243488e7e4af7407b374",
-      "topic": "MNN 手机 ARM CPU 注意力大幅优化",
-      "why": "本周开源端侧引擎里动作最大的一次提交，连异构 SoC 的线程调度悬崖都一起处理了，直接影响手机上的体感速度。"
+      "url": "https://arxiv.org/abs/2609.16085",
+      "topic": "INT8 量化并不可移植",
+      "why": "跨七类硬件的受控实测推翻了「量化一次到处能跑」的默认假设：缺点积指令的核反而慢 1.7 倍，不同整数核之间预测结果还会不一致，做端侧部署前必须先看这一条。"
     },
     {
-      "url": "https://github.com/microsoft/onnxruntime/commit/c7c640854b00858587d3fb2484a06ac6ee8f89a3",
-      "topic": "ONNX Runtime WebGPU 支持 int8 KV 缓存量化",
-      "why": "把 Q8 省 7.8% 显存只掉 2.1% 吞吐、Q4 省 13.4% 显存掉 7.5% 吞吐的账算清楚了，本地跑长上下文可以照着选。"
+      "url": "https://arxiv.org/abs/2609.09662",
+      "topic": "手机端侧推理的功耗和发热",
+      "why": "把投机解码与动态电压频率调节绑在一起，正面处理手机既缺算力又没风扇散热的真实约束，比单纯优化算子更贴近落地。"
     },
     {
-      "url": "https://arxiv.org/abs/2609.07370",
-      "topic": "2B 以下小模型工具调用实测偏冷",
-      "why": "1000 条原始回复里只有 5 条能直接当 JSON 解析，说明端侧 agent 目前几乎完全靠输出修复兜着，是落地前必须知道的前提。"
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.4.1",
+      "topic": "llama.cpp 扩展端侧后端覆盖",
+      "why": "本地推理事实标准的版本更新同时扩了 Hexagon、Vulkan、SYCL、OpenCL 后端并新增三值 MoE 架构支持，直接决定本地部署能选哪些模型。"
     }
   ]
 }
