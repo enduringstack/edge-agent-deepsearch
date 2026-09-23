@@ -1,35 +1,35 @@
 {
-  "overview": "本周端侧 AI 动态（08-19~08-25）：主线是端侧推理栈从「能跑」走向「说得清跑在哪、跑多快、耗多少电」。联发科发布 MT8875，把超过 12.8 TOPS 的生成式 AI 算力和 5G 集成进一颗 4 纳米物联网平台；llama.cpp 启用语义化版本号推出稳定版，ONNX Runtime 的 WebGPU 插件补上 PagedAttention。研究侧最有分量的是 FreeToken，把笔记本和工作站当成弹性推理平台，直接承载本机运行的编码与工具调用智能体。另有两份实测：苹果神经引擎落位研究验证了模型到底跑没跑在 NPU 上，跨三代 Jetson 的 Hydra 公开 10.7 万条逐提示记录。Google 的 Gemma 4 挑战赛获奖作品说明，离线优先路线已能支撑真实应用。",
+  "overview": "本周端侧 AI 动态（08-26~09-01）：主线是打地基，不是出新品。厂商侧最实的一条是 NVIDIA 与联发科把合作推进到本地 AI 计算，共同做面向消费级 PC 和边缘系统的 Spark 系列芯片；Anthropic 则开放模型硬件标准，把智能体操作物理设备的接口统一起来。研究侧值得看的是真机工作：mzCache 在安卓上治理多任务内存压力，首个 token 等待缩短 2.1 到 5.5 倍；单片机上的前向自适应让整数量化视觉模型在 ESP32-S3 现场纠偏，只多花 8.3 毫焦。安全侧连出两条坏消息：激光探测能从端侧加速器直接读出权重和激活，量化还可能被埋进只在压缩后才激活的后门。能耗侧则有反直觉结论，INT4 会因为把推理链拉长而净增能耗。社区层同样围着本地推理转。",
   "highlights": [
     {
-      "url": "https://www.mediatek.com/tek-talk-blogs/mediatek-mt8875-our-next-gen-5g-iot-platform-for-genai-applications",
-      "topic": "联发科 MT8875 端侧生成式 AI 平台",
-      "why": "把超过 12.8 TOPS 的生成式 AI 加速和 5G 集成进一颗 4 纳米 IoT 芯片，算力是上一代两倍，是本周最明确的端侧 AI 硬件代际更新。"
+      "url": "https://www.mediatek.com/press-room/nvidia-and-mediatek-deepen-long-standing-partnership-to-build-ai-edge-to-cloud-computing-platforms",
+      "topic": "英伟达联发科押注本地 AI 计算",
+      "why": "两家把合作从车用推进到消费级 PC 和边缘系统的 Spark 系列芯片，并配 35 亿美元可转债绑定，是本周最实的端侧算力供给信号。"
     },
     {
-      "url": "https://huggingface.co/papers/2608.16157",
-      "topic": "FreeToken 个人电脑 MoE 推理系统",
-      "why": "把 8GB 显存笔记本能跑的模型推到 35B、单卡工作站推到 753B，并且明确围绕本机运行的编码与工具调用智能体来调度资源，是本周最有分量的 PC 端侧 Agent 基础设施。"
+      "url": "https://www.anthropic.com/news/model-hardware-standard-research-preview",
+      "topic": "Anthropic 开放模型硬件标准",
+      "why": "把智能体发现和操作物理仪器的接口统一成一套规范，接入新硬件从数周压到数小时，是智能体走向物理世界的基础设施动作。"
     },
     {
-      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/winning-entries-gemma-4-good-challenge/",
-      "topic": "Gemma 4 获奖项目的离线优先部署",
-      "why": "1600 多份作品中的获奖项目普遍用 LiteRT、Cactus、Ollama、llama.cpp 做本地部署，有的完全离线运行、有的在边缘端保住科研数据隐私，是开源小模型真正落到端侧的一手样本。"
+      "url": "https://arxiv.org/abs/2609.01338",
+      "topic": "mzCache 手机端推理内存管理",
+      "why": "针对安卓多任务下模型被系统踢出内存这一真实失败模式，在真机上把首个 token 的等待压掉 2.1 到 5.5 倍，已被 MobiCom 2026 接收。"
     },
     {
-      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.2.0",
-      "topic": "llama.cpp 启用稳定版本体系",
-      "why": "端侧最常用的本地推理引擎终于把稳定版和每日构建分成两条标签线，下游 App 和发行版选版本不用再赌 nightly。"
+      "url": "https://arxiv.org/abs/2608.25321",
+      "topic": "激光探测窃取端侧芯片模型",
+      "why": "在真实 FPGA 加速器上用激光电压成像读出词嵌入、注意力和量化权重，说明模型放到端上并不自动等于安全。"
     },
     {
-      "url": "https://arxiv.org/abs/2608.22110",
-      "topic": "苹果神经引擎算子落位实测",
-      "why": "用 ANE 内存控制器的字节计数器验证模型实际跑在哪，并发现融合写法能上 NPU、算术等价的分解写法只能落 CPU，给端侧部署提供了可复现的验证方法。"
+      "url": "https://arxiv.org/abs/2609.01683",
+      "topic": "单片机上的前向自适应",
+      "why": "让不能反向传播的整数量化视觉模型在 ESP32-S3 上现场纠偏，恢复 20.9 个准确率点而只多花 8.3 毫焦和 21.9 毫秒。"
     },
     {
-      "url": "https://arxiv.org/abs/2608.25053",
-      "topic": "Hydra 边缘 SoC 推理刻画框架",
-      "why": "横跨三代 Jetson、13 个模型和五种执行格式的 10.7 万条逐提示记录公开可用，并指出只看总时延会掩盖后端带来的关键部署差异。"
+      "url": "https://arxiv.org/abs/2609.05512",
+      "topic": "INT4 反而更费电",
+      "why": "硬件级能耗实测显示低比特量化会把推理链拉长，25% 的功率下降可能变成净能耗上升，只看功率的端侧优化会被误导。"
     }
   ]
 }
