@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Pruned Traffic Trees: Native Semantic Compression with a Protocol-Structured Model Family for Encrypted Traffic Classification</h1>
 <div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-22 · Yuantu Luo; Jun Tao; Xiangyu Xu; Linxiao Yu; Kangying Li / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">PTT 是面向路由器和中间盒的轻量加密流量分类模型，把协议字段和树状结构本身作为可裁剪、可蒸馏的压缩单元。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在两个数据集上，轻量版 Macro-F1 分别为 0.9325 和 0.9136；参数量减少 80.3% 和 61.3%，有效 GFLOPs 降低 98.85% 和 98.78%，CPU 推理加速 8.75 倍和 8.46 倍。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">完整模型先学习协议树图中的字段重要性和稀疏执行方式，再用 TopK 与结构闭包生成精简协议树；轻量版继承拓扑，通过结构对齐迁移和流级 logits 蒸馏进一步缩小宽度。</span></div>
-<div class="score-reason">评分依据：目标设备是资源受限网络设备，端侧部署语境明确；以协议原生结构驱动剪枝和蒸馏并取得显著 CPU 收益，贡献度中等。</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">加密流量分类模型太重，路由器和中间盒跑不动，这篇不压权重也不压通道，而是直接决定保留哪些协议字段和结构上下文。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把协议树图当作压缩单元，先用完整协议树图学结构化表示和字段显著性，再据此蒸出精简协议树图训练中号模型，最小的版本继承同样拓扑并通过结构对齐迁移和流级 logits 蒸馏收窄宽度。</span></div>
+<div class="score-reason">评分依据：目标部署平台是路由器等资源受限网络设备，与端侧压缩技术栈相通；用协议结构而非权重当压缩单位的切入点较新颖。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.21874" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

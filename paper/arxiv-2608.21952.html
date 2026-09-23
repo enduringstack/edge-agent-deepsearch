@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SSDi8: Accurate and Efficient 8-bit Quantization for State Space Duality</h1>
 <div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-22 · Hyunwoo Kim; Byoungchan Ko; Minseok Kang; Minwoo Kim; Dongjin Lee; Jaehoon Lee; Sungroh Yoon; Dahuin Jung / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">SSDi8 是专门为 Mamba-2 的结构化状态空间对偶模块设计的后训练量化方法，目标是让计算尽量保持在 INT8 路径，同时降低内存与延迟。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">W4A8 和 W8A8 配置下，SSDi8 在保持接近 FP16 准确率的同时最高加速 1.4 倍，并已在资源受限的 Orin NX 设备上验证。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">方法将逐元素乘法与矩阵乘法解耦以复用量化激活，在开销较低的位置自适应量化通道变化的激活，并利用不同维度的离群值分布和逐通道误差统计进行误差修正。</span></div>
-<div class="score-reason">评分依据：工作同时覆盖状态空间模型的低比特压缩、INT8 执行路径和 Orin NX 实机验证，对端侧序列模型推理直接相关；贡献在于针对 SSD 结构设计量化与误差修正，而非套用通用量化方案。</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Mamba-2 的状态空间对偶结构虽然高效，但内存和时延开销仍然不小，这篇给它做了第一个训练后 INT8 量化方案。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把逐元素乘法和矩阵乘法解耦重写，让量化后的激活能在模块之间复用，从而保持一条持续的 INT8 通路；再在代价划算的位置自适应量化随通道变化的激活来进一步降时延。</span></div>
+<div class="score-reason">评分依据：状态空间模型的低比特量化对端侧长序列部署有直接迁移价值；针对 SSD 结构重写以保持 INT8 通路是有针对性的创新。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.21952" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

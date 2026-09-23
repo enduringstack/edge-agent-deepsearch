@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MoARa: Module-Aware Rank Allocation and Structure-Preserving Decomposition for Low-Rank LLM Pre-training</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>MoARa: Module-Aware Rank Allocation and Structure-Preserving Decomposition for Low-Rank LLM Pre-training</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-09-14 · Keunyoung Kim; Nojun Kwak / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:高效推理</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">低秩梯度投影能省大模型预训练的优化器显存，这套方法按模块分配投影秩，并把梯度的幅值和方向分开投影，让训练更快达标。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Llama、Qwen、DeepSeek 共五种架构、300M 到 7B 规模上，GaLore 加上该方法在 Llama 2 7B 上少用 37% 步数、少用 34% 墙钟时间达到同样困惑度，峰值显存只多 0.2%；两个部件合起来最高减少 41.7% 步数和 37.1% 时间。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用静态画像给不同 Transformer 模块分配不同的投影秩，再做分块的幅值方向分解（块大小取在注意力头维度附近），避免直接投影原始梯度时幅值和方向被一起衰减。</span></div>
+<div class="score-reason">评分依据：是预训练阶段的显存优化，与端侧推理没有直接关系，但低秩训练对端侧微调有迁移价值（相关性 3）。模块感知秩分配的效果稳定（贡献 6）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.15037" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

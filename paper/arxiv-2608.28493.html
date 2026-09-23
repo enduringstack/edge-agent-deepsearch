@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Low-Power End-to-End Cochlear Implant Speech Denoising with Spiking Neural Networks</h1>
 <div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-28 · Ludovic Boulanger; Sean U. N. Wood / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:SNN</span><span class="tag">应用:语音</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作为人工耳蜗设计脉冲神经网络，把语音增强和耳蜗刺激编码合并到一个低功耗模型中。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">VSTOI 和信噪比改善指标与 Deep ACE 相当，同时能耗降低超过 6 倍。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">模型以脉冲神经元处理时序声音信号，在同一网络内联合完成降噪和人工耳蜗编码，从而减少传统多阶段处理的运算。</span></div>
-<div class="score-reason">评分依据：人工耳蜗是功耗严格受限的端侧设备，部署相关性高；将语音增强与刺激编码合并为脉冲模型具有实际价值，但应用范围较专门，贡献度中等。</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:能耗功耗</span><span class="tag">应用:语音</span><span class="tag">硬件:神经形态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">人工耳蜗处理器功耗极低，跑不动深度降噪网络；这项工作用脉冲神经网络同时做语音增强和耳蜗编码。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在可懂度和信噪比改善指标上与 Deep ACE 相当，能耗降低六倍以上。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">参照 Deep ACE 架构设计脉冲神经网络，把语音增强和人工耳蜗编码合成一个模型完成，利用脉冲的事件驱动特性降低运算量。</span></div>
+<div class="score-reason">评分依据：目标硬件是人工耳蜗这种极低功耗可穿戴处理器，端侧约束非常明确。做法是把已有架构迁移成脉冲版本，六倍能耗收益扎实但方法创新度一般。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.28493" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PELM: Power Efficient On-Device LLM Inference with Speculative Decoding and Dynamic Voltage Frequency Scaling</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-09 · Weisi Yang; Stephen Xia / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">本条目来自Weisi Yang; Stephen Xia，发布于本周，涉及AI相关技术动态。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在投机解码、能耗功耗、安全隐私。</div>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-09 · Weisi Yang; Stephen Xia / arXiv</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:高效推理</span><span class="tag">硬件:手机</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">手机上跑大模型既缺算力又没风扇散热，这套方案把动态调频和「不是所有 token 都要跑满全深度」结合起来省电。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">论文报告在热受限场景下比只调频率的方法更省电；摘要截断未给出具体百分比。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在传统的动态电压频率调节之外，再加两个与负载相关的手段：用投机解码减少需要走完整深度的 token 数量，并据此调整处理器频率，从而同时压住功耗和发热。</span></div>
+<div class="score-reason">评分依据：直接针对手机和边缘平台既缺算力又缺散热的现实约束，把算法侧和调频侧结合是对的方向（相关性 10）。投机解码与调频联动是有针对性的组合（贡献 6）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.09662" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

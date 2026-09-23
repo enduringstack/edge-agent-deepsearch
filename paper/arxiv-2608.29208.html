@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AdaVLA: Adaptive Step Flow Matching for Training-free Acceleration of Vision-Language-Action Models</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-29 · Sunghwan Han; Youngtae Han; Youngmin Yi / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">硬件:Jetson</span><span class="tag">应用:机器人</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">AdaVLA 是面向机器人视觉—语言—动作模型的免训练推理加速框架，可在设备上动态减少流匹配生成步骤与 MLP 计算。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 Jetson AGX Orin 上，π₀.₅ 和 X-VLA 分别加速 1.87 倍和 2.24 倍，任务成功率几乎没有下降；方法也在真实机器人任务上完成验证。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">根据流匹配轨迹曲率估计动作生成置信度，在线决定推理步数，并用高效的重要性评估动态调整 MLP 剪枝比例，无需训练数据或额外微调。</span></div>
-<div class="score-reason">评分依据：在 Jetson 上解决 VLA 的实时设备部署瓶颈，直接服务机器人端侧行动模型；免训练的步数调节与剪枝结合有明确速度收益，贡献度中等。</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-08-29 · Sunghwan Han; Youngtae Han; Youngmin Yi / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">方向:测试时自适应</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">视觉语言动作模型算得太重，装不进机器人本体；AdaVLA 不用重新训练就能把流匹配式模型的推理步数自适应压下来。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">现有加速方法多半盯着视觉语言模型本身的推理成本，忽略了流匹配推理里反复解常微分方程这一段；AdaVLA 在线计算一个新指标来判断当前样本需要多少积分步，动态跳过冗余步骤，全程不需要训练数据。</span></div>
+<div class="score-reason">评分依据：明确指向视觉语言动作模型的端侧部署瓶颈，且不依赖训练数据这一点对拿不到私有数据集的落地方尤其重要，端侧契合度高。把加速目标从视觉语言模型转到流匹配的积分过程，是被忽视的角度。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.29208" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

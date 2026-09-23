@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Energy-Efficient Visual Inspection with FFT-Based CNNs and Adaptive Floating-Point Quantization</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-20 · Lukas Krupp; Marco Groß; Michael Graichen; Kim Ulrich; Norbert Wehn / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作面向工业 CPU-FPGA 平台上的视觉缺陷检测，研究如何用 FFT 卷积和自适应 FP8 量化提高 CNN 推理的能效。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">逐层指数偏置优化将准确率从 80.33% 提升到 84.13%，且无需增加数据通路位宽；与仅用 CPU 推理相比，FPGA 的能效约提高 2.5 倍。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">系统在 LeNet-5 加速器中采用串行基 2² SDF FFT 模块，并比较 FFT 内逐步偏置调整、权重缩放以及跨层选择指数偏置等量化优化方法。</span></div>
-<div class="score-reason">评分依据：工作聚焦 FPGA 上的低精度视觉推理和能效优化，对工业端侧加速器设计与量化部署直接相关；贡献是把 FFT 卷积、FP8 量化及逐层偏置选择结合并完成硬件实测。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-20 · Lukas Krupp; Marco Groß; Michael Graichen; Kim Ulrich; Norbert Wehn / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">硬件:FPGA</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:编译部署</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在 CPU-FPGA 工业平台上用低精度浮点做基于 FFT 的卷积推理，把视觉质检做得更省电。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">分层指数偏置优化把准确率从 80.33% 提到 84.13% 且不改数据通路位宽；相比纯 CPU 推理，FPGA 能效约高 2.5 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把 FFT 卷积与自适应的训练后 FP8 量化结合，比较了 FFT 内部的渐进偏置调整和跨层的分层指数偏置选择两种 FPGA 友好优化，实现在串行 radix-2² SDF FFT 模块搭的 LeNet-5 加速器上。</span></div>
+<div class="score-reason">评分依据：明确在工业边缘 FPGA 平台上做低精度部署并给出能效数字，端侧相关性高；方法是已有量化技巧在 FFT 卷积上的适配。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.19837" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

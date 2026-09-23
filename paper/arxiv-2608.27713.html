@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DART-FL: Burst-Aware Multitask Federated Learning under Dynamic Inference Demand at the Edge</h1>
 <div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-27 · Yiming Xie; Pinrui Yu; Geng Yuan; Xue Lin; Ningfang Mi / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作提出 DART-FL，在边缘设备同时承担在线推理和联邦训练时，动态分配有限算力，优先保证推理需求并维持长期训练效果。</span></div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:调度服务</span><span class="tag">方向:端侧训练</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">边缘设备上训练和在线推理要抢同一份算力，DART-FL 让资源划分跟着推理需求的突发情况动态走。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">系统根据任务积压和设备能力先预留最低推理资源，再用队列感知的漂移加惩罚策略分配剩余训练资源，并通过动态损失权重和共享骨干、多任务头完成联邦聚合。</span></div>
-<div class="score-reason">评分依据：场景明确是资源受限边缘设备上的训练与推理共存，端侧相关性高；贡献是资源调度、队列控制与多任务联邦学习的系统整合，贡献度中等。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每个调度周期先用推理积压量和实测服务能力算出保住服务等级目标所需的最小推理资源，剩下的训练算力再用一个队列感知的调度器分给各任务，并映射成动态损失权重。</span></div>
+<div class="score-reason">评分依据：边缘设备上训练与推理共存、需求还会突发，是端侧智能系统的真实约束，端侧契合度高。做法是把服务等级目标引入联邦学习的资源划分，属于合理但常见的调度改进。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.27713" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

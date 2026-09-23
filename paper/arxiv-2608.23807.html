@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Serving Masked Diffusion LLMs: Characterization and Design Principles from Real Hardware</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Serving Masked Diffusion LLMs: Characterization and Design Principles from Real Hardware</h1>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-24 · Farhana Amin; Sabiha Afroz; Mona Moghadampanah; Dimitrios S. Nikolopoulos / arXiv</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">掩码扩散语言模型理论上能一次去噪多个 token 比自回归快，但没人先在真实并发负载下测过它的服务特性。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在单张 NVIDIA H200 上用带 D2F LoRA 适配器的 LLaDA-8B-Instruct 在 GSM8K 和 HumanEval 上实测，发现请求难度（所需去噪步数）是离散而非连续的，请求落在 11 个固定的步数档位上。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">系统刻画扩散语言模型在并发服务下的行为，据此指出直接照搬自回归服务的假设不成立，并给出面向扩散模型的服务设计原则。</span></div>
+<div class="score-reason">评分依据：扩散语言模型的低时延潜力对端侧有意义，但实测在数据中心 GPU 上做，相关度按中等计；先测量再设计的方法论正确。</div>
+<div class="source"><a href="https://arxiv.org/abs/2608.23807" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

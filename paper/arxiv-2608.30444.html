@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Non-uniform Memory Partitioning For Low-Power Spiking Neural Networks</h1>
 <div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-31 · Simon Richter; Darío Fernández Khatiboun; Maryam Sadeghi; Milad Zamani; Farshad Moradi / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">方向:SNN</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作为低功耗脉冲神经网络设计非均匀片上存储，让突触权重的存放位置随神经元活跃程度变化，以降低 SRAM 访问功耗。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 28 nm CMOS 综合设计中，突触权重存储的访问功耗最多降低 61%；与达到相近降功耗效果的传统均匀分区方案相比，面积开销低 2.1 倍。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把高发放率神经元的权重放入访问成本较低的浅层存储，把低活跃权重放入更深、密度更高的存储，并按应用需求和硬件约束自动搜索存储组合。</span></div>
-<div class="score-reason">评分依据：直接面向 SNN 芯片的片上存储功耗与面积约束，属于端侧硬件可落地的优化；非均匀分区与配置搜索有明确实测收益，贡献度中等。</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:神经形态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">脉冲神经网络芯片的功耗大头是访问片上存储里的突触权重，这项工作按神经元活跃度把权重分配到不同深浅的存储体。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把片上存储做成多个大小不一的存储体，让频繁放电神经元的权重进浅层低访问代价的存储、不常访问的权重进深层高密度存储，并用自动搜索按应用需求和硬件约束找最优存储配置。</span></div>
+<div class="score-reason">评分依据：针对低功耗脉冲芯片的存储访问功耗做架构优化，是端侧极低功耗硬件的核心问题，端侧契合度高。非均匀存储分区是存储层次设计里成熟的思路，迁移到脉冲网络属于合理工程。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.30444" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FrugalSOT - Frugal Search Over the Models</h1>
 <div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-21 · Pradheep P; Yuvanesh S; Harish KB; Keerthan Saai Reddy S; Joshva Devadas T; Naveenkumar J; Hemalatha K / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">FrugalSOT 是树莓派等嵌入式设备上的按请求选模方案，会先让较小模型处理简单输入，只有结果不够好时才升级到更复杂的模型。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">系统根据提示长度、命名实体密度和句法复杂度估计请求难度，从最可能达到相关性阈值的小模型开始执行；若未达标则逐级换用更大模型，并用历史验证结果和低通滤波持续更新阈值。</span></div>
-<div class="score-reason">评分依据：工作直接面向树莓派 5 的端侧自然语言处理推理，对资源受限设备的动态路由和算力节省有直接价值；贡献是把请求难度估计、逐级选模和在线阈值适配组合起来，但摘要未给出量化收益。</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:高效推理</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在树莓派 5 这类嵌入式硬件上做自然语言处理，先用最小的模型试，不够好再往上换更大的模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在树莓派 5 上降低了平均推理时间和整体计算资源消耗。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先从提示长度、命名实体密度、句法复杂度等特征估计请求难度，优先交给最简单且可能达标的模型；输出没过相关性阈值就升级到更复杂模型，阈值本身用历史验证结果通过低通滤波在后台持续更新。</span></div>
+<div class="score-reason">评分依据：直接在树莓派上做端侧模型级联选择并给出资源收益，端侧相关性高；难度估计加阈值自适应属于常见级联思路的实现。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.21621" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

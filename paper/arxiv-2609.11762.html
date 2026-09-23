@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Component-Aware Differential Privacy for Federated Multilingual Speech-LLMs</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-09-10 · Jordi Luque, Fernando López, Aleix Sant / arXiv</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-09-10 · Jordi Luque; Fernando López; Aleix Sant / arXiv</div>
 <div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span><span class="tag">应用:语音</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">学术预印本研究。本文研究联邦学习与隐私保护技术，涉及联邦学习、安全隐私等方向。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于联邦学习、安全隐私、语音等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">指出联邦学习里按层分配差分隐私裁剪预算的做法在语音大模型上会失效，并给出按组件分池的修正。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">单池按层方法会出现跨组件预算塌缩，让词错率远差于全局统一裁剪甚至训练直接崩掉；提出的两池分配在架构标定的参数下恢复了词错率，同时让编码器获得 4.47 倍更紧的逐组件噪声保护，语言模型侧噪声只多 2.6%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">发现声学编码器和语言解码器的更新范数差一个数量级是根因，于是把编码器和语言模型参数归一化到两个独立的池分别分配裁剪预算，并证明联合的 L2 敏感度和原有的差分隐私保证不变。</span></div>
+<div class="score-reason">评分依据：联邦语音模型训练属端侧训练相邻方向，隐私保护是设备端数据的核心诉求（相关性 4）。找到根因并给出有理论保证的修正（贡献 6）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.11762" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

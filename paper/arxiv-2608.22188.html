@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Unveiling the Depth-Performance Dilemma in Split-Federated Fine-tuning of LLMs</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-23 · Hariharan Ramesh; Someshwaran Murugaiyan; Jyotikrishna Dass / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">模型:Llama</span><span class="tag">模型:GPT</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项研究考察拆分联邦微调大语言模型时，客户端承担更多网络层虽然能改善吞吐和隐私，却可能让最终微调质量崩溃的矛盾。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">研究在 GPT-2 到 Llama-3-8B 的四种模型规模和多类基准上改变客户端与服务器的切分深度，并比较 AVG、STACK、SVD 和 FREEZE 等适配器聚合方法；分析将性能崩溃追溯到 Transformer 的近等距结构，使聚合噪声持续传播并触发服务器侧注意力崩溃。</span></div>
-<div class="score-reason">评分依据：拆分联邦微调直接涉及资源受限客户端与服务器的协同训练，对端云协同和隐私保护模型适配有较强参考价值；贡献是揭示切分深度并非不影响效果，并给出注意力崩溃的结构性解释。</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-08-23 · Hariharan Ramesh; Someshwaran Murugaiyan; Jyotikrishna Dass / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:联邦学习</span><span class="tag">方向:端云协同</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把大模型按层切开、客户端只留浅层交给服务器算深层，系统效率最好的切法恰恰是微调质量崩掉的地方。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 GPT-2 到 Llama-3-8B 四个规模上审计发现：切得越深吞吐和隐私单调变好，但性能会陷入灾难性平台期；AVG、STACK、SVD、FREEZE 等联邦适配器聚合方法都无法缓解这一分割特有的问题。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">系统扫描不同切分深度下的吞吐、隐私和微调质量，把这一现象命名为深度—性能两难，并逐一检验现有联邦适配器聚合方法能否补救。</span></div>
+<div class="score-reason">评分依据：分割联邦微调是端侧受限设备参与大模型训练的主要路线，相关性高；把系统效率与质量的冲突刻画清楚是有价值的负面结论。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.22188" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

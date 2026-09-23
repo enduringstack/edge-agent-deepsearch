@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LiteSearch-VL: Small Multimodal Search Agents via Trajectory Distillation and Synthetic Step-DPO</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-29 · Saeed Khaki; Nima Safaei; Kamal Ginotra / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:工具调用</span><span class="tag">方向:多模态</span><span class="tag">模型:GPT</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LiteSearch-VL 用低成本训练把多模态搜索智能体能力迁移到 20 亿和 40 亿参数的 Qwen3-VL 小模型。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">20 亿模型从 1240 次中有 1237 次无法作答，提升到 28.4% 的宏平均 Pass@1；最佳 40 亿配置达到 30.8%，且实验表明继续增加搜索轮次不能解决答案核验瓶颈。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">它先蒸馏完整搜索轨迹和工具使用规范，再用 GPT-5 生成的步骤级困难负例做 DPO，针对过早回答、选错工具、查询薄弱、重复查询和忽略图像五类失败。</span></div>
-<div class="score-reason">评分依据：小模型、LoRA 和工具轨迹蒸馏对资源受限智能体有直接迁移价值，且系统分析了能力迁移瓶颈；不过实验是单机预算训练，没有明确设备端部署。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-29 · Saeed Khaki; Nima Safaei; Kamal Ginotra / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span><span class="tag">方向:工具调用</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多模态搜索智能体现在要么用闭源前沿模型、要么用大开源底座加大量智能体数据训练，这篇问的是小底座能蒸馏到什么程度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">作者在单机预算下给 Qwen3-VL-2B 和 Qwen3-VL-4B 设计低算力配方：只用已公开的 OpenSearch-VL 轨迹、参数高效的 LoRA 适配器，以及针对五类局部失误用 GPT-5 生成难负样本做的步级偏好优化。</span></div>
+<div class="score-reason">评分依据：2B 到 4B 是端侧可承受的多模态尺寸，单机预算的蒸馏配方对想在设备上跑智能体的人有直接参考，但论文没有设备端部署实验，端侧契合度中等。做法是轨迹蒸馏加步级偏好优化的组合，属于扎实的配方工作。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.29357" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

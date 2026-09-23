@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>2AM: Grounding Agent-Side Memory as Guidance for Steerable Action Models in Long-Horizon Manipulation</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-09-10 · Yutong Hu, Fengjiao Chen, Xuezhi Cao, Renaud Detry / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">学术预印本研究。本文研究智能体系统相关技术，涉及多模态等方向。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、多模态、机器人等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-09-10 · Yutong Hu; Fengjiao Chen; Xuezhi Cao; Renaud Detry / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:机器人</span><span class="tag">方向:多模态</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长时程机器人操作的任务记忆不放在动作策略里，而是交给一个多模态智能体保管，动作模型只负责执行。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LIBERO-Mem 上不用深度、在线几何或规划器做物体运动，平均完成度达到 76.3%，比最强基线 14.8% 提升 61.5 个百分点，宽松成功率 63.0%、严格成功率 11.8%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">智能体把交互历史编译成子任务语言和可选的二维抓取、放置、移动提示；动作模型是纯 RGB 输入、按回合无状态的执行器。为让动作模型听得懂这些提示，训练时用结构化提示标签增强演示并加条件丢弃、空间噪声和时间抖动来容忍不完美的智能体输出。</span></div>
+<div class="score-reason">评分依据：把记忆从策略里剥离对算力受限的机器人端侧部署有价值，但论文是仿真评测（相关性 5）。职责切分清晰、消融设计好（贡献 6）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.11308" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

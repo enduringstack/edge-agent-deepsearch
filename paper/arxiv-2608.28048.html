@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AI Hardware Accelerators for Large Language Models: Architectures and the Memory Wall</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-28 · Siddharth Patel; Rohit Singh / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这是一篇大模型 AI 加速器综述，以“内存墙”为主线比较云端和边缘场景中的 GPU、ASIC、FPGA、存内计算、神经形态与光子架构。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用 Transformer 计算结构和 roofline 分析统一解释训练与解码瓶颈，并从算力、内存、能耗、可编程性和扩展性比较各类平台，主张采用软硬件协同的异构内存中心系统。</span></div>
-<div class="score-reason">评分依据：覆盖边缘部署、KV 缓存、数据搬运和能耗等推理栈核心问题，相关性高；作为综述主要提供系统化归纳而非新算法，贡献度中等。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-28 · Siddharth Patel; Rohit Singh / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:KV cache</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:GPU</span><span class="tag">硬件:NPU</span><span class="tag">硬件:CIM</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这是一篇大模型硬件加速器综述，覆盖 GPU、专用芯片、FPGA、存内计算以及神经形态和光子路线，横跨云端和边缘。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">结论是决定性的约束不是算力而是内存：自回归解码阶段受带宽限制，KV cache 规模可与模型权重相当，数据搬运主导能耗；在算力、内存、能耗、可编程性和可扩展性上对比后，没有任何单一架构在所有负载上最优。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以 Transformer 的计算结构和屋顶线分析作为统一框架，把各类加速器平台放在同一坐标系里比较。</span></div>
+<div class="score-reason">评分依据：综述明确覆盖边缘部署，且把内存墙这一判断讲透，对端侧硬件选型有参考价值，但不是针对端侧的专门研究，端侧契合度中等。作为综述整理得比较系统，没有新方法。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.28048" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

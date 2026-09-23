@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MAPS: Memory-Aware Predictive Scheduling Framework for Large Language Model Serving</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>MAPS: Memory-Aware Predictive Scheduling Framework for Large Language Model Serving</h1>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-09-14 · Tiancheng Zhang; Yulin Chen; Yunfeng Zhao; Shaoyuan Huang; Cheng Zhang; Xiaofei Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:调度服务</span><span class="tag">方向:云端serving</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">个人设备上的大模型应用会给云端带来突发负载，这套调度框架靠设备侧先猜输出长度来提前平衡云上解码实例的负载。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在两个真实负载和两个模型上，平均端到端时延降低 42.6、尾延迟最高降低 84.8（摘要按原文单位给出），优于三个现有系统。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在云端预填充的同时，让设备侧做投机式输出长度预测，几乎不增加时延；再用不确定度校准把预测转成有覆盖保证的长度上界，据此做全局加局部的分层调度，缓解解码队列堆积和队头阻塞。</span></div>
+<div class="score-reason">评分依据：调度本身在云端，但「让设备侧承担预测、云端受益」是典型的端云协同设计（相关性 5）。设备辅助预测加不确定度校准的组合有新意（贡献 6）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.15359" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

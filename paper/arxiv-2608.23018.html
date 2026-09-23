@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SplitLite: Low-Rank Residual Compression for Split Learning</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-24 · Tao Li; Yulin Tang; Qi Guo; Xianhao Chen / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:端云协同</span><span class="tag">方向:联邦学习</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">SplitLite 是面向设备端大模型联邦微调的低通信分割学习方法，压缩客户端与服务器之间反复传输的激活和梯度。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在一系列设备端大模型的 GLUE 实验中，激活上行通信最多减少 93.5%，总通信量最多减少 83.7%，且没有性能下降。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">利用相邻训练轮次激活残差和梯度残差分别呈现约 2r 与 4r 有效低秩结构，只传输经过量化和截断 SVD 的残差因子，服务器承担主要训练计算。</span></div>
-<div class="score-reason">评分依据：直接面向设备端大模型的联邦 LoRA 微调与端云通信瓶颈，端侧相关性高；低秩残差性质和显著通信压缩有中等贡献。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-08-24 · Tao Li; Yulin Tang; Qi Guo; Xianhao Chen / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:联邦学习</span><span class="tag">方向:端云协同</span><span class="tag">方向:量化</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">分割学习把训练主力交给服务器能减轻端侧负担，但要来回传高维激活和梯度，这篇只传低秩残差来省通信。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">关键发现是：当 LoRA 用秩 r 更新时，同一样本相邻轮次之间的激活残差和梯度残差分别呈现有效秩 2r 和 4r 的结构；据此只传量化后的截断 SVD 残差因子。</span></div>
+<div class="score-reason">评分依据：直接针对端侧大模型微调的通信瓶颈，端侧相关性高；把 LoRA 的低秩性质推广到残差并加以利用是有实质的理论观察。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.23018" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

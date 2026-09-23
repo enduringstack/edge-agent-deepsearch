@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Composable CXL Memory as a Kubernetes-Native Shared Memory for LLM Serving</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-09-09 · Hongjian Fan; Kevin Zhang; David Habinsky; Sean Dykstra / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:端云协同</span><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">本条目来自Hongjian Fan; Kevin Zhang; David Habinsky; Sean Dykstra，发布于本周，涉及AI相关技术动态。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于KV cache、记忆、端云协同等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-09-09 · Hongjian Fan; Kevin Zhang; David Habinsky; Sean Dykstra / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把可组合的 CXL 内存做成 Kubernetes 能调度的资源，让跨节点的容器共享同一块物理内存来复用 KV 缓存。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在两节点集群配 512 GiB CXL 设备上跑 Qwen2.5-7B-Instruct，跨节点前缀复用在外部命中率 95.4% 到 99.5% 时把首 token 时延降低 5.5 到 36.6 倍，而节点本地的显存前缀缓存和 CPU 内存卸载只能回退到完全重算；跨节点与同节点复用的时延比只差 1% 到 4%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 Kubernetes 动态资源分配驱动按需组合 CXL 区域，在各主机上呈现为 DAX 设备并以同一个容器设备接口名注入容器；给 vLLM/llm-d 的共享内存连接器把该区域当作 KV 缓存层，槽目录直接嵌在共享介质里，省掉外部元数据服务。</span></div>
+<div class="score-reason">评分依据：是集群级内存解耦，与端侧场景关系很远，仅在缓存复用思路上相通（相关性 2）。是可行性研究，作者也这样定位（贡献 5）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.10790" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

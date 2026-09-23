@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SAGE: State-Grounded, Abstention-Aware Evaluation of Task-Oriented Dialogue Agents</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>SAGE: State-Grounded, Abstention-Aware Evaluation of Task-Oriented Dialogue Agents</h1>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-31 · Rayan Khoury; Shih-Yao Lin; Pratyush Mishra / arXiv</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:规划推理</span><span class="tag">方向:工具调用</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">评估任务型对话智能体不能只看回复读起来顺不顺，还要看每一轮有没有把工作流状态推对；SAGE 想不靠昂贵的大模型裁判也能做到。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">推荐工作点 SAGE-Core 只靠编译器、符号规则和设备端编码器就能判定 81% 到 91% 的判据，且不产生任何付费大模型调用；在覆盖 MultiWOZ、Schema-Guided Dialogue 和 ABCD 的四个数据切片上做了验证。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把工作流规格和每轮状态差异编译成原子化、与模式对齐的判据，再让每条判据穿过一串符号验证器和编码器与自然语言推理验证器，验证器宁可弃权也不瞎猜，最后汇总成带证据链的轮级判定。</span></div>
+<div class="score-reason">评分依据：大部分判据由设备端编码器和符号规则完成、零付费模型调用，这一点对要在本地做评估或自检的端侧智能体有直接价值，但论文主体是评估方法而非端侧部署，端侧契合度中等。用可弃权的验证器级联替代整体式大模型裁判是合理设计。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.00434" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

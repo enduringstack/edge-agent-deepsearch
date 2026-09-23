@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>On the Instance Hardness as a Decision Criterion in TinyML Systems</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-30 · Tobiasz Puslecki; Krzysztof Walkowiak / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项 TinyML 初步研究用样本难度控制推理过程，希望在小型、资源受限设备上按需权衡分类质量、计算量与能耗。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把基于树深剪枝的样本难度方法用于 TinyML，并通过阈值调节分类精度，进而改变推理复杂度和能源消耗。</span></div>
-<div class="score-reason">评分依据：研究对象明确是内存和算力受限的 TinyML 设备，端侧相关性高；目前仅为概念验证和初步结果，贡献度中等。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-30 · Tobiasz Puslecki; Krzysztof Walkowiak / arXiv</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:高效推理</span><span class="tag">硬件:MCU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">TinyML 要把机器学习塞进内存和算力都很小的设备，这篇试着用样本难度来决定哪些数据值得留。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">初步结果显示按树深剪枝得到的样本难度设定阈值是可行的决策依据。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把树深剪枝的样本难度度量方法迁移到 TinyML 系统里，用难度阈值筛选训练样本，以降低推理阶段的算力和能耗开销。</span></div>
+<div class="score-reason">评分依据：目标场景明确是内存和算力受限的 TinyML 设备，端侧契合度较高。属于初步结果，方法是已有难度度量的迁移应用。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.29913" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

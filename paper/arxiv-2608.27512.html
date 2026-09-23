@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Quantization-Triggered Backdoors in Language Models: Cross-Quantizer Transferability and the Validation--Deployment Gap</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-27 · Jacopo Dardini; Claudio Stanzione; Giordano Colò; Giuseppe Fenza / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作揭示量化可能触发语言模型后门：全精度模型通过安全检查，并不保证压缩成 INT8 或 4 比特后的部署版本仍保持相同行为。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">翻译模型在修复后的 FP16 状态下测得敌我翻转为零，量化后最高达到 85.02%；立场分类的偏差变化最高达到 0.33，且攻击能否跨量化器保留取决于具体方案和模型架构。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者形式化量化行为等价类，并通过三阶段对抗微调把潜伏载荷写入模型，使其只在 INT8 或 4 比特压缩后激活。</span></div>
-<div class="score-reason">评分依据：它直接针对边缘部署常用的后训练量化，说明必须验证最终部署精度下的行为安全；理论与跨量化器实验贡献较强，但不属于端侧 Agent 本身。</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-08-27 · Jacopo Dardini; Claudio Stanzione; Giordano Colò; Giuseppe Fenza / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:安全隐私</span><span class="tag">方向:编译部署</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大家默认量化只是端侧部署的一步无害优化，这篇证明攻击者可以埋下只在量化后才激活的后门。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在全精度检查点上通过了源精度的安全评估，但一旦做 INT8 或 4 比特压缩就会触发定向的恶意行为；作者形式化了量化行为等价类并证明同属一类不等于行为等价。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用三阶段对抗微调把潜伏的恶意载荷嵌进模型，使其在全精度评估下表现正常，只有经过特定量化映射后才被激活，并验证这种后门在不同量化器之间的可迁移性。</span></div>
+<div class="score-reason">评分依据：量化是端侧部署的必经环节，这篇指出验证与部署之间存在结构性缺口，对所有做端侧模型分发的人都是硬警示，端侧契合度高。把攻击面形式化并证明跨量化器可迁移，比单纯演示一个攻击更有分量。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.27512" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

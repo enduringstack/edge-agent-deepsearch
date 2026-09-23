@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A Voice-Interactive Multi-Agent System for Smart Operating Rooms: Architecture Design and Key Technologies</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-09-10 · Tianxiang Zhou / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">模型:Llama</span><span class="tag">应用:语音</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">本条目来自Tianxiang Zhou，发布于本周，涉及AI相关技术动态。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在KV cache、Llama、语音。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-09-10 · Tianxiang Zhou / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">应用:语音</span><span class="tag">方向:工具调用</span><span class="tag">方向:推理框架</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">给智慧手术室做的语音交互多智能体系统，重点在把大模型的响应时延压到手术现场能接受的水平。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">KV 缓存前缀预热把重算开销从约 500 毫秒降到几十毫秒；流式部分 JSON 解析加提前并行执行把端到端时延降低约 30%；系统用 Qwen3-27B 配 llama.cpp/sglang，在 16384 token 上下文限制内有效运行，多设备并行控制响应时间满足手术室实时要求。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">分层架构包含语音交互流水线（唤醒、语音识别、轮次检测、智能体推理、语音合成）和智能体核心（技能注册表、任务规划器、设备管理器）；三项关键技术是按字节最长公共前缀复用的 KV 缓存预热、流式 JSON 解析提前并行执行，以及按用户角色、已连设备和手术阶段动态过滤系统提示。</span></div>
+<div class="score-reason">评分依据：用 llama.cpp 在本地部署并做 KV 前缀预热和上下文裁剪，都是端侧智能体的实用优化（相关性 7）。工程技术成熟但组合合理（贡献 5）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.11231" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A Method for Layer Bit-Width Allocation in LLM Quantization via Performance Maximization Under a Quality-Degradation Constraint</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-28 · Artem Safronov / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">硬件:GPU</span><span class="tag">模型:Gemma</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作为 Gemma-3-1B 设计逐层混合位宽分配，在限定生成质量损失的前提下优化 TensorRT-LLM 推理延迟。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">最佳低损方案将延迟降低 11.0%，Top-1 一致率为 98.90%，困惑度恶化 0.85%；接受更大质量损失时，最高可加速 19.1%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">依据层敏感度分别为 FFN、Attention 和 lm_head 分配精度，在 TensorRT-LLM 中测试 13 种 W8A8 组合，并针对导出问题手工实现 SmoothQuant。</span></div>
-<div class="score-reason">评分依据：逐层量化和延迟优化可用于资源受限推理，但实验平台是 RTX 5090，未证明端侧部署；对不同模块量化收益的分析具体，贡献度中等。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-28 · Artem Safronov / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">模型:Gemma</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这篇针对 Gemma-3-1B 提出一种逐层比特分配方法，把问题写成在给定质量损失预算下最大化提速。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 RTX 5090 上测了 13 个 W8A8 变体，发现前馈网络和输出头这两块的量化与反量化时间开销能被低精度计算的收益补偿回来。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">沿用作者此前敏感度剖析的结果，在 TensorRT-LLM 的激活直通模式下按 5+5、10+10 和全部 26 层三种分组，逐块决定精度，并区分前馈网络、注意力和输出头对整体提速的不同贡献。</span></div>
+<div class="score-reason">评分依据：对象是 10 亿参数级的端侧常用尺寸模型，比特分配结论可迁移，但实测平台是消费级独立显卡而非移动设备，端侧契合度一般。做法是已有敏感度剖析的工程化应用。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.28003" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AWM: Answerable Working Memory for Long-Document VQA Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-26 · Dongzhuoran Zhou; Yuqicheng Zhu; Yule Liu; Zhen Yang; Rui Lu; Yuxiao Dong; Jie Tang; Evgeny Kharlamov / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作提出可回答性加权记忆，让长文档问答 Agent 不只记住检索片段，还判断当前记忆是否足以支持最终答案。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 MMLongBench-Doc 中，使用标准记忆时有 42.5% 的正确答案无法仅由记忆内容支持；该方法在 MMLongBench 和 LongDocURL 上分别提高最终准确率 8.1 和 11.9 个百分点，并将记忆缺失但答案正确的比例再降低 2.7 个百分点。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">系统把终止时证据组织成可检查的记忆产物，并在 GRPO 训练中加入可回答性奖励，同时保持最终答案正确性为首要优化目标。</span></div>
-<div class="score-reason">评分依据：证据充分性和紧凑记忆可迁移到资源受限检索 Agent，但论文没有设备端运行证据，相关性中等；可回答性诊断与奖励设计针对记忆质量的盲点，贡献度中等。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-26 · Dongzhuoran Zhou; Yuqicheng Zhu; Yule Liu; Zhen Yang; Rui Lu; Yuxiao Dong; Jie Tang; Evgeny Kharlamov / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长文档视觉问答智能体会翻页、看图、往工作记忆里写发现再综合答案，但现在只检查最终答案对不对，记忆质量是个盲区。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">作者指出智能体可能翻到了正确页面、答案也对，但留在记忆里的内容太笼统或不完整，一旦页面不可再访问就撑不住回答；AWM 据此提出以可回答性为标准来评估和构建工作记忆。</span></div>
+<div class="score-reason">评分依据：记忆是否足以脱离原始材料回答，对离线或弱连接的端侧场景更关键，但论文不讨论设备端约束，端侧相关性较弱。指出并度量记忆质量盲区是有价值的补位。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.25618" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

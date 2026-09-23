@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Group-Shared Low-Rank Approximation for Mobile-Efficient Pointwise Convolutions in Large-Kernel CNNs</h1>
 <div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-26 · Hao Luo; Yiting Yang; Wenyi Zhao; Man Jiang; Zhijun Lin; Ghulam Mohiuddin; Ting Jiang; Kunming Luo / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">硬件:手机</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">CGS 是面向大卷积核视觉模型的分组共享低秩压缩方法，重点削减占参数量主体的逐点卷积，让模型更适合手机等受限设备。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">它用类似奇异值分解的结构，让同一层不同通道组共享高成本的上下投影矩阵，只为各组保留低成本的可缩放对角矩阵。</span></div>
-<div class="score-reason">评分依据：逐点卷积在相关模型中占超过 87% 参数，该方法直接缓解手机的存储和加载瓶颈；工程相关性高，但贡献集中在视觉模型压缩，不是智能体闭环。</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span><span class="tag">硬件:手机</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大核卷积网络效果好但参数量涨得太快，装不进手机；这篇指出真正的瓶颈其实是逐点卷积而不是深度卷积。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">作者统计发现逐点卷积主导参数量，在 RepLKNet-31B 这类模型里占比超过 87%，是资源受限设备上的主要部署瓶颈。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以往的高效架构都在用低秩近似和权重共享压缩深度卷积，这项工作转而对逐点卷积做分组共享的低秩近似，降低存储成本和内存载入压力。</span></div>
+<div class="score-reason">评分依据：明确面向智能手机等资源受限设备的存储与内存载入约束，端侧契合度高。指出逐点卷积才是参数大头是有用的观察，压缩手段本身是低秩加共享的常规组合。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.26069" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

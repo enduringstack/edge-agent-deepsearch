@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Structured Transforms for Low-Overhead Quantization of Language Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-09-10 · Daria Cherniuk, Alexander Rudikov, Boris Kashin, Ivan Oseledets / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:云端serving</span><span class="tag">模型:Llama</span><span class="tag">模型:Mistral</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">学术预印本研究。本文研究语言模型的量化压缩技术，涉及量化压缩等方向。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于量化、云端serving、Llama等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-09-10 · Daria Cherniuk; Alexander Rudikov; Boris Kashin; Ivan Oseledets / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">模型:Llama</span><span class="tag">模型:Mistral</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">改进基于 Kashin 分解的权重量化算法，用结构化的正交变换把每轮开销从平方级降到近线性。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">配合 OPTQ 式顺序误差补偿和 QuIP 式不相干预处理后，在 OPT、Llama-2 和 Pythia 的 4 比特逐通道量化上与 OPTQ、QuIP、QuIP-RG 等方法竞争力相当且墙钟扩展性更好；在 QuIP 系方法发散到四位数困惑度（Pythia-6.9B）或分解报 NaN（Mistral-7B）的压力配置下仍保持数值稳定。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">保留把每个权重分解成两个无穷范数受限分量的核心做法，但把稠密随机正交矩阵换成符号随机化的离散余弦变换，把每轮开销从 O(N²) 降到 O(N log N)；交替更新的贪心算法保证每个因子做 2 比特聚类所需的四峰分布，并给出聚类中心的闭式初始化。</span></div>
+<div class="score-reason">评分依据：低开销的权重量化算法直接服务端侧低比特部署，数值稳定性也很关键（相关性 6）。用结构化变换替代稠密正交矩阵是有效的改进（贡献 6）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.11687" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

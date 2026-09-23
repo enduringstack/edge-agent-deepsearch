@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Spiking Neural Networks for Continuous Control: Neuromorphic Reinforcement Learning in Conventional Computing</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-24 · Jessica Hunter; Md Maruf Hossain Shuvo; Krishna Roy / arXiv</div>
-<div class="tags"><span class="tag">方向:SNN</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作把连续控制强化学习中的传统动作网络替换成脉冲神经网络，为后续部署到神经形态硬件建立可复现基线。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者在 Soft Actor-Critic 中设计脉冲动作网络 SANSAC，并在普通计算机上与传统 SAC 对照，检查网络隐藏维度对连续控制表现的影响。</span></div>
-<div class="score-reason">评分依据：模型结构明确为神经形态连续控制部署做准备，面向低功耗端侧控制，相关性高；当前实验仍在传统计算机上，主要贡献是可行性验证和基线建立，贡献度中等。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-24 · Jessica Hunter; Md Maruf Hossain Shuvo; Krishna Roy / arXiv</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">硬件:神经形态</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把强化学习的 actor 网络换成脉冲神经网络，先在普通硬件上验证换了之后连续控制性能会不会掉。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">SANSAC 与传统 Soft Actor-Critic 在连续控制任务上表现接近等价。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">提出脉冲 actor 版本的 Soft Actor-Critic，设计上保证可以落到神经形态硬件，但先在常规计算机上与原版 SAC 做系统对照，建立后续神经形态强化学习研究的基线。</span></div>
+<div class="score-reason">评分依据：为神经形态低功耗控制铺路，属于端侧相邻方向；先做同硬件对照的验证思路严谨，但尚未在真实神经形态芯片上验证。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.22729" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

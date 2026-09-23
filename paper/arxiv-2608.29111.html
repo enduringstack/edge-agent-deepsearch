@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Auditing and Mitigating Privacy Leakage in Cloud-Edge Collaborative Decoding</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-29 · Kejia Zhang; Tianyuan Zou; Zixuan GU; Yang Liu / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作审计端云协同解码中的隐私泄漏，并提出 CoVeil，让私有数据留在端侧的同时降低传给云端大模型的上下文泄漏。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">相对现有基线，CoVeil 最多减少 87.2% 的数据泄漏，同时只造成很小的准确率损失。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">端侧小模型基于私有数据产生下一 token 分布，云端大模型只处理公开数据；CoVeil 在解码时动态优化传输信号，压制隐私信息并维持协同生成质量。</span></div>
-<div class="score-reason">评分依据：直接研究资源受限端侧与云端大模型协同中的隐私风险，和端云推理栈高度相关；既有系统化审计也有动态防御与量化收益，贡献度中等。</div>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-08-29 · Kejia Zhang; Tianyuan Zou; Zixuan GU; Yang Liu / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:安全隐私</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">端侧小模型和云端大模型协同生成时，云端其实能反推出留在设备上的私有内容；这篇既做了泄露审计，也给出了防御方案。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">无防御时云侧融合达到 56.6% 的 Token-ER@100 和 41.1% 的反演 ROUGE-1 召回，端侧融合是 43.0% 和 39.2%；CoVeil 防御把泄露最多降低 87.2%，精度损失不超过 0.2 个百分点，同等精度下 Token-ER@100 从 28.3% 和 24.4% 降到 13.4%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">设备端小模型处理公开查询和私有上下文，云端大模型只接触公开数据和共享的生成前缀；作者先构造针对这条协同链路的反演攻击做审计，再用 CoVeil 在融合环节遮蔽可被反推的信号。</span></div>
+<div class="score-reason">评分依据：端云协同解码是端侧部署绕不开的形态，这篇把设备侧私有上下文的泄露风险量化出来并给出可用防御，端侧契合度高。先系统性审计再提防御的组合有实质贡献，不只是又一个隐私保护技巧。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.29111" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Defending Wearable VLMs Against Private Attribute Inference</h1>
 <div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-26 · Zhimin Li; Pan Wang; Jingxian Chen; Yuantao Tang; Anthony Chen; Qian Lou; Jingtong Hu / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作针对可穿戴视觉语言模型的隐私泄漏，在视觉 token 离开可信设备前进行处理，阻止下游组件推断佩戴者或旁人的敏感属性。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 3,221 条图文问答基准上，TGAP 将隐私属性识别准确率从 56.7% 降至 7.4%，绝对下降 49.3 个百分点，同时保持 74.4% 的宽松口径任务效用。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">TGAP 在大模型之前对视觉 token 学习残差变换，联合使用效用保持、身份正则、语义隐私抑制和图像驱动表征抑制，避免粗粒度遮罩造成的效用损失。</span></div>
-<div class="score-reason">评分依据：直接面向可穿戴设备的分割式多模态推理与 token 传输隐私，端侧相关性高；新基准和轻量 token 变换均有量化验证，贡献度中等。</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:端云协同</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">可穿戴视觉语言模型持续拍第一人称画面来帮用户，但同一段画面也会泄露佩戴者和旁人的私密属性。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">作者把这件事当成切分推理下的隐私与效用联合问题：视觉编码留在可信的设备边界内，中间视觉 token 才传给下游推理组件；即使最终文本回答无害，外部攻击者或不可信的下游组件仍可能从这些 token 推断私密属性，论文针对这一泄露面设计防御。</span></div>
+<div class="score-reason">评分依据：问题设定就是可穿戴设备上的切分推理，编码在设备内、推理在云端，是端侧多模态助手的典型形态，端侧契合度高。把隐私与效用放在同一优化问题里处理是合理设计，属于中等贡献。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.28691" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

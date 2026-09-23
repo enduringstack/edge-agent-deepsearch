@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CateKV: On Sequential Consistency for Long-Context LLM Inference Acceleration</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-31 · Haoyun Jiang; Haolin Li; Jianwei Zhang; Fei Huang; Qiang Hu; Minmin Sun; Shuai Xiao; Yong Li / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">CateKV 是一种面向长上下文大模型推理的混合 KV 缓存方法，利用不同注意力头的时序稳定性减少显存占用和解码计算。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在保持与全量注意力相近准确率的同时，内存占用最多降低 2.72 倍，单样本解码加速 2.18 倍，批处理吞吐最高提升 3.96 倍。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用变异系数算法识别注意模式持续稳定的头，只为这些头保留关键 token；对变化较大的自适应头则保留大部分 KV 对，并可与现有加速方法组合。</span></div>
-<div class="score-reason">评分依据：KV 缓存压缩和长上下文解码提速可迁移到内存受限推理环境，但论文未展示具体端侧设备部署；方法与收益清晰，贡献度中等。</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-08-31 · Haoyun Jiang; Haolin Li; Jianwei Zhang; Fei Huang; Qiang Hu; Minmin Sun; Shuai Xiao; Yong Li / arXiv</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:KV cache</span><span class="tag">方向:稀疏注意力</span><span class="tag">方向:高效推理</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长上下文推理最大的负担是 KV cache，CateKV 发现一部分注意力头的关注模式在整个序列上高度稳定，可以只保留关键 token。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">内存最多降低 2.72 倍，单样本解码加速 2.18 倍，批量场景吞吐提升 3.96 倍，在 RULER、LongBench 和大海捞针等长上下文基准上精度与全注意力相当。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用基于变异系数的算法持续识别注意力模式稳定的一致性头，对这些头只保留关键 token 的 KV，对自适应头则保留大部分 KV 对，形成混合 KV cache。</span></div>
+<div class="score-reason">评分依据：属于 KV cache 压缩这一层的通用推理加速工作，对内存受限的端侧长上下文场景有直接迁移价值，但实验面向服务器侧长上下文推理，端侧契合度中等。按注意力头的顺序一致性分类做混合保留是有想法的改进，但仍在 KV 稀疏化的常见路线内。作者机构证据来自 arXiv PDF 首页署名：Jianwei Zhang、Fei Huang、Minmin Sun、Shuai Xiao、Yong Li、Junyang Lin 标注 Alibaba Group，据此标注 vendors 为 Alibaba。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.30295" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MetroLLM-Bench: Evaluating Language Models as Transit Kiosk Runtimes</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-09-11 · Remco Hendriks / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">本条目来自Remco Hendriks，发布于本周，涉及AI相关技术动态。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
-<div class="source"><a href="https://huggingface.co/papers/2609.10016" target="_blank" rel="noopener">查看原文 →</a></div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-09 · Remco Hendriks / arXiv</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:工具调用</span><span class="tag">方向:量化</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一个把语言模型当地铁自助售票机策略层来测的基准，模型要调结构化工具并给出机器可渲染的最终状态。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">基准含 955 个案例、六个真实地铁系统、11 个类别；26 个模型中 23 个被排名；留出集上一个 4B 的 Qwen 3.5 学生经参数高效微调后 Tier 1 得分 91.3，超过 GPT-5.6 的两档（90.6 和 90.0），与最高推理强度的 GPT-5.4 完整版持平（91.4），量化后仅 2.6 GB；9B 和 27B 学生在该训练规模下没有进一步提升。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每个案例要求模型调用结构化工具并提交含结果、必要时的票价报价和终端动作的机器可渲染状态；14 个确定性打分项构成第一层，八个语义质量项构成第二层。</span></div>
+<div class="score-reason">评分依据：结论很端侧：一个 2.6GB 的 4B 量化模型就能在真实终端任务上打平云端大模型（相关性 8）。基准设计和规模消融都扎实（贡献 6）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.10016" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

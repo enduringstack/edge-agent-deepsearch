@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Correlation-Aware Structured Pruning for Large Language Models</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Correlation-Aware Structured Pruning for Large Language Models</h1>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-23 · Sicheng Xu; Hao Shi; Wei Zhang; Haoran Pang; Zhenyu Ming; Hao Wu; Zhongyi Huang; Xin Yao / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">结构化剪枝通常独立评估每个通道或注意力头的重要性，这篇指出这种独立性假设常被打破，改为显式建模单元之间的相关性。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把剪枝目标写成带基数约束的二次 0-1 规划来显式刻画重建误差里的跨单元依赖，因为该问题 NP 难，改用基于依赖感知边际代价的贪心交互算法选单元，并结合梯度策略进一步优化。</span></div>
+<div class="score-reason">评分依据：结构化剪枝直接决定端侧能装下多大模型，属可迁移技术栈；把单元相关性写进优化目标的建模较扎实。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.22131" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Beyond Edge Cuts: Activity-Weighted Multicast Hypergraph Mapping for Spiking Neural Networks on Mesh NoCs</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-26 · Amirreza Khorasanian / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:SNN</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">M-HySMap 是面向网格片上网络神经形态多核平台的 SNN 映射方法，用真实多播路由和脉冲活跃度优化通信开销。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 115 项实验及一个 7×7 压力案例中，相比 Activity+QAP 路由多播跳数降低 10.6%–19.6%，相比 Edge+QAP 降低 19.7%–41.1%；增量更新将优化提速 4.7–12.7 倍。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把每个源神经元到其突触后扇出的通信表示为带活跃度权重的有向超边，联合优化目标核心数、确定性网格路由并集和链路拥塞；只增量重算移动神经元及其前驱相关超边。</span></div>
-<div class="score-reason">评分依据：直接优化神经形态多核平台上的 SNN 通信与映射，和资源受限专用硬件相关性高；路由感知超图建模与精确增量求值有充分实验支持，贡献度中等。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-26 · Amirreza Khorasanian / arXiv</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:编译部署</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:神经形态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把脉冲神经网络映射到片上网络众核芯片时，一个神经元的脉冲是一对多组播而不是一堆两两连线；这篇按组播的真实通信形态重做映射。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">为每个源神经元建一条指向其全部下游的有向超边并按实测活跃度加权，从活跃度感知的初始解出发，联合优化目标核扇出、确定性网格路由的并集和链路拥塞；利用移动单个神经元只影响自身和前驱超边这一局部性，做精确的增量增益计算并缓存未受影响的路由。</span></div>
+<div class="score-reason">评分依据：面向神经形态众核芯片的部署映射，属于端侧低功耗硬件技术栈，相关性较高但离产品部署还有距离。用超图组播替代成对切边代价是对问题建模的修正，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.26223" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

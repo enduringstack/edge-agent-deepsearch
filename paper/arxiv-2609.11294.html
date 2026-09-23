@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Memory Compression for High-Fanout Agent Sandboxes</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-09-10 · Mengming Li, Ceyu XU, Qijun Zhang, Jiangnan Yu, Xiangfeng Sun, Haohui Mai, Zhiyao Xie / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">学术预印本研究。本文研究模型压缩与蒸馏方法，</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-09-10 · Mengming Li; Ceyu XU; Qijun Zhang; Jiangnan Yu; Xiangfeng Sun; Haohui Mai; Zhiyao Xie / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:调度服务</span><span class="tag">方向:云端serving</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一个任务会拉起很多并发沙箱，这套内存压缩系统专门利用这些沙箱同源同轨迹带来的冗余。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在大模型训练和推理负载上，沙箱占用内存最多降低 8.7 倍，而 Linux 默认配置只有 2.1 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">同时利用模板相对冗余和跨沙箱冗余来压缩；把压缩范围放宽到任何有划算表示的页，并把开销控制从压缩时的页选择挪到恢复时的预取；还把昂贵的压缩对齐到大模型等待期，避免干扰前台工具执行。</span></div>
+<div class="score-reason">评分依据：是服务端沙箱的内存压缩，与端侧无直接关系，但按执行阶段择机压缩的思路可迁移（相关性 3）。利用同源沙箱冗余是有新意的切入点（贡献 6）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.11294" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

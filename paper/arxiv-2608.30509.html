@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CHIPSMORE: Compute-in-Interconnect and -Memory Chiplets for Multi-Mode Multi-Request LLM Inference Acceleration</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-31 · Yue Jiet Chong; Yimin Wang; Zhen Wu; Zixuan Wang; Wei Zhang; Xuanyao Fong / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span><span class="tag">模型:Mistral</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">CHIPSMORE 是一套面向多适配模式、长上下文和并发请求的 LLM 推理加速器，把互连内计算与存内计算芯粒结合起来。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 Mistral-7B 推理上，相比 NVIDIA H100，吞吐最高提升 2.38 倍，能效最高提升 27 倍，并避免为并发请求复制模型权重。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">它混合使用 RRAM 模拟存内计算、SRAM 数字存内计算和可编程计算互连，按负载动态分配 KV 存储，并通过无权重复制的流水线并行处理多个请求。</span></div>
-<div class="score-reason">评分依据：这项工作直接优化 LLM 推理的并发、KV 内存和能耗，硬件软件协同设计具有较强贡献；但验证聚焦专用加速器，并未给出消费端设备部署。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-31 · Yue Jiet Chong; Yimin Wang; Zhen Wu; Zixuan Wang; Wei Zhang; Xuanyao Fong / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">方向:调度服务</span><span class="tag">硬件:CIM</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型推理在不同适配模式、上下文长度和并发度下差异很大，CHIPSMORE 用存内计算加互连内计算的芯粒来兼顾这些情况。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">异构处理单元由阻变存储器模拟存内计算和静态存储器数字存内计算组成，通过可编程的单元间计算网络互连；一个可组合的分层 KV 存储方案按负载动态分配路由暂存区、数字存内计算单元和嵌入式动态存储资源，从而支持长上下文和批量推理。</span></div>
+<div class="score-reason">评分依据：存内计算芯粒是端侧和边缘服务器都可能采用的架构，KV 分层调度思路可迁移，但论文面向多请求批量场景，端侧契合度中等。把互连内计算与存内计算组合并做分层 KV 分配，架构上有新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.30509" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

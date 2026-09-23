@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>GraphMemix: Query-Aware Evidence Forests for Long-Term Multimodal Agent Memory</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-27 · Geng Li; Yuhao Wang; Dong Li; Jianye Hao; Yuxin Peng / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">GraphMemix 为多模态智能体构建按查询组织的长期记忆，把相关证据压缩成可控预算内的证据森林，减少冗余并补回低相似度信息。</span></div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-27 · Geng Li; Yuhao Wang; Dong Li; Jianye Hao; Yuxin Peng / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多模态智能体的长期记忆要么靠昂贵的、与问题无关的离线摘要，要么靠简单的向量相似检索，前者浪费后者不准。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先从多视角种子记忆沿模式和语义关系扩展候选图，再分开计算证据效用与激活成本，最后在证据预算下联合选择森林结构和可靠关系。</span></div>
-<div class="score-reason">评分依据：长期多模态记忆对本地 Agent 有迁移价值，但论文未展示端侧内存、延迟或设备部署；查询感知图优化兼顾准确率与生命周期成本，贡献度中等。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">GraphMemix 把记忆组织建模成与查询相关的证据森林构建这一组合优化问题，先做候选图构建，把多视角的种子记忆扩展开，再按查询挑出证据子结构。</span></div>
+<div class="score-reason">评分依据：记忆组织方式影响智能体的上下文开销，对受限设备有间接迁移价值，但论文不涉及设备端约束，端侧相关性较弱。把记忆检索写成组合优化问题是有新意的建模。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.26983" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

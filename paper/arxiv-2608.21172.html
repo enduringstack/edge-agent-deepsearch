@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Thermo-FL: Thermal-Aware Robust Federated Fine-Tuning of Large Language Models for Edge AI</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Thermo-FL: Thermal-Aware Robust Federated Fine-Tuning of Large Language Models for Edge AI</h1>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-08-21 · Shiva Shrestha; Kazi Shaharair Sharif; Zongxing Xie; Jiajing Huang; Anhao Xiang; Honghui Xu / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:端侧训练</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">边缘设备联邦微调大模型时既会因为发热降频拖慢进度，又可能被恶意客户端污染，这篇把设备温度当成主动控制信号一起处理。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">客户端根据设备温度升降调整激活的 LoRA 层比例和上传更新的稠密度，热了就减负载；服务器侧用一套针对动态稀疏 LoRA 更新的鲁棒聚合流程，结合范数过滤、掩码感知的方向校验和自适应处理来抵抗恶意更新。</span></div>
+<div class="score-reason">评分依据：把边缘设备的热降频这一真实工程约束纳入训练控制，端侧相关性高；温度驱动的稀疏度调节加鲁棒聚合的组合较有针对性。</div>
+<div class="source"><a href="https://arxiv.org/abs/2608.21172" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

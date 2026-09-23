@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LILA: Calibration-Free Structured Pruning of Large Language Models via Latent Spectral Geometry</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-09-10 · Sankar Behera, Dhruv Singh, Anshika Agnihotri, Raj Kumar Choudhary, Satyadev Ahlawat, Yamuna Prasad / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">模型:Llama</span><span class="tag">模型:Phi</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">学术预印本研究。本文研究模型剪枝与稀疏化技术，涉及模型剪枝等方向。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、Llama、Phi等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-09-10 · Sankar Behera; Dhruv Singh; Anshika Agnihotri; Raj Kumar Choudhary; Satyadev Ahlawat; Yamuna Prasad / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span><span class="tag">模型:Llama</span><span class="tag">模型:Phi</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一种不需要校准数据、不需要梯度、也不需要额外策略网络的大模型结构化剪枝方法。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">完全不微调时，在 LLaMA-2-7B 上 25% 稀疏度下零样本准确率比用 4500 万参数强化学习策略的 PruneNet 高 1.57 个百分点，在所有稀疏度上比用 WikiText-2 校准的 SliceGPT 最多高 6.0 个百分点；做一轮 LoRA 恢复微调后，在 LLaMA-2-7B 和 Phi-2 上与重度校准的 SliceGPT 相差不超过 0.48 个百分点；神经正切核分析显示相比随机剪枝功能失真降低 22 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用完整前馈权重矩阵与去掉某个神经元后的奇异值分布之间的 Kolmogorov-Smirnov 距离给神经元重要性打分，得到一个闭式的谱判据，不改变原始架构；再按该分数动态分配各层稀疏预算。</span></div>
+<div class="score-reason">评分依据：免校准免梯度的剪枝让端侧压缩流程大幅简化，且保持原架构便于部署（相关性 7）。闭式谱判据加理论分析比较扎实（贡献 7）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.11163" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Selective Forgetting: A Graph-Based Memory Framework for Long-Term LLM Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-29 · Theo Rusu; Sourena Khanzadeh; Manar Alalfi / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作检验图结构是否真的能改善对话记忆，并提出选择性遗忘策略，在尽量不损伤回答质量的前提下缩小长期记忆。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">图记忆的 token F1 为 0.417，低于扁平向量记忆的 0.468；在定位指定助手轮次时分别为 0.607 和 0.911。选择性遗忘删除了 9.8% 的节点、减少 9.5% 的存储字节，token F1 变化仅为 0.001，评审正确率下降 1.6 个百分点。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">系统把记忆表示成带类型的节点和边，进行两跳检索，并依据新近度、访问频率、中心性和年龄的加权分数周期性裁剪节点。</span></div>
-<div class="score-reason">评分依据：受控遗忘能帮助资源受限 Agent 管理长期内存，但研究没有设备端部署，相关性中等；论文给出了图记忆的负面证据及可量化裁剪方案，贡献度中等。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-29 · Theo Rusu; Sourena Khanzadeh; Manar Alalfi / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大家假设把对话拆成知识图谱能提升长期记忆检索，这篇直接把这个假设拿来验，结果是不成立。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LongMemEval 上，同等候选生成预算下图结构反而不如扁平向量基线，token F1 为 0.417 对 0.468，500 题配对自助法给出 -0.050 的差距；在需要回忆具体某一轮助手回复的问题上，判定正确率从 0.911 掉到 0.607。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">框架把每轮对话抽成带类型的节点和带属性的边，从两跳子图回答问题，并按时近性、访问频次、度中心性和年龄的加权组合定期剪除低分节点。</span></div>
+<div class="score-reason">评分依据：长期记忆压缩对内存受限的端侧智能体有间接参考价值，但工作本身不涉及设备端部署，端侧相关性较弱。结论是一个诚实的否定结果，信息量有但方法贡献有限。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.28978" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

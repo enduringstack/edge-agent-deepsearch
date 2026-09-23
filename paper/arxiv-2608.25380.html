@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>APT: Accelerating Diffusion Transformers via Attention Probability-Guided Pruning and Quantization</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-26 · Sungyeob Yoo; Seeyeon Kim; Joonyong Park; Seunghee Han; Joo-Young Kim / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效注意力</span><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作提出 APT，为高分辨率扩散 Transformer 设计软硬件协同加速器，按注意力概率的重要性同时决定剪枝和计算精度。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 PixArt-alpha、Stable Diffusion 3 和 FLUX 上，相较 NVIDIA A100 最高提速 8.16 倍、能效提高 14.98 倍；相较 EXION 加速器分别最高提升 3.01 倍和 2.04 倍。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">方法用双阈值将注意力项划分为保留、低精度和剪除三类，并用跨时间步预测模块生成动态掩码；硬件流水线针对不规则稀疏、双精度计算和动态调度进行专门设计。</span></div>
-<div class="score-reason">评分依据：工作属于生成模型推理加速和专用硬件技术栈，对端侧部署有间接迁移价值，但目标不是具体端侧设备，相关性中等；注意力剪枝、精度分配与硬件架构联合设计，贡献度中等。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-26 · Sungyeob Yoo; Seeyeon Kim; Joonyong Park; Seunghee Han; Joo-Young Kim / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:量化</span><span class="tag">方向:高效注意力</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">扩散 Transformer 做高分辨率生成时，自注意力的开销随分辨率四次方增长；APT 用注意力概率同时指导剪枝和量化。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把注意力概率当成统一的重要性度量，在算法层做细粒度剪枝并配合自适应精度缩放，再用软硬件协同设计的加速器把这两件事一起做掉。</span></div>
+<div class="score-reason">评分依据：高分辨率生成模型要进移动设备必须解决注意力成本，剪枝加量化的协同设计有迁移价值，但目标是专用加速器而非现有端侧芯片，端侧契合度中等。用同一个重要性度量统一两种压缩手段是合理设计。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.25380" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

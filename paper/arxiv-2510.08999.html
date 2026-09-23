@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SQS: Bayesian DNN Compression through Sparse Quantized Sub-distributions</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-09-09 · Ziyi Wang; Nan Jiang; Guang Lin; Qifan Song / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:剪枝稀疏</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">本条目来自Ziyi Wang; Nan Jiang; Guang Lin; Qifan Song，发布于本周，涉及AI相关技术动态。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在量化、剪枝稀疏。</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-09 · Ziyi Wang, Nan Jiang, Guang Lin, Qifan Song / HuggingFace Daily</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span><span class="tag">模型:Llama</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用贝叶斯变分学习把剪枝和低比特量化放在一个框架里同时做，比分别做能压得更狠。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ResNet、BERT-base、Llama3.2 和 Qwen2.5 上，压缩率高于一系列已有方法且性能下降相当；理论上给出了该变分方法对稀疏量化网络的一致性结果。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用尖峰平板先验诱导稀疏，用高斯混合模型刻画量化后的权重以支持低比特；因为该目标不可解，推导了一个高效近似来实现低精度损失的压缩。</span></div>
+<div class="score-reason">评分依据：明确以「把模型部署到资源受限设备」为动机，剪枝与量化联合优化是端侧压缩的正路（相关性 7）。统一的贝叶斯框架加一致性结果比较扎实（贡献 6）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2510.08999" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

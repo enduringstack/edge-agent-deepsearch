@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Building py-kvcache: A Performance Characterization of External KV Caching for vLLM with NVMe SSDs</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-10 · Joseph Kanichai; Tiziano De Matteis; Animesh Trivedi / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:端云协同</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">本条目来自Joseph Kanichai; Tiziano De Matteis; Animesh Trivedi，发布于本周，涉及AI相关技术动态。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在KV cache、记忆、端云协同。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-10 · Joseph Kanichai; Tiziano De Matteis; Animesh Trivedi / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:推理框架</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究把 KV 缓存放到 NVMe 固态盘上到底什么时候划算，并做了一个调度器感知的外部缓存连接器。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">8 万 token 时从磁盘加载比 LMCache 快 2.0 倍，其中预加载贡献 1.34 倍；同时开 GPU、CPU 和磁盘缓存时比 LMCache 快 1.23 倍，与原生 vLLM 的 KV 卸载实现相差约 4%；但在 H100 上平均请求低于盈亏平衡点，仅靠显存保留前缀就够了。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先在 GPU、CPU、NVMe 三层上用合成负载、长上下文基准和生产轨迹刻画重算与加载的权衡，发现性能取决于传输粒度、中间内存占用和传输进入调度的时机；据此实现带异步直接 IO、有界共享暂存区和调度器感知预加载的连接器，在请求还在排队时就开始读盘。</span></div>
+<div class="score-reason">评分依据：外部 KV 缓存的盈亏平衡分析对显存紧张的端侧设备很有参考价值（相关性 6）。结论明确指出这是一个要按场景决定的准入问题（贡献 6）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.11744" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

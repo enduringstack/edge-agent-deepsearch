@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Gen-TAS: A Generative AI-Aided Hardware-Software Task Allocation Framework for FPGA-GPP Heterogeneous Systems</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-28 · Mary Kong; Yuqin Zhao; Semih Vazgecen; Cristian Sestito; Themis Prodromakis / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">应用:RAG</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Gen-TAS 用知识增强大模型帮助设计者为 FPGA 与通用处理器异构系统分配软硬件任务，并生成符合延迟、功耗和资源目标的可解释方案。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 CNN 和软件无线电负载上，面向延迟选择的方案相对全通用处理器基线最高分别加速 2.45 倍和 92.53 倍。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">它结合任务图分析、历史实现知识的 RAG、多方案生成和人工选择，再由确定性后端把分配决策转换为可复现的 FPGA SoC 实现。</span></div>
-<div class="score-reason">评分依据：该框架直接服务 FPGA 异构端侧系统的性能与功耗权衡，连接生成式 AI 决策和可复现硬件实现；贡献较强，但 Agent 推理本身并非部署在终端执行。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-28 · Mary Kong; Yuqin Zhao; Semih Vazgecen; Cristian Sestito; Themis Prodromakis / arXiv</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">应用:RAG</span><span class="tag">硬件:FPGA</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">FPGA 加通用处理器的异构系统里，哪些任务该放硬件、哪些放软件，一直靠专家经验；Gen-TAS 让大模型来给方案。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在卷积网络和软件无线电负载上跨多个大模型实验，分配结果稳定且符合给定目标；在面向时延的目标下，按所选策略实现的方案取得了相应改进。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把任务图分析和检索增强生成结合，让大模型的推理建立在历史实现知识之上并生成多套可解释策略，再由人工选择和确定性后端把决策映射成可复现的 FPGA 片上系统实现。</span></div>
+<div class="score-reason">评分依据：面向 FPGA 异构系统的软硬件划分，属于端侧部署工具链，但用的是云端大模型做设计辅助而非端侧推理，端侧契合度中等。用检索增强把大模型接进设计流程是合理工程整合。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.28160" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

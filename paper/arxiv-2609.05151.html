@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Large Language Models with At Most One Spike per Neuron</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Large Language Models with At Most One Spike per Neuron</h1>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-09-04 · Zhuoya Zhao; Parsa Omidi; Aref Jafari; Richard Naud / arXiv</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span><span class="tag">硬件:神经形态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">脉冲神经网络靠事件驱动的稀疏计算省电，这篇用「每个神经元最多发一次脉冲」的首次脉冲时间编码把大语言模型整个搬成脉冲网络。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">论文报告：在 BERT 和 GPT-2 上，自然语言理解和常识推理表现与对应的人工神经网络相当，但语言建模困惑度仍有明显差距；这是已知首次用首次脉冲时间编码把脉冲大模型扩到 15 亿参数，论文还给出了脉冲相关能耗的估算。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以往首次脉冲时间编码只能用在特定结构上，层归一化、矩阵乘法这些模块编不了；作者提出一种基于参照的策略，专门编码嵌入层、层归一化、注意力相关运算和 dropout 四个核心模块，从而搭出一个完全基于该编码的脉冲网络并端到端训练。</span></div>
+<div class="score-reason">评分依据：脉冲网络是端侧低功耗推理的相邻路线，这篇首次把该编码方式扩到 15 亿参数规模，对神经形态硬件上的语言模型是实质推进；不过还没有真实设备部署，且语言建模仍有差距。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.05151" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

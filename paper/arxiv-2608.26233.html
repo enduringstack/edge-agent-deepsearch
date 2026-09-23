@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Pruning Binarized Neural Networks: A Dedicated Framework and Globally Weighted Algorithms</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-26 · Roan Rubiales; Jean Pierre David / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">硬件:MCU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作提出面向 FPGA 和微控制器部署的二值神经网络剪枝框架，在训练中冻结并移除低价值连接以缩小模型。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">VGG11 在剪除 70% 参数时保持准确率不变，而论文所比较的既有方法在相同条件下可剪除 41%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">框架在 PyTorch 中跨网络层计算全局加权重要性，对低权重连接逐步冻结和剪除，并保留适合二值运算硬件实现的模型结构。</span></div>
-<div class="score-reason">评分依据：目标明确是 FPGA 与微控制器上的紧凑推理，端侧相关性高；全局加权冻结与剪枝框架改善了压缩比例，但属于成熟压缩路线上的推进，贡献度中等。</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-26 · Roan Rubiales; Jean Pierre David / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:量化</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:FPGA</span><span class="tag">硬件:MCU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">二值化能把网络压到极致，适合 FPGA 和单片机，但现有剪枝方法对二值表示不适用、也换不来真实的硬件收益。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">作者提供一个基于 PyTorch 的研究框架，内置冻结和剪枝机制来设计和优化二值网络，支持快速可复现地评估现有方法和原型化新方法，并在此之上提出全局加权的剪枝算法。</span></div>
+<div class="score-reason">评分依据：目标硬件明确是 FPGA 和单片机这类受限边缘硬件，且强调剪枝要换来真实硬件节省，端侧契合度高。贡献以框架和算法组合为主，属于扎实的工程研究。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.26233" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PAANI : On Device Visual Evidence Fusion and Explainable Guidance for River Robot Simulation</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>PAANI : On Device Visual Evidence Fusion and Explainable Guidance for River Robot Simulation</h1>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-09-17 · Savio Cardoz; Santhiya Rajan / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:编译部署</span><span class="tag">方向:多模态</span><span class="tag">硬件:MCU</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">PAANI 把河道巡检机器人的感知到导引整条链路放在 Arduino UNO Q 这种极受限的板子上，并让每条建议都能说明依据。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">项目自训的 YOLO11n 检测器加定制的 MobileNetV3 Small 语义分割器，按时间戳对齐做证据融合；有界跟踪提供目标持续性，走廊策略把水面标签、被接受的检测、紧急程度和掩码不确定度合起来判断，最终建议会把支撑证据和策略理由一并输出。</span></div>
+<div class="score-reason">评分依据：在 Arduino 级别的硬件上跑视觉融合并保留可解释链路，是资源极限场景下的扎实工程实现。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.22353" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

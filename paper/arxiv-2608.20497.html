@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Bern2Edge: A Neurosymbolic Compiler for Edge Deployment via Bernstein Polynomial Networks</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-20 · Malak Gamal El-Din; Yifan Zhang; Yasser Shoukry; Sitao Huang; Salma Elmalaki / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:蒸馏</span><span class="tag">方向:能耗功耗</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作提出 Bern2Edge，把训练好的神经网络直接转换成适合 FPGA 的 Bernstein 多项式网络，同时提供高精度查表实现和可解释规则实现。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在相同压缩条件下，准确率比 ReLU 方案最高提高 2.12 个百分点；在 AMD Xilinx KV260 上，相较 W8A8 教师模型时延最高降低 99.8%、BRAM 使用最高降低 95.2%，准确率差距保持在 0.5 个百分点内。规则路径可减少最多 89.0% 的 DSP 使用，总代价为 1.5 个百分点准确率。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">框架通过知识蒸馏把前馈教师网络改写为 Bernstein 多项式激活，再根据需求编译成保持精度的查找表电路，或从激活几何中提取带输入约束的符号规则。</span></div>
-<div class="score-reason">评分依据：框架在 KV260 和低功耗 Spartan-7 FPGA 上完成部署，端侧相关性高；把蒸馏、可解释表示和硬件编译打通，并提供两条部署路径，贡献度中等。</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-08-20 · Malak Gamal El-Din; Yifan Zhang; Yasser Shoukry; Sitao Huang; Salma Elmalaki / arXiv</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:蒸馏</span><span class="tag">硬件:FPGA</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一个端到端编译框架，把训练好的神经网络转成适合边缘硬件的多项式表示，既能高保真部署也能给出可解释的符号规则。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在相同压缩约束下比 ReLU 网络准确率最高提升 2.12 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用知识蒸馏把预训练教师前馈网络转成以 Bernstein 多项式作激活的表示，再走两条部署路径：一条是基于查找表的高保真实现，另一条是从多项式激活几何导出的符号规则表示。</span></div>
+<div class="score-reason">评分依据：把训练、压缩和硬件综合打通到边缘部署，端侧相关性高；用 Bernstein 多项式同时换取硬件效率和可解释性的思路较新颖。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.20497" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

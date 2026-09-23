@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Event-Driven Language Models with Sparse Neural Activity for Neuromorphic Hardware</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-31 · Simon Richter; Ruhai Lin; Jason Yik; Taylor Kergan; Rui-Jie Zhu; Farshad Moradi; Jason Eshraghian / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效注意力</span><span class="tag">方向:记忆</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作为神经形态硬件设计了一类事件驱动语言模型，通过让大部分神经激活保持为零，减少边缘推理中的运算和能耗。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">模型在性能接近稠密版本时，将有效算术运算量最多降至四分之一；硬件映射分析预计，相较边缘 GPU 吞吐最高提升 37 倍、功耗最多降低 16 倍，相较未稀疏基线最高提升 5.4 倍。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">方法以量化线性注意力为基础，为每个投影学习独立阈值，把幅度较小的激活置零并保留离群值，再将稀疏事件映射到多核、多芯片神经形态架构。</span></div>
-<div class="score-reason">评分依据：目标硬件和优化指标都明确面向低功耗端侧推理，相关性高；可学习稀疏阈值与量化线性注意力的结合具有实用价值，但主要硬件收益来自映射分析而非真实芯片实测，贡献度中等。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-08-31 · Simon Richter; Ruhai Lin; Jason Yik; Taylor Kergan; Rui-Jie Zhu; Farshad Moradi; Jason Eshraghian / arXiv</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:量化</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:神经形态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把语言模型改造成事件驱动的稀疏激活形式，让它能跑在神经形态芯片上而不是 GPU 上。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">低于逐投影可训练阈值的激活被置零、同时保留关键离群值，性能与稠密模型相当而有效算术运算最多减少 4 倍；在多核多芯片神经形态平台上推算吞吐最高提升 37 倍、功耗最低降至 16 分之一。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在重度量化的线性注意力模型里引入逐投影可训练阈值制造稀疏激活，再把这种非结构化稀疏交给事件驱动的神经形态平台，在计算和通信两层都转化成实际吞吐，而 GPU 架构做不到这一点。</span></div>
+<div class="score-reason">评分依据：面向神经形态硬件的低功耗语言模型推理，是端侧极低功耗路线上的关键一环，端侧契合度高。把稀疏激活和事件驱动硬件绑定起来换吞吐，而不是停留在算法层面的稀疏率，贡献比较实。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.30439" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

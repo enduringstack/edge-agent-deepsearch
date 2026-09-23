@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Improving Natural-Language Combinatorial-Optimization Accuracy in Resource-Constrained Language Models via Formal Abstractions</h1>
 <div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-19 · Shrenil Shaun Sharma; Avi Sharma / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">SDDL 是面向小型、资源受限语言模型的神经符号调度框架，让模型先把自然语言问题整理成正式结构，再交给确定性编译器和求解器完成搜索。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 300 个调度实例上，两个最佳配置的可行率达到 55.3% 和 28.3%，高于直接生成的 23.7% 和 1.3%，以及生成求解器代码的 21.7% 和 7.0%；可行方案的中位最优差距为 0.0%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">语言模型只提取任务、资源、约束和目标，输出紧凑且与求解器对齐的表示；低层建模与组合搜索由确定性编译器和外部求解器执行。</span></div>
-<div class="score-reason">评分依据：通过形式化分工提升小模型处理复杂调度的能力，适合算力受限环境，但不涉及具体端侧部署；神经符号表示和独立验证结果有中等贡献。</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:工具调用</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">组合调度问题搜索空间极大，小模型直接从自然语言排班常常给出不可行解，这篇让小模型只负责翻译、把求解交给确定性求解器。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在一个 300 实例、多任务族的测试集上评估。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">神经符号框架把自然语言调度问题翻译成紧凑的、与求解器对齐的任务、资源、约束和目标表示，底层建模和搜索交给确定性编译器和外部求解器完成。</span></div>
+<div class="score-reason">评分依据：明确针对「大模型跑不动、只能用小模型」的资源受限场景做能力补偿，与端侧智能体诉求契合；神经符号分工的设计合理。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.18409" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

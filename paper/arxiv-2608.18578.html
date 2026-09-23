@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Compress and Forget: bitsandbytes Quantization Amplifies Proactive Interference in LLMs</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-19 · Shayan Shahrabi-Farahani; Dara Rahmati / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">模型:Qwen</span><span class="tag">模型:Phi</span><span class="tag">模型:Mistral</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作发现 bitsandbytes 低比特量化会加重大模型的主动干扰：同一信息被反复覆盖后，模型更容易取回旧值。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen2.5-7B、Mistral-7B 和 Phi-3.5-mini 上，INT4 在高干扰条件下均显著降低准确率；例如 Qwen 从 81.0% 降至 68.3%。INT4 下同键旧值侵入错误从 21.5% 升至 24.6%，INT8 在三个模型中的两个也出现较小但真实的损失。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者固定检索任务，分别测试 FP16、INT8 和 INT4/NF4，并用语义相似干扰、数字对照及分层消融定位问题，确认主要影响来自量化后的 Transformer 主干而非输出投影层。</span></div>
-<div class="score-reason">评分依据：研究揭示常用量化方案在长且持续更新上下文中的隐藏代价，对端侧低比特推理和 Agent 记忆有直接迁移价值，但没有具体设备部署；跨模型对照和机制消融使贡献度中等。</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-19 · Shayan Shahrabi-Farahani; Dara Rahmati / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">训练后量化现在是开源模型上线的默认路径，这篇检验它会不会放大大模型的「前摄干扰」——即反复被覆盖的值越改越记不住。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">INT4 量化在每个模型上都显著降低高干扰下的准确率，例如 Qwen 从 81.0% 掉到 68.3%，配对 McNemar 检验 p≤2.6×10⁻⁶。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 Qwen2.5-7B-Instruct、Mistral-7B-Instruct-v0.3、Phi-3.5-mini-instruct 三个架构不同的指令模型上，固定检索任务，比较 FP16、INT8 和 INT4/NF4 三档精度（均用 bitsandbytes）。</span></div>
+<div class="score-reason">评分依据：量化是端侧部署默认路径，这篇给出低比特会损害多轮状态记忆的量化风险证据，对端侧助理很有参考；实验设计严谨。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.18578" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Memristive-Friendly Hadamard Reservoir Computing: Structured, Multiplier-Free Recurrences at Scale</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-28 · Andrea Ceni; Gianluca Milano; Carlo Ricciardi; Claudio Gallicchio / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作提出适合神经形态与低资源硬件的结构化储备池网络，用快速 Hadamard 变换替代庞大的稠密循环矩阵。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 20 个分类和 7 个回归任务、最高 8192 维储备池上，效果可匹配稠密正交储备池并优于简单循环结构；硬件实现最高提速 50 倍，所需存储最多缩小约 1 万倍。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">循环变换由符号对角矩阵、置换和快速 Walsh-Hadamard 变换组成，不显式存储或乘以稠密矩阵，把参数量降至线性规模、计算量降至 O(N log N)。</span></div>
-<div class="score-reason">评分依据：计算与存储设计直接针对神经形态和受限硬件，端侧相关性高；结构化无乘法储备池带来显著效率，但适用模型类型较专门，贡献度中等。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-28 · Andrea Ceni; Gianluca Milano; Carlo Ricciardi; Claudio Gallicchio / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:CIM</span><span class="tag">硬件:神经形态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">储备池计算适合忆阻器硬件，但仍要一个稠密的递归矩阵，物理实现很贵；这项工作用结构化正交算子把它换掉。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用符号对角阵、一个置换和快速沃尔什-哈达玛变换组合出结构化正交算子，无需乘法器、参数量为 O(N)、每步运算量 O(N log N)，且从不显式展开成矩阵；理论分析给出严格的回声状态条件和设计时可预测的噪声响应。</span></div>
+<div class="score-reason">评分依据：面向忆阻器等新型端侧计算介质，免乘法器和线性参数量对硬件实现有直接价值，但离实际设备部署仍有距离。把稠密递归换成结构化正交算子有理论支撑，属于中等贡献。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.28295" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

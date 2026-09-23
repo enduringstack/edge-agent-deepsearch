@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Q-Strata: Hierarchical Bit Allocation for Mixed-Precision Quantization of Mixture-of-Experts LLMs</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-31 · Deokjae Lee; Sihun Chu; Hyun Oh Song / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:MoE</span><span class="tag">方向:评测基准</span><span class="tag">模型:DeepSeek</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Q-Strata 是面向 MoE 大模型的混合精度量化分配方法，用分层搜索决定各个 MoE 块和线性层应该采用多少比特。</span></div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-31 · Deokjae Lee; Sihun Chu; Hyun Oh Song / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:MoE</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">混合精度量化要给每个线性层分配比特数，MoE 模型每个块里有一堆专家，搜索空间大到没法穷举；Q-Strata 把它拆成两级。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">内层先用低成本代理指标为每个块缓存不同预算下的帕累托候选，外层再以完整量化模型的质量为目标，为各块联合分配预算。</span></div>
-<div class="score-reason">评分依据：混合精度量化可迁移到受限设备的 MoE 推理；其模型级联合优化解决了逐块独立分配的耦合问题，但论文没有直接展示端侧部署。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">内层用廉价代理为每个块缓存一条不同预算下的帕累托前沿候选，外层只需为每个块设定一个预算、并用组装后量化模型上的模型级目标来评估，从而把搜索从逐层选比特缩减成逐块选预算。</span></div>
+<div class="score-reason">评分依据：MoE 加混合精度量化是把大模型塞进受限内存的常见组合，对端侧部署有迁移价值，但实验面向通用推理，端侧契合度中等。双层分配是搜索空间压缩的合理设计，属于常见优化路线。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.30564" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

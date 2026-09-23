@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calibrating Small Language Models for Claim Check-Worthiness Detection</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Calibrating Small Language Models for Claim Check-Worthiness Detection</h1>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-31 · Pratuat Amatya; V Venktesh; Vinay Setty / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一家早期创业公司对每条待核查断言都跑大模型，成本和时延都受不了，小模型又不够准；这篇用一个轻量的推理时校准层补差距。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">NN-PPI 视基线模型大小和表现不同带来 12% 到 33.80% 的加权 F1 提升，让小模型达到大模型水平，并且还能进一步改进一个已在生产中部署的微调模型。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">提出预测驱动推理的逐点扩展 NN-PPI，作为推理时的事后轻量层校准模型预测，不需要重新训练底层模型。</span></div>
+<div class="score-reason">评分依据：动机直接来自成本和时延约束下的小模型替代，且校准层不需重训、便于在受限环境部署，端侧契合度中等偏上。把预测驱动推理做成推理时校准层是合理迁移，贡献中等。</div>
+<div class="source"><a href="https://arxiv.org/abs/2608.30731" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

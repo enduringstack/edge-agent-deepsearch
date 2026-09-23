@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Goodput Maximization for Large Language Model Edge Inference: A Two-Phase Maskable PPO Approach</h1>
 <div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-26 · Xiaojing Chen; Qi Zhang; Wei Ni; Shunqing Zhang; Yanzan Sun / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">TP-MPPO 是无线边缘网络中的 LLM 推理调度算法，在满足严格服务等级目标的前提下提高有效请求吞吐。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">仿真中，相比各项基线，系统奖励提升 33.3% 至 87.5%，并取得最高的有效吞吐。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">第一阶段用带动作掩码的 PPO 选择卸载位置，避免探索无效动作；第二阶段用闭式解分配上行带宽、用贪心算法分配下行带宽，两阶段交替到收敛。</span></div>
-<div class="score-reason">评分依据：研究直接针对边缘 LLM 服务的卸载、带宽和时延约束，调度收益明确；但结果来自仿真，属于边缘服务优化而非终端本地 Agent。</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:端云协同</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在无线边缘网络里跑大模型推理服务，这篇用两阶段强化学习同时决定任务往哪卸载和带宽怎么分。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">第一阶段用带动作掩码的近端策略优化决定任务卸载，掩码能避开非法动作、压缩动作空间；第二阶段对上行带宽给闭式解、对下行带宽用贪心算法，并把结果作为下一轮的即时奖励，两阶段交替直到收敛。</span></div>
+<div class="score-reason">评分依据：面向无线边缘网络的大模型推理服务，卸载决策和带宽分配都是端边协同的核心变量，端侧契合度高。做法是强化学习加闭式解的组合，属于常规优化思路，且结果基于仿真。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.25543" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

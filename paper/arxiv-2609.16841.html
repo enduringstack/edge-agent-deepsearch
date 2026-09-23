@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>StackTok: Accelerating VLMs Inference with Budget-Adaptive Visual Token Selection</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>StackTok: Accelerating VLMs Inference with Budget-Adaptive Visual Token Selection</h1>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-09-15 · Zhenbin Wang; Lei Zhang; Lituan Wang; Wei Huang; Yan Wang; Zhenwei Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">给视觉语言模型挑视觉 token，按问题类型和 token 预算自动在「相关性优先」和「覆盖优先」之间调节，不用重新训练。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在五个视觉语言模型、十个图像理解基准上，所有模型与预算组合中都排免训练选择器第一；在高分辨率 LLaVA-NeXT-7B 上只留 2880 个视觉 token 中的 160 个（5.6%）仍保留 95.26% 的全 token 性能。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用只看覆盖的贪心序列建一个按规模索引的覆盖参考，再用问题与视觉的亲和度熵调整覆盖目标，靠一个参考门控的交替策略在相关性和覆盖之间切换；高分辨率输入下按各切片的边际收益共享一个 token 预算。</span></div>
+<div class="score-reason">评分依据：视觉 token 剪枝是端侧多模态部署最直接的省算力手段，5.6% token 保住 95% 性能的量级很实用（相关性 7）。预算自适应的覆盖参考设计有新意（贡献 7）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.16841" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

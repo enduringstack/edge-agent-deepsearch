@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SemKV: Semantic Mixed-Precision KV Cache Quantization Guided by the Quality Cliff for Long-Context LLM Inference</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-28 · Daeha Lee; Do-Hyung Kim; Jae-Hong Kim / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">模型:Llama</span><span class="tag">模型:Mistral</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作提出 SemKV，用语义重要性指导 KV 缓存的混合精度存储，在不直接删除 token 的情况下压缩长上下文推理内存。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 900 个样本和 3 个随机种子上，KV 存储缩小 6.0 倍且未检测到统计显著的质量损失；TurboQuant-MSE 配置达到 7.9 倍压缩，并在比 FP16 剪枝少 1.5 倍预算时取得更好结果。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者先测出不同模型的 KV 量化精度断崖，再按语义重要性给 token 排序，并只使用断崖之上的相邻两档精度保存全部 token。</span></div>
-<div class="score-reason">评分依据：KV 缓存压缩可直接迁移到端侧长上下文推理，但实验未落到具体设备，相关性中等；利用精度断崖和语义排序进行无删减混合量化，贡献度中等。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-28 · Daeha Lee; Do-Hyung Kim; Jae-Hong Kim / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:量化</span><span class="tag">应用:长上下文推理</span><span class="tag">模型:Llama</span><span class="tag">模型:Mistral</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">KV cache 量化不是越压越差的平滑曲线，而是存在一个断崖；SemKV 把精度分配卡在断崖之上。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">Llama-3.1-8B-Instruct 用仿射量化时，在 2.322 比特以上与 FP16 在统计上不可区分，到 2.0 比特就崩塌，这个断崖在生成时量化和多轮对话中复现并可迁移到 Mistral-7B；SemKV 实测存储降低 6.0 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">SemKV 不丢弃任何 token，而是用模型内部的重要性分数给 token 排序，再给它们分配断崖之上的两个相邻精度，用网格插值的方式达到均匀量化做不到的平均精度。</span></div>
+<div class="score-reason">评分依据：KV cache 是端侧长上下文的内存瓶颈，6 倍存储压缩可直接迁移到设备侧，但实验面向服务器推理，端侧契合度中等。发现质量断崖并据此重新定义混合精度的意义，是有信息量的观察。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.28911" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

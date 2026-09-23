@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Resource Constraints and Performance in Agentic AI Systems</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-28 · Amaz Salman; Malka Halgamuge; Teo Susnjak / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作用统一任务比较 OpenClaw 与 NanoBot 两类 Agent 系统，重点分析完成质量、运行时间和峰值内存之间的取舍。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">主实验中完整完成数为 31 对 25，差值置信区间为 -3 到 15，未能确认一方占优；在可插桩设置下两者各完整完成 26 次，但 NanoBot 的至少部分完成数为 43 对 26。OpenClaw 的运行时间长 83%，墙钟时间几何均值比为 2.98，峰值内存几何均值比为 19.44。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者采用成对任务基准和可插桩提示，逐次记录完成状态、墙钟时间、内存与失败过程，并用尝试级溯源解释汇总指标背后的资源消耗。</span></div>
-<div class="score-reason">评分依据：研究直接量化 Agent 系统的时间和内存开销，对选择轻量端侧方案高度相关；贡献主要是资源感知评测与分析，而不是新的 Agent 算法，贡献度中等。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-28 · Amaz Salman; Malka Halgamuge; Teo Susnjak / arXiv</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:工具调用</span><span class="tag">方向:记忆</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体系统把语言模型和工具、记忆、状态管理、多步执行拼在一起，这篇实测这些机制带来的能力和开销各是多少。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">主基准上完整完成任务的比例 OpenClaw 为 31%、NanoBot 为 25%，六个百分点的差距对应的 95% 自助法区间是负 3 到正 15 个百分点，因此没有统计上确立的优劣；在带插桩的子集上两者完整完成率都是 26%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用配对的主基准和一个更细的插桩配对提示子集，把 OpenClaw 和 NanoBot 当作完整系统来对比，同时记录任务能力和运行开销。</span></div>
+<div class="score-reason">评分依据：资源开销是端侧运行智能体的硬约束，实测两套开源骨架的能力与代价有参考价值，但评测不在设备端进行，端侧契合度中等。诚实地给出区间并指出差距不显著，比宣称胜出更可信。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.27886" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

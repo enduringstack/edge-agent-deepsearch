@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AGM: Achievement-Grounded Memory for Closed-Loop Agents with Frozen VLA Policies</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-08-30 · Hongbo Gao; Zeyu Ni; Xin Wen; Siyu Xu; Ruifeng Li / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">AGM 为冻结的视觉语言动作策略加入以实际完成结果为依据的记忆，让机器人能在执行、核验和更新进度之间形成闭环。</span></div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-30 · Hongbo Gao; Zeyu Ni; Xin Wen; Siyu Xu; Ruifeng Li / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">冻结的视觉语言动作策略会开环执行一串动作，不知道自己做到哪一步；AGM 给它加一个由物理证据推进的进度记忆。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">它把任务拆成子目标并维护进度指针，只有视觉跟踪和跨视角比较确认当前动作确实完成后才推进记忆，同时用仅 243 万参数的验证头完成核验。</span></div>
-<div class="score-reason">评分依据：该方法研究具身智能体的可靠记忆与闭环执行，对机器人端侧 Agent 很相关；贡献在于用物理证据约束记忆更新，但摘要未说明推理具体运行在哪类终端硬件。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把任务表示成带进度指针的子目标序列，只有当前子目标被物理证据验证后才推进记忆；本体感知的交互线索决定什么时候验证，连贯点跟踪和语言条件的跨视角比对决定验证结果，全部由冻结基础模型经一个 243 万参数的验证头给出。</span></div>
+<div class="score-reason">评分依据：机器人执行闭环对时延敏感、天然偏向本地运行，243 万参数的轻量验证头也有端侧部署潜力，但论文没有给出设备端运行证据，端侧契合度中等偏上。用物理证据而非动作意图推进记忆，抓住了开环执行的真正病根。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.29537" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

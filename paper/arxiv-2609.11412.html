@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>X-AuT: Progressive Audio-Encoder Compression for Speech LLMs with Cross-Scale Distillation</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-09-11 · Haojun Zhang; Yi Zou; Min Chen; Qize Yu; Lianrui Fan; Xini Ding; Hao Li; Shuchang Zhou; Xianming Liu; Shiyu Huang / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span><span class="tag">应用:语音</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">本条目来自Haojun Zhang; Yi Zou; Min Chen; Qize Yu; Lianrui Fan; Xini Ding; Hao Li; Shuchang Zhou; Xianming Liu; Shiyu Huang，发布于本周，涉及AI相关技术动态。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、蒸馏、语音等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
-<div class="source"><a href="https://huggingface.co/papers/2609.11412" target="_blank" rel="noopener">查看原文 →</a></div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-10 · Haojun Zhang; Yi Zou; Min Chen; Qize Yu; Lianrui Fan; Xini Ding; Hao Li; Shuchang Zhou / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span><span class="tag">应用:语音</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把语音大模型的音频编码器逐步剪掉几层来降推理成本，再用跨尺度蒸馏把精度补回来。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在十个中英文公开基准上，把 Qwen3-ASR-0.6B 的音频编码器从 18 层压到 16 层反而把宏平均错误率从 5.61% 降到 5.27%；14 层版本为 5.75%，音频塔参数少 20.7%；1.7B 老师在同一配方下平均错误 5.55%，而自蒸馏为 8.45%；渐进 18 到 14 层剪枝优于直接剪到 14 层（5.75% 对 6.73%）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用短行为探针挑要保留的层组合，再通过表示对齐、跨尺度蒸馏、有计划的学生策略监督和 LoRA 微调恢复被剪模型；语言模型主干冻结，只让注意力 LoRA 适配器和绑定的输出嵌入参与蒸馏。</span></div>
+<div class="score-reason">评分依据：压缩语音识别模型的编码器直接降低端侧语音链路的推理成本（相关性 6）。渐进剪枝优于直接剪枝的对照有价值（贡献 6）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.11412" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

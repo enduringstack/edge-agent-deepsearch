@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Trajectory-Level Speculative Decoding for Diffusion Language Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-27 · Tianxiang Pan; Baitao Gong; Mo Guang; Hongwei Yong; Tianpeng Jiang; Yaqian Li; Zheng Cao; Kaiwen Long / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作把扩散语言模型的推测解码从单个候选扩展到候选轨迹，以减少生成过程中反复验证带来的迭代次数。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">生成迭代次数减少 30% 至 40%，每步接受 token 数从 2.6 提高到 4.3；相较原始扩散解码提速 7 至 14 倍，相较 Fast-dLLM 提速 1.3 倍，准确率下降低于 1%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">方法按置信度构建候选树，结合块级并行双向掩码与跨块推测，并通过对轨迹漂移的刻画控制接受和回退。</span></div>
-<div class="score-reason">评分依据：推测解码能降低生成式模型推理时延，可迁移到端侧推理栈，但论文未在端侧设备验证，相关性中等；轨迹级候选和漂移控制具有一定新意，贡献度中等。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-27 · Tianxiang Pan; Baitao Gong; Mo Guang; Hongwei Yong; Tianpeng Jiang; Yaqian Li; Zheng Cao; Kaiwen Long / arXiv</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">扩散式语言模型靠反复去噪并行出 token，但置信度一低就退化成一次只出一个；这篇把投机解码搬到去噪轨迹这一层。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用置信度分层的树搜索构造候选去噪轨迹，再用双向注意力掩码做分块并行验证；还引入跨块投机，利用扩散模型的双向结构做跨块前瞻；作者形式化了该方法何时是精确的，并指出轨迹漂移是提高并行度的根本代价。</span></div>
+<div class="score-reason">评分依据：扩散式语言模型是端侧低时延生成的候选路线，轨迹级投机对单请求场景收益明显，但论文没有设备端实测，端侧契合度中等。把投机对象从 token 序列换成去噪轨迹并给出精确性条件，是有实质的范式扩展。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.27514" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

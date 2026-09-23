@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A Layer Importance Metric for Quantization Accounting for the Speed-Quality Trade-off in Autoregressive Models</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-27 · Artem Safronov / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">模型:Gemma</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项方法用一个联合指标判断小语言模型中哪些层最值得量化，同时权衡质量损失和实际推理加速收益。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在多种模型架构上的评估显示，其加速收益预测误差约为 4%；分析还指出前馈网络块和嵌入矩阵是 Gemma 3 1B 的优先加速目标。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">它用归一化信噪比估计信息保留，用 roofline 延迟模型估计速度收益，再把两者组合成可调的层级优先系数，无需逐个方案实际运行。</span></div>
-<div class="score-reason">评分依据：论文明确面向内存和算力有限设备上的小模型量化，能降低昂贵搜索成本并提高工程可预测性；方法贡献实用，但摘要未给出真实设备端到端加速数据。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-27 · Artem Safronov / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">小模型装在内存和算力都有限的设备上，一刀切量化反而伤精度；这篇给出一个同时考虑质量和速度的分层重要性指标。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">对 Gemma 3 1B 做剖析后发现前馈网络模块和词嵌入矩阵是最值得加速的目标。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把基于归一化信噪比的信息保留度和基于屋顶线模型的吞吐收益两个正交指标合成一个优先级系数，质量分用模拟量化估计、速度分用屋顶线建模估计，都不需要真正执行，从而可调地在速度和质量之间取舍。</span></div>
+<div class="score-reason">评分依据：问题设定就是内存和算力受限设备上的小模型自回归推理，且以 Gemma 3 1B 这种端侧常用尺寸为分析对象，端侧契合度高。做法是把两个已有指标做加权组合，创新度有限。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.26926" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

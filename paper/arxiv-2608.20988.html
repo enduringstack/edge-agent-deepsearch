@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Jacobian-guided Noise Injection for Quantization Robustness in Large Language Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-21 · Deepanshu Pandey; Arnav Chavan; Nahush Lele; Sankalp Dayal; Deepak Gupta / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作为低位大模型量化设计雅可比引导的噪声注入，专门缓解自注意力 softmax 对离群值和离散误差过于敏感的问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">低位量化实验中，SigLIP 在 ImageNet-1K 的 Top-1 准确率相对最多提升 37%，语言模型在 WikiText 上的相对困惑度最多改善 40%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先用理论分析把量化退化与 softmax 雅可比范数联系起来，再按局部注意力敏感度计算高斯噪声方差，把零均值噪声注入注意力前 logits 进行训练。</span></div>
-<div class="score-reason">评分依据：提高低位量化鲁棒性可迁移到资源受限推理，但未展示具体端侧设备；从敏感度理论推导噪声强度并跨视觉、语言模型验证，贡献度中等。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-21 · Deepanshu Pandey; Arnav Chavan; Nahush Lele; Sankalp Dayal; Deepak Gupta / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效注意力</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型量化时 softmax 对离群值特别敏感，这篇用一种按敏感度注入噪声的训练策略提升量化鲁棒性。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在主流大模型架构上相对常见训练后量化方法取得最高 37% 的相对改善。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">理论上论证压住 softmax 雅可比矩阵的范数能约束量化带来的性能损失，据此在注意力 logits 上注入零均值高斯噪声，噪声方差直接由雅可比 Frobenius 范数导出，从而给出最优噪声强度而不是靠启发式。</span></div>
+<div class="score-reason">评分依据：量化鲁棒性对端侧低比特部署有直接迁移价值，但论文本身未做设备端验证；从雅可比范数推出噪声方差的理论依据较清晰。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.20988" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

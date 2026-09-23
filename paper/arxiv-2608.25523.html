@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TOPAS: Workflow-Aware Prefix-State Scheduling for Multi-Agent LLM Serving</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-26 · Hongqiu Ni; Han Tian; Chi Zhang; Guopeng Li; Haisheng Tan / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">TOPAS 是多智能体 LLM 服务的工作流感知调度器，同时决定保留哪些智能体前缀 KV 状态以及下一步执行哪些请求。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">相对各负载的最佳基线，合成工作流的平均和 P99 任务完成时间最高分别降低 39.8% 和 49.4%；MetaGPT-SOP 平均降低 9.8%，MetaGPT-TL 平均和 P99 分别降低 22.0% 和 26.6%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">它按任务剩余最长服务路径和后续前缀复用收益给调度后状态打分，同时计算前缀搬移与抢占成本，并用任务级老化避免饥饿。</span></div>
-<div class="score-reason">评分依据：前缀 KV 缓存和多智能体工作流调度属于推理服务核心栈，性能收益清晰且已集成 SGLang；但它优化的是共享 GPU 服务，不是设备端 Agent。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-26 · Hongqiu Ni; Han Tian; Chi Zhang; Guopeng Li; Haisheng Tan / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:调度服务</span><span class="tag">方向:云端serving</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多智能体服务里给每个智能体留长系统提示的 KV 缓存能加速后续调用，但也会吃掉并发批处理的显存；TOPAS 同时决定留谁和先跑谁。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">现有调度器要么只顾前缀命中率、要么只顾整体工作流推进，在共享 KV 预算下单独优化任何一边都可能因为下游延迟或频繁替换前缀而拖长任务完成时间；TOPAS 把保留哪些智能体前缀和调度哪些请求执行放在一起做决策。</span></div>
+<div class="score-reason">评分依据：前缀缓存与显存预算的取舍在端侧同样存在且更紧，思路可迁移，但论文面向 GPU 服务端多智能体服务，端侧契合度中等。联合决策比单目标优化更合理，属于中等改进。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.25523" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FL-MAESTRO: Multi-Agent LLM Orchestration for Resource-Constrained Federated Learning</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-20 · Jiajun Wu; Zirui Wang; Jiayu Zhou; Qiang Ye; Steve Drew / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:联邦学习</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">FL-MAESTRO 用多个大模型智能体在联邦学习每一轮共同决定通信拓扑、客户端资源分配和模型聚合方式，以适应边缘设备和链路随时上下线的情况。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在非独立同分布 CIFAR-10 实验中，准确率与最强节能基线相当，同时把每轮浪费的能耗从超过三分之一降到接近零。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">三个专业智能体分别分析拓扑、资源和聚合决策，协调智能体合并结果，再由非大模型检查器验证可行性；系统还根据预测故障名单提前排除不会被聚合的客户端。</span></div>
-<div class="score-reason">评分依据：直接面向动态边缘网络中的联邦学习资源与能耗管理，端侧相关性高；多智能体联合运行时决策和非模型可行性检查有中等贡献。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-20 · Jiajun Wu; Zirui Wang; Jiayu Zhou; Qiang Ye; Steve Drew / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:端云协同</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">联邦学习每一轮都要同时决定通信拓扑、各客户端资源分配和聚合规则，这篇让三个大模型智能体各管一个决定。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">三个专职大模型智能体分别分析拓扑、资源和聚合，协调者把三份分析合成一个决定，再由一个非大模型的可行性检查确认后才执行该轮；编排器还会读服务器的预测失败名单，提前剔除那些更新注定聚合不上的客户端。</span></div>
+<div class="score-reason">评分依据：面向资源受限联邦学习的运行时决策，与端侧协同训练直接相关，但大模型编排跑在服务器侧；多智能体分工加可行性校验的设计合理，属于常见范式组合。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.20518" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

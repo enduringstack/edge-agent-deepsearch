@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CoVeR: Coverage-Based Token Pruning for Multi-View 3D Reasoning in VLMs</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-09-09 · Nhat-Tan Bui; Varshini Elangovan; Arun Reddy Anugu; Sreyas Mohan; Wei Ye; Dilin Wang; JQ Huang; Rakesh Ranjan; Aviral Chharia; Fernando De la Torre / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">本条目来自Nhat-Tan Bui; Varshini Elangovan; Arun Reddy Anugu; Sreyas Mohan; Wei Ye; Dilin Wang; JQ Huang; Rakesh Ranjan; Aviral Chharia; Fernando De la Torre，发布于本周，涉及AI相关技术动态。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-09-09 · Nhat-Tan Bui, Varshini Elangovan, Arun Reddy Anugu, Sreyas Mohan, Wei Ye, Dilin Wang, JQ Huang, Rakesh Ranjan, Aviral Chharia, Fernando De la Torre / HuggingFace Daily</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多视角图片喂给视觉语言模型做三维推理会产生上万冗余 token，这套免训练选择器只看 token 坐标按空间覆盖挑。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在三个三维推理基准上都超过此前最好方法，并作为即插即用模块在四个视觉语言模型上泛化；摘要截断未给出完整的保留比例数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">发现空间覆盖度与三维推理表现相关，于是设计一个确定性、免训练、只用 token 坐标的选择器，挑出能覆盖场景每个区域的 token，从而既能严格满足每场景的 token 预算，又避免体素化方法的饱和和重要性方法的近重复选择。</span></div>
+<div class="score-reason">评分依据：视觉 token 剪枝是端侧多模态部署最直接的省算力手段，免训练更易落地（相关性 6）。以空间覆盖为判据的确定性选择器有新意（贡献 6）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2609.08345" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

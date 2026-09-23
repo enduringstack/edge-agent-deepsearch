@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Llama-Mobile: Efficient 2.7-Bit Quantization of VLMs</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-21 · Luka Ribar; Jeevan Bhoot; Douglas Orr / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">模型:Llama</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作提出面向手机的视觉语言模型量化框架，把大模型压缩到可在 Arm CPU 上高效执行的非整数低比特格式。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">Llama 3.2 11B Vision Instruct 被压缩为 3.7 GB，权重平均每参数 2.7 bit、激活为 8 bit，同时在标准视觉问答任务上保持较强表现。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">量化流程由模型自行生成校准和训练数据，无需原始训练环境，并使用专为 Arm CPU 执行设计的 2.7 bit 参数格式。</span></div>
-<div class="score-reason">评分依据：工作直接针对移动设备和 Arm CPU 上的视觉语言模型推理，端侧相关性高；自生成数据的量化流程与 2.7 bit 执行格式具有工程价值，贡献度中等。</div>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-08-21 · Luka Ribar; Jeevan Bhoot; Douglas Orr / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:多模态</span><span class="tag">硬件:CPU</span><span class="tag">方向:编译部署</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把视觉语言模型压到手机能跑的量级，提出一个每参数 2.7 比特的量化格式，专门为 Arm CPU 高效执行设计。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">把 Llama 3.2 11B Vision Instruct 压到 3.7GB（激活 8 比特），在一组标准视觉问答任务上仍保持较强性能。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">量化流水线用模型自己生成校准训练数据，因此不需要拿到原始训练环境；再配一个 2.7 比特每参数的新格式，保证在 Arm CPU 上能高效解码执行。</span></div>
+<div class="score-reason">评分依据：明确以手机部署为目标并给出 Arm CPU 可执行的 2.7 比特格式，端侧相关性高；非整数比特格式加免训练环境的校准流水线有实质创新。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.21134" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

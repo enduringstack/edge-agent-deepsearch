@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Activation Outliers Matter: Robust Recovery for Quantized Multimodal LLMs</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-27 · Tanzila Rahman; Mehran Taghian Jazi; Yunke Peng; Zhuang Ma; Anandharaju Durai Raju; Yao Wang; Xing Huang; Hei Yi Mak / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作研究多模态大模型的超低位量化，发现激活值离群是 4 位部署性能下降的主要来源，并提出轻量残差恢复方法 RFQ。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在主要超低位激活表示之外增加辅助量化残差通路，显式补偿量化误差；无需改模型架构，计算开销很小，并在 Wan2.2 与 Qwen3-VL 上验证。</span></div>
-<div class="score-reason">评分依据：低位多模态模型可降低计算和内存需求，适合向端侧推理迁移，但没有具体设备部署数据；定位激活瓶颈并提出轻量恢复方案，贡献度中等。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-27 · Tanzila Rahman; Mehran Taghian Jazi; Yunke Peng; Zhuang Ma; Anandharaju Durai Raju; Yao Wang; Xing Huang; Hei Yi Mak / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多模态大模型压到 4 比特会明显掉点，这篇把锅具体归到激活量化上，并给出一个轻量修补方案。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">分析显示 MXFP8 几乎无损，而激进的 4 比特量化会显著退化；消融实验确认激活量化才是主要损失来源，其贡献明显大于权重量化。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">提出残差回退量化，在主要的超低比特激活表示之外补一路辅助的激活重建，专门救回被离群值破坏的部分。</span></div>
+<div class="score-reason">评分依据：超低比特多模态模型是端侧部署的主要形态，把损失归因到激活量化对落地有直接指导意义，但实验面向新硬件低精度格式而非具体端侧芯片，端侧契合度中等。残差回退是常见的补偿思路。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.26581" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

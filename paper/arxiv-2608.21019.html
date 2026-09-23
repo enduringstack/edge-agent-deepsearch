@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Target-Aware Calibration Data Selection for Preserving Uncertainty in Quantized Language Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-21 · Zhen Yang; Sizai Hou; Kaiwen Zheng; Yaofang Liu; Liang He; Yixuan Chen; Kangning Cui / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作研究如何为语言模型量化挑选校准数据，使量化后的模型不仅保持准确率，也尽量保留原模型的置信度、决策边界和拒答行为。</span></div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-21 · Zhen Yang; Sizai Hou; Kaiwen Zheng; Yaofang Liu; Liang He; Yixuan Chen; Kangning Cui / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:安全隐私</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">量化时挑什么校准数据，通常只盯准确率，这篇把「量化后模型的置信度和弃答行为还准不准」当成首要目标。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">DPQ 在量化前读取全精度模型的预测，用高疑惑样本与通用锚点组成面向具体目标的校准混合；不同配方分别对齐答案边界、置信度、熵或更广泛的选择题行为。</span></div>
-<div class="score-reason">评分依据：校准数据选择是低比特模型部署的重要环节，保留不确定性对资源受限推理中的拒答和风险控制有直接迁移价值；贡献在于把校准从统一配方改为面向部署目标的选择问题，并在多模型、多基准上展示不同目标需要不同配方。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把校准数据选择形式化为分布保持风险和边界保持风险两个目标，并用混合失配论证说明为什么没有一套校准配方能适配所有部署目标；据此提出 DPQ，用全精度模型的预测来构造与目标场景对齐的校准集。</span></div>
+<div class="score-reason">评分依据：端侧模型量化后是否还敢于弃答、置信度可不可信，直接关系可用性，迁移价值明确；把不确定性保持写成优化目标的切入点较新。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.21019" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CropCop: An Auditable 120-Class Plant-Health Model from Benchmark Reconstruction to a Quantised Runtime Artifact</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-26 · Rana Muhammad Ahmed; Sabahat Abbas / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:蒸馏</span><span class="tag">方向:评测基准</span><span class="tag">硬件:手机</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">CropCop 是一个覆盖 120 类植物健康状态的可审计识别系统，从数据去重、模型训练一直验证到最终量化 ExecuTorch 运行文件。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">最终 22.60 MiB 的 ExecuTorch/XNNPACK PTE 直接运行时达到 98.46% 准确率和 96.23% macro-F1；相对转换后的 INT8 图，16,363 个样本中仅 6 个 Top-1 决策改变。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先审计并重建无跨划分重复的 109,107 张图像基准，再训练紧凑 MobileNetV4，使用验证集选择动态激活与逐通道权重量化，最后直接执行并核验 PTE 产物。</span></div>
-<div class="score-reason">评分依据：量化模型和 ExecuTorch/XNNPACK 产物具备手机端迁移价值，但论文没有在真实 Android 硬件或未见农场环境中验证；端到端审计链较完整，贡献度中等。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-26 · Rana Muhammad Ahmed; Sabahat Abbas / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span><span class="tag">方向:编译部署</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">很多植物健康识别模型的分数看着很高，其实建立在重复图片和从没被真正评测过的运行时文件之上；CropCop 把整条证据链补齐。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">从 117546 张审计过的图像出发，确认 3233 组跨划分边界的重复关系后，冻结出一个 109107 张图、可信泄漏组之间零交叉、最大类与最小类比为 151.7 的基准；完整微调的 DINOv3 ConvNeXt-Tiny 参考模型在锁定的内部测试集上取得 98.51% 准确率和 96.87% 宏平均 F1。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">系统覆盖 120 个实际植物健康类别，从语料重建开始，一直做到直接执行最终量化产物，确保被评测的就是真正部署的那个文件，并配一个紧凑的移动端模型。</span></div>
+<div class="score-reason">评分依据：强调评测对象必须是最终量化运行时产物而不是训练时的模型，这一点正是端侧部署最容易失真的环节，端侧契合度较高。数据审计和证据链做得很细，方法本身是工程规范化。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.25539" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

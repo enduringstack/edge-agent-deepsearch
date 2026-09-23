@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ReCache: Efficient KV Cache Reuse and Compression for Tool-Augmented LLM Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-20 · Yichu Fang; Sitong Wei; Haozhe Hu; Xiaoyu Shen / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">ReCache 是面向工具增强型大模型智能体的 KV 缓存框架，可独立缓存反复出现但排列组合不同的工具和技能描述，减少首 token 延迟与显存占用。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">资源级注意力的调用 F1 为 82.3%，与稠密方案的 82.4% 基本相当，同时首 token 时间加速 3.655 倍；完整框架将 KV 张量内存减少 92.43%，注意力计算加速 1.423 倍。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用资源级注意力消除不同工具描述之间的交叉依赖，并采用资源局部位置生成可重组 KV 块；随后只开放贡献较大的层和 KV 头路径，并剪掉非调用关键字段。</span></div>
-<div class="score-reason">评分依据：智能体工具模式的 KV 复用和压缩对本地推理有迁移价值，但未验证端侧设备；可组合缓存、选择性访问和完整量化收益构成中等贡献。</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-20 · Yichu Fang; Sitong Wei; Haozhe Hu; Xiaoyu Shen / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:工具调用</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">工具型智能体每次请求都要重新编码那些反复出现的工具和技能描述，前缀缓存又因为顺序不同用不上，这篇让这些描述可以独立缓存复用。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">资源级注意力在调用 F1 上与稠密方案持平（82.3% 对 82.4%），首 token 时间加速 3.655 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用「资源级注意力」去掉不同资源之间的交互并给每个资源本地位置编号，得到与组合顺序无关的 KV 块；再把资源可见性限制在少数贡献大的层与 KV 头路由上，并通过结构化和语义化裁剪只保留调用必需的字段。</span></div>
+<div class="score-reason">评分依据：工具调用场景的 KV 复用直接影响智能体响应时延，对端侧受限设备有明确迁移价值；顺序无关 KV 块的设计有创新。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.19662" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

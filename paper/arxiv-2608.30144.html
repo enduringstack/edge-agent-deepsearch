@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Rethinking Language's Role in Efficient VLA for Autonomous Vehicles: Toward Smarter, Trustworthy Driving</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-31 · Tongfei Guo; Lili Su / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这是一篇面向自动驾驶视觉—语言—动作模型部署的综述，讨论语言应在推理的哪个阶段、以多大频率参与，以减轻车载系统逐帧生成文本带来的时延和内存负担。</span></div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-31 · Tongfei Guo; Lili Su / arXiv</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">自动驾驶里用视觉语言动作模型能带来可解释性，但车上每一帧都要付推理代价；这篇系统梳理了语言到底该在推理时出现在哪一步。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者提出 Language Residue 分类框架，将现有方案分为仅在训练时使用语言监督、使用非文本潜变量推理、按需调用语言和逐帧生成语言四档，并从时延、参数量、内存、FLOPs 和 token 数五个部署维度进行比较。</span></div>
-<div class="score-reason">评分依据：工作直接讨论自动驾驶模型的车载推理成本，对端侧多模态系统部署高度相关；主要贡献是统一分类与评测视角，未提出并实测新的部署系统，因此贡献度中等。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">提出语言残留分类法，把方法分成只在训练时用语言监督、隐式非文本推理、按条件调用语言、每帧完整生成四档，再按时延、参数量、内存、算力和 token 五个部署维度给代表性方法逐一打标，在 nuScenes、NAVSIM、Bench2Drive 等开闭环基准上对比。</span></div>
+<div class="score-reason">评分依据：车载推理的时延和内存预算与端侧场景同构，按推理时语言用量分档的视角对任何端侧多模态部署都可直接迁移。内容是综述和分类法，没有新方法。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.30144" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

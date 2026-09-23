@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LLMscope: Extracting LLM Assets from Edge AI Chips via Optical Probing</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-26 · Dev Mehta; Lily Dukette; William Folan; Olivia Kochol; Noah Solomon; Shahin Tajik; Fatemeh Ganji / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLMscope 揭示边缘 AI 加速器运行大模型时的物理侧信道风险，可通过光学探测提取模型参数和中间推理状态。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 FPGA 大模型加速器上，实验完整恢复了目标嵌入、注意力、量化 MLP 权重、激活及其他状态；分析还表明直接恢复所需成像工作量随目标资产规模线性增长。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">使用激光电压成像定位片上存储和计算子电路，利用加速器跨地址、模块和层复用缓冲区与计算单元的特点，在推理期间读取资产，并设计部分位缺失时的恢复方法。</span></div>
-<div class="score-reason">评分依据：攻击对象明确是边缘 AI 芯片上的大模型推理，揭示端侧部署容易忽视的物理安全面；从实机攻击到恢复界限分析较完整，贡献度中等。</div>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-08-26 · Dev Mehta; Lily Dukette; William Folan; Olivia Kochol; Noah Solomon; Shahin Tajik; Fatemeh Ganji / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:量化</span><span class="tag">硬件:FPGA</span><span class="tag">硬件:NPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型推理搬到端侧 AI 芯片上后多了一类物理风险：有人可以用激光探测直接从芯片里读出模型资产。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">作者用激光电压成像在一块基于 FPGA 的大模型加速器上实施攻击，成功提取出词嵌入、注意力、量化后的前馈网络权重、激活值和其他推理中间状态。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">推理过程中模型参数和中间状态会反复被载入片上存储与计算子电路；由于这类加速器在不同地址、分块、模块和层之间复用同一批缓冲区和计算单元，攻击者只要探测不同存储位置就能读出资产值。</span></div>
+<div class="score-reason">评分依据：攻击目标就是端侧 AI 加速器，且在真实 FPGA 加速器上做出了实证，端侧契合度很高。把光学探测这条物理侧信道用在大模型资产提取上，是端侧部署安全里此前被忽视的一面。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.25321" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

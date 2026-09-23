@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FreeToken: Efficient Edge-Native MoE Serving with Bandwidth-Adaptive Execution</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-17 · Shuo Yang; Xiaoze Fan; Melissa Pan; Haocheng Xi; Zhe Wang; Shanlin Sun; Kurt Keutzer; Song Han / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:MoE</span><span class="tag">方向:端云协同</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">FreeToken 是面向个人电脑的本地 MoE 模型服务系统，可根据机器现有的 CPU、GPU、内存和带宽动态安排模型与计算，让超大开源模型及工具型智能体在消费级设备上运行。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">系统支持超过 20 个 MoE 模型，覆盖 8GB 显存笔记本到单张工作站 GPU；可在笔记本运行 35B 模型、游戏台式机运行 284B 模型，并在单张工作站 GPU 上运行 753B 的 GLM-5.2。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">它联合设计模型布局与加载、专家驻留、CPU-GPU 协同、智能体状态复用和运行时内存管理，并随工作负载和硬件资源变化持续调整计算与模型状态的放置位置。</span></div>
-<div class="score-reason">评分依据：工作直接面向个人电脑上的超大 MoE 与工具型智能体推理，和端侧推理栈高度相关；贡献在于把模型加载、异构执行、状态复用和内存管理整合为可随带宽自适应的完整服务系统。</div>
-<div class="source"><a href="https://arxiv.org/abs/2608.16157" target="_blank" rel="noopener">查看原文 →</a></div>
+<div class="meta"><span class="score">18</span> <span class="tier school">学校预印本</span>  2026-08-19 · Shuo Yang, Xiaoze Fan, Melissa Pan, Haocheng Xi, Zhe Wang, Shanlin Sun, Kurt Keutzer, Song Han, Matei Zaharia, Chenfeng Xu, Ion Stoica / HuggingFace Daily</div>
+<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:MoE</span><span class="tag">方向:推理框架</span><span class="tag">方向:调度服务</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把个人电脑当成一个弹性的推理平台而不是「小号 GPU」，让笔记本和台式机也能跑前沿开源 MoE 大模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">支持 20 多个 MoE 模型和真实的编码、工具调用智能体，硬件从 8GB 显存的笔记本到单卡工作站；把笔记本可跑规模推到 35B、游戏台式机推到 284B、单张工作站显卡上跑起 753B 的 GLM-5.2。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">整条服务栈协同设计：模型布局与加载、专家驻留、CPU 与 GPU 分工、智能体状态复用和运行时内存管理都围绕两个现实——智能体负载的执行模式一直在变，边缘硬件的资源配比每台机器都不同；因此不锁定固定卸载策略，而是持续把计算和模型状态映射到当前真正可用的资源上。</span></div>
+<div class="score-reason">评分依据：面向个人电脑的 MoE 服务系统，并直接承载本机运行的编码与工具调用智能体，端侧相关性极高；整栈协同与动态资源映射的工程贡献很强。</div>
+<div class="source"><a href="https://huggingface.co/papers/2608.16157" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

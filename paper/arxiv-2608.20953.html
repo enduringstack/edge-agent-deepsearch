@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Quantization-Aware Healing: A Practical Recipe for Recovering Compressed, 4-Bit LLMs</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-21 · Bakbergen Ryskulov; Iker García-Ferrero; David Montero; David Jansen; Ali Hashemi; Jezabel R. Garcia; Antonio Tiene; Román Orús / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:蒸馏</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">模型:GPT</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作提出量化感知修复方案，用原始大模型重新指导经过结构压缩和 4 bit 量化的学生模型，恢复推理、数学、代码和长上下文能力。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 GPT-OSS 120B 压缩至 60B 并量化为 MXFP4 的流程中，学生模型在 9 个基准中的 7 个达到或超过其 bfloat16 来源模型，权重内存约减少 4 倍、参数量为教师模型的一半；达到相近峰值的速度约为匹配 QAT 基线的 7 倍。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">方法不让 4 bit 学生只拟合硬标签，而是直接从原始未压缩教师蒸馏，使结构压缩后的模型在量化状态下继续恢复能力并保持训练稳定。</span></div>
-<div class="score-reason">评分依据：方案降低压缩大模型的部署内存并改善低比特恢复，对端侧推理有直接迁移价值，但实验模型规模仍偏服务器级；量化与蒸馏联合修复的实用配方贡献度中等。</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-21 · Bakbergen Ryskulov; Iker García-Ferrero; David Montero; David Jansen; Ali Hashemi; Jezabel R. Garcia; Antonio Tiene; Román Orús / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">又做结构化压缩又量化到 4 比特之后模型会明显变笨，这篇给出一套把能力「治回来」的实用配方。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 GPT-OSS 120B 压到 60B 再转 MXFP4 的流水线上，QAH 学生模型在 9 个基准里有 7 个达到或超过它的 bfloat16 来源，权重内存约少 4 倍、参数量约为教师一半，并以 Hypernova-60B 开源；相比对照的 QAT 基线，达到相当峰值快约 7 倍且持续训练下保持稳定。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">不用常规的量化感知训练去拟合硬标签，而是让 4 比特学生直接从未压缩的原始模型蒸馏——因为结构化压缩过的模型本身就只是原模型的蒸馏近似，拿它当目标等于二次损失。</span></div>
+<div class="score-reason">评分依据：压缩加低比特后的能力恢复是端侧部署的必经环节，迁移价值明确；指出 QAT 目标选错并给出更稳的替代，贡献实在。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.20953" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

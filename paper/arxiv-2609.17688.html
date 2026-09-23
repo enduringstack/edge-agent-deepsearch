@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CapMem: A Benchmark for Caption-Based Episodic Memory in Egocentric Video</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>CapMem: A Benchmark for Caption-Based Episodic Memory in Egocentric Video</h1>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-09-15 · Dingli Liang; Yiqiao Xie; Yukai Huang; Zhaokai Wang; Weitong Cai; Guangwen Feng; Jifei Song; Zhensong Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究可穿戴助手能不能用文字字幕当长视频的情节记忆，配套发布了一个第一人称视频记忆问答基准。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">基准含 75 段共 33.7 小时视频和 1000 道选择题；在 20 分钟以上长视频上，30 秒和 60 秒字幕窗口的全覆盖字幕问答分别在 12 个模型里的 10 个和 8 个上优于直接视频问答；同视频子集上六个 Qwen 模型的等帧对照仍保持 3.22 和 2.55 分的平均增益；字幕引导的检索加验证流程再提升最多 5.3 分。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把长视频切成固定时长窗口先生成文字字幕作为可复用记忆，提问时先检索相关字幕再回视频核对，绕开视觉 token 预算和长上下文检索失败的问题。</span></div>
+<div class="score-reason">评分依据：针对可穿戴助手的帧预算和视觉 token 成本做记忆压缩，是端侧多模态助手的关键瓶颈（相关性 7）。字幕当记忆是常见思路，贡献主要在基准和系统对照（贡献 5）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.17688" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>
