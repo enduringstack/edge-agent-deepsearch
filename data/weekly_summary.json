@@ -1,35 +1,35 @@
 {
-  "overview": "本周端侧 AI 动态（09-09~09-15）：主线是硬件和运行时同时把「智能体跑在设备上」当成正式目标。联发科发布 2nm 的天玑 9600 Pro，用双 NPU 加智能体 AI 引擎把端侧可跑模型推到 30B，多核功耗降 61%、大模型预填充提速 51%；高通同周讲清下一代 Hexagon NPU 为何要为智能体重做架构，靠专攻 Transformer 的 Element Accelerator 和扩大 50% 的共享内存把更多流程留在片上。学术侧重心落在同一处：手机上用投机解码的验证窗口掩盖 MoE 专家的闪存搬运，手机 GPU 与多簇 CPU 的算子级协同调度，以及把投机解码和动态调频绑在一起解决发热与续航。同时有几篇实测在泼冷水——同一个 INT8 模型换硬件既可能慢 1.7 倍也可能输出不一致。开源侧 llama.cpp 0.4.1 扩了 Hexagon、Vulkan 等端侧后端并新增三值 MoE 架构，ONNX Runtime 1.30.0 补上 INT4 分页 KV 缓存和 Arm64 融合算子。",
+  "overview": "本周端侧 AI 动态（09-16~09-22）：主线是 AI 优先笔记本落地和端侧智能体拿到官方成绩单。9 月 21 日谷歌发布内置 Gemini 的 Googlebook，联发科同日推出 3nm、NPU 算力 55 TOPS 的天玑 CX C10 Max 与之配套，PC 侧助手被做进系统交互层而不再是独立应用。更硬的一条来自 9 月 16 日的 NVIDIA：TensorRT Edge-LLM 在单块 Jetson AGX Thor 上跑完 MLPerf 边缘智能体基准，1007 轮负载比 llama.cpp 参考实现快 6.4 倍。同一天 ExecuTorch v1.5.0 与 OpenVINO 2026.4.0 双双发版，前者扩成 C++ SDK 并补齐手机与 Cortex-M 后端，后者继续扩大 NPU 可跑模型。学术侧集中攻内存墙：TierKV 在三款手机 SoC 上把预填吞吐拉高最多 17.6 倍，Edge0 和 SSD-LLaMA 分别把 350 亿和万亿参数 MoE 塞进 24GB 显存与家用 PC。真正把智能体闭环放到设备上的工作也开始出现：本周有论文在无服务器可用的设备上实测工具路由该怎么分工，也有把下一最佳视角规划整体跑在 Jetson 上并给出帧率与每帧能耗的方案，另有工作用本地部署的小模型逐档评测 MCP 工具接口该拆多细。",
   "highlights": [
     {
-      "url": "https://www.mediatek.com/press-room/mediatek-dimensity-9600-pro-sets-new-standard-for-flagship-smartphone-chips",
-      "topic": "天玑 9600 Pro 把端侧模型推到 30B",
-      "why": "本周唯一给出手机端可跑模型规模和 NPU 功耗数字的旗舰芯片发布，双 NPU 加智能体 AI 引擎的分工直接决定下一代手机端侧模型的能力上限。"
+      "url": "https://developer.nvidia.com/blog/tensorrt-edge-llm-completes-the-mlperf-edge-agentic-benchmark-6-4x-faster-on-jetson-agx-thor/",
+      "topic": "端侧智能体跑通 MLPerf 基准",
+      "why": "NVIDIA 在单块 Jetson AGX Thor 上完整跑完 1007 轮智能体负载并给出 52.33 token/s 和 6.4 倍加速比，这是本周唯一一条可核对的端侧智能体端到端成绩。"
     },
     {
-      "url": "https://www.qualcomm.com/news/onq/2026/09/hexagon-npu-agentic-ai-architecture",
-      "topic": "高通把智能体需求写进 NPU 架构",
-      "why": "官方第一次系统解释「为什么智能体时代的手机需要换一套 NPU 架构」，Element Accelerator 和扩大 50% 的共享内存说明端侧瓶颈已经从算力转向片上数据驻留。"
+      "url": "https://blog.google/products-and-platforms/devices/googlebook/googlebook-built-in-intelligence/",
+      "topic": "Googlebook 把助手做进系统",
+      "why": "谷歌用 Magic Pointer、Rambler 和自建小组件三个入口把 Gemini 铺进笔记本交互层，标志 PC 侧 AI 从聊天窗口转向系统能力。"
     },
     {
-      "url": "https://arxiv.org/abs/2609.14643",
-      "topic": "手机上跑 30B MoE 的运行时",
-      "why": "用投机解码的多 token 验证窗口掩盖闪存搬运，在两个真实移动平台上比按需卸载快 4.83 倍，是本周把手机端侧大模型从演示推向可用的最硬一篇。"
+      "url": "https://www.mediatek.com/press-room/mediatek-dimensity-cx-c10-max-offers-flagship-performance-to-a-new-era-of-ai-first-laptops",
+      "topic": "55 TOPS 的 AI 笔电芯片",
+      "why": "联发科给出本周唯一一条带具体 NPU 算力数字的笔电级端侧芯片规格，可以直接拿来估算本地模型的推理预算。"
     },
     {
-      "url": "https://arxiv.org/abs/2609.16085",
-      "topic": "INT8 量化并不可移植",
-      "why": "跨七类硬件的受控实测推翻了「量化一次到处能跑」的默认假设：缺点积指令的核反而慢 1.7 倍，不同整数核之间预测结果还会不一致，做端侧部署前必须先看这一条。"
+      "url": "https://github.com/pytorch/executorch/releases/tag/v1.5.0",
+      "topic": "ExecuTorch 扩成 C++ SDK",
+      "why": "一次发版同时动了高通/Core ML/MLX delegate、Cortex-M 与 Ethos-U 目标和本地 LLM 服务三条线，是端侧部署工程师最该跟进的运行时变化。"
     },
     {
-      "url": "https://arxiv.org/abs/2609.09662",
-      "topic": "手机端侧推理的功耗和发热",
-      "why": "把投机解码与动态电压频率调节绑在一起，正面处理手机既缺算力又没风扇散热的真实约束，比单纯优化算子更贴近落地。"
+      "url": "https://github.com/openvinotoolkit/openvino/releases/tag/2026.4.0",
+      "topic": "OpenVINO 扩大 NPU 可跑模型",
+      "why": "NPU 上新增 FLUX.2-Klein 4B 与 Kokoro-82M，并把有界动态形状扩展到视觉超分，直接决定今年哪些模型能落到 AI PC 上。"
     },
     {
-      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.4.1",
-      "topic": "llama.cpp 扩展端侧后端覆盖",
-      "why": "本地推理事实标准的版本更新同时扩了 Hexagon、Vulkan、SYCL、OpenCL 后端并新增三值 MoE 架构支持，直接决定本地部署能选哪些模型。"
+      "url": "https://arxiv.org/abs/2609.21172",
+      "topic": "手机长上下文的多级 KV 缓存",
+      "why": "TierKV 在三款真实手机 SoC 上把预填吞吐提升最多 17.6 倍、常驻 KV 内存降低 12.5%–34%，是本周最贴近手机落地的一篇。"
     }
   ]
 }
