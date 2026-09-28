@@ -14,7 +14,7 @@
 6. **date 必须取自元数据**：arXiv 新稿写 `arxiv_date_basis=submitted` 并取提交日；更新扫描召回的旧稿写 `updated`，但只有主 agent 对比旧版、确认实验/方法/数据/代码/结论有实质变化并填写中文 `arxiv_revision_note` 后才能进入 run。仅改排版或摘要无实质变化必须丢弃。HF 条目取 HF 发布日；不许为塞进窗口改日期。
 7. **优先级（高→低，对应 source_tier）**：
    1. `官方动态`：24 个规范厂商/模型实验室官方来源（Apple/Samsung/Huawei/Qualcomm/MediaTek/Xiaomi/OPPO/vivo/Honor/Google/Microsoft/OpenAI/Anthropic/Meta/NVIDIA/Mistral/ModelBest/Qwen/StepFun/DeepSeek/Moonshot/Zhipu/MiniMax/Baichuan）
-   2. `开源大项目`：业界认可大项目重大 release（见 `docs/references/big-projects-whitelist.md`，如 vLLM/SGLang/llama.cpp/ExecuTorch/MLC-LLM/ADK/TensorRT/MediaPipe 等）
+   2. `开源大项目`：业界认可大项目重大 release（**清单以 `docs/references/big-projects-whitelist.md` 为准**，如 llama.cpp/ExecuTorch/MLC-LLM/ONNX Runtime/MNN/ncnn/MediaPipe/LiteRT/MLX/OpenVINO）。白名单只收端侧/边缘推理引擎和 Agent 应用；vLLM/SGLang/TensorRT/ollama 属服务端 serving 栈，不在边界内
    3. `公司项目`：快手/字节/腾讯/百度/美团/京东/拼多多/网易等公司独立或主导的研究（arXiv 或顶会，affiliation 命中公司，`vendors` + 权威 `affiliation_evidence_url` 必填）；只接受 arXiv PDF、OpenReview/Scholar 或认可论文出版页，GitHub repo/release 不是机构证据。证据未核实前先按 `学校预印本` 收录，不删除
    4. `学校顶会`：任何高校独立发表顶会顶刊
    5. `学校预印本`：任何大学作者发的 arXiv 预印本（非顶会但主题强相关），排序最低。新鲜端侧工作多先上 arXiv，这一档保证雷达不漏最新真东西。

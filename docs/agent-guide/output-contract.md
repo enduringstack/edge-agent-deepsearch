@@ -62,7 +62,7 @@ research_runs/<run_id>.json
 ## source_tier 口径
 
 - `官方动态`：24 个规范厂商/模型实验室的官方技术博客或官方产品发布。`paper_url` 必须命中官方域名白名单。排序最前。
-- `开源大项目`：业界认可的开源大项目重大 release/更新（见 `docs/references/big-projects-whitelist.md`，如 vLLM/SGLang/llama.cpp/ExecuTorch/ADK/TensorRT 等）。`paper_url` 必须是 `github.com` 仓地址。非白名单小仓不收。
+- `开源大项目`：业界认可的开源大项目重大 release/更新（**以 `docs/references/big-projects-whitelist.md` 的清单为准**，如 llama.cpp/ExecuTorch/MLC-LLM/ONNX Runtime/MNN/ncnn/MediaPipe/LiteRT/MLX/OpenVINO 等端侧推理引擎）。`paper_url` 必须是 `github.com` 仓地址。非白名单小仓不收。白名单刻意只收**端侧/边缘**推理引擎和 Agent 应用，vLLM/SGLang/TensorRT/TensorRT-LLM/ollama 这类**服务端 serving 栈不在边界内**，不要因为它们有大版本发布就收进来。
 - `公司项目`：快手/字节/腾讯/百度/美团/京东/拼多多/网易等公司独立或主导的研究（arXiv 或顶会，affiliation 命中公司）。`vendors` 与 `affiliation_evidence_url` 均必填；未核实一手证据前先放 `学校预印本`，不丢条目。
 - `学校顶会`：任何高校独立发表的顶会顶刊（NeurIPS/ICML/ICLR/MobiSys/SenSys/ASPLOS/ACL/CVPR/ICCV/EMNLP/AAAI/IJCAI/TPAMI/TNNLS/ToN）。不再卡中美名校——任何正规大学都收。
 - `学校预印本`：任何大学作者发的 arXiv 预印本（非顶会但主题强相关）。新鲜端侧工作多先上 arXiv，这一档保证雷达不漏最新真东西；排序最低。
