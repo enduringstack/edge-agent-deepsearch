@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SlackDrive: Reclaiming Runtime Slack for Adaptive Driving Inference</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>SlackDrive: Reclaiming Runtime Slack for Adaptive Driving Inference</h1>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-09-23 · Xiaohuan Pei; Hengguang Zhou; Yuanhao Ban; Justin Cui; Jiaqi Feng; Haoyu Xie; Tao Huang; Pichao Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:高效推理</span><span class="tag">方向:测试时自适应</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">车上的驾驶世界—动作模型越来越重，和实时控制的时延要求冲突。SlackDrive 在每一步推理前先看还剩多少时间，再决定这次给多少算力。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 NAVSIM v2 配 DriveDreamer-Policy 的设置下，严苛时延条件中受时延约束的 EPDMS 比最强基线高 21.7%，而全预算模型和预设的令牌剪枝基线在运行时争抢下都超出了可接受时延包络。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">一次性对一小组离散算力预算做时延与规划效用画像，在线用已完成的前向推理估计当前算力状态，再选出预计仍在可接受时延包络内、效用最高的预算；整套东西只做预算选择，不改驾驶主干模型。</span></div>
+<div class="score-reason">评分依据：针对车载共享算力上的实时推理调度，动机完全是端侧的；但评测在 NAVSIM 仿真环境完成，没有真实车载硬件数据，因此不按设备端智能体计。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.28064" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

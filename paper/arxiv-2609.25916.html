@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Beyond Scalar Sensitivity: Activation-Aware Mixed-Precision LLM Quantization with Cross-Layer Refinement</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Beyond Scalar Sensitivity: Activation-Aware Mixed-Precision LLM Quantization with Cross-Layer Refinement</h1>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-09-22 · Akihiro Yoshida; Yuma Ichikawa / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">混合精度量化通常把每个权重矩阵的敏感度压成一个标量再做背包优化，这篇证明这个标量会带来多大误差，并给出替代方案。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">作者证明即便是最优的标量代理，相对完整的激活感知二次型也会有最高 sqrt(κ(A)κ(B)) 的乘性失真，在典型大模型模块上这个界从 10 的 1 次方跨到 10 的 13 次方。多个模型、多种位宽预算的实验显示 CASA 的困惑度低于最新的标量代理基线，在低于每权重 3 比特时尤其明显，且零样本准确率的提升随模型各模块平均条件数变化。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">两阶段方法：第一阶段用 Kronecker 分解 Hessian 导出的激活感知度量替换标量代理，使背包问题的连续松弛有闭式解；第二阶段做跨层感知的局部搜索，用端到端模型损失评估位宽更新。</span></div>
+<div class="score-reason">评分依据：超低比特混合精度量化是把大模型压进端侧内存的关键手段，理论界也解释了已有方法为何会失手；实验未涉及端侧硬件。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.25916" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>
