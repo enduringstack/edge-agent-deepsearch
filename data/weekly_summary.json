@@ -1,35 +1,35 @@
 {
-  "overview": "本周端侧 AI 动态（09-16~09-22）：主线是 AI 优先笔记本落地和端侧智能体拿到官方成绩单。9 月 21 日谷歌发布内置 Gemini 的 Googlebook，联发科同日推出 3nm、NPU 算力 55 TOPS 的天玑 CX C10 Max 与之配套，PC 侧助手被做进系统交互层而不再是独立应用。更硬的一条来自 9 月 16 日的 NVIDIA：TensorRT Edge-LLM 在单块 Jetson AGX Thor 上跑完 MLPerf 边缘智能体基准，1007 轮负载比 llama.cpp 参考实现快 6.4 倍。同一天 ExecuTorch v1.5.0 与 OpenVINO 2026.4.0 双双发版，前者扩成 C++ SDK 并补齐手机与 Cortex-M 后端，后者继续扩大 NPU 可跑模型。学术侧集中攻内存墙：TierKV 在三款手机 SoC 上把预填吞吐拉高最多 17.6 倍，Edge0 和 SSD-LLaMA 分别把 350 亿和万亿参数 MoE 塞进 24GB 显存与家用 PC。真正把智能体闭环放到设备上的工作也开始出现：本周有论文在无服务器可用的设备上实测工具路由该怎么分工，也有把下一最佳视角规划整体跑在 Jetson 上并给出帧率与每帧能耗的方案，另有工作用本地部署的小模型逐档评测 MCP 工具接口该拆多细。",
+  "overview": "本周端侧 AI 动态（09-22~09-28）：骁龙峰会把「PC 本地智能体」从概念推到了带数字的阶段。Google 让 Antigravity SDK 支持本地模型，官方第一次给出整条智能体工作流留在本机的门槛——LiteRT 跑 Gemma 4 26B、需 24GB 以上显存，演示里 97.2% 的 token 不出机器；高通这边 Clairvoyance 接 GenieX，按任务难度在 CPU、GPU 和 Hexagon NPU 之间分配模型，骁龙 X2 至尊版给到 228 GB/s 带宽和 80+ TOPS。Cartesia 围着 NPU 重新设计语音模型结构，把合成加识别整条链路压进 100 毫秒以内。学术侧的共同主题是「把最贵的那步换掉」：TRACKGRAPH 用图像跟踪替代视觉语言推理，让四足机器人机上建图与目标搜索跑到 7.5Hz；PTC-Decoder 不重训、只在解码阶段锁住工具名，治小模型不照计划执行的老毛病。PUBG Ally 则是本周少见的已上线端侧智能体。",
   "highlights": [
     {
-      "url": "https://developer.nvidia.com/blog/tensorrt-edge-llm-completes-the-mlperf-edge-agentic-benchmark-6-4x-faster-on-jetson-agx-thor/",
-      "topic": "端侧智能体跑通 MLPerf 基准",
-      "why": "NVIDIA 在单块 Jetson AGX Thor 上完整跑完 1007 轮智能体负载并给出 52.33 token/s 和 6.4 倍加速比，这是本周唯一一条可核对的端侧智能体端到端成绩。"
+      "url": "https://developers.googleblog.com/en/introducing-support-for-local-ai-models-in-the-antigravity-sdk/",
+      "topic": "Antigravity SDK 支持本地模型",
+      "why": "官方第一次给出「整条智能体工作流留在本机」的路径和门槛数字：LiteRT 跑 Gemma 4 26B A4B，需 24GB 以上显存，混合演示里 3322 个 token（97.2%）在本地、只有 95 个云端 token 用于规划。"
     },
     {
-      "url": "https://blog.google/products-and-platforms/devices/googlebook/googlebook-built-in-intelligence/",
-      "topic": "Googlebook 把助手做进系统",
-      "why": "谷歌用 Magic Pointer、Rambler 和自建小组件三个入口把 Gemini 铺进笔记本交互层，标志 PC 侧 AI 从聊天窗口转向系统能力。"
+      "url": "https://www.qualcomm.com/developer/blog/2026/09/clairvoyance-geniex-hexagon-snapdragon",
+      "topic": "Clairvoyance 接 GenieX 做笔记本本地智能体",
+      "why": "把「按任务难度匹配模型和计算核心」做成了产品，并给出骁龙 X2 至尊版 Extreme 上 228 GB/s 内存带宽与 80+ TOPS 的可用算力，是判断 PC 本地智能体现实能力的少见一手材料。"
     },
     {
-      "url": "https://www.mediatek.com/press-room/mediatek-dimensity-cx-c10-max-offers-flagship-performance-to-a-new-era-of-ai-first-laptops",
-      "topic": "55 TOPS 的 AI 笔电芯片",
-      "why": "联发科给出本周唯一一条带具体 NPU 算力数字的笔电级端侧芯片规格，可以直接拿来估算本地模型的推理预算。"
+      "url": "https://www.qualcomm.com/developer/blog/2026/09/qualcomm-cartesia-join-forces-to-bring-voice-ai-googlebook-snapdragon-x-series",
+      "topic": "Hexagon NPU 上的全本地语音链路",
+      "why": "语音合成与识别整条流水线都跑在 NPU 上、时延低于 100 毫秒，而且模型架构是围着 NPU 从头设计的，不是把云端结构硬搬下来。"
     },
     {
-      "url": "https://github.com/pytorch/executorch/releases/tag/v1.5.0",
-      "topic": "ExecuTorch 扩成 C++ SDK",
-      "why": "一次发版同时动了高通/Core ML/MLX delegate、Cortex-M 与 Ethos-U 目标和本地 LLM 服务三条线，是端侧部署工程师最该跟进的运行时变化。"
+      "url": "https://arxiv.org/abs/2609.31005",
+      "topic": "TRACKGRAPH 四足机器人机上场景图搜索",
+      "why": "把开放词表建图里最贵的视觉语言推理换成图像空间跟踪，同卡比 ViT-H 基线快 1.7 倍、少用 3.3 倍显存，省下的算力刚好够让目标搜索闭环以 7.5Hz 真的跑在四足机器人身上。"
     },
     {
-      "url": "https://github.com/openvinotoolkit/openvino/releases/tag/2026.4.0",
-      "topic": "OpenVINO 扩大 NPU 可跑模型",
-      "why": "NPU 上新增 FLUX.2-Klein 4B 与 Kokoro-82M，并把有界动态形状扩展到视觉超分，直接决定今年哪些模型能落到 AI PC 上。"
+      "url": "https://arxiv.org/abs/2609.30836",
+      "topic": "PTC-Decoder 端侧小模型计划约束解码",
+      "why": "抓住端侧智能体最现实的软肋——小模型不执行提示词里的计划，改成解码阶段用自动机硬锁工具名，不需重训；200 个遥感任务、7 个小模型上总分平均 +1.21（p<0.01）。"
     },
     {
-      "url": "https://arxiv.org/abs/2609.21172",
-      "topic": "手机长上下文的多级 KV 缓存",
-      "why": "TierKV 在三款真实手机 SoC 上把预填吞吐提升最多 17.6 倍、常驻 KV 内存降低 12.5%–34%，是本周最贴近手机落地的一篇。"
+      "url": "https://arxiv.org/abs/2609.29837",
+      "topic": "PUBG Ally 对话式游戏队友智能体",
+      "why": "本周少有的已面向真实用户上线的端侧智能体，近 3.9 万局真人同场数据训练，141 个国家玩家调研中推荐意愿净值 +25.1 个百分点，并交代了为上端做的压缩与护栏取舍。"
     }
   ]
 }
