@@ -1,35 +1,35 @@
 {
-  "overview": "本周端侧 AI 动态（09-22~09-28）：骁龙峰会把「PC 本地智能体」从概念推到了带数字的阶段。Google 让 Antigravity SDK 支持本地模型，官方第一次给出整条智能体工作流留在本机的门槛——LiteRT 跑 Gemma 4 26B、需 24GB 以上显存，演示里 97.2% 的 token 不出机器；高通这边 Clairvoyance 接 GenieX，按任务难度在 CPU、GPU 和 Hexagon NPU 之间分配模型，骁龙 X2 至尊版给到 228 GB/s 带宽和 80+ TOPS。Cartesia 围着 NPU 重新设计语音模型结构，把合成加识别整条链路压进 100 毫秒以内。学术侧的共同主题是「把最贵的那步换掉」：TRACKGRAPH 用图像跟踪替代视觉语言推理，让四足机器人机上建图与目标搜索跑到 7.5Hz；PTC-Decoder 不重训、只在解码阶段锁住工具名，治小模型不照计划执行的老毛病。PUBG Ally 则是本周少见的已上线端侧智能体。",
+  "overview": "本周端侧 AI 动态（09-29~10-05）：厂商侧的关键词是算力下沉和链路打通。三星发布 Galaxy Tab S12 系列，官方给出三纳米处理器相比上代 NPU 处理速度提升 61%、CPU 提升 19%、GPU 提升 17%，芯片来自联发科天玑 9500，旗舰手机平台首次进入三星高端平板。高通开发者博客罕见地把「模型调用如何跨处理器域抵达 Hexagon NPU」整条链路讲透，FastRPC 负责把调用从应用处理器递到 DSP 域，stub 和 skel 各管一端。英伟达则开源了一套 C++ 示例，教开发者把模型做成 Windows 和 Linux 上的本机应用，并给出语音识别 206 倍实时、交互式分割从每秒 0.5 帧提到 38.3 帧的实测对比。学术侧有三条线索最值得看：一是真正落到手机运行时的优化，有工作在 MNN 上为安卓实现了与目标模型解耦的投机解码，并在四款真机、超过十二小时音频上验证；二是把整条智能体工作流留在本机，有系统为 Apple M4 的统一内存架构重排多智能体负载，拿到 1.77 倍加速；三是把重复计算彻底消掉，有工作实测真实负载里 98.7% 的提示词是模型此前读过的内容，接上键值缓存复用层后同一道题从 9.3 秒、2754 焦耳降到 0.59 秒、200 焦耳。单片机一侧还出现两个推翻常识的结论：在常见的 Armv7E-M 架构上十六比特量化并不比八比特慢，而被广泛引用的内存最优原地卷积公式其实存在会静默破坏数据的欠分配错误。",
   "highlights": [
     {
-      "url": "https://developers.googleblog.com/en/introducing-support-for-local-ai-models-in-the-antigravity-sdk/",
-      "topic": "Antigravity SDK 支持本地模型",
-      "why": "官方第一次给出「整条智能体工作流留在本机」的路径和门槛数字：LiteRT 跑 Gemma 4 26B A4B，需 24GB 以上显存，混合演示里 3322 个 token（97.2%）在本地、只有 95 个云端 token 用于规划。"
+      "url": "https://www.qualcomm.com/developer/blog/2026/10/how-ai-models-reach-hexagon-npu-qairt-fastrpc-hexagon-explained",
+      "topic": "模型如何抵达 Hexagon NPU",
+      "why": "端侧部署的文章大多只讲模型怎么量化，这篇把量化之后「调用怎么跨处理器域送到 NPU」讲透了：FastRPC 在同一颗 SoC 内把函数调用从应用处理器域递到 Hexagon DSP 域，stub 发请求、skel 在硬件侧执行，调试端侧推理卡顿时用得上。"
     },
     {
-      "url": "https://www.qualcomm.com/developer/blog/2026/09/clairvoyance-geniex-hexagon-snapdragon",
-      "topic": "Clairvoyance 接 GenieX 做笔记本本地智能体",
-      "why": "把「按任务难度匹配模型和计算核心」做成了产品，并给出骁龙 X2 至尊版 Extreme 上 228 GB/s 内存带宽与 80+ TOPS 的可用算力，是判断 PC 本地智能体现实能力的少见一手材料。"
+      "url": "https://news.samsung.com/global/samsung-introduces-galaxy-tab-s12-series-the-ultimate-productivity-powerhouse-built-for-growth",
+      "topic": "Galaxy Tab S12 系列的 NPU 代际数字",
+      "why": "厂商官方给出了可对照的代际提升：三纳米处理器相比 Tab S11 Ultra，NPU 处理速度最高提升 61%、CPU 提升 19%、GPU 提升 17%，是本周少有的能用来判断移动端 AI 算力增长节奏的一手数据。"
     },
     {
-      "url": "https://www.qualcomm.com/developer/blog/2026/09/qualcomm-cartesia-join-forces-to-bring-voice-ai-googlebook-snapdragon-x-series",
-      "topic": "Hexagon NPU 上的全本地语音链路",
-      "why": "语音合成与识别整条流水线都跑在 NPU 上、时延低于 100 毫秒，而且模型架构是围着 NPU 从头设计的，不是把云端结构硬搬下来。"
+      "url": "https://developer.nvidia.com/blog/build-local-ai-apps-with-c-and-nvidia-tensorrt-rtx-samples/",
+      "topic": "本地 AI 应用的 C++ 示例集",
+      "why": "官方给出把模型做成本机原生应用的完整可跑范例，并附上可核对的数字：Parakeet TDT 语音识别 206.41 倍实时，SAM 2.1 从 CPU 的每秒 0.5 帧提到 GPU 的 38.3 帧，FLUX.2 用 NVFP4 相对 BF16 加速 1.63 倍。"
     },
     {
-      "url": "https://arxiv.org/abs/2609.31005",
-      "topic": "TRACKGRAPH 四足机器人机上场景图搜索",
-      "why": "把开放词表建图里最贵的视觉语言推理换成图像空间跟踪，同卡比 ViT-H 基线快 1.7 倍、少用 3.3 倍显存，省下的算力刚好够让目标搜索闭环以 7.5Hz 真的跑在四足机器人身上。"
+      "url": "https://arxiv.org/abs/2609.37617",
+      "topic": "手机端音频模型的解耦式投机解码",
+      "why": "本周唯一真正落到手机运行时的推理优化：在 MNN 上为安卓实现，在四款真机、七个数据集、12.2 小时音频上评测，并且打破了「草稿必须跟着目标模型已验证前缀走」这个一直被当作前提的串行依赖。"
     },
     {
-      "url": "https://arxiv.org/abs/2609.30836",
-      "topic": "PTC-Decoder 端侧小模型计划约束解码",
-      "why": "抓住端侧智能体最现实的软肋——小模型不执行提示词里的计划，改成解码阶段用自动机硬锁工具名，不需重训；200 个遥感任务、7 个小模型上总分平均 +1.21（p<0.01）。"
+      "url": "https://arxiv.org/abs/2610.03394",
+      "topic": "个人电脑上的多智能体推理系统",
+      "why": "少见地把「多个智能体一起跑在自己电脑上」当成系统问题正面解决，指出统一内存上的总线争抢和工具调用停顿才是真瓶颈，在 Apple M4 上实测整体加速 1.77 倍。"
     },
     {
-      "url": "https://arxiv.org/abs/2609.29837",
-      "topic": "PUBG Ally 对话式游戏队友智能体",
-      "why": "本周少有的已面向真实用户上线的端侧智能体，近 3.9 万局真人同场数据训练，141 个国家玩家调研中推荐意愿净值 +25.1 个百分点，并交代了为上端做的压缩与护栏取舍。"
+      "url": "https://arxiv.org/abs/2609.39358",
+      "topic": "让模型读同一份文档只付一次钱",
+      "why": "先在七个真实数据集上测出 98.7% 的提示词是模型已经读过的内容，再把键值缓存复用层接到 llama.cpp 等三个真实运行时上，同一道召回题从 9.3 秒、2754 焦耳降到 0.59 秒、200 焦耳。"
     }
   ]
 }
