@@ -30,6 +30,22 @@ if not args.no_collect:
 
     collect_github_trending.main(["--today", args.today] if args.today else None)
 
+def _clip(desc: str, limit: int = 140) -> str:
+    """Cut to the display limit on a word boundary, and mark it as cut.
+
+    The translator rewrites these into Chinese from this file alone; an unmarked
+    mid-word cut reads as the whole description. The untruncated text stays in
+    data/_github_trending.json for anyone who needs the tail.
+    """
+    desc = (desc or "").strip()
+    if len(desc) <= limit:
+        return desc
+    head = desc[: limit - 1]
+    if " " in head:
+        head = head[: head.rindex(" ")]
+    return head.rstrip(" ,;:-") + "…"
+
+
 src = ROOT / "data" / "_github_trending.json"
 d = json.loads(src.read_text(encoding="utf-8"))
 items = [x for x in d if x.get("source") == "search" and x.get("stars")]
@@ -41,7 +57,7 @@ out = [
         "url": x["url"],
         "total": str(x["stars"]) + "★",
         "week": str(x["stars"]),
-        "desc": x["desc"][:140],
+        "desc": _clip(x["desc"]),
     }
     for i, x in enumerate(items[:20])
 ]

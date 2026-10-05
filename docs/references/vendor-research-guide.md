@@ -102,6 +102,30 @@ arXiv 自身搜索只匹配标题和摘要，不直接按作者 affiliation 过�
 | 整站 JS 渲染，只拿得到标题；或 curl 返回的 canonical 指向另一篇 | qualcomm.com 部分页面、openai.com（403）、apple.com / samsung.com newsroom | **丢弃**。URL 能开 ≠ 内容对题，更 ≠ 日期可核 |
 | sitemap `lastmod` 是本周，正文日期却是几个月前 | Anthropic、Mistral、MediaTek tek-talk、Honor 各地区镜像 | **丢弃**。`lastmod` 是发现层信号，常青页模板一动就刷新 |
 
+### 历史窗口（回填）优先试这些入口
+
+按实测有效性排序，`lastmod` 应当是最后手段：
+
+| 入口 | 形式 | 实测 |
+|---|---|---|
+| **WordPress REST API** | `<blog>/wp-json/wp/v2/posts?after=…&before=…&per_page=100` | **最强**，按发布日精确过滤且带正文。`developer.nvidia.com/blog`、`blogs.nvidia.com`、`about.fb.com` 均可用。凡 WordPress 站先试这个 |
+| **厂商自家全量 RSS** | `openai.com/news/rss.xml`（1247 条回溯到 2015）、`mistral.ai/rss.xml`（88 条回溯到 2023） | 对历史窗口是降维打击。注意区分「全量归档 feed」和「只给最近 N 条的 feed」 |
+| **Blogger feed 带日期参数** | `…/feeds/posts/default?alt=rss&published-min=…&published-max=…` | `android-developers.googleblog.com` 可用 |
+| **站点内嵌 JSON** | `machinelearning.apple.com/research?page=1..8` 内嵌 `"published"` | Apple 历史回填唯一可用入口（其 `rss.xml` 只有 10 条） |
+| **全量 sitemap + 逐条核正文** | `blog.google/en-us/sitemap.xml`（11701 条）、`qualcomm.com/sitemap.xml` 按 URL 路径 grep `/YYYY/MM/` | lastmod 只做发现（可放宽±10 天），日期必须回正文或 `.model.json` 定 |
+
+**无效 / 陷阱**（都实测过，别重复踩）：
+
+- 「只给最近 N 条」的 feed 对历史窗口一律无用：`machinelearning.apple.com/rss.xml`(10)、`blog.google/rss/`(20)、`blogs.nvidia.com/feed/`(18)、`developer.nvidia.com/blog/feed/`(100，只回溯到 7 月)
+- `developer.nvidia.com/blog/feed/?paged=12` 返回 200 且 782KB，但**整个文档没有一个 `<pubDate>`** —— 分页失效后的降级响应，极易误判成有数据
+- `developers.googleblog.com/feeds/posts/default` 完全没有日期字段，`published-min` 被忽略（该站已非 Blogger）
+- `ai.meta.com/*` 和 `meta.com/*` 对 curl 一律 **400**，浏览器 UA 也救不了 —— Meta 只能走 `about.fb.com`
+- `blogs.nvidia.com/2026/06/` **404**，而 `developer.nvidia.com/blog/2026/06/` 可用 —— 同一公司两个博客归档形态不同，必须逐站实测
+- `qwenlm.github.io/blog/index.xml` 最新只到 2025-09（博客已迁站）
+- ModelBest 官网只做索引，文章正文托管在微信公众号（`mp.weixin.qq.com`），不命中官方域名白名单
+
+---
+
 sitemap 只用于**发现**，不用于**定日期**。一次回填里 176 条厂商 sitemap 命中最后只有 6 条经得起正文日期核验，这个比例是正常的，不是漏采。
 
 ---

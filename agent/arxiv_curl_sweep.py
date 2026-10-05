@@ -15,7 +15,7 @@ import sys
 import time
 import urllib.parse
 import xml.etree.ElementTree as ET
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 
 from research_collection import (
@@ -248,6 +248,40 @@ def collect_query_pages(
     return collected
 
 
+# arXiv's legacy API refuses start >= 10000 with HTTP 500, so a lastUpdatedDate
+# sweep can only page back a limited number of weeks. PAGING_CEILING is the last
+# offset it will still serve.
+PAGING_CEILING = 9900
+
+
+def probe_updates_reach(categories: list[str], page_size: int = 1) -> dict:
+    """How far back each category's revision sweep can still reach, measured.
+
+    Queries each category at the paging ceiling sorted by lastUpdatedDate and reads
+    the oldest row served. Backfilling a window older than every one of those dates
+    is provably impossible, which is what the collection manifest records so the
+    coverage gate can waive `recent-updates` on evidence instead of on trust.
+    """
+    reach = {}
+    for cat in categories:
+        xml = curl_url(
+            build_api_url(f"cat:{cat}", start=PAGING_CEILING, page_size=page_size,
+                          sort_by="lastUpdatedDate")
+        )
+        entries = parse(xml) if xml else []
+        oldest = ""
+        for entry in entries:
+            updated = str(entry.get("updated_date") or entry.get("date") or "")[:10]
+            if updated and (not oldest or updated < oldest):
+                oldest = updated
+        # An empty page at the ceiling means this category holds fewer rows than the
+        # ceiling, so its whole history is pageable — that category CAN reach the
+        # window. Record it as such instead of discarding the probe.
+        reach[f"cat:{cat}"] = oldest or "reachable"
+        time.sleep(4)
+    return reach
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description="Collect a complete seven-day arXiv candidate set.")
     parser.add_argument("--today", help="Override collection date as YYYY-MM-DD")
@@ -348,6 +382,35 @@ def main(argv=None):
         print(f"  {label:22s} pages={page_counter:2d} in_win={len(in_win):4d} new={len(new):4d}")
         time.sleep(4)  # polite pacing for arxiv API
 
+    unreachable_probe = None
+    if "recent-updates" in failed_queries and "recent-updates" not in completed_queries:
+        print("  probing how far back the revision sweep can still reach...", file=sys.stderr)
+        reach = probe_updates_reach(CAT_LIST)
+        blocked = [
+            cat for cat, oldest in (reach or {}).items()
+            if oldest != "reachable" and oldest > window_end.isoformat()
+        ]
+        if reach and blocked:
+            unreachable_probe = {
+                "reason": (
+                    "arXiv legacy API refuses start>=10000, so the lastUpdatedDate sweep "
+                    "cannot page back to this window; the API honours no lastUpdatedDate "
+                    "range filter to bound it instead."
+                ),
+                "paging_ceiling": PAGING_CEILING,
+                "categories_probed": list(CAT_LIST),
+                "oldest_reachable_by_category": reach,
+                "categories_blocked": sorted(blocked),
+                "window_end": window_end.isoformat(),
+                "probed_at": datetime.now().astimezone().isoformat(),
+            }
+            print(
+                f"  [UNREACHABLE] {len(blocked)}/{len(reach)} categories cannot page back "
+                f"to {window_end} (ceiling bottoms out at "
+                f"{min(reach[c] for c in blocked)}); recorded as evidence",
+                file=sys.stderr,
+            )
+
     deduped_failed = []
     for failed in failed_queries:
         if failed not in deduped_failed and failed not in completed_queries:
@@ -358,7 +421,15 @@ def main(argv=None):
     cands.sort(key=lambda e: e["date"], reverse=True)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(cands, ensure_ascii=False, indent=2), encoding="utf-8")
-    status = "complete" if not failed_queries and REQUIRED_ARXIV_SWEEPS.issubset(completed_queries) else "incomplete"
+    # A proven-unreachable revision sweep is covered by the manifest's probe evidence,
+    # so it must not hold the source at "incomplete" forever; every other gap still does.
+    waived = {"recent-updates"} if unreachable_probe else set()
+    outstanding = [q for q in failed_queries if q not in waived]
+    status = (
+        "complete"
+        if not outstanding and REQUIRED_ARXIV_SWEEPS.issubset(set(completed_queries) | waived)
+        else "incomplete"
+    )
     update_source_coverage(
         args.manifest,
         "arxiv",
@@ -368,6 +439,7 @@ def main(argv=None):
             "queries_failed": failed_queries,
             "pages_fetched": pages_fetched,
             "candidate_count": len(cands),
+            **({"recent_updates_unreachable": unreachable_probe} if unreachable_probe else {}),
             **candidate_artifact_attestation(OUT, "arxiv"),
         },
         today=run_date,

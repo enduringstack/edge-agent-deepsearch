@@ -157,6 +157,44 @@ def _missing(required: frozenset[str], actual) -> list[str]:
     return sorted(required - {str(value) for value in (actual or [])})
 
 
+def _recent_updates_waived(arxiv: dict, window_end: date) -> bool:
+    """True only when the collector PROVED the revision sweep can't reach this window.
+
+    arXiv's legacy API refuses ``start >= 10000`` (HTTP 500), so a sweep sorted by
+    ``lastUpdatedDate`` can only page back a few weeks. Backfilling an older window
+    therefore cannot complete ``recent-updates`` no matter how it is retried, and the
+    API honours no ``lastUpdatedDate`` range filter to bound it instead.
+
+    This is a waiver, not a bypass: the manifest must carry a probe recording the
+    oldest date each required category could still reach at the paging ceiling, and
+    every one of those dates must fall AFTER the window — i.e. the window is provably
+    out of reach. A missing, malformed, or non-proving probe fails closed.
+    """
+    probe = arxiv.get("recent_updates_unreachable")
+    if not isinstance(probe, dict):
+        return False
+    probed = probe.get("oldest_reachable_by_category")
+    if not isinstance(probed, dict) or not probed:
+        return False
+    required = {f"cat:{cat}" for cat in probe.get("categories_probed") or []}
+    if set(probed) != required or not required:
+        return False
+    blocked = 0
+    for oldest in probed.values():
+        if oldest == "reachable":
+            # Category smaller than the ceiling: its whole history is pageable.
+            continue
+        try:
+            reached = date.fromisoformat(str(oldest)[:10])
+        except ValueError:
+            return False
+        if reached > window_end:
+            blocked += 1
+    # `recent-updates` needs every required category, so one unreachable category is
+    # enough to make the label impossible — but at least one must be PROVEN so.
+    return blocked > 0
+
+
 def validate_collection_manifest(manifest: dict, today: str | date | None = None) -> dict:
     if not isinstance(manifest, dict):
         raise CollectionCoverageError("collection manifest must be a JSON object")
@@ -171,6 +209,8 @@ def validate_collection_manifest(manifest: dict, today: str | date | None = None
 
     arxiv = _require_source(sources, "arxiv")
     missing_arxiv = _missing(REQUIRED_ARXIV_SWEEPS, arxiv.get("queries_completed"))
+    if missing_arxiv == ["recent-updates"] and _recent_updates_waived(arxiv, end):
+        missing_arxiv = []
     if missing_arxiv:
         raise CollectionCoverageError(f"arxiv broad sweeps missing: {', '.join(missing_arxiv)}")
     pages_fetched = arxiv.get("pages_fetched")

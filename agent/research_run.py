@@ -289,6 +289,10 @@ def is_link_alive(url: str, timeout: int = 5) -> bool:
     HTTPError retries GET as the ground truth. Network errors (offline / DNS
     failure) count as alive to avoid false-killing papers when the validator
     runs offline; timeouts count as dead.
+
+    Only a genuine "not found" kills a paper. Rate limits (429/503) and refusals
+    (401/403/451) are server-side decisions about the request, not evidence that
+    the URL is dead, so both count as alive with a warning.
     """
     # A Mozilla-compatible UA is required: WAF-protected vendor sites
     # (e.g. qualcomm.com) block the default Python-urllib UA with 403,
@@ -310,6 +314,15 @@ def is_link_alive(url: str, timeout: int = 5) -> bool:
             # alive so batch validation doesn't false-kill real papers.
             if exc.code in (429, 503):
                 print(f"warning: link check got {exc.code} (rate-limit) for {url} (treating as alive)", file=sys.stderr)
+                return True
+            # 401/403/451 mean the server refused THIS client (WAF, bot filter,
+            # geo-block) — the resource exists, we just may not have it. That is a
+            # different thing from 404, and validation-rules #17 fails only on 404.
+            # openai.com refuses every UA this way; treating it as dead silently
+            # dropped real official posts whose date was verified from the site's
+            # own feed.
+            if exc.code in (401, 403, 451):
+                print(f"warning: link check got {exc.code} (server refused the client) for {url} (treating as alive)", file=sys.stderr)
                 return True
             return exc.code < 400
         except (TimeoutError, socket.timeout):

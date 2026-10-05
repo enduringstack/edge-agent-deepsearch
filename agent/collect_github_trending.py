@@ -55,8 +55,11 @@ def parse_trending(html):
         out.append((full,desc))
     return out
 
-def search_api(query, date_from, per_page=30):
-    q=f"{query} created:>={date_from}"
+def search_api(query, date_from, per_page=30, date_to=None):
+    # Bound BOTH ends. An open `created:>=` is harmless for the current week (nothing
+    # is created in the future) but silently fills a backfilled window with every repo
+    # created since — a historical run then ships repos months newer than its window.
+    q=f"{query} created:{date_from}..{date_to}" if date_to else f"{query} created:>={date_from}"
     url=f"https://api.github.com/search/repositories?{urllib.parse.urlencode({'q':q,'sort':'stars','order':'desc','per_page':per_page})}"
     txt,st=fetch(url)
     if not txt: return []
@@ -74,6 +77,7 @@ def main(argv=None):
     run_date = parse_collection_date(args.today)
     window_start, window_end, _ = collection_window(run_date)
     date_from = window_start.isoformat()
+    date_to = window_end.isoformat()
 
     repos={}  # full_name -> {desc, stars, url, created, source}
     # 1) trending
@@ -88,7 +92,7 @@ def main(argv=None):
     # 2) search API for端侧 keywords created this week
     for q in ['on-device LLM','edge AI inference','mobile LLM agent','NPU inference',
               'speculative decoding','local LLM engine','edge device agent','llama.cpp executorch']:
-        for full,desc,stars,url,created in search_api(q, date_from):
+        for full,desc,stars,url,created in search_api(q, date_from, date_to=date_to):
             if full not in repos or repos[full]['stars'] is None:
                 repos[full]={"desc":desc,"stars":stars,"url":url,"created":created,"source":"search"}
         time.sleep(2)
@@ -97,7 +101,10 @@ def main(argv=None):
     for full,r in repos.items():
         hay=(full+' '+r['desc']).lower()
         if not any(k in hay for k in EDGE_KW): continue
-        out.append({"repo":full,"desc":r['desc'][:140],"stars":r['stars'],"url":r['url'],"created":r['created'],"source":r['source']})
+        # Keep the FULL description here. The 140-char cap belongs to the display file
+        # (refresh_trending), and truncating twice left the translator a half sentence
+        # with no way to see the tail.
+        out.append({"repo":full,"desc":r['desc'],"stars":r['stars'],"url":r['url'],"created":r['created'],"source":r['source']})
     out.sort(key=lambda x:(x['stars'] or 0), reverse=True)
     json.dump(out, open("data/_github_trending.json","w",encoding="utf-8"), ensure_ascii=False, indent=2)
     update_source_coverage(
@@ -109,7 +116,7 @@ def main(argv=None):
         },
         today=run_date,
     )
-    print(f"# {len(out)}端侧-AI repos (trending + created>={date_from}, through {window_end})")
+    print(f"# {len(out)}端侧-AI repos (trending + created:{date_from}..{date_to})")
     for r in out[:40]:
         print(f"  {str(r['stars'] or '?'):>4}★ [{r['source']}] {r['repo']}  -- {r['desc'][:60]}")
         print(f"      {r['url']}")

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import importlib
+import importlib.util
 import inspect
 import json
 import sys
@@ -550,6 +551,119 @@ class CollectionManifestTests(unittest.TestCase):
             module.validate_collection_manifest(manifest, today=date(2026, 8, 5))
 
         self.assertIn("huggingface", str(ctx.exception).lower())
+
+    # --- recent-updates waiver: only a PROVING probe may stand in for the sweep ---
+
+    def _without_recent_updates(self, module):
+        manifest = self._valid_manifest(module)
+        arxiv = manifest["sources"]["arxiv"]
+        arxiv["queries_completed"] = [
+            q for q in arxiv["queries_completed"] if q != "recent-updates"
+        ]
+        return manifest
+
+    def _probe(self, module, oldest):
+        return {
+            "reason": "arXiv legacy API refuses start>=10000",
+            "paging_ceiling": 9900,
+            "categories_probed": list(module.REQUIRED_ARXIV_SWEEPS and
+                                      ["cs.AI", "cs.LG", "cs.CL", "cs.RO", "cs.AR",
+                                       "cs.DC", "cs.ET", "cs.SY", "cs.NE"]),
+            "oldest_reachable_by_category": {
+                f"cat:{c}": oldest
+                for c in ["cs.AI", "cs.LG", "cs.CL", "cs.RO", "cs.AR",
+                          "cs.DC", "cs.ET", "cs.SY", "cs.NE"]
+            },
+            "window_end": "2026-08-05",
+            "probed_at": "2026-10-05T00:00:00+08:00",
+        }
+
+    def test_waives_recent_updates_when_probe_proves_window_unreachable(self):
+        module = self._module()
+        manifest = self._without_recent_updates(module)
+        # Sweep bottoms out well AFTER the window -> the window is out of reach.
+        manifest["sources"]["arxiv"]["recent_updates_unreachable"] = self._probe(
+            module, "2026-09-20"
+        )
+
+        self.assertIsNotNone(
+            module.validate_collection_manifest(manifest, today=date(2026, 8, 5))
+        )
+
+    def test_rejects_missing_recent_updates_without_any_probe(self):
+        module = self._module()
+        manifest = self._without_recent_updates(module)
+
+        with self.assertRaises(module.CollectionCoverageError) as ctx:
+            module.validate_collection_manifest(manifest, today=date(2026, 8, 5))
+
+        self.assertIn("recent-updates", str(ctx.exception))
+
+    def test_waives_when_only_some_categories_are_blocked(self):
+        module = self._module()
+        manifest = self._without_recent_updates(module)
+        probe = self._probe(module, "2026-09-20")
+        # Small categories hold fewer rows than the ceiling, so their whole history is
+        # pageable; one blocked category still makes the label impossible.
+        for cat in ["cat:cs.ET", "cat:cs.AR", "cat:cs.NE"]:
+            probe["oldest_reachable_by_category"][cat] = "reachable"
+        manifest["sources"]["arxiv"]["recent_updates_unreachable"] = probe
+
+        self.assertIsNotNone(
+            module.validate_collection_manifest(manifest, today=date(2026, 8, 5))
+        )
+
+    def test_rejects_probe_where_every_category_is_reachable(self):
+        module = self._module()
+        manifest = self._without_recent_updates(module)
+        probe = self._probe(module, "2026-09-20")
+        for cat in list(probe["oldest_reachable_by_category"]):
+            probe["oldest_reachable_by_category"][cat] = "reachable"
+        manifest["sources"]["arxiv"]["recent_updates_unreachable"] = probe
+
+        with self.assertRaises(module.CollectionCoverageError) as ctx:
+            module.validate_collection_manifest(manifest, today=date(2026, 8, 5))
+
+        self.assertIn("recent-updates", str(ctx.exception))
+
+    def test_rejects_probe_that_shows_the_window_was_reachable(self):
+        module = self._module()
+        manifest = self._without_recent_updates(module)
+        # Sweep could still page back BEFORE the window -> it simply failed; no waiver.
+        manifest["sources"]["arxiv"]["recent_updates_unreachable"] = self._probe(
+            module, "2026-07-01"
+        )
+
+        with self.assertRaises(module.CollectionCoverageError) as ctx:
+            module.validate_collection_manifest(manifest, today=date(2026, 8, 5))
+
+        self.assertIn("recent-updates", str(ctx.exception))
+
+    def test_rejects_probe_missing_a_required_category(self):
+        module = self._module()
+        manifest = self._without_recent_updates(module)
+        probe = self._probe(module, "2026-09-20")
+        probe["oldest_reachable_by_category"].pop("cat:cs.NE")
+        manifest["sources"]["arxiv"]["recent_updates_unreachable"] = probe
+
+        with self.assertRaises(module.CollectionCoverageError) as ctx:
+            module.validate_collection_manifest(manifest, today=date(2026, 8, 5))
+
+        self.assertIn("recent-updates", str(ctx.exception))
+
+    def test_waiver_does_not_excuse_any_other_missing_sweep(self):
+        module = self._module()
+        manifest = self._without_recent_updates(module)
+        arxiv = manifest["sources"]["arxiv"]
+        arxiv["queries_completed"] = [
+            q for q in arxiv["queries_completed"] if q != "cs.AI-broad"
+        ]
+        arxiv["recent_updates_unreachable"] = self._probe(module, "2026-09-20")
+
+        with self.assertRaises(module.CollectionCoverageError) as ctx:
+            module.validate_collection_manifest(manifest, today=date(2026, 8, 5))
+
+        self.assertIn("cs.AI-broad", str(ctx.exception))
 
     def test_rejects_arxiv_manifest_with_too_few_pages_for_broad_sweeps(self):
         module = self._module()

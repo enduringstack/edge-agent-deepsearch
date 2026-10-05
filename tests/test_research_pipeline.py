@@ -178,6 +178,42 @@ def write_json(payload):
     return Path(tmp.name)
 
 
+
+class LinkLivenessStatusTests(unittest.TestCase):
+    """Only a genuine 404 may kill a paper; refusals and rate limits may not."""
+
+    def _status(self, code):
+        import urllib.error
+
+        def fake_urlopen(req, timeout=None):
+            raise urllib.error.HTTPError(req.full_url, code, "x", {}, None)
+
+        return mock.patch("urllib.request.urlopen", side_effect=fake_urlopen)
+
+    def test_404_is_dead(self):
+        with self._status(404):
+            self.assertFalse(research_run.is_link_alive("https://example.com/gone"))
+
+    def test_410_is_dead(self):
+        with self._status(410):
+            self.assertFalse(research_run.is_link_alive("https://example.com/gone"))
+
+    def test_403_refusal_counts_as_alive(self):
+        # openai.com refuses every user agent; the resource is not missing.
+        with self._status(403):
+            self.assertTrue(research_run.is_link_alive("https://openai.com/index/x"))
+
+    def test_401_and_451_refusals_count_as_alive(self):
+        for code in (401, 451):
+            with self.subTest(code=code), self._status(code):
+                self.assertTrue(research_run.is_link_alive("https://example.com/x"))
+
+    def test_rate_limit_counts_as_alive(self):
+        for code in (429, 503):
+            with self.subTest(code=code), self._status(code):
+                self.assertTrue(research_run.is_link_alive("https://example.com/x"))
+
+
 class ResearchRunValidationTests(unittest.TestCase):
     def setUp(self):
         patcher = mock.patch("research_run.is_link_alive", return_value=True)
