@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RT-VLA: Real-Time Vision-Language-Action Models via Knowledge Distillation</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>RT-VLA: Real-Time Vision-Language-Action Models via Knowledge Distillation</h1>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-06-12 · Xiangyu Huang; Zhenlin Hua; Han Zhou; Shounak Sural; Ragunathan Rajkumar / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">视觉语言动作模型能一边开车一边解释为什么这么开，但骨干太大，推理时延让它上不了真实道路。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">相比 SimLingo 老师模型，推理时间减少 44.8%，同时保持有竞争力的闭环驾驶和语言推理表现。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用多层级的监督蒸馏把老师模型的驾驶和推理能力转移到紧凑的学生模型里；语言解释改成事后离线分析安全关键驾驶片段来产出，从而不给实时控制增加任何时延。</span></div>
+<div class="score-reason">评分依据：直指车端实时性这一部署硬约束，并给出接近一半的时延下降，可迁移性强，但论文没有说明车载硬件实测。把解释功能挪到离线以保住实时路径，是很务实的工程取舍，贡献中等偏上。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.14010" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

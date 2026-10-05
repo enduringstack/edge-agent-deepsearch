@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Prompt-Level Distillation: A Non-Parametric Alternative to Model Fine-Tuning for Efficient Reasoning</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Prompt-Level Distillation: A Non-Parametric Alternative to Model Fine-Tuning for Efficient Reasoning</h1>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-16 · Sanket Badhe, Deep Shah / HuggingFace Daily</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span><span class="tag">模型:Gemma</span><span class="tag">模型:Mistral</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">想让小模型会推理，常规做法是微调；这篇改成把老师的推理套路写成一份结构化指令，直接塞进学生的系统提示里。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">用 Gemma-3 4B 时，StereoSet 的宏平均 F1 从 57% 提到 90.0%，Contract-NLI 从 67% 提到 83%，LogiQA 准确率提到 70%；在 Mistral Small 3.1 上也有类似结果，且几乎不增加时延。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从老师模型里抽取显式的推理模式，整理成一份富有表达力的指令清单放进学生模型的系统提示，不改学生参数，因此也不引入微调的资源和运维开销。</span></div>
+<div class="score-reason">评分依据：让 40 亿参数级的小模型在不微调、不加时延的前提下接近大模型表现，对端侧部署很有吸引力，但论文没有做设备端实验。把蒸馏搬到提示层是轻量而讨巧的做法，可靠性边界尚待验证，贡献中等。</div>
+<div class="source"><a href="https://huggingface.co/papers/2602.21103" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

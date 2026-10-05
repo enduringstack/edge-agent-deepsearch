@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RegimeVGGT: Layer-Wise Spatially Preserving Redundancy Removal for Visual Geometry Grounded Transformer</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>RegimeVGGT: Layer-Wise Spatially Preserving Redundancy Removal for Visual Geometry Grounded Transformer</h1>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-16 · Jinhao You; Shuo Lyu; Zhuohang Lyu; Tanxuan Li; Zibo Zhao; Jiaxiang Hu; Kai Tang; Yichen Guo / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:稀疏注意力</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">三维重建模型 VGGT 一次前向就能还原场景结构，但跨帧注意力是平方复杂度；这篇按层分区段地压缩计算。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">免训练的情况下取得 6.7 倍的加速。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">分析发现浅层缺乏跨视角结构、中层负责跨视角对齐、深层对稠密几何冗余但其跨帧注意力对位姿仍关键，于是沿层做 U 形压缩：显著性引导的分带合并保护几何与边缘关键 token，选择性保护的键值下采样则通过相移网格、参考帧锚点和不压缩的相机标记来保住位姿通路。</span></div>
+<div class="score-reason">评分依据：免训练的推理加速对算力受限设备上的三维感知有直接迁移价值，但论文没有讨论设备部署，相关度中等。按层分区段差异化压缩、并单独保护位姿通路的设计比统一压缩细致，贡献中等偏上。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.18439" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

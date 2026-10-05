@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NEURON-Fabric: CXL-Side Low-Bit Gradient Aggregation for Distributed Training</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>NEURON-Fabric: CXL-Side Low-Bit Gradient Aggregation for Distributed Training</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-13 · Ziqiang Wang; Changcheng Huang; Chung-Horng Lung / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:端侧训练</span><span class="tag">硬件:CIM</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">分布式训练里梯度全规约把内存和通信都压满了，这篇问：能不能让 CXL 内存控制器在梯度经过时顺手把它们聚合了。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">实测五周期的低位聚合数据通路，在最后一级缓存全未命中的情形下最多只增加 1.67% 的暴露运行时开销；在带宽压力下这段计算会被 CXL 本身的传输时间掩盖。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 CXL 内存侧做两种聚合：打包的符号计数聚合和三值门控聚合，同时保留一条 32 位浮点通路，供不适合低位近似的负载、层或阶段使用，并提供选择通路的控制接口。</span></div>
+<div class="score-reason">评分依据：近内存计算与低位梯度聚合的思路对端侧训练有参考价值，但论文针对的是大模型分布式训练场景，相关度较低。把聚合下沉到内存控制器并保留高精度回退通路，体系结构设计合理，贡献中等。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.15045" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

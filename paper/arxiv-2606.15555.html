@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Service-Induced Congestion in Memory-Constrained LLM Serving</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Service-Induced Congestion in Memory-Constrained LLM Serving</h1>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-14 · Ruicheng Ao; Jing Dong; Gan Luo; David Simchi-Levi / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:调度服务</span><span class="tag">方向:云端serving</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型服务里每个请求的键值缓存都随生成而增长，高并发下显存压力是服务过程自己造出来的，爆了就要赶走请求重来。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">理论分析表明：在输入饱和的情形下，同质负载的无驱逐平衡点是不稳定的，除去一个零测度的例外集，系统必然收敛到带驱逐的极限环。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">建立离散时间动力学模型，刻画连续批处理下的准入、显存增长和驱逐三个环节，分析系统的不动点与极限环结构。</span></div>
+<div class="score-reason">评分依据：面向高并发云端服务的排队论分析，与端侧部署无直接关系，相关度低；但显存受限下的驱逐动力学在设备侧同样存在，按相邻工作保留。用动力系统刻画驱逐震荡并给出稳定性结论，理论角度较新，贡献中等。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.15555" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

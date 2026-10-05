@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Edge-Inference Governors Need Memory-Clock State</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Edge-Inference Governors Need Memory-Clock State</h1>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-06-15 · Jaehoon Kang / arXiv</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:调度服务</span><span class="tag">方向:编译部署</span><span class="tag">硬件:Jetson</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">边缘芯片上调频降压的调度器只盯着 CPU 和 GPU 频率，却漏了内存频率，结果在卡时限的场景下频繁超时。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Jetson Orin 上实测：不考虑内存频率、只拟合 GPU 的模型在紧时限下有 25% 到 28% 的周期超时；改成考虑内存频率的双格重拟合后，在 2% 的服务质量预算下把超时压到不超过 0.9%。六个模型、两块 Orin 开发板上，MobileNetV2 和 ViT-Small 的核心结论都能复现。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">指出集成边缘芯片上内存总线频率是独立于计算时钟的部署状态变量，必须作为条件纳入时延估计；据此做分格重拟合，提前选出预算可行的工作点，而不是事后靠时延反馈补救。</span></div>
+<div class="score-reason">评分依据：直接在 Jetson Orin 真机上定位出边缘推理调度器的一个系统性盲区，并给出可复现的修正，端侧语境确凿。发现问题的角度扎实、证据充分，方法本身是建模细化，贡献中等偏上。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.16106" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

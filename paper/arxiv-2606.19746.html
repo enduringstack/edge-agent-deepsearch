@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SAC: Disaggregated KV Cache System for Sparse Attention LLMs with CXL</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>SAC: Disaggregated KV Cache System for Sparse Attention LLMs with CXL</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-18 · Ruiyang Ma; Teng Ma; Junru Li; Hantian Zha; Xuchun Shang; Qingda Hu; Zheng Liu; Xinjun Yang / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:稀疏注意力</span><span class="tag">方向:云端serving</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">稀疏注意力模型解码时其实只用得上一小部分键值缓存，但现有的远端内存池还是要先把整段前缀拉回本地；这篇改成按需只取用得上的那几条。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">原文称这是第一个面向稀疏注意力模型的分离式键值缓存系统，摘要未给出具体的时延或吞吐数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">借助 CXL 提供的低时延、缓存行粒度读写语义，推理过程中只按需取回排在前面的那部分键值条目，而不是整段前缀搬运。</span></div>
+<div class="score-reason">评分依据：面向数据中心的分离式内存池和长上下文服务，设备端语境不成立，相关度低；但键值缓存按需取用的思路对内存受限场景仍有参考价值，故保留。借助 CXL 细粒度语义重做稀疏注意力的缓存取用路径有实质创新，贡献中等偏上。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.19746" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

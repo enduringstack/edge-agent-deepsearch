@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Marginal Advantage Accumulation for Memory-Driven Agent Self-Evolution</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Marginal Advantage Accumulation for Memory-Driven Agent Self-Evolution</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-18 · Mingyu Yang; Keye Zheng; Congchao Cheng; Yujie Liu; Xingkang Lu; Fan Jiang; Yefei Zheng / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:蒸馏</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">解决智能体记忆优化里的「同一条操作在不同批次收到相反反馈」问题，给每条记忆操作累计一个跨批次可比的证据分。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 4 个基准、4 个目标模型共 16 组设置里，有 14 组取得最好结果，优于已有的批级蒸馏基线，并降低了优化阶段的 token 消耗。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先把不同批次的反馈转成可比的差分信号，再用指数滑动平均逐条操作累计带符号的证据，并通过语义身份合并保证同一条操作跨批次能对上号；整体作为后处理模块挂在已有流程后面。</span></div>
+<div class="score-reason">评分依据：面向智能体记忆的训练后处理，对端侧智能体的记忆治理有间接迁移价值，但工作本身不涉及设备约束，相关度较低。跨批次证据累计的形式化比较清楚，贡献中等。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.20475" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>
