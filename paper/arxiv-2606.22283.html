@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Apple Neural Engine: Architecture, Programming, and Performance</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Apple Neural Engine: Architecture, Programming, and Performance</h1>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-06-21 · Spencer H. Bryngelson / arXiv</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:高效推理</span><span class="tag">方向:量化</span><span class="tag">硬件:NPU</span><span class="tag">硬件:Apple-Silicon</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">逆向还原苹果芯片里那块只能通过 Core ML 间接使用的神经网络加速器，把它的内部构造讲清楚。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">覆盖 A11 到 A18 和 M1 到 M5 系列，给出逐芯片的目标参数表和算子-设备支持矩阵，直接测量在 M1 和 M5 上完成；作者把每条结论标注为实测、反编译推得还是推测，并记录了方法与未决问题。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">基于在苹果芯片上的直接测量，以及对私有运行时、编译器、内核驱动和固件的静态分析，记录了限制该引擎吞吐与能耗的数据通路和屋顶线、绕过 Core ML 直达硬件的派发路径、编译器与磁盘上的程序格式、权重压缩方案，以及底层的内核驱动、固件和命令协议；并指出这条直达路径虽可从普通用户态调用，却未公开也不受支持。</span></div>
+<div class="score-reason">评分依据：对象就是出货量最大的一类端侧 NPU，把它的数据通路、派发路径、权重压缩和驱动协议公开记录下来，对 iPhone 和 Mac 上的端侧模型部署有直接工程价值，契合度很高；属逆向工程与文档化工作，但覆盖代际完整、证据等级标注也很克制。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.22283" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

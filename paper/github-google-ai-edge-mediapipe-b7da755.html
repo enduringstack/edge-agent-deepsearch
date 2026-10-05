@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>google-ai-edge/mediapipe: No public description</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>google-ai-edge/mediapipe: No public description</h1>
+<div class="meta"><span class="score">13</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-06-24 · google-ai-edge / GitHub</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">硬件:手机</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">MediaPipe 新增一套交互式图像分割能力，用户划一笔就能抠出想要的区域。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">本次提交改动 27 个文件、新增 2758 行，同时铺开 iOS、安卓、Python 和 Web 四个平台的实现与测试。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用协议缓冲定义笔划数据结构，支持正向、负向和套索三种笔刷模式；实现上采用编码器与解码器分离的做法——编码器只对图像抽一次特征，之后每来一笔用户笔划就只跑一个轻量解码器生成分割掩码，从而让交互过程足够跟手。</span></div>
+<div class="score-reason">评分依据：MediaPipe 是安卓和 iOS 上的主力端侧推理栈，这次新增的能力直接覆盖四个平台，且编码一次、每笔只跑轻解码器的设计正是为设备端交互时延服务的，端侧契合度高；属成熟框架的功能扩展，架构思路常见但工程铺开完整。</div>
+<div class="source"><a href="https://github.com/google-ai-edge/mediapipe/commit/b7da7553d43cc5e7eb95c6bc742c6d364b7f0ada" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

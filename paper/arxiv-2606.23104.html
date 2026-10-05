@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ReNIO: Reweighting Negative Trajectory Importance for LLM On-Policy Distillation</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>ReNIO: Reweighting Negative Trajectory Importance for LLM On-Policy Distillation</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-22 · Chen Lin; Kedi Chen; Wei Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在同策略蒸馏里给「做错的轨迹」更高权重，提升学生模型的推理能力。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">受控过滤实验里存在一致的不对称现象：只用做错的学生输出训练，效果好于只用做对的；分析显示只用做对的输出会让模型推理链变短、反思行为变弱，而做错的输出更能保留模型能力边界附近的探索性推理。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用学生与教师的概率比值找出导致错误推理链的关键 token，把这些 token 的信息聚合成一个归一化的样本权重，从而在不需要完整含答案推演的情况下，自然地给更可能是负例的轨迹分配更大权重。</span></div>
+<div class="score-reason">评分依据：蒸馏属端侧可迁移的技术栈，但本文目标是提升推理能力而非压缩模型或降低部署开销，与端侧只有宽泛关联；用概率比定位关键 token 来加权的做法较巧妙。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.23104" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

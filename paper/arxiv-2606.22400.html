@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Multi-cancer detection using a computationally efficient CNN with transfer learning</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Multi-cancer detection using a computationally efficient CNN with transfer learning</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-21 · Vasileios E. Papageorgiou; Georgios Petmezas; Dimitrios-Panagiotis Papageorgiou; Leandros Stefanopoulos; Nicos Maglaveras / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:蒸馏</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用一个计算开销很小的卷积网络加迁移学习，在医学影像上做多种癌症的检测。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">五折分层交叉验证下，脑部、肺部和肾脏癌症分类测试准确率分别为 90.85±2.22%、98.64±2.43% 和 99.92±0.08%；迁移学习只需额外 20 个训练轮次就能达到与从头训练相当的效果，微调过程每张图每轮约 0.014 秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">设计一个轻量卷积网络架构以降低计算复杂度同时保住分类性能，在脑部磁共振与肺、肾计算机断层扫描三个肿瘤数据集上评测；迁移学习的做法是先在一种癌症上预训练再到其他癌症上微调，微调时只更新网络的分类部分。</span></div>
+<div class="score-reason">评分依据：明确以适合资源受限环境部署为设计目标，轻量骨干对端侧医学影像有迁移价值，但没有给出模型体积、延迟或设备实测，相关度中等；属常规的轻量卷积网络加迁移学习组合。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.22400" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

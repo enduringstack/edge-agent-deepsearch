@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TRACE: Business Rule-Grounded Reasoning Curriculum for Knowledge-Preserving Parametric Tool Retrieval in Enterprise LLMs</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-28 · Sai Shruthi Sistla, Ashutosh Hathidara, Christopher Toukmaji, Mayank Shrivastava, Karthikeyan Asokkumar / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">参数化检索让 LLM 通过给每个 API 分配唯一虚拟 token 并训练模型生成它来隐式检索工具，作者针对此展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=3)；affiliation 待核实</div>
-<div class="source"><a href="https://huggingface.co/papers/2607.22639" target="_blank" rel="noopener">查看原文 →</a></div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-22 · Sai Shruthi Sistla; Ashutosh Hathidara; Christopher Toukmaji; Mayank Shrivastava; Karthikeyan Asokkumar / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让企业大模型在不丢失原有工具知识的前提下，快速检索出该调用哪个 API。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">该训练目标既保住了第一阶段的选择题和问答探测准确率，又让模型可以用单束贪心解码达到生产可用的延迟；评测覆盖两个企业合计 8300 多个工具的目录。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">分两阶段：第一阶段沿用已有的多格式记忆化监督微调，用 LoRA 把工具知识种进模型；第二阶段是核心，训练模型先吐一段思考轨迹再输出工具 token 的 JSON 列表，训练数据一半来自已有方法的配对数据、一半是针对领域专家整理的业务规则合成的查询，两者都附带推理轨迹。</span></div>
+<div class="score-reason">评分依据：工具调用是智能体的基础能力，把束搜索换成单束贪心解码也确实降低了推理开销，但面向的是企业云端部署，与端侧只有宽泛关联；两阶段课程式训练属常见做法的工程落地。</div>
+<div class="source"><a href="https://arxiv.org/abs/2607.22639" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

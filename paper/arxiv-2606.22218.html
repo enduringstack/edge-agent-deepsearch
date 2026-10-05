@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>An Analysis of Untrained Deep Reservoir Networks for Audio Surveillance</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>An Analysis of Untrained Deep Reservoir Networks for Audio Surveillance</h1>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-20 · Corrado Baccheschi; Patrizio Dazzi / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span><span class="tag">应用:语音</span><span class="tag">硬件:Jetson</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用完全不训练的回声状态网络做音频监控里的紧急声音事件检测，看看能省多少算力。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">深层和浅层的储备池模型都取得了有竞争力的识别率，其中深层变体在高噪声条件下更鲁棒，而浅层变体效率最优，在 NVIDIA Orin 这类边缘设备上尤其明显；该方法在不同输入表示下也保持稳健。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">考察储备池计算范式下的免训练循环模型——即不同深度的双向回声状态网络，从浅层到深层配置——在 MIVIA 音频事件数据集的多类设定和不同信噪比下的表现，并与完整训练的双向长短期记忆网络和卷积循环网络基线对比，重点权衡深度、识别性能和计算效率三者的关系。</span></div>
+<div class="score-reason">评分依据：明确在 NVIDIA Orin 这类边缘设备上比较效率，免训练的储备池模型对算力与功耗受限的音频监控场景有现实价值，端侧契合度较高；属已有范式在新任务上的系统性评估。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.22218" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>
