@@ -114,6 +114,15 @@ arXiv 自身搜索只匹配标题和摘要，不直接按作者 affiliation 过�
 | **站点内嵌 JSON** | `machinelearning.apple.com/research?page=1..8` 内嵌 `"published"` | Apple 历史回填唯一可用入口（其 `rss.xml` 只有 10 条） |
 | **全量 sitemap + 逐条核正文** | `blog.google/en-us/sitemap.xml`（11701 条）、`qualcomm.com/sitemap.xml` 按 URL 路径 grep `/YYYY/MM/` | lastmod 只做发现（可放宽±10 天），日期必须回正文或 `.model.json` 定 |
 
+**本周（06-12~06-18 回填）新增实测**：
+
+- `machinelearning.apple.com/research?page=N` 的 **`page` 参数是空操作** —— 1~8 页返回同一个 2.5MB 文档，内含全部 567 条 `published`（2017-07 ~ 2026-10）。取第 1 页即是全量，不必翻页
+- `developer.apple.com/news/rss/news.rss` 是**可用的历史归档 feed**（147 条回溯到 2024-10），Apple 侧第二个入口
+- **Microsoft 没有任何可用的历史归档入口**：techcommunity 两个 RSS 路径 404/空、`azure.microsoft.com/blog/feed` 10 条、`microsoft.com/research/feed` 10 条、`research.samsung.com/rss/blog` 404。回填窗口只能记 `no_match`，但这是「查不到」而非「确认没有」，性质与其他 `no_match` 不同
+- `aihub.qualcomm.com/sitemap.xml` 有 18187 条 URL 但**完全没有 `<lastmod>`**，做不了时间发现
+- `developers.vivo.com/sitemap.xml` 返回的是 Vue SPA 外壳 HTML 而非 XML，极易误判成「有 sitemap」
+- `news.samsung.com/global/feed` 50 条但只回溯到 2026-08，属「只给最近 N 条」型
+
 **无效 / 陷阱**（都实测过，别重复踩）：
 
 - 「只给最近 N 条」的 feed 对历史窗口一律无用：`machinelearning.apple.com/rss.xml`(10)、`blog.google/rss/`(20)、`blogs.nvidia.com/feed/`(18)、`developer.nvidia.com/blog/feed/`(100，只回溯到 7 月)

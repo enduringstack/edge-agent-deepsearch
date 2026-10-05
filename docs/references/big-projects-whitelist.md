@@ -19,8 +19,8 @@
 - Core ML Tools (Apple) — `github.com/apple/coremltools`（iOS 部署）
 - MLX (Apple) — `github.com/ml-explore/mlx`（Apple Silicon）
 - OpenVINO (Intel) — `github.com/openvinotoolkit/openvino`（边缘推理）
-- PowerInfer (SJTU) — `github.com/PowerInfer/PowerInfer`（CPU+GPU 混合端侧大模型）
-- RKLLM (Rockchip) — Rockchip NPU 端侧（仓址以官方为准）
+- PowerInfer (SJTU) — `github.com/Tiiny-AI/PowerInfer`（CPU+GPU 混合端侧大模型。原 `PowerInfer/PowerInfer` 组织路径已 404，项目迁至 Tiiny-AI）
+- RKLLM (Rockchip) — `github.com/airockchip/rknn-llm`（瑞芯微 RK3588/RK3576 NPU 端侧 LLM 运行时）
 
 ## Agent 应用
 - nanobot (HKUDS) — `github.com/HKUDS/nanobot`（轻量开源 AI agent，工具/聊天/工作流；港大 HKUDS 实验室）
@@ -28,5 +28,9 @@
 - Limioryn — `github.com/YINGLINGH/limioryn`（本周新仓快速获得 100+ stars；面向 ESP32/STM32/Linux SBC 的端云 Agent 框架，提供 Capability 工具、设备执行、ACK、对账与恢复闭环）
 
 ## 维护规则
+
+> **仓址必须写具体路径。** RKLLM 一度只写「仓址以官方为准」，`REQUIRED_GITHUB_PROJECTS` 因此从不包含瑞芯微仓，
+> 采集器连续两周扫不到它的真实 release（06-17 的 v1.3.0、09-29 的 v1.3.1）；PowerInfer 的组织路径失效后也静默
+> 失联。**没有具体仓路径的条目等于不存在**——机器清单只认路径，人读文档里的描述性文字不参与任何过滤。
 - 增删在本文档进行，不靠记忆。新项目要"业界认可大项目"（知名实验室/公司/高 star+影响力），个人小仓不收。
 - 一个仓只在「最近 7 天有重大 release」时才进本周 run。

@@ -376,9 +376,15 @@ def convert_github(c: dict) -> dict | None:
     vendor = str(c.get("vendor") or "")
     affiliation_evidence_url = ""
     text = (title + "\n" + summary).lower()
+    # Whitelist membership IS the relevance determination — the project was vetted
+    # when it went on the list. Re-judging it with the keyword classifier only
+    # misfires: a release candidate's summary is often a machine-generated file or
+    # line count with no semantic words (ncnn's "94 files, +17185"), or a Chinese
+    # release note the English trigger table cannot match (rknn-llm v1.3.0). Both
+    # were silently dropped before this guard; the repo gate above is the real filter.
     relevance = classify_research_relevance(text)
     if relevance == "irrelevant":
-        return None
+        relevance = "direct"
     rel = 8 if relevance == "direct" else 5
     contrib = 6
     tags = candidate_tags(title, summary, relevance)

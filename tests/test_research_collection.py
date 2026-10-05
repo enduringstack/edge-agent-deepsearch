@@ -665,6 +665,76 @@ class CollectionManifestTests(unittest.TestCase):
 
         self.assertIn("cs.AI-broad", str(ctx.exception))
 
+    # --- whitelisted repos must never be dropped by the keyword relevance gate ---
+
+    def _convert_github(self, candidate):
+        import importlib.util, sys
+        from pathlib import Path
+        root = Path(__file__).resolve().parents[1]
+        sys.path.insert(0, str(root / "agent"))
+        import build_run_week
+        return build_run_week.convert_github(candidate)
+
+    def test_machine_generated_line_count_summary_survives(self):
+        # ncnn: summary is a file/line count with no semantic words at all.
+        got = self._convert_github({
+            "repo": "Tencent/ncnn", "tag": "commit-abc",
+            "title": "vulkan int8 kernels",
+            "summary": "94 files changed, 17185 insertions",
+            "release_url": "https://github.com/Tencent/ncnn/commit/abc",
+            "date": "2026-06-17",
+        })
+        self.assertIsNotNone(got)
+        self.assertEqual(got["source_tier"], "开源大项目")
+
+    def test_chinese_release_note_survives(self):
+        # rknn-llm v1.3.0: semantically rich, but the trigger table is English-only.
+        got = self._convert_github({
+            "repo": "airockchip/rknn-llm", "tag": "release-v1.3.0",
+            "title": "release-v1.3.0",
+            "summary": "新增 Qwen3.5、Gemma4、SmolLM3 支持；多模态输入接口与缓存复用；"
+                       "RK3576 长上下文解码优化；RK3588 推理数值溢出修复",
+            "release_url": "https://github.com/airockchip/rknn-llm/releases/tag/release-v1.3.0",
+            "date": "2026-06-17",
+        })
+        self.assertIsNotNone(got)
+        self.assertEqual(got["source_tier"], "开源大项目")
+
+    def test_non_whitelisted_repo_is_still_dropped(self):
+        # The guard must not become a back door for arbitrary repos.
+        self.assertIsNone(self._convert_github({
+            "repo": "someone/weekend-project", "tag": "v0.1",
+            "title": "my cool thing", "summary": "新增一些功能",
+            "release_url": "https://github.com/someone/weekend-project/releases/tag/v0.1",
+            "date": "2026-06-17",
+        }))
+
+    # --- whitelist repo paths: the machine list only ever matches concrete paths ---
+
+    def test_rockchip_and_powerinfer_are_whitelisted_by_their_live_paths(self):
+        module = self._module()
+        # RKLLM once had no concrete path in the doc, so the machine list never held
+        # it and two real releases were silently unreachable; PowerInfer's org moved.
+        for repo in ("airockchip/rknn-llm", "Tiiny-AI/PowerInfer"):
+            with self.subTest(repo=repo):
+                self.assertTrue(module.is_required_github_project(repo))
+
+    def test_dead_powerinfer_org_path_is_no_longer_whitelisted(self):
+        module = self._module()
+        self.assertFalse(module.is_required_github_project("PowerInfer/PowerInfer"))
+
+    def test_server_side_serving_stacks_stay_out_of_the_whitelist(self):
+        module = self._module()
+        # The list is deliberately edge/on-device only; these are server serving stacks.
+        for repo in ("vllm-project/vllm", "sgl-project/sglang", "NVIDIA/TensorRT",
+                     "ollama/ollama"):
+            with self.subTest(repo=repo):
+                self.assertFalse(module.is_required_github_project(repo))
+
+    def test_unknown_small_repo_is_rejected(self):
+        module = self._module()
+        self.assertFalse(module.is_required_github_project("someone/weekend-project"))
+
     def test_rejects_arxiv_manifest_with_too_few_pages_for_broad_sweeps(self):
         module = self._module()
         manifest = self._valid_manifest(module)
