@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>InterEvolve: Test-Time Evolution of Reward Programs for Humanoid Loco-Manipulation</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>InterEvolve: Test-Time Evolution of Reward Programs for Humanoid Loco-Manipulation</h1>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-10-01 · Zhuo Lin; Sirui Xu; Liuyu Bian; Yu-Xiong Wang; Liang-Yan Gui / arXiv</div>
+<div class="tags"><span class="tag">应用:机器人</span><span class="tag">方向:测试时自适应</span><span class="tag">方向:规划推理</span><span class="tag">方向:工具调用</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让人形机器人去做它从没训练过的任务，不重训，只靠复用已有技能、从自己的尝试里改进并把学到的留下来。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">实验显示人类手写的奖励远远没有把前后向行为基础模型的运动操作能力挖出来，而该方法通过迭代能持续改进；论文摘要未给出统一的成功率数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">一是训练一个物体感知的前后向行为基础模型，在冻结的身体先验上加物体残差，使得一个新的奖励函数在测试时就能转化成运动操作行为；二是把任务写成「奖励程序」——带完成条件和可调常数的分阶段奖励，由大模型智能体依据执行反馈和已验证程序的技能库在上下文里改写程序结构，再由数值优化器调常数，每个候选都在并行仿真场景里验证。</span></div>
+<div class="score-reason">评分依据：面向人形机器人在部署后不重训就适应新任务，正是端侧自适应最现实的诉求，端侧契合度高。把任务规范做成「可改写结构加可调常数」的程序，既让大模型能推理又让数值优化能接手，这个接口设计是本文最有价值的地方。验证目前仍在并行仿真中进行。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.02196" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

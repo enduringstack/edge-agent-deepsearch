@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SEDIMA: Cross-Run Hierarchical Insight Memory for Evolutionary Search Agents</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>SEDIMA: Cross-Run Hierarchical Insight Memory for Evolutionary Search Agents</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-10-01 · Amirhossein Abaskohi; Mahdi Mostajabdaveh; Zirui Zhou / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型驱动的进化式搜索每次都从零开始，同样的改进反复发现、同样的死胡同反复撞。这份工作给它加了一份能跨任务积累的经验记忆。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">作为不改动搜索算子的插件模块，在固定 100 个候选评估预算下，AlgoTune 上平均最终性能提升 5.5%、ALE-Bench LITE 上提升 6.6%；在 OpenEvolve 框架下，五种底座模型平均少用 32.3% 的迭代就能达到基线最好成绩。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把原始运行轨迹提炼成自然语言洞见，用注意力加权的质心按语义相似度聚类，再在后续变异时检索相关指导作为条件，从而把知识跨运行、跨问题地累积下来而不是困在单条轨迹里。</span></div>
+<div class="score-reason">评分依据：属于云端自动算法发现，与端侧部署没有直接关系。作为不改搜索算子的插件还能减少三成迭代，说明跨运行记忆这个切口选得准，工程性价比高。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.02361" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

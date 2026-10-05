@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2026.4.1</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>2026.4.1</h1>
+<div class="meta"><span class="score">12</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-10-01 · openvinotoolkit / GitHub</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span><span class="tag">硬件:NPU</span><span class="tag">方向:KV cache</span><span class="tag">方向:量化</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">OpenVINO 发布 2026.4.1，重点改进大模型注意力算子的支持面，并修了一批显卡和 NPU 上出错的问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">官方发布说明列出：GroupQueryAttention 新增因果注意力与部分旋转位置编码支持，MatMulNBits 扩展 bfloat16 并调整权重、缩放、零点的排布以正确解码更多量化模型；修复滑动窗口 KV cache 路径上会导致显存损坏或驱动崩溃的越界索引，以及低精度数据类型下的形状推断错误；显卡侧修复动态形状加零拷贝输出张量时的结果错误、GRU 序列模型的错误结果和布局传播问题；NPU 侧修复在 Intel Core Ultra 第三代处理器上的崩溃并加固了对畸形数据的导入校验。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 2026.4 基础上做维护更新，扩展注意力与量化矩阵乘算子的能力边界，并逐项修复显卡、NPU、CPU 后端上的正确性与稳定性缺陷。</span></div>
+<div class="score-reason">评分依据：OpenVINO 是 PC 和边缘设备上做本地推理的主力运行时之一，这次修的正是 NPU 崩溃和滑动窗口 KV cache 的显存越界，对本地跑大模型的稳定性影响直接。属于维护版本，技术贡献按低计。</div>
+<div class="source"><a href="https://github.com/openvinotoolkit/openvino/releases/tag/2026.4.1" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

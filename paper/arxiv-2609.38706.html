@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Preserving Provenance in Shared KV Caches for LLM Serving</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Preserving Provenance in Shared KV Caches for LLM Serving</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-09-30 · Wei Song; Yuxin Cao; Xi Zheng; Leo Zhang; Xiao Cheng / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:安全隐私</span><span class="tag">方向:云端serving</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">生产环境里，推理引擎的本地前缀缓存会区分适配器和权重配置，但共享缓存层往往只按 token 内容建索引，于是不同来源的相同 token 撞到了一起。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">对三个 vLLM 连接器的源码审计确认了这一结构性遗漏，运行时实验在 vLLM 和两个 SGLang 版本、7 个家族 12 个模型（0.5B 到 32B）和 160 多种配置上复现：跨适配器碰撞让准确率从 0.94 掉到 0.64，不兼容的 KV 表示让推理准确率归零，而缺少加盐让 93% 的提示可以通过时序被识别出来。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把缺失的保证形式化为「KV 血缘契约」——对一个声明的维度注册表，共享键必须对计算血缘和共享血缘单射，且身份在各工作进程间稳定；任何具有稳定身份的维度都可以据此加入，而不需要为每个连接器单独写键逻辑。</span></div>
+<div class="score-reason">评分依据：问题出在服务端共享缓存层，与端侧部署关系宽泛。但「缓存复用必须带血缘」这条原则对任何做跨请求状态复用的系统都成立，而且论文用源码审计加跨引擎复现把问题坐实了，不是停在理论担忧。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.38706" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

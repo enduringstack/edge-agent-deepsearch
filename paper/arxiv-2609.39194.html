@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Importance-Aware Feature Sparsification for Wireless Split Learning</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Importance-Aware Feature Sparsification for Wireless Split Learning</h1>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-09-30 · Bumjun Kim; Yoon Huh; Wan Choi / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:联邦学习</span><span class="tag">方向:端侧训练</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">拆分学习把网络上层放到服务器以减轻设备负担，但每轮都要上传高维中间特征，通信又成了瓶颈。这份工作把「挑哪些特征上传」的活交给服务器来做。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">论文给出了非渐近收敛界，分离出稀疏化引入的误差，并刻画了稀疏比例与小批量大小在固定通信预算下如何共同影响收敛；同时分析了该方法相对已有方案的通信与计算开销。摘要未给出具体准确率数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">服务器在反向传播时用真实类别对应的 logit 算 Grad-CAM 分数给特征通道排序，再把各类分数聚合成一个类别均衡、与标签无关的重要性向量以缓解标签倾斜下的头部类偏置；客户端下一轮直接复用该向量保留前 N 个通道，不需要额外的前向或反向计算。</span></div>
+<div class="score-reason">评分依据：拆分学习本身就是为算力受限终端设计的，而把特征选择的计算整体挪到服务器、客户端零额外开销，这个取舍对设备侧很友好。配上隔离稀疏化误差的收敛界，理论与系统两头都交代得比较清楚。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.39194" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

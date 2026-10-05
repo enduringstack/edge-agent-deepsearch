@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Spatial Strategies, Not Actions: Vector-Quantized Geodesics as Tools for LLM-Driven Agents</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Spatial Strategies, Not Actions: Vector-Quantized Geodesics as Tools for LLM-Driven Agents</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-09-30 · Gabriel Turinici / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型智能体常被批评没有空间感。这份工作不让它直接选动作，而是先把几何轨迹做成一批「工具」，再让它挑工具。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在部分可观测的动态二维网格环境里用开源视觉语言模型 Qwen3.6-35B-A3B 测试，几何工具库配合以智能体为中心的缩放工具和碰撞检测工具后，一个不做思维链的快速配置就达到了代价高得多的思维链版本的到达率，单次决策耗时从分钟级降到秒级。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先采集测地轨迹并做向量量化，挑出有代表性的子集；离线阶段让大模型给每条被选轨迹配一段描述其行为模式的自然语言，使其成为一个工具；在线阶段大模型根据当前状态和目标挑工具，底层由原始动作执行该轨迹。</span></div>
+<div class="score-reason">评分依据：与端侧部署没有直接关系，但「用工具库换掉思维链」把单次决策从分钟压到秒级，这个代价结构对算力受限场景有迁移价值。把工具发现交给无监督量化、把决策交给大模型的两层分工是清楚的设计。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.00613" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

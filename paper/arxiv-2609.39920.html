@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MCD: Causal Distillation of Multimodal In-Context Learning in Large Vision-Language Models</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>MCD: Causal Distillation of Multimodal In-Context Learning in Large Vision-Language Models</h1>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-09-30 · Yanshu Li; Jiaqian Li; Canran Xiao; Xi Xiao; Tianyang Wang; Yongtai Liu / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">视觉语言模型的上下文学习能力随模型变小掉得厉害。常规蒸馏只教学生「老师答什么」，没教它「老师是看哪条证据得出的」。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在三个视觉语言模型家族、七个基准上，学生平均提升 7.23 分，比普通蒸馏高 4.68 分。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用保持结构的 token 干预找出并验证真正起因果作用的证据，再把教师在这些证据被保留或被移除时的反应差异传给学生，从而把蒸馏目标从输出分布对齐换成「如何使用多模态证据」的因果模式对齐。</span></div>
+<div class="score-reason">评分依据：小模型保住上下文学习能力是端侧多模态部署的前提，这个方向有迁移价值但论文没有做设备端实测。指出学生可能「答案学对了却仍靠语言先验」并用因果干预来堵这个漏洞，切入点比对齐输出分布更本质。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.39920" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

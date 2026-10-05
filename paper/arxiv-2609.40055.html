@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Less Data, Better Timing: Student-Curriculum Coupling for VLM On-Policy Distillation in Temporal Video Grounding</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Less Data, Better Timing: Student-Curriculum Coupling for VLM On-Policy Distillation in Temporal Video Grounding</h1>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-09-30 · Jiacheng Qiu; Yunsoo Kim; Ruichen Xu; Jian Luo; Petar M. Djurić; Sima Mofakham / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在线策略蒸馏通常按固定教师和初始学生状态排好课程，默认这些样本一直有用。这份工作指出「值不值得教」会随学生水平变化。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在三个时序视频定位基准上，相比 Video-OPD 在其原始课程下的平均召回率相对提升 5.1%，同时少用 60.0% 的训练样本、训练时间减少 50.4%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把监督的可信度和必要性拆开看——前者关乎目标本身可不可信，后者随学生当前能力变化；据此构建一个紧凑的锚点加前沿课程定义候选监督空间，再由不断变化的学生动态决定其中的激活子集，监督可以被激活、暂停或重新激活。</span></div>
+<div class="score-reason">评分依据：属于视频理解模型的训练方法，与端侧部署没有直接关系。把监督价值拆成可信度和必要性两个会随训练变化的量，是对课程学习的一处实质细化，训练成本降幅也很明显。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.40055" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AS$^2$D: Accelerating On-Demand Audio Understanding on Mobile Devices</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>AS$^2$D: Accelerating On-Demand Audio Understanding on Mobile Devices</h1>
+<div class="meta"><span class="score">17</span> <span class="tier school">学校预印本</span>  2026-09-29 · Yunzhe Li; Kyoungjun Park; Hongzi Zhu; Lili Qiu / arXiv</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">应用:语音</span><span class="tag">硬件:手机</span><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">投机解码要等目标模型确认完前缀草稿模型才能继续，两头串行。这份工作发现对音频模型来说，输入音频和用户请求本身就能提供候选，草稿不必跟着目标走。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">该方法在 MNN 框架上为 Android 实现，在四款手机、两个目标模型、七个数据集和三类任务、共 12.2 小时音频上评测；摘要未给出统一的加速倍数。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">让草稿与目标解耦：一个以音频为条件的草稿模型按自己的生成历史往前跑，目标模型独立地验证和纠正已经就绪的候选；没有可用候选时目标模型自己往前推进。于是目标反馈只决定哪些候选被采纳，不再决定草稿什么时候能继续，草稿和验证可以并发进行。</span></div>
+<div class="score-reason">评分依据：在 MNN 上为 Android 实现并在四款真机上评测，是本周少见的真正落到手机运行时的推理优化，端侧契合度很高。打破「草稿必须跟着目标前缀」这个一直被当作前提的依赖，针对音频这类源条件生成给出了合理依据，思路有突破性。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.37617" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

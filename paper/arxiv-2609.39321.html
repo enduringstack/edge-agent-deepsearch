@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GRPO Training Dynamics for Small Language Models</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>GRPO Training Dynamics for Small Language Models</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-09-30 · Rajat Ghosh; Vaishnavi Bhargava; Henry Wong; Aryan Singhal; Debojyoti Dutta / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">GRPO 省显存，适合在有限算力上做强化微调，但它在小模型上到底怎么训、什么会翻车，一直没人系统说清。这份工作把 1.5B 到 7B 的情况摸了一遍。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">初版调优模型在约 80% 的数学基准评测上超过各自的基座模型，但在选择题和代码推理任务上提升有限；按机理分析调整低秩适配目标模块和奖励塑形配置后，后两类任务的表现得到改善。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在单机 8 卡 A100 的实际预算下，跨多个模型家族和数学、代码、科学选择题三类推理领域，系统分析分组大小如何影响策略收敛、训练稳定性和下游成绩，并刻画训练中张量级的更新动态，考察低秩适配的目标模块与层选择能否带来改善。</span></div>
+<div class="score-reason">评分依据：小模型是端侧的主力，而这份工作给的是在有限算力下复现 GRPO 的实操指引，对资源受限团队有直接用处。内容是系统性实验与调参经验总结，没有新方法，并且如实报告了在选择题和代码上的失败。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.39321" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

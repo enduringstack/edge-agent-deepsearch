@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Adaptive Mutual Distillation for Balanced Multi-Task Post-Training of Large Language Models</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Adaptive Mutual Distillation for Balanced Multi-Task Post-Training of Large Language Models</h1>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-10-02 · Baohang Li; Xiaocheng Feng; Yichong Huang; Chengpeng Fu; Wenshuai Huo; Zekun Zhou; Zekun Yuan; Tingjia Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多任务后训练里各任务数据量差很多，不同的平衡策略会训出各有所长的模型。这份工作让两个这样的模型互相教。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 6 个基准和 3 种大模型底座上，两个协同训练出的模型平均分都高于用相同采样策略的监督微调基线，也高于所比较的任务平衡方法；把两个模型合并后平均分还能再提升，合并模型相比多任务监督微调在三个底座上平均高 2.91 分。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">同时训练两个采用不同任务平衡策略的模型，用跨任务共享的短训练探针评估蒸馏权重的候选调整，再按各任务的验证分数为每个任务和每个传递方向分别选定调整幅度。</span></div>
+<div class="score-reason">评分依据：纯训练方法，与端侧部署没有直接关系。思路是互蒸馏加按任务自适应权重，属于常见组合的细化，提升幅度中等。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.02856" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

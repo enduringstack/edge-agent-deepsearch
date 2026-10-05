@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>After a Decade: Bringing Shadow Removal into the Real World with Agentic Training Data</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>After a Decade: Bringing Shadow Removal into the Real World with Agentic Training Data</h1>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-09-29 · Shilin Hu; Jingyi Xu; Dimitris Samaras; Hieu Le / arXiv</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">去阴影在学术基准上看着快解决了，真实场景却很脆，原因是配对训练数据十年没怎么变——要拍一张「同场景同光照但没有阴影」的对照图太难了。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">构建了含 17138 组图像、掩码、目标三元组的数据集，覆盖通用场景、人脸和遥感；该构建流程相对以往去阴影工作把颜色分布差异降低 50.5%，用它训练现有去阴影模型可把跨域 LAB 均方根误差降低 19.7% 到 37.5%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把已有的大规模阴影检测数据集（有真实图像和掩码但没有无阴影目标）变成配对监督：用一套离线的智能体工作流，组合物理驱动的生成、失败检测、按反馈重试、候选筛选和确定性修正来补出目标图。</span></div>
+<div class="score-reason">评分依据：属于图像复原的数据构建，与端侧部署没有直接关系。价值在于指出十年没变的数据才是瓶颈，并用带失败检测和重试的离线流程把已有的不完整数据盘活。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.38607" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TReVS: Integrating Textual Relevance and Visual Saliency for Efficient Vision-Language Model Token Pruning</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>TReVS: Integrating Textual Relevance and Visual Saliency for Efficient Vision-Language Model Token Pruning</h1>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-09-29 · Jing Wang; Zhiping Wu; Dongdong Ren; Youfang Han; Wei Zhao; Wenbin Li / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">视觉语言模型的视觉 token 太多，推理很贵。常见的两段式剪枝先按视觉显著性砍一刀，可能把与问题相关的 token 提前砍掉。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">实证分析显示把查询信息引入第一阶段剪枝能更好地保住任务相关证据，并一致优于只看视觉显著性的做法；论文还发现高方差注意力头对文本查询更敏感，能给第二阶段提供更有判别力的文本到视觉注意力信号。摘要未给出具体的剪枝率与精度数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">免训练框架：在进入语言模型之前，把文本相关性和视觉编码器的显著性结合起来做第一阶段剪枝；在浅层到中层则利用高方差注意力头给出的信号剔除与任务无关的 token。</span></div>
+<div class="score-reason">评分依据：视觉 token 剪枝是端侧多模态推理最直接的降本手段，免训练也便于落地，但论文没有设备端实测。指出两段式剪枝第一阶段会「提前砍掉关键证据」并用查询信息补救，诊断准确，方法本身属于常见思路的改进。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.37581" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Serving a Revisable World: Versioned Execution for Interruptible Agents</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Serving a Revisable World: Versioned Execution for Interruptible Agents</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-10-01 · Yanxin Zhang; Rahul Sharma; Nitin Vegesna; Zheyu Fu; Chang Liu; Trivikram Krishnamurthy / arXiv</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用户改口、工具出错、计划变了，智能体的任务就得中途改。现在的服务端只能「中止旧请求再提交新请求」，旧的缓冲输出可能还会发出去，新的又得从头重建状态。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">正确性实验验证了当前版本输出和有效状态继承在各条路径上都成立；把失效与继承结合起来，让从改动到后继请求首 token 的时间在受控配对实验中中位数缩短 17.1%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">重新设计服务控制面，引入「版本化执行」：请求拥有调度和内存资源，执行版本拥有「权限」——也就是为当前执行发布输出或写入状态的资格；系统先吊销过时工作，再限定其剩余执行并认证后继可继承的已完成前缀，后继从该状态继续运行，被隔离的旧资源异步回收。</span></div>
+<div class="score-reason">评分依据：针对的是服务端的可中断执行，与端侧部署关系宽泛。把「资源所有权」和「发布权限」拆成两层来统一处理快速失效与选择性保留，是个干净的抽象，并在 vLLM 上做了完整实现。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.01160" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

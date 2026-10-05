@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>How Can Recommendation Feedback Evolve Agent Memory?</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>How Can Recommendation Feedback Evolve Agent Memory?</h1>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-09-29 · Shanwen Mao; Mingming Li; Hao Zhang; Zhiheng Li; Yige Wang; Penghua Yu; Junxiong Zhu / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">做内容的智能体会不断收到推荐系统反馈的曝光、点击和转化，但这些信号来得晚、噪声大，还分不清是哪条记忆起的作用。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">论文提出用「记忆演化增益」衡量演化后的记忆相对无记忆基线在严格的未来任务上带来的效用提升；摘要未给出具体数值。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把记忆当成一个容量受限的经验群体：用时间和语义上的信用分配估计每条记忆在当前语境下的适应度，再用「责任信用」按生成时实际引用了哪些记忆来分摊结果信号，据此驱动记忆的演化。</span></div>
+<div class="score-reason">评分依据：与端侧部署没有直接关系。把延迟且混杂的线上反馈拆成时间、语义和责任三类信用来归因，是针对推荐场景特性的合理设计。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.37544" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

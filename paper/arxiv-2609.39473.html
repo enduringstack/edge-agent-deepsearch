@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Beyond the Shadows of Plato's Cave: Evaluating False Memory in Autonomous Agents via Counterfactual Reasoning</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Beyond the Shadows of Plato's Cave: Evaluating False Memory in Autonomous Agents via Counterfactual Reasoning</h1>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-09-30 · Quan M. Tran; Zhuo Huang; Zhen Fang; Jing Zhang; Mingming Gong; Tongliang Liu / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体靠记忆泛化到新环境，但记忆也会把过去的偏见带进来。这份工作把这类「虚假记忆」和普通的泛化失败区分开。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">实验显示只盯着最终答案往往发现不了虚假记忆，而该框架在各类虚假记忆设置下取得 76.2% 到 96.7% 的 AUROC，在真实基准上比最好的基线高 3.4% 到 23.3%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">不做训练，而是通过反事实推理观察智能体信念的演化：构造假设性干预让记忆背后的潜在概念发生变化，再测量由此产生的概念漂移来区分忠实记忆与虚假记忆；这些概念可以从智能体生成答案之前的隐状态里估计，不需要设计奖励也不需要采样答案。</span></div>
+<div class="score-reason">评分依据：与端侧部署没有直接关系。从生成答案前的隐状态估计概念漂移这一点很省算力，也避开了奖励设计，对记忆系统的可靠性评估是一个新角度。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.39473" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>
