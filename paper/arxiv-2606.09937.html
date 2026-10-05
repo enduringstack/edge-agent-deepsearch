@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RKSC: Reasoning-Aware KV Cache Sharing and Confident Early Exit for Multi-Step LLM Inference</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>RKSC: Reasoning-Aware KV Cache Sharing and Confident Early Exit for Multi-Step LLM Inference</h1>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-07 · Anirudh Sekar / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一个免训练的推理框架，专门消除多分支推理流水线里的两类结构性冗余：前缀缓存重复计算和不必要的验证前向。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在五个模型家族（70 亿到 100 亿参数）、四个基准、1000 道题上，相对不用缓存的基线平均加速 3.008 倍、峰值 3.990 倍，相对等价于 vLLM 的前缀缓存平均再快 1.66 倍，提前退出引入的错误率仅 0.37%（1616 次验证调用里 6 次出错）；无需微调或改架构。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">前缀 KV 缓存只算一次，再按隐状态余弦相似度广播给所有语义相近的分支；置信度门控的提前退出有两条通路，一是各分支生成置信度都很明确时整个跳过验证前向，二是逐层熵趋稳时在中间层终止验证；再用注意力加权的深度优先淘汰防止缓存无限增长。</span></div>
+<div class="score-reason">评分依据：免训练、不改架构的缓存复用与提前退出，对算力有限的端侧多步推理有直接迁移价值，但原文在服务器模型上验证。把前缀缓存从 token 精确匹配推广到语义相似分支，是有实际收益的一步。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.09937" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

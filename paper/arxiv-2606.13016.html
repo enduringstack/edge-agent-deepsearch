@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Otters++: A Time-to-first-spike Based Energy Efficient Optical Spiking Transformer</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Otters++: A Time-to-first-spike Based Energy Efficient Optical Spiking Transformer</h1>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-06-11 · Zhanglu Yan; Jiayi Mao; Kaiwen Tang; Fanfan Li; Gang Pan; Tao Luo; Bowen Zhu; Qianhui Liu / arXiv</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">硬件:神经形态</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一种用光电器件实现的脉冲 Transformer，把器件本身的信号衰减直接当成脉冲时间编码的计算，省掉数字算衰减项的开销。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 GLUE 上平均分提升到 84.17%，同时相对此前的脉冲 Transformer 基线保持明显能耗优势。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用实测的氧化铟光电突触衰减曲线直接实现首次脉冲时间编码的时间项；再证明该结构与量化神经网络逐层等价，训练时前向走忠于器件的脉冲计算、反向走等价量化网络的直通梯度并配合蒸馏，同时按实测器件噪声采样让训练感知硬件波动。</span></div>
+<div class="score-reason">评分依据：脉冲网络与光电器件协同设计直指低功耗推理，是端侧低功耗的相邻方向，但工作停在器件与模型层面、没有终端产品形态。把器件的物理衰减当成计算本身，并给出可训练的等价量化网络通路，思路少见。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.13016" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

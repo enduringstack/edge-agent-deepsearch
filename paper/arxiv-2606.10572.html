@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>One Token per Multimodal Evidence: Latent Memory for Resource-Constrained QA</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>One Token per Multimodal Evidence: Latent Memory for Resource-Constrained QA</h1>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-09 · Zhi Zheng; Ziqiao Meng; Hao Luan; Wei Liu; Wee Sun Lee / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:RAG</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把检索增强问答里的每条文本或图片证据压成一个隐空间 token，让内存和 token 预算紧张的场景也用得起外部记忆。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在七个纯文本问答基准和多模态问答基准上与先进 RAG 基线持平，生成端 token 消耗少 3 到 10 倍；在 WebQA 的图像问答上表现最好。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用一个小的压缩模型把每条证据编码成单个高维隐 token，查询也映射到同一隐空间做检索，检索到的隐 token 直接喂给预训练大模型生成答案；压缩器用重建、对比和蒸馏三个目标端到端一起训练。</span></div>
+<div class="score-reason">评分依据：明确以资源受限应用用不起原始证据检索为动机，token 和存储开销的下降对端侧助手直接有用，但没有设备端实测。用单个隐 token 同时承担重建、检索和生成三项目标，是比较激进也比较干净的设计。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.10572" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Unifying Data, Memory, and Compute Efficiency in LLM training: A Survey</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Unifying Data, Memory, and Compute Efficiency in LLM training: A Survey</h1>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-06-09 · Vanessa Schmidt; Huy Hoang Nguyen; Cédric Jung; Shirin Salehi; Anke Schmeink / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:端侧训练</span><span class="tag">方向:剪枝稀疏</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一篇以资源约束为主线的综述，把大模型训练里的数据效率、显存效率和算力预算三个瓶颈放在一起讨论。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">综述整理出的主要结论包括：不同场景下好数据的定义不同、最优子集取决于任务目标和资源预算；微调时主导瓶颈常常是显存而不是算力；以及算力最优分配与停止规则的已有证据。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按三条轴线组织文献：数据轴梳理从学习动态代理信号到梯度与影响力打分、再到难度感知与课程式策略的选择与剪枝方法；系统轴说明需要同时压缩权重存储、优化器状态和激活显存；算力轴把训练和推理都视为受有限浮点预算约束的过程。</span></div>
+<div class="score-reason">评分依据：以资源约束为中心梳理效率技术，对理解端侧训练与微调的瓶颈有参考价值，但内容集中在数据中心规模的训练。综述性质，不提供新方法。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.10706" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

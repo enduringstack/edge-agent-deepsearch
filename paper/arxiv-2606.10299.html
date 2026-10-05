@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>What Spatial Memory Must Store: Occlusion as the Test for Language-Agent Memory</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>What Spatial Memory Must Store: Occlusion as the Test for Language-Agent Memory</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-09 · Doeon Kwon; Junho Bang / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">检验语言智能体的空间记忆到底该存什么，用墙后物体这种遮挡情形来区分回忆和可见性两件事。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">预注册实验显示现有记忆宫殿把空间邻近度与新近度、重要度线性混合的默认做法并不管用（Delta-Hit@5 平均 -0.0375），而以几何为主导的加权大幅获胜（+0.3208）；在 849 个墙后目标上，纯文本和实时视野锥都得 0.000 分，加上射线体素遍历后达到 0.982；坐标回忆对近似重复位置的区分率为 1.000，而余弦相似基线只有 0.533。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把记忆回忆和可见性拆成两件事：回忆按设计就该无视遮挡，可见性则是一个作用在已存几何上的感知判定，用一行射线对体素的数字微分分析器，复用智能体本来就在投射的视线射线来计算。</span></div>
+<div class="score-reason">评分依据：空间记忆的组织方式对具身端侧智能体有参考价值，但本文实验在模拟世界里进行、不涉及设备部署。把回忆与可见性分离并用预注册实验测量，方法学上相当严谨。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.10299" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

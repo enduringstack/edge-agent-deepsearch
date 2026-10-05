@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Toward a Small ML Runtime Stack for Raspberry Pi 5 QPUs</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Toward a Small ML Runtime Stack for Raspberry Pi 5 QPUs</h1>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-06-06 · Yiannis Hadjiyianni; Panagiotis Michelakis; Dimitrios Stamoulis / arXiv</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span><span class="tag">方向:高效推理</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在树莓派 5 的 VideoCore VII 图形处理单元上搭一套以该单元为中心的机器学习运行时，把它当成边缘推理的执行基底。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">对稠密整数算子，打包的 INT16 输入配 INT32 累加相对 NumPy 吞吐高出近两个数量级；在最小最大值、池化、卷积和注意力等操作上均优于 PyTorch 和 NumPy；作者称这是初步结果，表明树莓派的图形单元可以作为边缘侧加速 AI 模型执行的实用基底。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">基于一个汇编库构建，包含可复用的分块矩阵乘基底、以矩阵乘实现的卷积、一个单头注意力核心、常驻执行器，以及基于 24 位乘法指令的整数执行通路。</span></div>
+<div class="score-reason">评分依据：把树莓派上长期闲置的图形单元挖出来做推理加速，是很具体的端侧算力利用工作，并给出实测吞吐对比。作者自述为初步结果，覆盖的算子和模型规模还有限。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.09905" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

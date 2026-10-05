@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pruning and Distilling Mixture-of-Experts into Dense Language Models</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Pruning and Distilling Mixture-of-Experts into Dense Language Models</h1>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-09 · Junhyuck Kim, Jihun Yun, Haechan Kim, Gyeongman Kim, Joonghyun Bae, Jaewoong Cho / HuggingFace Daily</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span><span class="tag">方向:MoE</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把训练好的混合专家模型整体转换成普通稠密模型，解决专家权重必须全部常驻内存、不适合内存受限部署的问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在参数量对齐的受控对比下，混合专家转稠密比稠密直接剪枝的下游平均准确率高 6.3 个百分点，约 40 亿 token 蒸馏的训练墙钟时间还快 1.6 倍；文中在三个模型上比较了 7 种打分、5 种分组和 2 种幅度缩放共 350 种配置，发现打分方法影响最大。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先给专家打分、挑选并分组，把选中的专家拼接成一个稠密前馈层，再用原混合专家模型当教师做知识蒸馏精修；作者提出的感知多样性的打分方法在三个模型上都优于此前方法。</span></div>
+<div class="score-reason">评分依据：直接针对内存受限部署下混合专家模型的结构性缺陷，产出的稠密模型对端侧更友好，但原文没有设备端实测。第一个系统性地把训练好的混合专家转成全稠密架构，并用 350 组配置厘清了关键因素。</div>
+<div class="source"><a href="https://huggingface.co/papers/2605.28207" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rosetta Memory: Adaptive Memory for Cross-LLM Agents</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Rosetta Memory: Adaptive Memory for Cross-LLM Agents</h1>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-05 · Hao Yang; Shiqi Shen; Haoxuan Li; Zhipeng Wang; Zhi Gong; Xu Chen / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用户常常在不同大模型之间来回切换，一个模型写下的记忆得让另一个模型读懂，这篇研究怎么让记忆跨模型适配。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 HotpotQA、2WikiMultihopQA 和 MuSiQue 上一致优于基线，并且在换成训练时没见过的模型时仍然稳健。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把视角从以模型为中心的记忆设计转成以记忆为中心的模型适配，在写入和读取两侧各设计一个按模型画像条件化的算子并联合训练；再用一个最小增益采样课程，训练时优先照顾被服务得最差的模型；评估上设计了与朴素记忆基线对比的性能差奖励，以衡量算子本身而非模型自身能力的贡献。</span></div>
+<div class="score-reason">评分依据：跨模型的记忆互通在端云混合、端侧小模型与云端大模型分工的场景下会变得重要，但原文不涉及部署位置，相关度按宽泛计。把问题从模型中心翻转成记忆中心，角度清晰。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.07711" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

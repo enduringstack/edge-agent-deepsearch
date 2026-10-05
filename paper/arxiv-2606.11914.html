@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NARRAS: Edge-Triggered Distributed Inference for CSI-Based Localization in Vehicular IoT Networks</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>NARRAS: Edge-Triggered Distributed Inference for CSI-Based Localization in Vehicular IoT Networks</h1>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-06-10 · Rodrigo Oliver; Ricardo Vazquez Alvarez; Alejandro Lancho; Stefano Rini / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:高效推理</span><span class="tag">方向:能耗功耗</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让车联网里分布式部署的天线阵列各自判断自己这次观测值不值得上报，在有限上行信道下完成基于信道状态信息的定位。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在相当的上行活跃度下，定位精度优于已有的学习型和启发式稀疏上报策略；稠密全量上报的模型仍可作为不受预算约束的参考上界。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把问题抽象成边缘触发的分布式推理：每个远端天线阵列先把本地信道状态编码成隐特征，再结合自己近期观测的循环摘要和上次发送的隐特征记忆，决定本次是否上报；训练时用可微的活跃度惩罚和经验证校准的确定性阈值控制平均活跃发射数，并用信道图正则化塑造隐空间几何。</span></div>
+<div class="score-reason">评分依据：设备侧自行决定是否上传、在共享信道预算下完成协同推理，正是资源受限边缘节点的典型问题。把上报决策、循环摘要和发送记忆联合训练，比固定稀疏策略更贴合实际约束。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.11914" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>
