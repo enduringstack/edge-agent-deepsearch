@@ -123,6 +123,18 @@ arXiv 自身搜索只匹配标题和摘要，不直接按作者 affiliation 过�
 - `developers.vivo.com/sitemap.xml` 返回的是 Vue SPA 外壳 HTML 而非 XML，极易误判成「有 sitemap」
 - `news.samsung.com/global/feed` 50 条但只回溯到 2026-08，属「只给最近 N 条」型
 
+**06-05~06-11 回填新增实测**：
+
+- **`anthropic.com/news` 内嵌 Sanity JSON 是 Anthropic 的全量归档索引**（269 组 `publishedOn`+`slug`，回溯到 2021-05）。`anthropic.com/rss.xml` 与 `/feed.xml` 均 404，此前只能靠 sitemap lastmod 记 `no_match`
+- **`apple.com/newsroom/sitemap.xml`（2588 条）+ 逐条 JSON-LD `datePublished`**：sitemap 无 lastmod，但 URL 路径带 `/YYYY/MM/`，按月 grep 后逐条开正文定日。回填发布会周（WWDC 等）的关键入口
+- **`mediatek.com/sitemap.xml`（4191 条带 lastmod）+ 文章页 JSON-LD** 可定日，**但 lastmod 实际是 `dateModified`**（实测一文 lastmod 06-10 / published 05-07），必须逐条回正文
+- **Reddit 终于有历史入口**：`arctic-shift.photon-reddit.com/api/posts/search?subreddit=X&after=…&before=…` 匿名 200，返回带 `created_utc`/`score`/`selftext`/`permalink` 的 JSON。限制：每 sub 单次 100 条上限、翻页未跑通，是抽样不是穷举，条目 `verification` 应记「仅线索」
+- **X 原帖回核**：UA 必须是 `curl/8.4.0` 才返回带 `article:published_time` 的 SSR 页（浏览器 UA 只得 JS 壳），且成功是概率性的、需 `sleep 4` 重试。可先用 snowflake 离线定时筛选——`(id>>22)+1288834974657` 毫秒即发布时间，与 meta 精确吻合，先筛进窗口再只对少数条做高成本回核
+- **`news.samsung.com` 是 WordPress 但 `/wp-json/wp/v2/posts` 被 WAF 挡成 403** —— WP REST 这招对三星无效，别重试
+- **`blog.mi.com` 是 catch-all 200 陷阱**：`/en/`、`/sitemap.xml`、`/feed/`、`/wp-json/wp/v2/posts` 全部返回同一个 42KB SPA 外壳，极易误记成 `found`
+- **blog.google 的 lastmod 漂移远超 ±10 天**：实测有 lastmod 2026-06-10 / `datePublished` 2026-03-25（差 77 天）。发现窗放宽到 ±30 天仍可用，但 lastmod 绝不能当日期
+- `honor.com/global/sitemap.xml` 可用（1794 条带 lastmod）但只反映近期重生成；`honor.com/sitemap.xml` 是 404。`oppo.com/sitemap.xml` 是按地区分的 sitemapindex，index 层 lastmod 全部同一天，拿不到逐条发布日
+
 **无效 / 陷阱**（都实测过，别重复踩）：
 
 - 「只给最近 N 条」的 feed 对历史窗口一律无用：`machinelearning.apple.com/rss.xml`(10)、`blog.google/rss/`(20)、`blogs.nvidia.com/feed/`(18)、`developer.nvidia.com/blog/feed/`(100，只回溯到 7 月)

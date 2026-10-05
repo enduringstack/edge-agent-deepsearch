@@ -72,10 +72,55 @@ def find_major_code_drops(
     return matches
 
 
+RELEASE_PAGE_LIMIT = 40
+
+# Repos whose release history could not be paged back far enough to prove the
+# window is empty. Recorded in the manifest so a zero is never mistaken for a fact.
+UNPROVEN_RELEASE_SCANS: list[str] = []
+
+
+def fetch_releases(repo: str, window_start: str) -> tuple[list[dict], bool]:
+    """Page back through a repo's releases until the window is covered.
+
+    The endpoint is newest-first and a single page holds 100 rows. A repo that
+    tags daily CI builds burns that in two or three weeks (llama.cpp's first 100
+    releases only reach back ~5 days), so an unpaginated scan silently returns
+    nothing for any older window — the release half of a backfill week would look
+    empty without saying so. Keep paging until a page is entirely older than the
+    window, so "no release" means no release.
+
+    Returns the rows plus whether paging actually reached past ``window_start``.
+    When it did not — the API caps release paging and answers 422 past the cap —
+    the caller records the repo as unproven rather than reporting a clean zero.
+    """
+    collected: list[dict] = []
+    covered = False
+    for page in range(1, RELEASE_PAGE_LIMIT + 1):
+        batch = fetch_json(
+            f"https://api.github.com/repos/{repo}/releases?per_page=100&page={page}"
+        )
+        if not isinstance(batch, list):
+            break  # the API refused (422 past the paging cap): coverage unproven
+        if not batch:
+            covered = True  # ran out of releases entirely, so the window is covered
+            break
+        collected.extend(batch)
+        oldest = min(
+            (str(r.get("published_at") or r.get("created_at") or "")[:10] for r in batch),
+            default="",
+        )
+        if oldest and oldest < window_start:
+            covered = True
+            break
+    return collected, covered
+
+
 def collect_project(repo: str, window_start: str, window_end: str) -> list[dict]:
     candidates: list[dict] = []
-    releases = fetch_json(f"https://api.github.com/repos/{repo}/releases?per_page=100") or []
-    for release in releases if isinstance(releases, list) else []:
+    releases, window_covered = fetch_releases(repo, window_start)
+    if not window_covered:
+        UNPROVEN_RELEASE_SCANS.append(repo)
+    for release in releases:
         published = str(release.get("published_at") or release.get("created_at") or "")[:10]
         if not (window_start <= published <= window_end):
             continue
@@ -146,6 +191,8 @@ def main(argv=None) -> int:
             "status": "complete",
             "candidate_count": len(candidates),
             "release_projects_checked": checked,
+            **({"release_scan_unproven": sorted(set(UNPROVEN_RELEASE_SCANS))}
+               if UNPROVEN_RELEASE_SCANS else {}),
         },
         today=run_date,
     )

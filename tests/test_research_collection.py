@@ -709,6 +709,62 @@ class CollectionManifestTests(unittest.TestCase):
             "date": "2026-06-17",
         }))
 
+    # --- release scan must page back far enough to cover an old window ---
+
+    def _releases_module(self):
+        import importlib.util, sys
+        from pathlib import Path
+        root = Path(__file__).resolve().parents[1]
+        sys.path.insert(0, str(root / "agent"))
+        import collect_github_releases
+        return collect_github_releases
+
+    def test_release_scan_pages_back_until_it_passes_the_window(self):
+        module = self._releases_module()
+        # A daily-CI repo: page 1 is all recent, the window only appears on page 3.
+        pages = {
+            1: [{"published_at": f"2026-10-0{i}T00:00:00Z"} for i in range(1, 6)],
+            2: [{"published_at": f"2026-08-0{i}T00:00:00Z"} for i in range(1, 6)],
+            3: [{"published_at": "2026-06-07T00:00:00Z"},
+                {"published_at": "2026-05-30T00:00:00Z"}],
+            4: [{"published_at": "2026-01-01T00:00:00Z"}],
+        }
+        seen = []
+
+        def fake_fetch(url):
+            page = int(url.rsplit("page=", 1)[1])
+            seen.append(page)
+            return pages.get(page, [])
+
+        with mock.patch.object(module, "fetch_json", side_effect=fake_fetch):
+            got, covered = module.fetch_releases("owner/daily-ci", "2026-06-05")
+        # Stops once a page reaches past the window start; never fetches page 4.
+        self.assertEqual(seen, [1, 2, 3])
+        self.assertTrue(covered)
+        self.assertTrue(any(r["published_at"].startswith("2026-06-07") for r in got))
+
+    def test_release_scan_reports_unproven_when_the_api_cuts_it_off(self):
+        module = self._releases_module()
+        # The API answers 422 past its paging cap -> fetch_json returns None. A zero
+        # here is "could not tell", not "nothing was released".
+        calls = {"n": 0}
+
+        def fake_fetch(url):
+            calls["n"] += 1
+            return [{"published_at": "2026-10-01T00:00:00Z"}] if calls["n"] == 1 else None
+
+        with mock.patch.object(module, "fetch_json", side_effect=fake_fetch):
+            got, covered = module.fetch_releases("owner/daily-ci", "2026-06-05")
+        self.assertFalse(covered)
+        self.assertEqual(len(got), 1)
+
+    def test_release_scan_stops_on_empty_page(self):
+        module = self._releases_module()
+        with mock.patch.object(module, "fetch_json", side_effect=lambda url: []):
+            got, covered = module.fetch_releases("owner/empty", "2026-06-05")
+        self.assertEqual(got, [])
+        self.assertTrue(covered)
+
     # --- whitelist repo paths: the machine list only ever matches concrete paths ---
 
     def test_rockchip_and_powerinfer_are_whitelisted_by_their_live_paths(self):
