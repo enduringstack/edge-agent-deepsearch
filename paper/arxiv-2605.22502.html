@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Compiling Agentic Workflows into LLM Weights: Near-Frontier Quality at Two Orders of Magnitude Less Cost</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Compiling Agentic Workflows into LLM Weights: Near-Frontier Quality at Two Orders of Magnitude Less Cost</h1>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-05-21 · Simon Dennis; Rivaan Patil; Kevin Shabahang; Hao Guo / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:端侧训练</span><span class="tag">方向:规划推理</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">与其在大模型外面套一层编排器，不如把流程直接微调进一个小模型的权重里。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告统一数值。作者在差旅预订（14 个节点）、会议软件客服（14 个节点、含产品专有知识）和保险理赔（55 个节点、6 个决策枢纽）三个场景上，逐一实证回应了阻碍开发者采用这条路线的三个顾虑，并称质量接近前沿模型而成本低两个数量级。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">现有编排框架都是在大模型之上放一个外部编排器，每轮注入指令并决定路由；而把流程编译进一个小型微调模型的权重，可以同时解决占满上下文窗口、每次对话都要用前沿模型、以及把专有流程暴露给第三方这三个问题。</span></div>
+<div class="score-reason">评分依据：「用一个微调小模型替掉前沿模型加外部编排」正是端侧智能体想要的形态，成本和隐私论证也对端侧成立，但论文没有设备端部署实验，端侧相关性中等。工作本身是对已有技术路线的系统性再论证与实证，而非全新方法。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.22502" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-05-20 · Caleb Winston; Ron Yifeng Wang; Azalia Mirhoseini; Christos Kozyrakis / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">方向:调度服务</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把自然语言任务直接编译成可执行代码，让操作电脑的智能体不用每一步都等一次模型调用。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在五个应用上，规划器相比 Browser-Use 提速 10.4 倍、准确率高 28 个百分点；调度器相比 OpenAI 的电脑操作智能体提速 2.4 倍、准确率高 9 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">三部分：规划器生成多份代码方案，逐一对照工具规格校验，再选成本最低的那份；调度器用蒙特卡洛成本估计、依据学到的时延分布探索并行化策略；工具协议则规定前置和后置条件，用不变量约束降低错误调用的比例。编译出的代码里可以混合模型调用、工具调用和并行执行。</span></div>
+<div class="score-reason">评分依据：虽然对象是界面自动化，但贡献集中在把任务编译成可并行执行代码这一系统架构层面，不是单纯的屏幕点击；运行在云端桌面环境，与设备端部署无关，端侧相关性很低。把顺序的「截图再决策」循环换成一次编译加并行执行，加速幅度很大。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.21470" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

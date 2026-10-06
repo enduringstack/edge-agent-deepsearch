@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Perforated Neural Networks for Keyword Spotting</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Perforated Neural Networks for Keyword Spotting</h1>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-05-15 · Vishy Gopal; Aris Ilias Goutis; Ralph Crewe; Erin Yanacek; Rorry Brenner / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span><span class="tag">应用:语音</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把一种叫「打孔反向传播」的训练技巧用到边缘设备的关键词唤醒任务上，想同时把模型做小、准确率做高。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">最好的树突模型用 1500 个参数达到 0.933 的测试准确率，而基线要约 4000 个参数才有 0.921；800 组超参试验里各个参数量档位都优于传统结构。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在普通卷积网络里插入人工「树突节点」，这些节点用打孔反向传播单独训练，相当于给原有神经元加一层额外非线性，不改主干结构就提升表达力。</span></div>
+<div class="score-reason">评分依据：关键词唤醒是典型的端侧常驻任务，实验直接在 Edge Impulse 的边缘机器学习流水线上做，端侧契合度高。方法是把已有的打孔反向传播迁移到一个新任务上，属于应用验证而非新机制。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.15647" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

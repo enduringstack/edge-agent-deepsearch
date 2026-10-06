@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AtlasVA: Self-Evolving Visual Skill Memory for Teacher-Free VLM Agents</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>AtlasVA: Self-Evolving Visual Skill Memory for Teacher-Free VLM Agents</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-05-19 · Pan Wang, Yihao Hu, Xiujin Liu, Jingchu Yang, Hang Wang, Zhihao Wen / HuggingFace Daily</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让视觉语言智能体把经验直接存成图像形态的技能记忆，而不是压成一段文字再读回来。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在推箱子、冰湖、三维具身导航和三维机器人操作等基准上，稳定优于以文本为中心的记忆基线和有竞争力的视觉语言智能体，在空间密集的任务上优势尤其明显。原文摘要没有给出具体数值。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">记忆分三层互补：空间热力图、视觉范例和符号化的文字技能；系统还直接从轨迹统计和轻量的网格启发式演化出「危险图」和「亲和图」，再把这些自演化的图当作基于势函数的塑形奖励用于强化学习，从而把感知、记忆和优化统一起来，不需要外部大模型来做监督或总结。</span></div>
+<div class="score-reason">评分依据：不依赖外部专有教师模型这一点对本地化部署友好，但论文没有涉及设备端执行或算力预算，端侧相关性低。指出把几何先验压成语言会有损失、并让记忆保持视觉形态，论点清楚且方案自洽。</div>
+<div class="source"><a href="https://huggingface.co/papers/2605.17933" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

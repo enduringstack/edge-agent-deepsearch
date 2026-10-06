@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Runtime-Orchestrated Second-Order Optimization for Scalable LLM Training</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Runtime-Orchestrated Second-Order Optimization for Scalable LLM Training</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-05-15 · Yishun Lu; Junhao Zhang; Zeyu Yang; Wes Armour / arXiv</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span><span class="tag">硬件:DGX</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一个运行时系统，把二阶优化器那些又大又贵的状态挪出 GPU 关键路径，让二阶训练变得可行。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在单块 GB10 加 128 GB 统一内存的 DGX Spark 平台上，支持 10 亿参数语言模型的二阶训练；在多节点 GH200 系统上降低了可见的优化器开销、减少了反复出现的时延尖峰、缩短了收敛的实际耗时，同时保住了两种二阶优化器的优化优势。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按架构约束和运行时压力把优化器状态动态分布在 GPU 显存、CPU 内存和可选的 NVMe 之间；用训练钩子提前准备影子状态，让昂贵的矩阵逆根运算在主机侧异步进行而 GPU 继续算；分布式训练则用有界陈旧度协议限制同步频率，并做拓扑感知的协调。</span></div>
+<div class="score-reason">评分依据：在内存受限平台上把大模型训练跑起来的思路与端侧资源约束同构，但实验平台是工作站和超算节点，与终端设备无关，端侧相关性低。把二阶训练的瓶颈从算法简化转到运行时状态管理，视角有新意且工程完整。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.16184" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

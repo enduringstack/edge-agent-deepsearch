@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TClone: Low-Latency Forking of Live GUI Environments for Computer-Use Agents</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>TClone: Low-Latency Forking of Live GUI Environments for Computer-Use Agents</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-05-17 · Yutong Huang; Vikranth Srivatsa; Alex Asch; Hansin Tushar Patwa; Yiying Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:调度服务</span><span class="tag">方向:工具调用</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让操作电脑的智能体可以把整个正在用的桌面工作区快速复制一份出来试错，出问题能回滚。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">端到端的智能体循环测量里，相比 KVM 和 CRIU，总任务时延分别降低 1.9 倍和 1.5 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">系统把「快速建分支」和「持久化检查点」分开：用兄弟容器、写时复制的内存共享、文件系统版本化、图形界面本地执行和异步检查点，使一个正在运行的桌面工作区可以被快照、分叉成隔离分支、回滚，也能有选择地提交或合并。</span></div>
+<div class="score-reason">评分依据：系统跑在用户的个人计算环境上，与本地智能体的安全执行相关，但解决的是虚拟化与版本管理问题，不涉及模型推理或设备算力约束，端侧相关性有限。把工作区版本化做成一等系统原语，并把快分支与持久化解耦，是实在的系统贡献。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.17320" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

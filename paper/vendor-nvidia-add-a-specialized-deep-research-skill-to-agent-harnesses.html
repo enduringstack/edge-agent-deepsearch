@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Add a Specialized Deep Research Skill to Agent Harnesses</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Add a Specialized Deep Research Skill to Agent Harnesses</h1>
+<div class="meta"><span class="score">6</span> <span class="tier">官方动态</span>  2026-05-20 · NVIDIA / NVIDIA</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:工具调用</span><span class="tag">应用:RAG</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">NVIDIA 介绍怎么把自家的 AI-Q 深度研究能力作为一个技能挂进 Claude Code、Codex 这类智能体框架。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告量化指标。文中只给了工程参数，例如需要 Python 3.10 以上、默认服务地址是本机 8000 端口、文档覆盖三种 MCP 接入场景。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">研究流程分四段：意图分类器先判断该做多深的研究，再向用户澄清，然后浅研究，最后深研究，每一段都用 FreshQA、Deep Research Bench 和 DeepSearchQA 单独调优评估；数据接入支持免认证的 MCP 服务、服务账号 OAuth2 以及转发用户令牌三种方式，部署可以用 Docker Compose 或 Helm 放到开发机、本地集群甚至离网机房。</span></div>
+<div class="score-reason">评分依据：可以部署到开发机和离网机房这一点与本地化部署沾边，但运行载体仍是服务器级环境，端侧相关性低。把研究流程切成可分别评估的四段并做好数据接入认证，是扎实的工程设计。</div>
+<div class="source"><a href="https://developer.nvidia.com/blog/add-a-specialized-deep-research-skill-to-agent-harnesses/" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>
