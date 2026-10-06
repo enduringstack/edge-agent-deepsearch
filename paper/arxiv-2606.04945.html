@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>STaR-Quant: State-Time Consistent Post-Training Quantization for Diffusion Large Language Models</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>STaR-Quant: State-Time Consistent Post-Training Quantization for Diffusion Large Language Models</h1>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-03 · Xin Yan; Aqiang Wang; Zhenglin Wan; Xingrui Yu; Ivor Tsang / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">针对扩散式语言模型逐步去噪的特点做训练后量化，分别处理被遮蔽和未遮蔽 token 的激活差异。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在代表性扩散语言模型上稳定优于强训练后量化基线，相比 FP16 部署最高提速 1.69 倍、省显存 3.14 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先指出两个难点——同一步内遮蔽与未遮蔽 token 的激活分布不同、量化误差会跨去噪步累积；于是用状态引导的激活变换把两类 token 分到不同变换空间但共用一套静态权重变换，再用一个轻量块对角仿射映射补偿注意力的时序误差。</span></div>
+<div class="score-reason">评分依据：扩散语言模型的显存和算力开销是端侧落地的主要障碍，量化方案可迁移，但实验未涉及真实设备（相关性 5）。抓住状态差异与时序误差两个特有问题并分别给解法，针对性强（贡献 6）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.04945" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

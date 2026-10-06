@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Memory is Reconstructed, Not Retrieved: Graph Memory for LLM Agents</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-15 · Shuo Ji, Yibo Li, Bryan Hooi / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">智能体的记忆检索现在是「先捞再想」的固定两步，捞完才发现不对也没法回头；这篇让推理边走边决定接着捞什么。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把记忆组织成「线索—标签—内容」的联想图，标签充当连接细粒度线索与记忆内容的语义桥梁；主动重建机制把模型推理直接嵌进记忆访问过程，按已累积的证据迭代地探索并剪掉检索路径，避免组合爆炸。</span></div>
-<div class="score-reason">评分依据：记忆检索的组合爆炸控制对算力受限的端侧智能体有参考价值，但论文不涉及设备约束，相关度较低。把检索从静态流水线改成带剪枝的主动重建，思路合理，贡献中等。</div>
-<div class="source"><a href="https://huggingface.co/papers/2606.06036" target="_blank" rel="noopener">查看原文 →</a></div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-04 · Shuo Ji; Yibo Li; Bryan Hooi / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把智能体的记忆做成「线索—标签—内容」的关联图，边推理边决定往哪儿找。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LoCoMo 和 LongMemEval 两个基准上比强基线最高提升 23%，同时明显降低 token 和运行时开销；原文未给出具体省了多少。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先把历史组织成关联记忆图，用标签当语义桥；检索时把模型推理直接嵌进访问过程，根据已拿到的证据逐步扩展或剪掉检索路径，避免无约束展开导致组合爆炸。</span></div>
+<div class="score-reason">评分依据：长程记忆检索的结构改进，省算力这点对端侧有参考价值，但没有设备端验证（相关性 3）。关联图加主动重构的组合有一定新意（贡献 5）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.06036" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

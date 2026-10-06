@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HomeFlow: A Data Flywheel for Smart Home Agent Training with Verifiable Simulation</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>HomeFlow: A Data Flywheel for Smart Home Agent Training with Verifiable Simulation</h1>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-05-31 · Yi Gu; Huacan Wang; Shuo Zhang; Yuqing Hou; Lei Xue; Weipeng Ming; Chen Liu; Fangzhou Yu / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:评测基准</span><span class="tag">应用:IoT命令</span><span class="tag">方向:工具调用</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用可验证的智能家居模拟环境源源不断造训练数据，把家居智能体训出来。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在作者构建的智能家居基准上，40 亿和 80 亿参数两个版本的任务成功率分别为 84.60% 和 87.03%，其中 80 亿版本比领先的 GPT-5.5 还高 1.23 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用统一模拟环境加程序化生成的多样家居场景做底座；把开放式用户意图编译成可执行的、基于状态的成功判定条件，再用环境引导的树搜索合成多样且可验证的多轮轨迹；最后通过监督微调和分步强化学习，让智能体借真实的物理反馈迭代提升。</span></div>
+<div class="score-reason">评分依据：智能家居是端侧智能体的代表场景，训出的 40 亿和 80 亿参数模型规模也接近端侧可部署区间，但全程在模拟环境中、没有真实设备执行（相关性 6）。把意图编译成可验证成功条件再配树搜索合成数据，是一条完整且可复用的数据飞轮（贡献 6）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.01230" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

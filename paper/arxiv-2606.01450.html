@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>OpenEye: A Scalable Open-Source Hardware Accelerator for DNNs</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>OpenEye: A Scalable Open-Source Hardware Accelerator for DNNs</h1>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-05-31 · Denis Lebold; Hendrik Wöhrle / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span><span class="tag">方向:编译部署</span><span class="tag">硬件:FPGA</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一个开源的、规模可伸缩的 FPGA 神经网络加速器，原生支持稀疏权重和稀疏激活。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Xilinx ZU19EG 这块 FPGA 上实现了多种簇数与处理单元数的配置，用卷积、全连接和池化等代表性算子分析资源占用、执行时延和伸缩性，结果显示各配置下性能与资源消耗的折中都比较理想；布线和互联开销随处理单元数增加接近线性增长。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">架构由若干处理单元簇组成，簇间用流式数据流互联，参数高度可配；原生支持稀疏权重与激活，跳过不必要的计算和访存；簇数和每簇处理单元数都可调，以适配不同性能与资源约束。</span></div>
+<div class="score-reason">评分依据：面向嵌入式平台的推理加速器，资源占用和可伸缩性是核心关注点，端侧语境明确（相关性 8）。开源且参数化程度高对社区有用，但架构本身属于常见的簇加流式数据流设计（贡献 5）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.01450" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Agent Memory: Characterization and System Implications of Stateful Long-Horizon Workloads</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Agent Memory: Characterization and System Implications of Stateful Long-Horizon Workloads</h1>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-04 · Yasmine Omri; Ziyu Gan; Zachary Broveak; Robin Geens; Zexue He; Alex Pentland; Marian Verhelst; Tsachy Weissman / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:调度服务</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">第一次从系统角度给「智能体记忆」做体检，看十种记忆方案到底把开销花在了哪里。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">作者建了分阶段的性能剖析工具，在两套基准上测了十个代表性记忆系统，并总结出 10 条系统设计建议（涉及构建调度、能力下限、按查询量摊销、新鲜度与时延取舍、集群规模管理）；论文未给出统一的加速倍数。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先按四个维度给记忆系统分类，再用能区分「构建 / 检索 / 生成」三个阶段的剖析框架，把每种设计选择的成本分别归因到写路径和读路径。</span></div>
+<div class="score-reason">评分依据：智能体长程记忆的开销画像对端侧有限内存场景有直接参考价值，但测量环境是服务端（相关性 4）。首次做系统级横评并给出可操作建议，属于有价值的基础工作（贡献 6）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.06448" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

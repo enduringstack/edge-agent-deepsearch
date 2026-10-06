@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GPU Forecasters: Language Models as Selective Surrogates for Kernel Runtime Optimization</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>GPU Forecasters: Language Models as Selective Surrogates for Kernel Runtime Optimization</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-05-29 · Zaid Khan; Justin Chih-Yao Chen; Jaemin Cho; Elias Stengel-Eskin; Mohit Bansal / arXiv</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:高效推理</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让语言模型充当 GPU 的「替身」，先预测算子快不快，拿不准时才真上机器测。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">实验显示模型能较准确地预测算子的相对性能，强化学习还能进一步提升预测准确率和置信度校准；把它放进算子搜索后，在同样的 GPU 测量预算下可以多考察数倍候选，从而找到比同预算基线更快的算子。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把语言模型当作选择性的 GPU 代理模型：既要预测准，也要知道自己什么时候可能错，不确定时就把评估交还给真实 GPU；评价标准同时看预测准确性、校准程度，以及在有限测量预算下恢复高速算子的实际效用。</span></div>
+<div class="score-reason">评分依据：算子自动优化是部署栈的一环，减少上机测量的思路对编译调优有普遍价值，但目标硬件是 GPU（相关性 3）。把语言模型从「写算子的人」变成「模拟 GPU 的模型」是个有意思的角色转变（贡献 6）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.31464" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

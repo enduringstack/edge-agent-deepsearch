@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>InfoMerge: Information-aware Token Compression for Efficient Video Large Language Models</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>InfoMerge: Information-aware Token Compression for Efficient Video Large Language Models</h1>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-01 · Xinxin Liu; Shiwei Gan; Xiao Liu; Yafeng Yin; Lei Xie; Sanglu Lu / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">给视频大模型压视觉 token：先稳稳估出哪些片段是重复的，再按信息量分配预算。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多个基准和主干上都取得较好的效率与精度平衡，压缩越激进优势越明显；在 LLaVA-OneVision-7B 上减少 85% 视觉 token 的同时保住原平均表现的 98.8%，预填阶段提速 4.24 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用片段级的二阶时间冗余估计（对每个片段内相同空间位置的 token 建模时间相似结构）替代易受帧级噪声影响的相邻帧相似度；再按片段独特性和基于谱熵的表示丰富度动态分配 token 预算，而不是简单按片段长度分。整套方法免训练。</span></div>
+<div class="score-reason">评分依据：视觉 token 压缩是把视频理解模型搬上端侧的关键，免训练且预填提速 4 倍以上，迁移性好，但论文未做设备实验（相关性 5）。两处设计都针对已有方法的具体缺陷，改进有依据（贡献 6）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.02161" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

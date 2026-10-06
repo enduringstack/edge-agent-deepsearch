@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Temporal Order Matters for Agentic Memory: Segment Trees for Long-Horizon Agents</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Temporal Order Matters for Agentic Memory: Segment Trees for Long-Horizon Agents</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-03 · Yifan Simon Liu; Liam Gallagher; Faeze Moradi Kalarde; Jiazhou Liang; Armin Toroghi; Scott Sanner / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把对话历史按时间顺序建成一棵线段树，让智能体记得住事情发生的先后。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在三个长程记忆基准、两种底座模型上，答案质量都优于平铺检索、图结构记忆和树结构记忆基线；打乱时间顺序的对照实验显示收益确实来自保留时序。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把每句话插入一棵按时间排序的线段树，用在线最右前沿更新规则增量维护层级化的记忆片段；检索时让相关性分数在树上传播，把局部语义匹配和层级时间上下文结合起来。</span></div>
+<div class="score-reason">评分依据：长程对话记忆的结构化检索方法，对端侧助手的持续记忆有参考价值，但没有设备端实验（相关性 3）。强调时间顺序并用消融验证，论证比较干净（贡献 5）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.04555" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ProbeScale: Probing Analysis to Optimize Neural Scaling Laws for Efficient Small Language Model Inference</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>ProbeScale: Probing Analysis to Optimize Neural Scaling Laws for Efficient Small Language Model Inference</h1>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-01 · Sourav Das / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用探针分析找出小模型内部真正管用的那几层，裁成更小的子网络。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 RoBERTa-Large 和 T5-Base 上，找到的子网络把参数量减少 5 到 10 倍，同时在目标任务上保住原模型 95% 到 98% 的表现，优于启发式基线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用任务特定探针量化每一层对目标下游能力的相关性，再把子网络选择形式化成「在参数预算下最大化任务加权探针性能的层子集选择」问题。</span></div>
+<div class="score-reason">评分依据：直接针对「小模型在严苛资源约束下仍难部署」这一端侧痛点，压缩倍数也很实在（相关性 6）。把探针分析和缩放律结合起来做层选择有一定新意，评测模型偏老（贡献 5）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.01806" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

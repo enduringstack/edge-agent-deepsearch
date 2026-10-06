@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vortex: Efficient and Programmable Sparse Attention Serving for AI Agents</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Vortex: Efficient and Programmable Sparse Attention Serving for AI Agents</h1>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-04 · Zhuoming Chen; Xinrui Zhong; Qilong Feng; Ranajoy Sadhukhan; Yang Zhou; Michael Qizhe Shieh; Zhihao Jia; Beidi Chen / arXiv</div>
+<div class="tags"><span class="tag">方向:稀疏注意力</span><span class="tag">方向:高效注意力</span><span class="tag">方向:调度服务</span><span class="tag">方向:云端serving</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一套给稀疏注意力算法用的「快速试验台」，让新算法不用重写底层内核就能跑进真实推理服务栈。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">自动搜出的最佳稀疏方案比全注意力吞吐高 3.46 倍且精度不掉；在 MLA 架构的 GLM-4.7-Flash 上提速 4.7 倍，在 2290 亿参数的 MiniMax-M2.7 上提速 1.37 倍（NVIDIA B200）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用一套嵌在 Python 里的前端语言加「分页式张量」抽象来描述各种稀疏注意力，后端直接接进现有推理服务栈，于是算法原型能立刻变成真实吞吐收益。</span></div>
+<div class="score-reason">评分依据：稀疏注意力是长上下文降本的核心手段，对端侧长对话同样有迁移价值，但本文验证平台是数据中心 GPU（相关性 4）。把算法表达层和服务后端打通、让 AI 自动搜索稀疏方案，属于有创新的系统工作（贡献 7）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2606.06453" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>
