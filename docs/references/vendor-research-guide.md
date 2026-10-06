@@ -185,9 +185,51 @@ arXiv 自身搜索只匹配标题和摘要，不直接按作者 affiliation 过�
 - **Windows CRLF 陷阱**：Python `open(...,'w')` / `write_text` 默认会把 `
 ` 写成 `
 `，
-  URL 清单被 bash `read` 读进来时带着 ``，curl 全部返回 000 —— 产生一次完全虚假的「0 命中」。
-  管道里必须 `tr -d ''`；写文件时用 `newline='
+  URL 清单被 bash `read` 读进来时带着 `
+`，curl 全部返回 000 —— 产生一次完全虚假的「0 命中」。
+  管道里必须 `tr -d '
+'`；写文件时用 `newline='
 '` 显式指定，否则改一行 Markdown 也会变成全文件 diff
+
+**05-15~05-21（Google I/O 周）回填新增实测**：
+
+- **入口会腐坏，上周有效不等于本周有效**：**Zhipu 退化了**——`zhipuai.cn/news` 现在是 catch-all SPA 外壳
+  （`/news`、`/news/`、`/devday` 返回同一个约 899KB 文档，内嵌 JSON 只剩模型卡 `updatedAt`），
+  上一周记录的「服务端渲染 25 条可枚举」已不复现，本周只能退回「查不到」。
+  **每周都要实测，别直接采信往期结论**
+- **`developers.googleblog.com`**（注意它和 `blog.google`、`android-developers.googleblog.com` 是三个站，I/O 周三个都要查）：
+  sitemap 的 lastmod 漂移大且方向不定（实测 lastmod 06-02 / 正文 04-14、lastmod 05-05 / 正文 04-30），
+  但 **lastmod ≥ 发布日**，所以取 `lastmod >= 窗口月` 的条目回正文即可穷举
+- **blog.google 的发现窗已验证够用**：除 lastmod 落在「发布月 +4 个月」内的条目外，额外兜底扫描
+  前一个月与后四个月共 366 条，窗口内新增 0 条。串行 + 3 次重试下 447 条里 402 条拿到
+  `published_time`，45 条无值全是分区索引页——没有假 0
+- **`blog.google/sitemap.xml` 是 sitemapindex**，非 en-us 的分片全是 `/intl/<locale>/` 地区镜像；
+  取 en-us 分片即英文全量（约 11700 条，含 `/security/` 等浅路径分区，**不要按路径深度过滤**）
+- **Qualcomm 还有一段无日期路径**：`qualcomm.com/snapdragon/news/`（222 条，URL **不带** `/YYYY/MM/`），
+  按「路径 grep /YYYY/MM/」会整段漏掉。这 222 条全部有 `.model.json` 的 `pagePublishDate`，
+  应纳入常规扫描——但它们做不了 URL 年月交叉印证，收录前需另想印证手段
+- **`techcommunity.microsoft.com` 的 RSS 现在返回 200/452KB**（此前 404/空），但只有最近 20 条，
+  对历史窗口仍然无用——**别被 200 骗**
+- **OPPO 的 sitemap lastmod 是模板重生成**（2020 年 Find X2 Pro 稿标成 2026-05-13），与 MediaTek 同类陷阱。
+  `mi.com/global/discover/` 复现 catch-all 外壳（拼不存在的子路径同样返回 42KB）。
+  `vivo.com/sitemap.xml`、`baichuan-ai.com/sitemap.xml`、`alibabacloud.com/blog/sitemap.xml` 均 404
+
+**社区雷达侧的实测（同属历史窗口检索，记在一起便于查阅）**：
+
+- **X 回核的 URL 形式必须完整**：`x.com/<handle>/status/<id>`。拼成 `x.com/<handle>/<id>` 只会拿到
+  无 meta 的 JS 壳。形式写对后实测 24 次尝试 22 次拿到 `article:published_time`，
+  这很可能才是之前记录的「概率性需重试」的真实成因。
+  **判据用 `grep -a published_time` 命中与否，不要用响应体字节数**——壳的大小会随 X 前端版本漂移，
+  字节数只能当快速初筛。`grep` 的 `-a` 不能省：响应体含二进制字节时 grep 会当成 binary file
+  静默不输出，这本身就会制造一次假的「无 meta」
+- **X 的纯图片/视频贴拿不到正文**：只有 `og:description` 那点文字可用，配图与视频内容不可复述。
+  这个限制与回核成功率无关，高成功率也不改变它
+- **Reddit 的限流响应是固定 54 字节**（`{"data":null,"error":"Timeout. Maybe slow down a bit"}`），
+  可按字节数直接判限流并重试；**11 字节则是 sub 不存在**，两者含义完全不同
+- **GitHub Discussions 的时间要按 `<relative-time>` 切块解析**：取每块里最后一个 discussions 链接，
+  直接 `findall` 会让时间和标题错位
+- **YouTube 频道 RSS 的覆盖窗约 6 周**（实测 5 个频道最早 published 落在约 6 周前），不是「最近两周」。
+  对更早的窗口是结构性够不到，应记 `limited`
 
 **无效 / 陷阱**（都实测过，别重复踩）：
 
