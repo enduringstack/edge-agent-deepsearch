@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MemMorph: Tool Hijacking in LLM Agents via Memory Poisoning</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>MemMorph: Tool Hijacking in LLM Agents via Memory Poisoning</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-05-24 · Xuanye Zhang; Yongsen Zheng; Zhuqin Xu; Kaiyu Zhou; Bowen Shen; Haoran Ou; Tianwei Zhang; Kwok-Yan Lam / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">方向:安全隐私</span><span class="tag">应用:安全</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体靠长期记忆来改进选工具的策略，这篇论文往记忆里塞几条伪装成技术事实的记录就能让它主动挑攻击者想要的工具。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 3 个基准、10 种智能体骨干和 3 种记忆模块实现上，仅注入三条记录即可达到最高 85.9% 的攻击成功率，比最强基线高出最多 25 个百分点，并在三种代表性防御下仍然有效。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">不直接指示该调用哪个工具，而是把精心构造的少量记录伪装成技术事实、事故报告和运维策略注入长期记忆，重塑智能体的上下文认知与决策过程，使它自行推断出攻击者偏好的工具。</span></div>
+<div class="score-reason">评分依据：面向工具增强型智能体的记忆安全，与端侧部署无直接关系，但端侧智能体同样依赖本地长期记忆来选工具，风险可迁移，相关度低。贡献在于揭示长期记忆是一个此前被忽视的攻击面，且只需极少注入即可奏效。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.26154" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

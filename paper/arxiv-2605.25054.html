@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Scale When Needed: Adaptive Neuron-level Mixed Precision Quantization Aware Training</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Scale When Needed: Adaptive Neuron-level Mixed Precision Quantization Aware Training</h1>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-05-24 · Ayush K. Varshney; Konstantinos Vandikas; Šarūnas Girdzijauskas; Adam Orucu; Aneta Vulgarakis Feljan / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:端侧训练</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">混合精度量化通常按层或按通道分配位宽，这篇论文把粒度下沉到单个神经元，让每个神经元自己在训练中学该用几位。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在电信和非电信数据集、多层感知机与表格基础模型两类架构上，该方法取得优于混合精度量化训练基线的压缩与精度权衡。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从低比特起步，只有当训练信号确实需要时才通过可微替代函数和直通估计器扩大位宽，同时保持推理图完全离散；权重和激活都适用这一机制，因而也减少了内存搬运。</span></div>
+<div class="score-reason">评分依据：明确以资源受限的边缘设备部署为目标，权重与激活同时量化还能减少内存搬运，端侧契合度高；但论文未给设备端实测。贡献在于把混合精度的粒度推进到神经元级并保证推理图仍完全离散。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.25054" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

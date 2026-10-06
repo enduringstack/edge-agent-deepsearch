@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Parameter-Efficient CT Reconstruction via Deep Graph Laplacian Regularization</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Parameter-Efficient CT Reconstruction via Deep Graph Laplacian Regularization</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-05-25 · Veera Varuni Radhakrishnan; Chinthaka Dinesh; Qurat-ul-Ain Azim / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">低剂量 CT 重建的深度模型动辄五十万参数、几万张训练扫描，这篇论文用图正则化在极小规模下做出可用效果。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LoDoPaB-CT 基准上达到 30.70 dB 峰值信噪比，比滤波反投影高 6.33 dB，而只用了 91848 个参数和 1000 个训练样本（标准训练集的 2.8%）；按每 dB 提升折算，参数效率是对照方法的 5.8 倍、数据效率是 30 倍。与当前最好方法仍有约 13 dB 差距。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把二次型图正则化嵌进近端前后向分裂优化框架，配三个轻量卷积模块；学到的图带宽参数收敛到可解释的取值，说明模型抓到的是有意义的图像先验而非过拟合。</span></div>
+<div class="score-reason">评分依据：明确以资源受限的医学影像场景为目标，参数量压到不足十万且训练数据极少，对算力与数据都紧张的端侧部署有参考价值，相关度中等；但没有设备端实测且精度与最好方法差距明显。贡献在于把经典图正则化与轻量网络结合出很高的效率比。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.25348" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

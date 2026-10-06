@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Improving Small Language Models for Code Generation with Reinforcement Learning from Verification Feedback</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Improving Small Language Models for Code Generation with Reinforcement Learning from Verification Feedback</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-05-28 · Egor Skopin; Evgeny Kotelnikov / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">应用:代码</span><span class="tag">模型:Qwen</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用单元测试这类可自动判对错的信号来强化训练小模型写代码，并系统比较了不同奖励设计的影响。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 MBPP 基准上用 Qwen3-0.6B 和 Llama3.2-1B 加 LoRA 微调，组合奖励配置下一次通过率最高提升 13 个百分点；但只用静态分析惩罚会把策略带偏，模型倾向于写更短的代码来减少告警而功能正确性并未可靠提升，组合奖励能缓解这种退化。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">分别用仅单元测试奖励、仅 Ruff 静态分析塑形奖励和两者组合的奖励，配合两种分组策略优化算法训练，并在通过率之外加测生成长度、告警严重度分布和执行错误类型等行为诊断指标。</span></div>
+<div class="score-reason">评分依据：实验对象是 6 亿和 10 亿参数级小模型，正是端侧可部署的尺寸，结论对端侧代码助手的训练有参考价值，相关度中等；但没有部署相关内容。贡献是扎实的实证比较而非新方法。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.30478" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

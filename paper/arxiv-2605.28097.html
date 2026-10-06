@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ICAN-Deploy: Identity-Stable Canary Deployment for Safety-Critical Embodied Agents</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>ICAN-Deploy: Identity-Stable Canary Deployment for Safety-Critical Embodied Agents</h1>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-05-27 · Xue Qin; Simin Luan; John See; Zeyd Boukhers; Cong Yang; Zhijun Li / arXiv</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:安全隐私</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">灰度发布会让系统的加密身份在切流窗口内发生变化，对安全攸关的具身智能体来说这等于每次灰度都要重新认证，这篇论文让身份保持不变。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 MuJoCo 中的 Franka Panda 机械臂上跑了 100 个真实灰度周期，身份漂移为零，进入时延的 95% 置信区间为 1.52 到 2.01 毫秒；不变性还通过闭式证明、抽象语法树静态检查和 TLA+ 模型检验三重验证。一个把版本写进清单的对照方案在同样负载下被证伪。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">中间件的状态机把能力名称（冻结并参与哈希）与能力版本（可变的运行时状态）分开，从而让身份哈希在整个灰度窗口内保持不变；该机制实现在面向大模型驱动机器人的运行时治理层内部。</span></div>
+<div class="score-reason">评分依据：面向机器人等具身设备的版本发布与运行时治理，部署形态与端侧设备直接相关，相关度中等；但实验在仿真环境中完成，且与模型推理本身关系不大。贡献在于用名称与版本分离这一简单构造解决了认证失效问题并做了形式化验证。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.28097" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

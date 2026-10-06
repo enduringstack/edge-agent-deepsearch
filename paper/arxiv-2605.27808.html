@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TARQ: Tail-Aware Reconstruction Quantization for Rare-Word Robust Automatic Speech Recognition</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>TARQ: Tail-Aware Reconstruction Quantization for Rare-Word Robust Automatic Speech Recognition</h1>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-05-27 · Xinyu Wang; Ziyu Zhao; Ke Bai; Silin Meng; Dongming Shen; Xiao-Wen Chang; Yixuan HE / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">应用:语音</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">量化语音识别模型时，校准数据会按词频加权，结果人名、数字和专业词这些长尾词被量化伤得最重，这篇论文专门把校准重心往长尾挪。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 8 个语音识别骨干、6 个数据集上以 4 比特权重分组量化评测，平均长尾词错误率改善且整体词错误率没有退化；在对比方法中跨语料的长尾词错误率波动最小，并且无需实体标注就能迁移到实体密集的基准上。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">提出一个无标签的后训练量化框架，用一条逐线性层的闭式规则把常见词与长尾词的校准权重拉平，再配一个与评测指标一致的残差修正；整个过程不需要实体标签、不需要精心挑选校准集、不需要验证解码，也不需要额外训练。</span></div>
+<div class="score-reason">评分依据：语音识别模型量化是端侧语音落地的必经环节，长尾词正是实际使用中最被在意的部分，方法零额外成本、可直接套用，相关度较高；但论文未给设备端实测。贡献在于指出常规校准目标与长尾风险的错配并给出闭式修正。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.27808" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

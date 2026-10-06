@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Provably Communication-Efficient and Privacy-Preserving Federated Graph Neural Networks</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Provably Communication-Efficient and Privacy-Preserving Federated Graph Neural Networks</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-05-25 · Zhishuai Guo; Wenhan Wu; Chen Chen; Lei Zhang; Olivera Kotevska; Ravi K Madduri / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span><span class="tag">方向:端云协同</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">图数据分散在多个机构手里不能共享，这篇论文做了一个既省通信又能给出隐私保证的联邦图神经网络框架。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">理论上证明以一定速率收敛到稳定点并给出通信复杂度上界，同时在公开队列威胁模型下导出了度量差分隐私保证；在合成的跨行反洗钱基准和引文网络上，该方法在显著降低通信量的同时保持良好表现，并在加噪声保护隐私时依然稳健。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">不共享原始数据也不每轮交换嵌入，而是低频地交换聚合后的节点表示；为处理跨客户端依赖和表示过期的问题，引入滑动平均估计器持续跟踪节点表示以便跨轮稳定复用；隐私上采用按嵌入空间距离度量的差分隐私框架，在标准差分隐私过于保守的噪声水平下仍能给出有意义的保证。</span></div>
+<div class="score-reason">评分依据：联邦学习的通信开销与隐私保证对分散在设备侧的数据训练有参考价值，但论文面向机构间协作而非终端设备，也没有算力受限方面的讨论，相关度中等偏下。贡献在于同时给出通信复杂度与隐私的形式化保证。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.26243" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

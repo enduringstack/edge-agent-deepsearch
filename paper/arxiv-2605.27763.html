@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A Paired Testing Protocol for Batch-Conditioned Refusal Robustness in LLM Serving</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>A Paired Testing Protocol for Batch-Conditioned Refusal Robustness in LLM Serving</h1>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-05-26 · Sahil Kadadekar / arXiv</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">同一条提示词单独跑、放在同步批里跑、还是进连续批调度器，模型的拒答行为会不会变？这篇论文把批处理配置当成一个要测的变量。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">本地测试中安全标签的变化比能力标签更频繁（0.51% 对 0.14%），但对 63 条候选逐一裁定后只剩 17 条是真正的行为翻转，修正后的全集翻转率为 0.16%；扩展到 15 个模型后未发现安全相对能力的普遍偏斜；在算子消融中，标准 vLLM 在候选集上复现了 55 例中的 22 例翻转，而开启批次不变算子后同一测试降到 0 例。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把四项有产物支撑的研究综合成一套配对测试协议，分别覆盖本地发现与裁定、跨模型泛化、连续批组成，以及批次不变算子的消融；建议做法是在实际服务的批处理配置下评测拒答，并把安全提示词与能力对照配对使用。</span></div>
+<div class="score-reason">评分依据：面向服务端批处理配置的安全评测方法，与端侧部署无关，相关度低。贡献在于指出了一个常被当作固定背景的变量确实会影响行为，并用算子消融定位到了根因。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.27763" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

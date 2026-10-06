@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BitTP: The Lightweight Trajectory Prediction Model with BitLLM for Edge-Devices</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>BitTP: The Lightweight Trajectory Prediction Model with BitLLM for Edge-Devices</h1>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-05-28 · Mincheol Kang; Hyunjin Lim; Bomin Kang; Daehee Park / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span><span class="tag">应用:机器人</span><span class="tag">模型:BitNet</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">基于大模型的轨迹预测效果好但吃内存吃算力，这篇论文把它改成极低比特的轻量结构，好塞进自主机器人的车载计算机。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">仅权重量化到 1.58 比特后，不仅没有变差反而优于全精度基线：平均位移误差降低 14.29%，最终位移误差降低 20.97%，同时相比其他量化方法进一步降低了内存占用和推理时延。作者同时发现激活值必须保持全精度，一旦量化时空推理会严重退化并失稳。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把基于大模型的轨迹预测器整体换成比特线性结构，权重走 1.58 比特、激活保留全精度，用极低比特带来的正则化效应换取精度与效率的双赢。</span></div>
+<div class="score-reason">评分依据：明确面向自主机器人车载计算机这类资源受限设备，给出了内存与时延的改善方向，端侧契合度很高。贡献在于指出权重量化到 1.58 比特反而能当正则化用、而激活绝不能动这一清晰结论。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.29705" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

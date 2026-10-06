@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Strong Teacher Not Needed? On Distillation in LLM Pretraining</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Strong Teacher Not Needed? On Distillation in LLM Pretraining</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-05-22 · Taiming Lu; Zhuang Liu / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">蒸馏默认教师越强学生越好，这篇论文在预训练阶段系统检验了这个假设，发现两头都不成立。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">通过改变架构规模和训练 token 预算构造出强教弱、同水平和弱教强三种关系，结果显示：只要把语言建模损失和蒸馏损失配比得当，小而欠训练的教师也能提升更大的学生；同时把教师继续加大参数或加长训练，蒸馏收益会饱和甚至反转。作者还观察到蒸馏对泛化（分布外与下游表现）的改善比对领域内拟合更明显。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在预训练设定下系统地变动师生双方的架构规模与训练数据量，并调节语言建模损失与蒸馏损失的混合比例，逐一比较各组合下的蒸馏效果。</span></div>
+<div class="score-reason">评分依据：蒸馏是端侧小模型的主要产出路径，「教师不必很强」这一结论能显著降低造端侧模型的成本，但论文完全不涉及部署，相关度低。贡献在于用受控实验推翻了一个被广泛默认的前提。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.23857" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

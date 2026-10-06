@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MemAudit: Post-hoc Auditing of Poisoned Agent Memory via Causal Attribution and Structural Anomaly Detection</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>MemAudit: Post-hoc Auditing of Poisoned Agent Memory via Causal Attribution and Structural Anomaly Detection</h1>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-05-22 · Zhewen Tan; Yilun Yao; Huiyan Jin; Wenhan Yu; Guoan Wang; Mengyuan Fan; liang lu; Feng Liu / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:安全隐私</span><span class="tag">应用:安全</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体的记忆被人投毒之后，现有防御都在事前拦截，这篇论文解决的是事后追责：到底是哪几条记忆导致了有害行为。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">针对一种仅靠正常交互注入恶意记录的攻击做评估，在问答和推理智能体两种设定下，该框架在贴近现实的事后审计场景中把攻击成功率从 70% 降到 0%、从 83.3% 降到 0%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">结合两种互补信号：一个反事实记忆影响分数衡量每条记忆对有害输出的因果贡献，一个记忆一致性图在整个记忆库里识别结构上异常的记录。</span></div>
+<div class="score-reason">评分依据：面向智能体记忆的安全审计，与端侧部署无直接关系，相关度低。贡献在于把防御视角从在线拦截转到事后因果归因，并给出了清零攻击成功率的结果。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.23723" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

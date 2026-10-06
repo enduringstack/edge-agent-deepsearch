@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Entity-Collision: A Stratified Protocol for Attributing Retrieval Lift in Agent Memory</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Entity-Collision: A Stratified Protocol for Attributing Retrieval Lift in Agent Memory</h1>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-05-28 · Youwang Deng / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体记忆的检索评测常常只报一个命中率，这篇论文提出一套分层协议，把「检索提升到底来自哪里」拆开看。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在开源智能体记忆测试床上按 5 类标签、3 种嵌入模型、5 个碰撞程度做配对自助法评估，发现 256 维哈希三元组只在闭词表的词法类标签且深度碰撞时有用，MiniLM-384 在两个维度上都占优，而参数量 2.7 倍的 BGE-large 并不一致地更好；在 LoCoMo 上的自适应向量权重路由测出 11.7 个百分点的理论提升空间但没有方法能拿到。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">构造时就让每个干扰项都共享答案的实体词，把词法检索基线的分数钉死，再按判别标签把查询分层，这样任何超出词法基线的提升都可以归因到嵌入模型本身。</span></div>
+<div class="score-reason">评分依据：面向智能体记忆检索的评测方法学，与端侧部署无直接关系，仅因端侧智能体也依赖记忆检索而间接相关，相关度低。贡献在于提出了可归因的评测构造方式。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.29630" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

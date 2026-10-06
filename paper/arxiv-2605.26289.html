@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stateful Inference for Low-Latency Multi-Agent Tool Calling</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Stateful Inference for Low-Latency Multi-Agent Tool Calling</h1>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-05-25 · Victor Norgren / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:投机解码</span><span class="tag">方向:调度服务</span><span class="tag">方向:工具调用</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多智能体轮流调用工具时，每一轮其实有八九成提示词跟上一轮一样，现有框架却每次都从头算一遍，这篇论文把状态留下来只算增量。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在全新生成的负载上与两个主流推理框架对比，参考实现在 6 轮的智能体流程上每轮快 2.1 倍，在 35 轮流程的中位轮次上快 4.2 倍，端到端墙上时间减半；作者强调优势来自有状态复用与投机，而不只是缓存。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">让键值缓存跨轮次持久存在，每轮只摄入新增 token 从而把每轮代价从与总长度成正比降到与增量成正比；再用基数前缀缓存把这种复用扩展到交错的多智能体流量，并用提示词查表式的投机解码加速结构化输出。</span></div>
+<div class="score-reason">评分依据：面向服务端的多轮智能体推理，但「跨轮次保留状态、只算增量」的思路对端侧常驻助手同样适用，相关度中等偏下。贡献在于把有状态推理做成完整架构并给出与主流框架的对比数据。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.26289" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

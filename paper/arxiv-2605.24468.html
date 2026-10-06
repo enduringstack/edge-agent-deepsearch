@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SAM: State-Adaptive Memory for Long-Horizon Reasoning Agent</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>SAM: State-Adaptive Memory for Long-Horizon Reasoning Agent</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-05-23 · Yuyang Hu; Hongjin Qian; Shuting Wang; Jiongnan Liu; Ziliang Zhao; Jiejun Tan; Zheng Liu; Zhicheng Dou / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长程智能体的交互历史里，当前决策需要的信息可能散落在很早以前的步骤里，这篇论文让记忆的读取方式随智能体状态变化而调整。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在四个长程检索与推理基准上，跨多种智能体骨干均稳定优于强基线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把持续的交互整合成紧凑的记忆线索，同时保留原始轨迹分页以备按意图回溯；这些线索不替代历史，而是作为轻量把手让智能体按当前需要重建时间上久远的信息，无需重训底座模型；记忆模块本身再通过专家引导的监督和强化学习对齐到轨迹级收益。</span></div>
+<div class="score-reason">评分依据：面向通用长程智能体的记忆机制，与端侧部署无直接关系，相关度低。贡献在于把「历史该怎么读」显式建模成随状态自适应的问题，而不是简单截断或压缩。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.24468" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

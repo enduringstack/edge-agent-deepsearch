@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NEXUS: Structured Runtime Safety for Tool-Using LLM Agents</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>NEXUS: Structured Runtime Safety for Tool-Using LLM Agents</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-05-25 · Elias Hossain; Md Mehedi Hasan Nipu; Tasfia Nuzhat Ornee; Rajib Rana; Niloofar Yousefi / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:安全隐私</span><span class="tag">应用:安全</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">会调用工具的智能体会执行有实际后果的动作，这篇论文做了一个在执行前按结构化计划判断该放行、拦截、要确认还是要改写的监控器。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 128 条的合成基准上 F1 为 0.949、四类干预决策准确率为 0.6406，比只用规则的方案高 27.3 个百分点；在 R-Judge 上 F1 为 0.861 略优于只用规则的 0.849；在间接提示注入测试中以 99% 的正常放行率做到 0% 攻击成功率；中位时延 0.205 毫秒，给典型智能体循环增加的开销不到 0.1%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把确定性安全规则、参数级检查和一个校准过的逻辑回归风险分数结合起来，按风险分档决定升级到哪一级干预，从而在四种处置动作之间做选择。</span></div>
+<div class="score-reason">评分依据：与端侧推理无关，但 0.205 毫秒的中位时延意味着这类安全层在资源受限设备上也跑得起，对端侧智能体的动作安全有参考价值，相关度低。贡献在于用规则加校准风险分的组合实现分级干预并给出开销数据。</div>
+<div class="source"><a href="https://arxiv.org/abs/2607.19356" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

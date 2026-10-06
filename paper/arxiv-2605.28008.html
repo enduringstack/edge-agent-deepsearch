@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Zipping the Thought: When and How Compressed Reasoning Data Works in LLM Post-Training</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Zipping the Thought: When and How Compressed Reasoning Data Works in LLM Post-Training</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-05-27 · Kohsei Matsutani; Gouki Minegishi; Takeshi Kojima; Yusuke Iwasawa; Yutaka Matsuo / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:高效推理</span><span class="tag">方向:蒸馏</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把长推理链压短了再拿去微调，到底什么时候有用、怎么用，这篇论文用受控实验把机制理清楚。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">主要发现有四条：越粗粒度的推理链需要越多微调数据；相比完全展开的推理链，合并式和隐式推理链更吃数据规模，其中合并式受益于数据重复、隐式容易走向记忆；带可验证奖励的强化学习会把微调阶段学到的压缩步骤重新拆开；单向的推理链顺序在更长的序列任务上泛化更好。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先把推理链分成完全展开、把多步合并成一步、以及省略中间步骤三类，再构造一个可控的合成组合推理任务，在难度、压缩粒度和数据规模三个维度上做受控变化，并跨不同模型家族与规模做系统实验。</span></div>
+<div class="score-reason">评分依据：推理链长度直接决定推理时的 token 开销，对算力受限场景有实际意义，但论文本身是机制研究，不涉及部署，相关度低。贡献在于用受控合成任务把压缩推理数据的作用机制拆解清楚。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.28008" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

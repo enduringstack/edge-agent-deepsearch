@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WINDQuant: Weight-Informed Neural Decision-Making for Global Mixed-Precision LLM Quantization</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>WINDQuant: Weight-Informed Neural Decision-Making for Global Mixed-Precision LLM Quantization</h1>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-05-26 · Phong Nam Huu Nguyen; Khoi M. Le; Cong-Duy T Nguyen; Anh Tuan Luu; Thong Thanh Nguyen; Tho Quan / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">超低比特量化要给不同部位分配不同位宽，这篇论文用强化学习训练一个控制器来做这件事。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LLaMA 系列模型上的实验显示，该方法在超低比特设定下取得有竞争力的表现，同时相比需要重训的方法明显降低了优化开销。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">控制器不发明新的底层量化算子，而是在全局存储预算下学习给细粒度的列分块分配位宽和量化处理方式，从而在层内实现灵活的精度分配；实现上把 PPO 与激活感知校准、逐单元的轻量量化器拟合和显式的有效位宽核算结合起来。</span></div>
+<div class="score-reason">评分依据：超低比特混合精度量化是把大模型装进端侧内存预算的关键手段，全局存储预算的提法也贴合端侧约束，迁移价值明确，相关度较高；但论文无设备端实测。贡献在于把位宽分配当成可学习的控制问题并下沉到列分块粒度。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.26660" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

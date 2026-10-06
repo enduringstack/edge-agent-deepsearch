@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Pruning and Distilling Mixture-of-Experts into Dense Language Models</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-09 · Junhyuck Kim, Jihun Yun, Haechan Kim, Gyeongman Kim, Joonghyun Bae, Jaewoong Cho / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span><span class="tag">方向:MoE</span><span class="tag">方向:模型架构</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把训练好的混合专家模型整体转换成普通稠密模型，解决专家权重必须全部常驻内存、不适合内存受限部署的问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在参数量对齐的受控对比下，混合专家转稠密比稠密直接剪枝的下游平均准确率高 6.3 个百分点，约 40 亿 token 蒸馏的训练墙钟时间还快 1.6 倍；文中在三个模型上比较了 7 种打分、5 种分组和 2 种幅度缩放共 350 种配置，发现打分方法影响最大。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先给专家打分、挑选并分组，把选中的专家拼接成一个稠密前馈层，再用原混合专家模型当教师做知识蒸馏精修；作者提出的感知多样性的打分方法在三个模型上都优于此前方法。</span></div>
-<div class="score-reason">评分依据：直接针对内存受限部署下混合专家模型的结构性缺陷，产出的稠密模型对端侧更友好，但原文没有设备端实测。第一个系统性地把训练好的混合专家转成全稠密架构，并用 350 组配置厘清了关键因素。</div>
-<div class="source"><a href="https://huggingface.co/papers/2605.28207" target="_blank" rel="noopener">查看原文 →</a></div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-05-27 · Junhyuck Kim; Jihun Yun; Haechan Kim; Gyeongman Kim; Joonghyun Bae; Jaewoong Cho / arXiv</div>
+<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span><span class="tag">模型:DeepSeek</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">混合专家模型哪怕只激活一小部分专家，所有参数仍得全部装进内存，这篇论文把训练好的混合专家模型整个转成普通稠密模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen3-30B-A3B 上评估了 7 种打分、5 种分组和 2 种幅值缩放方法共 350 种配置，发现打分方法影响最大，作者提出的多样性感知打分在 Qwen3-30B-A3B、DeepSeek-V2-Lite 和 GPT-OSS-20B 上均优于已有方法；在参数量对齐的受控比较下，混合专家转稠密比稠密直接剪枝在约 40 亿 token 蒸馏后平均下游准确率高 6.3 个百分点，且训练墙上时间快 1.6 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先给专家打分、挑选并分组，再把选中的专家拼接成一个稠密前馈网络，最后用原混合专家模型当教师做知识蒸馏做精修。</span></div>
+<div class="score-reason">评分依据：直接针对内存受限部署这一端侧核心约束，把「必须全量常驻」的结构换成稠密模型，迁移价值明确，相关度较高；但实验规模和硬件仍在服务器侧。贡献在于首次系统地把混合专家转稠密做成完整框架并用 350 组配置厘清了关键因素。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.28207" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>
