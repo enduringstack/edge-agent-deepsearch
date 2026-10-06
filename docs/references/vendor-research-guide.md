@@ -163,6 +163,32 @@ arXiv 自身搜索只匹配标题和摘要，不直接按作者 affiliation 过�
 - `mediatek.com` 的 lastmod = dateModified 再次复现且偏差更大：Computex 2026 稿 lastmod `2026-07-15` /
   JSON-LD `2026-05-28`，差 48 天；大批 2022-2024 老稿集体刷成同一天
 
+**05-22~05-28 回填新增实测**：
+
+- **Microsoft 其实有历史归档入口**（推翻上一周「三路皆无、只能记查不到」的结论）：
+  `microsoft.com/en-us/research/wp-json/wp/v2/posts?after=…&before=…&per_page=100` 可用——
+  microsoft.com/research 是 WordPress。techcommunity 的搜索 API 仍 403
+- **DeepSeek**：`deepseek.com/sitemap.xml` 是可枚举的全量 news 归档，每条 news 的 lastmod 就是发布日。
+  DeepSeek 从「查不到」升级为可判「确认无」
+- **Zhipu**：`zhipuai.cn/news` 服务端渲染带日期、25 条可枚举，同样可做「确认无」判定
+- **Honor**：用 `/global/news/archive/`（全量 245 条）而不是 `/global/news/` 列表页，覆盖好得多
+- **`mistral.ai/rss.xml` 现在 302 跳到 `/news/rss`**——直接取旧路径只得 24 字节 "Redirecting to"，必须 `curl -L`
+- **`blog.google/en-us/sitemap.xml` 的小分区（`/security/`、`/waze/`、`/chromium/` 等约 300 条）不能漏**：
+  实测唯一的 Chrome Enterprise AI agent 条目就在 `/security/` 下、路径只有 4 层，
+  按「深度≥5 + 只看三大分区」过滤会整条漏掉
+
+**两个会制造「假的 0 命中」的操作陷阱**：
+
+- **blog.google 与 mediatek.com 会突发静默空响应**（curl 返回 000 或空体），并发 6~12 时成片失败，
+  极易被误读成「该条无日期」。必须**串行 + 最多 3 次重试 + 对空值复跑**；实测复跑后 blog.google
+  436 条里 390 条拿到 `published_time`（其余是本就无该 meta 的分区索引页），MediaTek 285 条全部拿到
+- **Windows CRLF 陷阱**：Python `open(...,'w')` / `write_text` 默认会把 `
+` 写成 `
+`，
+  URL 清单被 bash `read` 读进来时带着 ``，curl 全部返回 000 —— 产生一次完全虚假的「0 命中」。
+  管道里必须 `tr -d ''`；写文件时用 `newline='
+'` 显式指定，否则改一行 Markdown 也会变成全文件 diff
+
 **无效 / 陷阱**（都实测过，别重复踩）：
 
 - 「只给最近 N 条」的 feed 对历史窗口一律无用：`machinelearning.apple.com/rss.xml`(10)、`blog.google/rss/`(20)、`blogs.nvidia.com/feed/`(18)、`developer.nvidia.com/blog/feed/`(100，只回溯到 7 月)
