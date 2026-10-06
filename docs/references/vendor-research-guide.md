@@ -135,6 +135,34 @@ arXiv 自身搜索只匹配标题和摘要，不直接按作者 affiliation 过�
 - **blog.google 的 lastmod 漂移远超 ±10 天**：实测有 lastmod 2026-06-10 / `datePublished` 2026-03-25（差 77 天）。发现窗放宽到 ±30 天仍可用，但 lastmod 绝不能当日期
 - `honor.com/global/sitemap.xml` 可用（1794 条带 lastmod）但只反映近期重生成；`honor.com/sitemap.xml` 是 404。`oppo.com/sitemap.xml` 是按地区分的 sitemapindex，index 层 lastmod 全部同一天，拿不到逐条发布日
 
+**05-29~06-04 回填新增实测**：
+
+- **Samsung 终于有历史入口**：`news.samsung.com/global/<YYYY>/<MM>/`（含 `page/2/`）是**服务端渲染的月度归档**，
+  再逐条开文章页取 JSON-LD `datePublished`。此前只有 `/global/feed`（50 条、回溯两个月）和被 WAF 挡成 403 的
+  WP REST，连续数周只能记 no_match。注意 `news.samsung.com/global/wp-sitemap.xml` 存在（posts 分 4 片），
+  但 `sitemap_index.xml` 是 404
+- **Honor 有正文日期了**：`honor.com/global/news/` 列表页服务端渲染且带每条英文日期，文章页有 JSON-LD
+  `datePublished`。此前只能用 sitemap lastmod，整批丢弃
+- **ModelBest 首页内嵌 JSON 是全量索引**（title/intro/link/ISO 时间戳），能精确定位窗口内条目——但 link 全指向
+  `mp.weixin.qq.com`，对本项目仍记 no_match。价值在于把「查不到」降级成「**确认有但域名不合规**」
+
+**新增陷阱**：
+
+- **Qualcomm `.model.json` 里有三个日期字段，只有一个是对的**：`publishDateTime`（如 "Jun 01, 2026 | 23:50"）
+  和一堆整数 `publishDate` 都是**页内「相关文章」卡片的日期**，不是本文发布日（实测 dragonwing-iq10 的
+  `pagePublishDate` 是 06-01、`publishDateTime` 却是 05-28）。只能用带引号的字符串字段
+  `"pagePublishDate":"<ms>"`，且必须与 URL 路径年月交叉印证
+- **blog.google 文章页的 JSON-LD 写作 `"datePublished": "`（冒号后有空格）**，无空格正则会全部匹配失败；
+  用 `<meta property="article:published_time">` 更稳。另外 `blog.google/en-us/sitemap.xml` 里混有 `/authors/` 页，
+  不过滤会污染候选池
+- **`www.huawei.com/en/sitemap.xml` 和 `/en/news/<Y>/<M>` 是软 404**：返回 404 但带 199KB 正文，按响应体大小
+  判断会误判成有数据
+- **YouTube 频道 RSS 已整体 404**（多个有效频道 ID 验证，`?user=` 同样失效），从「只给 15 条」退化为完全不可用
+- **GitHub Discussions 的 `ollama/ollama`、`google-ai-edge/LiteRT-LM`、`huggingface/transformers.js` 返回
+  9 字节空响应**——这是入口级拒绝，不是「窗口内无帖」，应记为不可达而非 no_match
+- `mediatek.com` 的 lastmod = dateModified 再次复现且偏差更大：Computex 2026 稿 lastmod `2026-07-15` /
+  JSON-LD `2026-05-28`，差 48 天；大批 2022-2024 老稿集体刷成同一天
+
 **无效 / 陷阱**（都实测过，别重复踩）：
 
 - 「只给最近 N 条」的 feed 对历史窗口一律无用：`machinelearning.apple.com/rss.xml`(10)、`blog.google/rss/`(20)、`blogs.nvidia.com/feed/`(18)、`developer.nvidia.com/blog/feed/`(100，只回溯到 7 月)
