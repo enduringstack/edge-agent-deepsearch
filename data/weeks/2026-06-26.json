@@ -5093,5 +5093,720 @@
         "desc": "agent multiplexer that lives in your terminal."
       }
     ]
+  },
+  "hardware": {
+    "window": {
+      "start": "2026-06-26",
+      "end": "2026-07-01"
+    },
+    "items": [
+      {
+        "date": "2026-06-30",
+        "vendor": "Apple",
+        "category": "移动SoC",
+        "title": "iPhone 18 Pro leaks: Qualcomm or Apple C2 model, A20 details, camera upgrades",
+        "title_zh": "爆料：Tata 泄露文件显示 iPhone 18 Pro 分区用 C2 基带",
+        "url": "https://appleinsider.com/articles/26/06/30/iphone-18-pro-leaks-qualcomm-or-apple-c2-model-a20-details-camera-upgrades",
+        "source_type": "媒体",
+        "summary_zh": "【爆料】AppleInsider 分析 Tata Electronics 遭勒索攻击泄露的约 630GB 文件：iPhone 18 Pro/Pro Max 美版 BOM 仍含高通 SDX80M、SDR875、QDM8771、QDM8720、PMK75、PMX75、QET7100A 等器件，美国以外版本则缺失这些器件，推测改用 Apple 自研 C2 基带；C2 据称仍不支持 5G mmWave，机型搭载 A20 Pro。",
+        "whats_new_zh": [
+          "C2 基带首次出现在 iPhone 18 Pro 原型 BOM 线索中（非美版）",
+          "美版保留高通 SDX80M 等 7 颗射频/电源器件",
+          "C2 据称不支持 mmWave",
+          "6 月 25 日 AppleInsider 首次披露泄露文件含 iPhone 18 Pro 原理图"
+        ],
+        "key_specs": {
+          "other": "A20 Pro（细节未披露）；C2 工艺、带宽未披露；RAM 未提及"
+        },
+        "edge_ai_impact_zh": "自研基带进一步扩大 Apple 对 SoC 周边芯片的控制，有利于整机功耗与 AI 常驻功能的协同；但对端侧 AI 算力本身影响有限。注：A20/iPhone 18 已在 9 月发布，属后续月份内容。",
+        "evidence_urls": [
+          "https://www.heise.de/en/news/Leak-Apple-uses-different-modems-for-iPhone-18-Pro-11352747.html"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "泄露来源",
+            "points": [
+              "Tata Electronics 勒索攻击，约 630GB、20 万+份文件（并非全部属于 Apple）被发布到暗网",
+              "原型阶段文档，量产前可能变更"
+            ]
+          },
+          {
+            "heading": "基带分区",
+            "points": [
+              "美版：高通 SDX80M、SDR875、QDM8771、QDM8720、PMK75、PMX75、QET7100A",
+              "非美版：上述器件缺失，推测为 C2；C1/C1X 均不支持 mmWave，C2 据称延续"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-06-27",
+        "vendor": "Qualcomm",
+        "category": "软件栈/工具链",
+        "title": "GenieX (formerly NexaSDK) developer preview: open-source on-device GenAI runtime for Qualcomm chipsets",
+        "title_zh": "GenieX开发者预览：原NexaSDK更名开源",
+        "url": "https://www.qualcomm.com/developer/blog/2026/06/geniex-developer-preview",
+        "source_type": "官方",
+        "summary_zh": "高通把收购 Nexa AI 后得到的 NexaSDK 更名为 GenieX，以 BSD-3 许可开源并进入开发者预览。GitHub 上 v0.3.0-alpha.1 发布于 6 月 11 日，6 月 27 日起的 v0.3.10 系列清除了 nexa-sdk 引用并启用 geniex.aihub.qualcomm.com 域名。GenieX 有两条运行时：llama.cpp（任意 GGUF，可跑在 Hexagon NPU/GPU/CPU 上）和 qairt（AI Hub 预编译包，固定在 NPU 上），并提供 OpenAI 兼容的本地服务。",
+        "whats_new_zh": [
+          "两条运行时：llama_cpp（GGUF，Hexagon 推荐 Q4_0）和 qairt（AI Hub 预编译、按芯片量化的 bundle，只跑 NPU）",
+          "geniex serve 在 127.0.0.1:18181/v1 提供 OpenAI 兼容 API",
+          "v0.3.10~0.3.13（6 月 27-28 日）：Windows on Snapdragon 使用微软签名的 HTP catalog，无需手动导入证书；model-manager 识别 MXFP4",
+          "支持平台：Snapdragon X/X Elite（Windows）、8 Elite 和 8 Elite Gen 5（Android）、Dragonwing QCS9075（Linux）",
+          "示例模型：Qwen3-4B-Instruct-2507、Gemma-4-E4B-it QAT Q4_0 GGUF"
+        ],
+        "key_specs": {
+          "other": "BSD-3-Clause；CLI / Python / Kotlin / Docker；仅支持 Snapdragon"
+        },
+        "edge_ai_impact_zh": "这是高通第一次让任意 GGUF 模型直接跑在 Hexagon NPU 上（llama.cpp HTP 后端），把 AI Hub 必须预编译的门槛降到“一行命令”。OpenAI 兼容服务让本地智能体框架可以无改动接入 NPU。",
+        "evidence_urls": [
+          "https://github.com/qualcomm/geniex",
+          "https://7minai.com/news/qualcomm-geniex-on-device-llm/",
+          "https://geniex.aihub.qualcomm.com/en/get-started/platforms"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "运行时架构",
+            "points": [
+              "llama.cpp 路径：GGUF 模型经 Hexagon HTP 后端运行，推荐 Q4_0 量化；也可退回 Adreno GPU 或 CPU",
+              "qairt 路径：用 AI Hub 按芯片编译、量化好的 bundle，固定在 NPU 上，性能最优但模型选择受限",
+              "构建链升级 Hexagon toolchain v0.7，修复 HTP v75 上的误编译问题（v0.3.14，7 月 2 日）"
+            ]
+          },
+          {
+            "heading": "开发体验",
+            "points": [
+              "CLI、Python（AutoModelForCausalLM）、Android Kotlin/Java、Docker、OpenAI 兼容服务器",
+              "微软签名的 HTP catalog 免去了在 Windows on Snapdragon 上导入证书的麻烦",
+              "识别 MXFP4 量化格式（6 月 28 日），为 gpt-oss 类 MXFP4 权重铺路（推断）"
+            ]
+          },
+          {
+            "heading": "来源",
+            "points": [
+              "由 2026 年早些时候被高通收购的 Nexa AI 团队开发；GitHub 仓库创建于 2024 年 8 月，原名 nexa-sdk"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方示例为 4B 级模型（Qwen3-4B、Gemma-4-E4B，Q4_0）；tok/s、上下文长度和功耗均未披露。"
+      },
+      {
+        "date": "2026-07-01",
+        "vendor": "Korea University / UW–Madison",
+        "category": "学术研究",
+        "title": "NPUsper: Eliminating Redundant Computation for Real-Time Whisper on Mobile NPUs",
+        "title_zh": "NPUsper：手机NPU上实时Whisper转写",
+        "url": "https://arxiv.org/abs/2607.01108",
+        "source_type": "论文",
+        "summary_zh": "NPUsper通过解码器交叉注意力的时间模式在线检测幻觉token，避免以往流式方案的大量填充；并提出“受控展开”，把自回归解码按K步编译为分块图，减少KV Cache冗余计算与图调度开销。在Galaxy S25和Snapdragon X Plus笔记本上，每词延迟最多降4.84倍、TTFT最多降33.2倍、平均功耗最多降88.64%。",
+        "whats_new_zh": [
+          "Galaxy S25上NPU版平均功耗0.46 W，基线2.94–4.05 W；X Plus上0.81 W",
+          "TTFT：S25降3.9–22.8倍、X Plus降6.9–33.2倍",
+          "受控展开默认块调度[4,6,5,5,5,5]，每桶最多30个解码token",
+          "WER（TED-LIUM 3）14.18%，SimulStreaming 11.26%——有约3个百分点精度代价"
+        ],
+        "key_specs": {
+          "gpu": "Adreno 830（S25）/ Adreno X1-45（X Plus），whisper.cpp OpenCL基线",
+          "npu": "Qualcomm Hexagon（QNN HTP，ONNX Runtime QNN 1.23.2，QAIRT 2.37）",
+          "power": "S25平均0.46 W",
+          "other": "Whisper base为主，small/medium附录测试；large在S25上OOM"
+        },
+        "edge_ai_impact_zh": "说明语音这类常驻场景在NPU上能做到亚瓦级功耗，关键是把动态自回归解码改写成固定形状的分块图以适配NPU静态图编译。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2607.01108v1"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "Korea University；University of Wisconsin–Madison",
+        "authors": "Sihyeon Lee, Hojeong Lee, Sungwon Woo et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 适配",
+            "points": [
+              "受控展开把自回归解码编译成K步分块图（K=5为主），减少KV Cache重复计算与逐步调度",
+              "离线用qairt-converter和qnn-context-binary-generator生成上下文二进制"
+            ]
+          },
+          {
+            "heading": "低功耗/常驻 AI",
+            "points": [
+              "S25上0.46 W，比GPU/CPU流式基线低一个数量级（2.94–4.05 W）",
+              "短音频分轮处理、最小携带，降低每轮计算量"
+            ]
+          },
+          {
+            "heading": "精度权衡",
+            "points": [
+              "TED-LIUM 3 WER 14.18% vs SimulStreaming 11.26%；Meanwhile数据集16.36% vs 12.06%"
+            ]
+          }
+        ],
+        "model_capacity_zh": "主评测Whisper base；small、medium可运行，large在Galaxy S25上内存溢出。"
+      },
+      {
+        "date": "2026-06-30",
+        "vendor": "Duke University",
+        "category": "学术研究",
+        "title": "EVA: Accelerating LLM Decoding via an Efficient Vector Quantization Architecture",
+        "title_zh": "EVA：向量量化把解码GEMV变GEMM",
+        "url": "https://arxiv.org/abs/2605.24144",
+        "source_type": "论文",
+        "summary_zh": "EVA 针对仅权重向量量化（VQ）解码的两个痛点：GEMV 利用率低、码本查表的 bank 冲突。其做法是不再重建权重，而是先让输入向量与码本做点积，把解码从 GEMV 变成 GEMM，再从中间输出缓冲做结构化查表，消除 bank 冲突。相对 SOTA 查表架构最高 11.17x 加速、7.17x 能效。",
+        "whats_new_zh": [
+          "最高 11.17x 加速、7.17x 能效（vs SOTA lookup-based 架构）",
+          "解码 GEMV → GEMM 转换",
+          "结构化查表消除 memory bank conflict，VQ 后算术精度保持"
+        ],
+        "key_specs": {
+          "other": "weight-only vector quantization；码本点积 + 结构化 lookup"
+        },
+        "edge_ai_impact_zh": "VQ 能把权重压到 2-3 bit 级等效位宽，EVA 证明在硬件上可兼顾带宽与利用率，对 decode 受限的手机 NPU 是值得跟进的数据通路设计。",
+        "evidence_urls": [
+          "https://arxiv.org/pdf/2605.24144",
+          "https://www.alphaxiv.org/abs/2605.24144",
+          "https://iscaconf.org/isca2026/program/"
+        ],
+        "confidence": "high",
+        "venue": "ISCA 2026",
+        "affiliation": "Duke University",
+        "authors": "Bowen Duan, Cong Guo, Chiyue Wei et al.（Hai Li、Yiran Chen 组）",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "decode 由一串小 GEMV 组成，访存受限且加速器利用率低",
+              "VQ 虽降低模型体积和带宽，但码本查表存在频繁 bank 冲突"
+            ]
+          },
+          {
+            "heading": "微架构",
+            "points": [
+              "输入向量 × 码本直接点积，GEMV → GEMM",
+              "从中间输出缓冲做结构化查表，消除 bank 冲突"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "最高 11.17x 加速、7.17x 能效（vs SOTA 查表架构，作者口径）",
+              "VQ 之后算术精度不损失"
+            ]
+          }
+        ],
+        "model_capacity_zh": "具体模型规模摘要未披露。"
+      },
+      {
+        "date": "2026-06-29",
+        "vendor": "上海交通大学",
+        "category": "学术研究",
+        "title": "COSM: A Cooperative Scheduling Framework for Concurrent PIM and CPU Execution on Mobile Devices",
+        "title_zh": "COSM：手机上PIM与CPU并发协同调度",
+        "url": "https://arxiv.org/abs/2606.30553",
+        "source_type": "论文",
+        "summary_zh": "COSM 针对手机端 LPDDR-PIM 的现实约束：DRAM 成本和板面积不允许给 PIM 单独配内存，CPU 上的 App 与 LLM 必须共享同一组 DRAM bank，导致 bank 冲突和总线拥塞，PIM 的性能和能效收益被吃掉。作者在内存控制器里加入低干扰 PIM 控制接口和感知空闲窗口的调度器，把 PIM 命令塞进 CPU 访存序列的空闲间隙。论文报告 PIM 吞吐最高提升 2.8x，CPU 性能损失 <2.0%（作者口径）。",
+        "whats_new_zh": [
+          "PIM 吞吐相对基线调度最高提升 2.8x",
+          "CPU 性能损失控制在 2.0% 以内",
+          "可暂停的 PIM 命令 + CPU 中介的数据搬运命令（修改 DRAM 命令集）",
+          "ISCA 2026 Session 1A，6 月 29 日报告"
+        ],
+        "key_specs": {
+          "memory": "共享 LPDDR，每 bank 增加 SRAM 缓冲存放 PIM 操作数与暂存数据",
+          "other": "内存控制器内 2 条专用 PIM 队列（计算/搬运）"
+        },
+        "edge_ai_impact_zh": "这是少数正面处理“手机 PIM 必须和 App 共享内存”这一落地障碍的工作；若 LPDDR-PIM（三星 LP-PIM 等）进入手机，控制器级调度是必需配套。",
+        "evidence_urls": [
+          "https://arxiv.org/pdf/2606.30553",
+          "https://iscaconf.org/isca2026/program/"
+        ],
+        "confidence": "high",
+        "venue": "ISCA 2026",
+        "affiliation": "上海交通大学（含 Onur Mutlu 等合作者）",
+        "authors": "Yilong Zhao, Fangxin Liu, Onur Mutlu et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题定义",
+            "points": [
+              "手机 DRAM 成本与板面积限制使 PIM 无法独占内存，CPU 与 PIM 必须在共享内存上并发执行",
+              "并发带来 bank 冲突和总线拥塞，削弱 PIM 原本“少搬数据省能耗”的收益"
+            ]
+          },
+          {
+            "heading": "控制器微架构",
+            "points": [
+              "修改 DRAM 命令集：PIM 任务可在高优先级 CPU 请求到达时暂停，并新增 CPU 中介的数据传输命令",
+              "内存控制器内设两条专用 PIM 队列（计算命令/传输命令），由 PIM 调度器仲裁",
+              "每个 DRAM bank 增加 SRAM 缓冲，存放 PIM 操作数和暂存传输数据"
+            ]
+          },
+          {
+            "heading": "调度策略",
+            "points": [
+              "idleness-aware 调度器预测 CPU 访存空闲窗口并在其中发射 PIM 命令",
+              "既对 CPU 隐藏 PIM 执行延迟，也让 PIM 计算与数据搬运重叠"
+            ]
+          },
+          {
+            "heading": "评估结果",
+            "points": [
+              "负载：LLM 与移动 App、计算密集 kernel 并发",
+              "PIM 吞吐最高 2.8x（vs 基线调度），CPU 性能损失 <2.0%（作者口径，仿真评估，具体模型规模摘要未披露）"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露具体模型参数量与 tokens/s；论文定位为手机端 LLM 的 PIM 加速（摘要口径）。"
+      },
+      {
+        "date": "2026-06-29",
+        "vendor": "KAIST",
+        "category": "学术研究",
+        "title": "Cassandra: Enabling Reasoning LLMs at Edge via Self-Speculative Decoding",
+        "title_zh": "Cassandra：自推测解码让推理模型上端侧",
+        "url": "https://arxiv.org/abs/2605.26558",
+        "source_type": "论文",
+        "summary_zh": "Cassandra 是面向低 batch 端侧推理模型的算法-硬件协同自推测解码框架：不额外训练草稿模型，而是对权重和 KV Cache 做细粒度剪枝与尾数截断，构造“自身的低精度草稿”，再用全精度并行验证保证无损。配套一个轻量编解码硬件模块，可集成到商用 GPU/NPU。作者报告相对 BF16 基线最高 2.41x 加速。",
+        "whats_new_zh": [
+          "相对 BF16 基线最高 2.41x 加速，无需额外训练",
+          "Llama 3 8B @ RTX 4090、同等显存预算下比 Eagle-3 多生成 1.81x token",
+          "提出可嵌入商用 GPU/NPU 的轻量 encoder-decoder 硬件模块"
+        ],
+        "key_specs": {
+          "other": "草稿模型 = 剪枝 + 尾数截断（权重与 KV Cache）；全精度并行验证"
+        },
+        "edge_ai_impact_zh": "推理模型（长思维链）把端侧瓶颈推向 decode 阶段，Cassandra 给出了“无损 + 免训练 + 低 batch”的路线，对手机 NPU 增加格式转换单元有直接参考价值。",
+        "evidence_urls": [
+          "https://iscaconf.org/isca2026/program/"
+        ],
+        "confidence": "high",
+        "venue": "ISCA 2026",
+        "affiliation": "KAIST",
+        "authors": "Soongyu Choi, Yuntae Kim, Muyoung Son et al.（通讯：Joo-Young Kim）",
+        "deep_dive_zh": [
+          {
+            "heading": "算法机制",
+            "points": [
+              "自推测：草稿来自同一模型的低精度/稀疏化视图，而非独立小模型或层跳跃",
+              "细粒度数据选择：剪枝 + 尾数截断，保留权重与 KV Cache 中最显著的值",
+              "全精度并行验证，输出与原模型无损一致"
+            ]
+          },
+          {
+            "heading": "硬件支持",
+            "points": [
+              "轻量 encoder-decoder 模块负责 Cassandra 表示与标准浮点格式互转",
+              "定位为可集成到商用 GPU 和 NPU 的附加单元；面积/功耗摘要未披露"
+            ]
+          },
+          {
+            "heading": "实测/评估",
+            "points": [
+              "最高 2.41x 加速（vs BF16）",
+              "Llama 3 8B、RTX 4090、相同内存预算：生成 token 数为 Eagle-3 的 1.81x",
+              "对比对象包括层跳跃类与结构化 KV 压缩类自推测方法"
+            ]
+          }
+        ],
+        "model_capacity_zh": "评估模型含 Llama 3 8B（BF16 基线）；面向低 batch 的消费级设备推理。端侧 NPU 上的 tokens/s 未披露。"
+      },
+      {
+        "date": "2026-06-29",
+        "vendor": "Cornell / KU Leuven / Stanford",
+        "category": "学术研究",
+        "title": "P3-LLM: An Integrated NPU-PIM Accelerator for Edge LLM Inference Using Hybrid Numerical Formats",
+        "title_zh": "P3-LLM：混合数值格式的端侧NPU-PIM加速器",
+        "url": "https://arxiv.org/abs/2511.06838",
+        "source_type": "论文",
+        "summary_zh": "P3-LLM 把 NPU 与 DRAM-PIM 集成用于端侧 LLM 推理，核心观点是 FP16 等高精度 PIM 运算单元在 DRAM 工艺中面积/功耗代价过高。作者为不同算子分配混合数值格式（权重、激活、KV Cache 分别量化），在 PIM 中放置更轻量的低精度运算单元，在等面积下提高吞吐，并用算子融合消除运行时反量化开销。相对 HBM-PIM、Ecco、Pimba 平均加速 4.9x/2.0x/3.4x（arXiv 摘要口径）。",
+        "whats_new_zh": [
+          "平均加速：vs HBM-PIM 4.9x、vs Ecco 2.0x、vs Pimba 3.4x",
+          "KV Cache 量化与权重-激活量化均达 SOTA 精度（作者口径）",
+          "第三方摘要提及 4-bit 权重/KV 下最高 7.8x 解码加速、6.3x 能效（vs 纯 NPU，未经原文核实）"
+        ],
+        "key_specs": {
+          "npu": "NPU + DRAM-PIM 集成",
+          "memory": "PIM 内放置低精度混合格式运算单元",
+          "other": "开源：github.com/yc2367/P3-LLM"
+        },
+        "edge_ai_impact_zh": "对手机 LPDDR-PIM 的启示：PIM 侧不要堆 FP16，应和量化格式协同设计；与 COSM（共享内存调度）构成互补。",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2511.06838v3",
+          "https://alphaxiv.org/overview/2511.06838v3",
+          "https://iscaconf.org/isca2026/program/"
+        ],
+        "confidence": "high",
+        "venue": "ISCA 2026",
+        "affiliation": "Cornell University、KU Leuven、Stanford University",
+        "authors": "Yuzong Chen, Chao Fang, Xilai Dai et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "动机",
+            "points": [
+              "已有 NPU+PIM 系统使用 FP16 等高精度 PIM 单元，在 DRAM 工艺下面积和功耗开销大，限制有效吞吐",
+              "LLM decode 阶段受内存带宽约束，PIM 天然适配 GEMV"
+            ]
+          },
+          {
+            "heading": "量化与格式",
+            "points": [
+              "混合精度量化：为 LLM 不同操作数分配不同数值格式",
+              "同时覆盖 KV Cache 量化与权重-激活量化"
+            ]
+          },
+          {
+            "heading": "PIM 微架构",
+            "points": [
+              "为混合格式定制的轻量 PIM 运算单元，等面积下提升吞吐",
+              "低精度数据流内做算子融合，降低运行时反量化开销"
+            ]
+          },
+          {
+            "heading": "性能对比",
+            "points": [
+              "vs HBM-PIM 平均 4.9x，vs Ecco 2.0x，vs Pimba 3.4x（arXiv v3 摘要）",
+              "能效数字摘要未给出；第三方 alphaXiv 摘要称 vs 纯 NPU 最高 6.3x 能效（媒体口径，未核实）"
+            ]
+          }
+        ],
+        "model_capacity_zh": "4-bit 级别权重与 KV Cache（第三方摘要口径）；具体模型尺寸与 tokens/s 摘要未披露。"
+      },
+      {
+        "date": "2026-06-26",
+        "vendor": "IIIT Hyderabad",
+        "category": "学术研究",
+        "title": "Phase Matters: Characterizing Heterogeneous Vision-Language Inference on a Mobile SoC",
+        "title_zh": "骁龙8至尊版上VLM分阶段异构推理表征",
+        "url": "https://arxiv.org/abs/2606.27906",
+        "source_type": "论文",
+        "summary_zh": "在Qualcomm SM8750（Snapdragon 8 Elite）上对VLM推理做硬件在环表征，覆盖分阶段吞吐、冷/热缓存、100次热稳定性、能耗、CPU/NPU混合管线与视觉token预算。以FastVLM-0.5B为例，NPU对预填充提速1.64倍、解码只提速1.18倍，而视觉编码器提速20–45倍；四步图改写让Phi-3.5-V编码器也能走QNN路径。",
+        "whats_new_zh": [
+          "FastVLM-0.5B热缓存：预填充CPU 120.6 → NPU 197.4 tok/s；解码95.5 → 113.1 tok/s",
+          "NPU执行器初始化536.0 ms（CPU 83.6 ms），冷启动纯NPU管线26,820 ms vs 热启动2,080 ms",
+          "100次连续运行：NPU稳态40.78 °C vs CPU 51.25 °C（低10.47 °C），单请求能耗低2.52倍",
+          "编码器CPU FP16/GPU FP16/NPU INT8：ViT-B/16 663.0/98.9/14.9 ms；Phi-3.5-V CLIP 2,286.1/436.0/103.5 ms（22.1倍）"
+        ],
+        "key_specs": {
+          "process": "3 nm",
+          "cpu": "Oryon 64位，4.32 GHz",
+          "npu": "Hexagon（经LiteRT QNN delegate / QAIRT）",
+          "other": "LiteRT+XNNPACK（CPU FP16）；W4A8解码路径；手机型号与内存未披露"
+        },
+        "edge_ai_impact_zh": "量化了“NPU加速VLM主要赚在视觉编码器和预填充，解码收益有限”，并指出NPU初始化与冷启动开销巨大，常驻场景应保持执行器热态；对端侧多模态的CPU/NPU分工有直接指导意义。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2606.27906v1"
+        ],
+        "confidence": "high",
+        "venue": "MobiSys 2026 Workshop（arXiv预印本）",
+        "affiliation": "International Institute of Information Technology, Hyderabad",
+        "authors": "Aryama V Murthy, Yashas N Kotre, Prathmesh Sharma et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "分阶段差异",
+            "points": [
+              "预填充1.64倍 vs 解码1.18倍：解码受带宽限制，NPU算力优势难以兑现",
+              "视觉编码器在NPU INT8上提速20–45倍，是最值得卸载的部分"
+            ]
+          },
+          {
+            "heading": "冷启动与管线配置",
+            "points": [
+              "NPU执行器初始化536 ms，导致冷启动纯NPU管线26.8 s，热态降至2.08 s",
+              "Hybrid-PD（预填充NPU+解码CPU）冷/热6,240/2,640 ms，冷启动更友好"
+            ]
+          },
+          {
+            "heading": "热与能效",
+            "points": [
+              "100次运行NPU均温40.78 °C（峰44.20 °C），CPU 51.25 °C（峰55.30 °C）",
+              "NPU单请求能耗低2.52倍（未给绝对焦耳）；INT8使CIDEr降0.4、VQAv2降0.3%"
+            ]
+          },
+          {
+            "heading": "移植方法",
+            "points": [
+              "静态形状导出→注意力分解→显式类型转换→CPU回退分区，四步后Phi-3.5-V编码器NPU FLOP占比96.8%（实测）"
+            ]
+          }
+        ],
+        "model_capacity_zh": "FastVLM-0.5B端到端：NPU预填充197.4 tok/s、解码113.1 tok/s；W4A8混合方案64视觉token时97.5 tok/s、首token 0.497 s。另测Phi-3.5-V、NanoVLM-222M、Gemma3n MobileNetV5编码器。"
+      },
+      {
+        "date": "2026-07-01",
+        "vendor": "学术（BaseRT 团队）",
+        "category": "学术研究",
+        "title": "BaseRT: Best-in-Class LLM Inference on Apple Silicon via Native Metal",
+        "title_zh": "BaseRT：原生 Metal 推理比 llama.cpp 快 1.56×",
+        "url": "https://arxiv.org/abs/2607.00501",
+        "source_type": "论文",
+        "summary_zh": "BaseRT 是一个原生 Metal 的 Apple Silicon LLM 运行时，通过芯片特定的 kernel 融合、内存感知优化与自定义 dispatch，支持 Q2 到 FP16 共 8 种量化格式；在 M3 与 M4 Pro 上测 Qwen3、Llama 3.2、Gemma 4（Q4/Q8），decode 吞吐最高为 llama.cpp 的 1.56×、MLX 的 1.35×，MoE 模型 prefill 增益更大。",
+        "whats_new_zh": [
+          "decode：最高 1.56× llama.cpp、1.35× MLX",
+          "8 种量化格式（Q2–FP16），覆盖 <1B 到 30B 模型",
+          "测试平台 M3、M4 Pro"
+        ],
+        "key_specs": {
+          "gpu": "Apple M 系列 GPU（Metal）",
+          "other": "开源于 GitHub"
+        },
+        "edge_ai_impact_zh": "第三方证明 MLX/llama.cpp 在 Apple GPU 上仍有 35–56% 的 decode 余量，与 Apple 官方 Core AI/Metal tensor 路线形成竞争；后续团队还发布了针对 M5 Neural Accelerator 的版本（7 月，窗口外）。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2607.00501v1"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv",
+        "affiliation": "未披露",
+        "authors": "Prabod Rathnayaka, Fabian Waschkowski, Lukas Wesemann",
+        "deep_dive_zh": [
+          {
+            "heading": "方法",
+            "points": [
+              "认为 llama.cpp 与 MLX 的抽象层不匹配 Metal 执行模型与统一内存",
+              "芯片特定 kernel 融合、内存感知优化、自定义 dispatch"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "decode 最高 1.56×（vs llama.cpp）、1.35×（vs MLX）",
+              "MoE 模型 prefill 增益更大；Qwen3 / Llama 3.2 / Gemma 4 全系一致领先"
+            ]
+          },
+          {
+            "heading": "运行时设计",
+            "points": [
+              "数据驱动的架构描述符支持多模型族；零分配解码循环消除逐token内存分配",
+              "按芯片调优的手写融合Metal核；预填充用分块GEMM+FlashAttention式核"
+            ]
+          },
+          {
+            "heading": "能效与实测",
+            "points": [
+              "收益在小稠密模型最大（0.6B上解码快1.56倍），3B与30B-A3B上优势收窄到约1.04-1.15倍——大模型已接近带宽上限",
+              "稠密模型预填充与llama.cpp/MLX基本持平，MoE短提示预填充领先约1.8倍"
+            ]
+          },
+          {
+            "heading": "局限",
+            "points": [
+              "仅单设备单请求，无连续批处理/张量并行；只有Metal后端",
+              "结果为作者自测，覆盖模型族与量化级别有限"
+            ]
+          }
+        ],
+        "model_capacity_zh": "论文口径：<1B 至 30B 参数模型，Q4/Q8，M3 与 M4 Pro；绝对 tok/s 摘要未列。"
+      },
+      {
+        "date": "2026-06-30",
+        "vendor": "南京大学",
+        "category": "学术研究",
+        "title": "SMoE: An Algorithm-System Co-Design for Pushing MoE to the Edge via Expert Substitution",
+        "title_zh": "SMoE：专家替换把MoE推上边缘设备",
+        "url": "https://arxiv.org/abs/2508.18983",
+        "source_type": "论文",
+        "summary_zh": "SMoE 观察到低门控分数的激活专家往往可以被“功能相似、且已驻留在 GPU 内存中”的专家替代，几乎不损失精度。据此设计专家替换、驱逐/预取策略，以及对无法替换也无法预取专家的 CPU 辅助流水线。在 A6000 上跑 Qwen2-57B-A14B，GPU 专家命中率达 71%，预取量从 3 个专家降为 1 个。",
+        "whats_new_zh": [
+          "Qwen2-57B-A14B @ A6000：GPU 专家命中率 71%",
+          "需预取专家数 3 → 1",
+          "不依赖 AMX/AVX-512 等高端 CPU 指令，面向边缘设备"
+        ],
+        "key_specs": {
+          "gpu": "评估：NVIDIA A6000",
+          "memory": "专家缓存于 GPU 显存，冷专家在 CPU/SSD"
+        },
+        "edge_ai_impact_zh": "统一内存设备（如 32/64GB Mac Studio）也装不下 100GB+ 的 MoE，专家替换是降低 SSD/PCIe 访问频度的软件侧手段，对端侧 MoE 落地有直接意义。",
+        "evidence_urls": [
+          "https://arxiv.org/pdf/2508.18983",
+          "https://arxiv.org/html/2508.18983v2",
+          "https://iscaconf.org/isca2026/program/"
+        ],
+        "confidence": "medium",
+        "venue": "ISCA 2026",
+        "affiliation": "南京大学",
+        "authors": "Guoying Zhu et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "核心观察",
+            "points": [
+              "低分专家门控分数远低于 top 专家，用相似专家替换可抑制噪声激活",
+              "单纯降分不提速，需借此提高 GPU 缓存命中"
+            ]
+          },
+          {
+            "heading": "系统设计",
+            "points": [
+              "三问题：替换谁/用谁替换；驱逐与预取；不可替换不可预取专家走 CPU 辅助流水线",
+              "刻意不基于 kTransformers，因其依赖边缘设备常缺的 AMX/AVX-512"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "Qwen2-57B-A14B 在 A6000 上 GPU 专家命中率 71%",
+              "预取专家数由 3 降为 1；端到端加速比在检索到的材料中未披露"
+            ]
+          }
+        ],
+        "model_capacity_zh": "评估模型：Qwen2-57B-A14B（总参 57B / 激活 14B）；tokens/s 未披露。"
+      },
+      {
+        "date": "2026-06-29",
+        "vendor": "Duke University",
+        "category": "学术研究",
+        "title": "OASIS: Outlier-Aware LUT-Based GEMM with Dual-Side Quantization for LLM Inference Acceleration",
+        "title_zh": "OASIS：异常值感知的查表GEMM加速器",
+        "url": "https://arxiv.org/abs/2507.23035",
+        "source_type": "论文",
+        "summary_zh": "OASIS 用查找表（LUT）直接执行“非均匀量化权重 × 非均匀量化激活”的 GEMM，无需反量化。通过预计算的笛卡尔积 LUT 把 LUT 尺寸缩小 64x、并行度提升 1024x；为激进的激活量化增加并行的异常值 LUT 通路与误差补偿，并配套实时 top-k 异常值检测引擎 Orizuru。相对 FIGLUT 加速器约 3.00x 速度、1.44x 能效。",
+        "whats_new_zh": [
+          "vs 现有 LUT-GEMM：LUT 尺寸 -64x、并行度 +1024x",
+          "精度：相对 FP16 平均下降约 1.98%，比 Atom 少降 5.18%",
+          "硬件：vs FIGLUT 约 3.00x 加速、1.44x 能效"
+        ],
+        "key_specs": {
+          "other": "双侧（权重+激活）非均匀量化；Orizuru top-k 异常值引擎"
+        },
+        "edge_ai_impact_zh": "LUT 计算是端侧 NPU 支持 sub-4bit 的一条主线（与 MobiSys 的 Vec-LUT、T-MAC 系一脉相承），OASIS 把它推进到 W/A 双侧量化。",
+        "evidence_urls": [
+          "https://arxiv.org/pdf/2507.23035",
+          "https://iscaconf.org/isca2026/program/"
+        ],
+        "confidence": "medium",
+        "venue": "ISCA 2026",
+        "affiliation": "Duke University",
+        "authors": "Xueying Wu et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "计算范式",
+            "points": [
+              "预计算 Cartesian Product LUT，避免反量化，直接完成低比特 GEMM",
+              "相对已有 LUT-GEMM，LUT 尺寸缩小 64x，并行度提升 1024x"
+            ]
+          },
+          {
+            "heading": "异常值处理",
+            "points": [
+              "异常值走并发 LUT 支路 + 误差补偿",
+              "Orizuru：实时检测激活异常值的 top-k 引擎",
+              "异常值比例 ≤1% 时吞吐基本持平，再高则异常值支路成为瓶颈"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "平均精度下降约 1.98%（vs FP16），比 Atom 低 5.18 个百分点",
+              "vs FIGLUT：约 3.00x 加速、1.44x 能效"
+            ]
+          }
+        ],
+        "model_capacity_zh": "具体模型规模摘要中未披露。"
+      },
+      {
+        "date": "2026-06-30",
+        "vendor": "中科院大学 / UCSD",
+        "category": "学术研究",
+        "title": "DynoPipe: Heterogeneous Edge-Cloud LLM Serving with Dynamically Orchestrated Pipeline Boundaries",
+        "title_zh": "DynoPipe：边云协同LLM动态切分流水线",
+        "url": "https://researchr.org/publication/LinCZXY26/authors",
+        "source_type": "论文",
+        "summary_zh": "DynoPipe 研究端/边与云之间的异构 LLM 服务，动态调整边云流水线的切分边界。收录于 ISCA 2026 论文集第 969-984 页。公开渠道未检索到摘要与数值结果。",
+        "whats_new_zh": [
+          "ISCA 2026 Session 5A（6 月 30 日），论文集 pp. 969-984",
+          "边云流水线边界动态编排",
+          "量化结果：未披露"
+        ],
+        "key_specs": {},
+        "edge_ai_impact_zh": "端云协同是手机厂商（如端侧小模型 + 云端大模型）的现实形态，体系结构顶会开始系统研究切分点的动态化。",
+        "evidence_urls": [
+          "https://iscaconf.org/isca2026/program/"
+        ],
+        "confidence": "low",
+        "venue": "ISCA 2026",
+        "affiliation": "中国科学院大学 / UC San Diego（含中科院深圳先进院作者）",
+        "authors": "Yanying Lin, Baicheng Chen, Xinyu Zhang et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "研究对象",
+            "points": [
+              "异构边-云 LLM 服务",
+              "动态编排流水线边界（split point）"
+            ]
+          },
+          {
+            "heading": "可信度说明",
+            "points": [
+              "仅有程序表与 researchr 收录信息，方法与数字待全文核实"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-06-29",
+        "vendor": "国立阳明交通大学 (NYCU)",
+        "category": "学术研究",
+        "title": "Omni-LUT: Energy-Efficient LUT-based Accelerator with Hardware-Aware KV Cache Quantization",
+        "title_zh": "Omni-LUT：查表加速器+硬件感知KV量化",
+        "url": "https://iscaconf.org/isca2026/program/",
+        "source_type": "论文",
+        "summary_zh": "NYCU 团队的 Omni-LUT 是基于 LUT 的 GEMM 加速器，配合“硬件感知”的 KV Cache 量化方法，在 prefill 与 decode 两个阶段提供混合精度计算的软硬件协同支持。公开材料（NYCU 讲座摘要）称其相对 SOTA AI 加速器显著降低延迟和能耗，但未给出具体数字。",
+        "whats_new_zh": [
+          "ISCA 2026 Session 3A（6 月 29 日）",
+          "prefill/decode 双阶段混合精度支持",
+          "具体加速比/能效：未披露（公开摘要无数字）"
+        ],
+        "key_specs": {
+          "other": "LUT-based GEMM + hardware-aware KV Cache quantization"
+        },
+        "edge_ai_impact_zh": "与 OASIS 同场（3A）出现，说明“LUT 化低比特计算 + KV Cache 量化”已成为端侧 LLM 加速器的主流议题。",
+        "evidence_urls": [
+          "https://www.csie.ncu.edu.tw/announcement/03e3e022aa28647365492a3385cb9ff3",
+          "https://arxiv.org/pdf/2608.13962"
+        ],
+        "confidence": "low",
+        "venue": "ISCA 2026",
+        "affiliation": "国立阳明交通大学（NYCU）",
+        "authors": "Cheng-Han Tsai et al.（导师 Tsung Tai Yeh）",
+        "deep_dive_zh": [
+          {
+            "heading": "架构要点",
+            "points": [
+              "LUT-based GEMM 加速器，面向混合精度计算",
+              "KV Cache 量化方法按硬件数据通路设计（hardware-aware）"
+            ]
+          },
+          {
+            "heading": "阶段覆盖",
+            "points": [
+              "同时为 prefill（计算密集）与 decode（访存密集）提供混合精度支持"
+            ]
+          },
+          {
+            "heading": "可信度说明",
+            "points": [
+              "本条仅基于 ISCA 程序表与 NYCU 讲座摘要，量化结果未披露，待论文全文核实"
+            ]
+          },
+          {
+            "heading": "架构方向",
+            "points": [
+              "异构：NAND 内计算承接大容量专家权重，近 DRAM 计算承接热数据",
+              "动态推理：根据 MoE 路由自适应调度"
+            ]
+          },
+          {
+            "heading": "相关背景",
+            "points": [
+              "同类工作 NVLLM 将约 70% 参数所在的 FFN 卸载到 Flash 计算，注意力在 DRAM 侧 NPU 执行（作背景参考）"
+            ]
+          }
+        ]
+      }
+    ],
+    "overview": "ISCA 2026 周（06-26~07-01），端侧 LLM 体系结构论文集中发布。PIM 开始从 HBM 走向手机 LPDDR：上海交大的 COSM 在手机上让 PIM 与 CPU 并发协同调度（PIM 吞吐最高提升 2.8 倍，CPU 性能损失低于 2%），Cornell 等的 P3-LLM 做混合数值格式的 NPU-PIM 加速器（比 HBM-PIM 平均快 4.9 倍）。查表低比特计算成为共识（OASIS、Omni-LUT），Duke 的 EVA 用向量量化把 decode 的 GEMV 变成 GEMM（最高 11.17 倍加速）；KAIST 的 Cassandra 用自推测解码让推理模型上端侧（最高 2.41 倍），南京大学的 SMoE 通过专家替换把 Qwen2-57B-A14B 推上边缘设备。arXiv 上，骁龙 8 Elite 的 VLM 分阶段实测显示 FastVLM-0.5B 的 NPU 解码达 113 tok/s，但冷启动纯 NPU 管线要 26.8 秒；NPUsper 在 Galaxy S25 NPU 上跑 Whisper，平均功耗 0.46W。高通把 NexaSDK 更名为 GenieX 并开源，可在 Hexagon NPU 上跑任意 GGUF 模型；Apple C2 基带出现在 iPhone 18 Pro 原型的泄露文件中（爆料）。",
+    "takeaways_zh": [
+      "ISCA 2026 的端侧论文集中在 decode：PIM 进 LPDDR、查表低比特、向量量化把 GEMV 变 GEMM，目标都是减少每个 token 读取的字节数。",
+      "NPU 的冷启动和图编译开销（纯 NPU 管线冷启动 26.8 秒 vs 热启动 2.1 秒）是被忽视的体验问题，常驻进程与预编译比峰值算力更影响智能体响应。",
+      "常驻语音等小模型在手机 NPU 上已能做到亚瓦级（Whisper base 0.46W），“常开 AI”的门槛在软件而不在芯片。"
+    ]
   }
 }

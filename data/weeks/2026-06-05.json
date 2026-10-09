@@ -7389,5 +7389,1082 @@
         "verification": "已回链原始材料"
       }
     ]
+  },
+  "hardware": {
+    "window": {
+      "start": "2026-06-05",
+      "end": "2026-06-11"
+    },
+    "items": [
+      {
+        "date": "2026-06-08",
+        "vendor": "Apple",
+        "category": "移动SoC",
+        "title": "Apple introduces Siri AI, a profoundly more capable and personal assistant (most advanced on-device model requirements)",
+        "title_zh": "20B 端侧模型门槛：12GB 内存 + A19 Pro/M3/M4",
+        "url": "https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/",
+        "source_type": "官方",
+        "summary_zh": "Apple 新闻稿列出「最先进端侧模型」（即 AFM 3 Core Advanced，驱动 Expressive Voices 与高级听写）的设备要求：iPhone Air、iPhone 17 Pro/Pro Max、M4 及以后且 ≥12GB 统一内存的 iPad、M3 及以后且 ≥12GB 的 Mac、以及 Apple Vision Pro（M5）。普通 Apple Intelligence/Siri AI 仍覆盖 iPhone 15 Pro 起和 M1 起的设备。",
+        "whats_new_zh": [
+          "首次以「内存容量」而非仅芯片代际作为端侧模型门槛：≥12GB",
+          "iPhone 端只有 A19 Pro 机型（iPhone Air、17 Pro/Pro Max）获得 20B 模型；8GB 的 iPhone 16 Pro 等被排除",
+          "Mac 门槛 M3+、iPad 门槛 M4+，均需 ≥12GB；Vision Pro 需 M5 版",
+          "macitynet 整理：M4 iPad Pro 256/512GB 版只有 8GB 被排除，M3 Mac 需配 16GB"
+        ],
+        "key_specs": {
+          "npu": "需要「一定水平以上」的 Neural Engine（Mac Fan 分析，代际因产品而异）",
+          "memory": "≥12GB 统一内存（官方）；Mac 实际多为 16GB 起配",
+          "other": "AFM 3 Core Advanced 20B 总参/1–4B 激活，权重放 NAND"
+        },
+        "edge_ai_impact_zh": "12GB 成为 Apple 端侧大模型的硬门槛，意味着 2025 年起 Pro 机型加内存（A19 Pro 12GB）是为 flash-offload 型稀疏模型提前铺路；对安卓阵营而言，「flash 常驻 + DRAM 热专家」的方案让 12–16GB 手机也能承载 20B 级模型。",
+        "evidence_urls": [
+          "https://macfan.book.mynavi.jp/article/109355/",
+          "https://www.macitynet.it/afm-3-core-advanced-apple-12-gb-ram/",
+          "https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "设备门槛（官方）",
+            "points": [
+              "iPhone：iPhone Air、iPhone 17 Pro/Pro Max（均为 A19 Pro）",
+              "iPad：M4 及以后且 ≥12GB；Mac：M3 及以后且 ≥12GB；Apple Vision Pro（M5）",
+              "普通 Apple Intelligence：iPhone 16 全系、iPhone 15 Pro/Pro Max、iPad mini（A17 Pro）、MacBook Neo（A18 Pro）、M1 起的 iPad/Mac"
+            ]
+          },
+          {
+            "heading": "为什么是 12GB（媒体分析）",
+            "points": [
+              "Mac Fan（6/20）：IFP 使驻留 DRAM 的权重降到 20B 中的约 1–4B，但仍需额外空间放被路由的权重，因此要求 12GB+；Mac 实际需 16GB+",
+              "macitynet：12GB 是整机内存门槛，DRAM 中同时要放 OS、App、选中参数、共享部分、中间结果、音频/相机/屏幕数据与随长度增长的上下文 cache；8GB 机型会更频繁回退 flash、杀后台、增加延迟与能耗",
+              "Mac Fan 指出还需要一定代际以上的 Neural Engine，但未给出具体 TOPS 门槛"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "路由按 prompt 进行，正是为了规避 NAND→DRAM 带宽不足（官方原因）",
+              "macitynet 列举：M5 iPad Pro 256/512GB 为 12GB、1/2TB 为 16GB；M4 iPad Pro 256/512GB 仅 8GB 因而不支持",
+              "Mac Studio 需 M4 Max 36GB 起或 M3 Ultra 96GB 起（macitynet 整理）"
+            ]
+          },
+          {
+            "heading": "上下文窗口",
+            "points": [
+              "WWDC 会话 319：端侧模型 OS 26.0 为 4096 tokens，OS 27.0 在较新设备上为 8192 tokens",
+              "社区实测：macOS 27 beta 上 M3 Pro 读到 8192、M2 读到 4096，与官方「新设备 8192」一致"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方口径：20B 总参数、每请求激活 1–4B，最低 12GB 设备内存（12GB 指整机内存，不是模型占用）。DRAM 实际占用、flash 占用、量化 bit、tokens/s 均未披露；社区在 macOS 27 beta 上读到 M3 Pro 的 contextSize=8192、M2 为 4096（GitHub issue，社区实测）。"
+      },
+      {
+        "date": "2026-06-09",
+        "vendor": "TrendForce",
+        "category": "存储与内存",
+        "title": "Global Smartphone Production Fell 1.7% YoY in 1Q26; Memory Cost Pressures Expected to Drive a Sharper Decline in 2Q26",
+        "title_zh": "TrendForce：内存涨价拖累，2026 手机产量或降 16.2%",
+        "url": "https://www.trendforce.com/presscenter/news/20260609-13087.html",
+        "source_type": "媒体",
+        "summary_zh": "TrendForce 称 1Q26 全球手机产量约 2.84 亿部（YoY -1.7%），因低价内存库存耗尽、各品牌 2Q26 起减产，预计 2026 全年约 10.51 亿部、同比 -16.2%，内存若持续高价跌幅可能更深。5 月报告预测 2Q26 LPDDR5X 合约价环比 +78–83%。",
+        "whats_new_zh": [
+          "1Q26 产量 2.84 亿部（-1.7% YoY）；三星 6,260 万、苹果 6,020 万、OPPO 2,950 万、小米 2,600 万、vivo 2,200 万、传音 1,980 万",
+          "2026 全年预测 10.51 亿部（-16.2% YoY），2 月预测为 -10%",
+          "5 月 14 日报告：2Q26 LPDDR4X 合约价 +70–75% QoQ，LPDDR5X +78–83% QoQ"
+        ],
+        "key_specs": {
+          "memory": "2Q26 LPDDR5X 合约价 +78–83% QoQ（TrendForce 5 月预测）"
+        },
+        "edge_ai_impact_zh": "端侧 AI 最依赖的 DRAM 容量正被成本挤压：TrendForce 此前指出高端机 12GB 成主流、16GB 占比下降，中端回落到 8GB，这直接压缩了手机本地 LLM 的可驻留模型尺寸（例如 3B–7B INT4 模型与系统常驻内存的取舍）。",
+        "evidence_urls": [
+          "https://www.trendforce.com/presscenter/news/20260514-13044.html",
+          "https://www.trendforce.com/presscenter/news/20260211-12922.html"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "产量与品牌",
+            "points": [
+              "1Q26 2.84 亿部，-1.7% YoY；三星 +2.3% YoY，苹果 +19.7% YoY",
+              "全年 10.51 亿部（-16.2%），较 2 月的 11.35 亿部预测再下修"
+            ]
+          },
+          {
+            "heading": "内存价格",
+            "points": [
+              "2Q26 LPDDR4X +70–75%、LPDDR5X +78–83% QoQ（5 月预测，后续报告称已收窄）",
+              "TrendForce 此前称内存占整机 BOM 从 10–15% 升至 30–40%"
+            ]
+          },
+          {
+            "heading": "对端侧 AI 的影响",
+            "points": [
+              "高端 12GB 成主流、16GB 占比下降；中端回落 8GB（TrendForce 早前报告）",
+              "内存成本成为 OEM 推广本地大模型功能的主要约束"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-06-05",
+        "vendor": "JEDEC",
+        "category": "存储与内存",
+        "title": "LPDDR6、データセンターへ? LPDDR6-PIMの規格化が進む (EE Times Japan)",
+        "title_zh": "JEDEC：LPDDR6-PIM标准核心功能基本定稿",
+        "url": "https://eetimes.itmedia.co.jp/ee/articles/2606/05/news079.html",
+        "source_type": "媒体",
+        "summary_zh": "EE Times（日文版6月5日）报道JEDEC JC-42.6小组LPDDR6路线：引入x6及x6子通道模式、转向非二进制接口以减少封装引脚、提升单通道容量，目标容量上限达512GB；LPDDR6 SOCAMM2标准同步制定。JC-42.6副主席称LPDDR6-PIM的大部分核心功能已确定，正在审查细节。",
+        "whats_new_zh": [
+          "LPDDR6-PIM：大部分核心功能已定义，进入细节审查阶段（JEDEC副主席口径）",
+          "LPDDR6新增x6模式与x6子通道模式，非二进制接口",
+          "容量目标最高512GB（超越LPDDR5/5X上限）",
+          "LPDDR6 SOCAMM2标准制定中；相对上一代带宽提升约10-20%（媒体口径）"
+        ],
+        "key_specs": {
+          "memory": "LPDDR6（x6子通道、非二进制接口）、LPDDR6-PIM、LPDDR6 SOCAMM2"
+        },
+        "edge_ai_impact_zh": "LPDDR6-PIM一旦成为JEDEC标准，手机/PC SoC可用标准控制器调用'内存内GEMV'，把LLM decode阶段的带宽瓶颈部分转移到DRAM内部完成；这是端侧PIM从三星/海力士私有方案走向通用的关键一步。",
+        "evidence_urls": [
+          "https://www.androidheadlines.com/2026/06/lpddr6-memory-double-capacity-ai-datacenters.html",
+          "https://www.trendforce.com/news/2026/04/24/news-jedec-previews-lpddr6-enhancements-develops-socamm2-standard-for-ai-memory/"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "存内计算标准化",
+            "points": [
+              "PIM把计算逻辑放进DRAM芯片，以减少CPU/GPU与RAM间的数据搬运和功耗",
+              "三星、SK海力士此前已宣布联合推动LPDDR6-PIM标准化；三星8月Hot Chips公布LPDDR5X-PIM：Llama-3.1-8B吞吐27.0→81.3 tokens/s（窗口外背景，厂商口径）"
+            ]
+          },
+          {
+            "heading": "接口与容量",
+            "points": [
+              "x6子通道+非二进制接口：减少引脚、每封装可放更多die",
+              "JEDEC 4月22日预告512GB目标，6月报道确认PIM进度"
+            ]
+          },
+          {
+            "heading": "量产节奏",
+            "points": [
+              "SK海力士称1c LPDDR6于2026上半年完成量产准备、下半年供货；长鑫8月宣布LPDDR6量产（窗口外背景）",
+              "SOCAMM2形态LPDDR6主要面向AI服务器"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-06-10",
+        "vendor": "Qualcomm",
+        "category": "车载/机器人",
+        "title": "Cockpit-Driving Fusion, Qualcomm Unveils Another Major Move",
+        "title_zh": "高通无锡汽车峰会：舱驾融合与100亿参数端侧大模型",
+        "url": "https://autonews.gasgoo.com/articles/news/cockpit-driving-fusion-qualcomm-unveils-another-major-move-2064710943249113089",
+        "source_type": "媒体",
+        "summary_zh": "2026 高通汽车技术与合作峰会在无锡举行。Snapdragon Ride Flex（8775）已量产，拿下 9 个车型定点；更高性能的 8797 接近规模上量，卓驭在其上做舱驾融合域控。座舱平台可在端侧运行 100 亿参数多模态大模型，高通还联合 6 家伙伴发起车载 AI 智能体生态“Claw”。",
+        "whats_new_zh": [
+          "8775（Ride Flex，单 SoC 舱驾融合）量产，9 个车型定点，支持记忆泊车和高速/城市 NOA",
+          "8797：支持 40 路以上摄像头和多模态传感器，可跑大型端到端 Transformer 算法",
+          "至尊版平台总有效算力最高 2,000 TOPS；18 个全球定点，其中 10 款已量产或即将量产",
+          "座舱端侧可跑 100 亿参数多模态大模型，断网也能推理",
+          "近 40 家中国车企和 Tier1 选用 Snapdragon Ride；累计超过 7,500 万辆车搭载骁龙座舱"
+        ],
+        "key_specs": {
+          "npu": "至尊版平台最高 2,000 TOPS（总有效算力，官方口径）",
+          "other": "8775 / 8797 / 8397 / 8787；“Claw”车载智能体生态"
+        },
+        "edge_ai_impact_zh": "车载是高通端侧大模型参数规模最大的场景：10B 多模态模型在座舱本地跑，比手机端（3B 级）高出一个数量级。舱驾融合 SoC 也会让同一块 NPU 同时承担感知和座舱智能体，调度与隔离会成为新的设计难点。",
+        "evidence_urls": [],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "产品矩阵",
+            "points": [
+              "8775：2023 年发布的首个可扩展单 SoC 舱驾平台，现已量产（极狐 V9、阿尔法 T5/S5 等）",
+              "8797：面向 40+ 摄像头和端到端大模型，卓驭基于它做舱驾融合域控",
+              "8397（座舱至尊版）量产，东软睿驰以其端侧 AI 座舱域控拿下多家头部车企定点；8787 向下扩展至尊版家族"
+            ]
+          },
+          {
+            "heading": "端侧大模型",
+            "points": [
+              "座舱可本地跑 10B 多模态模型，离线推理，隐私数据不上云",
+              "智能体框架覆盖 AI 工具、云端/混合 planner、agent runtime、OS 和安全层",
+              "“Claw”生态伙伴：诚迈科技、车联天下、斑马、德赛西威、Megajoy、中科创达"
+            ]
+          },
+          {
+            "heading": "规模数据",
+            "points": [
+              "至尊版 18 个全球定点，10 款量产或即将量产；Ride 被近 40 家中国车企和 Tier1 采用",
+              "2021 年以来在中国支持超过 300 款智能网联车型；高通在华汽车工程师超过 1,000 人"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方口径：座舱平台端侧可运行 100 亿参数多模态大模型；精度、上下文和 tok/s 未披露。"
+      },
+      {
+        "date": "2026-06-08",
+        "vendor": "Apple",
+        "category": "数据中心(对端侧有参考)",
+        "title": "Expanding Private Cloud Compute",
+        "title_zh": "PCC 首次扩展到 Google Cloud 的 NVIDIA GPU",
+        "url": "https://security.apple.com/blog/expanding-pcc/",
+        "source_type": "官方",
+        "summary_zh": "Apple Security Research 宣布把 Private Cloud Compute 扩展到第三方数据中心：与 Google、NVIDIA 合作在 Google Cloud 上运行新的 Apple Intelligence 负载，硬件为 NVIDIA GPU（Confidential Computing）+ Intel TDX CPU + Google Titan 芯片。Apple 称核心五项要求不变，并不单纯依赖机密计算抵御侧信道等特权攻击。",
+        "whats_new_zh": [
+          "PCC 首次运行在非 Apple silicon、非 Apple 自有数据中心上",
+          "软件证明至少基于 2 个来自独立厂商的信任根",
+          "维护 Google Cloud PCC 硬件的可验证 append-only 账本，所有二进制公开、研究模式节点开放给 Security Bounty",
+          "夏季 preview 期内逐步爬坡到完整保护；PCC Security Guide 更新预计 2026 年晚些时候"
+        ],
+        "key_specs": {
+          "cpu": "Intel CPU + TDX",
+          "gpu": "NVIDIA GPU（Confidential Computing；Google 博客称为 Blackwell，具体型号未披露）",
+          "other": "Google Titan 硬件信任根；GPU 型号/数量/节点规模均未披露"
+        },
+        "edge_ai_impact_zh": "端侧不够时的云端兜底不再绑定自研 M 系列服务器，说明 Apple 自研服务器芯片（Baltra）尚未就绪；对端侧生态的意义在于「可验证隐私云」可以跨厂商复制，端云协同的隐私边界被标准化。",
+        "evidence_urls": [
+          "https://cloud.google.com/blog/products/identity-security/powering-the-next-era-of-confidential-ai",
+          "https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "硬件信任链",
+            "points": [
+              "NVIDIA GPU 启用 NVIDIA Confidential Computing；CPU 为 Intel TDX 机密 VM；Google Titan 提供硬件信任根",
+              "对可能被滥用来外泄用户数据的组件，软件证明至少基于两个独立厂商的信任根",
+              "从固件、宿主/客户机 OS 到应用代码，全部纳入 TCB 并受可验证透明性约束"
+            ]
+          },
+          {
+            "heading": "架构防护",
+            "points": [
+              "每个请求的初始网络数据解析在独立 namespace 的专用进程中执行",
+              "共享推理软件以短 TTL 周期回收；证明密钥放在隔离的专用机密 VM 中",
+              "Apple 设备只信任 Apple 加密批准的 PCC 软件"
+            ]
+          },
+          {
+            "heading": "透明性与时间线",
+            "points": [
+              "公开所有二进制与研究工具，研究模式实时节点通过 Apple Security Bounty 开放",
+              "夏季 preview 期逐步爬坡；更多细节于 6 月下旬 Confidential Computing Summit 披露"
+            ]
+          },
+          {
+            "heading": "栈组成",
+            "points": [
+              "Google Cloud Confidential Computing（Intel TDX）提供 VM 级硬件隔离",
+              "NVIDIA Confidential Computing on Blackwell 保护 CPU 到 GPU 的计算路径",
+              "Titan 芯片作为全舰队硬件信任根，保障启动与平台完整性"
+            ]
+          },
+          {
+            "heading": "未披露项",
+            "points": [
+              "实例/机器类型、GPU 数量、区域与容量均未披露",
+              "证明协议细节由 Apple 安全博客及后续 PCC Security Guide 补充"
+            ]
+          }
+        ],
+        "model_capacity_zh": "承载 AFM 3 Cloud Pro 等云端模型；模型参数、GPU 型号、吞吐均未披露。开发者侧 PCC 模型上下文为 32K（32768）tokens。"
+      },
+      {
+        "date": "2026-06-08",
+        "vendor": "Apple",
+        "category": "软件栈/工具链",
+        "title": "Introducing the Third Generation of Apple's Foundation Models",
+        "title_zh": "Apple 第三代基础模型 AFM 3 家族发布",
+        "url": "https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models",
+        "source_type": "官方",
+        "summary_zh": "Apple Machine Learning Research 在 WWDC26 当天发布第三代 Apple Foundation Models（AFM 3），共 5 个模型：端侧 AFM 3 Core（3B 稠密）与 AFM 3 Core Advanced（20B 稀疏、原生多模态），以及云侧 AFM 3 Cloud、ADM 3 Cloud（Image，扩散模型）和 AFM 3 Cloud Pro。官方称整个家族与 Google 合作定制，预训练在最新一代云 TPU 上大幅扩展，并使用 QAT 压缩；完整技术报告「将于今夏晚些时候」发布。",
+        "whats_new_zh": [
+          "端侧模型从 1 个变为 2 档：AFM 3 Core（约 3B 稠密）+ AFM 3 Core Advanced（20B 总参数、每请求激活 1–4B）",
+          "AFM 3 Core 对比 2025 基线（通用文本人评）：45.6% vs 23.3% 偏好；图像理解偏好率 >61%",
+          "AFM 3 Cloud 对比 2025 AFM Server：64.7% vs 8.7% 偏好；单侧满意度相对 +36%，指令遵循相对 +21%",
+          "AFM 3 Cloud Pro 运行在 NVIDIA GPU 上（其余 4 个模型针对 Apple silicon 优化）",
+          "TTS（AFM 3 Core Advanced @1B 激活）MOS：通用 4.15 vs 3.87，对话 4.24 vs 3.82"
+        ],
+        "key_specs": {
+          "npu": "端侧模型跑在 Apple silicon（Neural Engine/GPU），具体单元分配未披露",
+          "memory": "AFM 3 Core Advanced 全量权重驻留 NAND flash，仅部分进 DRAM；量化位宽未披露",
+          "other": "训练：云 TPU 预训练 + SFT + 多阶段 RL + QAT；AFM 3 Cloud 为升级版 PT-MoE"
+        },
+        "edge_ai_impact_zh": "这是 Apple 首次把 20B 级模型以「flash 常驻 + 按 prompt 路由」的方式塞进手机，端侧容量从 3B 跳到 20B 总参，但每次只把 1–4B 搬进 DRAM，绕开了手机 DRAM 容量瓶颈；同时云侧首次跑在第三方 NVIDIA GPU 上，端云分工被重新划线。",
+        "evidence_urls": [
+          "https://9to5mac.com/2026/06/11/apples-new-foundation-models-explained-on-device-ai-cloud-ai-and-everything-in-between/",
+          "https://machinelearning.apple.com/research/apple-foundation-models-2025-updates"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "模型家族与分工",
+            "points": [
+              "端侧 2 个：AFM 3 Core（3B 稠密，延续前两代 3B 路线）与 AFM 3 Core Advanced（20B 稀疏，原生多模态，「由最强 Apple silicon 解锁并优化」）",
+              "云侧 3 个：AFM 3 Cloud（PCC 上的速度/效率主力，升级版 PT-MoE）、ADM 3 Cloud（Image，扩散图像生成/编辑，含 Spatial Reframing、Image Playground 触控编辑的专用 adapter）、AFM 3 Cloud Pro（最强，面向 agentic 工具调用与复杂推理，针对 NVIDIA GPU 优化）",
+              "官方措辞为与 Google「合作定制」（custom-built in collaboration with Google），ML Research 原文未出现 Gemini 字样；Apple 安全博客则写明采用 Gemini 家族背后的技术"
+            ]
+          },
+          {
+            "heading": "AFM 3 Core Advanced 的稀疏机制",
+            "points": [
+              "基于 Apple 2025 年 ICML 论文 Instruction-Following Pruning（IFP）：该论文中 9B 模型按指令裁剪到 3B 激活，数学/代码比 3B 稠密高 5–8 分，接近 9B 水平",
+              "路由粒度是「每 prompt」而非「每 token」：原因是 NAND→DRAM 带宽太低，无法逐 token 换专家",
+              "由一个轻量稠密块在 prefill 阶段选定固定专家集，生成过程中周期性重选；大比例 shared experts 常驻 + 按需换入的 routed experts",
+              "每个用例的激活参数量是预先设定的，权重可跨不同难度请求增量加载"
+            ]
+          },
+          {
+            "heading": "训练与压缩",
+            "points": [
+              "预训练在最新一代云 TPU 上显著扩大规模；所有模型共享初始基础后再分化，新增音频、图像理解、长上下文、视觉生成能力",
+              "后训练：SFT + 多阶段强化学习；压缩：Quantization Aware Training（具体 bit 数未披露）",
+              "对比 2025 版：3B 端侧模型为 5:3 两块结构、后段共享 KV cache（KV 内存 -37.5%）、2 bpw 解码器权重、8-bit KV；云端为 3.56 bpw ASTC 压缩 PT-MoE"
+            ]
+          },
+          {
+            "heading": "评测结果（官方人评）",
+            "points": [
+              "AFM 3 Core vs 2025 基线：通用文本 45.6% vs 23.3%；图像理解在有偏好时 >61% 选新模型",
+              "AFM 3 Cloud vs 2025 AFM Server：64.7% vs 8.7%；图像理解 37.8% vs 9.6%",
+              "AFM 3 Cloud Pro vs AFM 3 Cloud：文本满意度相对 +10%，图像理解 +14%，数学 +14%",
+              "AFM 3 Core Advanced（1B 激活）：TTS MOS 通用 4.15（+0.28）、对话 4.24（+0.42）；听写整体质量偏好 44.7% vs 17.6%"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方口径：AFM 3 Core ≈3B 稠密；AFM 3 Core Advanced 20B 总参数、每请求激活 1–4B（TTS/听写评测用 1B 激活档）。端侧上下文 8192 tokens（OS 27 新设备，见 WWDC 会话 319）；量化位宽、内存占用、tokens/s 均未披露（技术报告待发）。作为参照，2025 版 3B 端侧模型为 2-bit QAT 权重 + 4-bit embedding + 8-bit KV cache。"
+      },
+      {
+        "date": "2026-06-08",
+        "vendor": "Apple",
+        "category": "软件栈/工具链",
+        "title": "What's new in the Foundation Models framework - WWDC26",
+        "title_zh": "Foundation Models 框架：8K 上下文、图像输入、模型协议",
+        "url": "https://developer.apple.com/videos/play/wwdc2026/241/",
+        "source_type": "官方",
+        "summary_zh": "WWDC26 会话 241 介绍 Foundation Models 框架更新：端侧模型重建，推理与工具调用更强；SystemLanguageModel 上下文为 8192 tokens，iOS 26.4 起提供 contextSize/tokenCount API；端侧模型支持图像附件输入；新增 LanguageModel 协议，可接入 PCC 模型、Anthropic/Google 的 Swift 包，以及开源的 CoreAILanguageModel 与 MLXLanguageModel。",
+        "whats_new_zh": [
+          "端侧 SystemLanguageModel().contextSize 返回 8192（此前 4096）",
+          "端侧模型支持任意尺寸/比例图像输入（UIImage/CGImage/CVPixelBuffer 等），图越大 token 越多",
+          "PrivateCloudComputeLanguageModel：32K 上下文、reasoningLevel 可调",
+          "Python SDK apple_fm_sdk 与 macOS 27 内置 fm CLI",
+          "usage 属性返回输入/缓存命中/输出/推理 token 数"
+        ],
+        "key_specs": {
+          "npu": "CoreAILanguageModel 在 Neural Engine 上跑本地模型；MLXLanguageModel 在 Mac GPU 上跑",
+          "other": "端侧上下文 8192；PCC 32K"
+        },
+        "edge_ai_impact_zh": "端侧上下文翻倍到 8K 并支持图像，使 3B 级端侧模型可承担简单多模态与 RAG（框架内置 Spotlight 搜索工具）；LanguageModel 协议让端侧/云端/第三方模型在同一 Session API 下可切换，端云路由交给 App 开发者。",
+        "evidence_urls": [
+          "https://developer.apple.com/videos/play/wwdc2026/319/",
+          "https://www.apple.com/newsroom/2026/06/apple-aids-app-development-with-new-intelligence-frameworks-and-advanced-tools/",
+          "https://developer.apple.com/wwdc26/guides/machine-learning/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "端侧模型 API",
+            "points": [
+              "contextSize 与 tokenCount(for:) 自 iOS 26.4 提供，可在发送前精确预算 8192 token 窗口",
+              "图像以 Attachment 形式与文本混排输入，无需裁剪/填充；未给出像素上限",
+              "内置 BarcodeReaderTool、OCRTool（Vision 驱动）和 Spotlight 搜索工具，实现纯本地 RAG"
+            ]
+          },
+          {
+            "heading": "模型抽象层",
+            "points": [
+              "新 LanguageModel 协议：SystemLanguageModel、PrivateCloudComputeLanguageModel 已遵循",
+              "Anthropic 与 Google 发布 Swift 包，可直接作为 Session 后端",
+              "开源 CoreAILanguageModel（Neural Engine）与 MLXLanguageModel（GPU），可跑任意本地开源模型"
+            ]
+          },
+          {
+            "heading": "工具链",
+            "points": [
+              "Python SDK apple_fm_sdk 直连同一端侧模型；macOS 27 自带 fm CLI（fm chat）",
+              "Dynamic Profiles 在单个会话内切换模型/工具/推理级别；新 Evaluations 框架做质量评测",
+              "response.usage 暴露 cachedTokenCount、reasoningTokenCount，便于第三方按 token 计费"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方口径：端侧模型上下文 8192 tokens（OS 27 新设备）、PCC 模型 32768 tokens；端侧模型参数量（AFM 3 Core ≈3B）由 ML Research 博客给出；tokens/s 未披露；adapter 本场未提及。"
+      },
+      {
+        "date": "2026-06-08",
+        "vendor": "Apple",
+        "category": "软件栈/工具链",
+        "title": "Meet the new Apple Foundation Model on Private Cloud Compute - WWDC26",
+        "title_zh": "开发者可免费调用 PCC 大模型（32K 上下文）",
+        "url": "https://developer.apple.com/videos/play/wwdc2026/319/",
+        "source_type": "官方",
+        "summary_zh": "会话 319 首次向第三方开放 PCC 上的 Apple Foundation Model：32768 tokens 上下文、light/moderate/deep 三档推理，@Generable 结构化输出与工具调用与端侧同 API；首次下载量 <200 万的 App 无云 API 成本，按用户 iCloud 账户每日限额，iCloud+ 提高额度。",
+        "whats_new_zh": [
+          "PCC 模型 contextSize=32768；端侧为 4096（OS 26.0）/8192（OS 27.0 新设备）",
+          "只有 PCC 模型支持 reasoning，推理 token 计入上下文",
+          "<200 万首次下载 App 免费；无 API key、无账户配置",
+          "watchOS 27 也可调用 PCC 模型"
+        ],
+        "key_specs": {
+          "other": "上下文 32K；硬件未在会话中说明（据 Apple 安全博客，部分 PCC 已扩展到 Google Cloud NVIDIA GPU）"
+        },
+        "edge_ai_impact_zh": "端侧 8K 与云端 32K 形成清晰分工：长输入、重工具调用、深推理走 PCC；对端侧芯片而言，Apple 把「复杂推理」明确留给云端，端侧重点是低延迟与隐私数据处理。",
+        "evidence_urls": [
+          "https://developer.apple.com/videos/play/wwdc2026/241/",
+          "https://www.apple.com/newsroom/2026/06/apple-aids-app-development-with-new-intelligence-frameworks-and-advanced-tools/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "能力边界",
+            "points": [
+              "适用：大输入推理、多次大输出工具调用、结构化输出",
+              "reasoningLevel：.light / .moderate / .deep，deep 时推理文本可能长于回答",
+              "本场明确图像输入是端侧模型今年的新能力，未确认 PCC 模型支持"
+            ]
+          },
+          {
+            "heading": "配额与成本",
+            "points": [
+              "每用户每日限额计在 iCloud 账户上，API 提供 quotaUsage.status / isLimitReached / limitIncreaseSuggestion",
+              "开发者零 token 成本，门槛为 <200 万首次下载（Small Business Program）"
+            ]
+          },
+          {
+            "heading": "端云切换",
+            "points": [
+              "同一 Swift API，代码可在端侧与 PCC 间无改写切换；端侧离线可用，PCC 需联网",
+              "Xcode 提供模拟配额将满/已满的调试选项"
+            ]
+          }
+        ],
+        "model_capacity_zh": "PCC 模型上下文 32768 tokens（官方）；参数量、延迟、每日限额具体数值未披露。"
+      },
+      {
+        "date": "2026-06-08",
+        "vendor": "Apple",
+        "category": "软件栈/工具链",
+        "title": "Meet Core AI - WWDC26",
+        "title_zh": "Core AI 发布：Core ML 的生成式继任者",
+        "url": "https://developer.apple.com/videos/play/wwdc2026/324/",
+        "source_type": "官方",
+        "summary_zh": "Apple 推出 Core AI，作为 Core ML 的官方继任者，统一在 CPU、GPU、Neural Engine 上运行从小型视觉模型到大型生成模型（会话中以 70B 参数 LLM 本地 agent 为例）。提供内存安全 Swift API、零拷贝、有状态执行（KV cache 作为 state 原地更新）、AOT 编译与设备特化缓存。Core ML 保留用于传统 ML。",
+        "whats_new_zh": [
+          "模型规模示例覆盖到 70B 参数本地 LLM（会话演示语境）",
+          "PyTorch torch.export → coreai_torch.TorchConverter → .to_coreai() 一步转换",
+          "KV cache 通过 register_buffer 导出为 state，推理时原地读写，避免每步重算",
+          "设备特化：首次加载编译并缓存，可在开发机 AOT 预编译缩短首启"
+        ],
+        "key_specs": {
+          "npu": "CPU/GPU/Neural Engine 统一调度",
+          "memory": "零拷贝数据路径，细粒度推理内存控制；KV cache 形状为 [layers, maxContext, hiddenDim] 固定大小",
+          "other": "InfoQ：模型规模覆盖 ~3B 视觉模型到 70B 推理 LLM"
+        },
+        "edge_ai_impact_zh": "Core ML 的「固定输入输出张量」范式被替换为面向 token 流和有状态推理的 Core AI，第三方大模型在 ANE/GPU 上的部署门槛大幅降低；这是 Apple 端侧软件栈十年来最大的一次换代。",
+        "evidence_urls": [
+          "https://www.infoq.com/news/2026/06/apple-core-ai-wwdc/",
+          "https://developer.apple.com/wwdc26/guides/machine-learning/",
+          "https://www.apple.com/newsroom/2026/06/apple-aids-app-development-with-new-intelligence-frameworks-and-advanced-tools/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "编译与特化",
+            "points": [
+              "随 App 分发的是「源表示」，需在设备上 specialize：分段/规划/优化（主要耗时）+ 为各计算单元生成可执行产物，产物与设备和 OS 版本绑定",
+              "AIModelCache 查询缓存，AIModel.specialize 预先特化；建议避免在交互流程中特化大模型",
+              "AOT 编译在开发机完成大部分工作，设备端剩余特化更快"
+            ]
+          },
+          {
+            "heading": "有状态推理与 KV cache",
+            "points": [
+              "无 cache 时每步重算全部历史 K/V，延迟随序列长度增长",
+              "PyTorch 中以 register_buffer 注册 keyCache/valueCache，转换时以 state_names 声明，Swift 端以 MutableViews 传入并原地更新",
+              "会话 325 补充：Core AI 识别 LLM 中常见的原地 KV 更新模式并映射到优化实现"
+            ]
+          },
+          {
+            "heading": "与 Core ML / MLX 关系",
+            "points": [
+              "Core ML 不移除，定位为决策树、表格等传统 ML；神经网络与 Transformer 转 Core AI（InfoQ 引社区讨论）",
+              "MLX 继续作为研究/自定义权重路线；Foundation Models 框架通过开源 CoreAILanguageModel 接入 Core AI 模型"
+            ]
+          },
+          {
+            "heading": "框架",
+            "points": [
+              "Foundation Models：端侧（含图像输入）+ 服务器模型 + 自定义技能 + Dynamic Profiles",
+              "第三方模型：Claude、Gemini 或任何实现 LanguageModel 协议的提供商",
+              "Core AI：本地运行自定义模型，无服务器依赖、无 token 成本"
+            ]
+          },
+          {
+            "heading": "工具",
+            "points": [
+              "Xcode 27 集成 Anthropic、Google、OpenAI 的 Agent，支持 MCP 与 Agent Client Protocol",
+              "Game Porting Toolkit 4 含 Metal 最佳实践 agent skills"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方会话以「70B 参数 LLM」本地 agent 为例；InfoQ 称覆盖 ~3B 到 70B。具体 tokens/s、内存占用未披露（取决于设备内存，70B 显然只适用于大内存 Mac）。"
+      },
+      {
+        "date": "2026-06-08",
+        "vendor": "Apple",
+        "category": "软件栈/工具链",
+        "title": "Dive into Core AI model authoring and optimization - WWDC26",
+        "title_zh": "coreai-opt：INT4/INT8/FP4/FP8 权重压缩",
+        "url": "https://developer.apple.com/videos/play/wwdc2026/325/",
+        "source_type": "官方",
+        "summary_zh": "会话 325 以 850M 参数 SAM3 为例演示 Core AI 模型压缩与调试：coreai-opt 支持 int4/int8/FP4/FP8 权重压缩（PTQ 或 QAT），w4 预设一行完成 4-bit per-channel 对称量化，模型从 >3GB（FP32）降到约 430MB；新 Core AI Debugger 以 PSNR 对齐定位量化误差；支持在 .aimodel 中嵌入自定义 Metal 4 kernel。",
+        "whats_new_zh": [
+          "SAM3 850M：FP32 转换 >3GB → int4 per-channel 约 430MB",
+          "4-bit palettization（KMeansPalettizer + per-channel scale）用于 iOS 功耗优化",
+          "图像/文本编码器占 96% 参数，检测头仅 4%；排除检测头压缩即恢复精度",
+          "复用缓存图像 embedding 后第二次推理快 76%",
+          "iPhone 版输入分辨率从 1008px 降到 336px"
+        ],
+        "key_specs": {
+          "npu": "针对 Neural Engine 的 conv 替代 Linear、静态 shape、channels-first 重写建议",
+          "memory": "4-bit 量化/调色板压缩，FP16 激活",
+          "other": "Core AI Debugger：PSNR 对比、按 PyTorch 模块导航"
+        },
+        "edge_ai_impact_zh": "Apple 官方工具首次把 FP4/FP8 纳入端侧权重格式，并给出「按模块选择性量化」的调试闭环，这是把 GPU 端常见的 MX/FP8 生态引入 ANE/GPU 部署的信号。",
+        "evidence_urls": [
+          "https://developer.apple.com/videos/play/wwdc2026/330/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "量化与调色板",
+            "points": [
+              "coreai-opt 权重压缩：int4、int8、FP4、FP8，粒度灵活（block 大小本场未给出）",
+              "presets.w4 = 4-bit per-channel 对称；EAGER 模式做权重压缩，GRAPH 模式做激活",
+              "4-bit palettization 产出查表表示，更适合 iOS 能效；整体 cast 到 FP16"
+            ]
+          },
+          {
+            "heading": "精度调试",
+            "points": [
+              "均匀 int4 后一朵被遮挡的花漏检；Debugger 定位到检测解码器（仅占 4% 参数）",
+              "Debugger 支持在指定设备上运行特化模型、与 PyTorch 参考中间结果按 PSNR 对比，绿/黄/红着色"
+            ]
+          },
+          {
+            "heading": "面向 ANE 的重写",
+            "points": [
+              "Linear 改卷积投影、静态 shape、channels-first 布局",
+              "SAM3 拆为 image_encode/text_encode/detect 三个函数共存于一个资产，提示词变更时复用图像 embedding（+76% 速度）",
+              "SDPA 等重算子有预置快速原语，算子融合为单 kernel dispatch"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方示例：SAM3 850M 参数，int4 后约 430MB；未给出 LLM 量化后的 tokens/s。"
+      },
+      {
+        "date": "2026-06-08",
+        "vendor": "Apple",
+        "category": "软件栈/工具链",
+        "title": "Optimize custom machine learning operations with Metal tensors - WWDC26",
+        "title_zh": "Metal 张量新增 FP8/MX/INT2，直驱 GPU Neural Accelerator",
+        "url": "https://developer.apple.com/videos/play/wwdc2026/330/",
+        "source_type": "官方",
+        "summary_zh": "会话 330 介绍 Metal Tensor API 与 MPP TensorOps：在 M5 与 A19 GPU 上自动使用每个 shader core 内的 Neural Accelerator（面向 LLM prefill 等稠密计算）；iOS/macOS 27 新增 4/8-bit 浮点、2-bit 整数、FP8 E8M0 块缩放与 MX 格式，多平面张量把量化数据与 scale 存在一个 MTLTensor 中；示例为 cooperative tensor 实现的 FlashAttention。",
+        "whats_new_zh": [
+          "数据类型：OS 26 支持 INT4/INT8；OS 27 新增 FP4/FP8（E4M3）、INT2、E8M0 scale 与 MX 缩放格式",
+          "block-wise scale 示例为 32×1 块",
+          "matmul2d 可直接吃量化输入并内部反量化；或反量化到 cooperative tensor 留在寄存器",
+          "Neural Accelerator 位于每个 GPU shader core 内（M5 家族；页面描述含 A19）"
+        ],
+        "key_specs": {
+          "gpu": "M5/A19 GPU 每核 Neural Accelerator；TensorOps 跨代自动选择硬件加速",
+          "other": "未给出任何性能数字"
+        },
+        "edge_ai_impact_zh": "MXFP8/FP4 + INT2 进入 Apple GPU 原生张量格式，意味着 iPhone 17 Pro/M5 的 GPU 可直接跑 OCP MX 风格量化模型；prefill 走 GPU Neural Accelerator、decode 受带宽限制，是 Apple 端侧 LLM 的新分工。",
+        "evidence_urls": [
+          "https://developer.apple.com/wwdc26/guides/machine-learning/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "硬件",
+            "points": [
+              "Neural Accelerator 是 M5 家族每个 shader core 内与其他管线并列的新硬件块，专攻 LLM prefill 等稠密计算",
+              "TensorOps 抽象跨代差异，在无 Neural Accelerator 的旧 GPU 上也能运行",
+              "会话 359（神经渲染）亦称 TensorOps 可充分利用 M5 与 A19 Pro GPU 的 Neural Accelerator"
+            ]
+          },
+          {
+            "heading": "低比特格式",
+            "points": [
+              "OS 26：INT4/INT8；OS 27：FP4/FP8（E4M3）、INT2、FP8 E8M0 块缩放、MX 格式",
+              "多平面张量：auxiliary scales plane，block factor 32×1",
+              "新低比特格式有额外对齐要求"
+            ]
+          },
+          {
+            "heading": "Cooperative tensor 与 FlashAttention",
+            "points": [
+              "cooperative tensor 存储分布在参与 matmul 的线程私有寄存器中，避免 threadgroup memory 往返",
+              "reduce_rows 做行 max，QK 结果直接作为 ×V 的左输入（兼容性用 is_compatible_as_left_input 检查）",
+              "可通过 TorchMetalKernel 将该 kernel 嵌入 Core AI 模型"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-06-08",
+        "vendor": "Apple",
+        "category": "软件栈/工具链",
+        "title": "Run local agentic AI on the Mac using MLX - WWDC26",
+        "title_zh": "MLX：M5 矩阵乘比 M4 快 4 倍，本地 Agent",
+        "url": "https://developer.apple.com/videos/play/wwdc2026/232/",
+        "source_type": "官方",
+        "summary_zh": "会话 232 展示用 mlx_lm.server 在 Mac 上提供 OpenAI 兼容端点、接入 Xcode 与 OpenCode 做本地编码 Agent。Apple 称 M5 GPU Neural Accelerator 使矩阵乘比 M4 快 4 倍，几乎等比例转化为 MLX 的 prompt 处理（prefill）加速，无需改代码；支持连续批处理与 Thunderbolt RDMA 分布式推理（4 节点最高约 3 倍）。",
+        "whats_new_zh": [
+          "M5 vs M4 矩阵乘 4×，prefill 近似 4×（官方）",
+          "mlx_lm.server 新增 continuous batching，并发子 Agent 不排队",
+          "分布式推理 4 节点最高 3×，需 macOS 26.2+",
+          "演示模型：Qwen-3.5-4B-8bit（单机）、Qwen-3.5-122B-A3B-8bit（分布式）"
+        ],
+        "key_specs": {
+          "gpu": "M5 GPU Neural Accelerators",
+          "memory": "提到单机 512GB 亦不足以放 1.6T 参数 DeepSeek（>800GB 权重）"
+        },
+        "edge_ai_impact_zh": "Agent 场景输入 token 远多于输出，Apple 明确把 M5 Neural Accelerator 的价值定位在 prefill；decode 仍受内存带宽限制，这也解释了为何 M6 爆料重点是带宽提升到约 200GB/s。",
+        "evidence_urls": [
+          "https://developer.apple.com/wwdc26/guides/machine-learning/",
+          "https://www.macrumors.com/2026/06/25/m6-macbook-pro-2026/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "服务化",
+            "points": [
+              "pip install mlx-lm 后 mlx_lm.server 提供 127.0.0.1:8080/v1 OpenAI 兼容接口，支持结构化工具调用与推理模型",
+              "连续批处理让新请求随时加入正在运行的 batch",
+              "Xcode 设置 → Intelligence → Locally Hosted 接入本地模型"
+            ]
+          },
+          {
+            "heading": "规模上限",
+            "points": [
+              "1.6T 参数 DeepSeek 权重 >800GB，单台 512GB 机器放不下，需要分布式",
+              "分布式通过 mlx.launch + JACCL 后端，模型自动分片"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方演示：Qwen-3.5-4B 8-bit 单机、Qwen-3.5-122B-A3B 8-bit 多机；未给出 tokens/s 绝对值。"
+      },
+      {
+        "date": "2026-06-08",
+        "vendor": "Apple",
+        "category": "软件栈/工具链",
+        "title": "Distributed inference and training with MLX - WWDC26",
+        "title_zh": "MLX 分布式：4 台 M3 Ultra 跑 1T 参数 Kimi",
+        "url": "https://developer.apple.com/videos/play/wwdc2026/233/",
+        "source_type": "官方",
+        "summary_zh": "会话 233 演示 Thunderbolt 5 RDMA（macOS 26.2+）+ 开源集合通信库 JACCL + MLX 的 Mac 集群：4 台 M3 Ultra 全互联，Qwen 3.6 27B 推理接近 3 倍单机速度；1T 参数 Kimi 2.6 在 8-bit 下权重约 1TB，单机放不下、四机张量并行可运行；Qwen 3.5 9B LoRA 微调从约 180 tok/s 提升到约 600 tok/s。",
+        "whats_new_zh": [
+          "4×M3 Ultra：Qwen 3.6 27B 生成速度近 3×",
+          "Kimi 2.6（1T）8-bit ≈1TB 权重，4 机张量并行",
+          "Qwen 3.5 9B 微调：~180 → ~600 tok/s（>3×）",
+          "JACCL 自动在全互联与环形拓扑间选择，可独立于 MLX 使用"
+        ],
+        "key_specs": {
+          "other": "互联：Thunderbolt 5 RDMA，环形拓扑每邻居可接 2–3 根线；带宽/延迟数值未披露"
+        },
+        "edge_ai_impact_zh": "Apple 把「多台 Mac 统一内存拼接」做成官方路径，使桌面级 Apple silicon 能承载 TB 级权重模型，填补了端侧与数据中心之间的「本地私有集群」档位。",
+        "evidence_urls": [
+          "https://developer.apple.com/wwdc26/guides/machine-learning/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "互联与通信",
+            "points": [
+              "RDMA over Thunderbolt 5 绕过 CPU/OS 开销，自 macOS 26.2 支持",
+              "通信时间 = 固定延迟 + 消息大小/带宽；小消息受延迟限制，大消息受带宽限制",
+              "全互联延迟最低；环形拓扑线缆更少，可每邻居 2–3 根线提升带宽"
+            ]
+          },
+          {
+            "heading": "并行策略",
+            "points": [
+              "张量并行（默认）：每层按宽度切分，每 token 每层通信，单 token 更快，依赖 mesh",
+              "流水线并行（--pipeline）：按深度切分，只在层组边界交换激活，不降低单 token 延迟",
+              "数据并行微调：每机一份完整副本，batch 4→16，梯度平均"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方：4 台 M3 Ultra 可运行 1T 参数 MoE（8-bit ≈1TB）；27B 稠密推理近 3× 加速；9B 微调 ~600 tok/s（4 机）。绝对推理 tokens/s 未披露。"
+      },
+      {
+        "date": "2026-06-10",
+        "vendor": "TSMC",
+        "category": "产业动态",
+        "title": "TSMC is ramping 2nm at five fab phases in year one",
+        "title_zh": "台积电 N2 首年五个厂区阶段同步爬坡",
+        "url": "https://borecraft.com/2026/06/10/tsmc-is-ramping-2nm-at-five-fab-phases-in-year-one/",
+        "source_type": "媒体",
+        "summary_zh": "基于 2026 TSMC 技术论坛资料的分析称，N2 在新竹 Fab 20 与高雄 Fab 22 同时量产，首年共五个厂区阶段爬坡；首年产出目标较 N3 2023 年起步高约 45%，年底产能估计约 9 万片/月（部分估计达 14 万），N2+A16 产能到 2028 年 CAGR 70%。客户包括 Apple、AMD、NVIDIA、Qualcomm。",
+        "whats_new_zh": [
+          "N2 首年 5 个 fab phase 同步爬坡；首年产出较 N3 起步 +45%",
+          "年底产能估计约 90k WSPM（区间 90k–140k，口径偏软）",
+          "N2/A16 产能 2028 年前 CAGR 70%；CoWoS 2027 年前 CAGR 80%、SoIC 90%"
+        ],
+        "key_specs": {
+          "process": "N2（GAA nanosheet）/ A16",
+          "other": "Fab 20 新竹、Fab 22 高雄"
+        },
+        "edge_ai_impact_zh": "2026 下半年旗舰手机 SoC（A20、骁龙 8 Elite Gen 6、天玑 9600 Pro 等）均依赖 N2 首年产能，产能/良率决定 2nm 端侧芯片的供给与价格。",
+        "evidence_urls": [],
+        "confidence": "low",
+        "deep_dive_zh": [
+          {
+            "heading": "产能",
+            "points": [
+              "约 90k WSPM 年底产能为推算，部分估计至 140k",
+              "建厂节奏：2025–2026 每年约 9 个厂区阶段，过去为 4–5 个"
+            ]
+          },
+          {
+            "heading": "可信度说明",
+            "points": [
+              "来源为个人博客，作者声明“AI 辅助撰写”，引用 Tom's Hardware、CNA、TrendForce 等二手报道，数字需回溯原文",
+              "TSMC 官方称 N2 良率学习曲线优于 N3"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-06-11",
+        "vendor": "Murai Labs",
+        "category": "学术研究",
+        "title": "Rigel: Reverse-Engineering the Metal 4.1 Tensor Compute Path on the Apple M4 Max GPU",
+        "title_zh": "Rigel：逆向M4 Max上Metal 4.1张量计算路径",
+        "url": "https://arxiv.org/abs/2606.12765",
+        "source_type": "论文",
+        "summary_zh": "针对Metal 4.1开放的MPP matmul2d/cooperative_tensor接口，作者用带校验和与溯源的微基准在M4 Max（尚无GPU神经加速器的一代）上还原了规范未公开或与之矛盾的11项事实。核心结论：fp8（E4M3）matmul2d是模拟而非硬件加速，吞吐只有fp16的0.94倍；matmul2d完全在GPU着色器核上执行，没有专用矩阵通路，也没有路由到ANE。",
+        "whats_new_zh": [
+          "fp8 matmul2d吞吐为fp16的0.94倍，尽管操作数字节减半——在M4上只是省内存而非提速",
+          "三信号（吞吐上限、与simdgroup_matrix对比、分轨功耗归因）证明无专用矩阵单元，累加≥fp32",
+          "还原了未公开的8x8 cooperative_tensor片段布局",
+          "手工融合GEMM+bias+GELU在缓存驻留区间比分解路径快6.5–12.9%；2048³ GEMM稳定14.80 TFLOP/s"
+        ],
+        "key_specs": {
+          "gpu": "Apple M4 Max GPU（无神经加速器一代）",
+          "other": "Metal 4.1 MPP matmul2d；MIT许可代码与逐单元CSV"
+        },
+        "edge_ai_impact_zh": "为评估苹果后续GPU内置神经加速器世代的真实提升提供了M4基线：在M4上用fp8不会提速只会省内存；短内核还会因GPU时钟爬升呈双峰吞吐，影响端侧基准的可复现性。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2606.12765v1"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "Murai Labs",
+        "authors": "Ramchand Kumaresan",
+        "deep_dive_zh": [
+          {
+            "heading": "张量路径微架构",
+            "points": [
+              "matmul2d完全在着色器核执行，无独立矩阵数据通路，无ANE路由证据",
+              "累加精度≥fp32；还原8x8片段布局"
+            ]
+          },
+          {
+            "heading": "精度与吞吐",
+            "points": [
+              "fp8 E4M3为模拟实现，吞吐0.94×fp16",
+              "512³规模300次采样分成约4.65与6.5 TFLOP/s两簇，原因是短内核落在GPU时钟爬升期"
+            ]
+          },
+          {
+            "heading": "优化实测",
+            "points": [
+              "融合GEMM+bias+GELU在缓存驻留区间+6.5~12.9%"
+            ]
+          }
+        ],
+        "model_capacity_zh": "不涉及具体LLM，属算子级表征；GEMM 1024³约12.7 TFLOP/s、2048³ 14.80 TFLOP/s。"
+      },
+      {
+        "date": "2026-06-11",
+        "vendor": "清华大学 / 北京航空航天大学",
+        "category": "学术研究",
+        "title": "Efficient On-Device Diffusion LLM Inference with Mobile NPU",
+        "title_zh": "llada.cpp：手机NPU上的扩散语言模型推理",
+        "url": "https://arxiv.org/abs/2606.13740",
+        "source_type": "论文",
+        "summary_zh": "扩散LLM（dLLM）可并行去噪多个token，但手机上重复去噪计算量大。llada.cpp基于llama.cpp（新增1.2万行以上代码），直接调用Hexagon SDK的HMX/HVX，提出多块推测解码、双路径渐进修订（CPU侧刷新不稳定token）和面向交换优化的内存运行时，把LLaDA-8B生成延迟相对CPU基线降17–42倍。",
+        "whats_new_zh": [
+          "单步延迟CPU vs NPU（LLaDA-8B）：32 token 4239.6→478.1 ms；128 token 14758.7→1531.6 ms（9.64倍）",
+          "SM8750上128 token GSM8K总耗时：CPU 2996.2 s → CPU+前缀KV 607.0 s → NPU+前缀KV 87.0 s → 完整llada.cpp 16.1 s",
+          "相对同尺寸自回归模型（Llama-3-8B）最高3.9倍加速",
+          "交换优化内存运行时使256/512目标token可生成224/401个（原NPU基线直接失败）"
+        ],
+        "key_specs": {
+          "npu": "Hexagon HMX/HVX：SM8750 65.25 INT8 TOPS；SM8650 45；SM8850 89.4（论文口径）",
+          "memory": "三台测试机均为16 GB LPDDR5X",
+          "other": "OnePlus Ace5 Pro（8 Elite）、OnePlus 12（8 Gen 3）、OnePlus 15（8 Elite Gen 5）；FastRPC/RPCMEM/DMABUF；Q4_0"
+        },
+        "edge_ai_impact_zh": "首个面向手机NPU的dLLM推理框架，显示扩散式并行解码天然更契合NPU的稠密矩阵算力，可能成为端侧绕开“解码带宽墙”的一条路线；同时揭示NPU可见地址空间是8B级模型的硬约束。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2606.13740v1"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "清华大学；北京航空航天大学",
+        "authors": "Tuowei Wang, Yanfan Sun, Ju Ren",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 执行映射",
+            "points": [
+              "多块推测解码：块后期有效工作量缩小时用未来块推测token填满NPU矩阵",
+              "双路径渐进修订：已提交token保持可修订，不稳定token走CPU路径刷新，不阻塞NPU稠密计算"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "NPU可见地址空间有限导致昂贵的重映射与数据搬运；交换优化运行时压缩地址布局并把数据暂存与NPU计算重叠",
+              "无此运行时时NPU基线在256/512 token直接失败"
+            ]
+          },
+          {
+            "heading": "跨代对比",
+            "points": [
+              "8 Gen 3/8 Elite启用NPU FlashAttention；8 Elite Gen 5因运行时限制改用CPU FlashAttention",
+              "三代NPU标称INT8算力45→65.25→89.4 TOPS（论文表格口径）"
+            ]
+          }
+        ],
+        "model_capacity_zh": "手机上跑LLaDA-8B-Instruct与Dream-7B（Q4_0），16 GB内存；128 token GSM8K任务完整生成16.1 s（8 Elite）。tokens/s与功耗绝对值未披露（仅图表）。"
+      },
+      {
+        "date": "2026-06-09",
+        "vendor": "Stanford / University of Rochester",
+        "category": "学术研究",
+        "title": "Energy-Efficient On-Device RAG on a Mobile NPU: System Design and Benchmark on Snapdragon X Elite",
+        "title_zh": "骁龙X Elite Hexagon NPU全流程端侧RAG实测",
+        "url": "https://arxiv.org/abs/2606.11257",
+        "source_type": "论文",
+        "summary_zh": "作者把RAG的三个神经网络阶段（EmbeddingGemma-300M嵌入、Jina Reranker v2重排、Qwen3-4B-Instruct生成）全部放到Snapdragon X Elite的Hexagon NPU上（QAIRT/QNN静态图），在Dell XPS 13 9345上与llama.cpp CPU和OpenCL/Adreno GPU基线对比。NPU在120条Wikipedia查询上把LLM预填充提速18.1倍、端到端查询延迟和系统能耗各降4.0倍，答案质量与CPU/GPU持平。",
+        "whats_new_zh": [
+          "预填充：NPU 786.66 tok/s vs CPU 43.36 vs GPU 25.18 tok/s；解码：14.19 vs 8.17 vs 4.65 tok/s",
+          "LLM TTFT：NPU 1.30 s vs CPU 24.77 s vs GPU 42.24 s；平均单次查询 9.48 s vs 37.98 s",
+          "单查询系统能耗约315 J（NPU）/1,251 J（CPU）/2,051 J（GPU）；索引阶段嵌入吞吐3,325 vs 367 tok/s，系统能耗19,592 J vs 241,020 J（12.3倍）",
+          "GPT-4.1评审均分NPU 9.32 / CPU 8.95 / GPU 9.03，86.7%查询三端得分完全一致"
+        ],
+        "key_specs": {
+          "cpu": "Qualcomm Oryon 12核（X1E80100）",
+          "gpu": "Adreno X1-85（OpenCL基线）",
+          "npu": "Hexagon NPU，官方45 TOPS INT8",
+          "memory": "64 GB LPDDR5x",
+          "power": "系统平均功耗NPU 33.24 W / CPU 32.94 W / GPU 32.25 W（HWiNFO64整机口径）",
+          "other": "Windows 11 ARM64；QAIRT/QNN + llama.cpp（Q4_K_M）"
+        },
+        "edge_ai_impact_zh": "首个在PC级NPU上跑通嵌入+重排+生成全链路的公开基准，说明NPU的最大收益在预填充（18倍）而非解码（1.7倍），对“长上下文RAG就该上NPU”给出了可复现的实测证据；同时暴露出静态图固定上下文长度带来的检索质量折损。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2606.11257v1"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "Stanford University；University of Rochester",
+        "authors": "Zhiyuan Cheng, Longying Lai",
+        "deep_dive_zh": [
+          {
+            "heading": "系统与软件栈",
+            "points": [
+              "三模型全部经QAIRT/QNN提前编译为静态图跑在Hexagon上；CPU/GPU基线用llama.cpp（GPU为OpenCL），重排器因OpenCL批量打分缺陷只能留在NPU",
+              "检索用FAISS IndexFlatL2 + SQLite FTS5混合检索，检索耗时三端均约3.09 s，说明瓶颈完全在神经网络阶段",
+              "NPU上模型必须按“从大到小”顺序加载，否则内存分配失败——反映NPU会话/内存管理仍不成熟"
+            ]
+          },
+          {
+            "heading": "能效与实测",
+            "points": [
+              "查询阶段NPU总系统能耗37.83 kJ vs CPU 150.12 kJ vs GPU 246.14 kJ（120条查询）",
+              "三端平均整机功耗几乎相同（约32-33 W），能耗差异几乎完全来自执行时间缩短——“快即省电”",
+              "集成GPU反而比CPU慢1.7倍、比NPU多耗6.5倍能量，说明Windows on Arm上llama.cpp OpenCL后端优化不足",
+              "论文贡献列表写“查询能耗降19.2倍”，但结果表实为4.0倍，引用时应以4.0倍为准"
+            ]
+          },
+          {
+            "heading": "局限与风险",
+            "points": [
+              "只测了一台X Elite笔记本，未测手机或其他NPU",
+              "FinDER压力测试中NPU仅9.2%查询给出实质回答（CPU 44.2%），作者归因于静态图上下文更短",
+              "质量评估只用单一LLM评审、无人类标注"
+            ]
+          }
+        ],
+        "model_capacity_zh": "实测跑通Qwen3-4B-Instruct（4B，NPU为AOT编译静态图，量化精度论文未披露；CPU/GPU为GGUF Q4_K_M）+ 300M嵌入 + 278M重排三模型同驻NPU；NPU解码14.19 tok/s、预填充786.66 tok/s。静态图限制上下文，NPU路径分块只能用1,000字符、top-7检索（CPU/GPU为2,500字符、top-10）。"
+      },
+      {
+        "date": "2026-06-09",
+        "vendor": "UIUC",
+        "category": "学术研究",
+        "title": "TileFuse: A Fused Mixed-Precision Kernel Library for Efficient Quantized LLM Inference on AMD NPUs",
+        "title_zh": "TileFuse：AMD XDNA2 NPU上的AWQ混合精度融合核",
+        "url": "https://arxiv.org/abs/2606.11357",
+        "source_type": "论文",
+        "summary_zh": "TileFuse是面向AMD XDNA2 NPU的贴近硬件的混合精度核库，把AWQ式W4A16/W8A16直接搬上NPU，而不是让模型迁就NPU专有量化格式。它把解包、反量化和GEMM/GEMV融合为单一核流程，用交错预分块布局支持最高32K的GEMM维度，并重写GEMV数据流以用满4x8 AIE阵列；在Ryzen AI笔记本上端到端预填充延迟最多降2.0倍、能耗降64.6%。",
+        "whats_new_zh": [
+          "Llama3-8B W4A16、2048 token预填充（Ryzen AI 7 350）：iGPU 8246.9 ms → NPU 4129.9 ms（2.00倍）",
+          "1024上下文预填充：Llama-3-8B 501.9 tok/s（FastFlowLM 345.9）；Qwen2.5-3B 890.4 tok/s（此前NPU方案550.0）",
+          "NPU路径能耗降64.6%（AI 7 350）/52.8%（HX 370）；核级GEMM最高+121.6%、GEMV最高+281%"
+        ],
+        "key_specs": {
+          "gpu": "Radeon 860M（8 CU，约5 TOPS实测）/ 890M（16 CU，约7 TOPS实测）",
+          "npu": "XDNA2：32个AIE计算核（4x8）+8个内存核+8个shim核；实测峰值Krackan 12 TOPS、Strix 9 TOPS（论文口径，非官方标称）",
+          "memory": "名义峰值带宽约128 GB/s",
+          "other": "平台：Ryzen AI 7 350（Krackan Point）、Ryzen AI 9 HX 370（Strix Point）"
+        },
+        "edge_ai_impact_zh": "证明AI PC NPU可以直接吃下社区主流AWQ量化模型，降低“为NPU重新量化”的门槛；但论文也承认解码阶段NPU仍不如iGPU，NPU目前最适合承担预填充。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2606.11357v2"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "University of Illinois Urbana-Champaign",
+        "authors": "Wesley Pang, Gregory Hyegang Jun, Feiyang Liu et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 微架构利用",
+            "points": [
+              "XDNA2阵列为4x8 AIE计算核，另有8个内存核和8个shim核；原GEMV数据流未用满阵列，TileFuse重排后用满全部4x8",
+              "交错预分块布局+元数据就近放置，使GEMM维度可到32K"
+            ]
+          },
+          {
+            "heading": "低比特核设计",
+            "points": [
+              "解包→反量化→GEMM/GEMV融合为单核，避免中间结果回写DRAM",
+              "原生支持AWQ式W4A16与W8A16，不要求NPU专属量化格式"
+            ]
+          },
+          {
+            "heading": "能效与实测",
+            "points": [
+              "Krackan与Strix的NPU实测峰值12/9 TOPS，同平台iGPU约5/7 TOPS",
+              "Llama3-8B预填充2.0倍提速，能耗降64.6%/52.8%（未给绝对焦耳）",
+              "解码仍是带宽受限，NPU不如iGPU——两平台名义带宽都约128 GB/s"
+            ]
+          }
+        ],
+        "model_capacity_zh": "端到端跑通Llama3-8B、Qwen2.5-3B、Gemma-2B（W4A16/W8A16）；Llama-3-8B预填充501.9 tok/s（1K上下文），2K上下文预填充4.13 s；解码tok/s未给数值（论文称NPU解码弱于iGPU）。"
+      },
+      {
+        "date": "2026-06-06",
+        "vendor": "VinRobotics / VinUniversity",
+        "category": "学术研究",
+        "title": "vla.cpp: A Unified Inference Runtime for Vision-Language-Action Models",
+        "title_zh": "vla.cpp：统一的VLA端侧推理运行时",
+        "url": "https://arxiv.org/abs/2606.08094",
+        "source_type": "论文",
+        "summary_zh": "vla.cpp是支持11个VLA模型的统一C++推理运行时，模型执行不依赖PyTorch，共享加载、张量执行与服务层，保留各架构特有的注意力、条件化与动作头。在NVIDIA、Apple、Intel硬件上做了剖析，BitVLA可在8 GB Jetson Orin Nano上完成全部200/200个LIBERO-Object回合。",
+        "whats_new_zh": [
+          "BitVLA在8 GB Jetson Orin Nano上LIBERO-Object 200/200成功",
+          "三值张量核心kernel使客户端推理在RTX 3060与AGX Orin上比CUDA core基线快4.0–4.6倍",
+          "在UR10e与ALOHA实体机器人上部署"
+        ],
+        "key_specs": {
+          "gpu": "Jetson Orin Nano 8 GB、AGX Orin、RTX 3060；另测Apple与Intel硬件",
+          "other": "C++，无PyTorch依赖；三值（ternary）tensor-core kernel"
+        },
+        "edge_ai_impact_zh": "VLA正在复制llama.cpp的路径：统一C++运行时+低比特（三值）权重，让8 GB级边缘板卡就能跑完整机器人策略。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2606.08094v2"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "VinRobotics；VinUniversity；TU Darmstadt等",
+        "authors": "Khanh D. Nguyen, Hung T. Ho, Chinh T. Nguyen et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "运行时设计",
+            "points": [
+              "迭代式策略跨求解步复用与观测相关的计算，回归式策略直接预测动作",
+              "共享加载/执行/服务，保留架构特定头"
+            ]
+          },
+          {
+            "heading": "低比特核",
+            "points": [
+              "三值tensor-core核在RTX 3060与AGX Orin上4.0–4.6倍提速"
+            ]
+          },
+          {
+            "heading": "数值验证",
+            "points": [
+              "SmolVLA案例显示位置索引精度会影响夹爪指令与任务成功率，固定输入数值检查需与回放评估并用"
+            ]
+          }
+        ],
+        "model_capacity_zh": "11个VLA模型；BitVLA（三值权重）在8 GB Orin Nano上可运行；tok/s或Hz未在摘要披露。"
+      },
+      {
+        "date": "2026-06-08",
+        "vendor": "UC San Diego / EPFL",
+        "category": "学术研究",
+        "title": "PALUTE: Processing-In-Memory Acceleration via Lookup Table for Edge LLM Inference",
+        "title_zh": "PALUTE：单片3D DRAM查表式PIM边缘LLM加速",
+        "url": "https://arxiv.org/abs/2606.08891",
+        "source_type": "论文",
+        "summary_zh": "PALUTE是基于单片3D（M3D）DRAM的查找表式存内计算加速器：利用M3D存储阵列的垂直组织在DRAM内做LUT查询，近存LUT生成器同时服务GEMM和GELU等逐元素非线性算子，再配合系统级分层与调度减少跨层数据搬运。周期精确仿真+RTL综合显示，Qwen3-4B W4A4下端到端1,264 TPS、功耗0.16 W。",
+        "whats_new_zh": [
+          "宣称能效比CHIME高12.8倍、比FIGLUT高1.6倍，面积效率比PIMPAL高2.0倍",
+          "M3D DRAM：35 nm、768层堆叠、单芯片24 GB、112.4 mm²，逻辑die混合键合约1.38 TB/s",
+          "LUT生成器3个时钟周期产出可查询LUT；W4A4最大并行8,388,608次查询"
+        ],
+        "key_specs": {
+          "process": "35 nm M3D DRAM，768层",
+          "memory": "24 GB/芯片，96 MB/bank；混合键合约1.38 TB/s",
+          "power": "0.16 W（仿真）",
+          "other": "ISLPED 2026；仿真+RTL综合，非流片"
+        },
+        "edge_ai_impact_zh": "把低比特LLM的反量化与非线性开销转成DRAM内查表，是“存储即算力”路线在边缘LLM上的一个极端设计点；但结果来自仿真，且面积效率并不占优。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2606.08891v1"
+        ],
+        "confidence": "medium",
+        "venue": "ISLPED 2026（arXiv预印本）",
+        "affiliation": "University of California San Diego；EPFL",
+        "authors": "Runyang Tian, Yanru Chen, Weihong Xu et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "存内计算架构",
+            "points": [
+              "4-bit值的LUT条目横向存于4个DRAM单元，段长2，利用符号对称只存非负半表",
+              "多份水平LUT副本提高查询并行度；每bank在逻辑die上配GEMM核+逐元素一元核"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "每个MAT为768×1024单元，每bank 1024个MAT；行缓冲接口128 bit/cycle",
+              "tACT/tPRE/tREAD/tWRITE均为14.16 ns"
+            ]
+          },
+          {
+            "heading": "对比口径",
+            "points": [
+              "按论文表格PALUTE对FIGLUT能效约108倍，与摘要“1.6倍”不符；面积效率11.25 TPS/mm²低于CHIME（22.01）与FIGLUT（26.54），仅优于PIMPAL",
+              "对Jetson Orin NX仅有图表对比，无数值"
+            ]
+          }
+        ],
+        "model_capacity_zh": "仿真评估Qwen3-4B（W4A4），1,264 tokens/s @0.16 W；单芯片24 GB容量。"
+      }
+    ],
+    "overview": "WWDC26 周（06-05~06-11），Apple 端侧 AI 做了一次“架构换代”。第三代基础模型 AFM 3 的端侧从单一 3B 稠密模型变为两档：AFM 3 Core（约 3B 稠密）和 AFM 3 Core Advanced（20B 总参数、每请求只激活 1–4B）。后者把权重放在闪存、按请求把激活部分载入 DRAM，并首次以“至少 12GB 内存”作为门槛（iPhone 端只有 A19 Pro 机型）；量化位宽、内存占用和 tokens/s 均未披露。软件栈上 Core AI 接替 Core ML，coreai-opt 支持 INT4/INT8/FP4/FP8（850M 的 SAM3 从 3GB 压到约 430MB），Metal 张量新增 FP8、MX 和 INT2，直接驱动 M5/A19 GPU 的 Neural Accelerator；Foundation Models 框架端侧上下文从 4096 提升到 8192，开发者还可免费调用 32K 上下文的 PCC 模型。云端 PCC 首次运行在 Google Cloud 的 NVIDIA GPU 上。高通无锡汽车峰会称座舱可端侧运行 100 亿参数多模态模型。论文侧，骁龙 X Elite 上的全流程 RAG 实测显示 NPU prefill 达 787 tok/s，decode 只有 14 tok/s；llada.cpp 让 8B 扩散语言模型在手机 NPU 上单步提速约 9.6 倍。行业侧，TrendForce 把 2026 年手机产量预测下调到 -16.2%，JEDEC 称 LPDDR6-PIM 核心功能基本定稿。",
+    "takeaways_zh": [
+      "Apple 用“闪存存全量、DRAM 只放激活部分”的稀疏 20B 模型，第一次把内存容量（12GB）而不是芯片代际作为端侧模型门槛。端侧模型规模的上限正在从 DRAM 转向闪存带宽。",
+      "Apple 的软件栈把 GPU Neural Accelerator 定位为 prefill 引擎，并开放 FP8/MX/INT2：低比特格式成为芯片与框架共同的接口，而不只是模型压缩技巧。",
+      "独立实测再次确认：NPU 的优势在 prefill（X Elite 上约为 CPU 的 18 倍），decode 只提升 1.7 倍左右，体验瓶颈仍是带宽。"
+    ]
   }
 }

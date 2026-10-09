@@ -6882,5 +6882,1098 @@
         "verification": "仅线索"
       }
     ]
+  },
+  "hardware": {
+    "window": {
+      "start": "2026-06-12",
+      "end": "2026-06-18"
+    },
+    "items": [
+      {
+        "date": "2026-06-15",
+        "vendor": "Ganzin",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Ganzin Showcases Aurora Ecosystem at AWE 2026 to Accelerate Eye-Tracking AI Glasses Adoption",
+        "title_zh": "Ganzin EPU2眼动ASIC：功耗约为NPU方案1/4",
+        "url": "https://aijourn.com/ganzin-showcases-aurora-ecosystem-at-awe-2026-to-accelerate-eye-tracking-ai-glasses-adoption/",
+        "source_type": "官方",
+        "summary_zh": "台湾眼动追踪公司Ganzin在AWE 2026展示Aurora生态，核心是自研眼动专用ASIC EPU2：官方称功耗约为传统NPU方案的四分之一，眼动追踪最高120Hz。Aurora IIE方案由1颗处理芯片+2个眼部传感器+2个红外照明组成。",
+        "whats_new_zh": [
+          "EPU2功耗约为传统NPU方案的1/4（官方口径）",
+          "眼动追踪最高120Hz",
+          "Aurora分三档：Aurora-II（软件IP授权）、Aurora IIS（基于NPU的交钥匙方案）、Aurora IIE（ASIC超低功耗）",
+          "合作方：OmniVision传感器、ams OSRAM红外、高通/奇景（Himax）处理器、Jorjin与广达设备平台"
+        ],
+        "key_specs": {
+          "npu": "EPU2眼动专用ASIC（工艺未披露）",
+          "power": "约为NPU方案的1/4（官方，未给绝对值）",
+          "other": "最高120Hz；1芯片+2传感器+2红外LED"
+        },
+        "edge_ai_impact_zh": "眼动是AI眼镜注视点交互与'看什么问什么'的入口，必须常开；用专用ASIC替代通用NPU跑眼动，是always-on子任务从NPU剥离、走固定功能硬件的典型路线。",
+        "evidence_urls": [],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "常驻AI的硬件分层",
+            "points": [
+              "EPU2是专用眼动处理器，而非通用NPU；官方仅给出'约1/4功耗'的相对数字，绝对mW值未披露",
+              "Aurora IIS仍保留NPU版本，说明客户可在灵活性（NPU）与功耗（ASIC）间二选一"
+            ]
+          },
+          {
+            "heading": "系统组成",
+            "points": [
+              "Aurora IIE：1颗处理芯片+2个眼部传感器+2个红外照明器",
+              "参考设计J9 AI眼镜由Ganzin与Jorjin联合推出"
+            ]
+          },
+          {
+            "heading": "对比",
+            "points": [
+              "同届VLSI 2026上Event-Gaze论文以28nm、12.88mW实现事件相机眼动/注视估计（学术口径），可作为眼动功耗量级参照"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-06-17",
+        "vendor": "Qualcomm",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Qualcomm Launches Snapdragon START to Speed AI Smart Glasses to Market",
+        "title_zh": "Snapdragon START：基于AR1+的智能眼镜交钥匙方案",
+        "url": "https://www.techtimes.com/articles/318634/20260619/qualcomm-launches-snapdragon-start-speed-ai-smart-glasses-market.htm",
+        "source_type": "媒体",
+        "summary_zh": "START（Scalable Turnkey AI-Ready Toolkit）把 AR1+ 模组、AI 软件、iOS/Android 配套 App、白牌参考设计和 ODM 供应链打包在一起，让眼镜品牌商可以快速出 AI 眼镜。参考设计有三种：音频+摄像头（类 Ray-Ban Meta）、单目显示、双目显示。高通以约 1,000 万美元入股首个客户 Inspecs。",
+        "whats_new_zh": [
+          "三种白牌参考设计：音频+摄像头、单目 LCoS（Thundercomm）、双目 microLED（Applied Materials）",
+          "ODM 为 Pegatron 和 Jorjin；Avegant 提供 LCoS",
+          "高通对 Inspecs 战略投资约 1,000 万美元（750 万股新股，每股 1 英镑），O'Neill/TitanFlex 等品牌产品最早年内上市",
+          "Amon：在研可穿戴设计超过 40 款",
+          "软件与模型无关，支持设备、手机、云三端混合分流"
+        ],
+        "key_specs": {
+          "npu": "AR1+（具体 TOPS 本文未披露）",
+          "power": "未披露（仅称低功耗）",
+          "other": "iOS/Android 配套 App；单目 LCoS / 双目 microLED"
+        },
+        "edge_ai_impact_zh": "START 把智能眼镜从芯片生意变成整机方案生意，大幅降低传统眼镜品牌的进入门槛。眼镜端 AR1+ 负责常驻感知和小模型，较重的推理交给手机或云，这会成为 2026 下半年非 Meta 眼镜的主流架构。",
+        "evidence_urls": [
+          "https://techcrunch.com/2026/06/16/qualcomm-wants-to-be-the-chip-inside-whatever-replaces-your-smartphone-and-it-just-announced-two-products-toward-that-end/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "方案构成",
+            "points": [
+              "AR1+ 计算模组 + 连接 + 端侧 AI，加上 iOS/Android 配套 App 和白牌 ID 设计",
+              "显示路线：LCoS 便宜成熟但不自发光、光路更大；microLED 自发光、更亮但良率难（TechTimes 分析）"
+            ]
+          },
+          {
+            "heading": "端-手机-云分工",
+            "points": [
+              "官方称 AI 与模型无关，由厂商自选模型；推理可在眼镜、手机、云之间动态切换",
+              "眼镜端常驻负载（唤醒、拍照、简单视觉）留在 AR1+，大模型交给手机或云"
+            ]
+          },
+          {
+            "heading": "市场",
+            "points": [
+              "TechTimes 引用：Meta Ray-Ban 累计销量超过 700 万副，份额约 82%；START 的目标是让更多眼镜品牌进来，从而做大高通的芯片出货面"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露：START 不绑定模型，眼镜端模型规模和 tok/s 都没有公布。作为对比，高通 3 月 MWC 发布的可穿戴“至尊版”平台官方称可在端侧跑 20 亿参数模型（不属于本期）。"
+      },
+      {
+        "date": "2026-06-16",
+        "vendor": "Qualcomm",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Qualcomm unveils Snapdragon Reality Elite for next-gen XR headsets and glasses",
+        "title_zh": "Snapdragon Reality Elite：48 TOPS XR平台，3B模型45 tok/s",
+        "url": "https://roadtovr.com/qualcomm-snapdragon-reality-elite-compact-headsets-glasses/",
+        "source_type": "媒体",
+        "summary_zh": "AWE 2026（6 月 16 日）上发布的 Snapdragon Reality Elite 是 XR2+ Gen 2 的继任者，同时面向 VST 一体机和有线 OST 眼镜。官方称 NPU 性能提升 160%、达 48 TOPS，可在端侧以 45 tok/s 运行 3B 参数语言模型。首发设备为 XREAL Project Aura 和一款 Play For Dream 头显。",
+        "whats_new_zh": [
+          "官方口径：相比 XR2+ Gen 2，GPU +60%、CPU +30%、NPU +160%；AI 最高 48 TOPS",
+          "官方口径（TechCrunch 转述）：3B 参数 LLM 端侧 45 tok/s",
+          "6 核 Kryo（4P+2E）最高 2.9 GHz；Adreno 配 12MB 高速显存；8MB 系统缓存",
+          "单眼 4.4K×4.4K@90Hz；12 路并发摄像头（2×12MP@90fps 透视 + 10×720p@120fps 感知）",
+          "同负载续航 +20%，满载温度低 12°C；Wi-Fi 7 / BT 6.0；原生支持 Android XR"
+        ],
+        "key_specs": {
+          "process": "未披露",
+          "cpu": "Kryo 6 核（4P+2E），最高 2.9 GHz",
+          "gpu": "Adreno，频率 +11%，12MB 高速显存",
+          "npu": "Hexagon + AI 加速器 + 独立音频 NPU，最高 48 TOPS",
+          "memory": "4×16 LPDDR5，最高 4.2 GHz；8MB 系统缓存",
+          "power": "同负载续航 +20%，满载温度低 12°C（官方）",
+          "other": "4.4K×4.4K@90Hz；12 路摄像头；8K60 解码 / 8K30 编码"
+        },
+        "edge_ai_impact_zh": "3B@45 tok/s 是高通首次给 XR 芯片公开 LLM 吞吐。这个速度足以让头显、眼镜本地跑对话加视觉理解智能体，不用依赖手机或云端。独立音频 NPU 则用于常驻语音唤醒，降低待机功耗。",
+        "evidence_urls": [
+          "https://techcrunch.com/2026/06/16/qualcomm-wants-to-be-the-chip-inside-whatever-replaces-your-smartphone-and-it-just-announced-two-products-toward-that-end/",
+          "https://www.engadget.com/2194353/qualcomm-unveils-its-snapdragon-reality-elite-chip-for-next-gen-ar-headsets/",
+          "https://9to5google.com/2026/06/16/snapdragon-reality-elite/",
+          "https://mobilesyrup.com/2026/06/16/qualcomm-snapdragon-reality-elite/",
+          "https://wwwhatsnew.com/2026/06/18/qualcomm-snapdragon-reality-elite-48-tops-xr-android-2026/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 与常驻 AI",
+            "points": [
+              "Hexagon 处理器带 AI 加速器，外加一颗专用音频 NPU，用于常驻关键词和语音处理",
+              "48 TOPS，比 XR2+ Gen 2 提升 160%，可本地跑 LLM 和视觉模型",
+              "3B@45 tok/s：按 INT4 约 1.5GB 权重估算，需要约 68 GB/s 的有效带宽（估算），与 4×16-bit LPDDR5 平台的带宽量级相符"
+            ]
+          },
+          {
+            "heading": "感知管线",
+            "points": [
+              "2 个完整 ISP 前端处理 12MP Bayer@90fps 彩色透视，10 个 lite 前端处理 720p 单色@120fps，用于 SLAM 和手眼追踪",
+              "共 12 路并发摄像头，满足 VST 头显的透视加全身追踪"
+            ]
+          },
+          {
+            "heading": "显示与形态",
+            "points": [
+              "单眼 4.4K×4.4K@90Hz（XR2+ Gen 2 为 4.3K）；4×DSI、2×eDP、DP1.4 over USB",
+              "同时支持一体式 VST 头显和计算盒/有线 OST 眼镜（XREAL Aura 属于后者）"
+            ]
+          },
+          {
+            "heading": "能效",
+            "points": [
+              "同负载续航 +20%、满载温度低 12°C（官方）；工艺未披露",
+              "Road to VR 称其相当于 XR2 Gen 3 这一代"
+            ]
+          },
+          {
+            "heading": "NPU 微架构",
+            "points": [
+              "Hexagon NPU 48 TOPS，较XR2+ Gen 2提升160%；多数媒体给出48 TOPS，MobileSyrup给出45 TOPS，以官方规格页为准",
+              "新增独立EVA单元承担深度估计等CV负载，减轻NPU与GPU在SLAM/手势管线上的占用"
+            ]
+          },
+          {
+            "heading": "低功耗/热设计",
+            "points": [
+              "官方称同负载续航+20%、持续负载温度最多低12°C",
+              "制程未披露；Reality Elite主打头显与系留眼镜，轻量AI眼镜（Meta Ray-Ban类）仍用AR1+（媒体口径）"
+            ]
+          },
+          {
+            "heading": "眼镜形态分工",
+            "points": [
+              "XREAL Aura（91g）采用'口袋puck + 镜框X1S协处理器'分体计算（媒体报道）",
+              "Google与高通合作为系留眼镜puck做参考设计；START计划首家合作伙伴为Inspecs"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方口径（TechCrunch 转述高通）：3B 参数语言模型端侧 45 tok/s。精度（很可能是 INT4，但未明说）、上下文长度和功耗均未披露。"
+      },
+      {
+        "date": "2026-06-16",
+        "vendor": "Snap / Qualcomm",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Snap Specs are official ... with a sky-high $2,200 price",
+        "title_zh": "Snap Specs AR眼镜发布：镜框内置两颗骁龙",
+        "url": "https://tomsguide.com/computing/smart-glasses/snap-specs-are-official-and-theyre-a-bold-mash-up-of-ray-ban-metas-and-apple-vision-pro-with-an-eye-watering-price",
+        "source_type": "媒体",
+        "summary_zh": "Snap 在 AWE 2026 上发布消费版 Specs AR 眼镜，镜框内置两颗 Snapdragon 处理器（一颗跑系统，一颗做计算机视觉），不需要计算盒。售价 2,195 美元，秋季在美、英、法发货。具体芯片型号未披露。",
+        "whats_new_zh": [
+          "两颗 Snapdragon 分别负责系统和 CV（型号未披露）",
+          "51° FOV、LCoS、7 ms motion-to-photon；混合使用续航约 4 小时（另一说法：主动使用 4 小时，含充电盒 20 小时）",
+          "重量约 130g；售价 2,195 美元，预订押金 200 美元",
+          "集成 OpenAI 和 Gemini 多模态助手"
+        ],
+        "key_specs": {
+          "other": "双 Snapdragon（型号未披露）；51° FOV；约 130g"
+        },
+        "edge_ai_impact_zh": "双芯片分工（系统 SoC + 专用 CV 芯片）说明 AR 眼镜的常驻感知功耗必须和主计算隔离。重的多模态推理仍然依赖云端助手。",
+        "evidence_urls": [
+          "https://skarredghost.com/2026/06/22/snap-specs-steam-frame/"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "架构",
+            "points": [
+              "一颗骁龙跑 Snap OS 和渲染，另一颗专做计算机视觉（追踪、识别），属于双芯异构",
+              "无外置计算盒，计算全部在镜框内"
+            ]
+          },
+          {
+            "heading": "约束",
+            "points": [
+              "130g 远超全天佩戴约 50g 的门槛；续航约 4 小时",
+              "高通在 AR 眼镜上的两条路线（START 轻眼镜、Reality Elite 有线眼镜）之外，Snap 代表的是一体式重型 AR 眼镜"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露：端侧模型规模不明，AI 助手依赖 OpenAI 和 Gemini 云端。"
+      },
+      {
+        "date": "2026-06-12",
+        "vendor": "Qualcomm / QCraft",
+        "category": "车载/机器人",
+        "title": "QCraft demonstrates urban NOA on Qualcomm's latest Snapdragon Ride chip, targets 2026 global mass production",
+        "title_zh": "轻舟智航在Snapdragon Ride SA8650P上演示城市NOA",
+        "url": "https://roboticsandautomationnews.com/2026/06/12/qcraft-demonstrates-urban-noa-on-qualcomms-latest-snapdragon-ride-chip-targets-2026-global-mass-production/102512/",
+        "source_type": "媒体",
+        "summary_zh": "轻舟智航（QCraft）6 月 5 日在高通无锡峰会上演示了跑在 Snapdragon Ride SA8650P 上的城市 NOA，并计划 2026 年实现辅助驾驶全球量产。这说明中算力 Ride 平台已能承载城市级领航辅助。",
+        "whats_new_zh": [
+          "城市 NOA 跑在 SA8650P 上（6 月 5 日演示）",
+          "目标 2026 年全球量产"
+        ],
+        "key_specs": {
+          "other": "SA8650P；算力、功耗本文未披露"
+        },
+        "edge_ai_impact_zh": "城市 NOA 下沉到中算力平台，说明端到端感知模型的压缩和量化已足够成熟。高通 Ride 正在用性价比争夺 Orin-X 一档的市场。",
+        "evidence_urls": [],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "要点",
+            "points": [
+              "SA8650P 是 Ride 家族中面向 L2+ 的主力平台，这次承载了城市级 NOA",
+              "本文未披露 TOPS、模型规模和功耗"
+            ]
+          },
+          {
+            "heading": "行业背景",
+            "points": [
+              "同期 Stellantis（5 月 21 日）宣布全线采用 Snapdragon Digital Chassis 和 Ride Pilot（L2+ 脱手驾驶），高通在 ADAS 上的海外和中国定点同步扩大"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-06-12",
+        "vendor": "Huawei",
+        "category": "软件栈/工具链",
+        "title": "HarmonyOS 7 开发者 Beta 正式启动，全场景智能操作系统再升级",
+        "title_zh": "HDC 2026：HarmonyOS 7 Beta 与鸿蒙智能体框架 2.0",
+        "url": "https://www.huawei.com/cn/news/2026/6/harmonyos7-hdc",
+        "source_type": "官方",
+        "summary_zh": "华为在 HDC 2026（东莞，6 月 12 日）启动 HarmonyOS 7 开发者 Beta，鸿蒙智能向 Agent 架构演进：智能体框架升级 2.0（“意图即服务”，复杂任务成功率 90%+），开放 20+ 项系统级 AI 能力并首次开放 GUI 操控能力，小艺接入 200+ 项系统级感知数据，方舟引擎首次融合“性能大模型”，并开源 openPangu 2.0（参数规模未披露）。",
+        "whats_new_zh": [
+          "鸿蒙智能体框架 2.0，复杂任务成功率 >90%（官方）",
+          "开放 20+ 系统级 AI 能力，首次向开发者开放 GUI 操控",
+          "小艺接入 200+ 系统级感知数据；方舟引擎融合性能大模型做调度加速",
+          "HarmonyOS 6 终端数 6,600 万+，注册开发者 1,100 万+"
+        ],
+        "key_specs": {
+          "other": "openPangu 2.0 开源（参数量未披露）；测试机型 Mate 80 Pro Max；端侧模型规模未披露"
+        },
+        "edge_ai_impact_zh": "系统级 Agent 与 GUI 操控是端侧常驻 AI 的主要负载来源，对 NPU 常驻功耗、内存驻留模型大小提出要求；华为未公布端侧模型尺寸，第三方关于“盘古 6.0 原生内置”等说法未获官方证实。",
+        "evidence_urls": [
+          "https://developer.huawei.com/consumer/cn/hdc/2026/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "Agent 架构",
+            "points": [
+              "“Agent 亲和系统架构”，推动应用 Agent 化、Skill 化",
+              "智能体框架 2.0：意图即服务，复杂任务成功率 >90%",
+              "开放 20+ 系统级 AI 能力 + GUI 操控"
+            ]
+          },
+          {
+            "heading": "系统层 AI",
+            "points": [
+              "方舟引擎首次融合性能大模型，按使用习惯、应用关联、时空和重要性做加速",
+              "AI 超分与智能 HDR 提升游戏画质；芯片级防诈（境外转打检测）"
+            ]
+          },
+          {
+            "heading": "需注意",
+            "points": [
+              "第三方称离线语音识别率 98%、跨设备时延 <10ms 等，官方页面未出现，属媒体口径",
+              "HarmonyOS 7 预计秋季商用（媒体）"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方未披露端侧模型参数量、精度与 tokens/s；openPangu 2.0 参数规模未披露。"
+      },
+      {
+        "date": "2026-06-15",
+        "vendor": "Syntiant",
+        "category": "产业动态",
+        "title": "Syntiant Expands Physical AI Platform with Acquisitions of Orosound and AudioSourceRE to Advance Intelligent Audio at the Edge",
+        "title_zh": "Syntiant收购Orosound与AudioSourceRE",
+        "url": "https://www.syntiant.com/press-release/syntiant-expands-physical-ai-platform-with-acquisitions-of-orosound-and-audiosourcere-to-advance-intelligent-audio-at-the-edge/",
+        "source_type": "官方",
+        "summary_zh": "常开语音NPU厂商Syntiant 6月15日宣布完成对法国Orosound（开放式耳机主动降噪、AI面对面对话）和爱尔兰AudioSourceRE（AI声源分离）的收购，交易金额未披露，以股票加现金支付。两家技术此前首先运行在已于2025年清算的GreenWaves GAP9处理器上。",
+        "whats_new_zh": [
+          "补齐开放式ANC、对话增强与声源分离算法",
+          "交易金额未披露，股票+现金",
+          "两家技术原基于GreenWaves GAP9（2025年清算）"
+        ],
+        "key_specs": {
+          "other": "交易金额未披露"
+        },
+        "edge_ai_impact_zh": "超低功耗音频AI的竞争点从'唤醒词'扩展到'降噪+分离+对话增强'整套算法栈；Syntiant通过并购把GAP9生态的算法迁移到自家NDP系列，强化耳机/AI眼镜音频前端。",
+        "evidence_urls": [
+          "https://audioxpress.com/news/syntiant-confirms-acquisitions-of-orosound-and-audiosourcere-to-advance-intelligent-audio-at-the-edge",
+          "https://ocbj.com/oc-homepage/syntiant-broadens-ai-reach-with-2-acquisitions"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "技术补位",
+            "points": [
+              "Orosound：Open-Ear ANC与AI面对面对话功能，面向耳机、头戴与智能眼镜",
+              "AudioSourceRE：AI声源分离（如人声/乐器分离）"
+            ]
+          },
+          {
+            "heading": "产业背景",
+            "points": [
+              "GreenWaves GAP9在2025年清算，其上的音频AI算法需要新硬件载体",
+              "Syntiant同月还宣布董事会任命、与Vibe合作语音工作空间，并筹备在纳斯达克以SYTN上市（媒体口径）"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-06-15",
+        "vendor": "Ecorbit",
+        "category": "学术研究",
+        "title": "Edge-Inference Governors Need Memory-Clock State",
+        "title_zh": "边缘推理DVFS调速器必须感知内存时钟",
+        "url": "https://arxiv.org/abs/2606.16106",
+        "source_type": "论文",
+        "summary_zh": "在内存子系统与计算时钟独立调频的边缘SoC上，现有频率感知延迟估计只建模CPU/GPU时钟而忽略内存时钟（EMC）。作者在Jetson Orin上部署实测调速器：不感知EMC的GPU-only拟合在紧截止期下漏掉25–28%周期，而EMC感知两单元重拟合在2% QoS预算内把漏失压到≤0.9%；LLM部署还需考虑KV Cache随解码长度增长和GPU共租户。",
+        "whats_new_zh": [
+          "EMC盲拟合紧截止期漏失25–28%，EMC感知≤0.9%",
+          "与活跃GPU共租户联合解码2,000 token时，不感知租户的准入漏掉32% token",
+          "离散带宽防护后留出验证集聚合漏失1.19%",
+          "覆盖6个模型、两款Orin SKU（含NX）"
+        ],
+        "key_specs": {
+          "gpu": "Jetson Orin（两款SKU，含Orin NX）",
+          "memory": "EMC内存时钟作为调度状态",
+          "other": "代码与轨迹开源（GitHub/Zenodo）"
+        },
+        "edge_ai_impact_zh": "对机器人/车载上有实时约束的LLM推理，内存频率是必须显式管理的状态；与EnerInfer调DDR频率的思路互为印证。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2606.16106v3"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "Ecorbit",
+        "authors": "Jaehoon Kang",
+        "deep_dive_zh": [
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "EMC决定斜率误差，仅靠延迟反馈的被动校准无法修复",
+              "解码长度增长导致KV Cache变大，逐步侵蚀紧截止期可行性"
+            ]
+          },
+          {
+            "heading": "调度策略",
+            "points": [
+              "合约准入策略由有界探测组合三层状态（EMC、解码长度、GPU共租户）",
+              "8次新启动中额外留一档余量即实现逐次合规"
+            ]
+          },
+          {
+            "heading": "实测",
+            "points": [
+              "MobileNetV2与ViT-Small结果在两款Orin上复现；检测与LLM部署在NX上复现EMC盲区失效",
+              "探测方差会导致临界准入误选低频档，离散带宽防护后留出集聚合漏失1.19%"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露LLM具体尺寸与tok/s（摘要层面）。"
+      },
+      {
+        "date": "2026-06-14",
+        "vendor": "MediaTek（联发科）",
+        "category": "学术研究",
+        "title": "TinyNPU: A 3nm 0.06-134.36 μJ/Token DCIM-Based Ultra Low Power NPU for Always-On Reasoning on Wearables",
+        "title_zh": "联发科TinyNPU：3nm DCIM常开推理NPU",
+        "url": "https://news.mynavi.jp/techplus/article/vlsi2026-8/",
+        "source_type": "论文",
+        "summary_zh": "联发科在VLSI 2026（C21.1）发表面向可穿戴'常开推理'（Always-on Reasoning）的TinyNPU：TSMC 3nm、基于数字存内计算（DCIM），512个8-bit MAC、256KB片上存储、峰值1.47 TOPS，能耗0.06-134.36 μJ/token，官方实测在智能眼镜上可实现最长10天续航。",
+        "whats_new_zh": [
+          "3nm DCIM，512×8-bit MAC，256KB片上SRAM，峰值1.47 TOPS（INT8）",
+          "0.06-134.36 μJ/token；INT8能效5.2-23.3 TOPS/W（图表口径）",
+          "Transformer模型上能效最高为先前工作31.8倍",
+          "智能眼镜续航最长10天（MediaTek实测口径）",
+          "裸片约0.55×0.45mm²（图表口径）"
+        ],
+        "key_specs": {
+          "process": "TSMC 3nm",
+          "npu": "DCIM，512×8-bit MAC，1.47 TOPS，5.2-23.3 TOPS/W",
+          "memory": "256KB片上（L1）",
+          "power": "0.06-134.36 μJ/token",
+          "other": "die约0.55×0.45mm²"
+        },
+        "edge_ai_impact_zh": "这是手机SoC大厂首次在顶会公开'眼镜/手表常开小模型推理'专用NPU：不是把手机NPU缩小，而是用DCIM把权重固定在SRAM里做计算，使μJ/token级能耗成为可能，预示天玑/可穿戴平台将出现独立的always-on AI岛。",
+        "evidence_urls": [
+          "https://www.proceedings.com/content/086/086455webtoc.pdf",
+          "https://ee.ofweek.com/2026-06/ART-8320315-8440-30690062.html"
+        ],
+        "confidence": "high",
+        "venue": "VLSI 2026 (IEEE/JSAP Symposium on VLSI Technology & Circuits, Honolulu, 6/14-18)",
+        "affiliation": "MediaTek（联发科）",
+        "authors": "Yi-Yen Hsieh, En-Jui Chang, Chieh-Fang Teng et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 微架构",
+            "points": [
+              "512个8-bit MAC基于数字存内计算（DCIM），权重驻留于SRAM阵列内计算，避免反复从外部存储搬运",
+              "峰值1.47 TOPS，INT8能效5.2-23.3 TOPS/W（随电压/负载变化）"
+            ]
+          },
+          {
+            "heading": "低功耗/常驻 AI",
+            "points": [
+              "面向'常开推理'场景：个人秘书、问答、会议Copilot等小语言模型任务（图注口径）",
+              "智能眼镜续航最长10天；能耗低至0.06 μJ/token（最轻负载）"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "256KB片上存储即全部L1，意味着模型必须以极小参数量或分块流式加载；外部存储接口未披露",
+              "裸片约0.55×0.45mm²（约0.25mm²），可作为SoC内的常开子系统"
+            ]
+          },
+          {
+            "heading": "能效与对比",
+            "points": [
+              "Transformer模型上能效最高为先前工作的31.8倍（论文口径，对比基线未在预告中说明）",
+              "基准模型包括MobileNetV2、MobileCLIP、ViT-Base/16、BERT-Tiny、BERT-Base、GPT-Neo；各模型对应μJ/token未能可靠核实"
+            ]
+          }
+        ],
+        "model_capacity_zh": "基准模型含MobileNetV2、MobileCLIP、ViT-Base/16、BERT-Tiny/Base与GPT-Neo（参数规模未在预告中注明）；片上仅256KB，可运行的最大LLM规模与tokens/s未披露；能耗0.06-134.36 μJ/token（论文口径）。"
+      },
+      {
+        "date": "2026-06-14",
+        "vendor": "TSMC（台积电）",
+        "category": "学术研究",
+        "title": "A 2nm 234.4 TOPS/W and 511.9 TOPS/mm² Digital Computing-in-Memory Compiler with Multiple MAC Units per Weight and Multiple Data Format Support",
+        "title_zh": "台积电2nm DCIM编译器：234.4 TOPS/W",
+        "url": "https://news.mynavi.jp/techplus/article/vlsi2026-8/#a-2nm-234-4-tops-w-and-511-9-tops-mm-dig",
+        "source_type": "论文",
+        "summary_zh": "台积电（C8.1）展示2nm数字存内计算（DCIM）宏编译器：每个权重配多个MAC单元并支持多种数据格式（INT4/INT8/INT16等），能效234.4 TOPS/W、面积效率511.9 TOPS/mm²，可在0.38V及以下电压工作。",
+        "whats_new_zh": [
+          "2nm下234.4 TOPS/W、511.9 TOPS/mm²",
+          "每权重多MAC单元（multiple MACs per weight）提高吞吐与面积效率",
+          "支持INT8/INT4/INT16等多数据格式（媒体口径）",
+          "可在≤0.38V工作"
+        ],
+        "key_specs": {
+          "process": "TSMC 2nm（N2纳米片）",
+          "npu": "DCIM编译宏，234.4 TOPS/W，511.9 TOPS/mm²",
+          "power": "≤0.38V可工作"
+        },
+        "edge_ai_impact_zh": "DCIM以'编译器'形式出现在2nm，意味着台积电准备把CIM宏像SRAM编译器一样提供给客户IP——手机/可穿戴SoC的NPU可以直接以DCIM宏替换部分SRAM+MAC阵列。",
+        "evidence_urls": [
+          "https://www.proceedings.com/content/086/086455webtoc.pdf",
+          "https://news.mynavi.jp/techplus/article/vlsi2026-8/",
+          "https://ee.ofweek.com/2026-06/ART-8320315-8440-30690062.html",
+          "https://archive.vlsisymposium.org/25web/wp-content/uploads/VLSI2025_Advanceprogram0611.pdf"
+        ],
+        "confidence": "high",
+        "venue": "VLSI 2026 (IEEE/JSAP Symposium on VLSI Technology & Circuits, Honolulu, 6/14-18)",
+        "affiliation": "TSMC（台积电）",
+        "authors": "Hidehiro Fujiwara, Brian Crafton, Haruki Mori et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "存内计算架构",
+            "points": [
+              "数字CIM：在SRAM位单元旁做数字加法树，精度确定、无需ADC",
+              "'每权重多MAC'设计让同一权重被多个输入并行复用，提升TOPS/mm²"
+            ]
+          },
+          {
+            "heading": "代际对比",
+            "points": [
+              "VLSI 2025上台积电3nm DCIM编译器：INT8/FP16，124.6 TOPS/W@0.5V（背景，搜索摘要口径）",
+              "2nm版本：234.4 TOPS/W@≤0.38V，能效约为上一代1.9倍（推算）"
+            ]
+          },
+          {
+            "heading": "数据格式与生态",
+            "points": [
+              "多数据格式（INT4/INT8/INT16）支持，与端侧LLM常用W4A8/W8A8量化匹配",
+              "编译器化意味着可按客户容量/形状生成宏，降低CIM集成门槛"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-06-14",
+        "vendor": "华中科技大学（缪向水/李祎团队）",
+        "category": "学术研究",
+        "title": "A 40nm 24.85-to-80.59 TFLOPS/W FP8 Computing-in-Memory Macro with Outlier-Aware Hierarchical-Alignment for Edge Transformers",
+        "title_zh": "华科FP8存内计算宏：最高80.59 TFLOPS/W",
+        "url": "https://www.laoyaoba.com/n/1054389",
+        "source_type": "论文",
+        "summary_zh": "华中科技大学团队在40nm实现面向端侧Transformer的FP8存内计算宏，采用离群值感知的分层对齐（Outlier-Aware Hierarchical-Alignment），FP8能效24.85-80.59 TFLOPS/W，较已有后对齐浮点CIM方案能效最高提升6.66倍。",
+        "whats_new_zh": [
+          "离群值感知分层对齐：解决浮点CIM指数对齐开销",
+          "能效较后对齐浮点CIM最高提升6.66倍"
+        ],
+        "key_specs": {
+          "process": "40nm",
+          "npu": "FP8 CIM宏，24.85-80.59 TFLOPS/W"
+        },
+        "edge_ai_impact_zh": "Transformer激活存在离群值，INT CIM需要复杂量化；FP8 CIM在成熟40nm上达到数十TFLOPS/W，说明浮点CIM已可服务端侧Transformer，且对国产成熟制程友好。",
+        "evidence_urls": [
+          "https://www.proceedings.com/content/086/086455webtoc.pdf",
+          "https://www.sina.cn/news/detail/5313804172793070.html"
+        ],
+        "confidence": "high",
+        "venue": "VLSI 2026 (IEEE/JSAP Symposium on VLSI Technology & Circuits, Honolulu, 6/14-18)",
+        "affiliation": "华中科技大学（缪向水/李祎团队）",
+        "authors": "Zhiwei Zhou, Tong Hu, Jia Chen et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "存内计算架构",
+            "points": [
+              "浮点CIM难点在尾数对齐：传统'后对齐'需对每个乘积做指数比较与移位",
+              "分层对齐+离群值感知：多数值走低开销路径，少数离群值单独处理"
+            ]
+          },
+          {
+            "heading": "能效与对比",
+            "points": [
+              "FP8 24.85-80.59 TFLOPS/W（浮点口径，非TOPS）",
+              "较已有后对齐浮点CIM能效最高6.66倍（论文口径）",
+              "同届另一浮点CIM（28nm 44.15 TFLOPS/W，ASIL-D）面向车载"
+            ]
+          },
+          {
+            "heading": "国产CIM背景",
+            "points": [
+              "VLSI 2026共录用251篇、中国内地33篇；投稿首次超1000篇，中国大陆336篇（媒体口径）"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-06-14",
+        "vendor": "SAIMEMORY Corporation（与Intel、PSMC、AP Memory等研究人员合作，媒体口径）",
+        "category": "学术研究",
+        "title": "Multiple-Wafer (9-Layer), Extreme Thin (3µm-Si per Stack) and Innovative Fusion-Bonded Via-in-one Architecture for High Bandwidth 3D Memory",
+        "title_zh": "SAIMEMORY 9层晶圆堆叠高带宽3D内存",
+        "url": "https://ee.ofweek.com/2026-06/ART-8320315-8440-30690062.html",
+        "source_type": "论文",
+        "summary_zh": "SAIMEMORY（T17.5）展示9层晶圆堆叠（1逻辑+8 DRAM）的高带宽3D内存：每层硅厚约3µm，融合键合Via-in-one架构，约13.7K个TSV，单芯片1.125GB，带宽密度0.25 Tb/s/mm²，被定位为对标微凸点2.5D封装（HBM）的未来内存候选。",
+        "whats_new_zh": [
+          "9层晶圆堆叠（逻辑层+8层DRAM），每层约3µm硅",
+          "约13.7K TSV；单芯片1.125GB",
+          "带宽密度0.25 Tb/s/mm²",
+          "Fusion-bonded Via-in-one替代微凸点"
+        ],
+        "key_specs": {
+          "memory": "3D DRAM堆叠，1.125GB/芯片，0.25 Tb/s/mm²",
+          "other": "~13.7K TSV；3µm/层"
+        },
+        "edge_ai_impact_zh": "晶圆级混合键合3D DRAM可把HBM级带宽密度做进更小、更低功耗的封装，对需要高带宽但无法承受HBM成本/功耗的端侧AI（机器人、AI PC）是潜在方案。",
+        "evidence_urls": [
+          "https://www.proceedings.com/content/086/086455webtoc.pdf"
+        ],
+        "confidence": "high",
+        "venue": "VLSI 2026 (IEEE/JSAP Symposium on VLSI Technology & Circuits, Honolulu, 6/14-18)",
+        "affiliation": "SAIMEMORY Corporation（与Intel、PSMC、AP Memory等研究人员合作，媒体口径）",
+        "authors": "C.-L. Lu et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "0.25 Tb/s/mm²带宽密度（约31 GB/s/mm²，换算）",
+              "单芯片1.125GB容量，偏向'近存高带宽小容量'层级"
+            ]
+          },
+          {
+            "heading": "堆叠工艺",
+            "points": [
+              "9片晶圆融合键合，每层减薄至约3µm，Via-in-one将键合与通孔合一",
+              "约13.7K个TSV提供宽I/O"
+            ]
+          },
+          {
+            "heading": "同届3D存储对照",
+            "points": [
+              "三星T5.1：16层垂直堆叠DRAM（VS-DRAM，GAA单元晶体管+水平电容）；SK海力士4F² VG DRAM（媒体口径）",
+              "3D NAND方面有面向1000+字线/1000+层的多堆叠单元阵列与CMB技术论文"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-06-12",
+        "vendor": "Georgia Institute of Technology",
+        "category": "学术研究",
+        "title": "ANEForge: Python for direct computation on the Apple Neural Engine",
+        "title_zh": "ANEForge：绕过Core ML直接编程ANE",
+        "url": "https://arxiv.org/abs/2606.17090",
+        "source_type": "论文",
+        "summary_zh": "ANEForge是一个Python包，把惰性张量图编译成单个ANE程序，通过与苹果内部框架相同的ANE守护进程和内核驱动栈下发，不经Core ML。它能调用ANE原生融合注意力、流式加载int8/int4/稀疏权重、让解码器和优化器状态常驻，甚至在ANE上跑训练的前向、反向与优化器更新。",
+        "whats_new_zh": [
+          "58个融合算子+19个原生桥接算子",
+          "小型融合程序单次调用约90 µs，接近ANE约70 µs的每程序dispatch下限",
+          "预训练ResNet-18前向端到端0.33 ms；Stable Diffusion U-Net前向通过验证",
+          "支持macOS 14+，每个版本绑定已记录的macOS与ANE编译器版本"
+        ],
+        "key_specs": {
+          "npu": "Apple Neural Engine（Apple Silicon全系）",
+          "other": "直接调度路径，非Core ML；支持int8/int4/稀疏权重流式与原生融合注意力"
+        },
+        "edge_ai_impact_zh": "解决了Core ML把ANE当“可选调度目标”、模型可能静默落到CPU/GPU的问题，使研究者能强制在ANE上实测与做端侧训练；但与上一篇手册同样依赖未公开接口。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2606.17090v1"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "Georgia Institute of Technology",
+        "authors": "Spencer H. Bryngelson",
+        "deep_dive_zh": [
+          {
+            "heading": "软件栈",
+            "points": [
+              "惰性张量图→单一ANE程序，走ANE daemon+内核驱动，与苹果内部框架同路径",
+              "可原生调用ANE融合注意力，并让解码器/优化器状态跨步常驻"
+            ]
+          },
+          {
+            "heading": "延迟与实测",
+            "points": [
+              "小融合程序约90 µs/次，ANE每程序dispatch下限约70 µs",
+              "ResNet-18端到端0.33 ms"
+            ]
+          },
+          {
+            "heading": "端侧训练",
+            "points": [
+              "前向、反向与优化器更新都在ANE上执行且状态常驻，为“Mac/iPhone上个性化微调走NPU”提供了可行性样例"
+            ]
+          }
+        ],
+        "model_capacity_zh": "论文验证的是ResNet-18、句向量编码器、ViT和SD U-Net；未报告LLM tokens/s（未披露）。"
+      },
+      {
+        "date": "2026-06-14",
+        "vendor": "Kyuho Jason Lee 课题组（机构以论文为准）",
+        "category": "学术研究",
+        "title": "HCNP: A 70.2 TOPS/W Hybrid CIM-NPU Processor with In-Streaming Processing for Energy-Efficient CNN/Transformer Acceleration in HMD",
+        "title_zh": "HCNP：头显用70.2 TOPS/W混合CIM-NPU",
+        "url": "https://www.proceedings.com/content/086/086455webtoc.pdf#hcnp-a-70-2-tops-w-hybrid-cim-npu-proces",
+        "source_type": "论文",
+        "summary_zh": "论文提出面向头戴显示（HMD）的混合CIM-NPU处理器HCNP，结合存内计算与传统NPU，并采用流式处理（In-Streaming Processing）同时加速CNN与Transformer，标题能效70.2 TOPS/W。",
+        "whats_new_zh": [
+          "70.2 TOPS/W（标题口径）",
+          "CIM与NPU混合：CIM处理权重固定的矩阵乘，NPU处理其余算子",
+          "流式处理面向HMD传感器数据实时性"
+        ],
+        "key_specs": {
+          "npu": "Hybrid CIM-NPU，70.2 TOPS/W",
+          "other": "工艺、面积、频率未在目录中披露"
+        },
+        "edge_ai_impact_zh": "XR头显需要同时跑CNN（手势/SLAM）与Transformer（多模态理解），HCNP代表'CIM+NPU异构'而非纯CIM的务实路线：CIM管权重驻留的大GEMM，NPU保留算子通用性。",
+        "evidence_urls": [
+          "https://www.proceedings.com/content/086/086455webtoc.pdf"
+        ],
+        "confidence": "medium",
+        "venue": "VLSI 2026 (IEEE/JSAP Symposium on VLSI Technology & Circuits, Honolulu, 6/14-18)",
+        "affiliation": "Kyuho Jason Lee 课题组（机构以论文为准）",
+        "authors": "Seungbin Kim, Hoichang Jeong, Dongwook Kim et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "架构思路",
+            "points": [
+              "混合CIM-NPU：解决纯CIM对非线性算子/动态权重（如Attention中的QK^T）不友好的问题",
+              "In-Streaming Processing：数据边到边算，减少中间特征写回"
+            ]
+          },
+          {
+            "heading": "能效",
+            "points": [
+              "70.2 TOPS/W为标题给出的峰值能效；精度、工艺未在目录中披露",
+              "对比同届联发科TinyNPU（5.2-23.3 TOPS/W@3nm），不同测量口径不可直接比较"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-06-14",
+        "vendor": "KAIST（Hoi-Jun Yoo 课题组）",
+        "category": "学术研究",
+        "title": "Silicon-Oracle (Soracle): A Multi-Modal Autoregressive Model Accelerator for Context-Aware Assistance on Mobile Platform",
+        "title_zh": "KAIST Soracle：移动端多模态自回归加速器",
+        "url": "https://www.proceedings.com/content/086/086455webtoc.pdf#silicon-oracle-soracle-a-multi-modal-aut",
+        "source_type": "论文",
+        "summary_zh": "KAIST团队提出面向移动平台情境感知助手的多模态自回归模型加速器Soracle，针对VLM类'看图+生成'负载做专用加速。",
+        "whats_new_zh": [
+          "面向移动端多模态自回归（VLM）推理",
+          "目标场景：情境感知助手（context-aware assistance）"
+        ],
+        "key_specs": {
+          "npu": "多模态自回归加速器",
+          "other": "工艺/能效未在目录中披露"
+        },
+        "edge_ai_impact_zh": "端侧助手从纯文本LLM走向'摄像头常开+多模态生成'，Soracle代表学界开始为VLM decode阶段专门设计硬件。",
+        "evidence_urls": [
+          "https://www.proceedings.com/content/086/086455webtoc.pdf"
+        ],
+        "confidence": "medium",
+        "venue": "VLSI 2026 (IEEE/JSAP Symposium on VLSI Technology & Circuits, Honolulu, 6/14-18)",
+        "affiliation": "KAIST（Hoi-Jun Yoo 课题组）",
+        "authors": "Wenao Xie, Zhongqi Li, Jiaer Chen et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "负载特征",
+            "points": [
+              "多模态自回归：视觉编码（计算密集）+语言decode（带宽密集）两段负载特性截然不同",
+              "论文标题未给出能效数字，详细指标未披露"
+            ]
+          },
+          {
+            "heading": "同届对照",
+            "points": [
+              "同届KAIST另一论文SR-VLNA（5.0-23.9 mJ/meter视觉语言导航加速器）面向具身智能体"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-06-14",
+        "vendor": "Cornell（Jae-sun Seo 课题组）",
+        "category": "学术研究",
+        "title": "Spectra: An Asymmetric-Precision Speculative Decoding LLM Accelerator with Product Quantization and Reconfigurable Flip-Flop Buffers in 28nm CMOS",
+        "title_zh": "Spectra：非对称精度投机解码LLM加速器",
+        "url": "https://www.proceedings.com/content/086/086455webtoc.pdf#spectra-an-asymmetric-precision-speculat",
+        "source_type": "论文",
+        "summary_zh": "论文在28nm CMOS上实现投机解码（speculative decoding）LLM加速器：草稿模型与目标模型采用非对称精度，结合乘积量化（Product Quantization）与可重构触发器缓冲。",
+        "whats_new_zh": [
+          "硬件级投机解码：小模型草稿+大模型校验",
+          "非对称精度：草稿/校验使用不同位宽",
+          "乘积量化压缩权重/激活",
+          "28nm CMOS实现"
+        ],
+        "key_specs": {
+          "process": "28nm CMOS",
+          "npu": "投机解码LLM加速器",
+          "memory": "可重构flip-flop缓冲"
+        },
+        "edge_ai_impact_zh": "端侧LLM decode受限于带宽，投机解码用'一次校验多token'摊薄权重读取；Spectra把这一算法技巧固化到硅上，是提升端侧tokens/s的可行方向。",
+        "evidence_urls": [
+          "https://www.proceedings.com/content/086/086455webtoc.pdf"
+        ],
+        "confidence": "medium",
+        "venue": "VLSI 2026 (IEEE/JSAP Symposium on VLSI Technology & Circuits, Honolulu, 6/14-18)",
+        "affiliation": "Cornell（Jae-sun Seo 课题组）",
+        "authors": "HanGyeol Mun, Jian Meng, Chun-Ting Chen et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "算法-硬件协同",
+            "points": [
+              "投机解码：草稿模型低精度快速生成，目标模型一次并行校验多个token",
+              "Product Quantization以码本查找替代部分乘法"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "使用可重构flip-flop缓冲而非全部SRAM，可能用于小容量高带宽的码本/中间态存储（具体容量未披露）"
+            ]
+          },
+          {
+            "heading": "指标",
+            "points": [
+              "能效、tokens/s与支持的模型规模在目录中未披露"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-06-14",
+        "vendor": "Stanford / TSMC 合作（Thierry Tambe、Priyanka Raina、Meng-Fan Chang 等）",
+        "category": "学术研究",
+        "title": "µAgent: A 7nm 404.3mJ/Action Edge SoC for Agentic AI Reasoning with Adaptive Block-Wise Mixed-Format 4-Bit Quantization and Decoupled Access-Execute",
+        "title_zh": "µAgent：7nm端侧智能体推理SoC",
+        "url": "https://www.proceedings.com/content/086/086455webtoc.pdf#agent-a-7nm-404-3mj-action-edge-soc-for",
+        "source_type": "论文",
+        "summary_zh": "论文提出7nm端侧Agentic AI推理SoC µAgent，以'每个动作能耗'衡量，达404.3 mJ/Action；采用自适应分块混合格式4-bit量化与访存/执行解耦（Decoupled Access-Execute）架构。",
+        "whats_new_zh": [
+          "404.3 mJ/Action（智能体单步动作能耗）",
+          "自适应block-wise混合格式4-bit量化（MX类块缩放思路）",
+          "Decoupled Access-Execute隐藏访存延迟",
+          "7nm工艺"
+        ],
+        "key_specs": {
+          "process": "7nm",
+          "npu": "4-bit混合格式Agentic推理SoC",
+          "power": "404.3 mJ/Action"
+        },
+        "edge_ai_impact_zh": "能效指标从TOPS/W、μJ/token进一步上升到'mJ/Action'，反映端侧AI从单次推理走向多步推理+工具调用的智能体负载；4-bit块格式已成为端侧LLM硬件默认精度。",
+        "evidence_urls": [
+          "https://www.proceedings.com/content/086/086455webtoc.pdf"
+        ],
+        "confidence": "medium",
+        "venue": "VLSI 2026 (IEEE/JSAP Symposium on VLSI Technology & Circuits, Honolulu, 6/14-18)",
+        "affiliation": "Stanford / TSMC 合作（Thierry Tambe、Priyanka Raina、Meng-Fan Chang 等）",
+        "authors": "Wonsuk Jang, Christian Kubicka, Allen Pan et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "量化与精度",
+            "points": [
+              "Adaptive block-wise mixed-format 4-bit：按块选择INT4/FP4等格式及缩放因子，兼顾outlier",
+              "4-bit权重使同等带宽下可读取的参数量为INT8的2倍"
+            ]
+          },
+          {
+            "heading": "访存架构",
+            "points": [
+              "Decoupled Access-Execute：独立访存引擎预取权重/KV，计算单元不因DRAM延迟停顿，针对decode阶段带宽受限"
+            ]
+          },
+          {
+            "heading": "能效口径",
+            "points": [
+              "404.3 mJ/Action为智能体单步动作总能耗；模型规模与每步token数未在目录中披露"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-06-14",
+        "vendor": "北京大学（Tianyu Jia、Le Ye 课题组）",
+        "category": "学术研究",
+        "title": "A 122.2 µJ/Token Reasoning LLM Accelerator with Reinforcement Fine-Tune Featuring Two-Level KV-Cache Compression and Spike-Driven Predictive Update",
+        "title_zh": "北大推理LLM加速器：122.2 µJ/token",
+        "url": "https://www.proceedings.com/content/086/086455webtoc.pdf#a-122-2-j-token-reasoning-llm-accelerato",
+        "source_type": "论文",
+        "summary_zh": "论文提出面向推理型（reasoning）LLM的加速器，能效122.2 µJ/token，支持强化微调（RL fine-tune），采用两级KV Cache压缩与脉冲驱动预测更新。",
+        "whats_new_zh": [
+          "122.2 µJ/token（标题口径）",
+          "两级KV Cache压缩：针对推理模型长思维链导致的KV膨胀",
+          "支持片上强化微调",
+          "Spike-driven predictive update降低更新开销"
+        ],
+        "key_specs": {
+          "npu": "推理LLM加速器",
+          "memory": "两级KV Cache压缩",
+          "power": "122.2 µJ/token"
+        },
+        "edge_ai_impact_zh": "推理模型的长CoT让KV Cache成为端侧内存第一大户；两级KV压缩直接针对LPDDR容量/带宽瓶颈，比单纯提高TOPS更契合端侧现实。",
+        "evidence_urls": [
+          "https://www.proceedings.com/content/086/086455webtoc.pdf"
+        ],
+        "confidence": "medium",
+        "venue": "VLSI 2026 (IEEE/JSAP Symposium on VLSI Technology & Circuits, Honolulu, 6/14-18)",
+        "affiliation": "北京大学（Tianyu Jia、Le Ye 课题组）",
+        "authors": "Mingxuan Li, Wenjie Ren, Zhuolin Li et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "两级KV Cache压缩：推理型LLM输出token数远多于普通对话，KV随序列线性增长",
+              "压缩后可在同等DRAM容量下支持更长上下文（压缩率未披露）"
+            ]
+          },
+          {
+            "heading": "训练/适配",
+            "points": [
+              "支持Reinforcement Fine-Tune，在端侧做个性化强化微调",
+              "Spike-Driven Predictive Update：仅在预测需要时更新，降低训练能耗"
+            ]
+          },
+          {
+            "heading": "能效对比",
+            "points": [
+              "122.2 µJ/token；对比同届TinyNPU 0.06-134.36 µJ/token，二者模型规模不同不可直接比较",
+              "工艺、模型规模未在目录中披露"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-06-14",
+        "vendor": "尹首一、涂锋斌等团队（机构以论文为准）",
+        "category": "学术研究",
+        "title": "A 28nm 44.15TFLOPS/W and 1.57TFLOPS/mm² Joint-Alignment Floating-Point CIM Macro with ISO26262 ASIL-D Safety Level for Autonomous Driving",
+        "title_zh": "28nm车规浮点CIM宏：44.15 TFLOPS/W",
+        "url": "https://www.proceedings.com/content/086/086455webtoc.pdf#a-28nm-44-15tflops-w-and-1-57tflops-mm-j",
+        "source_type": "论文",
+        "summary_zh": "论文提出28nm联合对齐（Joint-Alignment）浮点CIM宏，能效44.15 TFLOPS/W、面积效率1.57 TFLOPS/mm²，并满足ISO 26262 ASIL-D功能安全等级，面向自动驾驶。",
+        "whats_new_zh": [
+          "28nm浮点CIM，44.15 TFLOPS/W、1.57 TFLOPS/mm²",
+          "Joint-Alignment浮点对齐方案",
+          "ISO 26262 ASIL-D安全等级"
+        ],
+        "key_specs": {
+          "process": "28nm",
+          "npu": "浮点CIM宏，44.15 TFLOPS/W，1.57 TFLOPS/mm²",
+          "other": "ASIL-D"
+        },
+        "edge_ai_impact_zh": "CIM首次在顶会上以ASIL-D为卖点，说明存内计算开始面对车规可靠性要求（软错误、故障检测），为车载/机器人端侧Transformer打开路径。",
+        "evidence_urls": [
+          "https://www.proceedings.com/content/086/086455webtoc.pdf"
+        ],
+        "confidence": "medium",
+        "venue": "VLSI 2026 (IEEE/JSAP Symposium on VLSI Technology & Circuits, Honolulu, 6/14-18)",
+        "affiliation": "尹首一、涂锋斌等团队（机构以论文为准）",
+        "authors": "Zhen He, Yiqi Wang, Zhiheng Yue et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "浮点CIM",
+            "points": [
+              "Joint-Alignment：权重与输入联合对齐指数，减少逐乘积对齐",
+              "与华科40nm FP8 CIM形成两条浮点CIM技术路线"
+            ]
+          },
+          {
+            "heading": "功能安全",
+            "points": [
+              "满足ISO 26262 ASIL-D：需片上故障检测/纠错机制（具体机制未在目录中披露）"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-06-14",
+        "vendor": "清华大学（吴华强、高滨、唐建石团队）",
+        "category": "学术研究",
+        "title": "Flexible Monolithic 3D Integration of RRAM-based CIM, CNT CMOS Circuits and IGZO FET-based Sensor and Display for Augmented Reality Contact Lenses",
+        "title_zh": "清华：RRAM存内计算AR隐形眼镜单片3D集成",
+        "url": "https://www.proceedings.com/content/086/086455webtoc.pdf#flexible-monolithic-3d-integration-of-rr",
+        "source_type": "论文",
+        "summary_zh": "清华团队在柔性衬底上单片3D集成RRAM存内计算、碳纳米管（CNT）CMOS电路以及IGZO FET传感器与显示，面向增强现实隐形眼镜。",
+        "whats_new_zh": [
+          "柔性单片3D：RRAM-CIM+CNT CMOS+IGZO传感/显示",
+          "目标形态：AR隐形眼镜"
+        ],
+        "key_specs": {
+          "process": "柔性单片3D（RRAM/CNT/IGZO）",
+          "npu": "RRAM模拟CIM"
+        },
+        "edge_ai_impact_zh": "可穿戴AI的终极形态之一；虽距产品很远，但展示了非易失RRAM-CIM在'无外部存储、极小面积'场景的独特价值（权重断电不丢失、零待机功耗）。",
+        "evidence_urls": [
+          "https://www.proceedings.com/content/086/086455webtoc.pdf"
+        ],
+        "confidence": "medium",
+        "venue": "VLSI 2026 (IEEE/JSAP Symposium on VLSI Technology & Circuits, Honolulu, 6/14-18)",
+        "affiliation": "清华大学（吴华强、高滨、唐建石团队）",
+        "authors": "Weijin Wang, Yibei Zhang, Jianshi Tang et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "存内计算",
+            "points": [
+              "RRAM为非易失器件，权重常驻、无需上电加载，适合极低功耗常开场景",
+              "具体能效、阵列规模未在目录中披露"
+            ]
+          },
+          {
+            "heading": "集成方式",
+            "points": [
+              "CNT CMOS与IGZO均可低温工艺制备，使逻辑、存储、传感、显示在柔性衬底上单片堆叠"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-06-14",
+        "vendor": "中科院微电子所（叶甜春、殷华湘团队等）",
+        "category": "学术研究",
+        "title": "Monolithic 3D Integration of Stacked IGZO/Si Memtransistor-Based 2T0c Gain Cell for Attention Computation and CFET SRAM-DCIM With Multiple Spectral CNT-Sensors for End-To-End Vision Transformers (ViTs) on Edge AI",
+        "title_zh": "中科院微电子所：IGZO 2T0C注意力+CFET SRAM-DCIM",
+        "url": "https://www.proceedings.com/content/086/086455webtoc.pdf#monolithic-3d-integration-of-stacked-igz",
+        "source_type": "论文",
+        "summary_zh": "论文以单片3D集成堆叠IGZO/Si忆晶体管2T0C增益单元用于注意力计算，结合CFET SRAM-DCIM与多光谱CNT传感器，实现端侧ViT端到端处理。",
+        "whats_new_zh": [
+          "IGZO 2T0C增益单元承担Attention（动态权重）计算",
+          "CFET SRAM-DCIM承担静态权重GEMM",
+          "多光谱CNT传感器单片集成"
+        ],
+        "key_specs": {
+          "process": "单片3D：IGZO/Si + CFET",
+          "npu": "2T0C注意力CIM + SRAM-DCIM",
+          "memory": "IGZO 2T0C增益单元（无电容DRAM）"
+        },
+        "edge_ai_impact_zh": "Attention中K/V随输入变化，SRAM-CIM写入代价高；用IGZO 2T0C（长保持、低漏电的无电容DRAM）做'动态权重CIM'，是CIM支持Transformer的关键思路之一。",
+        "evidence_urls": [
+          "https://www.proceedings.com/content/086/086455webtoc.pdf"
+        ],
+        "confidence": "medium",
+        "venue": "VLSI 2026 (IEEE/JSAP Symposium on VLSI Technology & Circuits, Honolulu, 6/14-18)",
+        "affiliation": "中科院微电子所（叶甜春、殷华湘团队等）",
+        "authors": "Yanqing Li, Yunjiao Bao, Mingcheng Shi et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "存内计算分工",
+            "points": [
+              "静态权重→CFET SRAM-DCIM；动态QK^T/AV→IGZO 2T0C增益单元",
+              "感-存-算一体：多光谱CNT传感器直接给ViT供数"
+            ]
+          },
+          {
+            "heading": "器件背景",
+            "points": [
+              "同届多篇IGZO 2T0C/3D DRAM论文（如3 bits/cell、400s保持的双栅IGZO 2T0C）显示氧化物半导体DRAM正成为3D CIM底座",
+              "能效数字未在目录中披露"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-06-14",
+        "vendor": "Georgia Tech（Arijit Raychowdhury 课题组）",
+        "category": "学术研究",
+        "title": "Event-Gaze: A 28nm 441μs-Latency 12.88mW SoC for Sparse-Event-Based Dynamic Eye Tracking and Gaze Estimation in XR",
+        "title_zh": "Event-Gaze：12.88mW事件相机眼动SoC",
+        "url": "https://www.proceedings.com/content/086/086455webtoc.pdf#event-gaze-a-28nm-441-s-latency-12-88mw",
+        "source_type": "论文",
+        "summary_zh": "论文提出28nm事件驱动眼动追踪与注视估计SoC，利用稀疏事件相机数据，延迟441µs、功耗12.88mW，面向XR设备。",
+        "whats_new_zh": [
+          "28nm，延迟441µs，功耗12.88mW",
+          "基于稀疏事件（event-based）输入，只处理变化像素"
+        ],
+        "key_specs": {
+          "process": "28nm",
+          "power": "12.88mW",
+          "other": "延迟441µs"
+        },
+        "edge_ai_impact_zh": "眼动是XR/AI眼镜的常开负载，事件驱动+专用SoC把功耗压到十mW级，与Ganzin EPU2等产业方案方向一致。",
+        "evidence_urls": [
+          "https://www.proceedings.com/content/086/086455webtoc.pdf"
+        ],
+        "confidence": "medium",
+        "venue": "VLSI 2026 (IEEE/JSAP Symposium on VLSI Technology & Circuits, Honolulu, 6/14-18)",
+        "affiliation": "Georgia Tech（Arijit Raychowdhury 课题组）",
+        "authors": "Nealson Li, Che-Kai Liu, Zachary J. Ellis et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "常驻 AI",
+            "points": [
+              "事件相机只输出亮度变化，数据天然稀疏，计算量随眼动而非帧率增长",
+              "441µs延迟满足注视点渲染需求"
+            ]
+          },
+          {
+            "heading": "功耗对照",
+            "points": [
+              "12.88mW（论文口径）；产业侧Ganzin EPU2称功耗约为NPU方案1/4（未给绝对值）"
+            ]
+          }
+        ]
+      }
+    ],
+    "overview": "AWE 与 VLSI 周（06-12~06-18）。高通在 AWE 发布 Snapdragon Reality Elite XR 平台：AI 最高 48 TOPS，NPU 比 XR2+ Gen 2 提升 160%，官方称可端侧运行 3B 语言模型、45 tok/s（TechCrunch 转述，精度和功耗未披露）；同时推出基于 AR1+ 的智能眼镜交钥匙方案 START。Snap Specs AR 眼镜在镜框内放了两颗骁龙，但 AI 助手仍依赖云端。VLSI 2026（06-14~18）集中展示存内计算进入先进工艺和可穿戴设备：联发科 3nm 数字存内计算 TinyNPU 峰值 1.47 TOPS、0.06–134.36 µJ/token；台积电 2nm 存内计算编译器达 234.4 TOPS/W；另有 70.2 TOPS/W 的头显混合 CIM-NPU、122.2 µJ/token 的北大推理 LLM 加速器、7nm 端侧智能体 SoC µAgent 和 SAIMEMORY 9 层晶圆堆叠 3D 内存。华为 HDC 发布 HarmonyOS 7 Beta 与智能体框架 2.0，但没有给出端侧模型规模。Ganzin EPU2 眼动 ASIC 称功耗约为 NPU 方案的 1/4。",
+    "takeaways_zh": [
+      "XR 平台第一次给出 LLM 吞吐（3B、45 tok/s），眼镜和头显开始把“端侧小模型”当作卖点，但眼镜形态的大模型仍在手机或云端。",
+      "存内计算正从“宏”走向产品化 IP：联发科、台积电在 2nm/3nm 上的数字 CIM 说明它首先会以常驻、可穿戴的小 NPU 形式进入终端，而不是承担大模型。",
+      "眼动、语音唤醒等常开任务正在从通用 NPU 剥离到专用 ASIC，功耗以毫瓦计。"
+    ]
   }
 }
