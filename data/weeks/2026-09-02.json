@@ -5010,5 +5010,283 @@
         "evidence_url": ""
       }
     ]
+  },
+  "hardware": {
+    "window": {
+      "start": "2026-09-02",
+      "end": "2026-09-08"
+    },
+    "overview": "本周硬件侧的信号是“IP 先行、国产自研抢跑”。Arm 发布 CSS for Mobile 2：C2-Ultra 的 AI 性能最高是 C1-Ultra 的 1.7 倍，集群里的 SME2 单元从一个增加到两个，Mali G2-Ultra NX 首次在 GPU 内加入神经加速器，这基本决定了明年安卓旗舰的 CPU/GPU 底座。国产两颗自研芯片同周亮相：小米 18 Fold 搭载 3nm 玄戒 O3（NPU 200 TOPS），首发长鑫 LPDDR6；华为 Mate XT2 首发麒麟 9050 Pro，靠 LogicFolding 把晶体管密度从约 155 提到 238 MTr/mm²，官方称同性能下 NPU 功耗降低 66%。PC 侧，英伟达 RTX Spark（N1X）确认 10 月上市，最高配 128GB 统一内存。低功耗侧，BrainChip AKD1500 开始量产爬坡，高通 Dragonwing Q-2390 把 RISC-V 实时核放进了物联网 SoC。",
+    "items": [
+      {
+        "date": "2026-09-08",
+        "vendor": "Arm",
+        "category": "移动SoC",
+        "title": "Arm CSS for Mobile 2: AI-native compute platform built for agentic AI and mobile graphics",
+        "title_zh": "Arm CSS for Mobile 2：C2 CPU集群与G2-Ultra NX",
+        "url": "https://newsroom.arm.com/news/arm-css-for-mobile-2-agentic-ai-mobile-graphics",
+        "source_type": "官方",
+        "summary_zh": "Arm发布面向2026-2027旗舰手机的CSS for Mobile 2平台，包括C2 CPU集群（C2-Ultra/C2-Pro）、首款带专用神经加速器的Mali G2-Ultra NX GPU、系统IP与物理实现。Arm将其定位为“面向智能体AI的AI原生计算底座”，媒体注意到原“Lumex”品牌似已淡化。",
+        "whats_new_zh": [
+          "C2-Ultra对比C1-Ultra：AI性能最高1.7倍、单线程+15%、同性能功耗最多-38%",
+          "C2集群内置两个SME2单元（上代为一个），官方称最新小语言模型（SLM）加速70%",
+          "集群级多线程+12%、网页浏览+15%、应用启动+12%（CNX整理的官方数据）",
+          "Mali G2-Ultra NX：首款带专用神经加速器的Mali，神经图形能效最高4倍，现有游戏性能+14%；RTUv3光追，10-24核可配",
+          "神经图形：NSS（540p→1080p超分）、NFRU（30→60fps插帧）、NSSD（超分+降噪）"
+        ],
+        "key_specs": {
+          "process": "未公布（参考实现面向3nm/2nm级）",
+          "cpu": "C2-Ultra（Armv9.3-A，L2 2/3MB，可选L3最高32MB，单簇最多14核）+ C2-Pro；双SME2单元",
+          "gpu": "Mali G2-Ultra NX，10-24核，RTUv3，神经加速器",
+          "npu": "无独立NPU，AI经SME2与GPU神经加速器",
+          "other": "配套KleidiAI、Neural Graphics Development Kit、AI Portal；SME2生态伙伴含支付宝、Google AI Edge Gallery、OPPO、vivo"
+        },
+        "edge_ai_impact_zh": "Arm继续把矩阵算力放进CPU集群（SME2×2），让LLM解码等对延迟敏感的小批量负载可在CPU上高效运行，降低对各家私有NPU SDK的依赖；GPU神经加速器则为端侧生成式图形打开通道。天玑9600 Pro已率先采用C2核与G2-Ultra NX。",
+        "evidence_urls": [
+          "https://www.cnx-software.com/2026/09/08/arm-css-for-mobile-2-ai-native-platform-arm-c2-ultra-and-c2-pro-cpu-cores-mali-g2-ultra-nx-gpu",
+          "https://newsroom.arm.com/blog/arm-css-for-mobile-2-and-c2-cpu-cluster",
+          "https://chipsandcheese.com/p/arms-c2-ultra-g2-ultra-nx-and-css"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-07",
+        "vendor": "Xiaomi",
+        "category": "移动SoC",
+        "title": "Xiaomi 18 Fold launches as first phone with in-house XRING O3 and CXMT LPDDR6",
+        "title_zh": "小米18 Fold首发玄戒O3与长鑫LPDDR6",
+        "url": "https://www.crnasia.com/news/2026/components-and-peripherals/xiaomi-s-xring-o3-goes-into-mass-production",
+        "source_type": "媒体",
+        "summary_zh": "小米于9月7日在国内发布“中折叠”屏手机小米18 Fold，首发自研玄戒O3（XRING O3，8月24日技术沟通会公布）。O3采用台积电3nm，240亿晶体管、133mm²，NPU算力200 TOPS，是首款支持LPDDR6的手机芯片，并搭载长鑫存储（CXMT）量产的LPDDR6。",
+        "whats_new_zh": [
+          "台积电3nm，240亿晶体管/133mm²，较O1晶体管数+26%",
+          "媒体披露10核CPU：2×C1-Ultra（4.35GHz）+4×C1-Premium+4×C1-Pro，双SME2单元；16核G2-Ultra NX GPU（含8个神经加速器）",
+          "NPU 200 TOPS，较O1提升45%，围绕小米MiMo模型重构",
+          "首款支持LPDDR6的手机SoC，内存带宽113.8GB/s（较O1+48%）；CXMT LPDDR6最高12800Mbps，整机运行于10667Mbps",
+          "小米18 Fold起售10999元，出货目标20-30万颗（路透援引消息）"
+        ],
+        "key_specs": {
+          "process": "TSMC 3nm",
+          "cpu": "10核（媒体）：2×C1-Ultra 4.35GHz + 4×C1-Premium + 4×C1-Pro，双SME2",
+          "gpu": "16核 Arm G2-Ultra NX",
+          "npu": "200 TOPS（精度未披露）",
+          "memory": "LPDDR6（CXMT，16GB），带宽113.8GB/s",
+          "other": "同时用于小米Pad 9 Max；8月29日CXMT宣布LPDDR6量产"
+        },
+        "edge_ai_impact_zh": "国产SoC+国产LPDDR6首次在旗舰机组合落地；200 TOPS NPU与113.8GB/s带宽直接服务端侧大模型解码，NPU围绕自家MiMo模型协同设计体现了“模型-芯片垂直整合”的趋势。",
+        "evidence_urls": [
+          "https://www.ubergizmo.com/2026/09/xiaomi-18-fold-debuts-at-ifa-2026-with-in-house-xring-o3-chip/",
+          "https://www.gearlive.com/news/article/xiaomi-18-fold-219-grams-xring-o3-china-only",
+          "https://technode.com/2026/08/31/cxmt-starts-lpddr6-mass-production-for-xiaomis-upcoming-18-fold/",
+          "https://aicybr.com/blog/xiaomi-xring-o3-deep-dive"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-07",
+        "vendor": "Huawei (HiSilicon)",
+        "category": "移动SoC",
+        "title": "Huawei Mate XT 2 tri-fold debuts Kirin 9050 Pro with LogicFolding",
+        "title_zh": "华为Mate XT2首发麒麟9050 Pro（LogicFolding）",
+        "url": "https://www.iphoneincanada.ca/2026/09/07/huaweis-new-mate-xt-2-tri-fold-is-powered-by-physics-defying-silicon/",
+        "source_type": "媒体",
+        "summary_zh": "华为9月7日在广州发布第二代三折叠Mate XT 2非凡大师，同时发布麒麟9050 Pro与HarmonyOS 7。麒麟9050 Pro是“韬（Tau）定律”下LogicFolding（逻辑折叠）架构的首款商用芯片，通过在单芯片内垂直堆叠逻辑电路缩短关键路径，在不依赖更先进光刻节点的前提下提升晶体管密度。",
+        "whats_new_zh": [
+          "整机性能较上代Mate XTs提升42%（单核+24%、多核+52%，华为口径）",
+          "晶体管密度提升超50%（约155→238 MTr/mm²）",
+          "同性能下NPU功耗-66%、GPU功耗-58%、CPU大核功耗-41%（人民日报援引）",
+          "Mate XT2配16GB内存，最高2TB存储，9月12日在国内开售"
+        ],
+        "key_specs": {
+          "process": "未官方披露；分析师估计为SMIC N+2/N+3（7nm级DUV）",
+          "cpu": "媒体/跑分：9核（1×3.1GHz + 2×2.7GHz + 4×2.2GHz + 2×1.75GHz），支持超线程",
+          "gpu": "Maleoon 955（6核，跑分信息），硬件光追",
+          "npu": "达芬奇架构NPU（未公布TOPS）",
+          "memory": "媒体称支持LPDDR6（未经官方确认）",
+          "other": "HarmonyOS 7"
+        },
+        "edge_ai_impact_zh": "在先进制程受限条件下，华为通过架构/3D逻辑折叠获得大幅能效改善，特别是NPU同性能功耗降低三分之二，对端侧AI持续运行的发热与续航意义重大。",
+        "evidence_urls": [
+          "https://www.notebookcheck.net/Huawei-Mate-XT-2-launches-as-10-2-inch-foldable-with-ECG-variable-aperture-and-privacy-display.1391917.0.html",
+          "https://borncity.com/news/kirin-9050-pro-huaweis-neuer-flaggschiff-chip-mit-42-mehr-leistung/",
+          "https://thenextweb.com/news/huawei-tau-scaling-law-chip-queen-logicfolding"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-03",
+        "vendor": "NVIDIA / MediaTek",
+        "category": "PC芯片",
+        "title": "Nvidia's RTX Spark N1X launches in October for laptops and desktops — 18 or 20 CPU cores, paired with 5,120 or 6,144 CUDA cores, up to 128GB of unified memory",
+        "title_zh": "NVIDIA RTX Spark（N1X）确认10月上市",
+        "url": "https://www.tomshardware.com/laptops/nvidias-rtx-spark-n1x-launches-in-october-for-laptops-and-desktops-18-or-20-cpu-cores-paired-with-5-120-or-6-144-cuda-cores-up-to-128gb-of-unified-memory",
+        "source_type": "媒体",
+        "summary_zh": "NVIDIA在IFA 2026前夕公布与联发科合作的Arm PC芯片N1X（品牌RTX Spark）的两档配置与上市时间：首批笔记本与小型台式机10月起出货。高配为20核Grace CPU + 6144 CUDA核Blackwell GPU，统一内存24-128GB；低配为18核CPU + 5120核GPU，24/32GB，仅用于笔记本。",
+        "whats_new_zh": [
+          "两档N1X：20核CPU/6144核GPU/最高128GB；18核CPU/5120核GPU/24-32GB",
+          "TSMC 3nm，CPU与GPU两颗die经2.5D封装（媒体，部分为GB10数据）",
+          "256-bit LPDDR5X（最高约9400MT/s，约300GB/s，媒体整理，未获官方确认）",
+          "AI算力高配约1 PFLOPS FP4（稀疏），低配约400 TFLOPS（媒体援引路线图）",
+          "合作OEM：Acer、ASUS、Dell、Gigabyte、HP、Lenovo、Microsoft、MSI"
+        ],
+        "key_specs": {
+          "process": "TSMC 3nm",
+          "cpu": "最高20核 Arm（Grace，联发科设计，Armv9.2）",
+          "gpu": "Blackwell RTX，6144或5120 CUDA核",
+          "npu": "无独立NPU TOPS公布；AI主要由GPU Tensor Core承担（FP4约1 PFLOPS）",
+          "memory": "LPDDR5X统一内存24-128GB，约300GB/s（未官方确认）",
+          "other": "完整CUDA/TensorRT支持Windows on Arm"
+        },
+        "edge_ai_impact_zh": "这是首个把大容量统一内存+完整CUDA带到Windows on Arm笔记本的平台，可本地运行百亿至千亿级参数模型，PC端侧AI的竞争焦点从NPU TOPS转向“内存容量×带宽×软件生态”。",
+        "evidence_urls": [
+          "https://www.implicator.ai/nvidia-sets-october-launch-for-rtx-spark-n1x-without-naming-a-price/",
+          "https://www.gdm.or.jp/pressrelease/2026/0904/650789",
+          "https://windowscentral.com/hardware/nvidia/nvidia-confirms-rtx-spark-configurations-and-availability-first-devices-expected-to-begin-shipping-as-soon-as-next-month-with-two-n1x-configs-on-offer"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-03",
+        "vendor": "BrainChip",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "BrainChip to provide investor update (ASX announcement)",
+        "title_zh": "BrainChip：AKD1500量产爬坡，AKD2500年底流片",
+        "url": "https://bulletin.webull.com/qbd/announcement/20260903/499500695/a1bb1f299a32b44710664df9b2490aaa.pdf",
+        "source_type": "官方",
+        "summary_zh": "神经形态芯片公司BrainChip于9月3日发布ASX公告，宣布9月11日举行投资者商业进展说明会。据7月的季报，公司已收到首批2000颗AKD1500量产芯片，计划2026年下半年开始商业出货，首轮产量因良率原因从约7万颗下调到约6万颗。AKD2500计划在2026年12月初流片。",
+        "whats_new_zh": [
+          "AKD1500首批2000颗量产芯片到货，H2 2026开始商业出货",
+          "首轮产量约60,000颗（原计划约70,000颗），初期良率低于预期",
+          "AKD2500计划2026年12月初流片；已向授权方EDGEAI交付Akida 2.0 RTL",
+          "6月季度末现金2030万美元，季度经营现金净流出470万美元"
+        ],
+        "key_specs": {
+          "npu": "Akida AKD1500 (event-based neuromorphic)",
+          "other": "M.2形态AKD1500面向无风扇设计"
+        },
+        "edge_ai_impact_zh": "神经形态芯片终于进入小批量量产阶段，但营收规模仍然很小，商业化节奏偏慢。",
+        "evidence_urls": [
+          "https://www.fool.com.au/2026/07/27/brainchip-posts-q2-cash-chips-hit-commercial-production/"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-04",
+        "vendor": "Qualcomm",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Qualcomm Introduces Dragonwing Q-2390 and IQ-2390 Processors, Expanding Access to Intelligent Connected Devices",
+        "title_zh": "Dragonwing Q-2390/IQ-2390物联网芯片",
+        "url": "https://www.edge-ai-vision.com/2026/09/qualcomm-introduces-dragonwing-q-2390-and-iq-2390-processors-expanding-access-to-intelligent-connected-devices/",
+        "source_type": "媒体",
+        "summary_zh": "高通在IFA 2026之前发布两款入门级AIoT处理器，并在IFA展台展示了模组。原始新闻稿约在9月1日发布，略早于本期窗口；Edge AI and Vision Alliance于9月4日转载。Q-2390面向消费和商用设备，IQ-2390是工业级IQ2系列的首款产品。",
+        "whats_new_zh": [
+          "采用四核Kryo CPU、Adreno 704 GPU和RISC-V实时MCU，支持Linux、Android和Zephyr",
+          "Q-2390集成LTE Cat 4和GPS；IQ-2390支持双千兆以太网TSN，工作温度-30°C至+115°C，供货至2036年",
+          "Fibocom、SECO、Engicam、Eight Development推出模组或SoM，评估套件预计2027年初提供"
+        ],
+        "key_specs": {
+          "cpu": "四核Kryo",
+          "gpu": "Adreno 704",
+          "other": "RISC-V MCU；NPU算力与工艺未公布"
+        },
+        "edge_ai_impact_zh": "这两款芯片把视觉AI和RISC-V实时控制下沉到低成本的工业和消费终端，扩大了高通在边缘AIoT长尾市场的覆盖。",
+        "evidence_urls": [
+          "https://www.cnx-software.com/2026/09/01/qualcomm-introduces-dragonwing-q-2390-and-iq-2390-for-consumer-and-industrial-aiot-applications/"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-08",
+        "vendor": "Arm",
+        "category": "软件栈/工具链",
+        "title": "Arm unveils Arm AI Portal",
+        "title_zh": "Arm AI Portal：面向开发者与编码Agent的模型门户",
+        "url": "https://newsroom.arm.com/news/arm-unveils-arm-ai-portal",
+        "source_type": "官方",
+        "summary_zh": "Arm推出AI Portal（developer.arm.com/ai），集中提供针对Arm CPU优化的模型、代码与工具，覆盖语言、语音、视觉与神经图形。首批模型包括Qwen、Gemma与YOLO，运行时支持ExecuTorch、LiteRT和ONNX Runtime，并通过MCP向编码Agent开放。",
+        "whats_new_zh": [
+          "Qwen3-TTS在vivo X300上借助SME2与混合量化单线程加速超过4倍",
+          "Ultralytics YOLO26n在vivo X300（SME2，FP16对FP32）上性能提升超40%",
+          "模型经Hugging Face分发，Portal资源可通过MCP被编码Agent调用；自带模型优化工具即将推出"
+        ],
+        "key_specs": {
+          "cpu": "面向SME2/NEON优化",
+          "other": "ExecuTorch / LiteRT / ONNX-RT；Qwen、Gemma、YOLO"
+        },
+        "edge_ai_impact_zh": "降低在Arm终端部署端侧模型的门槛，并首次把“给Agent用的工具链”（MCP接入）作为一等公民，有利于模型厂商绕开碎片化的NPU SDK直接在CPU上获得可用性能。",
+        "evidence_urls": [
+          "https://www.pocketgamer.biz/arm-unveils-ai-native-mobile-platform-for-agentic-ai-and-graphics/"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-08",
+        "vendor": "TrendForce",
+        "category": "产业动态",
+        "title": "Early Purchases Lift 2026 Smartphone Production Above Expectations; Full-Year Forecast Raised to 1.07 Billion Units, Says TrendForce",
+        "title_zh": "TrendForce上调2026手机产量至10.7亿部",
+        "url": "https://www.trendforce.com/presscenter/news/20260908-13222.html",
+        "source_type": "官方",
+        "summary_zh": "TrendForce称2Q26全球手机产量2.75亿部，同比降8%，降幅小于预期；因消费者预期2027年涨价提前购买及品牌修正过度减产，全年预测由10.5亿上调至10.7亿部（同比-14%），但强调并非真正复苏。",
+        "whats_new_zh": [
+          "2Q26产量2.75亿部，-8% YoY",
+          "全年预测10.7亿部，降幅由16%收窄至14%",
+          "三星6200万部(+7%)、苹果约5200万部(+14%)、OPPO约3000万、小米约2900万、vivo约2100万、传音近2000万(-27%)",
+          "三星加大入门/中端机ODM比例以对冲内存成本；传音因低价内存库存少受冲击更大",
+          "预计2027年内存合约价继续上涨"
+        ],
+        "key_specs": {},
+        "edge_ai_impact_zh": "内存成本成为手机市场分化主因，头部品牌凭借长约与库存优势扩大份额，端侧AI配置（大内存）更难下放到入门机。",
+        "evidence_urls": [
+          "https://www.trendforce.com/presscenter/news/20260514-13044.html"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-03",
+        "vendor": "Ambarella",
+        "category": "产业动态",
+        "title": "Ambarella, Inc. Announces Second Quarter Fiscal Year 2027 Financial Results",
+        "title_zh": "安霸FY27 Q2营收1.081亿美元，边缘AI创新高",
+        "url": "https://investor.ambarella.com/node/17291",
+        "source_type": "官方",
+        "summary_zh": "Ambarella公布FY2027第二季度营收1.081亿美元，同比增长13.2%，边缘AI、汽车与IoT收入创纪录。财报后股价下跌6.3%，市场担忧下季季节性、内存与供应链成本上涨及边缘基础设施新品执行风险。",
+        "whats_new_zh": [
+          "营收1.081亿美元（+13.2% YoY），GAAP毛利率57.7%（去年同期58.9%）",
+          "GAAP净亏损670万美元；Non-GAAP每股收益0.18美元",
+          "现金及有价证券2.723亿美元，新授权5000万美元回购"
+        ],
+        "key_specs": {
+          "other": "内存成本上涨被列为风险因素"
+        },
+        "edge_ai_impact_zh": "非手机边缘AI视觉芯片需求仍在增长，但内存涨价同样挤压了IoT/安防设备的毛利与BOM。",
+        "evidence_urls": [
+          "https://finviz.com/news/388851/ambarella-inc-announces-second-quarter-fiscal-year-2027-financial-results",
+          "https://www.itiger.com/news/2664041088"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-08",
+        "vendor": "University of Cyprus",
+        "category": "学术研究",
+        "title": "A Measurement Study of LLM Inference Trade-offs Across Edge Continuum Hardware",
+        "title_zh": "边缘连续体LLM推理能效实测（Jetson Orin等）",
+        "url": "https://arxiv.org/abs/2609.08307",
+        "source_type": "论文",
+        "summary_zh": "该研究在Jetson AGX Orin、近边缘服务器（纯CPU/GPU）和云端GPT-4o之间实测LLM推理的精度、延迟与能耗。结论：GPU服务器计算延迟最低，Jetson Orin凭借较低的平台功耗能耗最低，纯CPU又慢又耗电。参数量和权重文件大小并不能可靠预测精度或延迟。",
+        "whats_new_zh": [
+          "Jetson Orin测得能耗最低，纯CPU方案在延迟和能耗上均最差",
+          "流式token传输开销会改变最优部署位置（Pareto分析）",
+          "已被WIMS 2026接收"
+        ],
+        "key_specs": {
+          "other": "Jetson AGX Orin vs near-edge server"
+        },
+        "edge_ai_impact_zh": "提醒评估端侧AI时不能只看计算侧指标，端到端的token交付与平台功耗同样决定部署选择。",
+        "evidence_urls": [],
+        "confidence": "medium"
+      }
+    ]
   }
 }

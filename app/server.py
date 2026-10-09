@@ -28,6 +28,7 @@ from app import storage
 from app import weeks as weeks_mod
 from app import build as build_app
 from app import community
+from app import hardware
 from app.page import INDEX_HTML
 
 DEPLOY_SERVER = "http://127.0.0.1:8001"
@@ -54,7 +55,7 @@ def _deploy_to_ghpages() -> None:
         if build.returncode != 0:
             print(f"[DEPLOY] build.py failed: {build.stderr.strip()}", flush=True)
             return
-        for script_name in ("build_notes.py", "build_snn.py", "build_waic.py"):
+        for script_name in ("build_notes.py", "build_snn.py", "build_waic.py", "build_hardware.py"):
             auxiliary = subprocess.run(
                 [sys.executable, str(ROOT / "agent" / script_name)],
                 cwd=str(ROOT), capture_output=True, text=True, timeout=60,
@@ -256,6 +257,13 @@ class Handler(BaseHTTPRequestHandler):
                 payload = community.empty_community("社区雷达数据未通过校验，本周暂不展示线索。")
             self.send_json(200, payload)
             return
+        if parsed.path == "/api/hardware":
+            try:
+                payload = hardware.load_hardware(ROOT / "data" / "hardware_radar.json")
+            except hardware.HardwareValidationError:
+                payload = hardware.empty_hardware("硬件雷达数据未通过校验，本周暂不展示。")
+            self.send_json(200, payload)
+            return
         if parsed.path == "/api/weeks":
             self.send_json(200, {"weeks": weeks_mod.read_manifest()})
             return
@@ -270,7 +278,8 @@ class Handler(BaseHTTPRequestHandler):
             page = build_app.render_page(
                 INDEX_HTML, rec["papers"], rec["weekly"], rec["trending"],
                 manifest, week_label=label, weeks_base="", runtime=True,
-                community=rec.get("community") or {"coverage": [], "items": []})
+                community=rec.get("community") or {"coverage": [], "items": []},
+                hardware=rec.get("hardware"))
             self.send_html(page)
             return
         if parsed.path.startswith("/paper/"):

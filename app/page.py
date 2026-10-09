@@ -171,6 +171,44 @@ INDEX_HTML = """<!doctype html>
     .empty{color:var(--muted);font-size:13px;padding:34px 18px;text-align:center;border:1px dashed var(--rule);background:var(--panel)}
     .empty button{display:block;margin:10px auto 0;border:1px solid var(--rust);background:transparent;color:var(--rust);padding:5px 10px;cursor:pointer}
 
+    /* hardware radar: chips, low-power silicon, PIM and memory — editorial, outside the paper run */
+    .hardware{margin-top:38px;padding:20px 22px 16px;background:var(--paper);border:1px solid var(--rule);border-top:4px solid var(--hw);scroll-margin-top:12px}
+    .hardware .eyebrow{color:var(--hw)}
+    .hardware .section-note a{color:var(--hw);font-weight:600}
+    .hw-overview{margin:13px 0 12px;padding:12px 14px;background:var(--blue-soft);color:var(--ink);font-size:13px;line-height:1.75;border-left:3px solid var(--hw)}
+    .hw-filter{display:flex;align-items:center;flex-wrap:wrap;gap:5px;padding:9px 10px;margin-bottom:10px;border:1px solid var(--hair);background:var(--panel)}
+    .hw-filter:empty{display:none}
+    .hw-filter button{border:1px solid var(--hair);background:var(--paper);color:var(--muted);padding:3px 7px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:9.5px;cursor:pointer}
+    .hw-filter button:hover{border-color:var(--hw);color:var(--hw)}
+    .hw-filter button.active{border-color:var(--hw);background:var(--hw);color:var(--paper)}
+    .hw-list{display:grid;grid-template-columns:1fr;gap:7px}
+    .hw-item{display:grid;grid-template-columns:96px minmax(0,1fr) minmax(250px,.55fr);gap:18px;padding:15px 14px;background:var(--panel);border:1px solid var(--hair);content-visibility:auto;contain-intrinsic-size:180px}
+    .hw-item:hover{border-color:var(--hw)}
+    .hw-origin{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+    .hw-cat{color:var(--paper);background:var(--hw);padding:3px 7px;font-size:10px;font-weight:600;line-height:1.3}
+    .hw-vendor{color:var(--ink);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;font-weight:600}
+    .hw-date{color:var(--faint);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:9px}
+    .hw-main,.hw-judgement{min-width:0}
+    .hw-title{display:block;margin:0 0 3px;color:var(--ink);font-size:16px;font-weight:700;line-height:1.4;text-decoration:none}
+    .hw-title:hover{color:var(--hw)}
+    .hw-original{color:var(--faint);font-size:11px;margin-bottom:6px}
+    .hw-summary{margin:0 0 6px;color:var(--muted);font-size:12.5px;line-height:1.62}
+    .hw-new{margin:4px 0 6px;padding-left:18px;font-size:12px;line-height:1.6;color:var(--ink)}
+    .hw-new li{margin:2px 0}
+    .hw-specs{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+    .hw-spec{background:var(--slate-soft);color:var(--muted);padding:2px 6px;font-size:10.5px;line-height:1.45}
+    .hw-spec b{color:var(--hw);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:9px;margin-right:4px}
+    .hw-judgement{border-left:2px solid var(--blue-soft);padding-left:16px}
+    .hw-why{margin:0;color:var(--ink);font-size:11.5px;line-height:1.6}
+    .hw-why b{display:block;margin-bottom:3px;color:var(--hw);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:9px;letter-spacing:.4px}
+    .hw-links{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .hw-badge{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:9px;padding:1px 6px;border:1px solid var(--hair);color:var(--muted)}
+    .hw-badge.official{border-color:var(--moss);color:var(--moss)}
+    .hw-badge.low{border-color:var(--rust);color:var(--rust)}
+    .hw-link{color:var(--hw);font-size:10.5px;text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--hw) 45%,transparent)}
+    .hw-more{display:block;margin:12px auto 2px;border:1px solid var(--hw);background:transparent;color:var(--hw);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;padding:7px 15px;cursor:pointer}
+    .hw-more:hover{background:var(--hw);color:var(--paper)}
+
     /* community signals: useful leads, kept outside the formal weekly report */
     .community{margin-top:38px;padding:20px 22px 16px;background:var(--paper);border:1px solid var(--rule);border-top:4px solid var(--blue);scroll-margin-top:12px}
     .community-boundary{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:13px 0 11px;padding:9px 11px;background:var(--blue-soft);color:var(--muted);font-size:11.5px}
@@ -240,6 +278,7 @@ INDEX_HTML = """<!doctype html>
       .weekly-grid{grid-template-columns:1fr}.weekly-overview{padding-right:0;border-right:0;border-bottom:1px solid var(--hair);padding-bottom:16px}
       .source-map{grid-template-columns:repeat(3,minmax(0,1fr))}.source-card:nth-child(3){border-right:0}.source-card:nth-child(-n+3){border-bottom:1px solid var(--hair)}
       .community-item{grid-template-columns:70px minmax(0,1fr)}.community-judgement{grid-column:2}
+      .hw-item{grid-template-columns:80px minmax(0,1fr)}.hw-judgement{grid-column:2}
       .community-coverage{grid-template-columns:repeat(3,minmax(0,1fr))}.coverage-item{border-bottom:1px solid var(--hair)}
     }
     @media(max-width:680px){
@@ -250,6 +289,7 @@ INDEX_HTML = """<!doctype html>
       .source-map{grid-template-columns:1fr 1fr}.source-card{border-bottom:1px solid var(--hair)}.source-card:nth-child(odd){border-right:1px solid var(--hair)}.source-card:nth-child(even){border-right:0}
       .library-tools{grid-template-columns:1fr}.trending-row{grid-template-columns:34px 1fr}.trending-desc,.trending-meta{grid-column:2}
       .community{padding:17px 14px}.community-toolbar{grid-template-columns:1fr}.community-coverage{grid-template-columns:1fr 1fr}.community-item{grid-template-columns:1fr}.community-origin{flex-direction:row;align-items:center}.community-judgement{grid-column:1;border-left:0;border-top:2px solid var(--blue-soft);padding:10px 0 0}
+      .hardware{padding:17px 14px}.hw-item{grid-template-columns:1fr}.hw-origin{flex-direction:row;align-items:center;flex-wrap:wrap}.hw-judgement{grid-column:1;border-left:0;border-top:2px solid var(--blue-soft);padding:10px 0 0}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
   </style>
@@ -266,10 +306,12 @@ INDEX_HTML = """<!doctype html>
       </div>
       <div class="masthead-foot">
         <nav class="nav" aria-label="辅助内容">
+          <a class="nav-link" href="#hardware">硬件雷达</a>
           <a class="nav-link" href="#community">社区雷达</a>
           <a class="nav-link" href="notes.html">调研笔记 ↗</a>
           <a class="nav-link" href="snn.html">SNN 洞察 ↗</a>
           <a class="nav-link" href="waic.html">WAIC ↗</a>
+          <a class="nav-link" href="hardware.html">硬件洞察 ↗</a>
         </nav>
         <label><span class="sr-only">切换周</span><select class="week-switch" id="week-switch" title="切换周"></select></label>
       </div>
@@ -277,6 +319,16 @@ INDEX_HTML = """<!doctype html>
 
     <section class="recommendations" id="recommendations" aria-live="polite"></section>
     <section class="weekly" id="weekly"></section>
+
+    <section class="hardware" id="hardware">
+      <header class="section-head">
+        <div><p class="eyebrow">移动芯片 · 低功耗 · 存内计算 · 内存</p><h2>硬件雷达</h2></div>
+        <p class="section-note">本周端侧相关的芯片与硬件动态，逐条写清“新在哪里”和“对端侧 AI 意味着什么”。月度业界全景见 <a href="hardware.html">硬件洞察 ↗</a></p>
+      </header>
+      <div class="hw-overview" id="hw-overview"></div>
+      <div class="hw-filter" id="hw-filter" aria-label="按硬件类别筛选"></div>
+      <div class="hw-list" id="hw-list" aria-live="polite"><div class="empty">正在读取本周硬件动态…</div></div>
+    </section>
 
     <section class="all-research" id="all-research">
       <header class="section-head all-head">
@@ -328,6 +380,7 @@ INDEX_HTML = """<!doctype html>
   </main>
 
   <script>
+    let HW_CACHE=[], HW_CATEGORY="", SHOW_ALL_HW=false;
     let ALL=[], TRENDING_CACHE=[], COMMUNITY_CACHE=[], COMMUNITY_COVERAGE=[], ACTIVE=new Set(), Q="", SORT="score", ACTIVE_SOURCE="", ACTIVE_SCOPE="", COMMUNITY_SOURCE="", COMMUNITY_SCOPE="", SHOW_ALL_RECOMMENDED=false, SHOW_ALL_COMMUNITY=false, SHOW_ALL_TRENDING=false, ADVANCED_OPEN=false, LAST_FOCUS=null;
     const REC_PREVIEW=6;
     const WEEKLY_PREVIEW=3;
@@ -741,10 +794,45 @@ INDEX_HTML = """<!doctype html>
       }).join("");
     }
     document.querySelector("#week-switch").addEventListener("change",event=>{if(event.target.value&&event.target.value!==location.pathname)location.href=event.target.value;});
+    const HW_PREVIEW=8;
+    const HW_SPEC_LABELS={process:"制程",cpu:"CPU",gpu:"GPU",npu:"NPU",memory:"内存",power:"功耗",other:"其他"};
+    function renderHardwareItem(item){
+      const specs=Object.entries(item.key_specs||{}).filter(([,v])=>v).map(([k,v])=>`<span class="hw-spec"><b>${escapeHtml(HW_SPEC_LABELS[k]||k)}</b>${escapeHtml(v)}</span>`).join("");
+      const news=(item.whats_new_zh||[]).map(x=>`<li>${escapeHtml(x)}</li>`).join("");
+      const official=item.source_type==="官方";
+      const evidence=(item.evidence_urls||[]).filter(u=>u!==item.url).slice(0,2).map((u,i)=>`<a class="hw-link" href="${escapeAttr(u)}" target="_blank" rel="noopener">佐证 ${i+1}</a>`).join("");
+      return `<article class="hw-item"><div class="hw-origin"><span class="hw-cat">${escapeHtml(item.category)}</span><span class="hw-vendor">${escapeHtml(item.vendor)}</span><time class="hw-date" datetime="${escapeAttr(item.date)}">${escapeHtml(item.date)}</time></div><div class="hw-main"><a class="hw-title" href="${escapeAttr(item.url)}" target="_blank" rel="noopener">${escapeHtml(item.title_zh)} ↗</a><div class="hw-original">${escapeHtml(item.title)}</div><p class="hw-summary">${escapeHtml(item.summary_zh)}</p>${news?`<ul class="hw-new">${news}</ul>`:''}${specs?`<div class="hw-specs">${specs}</div>`:''}</div><div class="hw-judgement"><p class="hw-why"><b>对端侧 AI 意味着什么</b>${escapeHtml(item.edge_ai_impact_zh)}</p><div class="hw-links"><span class="hw-badge ${official?'official':''}">${escapeHtml(item.source_type)}来源</span>${item.confidence==='low'?'<span class="hw-badge low">待进一步核实</span>':''}<a class="hw-link" href="${escapeAttr(item.url)}" target="_blank" rel="noopener">查看原文</a>${evidence}</div></div></article>`;
+    }
+    function renderHardware(){
+      const cats=[...new Set(HW_CACHE.map(item=>item.category))];
+      const options=[["","全部 "+HW_CACHE.length]].concat(cats.map(c=>[c,c+" "+HW_CACHE.filter(i=>i.category===c).length]));
+      document.querySelector("#hw-filter").innerHTML=HW_CACHE.length?options.map(([c,label])=>`<button type="button" data-hw-category="${escapeAttr(c)}" class="${HW_CATEGORY===c?'active':''}">${escapeHtml(label)}</button>`).join(""):"";
+      const list=HW_CACHE.filter(item=>HW_CATEGORY===""||item.category===HW_CATEGORY),el=document.querySelector("#hw-list");
+      if(!list.length){el.innerHTML='<div class="empty">本周未收录硬件动态。</div>';return;}
+      const shown=SHOW_ALL_HW?list:list.slice(0,HW_PREVIEW);
+      el.innerHTML=shown.map(renderHardwareItem).join("")+(list.length>HW_PREVIEW?`<button type="button" class="hw-more" id="hw-toggle">${SHOW_ALL_HW?'收起硬件动态':'展开全部 '+list.length+' 条硬件动态'}</button>`:'');
+    }
+    async function loadHardware(){
+      let data=window.__HARDWARE__||null;
+      if(!data){try{const response=await fetch("/api/hardware");if(!response.ok)throw new Error("HTTP "+response.status);data=await response.json();}catch(error){document.querySelector("#hw-list").innerHTML='<div class="empty">硬件雷达暂时读取失败；正式周报不受影响。</div>';return;}}
+      HW_CACHE=data.items||[];
+      const ov=document.querySelector("#hw-overview");
+      if(data.overview){ov.textContent=data.overview;}else{ov.hidden=true;}
+      renderHardware();
+    }
+    document.querySelector("#hw-filter").addEventListener("click",event=>{
+      const button=event.target.closest("[data-hw-category]");if(!button)return;
+      HW_CATEGORY=button.dataset.hwCategory;SHOW_ALL_HW=false;renderHardware();
+    });
+    document.querySelector("#hw-list").addEventListener("click",event=>{
+      const button=event.target.closest("#hw-toggle");if(!button)return;
+      SHOW_ALL_HW=!SHOW_ALL_HW;renderHardware();
+    });
     window.addEventListener("pageshow",renderWeekSwitch);
     renderWeekSwitch();
     loadPapers().catch(showLoadError);
     loadWeekly().catch(()=>{document.querySelector("#weekly").hidden=true;});
+    loadHardware().catch(()=>{});
     loadCommunity().catch(()=>{});
     loadTrending().catch(()=>{});
   </script>

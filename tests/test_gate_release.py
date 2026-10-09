@@ -54,6 +54,20 @@ class GateReleaseTest(unittest.TestCase):
             }],
         }
         _write(self.root, "data/community_radar.json", json.dumps(community, ensure_ascii=False))
+        hardware = {
+            "window": {"start": (today - timedelta(days=6)).isoformat(), "end": today.isoformat()},
+            "overview": "本周移动芯片的 NPU 代际提升明显。",
+            "items": [{
+                "date": today.isoformat(), "vendor": "Qualcomm", "category": "移动SoC",
+                "title": "New flagship SoC", "title_zh": "新旗舰移动平台",
+                "url": "https://www.qualcomm.com/news/releases/flagship",
+                "source_type": "官方", "summary_zh": "高通发布新一代旗舰移动平台。",
+                "whats_new_zh": ["NPU 性能提升。"], "key_specs": {"npu": "Hexagon"},
+                "edge_ai_impact_zh": "端侧大模型解码更快。", "evidence_urls": [], "confidence": "high",
+            }],
+        }
+        self.hardware = hardware
+        _write(self.root, "data/hardware_radar.json", json.dumps(hardware, ensure_ascii=False))
         # current week archive (1 paper, 1 官方动态 so the vendor gate passes)
         _write(self.root, "data/weeks/2026-07-02.json", json.dumps({
             "label": "2026-07-02", "title": "07-02~07-09",
@@ -82,6 +96,7 @@ class GateReleaseTest(unittest.TestCase):
         # built index: dict __PAPERS__, no server injection
         _write(self.root, "site/index.html",
                '<main><section id="recommendations"></section><section id="weekly"></section>'
+               '<section id="hardware"></section>'
                '<section id="all-research"><div id="source-map"></div></section>'
                '<section id="community"></section>'
                '<section id="discovery"></section></main>'
@@ -94,14 +109,17 @@ class GateReleaseTest(unittest.TestCase):
                'window.__WEEKLY__={"overview":"","highlights":[]};'
                'window.__TRENDING__={"items":[]};'
                f'window.__COMMUNITY__={json.dumps(community, ensure_ascii=False)};'
+               f'window.__HARDWARE__={json.dumps(hardware, ensure_ascii=False)};'
                'window.__WEEKS__=[];window.__WEEK_LABEL__=null;window.__WEEKS_BASE__="";</script>'
                '<script>async function loadPapers(){let data=window.__PAPERS__||null;}</script>'
+               '<script>async function loadHardware(){let data=window.__HARDWARE__||null;}</script>'
                '<script>async function loadCommunity(){let data=window.__COMMUNITY__||null;}</script>')
         # detail page exists -> no 404
         _write(self.root, "site/paper/arxiv-x1.html", "<html>detail</html>")
         _write(self.root, "site/notes.html", "<html>notes</html>")
         _write(self.root, "site/snn.html", "<html>snn</html>")
         _write(self.root, "site/waic.html", "<html>waic</html>")
+        _write(self.root, "site/hardware.html", "<html>hardware</html>")
         # fresh trending file (mtime now) so check_trending_freshness passes
         _write(self.root, "data/github_trending_top20.json", "[]")
         import os
@@ -403,6 +421,36 @@ class GateReleaseTest(unittest.TestCase):
         (self.root / "site" / "waic.html").unlink()
         errs = gr.run_all(self.root)
         self.assertTrue(any("waic.html" in e and "missing" in e for e in errs), errs)
+
+    # ---- hardware radar ----
+    def test_fail_when_hardware_page_missing(self):
+        self._seed_good()
+        (self.root / "site" / "hardware.html").unlink()
+        errs = gr.run_all(self.root)
+        self.assertTrue(any("hardware.html" in e and "missing" in e for e in errs), errs)
+
+    def test_fail_when_hardware_radar_invalid(self):
+        self._seed_good()
+        bad = dict(self.hardware, items=[dict(self.hardware["items"][0], category="随便")])
+        _write(self.root, "data/hardware_radar.json", json.dumps(bad, ensure_ascii=False))
+        errs = gr.run_all(self.root)
+        self.assertTrue(any("hardware_radar.json" in e and "category" in e for e in errs), errs)
+
+    def test_fail_when_hardware_snapshot_stale(self):
+        self._seed_good()
+        changed = dict(self.hardware, overview="另一份硬件综述。")
+        _write(self.root, "data/hardware_radar.json", json.dumps(changed, ensure_ascii=False))
+        errs = gr.run_all(self.root)
+        self.assertTrue(any("__HARDWARE__" in e and "不一致" in e for e in errs), errs)
+
+    def test_fail_when_archived_week_hardware_invalid(self):
+        self._seed_good()
+        week = self.root / "data" / "weeks" / "2026-07-02.json"
+        rec = json.loads(week.read_text(encoding="utf-8"))
+        rec["hardware"] = dict(self.hardware, items=[dict(self.hardware["items"][0], url="nope")])
+        week.write_text(json.dumps(rec, ensure_ascii=False), encoding="utf-8")
+        errs = gr.run_all(self.root)
+        self.assertTrue(any("2026-07-02.json hardware" in e for e in errs), errs)
 
     def test_pass_good_layout(self):
         self._seed_good()

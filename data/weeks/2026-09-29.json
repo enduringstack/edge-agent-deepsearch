@@ -7746,5 +7746,189 @@
         "evidence_url": ""
       }
     ]
+  },
+  "hardware": {
+    "window": {
+      "start": "2026-09-29",
+      "end": "2026-10-05"
+    },
+    "overview": "本周的主线是内存涨价和国产旗舰。TrendForce 预计 4Q26 DRAM 合约价再涨 10–15%、NAND 再涨 15–20%，传闻三星 Galaxy S27 将提价，LPDDR6 可能缺席，端侧大模型可用的内存预算被直接压缩。美光 1γ LPDDR6 开始向机器人、车载等物理 AI 客户送样。华为 Mate 90 全系使用麒麟芯片，官方称麒麟 9050 Pro 的 LogicFolding 实现 125 TB/s 的 die 间带宽，并在手机上运行 30B MoE 模型。三星 Exynos 2700 据报已在 SF2P 上量产，同样采用 C2 核与 LPDDR6。学术侧，EdgeAgent 针对统一内存 SoC 调度多智能体负载，在 Apple M4 上加速 1.77 倍。产业侧，高通与华为签署交叉专利许可，高通诉 Arm 案同日开庭。",
+    "items": [
+      {
+        "date": "2026-10-01",
+        "vendor": "Huawei (HiSilicon)",
+        "category": "移动SoC",
+        "title": "Huawei Launches the HUAWEI Mate 90 Series, Equipped with the Flagship Tau Chipset Across the Entire Series",
+        "title_zh": "华为Mate 90系列全系韬芯片：麒麟9050 Pro/9035/9030",
+        "url": "https://www.prnewswire.com/news-releases/huawei-launches-the-huawei-mate-90-series-equipped-with-the-flagship-tau-chipset-across-the-entire-series-302895853.html",
+        "source_type": "官方",
+        "summary_zh": "华为10月1日发布Mate 90系列，全系采用“韬（Tau）”芯片：Pro Max非凡/RS非凡大师用麒麟9050 Pro，Mate 90 Pro用麒麟9035，标准版用麒麟9030。Pro Max及以上机型支持30B MoE全模态端侧基础大模型，小艺（Celia）新增记忆、上下文操作栏、通话2.0等智能体功能。",
+        "whats_new_zh": [
+          "麒麟9050 Pro整体性能较Mate 80 Pro Max +31%；麒麟9035较Mate 80 Pro +20%；麒麟9030较Mate 80 +27%",
+          "LogicFolding芯片：500万信号传输键合点、125 TB/s die间带宽（官方新闻稿表述）",
+          "麒麟9050 Pro支持CPU超线程与硬件光追（特定场景每秒5500万条光线）",
+          "端侧运行30B MoE全模态基础模型；小艺记忆可整合50+主流App内容，导航栏提供30+上下文动作",
+          "起售价5999元起；HarmonyOS 6/7设备超9000万台"
+        ],
+        "key_specs": {
+          "process": "未披露（分析师估计7nm级）",
+          "cpu": "9050 Pro支持超线程；9035主频2.85GHz（媒体）",
+          "gpu": "9050 Pro：Maleoon 955（媒体），硬件光追；9035：Maleoon 935",
+          "npu": "未公布TOPS；媒体援引NPU任务速度+140%（未证实）",
+          "memory": "未披露",
+          "other": "HarmonyOS 7"
+        },
+        "edge_ai_impact_zh": "华为把30B MoE全模态模型下放到手机端并与系统级Agent（小艺）深度绑定，是国内厂商中端侧Agent落地最激进的一例；全系自研芯片也意味着其端侧AI栈完全独立于高通/联发科生态。",
+        "evidence_urls": [
+          "https://www.app.com.pk/?p=1284621",
+          "https://www.emirates247.com/technology/huawei-unveils-mate-90-series-with-kirin-9050-pro-and-harmonyos-7-as-us-chip-curbs-bite/6212",
+          "https://www.notebookcheck.net/New-Kirin-9050-Pro-flagship-chipset-makes-Geekbench-7-debut-aboard-Huawei-Mate-90-Pro-Max.1413274.0.html"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-10-02",
+        "vendor": "Samsung",
+        "category": "移动SoC",
+        "title": "Exynos 2700 enters mass production but Samsung is still unsure which chip the S27 Ultra should use",
+        "title_zh": "Exynos 2700据报以SF2P进入量产",
+        "url": "https://www.sammobile.com/news/exynos-2700-mass-production-samsung-unsure-which-chip-the-s27-ultra-should-use/",
+        "source_type": "媒体",
+        "summary_zh": "据韩媒The Elec报道，三星Exynos 2700已在第二代2nm GAA工艺SF2P上开始前段晶圆量产，产量较上代提升10%以上。Galaxy S27标准/Plus/Pro可能全球采用该芯片，Ultra仍未定。9月2日SemiAnalysis曝光的die floorplan显示其为10核CPU（2×C2-Ultra）、Xclipse 970 GPU、大面积NPU并支持LPDDR6。",
+        "whats_new_zh": [
+          "工艺升级至SF2P（第二代2nm GAA），据报开始量产",
+          "die floorplan（爆料）：2×C2-Ultra + 8×C2-Pro，16MB L3 + 24MB SLC，Xclipse 970 GPU，LPDDR6",
+          "据报内部Geekbench 6多核较高通下一代旗舰高9.5%，单核仍落后（未证实）"
+        ],
+        "key_specs": {
+          "process": "Samsung SF2P（2nm GAA第二代）",
+          "cpu": "爆料：2×C2-Ultra（约4.24GHz）+ 8×C2-Pro",
+          "gpu": "Xclipse 970（AMD RDNA系，爆料）",
+          "npu": "未公布",
+          "memory": "LPDDR6（爆料）",
+          "other": "预计用于2027年初Galaxy S27"
+        },
+        "edge_ai_impact_zh": "三星自研SoC将与联发科一同在下一代采用Arm C2核与LPDDR6，Android旗舰阵营的端侧AI硬件基线趋同（SME2 + 大NPU + LPDDR6）；Exynos能否重回Ultra机型决定三星端侧AI功能的芯片分层策略。",
+        "evidence_urls": [
+          "https://x.com/UniverseIce/status/2095165037086433426",
+          "https://xenospectrum.com/en/exynos-2700-wafer-production-galaxy-s27/"
+        ],
+        "confidence": "low"
+      },
+      {
+        "date": "2026-09-30",
+        "vendor": "TrendForce",
+        "category": "存储与内存",
+        "title": "AI Server Demand Sustains Memory Contract Price Increases in 4Q26, While Consumer-Side Pressure Persists, Says TrendForce",
+        "title_zh": "TrendForce：4Q26 DRAM续涨10-15%",
+        "url": "https://www.trendforce.com/presscenter/news/20260930-13258.html",
+        "source_type": "官方",
+        "summary_zh": "TrendForce预测4Q26常规DRAM合约价环比上涨10-15%，NAND Flash上涨15-20%。移动DRAM上涨趋势不变但涨幅收敛；手机品牌主要消化现有eMMC/UFS库存，增量采购有限。",
+        "whats_new_zh": [
+          "常规DRAM合约价4Q26 QoQ +10-15%",
+          "NAND Flash合约价4Q26 QoQ +15-20%",
+          "企业级SSD为唯一涨幅扩大的品类，2026年位元需求同比增>80%",
+          "背景：5月TrendForce称2Q26 LPDDR5X均价环比涨78-83%，高端机12GB成主流、16GB减少，中端回落至8GB"
+        ],
+        "key_specs": {
+          "memory": "LPDDR/UFS持续涨价"
+        },
+        "edge_ai_impact_zh": "连续多个季度的内存涨价使“16GB旗舰/12GB中高端”的端侧AI内存基线停滞甚至倒退，端侧大模型需要更激进的量化、KV缓存压缩和按需加载来适配8-12GB设备。",
+        "evidence_urls": [
+          "https://www.trendforce.com/presscenter/news/20260514-13044.html",
+          "https://www.theregister.com/a/5267643"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-30",
+        "vendor": "Micron",
+        "category": "存储与内存",
+        "title": "Micron Technology, Inc. Reports Results for the Fourth Quarter and Full Year of Fiscal 2026",
+        "title_zh": "美光FQ4：1γ LPDDR6送样物理AI，SOCAMM收入翻倍",
+        "url": "https://www.sec.gov/Archives/edgar/data/0000723125/000072312526000018/a2026q4ex991-pressrelease.htm",
+        "source_type": "官方",
+        "summary_zh": "美光公布FY26第四季度财报：营收542.3亿美元，全年1331.9亿美元。移动与客户端事业部（MCBU）单季营收131.1亿美元，上年同期为37.6亿美元。业务亮点包括：向多个物理AI市场送样基于1γ制程的LPDDR6，向旗舰手机出货6通道1γ LPDDR5X，服务器LPDDR SOCAMM收入环比翻倍以上。",
+        "whats_new_zh": [
+          "1γ LPDDR6开始向多个物理AI（机器人/车载等）市场客户送样",
+          "6通道1γ LPDDR5X已向旗舰移动设备出货",
+          "服务器LPDDR SOCAMM产品组合收入环比增长超过一倍",
+          "MCBU营收131.1亿美元，毛利率90%；FQ1-27营收指引约615亿±15亿美元"
+        ],
+        "key_specs": {
+          "process": "1γ (1-gamma)",
+          "memory": "LPDDR6 (sampling), LPDDR5X 6-channel, SOCAMM",
+          "other": "FQ4营收$54.23B"
+        },
+        "edge_ai_impact_zh": "美光LPDDR6首先瞄准物理AI而不是手机，说明机器人和车载端侧推理对带宽与能效同样敏感。存储厂利润创新高也意味着终端厂商的内存成本压力短期难以缓解。",
+        "evidence_urls": [],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-10-05",
+        "vendor": "Qualcomm",
+        "category": "产业动态",
+        "title": "Huawei and Qualcomm Announce Broad Patent License Agreement",
+        "title_zh": "高通与华为签署交叉专利许可",
+        "url": "https://www.huawei.com/en/news/2026/10/qualcomm-broad-patent-agreement",
+        "source_type": "官方",
+        "summary_zh": "华为与高通宣布签署多年期的广泛专利交叉许可协议，覆盖5G、计算、AI和网络领域。高通还将购买华为的部分美国专利，交易需等待监管批准。同一天，高通与Arm的新一轮诉讼在特拉华州开庭。",
+        "whats_new_zh": [
+          "交叉许可覆盖5G、计算、AI和网络；高通将收购华为部分计算、AI和网络相关的美国专利",
+          "同日（10月5日）高通诉Arm案开庭，争议包括Arm是否按合同提供芯片测试工具以及版税问题（据路透社报道）"
+        ],
+        "key_specs": {},
+        "edge_ai_impact_zh": "获得华为的计算和AI专利，有助于高通扩大在端侧和数据中心AI上的专利护城河。与Arm的诉讼结果则关系到自研Oryon核心的授权成本和长期路线。",
+        "evidence_urls": [
+          "https://investing.com/news/stock-market-news/qualcomm-and-arm-kick-off-trial-potential-for-huge-damages-in-focus-4937614"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-10-01",
+        "vendor": "Samsung (Galaxy S27, rumor)",
+        "category": "产业动态",
+        "title": "Samsung Galaxy S27 series could cost you more, especially if you want more storage",
+        "title_zh": "传Galaxy S27因内存涨价提价，LPDDR6或缺席",
+        "url": "https://businesstoday.in/technology/news/story/samsung-galaxy-s27-series-could-cost-you-more-especially-if-you-want-more-storage-559010-2026-10-01",
+        "source_type": "媒体",
+        "summary_zh": "韩国爆料人Lanzuk称，Galaxy S27全系价格将比上代上涨约13万韩元（约100美元），存储升级的加价也会更高，原因是NAND和LPDDR6价格上涨。另有爆料称，受DRAM/NAND短缺影响，S27 Ultra可能不会采用LPDDR6和UFS 5.0。以上均为未经三星确认的传闻。",
+        "whats_new_zh": [
+          "传S27全系涨价约13万韩元（约100美元）",
+          "传LPDDR6与UFS 5.0可能不进入S27 Ultra（与此前传闻相反）",
+          "The Bell报道三星MX正在为S27验证美光1γ LPDDR5X"
+        ],
+        "key_specs": {
+          "memory": "LPDDR6 vs LPDDR5X; UFS 5.0",
+          "other": "传闻，未证实"
+        },
+        "edge_ai_impact_zh": "如果头部厂商因成本推迟LPDDR6，端侧AI的带宽升级节奏将放缓一代，“新内存标准首发即普及”的假设需要修正。",
+        "evidence_urls": [
+          "https://www.androidcentral.com/phones/samsung%2Dgalaxy/not%2Dwhat%2Di%2Dwanted%2Dto%2Dhear%2Drumors%2Dnow%2Dsay%2Dgalaxy%2Ds27%2Dultra%2Dcould%2Dmiss%2Da%2Dhuge%2Dupgrade"
+        ],
+        "confidence": "low"
+      },
+      {
+        "date": "2026-10-02",
+        "vendor": "中山大学 / 中国移动",
+        "category": "学术研究",
+        "title": "EdgeAgent: Orchestrating On-Device LLM inference for End-User Multi-Agent Systems on CPU-GPU Unified Memory Architectures",
+        "title_zh": "EdgeAgent：统一内存SoC上的端侧多智能体调度",
+        "url": "https://arxiv.org/abs/2610.03394",
+        "source_type": "论文",
+        "summary_zh": "论文面向在CPU-GPU统一内存架构（UMA）SoC上运行的端侧多智能体系统，提出UMA感知执行和智能体感知调度，并在Apple M4上验证。",
+        "whats_new_zh": [
+          "仅靠UMA感知执行，即比批量投机解码基线快1.29倍",
+          "完整系统在工具调用延迟极端的情况下加速1.77倍"
+        ],
+        "key_specs": {
+          "memory": "CPU-GPU统一内存",
+          "other": "Apple M4实测"
+        },
+        "edge_ai_impact_zh": "端侧Agent会出现多个模型/会话并发，争抢同一块统一内存带宽，内存调度正成为端侧Agent性能的关键变量。",
+        "evidence_urls": [],
+        "confidence": "high"
+      }
+    ]
   }
 }

@@ -21,6 +21,9 @@ Catches the failure modes that shipped before by operating on real artifacts
 7. community    — all five social/forum sources have coverage evidence, the
                  static snapshot matches data/community_radar.json, and
                  discussion URLs never masquerade as formal research sources.
+8. hardware     — data/hardware_radar.json and every archived week's hardware
+                 block pass the hardware contract; the static snapshot matches;
+                 site/hardware.html exists for the 硬件洞察 nav link.
 
 Use: python app/gates/gate_release.py [--root DIR]
 Pre-deploy, after `python app/build.py`. Exit 0 = ship; 1 = blocked.
@@ -38,6 +41,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from app import community  # noqa: E402
+from app import hardware  # noqa: E402
 
 MIN_EXTERNAL_HIGHLIGHTS = 5
 MIN_CHINESE_CHARS = 8
@@ -53,7 +57,10 @@ DIRECT_EDGE_AGENT_TAG = "方向:端侧agent"
 
 _PAPERS_RE = re.compile(r"window\.__PAPERS__\s*=\s*(.+?);\s*window\.__WEEKLY__", re.S)
 _COMMUNITY_RE = re.compile(
-    r"window\.__COMMUNITY__\s*=\s*(\{.*?\});\s*window\.__WEEKS__", re.S)
+    r"window\.__COMMUNITY__\s*=\s*(\{.*?\});\s*window\.__(?:HARDWARE|WEEKS)__", re.S)
+_HARDWARE_RE = re.compile(
+    r"window\.__HARDWARE__\s*=\s*(\{.*?\});\s*window\.__WEEKS__", re.S)
+_STATIC_HARDWARE_FIRST = "let data=window.__HARDWARE__||null;"
 # render_page inlines with NO spaces around '=': `window.__WEEKS__=[`. The server.py
 # `/` route injects WITH spaces: `window.__WEEKS__ = [`. The space-form is the runtime
 # injection that must NOT survive into a static page (render_page strips it).
@@ -104,7 +111,7 @@ def check_editorial_layout(root: Path, errors: list) -> None:
     if not idx.exists():
         return  # check_contract reports the missing build artifact
     html = idx.read_text(encoding="utf-8")
-    ordered_ids = ["recommendations", "weekly", "all-research", "source-map", "community", "discovery"]
+    ordered_ids = ["recommendations", "weekly", "hardware", "all-research", "source-map", "community", "discovery"]
     positions = {}
     for section_id in ordered_ids:
         position = html.find(f'id="{section_id}"')
@@ -115,7 +122,7 @@ def check_editorial_layout(root: Path, errors: list) -> None:
     if all(positions[section_id] >= 0 for section_id in ordered_ids):
         actual = [positions[section_id] for section_id in ordered_ids]
         if actual != sorted(actual):
-            _err(errors, "site/index.html: editorial layout order must be 推荐 → 本周判断 → 完整资料库 → 来源构成 → 社区雷达 → GitHub 发现线索")
+            _err(errors, "site/index.html: editorial layout order must be 推荐 → 本周判断 → 硬件雷达 → 完整资料库 → 来源构成 → 社区雷达 → GitHub 发现线索")
     if _OLD_RECOMMENDATION_EXCLUSION_RE.search(html):
         _err(errors, "site/index.html: 完整资料库仍在排除推荐条目；推荐只能作为上方编辑视图，不能从完整收录移除")
 
@@ -347,6 +354,47 @@ def check_snn_page(root: Path, errors: list) -> None:
         _err(errors, "site/snn.html missing — run agent/build_snn.py (SNN 洞察 nav 链接会 404)")
 
 
+def check_hardware_radar(root: Path, errors: list) -> None:
+    """Current + archived hardware radar blocks pass the contract; static snapshot matches."""
+    data_path = root / "data" / "hardware_radar.json"
+    if not data_path.exists():
+        _err(errors, "data/hardware_radar.json missing — 硬件雷达不能静默跳过")
+        return
+    try:
+        expected = hardware.load_hardware(data_path)
+    except hardware.HardwareValidationError as exc:
+        _err(errors, f"data/hardware_radar.json 校验失败：{exc}")
+        return
+    for p in sorted((root / "data" / "weeks").glob("*.json")):
+        if p.name == "manifest.json":
+            continue
+        block = (_read_json(p, default={}) or {}).get("hardware")
+        if block and block.get("items"):
+            try:
+                hardware.validate_hardware(block)
+            except hardware.HardwareValidationError as exc:
+                _err(errors, f"data/weeks/{p.name} hardware 校验失败：{exc}")
+    idx = root / "site" / "index.html"
+    if not idx.exists():
+        return
+    html = idx.read_text(encoding="utf-8")
+    if _STATIC_HARDWARE_FIRST not in html:
+        _err(errors, "site/index.html: 静态页面没有优先读取 inlined __HARDWARE__；历史周会丢失硬件快照")
+    match = _HARDWARE_RE.search(html)
+    if not match:
+        _err(errors, "site/index.html: window.__HARDWARE__ missing — 静态硬件快照未构建")
+        return
+    try:
+        actual = hardware.validate_hardware(json.loads(match.group(1)))
+    except (json.JSONDecodeError, hardware.HardwareValidationError) as exc:
+        _err(errors, f"site/index.html: __HARDWARE__ 无效：{exc}")
+        return
+    if actual != expected:
+        _err(errors, "site/index.html: __HARDWARE__ 与 data/hardware_radar.json 不一致 — 构建可能使用了旧硬件数据")
+    if not (root / "site" / "hardware.html").exists():
+        _err(errors, "site/hardware.html missing — run agent/build_hardware.py (硬件洞察 nav 链接会 404)")
+
+
 def check_waic_page(root: Path, errors: list) -> None:
     """site/waic.html must exist — the WAIC insight page nav link points at it."""
     if not (root / "site" / "waic.html").exists():
@@ -376,6 +424,7 @@ def run_all(root: Path) -> list:
     check_trending_freshness(root, errors)
     check_snn_page(root, errors)
     check_waic_page(root, errors)
+    check_hardware_radar(root, errors)
     return errors
 
 

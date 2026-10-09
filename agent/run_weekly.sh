@@ -160,6 +160,7 @@ info "Step 9/10: build all + gate..."
 python agent/build_notes.py 2>/dev/null || info "build_notes 跳过"
 python agent/build_snn.py 2>/dev/null || info "build_snn 跳过"
 python agent/build_waic.py 2>/dev/null || info "build_waic 跳过"
+python agent/build_hardware.py 2>/dev/null || info "build_hardware 跳过"
 python app/build.py --server "${SERVER}" 2>&1 | tail -1
 python app/gates/gate_all.py 2>&1 | tail -1 && ok "gate 全过" || wait "gate 有问题——检查后再部署"
 

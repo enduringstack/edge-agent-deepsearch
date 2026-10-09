@@ -5261,5 +5261,639 @@
         "evidence_url": "https://github.com/ggml-org/llama.cpp/discussions/29263"
       }
     ]
+  },
+  "hardware": {
+    "window": {
+      "start": "2026-09-22",
+      "end": "2026-09-28"
+    },
+    "overview": "骁龙峰会周，也是这个月信息量最大的一周。高通第一次把旗舰拆成两档：第六代骁龙 8 超级至尊版采用 2nm，CPU 达 5.0GHz，NPU 新增 Element Accelerator 并支持 INT2/FP8，Adreno GPU 首次加入矩阵核心，内存升级到 LPDDR6（约 127GB/s），官方目标是在手机上运行 30B MoE 模型、32K 上下文；标准版则保留 LPDDR5X，也没有矩阵核心。更长远的信号是 HBC 近存计算：把多层 LPDDR 堆在计算 die 上，高通称同功耗下的带宽和 token 效率是 HBM 的 6 倍，并计划从数据中心下放到骁龙。三星 16GB LPDDR6 同周完成验证（10.7Gbps，能效 +21%）。TechInsights 拆解确认 A20 Pro 的裸片面积与上代基本相同（约 98mm²），新增的晶体管都给了 NPU 和 GPU。可穿戴侧有三条：高通耳机 eNPU 达到 128 GOPS 并加入微功耗 Wi-Fi，AR1 眼镜跑起了 2B 参数的 1-bit 多模态模型，Meta VR Glasses 把骁龙 Reality Elite 放进了口袋计算盒。",
+    "items": [
+      {
+        "date": "2026-09-22",
+        "vendor": "Qualcomm",
+        "category": "移动SoC",
+        "title": "Snapdragon Leads the Agentic AI Age with Two of the World’s Fastest Mobile SoCs Powering the Next Generation of Smartphones",
+        "title_zh": "第六代骁龙8超级至尊版发布（SM8975）",
+        "url": "https://www.qualcomm.com/news/releases/2026/09/snapdragon-leads-the-agentic-ai-age-with-two-of-the-world-s-fast",
+        "source_type": "官方",
+        "summary_zh": "高通在骁龙峰会首日发布旗舰双平台，其中第六代骁龙8超级至尊版（Snapdragon 8 Elite Extreme Gen 6，SM8975）是最高端型号，主打“智能体AI时代”。芯片采用2nm工艺，CPU主频首次突破5GHz，Adreno GPU首次加入AI矩阵核心，并支持LPDDR6内存。",
+        "whats_new_zh": [
+          "官方产品简介给出的较上代（8 Elite Gen 5）提升：CPU性能+13%、CPU能效+37%；GPU性能+44%、GPU能效+40%；NPU性能+35%、AI每瓦性能+33%",
+          "Oryon CPU：2个Prime核最高5.0GHz、6个Performance核最高4.0GHz，16MB Oryon Flex Cache（上代为4.6/3.62GHz）",
+          "Hexagon NPU重新设计：新增Element Accelerator，配置为12标量+8向量+1张量+1 element；新增Hexagon Direct Link与Micro Tile Inferencing；共享内存扩大50%；支持64位内存虚拟化",
+          "NPU精度支持INT2/INT4/INT8/INT16/FP8/FP16及混合精度，INT2为新增的低比特档位",
+          "Adreno GPU首次加入AI矩阵核心，配合Adreno Neural Fusion做AI超分和插帧；18MB Adreno高性能显存，功耗降低12%",
+          "内存支持LPDDR5x/LPDDR6，最高5300MHz、24GB；据ServeTheHome测算，LPDDR6为4×24bit，带宽127.2GB/s（上代84.8GB/s）；存储为UFS 5.0",
+          "Sensing Hub改为双微型NPU（音频/语音/传感器）加双Always-Sensing ISP，用于端侧个人知识图谱Personal Scribe",
+          "封装改为Offset PoP，DRAM放在逻辑die旁边而不是正上方，配合导热结构，官方称峰值性能可持续时间翻倍（据ServeTheHome/IDC）",
+          "集成X105 5G（3GPP Rel-19，下行14.8Gbps、上行4.2Gbps，6nm收发器功耗降低30%）和FastConnect 8800（Wi-Fi 8、4×4、11.6Gbps）"
+        ],
+        "key_specs": {
+          "process": "2nm（ServeTheHome称为TSMC N2P）",
+          "cpu": "Oryon：2×Prime@5.0GHz + 6×Performance@4.0GHz，16MB Flex Cache",
+          "gpu": "Adreno，含AI矩阵核心，18MB HPM，Vulkan 1.4",
+          "npu": "Hexagon：12标量+8向量+1张量+1 element，共享内存+50%，支持INT2/INT4/INT8/INT16/FP8/FP16",
+          "memory": "LPDDR5x/LPDDR6 @5300MHz，最高24GB；UFS 5.0",
+          "other": "X105 Modem（Rel-19）、FastConnect 8800（Wi-Fi 8/BT 6.3）、8K60视频、APV/H.266；型号SM8975"
+        },
+        "edge_ai_impact_zh": "共享内存扩大、LPDDR6带宽提升约50%以及INT2支持，都直接针对端侧LLM解码阶段的内存带宽瓶颈。官方称可在端侧运行30B以上参数的MoE模型，支持32K上下文。GPU矩阵核心则意味着端侧AI负载会在NPU和GPU之间进一步分流。",
+        "evidence_urls": [
+          "https://www.qualcomm.com/content/dam/qcomm-martech/dm-assets/documents/Snapdragon-8-Elite-Extreme-Gen-6-Product-Brief.pdf",
+          "https://www.servethehome.com/qualcomm-unveils-snapdragon-8-elite-gen-6-and-elite-extreme-gen-6-next-gen-flagship-mobile-chips/",
+          "https://9to5google.com/2026/09/22/snapdragon-8-elite-gen-6/",
+          "https://www.gsmarena.com/snapdragon_8_elite_extreme_gen_6_and_8_elite_gen_6_debut-news-74721.php"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-22",
+        "vendor": "vivo / OPPO (MediaTek)",
+        "category": "移动SoC",
+        "title": "vivo launches X500 Pro series with Dimensity 9600 Pro starting at RMB 6,499",
+        "title_zh": "vivo X500 Pro/OPPO Find X10 Pro Max首发天玑9600 Pro",
+        "url": "https://technode.com/2026/09/22/vivo-launches-x500-pro-series-with-dimensity-9600-pro-starting-at-rmb-6499/",
+        "source_type": "媒体",
+        "summary_zh": "vivo于9月21日在国内发布X500 Pro/Pro Max，成为天玑9600 Pro首批终端，起售价6499元；标准版X500采用天玑9600M。OPPO随后发布Find X10 Pro Max（天玑9600 Pro），标准版Find X10同样采用9600M。2nm手机SoC由此进入实际出货阶段。",
+        "whats_new_zh": [
+          "X500 Pro 6510mAh、X500 Pro Max 8000mAh电池，90W有线/40W无线",
+          "X500 Pro Max 9月24日开售，X500 Pro 9月29日开售",
+          "OPPO Find X10标准版（9600M）起售5499元，配8000mAh电池"
+        ],
+        "key_specs": {
+          "process": "TSMC 2nm（9600 Pro）/ 3nm（9600M）",
+          "cpu": "见天玑9600 Pro / 9600M",
+          "gpu": "G2-Ultra NX / Mali-G1 Ultra MC12",
+          "npu": "NPU 1090 / NPU 990",
+          "memory": "LPDDR6或LPDDR5X（视机型配置）",
+          "other": "Geekbench曝光X500 Pro单核4137/多核12751（发布前跑分，非官方）"
+        },
+        "edge_ai_impact_zh": "国内两大OEM同时以“Pro芯片=新架构、标准版=上代更名”的方式分层，意味着端侧大模型新能力（如30B MoE、KV压缩）短期仅覆盖高端机型，开发者需按NPU代际做模型分档。",
+        "evidence_urls": [
+          "https://propakistani.pk/2026/09/22/vivo-x500-pro-series-launches-with-mediateks-first-2nm-dimensity-chip-and-200mp-zoom-lens/",
+          "https://propakistani.pk/2026/09/23/oppo-just-launched-a-flagship-phone-with-three-200mp-cameras/",
+          "https://www.91mobiles.com/hub/vivo-x500-series-launched-china-price-specifications/"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-22",
+        "vendor": "Apple",
+        "category": "移动SoC",
+        "title": "Apple A20 Pro: Inside the iPhone 18 Pro's TSMC 2nm Processor",
+        "title_zh": "TechInsights：A20 Pro 2nm 裸片初析",
+        "url": "https://www.techinsights.com/blog/apple-a20-pro-tsmc-2nm-processor-analysis",
+        "source_type": "媒体",
+        "summary_zh": "TechInsights 的初步分析确认，A20 Pro 是 Apple 首颗基于 TSMC N2（GAA）的应用处理器。计算裸片约 8.0×12.3mm（约 98.2mm²），面积与 A19 Pro 基本持平。封装从 PoP 改为处理器与内存并排的晶圆级多芯片模块（WMCM），内存接口为 96-bit LPDDR5X。",
+        "whats_new_zh": [
+          "工艺：TSMC N2 纳米片 GAA，逻辑单元缩放激进",
+          "裸片面积约 98.2mm²，与 A19 Pro 几乎相同，GPU 和 AI 提升靠的是工艺密度而不是更大的面积",
+          "封装：A3473 封装，告别 PoP，改为并排式 WMCM",
+          "内存：96-bit LPDDR5X 接口（初步结论；位宽比上代宽，与 Apple 所说带宽 +50% 一致）",
+          "版图：2 个性能核 + 4 个能效核；GPU 比 A19 Pro 多 1 核；神经处理区面积“显著增大”，含矩阵乘和卷积计算引擎"
+        ],
+        "key_specs": {
+          "process": "TSMC N2（GAA）",
+          "cpu": "2P+4E",
+          "gpu": "比 A19 Pro 多 1 核（即 7 核）",
+          "npu": "面积显著增大（Apple 称双 16 核）",
+          "memory": "96-bit LPDDR5X，SoC 与内存并排封装",
+          "other": "计算裸片约 8.0×12.3mm ≈ 98.2mm²；封装型号 A3473"
+        },
+        "edge_ai_impact_zh": "手机 SoC 首次采用 96-bit 内存位宽和 WMCM 并排封装，相当于把 M 系列的“宽带宽”思路下放到手机上，直接抬高端侧 LLM 每秒可生成的 token 数上限。在裸片面积不变的前提下扩大 NPU，说明 Apple 把新增的晶体管预算优先分给了 AI。",
+        "evidence_urls": [
+          "https://www.techinsights.com/blog/iphone-18-pro-max-unboxing"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-22",
+        "vendor": "Qualcomm",
+        "category": "移动SoC",
+        "title": "Snapdragon 8 Elite Extreme Gen 6 and 8 Elite Gen 6 debut",
+        "title_zh": "第六代骁龙8至尊版（标准档SM8950）",
+        "url": "https://www.gsmarena.com/snapdragon_8_elite_extreme_gen_6_and_8_elite_gen_6_debut-news-74721.php",
+        "source_type": "媒体",
+        "summary_zh": "高通首次把顶级移动平台拆成两档。标准版第六代骁龙8至尊版（SM8950）与超级至尊版同为2nm，CPU配置相同（5GHz），但GPU、NPU、内存和视频能力有所裁剪，面向更多旗舰机型。IDC称两档价格差约100美元。",
+        "whats_new_zh": [
+          "较上代提升（高通口径，媒体转述）：CPU性能+10%、CPU能效+37%；GPU性能+35%、GPU能效+40%；NPU性能+14%、AI每瓦性能+20%",
+          "CPU与超级至尊版相同：2×5.0GHz Prime + 6×4.0GHz Performance，16MB Flex Cache",
+          "据ServeTheHome，标准版GPU未列出矩阵核心，内存为LPDDR5X（84.8GB/s），视频为8K30（超级至尊版为8K60），4K慢动作120fps（超级至尊版为240fps）",
+          "NPU同为12标量+8向量+1张量+1 element结构，但性能提升幅度明显小于超级至尊版"
+        ],
+        "key_specs": {
+          "process": "2nm",
+          "cpu": "Oryon 2×5.0GHz + 6×4.0GHz",
+          "gpu": "Adreno（GPU性能+35%）",
+          "npu": "Hexagon，含Element Accelerator，NPU性能+14%",
+          "memory": "LPDDR5X（ServeTheHome口径），UFS 5.0",
+          "other": "X105 Modem、FastConnect 8800；型号SM8950"
+        },
+        "edge_ai_impact_zh": "旗舰分档后，LPDDR6、大共享内存等对端侧大模型最关键的带宽资源只在高端档提供。端侧30B级MoE等能力会先集中在超级至尊版机型上，开发者需要按档位适配模型。",
+        "evidence_urls": [
+          "https://9to5google.com/2026/09/22/snapdragon-8-elite-gen-6/",
+          "https://www.servethehome.com/qualcomm-unveils-snapdragon-8-elite-gen-6-and-elite-extreme-gen-6-next-gen-flagship-mobile-chips/",
+          "https://www.idc.com/resource-center/blog/snapdragon-summit-2026-qualcomms-bid-to-be-the-silicon-behind-every-agent-on-every-device/"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-23",
+        "vendor": "Qualcomm",
+        "category": "移动SoC",
+        "title": "Snapdragon 8 Elite Extreme Gen 6 Is Already Looking Brutal in Benchmarks",
+        "title_zh": "超级至尊版参考机跑分",
+        "url": "https://gadgets.beebom.com/news/qualcomm-snapdragon-8-elite-extreme-gen-6-benchmarks-leaked",
+        "source_type": "媒体",
+        "summary_zh": "有博主在微博曝光高通参考设计机的跑分：AnTuTu约566万，Geekbench 6单核4332、多核13048。同期泄露的iPhone 18 Pro（A20 Pro）GB6单核约4719、多核约12677；联发科官方宣称天玑9600 Pro单核4276、多核12650。",
+        "whats_new_zh": [
+          "参考机AnTuTu 5,658,231（CPU约150万、GPU约203万）；Geekbench 6为4332/13048；Geekbench 7为3636/12349",
+          "对比来看，单核仍落后A20 Pro约8%，多核领先A20 Pro和天玑9600 Pro的官方数据",
+          "早期iQOO 16工程机未能维持5.01GHz峰值（约4.6GHz），GB6只有3434/9334，说明持续性能取决于整机散热"
+        ],
+        "key_specs": {
+          "cpu": "GB6 单核4332 / 多核13048（参考机）"
+        },
+        "edge_ai_impact_zh": "这些都是参考机或泄露数据，可信度有限。多核和GPU的领先对端侧多模态和游戏AI负载有利，单核仍是与苹果的主要差距。",
+        "evidence_urls": [
+          "https://www.androidheadlines.com/2026/09/iphone-18-pro-geekbench-leak-shows-how-the-a20-pro-stacks-up-against-snapdragon-and-dimensity.html",
+          "https://wccftech.com/dimensity-9600-pro-beats-a20-pro-multicore-dimensity-9500-scores-lowered/"
+        ],
+        "confidence": "low"
+      },
+      {
+        "date": "2026-09-22",
+        "vendor": "Apple",
+        "category": "PC芯片",
+        "title": "The new Mac mini and Mac Studio are available today",
+        "title_zh": "M6 Mac mini / M5 Ultra Mac Studio 开售",
+        "url": "https://www.apple.com/newsroom/2026/09/the-new-mac-mini-and-mac-studio-are-available-today/",
+        "source_type": "官方",
+        "summary_zh": "8 月 25 日发布的 M6 Mac mini 和 M5 Ultra Mac Studio 于 9 月 22 日开售。M6 是 Apple 首颗 2nm M 系列芯片，有 12 核 CPU（2 个 super core + 4 个性能核 + 6 个能效核）、12 核 GPU（每核带 Neural Accelerator）和双 16 核 Neural Engine。M5 Ultra 是首颗四裸片芯片，最高 80 核 GPU、512GB 统一内存、1.2TB/s 带宽。",
+        "whats_new_zh": [
+          "M6：首颗 2nm M 芯片；12 核 CPU（2 super + 4 P + 6 E），12 核 GPU 每核带 Neural Accelerator；GPU AI 峰值算力比 M5 高近 30%",
+          "M6：双 16 核 Neural Engine，峰值算力为上代 2 倍；内存最高 32GB，带宽 170GB/s（比 M5 +10%）",
+          "M5 Ultra：两颗双裸片 M5 Max 通过 UltraFusion 组成四裸片，裸片间带宽超过 4.4TB/s；36 核 CPU（12 super + 24 P），80 核 GPU",
+          "M5 Ultra：最高 512GB 统一内存，1.2TB/s（比 M3 Ultra +50%）；GPU AI 峰值算力为 M3 Ultra 的 4.5 倍",
+          "Thunderbolt 5 + RDMA 支持多台 Mac Studio 组集群，分布式推理最高提速 3 倍；512GB 配置 10 月下旬出货"
+        ],
+        "key_specs": {
+          "process": "M6：2nm；M5 Ultra：未公布",
+          "cpu": "M6：12 核（2S+4P+6E）；M5 Ultra：36 核（12S+24P）",
+          "gpu": "M6：12 核；M5 Ultra：80 核；每核带 Neural Accelerator",
+          "npu": "M6：双 16 核；M5 Ultra：32 核",
+          "memory": "M6：最高 32GB，170GB/s；M5 Pro：最高 64GB，307GB/s；M5 Ultra：最高 512GB，1.2TB/s",
+          "other": "UltraFusion 裸片间带宽 >4.4TB/s；TB5 RDMA 集群"
+        },
+        "edge_ai_impact_zh": "M6 的“双 NPU + GPU 内嵌矩阵单元”组合与 A20 Pro 同代同源，说明 Apple 正把端侧 AI 算力同时押在 NPU 和 GPU 两条路径上。M5 Ultra 的 512GB / 1.2TB/s 则让个人桌面机可以完整运行数千亿参数级模型。",
+        "evidence_urls": [
+          "https://www.apple.com/newsroom/2026/08/apple-introduces-m6-and-m5-ultra-for-a-big-leap-in-performance-and-ai-compute/"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-28",
+        "vendor": "AMD",
+        "category": "PC芯片",
+        "title": "How AMD Ryzen AI Max PRO 400 Series Processors Bring Local Agentic AI to Business Customers",
+        "title_zh": "Ryzen AI Max PRO 400：192GB统一内存跑300B+模型",
+        "url": "https://www.amd.com/en/blogs/2026/how-amd-ryzen-ai-max-pro-400-series-processors-bring-local-agentic-ai-to-business-customers.html",
+        "source_type": "官方",
+        "summary_zh": "AMD面向商用客户推介Ryzen AI Max PRO 400（Gorgon Halo）系列的本地智能体AI能力。该系列沿用Zen 5 + RDNA 3.5 + XDNA 2架构，主要升级是统一内存上限提升到192GB LPDDR5X-8533，AMD称可在4-bit量化下支持300B以上参数模型。IFA 2026后，搭载Ryzen AI Max+ PRO 495的迷你主机/工作站（如Lenovo ThinkCentre X）陆续准备出货。",
+        "whats_new_zh": [
+          "统一内存最高192GB（较300系+50%），LPDDR5X-8533",
+          "旗舰Ryzen AI Max+ PRO 495：16核32线程，3.1/5.0GHz（此前公布）",
+          "AMD称PRO 400系统4-bit量化下可运行300B+参数模型"
+        ],
+        "key_specs": {
+          "process": "TSMC 4nm级（沿用Strix Halo架构）",
+          "cpu": "Zen 5，最高16核/32线程，5.0GHz",
+          "gpu": "RDNA 3.5，最高40 CU",
+          "npu": "XDNA 2",
+          "memory": "LPDDR5X-8533，最高192GB，256-bit",
+          "other": "Ryzen AI Halo开发平台采用Max+ PRO 495"
+        },
+        "edge_ai_impact_zh": "AMD选择“只加内存容量不换架构”来应对本地大模型需求，说明对端侧LLM而言，容量与带宽比NPU TOPS更关键；192GB统一内存把x86 PC本地可跑模型推进到数百B级。",
+        "evidence_urls": [
+          "https://tweaktown.com/news/111752/amd-launches-the-ryzen-ai-max-pro-400-series-of-cpus-up-to-16-cores-with-192gb-of-unified-memory/index.html",
+          "https://www.tomshardware.com/tech-industry/best-of-ifa-2026",
+          "https://newsroom.amd.com/press-kits/press-kit-agentic-pcs"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-24",
+        "vendor": "Qualcomm",
+        "category": "PC芯片",
+        "title": "Snapdragon Summit 2026: Qualcomm's Bid to Be the Silicon Behind Every Agent on Every Device",
+        "title_zh": "Surface X2 Plus新机与Googlebook",
+        "url": "https://www.idc.com/resource-center/blog/snapdragon-summit-2026-qualcomms-bid-to-be-the-silicon-behind-every-agent-on-every-device/",
+        "source_type": "媒体",
+        "summary_zh": "峰会PC日没有发布新一代PC芯片，重点放在生态上。微软发布基于Snapdragon X2 Plus的12英寸Surface Pro和13英寸Surface Laptop，10月13日上市；谷歌发布融合ChromeOS与Android的Googlebook平台，采用第一代Snapdragon X Elite。Windows on Snapdragon应用已超过7300款，设计超过170款。",
+        "whats_new_zh": [
+          "Surface新机采用六核X2 Plus，Hexagon NPU为80 TOPS；微软称端侧AI快95%、图形快60%以上、Office快17%、电池效率提升18%",
+          "Surface Pro 12英寸起价1149.99美元；Surface Laptop 13英寸最长可播放视频22.5小时",
+          "Googlebook由Dell和HP首发，支持本地Gemini功能，续航最长19小时（据MarketBeat）"
+        ],
+        "key_specs": {
+          "npu": "X2 Plus Hexagon NPU 80 TOPS",
+          "other": "Googlebook采用第一代X Elite"
+        },
+        "edge_ai_impact_zh": "80 TOPS NPU下探到入门款Surface，谷歌也把本地Gemini放到骁龙笔记本上，说明端侧AI PC正在从旗舰向主流价位扩散。",
+        "evidence_urls": [
+          "https://www.fonearena.com/blog/493282/microsoft-surface-pro-surface-laptop-2026-price-features.html",
+          "https://www.marketbeat.com/instant-alerts/event-qualcomm-unveils-personal-ai-push-with-snapdragon-powered-glasses-hearables-and-pcs-2026-09-23/"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-24",
+        "vendor": "Meta",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "The Biggest News From Connect 2026",
+        "title_zh": "Connect 2026：Ray-Ban Gen 3/Audio与Muse代理",
+        "url": "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/",
+        "source_type": "官方",
+        "summary_zh": "Meta推出Ray-Ban Meta (Gen 3)、无摄像头的Ray-Ban Meta Audio，以及用于与Muse智能体对话的口袋设备Muse Charm；Muse将可在眼镜上识别视野中的物体并在后台执行任务。官方未披露任何一款AI眼镜的芯片型号。",
+        "whats_new_zh": [
+          "Ray-Ban Meta Gen 3：449美元起，续航最长9小时（比Gen 2多1小时），12MP相机/3K视频，6麦克风阵列降噪>90%，新增自定义AI动作键",
+          "Ray-Ban Meta Audio：349美元，无摄像头的开放式音频AI眼镜，10月13日发货",
+          "Muse Charm：基于实时语音模型的口袋式智能体终端，细节年内公布",
+          "FDA认证的听力增强软件，149.99美元，年内在美国上线",
+          "Meta预计年底前AI眼镜款式超过100种"
+        ],
+        "key_specs": {
+          "power": "Gen 3续航最长9小时",
+          "other": "芯片未公开（会前传闻为骁龙AR1+，未获官方确认）"
+        },
+        "edge_ai_impact_zh": "AI眼镜正分化为“有摄像头的视觉代理”和“无摄像头的纯音频代理”两条线，后者显著降低功耗与隐私门槛；Muse代理上眼镜意味着端侧主要负责唤醒、语音前处理和图像采集，重推理仍依赖手机与云端。",
+        "evidence_urls": [
+          "https://www.meta.com/blog/meta-connect-2026-everything-we-announced/",
+          "https://about.fb.com/news/2026/09/introducing-ray-ban-meta-audio-glasses-new-styles-plus-muse/",
+          "https://hypebeast.com/2026/9/meta-connect-2026-vr-glasses-ray-ban-audio-next-gen-specs"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-23",
+        "vendor": "Meta",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Meta VR Glasses Officially Announced, Shipping Spring 2027 For $1300",
+        "title_zh": "Meta VR Glasses发布：骁龙Reality Elite+分体计算",
+        "url": "https://www.uploadvr.com/meta-vr-glasses-officially-announced-connect-2026/",
+        "source_type": "媒体",
+        "summary_zh": "Meta在Connect 2026上发布约100克的Meta VR Glasses，计算、电池与存储全部移到约300克的分体“计算盒”(puck)中，经混合光纤线缆供电与传输。售价1300美元，2027年春季发货。",
+        "whats_new_zh": [
+          "SoC为高通Snapdragon Reality Elite（AWE 2026发布，NPU 48 TOPS，较XR2+ Gen 2 NPU提升160%）",
+          "12GB RAM + 128GB存储（puck内可microSD扩展）",
+          "双micro-OLED，每眼2412×2288，120Hz；FOV 70°×66°（Quest 3约110°×96°）",
+          "头显约100克，约为Quest 3的1/5；4摄像头眼动追踪+手势+面部追踪"
+        ],
+        "key_specs": {
+          "cpu": "Kryo（4+2性能核，据高通AWE资料）",
+          "gpu": "Adreno（较XR2+ Gen 2提升60%）",
+          "npu": "Hexagon 48 TOPS",
+          "memory": "12GB RAM / 128GB",
+          "other": "分体puck约300克；售价1300美元；2027春季发货"
+        },
+        "edge_ai_impact_zh": "“眼镜+口袋算力盒”分体架构把散热与功耗压力从脸上移走，使48 TOPS级NPU与12GB内存可用于本地手势/眼动追踪及端侧多模态模型，是重度XR走向眼镜形态的主流折中路线。",
+        "evidence_urls": [
+          "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/",
+          "https://hypebeast.com/2026/9/meta-connect-2026-vr-glasses-ray-ban-audio-next-gen-specs",
+          "https://9to5google.com/2026/06/16/snapdragon-reality-elite/"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-23",
+        "vendor": "Qualcomm",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Qualcomm Snapdragon Sound Elite Gen 2 Integrates AI and Wi-Fi for Next-Generation Hearables",
+        "title_zh": "骁龙畅听Elite Gen 2耳机平台",
+        "url": "https://audioxpress.com/news/qualcomm-snapdragon-sound-elite-gen-integrates-ai-and-wi-fi-for-next-generation-hearables",
+        "source_type": "媒体",
+        "summary_zh": "高通发布面向个人AI耳机的Snapdragon Sound Elite Gen 2，集成eNPU和微功耗Wi-Fi 6E，让耳机可以不经过手机直连云端智能体。同时推出Snapdragon Sound Apps and Agents生态，Cleer、HP、Bose等正在开发产品。",
+        "whats_new_zh": [
+          "eNPU算力最高128 GOPS（256 MAC/周期@250MHz），是S7 Gen 1（64 GOPS、128 MAC/周期）的两倍",
+          "集成微功耗Wi-Fi 6E（2.4/5/6GHz，PHY最高86Mbps，双频并发），支持XPAN",
+          "功耗最高降低40%（Wi-Fi连接待机场景仿真，0.6mA对1.0mA，有待最终硅片验证）",
+          "芯片面积缩小30%：SoC合计31.1mm²（上代44.2mm²）；采用第五代自适应ANC"
+        ],
+        "key_specs": {
+          "npu": "eNPU 128 GOPS（256 MAC/cycle @250MHz）",
+          "other": "微功耗Wi-Fi 6E、BT LE Audio/HDT、aptX Lossless，面积31.1mm²"
+        },
+        "edge_ai_impact_zh": "耳机级eNPU算力翻倍，再加上低功耗Wi-Fi，让耳机成为可以独立联网的语音入口和智能体终端。这体现了高通“手机为中心、多种可穿戴设备采集上下文”的分布式端侧AI架构。",
+        "evidence_urls": [
+          "https://hothardware.com/news/qualcomm-snapdragon-sound-elite-gen-2-ai-agents-earbuds",
+          "https://www.idc.com/resource-center/blog/snapdragon-summit-2026-qualcomms-bid-to-be-the-silicon-behind-every-agent-on-every-device/"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-24",
+        "vendor": "Infineon",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Elektor at embedded world North America 2026: Day 2 Update",
+        "title_zh": "英飞凌PSOC Edge在MCU上本地运行语音转文字",
+        "url": "https://www.elektormagazine.com/articles/elektor-at-embedded-world-north-america-day-update",
+        "source_type": "媒体",
+        "summary_zh": "9月22-24日在阿纳海姆举行的embedded world North America上，英飞凌演示了在PSOC Edge E83/E84 MCU上运行的DEEPCRAFT语音转文字模型。同一展会上，兆易创新展出了面向视觉/SLAM/AI推理的600MHz GD32H7，BrainChip展示了基于Akida的雷达分类、人体存在检测、跌倒检测等电池供电方案。",
+        "whats_new_zh": [
+          "PSOC Edge E83/E84运行约6M-32M参数的语音转文字模型",
+          "资源占用约4.4MB ROM、不到3MB RAM，有效功耗约20-65mW",
+          "PSOC Edge E8x采用Cortex-M55 + Ethos-U55 NPU（英飞凌此前公开规格）"
+        ],
+        "key_specs": {
+          "memory": "~4.4MB ROM / <3MB RAM",
+          "npu": "Arm Ethos-U55",
+          "power": "20-65mW active",
+          "other": "DEEPCRAFT AI Suite"
+        },
+        "edge_ai_impact_zh": "数千万参数级的语音模型已能放进几十毫瓦的MCU，“离线语音转写”正下沉到电池供电的IoT和可穿戴设备。",
+        "evidence_urls": [
+          "https://embeddedcomputing.com/application/tech-news-roundup/icymi-ep76-top-electronics-brainchip-partner-summit-electronics-seco-embedded-world-north-america"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-23",
+        "vendor": "Meta",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Meta Ray-Ban Display is Finally Rolling Out Internationally Starting Today",
+        "title_zh": "Ray-Ban Display与神经腕带开售海外",
+        "url": "https://roadtovr.com/meta-ray-ban-display-int-launch-connect-2026/",
+        "source_type": "媒体",
+        "summary_zh": "带单眼显示和sEMG神经腕带的Meta Ray-Ban Display在Connect 2026当天开放美、英、加线上订购，并在法、意、德开启预订，10月13日上市。同时新增免手持导航、个性化全息视频通话、杜比全景声录制等功能。",
+        "whats_new_zh": [
+          "英国749英镑、加拿大1149加元，即日起开售；法意德899欧元，10月13日上市",
+          "美国开放线上订购（此前需线下试戴）",
+          "新增免手持导航、个性化全息形象视频通话、Dolby Atmos录音"
+        ],
+        "key_specs": {
+          "power": "神经腕带续航约18小时，IPX7（第三方资料）",
+          "other": "Neural Band通过前臂肌电(sEMG)识别手指手势"
+        },
+        "edge_ai_impact_zh": "肌电腕带作为眼镜的输入设备开始规模化出海，意味着低功耗端侧手势/肌电信号分类模型将成为可穿戴芯片的新刚需负载。",
+        "evidence_urls": [
+          "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/",
+          "https://www.reality-atlas.com/de/blog/meta-ray-ban-display-review-kaufberatung"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-23",
+        "vendor": "Qualcomm",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "PrismML Brings 1-Bit Bonsai Models to AI Smart Glasses Powered by Snapdragon",
+        "title_zh": "AR1眼镜运行1-bit多模态模型",
+        "url": "https://www.thailand-business-news.com/?p=330746",
+        "source_type": "媒体",
+        "summary_zh": "PrismML在骁龙峰会期间演示，在Snapdragon AR1 Gen 1眼镜平台上本地运行2B参数的1-bit视觉语言模型（基于Bonsai 1.7B），模型权重和结构针对Hexagon NPU做了专门优化。据IDC，高通称AR1/AR1+是首批支持多模态1-bit模型的个人AI平台。",
+        "whats_new_zh": [
+          "模型由1.7B参数的1-bit语言模型和约0.3B的4-bit视觉编码器组成，总计约2B参数（有报道称上下文为1024 token）",
+          "内存占用约为同等4-bit模型的1/4，token生成速度超过4-bit等价模型的2倍",
+          "二手报道引用的厂商数据：权重内存从1.66GB降到0.43GB，生成速度从7.44提升到15.36 tokens/s（对比Qwen3 1.7B 4-bit，在4GB测试平台上测得）",
+          "同期推出Snapdragon START项目，提供基于AR1+的模组、软件和白牌参考设计；Inspecs称从立项到样机只用了4个月"
+        ],
+        "key_specs": {
+          "npu": "Hexagon NPU（AR1 Gen 1），1-bit权重推理",
+          "other": "Snapdragon START：AR1+ Gen 1模组 + 参考设计"
+        },
+        "edge_ai_impact_zh": "1-bit量化让2B级多模态模型能放进眼镜的内存和功耗预算。结合8 Elite Gen 6 NPU新增的INT2支持，可以看出高通正把极低比特推理作为可穿戴端侧AI的主要手段。",
+        "evidence_urls": [
+          "https://www.idc.com/resource-center/blog/snapdragon-summit-2026-qualcomms-bid-to-be-the-silicon-behind-every-agent-on-every-device/",
+          "https://www.marketbeat.com/instant-alerts/event-qualcomm-unveils-personal-ai-push-with-snapdragon-powered-glasses-hearables-and-pcs-2026-09-23/"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-23",
+        "vendor": "Qualcomm",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Qualcomm Unveils Personal AI Push With Snapdragon-Powered Glasses, Hearables and PCs",
+        "title_zh": "Wear Elite AI胸针参考设计等",
+        "url": "https://www.marketbeat.com/instant-alerts/event-qualcomm-unveils-personal-ai-push-with-snapdragon-powered-glasses-hearables-and-pcs-2026-09-23/",
+        "source_type": "媒体",
+        "summary_zh": "峰会第二天，高通集中发布个人AI可穿戴布局：预览基于Snapdragon Wear Elite的个人AI胸针参考设计（独立5G、双摄像头、麦克风和端侧AI），成立Personal AI Health Alliance，并展示Android XR和AR1眼镜的合作进展。",
+        "whats_new_zh": [
+          "AI胸针参考设计基于Wear Elite平台，具备独立5G、双摄像头、多麦克风和端侧AI，更多信息明年公布",
+          "据IDC，Google基于骁龙的Pixel Watch 5、三星和XREAL的Android XR设备，以及与Gentle Monster、Warby Parker合作的AR1眼镜将在年内推出",
+          "Awear展示面向眼镜的智能体操作系统Agentic System One，可在眼镜、手机和汽车之间迁移工作流",
+          "Personal AI Health Alliance：Optum Health、Scripps Health、Merck等探讨跌倒风险预测、临床记录等端侧AI用例"
+        ],
+        "key_specs": {
+          "other": "Wear Elite（3月MWC发布，3nm）用于胸针参考设计"
+        },
+        "edge_ai_impact_zh": "高通把可穿戴设备定位为向智能体提供视觉、音频和情境上下文的采集层，推动多设备协同的端侧智能体架构。低功耗NPU和常驻感知因此成为可穿戴芯片的核心指标。",
+        "evidence_urls": [
+          "https://www.idc.com/resource-center/blog/snapdragon-summit-2026-qualcomms-bid-to-be-the-silicon-behind-every-agent-on-every-device/"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-23",
+        "vendor": "Qualcomm",
+        "category": "存内计算/PIM",
+        "title": "[Snapdragon Summit] Qualcomm Brings Data Center HBC Technology to Smartphone Chips",
+        "title_zh": "高通HBC近存计算引入骁龙",
+        "url": "https://www.thelec.net/news/articleView.html?idxno=14133",
+        "source_type": "媒体",
+        "summary_zh": "高通CEO安蒙在峰会上预告，将把数据中心的High Bandwidth Compute（HBC）技术扩展到骁龙平台，作为让内存和AI计算更靠近的协处理器。HBC通过TSV把多颗LPDDR垂直堆叠在作为计算die的XPU上，属于近存计算（NMC）。更多细节将在MWC 2027公布。",
+        "whats_new_zh": [
+          "结构：多层LPDDR DRAM经TSV堆叠在底部的XPU计算die上，堆叠方式类似HBM，但使用低功耗DRAM",
+          "高通口径：同功耗下带宽和token吞吐效率都是HBM的6倍；相比传统GPU系统，同功耗token吞吐最高8倍；带宽可达数百TB/s量级（数据中心语境）",
+          "分工：高通负责设计、系统集成、底部计算die和TSV设计；三星与SK海力士负责DRAM堆叠；台积电负责集成与封装",
+          "规划覆盖手机、笔记本、智能眼镜和汽车；安蒙称未来的智能体设备每天可在端侧处理最多100万token",
+          "HBC最早在6月投资者日随Dragonfly数据中心路线图发布，这次首次明确向移动端下沉"
+        ],
+        "key_specs": {
+          "memory": "LPDDR堆叠 + TSV + XPU计算die（近存计算）",
+          "other": "具体搭载芯片与时间未公布，MWC 2027披露更多"
+        },
+        "edge_ai_impact_zh": "这是主流手机SoC厂商首次公开把近存计算作为端侧AI路线，直接针对LLM解码的内存墙。如果落地，端侧大模型的token吞吐和能效可能出现代际跃升，对低功耗常驻智能体意义很大。",
+        "evidence_urls": [
+          "https://www.idc.com/resource-center/blog/snapdragon-summit-2026-qualcomms-bid-to-be-the-silicon-behind-every-agent-on-every-device/"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-23",
+        "vendor": "Samsung Electronics / Qualcomm",
+        "category": "存储与内存",
+        "title": "Samsung Electronics' LPDDR6 Achieves Industry-First Validation on Qualcomm 'Snapdragon 8' Platform",
+        "title_zh": "三星16GB LPDDR6完成骁龙8 Elite Extreme Gen 6验证",
+        "url": "https://view.asiae.co.kr/en/article/2026092310181884005",
+        "source_type": "媒体",
+        "summary_zh": "三星宣布，其16GB LPDDR6已在高通Snapdragon 8 Elite Extreme Gen 6平台上完成验证，最高I/O速率10.7Gbps，号称业界首个。高通在9月22日开幕的Snapdragon Summit上发布了新平台，报道称支持最高24GB LPDDR5X/LPDDR6和UFS 5.0。三星同时表示，LPDDR产品线正向AI PC、边缘、车载扩展，其中包括LPDDR-PIM。",
+        "whats_new_zh": [
+          "16GB LPDDR6，10.7Gbps，带宽最高114GB/s",
+          "借助DVFS和动态能效模式（DEM），能效比LPDDR5X最高提升21%",
+          "引入PRAC（按行激活计数）机制，缓解行锤类干扰",
+          "Omdia预测LPDDR6在LPDDR出货中的占比：2027年3%、2028年9%、2030年39%"
+        ],
+        "key_specs": {
+          "memory": "16GB LPDDR6 10.7Gbps / 114GB/s",
+          "power": "能效较LPDDR5X +21%",
+          "other": "平台：Snapdragon 8 Elite Extreme Gen 6"
+        },
+        "edge_ai_impact_zh": "旗舰手机内存带宽从约85GB/s级迈向114GB/s，端侧LLM解码速度（token/s）会直接受益。但Omdia预测2027年LPDDR6渗透率只有3%，加上成本压力，短期内仍以超旗舰机型为主。",
+        "evidence_urls": [
+          "https://www.thetechoutlook.com/new-release/gadgets-release/mobile/qualcomm-unveils-snapdragon-8-elite-extreme-gen-6-and-snapdragon-8-elite-gen-6-chipsets/"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-24",
+        "vendor": "Qualcomm",
+        "category": "车载/机器人",
+        "title": "Qualcomm to Acquire PickNik to Advance the Future of Open Robotics and Physical AI",
+        "title_zh": "高通收购机器人软件商PickNik",
+        "url": "https://evertiq.com/news/2026-09-24-qualcomm-to-acquire-picknik-to-advance-open-robotics-ecosystem",
+        "source_type": "媒体",
+        "summary_zh": "高通在ROSCon多伦多宣布收购PickNik，这家公司是开源机械臂运动规划框架MoveIt的维护方，交易金额未披露。MoveIt将继续开源，并与Dragonwing机器人平台深度集成。",
+        "whats_new_zh": [
+          "MoveIt 1和MoveIt 2继续开源、由社区驱动，并继续支持第三方硬件",
+          "目标是打通从VLA/VLM模型到规划、操作和实时控制的链路，并与Dragonwing机器人平台集成",
+          "交易仍需满足常规交割条件"
+        ],
+        "key_specs": {},
+        "edge_ai_impact_zh": "这次收购补齐了机器人软件栈，让Dragonwing在具身智能和物理AI领域与NVIDIA Jetson生态竞争。端侧VLA推理与实时控制的结合是其中的关键。",
+        "evidence_urls": [
+          "https://www.robotics247.com/article/qualcomm-acquires-picknik-robotics-to-advance-the-future-of-open-robotics-and-physical-ai"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-22",
+        "vendor": "海光信息 Hygon",
+        "category": "车载/机器人",
+        "title": "海光信息发布首款面向端侧的算力芯片 CPU1000 系列",
+        "title_zh": "海光发布端侧CPU1000系列，面向机器人",
+        "url": "https://chinaflashmarket.com/a/184296",
+        "source_type": "媒体",
+        "summary_zh": "海光信息在深圳发布基于C86架构的CPU1000系列，定位低功耗、嵌入式与端侧场景，面向机器人、机器视觉、工业控制等“物理世界”应用。总裁沙超群称其为产品系列，后续将按场景配置CPU、GPU、NPU算力。",
+        "whats_new_zh": [
+          "海光首款面向端侧/物理世界的处理器，补齐“云-边-端”布局（此前为7000/5000/3000系列）",
+          "采用C86（x86兼容）架构",
+          "核数、制程、功耗、NPU算力均未公开"
+        ],
+        "key_specs": {
+          "process": "未披露",
+          "cpu": "C86架构",
+          "npu": "后续按场景配置",
+          "power": "低功耗（未给数值）",
+          "other": "口号“让算力抵达物理世界”"
+        },
+        "edge_ai_impact_zh": "国产服务器CPU厂商下探到机器人与工控端侧，x86兼容生态可降低工业软件迁移成本，但AI能力尚无具体参数，竞争力待观察。",
+        "evidence_urls": [
+          "https://scmp.com/tech/tech-trends/article/3368168/chinese-ai-chipmaker-hygon-plots-expansion-data-centres-robotics",
+          "https://www.nbd.com.cn/articles/2026-09-20/4586751.html"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-24",
+        "vendor": "AMD / Perplexity",
+        "category": "软件栈/工具链",
+        "title": "With AMD Ryzen AI Max Series Processors, Perplexity Brings Portable Computer to Agentic PCs",
+        "title_zh": "Perplexity本地Agent登陆Ryzen AI Max PC",
+        "url": "https://newsroom.amd.com/news/amd-perplexity-agentic-pcs/",
+        "source_type": "官方",
+        "summary_zh": "AMD宣布Perplexity的“Portable Computer”可在搭载Ryzen AI Max系列（含Ryzen AI Halo开发平台）的Windows PC上运行，订阅用户可在本地硬件执行AI任务和周期性工作流，无需消耗云端推理额度，并可按需切换云端推理。",
+        "whats_new_zh": [
+          "本地Agent任务不再消耗Perplexity Computer云端推理额度",
+          "本地模型与云端推理混合调度",
+          "AMD称128GB Ryzen AI Max+系统可本地运行最高200B参数模型（Agentic PC资料页）"
+        ],
+        "key_specs": {
+          "process": "TSMC 4nm（Strix Halo系）",
+          "cpu": "Zen 5，最高16核",
+          "gpu": "RDNA 3.5，最高40 CU",
+          "npu": "XDNA 2（约50 TOPS级）",
+          "memory": "LPDDR5X统一内存最高128GB（Max+ 300系）/192GB（PRO 400系）",
+          "other": "公告本身未给基准数据"
+        },
+        "edge_ai_impact_zh": "第三方Agent应用开始用“节省云推理成本”作为本地运行的理由，大统一内存x86 APU成为本地Agent的主要硬件载体之一。",
+        "evidence_urls": [
+          "https://newsroom.amd.com/press-kits/press-kit-agentic-pcs"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-25",
+        "vendor": "Qualcomm",
+        "category": "软件栈/工具链",
+        "title": "Qualcomm Unleashes Linux On Snapdragon X2 With NPU And GPU Support",
+        "title_zh": "骁龙X2获官方Linux支持",
+        "url": "https://hothardware.com/news/qualcomm-unleashes-linux-on-snapdragon-x2-with-npu-and-gpu-support",
+        "source_type": "媒体",
+        "summary_zh": "高通在峰会上宣布Snapdragon X2系列PC获得官方Linux支持：自研的Debian发行版年底推出，与Canonical合作的Ubuntu认证预计2027年上半年就绪。首批伙伴包括ASUS Zenbook A14/A16、HP和HUMAIN。",
+        "whats_new_zh": [
+          "Debian首批支持X2 Plus、X2 Elite和X2 Elite Extreme，2026年底可用；Ubuntu认证在2027年上半年",
+          "据多家媒体报道，Hexagon NPU和Adreno GPU等核心驱动正在向Linux主线上游化",
+          "不回溯支持第一代Snapdragon X；HUMAIN Horizon Ultra（X2 Elite）运行基于Linux的智能体OS"
+        ],
+        "key_specs": {
+          "other": "适用Snapdragon X2系列（X2系列Hexagon NPU最高80 TOPS）"
+        },
+        "edge_ai_impact_zh": "Linux上可用的Hexagon NPU驱动让X2成为开源端侧AI和智能体的开发平台，扩大了NPU在开发者和边缘场景中的可用性。",
+        "evidence_urls": [
+          "https://itdaily.com/news/software/qualcomm-linux-snapdragon-x2-debian-ubuntu/",
+          "https://www.idc.com/resource-center/blog/snapdragon-summit-2026-qualcomms-bid-to-be-the-silicon-behind-every-agent-on-every-device/"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-23",
+        "vendor": "Qualcomm",
+        "category": "产业动态",
+        "title": "小米 18 Pro Max 手机发布：首发第六代骁龙 8 超级至尊版、8500mAh 金沙江电池，6999 元起",
+        "title_zh": "小米18 Pro系列首发骁龙双旗舰",
+        "url": "https://www.ithome.com/1/006/425.htm",
+        "source_type": "媒体",
+        "summary_zh": "小米于9月23日发布小米18 Pro和18 Pro Max，分别首发第六代骁龙8至尊版和第六代骁龙8超级至尊版，是新平台的首批商用机型。18 Pro Max采用OFFSET PoP高导热封装和新一代环形冷泵散热，起售价6999元。",
+        "whats_new_zh": [
+          "18 Pro Max首发超级至尊版（2nm、CPU 5GHz），小米称重载游戏可1小时持久满帧",
+          "采用Offset PoP芯片封装，与高通新的封装方案一致",
+          "端侧AI方面，超级小爱2.0基于Xiaomi MiMo大模型，“传奇一瞬”影像采用端云双管线",
+          "其他已确认或预期的机型：OnePlus 16（超级至尊版），以及Motorola、OPPO、vivo、HONOR、iQOO、REDMI、RedMagic"
+        ],
+        "key_specs": {
+          "process": "2nm",
+          "cpu": "最高5GHz"
+        },
+        "edge_ai_impact_zh": "首批机型上市后，端侧MoE、长上下文等NPU新能力将从第四季度起在中国市场的旗舰机上接受真实场景检验。",
+        "evidence_urls": [
+          "https://www.gsmarena.com/snapdragon_8_elite_extreme_gen_6_and_8_elite_gen_6_debut-news-74721.php",
+          "https://www.idc.com/resource-center/blog/snapdragon-summit-2026-qualcomms-bid-to-be-the-silicon-behind-every-agent-on-every-device/"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-28",
+        "vendor": "Huawei (HiSilicon) / Bernstein",
+        "category": "产业动态",
+        "title": "Huawei Smartphone Chip Narrows Performance Gap",
+        "title_zh": "伯恩斯坦：麒麟9050 Pro与苹果差距缩至三年",
+        "url": "https://www.silicon.co.uk/mobility/smartphones/hauwei-kirin-9050-performance-631676",
+        "source_type": "媒体",
+        "summary_zh": "伯恩斯坦分析认为麒麟9050 Pro是“被低估的突破”，其收益主要来自架构（Tau定律、LogicFolding、软硬协同、灵衢UnifiedBus）而非制程微缩。分析称其与苹果的性能差距由四年缩小到三年，同样方法将用于昇腾AI芯片。",
+        "whats_new_zh": [
+          "晶体管密度从约155提升到238 MTr/mm²",
+          "Geekbench 6多核超过苹果A17 Pro，落后最新A20 Pro约30%；单核接近台积电4nm芯片水平",
+          "估计等效7nm节点，可能采用SMIC N+2/N+3（DUV）"
+        ],
+        "key_specs": {
+          "process": "估计SMIC N+2/N+3（7nm级）",
+          "other": "华为提出Tau芯片到2031年达到等效1.4nm密度"
+        },
+        "edge_ai_impact_zh": "若“架构换制程”路线可持续，国产端侧SoC在受限工艺下仍能保持AI能效迭代节奏；但单核与旗舰仍有明显差距，端侧LLM对单线程/带宽敏感的环节仍是短板。",
+        "evidence_urls": [
+          "https://evertiq.com/design/2026-05-27-huawei-proposes-tau-scaling-law-as-successor-to-moores-law"
+        ],
+        "confidence": "medium"
+      }
+    ]
   }
 }

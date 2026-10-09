@@ -1,7 +1,8 @@
 """Week archive / manifest / parse logic for the research-radar site.
 
 A "week" is a frozen snapshot of one weekly cycle: the papers list, the
-weekly summary (overview + highlights), the community radar, and the trending list. This module
+weekly summary (overview + highlights), the community radar, the hardware
+radar, and the trending list. This module
 owns the data model and disk layout under ``data/weeks/``; both the static
 builder (app.build) and the runtime server (app.server) call into it.
 """
@@ -63,7 +64,7 @@ def read_archive(label: str) -> dict | None:
 
 def write_archive(
         meta: dict, papers: list, weekly: dict, trending: dict,
-        community: dict | None = None) -> None:
+        community: dict | None = None, hardware: dict | None = None) -> None:
     WEEKS_DIR.mkdir(parents=True, exist_ok=True)
     rec = {
         "label": meta["label"],
@@ -73,6 +74,7 @@ def write_archive(
         "weekly": weekly,
         "trending": trending,
         "community": community or {"coverage": [], "items": []},
+        "hardware": hardware or {"window": {}, "overview": "", "items": []},
     }
     archive_path(meta["label"]).write_text(
         json.dumps(rec, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -127,6 +129,9 @@ _TRENDING_RE = re.compile(
     r"(?=window\.__COMMUNITY__|window\.__WEEKS__|</script>)", re.S)
 _COMMUNITY_RE = re.compile(
     r"window\.__COMMUNITY__\s*=\s*(\{.*?\});\s*"
+    r"(?=window\.__HARDWARE__|window\.__WEEKS__|</script>)", re.S)
+_HARDWARE_RE = re.compile(
+    r"window\.__HARDWARE__\s*=\s*(\{.*?\});\s*"
     r"(?=window\.__WEEKS__|</script>)", re.S)
 
 
@@ -157,4 +162,5 @@ def extract_payloads_from_html(html: str) -> dict:
         "weekly": grab(_WEEKLY_RE, {"overview": "", "highlights": []}),
         "trending": grab(_TRENDING_RE, {"items": []}),
         "community": grab(_COMMUNITY_RE, {"coverage": [], "items": []}),
+        "hardware": grab(_HARDWARE_RE, {"window": {}, "overview": "", "items": []}),
     }

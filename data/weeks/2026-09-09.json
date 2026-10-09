@@ -6087,5 +6087,566 @@
         "evidence_url": "https://xyntetik.com/runner/truncation-safe-tool-calling/"
       }
     ]
+  },
+  "hardware": {
+    "window": {
+      "start": "2026-09-09",
+      "end": "2026-09-15"
+    },
+    "overview": "本周是苹果周。A20 Pro 成为首颗量产的 2nm 手机 SoC（TSMC N2），封装从 PoP 改为内存与 SoC 并排的 WMCM，内存带宽 +50%，持续性能 +40%；Neural Engine 升级为双 16 核，算力翻倍，CPU 与 GPU 内也都嵌入了 Neural Accelerator。iOS 27 的端侧 AFM 3 Core Advanced 是约 20B 参数的稀疏模型，每次只激活 1–4B，完整权重放在闪存、专家按需载入，只开放给内存 ≥12GB 的设备，内存容量第一次成了功能门槛。联发科随后发布天玑 9600 Pro：2nm，CPU 全为 C2 大核，NPU 拆成负责 LLM 的 NPU 1090 和常驻低功耗 NPU，宣传口径从 TOPS 换成 prefill +51%、每瓦 token +55%。高通提前披露新 Hexagon NPU：新增 Element Accelerator，共享内存 +50%，INT4 prefill 最高 +50%。存内计算有两条进展：天玑 9600M 内置 CIM 超低功耗 NPU，伯克利提出在闪存存内计算上跑 LLM。",
+    "items": [
+      {
+        "date": "2026-09-15",
+        "vendor": "MediaTek",
+        "category": "移动SoC",
+        "title": "MediaTek Dimensity 9600 Pro Sets New Standard for Flagship Smartphone Chips",
+        "title_zh": "联发科天玑9600 Pro：2nm双NPU旗舰",
+        "url": "https://www.mediatek.com/press-room/mediatek-dimensity-9600-pro-sets-new-standard-for-flagship-smartphone-chips",
+        "source_type": "官方",
+        "summary_zh": "联发科发布天玑9600 Pro，这是其首款采用台积电2nm（N2P）工艺的旗舰手机SoC，延续全大核设计，采用Arm C2-Ultra/C2-Pro新核。AI部分改为“双NPU”：NPU 1090负责生成式/智能体AI，第二代Super Efficient NPU负责常驻感知，并配合Dimensity Agentic AI Engine调度CPU/GPU/ISP/NPU。首次在天玑平台支持LPDDR6与UFS 5.0。",
+        "whats_new_zh": [
+          "2nm工艺，2×C2-Ultra@4.55GHz + 3×C2-Pro@4.35GHz + 3×C2-Pro@3.1GHz，总缓存约34.5MB（16MB L3 + 10MB SLC）",
+          "CPU单核+17%、多核+15%，多核功耗降低61%（对比上代天玑9500，厂商实验室数据）",
+          "NPU 1090：INT4算力翻倍，LLM prefill +51%，每瓦token生成 +55%，token生成速度 +40%，模型启动 +27%",
+          "Super Efficient NPU 2.0常驻AI功耗降低40%；支持最高30B参数端侧模型、MoE推理与硬件KV-cache压缩引擎",
+          "G2-Ultra NX GPU峰值性能+27%、峰值功耗-24%、光追+18%，引入Dimensity Neural Graphics Architecture",
+          "首发支持LPDDR6（宣称同频下有效带宽较LPDDR5X提升33%）与UFS 5.0；Imagiq 1290 ISP支持4K240原生慢动作"
+        ],
+        "key_specs": {
+          "process": "TSMC 2nm (N2P)",
+          "cpu": "8核全大核 2×Arm C2-Ultra 4.55GHz + 3×C2-Pro 4.35GHz + 3×C2-Pro 3.1GHz；34.5MB总缓存",
+          "gpu": "Arm G2-Ultra NX（含神经图形加速）",
+          "npu": "双NPU：NPU 1090（INT4算力为上代2倍，未公布TOPS）+ Super Efficient NPU 2.0；Agentic AI Engine + NeuroPilot SDK",
+          "memory": "LPDDR6 或 LPDDR5X-10667；UFS 5.0",
+          "other": "Imagiq 1290 ISP；首批终端本季度上市"
+        },
+        "edge_ai_impact_zh": "联发科首次把“智能体AI”做成硬件级架构：大NPU负责LLM prefill/decode，小NPU负责常驻感知，加上KV-cache压缩和LPDDR6带宽，直接瞄准手机端多轮对话与长上下文Agent的内存瓶颈。30B参数（MoE）上限意味着手机端可承载的模型规模进一步上探。",
+        "evidence_urls": [
+          "https://www.prnewswire.com/news-releases/mediatek-dimensity-9600-pro-sets-new-standard-for-flagship-smartphone-chips-302878749.html",
+          "https://www.taipeitimes.com/News/biz/archives/2026/09/16/2003864324",
+          "https://www.pk-sharma.com/briefing/mediatek-dimensity-9600-pro-2nm-dual-npu-on-device-ai"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-15",
+        "vendor": "MediaTek",
+        "category": "移动SoC",
+        "title": "MediaTek Dimensity 9600M",
+        "title_zh": "天玑9600M：3nm次旗舰，含存内计算NPU",
+        "url": "https://www.mediatek.com/products/smartphones/dimensity-9600m",
+        "source_type": "官方",
+        "summary_zh": "与9600 Pro同日亮相的天玑9600M定位更广的旗舰市场，采用3nm级工艺和C1代CPU，被多家媒体视为天玑9500的更名/升级版本。其NPU 990用于生成式与智能体AI，另配一个采用存内计算（CIM）架构的超低功耗NPU负责常驻任务。",
+        "whats_new_zh": [
+          "1×C1-Ultra + 3×C1-Premium + 4×C1-Pro，16MB L3 + 10MB SLC，支持SME2",
+          "Mali-G1 Ultra MC12 GPU，宣称游戏最高185fps、光追场景120fps、MRFC 3.0插帧60→120fps",
+          "NPU 990 + 存内计算（CIM）超低功耗NPU；官方列出支持Gemini Nano 4与Qwen 3.5 Omni 4B",
+          "LPDDR5X-10667，UFS 4.1；支持三折叠屏三路MIPI"
+        ],
+        "key_specs": {
+          "process": "TSMC 3nm级（官方页未列，媒体称N3P）",
+          "cpu": "1×C1-Ultra + 3×C1-Premium + 4×C1-Pro（媒体称超大核4.21GHz）",
+          "gpu": "Arm Mali-G1 Ultra MC12",
+          "npu": "NPU 990 + CIM超低功耗NPU（未公布TOPS）",
+          "memory": "LPDDR5X-10667；UFS 4.1",
+          "other": "首发 vivo X500、OPPO Find X10 标准版"
+        },
+        "edge_ai_impact_zh": "存内计算NPU进入量产手机SoC，用于always-on感知，有助于在极低功耗下维持Agent的环境感知能力；官方点名Gemini Nano 4与Qwen 3.5 Omni 4B，显示端侧多模态小模型已成为标配适配对象。",
+        "evidence_urls": [
+          "https://www.teknoblog.com/mediatek-dimensity-9600m-ozellikleri/",
+          "https://www.91mobiles.com/hub/vivo-x500-series-launched-china-price-specifications/"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-09",
+        "vendor": "Apple",
+        "category": "移动SoC",
+        "title": "Apple debuts iPhone 18 Pro and iPhone 18 Pro Max",
+        "title_zh": "iPhone 18 Pro/Pro Max 与 A20 Pro 发布",
+        "url": "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/",
+        "source_type": "官方",
+        "summary_zh": "Apple 在 9 月 9 日的“Surprise and shine”发布会上推出 iPhone 18 Pro / Pro Max，搭载基于 2nm 工艺的 A20 Pro。新芯片采用借鉴 M 系列的定制封装，SoC 裸片与内存并排放置，可以直接贴合面积扩大到三倍的新均热板，持续性能最高提升 40%。iPhone 18 Pro 首发 Apple 第二代自研基带 C2，两款机型都搭载 N1 无线芯片。",
+        "whats_new_zh": [
+          "首款 2nm 手机 SoC：A20 Pro 采用“最新 2 纳米工艺”（TechInsights 确认为 TSMC N2，即 GAA 纳米片晶体管）",
+          "6 核 CPU，Apple 称其“集成 Neural Accelerators”；GPU 从 6 核增至 7 核，性能比 A19 Pro 最高提升 40%",
+          "全新双 16 核 Neural Engine（共 32 核），AI 算力为 A19 Pro 的 2 倍",
+          "内存带宽比 A19 Pro 提升 50%",
+          "封装从 PoP 改为 SoC 与内存并排的定制封装，内存移出散热路径；均热板面积为 iPhone 17 Pro 的 3 倍，持续性能最高 +40%",
+          "续航：eSIM 版视频播放最长 36 小时（Pro）和 45 小时（Pro Max）；起售价 1,199 / 1,299 美元，9 月 18 日发售"
+        ],
+        "key_specs": {
+          "process": "2nm（TSMC N2）",
+          "cpu": "6 核（2P+4E，据 TechInsights），Apple 称集成 Neural Accelerators；Geekbench 显示主频约 4.93GHz",
+          "gpu": "7 核，比 A19 Pro 最高快 40%",
+          "npu": "双 16 核 Neural Engine，算力为 A19 Pro 的 2 倍（Apple 未公布 TOPS）",
+          "memory": "带宽比 A19 Pro +50%；LPDDR5X，96-bit（TechInsights 初步结论）；容量官方未公布（部分媒体称 12GB，未核实）",
+          "other": "SoC 与内存并排封装、直贴均热板；C2 基带（仅 Pro）；N1：Wi-Fi 7 / BT 6 / Thread"
+        },
+        "edge_ai_impact_zh": "NPU 改为双 16 核，算力翻倍，再加上 50% 的带宽提升，直接缓解了端侧 LLM 解码时受带宽限制的问题。新封装把内存移出散热路径，提高了长时间推理（agent 连续调用）时的持续性能上限。",
+        "evidence_urls": [
+          "https://www.macrumors.com/2026/09/09/apple-september-2026-event-recap/",
+          "https://www.techinsights.com/blog/apple-a20-pro-tsmc-2nm-processor-analysis"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-09",
+        "vendor": "Apple",
+        "category": "移动SoC",
+        "title": "Apple unveils iPhone Duo",
+        "title_zh": "折叠屏 iPhone Duo（A20 Pro）",
+        "url": "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/",
+        "source_type": "官方",
+        "summary_zh": "Apple 首款折叠屏手机 iPhone Duo 发布，内屏 7.6 英寸、外屏 5.4 英寸，同样搭载 A20 Pro、C2 基带和 N1。新封装让芯片直接连接定制均热板，持续性能比 iPhone 17 Pro 最高提升 35%。机身左右两侧各放一块电池，协同工作。起售价 1,999 美元，10 月 23 日发售。",
+        "whats_new_zh": [
+          "A20 Pro 配置：CPU 比 A19 Pro 快 20%，7 核 GPU 快 40%，双 16 核 NPU 算力为 2 倍，统一内存带宽 +50%",
+          "持续性能比 iPhone 17 Pro 最高 +35%（手机版为 +40%，可见折叠机身的散热余量更小）",
+          "双电池并联：内屏视频播放最长 31 小时、外屏最长 44 小时，两块屏均衡使用时最长 24 小时",
+          "C2 基带在美国支持毫米波；随附 iOS 27.1；Smart Take 等相机功能在 A20 Pro 上运行端侧模型，第三方 Detail App 通过 Core AI 框架在端侧运行模型"
+        ],
+        "key_specs": {
+          "process": "2nm",
+          "cpu": "6 核，比 A19 Pro 最高 +20%",
+          "gpu": "7 核，最高 +40%",
+          "npu": "双 16 核 Neural Engine，2 倍算力",
+          "memory": "统一内存带宽 +50%（容量未公布）",
+          "other": "C2 基带（支持 mmWave）；N1（Wi-Fi 7/BT 6/Thread）；7.6+5.4 英寸双屏"
+        },
+        "edge_ai_impact_zh": "Apple 公开把 Core AI 框架作为第三方 App 在端侧跑模型的路径，说明 iOS 27 的端侧推理栈已经开始面向开发者。折叠机型散热受限、持续性能偏低，说明封装和散热仍是端侧大模型能否持续运行的关键。",
+        "evidence_urls": [
+          "https://www.macrumors.com/2026/09/09/apple-september-2026-event-recap/"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-10",
+        "vendor": "Apple",
+        "category": "移动SoC",
+        "title": "iPhone 18 Pro and Pro Max Benchmarks Reveal Speed of A20 Pro Chip",
+        "title_zh": "A20 Pro 首批 Geekbench 跑分",
+        "url": "https://www.macrumors.com/2026/09/10/iphone-18-pro-max-benchmarks-reveal-a20-pro-speed/",
+        "source_type": "媒体",
+        "summary_zh": "MacRumors 汇总了首批未经证实的 Geekbench 记录：iPhone 18 Pro 单核 4,719、多核 12,677，Pro Max 单核 4,725、多核 12,575，CPU 主频约 4.93GHz。相比 A19 Pro，单核约快 21–23%，多核约快 27–28%，7 核 GPU 约快 38–40%，均略高于 Apple 官方的“CPU 最高 +20%”。",
+        "whats_new_zh": [
+          "Geekbench（泄露）单核约 4,720，多核约 12,600",
+          "CPU 主频约 4.93GHz",
+          "相比 A19 Pro：单核 +21–23%，多核 +27–28%，GPU +38–40%"
+        ],
+        "key_specs": {
+          "process": "2nm",
+          "cpu": "6 核，约 4.93GHz",
+          "gpu": "7 核，约 +38–40%（Metal）",
+          "other": "单次跑分，不反映持续或游戏性能"
+        },
+        "edge_ai_impact_zh": "单核性能明显提升，对 agent 场景中的 tokenizer、调度和工具调用等串行逻辑有直接好处；但端侧 LLM 的吞吐主要取决于 NPU 和内存带宽，CPU 跑分只能作参考。",
+        "evidence_urls": [],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-15",
+        "vendor": "Ambarella",
+        "category": "NPU/AI加速器",
+        "title": "Ambarella Launches X7, Its First Standalone AI Accelerator to Add Physical AI to Any Host Processor",
+        "title_zh": "安霸X7：首款独立AI协处理加速器",
+        "url": "https://finviz.com/news/392185/ambarella-launches-x7-its-first-standalone-ai-accelerator-to-add-physical-ai-to-any-host-processor",
+        "source_type": "官方",
+        "summary_zh": "Ambarella发布首款独立CVflow AI加速芯片X7，作为Arm/x86主处理器的协处理器，在不重新设计平台的前提下为既有设备加装AI能力。X7已送样，XCalibur评估套件向合格客户供应，多家OEM已开始设计导入。",
+        "whats_new_zh": [
+          "通过单lane PCIe Gen 3或USB 3.2连接主机，主机视为标准PCIe设备",
+          "现有客户设计功耗2-5W",
+          "XCalibur参考卡为M.2 2280规格，搭载LPDDR5",
+          "支持CNN、ViT、多模态Transformer及混合网络；配套Cooper Model Garden"
+        ],
+        "key_specs": {
+          "process": "未披露",
+          "npu": "CVflow（TOPS未披露）",
+          "memory": "参考卡LPDDR5",
+          "power": "2-5W",
+          "other": "现已送样"
+        },
+        "edge_ai_impact_zh": "与Hailo类似的M.2协处理器形态，让存量摄像头、工控机、网关以低改造成本跑多模态模型，扩大了“非手机”端侧AI的装机面。",
+        "evidence_urls": [
+          "https://investor.ambarella.com/node/17291",
+          "https://ai2.work/blog/ambarella-unveils-x7-accelerator-and-lifts-edge-ai-sam-to-22-9b"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-10",
+        "vendor": "Qualcomm",
+        "category": "NPU/AI加速器",
+        "title": "Hexagon NPU: A new mobile architecture for agentic AI",
+        "title_zh": "新一代Hexagon NPU架构预披露",
+        "url": "https://www.qualcomm.com/news/onq/2026/09/hexagon-npu-agentic-ai-architecture",
+        "source_type": "官方",
+        "summary_zh": "高通在峰会前（9月10日）通过OnQ博客单独披露下一代旗舰的Hexagon NPU架构，定位为“常驻型智能体AI”。新架构加入面向Transformer的Element Accelerator，共享内存扩大50%，并首次支持端侧MoE大模型。",
+        "whats_new_zh": [
+          "新增Element Accelerator，专门加速Transformer负载，并针对快速动作循环和KV Cache做了优化",
+          "共享内存容量+50%，减少对外部DRAM的访问",
+          "INT4模型的prefill性能比8 Elite Gen 5最高提升50%，并增强了投机解码（speculative decoding），整体tokens/s提升（未公布绝对值）",
+          "首次支持最高30B参数的MoE模型，每个token只激活约3B路由参数；上下文长度最高32K",
+          "精度支持FP16/INT2/INT4/INT8/FP8；据The Elec，响应可在1.5秒内开始"
+        ],
+        "key_specs": {
+          "npu": "Hexagon + Element Accelerator，共享内存+50%，INT2/INT4/INT8/FP8/FP16，32K上下文，30B MoE（约3B激活）"
+        },
+        "edge_ai_impact_zh": "这是高通首次把“端侧MoE + 长上下文 + KV Cache加速”作为NPU的一等设计目标。它说明手机端大模型的瓶颈已经从算力转向内存容量和带宽，而MoE的稀疏激活是在LPDDR带宽受限时扩大模型规模的关键路径。",
+        "evidence_urls": [
+          "https://www.computerworld.com/article/4220719/qualcomms-next-snapdragon-mobile-chip-comes-into-focus-with-on-device-ai.html",
+          "https://www.thelec.net/news/articleView.html?idxno=13884"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-09",
+        "vendor": "Apple",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Introducing Apple Watch Series 12, with the all-new Health Sensing System",
+        "title_zh": "Apple Watch Series 12 / Ultra 4 与 S11",
+        "url": "https://www.apple.com/newsroom/2026/09/introducing-apple-watch-series-12-with-the-all-new-health-sensing-system/",
+        "source_type": "官方",
+        "summary_zh": "Apple Watch Series 12 和 Ultra 4 搭载 S11 芯片，Apple 称其为“最强可穿戴芯片”，但没有公布工艺和核心数。S11 内置 Secure Exclave 硬件隔离区，原始音频在里面处理后随即删除，用来支撑 Sound Recognition、Live Rewind、Siri Recap 等“Audio Intelligence”功能。新的 Health Sensing System 每 5 秒测一次心率，HRV 采样频率最高提升 24 倍。",
+        "whats_new_zh": [
+          "S11 新增 Secure Exclave：音频在与系统隔离的硬件区处理，不保存录音",
+          "全天每 5 秒测一次心率；HRV 测量频率最高提升 24 倍，并新增 0–10 分 Readiness 评分",
+          "Series 12 续航：日常 24 小时，户外运动 10 小时（+25%），快充 15 分钟可用 12 小时（+50%）",
+          "Ultra 4 续航：日常 50 小时，低功耗模式 84 小时，Max Extended Workout 45 小时；起售价 399 / 799 美元",
+          "Sound Recognition 在端侧运行；Live Rewind 和 Siri Recap 依赖配对 iPhone 上的模型和 PCC"
+        ],
+        "key_specs": {
+          "process": "未公布",
+          "cpu": "未公布",
+          "gpu": "未公布",
+          "npu": "未公布",
+          "memory": "未公布",
+          "other": "S11 + Secure Exclave；新光学/电学心率传感器；Ultra 4 支持卫星通信（Globalstar）"
+        },
+        "edge_ai_impact_zh": "手表采用“端侧常驻感知 + 硬件隔离处理 + 手机/PCC 负责重计算”的分层架构，适合常开语音和环境感知类 agent：在极低功耗下实现常时监听，同时保护隐私。",
+        "evidence_urls": [
+          "https://www.apple.com/newsroom/2026/09/apple-unveils-apple-watch-ultra-4/",
+          "https://www.apple.com/newsroom/2026/09/apple-advances-health-and-fitness-capabilities-using-apple-intelligence/"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-09",
+        "vendor": "Apple",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Apple introduces AirPods 5 with best-in-class open-ear Active Noise Cancellation",
+        "title_zh": "AirPods 5：开放式主动降噪",
+        "url": "https://www.apple.com/newsroom/2026/09/apple-introduces-airpods-5-with-best-in-class-open-ear-active-noise-cancellation/",
+        "source_type": "官方",
+        "summary_zh": "AirPods 5 全系标配主动降噪（ANC），借助新的多孔声学结构和更新的算法，降噪量比 AirPods 4 ANC 最高多 50%。新闻稿没有写明 H 系列芯片型号：发布前传闻为 H3，第三方 Apple Wiki 记为 H2，目前无法确认。耳机支持 Siri AI、点头/摇头交互和 Live Translation。",
+        "whats_new_zh": [
+          "ANC 降噪量比 AirPods 4 ANC 最高 +50%（新多孔声学结构 + 算法）",
+          "无线充电盒版本：开启 ANC 单次 5 小时（+1 小时），配合充电盒共 22 小时",
+          "Live Translation 由 Apple Intelligence 驱动；Siri AI 可免唤醒手势交互",
+          "售价 129 美元，无线充电盒版 149 美元；H 系列芯片型号官方未披露"
+        ],
+        "key_specs": {
+          "process": "未公布",
+          "other": "音频芯片型号未公布（H2 或 H3 存疑）"
+        },
+        "edge_ai_impact_zh": "耳机负责低功耗拾音和降噪前处理，翻译和语言模型推理交给 iPhone。这是典型的“耳机作入口、手机作算力”的 agent 交互形态。",
+        "evidence_urls": [
+          "https://www.macrumors.com/2026/09/09/apple-september-2026-event-recap/"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-10",
+        "vendor": "阿里巴巴（千问Qwen）",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Alibaba Qwen previews N1 AI glasses with iris recognition and no display",
+        "title_zh": "千问N1 AI眼镜预览：虹膜支付、无显示",
+        "url": "https://technode.com/2026/09/10/alibaba-qwen-previews-n1-ai-glasses-with-iris-recognition-and-no-display/",
+        "source_type": "媒体",
+        "summary_zh": "阿里千问在2026外滩大会AI支付展区预览N1眼镜，无显示屏，主打虹膜识别与眼动追踪，用户注视支付终端即可完成身份验证。其后有报道称N1系列在云栖大会发布，Pro版定于10月13日发售，但芯片、价格等完整规格均未公开。",
+        "whats_new_zh": [
+          "虹膜识别误识率据报道低于百万分之一",
+          "无显示屏设计，定位低于千问S1",
+          "据9月22日报道：基础款主打5000万像素第一视角拍摄，Pro版加入眼动追踪和虹膜支付（未获官方规格页确认）"
+        ],
+        "key_specs": {
+          "other": "芯片未披露；前代夸克G1为高通AR1+恒玄BES2800双芯片"
+        },
+        "edge_ai_impact_zh": "支付级虹膜/眼动认证要求在眼镜端完成安全的生物特征采集与匹配，推动AI眼镜从“拍照+语音助手”向“可信身份+交易代理”延伸，对端侧安全隔离与低功耗视觉处理提出新需求。",
+        "evidence_urls": [
+          "https://www.bit.com/zh/market-headlines/meta-alibaba-ai-glasses",
+          "https://www.ithome.com/0/924/190.htm"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-11",
+        "vendor": "CXMT (长鑫存储) / Xiaomi",
+        "category": "存储与内存",
+        "title": "Samsung, CXMT Reportedly Supply LPDDR5X for Chinese AI Phone as Domestic Memory Enters Flagship Supply Chain",
+        "title_zh": "长鑫LPDDR6量产并首发小米18 Fold，LPDDR5X进旗舰",
+        "url": "https://www.trendforce.com/news/2026/09/11/news-samsung-cxmt-reportedly-supply-lpddr5x-for-chinese-ai-phone-as-domestic-memory-enters-flagship-supply-chain/",
+        "source_type": "媒体",
+        "summary_zh": "长鑫存储（CXMT）宣布LPDDR6进入量产，首个客户是小米，产品用于搭载自研玄戒O3的小米18 Fold，号称全球首个LPDDR6商用手机。TrendForce同时报道，中兴与字节合作的Nubia NaviX Ultra采用三星+长鑫双供LPDDR5X，长鑫LPDDR5X最高速率已提升到10.667Gbps。国产DRAM正从中低端机型进入旗舰供应链。",
+        "whats_new_zh": [
+          "长鑫LPDDR6：单颗16GB，峰值12.8Gbps，搭配SoC运行时为10.667Gbps；较LPDDR5X带宽+60%、功耗-20%（厂商口径）",
+          "玄戒O3支持LPDDR6-10667，内存带宽约113.8GB/s（媒体报道）",
+          "小米18 Fold的16GB版本提供LPDDR5X与LPDDR6两种配置，存储为UFS 4.1",
+          "长鑫LPDDR5X最高速率达10.667Gbps，与三星/SK海力士10.7Gbps级产品相当"
+        ],
+        "key_specs": {
+          "process": "玄戒O3: TSMC 3nm（媒体报道）",
+          "memory": "LPDDR6 16GB/颗，12.8Gbps峰值",
+          "power": "较LPDDR5X -20%（厂商口径）",
+          "other": "首个客户：小米18 Fold"
+        },
+        "edge_ai_impact_zh": "中国厂商抢先实现LPDDR6商用，有利于国产手机在内存涨价周期中保障供应、拉低成本。量产良率和出货规模仍待验证。",
+        "evidence_urls": [
+          "https://technode.com/2026/08/31/cxmt-starts-lpddr6-mass-production-for-xiaomis-upcoming-18-fold/",
+          "https://www.notebookcheck.net/Xiaomi-18-Fold-set-to-debut-CXMT-s-new-LPDDR6-memory.1382353.0.html"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-15",
+        "vendor": "地平线 Horizon Robotics",
+        "category": "车载/机器人",
+        "title": "地平线第1500万颗征程芯片搭载大众 ID. AURA T6，HSD V2.1 即将推出",
+        "title_zh": "征程芯片量产破1500万，自主品牌份额超50%",
+        "url": "https://www.qbitai.com/2026/09/489698.html",
+        "source_type": "媒体",
+        "summary_zh": "地平线在上海临港举办量产1500万颗见证仪式，第1500万颗征程芯片（征程6H）搭载一汽-大众ID. AURA T6。公司同时预告HSD V2.1将首发全场景倒车能力，HSD年内将在头部新能源车企车型量产。",
+        "whats_new_zh": [
+          "征程系列累计量产超1500万颗，搭载车辆超800万辆",
+          "2026上半年自主品牌ADAS芯片份额首次突破50%，约为第二名2倍；城区NOA芯片份额22.8%（+5个百分点，行业第二）",
+          "海外在手订单超2000万套",
+          "HSD V2.1即将推出（V2.0于2026年6月发布）"
+        ],
+        "key_specs": {
+          "npu": "征程6系列覆盖10-560 TOPS",
+          "other": "Tier1：博世、安斯泰莫、电装、欧摩威"
+        },
+        "edge_ai_impact_zh": "国产智驾SoC在规模上已形成对英伟达/Mobileye的替代，软硬一体（HSD）模式使端侧大模型在车上的迭代速度显著加快。",
+        "evidence_urls": [
+          "https://m.mp.oeeee.com/a/BAAFRD0000202609161666970.html"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-10",
+        "vendor": "地平线 Horizon Robotics",
+        "category": "车载/机器人",
+        "title": "Horizon Robotics Secures JD Logistics Design Win as Journey Chip Shipments Top 15 Million",
+        "title_zh": "征程6P获京东L4无人配送车定点",
+        "url": "https://equalocean.com/news/2026091022177-horizon-robotics-secures-jd-logistics-design-win-as-journey-chip-shipments-top",
+        "source_type": "媒体",
+        "summary_zh": "9月9日京东全球科技探索者大会上，地平线征程6P计算平台被京东物流第六代“狼族Plus”L4无人配送车选用。CEO余凯预计未来3-5年物流场景部署有望达百万台，但未披露确定订单量。",
+        "whats_new_zh": [
+          "征程6P单芯片560 TOPS，基于BPU纳什架构，支持Transformer与BEV感知",
+          "与大众合资的酷睿程（Carizon）L2++方案已量产，2026年覆盖大众集团中国7款新能源车型",
+          "neueHCT基于征程6B的前视方案获德国车企全球平台定点，2027年量产，三年预计数百万套"
+        ],
+        "key_specs": {
+          "npu": "BPU Nash，560 TOPS（单芯片）",
+          "other": "应用于L4无人配送车"
+        },
+        "edge_ai_impact_zh": "车规智驾芯片向低速无人物流、机器人等“泛自动驾驶”场景外溢，单一大算力SoC复用于车与机器人正在成为国产边缘算力的主要放量路径。",
+        "evidence_urls": [
+          "https://equalocean.com/news/2026091022177"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-10",
+        "vendor": "d-Matrix / NVIDIA",
+        "category": "数据中心(对端侧有参考)",
+        "title": "Startup d-Matrix Will Pair Its Raptor Memory-Based XPU To Nvidia Rackscale Iron",
+        "title_zh": "d-Matrix 3D DRAM推理芯片Raptor接入NVLink Fusion",
+        "url": "https://www.nextplatform.com/compute/2026/09/10/startup-d-matrix-will-pair-its-raptor-memory-based-xpu-to-nvidia-rackscale-iron/5295601",
+        "source_type": "媒体",
+        "summary_zh": "NVIDIA于9月10日宣布与d-Matrix合作，把Raptor纳入MGX参考架构和NVLink Fusion生态，做“拆分推理”：Vera Rubin负责Prefill，Raptor负责Decode。Raptor把TSMC 4nm计算die以36μm间距键合在定制DRAM die上，计划2026年底流片，2027年Q4上市。",
+        "whats_new_zh": [
+          "4nm计算die与定制DRAM 3D堆叠（36μm间距，类HBM的CoW封装）",
+          "单卡内存带宽100TB/s；NVL144机柜共144颗Raptor，3D DRAM总容量2.3TB，总带宽7.2PB/s",
+          "计划2026年底流片，2027年Q4发布（以上均为流片前的厂商口径）"
+        ],
+        "key_specs": {
+          "process": "TSMC 4nm + custom DRAM",
+          "memory": "3D-stacked DRAM, 100TB/s/card",
+          "npu": "Raptor XPU",
+          "other": "NVLink Fusion / MGX NVL144"
+        },
+        "edge_ai_impact_zh": "“计算贴着DRAM做3D堆叠、专攻Decode”的思路与端侧PIM同源，验证了解码阶段受带宽限制、需要近存或存内架构这一判断。",
+        "evidence_urls": [
+          "https://hothardware.com/news/d-matrix-raptor-3d-dram-hot-chips-26"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-14",
+        "vendor": "Apple",
+        "category": "软件栈/工具链",
+        "title": "Siri AI, a profoundly more capable and personal assistant, is here",
+        "title_zh": "iOS 27 上线 Siri AI 与 AFM 3",
+        "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
+        "source_type": "官方",
+        "summary_zh": "iOS 27 等系统于 9 月 14 日正式推送，Siri AI 以 Beta 形式上线（先支持英语）。它由新一代 Apple Foundation Models（与 Google Gemini 合作打造）驱动，端侧和 Private Cloud Compute 两头运行，支持 App 内操作、跨 App 任务和屏幕感知等 agent 能力。端侧最强模型 AFM Core Advanced 只在高内存设备上开放。",
+        "whats_new_zh": [
+          "AFM Core Advanced（端侧最强模型）支持：iPhone 17 Pro / 18 Pro / Air / Duo，M4 及以上且内存 ≥12GB 的 iPad，M3 及以上且内存 ≥12GB 的 Mac，以及 Vision Pro（M5）",
+          "Apple ML 研究博客（6 月 8 日发布，9 月 9 日更新）：AFM 3 Core Advanced 总参数约 20B，采用稀疏激活，每次请求激活 1–4B 参数，原生多模态",
+          "完整模型存放在 NAND 闪存中，由一个轻量稠密块按提示选择专家；共享专家常驻，路由专家按需载入 DRAM；整体用 QAT 压缩",
+          "Agent 能力：在第三方 App 内执行操作（如 WhatsApp、Audible），跨 App 搜索后执行，屏幕感知，用自然语言生成 Shortcuts",
+          "Spotlight 索引和 App Toolbox 完全在端侧运行；服务器端功能（Siri AI、AFM 3 Cloud 等）设有每日用量上限，未来扩容将收费"
+        ],
+        "key_specs": {
+          "memory": "AFM Core Advanced 要求 ≥12GB 内存（iPad/Mac）",
+          "other": "AFM Core Advanced（端侧）+ AFM 3 Cloud（PCC）；Core AI 框架接替 Core ML 面向第三方端侧模型"
+        },
+        "edge_ai_impact_zh": "Apple 首次按内存容量（≥12GB）给端侧大模型划门槛，说明 20B 级 MoE 模型的权重常驻是端侧 agent 的硬约束。大规模的端云分层 agent 已经面向消费者落地。",
+        "evidence_urls": [
+          "https://www.apple.com/newsroom/2026/09/major-updates-for-apples-software-platforms-are-now-available/",
+          "https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-09",
+        "vendor": "Counterpoint Research",
+        "category": "产业动态",
+        "title": "Global Smartphone AP-SoC Market Share: Quarterly",
+        "title_zh": "Counterpoint Q2'26手机AP份额：Exynos升至9%",
+        "url": "https://www.counterpointresearch.com/en/insights/global-smartphone-apsoc-market-share-quarterly",
+        "source_type": "官方",
+        "summary_zh": "Counterpoint数据显示2026年Q2全球智能手机AP-SoC出货份额：联发科31%、高通23%、苹果19%、紫光展锐13%、三星9%、海思5%。三星Exynos份额创2024年统计以来新高，主要来自Exynos 2600（Galaxy S26）及Exynos 1680/1480（A57/A37）。",
+        "whats_new_zh": [
+          "联发科31%（Q1为33%）、高通23%（Q1 22%）、苹果19%（Q1 20%）",
+          "展锐13%（Q1 14%），受内存危机与入门机冲击",
+          "三星9%（环比+2pct，同比+3pct），海思5%（Q1 4%）",
+          "Counterpoint称Q2全球手机出货同比下降21%，主因内存成本上升与OEM谨慎备货（据搜索摘要，原页面数据需会员）"
+        ],
+        "key_specs": {},
+        "edge_ai_impact_zh": "内存涨价对入门机冲击最大（展锐份额下滑），而旗舰与中高端SoC份额相对稳固，端侧AI功能将更集中于中高端机型。",
+        "evidence_urls": [
+          "https://www.koreatimes.co.kr/business/companies/20260918/samsung-exynos-chipset-market-share-rises-to-9-in-q2"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-15",
+        "vendor": "Euclyd",
+        "category": "产业动态",
+        "title": "Dutch AI chip startup Euclyd raises over €200 million (co-led by Samsung)",
+        "title_zh": "Euclyd获超2亿欧元A轮，三星共同领投",
+        "url": "https://nltimes.nl/node/91753",
+        "source_type": "媒体",
+        "summary_zh": "埃因霍温AI推理芯片初创公司Euclyd完成超过2亿欧元（约2.31亿美元）A轮融资，由三星、Somerset Capital Partners、EQT管理的Scaleup Europe Fund和Innovation Industries共同领投。公司正在开发由专用处理器、内存架构和数据中心系统组成的推理平台，前ASML CEO Peter Wennink出任董事长。",
+        "whats_new_zh": [
+          "A轮超过2亿欧元，三星参与领投",
+          "前ASML总裁兼CEO Peter Wennink出任董事会主席",
+          "主打以内存架构为核心的推理平台，目标是降低成本、能耗和占地"
+        ],
+        "key_specs": {
+          "memory": "定制内存架构（细节未披露）",
+          "other": "融资约$231M"
+        },
+        "edge_ai_impact_zh": "存储大厂直接投资以内存架构为核心的推理芯片公司，说明行业把“内存墙”视为推理阶段的主要矛盾。",
+        "evidence_urls": [
+          "https://www.datacenterdynamics.com/en/news/dutch-ai-chip-startup-euclyd-raises-231-million-in-funding-round-co-led-by-samsung/"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-15",
+        "vendor": "工业和信息化部 / 国家发展改革委",
+        "category": "产业动态",
+        "title": "两部门：攻关端侧智能计算芯片、高端存储芯片、存算一体等新型架构",
+        "title_zh": "电子信息制造业“十五五”规划点名存算一体",
+        "url": "https://news.qq.com/rain/a/20260915A03TDL00",
+        "source_type": "媒体",
+        "summary_zh": "工信部与国家发改委印发《电子信息制造业发展“十五五”规划》，明确提出攻关端侧智能计算芯片和高端存储芯片，开发近存计算、存算一体等新型架构，并配套研发端侧操作系统、芯片使能软件、算子库和推理加速引擎。",
+        "whats_new_zh": [
+          "“端侧智能计算芯片”“近存计算/存算一体”首次被写入同一份国家级产业规划",
+          "要求同步完善端侧开发框架、算子库和推理引擎等软件生态"
+        ],
+        "key_specs": {
+          "other": "政策文件"
+        },
+        "edge_ai_impact_zh": "为国内存算一体和端侧AI芯片公司（后摩、知存、九天睿芯等）提供了明确的政策背书，后续可能带来专项资金和国产化采购。",
+        "evidence_urls": [],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-11",
+        "vendor": "Samsung Foundry",
+        "category": "产业动态",
+        "title": "[News] Samsung-Qualcomm 2nm Deal May Slip to 2027; Foundry Resists Lower Pricing as Process Stabilizes",
+        "title_zh": "三星2nm良率传超70%，高通订单或延至2027",
+        "url": "https://www.trendforce.com/news/2026/09/11/news-samsung-qualcomm-2nm-deal-may-slip-to-2027-foundry-resists-lower-pricing-as-process-stabilizes/",
+        "source_type": "媒体",
+        "summary_zh": "TrendForce援引韩媒称高通在三星2nm投片AP可能推迟到2027年，主要因价格分歧而非技术问题。三星泰勒厂据报在投产前已被2nm订单订满（特斯拉AI5/AI6、博通、Arm智能设备AI芯片）；Exynos 2700据报将采用SF2P。",
+        "whats_new_zh": [
+          "据每日经济新闻，三星2nm GAA良率由年初<50%升至>70%（另有朝鲜日报称SF2约60%，数据不一）",
+          "三星7月起SF4涨价10-15%（中美客户）、SF5涨10-15%、8nm近10%",
+          "2Q26三星代工营收份额5.9%，排名第二",
+          "Exynos 2700据报采用第二代2nm SF2P"
+        ],
+        "key_specs": {
+          "process": "SF2 / SF2P",
+          "other": "均为二手报道，未获公司确认"
+        },
+        "edge_ai_impact_zh": "三星2nm若稳定，将为特斯拉AI5等车载/机器人芯片和安卓旗舰提供台积电之外的第二来源，缓解N2产能与价格压力。",
+        "evidence_urls": [
+          "https://www.sammyfans.com/2026/09/28/samsung-2nm-chip-process-making-some-serious-progress/",
+          "https://www.trendforce.com/news/2026/07/13/news-samsung-reportedly-completes-tesla-ai5-tape-out-paving-the-way-for-2nm-ramp-at-taylor-fab/"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-09",
+        "vendor": "Apple",
+        "category": "产业动态",
+        "title": "C2: Apple's next-generation cellular modem system (iPhone 18 Pro)",
+        "title_zh": "自研 C2 基带首发，Pro Max 仍用高通",
+        "url": "https://www.techinsights.com/blog/iphone-18-pro-max-unboxing",
+        "source_type": "媒体",
+        "summary_zh": "Apple 的新闻稿只说 iPhone 18 Pro 搭载 C2，没有提 Pro Max。TechInsights 9 月 18 日的初步拆解显示，iPhone 18 Pro Max 用的是高通 Snapdragon X80 基带和 SDR875 射频收发器。这是同一代 Pro 系列首次分用两家基带。iPhone Duo 同样采用 C2。",
+        "whats_new_zh": [
+          "C2 比 C1X 功耗低 15%，上传速度更快，并加入“AI 驱动”的蜂窝连接质量和可靠性优化",
+          "C2 新增美国毫米波（mmWave）支持，补上了 C1/C1X 的短板",
+          "TechInsights 拆解：iPhone 18 Pro Max 用高通 X80 + SDR875，N1 无线模块为 Apple 自研",
+          "N1 自研无线芯片覆盖全系 Pro 和 Duo：Wi-Fi 7、蓝牙 6、Thread"
+        ],
+        "key_specs": {
+          "process": "未公布",
+          "other": "C2：比 C1X 功耗 -15%，支持 mmWave；Pro Max：Qualcomm X80 + SDR875（拆解）"
+        },
+        "edge_ai_impact_zh": "基带和无线芯片自研后，Apple 能和 SoC 统一调度功耗，降低常驻联网（端云协同、PCC 调用）的能耗底噪。不过 Pro Max 仍用高通，说明 C2 的产能或性能还没有完全覆盖旗舰机型。",
+        "evidence_urls": [
+          "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-14",
+        "vendor": "UC Berkeley (Keutzer / Gholami / Shao 等)",
+        "category": "学术研究",
+        "title": "LLM Inference in a Flash!",
+        "title_zh": "在闪存存内计算上跑LLM：全整数推理与字典式KV压缩",
+        "url": "https://arxiv.org/abs/2609.16161",
+        "source_type": "论文",
+        "summary_zh": "论文面向Compute-in-Flash（把计算放到SSD/闪存旁边）设备，针对其缺少高精度浮点运算、写入寿命有限两大问题，提出端到端全整数量化，以及基于稀疏字典编码的KV Cache压缩：每个KV向量用一组静态字典向量的线性组合表示。",
+        "whats_new_zh": [
+          "端到端整数化推理，去掉昂贵的FP32和非线性浮点运算",
+          "字典式KV Cache把动态KV写入流量降低15倍，缓解闪存写入寿命问题",
+          "在Llama-3.1-8B和Qwen-2.5-7B上精度损失有限"
+        ],
+        "key_specs": {
+          "memory": "Compute-in-Flash (NAND)",
+          "other": "KV traffic -15x"
+        },
+        "edge_ai_impact_zh": "为把大模型权重和KV放到闪存侧计算提供了算法基础，与SK海力士HBF、高带宽存储（HBS）等“存储侧算力”方向呼应，可能降低端侧对昂贵DRAM容量的依赖。",
+        "evidence_urls": [],
+        "confidence": "high"
+      }
+    ]
   }
 }

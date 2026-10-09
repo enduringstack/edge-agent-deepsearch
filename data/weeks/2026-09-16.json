@@ -3285,5 +3285,191 @@
         "evidence_url": ""
       }
     ]
+  },
+  "hardware": {
+    "window": {
+      "start": "2026-09-16",
+      "end": "2026-09-22"
+    },
+    "overview": "本周没有手机旗舰发布，看点在存储、边缘加速器和产业整合。SK 海力士在 AI Infra Summit 上把 AiM 存内计算定位为“快速 Decode 层”，同时发布 SALT-KV：按语义给 KV Cache 分段，再分配到 HBM/DRAM/SSD 三层。这一思路同样适用于内存吃紧的手机。Axelera 的 Europa（629 TOPS，45W）进入戴尔、超微服务器；Microchip 完成收购 Hailo，边缘 AI 加速器开始被 MCU 大厂整合。机器人算力方面，爱芯元智 M97（5nm，720 TOPS），地瓜机器人完成 4 亿美元 C 轮，国产具身智能芯片进入 500–700 TOPS 区间。PC 侧，Googlebook 搭载 Intel Panther Lake 首发。",
+    "items": [
+      {
+        "date": "2026-09-21",
+        "vendor": "Intel / Google",
+        "category": "PC芯片",
+        "title": "Googlebook Launches with Intel Core Ultra Series 3 Processors",
+        "title_zh": "Googlebook首发搭载Intel Panther Lake",
+        "url": "https://www.intel.com/content/www/us/en/newsroom/news/client-computing/googlebook-launches-with-intel-core-ultra-series-3-processors.html",
+        "source_type": "官方",
+        "summary_zh": "谷歌推出基于Android技术、主打Gemini的高端笔记本品类Googlebook，首批机型来自Acer、ASUS、Lenovo等，采用Intel 18A工艺的Core Ultra Series 3（Panther Lake），10月5日起在美加英德法澳新开售。媒体称另有骁龙X机型，联发科为后续合作方。",
+        "whats_new_zh": [
+          "Acer Googlebook 14（二合一）、ASUS Googlebook 14、Lenovo Googlebook 15首发",
+          "Panther Lake：Intel 18A，NPU 50 TOPS、平台合计最高180 TOPS（CES发布规格）",
+          "媒体：内存起步16GB，NPU 40+ TOPS，起售价约899美元"
+        ],
+        "key_specs": {
+          "process": "Intel 18A",
+          "cpu": "Core Ultra Series 3（Cougar Cove P核 + Darkmont E核）",
+          "gpu": "Xe3",
+          "npu": "NPU 5，最高50 TOPS",
+          "memory": "16-32GB（媒体）",
+          "other": "Wi-Fi 7、BT 6.0、Thunderbolt"
+        },
+        "edge_ai_impact_zh": "Android系桌面OS进入高端笔记本，Gemini端侧能力需要同时适配x86（Intel NPU/OpenVINO）与Arm（骁龙/联发科）后端，端侧推理框架的跨架构抽象层（如LiteRT）重要性上升。",
+        "evidence_urls": [
+          "https://www.iphoneincanada.ca/2026/09/21/googlebook-buyers-guide-canada/",
+          "https://www.channelnews.com.au/googlebook-laptops-to-launch-with-intel-qualcomm-and-mediatek-chips/"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-16",
+        "vendor": "Axelera AI",
+        "category": "NPU/AI加速器",
+        "title": "Axelera AI lance une puce pour l'inférence IA (Europa AIPU launch)",
+        "title_zh": "Axelera Europa AIPU出货，进入戴尔/超微服务器",
+        "url": "https://www.lemondeinformatique.fr/actualites/lire-axelera-ai-lance-une-puce-pour-l-inference-ia-100790.html",
+        "source_type": "媒体",
+        "summary_zh": "荷兰Axelera AI于9月15日宣布Europa AIPU正式上市出货，提供芯片、Edge 232p半高卡和Server 250p全高卡三种形态，Edge 232p已在Dell XE5和Supermicro 111AD中完成验证。厂商称Europa在边缘和企业推理中每瓦token最高可达部分GPU方案的6倍，但绝对速度并不总占优（Qwen3 32B为11 vs 13.2 tokens/s）。另据德语媒体9月14日报道，其欧洲渠道合作伙伴已增至约60家。",
+        "whats_new_zh": [
+          "单芯片最高629 TOPS，单卡TDP 45W，典型功耗30-40W",
+          "单芯片最多支持64GB内存（媒体报道为256-bit LPDDR5，200GB/s）",
+          "合作伙伴包括Dell、Supermicro、HPE、Lenovo、Advantech、Axiomtek、Seco"
+        ],
+        "key_specs": {
+          "memory": "最高64GB LPDDR5/芯片",
+          "npu": "Europa AIPU 629 TOPS",
+          "power": "45W TDP/卡",
+          "other": "Axelera以数字存内计算(D-IMC)路线著称"
+        },
+        "edge_ai_impact_zh": "数字存内计算类初创公司开始以标准PCIe卡进入主流OEM渠道，证明这条路线在边缘服务器和工作站上已具备商业可行性。",
+        "evidence_urls": [
+          "https://www.hpcwire.com/aiwire/2026/09/15/axelera-ai-launches-europa-aipu-for-enterprise-and-data-center-inference/",
+          "https://www.itreseller.ch/Artikel/106204/Nvidia-Konkurrent_Axelera_AI_baut_Channel_in_Europa_aus.html"
+        ],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-17",
+        "vendor": "SK hynix",
+        "category": "存内计算/PIM",
+        "title": "SK hynix Presents 'New Spectrum' for AI Infrastructure at 'AI Infra Summit 2026'",
+        "title_zh": "SK海力士AI Infra Summit展示AiM/AiMX与SALT-KV",
+        "url": "https://news.skhynix.com/en/ai-infra-summit-2026/",
+        "source_type": "官方",
+        "summary_zh": "SK海力士在9月15-17日于圣克拉拉举行的AI Infra Summit 2026上展出AiM芯片、AiMX加速卡以及搭载AiMX的服务器，并现场演示LLM服务。展位同时展示了HBF（高带宽闪存）结构模型，以及面向KV Cache分层管理的SALT-KV方案。副总裁Lim Eui-cheol在9月16日的演讲中称，单靠GPU+HBM架构越来越难满足新需求，PIM适合“快速解码”的高端服务场景。",
+        "whats_new_zh": [
+          "AiMX（基于GDDR6-AiM的加速卡）连同服务器整机一起展出，并提供LLM服务现场演示",
+          "新提出的SALT-KV（Semantic-Aware Lifecycle Tiering for KV Cache）按语义把KV Cache切段，评估各段的复用价值和存储成本，再分配到HBM/DRAM/SSD三层",
+          "HBF借鉴HBM的TSV工艺，定位在HBM和SSD之间的新内存层级",
+          "官方称展会人数约6000人，约为上届两倍；SK海力士展位面积也翻倍"
+        ],
+        "key_specs": {
+          "memory": "GDDR6-AiM (AiMX); HBF; eSSD",
+          "other": "官方未披露性能/功耗数据"
+        },
+        "edge_ai_impact_zh": "SK海力士公开定位PIM负责Decode阶段，这和端侧LLM受带宽限制的解码瓶颈是同一类问题。不过这次展示的仍是数据中心形态，LPDDR-AiM面向端侧的进展还要看后续发布。",
+        "evidence_urls": [],
+        "confidence": "high"
+      },
+      {
+        "date": "2026-09-17",
+        "vendor": "后摩智能 / 知存科技 / 九天睿芯 / 谦合益邦 等",
+        "category": "存内计算/PIM",
+        "title": "存算一体的交付时刻到了，但大厂正在把存算做进SoC",
+        "title_zh": "国内存算一体进入交付期：后摩M50量产等",
+        "url": "https://www.xinxianbing.com/2026/09/PIM-Is-Here-but-Big-Tech-Is-Baking-It-into-SoCs.html",
+        "source_type": "媒体",
+        "summary_zh": "行业评论文章梳理了国内存算一体的进展：后摩智能M50于2026年2月宣布量产，可离线运行1220亿参数大模型，已装入联想AI主机；谦合益邦的4层3D DRAM堆叠存算芯片于8月回片点亮；知存科技称已实现千万颗级出货。文章同时指出，小米、地平线、华为等正把近存/存算能力直接集成进自家SoC，对独立存算芯片公司形成挤压。",
+        "whats_new_zh": [
+          "后摩M50：可离线运行122B参数模型，软件栈兼容PyTorch/TensorFlow，下游有联想AI主机P7",
+          "谦合益邦：4层3D DRAM堆叠存算芯片回片点亮，并完成超20亿元B轮（文章口径）",
+          "九天睿芯2026年完成B++、C轮；微纳核芯B轮系列融资合计超10亿元（文章口径）",
+          "小米玄戒O100：6nm、3D晶圆级堆叠，近存带宽1.22TB/s（文章口径）"
+        ],
+        "key_specs": {
+          "memory": "3D DRAM堆叠 / NOR Flash / SRAM CIM",
+          "other": "二手汇总，数字需核实"
+        },
+        "edge_ai_impact_zh": "国内存算一体正在从“流片”走向“交付”，但SoC大厂自研近存方案可能会把独立存算芯片挤到AI PC和边缘盒子等细分市场。",
+        "evidence_urls": [
+          "https://news.qq.com/rain/a/20260407A068JQ00"
+        ],
+        "confidence": "low"
+      },
+      {
+        "date": "2026-09-18",
+        "vendor": "爱芯元智 Axera",
+        "category": "车载/机器人",
+        "title": "M9系列新品与M57量产同步落地 爱芯元智大涨超14%创近4个月新高",
+        "title_zh": "爱芯元智发布M9智驾芯片，M97达720TOPS",
+        "url": "https://www.caiwennews.com/article/1611461.shtml",
+        "source_type": "媒体",
+        "summary_zh": "爱芯元智正式推出M9系列高阶智驾芯片，含旗舰M97与主流M95两款5nm车规芯片。同期其ADAS SoC M57已搭载于安波福前视一体机，在国内头部新能源车企面向欧盟的车型上规模量产，满足E-NCAP 2026五星标准。",
+        "whats_new_zh": [
+          "M97：5nm车规，等效AI算力720 TOPS，等效内存带宽460GB/s",
+          "M95：5nm主流档（未披露算力）",
+          "M57已在出口欧盟车型上规模化交付"
+        ],
+        "key_specs": {
+          "process": "5nm车规",
+          "npu": "M97 720 TOPS（等效）",
+          "memory": "等效带宽460GB/s",
+          "other": "此前有报道称M97与蔚来神玑合作，未获官方确认"
+        },
+        "edge_ai_impact_zh": "国产第三方智驾芯片进入700 TOPS级，且强调“等效带宽”，反映端侧大模型推理的瓶颈已从算力转向内存带宽。",
+        "evidence_urls": [
+          "https://www.ithome.com/0/978/841.htm"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-17",
+        "vendor": "地瓜机器人 D-Robotics",
+        "category": "车载/机器人",
+        "title": "地瓜机器人完成4亿美元C轮融资 商业化步入高速增长",
+        "title_zh": "地瓜机器人完成4亿美元C轮融资",
+        "url": "https://www.sznews.com/news/content/2026-09/17/content_32173727.htm",
+        "source_type": "媒体",
+        "summary_zh": "由地平线孵化的机器人芯片公司地瓜机器人宣布完成4亿美元C轮融资，未来资产领投，美团战投等跟投。资金将用于强化旭日芯片全算力段布局，并建设贯通数据采集、训练、仿真、部署的全链路软件平台。",
+        "whats_new_zh": [
+          "C轮4亿美元；此前2026年3月B1轮1.2亿美元、4月B2轮1.5亿美元",
+          "旭日系列芯片累计出货突破800万片",
+          "2026上半年营收同比增长数倍",
+          "旗舰具身智能平台旭日S600（2026年一季度推出）标称560 TOPS（INT8）"
+        ],
+        "key_specs": {
+          "npu": "旭日S600：560 TOPS INT8"
+        },
+        "edge_ai_impact_zh": "具身智能的资本正向底层算力集中，单年近7亿美元融资显示“机器人专用SoC+工具链”已成为独立赛道，与Jetson Thor形成直接竞争。",
+        "evidence_urls": [
+          "https://wap.eastmoney.com/a/202609173877595429.html",
+          "https://www.robotsj.cn/shichangdongtai/2557.html"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-09-21",
+        "vendor": "Microchip / Hailo",
+        "category": "产业动态",
+        "title": "Microchip Technology Completes Acquisition of Hailo",
+        "title_zh": "Microchip完成收购边缘AI芯片商Hailo",
+        "url": "https://ir.microchip.com/news-events/press-releases/detail/1415/microchip-technology-completes-acquisition-of-hailo",
+        "source_type": "官方",
+        "summary_zh": "Microchip宣布完成对以色列边缘AI处理器公司Hailo的收购（交易条款未披露），以补强其边缘AI、机器视觉、机器人和物理AI产品线。Microchip承诺继续支持Hailo现有产品、软件和客户。Hailo有100多家客户、超过1万名开发者。",
+        "whats_new_zh": [
+          "交易于2026-09-21完成（媒体报道协议于7月签署）",
+          "Hailo业务涵盖AI加速器、视觉处理器、机器人处理器，支持Transformer和多模态负载",
+          "客户100+，开发者社区10,000+"
+        ],
+        "key_specs": {
+          "npu": "Hailo AI accelerators (如Hailo-8/10H)",
+          "other": "交易金额未披露"
+        },
+        "edge_ai_impact_zh": "独立边缘AI加速器公司正被MCU/模拟大厂整合，NPU将更多以“MCU/MPU+加速器”的平台形式进入工业和物理AI市场。",
+        "evidence_urls": [],
+        "confidence": "high"
+      }
+    ]
   }
 }
