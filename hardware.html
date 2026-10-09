@@ -21,6 +21,7 @@
     .scope{background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:12px 16px;margin-bottom:14px;display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
     h1{margin:0;font-family:"IBM Plex Mono",monospace;font-size:20px;font-weight:600;letter-spacing:1.5px}
     h1 .sub{font-family:"IBM Plex Sans",sans-serif;font-weight:500;font-size:13px;color:var(--muted);letter-spacing:0;margin-left:8px}
+    .months{display:flex;gap:6px;flex-wrap:wrap}.month{font-family:"IBM Plex Mono",monospace;font-size:11px;padding:2px 8px;border:1px solid var(--rule);border-radius:3px;color:var(--muted)}.month.on{background:var(--amber);border-color:var(--amber);color:#fff}
     .back{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--faint)}
     .sweep{height:2px;margin:10px -16px -12px;background:linear-gradient(90deg,transparent,var(--hair) 20%,var(--hair) 80%,transparent);position:relative;overflow:hidden}
     .sweep::after{content:"";position:absolute;inset:0;width:30%;background:linear-gradient(90deg,transparent,var(--amber),transparent);animation:sweep 3.2s linear infinite}
@@ -56,7 +57,7 @@
   <main>
     <header class="scope">
       <h1>RADAR<span class="sub">硬件洞察 · 移动芯片 / 低功耗 / 存内计算</span></h1>
-      <a class="back" href="index.html">← 返回雷达</a>
+      <nav class="months" id="months" aria-label="切换月份"></nav><a class="back" href="index.html">← 返回雷达</a>
       <div class="sweep"></div>
     </header>
     <div class="layout">
@@ -65,7 +66,17 @@
     </div>
   </main>
   <script>
-    var MD_URL = 'hardware/hardware-insight.md';
+    var MONTH = (location.search.match(/[?&]m=(\d{4}-\d{2})/) || [])[1] || '';
+    var MD_URL = MONTH ? 'hardware/insight-' + MONTH + '.md' : 'hardware/hardware-insight.md';
+    fetch('hardware/index.json').then(function(r){return r.ok ? r.json() : [];}).then(function(months){
+      var el = document.getElementById('months');
+      if(!el || !months.length) return;
+      var current = MONTH || months[0].month;
+      el.innerHTML = months.map(function(m, i){
+        var href = i === 0 ? 'hardware.html' : 'hardware.html?m=' + m.month;
+        return '<a class="month' + (m.month === current ? ' on' : '') + '" href="' + href + '" title="' + m.title + '">' + m.month + '</a>';
+      }).join('');
+    }).catch(function(){});
     function render(md){
       var art = document.getElementById('art');
       art.innerHTML = marked.parse(md);
