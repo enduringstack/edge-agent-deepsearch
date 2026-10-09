@@ -7752,7 +7752,7 @@
       "start": "2026-09-29",
       "end": "2026-10-05"
     },
-    "overview": "本周的主线是内存涨价和国产旗舰。TrendForce 预计 4Q26 DRAM 合约价再涨 10–15%、NAND 再涨 15–20%，传闻三星 Galaxy S27 将提价，LPDDR6 可能缺席，端侧大模型可用的内存预算被直接压缩。美光 1γ LPDDR6 开始向机器人、车载等物理 AI 客户送样。华为 Mate 90 全系使用麒麟芯片，官方称麒麟 9050 Pro 的 LogicFolding 实现 125 TB/s 的 die 间带宽，并在手机上运行 30B MoE 模型。三星 Exynos 2700 据报已在 SF2P 上量产，同样采用 C2 核与 LPDDR6。学术侧，EdgeAgent 针对统一内存 SoC 调度多智能体负载，在 Apple M4 上加速 1.77 倍。产业侧，高通与华为签署交叉专利许可，高通诉 Arm 案同日开庭。",
+    "overview": "本周的主线是内存涨价和国产旗舰落地。TrendForce 预计 4Q26 DRAM 合约价再涨 10–15%、NAND 再涨 15–20%。按此推算，中端机回落到 8GB 后，留给端侧模型的空间只有 2–3GB，只能放 3–4B INT4 模型。传闻 Galaxy S27 将提价，LPDDR6 可能缺席。美光 1γ LPDDR6 开始向机器人、车载等物理 AI 客户送样，并出货 6 通道（约 96-bit）LPDDR5X。华为 Mate 90 全系使用麒麟芯片，9050 Pro 端侧运行盘古 30B-A2B（激活率约 6.7%）。Exynos 2700 据报已在 SF2P 上量产。论文侧，EdgeAgent（已被 ASPLOS'27 接收）在 Apple M4 统一内存上调度多智能体负载，加速 1.77 倍；KAIST 的 PhaseGate 按 LLM 推理阶段调度 CPU 检索，缓解统一内存争用；萨尔大学首次给出在 iPhone 17 Pro 上完整微调 3B 模型的实测，约 0.04 J/token。",
     "items": [
       {
         "date": "2026-10-01",
@@ -7782,9 +7782,34 @@
         "evidence_urls": [
           "https://www.app.com.pk/?p=1284621",
           "https://www.emirates247.com/technology/huawei-unveils-mate-90-series-with-kirin-9050-pro-and-harmonyos-7-as-us-chip-curbs-bite/6212",
-          "https://www.notebookcheck.net/New-Kirin-9050-Pro-flagship-chipset-makes-Geekbench-7-debut-aboard-Huawei-Mate-90-Pro-Max.1413274.0.html"
+          "https://www.notebookcheck.net/New-Kirin-9050-Pro-flagship-chipset-makes-Geekbench-7-debut-aboard-Huawei-Mate-90-Pro-Max.1413274.0.html",
+          "https://en.kocpc.com.tw/archives/25948",
+          "https://news.qq.com/rain/a/20260908A052RR00"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "Pro Max及以上（麒麟9050 Pro）端侧运行30B MoE全模态基础模型，即盘古30B-A2B（总参数30B、激活2B，激活率约6.7%），为官方口径；另有本地6B多模态模型用于修图（拆解报道）。量化精度、上下文长度、tokens/s均未披露，唯一的速度数据是“3B模型Prefill为上代3倍”。Mate 90 Pro（麒麟9035）和标准版（9030）不支持30B模型。",
+        "deep_dive_zh": [
+          {
+            "heading": "为什么30B MoE能上手机",
+            "points": [
+              "每个token只激活2B参数，decode每步读取的权重量约等于一个2B稠密模型，带宽压力可控；但30B总权重仍需常驻或可快速换入，INT4下约15GB（本文粗算）。",
+              "华为把这一能力归功于“多级存算协同优化”，具体的权重分层（DRAM/闪存）和专家调度策略未披露。"
+            ]
+          },
+          {
+            "heading": "NPU 与芯片",
+            "points": [
+              "达芬奇架构NPU，官方称+140%；极客湾测得INT8约68 TOPS。",
+              "LogicFolding：500万信号键合点，die间125TB/s；CPU支持超线程，GPU硬件光追每秒5500万条光线。"
+            ]
+          },
+          {
+            "heading": "Agent 落地",
+            "points": [
+              "小艺记忆整合50+主流App，导航栏提供30+上下文动作，另有通话2.0与图库助手，相册分类整理可离线完成。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-10-02",
@@ -7811,9 +7836,36 @@
         "edge_ai_impact_zh": "三星自研SoC将与联发科一同在下一代采用Arm C2核与LPDDR6，Android旗舰阵营的端侧AI硬件基线趋同（SME2 + 大NPU + LPDDR6）；Exynos能否重回Ultra机型决定三星端侧AI功能的芯片分层策略。",
         "evidence_urls": [
           "https://x.com/UniverseIce/status/2095165037086433426",
-          "https://xenospectrum.com/en/exynos-2700-wafer-production-galaxy-s27/"
+          "https://xenospectrum.com/en/exynos-2700-wafer-production-galaxy-s27/",
+          "https://semiconductor.samsung.com/processor/mobile-processor/exynos-2600",
+          "https://sammobile.com/news/galaxy-s27-exynos-2700-chip-design-leaks",
+          "https://www.notebookcheck.net/Leaked-Exynos-2700-die-shot-reveals-what-Samsung-has-improved-over-the-Exynos-2600-for-the-upcoming-Galaxy-S27-series.1386348.0.html"
         ],
-        "confidence": "low"
+        "confidence": "low",
+        "model_capacity_zh": "未披露（产品尚未发布）。前代Exynos 2600的官方口径只有“生成式AI性能+113%”，没有参数量或tokens/s。以下2700信息均为爆料。",
+        "deep_dive_zh": [
+          {
+            "heading": "Exynos 2600（背景，官方）",
+            "points": [
+              "SF2（2nm GAA）；NPU与2500相同，为32K MAC（32768个），但生成式AI性能+113%，靠架构优化降低功耗和时延，不是靠堆MAC数量。",
+              "首个集成虚拟化安全与硬件混合后量子密码的手机NPU。"
+            ]
+          },
+          {
+            "heading": "Exynos 2700（爆料，SemiAnalysis die shot）",
+            "points": [
+              "SF2P；10核：2×C2-Ultra（4.24GHz/3.36GHz）+ 8×C2-Pro（3.74/2.88GHz），无小核。",
+              "16MB L3 + 24MB SLC；Xclipse 970（8 WGP）；NPU面积“巨大”，但TOPS与面积均未量化。",
+              "据报有4个LPDDR6 PHY（helentech），另有报道称LPDDR6可能只用于S27 Pro/Ultra。"
+            ]
+          },
+          {
+            "heading": "量产状态（The Elec，爆料）",
+            "points": [
+              "已在SF2P上开始前段晶圆生产，产量较上代提升10%以上；Ultra机型采用哪颗芯片仍未定。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-30",
@@ -7838,7 +7890,24 @@
           "https://www.trendforce.com/presscenter/news/20260514-13044.html",
           "https://www.theregister.com/a/5267643"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "TrendForce 5月称高端机12GB成主流、16GB减少，中端回落到8GB。8GB机型扣除系统和常驻应用后，留给端侧模型的空间约2–3GB，只能放3–4B INT4；12GB约可放7–8B INT4但较紧；16GB才能比较从容地常驻8B并留出KV Cache空间。",
+        "deep_dive_zh": [
+          {
+            "heading": "价格",
+            "points": [
+              "4Q26常规DRAM合约价环比+10–15%，NAND Flash +15–20%；企业级SSD是唯一涨幅扩大的品类。",
+              "Mobile DRAM仍在上涨通道，但前期已大幅反映（2Q26 LPDDR5X均价环比涨78–83%），4Q涨幅收敛；供应商把产能转向服务器，移动DRAM配给偏紧。"
+            ]
+          },
+          {
+            "heading": "对端侧AI的连锁反应",
+            "points": [
+              "手机品牌主要消化现有eMMC/UFS库存，增量采购有限；PC品牌下调主流机型SSD容量。",
+              "内存容量回落直接压缩端侧模型预算，反过来提高了1-bit/2-bit量化、MoE专家闪存卸载和PIM（不增加容量、只提升有效带宽）的价值。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-30",
@@ -7861,8 +7930,27 @@
           "other": "FQ4营收$54.23B"
         },
         "edge_ai_impact_zh": "美光LPDDR6首先瞄准物理AI而不是手机，说明机器人和车载端侧推理对带宽与能效同样敏感。存储厂利润创新高也意味着终端厂商的内存成本压力短期难以缓解。",
-        "evidence_urls": [],
-        "confidence": "high"
+        "evidence_urls": [
+          "https://micron.gcs-web.com/node/49611"
+        ],
+        "confidence": "high",
+        "model_capacity_zh": "财报未涉及模型。“6通道1γ LPDDR5X”若按每通道16bit计为96bit，在10.7Gbps下原始带宽约128GB/s，比常见64bit（约85GB/s）高约50%，8B INT4解码上限可从约19提升到约28 tokens/s（推算，通道宽度为假设）。",
+        "deep_dive_zh": [
+          {
+            "heading": "产品",
+            "points": [
+              "1γ LPDDR6开始向多个物理AI市场送样，优先给机器人/车载而不是手机。",
+              "6通道1γ LPDDR5X已向旗舰移动设备出货：用LPDDR5X加宽总线达到与LPDDR6相近的带宽，是LPDDR6昂贵期的过渡方案。",
+              "服务器LPDDR SOCAMM营收环比增长超过一倍；SOCAMM2已送样192GB/9.6Gbps，美光称比上代能效+20%以上，较同等RDIMM能效提升超三分之二、体积为三分之一。"
+            ]
+          },
+          {
+            "heading": "财务",
+            "points": [
+              "FQ4营收542.3亿美元，全年1331.9亿美元；移动与客户端事业部单季131.14亿美元（上年同期37.6亿美元）。存储厂利润创新高，终端内存成本压力短期难缓解。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-10-05",
@@ -7882,7 +7970,8 @@
         "evidence_urls": [
           "https://investing.com/news/stock-market-news/qualcomm-and-arm-kick-off-trial-potential-for-huge-damages-in-focus-4937614"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "deep_dive_zh": []
       },
       {
         "date": "2026-10-01",
@@ -7904,9 +7993,81 @@
         },
         "edge_ai_impact_zh": "如果头部厂商因成本推迟LPDDR6，端侧AI的带宽升级节奏将放缓一代，“新内存标准首发即普及”的假设需要修正。",
         "evidence_urls": [
-          "https://www.androidcentral.com/phones/samsung%2Dgalaxy/not%2Dwhat%2Di%2Dwanted%2Dto%2Dhear%2Drumors%2Dnow%2Dsay%2Dgalaxy%2Ds27%2Dultra%2Dcould%2Dmiss%2Da%2Dhuge%2Dupgrade"
+          "https://www.androidcentral.com/phones/samsung%2Dgalaxy/not%2Dwhat%2Di%2Dwanted%2Dto%2Dhear%2Drumors%2Dnow%2Dsay%2Dgalaxy%2Ds27%2Dultra%2Dcould%2Dmiss%2Da%2Dhuge%2Dupgrade",
+          "https://androidauthority.com/samsung-exynos-2700-specs-leak-3707590"
         ],
-        "confidence": "low"
+        "confidence": "low",
+        "deep_dive_zh": [
+          {
+            "heading": "内存成本与端侧AI",
+            "points": [
+              "爆料称NAND与LPDDR6涨价推高S27售价（韩国基础款或涨10万-13万韩元），LPDDR6可能只用于S27 Pro/Ultra。",
+              "若LPDDR6只进高端型号，端侧大模型能力会按内存代际出现机型分层，与联发科9600 Pro/9600M的分档类似。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-10-05",
+        "vendor": "Saarland University",
+        "category": "学术研究",
+        "title": "Fine-Tuning a 3B-Parameter LLM on a Smartphone: Characterizing Sustained Training",
+        "title_zh": "在iPhone 17 Pro上完整微调3B模型的实测",
+        "url": "https://arxiv.org/abs/2610.06325",
+        "source_type": "论文",
+        "summary_zh": "首个对手机上完整训练多 B 参数 LLM 的系统表征：iPhone 17 Pro（A19 Pro，GPU 核内含矩阵单元）用 MLX 对 4-bit SmolLM3-3B 做 LoRA 个性化微调，一次充电内可训完典型用户，适配器效果与服务器训练相当。持续训练会降频到初始吞吐约一半；作者发现 MLX 中量化反向内核从未被调度且有错误，修复后（已合入上游）训练快 1.47×、能耗少约三分之一。",
+        "whats_new_zh": [
+          "405 条记录用户：约 6,616–6,948 s 训练完成，耗电 47%（从 85% 电量起）",
+          "能耗恒定约 0.04 J/训练 token，满电约可训练 130 万 token；每 token 0.011–0.012 s",
+          "持续训练吞吐降至初始约 50%，各种暂停/突发调度均无法恢复",
+          "10 个运行时中 9 个不加速量化反向传播；MLX 修复后 1.47× 加速"
+        ],
+        "key_specs": {
+          "gpu": "A19 Pro GPU（GPU 核内矩阵单元）",
+          "other": "iPhone 17 Pro（A3523），MLX via mlx-swift，iOS 前台应用"
+        },
+        "edge_ai_impact_zh": "端侧个性化训练从“单步可行”走向“完整任务可行”，但热降频与运行时对反向传播的支持是主要短板——这对 NPU/GPU 设计（反向路径、量化反向内核）和 OS 后台调度提出新需求。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2610.06325"
+        ],
+        "confidence": "high",
+        "venue": "arXiv（cs.DC/cs.PF）",
+        "affiliation": "Saarland University",
+        "authors": "Andrew Geyko, Marius Mosbach, André Brinkmann",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "此前只测过手机上单个训练 step，没有完整训练、也没验证端侧训练的适配器是否真能提升个性化。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "在 LaMP 评分预测任务上对 5 个用户（405–987 条记录）完整训练；测内存、逐 kernel 时间、持续热行为与电池能耗；审计 10 个运行时的量化反向路径。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "iPhone 17 Pro（A19 Pro），MLX/mlx-swift，SmolLM3-3B 4-bit LoRA + 梯度检查点。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "训练时间与 token 数线性相关；405 记录用户消耗 47% 电量；987 记录用户满电在 1640/2961 步时关机。",
+              "几乎全部时间花在冻结基座模型、尤其是反向传播；MLX 修复带来 1.47× 与约 1/3 节能。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "为“端侧学习”给出首批完整能耗基线；仅 iOS/单机型，未涉及 ANE/NPU 训练。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "iPhone 17 Pro 上 SmolLM3-3B 4-bit + LoRA 训练（非推理）；训练速率约 0.011–0.012 s/token，约 0.04 J/token；单次充电约 130 万训练 token。"
       },
       {
         "date": "2026-10-02",
@@ -7926,9 +8087,112 @@
           "other": "Apple M4实测"
         },
         "edge_ai_impact_zh": "端侧Agent会出现多个模型/会话并发，争抢同一块统一内存带宽，内存调度正成为端侧Agent性能的关键变量。",
-        "evidence_urls": [],
-        "confidence": "high"
+        "evidence_urls": [
+          "https://arxiv.org/html/2610.03394"
+        ],
+        "confidence": "high",
+        "model_capacity_zh": "Apple M4（32 GB 统一内存、120 GB/s）上 FP16 运行 DeepSeek-R1-Distill-Llama-8B 与 Llama-3.1-8B-Instruct，EAGLE-3 投机解码；结果以相对加速给出（1.29× / 1.77×），绝对 tokens/s 见全文。",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "端侧多智能体工作流在 UMA 上：内存受限的解码让 CPU-GPU 协同执行陷入总线争用；不同 Agent 的草稿难度差异巨大；工具调用造成频繁停顿。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "UMA 感知执行层：零拷贝张量并行图 + 非对称内存布局，绕开图编译器限制，同时用满 CPU（ARMv9 SME2 微内核）与 GPU。",
+              "Agent 感知调度：按实时可预测性动态分配草稿预算；协作式 suspend-and-yield 让卡在工具调用上的 Agent 让出硬件。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "Apple M4（10 核 CPU 4P+6E，SME2；10 核 GPU；32 GB，120 GB/s）；关键消融在 M4 Pro（14 核 CPU、20 核 GPU、64 GB、273 GB/s）复现。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "UMA 感知执行单独贡献 1.29×（对批量投机解码）；完整系统在极端工具时延下 1.77×。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "ASPLOS '27 录用；说明 CPU 矩阵扩展（SME）已可作为端侧推理的第二算力。",
+              "仅 Apple Silicon，未覆盖 NPU（ANE）；全部 FP16，未结合低比特量化。"
+            ]
+          }
+        ],
+        "venue": "arXiv"
+      },
+      {
+        "date": "2026-10-03",
+        "vendor": "KAIST",
+        "category": "学术研究",
+        "title": "PhaseGate: Phase-Aware CPU Retrieval Scheduling for On-Device LLMs on Unified Memory",
+        "title_zh": "PhaseGate：统一内存上按LLM阶段调度CPU检索",
+        "url": "https://arxiv.org/abs/2610.04537",
+        "source_type": "论文",
+        "summary_zh": "在统一内存设备上，端侧助手的 GPU LLM 推理与 CPU 向量检索争抢内存带宽：4 个并发检索 worker 使 p95 解码时延上升 60–61%，而预填充只上升 5.7–6.9%。PhaseGate 按预填充/解码阶段分别设置检索并发上限（M4 上为 4 和 1），检索吞吐为最佳固定策略的 2.0×，且两项 p95 LLM 时延均控制在无检索基线的 1.25× 以内。",
+        "whats_new_zh": [
+          "4 并发检索：p95 解码时延 +60–61%，预填充仅 +5.7–6.9%（两台 M4）",
+          "检索吞吐 2.0× 最佳固定策略，p95 时延 ≤1.25× 基线（7 次留出运行全部满足）",
+          "不感知阶段的 TimeGate 吞吐相近但每次都违反输出 token 时延约束"
+        ],
+        "key_specs": {
+          "memory": "Apple M4 统一内存；M2 / M2 Pro Mac mini 复现",
+          "other": "MLX-LM v0.31.3；FAISS HNSW（10 万条 384 维）"
+        },
+        "edge_ai_impact_zh": "揭示统一内存 SoC 上“解码对带宽干扰极敏感”的事实：端侧 RAG/Agent 的 CPU 侧任务必须与 LLM 阶段协同调度，这同样适用于手机 SoC。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2610.04537"
+        ],
+        "confidence": "medium",
+        "venue": "On-Device Intelligence Workshop（arXiv 预印本）",
+        "affiliation": "KAIST",
+        "authors": "Seoyoon Yum, Sehoon Kim",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "统一内存上 CPU 检索与 GPU 推理争用带宽，解码阶段（带宽受限）受害远大于预填充。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "以 LLM 阶段为准入信号，校准预填充/解码两个并发上限；运行中调用不抢占。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "M4 Mac mini 为主，M2/M2 Pro 复现；受控合成负载。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "2.0× 检索吞吐，p95 时延在 1.25× 内；输出越长优势越小。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "workshop 论文、规模小；硬件/模型变化需重新校准。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "4-bit Qwen2.5-1.5B（MLX-LM）在 M4 Mac mini 上运行；tokens/s 绝对值未在摘要披露。"
       }
+    ],
+    "takeaways_zh": [
+      "DRAM 涨价是端侧大模型最大的反向变量：内存配置被压缩，1-bit/2-bit 量化、闪存专家卸载、近存和存内计算的商业价值随之上升。",
+      "低激活率 MoE（30B-A2B、30B-A3B）正在成为手机旗舰的“标准模型规格”，华为、高通、联发科、Apple 的路线已经趋同。",
+      "统一内存上的带宽争用正在成为端侧多智能体系统的新瓶颈：EdgeAgent 仅靠调度就在 Apple M4 上拿到 1.29–1.77 倍加速，PhaseGate 也从推理阶段调度入手缓解争用。"
     ]
   }
 }

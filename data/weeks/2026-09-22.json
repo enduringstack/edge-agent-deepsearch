@@ -5267,7 +5267,7 @@
       "start": "2026-09-22",
       "end": "2026-09-28"
     },
-    "overview": "骁龙峰会周，也是这个月信息量最大的一周。高通第一次把旗舰拆成两档：第六代骁龙 8 超级至尊版采用 2nm，CPU 达 5.0GHz，NPU 新增 Element Accelerator 并支持 INT2/FP8，Adreno GPU 首次加入矩阵核心，内存升级到 LPDDR6（约 127GB/s），官方目标是在手机上运行 30B MoE 模型、32K 上下文；标准版则保留 LPDDR5X，也没有矩阵核心。更长远的信号是 HBC 近存计算：把多层 LPDDR 堆在计算 die 上，高通称同功耗下的带宽和 token 效率是 HBM 的 6 倍，并计划从数据中心下放到骁龙。三星 16GB LPDDR6 同周完成验证（10.7Gbps，能效 +21%）。TechInsights 拆解确认 A20 Pro 的裸片面积与上代基本相同（约 98mm²），新增的晶体管都给了 NPU 和 GPU。可穿戴侧有三条：高通耳机 eNPU 达到 128 GOPS 并加入微功耗 Wi-Fi，AR1 眼镜跑起了 2B 参数的 1-bit 多模态模型，Meta VR Glasses 把骁龙 Reality Elite 放进了口袋计算盒。",
+    "overview": "骁龙峰会周，信息量最大的一周。第六代骁龙 8 超级至尊版（2nm，CPU 5.0GHz）真正新增的 AI 部分是 Element Accelerator（加速快速动作循环和 KV Cache）和 +50% 的 NPU 共享内存；INT2 精度和 Direct Link 在上代已有。内存升级为 LPDDR6，媒体给出 114–127GB/s。官方能力口径是 30B MoE（约 3B 激活）、32K 上下文，专家从 UFS 5.0 按需加载，但 TOPS 和 tokens/s 都未披露。旗舰首次拆成两档，标准版的矩阵核心和 LPDDR6 存在官方与媒体口径冲突。低功耗侧形成了一条清晰的模型梯度：手机 Sensing Hub 双 Micro NPU 最高跑 200M 参数，耳机 eNPU 128 GOPS，手表 Wear Elite 跑 2B 约 10 tok/s，AR1 眼镜跑 2B 1-bit VLM 达 15.36 tok/s。HBC 近存堆叠计划下放到骁龙。PC 侧，Ryzen AI Max PRO 400 的 192GB 统一内存宣称可跑 300B+ 模型，M6 Mac mini 实测 27B 4-bit 约 8–10 tok/s。论文侧，上交与阿里在三代 Hexagon NPU 上实现非前缀 KV 复用，一篇独立研究给出 iPhone 闪存承载 35B MoE 只有 1.8–3.2 tok/s 的可复现数据。",
     "items": [
       {
         "date": "2026-09-22",
@@ -5282,7 +5282,7 @@
           "官方产品简介给出的较上代（8 Elite Gen 5）提升：CPU性能+13%、CPU能效+37%；GPU性能+44%、GPU能效+40%；NPU性能+35%、AI每瓦性能+33%",
           "Oryon CPU：2个Prime核最高5.0GHz、6个Performance核最高4.0GHz，16MB Oryon Flex Cache（上代为4.6/3.62GHz）",
           "Hexagon NPU重新设计：新增Element Accelerator，配置为12标量+8向量+1张量+1 element；新增Hexagon Direct Link与Micro Tile Inferencing；共享内存扩大50%；支持64位内存虚拟化",
-          "NPU精度支持INT2/INT4/INT8/INT16/FP8/FP16及混合精度，INT2为新增的低比特档位",
+          "NPU精度支持INT2/INT4/INT8/INT16/FP8/FP16及混合精度（注：INT2在上代8 Elite Gen 5产品简介中已列出，并非本代新增）",
           "Adreno GPU首次加入AI矩阵核心，配合Adreno Neural Fusion做AI超分和插帧；18MB Adreno高性能显存，功耗降低12%",
           "内存支持LPDDR5x/LPDDR6，最高5300MHz、24GB；据ServeTheHome测算，LPDDR6为4×24bit，带宽127.2GB/s（上代84.8GB/s）；存储为UFS 5.0",
           "Sensing Hub改为双微型NPU（音频/语音/传感器）加双Always-Sensing ISP，用于端侧个人知识图谱Personal Scribe",
@@ -5297,14 +5297,53 @@
           "memory": "LPDDR5x/LPDDR6 @5300MHz，最高24GB；UFS 5.0",
           "other": "X105 Modem（Rel-19）、FastConnect 8800（Wi-Fi 8/BT 6.3）、8K60视频、APV/H.266；型号SM8975"
         },
-        "edge_ai_impact_zh": "共享内存扩大、LPDDR6带宽提升约50%以及INT2支持，都直接针对端侧LLM解码阶段的内存带宽瓶颈。官方称可在端侧运行30B以上参数的MoE模型，支持32K上下文。GPU矩阵核心则意味着端侧AI负载会在NPU和GPU之间进一步分流。",
+        "edge_ai_impact_zh": "共享内存扩大和LPDDR6带宽提升约50%，都直接针对端侧LLM解码阶段的内存带宽瓶颈。官方称可在端侧运行30B以上参数的MoE模型，支持32K上下文。GPU矩阵核心则意味着端侧AI负载会在NPU和GPU之间进一步分流。",
         "evidence_urls": [
           "https://www.qualcomm.com/content/dam/qcomm-martech/dm-assets/documents/Snapdragon-8-Elite-Extreme-Gen-6-Product-Brief.pdf",
           "https://www.servethehome.com/qualcomm-unveils-snapdragon-8-elite-gen-6-and-elite-extreme-gen-6-next-gen-flagship-mobile-chips/",
           "https://9to5google.com/2026/09/22/snapdragon-8-elite-gen-6/",
-          "https://www.gsmarena.com/snapdragon_8_elite_extreme_gen_6_and_8_elite_gen_6_debut-news-74721.php"
+          "https://www.gsmarena.com/snapdragon_8_elite_extreme_gen_6_and_8_elite_gen_6_debut-news-74721.php",
+          "https://www.qualcomm.com/content/dam/qcomm-martech/dm-assets/documents/Snapdragon-8-Elite-Gen-5-product-brief.pdf"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "官方口径：可在端侧运行总参数30B（部分媒体转述为“30B以上”）的MoE模型，每生成一个token只激活约3B路由参数，专家权重可直接从闪存（UFS 5.0）按需加载；上下文最高32K；INT4模型prefill较8 Elite Gen 5最高+50%（Digital Today转述部分模型最高+80%），并增强了投机解码。tokens/s绝对值、NPU TOPS均未披露。上代8 Elite Gen 5的官方口径为约220 tokens/s（模型与测试条件未说明）。估算（本文推算，非官方）：30B INT4权重约15GB，接近24GB内存上限，所以需要从闪存流式加载专家；3B激活参数在INT4下每个token约读1.5GB，按LPDDR6理论带宽127.2GB/s计算，decode上限约85 tokens/s（不计KV Cache和专家缓存命中）。",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 微架构（与上代对比）",
+            "points": [
+              "官方产品简介：Hexagon为“12标量 + 8向量 + 1 tensor + 1 element”配置；上代8 Elite Gen 5简介写的是“12标量 + 8向量 + 1 accelerator”。标量和向量数量不变，新增的是面向Transformer的Element Accelerator。",
+              "Element Accelerator的官方定位是加速“快速动作循环和KV Cache”（Computerworld转述），与标量、向量、矩阵单元协同（The Elec）。",
+              "共享内存扩大50%，只写在超级至尊版的简介里，标准版简介没有这一条；绝对容量未披露。",
+              "Hexagon Direct Link、Micro Tile Inferencing、64位内存虚拟化以及INT2/INT4/INT8/INT16/FP8/FP16混合精度，在8 Elite Gen 5的简介里已经出现，属于延续能力，并非Gen 6首发。此前“INT2为新增”的说法应更正。Micro Tile的机制高通未公开说明；Direct Link被TechTimes解读为绕过系统内存、从ISP或Modem直连NPU的数据通路（媒体解读）。",
+              "代际提升（官方，对比8 Elite Gen 5）：NPU性能+35%，AI每瓦性能+33%；标准版分别为+14%和+20%。TOPS未披露。"
+            ]
+          },
+          {
+            "heading": "低功耗/常驻 AI（Sensing Hub）",
+            "points": [
+              "Sensing Hub配有双Micro NPU（负责音频、语音和传感器）和双Always-Sensing ISP（支持两路常开摄像头并发），并搭载Personal Scribe，用于构建个人知识图谱（官方简介）。",
+              "HotHardware转述高通口径：Micro NPU性能+85%，能效+20%，支持最高200M参数的模型。TechTimes称Personal Scribe持续摄取短信、邮件和日程，在本地构建私有知识图谱。",
+              "8 Elite Gen 5的简介已经列出双Micro NPU、双Always-Sensing ISP和Personal Scribe，Micro NPU精度为INT4/INT8/INT16。Gen 6是在同一结构上的性能升级，Micro NPU的GOPS和功耗绝对值未披露。"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "官方：支持LPDDR5x/LPDDR6，最高5300MHz（10.6Gbps），容量最高24GB；存储为UFS 5.0。",
+              "ServeTheHome：超级至尊版为LPDDR6 4×24bit，带宽127.2GB/s；标准版为LPDDR5X 4×16bit，84.8GB/s。带宽提升约50%。",
+              "三星宣布16GB LPDDR6（10.7Gbps）完成该平台验证，口径为“最高114GB/s”，能效比LPDDR5X高21%。推算：LPDDR6每次burst为288bit，其中256bit是数据，其余为元数据或ECC。128.4GB/s × 256/288 ≈ 114GB/s，可以解释两个数字的差异（本文推算）。",
+              "Offset PoP：DRAM从逻辑die正上方移到侧面，并加“thermal transporter”导热块，官方称峰值性能持续时间翻倍（ServeTheHome），具体温度和功耗数据未披露。"
+            ]
+          },
+          {
+            "heading": "能效与实测",
+            "points": [
+              "目前只有官方相对值：CPU能效+37%，GPU能效+40%，AI每瓦性能+33%。尚无独立的NPU tokens/s实测。",
+              "参考机或工程机跑分属于泄露（见跑分条目）；小米称NPU推理速度提升80%（Notebookcheck转述，属厂商口径）。",
+              "工艺：2nm，ServeTheHome称为TSMC N2P（上代为N3P）。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-22",
@@ -5332,9 +5371,27 @@
         "evidence_urls": [
           "https://propakistani.pk/2026/09/22/vivo-x500-pro-series-launches-with-mediateks-first-2nm-dimensity-chip-and-200mp-zoom-lens/",
           "https://propakistani.pk/2026/09/23/oppo-just-launched-a-flagship-phone-with-three-200mp-cameras/",
-          "https://www.91mobiles.com/hub/vivo-x500-series-launched-china-price-specifications/"
+          "https://www.91mobiles.com/hub/vivo-x500-series-launched-china-price-specifications/",
+          "https://www.mediatek.com/press-room/mediatek-dimensity-9600-pro-sets-new-standard-for-flagship-smartphone-chips",
+          "https://www.mediatek.com/products/smartphones/dimensity-9600m"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "芯片层面的口径见天玑9600 Pro（最高30B含MoE）。vivo与OPPO尚未公开在X500 Pro/Find X10 Pro Max上实际部署的端侧模型参数量与tokens/s（未披露）。标准版搭载9600M，官方适配的是Gemini Nano 4与Qwen 3.5 Omni 4B。",
+        "deep_dive_zh": [
+          {
+            "heading": "代际分层",
+            "points": [
+              "Pro机型：NPU 1090 + Super Efficient NPU 2.0 + KV压缩 + LPDDR6选项；标准版：NPU 990 + CIM NPU + LPDDR5X-10667。端侧模型大约分成30B级和4B级两档。",
+              "Arm神经图形：Pro机型的G2-Ultra NX带NX矩阵单元（INT8/INT16），标准版的Mali-G1 Ultra没有。"
+            ]
+          },
+          {
+            "heading": "实测",
+            "points": [
+              "发布前Geekbench（非官方）：X500 Pro单核4137、多核12751；尚无独立的端侧LLM tokens/s评测。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-22",
@@ -5362,9 +5419,39 @@
         },
         "edge_ai_impact_zh": "手机 SoC 首次采用 96-bit 内存位宽和 WMCM 并排封装，相当于把 M 系列的“宽带宽”思路下放到手机上，直接抬高端侧 LLM 每秒可生成的 token 数上限。在裸片面积不变的前提下扩大 NPU，说明 Apple 把新增的晶体管预算优先分给了 AI。",
         "evidence_urls": [
-          "https://www.techinsights.com/blog/iphone-18-pro-max-unboxing"
+          "https://www.techinsights.com/blog/iphone-18-pro-max-unboxing",
+          "https://wccftech.com/a20-pro-will-not-feature-lpddr6-ram-but-six-channel-memory-for-increased-bandwidth/",
+          "https://iphone-mania.jp/iphone18-603246/",
+          "https://www.macrumors.com/2026/09/10/iphone-18-pro-max-battery-capacities-ram/",
+          "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "model_capacity_zh": "裸片分析不涉及模型规模。从硬件推算：12GB LPDDR5X（Xcode 口径），约 115GB/s（96-bit × 9600MT/s，推算）。4-bit 3B 模型的解码理论上限约 75 tok/s，4-bit 8B 约 29 tok/s（未计 KV Cache 和效率损失，属估算）。",
+        "deep_dive_zh": [
+          {
+            "heading": "工艺与面积",
+            "points": [
+              "TSMC N2，纳米片 GAA，是 Apple 首颗 N2 应用处理器。",
+              "计算裸片约 8.0 × 12.3mm ≈ 98.2mm²，与 A19 Pro 几乎相同，密度红利全部用来增加 GPU 和 AI 单元，而不是缩小面积。"
+            ]
+          },
+          {
+            "heading": "版图",
+            "points": [
+              "CPU 为 2P+4E，每个 P 核有独立 L2，E 核共享多 bank 缓存。",
+              "GPU 比 A19 Pro 多 1 核（7 核）。",
+              "NPU 区面积“显著增大”，内含矩阵乘和卷积计算引擎，与 Apple 的“双 16 核”说法吻合。完整的面积拆分只在付费报告中提供。"
+            ]
+          },
+          {
+            "heading": "封装与内存",
+            "points": [
+              "封装型号 A3473，从 PoP 改为处理器与内存并排的晶圆级多芯片模块（WMCM）。",
+              "初步结论为 96-bit LPDDR5X。发布前 Wccftech 根据泄露原理图报道为“六通道”LPDDR5X；iPhone-Mania 记为 4×24-bit。通道组织方式还有分歧，位宽 96-bit 是一致的。",
+              "并排封装把 DRAM 移出 SoC 的散热路径，SoC 直贴均热板，这是持续性能 +40% 的主要来源（官方）。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-22",
@@ -5378,7 +5465,7 @@
         "whats_new_zh": [
           "较上代提升（高通口径，媒体转述）：CPU性能+10%、CPU能效+37%；GPU性能+35%、GPU能效+40%；NPU性能+14%、AI每瓦性能+20%",
           "CPU与超级至尊版相同：2×5.0GHz Prime + 6×4.0GHz Performance，16MB Flex Cache",
-          "据ServeTheHome，标准版GPU未列出矩阵核心，内存为LPDDR5X（84.8GB/s），视频为8K30（超级至尊版为8K60），4K慢动作120fps（超级至尊版为240fps）",
+          "据ServeTheHome等媒体，标准版GPU无矩阵核心、内存为LPDDR5X（84.8GB/s）；但高通官方产品简介写有“Adreno GPU with matrix cores”和LPDDR5x/6支持，两者存在冲突，以量产机实测为准。视频8K30（超级至尊版为8K60）",
           "NPU同为12标量+8向量+1张量+1 element结构，但性能提升幅度明显小于超级至尊版"
         ],
         "key_specs": {
@@ -5393,9 +5480,36 @@
         "evidence_urls": [
           "https://9to5google.com/2026/09/22/snapdragon-8-elite-gen-6/",
           "https://www.servethehome.com/qualcomm-unveils-snapdragon-8-elite-gen-6-and-elite-extreme-gen-6-next-gen-flagship-mobile-chips/",
-          "https://www.idc.com/resource-center/blog/snapdragon-summit-2026-qualcomms-bid-to-be-the-silicon-behind-every-agent-on-every-device/"
+          "https://www.idc.com/resource-center/blog/snapdragon-summit-2026-qualcomms-bid-to-be-the-silicon-behind-every-agent-on-every-device/",
+          "https://www.qualcomm.com/content/dam/qcomm-martech/dm-assets/documents/Snapdragon-8-Elite-Gen-6-Product-Brief.pdf",
+          "https://www.techtimes.com/articles/327921/20260923/snapdragon-8-elite-gen-6-hits-5ghz-how-qualcomm-split-its-flagship-two.htm"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "model_capacity_zh": "标准版能跑多大的模型，官方未单独给出。TechTimes口径为32K上下文，而30B MoE和“共享内存+50%”只出现在超级至尊版的材料中。标准版NPU性能+14%，AI每瓦性能+20%。如果标准版机型采用LPDDR5X（84.8GB/s，ServeTheHome口径），按同样方法估算，3B激活INT4的decode理论上限约55 tokens/s（本文推算）。tokens/s和TOPS均未披露。",
+        "deep_dive_zh": [
+          {
+            "heading": "与超级至尊版的差异（AI相关）",
+            "points": [
+              "NPU结构相同（12标量 + 8向量 + 1 tensor + 1 element，Direct Link、Micro Tile、INT2至FP16），但标准版官方简介没有“50% larger shared memory”这一条。",
+              "性能提升：NPU +14% 对比 +35%；AI每瓦 +20% 对比 +33%；GPU +35% 对比 +44%；CPU +10% 对比 +13%（官方简介）。",
+              "Sensing Hub相同：双Micro NPU、双Always-Sensing ISP和Personal Scribe都写在标准版简介中。"
+            ]
+          },
+          {
+            "heading": "内存与口径冲突",
+            "points": [
+              "标准版官方简介写的是“Support for LP-DDR5x/6, up to 5300 MHz，最高24GB”；ServeTheHome和TechTimes则称标准版只有LPDDR5X（4×16bit，84.8GB/s）。是否支持LPDDR6，可能取决于OEM配置，以终端规格为准。",
+              "官方简介同样把“Adreno GPU with matrix cores”列入标准版AI Engine，与媒体说的“只有超级至尊版有矩阵核心”冲突；Neural Fusion则只出现在超级至尊版的材料中。",
+              "IDC称两档价差约100美元。小米18 Pro使用标准版，18 Pro Max使用超级至尊版。"
+            ]
+          },
+          {
+            "heading": "视频与其他",
+            "points": [
+              "标准版为8K30、4K120慢动作；超级至尊版为8K60、4K240，并加入APV和H.266（官方简介）。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-23",
@@ -5417,9 +5531,21 @@
         "edge_ai_impact_zh": "这些都是参考机或泄露数据，可信度有限。多核和GPU的领先对端侧多模态和游戏AI负载有利，单核仍是与苹果的主要差距。",
         "evidence_urls": [
           "https://www.androidheadlines.com/2026/09/iphone-18-pro-geekbench-leak-shows-how-the-a20-pro-stacks-up-against-snapdragon-and-dimensity.html",
-          "https://wccftech.com/dimensity-9600-pro-beats-a20-pro-multicore-dimensity-9500-scores-lowered/"
+          "https://wccftech.com/dimensity-9600-pro-beats-a20-pro-multicore-dimensity-9500-scores-lowered/",
+          "https://www.gsmarena.com/its_now_the_xiaomi_18_pro_maxs_turn_to_surface_in_geekbench-news-74667.php"
         ],
-        "confidence": "low"
+        "confidence": "low",
+        "model_capacity_zh": "跑分泄露不涉及AI模型容量；暂无Geekbench AI、MLPerf Mobile等NPU实测（截至10月7日未检索到）。",
+        "deep_dive_zh": [
+          {
+            "heading": "数据可信度",
+            "points": [
+              "参考机：AnTuTu 5,658,231；GB6 4332/13048（泄露，可信度低）。",
+              "Geekbench数据库中小米18 Pro Max的条目显示簇配置为2×5.11GHz + 3×4.03GHz + 3×2.74GHz（Notebookcheck转述），与官方“2+6”描述不一致，可能是工程机识别差异，有待零售机确认。",
+              "早期iQOO 16工程机未能维持5.01GHz峰值，说明持续性能取决于整机散热。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-22",
@@ -5447,9 +5573,48 @@
         },
         "edge_ai_impact_zh": "M6 的“双 NPU + GPU 内嵌矩阵单元”组合与 A20 Pro 同代同源，说明 Apple 正把端侧 AI 算力同时押在 NPU 和 GPU 两条路径上。M5 Ultra 的 512GB / 1.2TB/s 则让个人桌面机可以完整运行数千亿参数级模型。",
         "evidence_urls": [
-          "https://www.apple.com/newsroom/2026/08/apple-introduces-m6-and-m5-ultra-for-a-big-leap-in-performance-and-ai-compute/"
+          "https://www.apple.com/newsroom/2026/08/apple-introduces-m6-and-m5-ultra-for-a-big-leap-in-performance-and-ai-compute/",
+          "https://www.apple.com/newsroom/2025/10/apple-unleashes-m5-the-next-big-leap-in-ai-performance-for-apple-silicon/",
+          "https://www.apple.com.cn/newsroom/2026/03/apple-debuts-m5-pro-and-m5-max-to-supercharge-the-most-demanding-pro-workflows/",
+          "https://machinelearning.apple.com/research/exploring-llms-mlx-m5",
+          "https://www.bgr.com/2264114/mac-studio-m5-ultra-review/"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "官方口径：M5 Ultra 可以完全在端侧运行“数千亿参数”的 LLM，但没有给出具体模型或 tokens/s。按 4-bit 每参数约 0.5 字节估算，512GB 理论上可以装下约 0.7–0.9T 参数的权重（需要扣除系统、KV Cache 和上下文开销，属估算）。媒体实测（BGR，256GB 配置）：Qwen 27B 4-bit 约 55 tok/s（M3 Ultra 约 40），Qwen3.5-122B-A10B 约 80 tok/s（M3 Ultra 约 60），首 token 约 0.5 秒。M6 Mac mini 32GB：27B 4-bit 为 8–9.7 tok/s，用 MTP 投机解码为 16–19 tok/s，9B 4-bit 为 26.9 tok/s（llama.cpp）。",
+        "deep_dive_zh": [
+          {
+            "heading": "M6：与 A20 Pro 同代同构",
+            "points": [
+              "2nm；12 核 CPU（2 super + 4 P + 6 E）；12 核 GPU，每核带 Neural Accelerator，GPU 峰值 AI 算力比 M5 高近 30%。",
+              "双 16 核 Neural Engine，峰值算力为上代 2 倍，系统框架可以同时使用两个引擎（官方）。没有公布 TOPS。",
+              "内存最高 32GB，带宽 170GB/s（比 M5 的 153GB/s 高 10%）。Alex Ziskind 用 STREAM 实测约 143–145GB/s，芯片峰值功耗约 38W（持续 GPU LLM 负载）。",
+              "实测：9B 4-bit 的 prompt 处理从 M4 的 210 tok/s 提到 742 tok/s（3.5 倍），解码只从 18 提到 26.9 tok/s。这说明 Neural Accelerator 主要加速 prefill，解码仍受带宽约束。"
+            ]
+          },
+          {
+            "heading": "M5 Ultra：四裸片",
+            "points": [
+              "两颗双裸片 M5 Max 通过 UltraFusion 连接（>4.4TB/s，连接密度 6 倍以上）；36 核 CPU（12 super + 24 P）；80 核 GPU，每核带 Neural Accelerator；32 核 NE。",
+              "最高 512GB，带宽 1.2TB/s（比 M3 Ultra 高 50%）；GPU 峰值 AI 算力为 M3 Ultra 的 4.5 倍。512GB 配置 10 月下旬出货。",
+              "M5 Max（2026 年 3 月）：最高 128GB，614GB/s；M5 Pro：最高 64GB，307GB/s。M5 Pro/Max 采用 Fusion 架构，由两颗第三代 3nm 裸片组成。",
+              "Thunderbolt 5（120Gb/s）加 RDMA，可以把多台 Mac Studio 组成集群，分布式推理最高提速 3 倍（官方，7 月测试）。"
+            ]
+          },
+          {
+            "heading": "带宽屋顶线校验",
+            "points": [
+              "27B 4-bit 权重约 13.5GB。M6 按 170GB/s 算上限约 12.6 tok/s，按实测 144GB/s 算约 10.7 tok/s；实测 8–9.7 tok/s，接近屋顶线。",
+              "M5 Ultra 1.2TB/s 时上限约 89 tok/s，实测约 55 tok/s，效率约 60%。跨四裸片的访存和 kernel 效率还有提升空间（推断）。",
+              "Apple 在 M5 上的 MLX 实测（24GB）：Qwen3-14B 4-bit 的 TTFT 不到 10 秒，Qwen3-30B-A3B 4-bit 不到 3 秒；TTFT 比 M4 快 3.3–4.1 倍，解码只快 19–27%（与 153 对 120GB/s 的带宽比例一致）。"
+            ]
+          },
+          {
+            "heading": "AFM Core Advanced 在 Mac 上的门槛",
+            "points": [
+              "M3 及以上且 ≥12GB 统一内存的 Mac 都能跑 Core Advanced，所以 M6 Mac mini（16GB 起）默认满足。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-28",
@@ -5477,9 +5642,34 @@
         "evidence_urls": [
           "https://tweaktown.com/news/111752/amd-launches-the-ryzen-ai-max-pro-400-series-of-cpus-up-to-16-cores-with-192gb-of-unified-memory/index.html",
           "https://www.tomshardware.com/tech-industry/best-of-ifa-2026",
-          "https://newsroom.amd.com/press-kits/press-kit-agentic-pcs"
+          "https://newsroom.amd.com/press-kits/press-kit-agentic-pcs",
+          "https://wccftech.com/amd-pushes-ryzen-ai-max-400-to-192gb-memory-single-chip-run-300b-ai-llms-locally/",
+          "https://www.techtimes.com/articles/326623/20260904/ryzen-ai-max-pro-400-192gb-unified-memory-puts-300b-parameter-llms-your-desk-without-cloud.htm"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "model_capacity_zh": "AMD官方口径为“4-bit量化下可运行300B以上参数的模型”，是首款能做到这一点的x86客户端处理器；192GB中最多160GB可分配为GPU显存。按4-bit计算，300B权重约150GB，余下给KV cache的空间约10GB，长上下文受限（媒体分析）。速度：AMD唯一公布的数据是脚注中的“128K上下文下持续输出36 tokens/s、输入446 tokens/s”（预量产Ryzen AI Halo，LM Studio 0.4.12，Vulkan llama.cpp），但没写模型名，不能当作300B的结果。300B模型的tokens/s未披露。稠密300B在约273GB/s带宽下每token要读约150GB权重，只能做到个位数以下（本文推算）；实际可用的大模型应是MoE。",
+        "deep_dive_zh": [
+          {
+            "heading": "SoC 与 NPU",
+            "points": [
+              "Zen 5，最高16核32线程（Max+ PRO 495），RDNA 3.5最高40 CU；XDNA 2 NPU：495为55 TOPS，490/485约50 TOPS。",
+              "TDP默认55W，可调范围45-120W（wccftech）。AMD说明大模型主要跑在GPU上，NPU负责低功耗专用负载。"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "LPDDR5X-8533、256-bit，最高192GB（300系为128GB）；可分配显存从112GB提到160GB。",
+              "带宽约270-273GB/s（媒体），与N1X的约300GB/s同一档，因此两者decode速度上限接近，差别主要在容量（192GB vs 128GB）。"
+            ]
+          },
+          {
+            "heading": "模型容量梯度",
+            "points": [
+              "128GB的Max+ 300系，AMD口径最高200B；192GB的PRO 400系为300B+（均为4-bit）。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-24",
@@ -5502,9 +5692,115 @@
         "edge_ai_impact_zh": "80 TOPS NPU下探到入门款Surface，谷歌也把本地Gemini放到骁龙笔记本上，说明端侧AI PC正在从旗舰向主流价位扩散。",
         "evidence_urls": [
           "https://www.fonearena.com/blog/493282/microsoft-surface-pro-surface-laptop-2026-price-features.html",
-          "https://www.marketbeat.com/instant-alerts/event-qualcomm-unveils-personal-ai-push-with-snapdragon-powered-glasses-hearables-and-pcs-2026-09-23/"
+          "https://www.marketbeat.com/instant-alerts/event-qualcomm-unveils-personal-ai-push-with-snapdragon-powered-glasses-hearables-and-pcs-2026-09-23/",
+          "https://itdaily.com/news/workplace/qualcomm-snapdragon-x2-elite-agentic-pc/",
+          "https://www.theregister.com/2025/09/25/qualcomm_details_x2_elite"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "model_capacity_zh": "Surface新机所用的X2 Plus：Hexagon NPU 80 TOPS，内存16或24GB，LPDDR5x带宽最高152GB/s（高通产品表，经搜索结果转述）；微软称本地NPU推理快95%。X2系列官方口径（9月23日ITdaily）：本地运行最高30B参数模型，上下文20万token，支持450个模型，tokens/s是第一代的2倍（绝对值未披露），最高带宽228GB/s。X2 Elite Extreme为192bit、228GB/s，最高128GB内存。估算：gpt-oss-20b这类MoE模型（The Register举例）在16GB机型上会比较吃紧，24GB以上更合适（本文推算）。",
+        "deep_dive_zh": [
+          {
+            "heading": "PC 平台规格",
+            "points": [
+              "X2 Elite/Extreme：12至18核Oryon，Prime核单线程最高4.4至5GHz；NPU为80 TOPS（INT8），第一代X Elite为45 TOPS；LPDDR5x，标准款152GB/s，Extreme款228GB/s，最高128GB（The Register）。",
+              "ITdaily称高通现在把X2 Elite的NPU标为“最高85 TOPS”（9月23日），比去年发布时的80 TOPS多了5，但没有解释原因，硬件本身没有变化。"
+            ]
+          },
+          {
+            "heading": "Surface 与 Googlebook",
+            "points": [
+              "Surface Pro 12英寸（1149.99美元）和Surface Laptop 13英寸（1199美元）采用六核X2 Plus，16或24GB内存，视频播放续航分别为15.5和22.5小时，10月13日上市（FoneArena）。",
+              "Googlebook采用第一代X Elite（45 TOPS），由Dell和HP首发（IDC）。"
+            ]
+          },
+          {
+            "heading": "手机与PC的容量对比",
+            "points": [
+              "手机旗舰的带宽约114至127GB/s，内存最高24GB；X2 Elite Extreme带宽228GB/s，内存最高128GB。PC能常驻30B级模型并支持20万token上下文，手机则要靠MoE加闪存流式加载才能达到同一参数量级。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-09-23",
+        "vendor": "Qualcomm",
+        "category": "PC芯片",
+        "title": "Qualcomm applies new label to Snapdragon X2 Elite: the 'agentic PC' chip is the same chip",
+        "title_zh": "X2 Elite改称“智能体PC”芯片",
+        "url": "https://itdaily.com/news/workplace/qualcomm-snapdragon-x2-elite-agentic-pc/",
+        "source_type": "媒体",
+        "summary_zh": "高通在峰会PC日没有发布新硬件，而是把X2 Elite重新定位为“智能体PC”平台，并更新了AI口径：NPU“最高85 TOPS”，可本地运行最高30B参数模型，上下文20万token，支持450个模型。Windows 11 26H1将只面向X2 PC发布。",
+        "whats_new_zh": [
+          "NPU口径从去年发布时的80 TOPS提高到“最高85 TOPS”，原因未解释",
+          "本地模型最高30B参数，上下文200,000 token，支持450个模型，tokens/s为第一代的2倍",
+          "内存带宽228GB/s（高端SKU）；第一代X Elite NPU为45 TOPS"
+        ],
+        "key_specs": {
+          "process": "未披露",
+          "cpu": "最多18核Oryon",
+          "gpu": "Adreno",
+          "npu": "Hexagon，最高85 TOPS（多数SKU为80 TOPS）",
+          "memory": "LPDDR5x，最高228GB/s，最高128GB",
+          "other": "智能体框架：AnythingLLM、LLMWare、OpenClaw"
+        },
+        "edge_ai_impact_zh": "PC端的端侧模型口径已经提高到30B稠密或MoE级别、20万上下文。与手机的30B MoE（3B激活、32K上下文）对比可以看出，内存容量和带宽才是区分不同形态端侧AI能力的主变量，TOPS差距反而不大（手机未披露，PC为80至85 TOPS）。",
+        "evidence_urls": [
+          "https://www.theregister.com/2025/09/25/qualcomm_details_x2_elite"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "内存配置",
+            "points": [
+              "Extreme为192bit、228GB/s；Elite和Plus为128bit、152GB/s（部分Elite SKU在高通产品表中也标为228GB/s）；最高128GB（The Register、Windows Central）。"
+            ]
+          },
+          {
+            "heading": "口径注意",
+            "points": [
+              "“85 TOPS”只对应部分SKU（高通产品表中的X2E-90-100）；“30B”没有说明精度，也没有说明是稠密还是MoE。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方口径：最高30B参数、20万上下文、450个模型、tokens/s为第一代的2倍（绝对值未披露）。The Register以gpt-oss-20b为例说明高带宽对本地LLM的意义。"
+      },
+      {
+        "date": "2026-09-23",
+        "vendor": "Apple",
+        "category": "PC芯片",
+        "title": "Mac mini M6 vs M5 Pro for Local AI",
+        "title_zh": "M6 Mac mini 本地 LLM 实测汇总",
+        "url": "https://www.starryhope.com/minipcs/mac-mini-m6-vs-m5-pro-local-ai/",
+        "source_type": "媒体",
+        "summary_zh": "StarryHope 汇总了多位评测者的 M6 Mac mini（32GB）数据。Alex Ziskind 用 STREAM 实测带宽约 143–145GB/s，低于官方 170GB/s。27B Qwen 在 LM Studio 中约 9.7 tok/s，标准 MLX 4-bit 为 8–9 tok/s，用 MTP 投机解码为 16–19 tok/s。9B 4-bit 在 llama.cpp 中解码 26.9 tok/s（M4 为 18），prefill 742 tok/s（M4 为 210），TTFT 约 0.7 秒（M4 约 2.5 秒）。",
+        "whats_new_zh": [
+          "实测带宽 143–145GB/s，约为标称 170GB/s 的 85%",
+          "prefill 是 M4 的 3.5 倍，解码是 1.5 倍",
+          "27B 4-bit 占用约 23GB，峰值芯片功耗约 38W"
+        ],
+        "key_specs": {
+          "process": "2nm",
+          "cpu": "12 核（2S+4P+6E）",
+          "gpu": "12 核，每核带 Neural Accelerator",
+          "npu": "双 16 核",
+          "memory": "16–32GB，170GB/s（标称）",
+          "power": "持续 LLM 负载约 38W 峰值（实测）",
+          "other": "第三方测试汇总"
+        },
+        "edge_ai_impact_zh": "入门级 M6 已经可以用约 10 tok/s 跑 27B 4-bit 模型，配合 MTP 可到 16–19 tok/s。投机解码是突破带宽屋顶线的主要软件手段。",
+        "evidence_urls": [
+          "https://www.apple.com/newsroom/2026/09/the-new-mac-mini-and-mac-studio-are-available-today/"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "屋顶线",
+            "points": [
+              "13.5GB 权重按 144GB/s 实测带宽算上限约 10.7 tok/s，实测 8–9.7 tok/s，基本达到带宽上限"
+            ]
+          }
+        ],
+        "model_capacity_zh": "32GB 配置：27B 4-bit（约 23GB）是实用上限，约 8–10 tok/s，用 MTP 可达 16–19 tok/s。"
       },
       {
         "date": "2026-09-24",
@@ -5532,7 +5828,23 @@
           "https://about.fb.com/news/2026/09/introducing-ray-ban-meta-audio-glasses-new-styles-plus-muse/",
           "https://hypebeast.com/2026/9/meta-connect-2026-vr-glasses-ray-ban-audio-next-gen-specs"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "未披露。Ray-Ban Meta Gen 3与Ray-Ban Meta Audio的芯片型号官方均未公开（会前传闻为骁龙AR1+，未确认）；Muse代理的视觉识别和后台任务执行主要依赖手机/云端，端侧部分未说明。",
+        "deep_dive_zh": [
+          {
+            "heading": "续航与功耗",
+            "points": [
+              "Gen 3续航最长9小时，比Gen 2多1小时；12MP相机/3K视频，6麦克风阵列降噪>90%。",
+              "Ray-Ban Meta Audio去掉摄像头（349美元），常开功耗主要来自麦克风阵列与语音唤醒，是“语音优先”低功耗形态。"
+            ]
+          },
+          {
+            "heading": "端侧AI形态",
+            "points": [
+              "Muse Charm是基于实时语音模型的口袋式代理终端，细节年内公布；FDA认证的听力增强软件149.99美元，属于DSP+小模型常驻负载。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-23",
@@ -5562,7 +5874,23 @@
           "https://hypebeast.com/2026/9/meta-connect-2026-vr-glasses-ray-ban-audio-next-gen-specs",
           "https://9to5google.com/2026/06/16/snapdragon-reality-elite/"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "未披露。计算盒内为Snapdragon Reality Elite（UploadVR称其本质是XR2 Gen 3），12GB RAM/128GB存储；AWE 2026高通口径NPU 48 TOPS（较XR2+ Gen 2 NPU提升160%）。12GB RAM在扣除XR渲染、追踪占用后，可留给本地语言模型的空间有限（推断），官方未说明有哪些AI模型在本地运行。",
+        "deep_dive_zh": [
+          {
+            "heading": "分体计算",
+            "points": [
+              "约100克头显+约300克计算盒（puck），用混合光纤线缆供电和传输；计算、电池、存储全部移到计算盒，头显只保留显示和传感器。",
+              "这种设计把热和电池从头部移走，让SoC可以跑在手机级功耗，而不是眼镜级的百mW到1W。"
+            ]
+          },
+          {
+            "heading": "规格",
+            "points": [
+              "双micro-OLED，每眼2412×2288，120Hz；FOV 70°×66°；4摄像头眼动追踪+手势+面部追踪；1300美元，2027年春季发货。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-23",
@@ -5588,7 +5916,51 @@
           "https://hothardware.com/news/qualcomm-snapdragon-sound-elite-gen-2-ai-agents-earbuds",
           "https://www.idc.com/resource-center/blog/snapdragon-summit-2026-qualcomms-bid-to-be-the-silicon-behind-every-agent-on-every-device/"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "eNPU峰值128 GOPS（256 MAC/周期@250MHz），是S7 Gen 1（64 GOPS）的2倍。高通没有披露可运行的模型名称、参数量或片上SRAM容量。官方列出的用例为自适应ANC与AI通透、语音检测与cVc降噪、声学环境识别、转写与翻译，以及判断何时把请求交给云端大模型，说明耳机端运行的是小型信号处理和分类模型，LLM仍在手机或云端。估算：128 GOPS按INT8每次MAC算2 OPS，大约足够运行百万级至千万级参数的音频模型实时推理（本文推算，非官方）。",
+        "deep_dive_zh": [
+          {
+            "heading": "计算子系统",
+            "points": [
+              "Arm Cortex-M55应用处理器 + Cortex-M55主DSP + 2×Tensilica HiFi 5音频DSP + 1×HiFi 3低延迟DSP（用于ANC） + eNPU；音频框架为Kymera多核架构（audioXpress）。",
+              "eNPU：256 MAC/周期@250MHz = 128 GOPS；S7 Gen 1为128 MAC/周期 = 64 GOPS。"
+            ]
+          },
+          {
+            "heading": "低功耗与连接",
+            "points": [
+              "集成微功耗Wi-Fi 6E（PHY最高86Mbps），Wi-Fi连接待机电流目标0.6mA（S7 Gen 1为1.0mA，仿真值，待最终硅片验证）；整体功耗最多降低40%。",
+              "SoC面积合计31.1mm²（S7 Gen 1为44.2mm²），工艺未披露。"
+            ]
+          },
+          {
+            "heading": "AI 用例与生态",
+            "points": [
+              "第五代自适应ANC：依据佩戴、头部动作和噪声类型持续调整；支持实时翻译、情境助手和个性化听力。",
+              "Snapdragon Sound Apps and Agents让应用直接在耳机上运行，伙伴包括Cleer、Cinemo、Qobuz、Roon等（HotHardware）。"
+            ]
+          },
+          {
+            "heading": "NPU 微架构",
+            "points": [
+              "eNPU：256 MAC/cycle、250MHz，峰值128 GOPS；上代S7 Gen 1为128 MAC、64 GOPS（同频），翻倍。",
+              "应用处理器和主DSP均为Cortex-M55，另有2个Tensilica HiFi 5音频DSP和1个HiFi 3低延迟DSP。"
+            ]
+          },
+          {
+            "heading": "低功耗/常驻 AI",
+            "points": [
+              "Wi-Fi连接空闲场景下仿真电流目标0.6mA，S7 Gen 1为1.0mA，即-40%（待最终硅片实测）。",
+              "芯片总面积31.1mm²，上代44.2mm²（-30%）。微功耗Wi-Fi 6E（XPAN），PHY最高86Mbps，可不经手机直连云端。"
+            ]
+          },
+          {
+            "heading": "对比",
+            "points": [
+              "128 GOPS与Infineon PSOC Edge的Ethos-U55（128 MAC@400MHz约102 GOPS，推算）同档，说明耳机和MCU的端侧AI算力正汇聚到约100 GOPS这一档。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-24",
@@ -5612,9 +5984,41 @@
         },
         "edge_ai_impact_zh": "数千万参数级的语音模型已能放进几十毫瓦的MCU，“离线语音转写”正下沉到电池供电的IoT和可穿戴设备。",
         "evidence_urls": [
-          "https://embeddedcomputing.com/application/tech-news-roundup/icymi-ep76-top-electronics-brainchip-partner-summit-electronics-seco-embedded-world-north-america"
+          "https://embeddedcomputing.com/application/tech-news-roundup/icymi-ep76-top-electronics-brainchip-partner-summit-electronics-seco-embedded-world-north-america",
+          "https://www.mouser.in/en/new/semiconductors/embedded-processors-controllers/microcontrollers-mcu/arm-microcontrollers-mcu/infineon-psoc-edge-mcus/n-a85pcZ2mj0uc",
+          "https://www.eenewseurope.com/en/infineon-announces-next-generation-mcus-for-machine-learning"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "model_capacity_zh": "DEEPCRAFT语音转文字模型约6M–32M参数，最小配置约4.4MB ROM、不到3MB RAM，目标有效功耗约20–65mW（厂商口径，延迟未披露）。这是目前公开资料中MCU上“离线连续语音转写”的量级上限：模型需放进片上5MB SRAM，并配合外部Flash存放权重。",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 微架构",
+            "points": [
+              "PSOC Edge E83/E84：Cortex-M55（最高400MHz，Helium）+Arm Ethos-U55（128 MAC，400MHz）；按128 MAC×2 ops×400MHz推算峰值约102 GOPS（官方未给GOPS，营销口径为较现有Cortex-M的ML性能提升480倍）。",
+              "低功耗域：Cortex-M33（最高200MHz）+英飞凌自研NNLite加速器，用于常开唤醒/传感。"
+            ]
+          },
+          {
+            "heading": "内存",
+            "points": [
+              "M55子系统256KB I-TCM+256KB D-TCM+5MB SRAM（E84；E81/E83为4MB）；M33子系统1MB SRAM；另有512KB超低功耗RRAM（非MRAM）。",
+              "6M参数INT8约6MB、32M参数约32MB，后者需要外部Flash/PSRAM加XIP，ROM 4.4MB只对应最小模型（推算）。"
+            ]
+          },
+          {
+            "heading": "低功耗/常驻 AI",
+            "points": [
+              "M33+NNLite常开域做VAD/唤醒，命中后再唤醒M55+U55跑ASR，平均功耗远低于20–65mW的有效功耗。",
+              "E84额外集成2.5D GPU与MIPI DSI显示接口，面向带屏家电和可穿戴。"
+            ]
+          },
+          {
+            "heading": "同展对比",
+            "points": [
+              "兆易创新GD32H7（600MHz Cortex-M7）面向视觉/SLAM/AI推理，未给功耗；Microchip展示带活体检测的人脸识别，未给数字。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-23",
@@ -5637,9 +6041,34 @@
         "edge_ai_impact_zh": "肌电腕带作为眼镜的输入设备开始规模化出海，意味着低功耗端侧手势/肌电信号分类模型将成为可穿戴芯片的新刚需负载。",
         "evidence_urls": [
           "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/",
-          "https://www.reality-atlas.com/de/blog/meta-ray-ban-display-review-kaufberatung"
+          "https://www.reality-atlas.com/de/blog/meta-ray-ban-display-review-kaufberatung",
+          "https://www.androidauthority.com/meta-ray-ban-display-teardown-ifixit-3605921",
+          "https://techinsights.com/zh-cn/node/61791",
+          "https://hiverlab.com/meta-ar-glasses-ifixit-reveals-painful-repairability"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "model_capacity_zh": "未披露。拆解显示主控为骁龙AR1 Gen 1，配2GB RAM+32GB存储（iFixit/TechInsights），按2GB RAM推算端侧只能常驻十亿参数以下的INT4模型或≤2B的1-bit模型，Meta AI对话主体走手机/云端（推断）。",
+        "deep_dive_zh": [
+          {
+            "heading": "硬件拆解",
+            "points": [
+              "右镜腿微型投影+几何波导，600×600像素虚像，3颗LED光源；一侧镜腿只放电池、扬声器和麦克风，另一侧放主板；电池960mWh。",
+              "960mWh电池若要支撑数小时混合使用，平均功耗只能在几百mW量级（推算），这决定了眼镜端不可能持续跑大模型。"
+            ]
+          },
+          {
+            "heading": "神经腕带",
+            "points": [
+              "Neural Band通过前臂表面肌电（sEMG）识别手指手势；第三方资料称续航约18小时、IPX7；腕带内部芯片未公开。"
+            ]
+          },
+          {
+            "heading": "上市",
+            "points": [
+              "英国749英镑、加拿大1149加元即日开售；法意德899欧元，10月13日上市；新增免手持导航、全息形象视频通话、杜比全景声录音。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-23",
@@ -5660,12 +6089,51 @@
           "npu": "Hexagon NPU（AR1 Gen 1），1-bit权重推理",
           "other": "Snapdragon START：AR1+ Gen 1模组 + 参考设计"
         },
-        "edge_ai_impact_zh": "1-bit量化让2B级多模态模型能放进眼镜的内存和功耗预算。结合8 Elite Gen 6 NPU新增的INT2支持，可以看出高通正把极低比特推理作为可穿戴端侧AI的主要手段。",
+        "edge_ai_impact_zh": "1-bit量化让2B级多模态模型能放进眼镜的内存和功耗预算。结合Hexagon NPU自上代起支持的INT2精度，可以看出高通正把极低比特推理作为可穿戴端侧AI的主要手段。",
         "evidence_urls": [
           "https://www.idc.com/resource-center/blog/snapdragon-summit-2026-qualcomms-bid-to-be-the-silicon-behind-every-agent-on-every-device/",
-          "https://www.marketbeat.com/instant-alerts/event-qualcomm-unveils-personal-ai-push-with-snapdragon-powered-glasses-hearables-and-pcs-2026-09-23/"
+          "https://www.marketbeat.com/instant-alerts/event-qualcomm-unveils-personal-ai-push-with-snapdragon-powered-glasses-hearables-and-pcs-2026-09-23/",
+          "https://alphasignal.ai/news/prismml-runs-bonsai-1-7b-on-smart-glasses-at-2x-the-speed",
+          "https://9to5google.com/2025/06/10/snapdragon-ar1-gen-1/",
+          "https://xenospectrum.com/en/prismml-bonsai-smart-glasses-demo/"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "model_capacity_zh": "厂商实测（PrismML/高通）：AR1 Gen 1参考平台（4GB系统内存）运行约2B参数的VLM，由1.7B 1-bit语言模型和300M 4-bit视觉编码器组成。语言模型权重0.43GB，生成速度15.36 tokens/s；对照的Qwen3 1.7B 4-bit为1.66GB、7.44 tokens/s（2.06倍）。prefill、首token时间和图像编码延迟未披露。AR1+ Gen 1在2025年AWE上演示过完全在眼镜端运行Llama 3.2 1B。AR1和AR1+的NPU TOPS均未披露（官方只称“第三代Hexagon NPU”）。",
+        "deep_dive_zh": [
+          {
+            "heading": "1-bit 推理实现",
+            "points": [
+              "权重为二值±1，每128个权重共享一个FP16 scale（AlphaSignal）。",
+              "通过高通内部版QNN新增的1-bit kernel，把打包后的二值权重映射到Hexagon NPU上做矩阵运算，避免回落到CPU。这些kernel何时进入公开SDK未披露。"
+            ]
+          },
+          {
+            "heading": "AR1 / AR1+ 平台",
+            "points": [
+              "AR1+ Gen 1（2025年6月AWE）：封装缩小26%，镜腿高度最多降低20%，可在眼镜端运行SLM（演示用Llama 1B）。",
+              "Snapdragon START：基于AR1+的模组、软件和白牌参考设计（IDC）。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "0.43GB只是语言模型权重，还没有算视觉编码器、KV Cache、OS等占用（xenospectrum提醒）。按4GB内存计算，眼镜端的实际上限大约在2B级多模态模型。"
+            ]
+          },
+          {
+            "heading": "为什么1-bit能更快",
+            "points": [
+              "眼镜端解码同样受带宽限制，权重从4bit降到1bit，每token读取的字节数降为约1/4，因此速度提升（2倍以上）来自带宽而不是算力。",
+              "同样的内存可装下4倍参数的模型，在2GB RAM级的眼镜上这是从“几亿参数”跨到“2B参数”的关键。"
+            ]
+          },
+          {
+            "heading": "局限",
+            "points": [
+              "全部为厂商口径，未给出基准测试条件和精度评估细节；1-bit模型需专门训练（非训练后量化），生态模型少。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-23",
@@ -5687,9 +6155,46 @@
         },
         "edge_ai_impact_zh": "高通把可穿戴设备定位为向智能体提供视觉、音频和情境上下文的采集层，推动多设备协同的端侧智能体架构。低功耗NPU和常驻感知因此成为可穿戴芯片的核心指标。",
         "evidence_urls": [
-          "https://www.idc.com/resource-center/blog/snapdragon-summit-2026-qualcomms-bid-to-be-the-silicon-behind-every-agent-on-every-device/"
+          "https://www.idc.com/resource-center/blog/snapdragon-summit-2026-qualcomms-bid-to-be-the-silicon-behind-every-agent-on-every-device/",
+          "https://9to5google.com/2026/03/01/qualcomm-snapdragon-wear-elite/",
+          "https://heise.de/-11193005"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "model_capacity_zh": "Wear Elite（2026年3月MWC发布）的官方口径：Hexagon NPU可在端侧运行最高2B参数模型，生成速度最高约10 tokens/s；heise称首token响应约0.2秒，高通未提供NPU算力数据（TOPS未披露）。另有eNPU负责关键词检测、活动识别、降噪等常驻任务，算力未披露。内存容量和带宽未披露。估算：2B INT4权重约1GB（本文推算）。",
+        "deep_dive_zh": [
+          {
+            "heading": "双 NPU 结构",
+            "points": [
+              "主Hexagon NPU负责视觉、TTS、自然语言生成和智能体任务（2B、约10 tokens/s）；低功耗eNPU取代了上代的协处理器方案，负责KWS、活动识别等常驻任务（9to5Google）。",
+              "CPU：1×2.1GHz大核 + 4×1.95GHz小核，3nm，首次采用big.LITTLE；单核性能为W5+ Gen 2的5倍，GPU最高帧率为7倍。"
+            ]
+          },
+          {
+            "heading": "低功耗",
+            "points": [
+              "微功耗Wi-Fi的功耗门槛降低80%，可以长时间保持在线；续航比上代长约30%；10分钟可充到50%（300至600mAh电池）。"
+            ]
+          },
+          {
+            "heading": "AI胸针参考设计（本次峰会）",
+            "points": [
+              "基于Wear Elite，具备独立5G、双摄像头和多麦克风，进行端侧AI推理，更多细节明年公布；高通把它定位为向手机端智能体提供视觉和音频上下文的采集端。"
+            ]
+          },
+          {
+            "heading": "平台",
+            "points": [
+              "Snapdragon Sound Elite Gen 2：体积缩小30%，算力/AI性能翻倍，功耗-40%；集成蓝牙与微功耗Wi-Fi。",
+              "高通推出基于AR1+的紧凑眼镜模组；Inspecs独家合作AR1+ Gen 1企业安全眼镜。"
+            ]
+          },
+          {
+            "heading": "判断",
+            "points": [
+              "胸针/耳机/眼镜都没有给出TOPS和功耗数字，说明这一档的竞争点仍是续航和连接，端侧模型以亿级参数为主，生成式主体靠手机或云（推断）。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-23",
@@ -5715,7 +6220,44 @@
         "evidence_urls": [
           "https://www.idc.com/resource-center/blog/snapdragon-summit-2026-qualcomms-bid-to-be-the-silicon-behind-every-agent-on-every-device/"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "model_capacity_zh": "未披露具体搭载芯片、容量和带宽。官方口径（数据中心语境）：同功耗下带宽和token吞吐效率都是HBM的6倍，比传统GPU系统高最多8倍，带宽为“数百TB/s”量级。安蒙称未来智能体设备每天可在端侧处理多达100万token。手机版的参数要等MWC 2027。",
+        "deep_dive_zh": [
+          {
+            "heading": "结构",
+            "points": [
+              "多层LPDDR DRAM经TSV垂直堆叠在底部的XPU计算die上，属于近存计算（NMC），堆叠方式类似HBM，但使用低功耗DRAM（The Elec）。",
+              "分工：高通负责设计、系统集成、底部计算die和TSV设计；三星和SK海力士负责DRAM堆叠；台积电负责集成与封装。"
+            ]
+          },
+          {
+            "heading": "为什么对端侧重要",
+            "points": [
+              "端侧LLM的decode几乎完全受带宽约束。目前旗舰手机的LPDDR6只有约114至127GB/s，而HBC把计算放到DRAM正下方，绕开了PoP或侧置DRAM的外部总线。",
+              "The Elec对比：当前AI加速器的HBM总带宽约21至24TB/s，高通称HBC可达数百TB/s（数据中心版）。手机版的功耗和散热预算会小几个数量级，具体数值未披露。"
+            ]
+          },
+          {
+            "heading": "不确定性",
+            "points": [
+              "XPU的工艺、DRAM层数、单堆栈容量、手机版功耗和上市时间都未披露。IDC称更多细节在MWC 2027公布。",
+              "TSV堆叠的LPDDR成本和散热（计算die在DRAM下方）是手机落地的主要挑战（分析）。"
+            ]
+          },
+          {
+            "heading": "带宽与能效（厂商口径）",
+            "points": [
+              "数据中心形态带宽可达数百TB/s，对比最新加速器HBM总带宽约21–24TB/s；同功耗下带宽和token吞吐效率均为HBM的6倍，较常规GPU系统同功耗token吞吐最高8倍。",
+              "移动端HBC的带宽、容量、上市时间均未披露，也未点名具体骁龙型号。"
+            ]
+          },
+          {
+            "heading": "与PIM的区别",
+            "points": [
+              "PIM（三星LPDDR5X-PIM、SK海力士AiM）把MAC放进DRAM bank内，HBC则把DRAM堆在计算die上，计算仍在逻辑工艺，算子灵活性更高，不受DRAM工艺的逻辑密度限制。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-23",
@@ -5739,9 +6281,50 @@
         },
         "edge_ai_impact_zh": "旗舰手机内存带宽从约85GB/s级迈向114GB/s，端侧LLM解码速度（token/s）会直接受益。但Omdia预测2027年LPDDR6渗透率只有3%，加上成本压力，短期内仍以超旗舰机型为主。",
         "evidence_urls": [
-          "https://www.thetechoutlook.com/new-release/gadgets-release/mobile/qualcomm-unveils-snapdragon-8-elite-extreme-gen-6-and-snapdragon-8-elite-gen-6-chipsets/"
+          "https://www.thetechoutlook.com/new-release/gadgets-release/mobile/qualcomm-unveils-snapdragon-8-elite-extreme-gen-6-and-snapdragon-8-elite-gen-6-chipsets/",
+          "https://www.servethehome.com/qualcomm-unveils-snapdragon-8-elite-gen-6-and-elite-extreme-gen-6-next-gen-flagship-mobile-chips/",
+          "https://www.notebookcheck.net/JEDEC-releases-LPDDR6-standard-data-rates-reach-14-400-MT-s.1055771.0.html",
+          "https://community.cadence.com/cadence_blogs_8/b/fv/posts/lpddr6-next-generation-lpddr-device-standard-and-how-it-differs-from-lpddr5",
+          "https://www.powersystemsdesign.com/articles/lpddr6-bandwidth-math-what-you-gain-what-you-pay-what-you-measure/22/23664"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "内存本身不决定模型规模，但16GB容量配合约114GB/s带宽，决定了旗舰机能常驻的模型上限和decode上限。估算：3B激活INT4每个token约读1.5GB，按114GB/s计算，理论上限约76 tokens/s（本文推算）。",
+        "deep_dive_zh": [
+          {
+            "heading": "规格",
+            "points": [
+              "16GB LPDDR6，单pin 10.7Gbps（业界首个），最高114GB/s；能效比LPDDR5X高21%（DVFS和Dynamic Efficiency Mode）；采用PRAC抗行锤（row hammer）技术。",
+              "与ServeTheHome的127.2GB/s（4×24bit@10.6Gbps）不同，差异可能来自LPDDR6每个burst 288bit中只有256bit是数据（本文推算）。"
+            ]
+          },
+          {
+            "heading": "产业",
+            "points": [
+              "Omdia预测LPDDR6在LPDDR出货中的占比：2027年3%，2028年9%，2030年39%。短期内LPDDR6仍是旗舰专属。"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "16GB LPDDR6，10.7Gbps，最高114GB/s；114GB/s≈96bit×10.667Gbps×(256/288)÷8，与LPDDR6每子通道288bit突发中256bit为数据的结构一致（推算）。",
+              "JEDEC LPDDR6速率范围10,667–14,400MT/s，单个24bit通道有效带宽约28.5–38.4GB/s；96bit系统在14.4Gbps时有效带宽约153.6GB/s。"
+            ]
+          },
+          {
+            "heading": "功耗与可靠性",
+            "points": [
+              "DVFS+动态能效模式（DEM）：低带宽时只启用单个子通道，官方称能效较LPDDR5X最高+21%。",
+              "PRAC（按行激活计数）：每行有计数位记录自上次刷新以来的激活次数，主机与DRAM双方跟踪；超阈值时DRAM拉ALERT，主机插入RFM等缓解操作。LPDDR6是首个在标准层面直接处理行锤的LPDDR。"
+            ]
+          },
+          {
+            "heading": "市场",
+            "points": [
+              "Omdia预测LPDDR6在LPDDR出货中的占比：2027年3%、2028年9%、2030年39%。",
+              "三星同时表示LPDDR产品线正向AI PC、边缘、车载和数据中心扩展，其中包括LPDDR-PIM。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-24",
@@ -5762,7 +6345,15 @@
         "evidence_urls": [
           "https://www.robotics247.com/article/qualcomm-acquires-picknik-robotics-to-advance-the-future-of-open-robotics-and-physical-ai"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "意义",
+            "points": [
+              "高通补齐机器人软件栈，与地平线/地瓜（BPU+R52 MCU大小脑一体）、NVIDIA（Jetson Thor+Isaac）同样走“芯片+机器人软件”的平台化路线。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-22",
@@ -5790,7 +6381,17 @@
           "https://scmp.com/tech/tech-trends/article/3368168/chinese-ai-chipmaker-hygon-plots-expansion-data-centres-robotics",
           "https://www.nbd.com.cn/articles/2026-09-20/4586751.html"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "model_capacity_zh": "未披露。CPU1000系列核数、制程、功耗、NPU算力均未公开，官方称后续按场景配置CPU/GPU/NPU。",
+        "deep_dive_zh": [
+          {
+            "heading": "定位",
+            "points": [
+              "海光首款面向端侧/物理世界的C86（x86兼容）处理器，面向机器人、机器视觉、工业控制，补齐云-边-端布局（此前为7000/5000/3000系列）。",
+              "x86兼容的价值在于工业软件生态；端侧大模型能力取决于后续NPU配置，目前无法评估。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-24",
@@ -5816,9 +6417,21 @@
         },
         "edge_ai_impact_zh": "第三方Agent应用开始用“节省云推理成本”作为本地运行的理由，大统一内存x86 APU成为本地Agent的主要硬件载体之一。",
         "evidence_urls": [
-          "https://newsroom.amd.com/press-kits/press-kit-agentic-pcs"
+          "https://newsroom.amd.com/press-kits/press-kit-agentic-pcs",
+          "https://www.amd.com/en/blogs/2026/how-amd-ryzen-ai-max-pro-400-series-processors-bring-local-agentic-ai-to-business-customers.html",
+          "https://wccftech.com/amd-pushes-ryzen-ai-max-400-to-192gb-memory-single-chip-run-300b-ai-llms-locally/"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "公告没有说明Perplexity本地Agent用哪个模型、多大参数。平台容量方面，AMD称128GB的Ryzen AI Max+系统可本地运行最高200B参数模型，PRO 400（192GB）为300B+（4-bit）。AMD脚注的参考速度为128K上下文下输出36 tok/s、输入446 tok/s（未写模型名）。",
+        "deep_dive_zh": [
+          {
+            "heading": "工程要点",
+            "points": [
+              "本地/云端混合调度：本地运行的任务不消耗云端推理额度，复杂任务再回落到云端。",
+              "Ryzen AI Halo开发平台采用Max+ PRO 495（16核、40 CU、55 TOPS NPU、最高192GB）。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-25",
@@ -5840,9 +6453,26 @@
         "edge_ai_impact_zh": "Linux上可用的Hexagon NPU驱动让X2成为开源端侧AI和智能体的开发平台，扩大了NPU在开发者和边缘场景中的可用性。",
         "evidence_urls": [
           "https://itdaily.com/news/software/qualcomm-linux-snapdragon-x2-debian-ubuntu/",
-          "https://www.idc.com/resource-center/blog/snapdragon-summit-2026-qualcomms-bid-to-be-the-silicon-behind-every-agent-on-every-device/"
+          "https://www.idc.com/resource-center/blog/snapdragon-summit-2026-qualcomms-bid-to-be-the-silicon-behind-every-agent-on-every-device/",
+          "https://geniex.aihub.qualcomm.com/en/get-started/what-is-geniex"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "不涉及新的模型容量；X2系列NPU为80 TOPS（部分SKU为85 TOPS）。Linux下NPU驱动名称、内核版本以及QAIRT/GenieX的Linux支持细节，原报道均未披露。GenieX文档列出的目标平台包含Linux ARM64。",
+        "deep_dive_zh": [
+          {
+            "heading": "时间线",
+            "points": [
+              "高通自研Debian发行版2026年底推出；与Canonical合作的Ubuntu认证和伙伴设备在2027年上半年；伙伴包括HP、HUMAIN和ASUS。",
+              "原文没有说明NPU和GPU驱动是否已进入内核和Mesa主线，需要关注上游提交。"
+            ]
+          },
+          {
+            "heading": "端侧 AI 意义",
+            "points": [
+              "GenieX已支持Linux ARM64和Dragonwing平台。如果X2在Linux上也能使用Hexagon，就可以和Dragonwing共用同一套Linux NPU工具链，降低边缘AI的开发门槛（分析）。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-23",
@@ -5866,9 +6496,20 @@
         "edge_ai_impact_zh": "首批机型上市后，端侧MoE、长上下文等NPU新能力将从第四季度起在中国市场的旗舰机上接受真实场景检验。",
         "evidence_urls": [
           "https://www.gsmarena.com/snapdragon_8_elite_extreme_gen_6_and_8_elite_gen_6_debut-news-74721.php",
-          "https://www.idc.com/resource-center/blog/snapdragon-summit-2026-qualcomms-bid-to-be-the-silicon-behind-every-agent-on-every-device/"
+          "https://www.idc.com/resource-center/blog/snapdragon-summit-2026-qualcomms-bid-to-be-the-silicon-behind-every-agent-on-every-device/",
+          "https://www.notebookcheck.net/Xiaomi-18-Pro-Max-is-first-phone-with-5-GHz-processor-as-it-packs-giant-8-500-mAh-battery.1406759.0.html"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "小米没有披露端侧模型的参数量、tokens/s或上下文；超级小爱2.0基于Xiaomi MiMo大模型（端云协同）。内存配置为12GB或16GB，类型未写明（LPDDR5X还是LPDDR6未在IT之家原文中说明）。小米称NPU推理速度提升80%（Notebookcheck转述）。",
+        "deep_dive_zh": [
+          {
+            "heading": "整机实现",
+            "points": [
+              "18 Pro Max：OFFSET PoP高导热封装 + 新一代环形冷泵散热，称重载游戏可1小时持续满帧；配置为12+256GB（6999元）至16GB+1TB（9999元）。",
+              "首批机型的NPU独立测试尚未出现，Personal Scribe和30B MoE是否向用户开放，取决于OEM的软件集成。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-28",
@@ -5890,10 +6531,407 @@
         },
         "edge_ai_impact_zh": "若“架构换制程”路线可持续，国产端侧SoC在受限工艺下仍能保持AI能效迭代节奏；但单核与旗舰仍有明显差距，端侧LLM对单线程/带宽敏感的环节仍是短板。",
         "evidence_urls": [
-          "https://evertiq.com/design/2026-05-27-huawei-proposes-tau-scaling-law-as-successor-to-moores-law"
+          "https://evertiq.com/design/2026-05-27-huawei-proposes-tau-scaling-law-as-successor-to-moores-law",
+          "https://en.kocpc.com.tw/archives/25948",
+          "https://news.qq.com/rain/a/20260908A052RR00"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "model_capacity_zh": "同麒麟9050 Pro，官方口径30B MoE（盘古30B-A2B，激活2B）；tokens/s未披露。",
+        "deep_dive_zh": [
+          {
+            "heading": "密度提升从何而来",
+            "points": [
+              "LogicFolding把缓存、I/O、PLL下放到副die，主die专门放CPU执行单元与NPU，相当于在平面面积不变的情况下获得约1.7倍硅面积（240+mm² die总面积 vs 封装投影小于140mm²，拆解数据）。",
+              "因此238 MTr/mm²属于“投影密度”，并不是单层工艺密度，不能直接与台积电N3/N2的单层密度对比。"
+            ]
+          },
+          {
+            "heading": "差距仍在哪里",
+            "points": [
+              "伯恩斯坦：GB6多核超过A17 Pro，比A20 Pro低约30%，单核接近台积电4nm水平。端侧LLM decode对带宽和单线程敏感，这些环节仍是短板。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-09-28",
+        "vendor": "上海交通大学 / 阿里巴巴",
+        "category": "学术研究",
+        "title": "Dynamic Flow, Static Graph: KV Cache Reuse for Efficient LLM Serving on Mobile NPUs",
+        "title_zh": "手机NPU上的前缀/非前缀KV Cache复用",
+        "url": "https://arxiv.org/abs/2609.34727",
+        "source_type": "论文",
+        "summary_zh": "面向 RAG、长聊天历史、Agent skill 等端侧场景，论文在静态图 NPU 上实现前缀与非前缀 KV 复用：图内把选择性 KV 重算映射为静态 NPU 图，图间用动态规划合并 chunk 减少 padding，配合闪存上的分层 KV 管理与 IO-CPU-NPU 二维流水。基于 ExecuTorch + Qualcomm HTP，在三代 Hexagon 手机上 TTFT 降低 32–81%，预填充能耗降低 52–77%。已被 EuroSys '27 接收。",
+        "whats_new_zh": [
+          "TTFT：HotpotQA 降 32–56%，LoCoMo 降 42–65%，SkillsBench 降 68–81%（对比原版 ExecuTorch）",
+          "非前缀复用场景下前缀缓存仅 1.1–1.2×，本方法 1.5–2.9×",
+          "Xiaomi 15 Pro + Qwen3-4B：平均功耗 6.34 W vs 6.68 W，预填充能耗降 52%/67%/77%"
+        ],
+        "key_specs": {
+          "npu": "Hexagon V75 / V79 / V81（HTP）",
+          "memory": "12–16 GB RAM + 256/512 GB 闪存",
+          "power": "预填充平均 6.34 W（本方法）vs 6.68 W（无复用）",
+          "other": "设备：Meizu 21（8 Gen 3）、Xiaomi 15 Pro（8 Elite）、Honor Magic 8（8 Elite Gen 5）；ExecuTorch"
+        },
+        "edge_ai_impact_zh": "端侧 Agent/RAG 的瓶颈是长 prompt 预填充；把 KV 复用做进静态 NPU 图并利用闪存做 KV 二级存储，是让手机 NPU 承担 Agent 工作负载的系统级前提，阿里参与也说明其贴近产品。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2609.34727"
+        ],
+        "confidence": "high",
+        "venue": "EuroSys 2027（arXiv 预印本）",
+        "affiliation": "上海交通大学、阿里巴巴集团",
+        "authors": "Zhengxiang Huang, Shengheng Chen, Chaoyue Niu et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "云端 KV 复用（前缀缓存、CacheBlend 类非前缀复用）假设动态执行与充足带宽；手机 NPU 需静态编译图，内存与 IO 带宽都受限。",
+              "NPU 偏好整数 GEMM 和静态量化，而选择性重算中的 KV 偏差计算对精度敏感。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "图内：把选择性 KV 重算映射为静态 NPU 图，配合时延优化的图尺寸与混合精度 KV 偏差计算。",
+              "图间：动态规划调度 chunk 合并、减少 padding。",
+              "存储：NPU-CPU 内存 KV 管理 + 闪存上 tree-hash-semantic 混合结构，代价感知预取/淘汰；KV 加载、RoPE 重旋转与存储与 NPU 执行二维流水重叠，写回异步批量化。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "Meizu 21、Xiaomi 15 Pro、Honor Magic 8；HotpotQA（top-6 检索 chunk）、LoCoMo-MC10 长对话、SkillsBench；基线为无复用、前缀缓存等。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "三类负载 TTFT 降 32–81%；能耗随时延同比例下降（功耗基本不变）。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "直接对标端侧 Agent 的“技能描述/记忆/检索片段反复出现”特征，工程可落地性强。",
+              "只覆盖高通 HTP；解码阶段收益有限；非前缀复用存在近似误差，需关注质量回退（论文称可忽略）。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "实机：三款 Snapdragon 手机的 Hexagon NPU；模型 Qwen3-1.7B/4B、Llama3.2-1B/3B-Instruct，主要 INT4 量化；指标为 TTFT 与预填充能耗。"
+      },
+      {
+        "date": "2026-09-28",
+        "vendor": "北京大学 / 北京邮电大学",
+        "category": "学术研究",
+        "title": "OmniTide: Co-Designing Algorithms and Systems for Efficient On-Device Omni-LLM Streaming",
+        "title_zh": "OmniTide：端侧全模态流式推理的KV协同设计",
+        "url": "https://arxiv.org/abs/2609.34653",
+        "source_type": "论文",
+        "summary_zh": "端侧流式全模态（视频+音频）推理中 KV Cache 单调增长：在 Apple M2 Pro 上用 MiniCPM-o-4.5 处理 375 秒视频，上下文接近 80K token、占用近 23 GiB。OmniTide 在算法层按单元边界与模态重要性保留关键上下文（OmniPick），在系统层按保留概率分区并压实稀疏 token（OmniPage），实现最高 12.72× 内核加速、2.40× 流循环时延降低。",
+        "whats_new_zh": [
+          "内核最高 12.72× 加速、流循环时延降低 2.40×",
+          "StreamingBench 准确率比滑窗基线最高 +18.0 个百分点；物理 KV 跨度再降 26.7%",
+          "4 GiB 预算下处理 241 秒（22 万 token）流仅用 0.164 GiB 物理 KV；全上下文 67 秒即达 3.5 GiB"
+        ],
+        "key_specs": {
+          "gpu": "Apple M2 Pro GPU（Metal，32 GB 统一内存）/ RTX 4090",
+          "other": "基于 llama.cpp-omni，约 9.6K 行新增代码；Q4_K_M 主干"
+        },
+        "edge_ai_impact_zh": "端侧“常开”视觉/语音助手的 KV 管理是新的内存墙；该工作给出模态感知稀疏 + 物理压实的系统方案。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2609.34653"
+        ],
+        "confidence": "high",
+        "venue": "arXiv（cs.AI/cs.LG）",
+        "affiliation": "北京大学、北京邮电大学",
+        "authors": "Zongshang Shen, Wangsong Yin, Daliang Xu et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "流式全模态每秒注入数百 token，KV 单调增长；现有稀疏注意力要么估计开销高，要么破坏交错的跨模态上下文，且无法解决物理碎片。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "OmniPick（逻辑保留）+ OmniPage（物理分区与选择性迁移压实）。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "StreamingBench、SVBench 等三个流式基准；M2 Pro 与 RTX 4090。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "12.72× 内核加速，2.40× 时延降低，+18.0 pt 准确率。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "未在手机 SoC 上验证；评测平台内存较充裕。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "Qwen2.5-Omni-3B/7B、MiniCPM-o-4.5（Q4_K_M）在 Apple M2 Pro（32 GB）与 RTX 4090 上；非手机平台。"
+      },
+      {
+        "date": "2026-09-26",
+        "vendor": "北京大学 / 北京邮电大学",
+        "category": "学术研究",
+        "title": "Empowering Hybrid Attention Models on NPUs",
+        "title_zh": "HA-NPU：混合线性注意力模型在边缘NPU上的数据流优化",
+        "url": "https://arxiv.org/abs/2609.32114",
+        "source_type": "论文",
+        "summary_zh": "Qwen3.5、Kimi 等混合注意力（线性注意力 + 全注意力）模型理论上适合端侧，但在边缘 NPU 上线性注意力层会因跨核全局内存访问、局部 buffer 压力和矩阵/向量单元间布局转换而拖慢预填充。HA-NPU 在不改算法的前提下从核、算子、张量三级重组数据流，在华为 Ascend 310P/310B 上 LA 内核最高提速 35.95×、能耗降 36.14×，端到端请求时延最高快 2.03×。",
+        "whats_new_zh": [
+          "线性注意力内核最高 35.95× 加速、36.14× 能耗降低",
+          "端到端请求时延最高 2.03× 提升",
+          "覆盖 GDN（Qwen3.5-0.8B/2B/4B/9B）与 KDA（AFM-4.5B、Ling-3.0-tiny）两类线性注意力"
+        ],
+        "key_specs": {
+          "npu": "Ascend 310P（10 AI Core）/ Ascend 310B（1 AI Core）",
+          "memory": "310P：96 GB LPDDR4X；310B：24 GB LPDDR4X",
+          "other": "CANN + vLLM-Ascend；FP16 Q/K/V、FP32 gate/state"
+        },
+        "edge_ai_impact_zh": "混合注意力已成为新一代开源模型主流（Qwen3.5 等），而现有 NPU 软件栈仍按 softmax 注意力优化；该工作说明 NPU 编译器需要为线性注意力的递推状态与矩阵/向量交替做专门数据流规划，这对手机 NPU 同样适用。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2609.32114"
+        ],
+        "confidence": "high",
+        "venue": "arXiv（cs.DC）",
+        "affiliation": "北京大学、北京邮电大学",
+        "authors": "Yinyuan Zhang, Daliang Xu, Xiaolong Huang et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "混合注意力模型的 LA 层在边缘 NPU 上成为预填充瓶颈：跨核全局内存访问、局部 buffer 压力大、矩阵单元与向量单元之间频繁布局转换。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "核级：按 head 维切分并融合相关算子，消除跨核全局内存访问。",
+              "算子级：重排执行顺序，让中间张量即产即用，降低 local buffer 压力。",
+              "张量级：数据流感知的布局规划，减少 Cube/Vector 单元之间的转换开销。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "Ascend 310P 与 310B；基线 vLLM-Ascend v0.19.1rc1、FLA、FLA+MegaKernel、FlashQLA（作者移植到 Ascend）；能耗由 Ascend API 100 ms 采样积分。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "LA 内核最高 35.95×、能耗 36.14×；端到端最高 2.03×。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "补上了“新模型结构 × 边缘 NPU”之间的软件空白，代码计划开源。",
+              "仅在昇腾边缘卡上验证，未覆盖 Hexagon/ANE；基线为作者移植版本。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "实测平台为边缘 Ascend 310P/310B（非手机）；模型 Qwen3.5-0.8B/2B/4B/9B、AFM-4.5B、Ling-3.0-tiny；tokens/s 未在摘要中给出，以内核/请求时延与能耗为主。"
+      },
+      {
+        "date": "2026-09-24",
+        "vendor": "香港理工大学 / 南方科技大学",
+        "category": "学术研究",
+        "title": "ThermE: Predictive Management of Shared Thermal Headroom for Sustained LLM Inference on Thermally Constrained Edge SoCs",
+        "title_zh": "ThermE：边缘SoC持续LLM推理的热余量预测管理",
+        "url": "https://arxiv.org/abs/2610.00267",
+        "source_type": "论文",
+        "summary_zh": "边缘 SoC 的 CPU、GPU 与 RAM 共享同一散热路径，预填充与解码在消耗同一份随时间变化的“热余量”，而厂商 governor 只在接近降频阈值时被动反应。ThermE 用“LLM→热量编译器”+ PDE 约束的物理神经网络热预测 + 不确定性感知调度，在 Jetson AGX Orin 上基于 vLLM 实现，TTFT/TPOT 分别降低 40.55%/12.17%，SLO 违约率 5.70%（最强基线 12.30%）。",
+        "whats_new_zh": [
+          "TTFT -40.55%、TPOT -12.17%、p95 端到端 -13.01%（65 °C 环境、Stress 负载，对比 vLLM）",
+          "SLO 违约率 5.70% vs 12.30%",
+          "温度预测 MAE 1.94 °C，开销 11.50 ms"
+        ],
+        "key_specs": {
+          "memory": "Jetson AGX Orin 64GB（共享 LPDDR）",
+          "other": "恒温箱 48–65 °C；vLLM"
+        },
+        "edge_ai_impact_zh": "持续型端侧 Agent/助手的瓶颈正在从“峰值性能”转向“持续性能”；把热当作可调度资源，是车载/机器人/边缘盒子 SoC 运行 LLM 的现实需求。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2610.00267"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv（eess.SY）",
+        "affiliation": "香港理工大学、南方科技大学",
+        "authors": "Rui Lu, Yuheng Wang, Bozheng Liu",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "CPU/GPU/RAM 共享散热器，一个域的活动消耗所有域的热余量；内置 governor 仅在临界点反应，导致性能骤降。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "Fast LLM-to-Heat Compiler：不实际运行 LLM，把模型、请求、运行状态与候选动作映射为各域发热。",
+              "ThermPINN 离线热辨识 + Reduced Headroom Predictor 在线带不确定性预测；调度器用 beam search 选择硬件 profile 与 token 上限。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "Jetson AGX Orin 64GB 置于恒温箱（48–65 °C）；四种负载。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "TTFT -40.55%、TPOT -12.17%；违约率 5.70%。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "方法论可迁移到手机，但手机热路径与可控旋钮不同；仅单平台验证。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "Jetson AGX Orin 64GB 上的 vLLM 服务，四类 LLM 推理负载；具体模型规模与 tokens/s 未在摘要披露。"
+      },
+      {
+        "date": "2026-09-24",
+        "vendor": "独立研究者（Musa Shams）",
+        "category": "学术研究",
+        "title": "Paging the Experts: A Reproducible Characterization of Flash-Backed MoE Inference on iPhone",
+        "title_zh": "iPhone上闪存承载35B MoE推理的可复现实测",
+        "url": "https://arxiv.org/abs/2609.29032",
+        "source_type": "论文",
+        "summary_zh": "作者用 Swift/MLX 运行时 Routide 在 iPhone 17 Pro Max 上运行量化版 Qwen3.6-35B-A3B（文本路径），专家放在存储、只把字节预算内的子集缓存在内存。结论偏“去魅”：512 MiB LRU 下需求命中率 0%、同预算随机淘汰 18.80%、576 MiB LRU 38.58%，所谓容量悬崖是策略与负载的交互；进程峰值占用 1.87–2.73 GiB，冷启动解码约 2.2–3.2 tok/s。",
+        "whats_new_zh": [
+          "35B MoE 在 iPhone 上进程峰值 1.87–2.32 GiB（短 prompt）/2.39–2.73 GiB（长 prompt）",
+          "冷缓存解码：512 MiB 预算 2.246 tok/s，576 MiB 3.052 tok/s，1024 MiB 3.173 tok/s",
+          "512 token 持续运行 1.795–2.085 tok/s，单次逻辑读约 320 GB"
+        ],
+        "key_specs": {
+          "memory": "iPhone 17 Pro Max 内部存储承载专家；内存缓存 512–1024 MiB",
+          "other": "iOS 26.5.2/26.6.1；Swift/MLX"
+        },
+        "edge_ai_impact_zh": "证明手机可以“装下”35B 级 MoE，但速度只有约 2–3 tok/s 且闪存读放大巨大；也提醒行业：所谓“X GB 内存门槛”常是缓存策略问题。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2609.29032"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv（cs.PF）",
+        "affiliation": "独立研究者",
+        "authors": "Musa Shams",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "MoE 稀疏激活减少计算但不减少存储，手机上能否靠闪存分页运行 35B 级 MoE、需要多少内存？"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "Routide 运行时：需求执行 + 按字节预算的专家缓存（LRU/随机），预取作为可选策略；Mac 上同运行时对照验证 token 一致性。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "iPhone 17 Pro Max；多组 128/512 token 负载；记录计数器、热状态与整机功耗估计。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "命中率对策略极度敏感（0% vs 18.80% vs 38.58%）；预测准确不等于预取有效；手机与 Python 参考输出序列在 5 个用例中均不一致，无法声称数值等价。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "可复现、强调局限的测量研究，适合作为厂商宣传“手机跑 30B+”的校准参照。",
+              "单作者独立研究，样本小，功耗为未校准的整机估算。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "Qwen3.6-35B-A3B 量化 checkpoint（文本路径）在 iPhone 17 Pro Max 上约 1.8–3.2 tok/s，进程占用约 1.9–2.7 GiB；功耗仅给出一次整机估算，未给 J/token。"
+      },
+      {
+        "date": "2026-09-23",
+        "vendor": "奈良先端科学技术大学院大学（NAIST）",
+        "category": "学术研究",
+        "title": "Implementation and Evaluation of BitNet Inference on a CGLA by Signed-Int4 Instructions",
+        "title_zh": "在可编程CGLA上用有符号INT4指令跑BitNet",
+        "url": "https://arxiv.org/abs/2609.27453",
+        "source_type": "论文",
+        "summary_zh": "不为 BitNet b1.58 做专用数据通路，而是在可编程 CGLA（IMAX）上增加通用的有符号 int4 乘加指令 OP_SMA4：每个三值权重占一个 int4 lane，int8 激活拆成两个 int4 片段再移位相加。AMD Versal VPK180 上 145 MHz FPGA 原型实测，按 28 nm/840 MHz 模型折算为 0.390 ns/次 int4 乘积；集成进 BitNet C++ 后解码 2.52 tokens/s（多数计算仍在主机）。",
+        "whats_new_zh": [
+          "28 nm、840 MHz 模型：0.390 ns/有符号 int4 乘积，64 PE，功耗约 1.82 W",
+          "BitNet C++ 19 token 解码 7.53 s，即 2.52 tokens/s（含 16.3 ms 卸载区间）"
+        ],
+        "key_specs": {
+          "process": "28 nm（模型折算）/FPGA 原型 145 MHz",
+          "npu": "CGLA（IMAX）64 PE，32 KiB LMM",
+          "power": "约 1.82 W（28 nm 模型）",
+          "other": "原型平台 AMD Versal VPK180；对比 Xeon W5-2465X、RTX 4090"
+        },
+        "edge_ai_impact_zh": "说明 1.58-bit 模型可以复用通用 int4 指令而非专用电路，对端侧 NPU 是否需要原生三值支持提供了一个“可编程替代”的数据点，但目前端到端速度很低。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2609.27453"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv（cs.AR）",
+        "affiliation": "Nara Institute of Science and Technology",
+        "authors": "Takuto Ando, Yasuhiko Nakashima",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "三值权重 × int8 激活不匹配常规 int8/FP GEMM，已有 BitNet 加速器用专用数据通路，缺乏可编程性。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "新增可复用的 OP_SMA4 指令；int8 激活拆为两个 int4 片段 shift-and-add 重构；对 120–127 区间值做稀疏修正。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "Versal VPK180 FPGA 原型（145 MHz）；与 Xeon W5-2465X、RTX 4090 对比；分别评估指令时序、层投影与集成调用。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "0.390 ns/int4 乘积（折算）；端到端 2.52 tokens/s。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "频率折算非实测流片；只卸载了一部分计算，端到端性能主要受主机限制。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "BitNet b1.58 系列（具体规格见全文）；单次卸载调用下 2.52 tokens/s，主要执行仍在主机 CPU。"
       }
+    ],
+    "takeaways_zh": [
+      "高通这一代的端侧 AI 竞争力几乎全部来自内存子系统：片上共享内存、LPDDR6、闪存专家流式加载，以及远期的 HBC。NPU 峰值 TOPS 不再是卖点，高通干脆不公布。",
+      "常驻 AI 分为四级（Sensing Hub 200M、耳机 eNPU、手表 2B、眼镜 2B 1-bit），真正 7×24 小时常开的只有百万到两亿参数的那一层。所有厂商都没有公布常驻功耗的绝对值，这是评估“常驻智能体”续航的最大空白。",
+      "端侧 AI 资源开始按价位分档：两档骁龙的 CPU 完全相同，差异全在 AI 相关的内存与 NPU 资源上。开发者需要按两档分别准备模型规格。",
+      "在 PC 和 Mac 上，“装得下”取决于容量（128–512GB），“跑多快”取决于带宽（约 150GB/s 到 1.2TB/s）。实测解码基本贴着带宽计算出的上限。"
     ]
   }
 }

@@ -6093,7 +6093,7 @@
       "start": "2026-09-09",
       "end": "2026-09-15"
     },
-    "overview": "本周是苹果周。A20 Pro 成为首颗量产的 2nm 手机 SoC（TSMC N2），封装从 PoP 改为内存与 SoC 并排的 WMCM，内存带宽 +50%，持续性能 +40%；Neural Engine 升级为双 16 核，算力翻倍，CPU 与 GPU 内也都嵌入了 Neural Accelerator。iOS 27 的端侧 AFM 3 Core Advanced 是约 20B 参数的稀疏模型，每次只激活 1–4B，完整权重放在闪存、专家按需载入，只开放给内存 ≥12GB 的设备，内存容量第一次成了功能门槛。联发科随后发布天玑 9600 Pro：2nm，CPU 全为 C2 大核，NPU 拆成负责 LLM 的 NPU 1090 和常驻低功耗 NPU，宣传口径从 TOPS 换成 prefill +51%、每瓦 token +55%。高通提前披露新 Hexagon NPU：新增 Element Accelerator，共享内存 +50%，INT4 prefill 最高 +50%。存内计算有两条进展：天玑 9600M 内置 CIM 超低功耗 NPU，伯克利提出在闪存存内计算上跑 LLM。",
+    "overview": "本周是 Apple 周，也是“端侧模型规模”口径集中亮相的一周。A20 Pro 首次量产 2nm，Neural Engine 改为两个独立的 16 核实例，但 Geekbench AI 显示单模型只快约 50%。内存仍为 12GB（Xcode 证实），位宽加宽到 96-bit，带宽 +50%（约 115GB/s，媒体推算）；封装改为 WMCM，持续性能 +40%。iOS 27 的 AFM 3 Core Advanced 约 20B 参数，按 prompt 只激活 1–4B，路由专家放在闪存中按需载入，只开放给 12GB 设备。联发科天玑 9600 Pro 的 NPU 1090 INT4 算力翻倍，宣称支持最高 30B 模型，配合 KV Cache 硬件压缩，prefill +51%、生成 +40%；9600M 沿用 CIM 存内计算常驻 NPU。高通提前披露新 Hexagon：新增 Element Accelerator，共享内存 +50%，支持 30B MoE（约 3B 激活）和 32K 上下文。论文侧，北大 BigMoMo 用投机解码的多 token 验证窗口批量换入专家，在骁龙手机上跑到最高 80B 总参 MoE；伯克利提出在闪存存内计算上跑 LLM，KV 写入流量降低 15 倍。",
     "items": [
       {
         "date": "2026-09-15",
@@ -6124,9 +6124,50 @@
         "evidence_urls": [
           "https://www.prnewswire.com/news-releases/mediatek-dimensity-9600-pro-sets-new-standard-for-flagship-smartphone-chips-302878749.html",
           "https://www.taipeitimes.com/News/biz/archives/2026/09/16/2003864324",
-          "https://www.pk-sharma.com/briefing/mediatek-dimensity-9600-pro-2nm-dual-npu-on-device-ai"
+          "https://www.pk-sharma.com/briefing/mediatek-dimensity-9600-pro-2nm-dual-npu-on-device-ai",
+          "https://www.heise.de/en/news/Mediatek-Dimensity-9600-Pro-2nm-processor-with-All-Big-Core-CPU-and-two-NPUs-11452796.html",
+          "https://www.gsmarena.com/the_dimensity_9600_pro_is_a_2nm_chip_with_arm_c2_cores_and_malig2_ultra_nx_gpu-news-74619.php"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "官方口径为“最高30B参数端侧模型（含MoE）”；精度只公开了INT4（算力为NPU 990的2倍），FP8是否支持未披露；上下文长度未披露（上一代9500的口径是3B模型支持128K上下文）。速度只有相对值：LLM prefill+51%、token生成+40%、每瓦token+55%（厂商实验室demo机）；绝对tokens/s、TOPS均未披露。30B MoE在INT4下权重约15GB（本文粗算），需要16GB以上内存，并且依赖MoE的低激活比例和KV压缩来控制带宽。",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 1090（大NPU）",
+            "points": [
+              "第十代NPU，INT4算力为天玑9500 NPU 990的2倍（gsmarena/heise）；NPU 990的峰值约100 TOPS（Counterpoint口径），1090的TOPS未公布。",
+              "LLM prefill+51%；token生成+40%，每瓦token+55%；模型启动+27%。heise指出+40%与能耗-27%是“调度引擎3.0 + AI Compute Fusion”的系统级结果，并非NPU单独贡献。",
+              "支持MoE推理；ISP可调用NPU做照片和视频处理。"
+            ]
+          },
+          {
+            "heading": "KV-cache 硬件压缩",
+            "points": [
+              "新增硬件压缩引擎，对LLM的KV cache做压缩以减小内存占用（官方描述）。压缩比、有损还是无损、对精度的影响均未披露。",
+              "长上下文多轮Agent的KV cache随上下文线性增长，往往比权重更快吃满带宽和容量；硬件压缩可以同时降低decode阶段读KV的带宽。"
+            ]
+          },
+          {
+            "heading": "常驻低功耗 NPU",
+            "points": [
+              "第二代Super Efficient NPU（heise称eNPU 2.0），常驻AI功耗-40%（基准未写明，应为第一代）。第一代（天玑9500）采用存内计算（CIM），面向对焦追踪等持续运行的轻量模型，官方称比常规NPU省电42%。",
+              "2.0代是否仍为CIM、具体跑哪些模型、绝对功耗均未披露；官方只把它描述为支撑后台持续、上下文感知的Agent任务。"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "首次支持LPDDR6与UFS 5.0；官方称LPDDR6同频有效带宽比LPDDR5X高33%。gsmarena规格表中LPDDR6与LPDDR5X都写作10667，总线位宽和GB/s绝对值未披露。",
+              "缓存合计34.5MB（16MB L3 + 10MB SLC等），服务于CPU与NPU的“AI Computing Fusion”。"
+            ]
+          },
+          {
+            "heading": "代际对比（vs 天玑9500）",
+            "points": [
+              "9500：NPU 990，3B LLM速度翻倍，支持128K上下文与BitNet 1.58-bit，峰值功耗-56%（官方）。",
+              "9600 Pro：INT4翻倍，模型规模上限提到30B MoE，并新增KV压缩；宣传重点从TOPS转向prefill速度与每瓦token。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-15",
@@ -6154,9 +6195,36 @@
         "edge_ai_impact_zh": "存内计算NPU进入量产手机SoC，用于always-on感知，有助于在极低功耗下维持Agent的环境感知能力；官方点名Gemini Nano 4与Qwen 3.5 Omni 4B，显示端侧多模态小模型已成为标配适配对象。",
         "evidence_urls": [
           "https://www.teknoblog.com/mediatek-dimensity-9600m-ozellikleri/",
-          "https://www.91mobiles.com/hub/vivo-x500-series-launched-china-price-specifications/"
+          "https://www.91mobiles.com/hub/vivo-x500-series-launched-china-price-specifications/",
+          "https://www.mediatek.com/dimensity-9500",
+          "https://www.nasdaq.com/press-release/mediatek-dimensity-9500-unleashes-best-class-performance-ai-experiences-and-power",
+          "https://counterpointresearch.com/cn/insights/mediatek-dimensity-9500-powering-powering-next-gen-smartphones"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "官方点名支持Gemini Nano 4与Qwen 3.5 Omni 4B（4B级多模态）；最大参数量、精度、tokens/s和上下文长度均未披露。NPU 990沿用自天玑9500，9500的官方口径是3B LLM支持128K上下文，峰值约100 TOPS（Counterpoint）。",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 990（大NPU）",
+            "points": [
+              "第九代NPU，搭配Generative AI Engine 2.0；在9500上的官方口径为：算力较9400翻倍，3B LLM速度翻倍，支持BitNet 1.58-bit（功耗-33%），并支持端侧LoRA训练（Counterpoint）。",
+              "9600M官方页列出的应用场景：4K文生图、主动式个性化AI、相机Agent构图建议。"
+            ]
+          },
+          {
+            "heading": "CIM 存内计算 NPU",
+            "points": [
+              "官方定义是“采用独特存内计算（CIM）架构的超高能效NPU，用于always-on任务”。CIM把权重固定在存储阵列中，就地完成乘累加，减少权重在SRAM与MAC之间的搬运，因此适合参数小、持续运行的感知模型。",
+              "9500上的官方口径：面向对焦追踪等持续运行的轻量模型，功耗比常规NPU低42%（xpu.pub指出OEM如何使用尚不清楚）。9600M页面没有给出TOPS和功耗数字。",
+              "9600M的CIM NPU与9600 Pro的Super Efficient NPU 2.0是否同代、9600 Pro宣称的“常驻功耗-40%”是否适用于9600M，均未披露。"
+            ]
+          },
+          {
+            "heading": "内存与其他",
+            "points": [
+              "LPDDR5X-10667，16MB L3 + 10MB SLC，4-lane UFS 4.1（官方称可加快模型加载）；CPU支持Armv9.3与SME2。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-09",
@@ -6186,9 +6254,52 @@
         "edge_ai_impact_zh": "NPU 改为双 16 核，算力翻倍，再加上 50% 的带宽提升，直接缓解了端侧 LLM 解码时受带宽限制的问题。新封装把内存移出散热路径，提高了长时间推理（agent 连续调用）时的持续性能上限。",
         "evidence_urls": [
           "https://www.macrumors.com/2026/09/09/apple-september-2026-event-recap/",
-          "https://www.techinsights.com/blog/apple-a20-pro-tsmc-2nm-processor-analysis"
+          "https://www.techinsights.com/blog/apple-a20-pro-tsmc-2nm-processor-analysis",
+          "https://www.macrumors.com/2026/09/10/iphone-18-pro-max-battery-capacities-ram/",
+          "https://tech.ifeng.com/c/8wNVMWU93D8",
+          "https://www.macworld.com/article/3242385/iphone-18-pro-review-the-best-boring-gets.html"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "官方口径：iPhone 18 Pro/Pro Max 可以跑端侧 AFM 3 Core（3B 稠密）和 AFM 3 Core Advanced（总参数约 20B，按请求只激活 1–4B，原生多模态），后者只开放给 iPhone 17 Pro/Air/18 Pro/Duo 等 12GB 机型。内存容量 Apple 没有公布，MacRumors 从 Xcode 27 中查到是 12GB，与 iPhone 17 Pro 相同。Apple 没有公布 TOPS、tokens/s，也没有公布 AFM 3 的 QAT 位宽和上下文长度。第三方口径：PrismML 的 Bonsai 27B（1-bit 版 3.9GB，4K 上下文实测占用约 5.9GB）在 iPhone 17 Pro Max 上约 11 tok/s；有开发者称它在 iPhone 18 Pro 上约快 2 倍，但没有给出绝对值。按 12GB 机器约 6GB 可给模型的预算估算，iPhone 18 Pro 上实际可行的规模是 4-bit 约 8–10B 稠密模型，或 1–2-bit 的 20–30B 模型（估算）。",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 微架构：“双 16 核”意味着什么",
+            "points": [
+              "官方口径：Neural Engine 从 A17 Pro 到 A19 Pro 一直是单个 16 核实例（A17 Pro/A18 Pro 标称 35 TOPS），A20 Pro 改为两个 16 核实例，共 32 核，Apple 称 AI 算力为 A19 Pro 的 2 倍。",
+              "同代 M6 新闻稿说明，系统框架可以“同时使用两个引擎”。由此看，“dual”指两个独立的 NE 实例，可以并发调度不同模型或子图，而不是把单个引擎做宽。",
+              "Apple 没有公布 A20 Pro 的 TOPS（未披露）。如果按 A19 Pro 约 35 TOPS 乘 2，约为 70 TOPS，但这只是推算，不是官方数字。",
+              "媒体实测：Geekbench AI 的 NPU 分数为 单精度 7,002 / 半精度 55,720 / 量化 75,810，比 A19 Pro（5,111 / 36,772 / 50,411）高 37% / 51.5% / 50.4%，没有达到 2 倍。可能的原因是单模型基准难以同时用满两个 NE 实例，或受带宽限制（推断）。",
+              "TechInsights 版图：神经处理区面积“显著增大”，包含矩阵乘和卷积两类计算引擎。"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "官方口径：内存带宽比 A19 Pro 高 50%，但没有公布绝对值和容量。",
+              "TechInsights 初析为 96-bit LPDDR5X 接口（A19 Pro 为 64-bit）。位宽正好宽 50%，与官方 +50% 一致，说明数据速率大体没变。",
+              "带宽推算：96-bit × 9600MT/s = 115.2GB/s（ProPakistani 等媒体给出的就是这个数字）。发布前 iPhone-Mania 按 LPDDR5X-8533 估算为约 102GB/s。Apple 没有确认。",
+              "容量 12GB 来自 Xcode 27（MacRumors），没有增加。bdnews24 转述 Samsung 为主供，SK hynix 和 Micron 也供货。",
+              "端侧 LLM 解码基本受带宽限制，可以用“带宽 ÷ 每 token 读取的权重字节数”估算 tokens/s 上限。例如 4B 激活参数、4-bit 约 2GB，上限约 57 tok/s；2-bit 约 1GB，上限约 115 tok/s（理论值，未计 KV Cache）。"
+            ]
+          },
+          {
+            "heading": "封装与散热",
+            "points": [
+              "放弃 PoP，改为 SoC 与 DRAM 并排的晶圆级多芯片模块（TechInsights 称 WMCM，封装型号 A3473），DRAM 移出芯片散热路径，SoC 可以直贴均热板。",
+              "均热板面积为 iPhone 17 Pro 的 3 倍并采用新材料，持续性能最高 +40%（官方）。iPhone Duo 因机身限制只有 +35%。",
+              "计算裸片约 98.2mm²，与 A19 Pro 基本持平，N2 的密度红利被用在 NPU 和 GPU 上（TechInsights）。",
+              "Macworld 主观评测：高负载下发热“明显少于” iPhone 17 Pro，但没有给出压力测试稳定度数据。"
+            ]
+          },
+          {
+            "heading": "能效与实测",
+            "points": [
+              "Macworld：Geekbench 6 单核 +26% / 多核 +30%，Geekbench AI（NE）“快 40% 以上”，iPhone 18 Pro 续航 +12%，Pro Max 续航 +25%。",
+              "官方续航：eSIM 版视频播放 Pro 36 小时、Pro Max 45 小时。",
+              "Apple 没有公布 NPU 的每瓦性能或 TOPS/W（未披露）。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-09",
@@ -6215,9 +6326,114 @@
         },
         "edge_ai_impact_zh": "Apple 公开把 Core AI 框架作为第三方 App 在端侧跑模型的路径，说明 iOS 27 的端侧推理栈已经开始面向开发者。折叠机型散热受限、持续性能偏低，说明封装和散热仍是端侧大模型能否持续运行的关键。",
         "evidence_urls": [
-          "https://www.macrumors.com/2026/09/09/apple-september-2026-event-recap/"
+          "https://www.macrumors.com/2026/09/09/apple-september-2026-event-recap/",
+          "https://developer.apple.com/core-ai/",
+          "https://www.macrumors.com/2026/09/10/iphone-18-pro-max-battery-capacities-ram/",
+          "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "与 iPhone 18 Pro 同为 A20 Pro。官方把 iPhone Duo 列入 AFM Core Advanced（20B 总参、1–4B 激活）支持名单。内存容量官方未披露，MacRumors 因 Xcode 尚未收录而推测为 12GB。Apple 没有公布 tokens/s。新闻稿提到第三方 Detail App 通过 Core AI 框架在端侧运行模型，但没有给出模型规模。",
+        "deep_dive_zh": [
+          {
+            "heading": "散热约束对端侧推理的影响",
+            "points": [
+              "同一颗 A20 Pro，iPhone Duo 的持续性能只比 iPhone 17 Pro 高 35%，直板 Pro 是 +40%。折叠机身限制了均热板面积，长时间 LLM 解码或图像生成会更早降频（推断）。",
+              "新闻稿称 Duo 采用“定制均热板”，新封装让 A20 Pro 直接贴合均热板。"
+            ]
+          },
+          {
+            "heading": "软件栈：Core AI",
+            "points": [
+              "Core AI 在 WWDC26 推出，接替 Core ML：提供 Swift API 和 AOT 编译，按硬件自动特化，在 CPU、GPU、NE 之间调度推理，支持零拷贝和有状态执行；工具链包括 coreai-torch 转换、coreai-opt 优化和 Core AI Debugger。",
+              "Apple 开发者页面称 Core AI 是驱动端侧 Apple Intelligence 的推理框架，也可以把自定义语言模型接入 Foundation Models 框架。"
+            ]
+          },
+          {
+            "heading": "端侧功能负载",
+            "points": [
+              "Smart Take 在 A20 Pro 上运行端侧模型，实时分析画面并在被摄者摆好姿势时自动抓拍，属于持续视觉推理负载。",
+              "双电池并联：内屏视频 31 小时、外屏 44 小时、双屏均衡使用 24 小时（官方）。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-09-10",
+        "vendor": "Apple",
+        "category": "移动SoC",
+        "title": "iPhone 18 Pro: Battery Capacities and RAM Revealed",
+        "title_zh": "Xcode 证实 iPhone 18 Pro 系列为 12GB 内存",
+        "url": "https://www.macrumors.com/2026/09/10/iphone-18-pro-max-battery-capacities-ram/",
+        "source_type": "媒体",
+        "summary_zh": "MacRumors 在 Xcode 27 中查到 iPhone 18 Pro 和 Pro Max 都是 12GB RAM，与 iPhone 17 Pro 相同。EU 能效标签显示 SIM 卡槽版的电池容量为 4,056mAh 和 5,391mAh。iPhone Duo 的内存尚未收录，推测同为 12GB。",
+        "whats_new_zh": [
+          "RAM：18 Pro / Pro Max 均为 12GB（Xcode 27）",
+          "电池：4,056mAh / 5,391mAh（SIM 卡槽版，EU 能效标签）",
+          "容量没有增加，只有带宽提升 50%"
+        ],
+        "key_specs": {
+          "memory": "12GB LPDDR5X（96-bit，TechInsights 初析）",
+          "power": "4,056 / 5,391mAh",
+          "other": "Apple 不公布 RAM"
+        },
+        "edge_ai_impact_zh": "容量停在 12GB，带宽提高 50%，意味着本代端侧模型规模的上限没有变，变快的是同规模模型的解码速度。AFM Core Advanced 的 12GB 门槛与此一致。",
+        "evidence_urls": [
+          "https://bdnews24.com/technology/otve0x7lqw"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "容量 12GB（与 A19 Pro 一代相同），位宽从 64-bit 增至 96-bit，带宽 +50%（官方）",
+              "bdnews24 转述的供应商：Samsung 为主，SK hynix 和 Micron 也供货"
+            ]
+          }
+        ],
+        "model_capacity_zh": "12GB 机型上，PrismML 估计约 6GB 可供单个模型使用（含 KV Cache 和激活）。按 4-bit 估算约为 8–10B 稠密模型，Apple 用闪存分层的办法运行 20B 稀疏模型。"
+      },
+      {
+        "date": "2026-09-13",
+        "vendor": "Apple",
+        "category": "移动SoC",
+        "title": "A20 Pro芯片AI跑分曝光：苹果iPhone 18 Pro NPU最高增幅51.53%",
+        "title_zh": "A20 Pro Geekbench AI：NPU 量化分 +50%",
+        "url": "https://tech.ifeng.com/c/8wNVMWU93D8",
+        "source_type": "媒体",
+        "summary_zh": "IT之家（经凤凰网科技转载）报道了 A20 Pro 的 Geekbench AI 记录：Neural Engine 单精度 7,002、半精度 55,720、量化 75,810，比 A19 Pro 分别高 37.0%、51.5%、50.4%。同一报道列出的 A18 Pro 和 M5 分数可以作代际对照。Macworld 评测也称 NE 快 40% 以上，没有达到官方“2 倍算力”的说法。",
+        "whats_new_zh": [
+          "NPU 量化分 75,810，A19 Pro 为 50,411（+50.4%），A18 Pro 为 45,348，M5 为 57,553",
+          "半精度 55,720 对 36,772（+51.5%），单精度 7,002 对 5,111（+37.0%）",
+          "官方称双 16 核 NE 带来 2 倍算力，单模型基准只体现约 1.5 倍"
+        ],
+        "key_specs": {
+          "process": "TSMC N2",
+          "npu": "双 16 核 NE（32 核），TOPS 未披露",
+          "other": "Geekbench AI，Core ML 后端，泄露记录"
+        },
+        "edge_ai_impact_zh": "双 NE 的 2 倍峰值，可能要在多模型并发（Siri、相机、输入法同时运行）时才能兑现，单模型延迟的改善约 1.5 倍。开发者应以实测为准，不能直接套用 2 倍。",
+        "evidence_urls": [
+          "https://www.macworld.com/article/3242385/iphone-18-pro-review-the-best-boring-gets.html"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "代际对照（Geekbench AI NPU：单 / 半 / 量化）",
+            "points": [
+              "A18 Pro：4,575 / 32,910 / 45,348",
+              "A19 Pro：5,111 / 36,772 / 50,411",
+              "M5：5,411 / 41,100 / 57,553",
+              "A20 Pro：7,002 / 55,720 / 75,810"
+            ]
+          },
+          {
+            "heading": "解读",
+            "points": [
+              "A17 Pro 到 A19 Pro 的 NE 一直是 16 核、约 35 TOPS 量级，A19 Pro 相比 A18 Pro 的量化分只高约 11%；A20 Pro 一代提升约 50%，是近四代最大的一次 NE 跃升。",
+              "M6 新闻稿称系统框架可以同时使用两个 NE。单个基准模型未必能切分到两个引擎上，这可能是没有达到 2 倍的原因（推断）。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-10",
@@ -6240,8 +6456,31 @@
           "other": "单次跑分，不反映持续或游戏性能"
         },
         "edge_ai_impact_zh": "单核性能明显提升，对 agent 场景中的 tokenizer、调度和工具调用等串行逻辑有直接好处；但端侧 LLM 的吞吐主要取决于 NPU 和内存带宽，CPU 跑分只能作参考。",
-        "evidence_urls": [],
-        "confidence": "medium"
+        "evidence_urls": [
+          "https://tech.ifeng.com/c/8wNVMWU93D8",
+          "https://www.macworld.com/article/3242385/iphone-18-pro-review-the-best-boring-gets.html",
+          "https://www.techinsights.com/blog/apple-a20-pro-tsmc-2nm-processor-analysis"
+        ],
+        "confidence": "medium",
+        "model_capacity_zh": "CPU 跑分与能跑多大的模型没有直接关系。模型容量由 12GB 内存（Xcode 口径）和约 115GB/s 带宽（媒体推算）决定，见 A20 Pro 条目。",
+        "deep_dive_zh": [
+          {
+            "heading": "CPU：跑分口径汇总",
+            "points": [
+              "首批泄露（MacRumors）：单核约 4,720、多核约 12,600，主频约 4.93GHz；相比 A19 Pro 单核 +21–23%、多核 +27–28%。",
+              "Macworld 正式评测：Geekbench 6 单核 +26% / 多核 +30%，Geekbench 7 单核 +26% / 多核 +28%，均高于 Apple 官方的“CPU 最高 +20%”。",
+              "TechInsights 版图为 2P+4E，每个 P 核有独立 L2。"
+            ]
+          },
+          {
+            "heading": "NPU / AI 跑分（Geekbench AI）",
+            "points": [
+              "IT之家/凤凰网科技（9 月 13 日）：A20 Pro NPU 单精度 7,002 / 半精度 55,720 / 量化 75,810。",
+              "对比：A19 Pro 为 5,111 / 36,772 / 50,411，A18 Pro 为 4,575 / 32,910 / 45,348，M5 为 5,411 / 41,100 / 57,553。A20 Pro 的量化分数比 M5 的 16 核 NE 高约 32%。",
+              "增幅约 50%，没有达到官方的“2 倍”。原因可能是基准未能同时用满双 NE，也可能受带宽限制（推断）。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-15",
@@ -6268,9 +6507,40 @@
         "edge_ai_impact_zh": "与Hailo类似的M.2协处理器形态，让存量摄像头、工控机、网关以低改造成本跑多模态模型，扩大了“非手机”端侧AI的装机面。",
         "evidence_urls": [
           "https://investor.ambarella.com/node/17291",
-          "https://ai2.work/blog/ambarella-unveils-x7-accelerator-and-lifts-edge-ai-sam-to-22-9b"
+          "https://ai2.work/blog/ambarella-unveils-x7-accelerator-and-lifts-edge-ai-sam-to-22-9b",
+          "https://www.cnx-software.com/2024/01/09/ambarella-n1-soc-generative-ai-to-the-edge-video-analytics-robotics-industrial-applications/",
+          "https://www.globenewswire.com/news-release/2025/03/31/3052048/0/en/Ambarella-Debuts-Next-Generation-Edge-GenAI-Technology-at-ISC-West-Including-Reasoning-Models-Running-on-its-CVflow-Edge-AI-SoCs.html"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "X7本身的TOPS、参数量上限和tokens/s均未披露。官方只说支持CNN、ViT、多模态Transformer和VLM。作为参考，安霸CVflow 3.0 SoC家族官方称支持0.5B–34B参数的生成式模型（2025年ISC West），相机端演示过≤1.5B的VLM/推理模型；上一代N1 SoC官方给出Llama2-13B单流约25 tokens/s、功耗<50W（2024年CES）。",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 微架构",
+            "points": [
+              "采用第三代CVflow引擎，与安霸AI SoC同源；Cooper开发平台提供编译、量化、性能剖析工具和C++/Python运行时，Cooper Model Garden中的模型可直接部署。",
+              "工艺、TOPS、片上SRAM均未披露。"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "主机接口仅为单lane PCIe Gen3或USB 3.2，XCalibur参考卡PCIe吞吐>840MB/s；这一带宽只够传视频流和结果，模型权重必须常驻卡上LPDDR5，因此可跑模型规模取决于卡上LPDDR5容量（未披露）。",
+              "XCalibur为M.2 2280卡，安霸将开放完整设计文件。"
+            ]
+          },
+          {
+            "heading": "功耗",
+            "points": [
+              "现有客户设计功耗2–5W，与Hailo-10H（典型2.5W）同档，明显低于N1类<50W的边缘服务器SoC。"
+            ]
+          },
+          {
+            "heading": "定位判断",
+            "points": [
+              "“协处理器+标准PCIe设备”形态让既有Arm/x86主机不改板即可加装AI，竞争对象是Hailo-10H、Axelera Metis类M.2加速卡；X7已送样，并通过Capgemini、Macnica分销。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-10",
@@ -6294,9 +6564,44 @@
         "edge_ai_impact_zh": "这是高通首次把“端侧MoE + 长上下文 + KV Cache加速”作为NPU的一等设计目标。它说明手机端大模型的瓶颈已经从算力转向内存容量和带宽，而MoE的稀疏激活是在LPDDR带宽受限时扩大模型规模的关键路径。",
         "evidence_urls": [
           "https://www.computerworld.com/article/4220719/qualcomms-next-snapdragon-mobile-chip-comes-into-focus-with-on-device-ai.html",
-          "https://www.thelec.net/news/articleView.html?idxno=13884"
+          "https://www.thelec.net/news/articleView.html?idxno=13884",
+          "https://www.digitaltoday.co.kr/en/view/107233/snapdragon-summit-2026-smartphones-can-run-30-billion-parameter-ai-models",
+          "https://hothardware.com/news/snapdragon-8-elite-extreme-gen-6-release",
+          "https://www.thelec.net/news/articleView.html?idxno=14133"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "官方口径：首次支持MoE，最高30B总参数，每个token约3B路由参数激活；上下文最高32K；INT4 prefill较8 Elite Gen 5最高+50%；decode速度和投机解码都有增强，但没有给出绝对tokens/s。The Elec称响应可在1.5秒内开始（未说明基线）；专家从NAND实时加载到DRAM，常用专家常驻缓存。TOPS未披露。",
+        "deep_dive_zh": [
+          {
+            "heading": "架构新增点",
+            "points": [
+              "Element Accelerator：专为Transformer设计，针对快速动作循环和KV Cache加速，与标量、向量、矩阵单元并列。",
+              "共享内存+50%：让模型状态、激活、中间张量和KV Cache更多留在片上，减少外部DRAM访问（Computerworld、The Elec）。",
+              "精度：FP16、INT2、INT4、INT8、FP8（The Elec）。"
+            ]
+          },
+          {
+            "heading": "MoE 与存储层级",
+            "points": [
+              "专家权重放在UFS闪存中，按需加载到DRAM；高频专家驻留缓存。官方称这样可以用更低的内存带宽获得大模型效果（The Elec）。Digital Today补充说，模型直接从UFS 5.0运行，并依靠高通的闪存管理系统，只加载需要的部分。",
+              "估算（本文推算）：30B在INT4下约15GB，加上KV Cache和OS后，24GB手机也难以全量常驻，因此“从闪存运行”是必须的设计。闪存读带宽和专家切换延迟高通未披露，会是实际体验的关键变量。"
+            ]
+          },
+          {
+            "heading": "时间线与口径",
+            "points": [
+              "9月10日OnQ博客预披露，9月22日峰会正式发布；Digital Today转述“部分模型prefill最高+80%”，与博客的“INT4最高+50%”口径不同。",
+              "没有独立测试；端侧30B MoE在真实机型上的tokens/s、功耗和首token延迟都有待第四季度上市后验证。"
+            ]
+          },
+          {
+            "heading": "与内存墙的关系",
+            "points": [
+              "同期高通在骁龙峰会宣布把数据中心的HBC近存方案引入骁龙：多颗LPDDR通过TSV垂直堆叠在XPU计算die上，三星、SK海力士负责DRAM堆叠，台积电负责封装（TheElec）。",
+              "高通称同功耗下HBC带宽和token吞吐效率均为HBM的6倍（数据中心口径），说明高通也把下一代NPU的瓶颈定义在带宽而非TOPS。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-09",
@@ -6325,9 +6630,51 @@
         "edge_ai_impact_zh": "手表采用“端侧常驻感知 + 硬件隔离处理 + 手机/PCC 负责重计算”的分层架构，适合常开语音和环境感知类 agent：在极低功耗下实现常时监听，同时保护隐私。",
         "evidence_urls": [
           "https://www.apple.com/newsroom/2026/09/apple-unveils-apple-watch-ultra-4/",
-          "https://www.apple.com/newsroom/2026/09/apple-advances-health-and-fitness-capabilities-using-apple-intelligence/"
+          "https://www.apple.com/newsroom/2026/09/apple-advances-health-and-fitness-capabilities-using-apple-intelligence/",
+          "https://technews.tw/?p=1615944",
+          "https://techcrunch.com/2023/09/12/the-apple-watch-series-9-features-a-new-chip-the-s9",
+          "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "Apple 没有披露手表上运行的模型规模。官方明确在表上端侧运行的只有 Sound Recognition（不需要 iPhone）。Live Rewind 和 Siri Recap 需要 iPhone 16 及以上，并依赖 iPhone 上的 Apple Intelligence 模型和 PCC（服务器端有每日用量上限）。媒体/爆料称 S11 有 4GB RAM（上代 2GB）和 4 核 NE。即使属实，4GB 内存也要供 watchOS 共用，能常驻的大概只是百 M 参数级的声学/语音/唤醒类小模型（推断），跑不了 LLM。",
+        "deep_dive_zh": [
+          {
+            "heading": "低功耗 / 常驻 AI：Secure Exclave",
+            "points": [
+              "S11 新增 Secure Exclave 硬件隔离区，原始音频在与系统完全隔离的区域处理后立即删除，不生成录音，App、用户和 Apple 都无法访问（官方）。",
+              "这样就形成了一条常开麦克风流水线：前端在隔离区做声学事件检测和转写（推断），只有文本结果（Live Rewind 显示前 15 秒对话、Siri Recap 生成标题和要点）通过端到端加密同步到 Siri App。",
+              "Health Sensing System 每 5 秒测一次心率，HRV 采样频率最高提升 24 倍，说明 S11 的常驻传感器融合负载明显加重。"
+            ]
+          },
+          {
+            "heading": "表—机—云分工",
+            "points": [
+              "在表上：Sound Recognition（警报、门铃、婴儿哭声）、更快的 Shazam、健康传感。",
+              "在 iPhone 上：Live Rewind 和 Siri Recap 的语言模型推理（需要 iPhone 16+）；Siri AI 在 Apple Watch 上要求 Series 9 及以上，并配对支持 Apple Intelligence 的 iPhone。",
+              "在 PCC 上：服务器端模型，有每日用量上限，Apple 表示未来扩容将收费。"
+            ]
+          },
+          {
+            "heading": "能效",
+            "points": [
+              "Series 12 日常续航 24 小时，户外运动 10 小时（+25%），快充 15 分钟可用 12 小时（+50%）。在 Health Sensing 和音频智能负载增加的情况下，户外运动续航仍有提升（官方）。",
+              "Apple 没有披露 S11 的功耗。"
+            ]
+          },
+          {
+            "heading": "低功耗/常驻 AI",
+            "points": [
+              "S11驱动全新Health Sensing System和Audio Intelligence；音频处理在S11的Secure Exclave中隔离运行，处理完即删除。",
+              "续航：日常最长24小时；户外运动最长10小时（+25%）；快充15分钟可用12小时（+50%）。"
+            ]
+          },
+          {
+            "heading": "端云分工",
+            "points": [
+              "健康App中的动作评估使用iPhone上的视觉AI模型，手表本身只负责采集。这说明手表级芯片仍处于“传感+小模型常驻、大模型靠手机/云”的分层模式。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-09",
@@ -6350,9 +6697,48 @@
         },
         "edge_ai_impact_zh": "耳机负责低功耗拾音和降噪前处理，翻译和语言模型推理交给 iPhone。这是典型的“耳机作入口、手机作算力”的 agent 交互形态。",
         "evidence_urls": [
-          "https://www.macrumors.com/2026/09/09/apple-september-2026-event-recap/"
+          "https://www.macrumors.com/2026/09/09/apple-september-2026-event-recap/",
+          "https://www.apple.com/ie/newsroom/2025/11/live-translation-on-airpods-expands-to-the-eu/"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "model_capacity_zh": "AirPods 端没有运行语言模型的公开证据。Live Translation 由配对 iPhone 上的 Apple Intelligence 完成：2025 年 Apple 公布的要求是 H2 芯片的 AirPods Pro 3、AirPods Pro 2、AirPods 4 ANC，配合支持 Apple Intelligence 的 iPhone。AirPods 5 的 H 系列芯片型号官方未披露。耳机内的 ML 只有“计算音频算法”（ANC、头部手势识别）。",
+        "deep_dive_zh": [
+          {
+            "heading": "低功耗 / 常驻 AI",
+            "points": [
+              "官方：ANC 降噪量比 AirPods 4 ANC 最高 +50%，来自新的多孔声学结构加“改进的计算音频算法”，属于耳机 SoC 上的实时 DSP/ML 负载。",
+              "点头/摇头回应 Siri AI（Siri Interactions），基于耳机 IMU 做本地手势识别。",
+              "开启 ANC 单次 5 小时（+1 小时），连同充电盒共 22 小时。在 ANC 算法更重的情况下续航仍然增加，说明 H 系列芯片能效有提升（推断）。"
+            ]
+          },
+          {
+            "heading": "芯片与未披露项",
+            "points": [
+              "AirPods 5 新闻稿没有写 H 系列芯片型号。发布前传闻是 H3，第三方 wiki 记为 H2，目前无法确认。",
+              "Apple 没有公布耳机 SoC 的工艺、NPU 和功耗。Live Translation 的 2025 年支持名单都是 H2 机型（AirPods Pro 3 / Pro 2 / AirPods 4 ANC），说明这项功能对耳机算力要求不高，因为主要计算在手机上。"
+            ]
+          },
+          {
+            "heading": "耳机—手机分工",
+            "points": [
+              "Live Translation：耳机负责拾音和降噪前处理，语音识别、翻译和 TTS 在 iPhone 上完成，评测也明确说“干活的是手机，不是耳机”。",
+              "这与 Watch 的分工一致：可穿戴设备只做低功耗的感知前端，LLM 级推理放在 iPhone 或 PCC。"
+            ]
+          },
+          {
+            "heading": "低功耗/常驻 AI",
+            "points": [
+              "新的多端口声学结构加改进的计算音频算法，官方称比AirPods 4 ANC多降噪最高50%。",
+              "续航（无线充电盒款）：开ANC单次最长5小时（+1小时），连充电盒最长22小时。"
+            ]
+          },
+          {
+            "heading": "端云分工",
+            "points": [
+              "Siri AI的点头/摇头应答在耳机端用传感器识别；听写精度提升只在“搭载苹果最强端侧模型的设备”上可用。可见耳机侧仍是传感+DSP级，生成式能力全在手机。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-10",
@@ -6376,7 +6762,61 @@
           "https://www.bit.com/zh/market-headlines/meta-alibaba-ai-glasses",
           "https://www.ithome.com/0/924/190.htm"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "model_capacity_zh": "未披露。芯片、内存、续航均未公开，虹膜识别是端侧完成还是上云比对也未说明。前代夸克AI眼镜采用高通AR1+恒玄BES2800双芯片（媒体报道），这类架构下端侧通常只跑唤醒、降噪、拍照ISP和轻量视觉，大模型对话走手机/云端。",
+        "deep_dive_zh": [
+          {
+            "heading": "功能与定位",
+            "points": [
+              "无显示屏，主打虹膜识别（报道的误识率低于百万分之一）和眼动追踪，注视支付终端即可验证身份；定位低于带显示的千问S1。",
+              "9月22日报道称基础款主打5000万像素第一视角拍摄，Pro版加入眼动追踪和虹膜支付，10月13日发售（未获官方规格页确认）。"
+            ]
+          },
+          {
+            "heading": "低功耗推断",
+            "points": [
+              "无显示方案省去光机和显示驱动功耗，“AP+BT音频SoC”双芯片可让常开语音由低功耗蓝牙SoC承担、AP按需唤醒，这是目前非显示AI眼镜做到全天续航的主流做法（基于前代架构推断）。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-09-15",
+        "vendor": "Apple",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Apple Watch S11 晶片細節（科技新報）",
+        "title_zh": "S11 细节：4 核 NE、4GB RAM（爆料）",
+        "url": "https://technews.tw/?p=1615944",
+        "source_type": "媒体",
+        "summary_zh": "科技新报引用 Wccftech 的报道称，S11 为 2 核 CPU、1 核 GPU、4 核 Neural Engine，NE 末级缓存比前代大 50%；Apple Watch Series 12 和 Ultra 4 的 RAM 从 2GB 增至 4GB；S11 是否采用 2nm 工艺不确定。以上均非 Apple 官方信息。",
+        "whats_new_zh": [
+          "RAM 2GB → 4GB（爆料）",
+          "4 核 NE，LLC 比前代大 50%（爆料）",
+          "2 核 CPU / 1 核 GPU（爆料）"
+        ],
+        "key_specs": {
+          "process": "未确认",
+          "cpu": "2 核（爆料）",
+          "gpu": "1 核（爆料）",
+          "npu": "4 核（爆料）",
+          "memory": "4GB（爆料）",
+          "other": "Secure Exclave（官方）"
+        },
+        "edge_ai_impact_zh": "手表内存翻倍、NE 缓存加大，与 Audio Intelligence 的常开音频前端，以及表上端侧的 Sound Recognition 一致。LLM 推理仍交给 iPhone 和 PCC。",
+        "evidence_urls": [
+          "https://www.apple.com/newsroom/2026/09/introducing-apple-watch-series-12-with-the-all-new-health-sensing-system/"
+        ],
+        "confidence": "low",
+        "deep_dive_zh": [
+          {
+            "heading": "代际",
+            "points": [
+              "S9（2023）首次配 4 核 NE，ML 速度是 S8 的 2 倍，Siri 可在本地处理（媒体转述官方）",
+              "S11 仍为 4 核 NE，但 LLC 加大、内存翻倍（爆料）"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露。4GB 内存与系统共用，只适合常驻声学/语音小模型（推断）。"
       },
       {
         "date": "2026-09-11",
@@ -6402,9 +6842,48 @@
         "edge_ai_impact_zh": "中国厂商抢先实现LPDDR6商用，有利于国产手机在内存涨价周期中保障供应、拉低成本。量产良率和出货规模仍待验证。",
         "evidence_urls": [
           "https://technode.com/2026/08/31/cxmt-starts-lpddr6-mass-production-for-xiaomis-upcoming-18-fold/",
-          "https://www.notebookcheck.net/Xiaomi-18-Fold-set-to-debut-CXMT-s-new-LPDDR6-memory.1382353.0.html"
+          "https://www.notebookcheck.net/Xiaomi-18-Fold-set-to-debut-CXMT-s-new-LPDDR6-memory.1382353.0.html",
+          "https://hub.baai.ac.cn/view/57441",
+          "https://www.powersystemsdesign.com/articles/lpddr6-bandwidth-math-what-you-gain-what-you-pay-what-you-measure/22/23664"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "model_capacity_zh": "内存产品不直接对应模型规模。单颗16GB LPDDR6在手机上大致对应INT4下20B级以内的稠密模型，或激活参数较少的30B级MoE（本文按权重容量粗算，还需留出OS和KV cache空间）。",
+        "deep_dive_zh": [
+          {
+            "heading": "规格（长鑫官方口径）",
+            "points": [
+              "LPDDR6单颗16GB，最高12.8Gbps，与玄戒O3配合时运行在10.667Gbps。",
+              "带宽较自家LPDDR5X提升60%，功耗降低20%；9月7日宣布量产，称是“全球首个LPDDR6旗舰手机商用”。"
+            ]
+          },
+          {
+            "heading": "系统带宽",
+            "points": [
+              "玄戒O3为4×24-bit LPDDR6，整机113.8GB/s（小米官方）。LPDDR6把单通道从16 bit扩到24 bit，同频下位宽提升50%。"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "长鑫LPDDR6单颗16GB，颗粒峰值12.8Gbps，配SoC运行在10.667Gbps；厂商称较LPDDR5X带宽+60%、功耗-20%。",
+              "LPDDR6每通道24bit（2×12bit子通道），BL24时每个子通道一次突发288bit，其中256bit为数据，有效载荷约88.9%。玄戒O3的113.8GB/s正好等于96bit（4通道）×10.667Gbps×256/288÷8，与该结构吻合（推算）。",
+              "LPDDR5X-10667若同为96bit（6×16bit）可达128GB/s（原始值），因此LPDDR6在同频同位宽下的带宽优势主要来自更高的频率上限（14.4Gbps），而不是同频本身。"
+            ]
+          },
+          {
+            "heading": "供应链",
+            "points": [
+              "小米18 Fold 16GB版本同时提供LPDDR5X和LPDDR6两种配置，存储为UFS 4.1；长鑫LPDDR5X也已到10.667Gbps，与三星、SK海力士10.7Gbps同档。",
+              "中兴×字节的Nubia NaviX Ultra采用三星+长鑫双供LPDDR5X，国产DRAM进入旗舰供应链。"
+            ]
+          },
+          {
+            "heading": "判断",
+            "points": [
+              "在DRAM涨价周期中，国产LPDDR6首发更多是供应安全与成本议价，端侧AI的直接收益要按实际位宽核算：相对64bit LPDDR5X-10667（85.3GB/s）约+33%，相对96bit LPDDR5X（128GB/s原始值）则没有优势。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-15",
@@ -6427,9 +6906,33 @@
         },
         "edge_ai_impact_zh": "国产智驾SoC在规模上已形成对英伟达/Mobileye的替代，软硬一体（HSD）模式使端侧大模型在车上的迭代速度显著加快。",
         "evidence_urls": [
-          "https://m.mp.oeeee.com/a/BAAFRD0000202609161666970.html"
+          "https://m.mp.oeeee.com/a/BAAFRD0000202609161666970.html",
+          "https://en.42how.com/?p=31135",
+          "https://www.ifanr.com/1621169"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "征程6系列覆盖10–560 TOPS，旗舰征程6P官方称可部署端到端、VLA、VLM等大模型，但未公开VLA参数量和推理延迟。按第三方报道的256-bit LPDDR5约205GB/s推算，7B INT4级VLM（约3.5–4GB）的解码上限约50 tokens/s（推算）。",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 微架构",
+            "points": [
+              "征程6P：4核BPU纳什（Nash）+18核Cortex-A78AE（约410K DMIPS）+GPU约200 GFLOPS+ASIL-D MCU，标称560 TOPS（第三方英文资料）。",
+              "征程6系列从6B（前视一体机）到6P分档，同一BPU架构覆盖L2到城区NOA。"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "第三方报道征程6P为256-bit LPDDR5、约205GB/s，确定性访存延迟约130ns；官方未公开功耗。"
+            ]
+          },
+          {
+            "heading": "量产规模",
+            "points": [
+              "征程系列累计量产超1500万颗，搭载超800万辆车；2026上半年自主品牌ADAS芯片份额首次超50%，城区NOA芯片份额22.8%；海外在手订单超2000万套。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-10",
@@ -6451,9 +6954,26 @@
         },
         "edge_ai_impact_zh": "车规智驾芯片向低速无人物流、机器人等“泛自动驾驶”场景外溢，单一大算力SoC复用于车与机器人正在成为国产边缘算力的主要放量路径。",
         "evidence_urls": [
-          "https://equalocean.com/news/2026091022177"
+          "https://equalocean.com/news/2026091022177",
+          "https://en.42how.com/?p=31135"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "未披露具体模型。征程6P官方称支持Transformer/BEV、端到端、VLA、VLM；L4无人配送车的规划模型参数量未公开。",
+        "deep_dive_zh": [
+          {
+            "heading": "平台",
+            "points": [
+              "征程6P单芯片560 TOPS（BPU纳什），据第三方资料内存为256-bit LPDDR5约205GB/s；双6P方案约1000 TOPS（2025年发布会口径）。"
+            ]
+          },
+          {
+            "heading": "场景与功耗",
+            "points": [
+              "低速L4配送车对功耗和成本比乘用车更敏感，单颗6P即可覆盖感知+规划；整板功耗官方未披露。",
+              "余凯预计物流场景3–5年有望部署百万台，但未披露确定订单量。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-10",
@@ -6479,7 +6999,30 @@
         "evidence_urls": [
           "https://hothardware.com/news/d-matrix-raptor-3d-dram-hot-chips-26"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "model_capacity_zh": "数据中心产品，单机柜（144颗Raptor）共有2.3TB 3D堆叠DRAM；Hot Chips 2026演示中，单机柜跑GLM 5.2约3000 tokens/s/用户，跑Kimi K3约1000 tokens/s/用户（厂商口径）。",
+        "deep_dive_zh": [
+          {
+            "heading": "架构",
+            "points": [
+              "台积电4nm计算die与定制DRAM die以36μm间距键合（类似HBM的chip-on-wafer封装），单卡内部带宽约100TB/s，整机柜聚合7.2PB/s。",
+              "定位于分离式推理中的decode阶段，GPU负责prefill。"
+            ]
+          },
+          {
+            "heading": "系统与时间表",
+            "points": [
+              "液冷NVL144 MGX机柜（含Vera CPU与BlueField DPU），机柜内用NVLink/NVSwitch做一致性互连。",
+              "2026年底流片，计划2027年四季度推出；后续Lightning将采用多层DRAM堆叠。"
+            ]
+          },
+          {
+            "heading": "对端侧的参考",
+            "points": [
+              "“3D DRAM贴近计算”与手机LPDDR6、LogicFolding的思路相同，都是通过缩短数据路径缓解decode带宽墙。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-14",
@@ -6504,9 +7047,46 @@
         "edge_ai_impact_zh": "Apple 首次按内存容量（≥12GB）给端侧大模型划门槛，说明 20B 级 MoE 模型的权重常驻是端侧 agent 的硬约束。大规模的端云分层 agent 已经面向消费者落地。",
         "evidence_urls": [
           "https://www.apple.com/newsroom/2026/09/major-updates-for-apples-software-platforms-are-now-available/",
-          "https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models"
+          "https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models",
+          "https://machinelearning.apple.com/research/apple-foundation-models-2025-updates",
+          "https://developer.apple.com/core-ai/"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "官方口径：AFM 3 Core 为 3B 稠密模型；AFM 3 Core Advanced 总参约 20B，采用按 prompt 路由的稀疏结构，按用途激活 1–4B 参数（听写场景约 1B 激活）；完整权重存在 NAND，只把需要的部分载入 DRAM；使用 QAT 压缩但没有公布位宽；没有公布上下文长度和 tokens/s。Core Advanced 要求 iPhone 17 Pro/Air/18 Pro/Duo，或 ≥12GB 的 M4 iPad / M3 Mac，或 Vision Pro（M5）。上一代（2025）端侧模型约 3B，解码器权重 2-bit QAT，embedding 4-bit，KV Cache 8-bit，KV 共享让 KV 内存减少 37.5%。",
+        "deep_dive_zh": [
+          {
+            "heading": "AFM 3 Core Advanced 稀疏结构",
+            "points": [
+              "基于 Instruction-Following Pruning（IFP）：由一个轻量稠密块在 prefill 阶段为整个 prompt 选出一组固定专家，生成过程中周期性重新选择。这是按 prompt 路由，不是按 token 路由。",
+              "Apple 解释：NAND 到 DRAM 的带宽太低，撑不住逐 token 换专家，所以改为按 prompt 一次性载入，把闪存 I/O 摊到 prefill 阶段。",
+              "共享专家常驻 DRAM，承担大部分计算；路由专家按需载入。推理时可以按用途预设激活参数量（inference-time elasticity）。",
+              "估算 DRAM 占用：按 4-bit 算，激活 4B 约 2GB、20B 全量约 10GB。12GB 手机放不下全量，这正是采用闪存分层的原因（估算，Apple 未披露位宽）。"
+            ]
+          },
+          {
+            "heading": "上一代对照：AFM 2025 端侧模型",
+            "points": [
+              "约 3B 参数，解码器 2 bits/weight QAT（带可学习裁剪），embedding 4-bit，KV Cache 8-bit。",
+              "模型按 5:3 深度分为两块，第二块复用第一块最后一层的 KV，KV Cache 减少 37.5%，TTFT 也降低；LoRA adapter rank 为 32。",
+              "服务器模型为 PT-MoE（Parallel-Track MoE），解码器用 ASTC 压缩到 3.56 bpw，交替使用局部滑窗注意力和全局 NoPE 注意力；持续预训练的最后阶段把上下文扩到 65K。"
+            ]
+          },
+          {
+            "heading": "端—云分层",
+            "points": [
+              "端侧：系统 orchestrator、Spotlight 索引、App Toolbox 完全在端侧运行；听写和富表现力语音由 AFM Core Advanced 承担（1B 激活时听写偏好率 44.7% 对 17.6%）。",
+              "PCC：AFM 3 Cloud、AFM 3 Cloud Pro（针对 NVIDIA GPU 优化，PCC 已扩展到 Google Cloud 上的 NVIDIA GPU）、ADM 3 Cloud 图像模型；服务器端功能有每日上限。",
+              "新一代模型与 Google Gemini 合作定制，预训练在最新一代云 TPU 上完成。"
+            ]
+          },
+          {
+            "heading": "内存门槛",
+            "points": [
+              "Core Advanced 只开放给 12GB 机型（iPhone 17 Pro/Air 起），iPhone 17 和 iPhone 16 系列只能用 Core（3B）。内存容量第一次成为端侧模型分档的依据。",
+              "Mac 门槛是 M3 起且 ≥12GB，iPad 是 M4 起且 ≥12GB，说明除了容量，还要求一定的 NE/GPU 代际（推断）。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-09",
@@ -6528,7 +7108,8 @@
         "evidence_urls": [
           "https://www.koreatimes.co.kr/business/companies/20260918/samsung-exynos-chipset-market-share-rises-to-9-in-q2"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "deep_dive_zh": []
       },
       {
         "date": "2026-09-15",
@@ -6552,7 +7133,8 @@
         "evidence_urls": [
           "https://www.datacenterdynamics.com/en/news/dutch-ai-chip-startup-euclyd-raises-231-million-in-funding-round-co-led-by-samsung/"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "deep_dive_zh": []
       },
       {
         "date": "2026-09-15",
@@ -6572,7 +7154,8 @@
         },
         "edge_ai_impact_zh": "为国内存算一体和端侧AI芯片公司（后摩、知存、九天睿芯等）提供了明确的政策背书，后续可能带来专项资金和国产化采购。",
         "evidence_urls": [],
-        "confidence": "medium"
+        "confidence": "medium",
+        "deep_dive_zh": []
       },
       {
         "date": "2026-09-11",
@@ -6598,7 +7181,23 @@
           "https://www.sammyfans.com/2026/09/28/samsung-2nm-chip-process-making-some-serious-progress/",
           "https://www.trendforce.com/news/2026/07/13/news-samsung-reportedly-completes-tesla-ai5-tape-out-paving-the-way-for-2nm-ramp-at-taylor-fab/"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "工艺与良率",
+            "points": [
+              "据《每日经济新闻》，三星2nm GAA良率已超过70%（年初低于50%）；Exynos 2700采用第二代SF2P。",
+              "高通在三星2nm上的AP生产可能推迟到2027年，涉及量“相对较小”。"
+            ]
+          },
+          {
+            "heading": "产能与价格",
+            "points": [
+              "泰勒一厂2nm产能据报已被订满，订单含特斯拉AI5/AI6、博通通信芯片和Arm面向智能设备的AI芯片。",
+              "7月涨价：SF4涨10-15%（中美客户）或5-10%（台湾客户），5nm涨10-15%，8nm涨近10%。2Q26三星代工营收份额5.9%。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-09",
@@ -6621,9 +7220,33 @@
         },
         "edge_ai_impact_zh": "基带和无线芯片自研后，Apple 能和 SoC 统一调度功耗，降低常驻联网（端云协同、PCC 调用）的能耗底噪。不过 Pro Max 仍用高通，说明 C2 的产能或性能还没有完全覆盖旗舰机型。",
         "evidence_urls": [
-          "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/"
+          "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/",
+          "https://bdnews24.com/technology/otve0x7lqw"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "功耗口径",
+            "points": [
+              "官方：C2 上传更快，能耗比 C1X 低 15%，新增美国 mmWave 支持，并有“AI 驱动”的蜂窝连接质量和可靠性改进。基准是 C1X（iPhone Air/17e），不是高通 X80。",
+              "官方没有公布 C2 的工艺、峰值速率和绝对功耗（未披露）。也没有找到独立的 C2 与 X80 功耗对比实测。",
+              "N1（Wi-Fi 7 / BT 6 / Thread）没有公布功耗数字。媒体称自研的主要好处是与 iOS 更紧密集成，从而改善可靠性和续航（定性）。"
+            ]
+          },
+          {
+            "heading": "拆解：基带分用",
+            "points": [
+              "TechInsights（9 月 18 日）：iPhone 18 Pro Max 用高通 Snapdragon X80 加 SDR875 射频收发器，另有新的 mmWave 硬件；Wi-Fi 模块为 Apple N1；NAND 256GB，DRAM 为 LPDDR5X。",
+              "Apple 新闻稿只把 C2 归给 iPhone 18 Pro 和 iPhone Duo。是否有地区版本差异，各方报道不一致，没有权威确认。"
+            ]
+          },
+          {
+            "heading": "对端侧 AI 的意义",
+            "points": [
+              "端云协同的 agent（Siri AI 调用 PCC）需要常驻联网。基带功耗降低 15%，直接降低云端兜底调用的能耗底噪（推断）。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-14",
@@ -6644,9 +7267,177 @@
           "other": "KV traffic -15x"
         },
         "edge_ai_impact_zh": "为把大模型权重和KV放到闪存侧计算提供了算法基础，与SK海力士HBF、高带宽存储（HBS）等“存储侧算力”方向呼应，可能降低端侧对昂贵DRAM容量的依赖。",
-        "evidence_urls": [],
-        "confidence": "high"
+        "evidence_urls": [
+          "https://arxiv.org/html/2609.16161"
+        ],
+        "confidence": "high",
+        "model_capacity_zh": "Llama-3.1-8B 与 Qwen-2.5-7B 的算法精度评估（W8A8 全整数）；系统收益为分析模型（Llama 3.1-8B、batch=1 解码），无实机 tokens/s。",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "闪存存内计算（Compute-in-Flash）容量大、可避免权重搬运，但不支持高精度浮点且写耐久有限，无法直接承载 KV Cache 频繁写入。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "端到端全整数推理：线性层 W8A8，借鉴 SmoothQuant 做激活平滑，非线性/归约算子用整数近似，避免 FP 卸载。",
+              "字典式 KV 压缩：每个 KV 向量表示为闪存常驻静态过完备字典的稀疏线性组合，只写少量系数，降低写入量；配合 query-aware 分层稀疏。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "分析模型对比 4 种配置：B1 NPU+DDR5（FP16 KV）、B2 NPU+DRAM+字典压缩、S1 CIM-SSD（控制器 INT8/INT32 + SRAM + CIM 闪存阵列 + DRAM 后备）、S2（SRAM 受限，系数放 DRAM）；主机–SSD PCIe Gen4 x4 8 GB/s，控制器–阵列内部总线 16 GB/s。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "动态 KV 流量降低 15×，精度损失有限；系统模型给出短上下文 3.1×/2.7×（时延/能耗）、长上下文 4.4×/6.8× 收益（S2 配置，对比 DRAM 系统）。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "Keutzer/Gholami/Shao 团队把“权重静止在闪存中计算”推进到 KV Cache 层面，对 SSD/UFS 内计算的端侧形态有参考。",
+              "全部为算法 + 分析建模，没有闪存 CIM 实测硬件。"
+            ]
+          }
+        ],
+        "venue": "arXiv"
+      },
+      {
+        "date": "2026-09-13",
+        "vendor": "北京大学 / 天津大学",
+        "category": "学术研究",
+        "title": "BigMoMo: Efficient Inference of Large-Scale MoE with Speculative Decoding on Mobile Devices",
+        "title_zh": "BigMoMo：用投机解码在手机上跑最高80B MoE",
+        "url": "https://arxiv.org/abs/2609.14643",
+        "source_type": "论文",
+        "summary_zh": "BigMoMo 利用投机解码的多 token 验证窗口，把专家搬运从单 token 执行中解耦：同一批专家权重可被多个候选 token 复用、闪存读取变得连续、加载与 NPU 计算可重叠。系统基于 llama.cpp 的 Hexagon NPU 后端，在三代 Snapdragon 手机上测试，平均解码加速 4.83×（对按需自回归卸载）和 1.82×（对最佳投机 MoE 基线），并支持到 Qwen3-Next-80B-A3B。",
+        "whats_new_zh": [
+          "平均解码加速 4.83×（vs 按需自回归专家卸载）、1.82×（vs 最佳投机式 MoE 基线 SpecMoEOff/SP-MoE/MoE-SpAc）",
+          "在 Snapdragon 8 Elite Gen 5 上从 8B 扩展到 80B（Qwen3-Next-80B-A3B）均保持最低 TPOT",
+          "按运行时共加载模式重排闪存上的专家布局，热点专家常驻 NPU mapped buffer 并直接搬入 VTCM"
+        ],
+        "key_specs": {
+          "npu": "Hexagon NPU（llama.cpp Hexagon 后端，VTCM）",
+          "memory": "OnePlus 15：16 GB（可用 11.52 GB）/UFS 4.1；OnePlus 13：24 GB/UFS 4.0；OnePlus Ace 5：12 GB/UFS 4.0",
+          "other": "SoC：Snapdragon 8 Elite Gen 5 / 8 Elite / 8 Gen 3；Termux 环境；新增约 5,000 行代码"
+        },
+        "edge_ai_impact_zh": "首次在手机上系统展示 80B 总参 MoE 的投机解码 + 闪存卸载，说明“大总参、小激活”的 MoE + 投机解码是突破手机 DRAM 容量墙的现实路径，UFS 带宽与 NPU 本地存储（VTCM）调度成为关键。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2609.14643"
+        ],
+        "confidence": "high",
+        "venue": "arXiv（cs.AR/cs.DC）",
+        "affiliation": "北京大学计算机学院/电子学院、天津大学",
+        "authors": "Maoliang Li, Hailong Zou, Taohong Han et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "手机 DRAM 装不下 MoE 全部专家，专家卸载到闪存后，逐 token 路由导致碎片化闪存读与多阶段 NPU 准备，稀疏计算长期停在等权重。",
+              "每次搬运只服务很少 token，搬运成本无法摊薄。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "Reuse-oriented 专家搬运准入：依据接受率、路由影响和搬运代价同时剪枝投机分支与专家激活。",
+              "运行时自适应的闪存专家组织：按共加载模式重排专家，使读取连续。",
+              "跨层级搬运调度：把已就绪专家成批送 NPU，与在途传输重叠；离线 profiling 把最常用专家常驻 NPU mapped buffer。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "三款 OnePlus 手机覆盖三代 Snapdragon；草稿长度与分支宽度默认 2；GSM8K、HumanEval、MT-Bench、MMLU-Pro、CNN/DailyMail 五个基准。",
+              "基线算法在同一移动运行时内复现，对比公平性依赖作者实现。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "平均解码加速 4.83× / 1.82×；8 Elite 上加速略低，作者归因于其 24 GB DRAM 使闪存搬运本就较少。",
+              "8B→80B 六个模型上 TPOT 均最低。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "说明投机解码在端侧不只是减少计算轮数，更是“把内存搬运批量化”的工具，对 NPU 运行时设计有直接参考。",
+              "未报告能耗与发热；草稿模型额外内存与精度影响需看全文；依赖 Termux/llama.cpp 而非厂商 SDK。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "实机：OnePlus 15（8 Elite Gen 5）、OnePlus 13（8 Elite）、OnePlus Ace 5（8 Gen 3）。目标模型 Qwen3-30B-A3B、LFM2-24B-A2B、Gemma-4-26B-A4B-it、ERNIE-4.5-21B-A3B，均 Q4_0，配小草稿模型（如 Qwen3-0.6B）；扩展测试至 Qwen3-Next-80B-A3B。绝对 tokens/s 在论文图中给出，摘要口径为相对加速比。"
+      },
+      {
+        "date": "2026-09-09",
+        "vendor": "Northwestern University",
+        "category": "学术研究",
+        "title": "PELM: Power Efficient On-Device LLM Inference with Speculative Decoding and Dynamic Voltage Frequency Scaling",
+        "title_zh": "PELM：投机解码+DVFS的端侧低功耗推理",
+        "url": "https://arxiv.org/abs/2609.09662",
+        "source_type": "论文",
+        "summary_zh": "PELM 在传统 DVFS 频率调节之外，引入“投机解码”与“可变验证深度”（LayerSkip 早退）两个负载侧旋钮，用强化学习联合选择，以在散热受限场景下降低功耗与避免降频。在 Jetson AGX Orin 与 Orin Nano 上，相比现有功耗调度方法速度最高提升 23.1%、能耗降低 52.4%，任务质量相当。SenSys '26 论文。",
+        "whats_new_zh": [
+          "最高 23.1% 提速、52.4% 能耗降低（对比 SOTA 功耗调度器）",
+          "四档风扇 PWM 模拟散热条件；温度超过 78 °C（AGX Orin）/73 °C（Nano）判定失败"
+        ],
+        "key_specs": {
+          "other": "平台 Jetson AGX Orin、Jetson Orin Nano；HuggingFace Transformers + PyTorch，batch=1"
+        },
+        "edge_ai_impact_zh": "把“token 难度不同”引入功耗管理：端侧温控不只是调频，还可调算法深度。对无风扇的手机/可穿戴更有意义。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2609.09662"
+        ],
+        "confidence": "high",
+        "venue": "SenSys 2026（arXiv 预印本）",
+        "affiliation": "Northwestern University",
+        "authors": "Weisi Yang, Stephen Xia",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "移动/边缘设备缺乏主动散热，LLM 高负载易触发降频；已有 LLM 专用 DVFS 只调硬件频率，在严苛散热下效果不足。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "动作空间 = CPU/GPU 频率 × 是否投机解码 × 验证深度；RL 状态/奖励兼顾温度、速度与能耗；并处理早退导致缺失 KV 的补算开销。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "GSM8K、NQ-open、HumanEval、WMT14、CNN/DM 各 40 样本；所有会话从 45 °C 开始，四档冷却。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "最高 23.1% 提速、52.4% 节能，质量相当；代码开源（imec-nu/PELM）。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "需要 LayerSkip 类可早退模型；仅在 Jetson 上验证，未上手机 NPU。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "LLaMA-3.2-1B、LLaMA-3.1-8B、LLaMA-2-13B（LayerSkip 预训练版）在 Jetson AGX Orin / Orin Nano 上，batch=1；绝对 tokens/s 与 J/query 见论文图 6。"
       }
+    ],
+    "takeaways_zh": [
+      "三家旗舰不约而同地用“能装下多大的 MoE”代替 TOPS 作为 AI 卖点：Apple 20B（激活 1–4B）、联发科 30B、高通 30B（约 3B 激活）。但都没有公布 tokens/s，这些数字应理解为容量上限。",
+      "Apple 没有加内存容量，而是加位宽、改封装，同时把总参数放在闪存、激活参数放在内存。高通和联发科则走 LPDDR6 加大内存的路线。两条路线的差异会在长对话的首 token 延迟和持续性能上体现出来。",
+      "可穿戴设备坚持“隔离感知 + 手机推理 + 云端兜底”：S11 用 Secure Exclave 处理常开音频，AirPods 的翻译由 iPhone 完成。手表和耳机本身不跑语言模型。"
     ]
   }
 }

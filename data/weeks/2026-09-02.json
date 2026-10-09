@@ -5016,7 +5016,7 @@
       "start": "2026-09-02",
       "end": "2026-09-08"
     },
-    "overview": "本周硬件侧的信号是“IP 先行、国产自研抢跑”。Arm 发布 CSS for Mobile 2：C2-Ultra 的 AI 性能最高是 C1-Ultra 的 1.7 倍，集群里的 SME2 单元从一个增加到两个，Mali G2-Ultra NX 首次在 GPU 内加入神经加速器，这基本决定了明年安卓旗舰的 CPU/GPU 底座。国产两颗自研芯片同周亮相：小米 18 Fold 搭载 3nm 玄戒 O3（NPU 200 TOPS），首发长鑫 LPDDR6；华为 Mate XT2 首发麒麟 9050 Pro，靠 LogicFolding 把晶体管密度从约 155 提到 238 MTr/mm²，官方称同性能下 NPU 功耗降低 66%。PC 侧，英伟达 RTX Spark（N1X）确认 10 月上市，最高配 128GB 统一内存。低功耗侧，BrainChip AKD1500 开始量产爬坡，高通 Dragonwing Q-2390 把 RISC-V 实时核放进了物联网 SoC。",
+    "overview": "本周的看点是“IP 先行、国产自研抢跑”，同时出现两篇手机 NPU 跑 MoE 的论文。Arm CSS for Mobile 2：C2-Ultra 的 AI 性能是上代的 1.7 倍，集群内 SME2 单元增加到两个，官方称小语言模型提速 70%；但 Chips and Cheese 指出，扣除频率后 IPC 实际只提升约 3%。Mali G2-Ultra NX 首次在 GPU 内加入神经加速器，支持 INT8/INT16，不支持 FP8。国产方面，玄戒 O3（3nm，NPU 200 TOPS）用 5 值量化加 Huffman 压缩，权重平均约 2.6 bit，带宽占用降约 30%，并首发长鑫 LPDDR6（113.8GB/s）；麒麟 9050 Pro 采用 LogicFolding 面对面双 die，官方称可在端侧运行盘古 30B-A2B。PC 侧，RTX Spark（N1X）确认 10 月上市，128GB 统一内存，可跑 120B 级模型。论文侧，EStream 在骁龙 8 Elite Gen 5 的 NPU 上把 MoE 专家放进 UFS 分页换入，TTFT 最高快 27 倍；LeanStream 在 Jetson Orin 上只让 20% 权重常驻内存，7B 模型跑到 16–20 tok/s。",
     "items": [
       {
         "date": "2026-09-08",
@@ -5045,9 +5045,46 @@
         "evidence_urls": [
           "https://www.cnx-software.com/2026/09/08/arm-css-for-mobile-2-ai-native-platform-arm-c2-ultra-and-c2-pro-cpu-cores-mali-g2-ultra-nx-gpu",
           "https://newsroom.arm.com/blog/arm-css-for-mobile-2-and-c2-cpu-cluster",
-          "https://chipsandcheese.com/p/arms-c2-ultra-g2-ultra-nx-and-css"
+          "https://chipsandcheese.com/p/arms-c2-ultra-g2-ultra-nx-and-css",
+          "https://xpu.pub/2025/09/09/arm-lumex/"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "Arm未给出任何参数量或tokens/s口径。官方只说C2集群“双SME2”可让最新小语言模型（SLM）提速70%、C2-Ultra的AI性能为C1-Ultra的1.7倍（官方口径，相对值）。媒体评论认为SME2的定位是加速小模型和低延迟环节，并不意味着CPU能流畅跑20B级聊天模型；实际可跑的模型规模取决于SoC厂商的NPU和内存配置。上下文长度、精度上限均未披露。",
+        "deep_dive_zh": [
+          {
+            "heading": "SME2 矩阵单元",
+            "points": [
+              "每个C2集群挂两个SME2单元，由C2-Ultra与C2-Pro共享（官方称较上一代配置SME2能力翻倍）。SME2位于核外，相当于集群级共享矩阵协处理器，各核通过指令流向其派发外积运算。",
+              "Lumex/C1代的首批实现采用512-bit SVL，每个SME2单元约4KB ZA状态（xpu.pub）；C2是否保持512-bit、每周期MAC数，Arm均未公开（未披露）。",
+              "SME2外积指令支持FP16/BF16→FP32、INT8→INT32、INT16→INT32/64的加宽累加，并提供LUTI查表指令用于解包2/4-bit低比特权重，适合LLM decode中W4/W2权重的反量化。",
+              "官方AI指标：最新SLM提速70%，C2-Ultra的AI性能为C1-Ultra的1.7倍，代表性端到端Agent流程完成时间缩短24%。"
+            ]
+          },
+          {
+            "heading": "CPU 微架构与实际增益",
+            "points": [
+              "C2-Ultra：Armv9.3-A，64KB I$/128KB D$，L2 2/3MB，可选L3 256KB-32MB，单簇最多14核（CNX）。",
+              "Chips and Cheese指出C2-Ultra前端/后端布局与X925同宗（10-wide decode、8个简单ALU、6条FP管线），Arm澄清峰值IPC较C1-Ultra仅+7%；官方“+15%峰值/+12%平均”来自FPGA仿真且频率高8.5%，扣除频率后平均IPC增益约3.2%。",
+              "同性能功耗-38%包含工艺与实现的贡献，纯微架构部分无法拆分（媒体分析）。"
+            ]
+          },
+          {
+            "heading": "G2-Ultra NX 神经加速器",
+            "points": [
+              "NX矩阵单元嵌入着色器核：每核最高1024 INT8 MAC/clk或512 INT16 MAC/clk，可运行在执行引擎2倍频率；仅支持INT8/INT16，不支持FP8/BF16（Chips and Cheese）。",
+              "着色器核本身仍为128个FMA（256 FP32 / 512 FP16 FLOPs/clk），最多24核，与上代相同；加入NX后单核面积约+21%（约1.88mm² vs 1.55mm²）。",
+              "Ultra命名要求至少6个NX核；小米玄戒O3的16核GPU中只有一半（8核）带NX单元。",
+              "神经图形：NSS 540p→1080p超分、NFRU 30→60fps插帧（最高120fps会话）、NSSD超分+降噪；官方称神经图形每瓦性能最高4倍。"
+            ]
+          },
+          {
+            "heading": "软件栈",
+            "points": [
+              "KleidiAI为llama.cpp、ONNX Runtime、ExecuTorch、LiteRT等提供SME2/SVE2/I8MM内核，框架检测到SME2时自动启用，开发者无需改模型。",
+              "SME2生态伙伴：支付宝、Google AI Edge Gallery、OPPO、vivo；同期推出Arm AI Portal分发优化模型。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-07",
@@ -5078,9 +5115,45 @@
           "https://www.ubergizmo.com/2026/09/xiaomi-18-fold-debuts-at-ifa-2026-with-in-house-xring-o3-chip/",
           "https://www.gearlive.com/news/article/xiaomi-18-fold-219-grams-xring-o3-china-only",
           "https://technode.com/2026/08/31/cxmt-starts-lpddr6-mass-production-for-xiaomis-upcoming-18-fold/",
-          "https://aicybr.com/blog/xiaomi-xring-o3-deep-dive"
+          "https://aicybr.com/blog/xiaomi-xring-o3-deep-dive",
+          "https://hub.baai.ac.cn/view/57441"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "model_capacity_zh": "官方只给了MiMo-3B的相对数据（Prefill+40%、Decode+45%、功耗-26%，对比基准表述不一），O3端侧可承载的最大参数量、上下文长度和绝对tokens/s均未披露。常被引用的“330 tokens/s（3B模型）”属于同场发布的玄戒O100（14核AI加速器、1.2TB/s带宽），不是O3。精度上，200 TOPS的精度口径不一（有A8W4、INT4、INT8几种说法），官方另称INT8算力是O1的2.2倍。",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 微架构",
+            "points": [
+              "张量单元（大规模矩阵）+ 矢量单元（通用计算）双引擎：Tensor 200 TOPS，Vector 3.13 TFLOPS（较O1提升6.8倍），INT8算力为O1的2.2倍（官方，智源社区转述）。",
+              "媒体称NPU为4核设计，面向转置矩阵乘、SiLU激活与W4矩阵乘做了专门优化；也有报道称其采用SIMT架构（媒体口径，未获官方确认）。",
+              "缓存：GPU与NPU共享16MB缓存，CPU侧L2 12MB（aicybr整理）；另有报道称NPU自带8MB L2，两种说法尚不一致。"
+            ]
+          },
+          {
+            "heading": "模型协同：5值量化",
+            "points": [
+              "与MiMo团队联合训练5值量化模型：INT4需16个码点，新方案只用5个码点，再叠加霍夫曼无损压缩，高频值用短码、低频值用长码。",
+              "实测平均权重位宽约2.6 bit，内存带宽占用降低约30%（官方）；雷军称推理效果与传统INT4相当。",
+              "这是“压缩权重以换取decode带宽”的思路，与联发科的KV-cache硬件压缩互补：一个压权重，一个压缓存。"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "首款支持LPDDR6的手机SoC：单通道位宽由16 bit扩到24 bit，4×24-bit接口，10667Mbps，官方带宽113.8GB/s，较O1提升48%。",
+              "按96-bit×10667Mbps计算理论峰值约128GB/s，与官方113.8GB/s之间的差异厂商未解释（aicybr的推算）；可能与LPDDR6的元数据/ECC位开销有关，但未获证实。",
+              "搭配长鑫LPDDR6（单颗16GB，最高12.8Gbps，整机运行于10.667Gbps）。"
+            ]
+          },
+          {
+            "heading": "SoC 其余 AI 资源",
+            "points": [
+              "CPU 10核（2×C1-Ultra 4.35GHz + 4×C1-Premium + 4×C1-Pro），两个SME2单元。",
+              "16核G2-Ultra NX GPU，其中8核带NX神经加速器（Chips and Cheese）。",
+              "台积电3nm，240亿晶体管，133mm²。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-07",
@@ -5109,9 +5182,44 @@
         "evidence_urls": [
           "https://www.notebookcheck.net/Huawei-Mate-XT-2-launches-as-10-2-inch-foldable-with-ECG-variable-aperture-and-privacy-display.1391917.0.html",
           "https://borncity.com/news/kirin-9050-pro-huaweis-neuer-flaggschiff-chip-mit-42-mehr-leistung/",
-          "https://thenextweb.com/news/huawei-tau-scaling-law-chip-queen-logicfolding"
+          "https://thenextweb.com/news/huawei-tau-scaling-law-chip-queen-logicfolding",
+          "https://en.kocpc.com.tw/archives/25948",
+          "https://news.qq.com/rain/a/20260908A052RR00"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "model_capacity_zh": "华为官方口径为端侧30B MoE全模态模型（盘古30B-A2B，总参数30B、激活2B）；修图等场景另用本地6B多模态模型（极客湾拆解报道）。量化精度、上下文长度、tokens/s均未披露；唯一速度数据是“3B模型Prefill为上代3倍”（媒体转述官方）。若按INT4存储，30B权重约15GB（本文粗算），对16GB内存机型压力很大，华为称依靠“多级存算协同优化”，但是否把部分专家放在闪存或按需换入，官方未披露。",
+        "deep_dive_zh": [
+          {
+            "heading": "LogicFolding 机制",
+            "points": [
+              "两颗die面对面（F2F）Cu-Cu混合键合堆叠：上层主die用更先进工艺，放CPU执行单元（整数/浮点/Load-Store）和NPU等高密度、高发热逻辑；下层副die放L1/L2缓存、I/O、PLL等对工艺不敏感的模块（极客湾拆解，经KOCPC转述）。",
+              "官方新闻稿：500万个信号键合点，die间带宽125TB/s。拆解称供电与信号还使用约8万个TSV，占下层die约8%可用面积；关键路径时延-30%，buffer数量-55%。",
+              "腾讯新闻转述论文口径：混合键合间距1.5μm、5000万垂直互连、用40nm成熟设备实现，与新闻稿的500万口径不同，可能统计范围不同。",
+              "每颗die约120+mm²，合计240+mm²，封装投影面积小于上代的140+mm²；晶体管密度238 MTr/mm²（论文口径较约155提升约55%，拆解口径+28%，基准不同）。"
+            ]
+          },
+          {
+            "heading": "NPU 微架构",
+            "points": [
+              "达芬奇（Da Vinci）架构NPU；官方称AI性能较上代+140%（媒体转述）。",
+              "极客湾测得INT8约68 TOPS（媒体实测/推算）；另有分析称NPU从约29 TOPS升至约70 TOPS。",
+              "上下两层die的NPU总面积较上代大150%，仅主die上的NPU面积就超过整颗麒麟9030 Pro的NPU（拆解）。"
+            ]
+          },
+          {
+            "heading": "能效",
+            "points": [
+              "等性能下NPU功耗-66%、GPU-58%、CPU大核-41%（华为论文/人民日报口径）。",
+              "整机实测（Mate 90 Pro Max）：原神890p稳定60fps约4.2W，鸣潮648p平均50fps约6.3W（极客湾）。"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "百度百科与部分媒体称支持LPDDR6，官方新闻稿未提及；Mate XT2配16GB内存。内存位宽与带宽均未披露。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-03",
@@ -5141,9 +5249,41 @@
         "evidence_urls": [
           "https://www.implicator.ai/nvidia-sets-october-launch-for-rtx-spark-n1x-without-naming-a-price/",
           "https://www.gdm.or.jp/pressrelease/2026/0904/650789",
-          "https://windowscentral.com/hardware/nvidia/nvidia-confirms-rtx-spark-configurations-and-availability-first-devices-expected-to-begin-shipping-as-soon-as-next-month-with-two-n1x-configs-on-offer"
+          "https://windowscentral.com/hardware/nvidia/nvidia-confirms-rtx-spark-configurations-and-availability-first-devices-expected-to-begin-shipping-as-soon-as-next-month-with-two-n1x-configs-on-offer",
+          "https://www.storagereview.com/news/nvidia-rtx-spark-pre-orders-n1x-laptop-desktop-tdp-mxc-dgx-station-for-windows",
+          "https://github.com/ggml-org/llama.cpp/discussions/16578"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "model_capacity_zh": "NVIDIA官方称可跑120B参数、1M token上下文的模型（示例Qwen 3.8 Flash Next 125B）；微软称可跑120B以上，包括MAI Code 1.1 Flash（137B）、DeepSeek V4 Flash（284B）；Dell口径200B。差异主要来自每权重比特数不同。速度：微软在Surface Laptop Ultra上用llama.cpp（CUDA，DFlash2投机解码）测MAI Code 1.1 Flash，decode约63 tok/s（2K提示）到39 tok/s（256K），数值为StorageReview从无标注图表估读；prefill 923.5 tok/s@64K、769.8 tok/s@128K（微软）。尚无独立评测。参考：同为GB10架构的DGX Spark上，llama.cpp实测gpt-oss-120b生成58.7 tok/s、prompt处理2444 tok/s（2025年10月）。",
+        "deep_dive_zh": [
+          {
+            "heading": "计算与精度",
+            "points": [
+              "AI算力“最高1 PFLOPS FP4”，微软脚注明确为稀疏FP4理论值；NVIDIA未公布稠密FP4数值（按2:4稀疏惯例稠密约为一半，本文推断）。",
+              "无独立NPU TOPS口径，AI负载由Blackwell GPU的Tensor Core承担；6144/5120 CUDA核两档。"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "Dell规格表：LPDDR5X-9400、256-bit，约300.8GB/s，比DGX Spark的273GB/s高约10%；CPU与GPU die之间以NVLink-C2C 600GB/s互连。",
+              "统一内存24-128GB；GPU可寻址容量小于物理总量（微软说明）。decode速度基本由约300GB/s带宽决定，与Strix Halo（约273GB/s）同一档，低于M5 Max级别。"
+            ]
+          },
+          {
+            "heading": "功耗",
+            "points": [
+              "笔记本版（两档GPU）TDP 45-80W，台式机6144核版140W（StorageReview）。"
+            ]
+          },
+          {
+            "heading": "软件与 Agent 安全",
+            "points": [
+              "Windows on Arm原生CUDA/TensorRT；微软同步GA Microsoft Execution Containers（MXC），以外置JSON策略管控Agent的文件、网络与桌面访问，支持进程/会话/WSL/MicroVM容器。",
+              "首批接入MXC的Agent：GitHub Copilot、OpenAI Codex、OpenClaw、Replit、LM Studio、Unsloth；Claude Code、Perplexity、Manus等标为即将支持。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-03",
@@ -5166,9 +5306,45 @@
         },
         "edge_ai_impact_zh": "神经形态芯片终于进入小批量量产阶段，但营收规模仍然很小，商业化节奏偏慢。",
         "evidence_urls": [
-          "https://www.fool.com.au/2026/07/27/brainchip-posts-q2-cash-chips-hit-commercial-production/"
+          "https://www.fool.com.au/2026/07/27/brainchip-posts-q2-cash-chips-hit-commercial-production/",
+          "https://www.cnx-software.com/2026/09/21/brainchip-akd1500-m-2-and-pcie-edge-ai-cards-brainboard-1500-spi-module/",
+          "https://shop.brainchipinc.com/products/akd1500",
+          "https://brainchip.com/wp-content/uploads/2025/11/AKD1500-Product-Brief-V2.5-Nov.25.pdf",
+          "https://www.boerse-express.com/news/articles/brainchip-akd2500-mit-12-nanometer-prozess-901167"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "model_capacity_zh": "官方没有给出参数量上限。AKD1500片上本地存储仅1MB，定位是事件驱动的CNN→SNN转换模型和TENNs（状态空间类时序网络），典型负载为关键词唤醒、雷达/存在检测、跌倒检测、简单视觉分类等百KB到MB级模型。官方未宣称支持LLM。AKD2500（Akida 2.0）的算力和存储规格未披露。",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 微架构",
+            "points": [
+              "AKD1500采用Akida事件驱动神经形态架构（Akida Neuron Fabric），时钟5–400MHz，片上本地存储1MB；GlobalFoundries 22FDX（22nm FD-SOI）制造，7×7mm MFCTFBGA169封装（官方产品页/CNX）。",
+              "官方口径：最高800 GOPS（effective），<300mW，400MHz时典型功耗250mW，即约3 GOPS/mW；产品简报称<1mW/GOPS。",
+              "Akida 2.0新增TENNs（Temporal Event-based Neural Nets，状态空间模型），官方称在流式视频/音频时序任务上参数量和运算量可降一个数量级以上，可像CNN一样用反向传播训练、像RNN一样推理。"
+            ]
+          },
+          {
+            "heading": "低功耗/常驻 AI",
+            "points": [
+              "BrainBoard 1500模块（22.86×22.86mm，Arduino Nicla兼容）睡眠功耗为mW级，关机功耗低至37μW，经SPI/QSPI（最高60MHz）连接主MCU，适合电池供电的常开传感（CNX 2026-09-21）。",
+              "支持片上增量学习（on-chip learning），无需云端重训即可新增类别，适合本地个性化唤醒/识别。"
+            ]
+          },
+          {
+            "heading": "形态与量产",
+            "points": [
+              "开发卡价格：M.2 2230卡129美元（7月底）、BrainBoard 1500模块99美元（8月）、PCIe 2.0 x1卡149美元（9月中旬开售）、5颗芯片包199.99美元。",
+              "首轮量产约6万颗（原计划约7万颗），首批2000颗已到货，初期良率低于预期；6月季度末现金2030万美元，单季经营现金净流出470万美元（7月季报）。",
+              "AKD2500基于TSMC 12nm，经ASICLAND以MPW方式流片；早前报道称计划2026年下半年流片，9月公告口径为12月初流片。"
+            ]
+          },
+          {
+            "heading": "对比与判断",
+            "points": [
+              "800 GOPS/250mW的能效与Ethos-U55类MCU NPU（约百GOPS级）同档，但比Hailo-10H（40 TOPS INT4/2.5W）低两个数量级的绝对算力，定位在“传感器旁”的μW–mW常开层，而不是生成式AI层。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-04",
@@ -5191,9 +5367,47 @@
         },
         "edge_ai_impact_zh": "这两款芯片把视觉AI和RISC-V实时控制下沉到低成本的工业和消费终端，扩大了高通在边缘AIoT长尾市场的覆盖。",
         "evidence_urls": [
-          "https://www.cnx-software.com/2026/09/01/qualcomm-introduces-dragonwing-q-2390-and-iq-2390-for-consumer-and-industrial-aiot-applications/"
+          "https://www.cnx-software.com/2026/09/01/qualcomm-introduces-dragonwing-q-2390-and-iq-2390-for-consumer-and-industrial-aiot-applications/",
+          "https://hothardware.com/news/qualcomm-unveils-dragonwing-iq10"
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "model_capacity_zh": "Hexagon NPU最高1.1 TOPS；内存为双通道16bit LPDDR4x（最高1.8GHz），容量未披露。按这个算力和带宽，适合目标检测、分类等CNN视觉模型和小型音频模型，不适合运行LLM（本文推算）。高通没有给出模型规模的口径。对照：Dragonwing IQ10机器人参考设计（2026年6月Computex发布）宣称最高700 TOPS（稀疏），属于另一个量级。",
+        "deep_dive_zh": [
+          {
+            "heading": "规格（CNX Software）",
+            "points": [
+              "CPU：1×Cortex-A78 + 3×Cortex-A55，1.5或1.9GHz，512KB L3；GPU为Adreno 704，最高1.1GHz；音频DSP为Hexagon V66。",
+              "可选SiFive E61 RISC-V实时核（600MHz，768KB），运行Zephyr；Cortex-A侧支持Android、Yocto和Ubuntu。",
+              "接口：2×千兆以太网TSN，相机最高13MP双摄或25MP单摄，视频编解码1080p30。"
+            ]
+          },
+          {
+            "heading": "工业属性",
+            "points": [
+              "Q-2390 AB和IQ-2390的工作温度为-30°C至+115°C，供货至2036年；封装尺寸Q-2390为12×12mm，IQ-2390为21.3×18.4mm。"
+            ]
+          },
+          {
+            "heading": "平台构成",
+            "points": [
+              "四核Kryo CPU + Adreno 704 GPU + 实时RISC-V MCU；支持Linux、Android、Zephyr。",
+              "Q-2390带LTE Cat 4与GPS，面向POS、门禁、家用机器人、智能家电；IQ-2390带双千兆以太网+TSN，工作温度-30°C至+115°C，面向PLC/HMI/工业视觉。"
+            ]
+          },
+          {
+            "heading": "低功耗与内存",
+            "points": [
+              "工艺、功耗、NPU算力、内存规格官方均未披露，只称满足“严格的成本、功耗和尺寸约束”。",
+              "RISC-V实时MCU承担确定性控制，可在主CPU休眠时维持实时I/O，这是工业IoT的常见低功耗分区方式。"
+            ]
+          },
+          {
+            "heading": "进度",
+            "points": [
+              "目前处于早期接入计划，IFA 2026展出SOM，评估套件预计2027年初；合作产品包括广和通SC236模组（Q-2390）和SECO、Engicam（IQ-2390）。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-08",
@@ -5215,9 +5429,34 @@
         },
         "edge_ai_impact_zh": "降低在Arm终端部署端侧模型的门槛，并首次把“给Agent用的工具链”（MCP接入）作为一等公民，有利于模型厂商绕开碎片化的NPU SDK直接在CPU上获得可用性能。",
         "evidence_urls": [
-          "https://www.pocketgamer.biz/arm-unveils-ai-native-mobile-platform-for-agentic-ai-and-graphics/"
+          "https://www.pocketgamer.biz/arm-unveils-ai-native-mobile-platform-for-agentic-ai-and-graphics/",
+          "https://newsroom.arm.com/news/arm-css-for-mobile-2-agentic-ai-mobile-graphics",
+          "https://xpu.pub/2025/09/09/arm-lumex/"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "model_capacity_zh": "Portal不设模型规模上限，首批是面向CPU优化的小模型（Qwen、Gemma、YOLO及Qwen3-TTS等），官方未给出参数量清单或tokens/s。",
+        "deep_dive_zh": [
+          {
+            "heading": "性能数据（官方）",
+            "points": [
+              "Qwen3-TTS在vivo X300上通过SME2+混合量化，单线程提速超过4倍。",
+              "Ultralytics YOLO26n在vivo X300上用SME2跑FP16，较FP32提升超过40%。"
+            ]
+          },
+          {
+            "heading": "工具链",
+            "points": [
+              "运行时覆盖ExecuTorch、LiteRT、ONNX Runtime，底层由KleidiAI自动调用SME2/I8MM内核。",
+              "资源通过MCP向编码Agent开放，模型经Hugging Face分发；自带模型优化工具“即将推出”。"
+            ]
+          },
+          {
+            "heading": "工程意义",
+            "points": [
+              "CPU路径的优势是可移植、首token延迟低；劣势是算力比专用NPU低一个数量级（媒体评论），因此更适合TTS、ASR、检测与小参数LLM。"
+            ]
+          }
+        ]
       },
       {
         "date": "2026-09-08",
@@ -5240,7 +5479,8 @@
         "evidence_urls": [
           "https://www.trendforce.com/presscenter/news/20260514-13044.html"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "deep_dive_zh": []
       },
       {
         "date": "2026-09-03",
@@ -5264,7 +5504,201 @@
           "https://finviz.com/news/388851/ambarella-inc-announces-second-quarter-fiscal-year-2027-financial-results",
           "https://www.itiger.com/news/2664041088"
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "deep_dive_zh": []
+      },
+      {
+        "date": "2026-09-06",
+        "vendor": "上海交通大学 / 中国电信云计算研究院 / Temple University",
+        "category": "学术研究",
+        "title": "EStream: Fast and Memory-Efficient MoE Prefill through Expert Virtualization on Mobile NPUs",
+        "title_zh": "EStream：手机NPU上的MoE预填充与专家虚拟化",
+        "url": "https://arxiv.org/abs/2609.06551",
+        "source_type": "论文",
+        "summary_zh": "针对手机 NPU 静态图与 MoE 动态路由的矛盾，EStream 用“单张编译好的专家图 + 调用时绑定 token 与权重地址”让 MoE 预填充完全跑在 Hexagon NPU 上；专家池常驻 UFS 闪存，经固定大小的 NPU 可寻址 arena 分组换入，并自动调参让 UFS 读取与 NPU 计算重叠。在 Snapdragon 8 Elite Gen 5 手机上，TTFT 较最快基线快 2.25–27.57×，峰值物理内存降 1.19–12.29×，并可扩展到 46.7B 参数的 Mixtral-8x7B。",
+        "whats_new_zh": [
+          "纯预填充 TTFT 加速 2.25–27.57×（18 组对比设置）；峰值内存降低 1.19–12.29×",
+          "预填充能效较最强基线提升 1.19–8.41×，几何平均 4.08×；2K token 时达 7.78–8.41×",
+          "Qwen3-30B-A3B 在 1K→4K prompt 下能效 43.59→72.18 tokens/J；Mixtral-8x7B 23.41→35.76 tokens/J（含进程启动的更严格口径）"
+        ],
+        "key_specs": {
+          "process": "未披露（SM8850）",
+          "cpu": "2×Prime + 6×Performance Oryon",
+          "gpu": "Adreno（未细分）",
+          "npu": "Hexagon v81 HTP（HMX 矩阵单元，FP16 操作数）",
+          "memory": "15.1 GiB 内存，UFS 4.1",
+          "power": "用 Qualcomm QPT 积分整颗 SoC 能耗",
+          "other": "设备 OnePlus PLK110 / Android 16；对比 llama.cpp-CPU、MNN-CPU/OpenCL、ORT GenAI、EdgeMoE、PowerInfer"
+        },
+        "edge_ai_impact_zh": "证明“NPU 静态图 + 运行时绑定 + UFS 分页”可以让 7B–47B 级 MoE 在手机 NPU 上做预填充（分类/检索/安全等 prefill-only 服务），内存上限由 arena 而非模型大小决定，对端侧 MoE 落地和 UFS 4.x 带宽的价值是直接证据。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2609.06551"
+        ],
+        "confidence": "high",
+        "venue": "arXiv（cs.DC/cs.AR）",
+        "affiliation": "上海交通大学、中国电信云计算研究院、Temple University",
+        "authors": "Junming Zhang, Zhenzhe Zheng, Fan Wu et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "手机端大量 prefill-only 服务（意图识别、安全分类、检索打分）仍用稠密模型；MoE 能力更强但不适配 NPU：NPU 图编译期固定，MoE 专家在运行时选择。",
+              "一次请求的 token 会触达大部分专家，专家总量远超手机可用内存，CPU/GPU 回退或 padding 都会吃掉 NPU 优势。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "单张编译的专家图服务所有专家，每个专家的路由 token 与权重地址在调用时绑定，整个动态 MoE 在 NPU 上执行，无 padding、无 CPU/GPU 回退。",
+              "Expert virtualization：专家池放在 UFS 闪存，经固定大小的 NPU 可寻址 arena 逐组换入，加载隐藏在计算之后，内存占用由 arena 大小决定。",
+              "硬件感知配置算法自动选择 UFS–NPU 流水线参数，最大化加载/计算重叠，并可在给定内存预算下自动选点（论文给出 1K 时延–内存 Pareto 前沿）。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "OnePlus PLK110，Android 16，Snapdragon 8 Elite Gen 5（SM8850），Hexagon v81 HTP，UFS 4.1，15.1 GiB 内存。",
+              "数据集覆盖 MASSIVE、WinoGrande、ToxicChat、HellaSwag、ARC-C、NFCorpus、SciFact 等，prompt 256–4,096 token；能耗用 Qualcomm QPT 积分 SoC 总能耗。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "相对每个设置下最快基线：TTFT 2.25–27.57×，峰值物理内存 1.19–12.29× 降低。",
+              "能效 1.19–8.41×（几何平均 4.08×），随 prompt 变长收益增大（128 token 时 1.19–1.34×，2K 时 7.78–8.41×）。",
+              "可扩展至 Qwen3-30B-A3B 与 Mixtral-8x7B（46.7B）。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "把“闪存当专家仓库、NPU 当执行器”的路线从解码扩展到预填充，是 MoE 端侧化的关键拼图。",
+              "只处理 prefill-only 场景，未覆盖长解码；结果依赖高通 HTP 工具链与 UFS 4.1，其他厂商 NPU 可移植性未验证。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "实机：OnePlus（Snapdragon 8 Elite Gen 5，15.1 GiB）。主测 OLMoE-1B-7B、LFM2.5-8B-A1B、DeepSeek-V2-Lite（≤16B），扩展测 Qwen3-30B-A3B 与 Mixtral-8x7B（46.7B）；专家与大矩阵 GGUF Q4_0、激活 FP32、HMX 操作数与 KV FP16。指标为预填充 TTFT 与 tokens/J（非解码 tokens/s）。"
+      },
+      {
+        "date": "2026-09-04",
+        "vendor": "University of Notre Dame",
+        "category": "学术研究",
+        "title": "Interface-Aware KV Cache Quantization for Dense On-Chip NVM in Long-Context LLM Decoding",
+        "title_zh": "面向片上NVM接口的KV Cache量化",
+        "url": "https://arxiv.org/abs/2609.05764",
+        "source_type": "论文",
+        "summary_zh": "把量化 KV Cache 放入高密度片上非易失存储（RRAM 模型）可去掉片外搬运，但 KIVI/KVQuant 的逐组元数据和稀疏离群值不适配固定量程的读出转换器。作者用随机旋转 + 逐向量归一化让所有坐标同量程，K、V 各一本全局固定码本，阈值一次性写入读出转换器参考电平；4-bit KV 下元数据仅约 3%，KV 读能耗比 KIVI/KVQuant 映射到同一 NVM 低 3.1–3.6×。ICCAD '26 论文。",
+        "whats_new_zh": [
+          "KV 读能耗降低 3.1–3.6×；元数据开销比 KIVI 低 8×（约 3% vs 约 25%）",
+          "反量化仅需 16 项查表 + 一次范数乘法",
+          "Llama-3.2-3B / Llama-3.1-8B / Qwen2.5-14B，32k 上下文、4-bit KV 在器件噪声下保持精度"
+        ],
+        "key_specs": {
+          "memory": "片上高密度 NVM（RRAM 器件模型）存 KV；小型静态模拟 crossbar 只做固定旋转",
+          "other": "注意力仍在片上数字逻辑；仿真评估"
+        },
+        "edge_ai_impact_zh": "为“KV 常驻片上 NVM / 近存”路线给出算法-接口协同设计范式：量化格式应服从存储读出电路，而不只追求软件精度。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2609.05764"
+        ],
+        "confidence": "high",
+        "venue": "ICCAD 2026（arXiv 预印本）",
+        "affiliation": "University of Notre Dame",
+        "authors": "Jiahao Zheng, Yifan Qin, Xiaobo Sharon Hu et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "长上下文解码受 KV 读带宽限制；现有 KV 量化为 GPU 内存体系设计，per-group 元数据和 FP 离群值无法原位存入稠密阵列。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "随机旋转 + 逐向量归一化 → 全局固定码本（K、V 各一）→ 阈值编程为 ADC 参考电平，无需逐 token 重配转换器；旋转映射到一次写入的静态 crossbar。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "三种模型规模、32k 上下文，存储与 crossbar 噪声按真实器件水平仿真。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "KV 读能耗 3.1–3.6× 降低；元数据 8× 降低；软件精度上 KIVI/KVQuant 仍更高（作者明确承认）。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "仅仿真；NVM 写耐久与 KV 频繁写入的矛盾需在全文进一步评估。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "仿真：Llama-3.2-3B、Llama-3.1-8B、Qwen2.5-14B，上下文至 32k；无实机 tokens/s。"
+      },
+      {
+        "date": "2026-09-02",
+        "vendor": "George Mason University / JPMorganChase / University of Kansas",
+        "category": "学术研究",
+        "title": "LeanStream: A Speculate-and-Refine Streaming Framework for Efficient on-Device LLM Inference",
+        "title_zh": "LeanStream：投机-修正式权重流式加载的端侧推理",
+        "url": "https://arxiv.org/abs/2609.03079",
+        "source_type": "论文",
+        "summary_zh": "当 7B 模型权重超过设备 DRAM 时，需要利用激活稀疏并从 SSD/闪存流式加载权重。LeanStream 用 GPU 的部分计算结果逐步修正计算、加载与缓存保留优先级，实现细粒度计算/IO 重叠。在 Jetson AGX Orin/Xavier 与 OnePlus 13 上，同等吞吐下内存降 4.8–7.5×，吞吐再提升 1.6–2.1×。论文为 MobiCom '26 论文。",
+        "whats_new_zh": [
+          "同等吞吐下内存占用降低 4.8–7.5×；生成吞吐提升 1.6–2.1×",
+          "Jetson AGX Orin、20% 权重缓存：Mistral-7B 16.4、Llama2-7B 18.3、Qwen2.5-7B 19.8 tok/s（最佳静态配置 10.7/11.3/12.9）",
+          "对 PowerInfer-2（50% 权重缓存最优配置）最高 2.2× 吞吐"
+        ],
+        "key_specs": {
+          "memory": "Jetson + Samsung 980 Pro SSD；OnePlus 13 + UFS 4.0",
+          "other": "平台：Jetson AGX Orin、Jetson AGX Xavier、OnePlus 13（Snapdragon 8 Elite）"
+        },
+        "edge_ai_impact_zh": "给出“DRAM 只放 20% 权重也能 16–20 tok/s 跑 7B”的实测数据，说明存储带宽 + 稀疏预测可以显著降低端侧对 DRAM 容量的依赖。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2609.03079"
+        ],
+        "confidence": "high",
+        "venue": "MobiCom 2026（arXiv 预印本）",
+        "affiliation": "George Mason University、JPMorganChase 全球技术应用研究、University of Kansas",
+        "authors": "Renyuan Liu, Yuyang Leng, Kaiyan Liu et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "稀疏执行需要最新上下文才能准确决策，而计算/IO 重叠需要提前预测，二者冲突导致串行化或冗余读取。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "Speculate-and-refine：先投机预取，再用 GPU 部分结果逐步修正计算、加载与缓存优先级。",
+              "堆叠可学习哈希（Stacked Learnable Hashing）做轻量预测，端到端可微训练。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "Jetson AGX Orin/Xavier + 980 Pro SSD，OnePlus 13（8 Elite，UFS 4.0）；基线 DejaVu、DejaVu+（加 LRU）、PowerInfer-2；Qasper、TruthfulQA、CoQA。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "内存 4.8–7.5× 降低；吞吐 1.6–2.1×；Orin 上 7B 16.4–19.8 tok/s。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "依赖 ReLU 类激活稀疏的模型结构（Llama2/Mistral 稀疏化版本），对新一代 SwiGLU/MoE 模型的适用性需验证；未给能耗。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "Jetson AGX Orin 上 20% 权重驻留内存时 7B 模型 16.4–19.8 tok/s；模型 Mistral-7B、Llama2-7B、Qwen2.5-7B；手机端（OnePlus 13）具体 tok/s 见论文图表。"
       },
       {
         "date": "2026-09-08",
@@ -5284,9 +5718,108 @@
           "other": "Jetson AGX Orin vs near-edge server"
         },
         "edge_ai_impact_zh": "提醒评估端侧AI时不能只看计算侧指标，端到端的token交付与平台功耗同样决定部署选择。",
-        "evidence_urls": [],
-        "confidence": "medium"
+        "evidence_urls": [
+          "https://arxiv.org/html/2609.08307"
+        ],
+        "confidence": "medium",
+        "model_capacity_zh": "Jetson AGX Orin 64GB 通过 Ollama 运行 Llama 3.2 1B/3B（F16、Q5_K_M、Q4_K_M）、Mistral 7B、TinyLlama 1.1B、Phi-2（Q5_K_M/Q4_K_M）；具体 tokens/s 与能耗见论文图表。",
+        "deep_dive_zh": [
+          {
+            "heading": "实验设置",
+            "points": [
+              "边缘：Jetson AGX Orin（12 核 Cortex-A78AE、Ampere GPU 2048 CUDA/64 Tensor Core、64 GB 256-bit LPDDR5）；近边缘服务器：Xeon Gold 6230 + 96 GB + NVIDIA T4 16 GB；GPT-4o 作为云端精度参照（约 80% 正确率）。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "GPU 服务器计算侧时延最低，Jetson Orin 实测能耗最低；纯 CPU 在时延与能耗上均被支配。",
+              "Llama 3.2 F16 时延反而优于 7B 量化模型；Phi-2 量化版与 Llama 3.2 3B 量化版体积相当但后者精度与时延更好——参数量/文件大小不能预测实际表现。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "加入逐 token 流式传输开销的敏感性分析后，服务器 GPU 的时延优势缩小、端侧 GPU 推理更有竞争力。",
+              "单一 QA 负载、Ollama 单栈，未覆盖 TensorRT-LLM 等优化运行时。"
+            ]
+          },
+          {
+            "heading": "问题",
+            "points": [
+              "自托管 LLM 在边缘连续体（端-近边缘-云）上部署时，质量、延迟、模型体积与能耗之间缺乏受控的横向测量。",
+              "论文发表于 WIMS 2026（arXiv 2026-09-08），属于测量研究而非新硬件。"
+            ]
+          }
+        ],
+        "venue": "arXiv"
+      },
+      {
+        "date": "2026-09-02",
+        "vendor": "UW–Madison / Oak Ridge National Laboratory",
+        "category": "学术研究",
+        "title": "Compute-in-Memory Attention: A Time-Domain Analog Softmax Circuit with RC-Tunable Temperature",
+        "title_zh": "CIM注意力的时域模拟Softmax电路（22nm FDSOI）",
+        "url": "https://arxiv.org/abs/2609.04266",
+        "source_type": "论文",
+        "summary_zh": "在 GlobalFoundries 22 nm FDSOI 上设计 128 元素时域模拟 softmax，直接处理 CIM 输出的分数电压、无需中间 ADC：每个输入通过共享下降斜坡转为时间事件，比较器翻转时采样 RC 衰减参考得到指数权重，再做电路内归一化；温度由斜坡斜率与 RC 时间常数编程。后仿结果：242.97 ns、13.44 mW、25.5 pJ/输出元素。",
+        "whats_new_zh": [
+          "128 元素整体面积 9,453.42 μm²，单元 70.2 μm²",
+          "242.97 ns 评估时延、13.44 mW 总功耗、25.5 pJ/元素",
+          "相对理想 softmax RMSE 24.46 mV；接入 MemTorch Transformer 后验证损失在理想值 2.5% 以内"
+        ],
+        "key_specs": {
+          "process": "GlobalFoundries 22nm FDSOI",
+          "power": "13.44 mW（128 元素）",
+          "other": "晶体管级与后仿（含 PVT、Monte Carlo、互连寄生），未流片"
+        },
+        "edge_ai_impact_zh": "softmax 与 ADC 是模拟 CIM 注意力的能耗短板；时域方案为端侧 CIM 注意力引擎提供了可编程温度的模拟非线性单元参考。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2609.04266"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv（cs.AR）",
+        "affiliation": "University of Wisconsin–Madison、Oak Ridge National Laboratory",
+        "authors": "Ankur Singh, Ashish Gautam, Shruti R. Kulkarni et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "模拟 CIM 计算的注意力分数需先 ADC 才能做 softmax，指数与归一化在 CIM 加速器中开销大。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "共享斜坡把分数转为时间 → 采样 RC 衰减参考得到指数 → 电路内归一化；温度通过斜坡斜率与 RC 常数调节，不依赖亚阈值指数特性。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "22nm FDSOI，晶体管级与后仿，含多级输入、电容失配、PVT、Monte Carlo 与共享互连寄生。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "25.5 pJ/元素、242.97 ns；精度 RMSE 24.46 mV；模型级损失差距 <2.5%。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "仅仿真未流片；128 元素规模对长上下文需分块扩展。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "电路级工作，无 LLM 部署；Transformer 级评估基于 MemTorch 仿真。"
       }
+    ],
+    "takeaways_zh": [
+      "CPU 侧的 AI 加速（SME2）正在成为安卓旗舰的公共底座，但官方的“SLM +70%”属于相对口径。真正决定端侧大模型速度的，仍是 NPU 和内存。",
+      "国产自研 SoC 在“少搬字节”上做出了差异化：小米靠极低比特权重压缩（约 2.6 bit），华为靠 3D 堆叠扩大 NPU 面积，再配合 30B-A2B 这类低激活率 MoE。",
+      "“闪存存专家、NPU 分页执行”已经在骁龙实机上跑通（EStream）。手机能装下多大的模型，开始由 UFS 带宽和运行时设计决定，而不仅是 DRAM 容量。"
     ]
   }
 }

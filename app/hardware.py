@@ -68,6 +68,9 @@ def validate_hardware(payload: dict) -> dict:
     overview = payload.get("overview") or ""
     if not _chinese(overview):
         raise HardwareValidationError("overview 必须是可读中文")
+    takeaways = payload.get("takeaways_zh") or []
+    if not (isinstance(takeaways, list) and all(_chinese(x) for x in takeaways)):
+        raise HardwareValidationError("takeaways_zh 必须是中文字符串数组")
 
     items = payload.get("items")
     if not isinstance(items, list):
@@ -112,8 +115,25 @@ def validate_hardware(payload: dict) -> dict:
         confidence = item.get("confidence") or "high"
         if confidence not in CONFIDENCE:
             raise HardwareValidationError(f"{where}.confidence 非法：{confidence!r}")
+        capacity = item.get("model_capacity_zh") or ""
+        if capacity and not _chinese(capacity):
+            raise HardwareValidationError(f"{where}.model_capacity_zh 必须是可读中文")
+        deep = item.get("deep_dive_zh") or []
+        if not isinstance(deep, list) or not all(
+                isinstance(d, dict) and _chinese(d.get("heading"))
+                and isinstance(d.get("points"), list) and d["points"]
+                and all(isinstance(x, str) and x.strip() for x in d["points"])
+                for d in deep):
+            raise HardwareValidationError(
+                f"{where}.deep_dive_zh 必须是 [{{heading, points[]}}] 且标题为中文")
+        for key in ("venue", "affiliation", "authors"):
+            if key in item and not isinstance(item[key], str):
+                raise HardwareValidationError(f"{where}.{key} 必须是字符串")
+        if item["category"] == "学术研究" and not (item.get("venue") or "").strip():
+            raise HardwareValidationError(f"{where}.venue 学术研究条目必须注明发表处")
         out.append({
             **item,
+            "deep_dive_zh": deep,
             "whats_new_zh": whats_new,
             "key_specs": {k: v for k, v in specs.items() if v},
             "evidence_urls": evidence,
@@ -125,7 +145,7 @@ def validate_hardware(payload: dict) -> dict:
     out.sort(key=lambda x: (
         order[x["category"]], x["source_type"] != "官方", trust[x["confidence"]],
         -date.fromisoformat(x["date"]).toordinal()))
-    return {**payload, "items": out}
+    return {**payload, "takeaways_zh": takeaways, "items": out}
 
 
 def load_hardware(path: Path) -> dict:

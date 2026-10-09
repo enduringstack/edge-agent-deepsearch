@@ -65,6 +65,35 @@ class ValidateHardwareTest(unittest.TestCase):
                     hardware.validate_hardware(_payload(item))
                 self.assertIn(field, str(ctx.exception))
 
+    def test_accepts_deep_fields_and_takeaways(self):
+        payload = _payload(_item(
+            model_capacity_zh="官方口径：30B MoE（约 3B 激活），32K 上下文。",
+            deep_dive_zh=[{"heading": "NPU 微架构", "points": ["新增 Element Accelerator。"]}]))
+        payload["takeaways_zh"] = ["内存子系统成为竞争焦点。"]
+        out = hardware.validate_hardware(payload)
+        self.assertEqual(out["takeaways_zh"], ["内存子系统成为竞争焦点。"])
+        self.assertEqual(out["items"][0]["deep_dive_zh"][0]["heading"], "NPU 微架构")
+
+    def test_rejects_bad_deep_fields(self):
+        cases = {
+            "deep_dive_zh": _item(deep_dive_zh=[{"heading": "NPU", "points": ["x"]}]),
+            "model_capacity_zh": _item(model_capacity_zh="30B"),
+            "venue": _item(category="学术研究", source_type="论文"),
+        }
+        for field, item in cases.items():
+            with self.subTest(field=field):
+                with self.assertRaises(hardware.HardwareValidationError) as ctx:
+                    hardware.validate_hardware(_payload(item))
+                self.assertIn(field, str(ctx.exception))
+        bad = _payload()
+        bad["takeaways_zh"] = ["english"]
+        with self.assertRaises(hardware.HardwareValidationError):
+            hardware.validate_hardware(bad)
+
+    def test_page_renders_deep_fields(self):
+        for marker in ("能跑多大模型", "技术细节", "本周结论", "hw-takeaways", "item.venue"):
+            self.assertIn(marker, INDEX_HTML)
+
     def test_rejects_duplicate_urls(self):
         with self.assertRaises(hardware.HardwareValidationError):
             hardware.validate_hardware(_payload(_item(), _item()))

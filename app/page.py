@@ -206,6 +206,21 @@ INDEX_HTML = """<!doctype html>
     .hw-badge.official{border-color:var(--moss);color:var(--moss)}
     .hw-badge.low{border-color:var(--rust);color:var(--rust)}
     .hw-link{color:var(--hw);font-size:10.5px;text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--hw) 45%,transparent)}
+    .hw-capacity{margin:7px 0 4px;padding:7px 10px;background:var(--moss-soft);color:var(--ink);font-size:12px;line-height:1.6;border-left:3px solid var(--moss)}
+    .hw-capacity b{color:var(--moss);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:9.5px;margin-right:6px}
+    .hw-paper{margin:0 0 6px;color:var(--violet);font-size:11px}
+    .hw-paper b{background:var(--violet-soft);padding:1px 6px;margin-right:6px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:9.5px}
+    .hw-deep{margin-top:8px;border:1px solid var(--hair);background:var(--paper)}
+    .hw-deep summary{cursor:pointer;padding:6px 10px;color:var(--hw);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;font-weight:600}
+    .hw-deep summary:hover{background:var(--blue-soft)}
+    .hw-deep-body{padding:2px 12px 10px}
+    .hw-deep h4{margin:9px 0 3px;font-size:12px;color:var(--hw)}
+    .hw-deep ul{margin:0;padding-left:18px;font-size:12px;line-height:1.62;color:var(--ink)}
+    .hw-deep li{margin:2px 0}
+    .hw-takeaways{margin:14px 0 2px;padding:12px 14px;background:var(--panel);border:1px solid var(--rule);border-left:4px solid var(--hw)}
+    .hw-takeaways h3{margin:0 0 6px;font-size:14px;color:var(--hw)}
+    .hw-takeaways ol{margin:0;padding-left:20px;font-size:12.5px;line-height:1.7}
+    .hw-takeaways:empty{display:none}
     .hw-more{display:block;margin:12px auto 2px;border:1px solid var(--hw);background:transparent;color:var(--hw);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;padding:7px 15px;cursor:pointer}
     .hw-more:hover{background:var(--hw);color:var(--paper)}
 
@@ -328,6 +343,7 @@ INDEX_HTML = """<!doctype html>
       <div class="hw-overview" id="hw-overview"></div>
       <div class="hw-filter" id="hw-filter" aria-label="按硬件类别筛选"></div>
       <div class="hw-list" id="hw-list" aria-live="polite"><div class="empty">正在读取本周硬件动态…</div></div>
+      <div class="hw-takeaways" id="hw-takeaways"></div>
     </section>
 
     <section class="all-research" id="all-research">
@@ -801,7 +817,10 @@ INDEX_HTML = """<!doctype html>
       const news=(item.whats_new_zh||[]).map(x=>`<li>${escapeHtml(x)}</li>`).join("");
       const official=item.source_type==="官方";
       const evidence=(item.evidence_urls||[]).filter(u=>u!==item.url).slice(0,2).map((u,i)=>`<a class="hw-link" href="${escapeAttr(u)}" target="_blank" rel="noopener">佐证 ${i+1}</a>`).join("");
-      return `<article class="hw-item"><div class="hw-origin"><span class="hw-cat">${escapeHtml(item.category)}</span><span class="hw-vendor">${escapeHtml(item.vendor)}</span><time class="hw-date" datetime="${escapeAttr(item.date)}">${escapeHtml(item.date)}</time></div><div class="hw-main"><a class="hw-title" href="${escapeAttr(item.url)}" target="_blank" rel="noopener">${escapeHtml(item.title_zh)} ↗</a><div class="hw-original">${escapeHtml(item.title)}</div><p class="hw-summary">${escapeHtml(item.summary_zh)}</p>${news?`<ul class="hw-new">${news}</ul>`:''}${specs?`<div class="hw-specs">${specs}</div>`:''}</div><div class="hw-judgement"><p class="hw-why"><b>对端侧 AI 意味着什么</b>${escapeHtml(item.edge_ai_impact_zh)}</p><div class="hw-links"><span class="hw-badge ${official?'official':''}">${escapeHtml(item.source_type)}来源</span>${item.confidence==='low'?'<span class="hw-badge low">待进一步核实</span>':''}<a class="hw-link" href="${escapeAttr(item.url)}" target="_blank" rel="noopener">查看原文</a>${evidence}</div></div></article>`;
+      const paper=item.venue?`<div class="hw-paper"><b>${escapeHtml(item.venue)}</b>${escapeHtml([item.affiliation,item.authors].filter(Boolean).join(' · '))}</div>`:'';
+      const capacity=item.model_capacity_zh?`<div class="hw-capacity"><b>能跑多大模型</b>${escapeHtml(item.model_capacity_zh)}</div>`:'';
+      const deep=(item.deep_dive_zh||[]).length?`<details class="hw-deep"><summary>技术细节 · ${item.deep_dive_zh.length} 部分 ↓</summary><div class="hw-deep-body">${item.deep_dive_zh.map(d=>`<h4>${escapeHtml(d.heading)}</h4><ul>${(d.points||[]).map(x=>`<li>${escapeHtml(x)}</li>`).join("")}</ul>`).join("")}</div></details>`:'';
+      return `<article class="hw-item"><div class="hw-origin"><span class="hw-cat">${escapeHtml(item.category)}</span><span class="hw-vendor">${escapeHtml(item.vendor)}</span><time class="hw-date" datetime="${escapeAttr(item.date)}">${escapeHtml(item.date)}</time></div><div class="hw-main"><a class="hw-title" href="${escapeAttr(item.url)}" target="_blank" rel="noopener">${escapeHtml(item.title_zh)} ↗</a><div class="hw-original">${escapeHtml(item.title)}</div>${paper}<p class="hw-summary">${escapeHtml(item.summary_zh)}</p>${news?`<ul class="hw-new">${news}</ul>`:''}${capacity}${specs?`<div class="hw-specs">${specs}</div>`:''}${deep}</div><div class="hw-judgement"><p class="hw-why"><b>对端侧 AI 意味着什么</b>${escapeHtml(item.edge_ai_impact_zh)}</p><div class="hw-links"><span class="hw-badge ${official?'official':''}">${escapeHtml(item.source_type)}来源</span>${item.confidence==='low'?'<span class="hw-badge low">待进一步核实</span>':''}<a class="hw-link" href="${escapeAttr(item.url)}" target="_blank" rel="noopener">查看原文</a>${evidence}</div></div></article>`;
     }
     function renderHardware(){
       const cats=[...new Set(HW_CACHE.map(item=>item.category))];
@@ -818,6 +837,8 @@ INDEX_HTML = """<!doctype html>
       HW_CACHE=data.items||[];
       const ov=document.querySelector("#hw-overview");
       if(data.overview){ov.textContent=data.overview;}else{ov.hidden=true;}
+      const tk=data.takeaways_zh||[];
+      document.querySelector("#hw-takeaways").innerHTML=tk.length?`<h3>本周结论</h3><ol>${tk.map(x=>`<li>${escapeHtml(x)}</li>`).join("")}</ol>`:'';
       renderHardware();
     }
     document.querySelector("#hw-filter").addEventListener("click",event=>{
