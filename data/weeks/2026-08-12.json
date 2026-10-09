@@ -2549,5 +2549,809 @@
         "evidence_url": "https://www.raspberrypi.com/news/get-started-with-litert-on-raspberry-pi/"
       }
     ]
+  },
+  "hardware": {
+    "window": {
+      "start": "2026-08-12",
+      "end": "2026-08-18"
+    },
+    "items": [
+      {
+        "date": "2026-08-12",
+        "vendor": "Google",
+        "category": "移动SoC",
+        "title": "Google introduces Pixel 11, Pixel 11 Pro and Pixel 11 Pro XL (Tensor G6)",
+        "title_zh": "谷歌Tensor G6：TPU算力+50%",
+        "url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/",
+        "source_type": "官方",
+        "summary_zh": "谷歌8月12日随Pixel 11系列发布Tensor G6（早于本期窗口，作为背景收录）。官方称TPU算力提升50%，搭配最新Gemini Nano后端侧AI任务最高快3.5倍、能耗最多降为1/3.5；9to5Google报道其采用台积电3nm，而非此前传闻的2nm。",
+        "whats_new_zh": [
+          "TPU算力较G5 +50%（官方）",
+          "端侧AI任务最高快3.5倍、能耗最多降为1/3.5（官方，预量产机测试）",
+          "CPU网页浏览+25%、App启动+15%",
+          "Titan M3支持后量子密码安全启动"
+        ],
+        "key_specs": {
+          "process": "TSMC 3nm（媒体报道）",
+          "cpu": "未披露详细核心配置",
+          "npu": "第N代TPU，算力较G5 +50%（TOPS未披露）",
+          "memory": "未披露",
+          "other": "与DeepMind模型协同设计；Gemini Nano版本与参数量未披露"
+        },
+        "edge_ai_impact_zh": "谷歌继续不公布TOPS，只给“任务快多少、省多少能”的端到端口径，Gemini Nano的规模和上下文长度也不公开，开发者只能通过AICore/ML Kit等系统接口间接使用。",
+        "evidence_urls": [
+          "https://9to5google.com/2026/08/13/google-pixel-11-tensor-g6-chip-report/",
+          "https://www.androidauthority.com/google-tensor-g6-3695351/",
+          "https://xenospectrum.com/en/pixel-11-tensor-g6-tpu-compute-on-device-ai/",
+          "https://helentech.jp/news-tensor-g6-pixeltsmc-3nm-confirmed/"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "端云分工",
+            "points": [
+              "端侧：转写、部分翻译、诈骗检测、部分上下文处理；云端：跨App自动化、实时搜索、预订与云端Gemini模型（媒体整理）。"
+            ]
+          },
+          {
+            "heading": "TPU 与能效口径",
+            "points": [
+              "TPU 算力较 G5 +50%（官方），TOPS、MAC 阵列规模、支持精度均未披露；有媒体称为“第五代 TPU”，泄露代号 Santafe 未获官方确认。",
+              "“快3.5倍/省能3.5倍”是 Gemini Nano 端侧任务的端到端结果，而 TPU 峰值只 +50%，说明大部分增益来自模型/编译与内存通路协同设计（与 DeepMind 联合设计），而非单纯堆算力（本文判断）。",
+              "对比上代：G5 发布时口径为 TPU 较 Pixel 9 提升最高 60%、Recorder/Pixel Screenshots 快 2.6 倍、能效 2 倍；G5 的 60% 与 G6 的 50% 测量对象不同，不能连乘（xenospectrum 分析）。"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "官方博客未给内存带宽；个别媒体称“内存带宽翻倍”，仅单一来源，可信度低，本文不采用为定论。",
+              "Google 硬件副总裁向台湾 CNA 确认工艺为改良版 TSMC 3nm，而非传闻的 2nm（HelenTech 8 月 14 日转述）；同时称面对 DRAM 涨价，通过系统 UI、DRAM 使用方式与软硬件配置优化应对，暗示不会靠堆大内存跑更大端侧模型。"
+            ]
+          },
+          {
+            "heading": "CPU/ISP 与其他",
+            "points": [
+              "CPU：网页浏览 +25%、App 启动 +15%（对比 G5 发布时，预量产数据），核心配置与频率未披露。",
+              "ISP 升级使 Pro 机型 Night Sight 最快 4.5 倍，Pro Zoom 120x；Titan M3 支持后量子密码安全启动。",
+              "售价 Pixel 11 / Pro / Pro XL 起售 $899 / $1099 / $1299，8 月 20 日上架。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方只说运行“最新Gemini Nano”，版本、参数量、精度、上下文长度和tokens/s均未披露。端侧负责转写、部分翻译、诈骗检测等，跨App自动化、联网搜索和预订仍走云端（媒体）。"
+      },
+      {
+        "date": "2026-08-17",
+        "vendor": "Apple",
+        "category": "移动SoC",
+        "title": "iPhone 18 Pro and iPhone Ultra: New Details Leak as Apple Event Nears",
+        "title_zh": "爆料：A20 Pro 2nm，性能 +18%、能效 +30%",
+        "url": "https://www.macrumors.com/2026/08/17/iphone-18-pro-and-iphone-ultra-rumors/",
+        "source_type": "媒体",
+        "summary_zh": "【爆料】MacRumors 引述微博博主“定焦数码”（Fixed Focus Digital）：A20 Pro 是第一颗采用 TSMC 2nm 的 iPhone 芯片，比 A19 Pro 最高快 18%、能效最高提高 30%。8 月 7 日 AppleInsider 的汇总引述 Ice Universe，称 A20 Pro 的 Neural Engine 面积明显大于 A19 Pro。8 月 23 日 MacRumors 预告称，2nm 加上新封装将带来稳定的性能和能效提升。",
+        "whats_new_zh": [
+          "【爆料】A20 Pro 比 A19 Pro 性能最高 +18%、能效最高 +30%（定焦数码，经 MacRumors 转述；读者指出该博主有预测失误的记录）",
+          "【爆料】Ice Universe 称 A20 Pro 的 NE 区域明显变大（AppleInsider 8 月 7 日汇总；6 月 MacRumors 转述的主板图也有同样说法，图片真伪未证实）",
+          "【媒体预告】MacRumors 8 月 23 日：TSMC 第一代 2nm 加新封装设计；iPhone 18 Pro 预计搭载 C2 基带和 N2 无线芯片，改进细节未知",
+          "【背景】TrendForce 2026 年 1 月引述工商时报：A20 将从 InFO 封装改为 WMCM，TSMC 的 WMCM 产能到 2027 年可能翻倍以上；2 月称 TSMC 2nm 产能已被订满，主要客户是 Apple 和高通"
+        ],
+        "key_specs": {
+          "process": "TSMC N2（爆料，9 月发布后已证实）",
+          "cpu": "爆料 +18% 性能",
+          "gpu": "8 月未见可信数字",
+          "npu": "爆料：NE 面积明显变大",
+          "memory": "8 月未见可信数字",
+          "power": "爆料：能效 +30%",
+          "other": "WMCM 封装（供应链报道）；C2 基带 / N2 无线芯片"
+        },
+        "edge_ai_impact_zh": "8 月的爆料只说对了大方向：2nm、NE 变大、新封装。实际发布的“双 16 核 NE”和 96-bit 内存，在 8 月没有可靠来源提前给出。结合 8 月 25 日 M6 的“双 16 核 NE”，A20 Pro 的 NE 配置在 8 月底已可以推断。",
+        "evidence_urls": [
+          "https://www.macrumors.com/2026/08/23/iphone-18-pro-features-next-month/",
+          "https://appleinsider.com/articles/26/08/07/iphone-18-pro-rumor-roundup-2nm-a20-chip-c2-modem-under-display-face-id",
+          "https://www.trendforce.com/news/2026/01/20/news-tsmc-reportedly-expands-wmcm-packaging-for-apple-capacity-may-more-than-double-by-2027/",
+          "https://www.trendforce.com/news/2026/02/02/news-tsmc-2nm-reportedly-tight-amid-mobile-hpc-demand-nvidia-may-be-first-to-adopt-1-6nm-in-2028/"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "爆料可信度",
+            "points": [
+              "“+18% / +30%”与 TSMC 对 N2 相对 N3E 的官方口径（同功耗性能 +10–15%，同性能功耗 -25–30%）基本吻合，不排除是根据工艺口径推算出来的。",
+              "NE 变大的说法来自主板或芯片图的间接判读，没有核数或 TOPS。"
+            ]
+          },
+          {
+            "heading": "从 M6 反推 A20",
+            "points": [
+              "M6 是 Apple 第一颗 2nm 芯片，同时采用双 16 核 NE 和每核带 Neural Accelerator 的 GPU。按 Apple 惯例，同代 A/M 芯片共享 CPU、GPU、NE 的 IP，8 月 25 日之后 A20 Pro 采用双 NE 的可能性已经很高（推断，9 月发布后得到证实）。"
+            ]
+          },
+          {
+            "heading": "供应链",
+            "points": [
+              "WMCM 把 DRAM 从 SoC 上方移到旁边，DRAM 不再阻挡 SoC 散热，并且可以更灵活地加宽总线。这是 A20 Pro 持续性能提高的结构性原因。",
+              "8 月没有检索到新的一手 N2 / WMCM 供应链报道（DigiTimes、TrendForce 的相关报道集中在 2025 年 9 月到 2026 年 2 月）。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "8 月的爆料没有涉及内存容量和模型规模（未披露）。"
+      },
+      {
+        "date": "2026-08-14",
+        "vendor": "Qualcomm",
+        "category": "移动SoC",
+        "title": "Snapdragon 8 Elite Gen 6 Pro: Early AnTuTu Benchmark Explained (SM8975, 4,835,412 points)",
+        "title_zh": "爆料：SM8975 安兔兔 483.5 万分",
+        "url": "https://nokiamob.net/2026/08/14/snapdragon-8-elite-gen-6-pro-early-antutu-benchmark-explained/",
+        "source_type": "媒体",
+        "summary_zh": "【爆料】数码闲聊站在微博晒出 SM8975（当时传为 8 Elite Gen 6 Pro，后正式命名为 8 Elite Extreme Gen 6）的 AnTuTu V11.1.4 截图：总分 4,835,412，CPU 1,368,930，GPU（Adreno 850）1,854,826。安兔兔官方称后台查不到该成绩，无法独立核实。同期爆料提到 Pro 版加入 Matrix ALU 和“AI Frame Fusion”，这与 9 月官方公布的 Adreno 矩阵核心和 Neural Fusion 能对上。",
+        "whats_new_zh": [
+          "总分 4,835,412；对比 7 月榜首 iQOO 15 Ultra（8 Elite Gen 5，4,128,314）：总分 +17.1%，CPU +22.0%，GPU +21.3%（gazlog 计算）",
+          "对比 REDMAGIC 11S Pro+（4,416,758，安兔兔自测榜首）+9.5%；以“Gen 5 旗舰普遍超 450 万”为基线则约 +6%",
+          "传闻规格：2nm、2+3+3 八核；Pro 版为 Adreno 850 + 18MB GMEM + LPDDR6，标准版为 Adreno 845 + 12MB GMEM + LPDDR5X",
+          "Pro 版传闻加入 Matrix ALU 和 AI Frame Fusion（AI 超分/插帧）；NPU 规格未提及"
+        ],
+        "key_specs": {
+          "process": "2nm（传闻）",
+          "cpu": "8 核 2+3+3（传闻）",
+          "gpu": "Adreno 850，18MB GMEM（传闻）",
+          "npu": "未披露",
+          "memory": "LPDDR6（传闻，仅 Pro）",
+          "power": "未披露",
+          "other": "AnTuTu V11.1.4，成绩未进入安兔兔数据库"
+        },
+        "edge_ai_impact_zh": "这是第一次有爆料把“GPU 矩阵单元 + AI 插帧”和高通旗舰联系在一起，说明 2026 年旗舰会把 AI 算力从 NPU 扩展到 GPU。跑分本身反映不了 NPU 能力，参考价值有限。",
+        "evidence_urls": [
+          "https://gazlog.jp/entry/snapdragon8e-g6-pro-antutu-benchmark-leak/"
+        ],
+        "confidence": "low",
+        "deep_dive_zh": [
+          {
+            "heading": "GPU 与 AI 图形",
+            "points": [
+              "GPU 子项 1,854,826，比 Gen 5 榜首高 21.3%，与 9 月官方“Adreno 首次加入 AI 矩阵核心”的方向一致",
+              "爆料中的“Matrix ALU + AI Frame Fusion”在 9 月落地为 Neural Fusion 超分和插帧，矩阵核心数量和 TFLOPS 至今未披露",
+              "传闻 GMEM 分档为 18MB 对 12MB，后来官方简介写的是 18MB HPM；标准版的 GMEM 比上代还少"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "传闻只有 Pro 版支持 LPDDR6，标准版仍用 LPDDR5X。9 月官方口径为 LPDDR6 127.2GB/s 对 LPDDR5X 84.8GB/s（ServeTheHome）",
+              "对端侧 LLM 来说，decode 速度主要受内存带宽限制，按两档带宽之比推算约 1.5 倍（本文推算，非实测）"
+            ]
+          },
+          {
+            "heading": "可信度",
+            "points": [
+              "安兔兔官方称后台无法检索该成绩；测试设备、温度和功耗条件都不清楚",
+              "比较基线不同，提升幅度从 6% 到 17% 不等，不宜直接引用"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露（这是跑分爆料，不含任何 NPU、LLM 指标）。"
+      },
+      {
+        "date": "2026-08-18",
+        "vendor": "KU Leuven / TU Delft",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "ETHEREAL: A 25.6-μs/inf. Low-latency Event-driven Graph-neural-network Processor for High-resolution Vision at the Edge",
+        "title_zh": "ETHEREAL：事件相机 GNN 处理器",
+        "url": "https://arxiv.org/abs/2608.17787",
+        "source_type": "论文",
+        "summary_zh": "首颗事件驱动 GNN（EV-GNN）处理器芯片，为 DVS 事件相机设计：邻居并行的样条卷积引擎 + 分离 2D/3D 内存层级与时空事件缓存。实测在 DAGr-GNN、VGA（640×480）DSEC 数据集上每事件端到端推理 25.6 µs、1.6 µJ。同一工作以海报形式出现在 Hot Chips 2026（海报标题称 17 µs 延迟）。",
+        "whats_new_zh": [
+          "首颗 EV-GNN 处理器（论文口径）",
+          "VGA DSEC 上 25.6 µs / 1.6 µJ 每事件推理（实测）",
+          "Hot Chips 2026 海报标题口径为 17 µs 延迟"
+        ],
+        "key_specs": {
+          "other": "邻居并行样条卷积引擎；2D/3D 分离内存层级"
+        },
+        "edge_ai_impact_zh": "亚毫秒视觉延迟靠事件传感器 + 专用稀疏处理器实现，适合无人机/机器人避障等常开感知。",
+        "evidence_urls": [
+          "https://hc2026.hotchips.org/program/"
+        ],
+        "confidence": "high",
+        "venue": "Hot Chips 2026 海报 / 投稿 IEEE JSSC",
+        "affiliation": "KU Leuven, TU Delft",
+        "authors": "Adrian Kneip, Martin Lefebvre, Daniel Gehrig et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "要点",
+            "points": [
+              "EV-GNN 同时需要稠密规则计算与稀疏不规则访存，此前无专用硬件。",
+              "论文已投 IEEE JSSC；海报与论文延迟数字不同（17 µs vs 25.6 µs），可能对应不同工作负载或测量口径。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-08-14",
+        "vendor": "谦合益邦",
+        "category": "存内计算/PIM",
+        "title": "谦合益邦完成超20亿元B轮融资",
+        "title_zh": "谦合益邦B轮融资超20亿，4层3D DRAM存算芯片点亮",
+        "url": "https://news.pedaily.cn/202608/567713.shtml",
+        "source_type": "媒体",
+        "summary_zh": "网易孵化、2024年1月成立的3D存算一体芯片公司谦合益邦完成超20亿元B轮融资，国调基金、中国移动链长基金等13家机构参与。媒体同期报道其4层3D DRAM堆叠存算一体芯片回片点亮，公司称Hetrinat架构访存带宽较传统方案提升一个数量级（厂商口径）。",
+        "whats_new_zh": [
+          "B轮融资超20亿元人民币，13家投资方",
+          "DRAM堆叠层数迭代：1层→2层→4层，2026年点亮“首款四层3D DRAM堆叠云端高性能计算芯片”（公司口径）",
+          "Hetrinat三维集成原生架构，称访存带宽提升一个数量级（未给绝对值）",
+          "应用：云游戏加速、加密算力、大模型（对接中国移动九天）"
+        ],
+        "key_specs": {
+          "process": "未披露",
+          "memory": "4层3D DRAM堆叠（逻辑+DRAM混合键合，细节未披露）",
+          "power": "未披露"
+        },
+        "edge_ai_impact_zh": "定位云端，但与小米O100、d-Matrix Raptor同属“逻辑die直接键合DRAM”的3D近存路线，说明国内资本开始押注绕开HBM的带宽方案。",
+        "evidence_urls": [
+          "https://tech.ifeng.com/c/8wR69sbfst0",
+          "https://c.m.163.com/news/a/L5O57VBA0511DPVD.html"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "技术路线",
+            "points": [
+              "逻辑die与多层DRAM垂直集成（3D Native），以垂直互联取代2.5D HBM的横向PHY；层数从1→2→4。",
+              "带宽“提升一个数量级”无基准定义，属厂商宣传口径。"
+            ]
+          },
+          {
+            "heading": "资本信号",
+            "points": [
+              "8月中旬同期还有皓泽科技发布端侧VVT300 SoC（计划年内量产），国内存算/近存赛道融资与产品同步升温（AI科技评论9月1日综述）。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露（容量、带宽、算力、可跑模型均无公开数字）。"
+      },
+      {
+        "date": "2026-08-18",
+        "vendor": "TrendForce",
+        "category": "存储与内存",
+        "title": "Combined Revenue of Top Five NAND Flash Brands Rises 77% QoQ in 2Q26; Micron Moves Up to Third Place",
+        "title_zh": "2Q26前五大NAND营收环比+77%",
+        "url": "https://www.trendforce.com/presscenter/news/20260818-13186.html",
+        "source_type": "媒体",
+        "summary_zh": "TrendForce：2Q26前五大NAND品牌营收合计688.7亿美元，环比+77%，由AI服务器企业级SSD需求和合约价上涨驱动；美光升至第三。3Q26手机与PC需求因BOM成本推高终端售价而保持疲弱，原厂capex优先DRAM/HBM，NAND新增产能有限。",
+        "whats_new_zh": [
+          "前五合计688.7亿美元，+77% QoQ",
+          "三星约230.6亿（+70.7%，份额29.3%）；SK海力士集团>142.7亿（+89.5%）",
+          "美光118.5亿（+99.2%）升至第三；铠侠约107.2亿（+79.9%）；闪迪约89.7亿（+50.7%）",
+          "3Q26：手机/PC需求疲弱，企业级SSD强劲；3Q26 NAND合约价预计+10–15%（7月口径）"
+        ],
+        "key_specs": {
+          "memory": "NAND Flash（eSSD为主要驱动）"
+        },
+        "edge_ai_impact_zh": "UFS/端侧闪存成本同步上行，而端侧MoE“专家放闪存”方案恰恰需要更大的UFS容量，内存与存储双涨价会抑制2027年中端机的端侧大模型配置。",
+        "evidence_urls": [
+          "https://evertiq.com/news/2026-08-18-top-five-nand-flash-brands-post-77-revenue-surge-in-q2",
+          "https://iconnect007.com/article/150656/ai-server-demand-keeps-memory-prices-up-in-3q26-but-gains-moderate/150653/ein"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "结构",
+            "points": [
+              "增长来自价格而非位元：AI服务器eSSD拉动，原厂capex向DRAM/HBM倾斜，NAND扩产有限。",
+              "闪迪位元出货偏保守，营收增幅最低（+50.7%）。"
+            ]
+          },
+          {
+            "heading": "端侧影响",
+            "points": [
+              "报告未提UFS/客户端SSD；但“BOM推高终端售价→手机/PC需求弱”已被列为3Q26主要风险。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-08-12",
+        "vendor": "爱芯元智（Axera）",
+        "category": "车载/机器人",
+        "title": "爱芯元智2026年中期业绩：收入4.02亿元，同比增长181.8%",
+        "title_zh": "爱芯元智中报：营收+182%，研发+81%",
+        "url": "https://m.rccaijing.com/news-7493186720872724302.html",
+        "source_type": "媒体",
+        "summary_zh": "港股上市（2026年2月10日）后首份中报：上半年收入4.02亿元，同比+181.8%；归母亏损5.82亿元（去年同期5.36亿）。智能汽车与边缘AI推理等新兴业务收入占比由11.3%升至14.1%；研发开支5.16亿元，同比+81%，主要用于智驾与边缘AI多款先进工艺SoC流片。",
+        "whats_new_zh": [
+          "H1收入4.02亿元，+181.8%；归母亏损5.82亿元",
+          "新兴业务（智能汽车+边缘AI推理）占比11.3%→14.1%",
+          "研发5.16亿元（去年2.85亿），+81%，用于先进工艺SoC流片",
+          "毛利率提升9.0个百分点至29.0%（券商/媒体口径）",
+          "背景：M97 2月回片、H1交付工程样片；M95 7月回片；元曦A系列推理卡>1000 TOPS（WAIC，券商口径）"
+        ],
+        "key_specs": {
+          "npu": "M97：720 TOPS、等效460GB/s（9月口径）；元曦A系列>1000 TOPS（券商口径）",
+          "other": "已合作主机厂品牌25个（截至6月底，券商口径）"
+        },
+        "edge_ai_impact_zh": "收入主体仍是视觉/IoT类低毛利SoC，新兴的智驾与边缘推理卡只占14%；研发投入大于收入，说明国产边缘大模型推理芯片仍处于“流片换份额”阶段。",
+        "evidence_urls": [
+          "https://m.gelonghui.com/news/5285293",
+          "https://m.gelonghui.com/news/5279657"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "财务结构",
+            "points": [
+              "收入4.02亿元、研发5.16亿元，研发/收入>1.28；亏损扩大约4,600万元。",
+              "毛利率+9.0pct至29.0%，来自高毛利新兴业务占比提升与规模效应（券商口径）。"
+            ]
+          },
+          {
+            "heading": "产品节奏",
+            "points": [
+              "M57已装车量产并获海内外定点；M97于北京车展亮相，2026年2月回片；M95于7月回片。",
+              "WAIC 2026推出元曦AI推理卡，提出“边缘算力即生产力”。"
+            ]
+          },
+          {
+            "heading": "判断",
+            "points": [
+              "“等效460GB/s”的定义（压缩/缓存/片上SRAM折算）仍未公开，这是判断M97能否跑7–8B VLA骨干的关键。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "中报本身未披露模型规模。产品口径：M97面向高阶智驾/VLA（9月分析：720 TOPS、等效460GB/s）；元曦推理卡面向边缘大模型推理，具体可跑参数量与tokens/s未披露。"
+      },
+      {
+        "date": "2026-08-18",
+        "vendor": "Qualcomm (Modular)",
+        "category": "软件栈/工具链",
+        "title": "Modular open-sources Mojo three weeks after Qualcomm acquisition",
+        "title_zh": "高通旗下 Modular 开源 Mojo 编译器",
+        "url": "https://runtimewire.com/article/chris-lattner-open-sources-mojo-qualcomm-modular",
+        "source_type": "媒体",
+        "summary_zh": "高通 7 月 29 日完成对 Modular 的收购。Mojo 于 8 月 11 日发布 1.0，8 月 18 日以 Apache 2.0 开源语言、编译器和工具链。MAX 推理框架不在开源范围内，但将改为 source-available 并取消设备使用限制。新硬件集成包括 AWS Trainium、Google TPU、Qualcomm Cloud AI 100 Ultra 和 Dragonfly，未提及 Hexagon NPU。",
+        "whats_new_zh": [
+          "Mojo 1.0：8 月 11 日；开源：8 月 18 日（Apache 2.0）",
+          "收购完成：2026 年 7 月 29 日（金额未在该文披露，其他媒体称约 31 亿至 39 亿美元股票对价）",
+          "新增后端：Trainium、TPU、Qualcomm Cloud AI 100 Ultra、Qualcomm Dragonfly，计划“未来数月”进入生产",
+          "Modular 自称新硬件接入的工程量降低 10 倍以上（厂商口径，未经独立验证）"
+        ],
+        "key_specs": {
+          "gpu": "NVIDIA/AMD/Apple GPU",
+          "npu": "未提及 Hexagon",
+          "other": "MAX 改为 source-available"
+        },
+        "edge_ai_impact_zh": "目前主要面向数据中心。Hexagon 端侧 NPU 是否会成为 Mojo/MAX 的目标后端尚未公布，值得持续关注：如果打通，高通端到云会形成统一的 kernel 编写语言。",
+        "evidence_urls": [],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "软件栈定位",
+            "points": [
+              "Mojo 面向 kernel 编写（Python 语法 + MLIR），MAX 负责推理与服务；高通的 Cloud AI 100 Ultra 和 Dragonfly 被列为新后端",
+              "端侧目前仍是 QAIRT / Genie / GenieX 体系；Mojo 与 Hexagon 的关系未披露"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-08-17",
+        "vendor": "Apple",
+        "category": "软件栈/工具链",
+        "title": "iOS 27 beta 6 now available as Apple tests major Siri AI upgrade",
+        "title_zh": "iOS 27 beta 5/6：Siri AI 测试进入收尾",
+        "url": "https://9to5mac.com/2026/08/17/ios-27-beta-6/",
+        "source_type": "媒体",
+        "summary_zh": "Apple 8 月 10 日发布 iOS 27 beta 5，8 月 17 日发布 beta 6（build 24A5418b），这是本周期第一次只隔一周就发下一个 beta。beta 5 重启了 Siri AI 的索引，Siri 增强语音新增英式英语；beta 6 以稳定性为主。Siri AI 基于新一代 Apple Foundation Models，部分在端侧运行，部分在 Private Cloud Compute 运行。",
+        "whats_new_zh": [
+          "beta 5（8 月 10 日）：Siri AI 的索引重新开始；Siri 增强语音支持英式英语；“Ask Siri”从 App 图标长按菜单中移除",
+          "beta 6（8 月 17 日，24A5418b，上一版为 24A5408d）：以修复和打磨为主；Camera App 新增 Siri 模式，Visual Intelligence 并入 Siri",
+          "Siri AI 支持对话、个人上下文、屏幕感知和 App 内深度操作，并有独立的 Siri App；Apple Intelligence 需要较新的硬件（具体机型未在 beta 说明中列出）",
+          "macOS 27 同步发布 beta 6；Mac 新闻稿写明 Siri AI 将随 macOS 27 以 beta 形式推出，首发只支持英语"
+        ],
+        "key_specs": {
+          "other": "AFM 3（端侧 3B Core / 20B 稀疏 Core Advanced + PCC Cloud）；具体哪些功能在端侧运行未披露"
+        },
+        "edge_ai_impact_zh": "beta 5 重建索引说明 Siri AI 的个人上下文依赖端侧语义索引。这是一种常驻后台的嵌入和检索负载，对 NE 的低功耗持续算力和存储 I/O 都有要求。",
+        "evidence_urls": [
+          "https://9to5mac.com/2026/08/17/heres-whats-new-with-ios-27-beta-6/",
+          "https://9to5mac.com/2026/08/10/heres-whats-new-with-ios-27-beta-5/",
+          "https://macdailynews.com/2026/08/17/whats-new-in-ios-27-beta-6/",
+          "https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "端云分工",
+            "points": [
+              "9to5Mac 只说部分能力在端侧、部分走 PCC，没有给出功能级别的划分。",
+              "Siri AI 设备门槛与 Apple Intelligence 一致（需要较新的硬件）。9 月正式版文档列出 iPhone 15 Pro 及以上（9 月内容，不在本月展开）。"
+            ]
+          },
+          {
+            "heading": "索引负载",
+            "points": [
+              "“Indexing for Siri AI continues anew”说明 beta 5 修改了语义索引的格式或模型，需要重新向量化。这是端侧 embedding 模型的批量离线任务，通常在充电和空闲时执行。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "beta 说明没有披露模型规模。背景（AFM 3 技术博客，6 月）：端侧 AFM 3 Core 为 3B 稠密；Core Advanced 约 20B 总参、激活 1–4B，路由专家从 NAND 按需载入；Cloud 版在 PCC 上运行，规模未披露。"
+      },
+      {
+        "date": "2026-08-17",
+        "vendor": "UC Berkeley / UT Austin 等",
+        "category": "学术研究",
+        "title": "FreeToken: Efficient Edge-Native MoE Serving with Bandwidth-Adaptive Execution",
+        "title_zh": "FreeToken：面向个人电脑的带宽自适应MoE推理",
+        "url": "https://arxiv.org/abs/2608.16157",
+        "source_type": "论文",
+        "summary_zh": "FreeToken 把个人电脑（游戏台式机、笔记本、工作站）视为统一的弹性推理平台，围绕“agent 负载不断变化”和“各机器 GPU/CPU/内存/互联配比不同”两点，协同设计模型布局与加载、专家驻留、CPU–GPU 协同执行、agent 状态复用与运行时内存管理。在 RTX 5090 上 Qwen3.6-35B-A3B 达到 77–83 tok/s、DeepSeek-V4-Flash（284B）22–25 tok/s，是最强基线的 1.5–2.3×；8 GB 的 RTX 4060 笔记本跑 Qwen3.6-35B（NVFP4）39.3 tok/s，单张 RTX PRO 6000（96 GB）跑 753B 的 GLM-5.2 达 14.9 tok/s。",
+        "whats_new_zh": [
+          "RTX 5090 解码：Qwen3.6-35B-A3B 77–83 tok/s，DeepSeek-V4-Flash 22–25 tok/s，分别为最强基线的 1.8–2.3× 与 1.5–1.9×",
+          "RTX 4060 Laptop（8 GB）用 NVFP4 跑 Qwen3.6-35B-A3B 39.3 tok/s，达到 RTX 4090 速率的 92%",
+          "单张 RTX PRO 6000 Blackwell（96 GB）跑 GLM-5.2（753B-A40B，NVFP4）14.9 tok/s，llama.cpp 为 7.3",
+          "首 token 最差情形 <44 s，而 llama.cpp / Ollama / KTransformers 分别出现 232 s / 179 s / 946 s 的尾部停顿",
+          "RTX 5090 容量下全局 LRU 解码期专家 miss 率 16%（Qwen3.6）与 39%（DSV4-Flash），对比 KTransformers 41%/59%、llama.cpp 62%/89%"
+        ],
+        "key_specs": {
+          "process": "未涉及",
+          "cpu": "台式机 16 核、笔记本 14 核等（双通道 DDR5 实测 47.5–53.8 GB/s）",
+          "gpu": "RTX 4060 Laptop 8 GB / RTX 3090、4090 24 GB / RTX 5090 32 GB / RTX PRO 6000 96 GB",
+          "npu": "未使用",
+          "memory": "专家池放主机 DRAM，PCIe 5.0 x16 实际约 52.7 GB/s；DSV4-Flash FP4 专家池约 140 GB",
+          "power": "未披露",
+          "other": "支持 20+ MoE 模型；真实 agent 负载（OpenCode、Claude Code、OpenClaw）"
+        },
+        "edge_ai_impact_zh": "这是“个人电脑跑前沿 MoE”方向最完整的系统工作之一：把 CPU 内存带宽、PCIe 带宽与 GPU 显存当作需在线平衡的资源，而不是固定卸载策略。对 AI PC/端侧工作站而言，说明决定上限的是主机 DRAM 通道数与 PCIe 带宽，而非 GPU 算力。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2608.16157",
+          "https://github.com/FlashML-org/FreeToken"
+        ],
+        "confidence": "high",
+        "venue": "arXiv（cs.DC）",
+        "affiliation": "UC Berkeley、UT Austin 等（通讯作者 Shuo Yang @Berkeley、Chenfeng Xu @UT Austin；作者含 Kurt Keutzer、Song Han、Matei Zaharia、Ion Stoica）",
+        "authors": "Shuo Yang, Xiaoze Fan, Melissa Pan et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "前沿开源 MoE（如 DeepSeek-V4-Flash 284B、每 token 激活约 13B）的激活参数能放进 32 GB 显卡，但完整专家池放不下，冷专家只能放主机内存或 SSD。",
+              "现有系统（llama.cpp、KTransformers、Ollama）在加载时就固定专家位置；而 agent 负载每轮都会改写上下文（删工具输出、去掉 thinking 段），使 KV 检查点失效、执行模式不停变化。",
+              "消费级平台只有双通道 DRAM（DDR5 约 80–90 GB/s 峰值），远低于显卡显存带宽，固定的“传过去算”或“在 CPU 上算”都会让一方资源闲置。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "带宽自适应执行：持续把计算与模型状态映射到当前实际可用的 GPU、CPU、内存与互联资源上，而非固定卸载策略。",
+              "预填充采用全层双缓冲流水加载，让专家计算完全隐藏在 PCIe 传输之后；解码期用全局 per-miss LRU 管理专家缓存。",
+              "agent 状态复用与运行时内存管理，应对多轮 agent 对上下文的修改。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "五台消费级机器（RTX 3090/4090、RTX 5090 台式机与服务器、RTX 4060 笔记本）+ 一台 RTX PRO 6000 Blackwell 96 GB 工作站。",
+              "模型：Qwen3.6-35B-A3B（BF16/NVFP4）、DeepSeek-V4-Flash（MXFP4）、GLM-5.2（NVFP4）；负载：AIME、OpenCode+SWE、Claude Code+SWE、OpenClaw 邮件/日历。",
+              "基线：llama.cpp、Ollama、KTransformers、MoE-Infinity。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "RTX 5090：Qwen3.6 77–83 tok/s、DSV4-Flash 22–25 tok/s，且多轮 agent 负载下速率保持在单轮的 12% 以内；KTransformers 在 DSV4 上到第二类负载就丢了 31%。",
+              "预填充：8,192 token 分块耗时 1.19–1.22 s，即以 52.7 GB/s 流过 64.4 GB 专家池一次的时间；关闭双缓冲会损失 19–26% 吞吐。",
+              "跨硬件：领先最强基线 1.3×（3090/4090）、1.9–2.1×（5090）、1.8×（4060 笔记本）；换到双通道台式机只损失 4%，llama.cpp 则只剩 80%。",
+              "GLM-5.2 753B 在单张 RTX PRO 6000 上 14.9 tok/s（llama.cpp 7.3），KTransformers 需 753 GB–1.5 TB 内存无法运行。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "把“端侧 MoE 推理”扩展到 agent 负载与尾时延，指出单流基准会高估基线在 agent 场景的表现。",
+              "面向带独立显卡的 PC/工作站，与手机/统一内存 SoC 的约束不同；未报告功耗与能效。",
+              "部分评估用租用服务器模拟主机带宽（作者用两台真实机器做了校验）。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "实机：RTX 4060 Laptop 8 GB → Qwen3.6-35B-A3B（NVFP4）39.3 tok/s；RTX 5090 32 GB → Qwen3.6-35B-A3B（BF16）77–83 tok/s、DeepSeek-V4-Flash 284B（MXFP4，激活约 13B）22–25 tok/s；RTX PRO 6000 96 GB → GLM-5.2 753B-A40B（NVFP4，433 GB checkpoint）14.9 tok/s。预填充在 RTX 5090 上 16k token 时达 6.7k tok/s。能耗未披露。"
+      },
+      {
+        "date": "2026-08-15",
+        "vendor": "北京大学",
+        "category": "学术研究",
+        "title": "S2-MoE: Enabling Efficient Self-Speculative Decoding for Mixture-of-Experts on Edge Devices",
+        "title_zh": "S2-MoE：边缘设备上MoE的自投机解码",
+        "url": "https://arxiv.org/abs/2608.15018",
+        "source_type": "论文",
+        "summary_zh": "投机解码与 MoE 直接叠加在边缘设备上往往变慢：验证多个 draft token 会激活更多专家，在内存受限、batch=1 的场景下验证成本高、专家复用差。S2-MoE 用路由感知的自适应投机扩展、复用感知的专家门控和共享上下文对齐三项设计，在 llama.cpp 中实现，在 Jetson Orin 上相对标准自回归解码提速 1.3–5.3×（平均约 2.0×），RTX 4090 上 1.2–2.9×，无需训练。",
+        "whats_new_zh": [
+          "Jetson Orin 上 1.3–5.3× 加速，RTX 4090 上 1.2–2.9×（对标准自回归解码）",
+          "Jetson Orin NX 16 GB 上 GPT-OSS-120B 从 0.95–1.00 tok/s 提到 1.44–2.45 tok/s；OLMoE 在 HumanEval 上从 2.30 到 12.08 tok/s（5.25×）",
+          "Jetson AGX Orin 32 GB 上 OLMoE 从约 31.3 tok/s 提到 74.32 tok/s（HumanEval）",
+          "完整实现进 llama.cpp 并加入专家级卸载（超出内存的专家放 SSD），代码开源"
+        ],
+        "key_specs": {
+          "process": "未涉及",
+          "cpu": "Jetson Orin 的 Arm CPU（未细分）",
+          "gpu": "Jetson Orin NX 16GB / AGX Orin 32GB、64GB 的 Ampere iGPU；RTX 4090",
+          "npu": "未使用",
+          "memory": "Jetson 统一内存 16/32/64 GB，超出部分专家卸载到 SSD；RTX 4090 冷专家卸载到 CPU 内存",
+          "power": "未披露",
+          "other": "llama.cpp 实现，基线含 EAGLE-3、Cascade、层跳过自投机（LS）"
+        },
+        "edge_ai_impact_zh": "首次系统地说明在 batch=1 的端侧场景中“投机解码 + MoE”要按专家级验证成本来控制，而不是按 token 置信度；在 16 GB Jetson 上把 120B 级 MoE 从约 1 tok/s 提到约 2 tok/s，对端侧大 MoE 解码有直接参考价值。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2608.15018",
+          "https://github.com/angerybob/S2-MoE"
+        ],
+        "confidence": "high",
+        "venue": "arXiv（cs.AI）",
+        "affiliation": "北京大学人工智能研究院、集成电路学院、信息科学技术学院",
+        "authors": "Haochen Huang, Shengxuan Qiu, Meng Li",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "边缘推理 batch 通常只有 1–2，验证阶段仍是 memory-bound；MoE 中相邻 token 走不同专家，验证多个 draft token 会把更多专家拉进内存。",
+              "论文分析 DeepSeekMoE 的验证成本发现大量冗余专家激活，且 token 级置信度（如 EAGLE-3 的扩展/剪枝）不能反映专家级验证成本。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "Routing-aware adaptive speculative expansion：同时考虑接受概率与边际验证成本（新增专家数），优先扩展“接受/验证比”高的候选。",
+              "Reuse-aware expert gating：在验证时偏向复用已加载专家，提高参数复用。",
+              "Context-aligned self-speculation：draft 与 target 共享上下文，提升 draft 质量与接受长度；draft 为同一模型的稀疏化版本，无需另训小模型。",
+              "在 llama.cpp 中补上专家级卸载：非专家与共享参数常驻，单个专家按需取，内存允许时按离线 profiling 常驻热专家。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "平台：Jetson Orin NX 16 GB、Jetson AGX Orin 32 GB/64 GB（超出内存的专家卸到 SSD），以及 RTX 4090（冷专家卸到 CPU 内存）。",
+              "模型：DeepSeek-V2-Lite-Chat、OLMoE-1B-7B、Qwen3-30B-A3B、GPT-OSS-120B；任务含 GSM8K、HumanEval、ARC、GPQA-Diamond、AIME24/25、HMMT 及 LongBench。",
+              "基线：标准自回归、EAGLE-3（公开 checkpoint）、Cascade、层跳过自投机（LS）。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "Jetson Orin 上 1.3–5.3× 加速，平均约 2.0×；RTX 4090 上 1.2–2.9×。",
+              "Orin NX 16 GB：OLMoE HumanEval 2.30→12.08 tok/s（5.25×，接受长度 7.00）；GPT-OSS-120B 0.95→1.65 tok/s（1.74×），QA 任务 0.97→2.45 tok/s（2.53×）。",
+              "朴素自投机基线在紧内存下常常比自回归还慢（如 Orin NX 上 ES 在 GPT-OSS HumanEval 只有 0.40×）。",
+              "任务精度差异小且无系统性偏差，LongBench 分数与原模型相当。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "把“验证成本 = 专家搬运量”这一端侧特有约束纳入投机策略，是 MoE 投机解码走向端侧的关键一步。",
+              "结果基于 Jetson iGPU 与桌面 GPU，没有手机 NPU 实测；未报告能耗/功耗。",
+              "大模型绝对速度仍低：16 GB Orin NX 上 GPT-OSS-120B 约 1.4–2.5 tok/s，离交互可用仍有距离。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "实机：Jetson Orin NX 16 GB、Jetson AGX Orin 32/64 GB、RTX 4090。模型：DeepSeek-V2-Lite-Chat、OLMoE-1B-7B、Qwen3-30B-A3B、GPT-OSS-120B（附录原始数据）。例：Orin NX 16 GB 上 GPT-OSS-120B 自回归约 0.95–1.00 tok/s → S2-MoE 1.44–2.45 tok/s；Qwen3-30B-A3B 0.41–0.50 → 1.01–1.31 tok/s；OLMoE 2.1–2.3 → 3.75–12.08 tok/s。AGX Orin 64 GB 上 DeepSeek-V2-Lite 16.17 → 26.62 tok/s。量化格式与能耗未在摘要披露。"
+      },
+      {
+        "date": "2026-08-12",
+        "vendor": "学术（APEX 团队）",
+        "category": "学术研究",
+        "title": "APEX: Adaptive Expert Prefetching for Memory-Efficient Edge MoE Inference",
+        "title_zh": "APEX：端侧 MoE 自适应专家预取",
+        "url": "https://arxiv.org/abs/2608.11688",
+        "source_type": "论文",
+        "summary_zh": "端侧 MoE 的专家参数常驻片外内存，专家加载落在关键路径。APEX 在 attention 之前用轻量预取路由器预测候选专家，并以学习到的置信度动态多取专家，重叠准确率 >99%。精确模式 per-token 延迟最多 −26%、EDP 最多 −41%；免停顿模式进一步提效且精度影响可忽略。",
+        "whats_new_zh": [
+          "预取路由器在 attention 前预测专家，重叠准确率 >99%",
+          "精确模式：延迟最多 −26%，EDP 最多 −41%",
+          "免停顿模式：只用已到达专家计算，精度损失可忽略"
+        ],
+        "key_specs": {},
+        "edge_ai_impact_zh": "与 MICRO'26 EdgeXpert 一起，说明端侧 MoE 的核心是“专家搬运”而非计算；APEX 是纯调度方案，可直接落到现有手机 SoC 的运行时。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2608.11688"
+        ],
+        "confidence": "high",
+        "venue": "ESWEEK 2026（CODES+ISSS，IEEE TCAD）",
+        "affiliation": "未在 arXiv 摘要中列出（作者含 Umit Y. Ogras）",
+        "authors": "Alish Kanani, Layan Badawi, Umit Y. Ogras",
+        "deep_dive_zh": [
+          {
+            "heading": "要点",
+            "points": [
+              "固定 top-k 预取命中率不足，置信度驱动的自适应预取把专家加载与有用计算重叠。",
+              "两种模式权衡精确路由语义与零停顿。"
+            ]
+          },
+          {
+            "heading": "问题",
+            "points": [
+              "边缘 MoE 的专家参数放不进片上内存，只能放片外 LPDDR，专家加载进入关键路径：Granite-3.1-3B-A800M 单 token 生成中专家加载占 43% 时延、29% 能耗（1024 上下文）。",
+              "固定 top-k 预取无法适应层间与 token 间差异：k 小则难 token 频繁 miss，k 大则在容易 token 上浪费搬运能耗，甚至让预取流量超出 attention 窗口、成为新瓶颈。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "在 attention 之前放一个与原 router 同构的轻量 prefetch router，提前给出专家排序，DMA 在 attention 期间搬运。",
+              "用 logistic CDF 置信度模型为每个 token、每层选“满足覆盖约束的最小额外预取数”，而不是固定 k。",
+              "两种执行模式：correctness-preserving（缺失专家照常补取，路由语义不变）与 stall-free（用已预取集合里路由分数最高的专家替代缺失者，精度影响可忽略）。",
+              "prefetch router 训练只需约 10 分钟（Granite-1B）到 1 小时（Phi-7B/DeepSeek-16B）。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "目标平台：计算 chiplet + I/O/内存 chiplet，4 个向量阵列 @750 MHz、24 TFLOPS BF16、8 MB SRAM；封装内 819 GB/s，专家在 LPDDR5X 经 PCIe 6.0 x16（256 GB/s）。",
+              "计算阵列 RTL 在 TSMC 28nm 综合，PrimeTime 表征功耗；Ramulator 建模 DRAM；CHIPSIM 周期级协同仿真，DMA 竞争与排队都建模。",
+              "基线：不预取、ProMoE（固定 top-k）、两档静态 overfetch。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "重叠准确率 >99%：Granite-1B 平均额外预取 4.17 个、Granite-3B 2.86 个、Phi-7B 0.67 个、DeepSeek-16B 1.98 个专家。",
+              "Granite-3B @512：11.41 ms/token，比不预取低 42%、比 ProMoE 低 26%；1024/2048 上下文下比不预取低 41%/39%。",
+              "EDP：Granite-1B 对不预取降 36–42%、对 ProMoE 降 16–27%；DeepSeek-16B 对 ProMoE 降 30–41%，stall-free 再加 4–6%。",
+              "带宽灵敏度（含 32 GB/s 手机级）下时延稳定降低 14–42%。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "说明“预测 + 自适应预算”比固定 k 预取更适合带宽受限的端侧 MoE，且预测器开销很小，易于做进 NPU 运行时。",
+              "全部为 RTL 综合 + 仿真结果，没有真实芯片或手机实测；作者也明确目标是 Jetson Orin/Thor、Hailo-10H 级平台，而非低功耗手机 SoC。",
+              "评估模型都在 16B 以内，BF16 精度；低比特专家只在灵敏度分析里讨论。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "仿真平台（非实机）。模型：IBM Granite-3.1-1B-A400M、Granite-3.1-3B-A800M、Phi-mini-MoE-7B-A2.4B、DeepSeek-V2-Lite-16B-A2.4B，BF16 权重。指标为单 token 时延与 EDP，Granite-3B @512 上下文 11.41 ms/token（约 88 tokens/s，按论文时延换算）；绝对能耗与 tokens/J 未直接披露。"
+      },
+      {
+        "date": "2026-08-18",
+        "vendor": "University of Cumberlands（独立研究）",
+        "category": "学术研究",
+        "title": "Cacheable by Design? Training Mixture-of-Experts Routers for Locality Against the Edge Memory-Bandwidth Wall: A Pre-Registered Negative Result with a Systems Measurement Study",
+        "title_zh": "MoE路由可训练出缓存局部性吗：预注册负结果",
+        "url": "https://arxiv.org/abs/2608.18261",
+        "source_type": "论文",
+        "summary_zh": "作者在一台 8 GB RTX 3070 + 32 GB DDR4 + PCIe 3 NVMe 的普通台式机上，用 llama.cpp 从 SSD 流式读取专家运行 Qwen3-235B-A22B（Q4_K_M，134 GB），实测解码仅 0.44 tok/s，与“每 token 字节数 / SSD 带宽”模型吻合。在 Qwen3-30B 上测得相邻 token 专家复用是随机的 2.0×、13.4% 的专家做 LRU 缓存可命中 66% 请求。随后预注册训练 137M MoE，加局部性路由损失可把 miss 降 60%，但所有配置都未通过“困惑度损失 ≤1%”门槛，属于负结果。",
+        "whats_new_zh": [
+          "Qwen3-235B-A22B（Q4_K_M，134 GB）在 8 GB GPU + NVMe 上解码 0.44 tok/s，与带宽模型误差 6% 以内；batch 32 时因分页抖动崩溃",
+          "Qwen3-30B 路由统计：相邻 token 专家复用为随机的 2.0×，95% 流量只用 52.5% 专家，13.4% 专家的 LRU 缓存命中 66%",
+          "训练局部性损失：miss 最多降 60%、静态固定命中 99%，但都超出 ≤1% 困惑度门槛；340M 规模“代价”不降反升",
+          "免训练的 cache-aware rerouting 叠加训练局部性：miss 降约 80%，困惑度代价 ≤3.4%"
+        ],
+        "key_specs": {
+          "process": "未涉及",
+          "cpu": "Intel i9-12900",
+          "gpu": "RTX 3070 8 GB（GDDR6 448 GB/s）",
+          "npu": "未使用",
+          "memory": "32 GB DDR4（50 GB/s）+ WD SN530 NVMe（PCIe 3，无 DRAM 缓存，2.4 GB/s）",
+          "power": "未披露",
+          "other": "开源 llama-moe-trace 路由遥测工具"
+        },
+        "edge_ai_impact_zh": "给“消费级硬件跑超大 MoE”提供了一个清醒的带宽下限：每 token 读 12 GB 4-bit 专家，SSD 2.4 GB/s 就只能约 0.44 tok/s。同时说明靠训练改路由换缓存命中，会实打实付出质量代价，端侧系统更该在运行时做路由感知缓存。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2608.18261"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv（cs.AI）",
+        "affiliation": "University of Cumberlands（作者自述在个人硬件上独立完成）",
+        "authors": "Shriniwas Ramesh Suram",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "在 8 GB 显卡的普通 PC 上服务 235B MoE，瓶颈不是算力而是带宽：大部分专家只能放在比内存慢一个数量级的 SSD 上。",
+              "能否让 MoE 路由“天生可缓存”，从而降低 SSD 读取？此前 StickyMoE 在单领域 <25M 模型上称代价近乎为零。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "系统测量：llama.cpp（-ngl 99 -ncmoe 94）从 NVMe 流式读专家，并与“每 token 字节数 / 带宽”的一阶模型对比。",
+              "开发 llama-moe-trace，无需改模型即可采集路由遥测。",
+              "预注册实验：训练 137M MoE，加局部性与领域路由辅助损失，预设“miss 降低 + 困惑度损失 ≤1%”的联合判据；再在 340M 上复核。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "i9-12900、RTX 3070 8 GB、32 GB DDR4、WD SN530 NVMe（PCIe 3，2.4 GB/s）。134 GB 的 4-bit 模型中只有约 40 GB 能放进 VRAM+RAM。",
+              "路由统计基于 Qwen3-30B；训练实验在多领域语料上进行。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "Qwen3-235B 解码 0.441 tok/s（warm），12 GB/token ÷ 实测速率 ≈ 2.4 GB/s，正好是 SSD 冷读上限；冷启动单流 0.128 tok/s（模型预测 0.20），预填充仅 0.25 tok/s；按理应摊薄磁盘读取的批处理方案在 batch 32 时因分页抖动崩溃。",
+              "Qwen3-30B：相邻 token 专家复用为随机的 2.0×；95% 流量集中在 52.5% 专家；13.4% 专家的 LRU 可服务 66% 请求。",
+              "训练局部性：miss 最多降 60%、静态固定命中 99%，但每个配置都没过 ≤1% 困惑度门槛；免训练 rerouting 叠加后 miss 降约 80%，困惑度代价 ≤3.4%；领域预取无效。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "为端侧 MoE 提供了可复现的带宽墙数据点与开源工具，并纠正“局部性训练近乎免费”的说法。",
+              "单作者、单机测量，训练实验规模小（137M/340M）；结论能否外推到百亿级生产 MoE 仍待验证。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "实机（单台 RTX 3070 台式机）：Qwen3-235B-A22B Q4_K_M（134 GB，每 token 激活 22B≈12 GB 4-bit 专家）解码 0.441 tok/s（warm）；路由分析用 Qwen3-30B；训练实验为 137M/340M 小 MoE。能耗未披露。"
+      },
+      {
+        "date": "2026-08-12",
+        "vendor": "西江大学（Sogang University）",
+        "category": "学术研究",
+        "title": "NITRO: High-Performance 3D NAND Flash-Based In-Storage Computing with Enhanced Activation Dataflow",
+        "title_zh": "NITRO：3D NAND 存内计算加 DRAM 激活缓冲",
+        "url": "https://arxiv.org/abs/2608.11920",
+        "source_type": "论文",
+        "summary_zh": "NITRO 解决 NAND-PIM 做 LLM 推理的一个缺陷：中间激活如果写回 TLC NAND，几百微秒的编程时延会成为瓶颈。它把权重固化在 TLC NAND-PIM 中做线性层，把激活缓冲和 attention 交给 SSD 内的 LPDDR4 DRAM-PIM；同时设计跨 plane 的分布式数据映射来提高并行度。模拟结果显示，时延最多降低 99.7%，相对 3D-FPIM / S-FLASH 吞吐提升约 287× / 14.5×。",
+        "whats_new_zh": [
+          "DRAM 激活缓冲本身带来平均 4.07× 加速（对 3D-FPIM）",
+          "完整 NITRO 的归一化时延约为 3D-FPIM 的 0.003、S-FLASH 的 0.069",
+          "吞吐约为 3D-FPIM 的 287×、S-FLASH 的 14.5×；能耗相对 3D-FPIM 降约 98.9%，相对 S-FLASH 平均降约 72.6%",
+          "pSLC 做激活缓冲不如 DRAM：多 bit 页布局抬高了 ADC 复用时延"
+        ],
+        "key_specs": {
+          "process": "NAND-PIM PE 在 28nm 综合后缩放到 7nm；NAND 参数按 256Gb TLC 器件",
+          "npu": "TLC NAND-PIM 模拟电流求和 MAC（INT8 权重）+ LPDDR4 DRAM-PIM（参照 McDRAM）",
+          "memory": "3D TLC NAND（权重）+ SSD 内 LPDDR4（激活/attention）",
+          "power": "未披露绝对值",
+          "other": "NVSIM 加 3D-FPIM 修改版模拟器，以及自研模拟器；未评估精度"
+        },
+        "edge_ai_impact_zh": "闪存直接参与计算是“端侧闪存当模型仓库”路线的硬件延伸。NITRO 指出瓶颈在激活写入而不是权重读取，对未来带计算能力的 UFS/SSD 控制器设计有参考价值，但离手机产品还很远。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2608.11920"
+        ],
+        "confidence": "medium",
+        "venue": "DATE 2026（扩展版）",
+        "affiliation": "Sogang University（西江大学）",
+        "authors": "Sanghun Shin, Sangyeon Kim, Gisan Ji et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "NAND-PIM（3D-FPIM、S-FLASH）利用 NAND 的高密度存大模型权重，但没有处理中间激活的数据流，激活只能写回慢速 TLC 阵列，attention 阶段因此成为主要瓶颈。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "异构 PIM：线性层在 TLC NAND-PIM 中执行，推理时不需要编程权重；attention 和激活放在 SSD 内的 LPDDR4 DRAM-PIM。",
+              "分布式数据流：按 NAND 阵列 WL 维度对权重做垂直/水平切分，把矩阵分散到多个 plane 以利用 plane 级并行。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "NVSIM/3D-FPIM 模拟器，TLC/pSLC 时序取自 256Gb TLC 器件；DRAM-PIM 参数来自 McDRAM 和 Micron LPDDR4。",
+              "基线：3D-FPIM（128×128 分块）、S-FLASH（512×128 分块）。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "时延最多降 99.7%，吞吐为 3D-FPIM 的 287×、S-FLASH 的 14.5×；能耗相对 3D-FPIM 降约 98.9%，相对 S-FLASH 降约 72.6%。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "这是 DATE 2026 论文的扩展版，补充了吞吐、S-FLASH 基线和面积分析。",
+              "全部为模拟，基线本身较弱，所以倍数很大；没有精度验证；模型最大 13B，是 INT8 稠密模型，没有覆盖 MoE。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "评测模型：LLaMa-2 7B/13B、OPT-1.3B/2.7B/6.7B/13B，INT8 权重；只给归一化时延、吞吐和能耗，没有 tokens/s 绝对值，也没有精度评测（假设 NAND 单元偏差与已有研究相当）。"
+      }
+    ],
+    "overview": "本周两条主线：谷歌 Tensor G6 和“MoE 外存分页”论文集中出现。Tensor G6（TSMC 3nm，谷歌高管确认）的 TPU 算力 +50%，端侧任务官方称快 3.5 倍，但 Gemini Nano 的版本、参数量、上下文和 tokens/s 都未披露，3.5 倍也是内部预量产均值；开发者通过 LiteRT 上的 Tensor ML SDK 测试版接入。论文侧，UC Berkeley 等的 FreeToken 在 8GB 显存的笔记本 RTX 4060 上跑 35B MoE 达 39.3 tok/s，单张工作站 GPU 跑 753B 的 GLM-5.2 达 14.9 tok/s；北大 S2-MoE 在 16GB 的 Jetson Orin NX 上用自投机解码跑 GPT-OSS-120B（1.44–2.45 tok/s）。硬件爆料方面，骁龙 SM8975 安兔兔 483.5 万分，A20 Pro 传性能 +18%、能效 +30%，均未证实。国产存算方面，谦合益邦完成超 20 亿元 B 轮，称 4 层 3D DRAM 存算芯片已点亮。",
+    "takeaways_zh": [
+      "MoE 外存分页在 PC 上已经实用（FreeToken 35B 约 39 tok/s），在手机上还没有：手机需要更大的 LPDDR、更快的 UFS 和路由预测才能追上。",
+      "谷歌延续“只给相对值”的风格，Tensor G6 的端侧模型规模无法和高通、联发科横向比较，要等第三方实测。",
+      "3D 堆叠 DRAM 存算开始出现国产样片（谦合益邦），近存路线不再只有三星和 SK 海力士。"
+    ]
   }
 }

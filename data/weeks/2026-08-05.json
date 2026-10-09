@@ -4816,5 +4816,142 @@
         "desc": "面向 NPU 模型部署的一站式管理平台，统一处理模型资产、转换压缩、部署、推理结果和 Agent 问答，减少分散的人工操作。"
       }
     ]
+  },
+  "hardware": {
+    "window": {
+      "start": "2026-08-05",
+      "end": "2026-08-05"
+    },
+    "items": [
+      {
+        "date": "2026-08-05",
+        "vendor": "KAIST（Hoi-Jun Yoo 组）",
+        "category": "学术研究",
+        "title": "EdgeXpert: An Edge Device for Memory-Efficient LLM Inference with Mixture-of-Experts and Speculative Decoding",
+        "title_zh": "EdgeXpert：MoE+投机解码端侧加速器",
+        "url": "https://arxiv.org/abs/2608.05303",
+        "source_type": "论文",
+        "summary_zh": "（窗口前 arXiv，会议 10/31–11/4 召开）首个同时用好 MoE 稀疏激活与投机解码的端侧加速器：prefill 做 prompt 级专家复用，decode 做深度感知专家合并，只读显著通道。Samsung 28nm FDSOI 综合，9.3 mm²、峰值 1.52 W，相对前作延迟最多降 56.3%、能耗降 44.1%。",
+        "whats_new_zh": [
+          "prompt 级专家复用使 prefill 专家外存访问降 55.7%",
+          "8K MAC @800 MHz，13.1 TOPS 峰值，A8W4，8.6 TOPS/W",
+          "Qwen3-30B-A3B 等 4 个 MoE 模型上延迟降 10.7–61.1%、能耗降 9.5–56.6%",
+          "唯一同时满足 TTFT<450 ms 与 TPOT<50 ms 的设计（论文口径）"
+        ],
+        "key_specs": {
+          "process": "Samsung 28nm FDSOI，1.0 V，综合（非流片）",
+          "npu": "8K MAC，800 MHz，13.1 TOPS，A8W4",
+          "memory": "LPDDR4X 16 GB/s；512 KB 全局 SRAM",
+          "power": "峰值 1.52 W（不含外存）",
+          "other": "面积 9.3 mm²"
+        },
+        "edge_ai_impact_zh": "证明 30B 级 MoE（3B 激活）可以在 LPDDR4X 级带宽、1.5 W 级芯片上满足交互延迟，关键是把“专家权重搬运”当一等公民优化。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2608.05303",
+          "https://microarch.org/micro59/program/"
+        ],
+        "confidence": "high",
+        "venue": "MICRO 2026（Distinguished Papers 会场）",
+        "affiliation": "KAIST",
+        "authors": "Sangwoo Ha, Hyunwoo Seo, Yurim Jo et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "端侧 LLM 瓶颈是 FFN 的外存访问（EMA）。投机解码一次验证多个 token 会激活更多专家，抵消 MoE 稀疏带来的节省，两者“不兼容”。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "Prefill：轻量编码器识别重要 token，构建共享专家集合，次要 token 用缩减专家预算路由。",
+              "Decode：深度感知专家合并（expert coalescing），只加载显著通道，再用计算校准恢复精度，不增加访存。",
+              "自投机 EAGLE-3 单层 draft head，每轮 64 候选、最大深度 6。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "Samsung 28nm FDSOI 综合，8K MAC、512 KB SRAM、LPDDR4X 16 GB/s（读 4.5 pJ/bit）。",
+              "对比 SMoLPU（缩放到 800 MHz）、EdgeMoE、MoE-Pruner 的自回归与投机变体。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "延迟最多降 56.3%，能耗降 44.1%；接受长度基本不降（Qwen3-30B-A3B 4.3→4.4）。",
+              "精度：Qwen3-30B-A3B MT-Bench 8.8→8.7，GSM8K（thinking）87.3%→88.0%；OLMoE GSM8K 62.6%→58.9%。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "为手机端跑 30B-A3B 级 MoE 提供了硬件路径。",
+              "局限：非 thinking 模式 GSM8K 掉 3–4 点；综合结果非流片；未评估 LPDDR5X 级带宽下的收益。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "Granite-1B-A400M、OLMoE-1B-7B、DeepSeek-V2-Lite、Qwen3-30B-A3B；A8W4；外存 LPDDR4X 16 GB/s；论文以 TTFT/TPOT 门限（450 ms / 50 ms）报告，未直接给 tokens/s。"
+      },
+      {
+        "date": "2026-08-05",
+        "vendor": "上海交通大学 / 中科院计算所",
+        "category": "学术研究",
+        "title": "Deltoris: Enabling Real-time VLA Inference in Embodied AI via Bit-level Sparsity and Speculative Inference",
+        "title_zh": "Deltoris：比特稀疏实时VLA加速",
+        "url": "https://arxiv.org/abs/2608.04428",
+        "source_type": "论文",
+        "summary_zh": "（窗口前 arXiv）扩散式 VLA 需 50–200 Hz 控制频率。Deltoris 利用相邻帧输入相似性只计算差分中的有效比特，并用投机推理把数据加载摊到多个控制步；1D 脉动比特串行 PE 消除负载不均。相对移动 GPU 最高 34.2×、相对前作加速器 6.1×。",
+        "whats_new_zh": [
+          "时间感知比特稀疏：只处理差分激活中的 '1' 比特",
+          "投机推理跨控制步摊薄片外访存",
+          "最高 34.2×（对移动 GPU）、6.1×（对前作加速器）"
+        ],
+        "key_specs": {
+          "npu": "1D 脉动比特串行 PE 阵列",
+          "other": "目标 50–200 Hz 控制频率"
+        },
+        "edge_ai_impact_zh": "具身/机器人端侧模型的约束是硬实时控制频率而非 tokens/s，比特级时域稀疏是 LLM 加速器之外的新设计维度。",
+        "evidence_urls": [
+          "https://microarch.org/micro59/program/"
+        ],
+        "confidence": "high",
+        "venue": "MICRO 2026（程序 Session 7C）",
+        "affiliation": "上海交通大学、中科院计算所",
+        "authors": "Zheng Liu, Zeyu Guo, Zihan Liu et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "扩散式 VLA 运动质量最好但计算重，50–200 Hz 控制频率在边缘设备上有严苛延迟/能耗约束。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "时间感知比特稀疏 + 投机推理 + 1D 脉动比特串行 PE。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "对移动 GPU 最高 34.2×，对前作加速器 6.1×，精度相当。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "与同场 SpecVLA、VQVLA 一起显示 VLA 加速成为 MICRO 新热点。",
+              "局限：arXiv 页面未标注会议，会议归属依据 MICRO 2026 程序同名论文；未给绝对功耗。"
+            ]
+          }
+        ]
+      }
+    ],
+    "overview": "08-05 当天上线两篇后来被 MICRO 2026 接收的边缘加速器论文。KAIST Hoi-Jun Yoo 组的 EdgeXpert 首次在边缘加速器上让 MoE 与投机解码协同工作：草稿模型和专家路由共享调度，功耗 1.52W，时延最多降低 56.3%。上海交大与中科院计算所的 Deltoris 面向机器人 VLA（视觉-语言-动作）模型的实时推理，利用时域比特稀疏，相对移动 GPU 最高加速 34.2 倍。",
+    "takeaways_zh": [
+      "投机解码正在从软件技巧变成硬件数据通路的一部分：draft 与 verify 写进了调度器，NPU 指令集需要为此预留支持。",
+      "机器人 VLA 推理的瓶颈是“实时性”而不是吞吐，比特稀疏、减少访存是这一类芯片的主要手段。"
+    ]
   }
 }

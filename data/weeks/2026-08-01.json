@@ -19076,5 +19076,364 @@
         "desc": "针对 NPU 模型部署环节分散、人工操作效率低、推理结果缺少统一管理的问题，负责设计覆盖模型资产、转换压缩、部署、推理与 Agent 问答的一站式管理平"
       }
     ]
+  },
+  "hardware": {
+    "window": {
+      "start": "2026-08-02",
+      "end": "2026-08-07"
+    },
+    "items": [
+      {
+        "date": "2026-08-04",
+        "vendor": "学术（IBM Research 等）",
+        "category": "存内计算/PIM",
+        "title": "On Design Principles for Efficient Heterogeneous DRAM-PIM-GPU Systems",
+        "title_zh": "DRAM-PIM-GPU 异构系统设计原则",
+        "url": "https://arxiv.org/abs/2608.04169",
+        "source_type": "论文",
+        "summary_zh": "系统评估 OPT-7B/70B、Mamba2-2.7B/70B 在 DRAM-PIM+GPU 上的 decode，得出三条原则：静态功耗（DRAM 漏电、刷新、GPU 空闲）可主导能效，只算动态功耗会把 tokens/s/W 高估最多 3.85×；decode 性能随通道数单调不降；映射策略收益有限（kernel 级延迟/能耗最多 −14.0%/−17.4%，端到端 ≤5.6%）。",
+        "whats_new_zh": [
+          "只算动态功耗会高估 tokens/s/W 最多 3.85×（Mamba2-2.7B，batch 1，128 输入/2,048 输出）",
+          "decode 性能随通道数单调不降，低 batch 下高通道数趋于饱和",
+          "映射优化端到端收益 ≤5.6%，需系统级协同优化"
+        ],
+        "key_specs": {},
+        "edge_ai_impact_zh": "直接回应 LPDDR5X-PIM 未披露功耗的问题：端侧 batch=1 场景下静态功耗占比高，评估 PIM 能效必须计入刷新与空闲功耗。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2608.04169"
+        ],
+        "confidence": "high",
+        "venue": "IEEE SOCC 2026",
+        "affiliation": "未在 arXiv 摘要中列出（作者 Corey Lammie 等）",
+        "authors": "Corey Lammie, Hadjer Benmeziane, William Andrew Simon et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "要点",
+            "points": [
+              "固定容量扫描下所有模型共享近似最优层级配置，注意力模型配置错误的代价更大。"
+            ]
+          },
+          {
+            "heading": "问题",
+            "points": [
+              "已有 DRAM-PIM+GPU 的 LLM decode 研究大多只算动态能耗，也只看部分设计因素（层级、映射、互连），没有联合考虑静态功耗。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "扩展 ramulator2 加 attacc_simulator 加 Pimba，建模 DRAM 刷新/漏电、GPU 空闲、灵活算子映射，以及集成式与共置式（CXL/NVLink）两种接法。",
+              "提出 locality-aware 映射 RowLocalChunk，与 Pimba 映射做对比。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "A100 80GiB 搭配 DRAM-PIM；扫描 batch、ISL/OSL 和通道数（1–64）；固定 80 GiB 容量时做 25 种层级配置（22 种可行）。",
+              "对 DRAM 频率、CXL 带宽、GPU 功耗、刷新能耗等参数做敏感性分析。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "静态部分占总功耗 66–69%；NVLink 与 CXL 的带宽差 2.5×，对结果影响很小，互连选择是次要因素。",
+              "映射优化在 kernel 级最多降低 14.0% 时延、17.4% 能耗，端到端只有 0.6–5.6%。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "这是 IEEE SOCC 2026 接收的短文，价值在于给出 PIM 评估的方法学原则。",
+              "全部为模拟；以 A100/HBM 为对象，没有覆盖 LPDDR 端侧；部分功耗参数是作者自行推算的（例如 8.41 W 背景功耗）。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "评测模型：OPT-7B/70B、Mamba2-2.7B/70B；输入/输出长度最多 2048/2048；小模型用 1 个单元，70B 用 8 个 A100+PIM 张量并行单元。全部为模拟结果，没有端侧设备数据。"
+      },
+      {
+        "date": "2026-08-04",
+        "vendor": "SK hynix / SanDisk",
+        "category": "存储与内存",
+        "title": "SK hynix and Sandisk Debut HBF Standard to Challenge AI Memory Bottlenecks with Google, Tenstorrent Support",
+        "title_zh": "SK海力士与闪迪发布首个HBF标准规范",
+        "url": "https://www.trendforce.com/news/2026/08/04/sk-hynix-sandisk-debut-hbf-standard-to-challenge-ai-memory-bottlenecks-with-google-tenstorrent-support/",
+        "source_type": "媒体",
+        "summary_zh": "FMS 2026（8月4–6日）开幕时，SK海力士与闪迪通过OCP公开首个High Bandwidth Flash（HBF）标准规范：8/16层NAND堆叠、最高512GB，三档带宽约0.4–3.0TB/s，经UCIe连接GPU/CPU。Google DeepMind与Tenstorrent表态支持；闪迪目标2H26做出原型，2027年商用。SK海力士同时首次展出375层V10 4D NAND。",
+        "whats_new_zh": [
+          "容量最高512GB，8-high/16-high NAND堆叠",
+          "带宽三档（Grade 1–3），约0.4–3.0 TB/s",
+          "接口采用UCIe，规范同时定义电气、堆叠可靠性、封装与软件I/O要求",
+          "时间表：2H26原型与试产线，2027年商用；Hot Chips 2026内存教程也有一场“HBF in AI Compute”系统架构视角报告",
+          "SK海力士V10 375层4D NAND首秀，能效（性能/瓦）提升2.5倍，2027年初量产"
+        ],
+        "key_specs": {
+          "memory": "NAND堆叠HBF，≤512GB，0.4–3.0TB/s，UCIe",
+          "other": "OCP发布；Google DeepMind、Tenstorrent支持；NVIDIA未表态"
+        },
+        "edge_ai_impact_zh": "HBF目前完全面向数据中心，但它把“只读权重放闪存、高带宽直连计算die”的思路标准化了；端侧对应的是UFS 5.0+专家卸载，HBF的读放大、寿命与延迟数据值得端侧MoE设计参考。",
+        "evidence_urls": [
+          "https://www.guru3d.com/story/sk-hynix-and-sandisk-hbf-standard-reaches-512gb-and-3tb-s-through-ucie/",
+          "https://hc2026.hotchips.org/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "规格",
+            "points": [
+              "8/16层NAND堆叠，最高512GB；Grade 1–3带宽约0.4–3.0TB/s；UCIe接口而非私有互联。",
+              "规范覆盖电气与接口特性、堆叠可靠性、封装指南和软件I/O需求，经OCP发布。"
+            ]
+          },
+          {
+            "heading": "与HBM的分工",
+            "points": [
+              "SK海力士把组合定义为HBM（DRAM）—HBF（中间层）—eSSD（存储）三级。",
+              "HBF的价值在容量/成本：HBM单栈容量数十GB级，HBF单栈512GB；代价是NAND读延迟与写寿命（分析）。"
+            ]
+          },
+          {
+            "heading": "时间与生态",
+            "points": [
+              "标准化合作启动约6个月即出规范；闪迪2H26原型（日本为主要候选地），年底建成试产线，2027年商用。",
+              "Google DeepMind、Tenstorrent支持但未确定用例；NVIDIA未宣布采用。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "数据中心口径：512GB单栈可装下约1T参数的INT4权重（推算）；但闪存写寿命与读延迟决定它适合存放只读权重/冷KV，而非频繁改写的热KV Cache。端侧无直接产品。"
+      },
+      {
+        "date": "2026-08-03",
+        "vendor": "TrendForce",
+        "category": "存储与内存",
+        "title": "Mobile DRAM Contract Price 3Q26",
+        "title_zh": "3Q26移动DRAM合约价涨幅收窄至8–13%",
+        "url": "https://www.trendforce.com/research/download/RP260803NC",
+        "source_type": "媒体",
+        "summary_zh": "TrendForce 8月3日报告：3Q26移动DRAM合约价整体环比涨8–13%，较2Q26（LPDDR5X涨78–83%）明显收窄。三星涨幅回落到中个位数，SK海力士与长鑫为追平报价涨幅更大；买方库存12–14周，谈判进入拉锯，4Q26涨幅将进一步收敛但不会回落。",
+        "whats_new_zh": [
+          "3Q26移动DRAM合约价环比+8–13%（2Q26 LPDDR5X为+78–83%）",
+          "三星3Q26涨幅约中个位数；SK海力士、长鑫涨幅更大",
+          "终端买方平均库存12–14周；原厂继续把产能转向服务器与HBM，4Q26合约价难以回落",
+          "8月27/28日TrendForce 2Q26移动DRAM营收排名：美光在2Q26策略性减少对手机品牌供货，相关营收下降"
+        ],
+        "key_specs": {
+          "memory": "Mobile DRAM（LPDDR4X/LPDDR5X）合约价",
+          "other": "买方库存12–14周"
+        },
+        "edge_ai_impact_zh": "涨幅收窄不等于降价：手机RAM成本在2Q26已大幅抬升的基础上继续上涨，中端机回到8GB、高端以12GB为主的配置格局在2027年机型规划中难以逆转，端侧模型预算仍被压在3–8B INT4。",
+        "evidence_urls": [
+          "https://www.trendforce.com/research/download/RP260827LM",
+          "https://www.techbang.com/posts/129501-q2-lpddr5x-memory-prices-surge-83"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "价格节奏",
+            "points": [
+              "2Q26 LPDDR5X均价环比+78–83%、LPDDR4X+70–75%（TrendForce 5月口径），3Q26整体收窄到+8–13%，4Q26继续收敛。",
+              "同期常规DRAM合约价预计+13–18%、NAND+10–15%（TrendForce 7月3日口径），移动DRAM涨幅低于服务器DRAM。"
+            ]
+          },
+          {
+            "heading": "原厂分化",
+            "points": [
+              "三星前期报价已高，本季仅中个位数上调；SK海力士与长鑫补涨。",
+              "美光2Q26主动减少对手机品牌供货，把产能留给服务器/HBM，移动DRAM营收下降（TrendForce 8月27/28日排名报告摘要）。"
+            ]
+          },
+          {
+            "heading": "对端侧AI的含义",
+            "points": [
+              "品牌在努力履约以锁定2027年优先供应，LTA仍谨慎：意味着2027年旗舰的RAM容量是成本谈判结果而非技术选择。",
+              "容量受限时，低比特量化（4bit/2bit/1bit）、MoE专家闪存卸载、近存/PIM这类“少搬字节”的方案价值上升。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "间接影响：按扣除系统后的可用内存推算，8GB机型约能常驻3–4B INT4，12GB约7–8B INT4（KV Cache空间紧张），16GB才能从容跑8B加长上下文（推算，沿用9月分析口径）。"
+      },
+      {
+        "date": "2026-08-04",
+        "vendor": "Brown University / University of Michigan / Google",
+        "category": "学术研究",
+        "title": "Heterogeneity-Aware Microscaling for Efficient Low-Bit LLM Inference",
+        "title_zh": "AdaMX：异构感知的 4-bit 微缩放格式与 22nm 加速器",
+        "url": "https://arxiv.org/abs/2608.03867",
+        "source_type": "论文",
+        "summary_zh": "AdaMX 发现 MXFP4 的 8-bit E8M0 共享指数对 LLM 块来说过宽，于是把它拆成 4-bit 指数加 4-bit 每块元数据：权重按块在四种精度恢复模式间选择，激活用 E4M1 缩放加无损 FP6 块最大值扩展，等效位宽（EBW）不变。在 3B–70B 的 Llama/Qwen 上，它消除了 MXFP4 精度损失的 83%（常识）和 82%（MMLU）。作者在 22nm FD-SOI 做了综合加布局布线（非流片实测），与同吞吐的 MXFP4 阵列相比，面积多 3.2%，功耗多 3.5%。",
+        "whats_new_zh": [
+          "相对 MXFP4，常识任务精度损失回收 83%、MMLU 回收 82%；相对 NVFP4 回收 43% / 27%",
+          "AdaMX-16（4.5 EBW）与 AdaMX-32（4.25 EBW）共用一套数据通路；AdaMX-32 比 MXFP4（block 16）降低系统能耗 2.9–5.2%",
+          "22nm FD-SOI、500 MHz、0.8 V P&R：阵列 2.16 mm² / 482 mW（MXFP4 为 2.10 mm² / 466 mW），8192 个乘法器，峰值 8.19 TOPS，17.1 TOPS/W",
+          "Llama-3.1-8B 做 W4A4KV4 时，RULER 13 任务平均在 8K 和 32K 下分别比 NVFP4 高 2.4 分和 6.1 分"
+        ],
+        "key_specs": {
+          "process": "22nm FD-SOI（综合 + 布局布线，非流片）",
+          "npu": "8192 乘法器 MAC 阵列，500 MHz / 0.8 V，峰值 8.19 TOPS，17.1 TOPS/W",
+          "memory": "864 KB 片上 SRAM",
+          "power": "阵列 482.05 mW（MXFP4 基线 465.78 mW）",
+          "other": "面积 2.166 mm²（含 SRAM），比 MXFP4 多 3.2%；端到端能耗用 SCALE-Sim + Accelergy + CACTI 建模"
+        },
+        "edge_ai_impact_zh": "MXFP4/NVFP4 正在成为端侧 NPU 的下一代低位宽格式。AdaMX 说明，不增加位宽、只多花约 3% 面积，就能补回大部分 FP4 精度损失，这对受 DRAM 带宽限制的手机/PC NPU 有直接参考价值。另外，KV Cache 也能沿用同一种格式。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2608.03867"
+        ],
+        "confidence": "high",
+        "venue": "arXiv（cs.AR）",
+        "affiliation": "Brown University、University of Michigan、Google",
+        "authors": "Junyi Luo, Xinting Jiang, Tai-Hao Wen et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "MXFP4 每个 32 元素块共享一个 E8M0 幂次缩放，粒度太粗，PPL 和下游精度掉得明显；NVFP4、M2XFP 等补救方案要额外存储，抬高了等效位宽。",
+              "作者统计了 Llama-3.1-8B 等 4 个模型，发现 4-bit 指数已经覆盖 99.99% 以上的块，E8M0 中有 4 bit 闲置，可以拿来放元数据。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "两级缩放加锚定偏置：E8M0 拆成 E4 缩放和 4-bit 元数据，因此 EBW 不变（block 16 为 4.5，block 32 为 4.25）。",
+              "权重格式 E4Mt2T2：每块用 2-bit 类型码在四种格式增强模式间选择。在 Llama-3.1-8B 上四种码字的占比分别为 18.6%、30.3%、35.3% 和 15.9%。",
+              "激活格式 E4M1Mt2N1：用 round 缩放，并通过邻域选择对块最大值做无损 FP6 编码（N1）。KV Cache 复用权重侧格式。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "精度评测：WikiText-2 PPL、六项零样本常识任务、五样本 MMLU、RULER（8K/32K），以及 Gemma-4 12B 的 MMMU、ScienceQA、AI2D、TextVQA。",
+              "硬件：Verilog 实现解码器、PE 和量化单元，在 22nm FD-SOI 上以 500 MHz、0.8 V 做综合与 P&R，并与同吞吐、同 864 KB SRAM 的 MXFP4/NVFP4 阵列对比。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "MXFP4 到 FP16 的 PPL 差距被缩小 55–72%。Gemma-4 12B 保留 87–96% 的 FP16 精度，MMMU 比 MXFP4 高 12 分。",
+              "硬件代价：阵列面积 +3.2%、功耗 +3.5%，每 MAC 能耗 +2.9%，折算到系统能耗只多 0.1–1.1%，因为外部存储占系统能耗的 61–94%。",
+              "峰值 8.19 TOPS，17.1 TOPS/W（22nm、500 MHz）。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "这是一个兼容 OCP MX 生态的增量方案，NPU 厂商升级 FP4 数据通路时可以借鉴。",
+              "没有流片和实测，系统能耗来自建模；精度评测是 GPU 上的模拟量化，没有在真实端侧 SoC 上测 tokens/s。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "精度评测（在 H100 服务器上做量化仿真）：Qwen2.5-3B/14B、Llama-3.1-8B/70B、Gemma-4 12B（VLM），W4A4，KV4 上下文测到 32K。硬件只有 22nm P&R 的面积/功耗，以及 SCALE-Sim 建模的 decode 能耗（batch 8/32/128，2048 token 上下文）。论文没有给出端侧设备上的 tokens/s。"
+      },
+      {
+        "date": "2026-08-03",
+        "vendor": "学术（DeGS 团队）",
+        "category": "学术研究",
+        "title": "DeGS: A Scalable 3DGS Architecture via Decoupled Workload Parsing and Reorganization",
+        "title_zh": "DeGS：可扩展 3DGS 渲染加速器",
+        "url": "https://arxiv.org/abs/2608.02099",
+        "source_type": "论文",
+        "summary_zh": "DeGS 把 3DGS 渲染中耦合的 α 检查、透射率检查与 α 混合拆成解析→重组→混合三级流水，消除不规则高斯覆盖与像素提前终止造成的 PE 空转。28nm 实现，对 GSCore/GBU/GCC 吞吐 2.36–7.25×、端到端 1.82–6.02×、能效 1.59–4.42×，16→1024 PE 扩展时高分辨率下 PE 利用率仍 >80%。",
+        "whats_new_zh": [
+          "解耦数据流：parsing / reorganization / blending",
+          "28nm；吞吐 2.36–7.25×、端到端 1.82–6.02×、能效 1.59–4.42×（720p–8K）",
+          "16→1024 PE 扩展，PE 利用率 >80%"
+        ],
+        "key_specs": {
+          "process": "28nm"
+        },
+        "edge_ai_impact_zh": "3DGS 是 XR 眼镜/机器人空间感知的关键负载，DeGS 说明端侧渲染加速器的瓶颈在数据流耦合而非 PE 数量。",
+        "evidence_urls": [
+          "https://microarch.org/micro59/program/"
+        ],
+        "confidence": "high",
+        "venue": "MICRO 2026（Session 2D）",
+        "affiliation": "未在 arXiv 摘要中列出",
+        "authors": "Minnan Pei, Gang Li, Zeyu Zhu et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题与方案",
+            "points": [
+              "“边检查边混合”数据流使空间冗余（不规则覆盖）与时间冗余（像素异步终止）放大 PE 空转。",
+              "先把碎片化、变长、时序相关负载重组为紧凑无冲突的稠密负载，再并行混合。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-08-04",
+        "vendor": "LuxiTech（深圳）/ HKUST / 华中科技大学",
+        "category": "学术研究",
+        "title": "Unified Lookup-Table Inference with Signed-Digit K/V Caches for Ternary LLMs",
+        "title_zh": "三值 LLM 统一查表推理：有符号数位 KV Cache",
+        "url": "https://arxiv.org/abs/2608.03229",
+        "source_type": "论文",
+        "summary_zh": "三值（1.58-bit）LLM 的线性层可以用查表（LUT）计算，但 attention 的 K/V 是运行时生成的高精度数据，通常要另配一套 INT8/BF16 阵列。论文把运行时 K/V 编码成带块缩放的多平面有符号数位（RSD），让 QK/PV 直接复用线性层的 LUT 和归约数据通路，并用硬件感知的 DSE 在质量约束下选择每块的平面数。在 TSMC 40nm 综合结果中，编码器只占 LUT 核面积的 2.2%/3.9%，而独立稠密 attention 阵列要额外占 64.5%/254.4%。",
+        "whats_new_zh": [
+          "A8/A16 配置下 attention 功耗 6.39/23.97 mW，对比基线独立 attention 阵列 12.70/133.0 mW（40nm，综合 + PTPX）",
+          "在等面积预算内，16 个基线 A8 tile 的面积可放下 26 个 Proposed-A8 tile",
+          "外部存储流量最多降低 40.5%（BitNet-2B）和 57.3%（OPT-2.7B）；BitNet-2B block-32 的 packed K/V 比统一平面数少 35.3%",
+          "INT8 W1.58 投影数据通路能效 5.38 TOPS/W（BitMoD 3.25、Tender 5.12，后两者为 28nm）；只算 LUT 阵列时为 29.01 TOPS/W"
+        ],
+        "key_specs": {
+          "process": "TSMC 40nm 标准单元，1.1 V（综合 + 周期精确模拟，非流片）",
+          "npu": "统一 LUT 核：A8 配置 500 MHz，A16 配置 250 MHz",
+          "memory": "请求级评估假设 128 GB/s 外部带宽",
+          "power": "attention 部分 6.39 mW（A8）/ 23.97 mW（A16）",
+          "other": "compute tile 面积 59.99（Proposed-A8）对 98.47（Baseline-A8），单位见原文"
+        },
+        "edge_ai_impact_zh": "BitNet 类三值模型是端侧 NPU 做“去乘法器”化的主要候选，但 KV Cache 一直需要单独的高精度路径。这项工作证明 attention 也能并进同一个 LUT 引擎，对小面积 NPU 和可穿戴 SoC 的面积/功耗预算有参考价值。论文来自深圳初创公司 LuxiTech，可以看作产业侧的设计思路。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2608.03229"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv（cs.AR）",
+        "affiliation": "LuxiTech Co. Ltd.（深圳）、香港科技大学、华中科技大学",
+        "authors": "Ziang Duan, Jiajun Wu, Zetian Chen et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "现有三值 LLM 加速器（TeLLMe、TENET 等）只对线性投影用 LUT，attention 走单独的 INT/BF16 数据通路，面积和功耗都要重复配置。",
+              "单纯压缩 KV Cache 不能消除这种异构：K 和 V 在因果解码中的块完成时机不同，V 的尾块还没写满时就要参与计算。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "缓存驻留的 RSD 格式：运行时 K/V 存成多平面有符号数位加共享块缩放，attention 直接由激活生成的查找表消费，不需要还原成稠密 K/V。",
+              "在线 K/V 编码器、有界的 V 尾块处理，以及线性层与 QK/PV 共享的多流数据通路；平面数相同的块被一起调度。",
+              "四阶段硬件感知 DSE（LP 投影、修复、模拟器打分、留出集 NLL 门控），在质量约束下选择每块的平面数和映射。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "在 TSMC 40nm、1.1 V 上综合 Proposed 设计和吞吐匹配的异构基线；周期精确模拟器输出 TTFT、TPOT 和流量。",
+              "请求级评估采用 500 MHz、128 GB/s，并计入缩放和模板元数据读取。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "编码器只占 LUT 核面积的 2.2%/3.9%，独立 attention 阵列则要额外 64.5%/254.4%。",
+              "外部流量最多省 40.5%/57.3%，K/V footprint 降低 35.3%；精度下降 0.56–1.86 pp。",
+              "投影能效 5.38 TOPS/W（40nm），与 28nm 的 BitMoD（3.25）和 Tender（5.12）同一量级。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "把“三值权重”和“低位宽 KV”统一到同一种查表算子上，是端侧小面积 LLM 引擎的一条可行路线。",
+              "只有综合和模拟，没有流片；模型规模最大 3B，长上下文质量只测到 4K token 级别。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "模型：BitNet b1.58 2B4T、Falcon-E-1B/3B，以及 QAT 转换的三值 OPT-350M/1.3B/2.7B。混合平面策略带来的平均精度下降：BitNet-2B 0.72 pp，Falcon-E-3B 1.86 pp，OPT-350M 1.54 pp，OPT-2.7B 0.56 pp。只有周期精确模拟和 40nm 综合结果，没有端侧设备上的 tokens/s 实测。"
+      }
+    ],
+    "overview": "8 月第一周（08-02~08-07）没有芯片发布，信号来自内存市场和低比特格式论文。TrendForce 数据显示，3Q26 移动 DRAM 合约价环比仍涨 8–13%，涨幅比 2Q26 的 +78–83% 明显收窄，但价格没有回落。SK 海力士与闪迪发布首个 HBF（高带宽闪存）标准，单堆栈最高 512GB、带宽 0.4–3.0TB/s，接口采用 UCIe，定位在 HBM 和 SSD 之间。论文侧，Brown、密歇根与谷歌合作的 AdaMX 对 MXFP4 做块级自适应，在零额外位宽下收回八成以上精度损失，22nm 综合后面积和功耗只增加约 3%；IBM 等人的 DRAM-PIM-GPU 设计原则研究给出反证：batch=1 时 PIM 只能和 GPU 打平，静态功耗占约三分之二。",
+    "takeaways_zh": [
+      "内存涨价进入“涨幅收窄、价格不回落”阶段，端侧模型的内存预算短期不会宽松，压缩权重和外存卸载仍是主线。",
+      "FP4 数值格式竞争的重点从“几 bit”转到“怎么缩放”（AdaMX），下一代 NPU 的数据通路很可能采用块级自适应缩放。",
+      "PIM 的端到端收益必须把静态功耗算进去。IBM 的仿真提示，batch=1 场景下 PIM 不是天然的赢家。"
+    ]
   }
 }

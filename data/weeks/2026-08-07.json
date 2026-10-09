@@ -4435,5 +4435,343 @@
         "evidence_url": ""
       }
     ]
+  },
+  "hardware": {
+    "window": {
+      "start": "2026-08-07",
+      "end": "2026-08-12"
+    },
+    "items": [
+      {
+        "date": "2026-08-11",
+        "vendor": "Ambiq",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Ambiq Reports Second Quarter 2026 Financial Results",
+        "title_zh": "Ambiq Q2营收同比+90%，上调全年指引",
+        "url": "https://ambiq.com/news/ambiq-reports-second-quarter-2026-financial-results/",
+        "source_type": "官方",
+        "summary_zh": "超低功耗SoC厂商Ambiq（NYSE: AMBQ）Q2净销售额3,390万美元，同比+89.7%，GAAP毛利率提升490bp；Q3指引3,600–3,700万美元，全年指引上调至约1.35亿美元。公司称行业供应紧张限制了增长，并强调heliaCORE、compressionKIT、heliaPROFILER等让小模型在Apollo上部署的软件。",
+        "whats_new_zh": [
+          "Q2 GAAP净销售额3,390万美元（去年同期1,790万），+89.7%",
+          "GAAP毛利+113%，GAAP毛利率+490bp；GAAP净亏损710万美元（Q1为1,020万）",
+          "Q3指引3,600–3,700万美元、非GAAP毛利率46.5–47.5%，第六个连续环比增长季度",
+          "全年指引约1.35亿美元，近乎翻倍；6月增发净募资约1.68亿美元",
+          "累计出货超3亿颗；软件：heliaCORE（AI内核）、compressionKIT（官方称内存与功耗最多降20倍）、heliaPROFILER（开源）"
+        ],
+        "key_specs": {
+          "cpu": "Apollo系列（SPOT亚阈值技术）",
+          "npu": "未披露（以CPU/DSP内核+heliaCORE软件为主）",
+          "other": "Apollo330 Plus、Apollo510 Lite获Zephyr支持（9月8日）"
+        },
+        "edge_ai_impact_zh": "Ambiq是本月唯一给出硬数字的超低功耗AI芯片公司：营收翻倍说明手表/健康穿戴的常开AI需求真实存在，但其增长靠SPOT低压工艺+软件压缩，而非大NPU。",
+        "evidence_urls": [
+          "https://www.sec.gov/Archives/edgar/data/0001500412/000119312526343443/ambq-ex99_1.htm",
+          "https://quartr.com/events/ambiq-micro-inc-ambq-q2-2026_FVo0weQD"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "财务",
+            "points": [
+              "Q2净销售额3,390万美元，同比+89.7%；GAAP营业费用约2,400万美元（+50.3%）。",
+              "Q3指引非GAAP每股亏损0.12–0.20美元；季末现金约3.668亿美元（Quartr口径）。"
+            ]
+          },
+          {
+            "heading": "低功耗技术路线",
+            "points": [
+              "SPOT亚阈值/近阈值电路是核心，AI部署依赖heliaCORE内核库与compressionKIT压缩，而非独立NPU。",
+              "供应紧张被列为增长限制因素——与DRAM/晶圆产能向AI数据中心倾斜的大背景一致（分析）。"
+            ]
+          },
+          {
+            "heading": "缺失信息",
+            "points": [
+              "未披露分产品出货量、AI相关营收占比、具体设计win与NPU路线图。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "财报未披露模型规模。Apollo510（Cortex-M55）档位在9月分析中对应唤醒词、VAD、健康传感器异常检测等10K–1M参数级模型；compressionKIT称内存/功耗最多降20倍（厂商口径，未给基准）。"
+      },
+      {
+        "date": "2026-08-09",
+        "vendor": "学术（ReVolt 团队）",
+        "category": "存内计算/PIM",
+        "title": "ReVolt: Power Delivery Network-Aware Voltage Droop Control for 2.5D PIM Chiplet Architectures",
+        "title_zh": "ReVolt：2.5D PIM chiplet 电压跌落控制",
+        "url": "https://arxiv.org/abs/2608.08496",
+        "source_type": "论文",
+        "summary_zh": "2.5D PIM 多 chiplet 平台中，各 chiplet 电流需求变化引发时空变化的电压跌落，影响性能与推理精度。ReVolt 用 LSTM PDN 代理模型预测每个 chiplet 的电压轨迹，运行时调整运算单元（OU）大小控制电流，避免跌落违例，EDP 平均降低 76×（对固定/动态 OU 基线）。",
+        "whats_new_zh": [
+          "LSTM PDN 代理模型预测 per-chiplet 电压",
+          "以 OU 尺寸为控制旋钮调节电流需求",
+          "无跌落违例，EDP 平均 −76×，精度不变"
+        ],
+        "key_specs": {
+          "other": "2.5D PIM chiplet"
+        },
+        "edge_ai_impact_zh": "PIM 与 chiplet 结合时供电完整性是被忽视的约束；与 NVIDIA LPX 宣称“确定性功耗使跌落 −60%”同属一类问题。",
+        "evidence_urls": [],
+        "confidence": "medium",
+        "venue": "ESWEEK 2026",
+        "affiliation": "未在 arXiv 摘要中列出",
+        "authors": "Vibhanshu Sharma, Alish Kanani, Miao Sun et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "要点",
+            "points": [
+              "跌落违例会同时降低性能与模拟/PIM 计算精度；ReVolt 以前瞻调整 OU 大小规避。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-08-11",
+        "vendor": "庆北国立大学（Kyungpook National University）",
+        "category": "学术研究",
+        "title": "MemSpec: Memory-Aware Runtime for Adaptive Draft Scheduling in Speculative Decoding on Edge Devices",
+        "title_zh": "MemSpec：边缘设备上内存感知的投机解码草稿调度",
+        "url": "https://arxiv.org/abs/2608.10362",
+        "source_type": "论文",
+        "summary_zh": "投机解码的收益高度依赖草稿模型选择，但在 8 GB 的 Jetson Orin Nano 上只放得下 2 个草稿模型，切换到未驻留的领域草稿需要从 NVMe 加载，耗时超过一次投机迭代，抵消了自适应选择的收益。MemSpec 用一个 BERT 预测器根据 prompt 与生成上下文预测最有效的草稿，再由内存感知调度器提前预取、维护驻留工作集。相对静态基线吞吐提升 58.8%，相对 bandit 类自适应方法 MAB-Async 提升 40.7%，达到 Oracle-Dynamic 的 95–97%。",
+        "whats_new_zh": [
+          "稳态生成吞吐较静态基线 +58.8%，较 MAB-Async +40.7%（平均）",
+          "达到 Oracle-Dynamic 上界的 95–97%；fallback 执行时间占比从 MAB-Async 的 49.4% 降到 <5.5%",
+          "仅预测不预取（Prediction-Only）比 General-Static +21.6%，但比完整 MemSpec 低 30.5%；预测开销占总时间 3.9%"
+        ],
+        "key_specs": {
+          "process": "未披露",
+          "cpu": "6 核 Cortex-A78AE",
+          "gpu": "Ampere，1024 CUDA cores / 32 Tensor cores",
+          "npu": "未使用",
+          "memory": "8 GB LPDDR5（102 GB/s）+ 1 TB Samsung 990 PRO NVMe",
+          "power": "未披露",
+          "other": "JetPack 6.2.1，PyTorch 2.9.1 / CUDA 12.6；batch 1、greedy、输出 128 token"
+        },
+        "edge_ai_impact_zh": "说明在端侧内存预算下，“选对草稿”不等于“跑得快”：草稿模型的驻留管理本身就是瓶颈。对手机/车机上做多领域投机解码（多个小草稿或 LoRA 草稿）的运行时设计有直接参考价值。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2608.10362"
+        ],
+        "confidence": "high",
+        "venue": "LCTES '26",
+        "affiliation": "Kyungpook National University",
+        "authors": "Eunjeong Kim, Yeong Jun Jeon, Myeonggyun Han",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "Oracle-Static（每 prompt 选最佳草稿）比通用草稿平均 +22.5% 吞吐，Oracle-Dynamic（生成中途切换）再 +24.9%，说明动态选草稿有很大空间。",
+              "但 8 GB Orin Nano 上一次从 NVMe 加载 400M 草稿的时间超过一次投机迭代，MAB 类在线探索方法 49.4% 时间在用次优的驻留草稿 fallback 执行。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "Prediction Engine：冻结 BERT 编码器 + 排序头，根据 prompt 语义和近期生成上下文预测各草稿效用。",
+              "Draft Model Cache Manager：在 K=2 的驻留预算下维护高效用工作集，提前异步预取，把被动切换变成主动准备。",
+              "选择与执行解耦：调度点只在已驻留草稿间切换，避免同步加载阻塞。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "Jetson Orin Nano（1024 CUDA cores、6×A78AE、8 GB LPDDR5 102 GB/s、990 PRO NVMe），JetPack 6.2.1。",
+              "工作负载 Alpaca、LiveCodeBench、Omni-MATH、MMLU-Law、MMLU-Medical，各抽 100 条；输出 128 token、batch 1、greedy。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "平均吞吐：对 General-Static +58.8%，对 MAB-Async +40.7%，达 Oracle-Dynamic 的 95–97%。",
+              "fallback 执行比例降到 5.5% 以下；预测开销约 3.9%。",
+              "消融：只有预测、没有预取时仍有 30.5% 差距，证明驻留管理是主要收益来源。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "LCTES '26 论文，问题定义清楚：端侧投机解码的瓶颈从 acceptance rate 转向 memory residency。",
+              "只测 7B INT4 目标模型与 Jetson GPU，未涉及 NPU 或手机 SoC；只给归一化吞吐，没有绝对 tokens/s 与能耗数据。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "实机：Jetson Orin Nano 8 GB。目标模型 GPTQ INT4 LLaMA-2 7B 与 GPTQ INT4 Qwen2.5 7B；每族 5 个草稿（LLaMA 系 400M、Qwen 系 0.5B；通用 + 代码/数学/法律/医疗），同时最多驻留 2 个。论文只给相对吞吐，未披露绝对 tokens/s 与能耗。"
+      },
+      {
+        "date": "2026-08-10",
+        "vendor": "学术（UnionSparse 团队）",
+        "category": "学术研究",
+        "title": "UnionSparse: An Index-Efficient Sparsity Framework for Low-Bit Sparse LLM Inference on Edge",
+        "title_zh": "UnionSparse：低比特稀疏 LLM 索引压缩",
+        "url": "https://arxiv.org/abs/2608.09291",
+        "source_type": "论文",
+        "summary_zh": "量化缩小了权重载荷却没有同比缩小稀疏元数据，索引流量成为 SpMM 瓶颈。论文提出 Payload-to-Metadata Ratio（PMR），用索引高效位图编码（IE-BME）+ 低比特共享内存并行解码（LSPD）。W4A4、30–70% 稀疏下比 FlashLLM/SpInfer 快 2.30×/1.43×，比 CUTLASS/cuBLAS Tensor Core 快 1.56×/3.46×。",
+        "whats_new_zh": [
+          "提出 PMR 指标：提升 PMR 即提升 decode 有效计算强度",
+          "W4A4 + 30–70% 稀疏：对 FlashLLM 2.30×、SpInfer 1.43×",
+          "对 CUTLASS 1.56×、cuBLAS Tensor Core 3.46×（边缘 GPU）"
+        ],
+        "key_specs": {
+          "gpu": "边缘 GPU（Tensor Core）"
+        },
+        "edge_ai_impact_zh": "低比特 + 稀疏叠加时元数据开销会吃掉收益——这对端侧 NPU 的稀疏格式设计同样成立。",
+        "evidence_urls": [],
+        "confidence": "high",
+        "venue": "ESWEEK 2026 Journal Track（IEEE TCAD）",
+        "affiliation": "未在 arXiv 摘要中列出",
+        "authors": "Tianhao Jiang, Hang Gu, Teng Wang et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "要点",
+            "points": [
+              "IE-BME 摊薄元数据并让稀疏遍历与 fragment 组装对齐；LSPD 改善小 batch 执行。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-08-07",
+        "vendor": "中科院计算所（ICT, CAS）",
+        "category": "学术研究",
+        "title": "Rethinking Unified Memory for NPU-PIM Systems: Dual-View Memory for Dynamic Inference of LLM",
+        "title_zh": "PFM：NPU-PIM统一内存双视图设计",
+        "url": "https://arxiv.org/abs/2608.06989",
+        "source_type": "论文",
+        "summary_zh": "（窗口前 arXiv）NPU+PIM 统一内存设计通常假设张量固定归属某一设备，但 prefill/decode 切换与 MoE 路由会让最佳执行者在运行时变化。PFM 让物理布局与各加速器看到的逻辑视图解耦，NPU 与 PIM 无需复制或重排即可高效访问同一数据，端到端吞吐最高提升 2.32×。",
+        "whats_new_zh": [
+          "双视图内存：同一物理数据，NPU/PIM 各有逻辑视图",
+          "访问者感知的地址转换 + 运行时调度",
+          "端到端吞吐最高 2.32×（论文结论部分为 2.26×），仅需少量内存控制器与软件改动"
+        ],
+        "key_specs": {
+          "npu": "NPU + DRAM-PIM 异构",
+          "memory": "PIM 作统一主存（双视图映射）",
+          "other": "面向 prefill/decode 相变与 MoE 动态路由"
+        },
+        "edge_ai_impact_zh": "三星 LPDDR5X-PIM 落地后，SoC 侧如何同时让 NPU（prefill）与 PIM（decode）用同一份权重是关键问题，PFM 给出了内存控制器层面的答案。",
+        "evidence_urls": [
+          "https://microarch.org/micro59/program/"
+        ],
+        "confidence": "high",
+        "venue": "MICRO 2026",
+        "affiliation": "中国科学院计算技术研究所",
+        "authors": "Shixin Zhao, Lian Liu, Tianhua Han et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "静态数据映射导致 decode 期 PIM 带宽或 prefill 期 NPU 带宽被浪费；IANUS 等前作的统一内存仍按张量固定归属。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "PIM-as-Flexible-Memory：物理布局与逻辑视图解耦，避免数据复制/重排。",
+              "访问者感知地址转换 + 运行时调度应对负载波动（MoE 路由、阶段切换）。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "多种 LLM 上端到端吞吐最高 2.32×。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "与 P3-LLM（ISCA'26）、三星 LPDDR5X-PIM 构成“NPU+LP-PIM”完整链条。",
+              "局限：摘要未给出能耗与具体平台规格，需看全文；仿真评估。"
+            ]
+          },
+          {
+            "heading": "与产业的对应关系",
+            "points": [
+              "三星 LPDDR5X-PIM 在 Hot Chips 上要求 PIM 模式切换、权重常驻 bank；PFM 指出 prefill/decode 相变与 MoE 路由会让同一张量的最优执行设备在运行时变化，静态的设备偏向映射导致带宽浪费。",
+              "PFM 用“物理布局与逻辑视图解耦”的双视图内存，在不复制、不重排数据的前提下让 NPU 与 PIM 各按自己的视图访问——正是 PIM 进入手机/PC SoC 后要解决的软件/控制器问题。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "论文为架构仿真，未给出具体 tokens/s；结论：跨多个 LLM 端到端吞吐最高 2.32×。"
+      },
+      {
+        "date": "2026-08-08",
+        "vendor": "Cognizant AI & Analytics / Cognizant AI Lab",
+        "category": "学术研究",
+        "title": "RotaryQuant: Fitting 120B MoE Models on Consumer Hardware via Fused Compressed-Space Attention",
+        "title_zh": "RotaryQuant：在消费级Mac上装下120B MoE",
+        "url": "https://arxiv.org/abs/2608.08081",
+        "source_type": "论文",
+        "summary_zh": "RotaryQuant 从三个方向同时压缩：按架构角色做混合精度权重量化（dense 4-bit、路由专家 2-bit、共享专家 8-bit）、内存紧张时 LRU 把专家换到磁盘、以及新的 KV 压缩 IsoQuant（Walsh–Hadamard 变换 + 块对角 SO(4) 旋转后做 3-bit 标量量化）。一个四 kernel 融合的 Metal 管线直接在打包的 3-bit KV 上算 attention。在 Apple M4 Max 上，Gemma 4-26B-A4B 与 Qwen3.6-35B-A3B 峰值内存 5.4/6.8 GB，Nemotron-H 120B 峰值 17.2 GB，速度 12.85–15.6 tok/s，困惑度增量 ≤+0.0012。",
+        "whats_new_zh": [
+          "Nemotron-H 120B 峰值内存 17.2 GB（目标 32 GB 设备），14.85 tok/s；Gemma 4-26B-A4B 5.4 GB、12.85 tok/s；Qwen3.6-35B-A3B 6.8 GB、15.6 tok/s",
+          "IsoQuant 每头只需 256 个存储参数、O(d log d) 运算，对比稠密旋转的 16,384 参数、O(d²)",
+          "KV 3-bit 下 ΔPPL ≤ +0.0012，32K 上下文检索准确率 100%",
+          "消融：Gemma 4 不卸载专家时 FP16 KV 109.8 tok/s，IsoQuant 3-bit 降到 20.6 tok/s；开专家卸载时约 1 tok/s"
+        ],
+        "key_specs": {
+          "process": "未涉及",
+          "cpu": "Apple M4 Max",
+          "gpu": "Apple M4 Max GPU（Metal 融合 kernel）",
+          "npu": "未使用（未用 ANE）",
+          "memory": "实验机 128 GB 统一内存；以峰值内存验证 16/32 GB 设备预算",
+          "power": "未披露",
+          "other": "权重 4/2/8-bit 混合精度；KV 3-bit IsoQuant；MLX/Metal 生态"
+        },
+        "edge_ai_impact_zh": "为“16–32 GB 统一内存笔记本跑 26–120B MoE”给出了可复现的内存预算组合（2-bit 专家 + 3-bit KV + 专家换页），并把 KV 解压融合进 attention kernel。但其自己的消融表明 3-bit KV 和专家卸载都显著拖慢速度，是“以吞吐换可行性”的手段。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2608.08081"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv（cs.NE）",
+        "affiliation": "Cognizant AI & Analytics（伦敦）、Cognizant AI Lab（旧金山）、SMU、UMBC",
+        "authors": "Anthony Lui, Mohamed Elsaied, N. P. Savani",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "26–120B 的 MoE 在消费设备上同时受三种压力：常驻权重、随上下文线性增长的 KV cache（8K 上下文即 4–8 GB）、以及需要按需换入的几十个专家子层。",
+              "已有旋转量化（如 TurboQuant）使用稠密随机旋转，开销 O(d²)，并需解压出全精度 KV。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "按架构角色分配位宽：dense 层 4-bit、路由专家 2-bit、激活峰度高的共享专家 8-bit。",
+              "IsoQuant：WHT 全局混合 + 块对角 SO(4)（四元数对）旋转使分布各向同性，再做 3-bit 标量量化；每头 256 参数、O(d log d)。",
+              "四 kernel 融合的 Metal 管线直接在打包 3-bit 张量上计算 attention，不物化全精度 KV；内存真正紧张时 LRU 把专家换到磁盘。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "单台 Apple M4 Max（128 GB 统一内存），目标部署为 16–32 GB 消费设备。",
+              "模型 Gemma 4-26B-A4B、Qwen3-30B-A3B（KV 保真度）、Qwen3.6-35B-A3B（端到端）、Nemotron-H 120B；2K 上下文困惑度，初步验证到 32K。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "端到端：Gemma 4 12.85 tok/s / 5.4 GB；Nemotron-H 120B 14.85 tok/s / 17.2 GB；Qwen3.6-35B 15.6 tok/s / 6.8 GB；12/12 质量门通过，前两者 2 小时 soak 通过。",
+              "KV 保真：ΔPPL ≤ +0.0012；32K 上下文 Qwen3.6 困惑度偏离 0.024%，检索 100%。",
+              "代价：Gemma 4 在内存充足时 FP16 KV 109.8 tok/s，IsoQuant 3-bit 只有 20.6 tok/s；开启专家卸载降到约 1 tok/s。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "说明在统一内存 Mac 上，2-bit 专家 + 3-bit KV 足以把 120B MoE 压到 32 GB 预算内。",
+              "未在真正 16/32 GB 设备上测试，只用峰值内存推断；长上下文困惑度扫描仍在进行；作者自述其是“内存压力缓解机制而非通用加速器”；来自企业 AI 团队，非体系结构专业实验室。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "实验机 Apple M4 Max 128 GB（以峰值内存代表 16/32 GB 消费设备，非真机限内存）。Gemma 4-26B-A4B 12.85 tok/s @5.4 GB；Qwen3.6-35B-A3B 15.6 tok/s @6.8 GB；Nemotron-H 120B 14.85 tok/s @17.2 GB；上下文验证到 32K。能耗未披露。"
+      }
+    ],
+    "overview": "这周的看点是“NPU 与 PIM 如何共处”和 MoE 卸载的工程化。中科院计算所的 PFM（MICRO 2026）为 NPU 和 PIM 提供同一份数据的双视图，省掉布局转换和拷贝，吞吐最高 2.32 倍。这正是三星 LPDDR5X-PIM 进入 SoC 后必须回答的问题。RotaryQuant 把 120B MoE 压进消费级 Mac 的内存；MemSpec（LCTES'26）在 Jetson Orin Nano 上按内存压力调度投机解码的草稿模型。ReVolt 研究 2.5D PIM chiplet 的电压跌落控制，UnionSparse 指出低比特之后稀疏索引元数据成了新瓶颈。产业侧，超低功耗 MCU 厂商 Ambiq 二季度营收同比增长 89.7%，上调全年指引。",
+    "takeaways_zh": [
+      "PIM 进 SoC 的难点在系统层：数据布局、内存分配和调度要同时照顾 NPU 和 PIM，PFM 给出了一种不拷贝的做法。",
+      "低比特量化之后，稀疏元数据和缩放因子开始成为新的“搬运成本”，压缩要连同元数据一起设计。",
+      "超低功耗 AI 的需求在财报上已经能看到（Ambiq +90%），但本月 MCU NPU 没有新品。"
+    ]
   }
 }

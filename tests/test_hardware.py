@@ -129,24 +129,51 @@ class InlineRoundTripTest(unittest.TestCase):
 class BuildHardwarePageTest(unittest.TestCase):
     def test_shell_points_at_hardware_markdown(self):
         self.assertIn("hardware/hardware-insight.md", HARDWARE_HTML)
+        self.assertIn("hardware/index.json", HARDWARE_HTML)
+        self.assertIn('id="months"', HARDWARE_HTML)
         self.assertIn("硬件洞察", HARDWARE_HTML)
         self.assertNotIn("WAIC-insight.md", HARDWARE_HTML)
 
-    def test_build_writes_html_and_md(self):
+    def _run_build(self, src, site):
+        os.environ["HARDWARE_SRC_DIR"], os.environ["HARDWARE_SITE"] = str(src), str(site)
+        self.addCleanup(os.environ.pop, "HARDWARE_SRC_DIR", None)
+        self.addCleanup(os.environ.pop, "HARDWARE_SITE", None)
+        spec = importlib.util.spec_from_file_location(
+            "build_hardware", ROOT / "agent" / "build_hardware.py")
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        return mod.main()
+
+    def test_build_writes_every_month_and_latest(self):
         with tempfile.TemporaryDirectory() as tmp:
-            src = Path(tmp) / "hw.md"
-            src.write_text("# t\n## 1. A\n", encoding="utf-8")
-            site = Path(tmp) / "site"
-            os.environ["HARDWARE_SRC"], os.environ["HARDWARE_SITE"] = str(src), str(site)
-            self.addCleanup(os.environ.pop, "HARDWARE_SRC", None)
-            self.addCleanup(os.environ.pop, "HARDWARE_SITE", None)
-            spec = importlib.util.spec_from_file_location(
-                "build_hardware", ROOT / "agent" / "build_hardware.py")
-            mod = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(mod)
-            self.assertEqual(mod.main(), 0)
+            src, site = Path(tmp) / "src", Path(tmp) / "site"
+            src.mkdir()
+            (src / "a.md").write_text("# new", encoding="utf-8")
+            (src / "b.md").write_text("# old", encoding="utf-8")
+            (src / "index.json").write_text(json.dumps([
+                {"month": "2026-09", "title": "九月", "file": "a.md"},
+                {"month": "2026-08", "title": "八月", "file": "b.md"}]), encoding="utf-8")
+            self.assertEqual(self._run_build(src, site), 0)
+            out = site / "hardware"
             self.assertTrue((site / "hardware.html").exists())
-            self.assertTrue((site / "hardware" / "hardware-insight.md").exists())
+            self.assertEqual((out / "hardware-insight.md").read_text(encoding="utf-8"), "# new")
+            self.assertEqual((out / "insight-2026-08.md").read_text(encoding="utf-8"), "# old")
+            months = json.loads((out / "index.json").read_text(encoding="utf-8"))
+            self.assertEqual([m["month"] for m in months], ["2026-09", "2026-08"])
+
+    def test_build_fails_when_month_file_missing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            src = Path(tmp)
+            (src / "index.json").write_text(json.dumps(
+                [{"month": "2026-09", "title": "t", "file": "nope.md"}]), encoding="utf-8")
+            self.assertEqual(self._run_build(src, src / "site"), 1)
+
+    def test_committed_month_index_is_consistent(self):
+        index = json.loads((ROOT / "data/hardware-insights/index.json").read_text(encoding="utf-8"))
+        self.assertTrue(index)
+        self.assertEqual([e["month"] for e in index], sorted((e["month"] for e in index), reverse=True))
+        for e in index:
+            self.assertTrue((ROOT / "data/hardware-insights" / e["file"]).exists(), e)
 
 
 class CommittedDataTest(unittest.TestCase):

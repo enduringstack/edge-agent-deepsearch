@@ -4566,5 +4566,826 @@
         "evidence_url": ""
       }
     ]
+  },
+  "hardware": {
+    "window": {
+      "start": "2026-08-26",
+      "end": "2026-09-01"
+    },
+    "items": [
+      {
+        "date": "2026-08-26",
+        "vendor": "Qualcomm",
+        "category": "移动SoC",
+        "title": "Snapdragon 8 Elite Extreme Gen 6 Geekbench 6 appears: up to 5.01GHz, multi-core 15% below current gen",
+        "title_zh": "爆料：Extreme Gen 6 首个 Geekbench 偏低",
+        "url": "https://gazlog.jp/entry/snapdragon-8-elite-extreme-g6-geekbench6-benchmark/",
+        "source_type": "媒体",
+        "summary_zh": "【爆料/跑分库】vivo V2606A（SM8975，Android 17，14.87GB 内存）出现在 Geekbench 6.7.1：单核 3,434，多核 9,334，比 8 Elite Gen 5 零售机均值（3,631 / 10,940）分别低约 5% 和 15%。频率为 3×3.74 + 3×4.03 + 2×5.01GHz。媒体认为原因是开发机，加上 3 颗性能核换成了能效核，以及 5GHz 带来的热和功耗限制。",
+        "whats_new_zh": [
+          "Geekbench 6.7.1：单核 3,434 / 多核 9,334；Gen 5 零售均值 3,631 / 10,940",
+          "簇频率：3×3.74GHz + 3×4.03GHz + 2×5.01GHz",
+          "对照：9 月官方公布的参考机成绩为单核 4,291 / 多核 12,686，9 月 21 日 B 站原型机为 4,327 / 12,873（主频 5.10GHz）"
+        ],
+        "key_specs": {
+          "process": "2nm",
+          "cpu": "3×3.74 + 3×4.03 + 2×5.01GHz",
+          "npu": "未披露",
+          "memory": "14.87GB 可用（约 16GB）",
+          "power": "未披露",
+          "other": "vivo V2606A，Android 17"
+        },
+        "edge_ai_impact_zh": "早期样机明显受热和功耗限制，说明 5GHz 的持续性能依赖散热设计，这也是 9 月官方强调 Offset PoP 和导热块的原因。对端侧 AI 的直接意义不大。",
+        "evidence_urls": [
+          "https://tbreak.com/snapdragon-8-elite-extreme-gen-6-prototype-geekbench-leak/"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "能效与实测",
+            "points": [
+              "开发机多核比上代零售机低 15%，而 9 月官方参考机多核 12,686，比本次高约 36%，说明固件和功耗墙差异很大",
+              "B 站原型机（9 月 21 日）显示 DRAM 位于封装上方并带 Heat Pass Block，官方 9 月称 Offset PoP 把 DRAM 移到侧面"
+            ]
+          },
+          {
+            "heading": "CPU 簇",
+            "points": [
+              "三簇 3+3+2 的配置与 8 月 25 日的命名爆料一致；Gen 5 为 2+6 两簇"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-08-31",
+        "vendor": "Qualcomm / HUMAIN",
+        "category": "PC芯片",
+        "title": "Qualcomm and HUMAIN Unveil Horizon Ultra AI PC at LEAP 2026, Bringing AI Directly to the Device",
+        "title_zh": "HUMAIN Horizon Ultra：X2 Elite 主权 AI PC",
+        "url": "https://www.qualcomm.com/news/releases/2026/08/qualcomm-and-humain-unveil-horizon-ultra-ai-pc-at-leap-2026--bri",
+        "source_type": "官方",
+        "summary_zh": "高通与沙特 HUMAIN 在利雅得 LEAP 2026 发布 Horizon Ultra AI PC。该机基于 Snapdragon X2 Elite（18 核 Oryon + Adreno + Hexagon NPU），首发系统为 Windows，2027 年下一代将换成 HUMAIN OS，经销商为 AlFalak，9 月 20 日起面向企业销售。官方稿强调 AI 负载在 CPU、GPU、NPU 之间分配，必要时再延伸到云端。",
+        "whats_new_zh": [
+          "SoC：Snapdragon X2 Elite，18 核 Oryon",
+          "NPU：官方稿未给出 TOPS；Reuters 系报道称“最高 80 TOPS”（与 X2 Elite 官方 80 TOPS 一致）",
+          "续航：HUMAIN 高管接受 AGBI 采访称“最长 22 小时”（媒体转述）",
+          "9 月 20 日起企业销售；2027 年下一代改用 HUMAIN OS"
+        ],
+        "key_specs": {
+          "process": "3nm（X2 Elite，背景）",
+          "cpu": "18 核 Oryon",
+          "gpu": "Adreno",
+          "npu": "Hexagon，80 TOPS（媒体转述）",
+          "memory": "未披露",
+          "power": "续航最长 22 小时（媒体转述）",
+          "other": "LEAP 2026，利雅得"
+        },
+        "edge_ai_impact_zh": "这是高通 PC 芯片第一次以“主权 AI + 自研 OS”的形式落地，HUMAIN 同时也是 AI200 机架的首个客户。高通在端侧和数据中心两条线上捆绑了同一个大客户。",
+        "evidence_urls": [
+          "https://www.telecomtv.com/content/digital-platforms-services/qualcomm-and-humain-unveil-horizon-ultra-ai-pc-at-leap-2026-bringing-ai-directly-to-the-device-56150/",
+          "https://www.digitaltrends.com/computing/humain-horizon-ultra-ai-pc-unveiled-with-snapdragon-x2-elite-and-on-device-ai/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 与平台",
+            "points": [
+              "X2 Elite 的 Hexagon NPU 为 80 TOPS INT8（部分 SKU 为 85），比第一代 X Elite 的 45 TOPS 提升约 78%",
+              "官方稿只描述 CPU、GPU、NPU 异构分工和云端延伸，没有给出模型和 tokens/s"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "内存配置未披露；X2 Elite 平台带宽为 152 或 228GB/s，最高 128GB（9 月报告背景）"
+            ]
+          }
+        ],
+        "model_capacity_zh": "本次发布未披露具体模型（未提及 ALLaM 或 Humain One 的端侧规模）。参考 X2 Elite 平台口径：80 TOPS INT8，官方称最高可跑 30B 模型、20 万上下文（见 9 月报告），但不代表 Horizon Ultra 实际搭载的模型。"
+      },
+      {
+        "date": "2026-08-26",
+        "vendor": "Samsung Electronics",
+        "category": "存内计算/PIM",
+        "title": "Samsung's 4nm GAIA Could Mark First PIM Commercialization in AI PCs; Mass Production as Early as 2027",
+        "title_zh": "三星Hot Chips详解LPDDR5X-PIM：每bank一个MAC块",
+        "url": "https://www.trendforce.com/news/2026/08/26/news-samsungs-4nm-gaia-could-mark-first-pim-commercialization-in-ai-pcs-mass-production-as-early-as-2027/",
+        "source_type": "媒体",
+        "summary_zh": "（窗口前背景，Hot Chips 2026于8月下旬举行）三星首次公开LPDDR5X-PIM的结构与实测：在一颗16 bank的LPDDR5X-9600芯片上，每个bank配一个PIM块，内部聚合带宽614GB/s，是外部接口76.8GB/s的8倍。Llama 3.1 8B运行时间12.3s→5.4s，吞吐27→81.3（约3倍）。System LSI的4nm AI PC加速器GAIA据报将首个集成LPDDR5X-PIM，最早2027年量产；JEDEC LPDDR6-PIM标准接近定稿。",
+        "whats_new_zh": [
+          "每bank一个PIM块（MAC树+寄存器堆+控制逻辑），16个bank同时计算，内部带宽614GB/s vs 外部76.8GB/s（8倍）",
+          "每个PIM块每数据时钟4个INT8/FP8 MAC，单封装约2.4 TOPS，4bit权重时翻倍",
+          "Llama 3.1 8B：12.3s→5.4s（2.28倍），吞吐27.0→81.3（3.01倍）",
+          "地址对齐模式（AAM）兼容现有内存控制器，可容忍控制器的命令重排"
+        ],
+        "key_specs": {
+          "process": "GAIA：Samsung Foundry 4nm",
+          "npu": "每bank PIM块，INT8/FP8，约2.4 TOPS/封装",
+          "memory": "LPDDR5X-9600 16 bank，外部76.8GB/s，内部614GB/s",
+          "power": "未披露",
+          "other": "JEDEC LPDDR6-PIM接近定稿"
+        },
+        "edge_ai_impact_zh": "这是LPDDR级PIM首次给出接近产品形态的8B模型实测，直接针对端侧Decode的带宽瓶颈。2027年AI PC（GAIA）可能是首个落地场景，手机要等LPDDR6-PIM标准和SoC内存控制器支持。",
+        "evidence_urls": [
+          "https://chipsandcheese.com/hot-chips-2026-samsungs-processing",
+          "https://www.trendforce.com/news/2026/04/24/news-jedec-previews-lpddr6-enhancements-develops-socamm2-standard-for-ai-memory/",
+          "https://en.fnnews.com/news/202608260930347718",
+          "https://www.servethehome.com/samsung-lpddr5x-pim-at-hot-chips-2026/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "PIM 微架构",
+            "points": [
+              "每个bank一个PIM块：MAC树、4kbit源寄存器（存放激活向量）、2kbit scale寄存器（MAC前对权重做反量化缩放）、1024bit指令寄存器（最多64条16bit指令）。",
+              "权重常驻DRAM阵列，作为MAC的第二个操作数直接从bank读出，不经过外部I/O；激活向量由主机写入源寄存器，一个源寄存器需16次写入（256bit/包）。",
+              "multi-bank模式下的读命令触发所有bank同时计算，结果累加到PIM向量寄存器，再用写命令回写bank。"
+            ]
+          },
+          {
+            "heading": "为什么只到3倍而不是8倍",
+            "points": [
+              "内部带宽提升8倍，但8B实测只提升约3倍：注意力、softmax、归一化、采样等非GEMV部分仍在主机上（Amdahl定律）；模式切换和主机→PIM的激活传输也有开销（分析）。",
+              "设计偏向GEMV而非GEMM，对投机解码（一次验证多个token，近似小GEMM）和MoE的随机专家访问不友好；k-quants等量化格式不能直接映射，需要bank感知的物理内存分配（媒体分析）。"
+            ]
+          },
+          {
+            "heading": "系统集成难点",
+            "points": [
+              "PIM模式切换会与非PIM线程冲突；需要锁和通道隔离（牺牲带宽和算力）；建议不可缓存映射；带副作用的读会破坏预取和推测执行；PIM块之间不能直接交换数据。",
+              "作者建议增加专用DRAM计算命令、由内存控制器处理一致性，并为CPU增加块乘加指令。"
+            ]
+          },
+          {
+            "heading": "与上代 HBM-PIM 对比",
+            "points": [
+              "2021年HBM-PIM（Aquabolt-XL）：每bank（论文称每bank对）一个300MHz FP16可编程计算单元（PCU），每颗4Gb die 32个PCU，替换堆栈底部4层die；官方称系统性能2倍以上、能耗降低70%以上。",
+              "LPDDR5X-PIM改用INT8/FP8和4bit权重，目标从HPC/训练转向端侧量化LLM的Decode。"
+            ]
+          },
+          {
+            "heading": "标准化",
+            "points": [
+              "JEDEC 2026年4月预告LPDDR6下一版将新增x12/x6子通道模式（每die接口从x16扩到x24、容量最高512GB），并称LPDDR6-PIM标准接近完成；截至本期未见正式发布。"
+            ]
+          },
+          {
+            "heading": "已知信息",
+            "points": [
+              "GAIA 由三星 System LSI 开发，Samsung Foundry 4nm，定位 AI PC 加速器（媒体报道，主来源 ZDNet Korea 8/19）。",
+              "原型已交 Lenovo、HP 做性能验证；最早 2027 年量产，若成行将是 PIM 首次进入实际 AI PC 芯片组。"
+            ]
+          },
+          {
+            "heading": "判断",
+            "points": [
+              "AI PC 比手机更容易先落地 PIM：内存控制器与系统软件由少数 OEM/芯片商掌控，且对 8B 级本地模型的带宽需求最迫切。",
+              "风险在生态：需要运行时把 decode GEMV 切到 PIM 模式，且 PIM 与 NPU 的数据布局冲突（见 MICRO'26 PFM）尚无产品级方案。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "PIM不增加容量，只提升有效带宽；容量仍由LPDDR5X颗粒决定（Chips and Cheese推算8颗约128GB、约9.6 INT8 TOPS）。官方实测为Llama 3.1 8B（精度、上下文、SoC未公开，吞吐单位媒体多写作tokens/s）。只加速Decode阶段的GEMV；Prefill的GEMM、注意力softmax、采样仍在主机NPU/GPU上执行。"
+      },
+      {
+        "date": "2026-08-31",
+        "vendor": "Horizon Robotics（地平线）",
+        "category": "车载/机器人",
+        "title": "Horizon Robotics 2026 Interim Results Announcement",
+        "title_zh": "地平线中报：营收20.55亿元、毛利率约66%",
+        "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0831/2026083101009.pdf",
+        "source_type": "官方",
+        "summary_zh": "地平线8月31日发布2026中期业绩：收入20.55亿元，同比+32.9%，毛利率约66%；征程系列芯片出货221.8万片（+12.1%），授权与服务收入11.29亿元（+52.7%）超过产品收入9.26亿元。征程6B首发量产于广汽丰田；征程7预计2027年发布。",
+        "whats_new_zh": [
+          "收入20.55亿元（+32.9%），毛利13.56亿元，毛利率约66%，期内实现盈利（去年同期大额亏损）",
+          "征程系列出货221.8万片（+12.1%）；产品与方案收入9.26亿元（+14.8%）",
+          "授权与服务收入11.29亿元（+52.7%）",
+          "累计定点近500款车型，其中中高阶近130款、出口车型60+；HSD激活率>88%",
+          "征程6B全球首发量产（广汽丰田）；征程7预计2027年；星空/KKClaw 2026Q4量产"
+        ],
+        "key_specs": {
+          "npu": "征程6系列BPU Nash（J6P 560 TOPS，9月口径）",
+          "other": "向具身智能、无人物流车输出技术"
+        },
+        "edge_ai_impact_zh": "出货增速（+12%）远低于授权收入（+53%），地平线的增长正从卖芯片转向卖算法/IP；征程6同源的BPU Nash已下放到地瓜机器人S100/S100P，车规算力正在成为机器人的默认底座。",
+        "evidence_urls": [
+          "https://autonews.gasgoo.com/articles/ICV/horizon-robotics-2026-interim-report-gross-margin-maintains-high-of-66-2095039844043800577"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "收入结构",
+            "points": [
+              "授权与服务11.29亿元>产品9.26亿元，毛利率约66%由高毛利授权驱动。",
+              "征程出货221.8万片，增速12.1%，单片价值量随J6系列上行。"
+            ]
+          },
+          {
+            "heading": "路线图",
+            "points": [
+              "J6B首发量产；J7预计2027年；与大众合资Carizon的L3方案预计2027下半年。"
+            ]
+          },
+          {
+            "heading": "机器人外溢",
+            "points": [
+              "公司称已通过合作伙伴把技术输出到具身智能、无人物流车等边缘计算平台；同日地瓜机器人S100P上市评测。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "中报未披露模型规模。参考9月分析：征程6P/旭日S600同为4核BPU Nash+256bit LPDDR5(X)约205GB/s，可跑Pi0、Qwen3-VL-8B约10FPS级。"
+      },
+      {
+        "date": "2026-08-26",
+        "vendor": "BOS Semiconductors",
+        "category": "车载/机器人",
+        "title": "BOS Semiconductors presents chiplet-based AI accelerator Eagle-N at Hot Chips 2026",
+        "title_zh": "BOS Eagle-N：Chiplet 车载 AI SoC",
+        "url": "https://www.bos-semi.com/post/bos-semiconductors-presents-chiplet-based-ai-accelerator-eagle-n-at-hot-chips-2026",
+        "source_type": "官方",
+        "summary_zh": "现代汽车与 Tenstorrent 系的 BOS Semiconductors 在 Hot Chips 2026（8/24 Automotive 专场，CTO KM Lim）介绍 Eagle-N：以 chiplet 组合扩展算力，NPU 围绕数据搬运效率设计（跨计算簇共享内存、NoC、专用数据搬运处理器），并支持 NPU 虚拟化分区。官方稿未给出工艺、TOPS、功耗。",
+        "whats_new_zh": [
+          "chiplet 组合扩展算力，覆盖中高端车型与机器人",
+          "NPU：跨计算簇共享内存 + NoC + 专用数据搬运处理器",
+          "NPU 虚拟化：分区为独立执行环境，并行跑多个 AI 负载",
+          "支持大型 Transformer 与生成式 AI、Physical AI 负载",
+          "背景（2025-09，媒体/合作方口径）：业界首款 chiplet 车载 NPU，250 TOPS（dense），NPU 采用 Tenstorrent Tensix 核"
+        ],
+        "key_specs": {
+          "process": "未披露",
+          "npu": "Tensix 核（Tenstorrent 合作方口径）；250 TOPS dense 为 2025 年背景数据",
+          "memory": "未披露",
+          "power": "未披露",
+          "other": "chiplet 架构，NPU 虚拟化"
+        },
+        "edge_ai_impact_zh": "车载 AI SoC 从单片大芯片转向“chiplet 组合按车型扩展”，与 Intel Wildcat Lake 的 UCIe 下沉、Arm/Tenstorrent 的 chiplet 生态呼应；BOS 自己也总结本届 Hot Chips 的主题是“数据在内存与计算间搬运多快”，而非裸 TOPS。",
+        "evidence_urls": [
+          "https://hc2026.hotchips.org/program/",
+          "https://www.design-reuse.com/news/202531023-bos-semiconductors-to-present-eagle-n-at-hot-chips-2026/",
+          "https://en.wowtale.net/2026/02/23/233573",
+          "https://www.bos-semi.com/product",
+          "https://hc2026.hotchips.org/"
+        ],
+        "confidence": "medium",
+        "venue": "Hot Chips 2026",
+        "affiliation": "BOS Semiconductors",
+        "authors": "KM Lim（CTO，演讲者）",
+        "deep_dive_zh": [
+          {
+            "heading": "架构要点（官方稿）",
+            "points": [
+              "NPU 以数据搬运为中心：计算簇共享内存、NoC 互连、专用数据搬运处理器。",
+              "NPU 虚拟化把加速器切成独立执行环境，满足座舱/ADAS 多负载隔离。"
+            ]
+          },
+          {
+            "heading": "背景与进度",
+            "points": [
+              "Eagle-N 于 2024-12 首发；2025-09 称 250 TOPS dense、已向车厂送样（搜索摘要口径）。",
+              "2026-02 报道：量产样片计划上半年流片，A 轮 6,020 万美元主要用于 Eagle-N 量产（媒体）。"
+            ]
+          },
+          {
+            "heading": "未披露",
+            "points": [
+              "工艺、die 间互连标准（是否 UCIe）、内存类型与带宽、功耗、LLM/VLA 实测均未在官方稿出现。"
+            ]
+          },
+          {
+            "heading": "架构",
+            "points": [
+              "Tenstorrent Tensix NPU核+NoC；计算簇共享内存，另设专门的数据搬运处理器。",
+              "Chiplet化：250→2000+ TOPS按需堆叠，UCIe互联。"
+            ]
+          },
+          {
+            "heading": "车规与安全",
+            "points": [
+              "ASIL-B、AEC-Q100 Grade2，Rambus RT-640硬件安全模块。"
+            ]
+          },
+          {
+            "heading": "同场对照",
+            "points": [
+              "Hot Chips汽车专场另有Waymo传感器融合处理器与Waymo主题演讲；Infineon在RISC-V教程讲车规RISC-V。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露（官方稿仅称支持大型 Transformer 与生成式 AI）。"
+      },
+      {
+        "date": "2026-08-31",
+        "vendor": "D-Robotics（地瓜机器人）",
+        "category": "车载/机器人",
+        "title": "D-Robotics RDK S100P – A 128 TOPS alternative to NVIDIA Jetson Orin NX 16GB with Cortex-A78AE/R52 cores",
+        "title_zh": "地瓜RDK S100P：128 TOPS、24GB，对标Orin NX",
+        "url": "https://www.cnx-software.com/2026/08/31/d-robotics-rdk-s100p-a-128-tops-alternative-to-nvidia-jetson-orin-nx-16gb-with-cortex-a78ae-r52-cores/",
+        "source_type": "媒体",
+        "summary_zh": "CNX Software评测地瓜机器人RDK S100P开发套件：S100P SoC集成6核A78AE@2.0GHz、4核R52+实时MCU、1个BPU Nash（128 INT8 TOPS）、Mali-G78AE，配24GB LPDDR5（96bit、6400Mbps），售价899美元（DFRobot）。上代S100为12GB、80 TOPS。",
+        "whats_new_zh": [
+          "BPU Nash 128 INT8 TOPS（上代S100 80 TOPS），支持160+ ONNX算子",
+          "24GB LPDDR5、96bit、6400Mbps，理论约76.8GB/s（上代12GB）",
+          "6×A78AE@2.0GHz + 4×R52+@1.2GHz（1对锁步+2个分离锁步），Mali-G78AE 100 GFLOPS",
+          "售价899美元（DFRobot）/999.99美元（Waveshare）；90W适配器，板级最高150W",
+          "对比Orin NX 16GB：100 sparse INT8 TOPS@25W、16GB/128bit LPDDR5；二者TOPS口径不可直接比较"
+        ],
+        "key_specs": {
+          "cpu": "6×Cortex-A78AE@2.0GHz + 4×Cortex-R52+",
+          "gpu": "Mali-G78AE，100 GFLOPS",
+          "npu": "BPU Nash，128 INT8 TOPS",
+          "memory": "24GB LPDDR5，96bit，6400Mbps（≈76.8GB/s）",
+          "power": "12–20V输入，SoC功耗未披露",
+          "other": "$899；OpenExplorer工具链、TogetherROS.Bot（ROS 2 Humble）"
+        },
+        "edge_ai_impact_zh": "S100P用“更大容量、更窄位宽”换成本：24GB能装下更大的VLA/VLM，但76.8GB/s低于Orin NX（102.4GB/s），8B INT4解码上限约17 tokens/s，机器人大脑级VLM仍要上S600/Thor档。",
+        "evidence_urls": [
+          "https://wiki.dfrobot.com/dfr1300/docs/24982",
+          "https://www.electromaker.io/blog/article/d-robotics-introduces-the-rdk-s100-ai-robotics-development-board-at-embedded-world-2026"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "相对上代",
+            "points": [
+              "BPU 80→128 TOPS，内存12→24GB，仍为单BPU Nash（S600为4核Nash、560 TOPS）。",
+              "96bit LPDDR5-6400：带宽76.8GB/s，低于Orin NX 16GB的128bit（约102.4GB/s，推算）。"
+            ]
+          },
+          {
+            "heading": "实时与安全",
+            "points": [
+              "4核R52+支持锁步/分离锁步，适合电机控制与安全监控与AI同片运行，Orin NX无此配置。"
+            ]
+          },
+          {
+            "heading": "生态短板",
+            "points": [
+              "OpenExplorer + .hbm模型格式，相比CUDA/TensorRT/Isaac生态仍窄；目前主要面向中国市场。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "评测未给LLM/VLA实测。推算：76.8GB/s下8B INT4（约4.5GB/token含4K KV）上限约17 tokens/s，3B INT4约40 tokens/s；24GB容量可容纳INT4的30B级稠密或30B-A3B MoE权重（推算），但带宽决定只适合小激活参数模型。"
+      },
+      {
+        "date": "2026-08-26",
+        "vendor": "Qualcomm",
+        "category": "数据中心(对端侧有参考)",
+        "title": "Qualcomm at Deutsche Bank Technology Conference: first-gen data center silicon 'back in the lab, looking good'; HBC on track for 2027",
+        "title_zh": "德银会议：数据中心首代芯片回片，HBC 2027",
+        "url": "https://www.tikr.com/blog/qualcomm-stock-is-up-15-in-a-month-the-data-center-story-is-why-it-can-keep-going",
+        "source_type": "媒体",
+        "summary_zh": "8 月 26 日德意志银行科技会议上，高通 EVP Durga Malladi 表示首代数据中心芯片已“back in the lab, looking good”，并称 2027 年出货的 HBC（High Bandwidth Compute，近存计算内存架构）“第一代预计没有问题”，内存厂商的态度是“如何与你更紧密合作”。本条为二手转述（TIKR）。",
+        "whats_new_zh": [
+          "首代数据中心芯片已回片，正在实验室验证；预计下个季度给出 proof-point 数据，12 月季度开始确认首笔数据中心收入（TIKR 转述）",
+          "HBC：2027 年出货，Microsoft Azure 已承诺部署；三星、SK 海力士据报道将参与 HBC 合作",
+          "Dragonfly C1000 服务器 CPU：2028 年，Meta 为首发客户；数据中心营收目标为 FY2029 超过 150 亿美元"
+        ],
+        "key_specs": {
+          "process": "未披露",
+          "cpu": "Dragonfly C1000（2028）",
+          "npu": "AI200/AI250 系列（具体对应哪颗未说明）",
+          "memory": "HBC 近存计算（2027）",
+          "power": "未披露",
+          "other": "二手转述，非官方新闻稿"
+        },
+        "edge_ai_impact_zh": "HBC 的思路是把计算放到 LPDDR 类内存旁边，以内存容量和带宽换取推理效率，和手机端“共享内存 +50%、LPDDR6”属于同一类解法（应对内存墙）。它也是高通 AI250 近存计算路线的延续。",
+        "evidence_urls": [],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "背景：AI200 每卡 768GB LPDDR（2025 年 10 月官方）；AI250 采用基于近存计算的“创新内存架构”。HBC 是这条路线的 2027 版本",
+              "Malladi 称第一代 HBC“不预期有问题”，并称存储厂主动寻求深度合作，即 HBC 与 HBM 路线的竞争"
+            ]
+          },
+          {
+            "heading": "可信度",
+            "points": [
+              "原话来自 TIKR 对会议的转述，没有官方文字稿；“首代芯片”具体指哪颗未说明"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-09-01",
+        "vendor": "学术（mzCache 团队）",
+        "category": "软件栈/工具链",
+        "title": "mzCache: On-Device LLM Memory Management under Multitasking",
+        "title_zh": "mzCache：多任务下的手机 LLM 内存管理",
+        "url": "https://arxiv.org/abs/2609.01338",
+        "source_type": "论文",
+        "summary_zh": "手机多任务切换会让 OS 回收 LLM 权重与 KV Cache，再次请求时只能从存储读回或重算 KV。mzCache 把 LLM 内存切成细粒度共享缓冲，利用移动 SoC 统一内存让 GPU 零等待推理、CPU 并发恢复，配合混合 swap 与 backward-out 淘汰策略。基于 llama.cpp 的 Android 实现 TTFT 降低 2.1–5.5×。",
+        "whats_new_zh": [
+          "细粒度共享缓冲：支持部分淘汰与跨处理器并发恢复",
+          "GPU 推理与 CPU 恢复并发（依托统一内存）",
+          "TTFT 比存储回读式部分卸载低 2.1–5.5×（llama.cpp / Android）"
+        ],
+        "key_specs": {
+          "memory": "移动 SoC 统一内存",
+          "other": "llama.cpp，Android 应用"
+        },
+        "edge_ai_impact_zh": "指出端侧 LLM 的真实瓶颈之一是 OS 内存压力而非算力；对手机厂商的系统级 AI 内存保留策略（常驻模型、KV 持久化）有直接参考。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2609.01338"
+        ],
+        "confidence": "high",
+        "venue": "MobiCom 2026",
+        "affiliation": "未在 arXiv 摘要中列出（通讯作者 Kyunghan Lee）",
+        "authors": "Hongseung Yu, Minsung Kim, Jongseok Park et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "机制",
+            "points": [
+              "restoration-oriented 内存管理：任何淘汰状态都能低延迟恢复；混合 swap + backward-out 淘汰。",
+              "TTFT 改善 2.1–5.5×，并在真实多任务场景验证（论文口径）。"
+            ]
+          },
+          {
+            "heading": "问题",
+            "points": [
+              "移动端多任务导致 LLM 内存（权重 + KV Cache）被 OS 回收：权重作为 file-backed page 被丢弃，KV 作为 anonymous page 进 zRAM 或被 LMK 直接杀进程。",
+              "恢复时按需缺页从闪存读权重、从 swap 解压 KV，延迟以 page fault 为主而非 prefill 计算；OnePlus 12 上 OS Paging 延迟方差尤其大。",
+              "GPU buffer 位于 page-locked 区，OS 无法优雅回收，GPU 推理只能全有或全无。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "Restoration-oriented eviction：权重按层、KV 按 chunk 分成细粒度共享 buffer（CPU/GPU 同时可见），可部分换出、部分恢复。",
+              "Hybrid Swap：静态权重直接丢弃并从 UFS 用 direct I/O 重读，动态 KV 压缩后放内存 swap（可选 8-bit 量化或 CacheGen），压力更大时 CompKV 落盘。",
+              "Backward-out / Forward-in：从后层开始换出、从前层开始恢复，GPU 用残留部分立即开始 prefill，CPU 多核并发分配与加载，三阶段流水重叠。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "Galaxy S25+ 与 OnePlus 12，均 12 GB LPDDR5X + UFS 4.0；基线为 Android OS Paging（mmap + zRAM zstd，CPU 推理）与作者在 llama.cpp 中实现的层粒度 partial offload（GPU 推理）。",
+              "Qwen3-0.6B、EXAONE-4.0-1.2B，上下文 8k/16k/32k，输入固定 8 token 模拟多轮对话的追问。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "TTFT 对 partial offload 降 2.1–5.5×；完全换出时对 OS Paging 2.5–3.0×（S25+）、9.2–25.9×（OnePlus 12）。",
+              "分项加速：分配 1.37×、重载 2.15×、prefill 2.33×；分配-重载-prefill 全重叠 1.61×。",
+              "S25+ / Qwen3-0.6B / 32k / 50% 残留时，峰值功率 19.2 W 高于基线 14.6 W，但因时间更短总能耗更低。",
+              "真实使用（社交、视频、游戏、相机、浏览器交替 10 轮 45 分钟）：OS Paging 每轮被 LMK 终止，mzCache 25 pp 档全程存活。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "首次把“多任务内存压力”作为端侧 LLM 的系统问题系统性处理，MobiCom '26 论文，有实机与真实场景验证。",
+              "只验证了 ≤1.2B 小模型和 GPU 后端，未覆盖 NPU（Hexagon 的 VTCM/ION buffer 语义不同）；未报告解码吞吐，KV 压缩对长对话精度的影响只在两种算法上做了对比。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "实机：Galaxy S25+（Snapdragon 8 Elite 家族）与 OnePlus 12（Snapdragon 8 Gen 3），均 12 GB。模型仅 Qwen3-0.6B（权重 1.2 GB，KV 8k/16k/32k = 0.9/1.8/3.5 GB）与 EXAONE-4.0-1.2B（2.6 GB，KV 0.5/1.0/1.9 GB）；上下文 8k–32k、输入 8 token。指标为 TTFT，未报告解码 tokens/s；作者指出权重+KV 合计可达 5–7 GB，约占 12 GB 手机内存一半。"
+      },
+      {
+        "date": "2026-08-31",
+        "vendor": "Qualcomm",
+        "category": "产业动态",
+        "title": "Qualcomm Raising Chip Prices Starting Tomorrow",
+        "title_zh": "高通 9 月 1 日起芯片两位数涨价",
+        "url": "https://www.macrumors.com/2026/08/31/qualcomm-chip-price-increase/",
+        "source_type": "媒体",
+        "summary_zh": "高通在 7 月财报时预告的涨价于 9 月 1 日生效：9 月 1 日以后出货的芯片涨价“两位数”，与客户逐一谈判。Amon 称“只是转嫁巨大的成本上涨”，背景是 DRAM 和存储因供应问题涨价。",
+        "whats_new_zh": [
+          "9 月 1 日后出货的芯片涨价“两位数”（未给出具体百分比）",
+          "原因：供应商成本上升；DRAM 和存储价格上涨",
+          "供应限制还压低了高通在 iPhone 18 系列中的份额（MacRumors）"
+        ],
+        "key_specs": {
+          "memory": "DRAM 涨价背景"
+        },
+        "edge_ai_impact_zh": "端侧大模型要靠大内存（16 至 24GB）才能落地，内存涨价再加上 SoC 涨价，会挤压中高端机型的内存配置，也解释了 9 月高通为什么把 30B MoE 和 LPDDR6 只放在 Extreme 档。",
+        "evidence_urls": [],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "对端侧 AI 的影响",
+            "points": [
+              "CNBC 9 月 22 日报道把 8 Elite Gen 6 发布与“内存短缺压制手机市场”放在一起讨论（见 9 月报告背景）",
+              "按带宽和容量分档的 SoC，加上内存成本上涨，可能让标准版机型停留在 12 至 16GB，难以跑 30B MoE（本文推断）"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-09-01",
+        "vendor": "Georgia State University / Toyota Motor North America",
+        "category": "学术研究",
+        "title": "How Do Prompt Variations Affect Energy Consumption in On-Device LLMs?",
+        "title_zh": "提示词变化如何影响手机端侧LLM能耗",
+        "url": "https://arxiv.org/abs/2609.01798",
+        "source_type": "论文",
+        "summary_zh": "在 Pixel 8 Pro 与 Pixel 7 上用 MLC-LLM 部署 5 个 0.36–2B 量化小模型，经 ADB 采集电流/电压并按 prefill/decode 阶段积分能耗，系统研究“认知负荷”和“措辞模式”两类提示属性（10 个子属性、404 条 prompt、7620 次推理）。发现：每 token 能耗主要由模型决定；认知负荷改变每 token 解码能耗（Qwen2.5-1.5B 外在负荷可达 1.29×），措辞（CoT、强硬语气等）主要通过改变 token 数影响总能耗；端侧 prefill 每 token 能耗是 decode 的 3–6×（Gemma-2-2B 例外）。",
+        "whats_new_zh": [
+          "LLaMA-3.2-1B 与两个 Qwen 模型 prefill 每 token 能耗为 decode 的 3–6×，与服务器端相反",
+          "外在认知负荷使 Qwen2.5-1.5B 解码每 token 能耗升至 1.29×；Gemma-2-2B 长 prompt 摊薄后 prefill 归一化能耗降至 0.67×",
+          "Pixel 8 Pro Base prompt：Gemma-2-2B 生成 538 token 用时 63.0 s、解码能耗 381 J（解码功耗 6.09 W）；LLaMA-3.2-1B 380 token / 24.5 s / 156 J（6.36 W）",
+          "实验规模：2 类属性 × 10 子属性 × 4 数据集 × 404 prompt × 5 模型 × 2 设备 × 3 次，共 7620 次推理"
+        ],
+        "key_specs": {
+          "process": "未披露（Tensor G3 / G2）",
+          "cpu": "Pixel 8 Pro 锁频 1.32/1.57/2.04 GHz；Pixel 7 锁频 1.32/1.49/1.58 GHz",
+          "gpu": "锁频 810 MHz（MLC GPU 推理）",
+          "npu": "未使用",
+          "memory": "未披露",
+          "power": "ADB 采集整机电流×电压；Pixel 8 Pro 解码功耗约 4.8–6.4 W（表中数据）",
+          "other": "MLC-LLM + LM-Meter 改造的分阶段测量框架；关闭 DVFS"
+        },
+        "edge_ai_impact_zh": "把“提示词设计”纳入端侧能耗优化维度：对系统提示、Agent 模板这类每次调用都会附带的长前缀，选择不同措辞会直接改变 token 数和 Joule；同时再次确认手机端 prefill 每 token 比 decode 更贵，长前缀缓存/复用值得做。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2609.01798"
+        ],
+        "confidence": "high",
+        "venue": "arXiv（cs.CL）",
+        "affiliation": "Georgia State University、Toyota Motor North America",
+        "authors": "Wei Hu, Xiaolong Tu, Dawei Chen et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "端侧 LLM 的能耗研究多关注模型、运行时和硬件，提示词本身（措辞、推理负担）对能耗的影响缺少系统测量。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "定义两类提示属性：Phrasing Pattern（persona、format、polite、technical、CoT、aggressive 等）与 Cognitive Load（intrinsic/extraneous/germane），用 LLM 生成变体并经评分与语义相似度过滤。",
+              "在 MLC-LLM 中插桩记录 prefill/decode 起止时间，经 ADB 采样 I(t)·V(t) 积分得到分阶段能耗；锁定 CPU/GPU 频率消除 DVFS 干扰。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "Pixel 8 Pro 与 Pixel 7；5 个 0.36–2B 模型；4 个数据集（含 AI2-ARC、BoolQ、SVAMP）；每配置 3 次重复，共 7620 次推理。",
+              "质量用 DeepEval 六维无参考评分或任务准确率。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "每 token 能耗的主导因素是模型本身；措辞变体的归一化每 token 能耗基本在 1.0 附近。",
+              "认知负荷显著影响解码每 token 能耗（Qwen2.5-1.5B 外在负荷 1.29×）；CoT 和强硬语气显著增加 token 数，在 SmolLM2-360M、Qwen2.5-0.5B 上放大更明显。",
+              "能耗-质量 Pareto：对 LLaMA-3.2-1B、Qwen2.5-1.5B、SmolLM2-360M，存在既省能又提质量的措辞子属性。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "提供了手机端分阶段能耗测量方法和可复用数据集，提示能效优化可延伸到 prompt 层。",
+              "模型都 ≤2B、只用 MLC GPU 路径、锁低频，未涉及 NPU；prefill 窗口包含排队与 tokenize 等固定开销，使 prefill 每 token 能耗被放大；未披露投稿会议。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "Pixel 8 Pro / Pixel 7，MLC-LLM：Gemma-2-2B（q4f16_0）、LLaMA-3.2-1B、Qwen2.5-1.5B、SmolLM2-360M（q4f16_1）、Qwen2.5-0.5B（q0f16）。按附录表推算（非论文直接给出）Pixel 8 Pro 解码速度：Gemma-2-2B 约 8.5 tok/s、约 0.71 J/token；LLaMA-3.2-1B 约 15.5 tok/s、约 0.41 J/token；注意 CPU/GPU 被锁在较低频率，绝对值不代表手机峰值性能。"
+      },
+      {
+        "date": "2026-08-31",
+        "vendor": "Cornell",
+        "category": "学术研究",
+        "title": "HBQ: Hierarchical Scaling Block Quantization with Hardware-Efficiency-Aware Design for Accurate LLM Inference",
+        "title_zh": "HBQ：分层缩放块量化 W4A5",
+        "url": "https://arxiv.org/abs/2609.00450",
+        "source_type": "论文",
+        "summary_zh": "HBQ 指出块量化中块大小是硬件效率与精度的关键权衡：大块摊薄反量化与累加开销但损失精度。方案是大块 + 低开销尾数（SIG）二级缩放；HBQ-A 以 W4A5 达到 W4A16 级精度且面积小于 NVFP4，HBQ-E 再降 17% 硬件成本。28nm ASIC 实现覆盖权重、激活与 KV Cache。",
+        "whats_new_zh": [
+          "HBQ-A：W4A5 达到 W4A16 精度，面积低于 NVFP4",
+          "HBQ-E：硬件成本再降 17%，精度仍优于既有 BQ",
+          "28nm ASIC：对比 SOTA 仅权重量化面积/能效 2.3×/4.6×",
+          "对比既有 BQ：系统能耗低 1.6–3.3×、速度 1.5–3×；提出 partial-sum BQ 降外存能耗"
+        ],
+        "key_specs": {
+          "process": "28nm ASIC",
+          "npu": "支持 W/A/KV 的 HBQ 块量化 MAC",
+          "other": "开源：github.com/SeoLabCornell/HBQ"
+        },
+        "edge_ai_impact_zh": "端侧 NPU 正从 INT4 权重/INT8 激活走向 MX/NVFP4 类块浮点；HBQ 给出“比 NVFP4 更省面积、激活降到 5bit 仍保精度”的数据点，适合作为下一代手机 NPU 数值格式的参考。",
+        "evidence_urls": [
+          "https://microarch.org/micro59/program/"
+        ],
+        "confidence": "high",
+        "venue": "MICRO 2026（Session 6C）",
+        "affiliation": "Cornell（据开源仓库 SeoLabCornell 推断）",
+        "authors": "Chun-Ting Chen, Dongmin Han, Hangyeol Mun et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "设计空间结论",
+            "points": [
+              "块越大，反量化与累加成本越被摊薄，但量化误差上升；SIG 缩放针对权重/激活分布差异做二级补偿。"
+            ]
+          },
+          {
+            "heading": "硬件结果",
+            "points": [
+              "28nm 实现；面积效率 2.3×、能效 4.6×（对 SOTA weight-only），系统能耗 1.6–3.3× 更低、速度 1.5–3×（对既有 BQ）。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-09-01",
+        "vendor": "Georgia Tech（Shimeng Yu / Yingyan Celine Lin 组）",
+        "category": "学术研究",
+        "title": "Hardware Acceleration of Block-Diffusion LLM for Edge Devices",
+        "title_zh": "端侧块扩散LLM软硬协同加速",
+        "url": "https://arxiv.org/abs/2609.01084",
+        "source_type": "论文",
+        "summary_zh": "首批面向 batch=1 端侧块扩散 LLM（dLLM）的硬件工作：WIFiV-LPDDR 宽 I/O 带精度标记读、BRQ-KV（低秩+INT8 残差前缀缓存）、DAT-FFN（漂移感知低比特 delta），映射到输入驻留混合精度脉动阵列。在建模 Jetson 级平台上，7B 模型平均延迟 4.44×、能耗 3.96×，精度掉点 <1 个百分点。",
+        "whats_new_zh": [
+          "1.5B：能耗 3.79×、延迟 2.88×；7B：能耗 3.96×、延迟 4.44×（算术平均）",
+          "所有压缩模型基准分数下降 <1 个绝对百分点",
+          "提出带精度标记的宽 I/O LPDDR 内存接口"
+        ],
+        "key_specs": {
+          "npu": "输入驻留混合精度脉动阵列",
+          "memory": "WIFiV-LPDDR（宽 I/O，精度标记读）",
+          "other": "建模 Jetson 级平台"
+        },
+        "edge_ai_impact_zh": "扩散式 LLM 一次并行生成多个 token，是端侧突破 decode 带宽墙的另一条路；这篇说明 dLLM 同样需要 KV/FFN 专用压缩与 LPDDR 接口改造。",
+        "evidence_urls": [],
+        "confidence": "medium",
+        "venue": "arXiv（cs.AR）",
+        "affiliation": "Georgia Tech（据作者推断，arXiv 页面未列机构）",
+        "authors": "Wei-Hsing Huang, Kiseok Lee, Ming-Yen Lee et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "batch=1 无法摊薄权重流量；全序列重算的 dLLM 代价高，块扩散虽让已完成块可缓存，但精修仍需反复读前缀 KV 与 FFN 权重。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "WIFiV-LPDDR：宽 I/O LPDDR，读请求带精度标签。",
+              "BRQ-KV：低秩 + INT8 残差的前缀缓存，按 query 决定每项精度。",
+              "DAT-FFN：漂移式规范替换 / 阶段校正低比特 delta / 复用缓存状态，活跃激活不量化。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "7B：延迟 4.44×、能耗 3.96×；1.5B：2.88×、3.79×；精度掉点 <1pp。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "为 dLLM 端侧化提供首个系统级硬件基线。",
+              "局限：建模平台非真实芯片；arXiv 页面无会议信息（检索摘要中称 MICRO 2026，但未在 MICRO 程序中按此标题核实）。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-08-31",
+        "vendor": "Aarhus University / UC Santa Cruz / Harvard / 南丹麦大学",
+        "category": "学术研究",
+        "title": "Event-Driven Language Models with Sparse Neural Activity for Neuromorphic Hardware",
+        "title_zh": "事件驱动稀疏语言模型：面向 Loihi 2 类神经形态硬件",
+        "url": "https://arxiv.org/abs/2608.30439",
+        "source_type": "论文",
+        "summary_zh": "论文在三值权重、8-bit 激活的线性注意力模型 MMFreeLM 上，给每层加入可训练阈值（±Δ）的稀疏化预激活门：小激活置零，正负大值离群点保留。模型级 MAC 最多减少 76%，有效运算最多少 4×，精度损失很小。作者以 Loihi 2 多芯片上实测的稠密部署为基线做性能建模，推算稀疏模型相对 Jetson 上同等规模 Transformer 吞吐最多高 37×、功耗低 16×。",
+        "whats_new_zh": [
+          "模型级 MAC 运算最多减少 76%（有效运算最多少 4×），继续训练只用了 4B token（FineWebEdu）",
+          "在 Loihi 2 上（建模推算）：prefill 时延和每 token 能耗降 3.5×，generate 降 5.4×（对比同硬件稠密版）",
+          "相对 Jetson 上同规模 Transformer（Qwen2-500M、Alireo-400M）：吞吐最多 37×、功耗低 16×（推算）",
+          "370M 稀疏模型在平均激活 MAC 只有一半时，下游精度超过 dReLU 稀疏化方案"
+        ],
+        "key_specs": {
+          "process": "未涉及",
+          "npu": "Intel Loihi 2 多芯片（24 芯片部署作基线），事件驱动片间通信只传非零包",
+          "memory": "不需要 KV Cache（线性注意力 MLGRU 固定状态）",
+          "power": "Loihi 2 按近似恒定功耗包络折算能耗/token",
+          "other": "稀疏收益为在实测稠密基线上建模推算；Jetson/H100 数据引用自已有部署"
+        },
+        "edge_ai_impact_zh": "这篇论文说明了“稀疏激活 + 事件驱动”在端侧 LLM 上的上限：GPU/NPU 难以利用非结构化稀疏，类脑芯片可以。不过模型只有 370M–2.7B，而且收益是推算的，短期内更多是给可穿戴/常驻 AI 的超低功耗路线提供参考。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2608.30439"
+        ],
+        "confidence": "medium",
+        "venue": "IEEE MCSoC 2026",
+        "affiliation": "Aarhus University、UC Santa Cruz、Harvard University、University of Southern Denmark",
+        "authors": "Simon Richter, Ruhai Lin, Jason Yik et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "SSM/线性注意力消除了 KV Cache 和二次复杂度，但稠密投影层量化后仍然很贵；GPU 因为访存需要连续、线程锁步，很难利用非结构化激活稀疏。",
+              "已有方法要么只稀疏化 FFN（TurboSparse），要么需要 top-k 排序和跨核同步（Q-Sparse），在多核类脑硬件上开销大。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "在每层前插入稀疏化预激活门：前向时把 ±Δ 内的激活推向 0，反向时保持平滑梯度；Δ 按投影可训练，并保留离群值。",
+              "先做敏感性分析：LM head 和状态转移相关投影很敏感，FFN down-projection 对稀疏最不敏感。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "对预训练的 370M 和 2.7B MMFreeLM 继续训练 4B token；零样本评测 ARC-E/C、HellaSwag、OpenBookQA、PIQA、WinoGrande。",
+              "硬件建模：在已发表的 24 芯片 Loihi 2 实测稠密吞吐/能耗上，按块级 MAC 密度和片间通信稀疏度推算加速比。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "prefill 3.5×、generate 5.4×（时延和能耗/token，对比同硬件稠密版）；相对 Jetson 上的同级 Transformer，吞吐最多 37×、功耗低 16×。",
+              "平均推理任务精度相对稠密基线略有下降。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "这是 IEEE MCSOC 2026 接收的工作，Eshraghian 团队延续了 MMFreeLM 和 Loihi 2 路线。",
+              "稀疏模型的硬件收益是推算，不是实测；模型规模小；Loihi 2 不是商用端侧产品。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "模型：MMFreeLM 370M 和 2.7B（三值权重，8-bit 激活，MLGRU 线性注意力）；硬件数字基于 370M 模型在 24 芯片 Loihi 2 上的实测稠密基线推算，对比对象为 Jetson 上的 Qwen2-500M 和 Alireo-400M。论文没有给出稀疏模型的直接实测 tokens/s。"
+      },
+      {
+        "date": "2026-08-26",
+        "vendor": "独立研究者（Mohnish Pai）",
+        "category": "学术研究",
+        "title": "Ankhdjet: An Open-Source Compiler for Mask-Programmed Ternary Compute-in-ROM on an Open PDK",
+        "title_zh": "Ankhdjet：开源三值 Compute-in-ROM 掩膜编译器",
+        "url": "https://arxiv.org/abs/2608.26206",
+        "source_type": "论文",
+        "summary_zh": "受 Taalas HC1 把 Llama-3.1-8B 权重“硬连线”进 N6 芯片的启发，Ankhdjet 用全开源工具链（SKY130 PDK、KLayout、netgen、OpenROAD 等）实现了三值权重编程：把 HuggingFace 的 BitNet b1.58 checkpoint 编译成 compute-in-ROM 宏的 via 掩膜，并两次完成 DRC/LVS 零错误签核。宏已投 TinyTapeout/ChipFoundry ttsky26c shuttle，预计 2027 年回片。目前所有能耗数字都来自寄生提取仿真，没有实测。",
+        "whats_new_zh": [
+          "号称首个在可流片开源 PDK 上的“权重→掩膜”compute-in-ROM 编译器，两组不同权重矩阵在同一流程中签核（DRC 0、LVS 0、时序干净）",
+          "数字读出（全摆幅位线采样进标准单元）的面积是模拟比较器读出的 1/8",
+          "仿真读能耗 0.98–1.73 pJ/权重（跨工艺角；tt 27°C、1.8 V 下 tile 读一次 19.2 pJ，合 1.20 pJ/权重）",
+          "SKY130 位元 2.21 µm²/权重；64 行位线时感测外围占主导，约 256 行时阵列与外围面积大致持平"
+        ],
+        "key_specs": {
+          "process": "SKY130（130nm 开源 PDK），已投片 ttsky26c，预计 2027 年回片",
+          "npu": "mask-programmed 三值 compute-in-ROM 宏，FSM 周期 125 ns（五状态）",
+          "memory": "权重以 via 掩膜固化（只读），无 DRAM 搬运",
+          "power": "仿真：0.98–1.73 pJ/感测权重；没有实测能耗",
+          "other": "模拟读出与数字读出两版对照；130nm 下双三值权重/晶体管（BitROM 方案）的负结果"
+        },
+        "edge_ai_impact_zh": "“模型即芯片”（Taalas 路线）对超低功耗端侧固定功能模型很有吸引力。这篇论文给出了一个可复现的开源起点，不过 130nm 的密度离真实 LLM 规模还差很远，眼下更适合用来做方法学和教学参考。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2608.26206"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv（cs.AR）",
+        "affiliation": "独立研究者",
+        "authors": "Mohnish Pai",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "LLM 推理以权重搬运为主。三值化以后每个权重只有 1.58 bit，把权重直接做进 ROM 掩膜在工程上变得可行，但 Taalas HC1 一类方案的工具链是闭源的。",
+              "核心问题：能不能只用开源 PDK 和开源 EDA，把“模型专用硅”做成可复现的成果。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "编译器把三值矩阵映射为固定宏的 via 掩膜程序，换权重时只改掩膜；读出全数字化（位线采样进标准单元），可以通过综合移植到其他工艺节点。",
+              "保留模拟比较器读出版本作对照；逐层对抗式验证发现了 3 个 DRC 查不出的静默短路。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "SKY130，开源流程（ngspice、Yosys、OpenROAD、LibreLane、KLayout、netgen）；用 C-only 寄生提取做跨工艺角读能耗仿真。",
+              "流片载体：TinyTapeout/ChipFoundry ttsky26c shuttle（2026 年投片）。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "两次签核均为 DRC 0、LVS 0；数字读出面积是模拟感测的 1/8。",
+              "tt 27°C、1.8 V 下：宏 3.66 pJ、SA 对 0.97 pJ、tile 读 19.2 pJ（1.20 pJ/权重），漏电 0.048 µW。",
+              "负结果：BitROM 那种每个晶体管存两个三值权重的单元，移植到 130nm 不成立。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "这是开源 compute-in-ROM 的方法学基线，为“小模型固化进 SoC/IoT 芯片”提供可复现的工具链。",
+              "没有硅实测，也没有测量能耗；模拟版只演示读出，不含 MAC；作者是独立研究者，结论仍需等 2027 年回片验证。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "目标模型是 BitNet b1.58 一类三值 checkpoint，但论文明确说明，在 130nm 密度下真实模型放不进去。已签核的只有单一形状的宏（64 行位线），128–256 行属于外推。没有 tokens/s，也没有模型级能耗。"
+      }
+    ],
+    "overview": "8 月最后一周是“发布前夜”加上财报季。高通方面：Extreme Gen 6 首个 Geekbench 爆料偏低（3,434/9,334，核心布局与官方不符）；德银会议上，高通称数据中心首代芯片已回片，HBC 近存计算 2027 年就绪；9 月 1 日起芯片两位数涨价，原因是 DRAM 和存储成本上升；与 HUMAIN 发布基于 X2 Elite 的主权 AI PC。媒体补充了三星 GAIA 的细节：4nm AI PC 加速器，样片已交联想和惠普，最早 2027 年量产，将是 LPDDR5X-PIM 的首个商用落点。车与机器人方面：地平线中报营收 20.55 亿元，开始从卖芯片转向卖 IP；地瓜发布 RDK S100P（128 TOPS、24GB，对标 Orin NX）；BOS Eagle-N 用 chiplet 和 NPU 虚拟化做车载 AI。论文侧，Cornell 的 HBQ（MICRO 2026）用分层缩放块量化做到 W4A5，精度与 W4A16 相当；mzCache（MobiCom'26）研究安卓回收内存后模型的快速恢复；佐治亚州立大学测得手机上每个 prompt token 的能耗是生成 token 的 3–6 倍。",
+    "takeaways_zh": [
+      "内存成本开始直接传导到芯片价格：高通涨价、HBC 定在 2027 年，“每 GB 内存能支撑多大的模型”成了旗舰 SoC 竞争力的上限。",
+      "PIM 的第一个商用落点大概率是 AI PC（三星 GAIA，2027 年），手机要等 LPDDR6-PIM 标准化。",
+      "手机端侧 LLM 的体验指标正在从峰值 tok/s 转向冷启动、内存回收后的恢复时间和 J/任务，长提示词的能耗代价被低估了。"
+    ]
   }
 }
