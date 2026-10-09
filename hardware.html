@@ -68,7 +68,7 @@
   <script>
     var MONTH = (location.search.match(/[?&]m=(\d{4}-\d{2})/) || [])[1] || '';
     var MD_URL = MONTH ? 'hardware/insight-' + MONTH + '.md' : 'hardware/hardware-insight.md';
-    fetch('hardware/index.json').then(function(r){return r.ok ? r.json() : [];}).then(function(months){
+    fetch('hardware/index.json', {cache: 'no-cache'}).then(function(r){return r.ok ? r.json() : [];}).then(function(months){
       var el = document.getElementById('months');
       if(!el || !months.length) return;
       var current = MONTH || months[0].month;
@@ -105,7 +105,7 @@
         heads.forEach(function(h){obs.observe(h);});
       }
     }
-    fetch(MD_URL).then(function(r){
+    fetch(MD_URL, {cache: 'no-cache'}).then(function(r){
       if(!r.ok){document.getElementById('art').innerHTML='<p>加载失败 ('+r.status+')：'+MD_URL+'</p>';return '';}
       return r.text();
     }).then(function(md){if(md)render(md);}).catch(function(e){
