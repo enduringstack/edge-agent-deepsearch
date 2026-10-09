@@ -9648,5 +9648,1883 @@
         "evidence_url": ""
       }
     ]
+  },
+  "hardware": {
+    "window": {
+      "start": "2026-05-15",
+      "end": "2026-05-21"
+    },
+    "items": [
+      {
+        "date": "2026-05-15",
+        "vendor": "MediaTek",
+        "category": "移动SoC",
+        "title": "Mainstream to Premium Smartphones Get a Fresh Set of MediaTek Dimensity Chipsets",
+        "title_zh": "联发科集中更新天玑6500/7450/8550等主流芯片",
+        "url": "https://www.mediatek.com/tek-talk-blogs/mainstream-to-premium-smartphones-get-a-fresh-set-of-mediatek-dimensity-chipsets",
+        "source_type": "官方",
+        "summary_zh": "联发科官方博客汇总了近几周发布的一批主流到次旗舰天玑芯片：Dimensity 6500/6360、7300e、7450/7450X 以及 8550。主流型号以能效与 5G 连接为卖点，8550 则以 NPU 880 + LLM Booster 主打端侧生成式 AI。官方文稿几乎不披露制程、TOPS 等硬指标。",
+        "whats_new_zh": [
+          "天玑 6500/6360：官方称在 20 个常见场景下能效较上代最高提升 19%，CPU 比竞品快 18%（官方口径）",
+          "天玑 7300e：应用能效 +4%、Modem 能效 +21%、游戏能效 +8%；CPU +8%、游戏性能 +6%（官方口径）",
+          "天玑 7450/7450X：R17 规格 5G Modem，AI 优化带来 7% 性能提升；7450X 支持翻盖双屏",
+          "天玑 8550：NPU 880、LLM Booster、Gemini Nano V3、Diffusion Transformer、混合精度与投机解码"
+        ],
+        "key_specs": {
+          "process": "未披露（博客未写）",
+          "cpu": "8550 为全大核；其余未披露",
+          "gpu": "8550 为 8 核 GPU",
+          "npu": "8550：NPU 880（TOPS 未披露）；其余未披露",
+          "memory": "8550 带全处理器共享的大系统缓存；LPDDR 规格未在此文披露",
+          "power": "6500/6360 能效最高 +19%（官方）",
+          "other": "7450 系列 R17 5G Modem；8550 为 5G-Advanced Modem"
+        },
+        "edge_ai_impact_zh": "联发科把投机解码、混合精度、LLM Booster 这些原本只在 9000 系旗舰上的 LLM 加速手段下放到 8000 系，意味着 2026 年中端机也会把 Gemini Nano 这类端侧小模型当作标配；但 6000/7000 系仍以能效为主，生成式 AI 能力未披露。",
+        "evidence_urls": [],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "产品分层",
+            "points": [
+              "6000 系（6500/6360）定位入门 5G，卖点是 UltraSave 3.0+ 省电与最高 19% 的场景能效提升",
+              "7000 系分两条线：7300e 偏能效（Modem 能效 +21%），7450/7450X 偏体验（R17 Modem、高铁模式、Adaptive Gaming 3.0 + NOS）",
+              "8550 是唯一明确强调生成式 AI 的型号，NPU 880 + LLM Booster"
+            ]
+          },
+          {
+            "heading": "LLM 加速手段下放",
+            "points": [
+              "8550 列出的特性包括 mixed precision 数据支持、speculative decoding（投机解码）和 Diffusion Transformer 支持，与旗舰 9500 的软件栈思路一致",
+              "博客未给出 tok/s、首 token 延迟或 TOPS，属于“能力清单式”宣传"
+            ]
+          },
+          {
+            "heading": "披露缺口",
+            "points": [
+              "整篇稿件没有制程、CPU 主频、GPU 型号、NPU TOPS、内存带宽",
+              "需要结合媒体报道与后续规格页补全（见 8550 单独条目）"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方仅称 8550 支持 Gemini Nano V3（Google 端侧模型，参数量本文未披露）；其余型号能跑多大模型未披露。"
+      },
+      {
+        "date": "2026-05-21",
+        "vendor": "Xiaomi / Qualcomm",
+        "category": "移动SoC",
+        "title": "Xiaomi 17 Max launches in China with Snapdragon 8 Elite Gen 5 and 8,000mAh battery",
+        "title_zh": "小米17 Max发布：骁龙8至尊版Gen5+8000mAh",
+        "url": "https://91mobiles.com/hub/xiaomi-17-max-china-launch-confirmed-may-21st",
+        "source_type": "媒体",
+        "summary_zh": "小米17 Max于5月21日19:00在国内发布，为小米17系列第五款机型，采用Snapdragon 8 Elite Gen 5（3nm），主打8000mAh金沙江电池（硅含量最高16%、能量密度894Wh/L）与6.9英寸2K屏。媒体报道起售价12GB+256GB 4299元，5月25日开售。端侧AI功能细节未见披露。",
+        "whats_new_zh": [
+          "SoC：Snapdragon 8 Elite Gen 5，与17系列其他机型相同",
+          "电池8000mAh（标准版17为6330mAh），100W有线/50W无线/22.5W有线反充",
+          "价格（媒体口径）：12+256GB 4299元、16+256GB 4599元、12+512GB 4899元、16+512GB 5299元",
+          "AI功能、端侧模型规模：未披露"
+        ],
+        "key_specs": {
+          "process": "3nm（媒体口径）",
+          "npu": "Hexagon NPU（8 Elite Gen 5）；整机AI规格未披露",
+          "memory": "12GB/16GB",
+          "power": "8000mAh，894Wh/L",
+          "other": "6.9英寸2K OLED；200MP主摄+50MP 3x潜望"
+        },
+        "edge_ai_impact_zh": "大电池旗舰让常驻型端侧AI（后台Agent、实时相册理解等）的续航压力明显缓解；但窗口内骁龙旗舰新机更多是续航/影像差异化，而非新的端侧大模型能力。",
+        "evidence_urls": [
+          "https://www.huaweicentral.com/xiaomi-17-max-launched-with-a-200mp-leica-camera-giant-battery/amp/"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "平台与定位",
+            "points": [
+              "沿用Snapdragon 8 Elite Gen 5，与小米17/17 Pro系列一致，没有新SoC变体",
+              "定位大屏+长续航，首次在数字旗舰线使用“Max”命名"
+            ]
+          },
+          {
+            "heading": "能效相关",
+            "points": [
+              "8000mAh硅碳电池（硅含量≤16%，894Wh/L），比标准版6330mAh大约26%",
+              "官方称SuperPixel 2K屏功耗低于常规1.5K屏（未给出数值）"
+            ]
+          },
+          {
+            "heading": "端侧AI",
+            "points": [
+              "运行Android 16 + HyperOS 3.0，媒体报道未列出新的端侧AI功能或模型规格",
+              "价格各渠道存在出入（Kimovil记为4799元），以华为Central/Gizmochina的4299元起为准"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露：发布报道未给出端侧模型参数量、精度或tokens/s。"
+      },
+      {
+        "date": "2026-05-18",
+        "vendor": "小米",
+        "category": "移动SoC",
+        "title": "卢伟冰：小米今年一定会推出玄戒芯片迭代版本",
+        "title_zh": "卢伟冰确认玄戒芯片年内迭代",
+        "url": "https://www.guancha.cn/economy/2026_05_18_817486.shtml",
+        "source_type": "媒体",
+        "summary_zh": "5 月 16 日晚，小米总裁卢伟冰在直播中表示，小米今年一定会推出玄戒芯片的迭代版本，并由一款完成度较高的旗舰产品搭载。他认为网传的命名、规格与首发机型爆料可信度不高，并否认“跳过 O2 直接叫 O3”的说法。爆料称玄戒 O2 预计 8 月上市、仍用 TSMC N3 系工艺。",
+        "whats_new_zh": [
+          "官方表态：2026 年内必推玄戒迭代芯片，搭载于旗舰产品",
+          "否认“跳过 O2 命名 O3”的传闻；网传规格可信度不高",
+          "爆料：O2 约 2026 年 8 月上市，TSMC 3nm（N3P 说法见 1 月爆料），非 2nm"
+        ],
+        "key_specs": {
+          "process": "爆料：TSMC N3P（3nm）；官方未披露",
+          "cpu": "未披露",
+          "gpu": "未披露",
+          "npu": "未披露（O1 为 6 核 NPU 44 TOPS，作为参照）",
+          "memory": "未披露",
+          "power": "未披露",
+          "other": "首发机型未披露（网传 17S Pro 等）"
+        },
+        "edge_ai_impact_zh": "玄戒 O1 的 44 TOPS NPU 在 2025 年属旗舰中游；O2 若仍为 3nm，提升将更多来自 NPU 架构与软件（小米 MiMo 端侧模型 + HyperOS）协同。雷军此前提出“自研芯片+自研OS+自研大模型”大会师，O2 是关键载体。",
+        "evidence_urls": [
+          "https://www.notebookcheck.net/Upcoming-Xiaomi-XRing-O2-chipset-to-miss-out-on-2nm-process.1207362.0.html",
+          "https://www.huaweicentral.com/xiaomi-17s-pro-could-launch-in-may-with-new-xring-chipset/"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "官方口径 vs 爆料",
+            "points": [
+              "官方：今年推迭代版、旗舰首发；未给任何规格",
+              "爆料：TSMC N3P、8 月上市；卢伟冰本人称网传规格可信度不高"
+            ]
+          },
+          {
+            "heading": "上代基线（玄戒 O1）",
+            "points": [
+              "TSMC 3nm（N3E），190 亿晶体管、109mm²",
+              "2×X925 3.9GHz + 6×A725 + 2×A520，16 核 Immortalis-G925",
+              "6 核 NPU，44 TOPS"
+            ]
+          },
+          {
+            "heading": "产业意义",
+            "points": [
+              "MWC 2026 小米总裁称将每年推出一颗自研手机 SoC",
+              "O1 仅用于 15S Pro、Pad 7 Ultra、Pad 7s Pro 三款设备，O2 能否扩大出货是看点"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露。参照：玄戒 O1 为 6 核 NPU、44 TOPS（官方 2025 年口径）。"
+      },
+      {
+        "date": "2026-05-19",
+        "vendor": "MediaTek",
+        "category": "PC芯片",
+        "title": "Signal65 investigates the architectural advantages of the MediaTek Kompanio Ultra 910",
+        "title_zh": "Signal65评测Kompanio Ultra 910：50 TOPS NPU",
+        "url": "https://www.mediatek.com/tek-talk-blogs/signal-65-investigates-the-architectural-advantage-of-the-mediatek-kompanio-ultra-910",
+        "source_type": "官方",
+        "summary_zh": "联发科官方博客转述第三方机构 Signal65 白皮书，对比 Kompanio Ultra 910 与最新 x86 Chromebook 芯片。910 采用全大核 CPU、11 核 Immortalis-G925 GPU 与 50 TOPS 的 NPU 890，主打电池供电下性能不降。",
+        "whats_new_zh": [
+          "NPU 890：50 TOPS；GPU：11 核 Immortalis-G925",
+          "相对最新 x86 Chromebook：CPU 最高快 2 倍、图形最高快 9 倍、负载功耗最高低 85%、能效近 5 倍（厂商转述的 Signal65 结论）",
+          "电池供电：x86 平台性能最高下降 42%，910 仅下降 6%"
+        ],
+        "key_specs": {
+          "process": "未披露（本文）",
+          "cpu": "All Big Core（核数/频率本文未披露）",
+          "gpu": "11 核 Arm Immortalis-G925",
+          "npu": "NPU 890，50 TOPS",
+          "memory": "未披露",
+          "power": "负载功耗最高低 85%（对比 x86）",
+          "other": "ChromeOS / Googlebook 平台"
+        },
+        "edge_ai_impact_zh": "50 TOPS 已达到 Copilot+ PC（40 TOPS）门槛以上，且与 Intel Panther Lake NPU 5（50 TOPS）同档；Arm 阵营在 ChromeOS/Googlebook 上用手机级 NPU IP 做 PC，端侧 Gemini 在笔记本上的落地多了一条非 x86 路线。",
+        "evidence_urls": [
+          "https://www.mediatek.com/tek-talk-blogs/a-new-era-of-ai-computing-with-googlebook-mediatek"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "能效与实测口径",
+            "points": [
+              "“电池模式掉 6% vs x86 掉 42%”来自 Signal65 白皮书，由联发科博客转述，属厂商委托第三方测试",
+              "“能效近 5 倍”“负载功耗低 85%”均未给出测试负载细节"
+            ]
+          },
+          {
+            "heading": "平台背景",
+            "points": [
+              "5 月 14 日联发科同时发布“Googlebook x MediaTek”文章，910 是 Google 新 AI 笔记本形态的主力 Arm SoC"
+            ]
+          }
+        ],
+        "model_capacity_zh": "NPU 890 标称 50 TOPS（精度未注明）；可运行的模型参数量、tok/s 未披露。"
+      },
+      {
+        "date": "2026-05-19",
+        "vendor": "Google Research / Synaptics",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Google Research and Synaptics Partner to Showcase Immersive Edge AI Experiences Powered by the Coralboard at Google I/O 2026",
+        "title_zh": "Google×Synaptics在I/O展示Coralboard开发板",
+        "url": "https://www.edge-ai-vision.com/2026/05/google-research-and-synaptics-partner-to-showcase-immersive-edge-ai-experiences-powered-by-the-coralboard-at-google-i-o-2026/",
+        "source_type": "官方",
+        "summary_zh": "Synaptics与Google Research在Google I/O 2026（5月19日）发布限量版Coralboard，搭载基于Google开源Coral NPU的Astra SL2610系列SoC（Torq NPU子系统），用于“常开、低功耗”的边缘AI演示。展台用YOLOv8实时追踪水母，并驱动DeepMind Lyria Realtime生成音乐；Gemma 3 270M在板上有硬件加速支持。",
+        "whats_new_zh": [
+          "SoC为2GHz双核Synaptics Astra SL2619，配2GB DDR4，NPU子系统为“1 TOPS、支持CNN与Transformer”（官方口径）",
+          "Torq NPU工具链为开源、基于MLIR",
+          "Gemma 3 270M获得“内建硬件加速支持”；YOLOv8目标检测由NPU加速",
+          "板卡为I/O现场限量版，未公布售价与通用供货时间"
+        ],
+        "key_specs": {
+          "process": "未披露（Coral NPU参考设计目标为22nm）",
+          "cpu": "Astra SL2619 双核 @2GHz",
+          "npu": "Torq NPU子系统（基于Coral NPU，RISC-V），1 TOPS，支持CNN/Transformer",
+          "memory": "2GB DDR4",
+          "power": "未披露（Coral NPU IP设计目标约6mW@512 GOPS）",
+          "other": "CSI摄像头、DSI显示、麦克风、可选M.2 Wi-Fi/BT、mikroBUS/Qwiic"
+        },
+        "edge_ai_impact_zh": "这是Google开源Coral NPU（RISC-V RVV 1.0 + 矩阵外积MAC）首次以完整开发板形态面向开发者，配合Gemma 270M这种“小到能常驻”的模型，标志着Transformer推理正向MCU/低端MPU级别下沉；开源MLIR工具链也降低了碎片化NPU的移植成本。",
+        "evidence_urls": [
+          "https://developers.google.com/coral/guides/intro-coralNPU",
+          "https://cnx-software.com/2025/10/17/google-open-source-coral-npu-synaptics-sl2610-edge-ai-socs"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 微架构",
+            "points": [
+              "Coral NPU为Google Research开源的RISC-V ML加速核：标量核负责控制，向量单元兼容RISC-V Vector v1.0（SIMD协处理器），矩阵单元为量化外积MAC引擎。",
+              "官方设计目标为256 MACs/cycle、512 GOPS；Synaptics在此基础上做成Torq NPU子系统，板级口径为1 TOPS。",
+              "1 TOPS支持Transformer是关键卖点：多数MCU级NPU（Ethos-U55、早期eIQ Neutron）只针对CNN优化，Attention/Softmax需回退CPU。"
+            ]
+          },
+          {
+            "heading": "低功耗/常驻 AI",
+            "points": [
+              "Google对Coral NPU的功耗目标是约6mW（22nm，Google文档写1GHz，VeriSilicon写800MHz，两者口径不一致），属于设计目标而非实测。",
+              "新闻稿将Coralboard定位为“always-on、power-efficient Edge AI”，但未给出板级功耗或待机功耗。"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "外挂2GB DDR4而非LPDDR，说明这是开发板取向（成本/可得性优先），量产终端大概率会换成LPDDR4x/LPDDR5。",
+              "带宽未披露；对于270M级别模型，decode阶段是带宽受限，DDR4单通道的带宽将直接决定tokens/s。"
+            ]
+          },
+          {
+            "heading": "软件栈",
+            "points": [
+              "Torq工具链开源、基于MLIR；Google计划为Coral NPU提供TFLM编译器、MLIR编译器、模拟器与自定义kernel，覆盖TensorFlow/JAX/PyTorch模型。",
+              "与Gemma pavilion同场展示，表明Google把“Gemma小模型 + 开源NPU”作为端侧参考栈推广。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方口径：Gemma 3 270M（2.7亿参数）获硬件加速支持，YOLOv8检测由NPU加速；量化精度、上下文长度与tokens/s均未披露。按2GB DDR4推算，INT8下270M模型权重约0.27GB量级，内存不构成瓶颈（推算，非官方）。"
+      },
+      {
+        "date": "2026-05-19",
+        "vendor": "Google / Samsung / Qualcomm",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Intelligent eyewear is coming this fall",
+        "title_zh": "Android XR 智能眼镜：音频款今秋先发，兼容 iOS",
+        "url": "https://blog.google/products-and-platforms/platforms/android/android-xr-io-2026/",
+        "source_type": "官方",
+        "summary_zh": "Google XR 负责人 Shahram Izadi 在 I/O 2026 发布 Android XR“智能眼镜”路线：分为无屏音频眼镜与带显示眼镜两类，与 Samsung、Qualcomm 共建，Gentle Monster 与 Warby Parker 提供镜框设计，音频款今秋率先上市，并同时支持 Android 与 iOS 手机。官方未披露芯片型号与端/云算力分工。",
+        "whats_new_zh": [
+          "两类形态：audio glasses（耳边语音 Gemini）与 display glasses（按需显示信息）",
+          "音频款“later this fall”上市；显示款时间未披露",
+          "可通过“Hey Google”或轻触镜腿唤醒 Gemini；支持所见即问、基于朝向的步行导航、通话/短信、拍照录像",
+          "兼容 Android 与 iOS 手机；Gemini Intelligence 可在后台完成多步任务（如 DoorDash 点咖啡）"
+        ],
+        "key_specs": {
+          "other": "芯片：官方仅称与 Qualcomm 共建，型号未披露；媒体传闻首款 Samsung 眼镜（代号 Jinju）采用 Snapdragon AR1、约 50 g、155 mAh、12MP 摄像头（爆料）"
+        },
+        "edge_ai_impact_zh": "眼镜端以“手机为算力中枢、眼镜做传感与交互”的分布式架构为主，眼镜 SoC 只需承担唤醒词、摄像头 ISP 与低功耗连接；真正的多模态推理落在手机 NPU 或云端。支持 iOS 意味着 Google 必须把更多推理放到云端而非依赖 Android 手机的 AICore。",
+        "evidence_urls": [
+          "https://campustechnology.com/articles/2026/05/22/google-unveils-android-xr-smart-glasses-powered-by-gemini-ai.aspx",
+          "https://www.mysmartprice.com/personal-tech/wearables/wearables-news/google-and-samsung-showcase-android-xr-smart-glasses-powered-by-gemini-at-i-o-2026/",
+          "https://www.smartprix.com/bytes/samsung-galaxy-glasses-release-date-price-android-xr-features-specs-everything-else-we-know/",
+          "https://www.phonebunch.com/news/google-i-o-2026-android-xr-platform-intelligent-eyewear-samsung_9460.html",
+          "https://www.androidauthority.com/android-xr-glasses-preview-google-io-2026-3665773/"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "算力分工",
+            "points": [
+              "官方未说明眼镜/手机/云的分工；MySmartPrice 报道称处理由连接手机的 Qualcomm Snapdragon 平台完成，眼镜作为伴随设备（媒体口径）",
+              "支持 iOS 配对意味着在 iPhone 上无法调用 AICore/Gemini Nano，推理更可能走 Gemini 云端"
+            ]
+          },
+          {
+            "heading": "低功耗硬件（爆料）",
+            "points": [
+              "Samsung 首款眼镜 Jinju 传闻采用 Snapdragon AR1、无显示、12MP 摄像头、约 155 mAh 电池、续航 6~8 小时、约 50 g（均为爆料）",
+              "带 micro-LED 显示的 Haean 传闻 2027 年推出（爆料）"
+            ]
+          },
+          {
+            "heading": "交互与功能",
+            "points": [
+              "唤醒：语音“Hey Google”或镜腿触控",
+              "导航利用位置与头部朝向，需要 IMU + 定位的常驻低功耗融合"
+            ]
+          },
+          {
+            "heading": "产品形态与分工",
+            "points": [
+              "音频眼镜：开放式扬声器、内置摄像头、镜腿触控，语音“Hey Google”或触控唤醒Gemini",
+              "显示眼镜：向用户视野投射视觉信息，上市时间晚于音频眼镜",
+              "设计合作：Gentle Monster、Warby Parker；平台：Android XR（Google与三星、高通联合开发）"
+            ]
+          },
+          {
+            "heading": "算力与推理路径",
+            "points": [
+              "媒体口径：Gemini使用配对手机的连接提供AI功能，眼镜本体不是大模型推理主体",
+              "芯片在I/O期间未公布；9月Snapdragon Summit上Google称该批眼镜基于Snapdragon AR1（与Ray-Ban Meta同款平台），属后续官方确认",
+              "重量、续航、显示分辨率、价格均未披露"
+            ]
+          },
+          {
+            "heading": "对高通的意义",
+            "points": [
+              "Android XR生态同时覆盖眼镜（AR1）与更高端的头显/有线眼镜（Snapdragon XR/Reality系列），高通是事实上的唯一SoC供应方",
+              "眼镜品类从显示优先转向“音频+相机+AI助手”优先，利好低功耗ISP与常驻语音唤醒能力"
+            ]
+          },
+          {
+            "heading": "计算分层",
+            "points": [
+              "交互链路为眼镜（唤醒词、触控、摄像头采集、扬声器）→手机（Android Halo承接需屏幕的内容）→Gemini，典型的“端-机-云”三层。",
+              "支持iPhone配对，说明关键AI能力不依赖Android系统级NPU调度，而是走Gemini应用/云服务。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露：眼镜端是否运行本地模型、运行多大模型均未公开；Gemini 主要依赖配对手机/云端（媒体口径）。"
+      },
+      {
+        "date": "2026-05-19",
+        "vendor": "Mythic / Videantis",
+        "category": "存内计算/PIM",
+        "title": "Mythic Acquires Videantis to Build the World's Most Energy-Efficient AI Compute Platform",
+        "title_zh": "Mythic收购Videantis，模拟存算+数字处理器混合",
+        "url": "https://www.edge-ai-vision.com/2026/05/mythic-acquires-videantis-to-build-the-worlds-most-energy-efficient-ai-compute-platform/",
+        "source_type": "官方",
+        "summary_zh": "模拟存内计算（analog CIM）公司Mythic宣布收购德国汉诺威的数字处理器IP公司Videantis，后者作为全资子公司保留，5位创始人加入Mythic；交易金额未披露。Mythic的目标是把模拟APU（矩阵乘在Flash阵列内完成）与Videantis的VLIW+SIMD可重构数字处理器拼成“混合AI计算平台”，覆盖从单摄像头无人机、工厂机器人到车载乃至数据中心。",
+        "whats_new_zh": [
+          "Videantis处理器IP累计出货“超过2500万颗芯片”，已进入欧洲前三大车企，支持20mm×20mm摄像头模组内的AEB（官方口径）",
+          "Mythic官方继续宣称APU能效“比GPU高100倍”、能耗为SOTA GPU的“1%”，本次新闻稿未给出TOPS、TOPS/W或精度数字",
+          "欧洲深科技VC eCAPITAL随交易成为Mythic股东；Mythic此前完成1.25亿美元超额认购融资（DCVC领投，SoftBank、Honda、Lockheed Martin等参与）"
+        ],
+        "key_specs": {
+          "process": "未披露",
+          "npu": "模拟APU（Flash存内计算）+ Videantis v-MP6000UDX（VLIW+SIMD同构多核阵列）",
+          "memory": "权重常驻存算阵列（架构口径），具体容量未披露",
+          "power": "新闻稿未给数字；2025-12融资稿口径为120 TOPS/W（含内存搬运）",
+          "other": "收购金额未披露；目标市场：数据中心、汽车、机器人、国防"
+        },
+        "edge_ai_impact_zh": "纯模拟CIM的短板一直是“非矩阵算子”（预处理、后处理、Softmax/归一化、视频编解码）需要回到数字域，Videantis正好补齐这部分可编程数字算力；这说明存算一体厂商正在从“单一宏/加速器”转向“完整SoC/系统”交付，是商业化落地的必经之路。",
+        "evidence_urls": [
+          "https://www.businesswire.com/news/home/20251217546249/en/Mythic-to-Challenge-AIs-GPU-Pantheon-with-100x-Energy-Advantage-and-Oversubscribed-$125M-Raise"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "存算架构",
+            "points": [
+              "Mythic APU把计算与存储“合并到同一平面”（官方表述），权重存放在非易失阵列中，以模拟电流求和完成MAC，避免了权重从DRAM反复搬运。",
+              "2025-12融资稿给出的架构能效口径为120 TOPS/W且“包含内存搬运”，并宣称比顶级GPU高100倍；这是厂商口径，未见第三方实测。",
+              "此次新闻稿只重复“100x”“1%能耗”的定性说法，没有新增TOPS/W、精度（INT8/INT4/模拟等效位宽）数据。"
+            ]
+          },
+          {
+            "heading": "Videantis补齐的数字部分",
+            "points": [
+              "旗舰IP v-MP6000UDX为“统一处理器平台”，可在同一阵列上跑深度学习、传统视觉、信号/图像处理、视频编解码与AI推理。",
+              "架构为可扩展的同构核阵列，VLIW+SIMD组合，官方称兼具“FPGA式可重构与ASIC级能效”。",
+              "Videantis CEO称“能效来自对数据搬运的控制”，与Mythic“避免搬运”的存算理念一致；CTO称其提供“灵活计算”这块拼图。"
+            ]
+          },
+          {
+            "heading": "落地与市场",
+            "points": [
+              "Videantis IP累计出货超过2500万颗芯片、生产部署“零现场缺陷”，在车规前装（AEB摄像头）有量产履历，可为Mythic带来车规客户与流程。",
+              "Mythic的Starlight方案把模拟协处理器嵌入图像传感器，用于低照度视觉；与Honda有下一代车用AI芯片联合开发协议。",
+              "新闻稿未给出混合平台的流片时间表或首颗芯片规格。"
+            ]
+          },
+          {
+            "heading": "对比与判断",
+            "points": [
+              "同类模拟/混合CIM路线：EnCharge AI（基于SRAM电容的模拟CIM，2025-05发布EN100，面向笔电）、Sagence（模拟CIM）；数字CIM路线代表为Axelera Europa（D-IMC，629 TOPS INT8）。",
+              "Mythic走“收购数字IP”补短板，而Axelera在单芯片内自带RISC-V控制核+数字向量单元，两种路线的系统完整度差距正在缩小。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露。新闻稿未给出可运行模型规模、精度或tokens/s；历史产品M1076 APU口径为25 TOPS、片上近2万个ADC（媒体转述），定位CNN类视觉模型，尚无公开LLM能力数据。"
+      },
+      {
+        "date": "2026-05-21",
+        "vendor": "Qualcomm / Stellantis",
+        "category": "车载/机器人",
+        "title": "Stellantis and Qualcomm Expand Collaboration to Adopt Snapdragon Digital Chassis Driver Assistance, Cockpit and Connectivity Platforms Across Next-Generation Vehicle Architectures",
+        "title_zh": "Stellantis扩大采用骁龙数字底盘：座舱+连接+Ride Pilot辅助驾驶",
+        "url": "https://www.qualcomm.com/news/releases/2026/05/stellantis-and-qualcomm-expand-partnership-to-adopt----snapdrago",
+        "source_type": "官方",
+        "summary_zh": "5月21日（阿姆斯特丹/圣地亚哥）高通与Stellantis宣布扩大多年合作：Stellantis下一代整车架构将统一采用Snapdragon Digital Chassis SoC，覆盖座舱、连接与ADAS，并与Stellantis自研的电子电气/软件平台STLA Brain集成。新增部分是高通Snapdragon Ride Pilot辅助驾驶软件栈，可从主动安全/法规功能扩展到L2+脱手驾驶。官方口径强调这是非约束性授标（non-binding award），最终范围和条款仍待后续协议。",
+        "whats_new_zh": [
+          "合作范围从此前的座舱/连接扩展到ADAS：新增Snapdragon Ride Pilot软件栈，官方称可覆盖“数百万辆”Stellantis车辆（未给出具体数字）",
+          "Digital Chassis方案与STLA Brain平台集成，目标是跨品牌统一的可扩展算力底座、通过平台标准化降本",
+          "非约束性授标：框架涵盖技术开发、授权与部署，双方可各自追加软件合作；需尽调、正式协议及监管审批",
+          "未披露：具体SoC型号（Ride Elite / Ride Flex / Cockpit Elite均未在新闻稿中出现）、TOPS、量产车型与年份、金额"
+        ],
+        "key_specs": {
+          "npu": "未披露（新闻稿未点名具体Ride/Cockpit SoC与TOPS）",
+          "other": "软件：Snapdragon Ride Pilot ADAS栈（主动安全→L2+脱手）；集成平台：STLA Brain"
+        },
+        "edge_ai_impact_zh": "欧洲大型车企把ADAS感知/规划栈也交给高通，意味着“SoC+全栈辅助驾驶软件”打包模式在海外传统车企落地，与英伟达DRIVE、Mobileye形成正面竞争。对端侧AI而言，车端BEV/端到端模型的部署将更多基于Hexagon NPU与高通工具链。",
+        "evidence_urls": [
+          "https://roboticsandautomationnews.com/2026/05/22/stellantis-expands-qualcomm-partnership-for-ai-powered-vehicle-platforms/101840/",
+          "https://www.digitimes.com/news/a20260525PR202/stellantis-qualcomm-snapdragon-vehicle-adas.html",
+          "https://www.media.stellantisnorthamerica.com/newsrelease.do?id=27755&mid=1"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "合作范围与软件栈",
+            "points": [
+              "三大域：座舱（Cockpit）、连接（Connectivity）、辅助驾驶（ADAS）统一采用Snapdragon Digital Chassis SoC，官方口径为“覆盖整车的统一算力”",
+              "ADAS软件为Snapdragon Ride Pilot，定位从法规/主动安全功能扩展到L2+脱手驾驶“及更高”",
+              "与Stellantis的STLA Brain电子电气与软件平台集成，强调OTA持续功能升级与更快上市"
+            ]
+          },
+          {
+            "heading": "商业条款与不确定性",
+            "points": [
+              "官方明确为non-binding award：仅建立技术开发、授权和部署框架，最终范围与条款取决于后续协议",
+              "双方可各自追加其他软件合作，即Stellantis并未排他锁定单一ADAS软件供应商",
+              "未披露金额、量产时间、首发品牌/车型；媒体（Digitimes 5月25日）也仅转述新闻稿"
+            ]
+          },
+          {
+            "heading": "与前代合作对比",
+            "points": [
+              "此前Counterpoint报道的多年协议是Stellantis 14个品牌采用Digital Chassis（座舱/连接为主，从2024年起Maserati首发）；本次关键增量是ADAS软件栈",
+              "高通在中国市场主推Ride Flex（座舱+ADAS单芯片融合），而本次欧洲新闻稿未点名Ride Flex，是否走舱驾一体仍未披露"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露：新闻稿未给出车端模型规模、精度、TOPS或传感器配置。"
+      },
+      {
+        "date": "2026-05-19",
+        "vendor": "Qualcomm",
+        "category": "软件栈/工具链",
+        "title": "Qualcomm AI Hub Models v0.54.0 adds Pi0.5 vision-language-action model",
+        "title_zh": "AI Hub Models v0.54.0：上架Pi0.5机器人VLA模型",
+        "url": "https://github.com/qualcomm/ai-hub-models/releases?page=2",
+        "source_type": "官方",
+        "summary_zh": "高通在GitHub发布qualcomm/ai-hub-models v0.54.0（5月19日），新增Physical Intelligence的Pi0.5视觉-语言-动作（VLA）模型，并在设备下拉列表中加入Dragonwing Q-7790、Q-8750、IQ-X5121、IQ-X7181及SA8255P/SA8650P ADP等非托管设备（以相近托管设备的指标代替）。AI Hub模型页显示Pi0.5采用混合量化：主干w4a16、视觉编码器与动作专家w8a16。",
+        "whats_new_zh": [
+          "新增Pi0.5 VLA：拆分为vision_encoder、token_emb、backbone、action_expert四个组件，50步action chunk、3路相机、224×224视觉输入（模型页口径）",
+          "量化：backbone w4a16，vision encoder与action expert w8a16；运行时为ONNX Runtime（模型页口径）",
+          "设备覆盖：新增Dragonwing Q-7790/Q-8750/IQ-X5121/IQ-X7181与车规SA8255P、SA8650P ADP的指标展示",
+          "修复：DETR系列高精度格式从int16改为fp16；FCN-ResNet50 VOC标签映射错误；MeloTTS资产序列化问题"
+        ],
+        "key_specs": {
+          "npu": "Hexagon NPU（模型页列出X2 Elite CRD NPU指标）",
+          "other": "Pi0.5：w4a16主干+w8a16视觉/动作专家；参数量未在页面披露"
+        },
+        "edge_ai_impact_zh": "这是高通把开源机器人基础模型（VLA）纳入官方预优化模型库的信号，与Dragonwing IQ系列机器人平台路线配套；4-bit权重+16-bit激活的混合精度是端侧VLA落地的典型取舍。",
+        "evidence_urls": [
+          "https://aihub.qualcomm.com/models/pi05"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "模型拆分与量化",
+            "points": [
+              "四个子图：vision_encoder、token_emb、backbone、action_expert，分别编译，便于在NPU上做异构精度",
+              "LLM主干用w4a16（4-bit权重、16-bit激活），视觉编码器与动作专家保留w8a16，以兼顾带宽与动作精度",
+              "运行时标注为ONNX Runtime（QNN EP路径），页面未提QNN/TFLite单独版本"
+            ]
+          },
+          {
+            "heading": "目标硬件",
+            "points": [
+              "支持芯片包括Snapdragon X Elite/X2 Elite、8 Gen 1–3与8 Elite系列、Dragonwing IQ-9075/IQ-X7181/Q-8750、SA8775P等（模型页部分列表）",
+              "设备列表含Arduino VENTUNO Q与XR2 Gen 2参考设计，说明高通将同一VLA资产覆盖PC、手机、IoT、车规平台"
+            ]
+          },
+          {
+            "heading": "实测口径与局限",
+            "points": [
+              "页面默认仅展示X2 Elite CRD一组数字（2.05 ms / 489 inf/s / 39 MB），未说明对应哪个组件，完整端到端控制频率未披露",
+              "v0.54.0 release note本身未给出任何性能数字或w4a16等精度信息，精度来自模型页"
+            ]
+          }
+        ],
+        "model_capacity_zh": "Pi0.5（VLA）：参数量AI Hub页面未披露；精度为backbone w4a16、vision encoder/action expert w8a16；输入3路相机、224×224，输出50步action chunk。模型页（查看时为当前版本，非5月19日快照）在Snapdragon X2 Elite CRD NPU上默认展示的一项组件指标为2.05 ms、489次推理/秒、内存39 MB、34层——这只是单个组件的数值，不代表完整VLA闭环延迟。"
+      },
+      {
+        "date": "2026-05-19",
+        "vendor": "Google",
+        "category": "软件栈/工具链",
+        "title": "Blazing fast on-device GenAI with LiteRT-LM",
+        "title_zh": "LiteRT-LM：Gemma 4 E2B 端侧 52~76 tok/s，MTP 提速 2.2 倍",
+        "url": "https://developers.googleblog.com/blazing-fast-on-device-genai-with-litert-lm/",
+        "source_type": "官方",
+        "summary_zh": "Google 在 I/O 2026 当天发布 LiteRT-LM 技术博客，系统介绍其作为 Gemma 4 端侧推理栈的性能与功能。官方给出 Gemma 4 E2B 在三星 S26 Ultra（OpenCL GPU）、iPhone 17 Pro（Metal GPU）与 MacBook Pro M4 Max（WebGPU）上的 decode 速度，并引入 Multi-Token Prediction（MTP）投机解码，最高 2.2 倍加速。同时上线开源 Swift API 与 WebGPU JavaScript API，使 LiteRT-LM 成为覆盖 Android / iOS / Web / 桌面的跨平台 LLM runtime。",
+        "whats_new_zh": [
+          "Gemma 4 E2B decode（无 MTP，官方口径）：Galaxy S26 Ultra GPU 52 tok/s、iPhone 17 Pro GPU 56 tok/s、MacBook Pro（M4 Max）WebGPU 最高 76 tok/s",
+          "MTP（Multi-Token Prediction）在 S26 Ultra GPU 上最高 2.2 倍 decode 加速，drafter 与主模型同硬件运行、共享 KV Cache，两行配置开启",
+          "E2B 模型文件约 2.58 GB；在 Apple 移动端 CPU 上借助 XNNPACK weight caching，物理内存占用约 607 MB",
+          "新增开源 Swift API（iOS，Metal 加速）、WebGPU JS API、桌面 CLI；支持 Thinking Mode、约束解码（JSON Schema/语法）、function calling、会话保存/恢复",
+          "后端覆盖 CPU / GPU / NPU，其中 NPU 目前仅限 Android"
+        ],
+        "key_specs": {
+          "cpu": "XNNPACK 内核",
+          "gpu": "MLDrift 内核：OpenCL（Android）/ Metal（iOS）/ WebGPU（浏览器）",
+          "npu": "支持，仅 Android（具体芯片列表本文未披露）",
+          "memory": "E2B 文件约 2.58 GB；iOS CPU 物理占用约 607 MB（Per-Layer Embedding 不常驻、图像/音频编码器按需加载）",
+          "other": "MTP 最高 2.2x；量化位宽未披露"
+        },
+        "edge_ai_impact_zh": "这是 I/O 2026 端侧方向最硬核的一组数字：2B 级有效参数模型在旗舰手机 GPU 上已稳定 50+ tok/s，加上 MTP 可望突破 100 tok/s 量级。Google 同时把 iOS 与 Web 纳入一等公民，意味着 Gemma 4 / LiteRT-LM 正在与 Apple MLX、Core ML 直接竞争 iPhone 上的开发者心智。",
+        "evidence_urls": [],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "推理加速机制",
+            "points": [
+              "MTP 属于投机解码：轻量 drafter 一次预测多个 token，由主模型并行校验；Google 让 drafter 与主模型跑在同一加速器上并共享 KV Cache，避免跨设备拷贝",
+              "官方称最高 2.2x decode 提速，测于 Galaxy S26 Ultra GPU 后端；Gemma 官方发布记录显示 Gemma 4 - MTP 权重已于 2026-04-16 随 E2B/E4B/31B/26B A4B 发布",
+              "约束解码（JSON Schema / 语法）直接在 runtime 内实现，并在 S25 Ultra CPU 上给出 Thinking/约束解码质量对比（数值仅见图表）"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "E2B 下载体积约 2.58 GB，但通过 Per-Layer Embedding（PLE）不常驻内存、图像/音频编码器按需加载，iOS CPU 物理占用压到约 607 MB",
+              "XNNPACK weight caching 让权重以 mmap/缓存形式复用，降低冷启动与常驻内存——这对 8 GB 内存手机尤为关键",
+              "decode 是带宽瓶颈阶段：同为 E2B，M4 Max（高带宽统一内存）WebGPU 76 tok/s，高于手机 GPU 的 52~56 tok/s"
+            ]
+          },
+          {
+            "heading": "跨平台后端",
+            "points": [
+              "Android：Kotlin / C++ API，后端 CPU（XNNPACK）、GPU（MLDrift/OpenCL）、NPU",
+              "iOS：开源 Swift API + Metal GPU，博客附与 MLX 在 iPhone 17 Pro 上的对比图（数值仅见图表）",
+              "Web：LiteRT-LM.js（WebGPU，提及 WASM），与 ONNX Runtime Web 在 M4 Max 48 GB / 40 核 GPU 上对比（数值仅见图表）"
+            ]
+          },
+          {
+            "heading": "能效与实测",
+            "points": [
+              "文中 tok/s 均为 Google 官方口径，未给出功耗/温度/持续负载曲线；能效数据未披露",
+              "iPhone 17 Pro GPU 56 tok/s 略高于 S26 Ultra GPU 52 tok/s，说明在 GPU 路径下 A19 Pro 与骁龙旗舰处于同一档"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方口径：Gemma 4 E2B（文件约 2.58 GB，iOS CPU 物理内存约 607 MB）在 S26 Ultra GPU 52 tok/s、iPhone 17 Pro GPU 56 tok/s、M4 Max WebGPU 76 tok/s（decode，无 MTP）；开启 MTP 最高再提速 2.2 倍（S26 Ultra GPU）。E4B 仅给出模型卡链接，速度未披露；prefill 数值仅见于图表；量化位宽未披露。"
+      },
+      {
+        "date": "2026-05-19",
+        "vendor": "Google",
+        "category": "软件栈/工具链",
+        "title": "15 updates from Google I/O 2026: Powering the agentic web with new capabilities, tools, and features in Chrome",
+        "title_zh": "Chrome Prompt API 稳定版上线，新发布 Gemma 197M 专家模型",
+        "url": "https://developer.chrome.com/blog/chrome-at-io26",
+        "source_type": "官方",
+        "summary_zh": "Chrome 团队在 I/O 2026 宣布基于 Gemini Nano 的 Prompt API 已在 Chrome 148 稳定（Chrome 148 已于 5 月 5 日进入 stable），支持文本/图像/音频多模态输入与 JSON Schema/正则约束输出；同时发布 Gemma 197M——一个面向 Summarizer 等任务型 API 的高效专家模型，用于覆盖更多低配设备。WebMCP 将在 Chrome 149 开启 origin trial。",
+        "whats_new_zh": [
+          "Prompt API 在 Chrome 148 稳定：多模态输入（文本、图像、音频）、结构化输出（JSON Schema / 正则约束）、语言扩展至 en/ja/es/de/fr",
+          "新模型 Gemma 197M：约 1.97 亿参数的任务专家模型，用于 Summarizer 等任务型 API，以覆盖更广设备（细节未披露）",
+          "Prompt API 硬件门槛（官方文档）：Profile 所在卷 ≥22 GB 空闲；GPU 显存 >4 GB，或 16 GB RAM + 4 核以上 CPU；音频输入必须有 GPU；不支持 Android/iOS",
+          "Gemini in Chrome for Android 6 月下旬上线，要求 4 GB+ RAM（云端 Gemini 能力）"
+        ],
+        "key_specs": {
+          "gpu": ">4 GB VRAM（Prompt API）",
+          "memory": "或 16 GB RAM + 4 核 CPU；存储 ≥22 GB 空闲",
+          "other": "模型：Gemini Nano（版本未披露）+ Gemma 197M"
+        },
+        "edge_ai_impact_zh": "浏览器正在成为端侧 LLM 的第三个分发渠道（OS 内置、App 自带之外）。Gemini Nano 在 PC 上需要独显或 16 GB 内存，而 197M 级专家模型则把摘要/翻译下沉到入门设备——这是“大小模型分层”的典型做法。",
+        "evidence_urls": [
+          "https://developer.chrome.com/docs/ai/prompt-api",
+          "https://developer.chrome.com/release-notes/148",
+          "https://sdtimes.com/ai/google-i-o-2026-introduces-the-agentic-web-era-with-major-chrome-updates/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "硬件门槛",
+            "points": [
+              "GPU 路径：显存 >4 GB；CPU 路径：16 GB RAM 且 ≥4 核——说明 Nano 在 PC 端 CPU 推理需要较大内存余量",
+              "存储需 ≥22 GB 空闲（模型本体“显著小于”此值），空闲低于 10 GB 时模型会被删除并在条件满足后重下",
+              "Prompt API 暂不支持移动端；Language Detector / Translator 也仅限桌面"
+            ]
+          },
+          {
+            "heading": "API 能力",
+            "points": [
+              "首版即支持文本、图像、音频三模态输入，输出仅文本",
+              "响应约束可用 JSON Schema 或正则，适合标签生成、评论审核等结构化任务；temperature/topK 采样参数仍在 origin trial",
+              "上下文溢出时丢弃最早的问答对、保留 system prompt；空间不足则抛 QuotaExceededError"
+            ]
+          },
+          {
+            "heading": "分层模型策略",
+            "points": [
+              "Gemma 197M 被定位为“efficient expert model”，承担 Summarizer 等任务型 API，以“scale across a wider range of devices”",
+              "与 Gemini Nano 形成大小两级：通用 Prompt API 走 Nano，高频单一任务走 197M 专家模型"
+            ]
+          }
+        ],
+        "model_capacity_zh": "Gemini Nano（Chrome 内版本与参数量未披露，实际大小见 chrome://on-device-internals）；Gemma 197M 约 1.97 亿参数（精度、上下文未披露）。上下文长度运行时通过 session.contextWindow 查询，未公开固定值。"
+      },
+      {
+        "date": "2026-05-18",
+        "vendor": "Google",
+        "category": "软件栈/工具链",
+        "title": "LiteRT-LM v0.12.0 release",
+        "title_zh": "LiteRT-LM v0.12.0：CLI 支持 NPU，接入 Intel OpenVINO",
+        "url": "https://github.com/google-ai-edge/LiteRT-LM/releases/tag/v0.12.0",
+        "source_type": "官方",
+        "summary_zh": "I/O 前一天，Google AI Edge 在 GitHub 发布 LiteRT-LM v0.12.0。LiteRT-LM CLI 在 Linux / macOS / Windows 上新增 NPU 后端，Python API 与 CLI 通过 --backend=npu 支持 Intel OpenVINO NPU；同时正式提供 iOS Swift API（Metal）与浏览器 JavaScript API（WebGPU/CPU）。",
+        "whats_new_zh": [
+          "CLI 新增 NPU 后端（与 CPU、GPU 并列），覆盖 Linux / macOS / Windows",
+          "Python API 与 CLI 支持 Intel OpenVINO NPU：--backend=npu",
+          "修复一个 GPU activation 类型 bug——该 bug 曾把 prefill 速度限制在正常值的 50%",
+          "Swift API（iOS，Metal）与 Web JS API（WebGPU/CPU）上线；社区 Flutter 绑定 flutter_gemma；benchmark 工具新增 --max-num-tokens"
+        ],
+        "key_specs": {
+          "gpu": "Metal / WebGPU",
+          "npu": "Intel OpenVINO NPU（PC）；Android NPU 路径见 LiteRT",
+          "other": "prefill 修复：此前被限制在 50%"
+        },
+        "edge_ai_impact_zh": "LiteRT-LM 从 Android 专属走向 PC NPU（Intel Core Ultra）与 Apple 平台，意味着同一份 Gemma 4 .litertlm 模型可以在手机 NPU、AI PC NPU、iPhone GPU 和浏览器上复用，是对 Windows ML / Foundry Local 和 Apple MLX 的正面竞争。",
+        "evidence_urls": [
+          "https://github.com/google-ai-edge/LiteRT-LM/releases"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 支持面",
+            "points": [
+              "此前 LiteRT 的 NPU 路径以 Qualcomm、MediaTek 手机 NPU 为主（AOT 与端上编译两种方式，见 LiteRT 早前博客）",
+              "v0.12.0 把 NPU 扩到桌面 CLI，并显式接入 Intel OpenVINO——这是 LiteRT-LM 首次面向 x86 AI PC 的 NPU"
+            ]
+          },
+          {
+            "heading": "性能修复",
+            "points": [
+              "GPU activation 类型错误导致 prefill 只有正常速度的 50%，修复后官方称恢复正常（无具体数字）",
+              "benchmark 工具新增 --max-num-tokens，方便固定长度测 decode 吞吐"
+            ]
+          },
+          {
+            "heading": "生态",
+            "points": [
+              "Swift API 与 Web API 与次日 I/O 博客中的 iPhone 17 Pro 56 tok/s、WebGPU 76 tok/s 数据配套",
+              "flutter_gemma 社区绑定让跨端 App 直接调用 Gemma 4"
+            ]
+          }
+        ],
+        "model_capacity_zh": "Release notes 未点名新模型，也未给出 tok/s；NPU 后端在 Intel OpenVINO 上的性能未披露。"
+      },
+      {
+        "date": "2026-05-19",
+        "vendor": "Analog Devices / Empower Semiconductor",
+        "category": "产业动态",
+        "title": "Analog Devices to Acquire Empower Semiconductor, Expanding its Next-Generation High-Density Power Portfolio for the AI Era",
+        "title_zh": "ADI以15亿美元收购Empower集成稳压器",
+        "url": "https://www.edge-ai-vision.com/2026/05/analog-devices-to-acquire-empower-semiconductor-expanding-its-next-generation-high-density-power-portfolio-for-the-ai-era/",
+        "source_type": "官方",
+        "summary_zh": "ADI宣布以15亿美元全现金收购Empower Semiconductor，获得其集成电压调节器（IVR）、FinFast技术与已量产的硅电容，以垂直供电方式把电压转换靠近处理器、缩短供电路径。主战场是AI数据中心，预计2026下半年完成交割。",
+        "whats_new_zh": [
+          "交易金额15亿美元、全现金，预计2026下半年交割（官方口径）",
+          "Empower的IVR项目正与超大规模云厂商和AI芯片公司推进；硅电容已量产",
+          "ADI称影响将延伸到“任何受能源约束的领域”，但未点名边缘/移动"
+        ],
+        "key_specs": {
+          "power": "IVR + 垂直供电；具体效率/电流密度/开关频率未披露",
+          "other": "15亿美元全现金"
+        },
+        "edge_ai_impact_zh": "AI芯片的能效瓶颈不仅在TOPS/W，也在供电网络损耗与瞬态响应；IVR/硅电容先在数据中心落地，后续有望下沉到高功率边缘SoC（车载、机器人），属于对端侧有参考意义的供电侧动态。",
+        "evidence_urls": [],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "技术要点",
+            "points": [
+              "IVR把电压转换做到封装/处理器附近，实现垂直供电，缩短PDN路径，降低I²R损耗并改善负载瞬态。",
+              "FinFast被Empower描述为降低数据中心能耗与TCO的技术；硅电容已进入量产。"
+            ]
+          },
+          {
+            "heading": "对边缘的参考",
+            "points": [
+              "边缘SoC做DVFS/电源门控越激进，越依赖快速响应的片上/近片稳压；IVR路线若下沉，将影响NPU“突发算力”可持续性。",
+              "新闻稿未提频率、效率等数字，需等待交割后的产品路线。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-05-21",
+        "vendor": "Qualcomm / aiMotive",
+        "category": "产业动态",
+        "title": "Stellantis and Qualcomm sign non-binding LOI for aiMotive to join Qualcomm Technologies",
+        "title_zh": "Stellantis旗下aiMotive拟并入高通（非约束性意向书）",
+        "url": "https://www.qualcomm.com/news/releases/2026/05/stellantis-and-qualcomm-expand-partnership-to-adopt----snapdrago#aimotive",
+        "source_type": "官方",
+        "summary_zh": "同一新闻稿中，Stellantis与高通签署非约束性意向书（LOI），拟让Stellantis旗下的自动驾驶与仿真公司aiMotive加入高通技术公司，需满足多项条件。新闻稿未披露交易价格、结构或时间表。",
+        "whats_new_zh": [
+          "aiMotive（Stellantis所有的自动驾驶与仿真公司）拟并入Qualcomm Technologies，形式为non-binding LOI",
+          "未披露：交易金额、人员规模、交割时间、条件细节"
+        ],
+        "key_specs": {
+          "other": "交易形式：非约束性意向书；价格/时间：未披露"
+        },
+        "edge_ai_impact_zh": "若完成，高通将补强自动驾驶软件与仿真/数据闭环能力，进一步把Snapdragon Ride Pilot做成“芯片+算法+仿真”全栈方案，与其2025年起强化的ADAS自研栈路线一致。",
+        "evidence_urls": [
+          "https://www.qualcomm.com/news/releases/2026/05/stellantis-and-qualcomm-expand-partnership-to-adopt----snapdrago",
+          "https://roboticsandautomationnews.com/2026/05/22/stellantis-expands-qualcomm-partnership-for-ai-powered-vehicle-platforms/101840/"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "交易要点",
+            "points": [
+              "官方口径：aiMotive为Stellantis拥有的automated driving and simulation公司；双方签署LOI，拟让其加入高通，subject to various conditions",
+              "新闻稿未提供价格、结构、时间，属于早期意向，确定性低于正式并购公告"
+            ]
+          },
+          {
+            "heading": "对高通ADAS栈的意义",
+            "points": [
+              "与同日公布的Ride Pilot在Stellantis车型上的扩展相互配合：芯片客户的自动驾驶团队直接并入供应商，减少重复开发",
+              "仿真能力对端到端/数据驱动ADAS模型的训练与验证至关重要，可视为高通补足“车端推理”之外的工具链"
+            ]
+          },
+          {
+            "heading": "未披露项",
+            "points": [
+              "aiMotive现有产品（如其自动驾驶软件与仿真器）是否整体并入、是否继续服务其他车企，新闻稿未说明",
+              "监管审批及正式协议签署时间未披露"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-05-15",
+        "vendor": "Google",
+        "category": "产业动态",
+        "title": "Gemini Intelligence requires 12GB RAM, 'flagship chip', and Gemini Nano v3 on Android",
+        "title_zh": "Gemini Intelligence 门槛：12GB 内存+旗舰芯片+Nano v3",
+        "url": "https://9to5google.com/2026/05/15/gemini-intelligence-android-spec-requirements/",
+        "source_type": "媒体",
+        "summary_zh": "Google 在 I/O 前夕公布 Gemini Intelligence（高端 Android 上的旗舰 AI 功能品牌）的设备门槛，9to5Google 据 Google 脚注整理：需“旗舰芯片”、≥12 GB RAM、支持 AICore 且 Gemini Nano v3 及以上，以及 5 次系统升级、6 年安全更新。Pixel 9 系列与 Galaxy Z Fold7 因仍为 Nano v2 暂不满足。",
+        "whats_new_zh": [
+          "硬件门槛：flagship chip（未给出芯片清单）+ ≥12 GB RAM",
+          "模型门槛：AICore 支持 + Gemini Nano v3 或更高（指 Prompt API 支持）",
+          "软件门槛：≥5 次 Android 大版本升级、6 年安全更新（至少按季度）、崩溃率等质量指标",
+          "已列入 Nano v3 的机型：Pixel 10 全系、Galaxy S26 系列、OnePlus 15/15R、iQOO 15、Honor Magic 8 Pro 等；Pixel 9 系列、Z Fold7、Xiaomi 15 系列仍为 Nano v2"
+        ],
+        "key_specs": {
+          "npu": "“flagship chip”（未披露具体型号/TOPS）",
+          "memory": "≥12 GB RAM",
+          "other": "Gemini Nano v3+；Pixel 11 基础款传闻 8 GB RAM 与此门槛冲突"
+        },
+        "edge_ai_impact_zh": "12 GB 内存成为 Android 端侧 AI 的硬门槛，与 Apple Intelligence 的 8 GB 起步形成对照；这将推动中高端机型内存继续上探，并把“Nano 版本号”变成手机 SoC/OEM 的新卖点。",
+        "evidence_urls": [
+          "https://www.droid-life.com/2026/05/15/gemini-intelligence-on-your-pixel-or-galaxy-phone-looking-doubtful/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "门槛拆解",
+            "points": [
+              "RAM ≥12 GB：为常驻 Nano 模型 + 系统 + 前台应用预留空间",
+              "Nano v3+ 意味着需要 OEM 与 Google 在 AICore 上完成新版模型适配，Pixel 9（Tensor G4）尚停留在 v2",
+              "5 次系统升级 / 6 年安全更新把门槛延伸到软件维护承诺"
+            ]
+          },
+          {
+            "heading": "受影响机型",
+            "points": [
+              "满足 Nano v3：Pixel 10 系列（Tensor G5）、Galaxy S26 系列、OnePlus 15、iQOO 15、Honor Magic 8 Pro、OPPO/vivo 多款",
+              "暂不满足：Pixel 9 系列、Galaxy Z Fold7、Z TriFold、OnePlus 13、Xiaomi 15 系列（Nano v2）",
+              "媒体指出该门槛与 Pixel 11 基础款可能降至 8 GB RAM 的爆料存在矛盾（爆料，未证实）"
+            ]
+          }
+        ],
+        "model_capacity_zh": "要求 Gemini Nano v3 或以上（Pixel 10 的 nano-v3 与 Gemma 3n 同架构，背景见 Prompt API 文档）；具体参数量与 tok/s 未披露。"
+      },
+      {
+        "date": "2026-05-19",
+        "vendor": "半导体产业纵横（炬芯、瑞芯微、恒玄、全志、Qualcomm等）",
+        "category": "产业动态",
+        "title": "芯片下沉，AI硬件全面开花",
+        "title_zh": "芯片下沉：端侧AI硬件芯片全景梳理",
+        "url": "https://www.36kr.com/p/3816031662382597",
+        "source_type": "媒体",
+        "summary_zh": "半导体产业纵横（36氪转载）梳理了AI耳机/录音笔、AI眼镜、AI玩具/戒指等品类背后的芯片：炬芯ATS362X采用存内计算NPU，Rockchip RK182X/RK1860协处理器面向3B~13B模型，恒玄BES2700/2800/6000覆盖可穿戴与眼镜。文章引用IDC数据称边缘AI芯片出货同比+78%，其中IoT/边缘中低端芯片增长超110%。",
+        "whats_new_zh": [
+          "炬芯ATS362X：CPU+DSP+NPU三核，存内计算NPU 132 GOPS@500MHz，6.4 TOPS/W（INT8），稀疏优化后19.2 TOPS/W（媒体转述厂商口径）",
+          "瑞芯微RK182X协处理器支持3B/7B LLM与VLM；下一代RK1860算力超40 TOPS、支持13B模型；RK3572为8nm、2×A73+6×A53、4 TOPS NPU",
+          "恒玄BES6000系列上半年送样，单芯片A+M核异构；自研AI眼镜SoC为6nm",
+          "IDC：2026年中国AI眼镜预计451万台；边缘AI芯片出货+78%"
+        ],
+        "key_specs": {
+          "process": "RK3572 8nm；恒玄眼镜SoC 6nm；骁龙可穿戴至尊版3nm",
+          "npu": "ATS362X CIM NPU 132 GOPS；RK1860 >40 TOPS；RK3572 4 TOPS",
+          "power": "ATS362X 6.4 TOPS/W INT8（稀疏19.2 TOPS/W）"
+        },
+        "edge_ai_impact_zh": "国产可穿戴/音频SoC已把SRAM存内计算NPU做进量产级芯片（ATS362X），且“主SoC+LLM协处理器”（RK182X/RK1860）成为端侧跑3B~13B模型的主流折中方案。",
+        "evidence_urls": [],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "存内计算落地：炬芯ATS362X",
+            "points": [
+              "CPU+DSP+NPU三核，NPU基于存内计算，132 GOPS@500MHz。",
+              "能效6.4 TOPS/W（INT8），稀疏优化后19.2 TOPS/W——即稀疏带来3倍等效能效；该数字为厂商口径，测试负载未披露。",
+              "对比：同为MCU级，Renesas RA8P1的Ethos-U55为256 GOPS、Infineon PSOC Edge E84约0.3 TOPS（第三方汇总），ATS362X算力不高但能效指标突出。"
+            ]
+          },
+          {
+            "heading": "LLM协处理器路线",
+            "points": [
+              "RK182X：3B/7B LLM与VLM；RK1860：>40 TOPS、13B模型，均以协处理器形式挂在主SoC旁，独立内存承载权重。",
+              "RK3572（8nm、4 TOPS）对上一代中端平台性能提升>100%、典型功耗降低>50%（厂商口径）。"
+            ]
+          },
+          {
+            "heading": "可穿戴/眼镜主控",
+            "points": [
+              "恒玄BES2700用于小米AI眼镜，BES2800覆盖TWS/手表/眼镜，BES6000上半年送样；自研AI眼镜SoC为6nm。",
+              "瑞芯微RK3588、RK3566/RV1106被用作小米与诠视AR眼镜主控；全志V851等V系列用于AI眼镜/玩具。",
+              "Nordic带NPU蓝牙SoC（nRF54LM20B Axon）口径为对比纯CPU推理快15倍、能效高8倍。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "媒体口径：RK182X支持3B与7B LLM/VLM；RK1860支持13B；骁龙可穿戴平台至尊版端侧最高2B参数、首token 0.2s、最高10 tokens/s；ATS362X（132 GOPS）定位音频/KWS级小模型，未给参数量。"
+      },
+      {
+        "date": "2026-05-17",
+        "vendor": "Apple",
+        "category": "产业动态",
+        "title": "Standalone Siri app to offer auto-deleting chat history, launch with beta label: report",
+        "title_zh": "爆料：独立 Siri App 将带 beta 标签，Gemini Siri 跑在 PCC",
+        "url": "https://9to5mac.com/2026/05/17/apple-launching-new-siri-app-next-month-with-auto-deleting-chat-history/",
+        "source_type": "媒体",
+        "summary_zh": "Bloomberg Mark Gurman 报道（9to5Mac 转述）：iOS 27 将推出独立 Siri App，支持会话历史、语音对话、文件上传及 30 天/1 年/永久的自动删除；新 Siri 发布时带 beta 标签。Apple 将在自家 Private Cloud Compute 服务器上运行基于 Gemini 的 Siri，而不是把数据直接交给 Google。",
+        "whats_new_zh": [
+          "独立 Siri App：聊天历史、新建对话/语音对话、文件上传，两种界面（ChatGPT 式或 Messages 式列表）",
+          "聊天记录自动删除选项：30 天、1 年、永久",
+          "内部 iOS 27 测试版带“退出 Siri beta”开关（爆料）",
+          "Gemini Siri 运行于 Apple PCC，Google 不应以 Siri 对话训练模型（爆料）"
+        ],
+        "key_specs": {
+          "other": "端侧处理与硬件要求未披露"
+        },
+        "edge_ai_impact_zh": "Siri 进一步聊天机器人化，意味着更长上下文与多轮会话，端侧负责的部分（意图理解、个人上下文检索）对 A 系列 Neural Engine 和内存提出更高要求，而重推理留在 PCC。",
+        "evidence_urls": [],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "产品形态",
+            "points": [
+              "Siri 从语音助手转向带历史记录的聊天应用，与 ChatGPT/Gemini App 正面竞争",
+              "Gurman 预计 beta 标签会出现在开发者测试版与秋季正式版中"
+            ]
+          },
+          {
+            "heading": "端/云分工（爆料）",
+            "points": [
+              "Gurman：Gemini Siri 跑在 Apple 自家 PCC；11 天后 The Information 称部分请求会进入 Google Cloud（Nvidia）——两份报道口径不同",
+              "端侧具体负责哪些能力本报道未涉及"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露端侧模型规模；背景（Gurman 1 月爆料）：PCC 上 Gemini 定制模型约 1.2 万亿参数，内部称 Apple Foundation Models v10，iOS 27 聊天功能用 v11。"
+      },
+      {
+        "date": "2026-05-21",
+        "vendor": "南方科技大学 / 鹏城实验室",
+        "category": "学术研究",
+        "title": "IntAttention: A Fully Integer Attention Pipeline for Efficient Edge Inference",
+        "title_zh": "IntAttention：端侧全整数注意力流水线",
+        "url": "https://proceedings.mlsys.org/paper_files/paper/2026/hash/ea5ffdf7da91256ecd2770f9fd2dade9-Abstract-Conference.html",
+        "source_type": "论文",
+        "summary_zh": "INT8 加速了 QK/PV 矩阵乘后，“反量化→softmax→再量化”路径成为端侧 attention 的主要瓶颈（最高占 65%）。IntAttention 提出 IndexSoftmax：稀疏感知裁剪 + 32 项查找表 + 直接整数归一化，全程无浮点，免训练即插即用。",
+        "whats_new_zh": [
+          "Armv8 CPU 上相对 FP16 最高 3.7× 加速、能耗降低 61%；相对常规 INT8 attention 最高 2.0×",
+          "RK3588S2：较 FP16 加速 2.1–3.7×；Apple M2：2.4–2.8×",
+          "RK3588S2 能耗仅为 FP16 的 39.18%，比 Quant-Only 低 37%",
+          "LUT 仅 32 项 UINT8（32 B），分辨率为同预算 EXAQ（INT3，8 项）的 4×"
+        ],
+        "key_specs": {
+          "cpu": "Rockchip RK3588S2（NEON+dot-product）、Apple M2（NEON+dot-product+I8MM）",
+          "other": "Arm Compute Library 52.4.0；序列 1K–16K，head dim 128"
+        },
+        "edge_ai_impact_zh": "对 NPU 设计者而言，这篇论文量化了“GEMM 量化之后，softmax 变成新瓶颈”的事实；全整数 attention 适合没有高吞吐 FP 单元的低功耗 NPU/DSP。",
+        "evidence_urls": [
+          "https://proceedings.mlsys.org/paper_files/paper/2026/file/ea5ffdf7da91256ecd2770f9fd2dade9-Paper-Conference.pdf",
+          "https://mlsys.org/virtual/2026/calendar"
+        ],
+        "confidence": "high",
+        "venue": "MLSys 2026",
+        "affiliation": "Southern University of Science and Technology、Peng Cheng Laboratory",
+        "authors": "Wanli Zhong, Haibo Feng, Zirui Zhou et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "瓶颈量化",
+            "points": [
+              "FP32 时 softmax 路径占 attention 时间 13–19%，FP16 GEMM 时 23–30%，INT8 GEMM 后升至 57–65%"
+            ]
+          },
+          {
+            "heading": "IndexSoftmax 机制",
+            "points": [
+              "稀疏感知裁剪：超出阈值 c 的指数项直接截断为 0",
+              "b=5 即 32 项 UINT8 LUT 近似指数，一次 LUT gather + 一次 32bit 累加 + 一次逐元素缩放",
+              "推荐超参 (b, c)=(5, 6.6)；PV 阶段使用 UINT8 概率矩阵"
+            ]
+          },
+          {
+            "heading": "能效与实测",
+            "points": [
+              "RK3588S2：2.1–3.7×（vs FP16），1.6–2×（vs Quant-Only）；能耗 -61%",
+              "Apple M2：2.4–2.8×（vs FP16），1.9–2.4×（vs Quant-Only）"
+            ]
+          },
+          {
+            "heading": "精度",
+            "points": [
+              "Llama-3.2-1B、OPT-1.3B 平均精度与 FP16 持平或略高；Qwen3-1.7B 对 attention 量化更敏感但仍优于 Quant-Only",
+              "视觉：DeiT-B、ViT-L、CaiT-L 与 Quant-Only 持平或略优"
+            ]
+          }
+        ],
+        "model_capacity_zh": "评测 Llama-3.2-1B、OPT-1.3B、Qwen3-1.7B 及 ViT 类模型；序列长度 1K–16K（attention 算子级测速），端到端 tok/s 未披露。"
+      },
+      {
+        "date": "2026-05-21",
+        "vendor": "上海交通大学 / Purdue",
+        "category": "学术研究",
+        "title": "Rethinking DVFS for Mobile LLMs: Unified Energy-Aware Scheduling with CORE",
+        "title_zh": "CORE：手机 LLM 的 CPU/GPU/内存联合调频",
+        "url": "https://proceedings.mlsys.org/paper_files/paper/2026/hash/136b9a13861308c8948cd308ccd02658-Abstract-Conference.html",
+        "source_type": "论文",
+        "summary_zh": "论文发现手机上 llama.cpp 的 GPU 推理仍高度依赖 CPU（OpenCL 驱动队列），而 Android 的 CPU/GPU/内存 governor 各自为政，导致延迟或能耗显著偏离最优。CORE 离线搜索最优频点组合、运行时按请求套用，联合协调三者。",
+        "whats_new_zh": [
+          "默认 governor 比最优频点组合延迟高 23.0–40.4% 或能耗高 5.0–16.6%",
+          "CORE 在不增加每 token 能耗的前提下，TTFT 平均降低 8.5–17.7%，TPOT 降低 27.8–39.6%",
+          "等延迟目标下能耗降低：DS-Qwen 15.8%、TinyLlama 7.5%、StableLM 6.3%",
+          "频点搜索相比 2808 种组合减少 374×，每模型 17.7–78.5 分钟完成"
+        ],
+        "key_specs": {
+          "cpu": "Google Tensor G2",
+          "gpu": "Mali-G710 MP7",
+          "memory": "Pixel 7 Pro 12 GB",
+          "power": "Monsoon 电源直测，0.2 ms 分辨率",
+          "other": "Pixel 7 / 7 Pro，Android 13，llama.cpp b2202，4bit 量化"
+        },
+        "edge_ai_impact_zh": "端侧 LLM 的体验与续航很大程度取决于 SoC 的 DVFS 策略而非峰值算力；这篇工作说明手机厂商需要为 LLM 负载定制“跨 CPU/GPU/DDR 的协同调频”。",
+        "evidence_urls": [
+          "https://proceedings.mlsys.org/paper_files/paper/2026/file/136b9a13861308c8948cd308ccd02658-Paper-Conference.pdf",
+          "https://mlsys.org/virtual/2026/calendar"
+        ],
+        "confidence": "high",
+        "venue": "MLSys 2026",
+        "affiliation": "Shanghai Jiao Tong University、Purdue University",
+        "authors": "Zongpu Zhang, Pranab Dash, Qiang Xu et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "根因分析",
+            "points": [
+              "Mali GPU 硬件队列只允许至多 2 个在途条目，OpenCL 运行时需 CPU 持续派发 kernel，所以 CPU 降频会拖慢 GPU",
+              "Pixel 的 CPU 用 sched-pixel EAS、GPU 用 Quickstep（阈值为图形负载调优）、内存用 interactive，彼此无协同"
+            ]
+          },
+          {
+            "heading": "实测例子",
+            "points": [
+              "TinyLlama decode：GPU governor 215.1 ms/token、402.7 mJ/token；固定 848 MHz 时 126.9 ms（-41%）且能耗相近",
+              "DS-Qwen：同能耗（约 460 mJ/token）下 CORE 把 TPOT 从 346.8 ms 降到 229.6 ms（GPU 701 MHz、CPU 1582 MHz）"
+            ]
+          },
+          {
+            "heading": "ShareGPT 真实 trace",
+            "points": [
+              "TinyLlama：TTFT 10.8→9.2 s，TPOT 212.1→153.1 ms，E2E 31.0→23.8 s（同能耗）",
+              "StableLM 2.7B（文中另称 3B）：TPOT 490.0→302.3 ms（-38.3%）"
+            ]
+          },
+          {
+            "heading": "背景数据",
+            "points": [
+              "引用 MobiCom'24 研究：iPhone 14 Pro 上跑 4bit 3B 模型，490–590 次 prompt 即可耗尽电量"
+            ]
+          }
+        ],
+        "model_capacity_zh": "论文实测：Pixel 7 系列上运行 TinyLlama 1.1B、StableLM 2.7B/3B、Phi-2、DeepSeek-R1-Distill-Qwen、Llama-2 7B（仅 12 GB 的 Pixel 7 Pro），均为 4bit；decode 约 127–495 ms/token（约 2–8 tok/s，GPU OpenCL 路径）。"
+      },
+      {
+        "date": "2026-05-21",
+        "vendor": "华为",
+        "category": "学术研究",
+        "title": "ProfInfer: An eBPF-based Fine-Grained LLM Inference Profiler",
+        "title_zh": "ProfInfer：基于 eBPF 的端侧 LLM 推理细粒度剖析",
+        "url": "https://proceedings.mlsys.org/paper_files/paper/2026/hash/03dbc11a22e79cd38bea53cf518c2371-Abstract-Conference.html",
+        "source_type": "论文",
+        "summary_zh": "华为德累斯顿研究中心等提出面向资源受限端侧设备的 LLM 推理剖析框架，以 llama.cpp 为例，用 eBPF 在不改源码、不重编译的情况下挂探针，输出算子、图、时间线与硬件计数器趋势，可观察稠密推理、MoE 路由与算子卸载行为。",
+        "whats_new_zh": [
+          "运行时开销低于 5%（论文正文；papers.cool 摘要版本写为低于 4%）",
+          "可回答“该负载是访存受限还是计算受限”，分析 KV Cache 效应、后端性能差异与 MoE 动态特性",
+          "示例平台：Orange Pi 5 Ultra，两颗 Cortex-A76 核运行 BF16 模型并给出逐算子内存带宽占用"
+        ],
+        "key_specs": {
+          "cpu": "Orange Pi 5 Ultra（Cortex-A76）",
+          "other": "eBPF 动态探针；目标 llama.cpp 及同类运行时"
+        },
+        "edge_ai_impact_zh": "端侧 NPU/CPU 混合推理调优长期缺乏“算子级可观测性”；非侵入式剖析对手机/PC 厂商定位 KV、卸载与 MoE 路由瓶颈很实用。",
+        "evidence_urls": [
+          "https://proceedings.mlsys.org/paper_files/paper/2026/file/03dbc11a22e79cd38bea53cf518c2371-Paper-Conference.pdf",
+          "https://mlsys.org/virtual/2026/calendar"
+        ],
+        "confidence": "high",
+        "venue": "MLSys 2026",
+        "affiliation": "Huawei Hilbert Research Center (Dresden)、TU Munich、Huawei Central Software Institute、Shanghai Jiao Tong University",
+        "authors": "Bohua Zou, Debayan Roy, Dhimankumar Yogesh Airao et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "实现",
+            "points": [
+              "eBPF 跨多层动态挂载运行时函数探针，无需修改或重编译推理引擎",
+              "把 trace 转换为算子/图/时间线/硬件计数器可视化"
+            ]
+          },
+          {
+            "heading": "可观测内容",
+            "points": [
+              "层卸载到 GPU 时 llama.cpp 会生成多张子图，可逐图追踪",
+              "MoE 每步激活不同专家的动态行为",
+              "逐算子内存带宽消耗，判断 memory-bound / compute-bound"
+            ]
+          },
+          {
+            "heading": "开销",
+            "points": [
+              "运行时开销 <5%，保持高剖析保真度"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露完整模型列表；示例为 Orange Pi 5 Ultra 上的 BF16 小模型。"
+      },
+      {
+        "date": "2026-05-21",
+        "vendor": "Groq（作者现属 NVIDIA）",
+        "category": "学术研究",
+        "title": "SHIP: SRAM-Based Huge Inference Pipelines for Fast LLM Serving",
+        "title_zh": "Groq SHIP：纯 SRAM 大规模推理流水线",
+        "url": "https://proceedings.mlsys.org/paper_files/paper/2026/hash/9c20f16b05f5e5e70fa07e2a4364b80e-Abstract-Conference.html",
+        "source_type": "论文",
+        "summary_zh": "首次公开大规模基于 SRAM 的 LLM 推理部署——Groq 公有云第一代 SHIP：同步低直径互连跨数千芯片扩展，在有限片上容量下优化 LLM 服务，并用超大流水线维持不同 prefill/decode 比例与上下文下的效率。",
+        "whats_new_zh": [
+          "官方口径：Groq 公有云每日服务数千亿 token",
+          "同步、低直径互连支撑数千芯片的低延迟扩展",
+          "论文署名单位为 NVIDIA，注明“Work done while at Groq”"
+        ],
+        "key_specs": {
+          "memory": "片上 SRAM 存放权重与 KV，不依赖 HBM",
+          "other": "数千芯片同步互连"
+        },
+        "edge_ai_impact_zh": "SRAM 换 HBM 的路线与端侧“近存/存内计算 NPU”同源：把权重常驻片上消除带宽墙，但代价是容量，需要大规模流水切分——这为端侧 SRAM-heavy NPU 的模型切分提供了反向参照。",
+        "evidence_urls": [
+          "https://proceedings.mlsys.org/paper_files/paper/2026/file/9c20f16b05f5e5e70fa07e2a4364b80e-Paper-Conference.pdf",
+          "https://mlsys.org/virtual/2026/calendar"
+        ],
+        "confidence": "high",
+        "venue": "MLSys 2026",
+        "affiliation": "Groq（作者现为 NVIDIA）",
+        "authors": "Andrew Bitar, Aravind Vellora Vayalapra, Baorui Zhou et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "架构要点",
+            "points": [
+              "以 SRAM 替代 HBM 承载权重与 KV，突破 decode 带宽瓶颈",
+              "同步、低直径互连实现跨数千芯片的确定性低延迟"
+            ]
+          },
+          {
+            "heading": "服务优化",
+            "points": [
+              "在有限内存容量下优化 LLM 服务",
+              "大流水线设计在不同 prefill:decode 比例和上下文长度下保持效率"
+            ]
+          },
+          {
+            "heading": "披露情况",
+            "points": [
+              "具体芯片 SRAM 容量、功耗与 tok/s 在摘要中未披露"
+            ]
+          }
+        ],
+        "model_capacity_zh": "数据中心场景；具体单芯片容量与模型规模摘要未披露。"
+      },
+      {
+        "date": "2026-05-20",
+        "vendor": "Together AI / 悉尼大学 / Microsoft",
+        "category": "学术研究",
+        "title": "Kitty: Accurate and Efficient 2-bit KV Cache Quantization with Dynamic Channel-wise Precision Boost",
+        "title_zh": "Kitty：动态通道提精度的 2bit KV Cache 量化",
+        "url": "https://proceedings.mlsys.org/paper_files/paper/2026/hash/e4d8d1b5120be349d3fff8878650cf45-Abstract-Conference.html",
+        "source_type": "论文",
+        "summary_zh": "Kitty 指出 4bit KV 量化基本无损但 2bit 在长链推理上掉点明显，提出按敏感度给少量 Key 通道“提精度”到 INT4、其余保持 2bit，并配合页式布局与 Triton 反量化 kernel，使混合精度不拖慢 attention。",
+        "whats_new_zh": [
+          "KV 内存降低近 8×，7 项任务精度损失可忽略（Qwen3、LLaMA3）",
+          "同等显存预算下 batch 最大可扩 8×，吞吐提升 2.1×–4.1×",
+          "Kitty 提精度 12.5% 通道，Kitty-Pro 提 25% 通道即可回到 FP16 精度水平；相比 KIVI-K2V2* 在 Qwen3-8B 平均精度高 5.17"
+        ],
+        "key_specs": {
+          "gpu": "A100 / H100（评测）",
+          "memory": "KV：2bit 主体 + 12.5%–25% 通道 INT4",
+          "other": "页式 KV 布局、Triton 反量化 kernel"
+        },
+        "edge_ai_impact_zh": "论文在数据中心 GPU 上评测，但“2bit KV + 少量通道提精度”直接对应端侧长上下文/推理模型的内存墙：手机 12–16 GB 内存下，KV Cache 往往比 4bit 权重更快吃满内存。",
+        "evidence_urls": [
+          "https://proceedings.mlsys.org/paper_files/paper/2026/file/e4d8d1b5120be349d3fff8878650cf45-Paper-Conference.pdf",
+          "https://mlsys.org/virtual/2026/calendar"
+        ],
+        "confidence": "high",
+        "venue": "MLSys 2026",
+        "affiliation": "University of Sydney、Together AI、UIUC、Microsoft",
+        "authors": "Haojun Xia, Xiaoxia Wu, Jisen Li et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "算法",
+            "points": [
+              "Dynamic Channel-wise Precision Boost：按敏感度对 Key 通道排序，只把 Top-K 通道保留为 4bit（head 维度 128 时提 25% 即 K=32）",
+              "对比 KIVI 2bit：保留初始 token 全精度仍不足以弥合与 FP16 的差距，通道提精度进一步收敛"
+            ]
+          },
+          {
+            "heading": "系统设计",
+            "points": [
+              "把每个混合精度 Key page 分解为两个统一 2bit 精度的张量，避免不规则访存",
+              "page-centric KV 布局 + Triton 兼容的页反量化 kernel + 轻量运行时流水，摊销在线量化开销"
+            ]
+          },
+          {
+            "heading": "实测",
+            "points": [
+              "Qwen3-8B 端到端推理，生成至 8192 token 最大长度",
+              "在相同内存预算下吞吐 2.1×–4.1×，batch 最大 8×"
+            ]
+          }
+        ],
+        "model_capacity_zh": "评测模型 Qwen3（含 8B）与 LLaMA3-8B 及更大模型；KV 压缩近 8×，即同内存下可支撑约 8 倍 KV 容量（上下文或并发）。"
+      },
+      {
+        "date": "2026-05-20",
+        "vendor": "Intel Labs / UCSB / USC",
+        "category": "学术研究",
+        "title": "SkipKV: Selective Skipping of KV Generation and Storage for Efficient Inference with Large Reasoning Models",
+        "title_zh": "SkipKV：面向推理模型的句级 KV 跳过与压缩",
+        "url": "https://proceedings.mlsys.org/paper_files/paper/2026/hash/45c1f6a8cbf2da59ebf2c802b4f742cd-Abstract-Conference.html",
+        "source_type": "论文",
+        "summary_zh": "针对大推理模型（LRM）冗长 CoT 导致 KV Cache 线性膨胀，SkipKV 以“句子”为粒度识别并删除高度相似的推理片段，同时用 steering vector 引导模型生成更简洁的回答，无需训练。",
+        "whats_new_zh": [
+          "相同压缩预算下精度比基线最高高 26.7%",
+          "相比 SOTA，生成长度最多缩短 1.6×，吞吐最高提升 1.7×",
+          "R1-Qwen-14B 在 AIME-24 上：2× KV 压缩下精度 +26.7%、生成长度缩短 22%"
+        ],
+        "key_specs": {
+          "memory": "句级 KV 驱逐",
+          "other": "training-free；评测 DeepSeek-R1-Qwen-7B/14B、R1-Llama-8B"
+        },
+        "edge_ai_impact_zh": "端侧部署推理模型时，KV 和生成长度同时决定能耗；SkipKV 同时削减两者，对内存有限的手机/PC NPU 尤其有价值。",
+        "evidence_urls": [
+          "https://proceedings.mlsys.org/paper_files/paper/2026/file/45c1f6a8cbf2da59ebf2c802b4f742cd-Paper-Conference.pdf",
+          "https://mlsys.org/virtual/2026/calendar"
+        ],
+        "confidence": "high",
+        "venue": "MLSys 2026",
+        "affiliation": "UC Santa Barbara、Intel Labs、USC",
+        "authors": "Jiayi Tian, Seyedarmin Azizi, Yequan Zhao et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题诊断",
+            "points": [
+              "现有 token 级驱逐在多 batch 场景因打分不稳定、padding 吃掉有效预算而掉点",
+              "语义无关的驱逐会让模型反复“复核”，反而生成比不驱逐更长的序列"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "句级打分指标识别并删除高度相似的句子，保持语义连贯",
+              "动态调整 steering vector 修改隐藏状态，抑制冗余生成"
+            ]
+          },
+          {
+            "heading": "评测",
+            "points": [
+              "模型：DeepSeek-R1-Qwen-7B、R1-Qwen-14B、R1-Llama-8B；基准：AIME-24、LiveCodeBench、MATH-500、GSM8K",
+              "精度最高 +26.7%，生成长度最多缩短 1.6×，吞吐最高 1.7×"
+            ]
+          }
+        ],
+        "model_capacity_zh": "评测 7B–14B 蒸馏推理模型；硬件平台论文摘要未强调端侧设备。"
+      },
+      {
+        "date": "2026-05-20",
+        "vendor": "台湾大学",
+        "category": "学术研究",
+        "title": "Locality-Aware Beam Scheduling for Efficient Test-Time Compute with a Consumer-grade GPU",
+        "title_zh": "消费级 GPU 上的局部性感知 beam 调度",
+        "url": "https://proceedings.mlsys.org/paper_files/paper/2026/hash/c74b624843218d9b6713fcf299d6d5e4-Abstract-Conference.html",
+        "source_type": "论文",
+        "summary_zh": "测试时计算（TTC，如逐步 beam search）让多条解码路径并发，KV Cache 随探索空间膨胀，在 24 GB 消费级 GPU 上被迫卸载到主存造成 I/O 停顿。论文利用 token 间与 beam 间的 KV 局部性，减少重复传输并用分组预取重叠计算。",
+        "whats_new_zh": [
+          "KV Cache 传输量减少 95% 以上",
+          "相对逐层卸载：OPT-6.7B 加速 3.39–9.72×，LLaMA-2-7B 3.60–8.74×，Qwen-7B 4.17–7.99×",
+          "平台：RTX 4090（24 GB），超出显存后 KV 卸载至主机内存"
+        ],
+        "key_specs": {
+          "gpu": "RTX 4090 24GB",
+          "memory": "KV 卸载至主机内存 + 分组预取"
+        },
+        "edge_ai_impact_zh": "本地 PC 跑推理模型做 TTC 时，瓶颈从权重转向 KV；该方法对 AI PC（独显/统一内存）上的“深度思考”模式有直接借鉴意义。",
+        "evidence_urls": [
+          "https://proceedings.mlsys.org/paper_files/paper/2026/file/c74b624843218d9b6713fcf299d6d5e4-Paper-Conference.pdf",
+          "https://mlsys.org/virtual/2026/calendar"
+        ],
+        "confidence": "high",
+        "venue": "MLSys 2026",
+        "affiliation": "National Taiwan University CSIE",
+        "authors": "Hsing-Ti Wang, Hung-Tso Shiao, Chia-Lin Yang",
+        "deep_dive_zh": [
+          {
+            "heading": "两类局部性",
+            "points": [
+              "Inter-token：同一 beam 内连续 token 访问几乎相同的 KV 数据",
+              "Inter-beam：共享前缀的 beam 在跨步之间复用重叠 KV 段"
+            ]
+          },
+          {
+            "heading": "调度",
+            "points": [
+              "按显存预算平衡分组：例如 4 GB KV 预算、每 beam 0.6 GB 时，最多 6 beam 一组，12 个 beam 分两组",
+              "预取下一组 KV 与当前计算重叠"
+            ]
+          },
+          {
+            "heading": "收益",
+            "points": [
+              "KV 传输量下降 >95%",
+              "三种 7B 级模型端到端 3.39–9.72× 加速（对比 layer-wise offloading）"
+            ]
+          }
+        ],
+        "model_capacity_zh": "单张 24 GB 消费级 GPU 上运行 6.7B–7B 模型的 beam search TTC，序列长度 2048 等设置。"
+      },
+      {
+        "date": "2026-05-20",
+        "vendor": "独立研究者",
+        "category": "学术研究",
+        "title": "Once-for-All Channel Mixers (HyperTinyPW): Generative Compression for TinyML",
+        "title_zh": "HyperTinyPW：MCU 上的生成式权重压缩",
+        "url": "https://proceedings.mlsys.org/paper_files/paper/2026/hash/2d04d97593c8c33d415337f408ed0e1b-Abstract-Conference.html",
+        "source_type": "论文",
+        "summary_zh": "在 MCU 上即使 INT8 量化后，1×1 pointwise 层仍主导 Flash 占用。HyperTinyPW 用共享 micro-MLP 在加载时由极小的逐层编码“生成”PW 权重并缓存，推理仍用标准整数算子，稳态速度与 INT8 可分离 CNN 相同。",
+        "whats_new_zh": [
+          "225 kB 模型达到与 1.4 MB CNN 接近的性能，体积小 6.31×（字节减少 84.15%），保留大模型 95% macro-F1（三个 ECG 基准）",
+          "迁移至关键词唤醒：Speech Commands 测试准确率 96.2%（验证最佳 98.2%）",
+          "仅一次性合成开销，不改动商用 MCU 运行时"
+        ],
+        "key_specs": {
+          "memory": "Flash/SRAM 仅数十至数百 kB",
+          "other": "INT8；首层 PW1 保持 INT8 以稳定"
+        },
+        "edge_ai_impact_zh": "对常驻感知（ECG、KWS）这类可穿戴/IoT 设备，Flash 往往比算力更稀缺；“存生成器而非存权重”是一条与 NPU 无关、可直接落地的压缩路线。",
+        "evidence_urls": [
+          "https://proceedings.mlsys.org/paper_files/paper/2026/file/2d04d97593c8c33d415337f408ed0e1b-Paper-Conference.pdf",
+          "https://mlsys.org/virtual/2026/calendar"
+        ],
+        "confidence": "high",
+        "venue": "MLSys 2026",
+        "affiliation": "Independent Researcher",
+        "authors": "Yassien Shaalan",
+        "deep_dive_zh": [
+          {
+            "heading": "方法",
+            "points": [
+              "共享潜在基跨层去冗余，每层只存小编码",
+              "加载时合成 PW kernel 并缓存，之后与普通 INT8 推理一致，无逐输入动态生成带来的 SRAM 压力与延迟抖动"
+            ]
+          },
+          {
+            "heading": "评测口径",
+            "points": [
+              "提出 TinyML 忠实的“打包字节”记账：生成器、heads、编码、保留的 PW1、骨干全部计入",
+              "数据集：Apnea-ECG、PTB-XL、MIT-BIH；音频：Speech Commands"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "225 kB vs 1.4 MB：6.31× 更小，macro-F1 保留 95%",
+              "KWS 96.2% 测试准确率"
+            ]
+          }
+        ],
+        "model_capacity_zh": "MCU 级 CNN（约 225 kB），非 LLM。"
+      },
+      {
+        "date": "2026-05-20",
+        "vendor": "Cornell / Together AI / Princeton",
+        "category": "学术研究",
+        "title": "Search Your Block Floating Point Scales!",
+        "title_zh": "ScaleSearch：微缩放 BFP/NVFP4 缩放因子搜索",
+        "url": "https://proceedings.mlsys.org/paper_files/paper/2026/hash/633b0e871a48d542280c3ad03928e60d-Abstract-Conference.html",
+        "source_type": "论文",
+        "summary_zh": "微缩放块浮点（MX/NVFP4）已获 GPU 原生支持，但标准做法按块最大值取缩放因子并非误差最优。ScaleSearch 利用微缩放格式中缩放因子的尾数位做细粒度搜索，最小化量化误差，并提出基于 NVFP4 的加速注意力 ScaleSearchAttention。",
+        "whats_new_zh": [
+          "NVFP4 量化误差降低 27%",
+          "Qwen3-8B PTQ 在 MATH500 上最多提升 15 分",
+          "ScaleSearchAttention 使 Llama 3.1 70B 的 Wikitext-2 PPL 最多改善 0.77"
+        ],
+        "key_specs": {
+          "other": "NVFP4 / 微缩放 BFP；可与 PTQ、低精度 attention 组合"
+        },
+        "edge_ai_impact_zh": "端侧 NPU 正快速引入 FP4/MX 类格式；缩放因子选择是零硬件成本的精度杠杆，可直接移植到端侧编译器的离线量化流程。",
+        "evidence_urls": [
+          "https://proceedings.mlsys.org/paper_files/paper/2026/file/633b0e871a48d542280c3ad03928e60d-Paper-Conference.pdf",
+          "https://mlsys.org/virtual/2026/calendar"
+        ],
+        "confidence": "high",
+        "venue": "MLSys 2026",
+        "affiliation": "Cornell University、Together AI、UC San Diego、Princeton University",
+        "authors": "Tanmaey Gupta, Hayden Prairie, Shirley Wu et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "原理",
+            "points": [
+              "标准 BFP 以块内最大幅值确定共享 scale，ScaleSearch 在 scale 的尾数位上搜索使块误差最小的值",
+              "可嵌入 PTQ 与低精度 attention 流程"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "NVFP4 误差 -27%；Qwen3-8B MATH500 PTQ 最多 +15 分；Llama 3.1 70B PPL 最多 -0.77"
+            ]
+          },
+          {
+            "heading": "对端侧的启示",
+            "points": [
+              "NVFP4 的 scale 为 FP8（E4M3），自带尾数位，搜索空间在不改格式的前提下即可利用",
+              "离线一次性搜索，不增加推理时硬件开销（论文称与基线性能接近）"
+            ]
+          }
+        ],
+        "model_capacity_zh": "评测覆盖 Qwen3-8B 至 Llama 3.1 70B，4bit（NVFP4）权重/注意力。"
+      },
+      {
+        "date": "2026-05-20",
+        "vendor": "多伦多大学",
+        "category": "学术研究",
+        "title": "Shannonic: Efficient Entropy-Optimal Compression for ML Workloads",
+        "title_zh": "Shannonic：逼近香农极限的张量无损压缩",
+        "url": "https://proceedings.mlsys.org/paper_files/paper/2026/hash/96f39c8de84678cb2a908cd52bfd7819-Abstract-Conference.html",
+        "source_type": "论文",
+        "summary_zh": "Shannonic 离线把张量值域划分为最优子区间，每个值编码为（区间索引, 偏移）对，区间索引用 ANS 熵编码，实现近熵极限的无损压缩，且编解码状态极小，适合硬件实现。",
+        "whats_new_zh": [
+          "8bit 量化模型上编解码状态仅 530 B，编码效率在香农极限 1% 以内",
+          "带宽受限网络下联邦学习加速 1.3–3.1×",
+          "端云协同 LLM 推理延迟降低 29–32%；附录评测 175B LLM 的内存虚拟化场景"
+        ],
+        "key_specs": {
+          "memory": "无损压缩，状态 530 B",
+          "other": "ANS 熵编码"
+        },
+        "edge_ai_impact_zh": "极小状态的熵编码适合做进 NPU/内存控制器，对端侧权重流式加载、端云拆分推理的链路带宽都有直接收益。",
+        "evidence_urls": [
+          "https://proceedings.mlsys.org/paper_files/paper/2026/file/96f39c8de84678cb2a908cd52bfd7819-Paper-Conference.pdf",
+          "https://mlsys.org/virtual/2026/calendar"
+        ],
+        "confidence": "high",
+        "venue": "MLSys 2026",
+        "affiliation": "University of Toronto、Vector Institute",
+        "authors": "Kareem Ibrahim, Mohammadjavad Maheronnaghsh, Andreas Moshovos",
+        "deep_dive_zh": [
+          {
+            "heading": "编码方案",
+            "points": [
+              "离线预处理确定最优子区间与编解码表",
+              "区间索引走 ANS，偏移直接存储，理论与实测均优于标准 ANS"
+            ]
+          },
+          {
+            "heading": "硬件友好性",
+            "points": [
+              "530 B 状态，适合片上实现",
+              "面向 8bit 量化模型张量"
+            ]
+          },
+          {
+            "heading": "应用",
+            "points": [
+              "联邦学习 1.3–3.1× 加速；端云 LLM 推理 29–32% 延迟下降"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露具体端侧模型规模；附录评测 175B LLM 内存虚拟化。"
+      },
+      {
+        "date": "2026-05-20",
+        "vendor": "UC Santa Cruz / Microsoft Research",
+        "category": "学术研究",
+        "title": "Llamas on the Web: Memory-Efficient, Performance-Portable, and Multi-Precision LLM Inference with WebGPU",
+        "title_zh": "LlamaWeb：llama.cpp 的 WebGPU 浏览器推理后端",
+        "url": "https://arxiv.org/abs/2605.20706",
+        "source_type": "论文",
+        "summary_zh": "UC Santa Cruz 与微软研究院提出 LlamaWeb，作为 llama.cpp 的 WebGPU 后端，通过静态内存规划、可调内核库与模板化多量化格式 GPU 内核，实现浏览器中跨设备 LLM 推理。在 8 家厂商 16 台设备（含移动设备）、10 个模型上评估，内存比现有浏览器框架少 29%~33%，解码吞吐高 45%~69%。",
+        "whats_new_zh": [
+          "16 台设备/8 家厂商/10 个模型/4 种权重格式，号称最大的单框架跨设备数据集，且是唯一含移动设备的 WebGPU 数据集",
+          "内存比 WebLLM/Transformers.js 等低 29%~33%；四家 GPU 上解码吞吐高 45%~69%",
+          "支持 23 种权重格式（WebLLM 6、Transformers.js 7）"
+        ],
+        "key_specs": {
+          "gpu": "WebGPU（跨 Apple/高通/英特尔等 GPU）",
+          "other": "Apple M3 上 Llama 3.2 1B q4_k_m 解码 89.9% 时间在 GEMV"
+        },
+        "edge_ai_impact_zh": "浏览器成为免安装的端侧 LLM 分发渠道；论文的内核剖析再次印证解码阶段由矩阵-向量乘（带宽）主导。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2605.20706v1"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "UC Santa Cruz / Microsoft Research",
+        "authors": "Reese Levine, Rithik Sharma, Nikhil Jain et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "内存与加载",
+            "points": [
+              "静态内存规划 + 高效模型加载，在多种设备/浏览器/OS 组合下比现有框架少用 29%~33% 内存",
+              "Table 1：WebLLM 内存 +49%、Transformers.js +41%（相对 LlamaWeb）"
+            ]
+          },
+          {
+            "heading": "跨设备性能可移植",
+            "points": [
+              "可调内核库 + k-means 设备聚类处理 GPU 差异",
+              "解码吞吐比现有浏览器框架高 45%~69%（四家 GPU）；部分设备上甚至超过厂商原生 llama.cpp 后端"
+            ]
+          },
+          {
+            "heading": "内核剖析（Apple M3, Llama 3.2 1B q4_k_m）",
+            "points": [
+              "KV@0：预填充 92.6% 时间在 GEMM；解码 89.9% 在 GEMV",
+              "KV@2048：注意力占比升至约 14%~15%，长上下文下注意力成为第二大开销"
+            ]
+          }
+        ],
+        "model_capacity_zh": "论文评估 10 个语言模型、4 种权重格式；Apple M3 上以 Llama 3.2 1B（q4_k_m）做内核剖析；具体 tok/s 绝对值见论文图表，摘要未给出。"
+      },
+      {
+        "date": "2026-05-19",
+        "vendor": "Meta / PyTorch",
+        "category": "学术研究",
+        "title": "ExecuTorch - A Unified PyTorch Solution to Run ML Models On-Device",
+        "title_zh": "ExecuTorch：PyTorch 原生端侧部署框架（最佳工业论文）",
+        "url": "https://proceedings.mlsys.org/paper_files/paper/2026/hash/236f915dd02af4f11927f67330b21d4b-Abstract-Conference.html",
+        "source_type": "论文",
+        "summary_zh": "Meta PyTorch 团队系统性介绍 ExecuTorch：用 torch.export 把模型导出为由不足 300 个 Core ATen 算子组成的 AOT 图，再通过可插拔 backend delegate 把子图下发到 CPU/GPU/NPU，覆盖从 MCU 到手机 SoC 的 12 个硬件后端。论文在 MLSys 2026 周二 Best Paper Session 宣讲，ExecuTorch 官方账号称其获得 Best Industry Paper Award（官方口径）。",
+        "whats_new_zh": [
+          "官方口径：支撑 Meta 全家桶 App 与 Reality Labs（如 Ray-Ban 智能眼镜）每日数十亿次推理，支持 12 个硬件后端",
+          "Galaxy S25 Ultra（Snapdragon 8 Elite）Hexagon NPU 上 Llama 3.2 1B（A16W4）prefill 2813–2977 tok/s、decode 约 46.5 tok/s；同机 llama.cpp NPU 路径 prefill 仅 330–374 tok/s",
+          "CPU（XNNPACK，4bit 权重 GS32）Qwen3 0.6B decode 72.3–72.7 tok/s，Phi-4 Mini（3.8B）decode 18.5–19.9 tok/s",
+          "Raspberry Pi Pico 2（Cortex-M33，520 KiB SRAM）上运行时本体仅 13–26 KiB，INT8 + 融合后内存规划 arena 从 101.2 KiB 降到 3.8 KiB"
+        ],
+        "key_specs": {
+          "cpu": "XNNPACK（含 Arm KleidiAI）",
+          "gpu": "Vulkan（76 个 ATen 算子 GLSL 实现）",
+          "npu": "Qualcomm QNN（A8W8/A16W4）、Apple CoreML/ANE、Arm Ethos-U85、MediaTek/Exynos/NXP 开发中",
+          "memory": "AOT 内存规划，无运行时分配",
+          "other": "测试机：Galaxy S25 Ultra、Pixel 9 Pro XL（Tensor G4）、iPhone 15 Pro"
+        },
+        "edge_ai_impact_zh": "ExecuTorch 把“研究模型→端侧 NPU”链路收敛到 PyTorch 内部，实测显示在 Hexagon NPU 上若能整图 delegate，prefill 吞吐可比 llama.cpp 高约 8 倍；对手机/眼镜厂商而言，NPU 软件栈的“图覆盖率”而非峰值 TOPS 才是决定体验的关键。",
+        "evidence_urls": [
+          "https://proceedings.mlsys.org/paper_files/paper/2026/file/236f915dd02af4f11927f67330b21d4b-Paper-Conference.pdf",
+          "https://mlsys.org/virtual/2026/calendar",
+          "https://nitter.kareem.one/ExecuTorch"
+        ],
+        "confidence": "high",
+        "venue": "MLSys 2026",
+        "affiliation": "Meta（PyTorch）",
+        "authors": "Mergen Nachin, Digant Desai, Stephen Jia et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "软件栈架构",
+            "points": [
+              "torch.export 产出 <300 个 Core ATen 原语组成的硬件无关 AOT 图，去除 Python 依赖但保留调试符号，且与 ONNX 不同，可直接在 PyTorch 中执行用于部署前验证",
+              "backend delegate = AOT 编译器（产出 delegate blob）+ 运行时库；partitioner 只把 backend 声明支持的子图下发，其余回落 CPU",
+              "量化基于 TorchAO，支持 PT2E 静态量化（PTQ/QAT）与 eager 模式权重量化，支持 SpinQuant 等算法"
+            ]
+          },
+          {
+            "heading": "NPU 后端细节",
+            "points": [
+              "QNN 后端基于 Qualcomm AI Engine Direct，面向 Hexagon，量化格式 A8W8 与 A16W4，支持多方法执行、spill-fill buffer、运行时功耗模式切换",
+              "ET QNN 使用 group-wise（GS32）权重量化，prefill 强于高通自家 QAIRT（Llama 3.2 1B：2813–2977 vs 2278–2392 tok/s），但 decode 略低（46.5 vs 52.0–52.7 tok/s），论文归因于 per-group 量化参数开销",
+              "论文指出 LiteRT 与 ONNX Runtime 的 NPU EP 只“认领”少量节点，大部分推理仍落在 CPU，是 NPU 实际吞吐差的主因",
+              "Arm 后端把子图转为 TOSA IR，经 Vela 编译到 Ethos-U（含 U85）"
+            ]
+          },
+          {
+            "heading": "实测吞吐（Galaxy S25 Ultra）",
+            "points": [
+              "测试条件：256 prompt + 256 生成 token，最大上下文 2048，CPU 线程=性能核数（S25 Ultra 为 8）",
+              "NPU：Qwen3 0.6B prefill 1463–1542 / decode 61–62 tok/s；Phi-4 Mini prefill 1161–1229 / decode 18.1–19.6 tok/s",
+              "CPU XNNPACK GS32：Llama 3.2 1B prefill 525–529 / decode 65.9–67.1 tok/s；llama.cpp 在 Qwen3 与 Phi-4 Mini 的 decode 更快（Phi-4 Mini 22.1–22.9 tok/s），因其单 token attention 实现更高效"
+            ]
+          },
+          {
+            "heading": "MCU 与体积",
+            "points": [
+              "Pico 2 上 selective build 使代码体积从 1322 KiB 降到 253 KiB（FP32，5.2×），CMSIS-NN INT8 从 1248 KiB 降到 203 KiB（6.2×）",
+              "INT8 MNIST 模型总 RAM 约 11 KiB",
+              "代价：XNNPACK 暂不支持 tied embedding，模型文件偏大（如 Phi-4 Mini 2428 MiB vs llama.cpp 2216 MiB）"
+            ]
+          }
+        ],
+        "model_capacity_zh": "论文实测（官方口径）：手机端 0.6B–3.8B（Qwen3 0.6B / Llama 3.2 1B / Phi-4 Mini 3.8B），4bit 权重；NPU 上 1B 模型 prefill 约 2.8–3.0k tok/s、decode 约 46 tok/s；另支持 Gemma 3 4B、Voxtral 等多模态模型导出；上下文测试上限 2048（可在导出时调大）。"
+      },
+      {
+        "date": "2026-05-19",
+        "vendor": "UC Berkeley",
+        "category": "学术研究",
+        "title": "LEANN: A Low-Storage Overhead Vector Index",
+        "title_zh": "LEANN：面向个人设备的低存储向量索引",
+        "url": "https://proceedings.mlsys.org/paper_files/paper/2026/hash/e27ea0cd50b798ff8942caf9203f0992-Abstract-Conference.html",
+        "source_type": "论文",
+        "summary_zh": "LEANN 针对“个人设备上做 RAG”时向量索引比原始数据还大的问题，改为在线重算 embedding、只保留压缩后的近邻图结构。论文入选 MLSys 2026 Best Paper Session（5 月 19 日）。",
+        "whats_new_zh": [
+          "索引体积最多比传统索引小 50 倍，存储仅约原始数据的 5%，同时保持 SOTA 检索精度与相近 RAG 延迟（官方口径）",
+          "动机数据：76 GB 文本语料需要 173 GB embedding + 15 GB HNSW 索引，存储超过原始数据两倍",
+          "在 RTX 4090 服务器与 M1 Mac 上评测；HNSW/IVF 在本地 Mac 上直接 OOM"
+        ],
+        "key_specs": {
+          "gpu": "RTX 4090（服务器）",
+          "memory": "以重算换存储：不持久化 embedding",
+          "other": "另在 M1 Mac 上测试"
+        },
+        "edge_ai_impact_zh": "端侧 RAG/个人知识库的瓶颈往往是闪存与内存而非算力；LEANN 用 NPU/GPU 的富余算力换存储，契合手机/PC 的“算力过剩、存储紧张”现状。",
+        "evidence_urls": [
+          "https://proceedings.mlsys.org/paper_files/paper/2026/file/e27ea0cd50b798ff8942caf9203f0992-Paper-Conference.pdf",
+          "https://mlsys.org/virtual/2026/calendar"
+        ],
+        "confidence": "high",
+        "venue": "MLSys 2026",
+        "affiliation": "UC Berkeley、CUHK、Amazon Web Services、UC Davis",
+        "authors": "Yichuan Wang, Zhifei Li, Shu Liu et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "核心机制",
+            "points": [
+              "检索时只对图遍历中实际访问到的节点按需重算 embedding，不保存全量高维向量",
+              "对 SOTA 近邻图索引做剪枝压缩，保留高价值边，在不损精度的前提下减小元数据",
+              "支持存储高效的建索引与增量更新"
+            ]
+          },
+          {
+            "heading": "存储账本",
+            "points": [
+              "传统方案：76 GB 文本 → 173 GB embedding + 15 GB HNSW",
+              "LEANN：索引最多缩小 50×，约为原始数据的 5%"
+            ]
+          },
+          {
+            "heading": "端侧意义",
+            "points": [
+              "在 M1 Mac 这类本地设备上，传统 HNSW/IVF 因 OOM 无法运行，而 LEANN 可运行（论文附录 Table 4）",
+              "代价是每次查询的 embedding 重算开销，需要端侧 NPU/GPU 有足够 embedding 吞吐"
+            ]
+          }
+        ],
+        "model_capacity_zh": "不涉及 LLM 参数规模；RAG 评测下游模型为 Qwen3-4B（RTX 4090）。"
+      },
+      {
+        "date": "2026-05-18",
+        "vendor": "Purdue University",
+        "category": "学术研究",
+        "title": "Speed Kills: Exploring Confused Deputy Attacks Through Edge AI Accelerators",
+        "title_zh": "Speed Kills：边缘AI加速器的『混淆代理』攻击",
+        "url": "https://arxiv.org/abs/2605.17707",
+        "source_type": "论文",
+        "summary_zh": "Purdue 大学研究边缘 AI 加速器（NPU/TPU 等）绕过 OS 隔离、被恶意应用诱导执行特权内存操作的『混淆代理攻击』。作者构建 LLM 辅助的分析框架 DeputyHunt，检查了 Google、NVIDIA、Hailo、TI、NXP、AWS、Rockchip 共 7 种加速器，其中 6 种可被利用，影响超过 128 款 SoC、上亿台设备，并获得 CVE-2025-66425。",
+        "whats_new_zh": [
+          "7 种 AI 加速器中 6 种存在可行的混淆代理攻击",
+          "波及超过 128 款 SoC、超过 1 亿台设备；获分配 CVE-2025-66425",
+          "提出按需校验防御，在 gem5-SALAM 模拟中平均运行时开销约 15%（传统防御约 56%）"
+        ],
+        "key_specs": {
+          "npu": "被测：Google、NVIDIA、Hailo、TI、NXP、AWS(Inferentia)、Rockchip NPU",
+          "other": "安全：加速器 DMA/页表与 AP 安全机制语义鸿沟"
+        },
+        "edge_ai_impact_zh": "端侧 NPU 越来越多直接访问共享内存（含 KV Cache 与模型权重），本文提醒 NPU 的 IOMMU/页表隔离是端侧 AI 落地必须补齐的硬件能力。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2605.17707v1"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "Purdue University",
+        "authors": "Datta Manikanta Sri Hari Danduri, Aravind Kumar Machiry",
+        "deep_dive_zh": [
+          {
+            "heading": "攻击面",
+            "points": [
+              "AI 加速器不受 OS 进程隔离约束，对 AP 的内核/用户内存划分可见性有限，形成语义鸿沟",
+              "恶意应用可诱导加速器代为执行特权读写（confused deputy）"
+            ]
+          },
+          {
+            "heading": "实证范围",
+            "points": [
+              "覆盖 7 家厂商加速器，6 家可行；影响 128+ SoC、1 亿+ 设备",
+              "厂商已确认，分配 CVE-2025-66425"
+            ]
+          },
+          {
+            "heading": "防御与开销",
+            "points": [
+              "按需校验（on-demand validation）防御在 gem5-SALAM 上平均开销约 15%，对比传统防御约 56%"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "vendor": "清华大学 / 北京航空航天大学 / 匹兹堡大学",
+        "category": "学术研究",
+        "title": "Lever: Speculative LLM Inference on Smartphones",
+        "title_zh": "Lever：手机上把8B~14B模型放在闪存里做投机解码",
+        "url": "https://arxiv.org/abs/2605.16786",
+        "source_type": "论文",
+        "summary_zh": "清华大学任炬团队提出 Lever，把小 draft 模型常驻 DRAM、把 8B~14B 目标模型放在 UFS 闪存中，用投机解码让一次闪存读取验证多个候选 token。系统针对手机的长 I/O 延迟、有限并行度和 CPU-NPU 异构做了起草、验证、执行三段联合优化。在 OnePlus 12 与两款 Snapdragon 8 Elite 荣耀手机上实测，相比闪存卸载自回归基线几何平均提速 2.93 倍。",
+        "whats_new_zh": [
+          "48 组设备×模型×数据集配置下，几何平均提速：比 Flash-AR 快 2.93×、比 Chain-SD 快 1.50×、比 EdgeLLM 快 1.27×",
+          "OnePlus 12 上闪存驻留目标模型单次验证中 I/O 占 78.3%~93.3%（Qwen3-14B：I/O 1967.1 ms / 总 2108.3 ms）",
+          "Qwen3-8B（MBPP）在 0% 层驻留 DRAM 时 Lever 解码 1.753 tok/s，100% 驻留时 3.401 tok/s"
+        ],
+        "key_specs": {
+          "cpu": "Snapdragon 8 Gen 3 / 8 Elite CPU",
+          "npu": "Hexagon NPU（CPU-NPU 混合执行验证）",
+          "memory": "DRAM 放 draft 模型；目标模型放 UFS 3.1/4.0/4.1 闪存",
+          "other": "设备：OnePlus 12、Honor 500 Pro、Honor Magic V5"
+        },
+        "edge_ai_impact_zh": "说明在 12~16GB 手机上跑超出 DRAM 的 8B~14B 模型，瓶颈几乎全在闪存 I/O，投机解码是把『闪存当内存』变得可用的关键手段；也给 UFS 带宽与 NPU 批量验证能力提出了明确需求。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2605.16786v1"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "清华大学 / 北京航空航天大学 / 匹兹堡大学",
+        "authors": "Tuowei Wang, Fengzu Li, Yanfan Sun et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "闪存 I/O 瓶颈量化",
+            "points": [
+              "OnePlus 12（Snapdragon 8 Gen 3，UFS 4.0）上单 token 验证：Llama-3.1-8B 计算 93.2 ms vs I/O 990.6 ms（I/O 占 91.4%）",
+              "Qwen3-14B 验证一次 2108.3 ms，其中 I/O 1967.1 ms（93.3%）；Qwen3-4B I/O 占比 78.3%",
+              "结论：手机端『超 DRAM 模型』的解码延迟几乎由闪存带宽决定，而非 NPU 算力"
+            ]
+          },
+          {
+            "heading": "投机解码的手机化改造",
+            "points": [
+              "起草阶段：基于 I/O 与计算感知的收益-成本目标构建 token tree，而非照搬服务器端固定树预算",
+              "验证阶段：用 early-exit 预测剪掉低价值分支；论文测得 token tree 预算 16/32 时验证计算有约 20%~23% 被浪费（如 Llama-3.1-8B 预算16：828 ms 中浪费 188 ms）",
+              "执行阶段：把投机计算映射到 CPU-NPU 混合硬件以提高利用率"
+            ]
+          },
+          {
+            "heading": "实测设备与结果",
+            "points": [
+              "设备：OnePlus 12（8 Gen 3, UFS 4.0）、Honor 500 Pro（8 Elite, UFS 3.1）、Honor Magic V5（8 Elite, UFS 4.1）",
+              "几何平均：比 Flash-AR 快 2.93×，比链式投机解码快 1.50×，比 EdgeLLM 快 1.27×",
+              "Qwen3-8B 当 DRAM 驻留层比例从 0% 升到 100%，解码从 1.753 提升到 3.401 tok/s（MBPP），体现 DRAM 容量与速度的直接换算关系"
+            ]
+          }
+        ],
+        "model_capacity_zh": "论文实测 Llama-3.1-8B、Qwen3-4B/8B/14B（目标模型闪存驻留），draft 用 EAGLE3；Qwen3-8B 全闪存驻留时解码约 1.75 tok/s（论文实测，OnePlus 12），说明 14B 级可『跑通』但仍远未到交互流畅。"
+      },
+      {
+        "date": "2026-05-15",
+        "vendor": "RWTH Aachen University / TU Darmstadt",
+        "category": "学术研究",
+        "title": "Going Beyond the Edge: Distributed Inference of Transformer Models on Ultra-Low-Power Wireless Devices",
+        "title_zh": "CATS：16颗nRF52840协同跑Transformer",
+        "url": "https://arxiv.org/abs/2605.15694",
+        "source_type": "论文",
+        "summary_zh": "RWTH Aachen 与 TU Darmstadt 提出 CATS，在超低功耗无线 IoT 设备上做分布式 Transformer 推理：新通信原语 SomeGather 选择性广播激活列以降低带宽与 RAM，配合通信感知分割与训练期 message-dropout 应对丢包。实测 16 颗 nRF52840（Cortex-M4）组成两跳 BLE 物理层网络，协同执行比单设备可承载大 14 倍的模型（1400 万参数 ViT）。",
+        "whats_new_zh": [
+          "首次在超低功耗无线设备上实现分布式 Transformer 推理",
+          "16 颗 nRF52840（Cortex-M4）分布在一层楼，两跳网络，基于 BLE 物理层",
+          "执行 14M 参数 ViT，为单设备可运行模型的 14 倍"
+        ],
+        "key_specs": {
+          "cpu": "nRF52840（Arm Cortex-M4）×16",
+          "other": "BLE 物理层两跳 mesh 网络"
+        },
+        "edge_ai_impact_zh": "代表『可穿戴/IoT 集群化推理』方向：单 MCU 内存不足时，用通信感知的模型并行把多个超低功耗节点拼成一个推理系统。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2605.15694v1"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "RWTH Aachen University / TU Darmstadt",
+        "authors": "Alexander Gräfe, Ding Huo, Vincent de Bakker et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "通信原语",
+            "points": [
+              "SomeGather：剪枝后的选择性广播，仅发送部分激活列，降低带宽与 RAM 占用且不损精度"
+            ]
+          },
+          {
+            "heading": "鲁棒性",
+            "points": [
+              "训练时 message-dropout 模拟丢包，使模型在推理时对无线丢包鲁棒"
+            ]
+          },
+          {
+            "heading": "实测部署",
+            "points": [
+              "16 颗 nRF52840，两跳 BLE 物理层网络，执行 14M 参数 ViT（单设备可承载规模的 14×）"
+            ]
+          }
+        ],
+        "model_capacity_zh": "16 节点协同运行 14M 参数 ViT（论文实测），远小于 LLM 尺度。"
+      },
+      {
+        "date": "2026-05-19",
+        "vendor": "北京大学 / 北京邮电大学（论文页未列机构，依作者团队推断）",
+        "category": "学术研究",
+        "title": "Quant.npu: Enabling Efficient Mobile NPU Inference for on-device LLMs via Fully Static Quantization",
+        "title_zh": "Quant.npu：为手机NPU定制的全静态量化",
+        "url": "https://arxiv.org/abs/2605.20295",
+        "source_type": "论文",
+        "summary_zh": "Quant.npu 针对手机 NPU 只擅长整数、静态量化的约束，提出整数全静态量化框架：可学习量化参数 + 旋转矩阵，配合旋转/位宽感知初始化、两阶段选择性优化和敏感度引导的混合精度。在 Qualcomm SM8650（Snapdragon 8 Gen 3）NPU 上相对 ExecuTorch-W4A16 最多提速 15.1%，并在 SM8750（Snapdragon 8 Elite）上给出完整速度/内存/能耗表。",
+        "whats_new_zh": [
+          "W4A8 相对 ExecuTorch-W4A16 最多提速 15.1%，Llama-3.2-3B 精度仅降约 1%（全任务平均降 2.58%、PPL +1.23）",
+          "SM8750 上 Qwen2.5-3B 预填充 969.72 tok/s（ExecuTorch 808.10），SmolLM2-1.7B 预填充 1612.78 tok/s",
+          "峰值内存：Qwen2.5-3B 1876 MB vs ExecuTorch 2216 MB；Llama-3.2-3B 1985 MB vs 2434 MB"
+        ],
+        "key_specs": {
+          "npu": "Qualcomm Hexagon NPU（SM8650 / SM8750）",
+          "memory": "W4A8 per-channel；峰值内存约 1.0~2.0 GB（1.7B~3B）",
+          "power": "Table 12 给出每次运行能耗（J）与掉电（μAh）"
+        },
+        "edge_ai_impact_zh": "证明『NPU 友好的静态量化』而非 GPU 风格的动态激活量化，是手机端把预填充推到 1000+ tok/s 的前提；对 Hexagon 软件栈与模型发布方的量化格式选择有直接参考价值。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2605.20295v1"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv",
+        "affiliation": "北京大学 / 北京邮电大学（论文页未列机构，依作者团队推断）",
+        "authors": "Jinghe Zhang, Daliang Xu, Chenghua Wang et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 约束",
+            "points": [
+              "论文指出 Hexagon 上标准 W4A8 per-tensor 比 W4A16 per-block 快约 20%，细粒度分块反量化会打断流水",
+              "NPU 偏好整数矩阵乘与静态量化，主流 GPU 向的动态激活量化 PTQ 不兼容"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "可学习量化参数 + 旋转矩阵，运行时无需重算量化参数",
+              "旋转与位宽感知初始化 + 分布感知两阶段优化，解决联合优化导致的梯度不稳定",
+              "敏感度引导混合精度：如 30 层模型仅调整 3 层激活位宽即可接近 16-bit 效果"
+            ]
+          },
+          {
+            "heading": "SM8750 实测（Table 12）",
+            "points": [
+              "Qwen2.5-3B（DroidTask）：预填充 969.72 vs 808.10 tok/s，解码均为 21.06 tok/s，单次能耗 31.58 J vs 36.9 J",
+              "Llama-3.2-3B（Persona-Chat）：预填充 1033.19 vs 860.99 tok/s，解码 27.81 tok/s",
+              "SmolLM2-1.7B：解码 37~49 tok/s，峰值内存 994 MB vs 1119 MB",
+              "解码速度与基线相同，收益集中在预填充与内存（解码仍受带宽限制）"
+            ]
+          }
+        ],
+        "model_capacity_zh": "论文实测 SmolLM2-1.7B、Qwen3-1.7B、Qwen2.5-3B、Llama-3.2-3B（W4A8），附录覆盖 Llama3-8B 精度；SM8750 上 3B 模型解码约 21~29 tok/s、预填充约 700~1030 tok/s（论文实测）。"
+      },
+      {
+        "date": "2026-05-17",
+        "vendor": "Brown University / University of Michigan / Google Research",
+        "category": "学术研究",
+        "title": "LLMForge: Multi-Backend Hardware-Aware Neural Architecture Search with Infinite-Head Attention for Edge Language Models",
+        "title_zh": "LLMForge：面向边缘硬件的小模型架构搜索",
+        "url": "https://arxiv.org/abs/2605.17653",
+        "source_type": "论文",
+        "summary_zh": "Brown 大学与 Google Research 提出 LLMForge，一个针对亚十亿参数边缘语言模型的硬件感知 NAS 框架。其 Infinite-Head Attention 将 query 头数、KV 组数和每头维度解耦，使单层注意力配置空间比 GQA 扩大约 400 倍，并用多后端成本模型（GPU、脉动阵列、环形数据流边缘加速器）搜索。不同硬件上搜索收敛到明显不同的架构形态。",
+        "whats_new_zh": [
+          "Infinite-Head Attention 使每层注意力可选配置空间约为 GQA 的 400×",
+          "在多芯片环形（ring）基底上搜得 3 个约 300M 参数变体：能效版每 token 能耗降 40%，时延版 TTFT 与 TPOT 降 43%",
+          "精度版验证 loss 2.798，对比 SmolLM2-360M、Qwen-0.5B 架构基线（FineWeb-Edu-10BT 同配方重训）"
+        ],
+        "key_specs": {
+          "npu": "成本模型覆盖 GPU、脉动阵列加速器、ring 数据流边缘加速器",
+          "other": "约 300M 参数级模型"
+        },
+        "edge_ai_impact_zh": "提示边缘小模型的『最优架构』取决于目标 NPU 的瓶颈（带宽/算力/片间通信），模型-硬件协同设计应前移到架构搜索阶段。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2605.17653v1"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv",
+        "affiliation": "Brown University / University of Michigan / Google Research",
+        "authors": "Xinting Jiang, Junyi Luo, Ruichen Qi et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "搜索空间设计",
+            "points": [
+              "IHA 将 query 头数、KV 组数、每头 Q/K 与 V 维度完全解耦，配置空间约为 GQA 的 400×",
+              "Forge-Former（编码器式代理模型）用于候选排序，优于 MLP 与随机森林代理"
+            ]
+          },
+          {
+            "heading": "多后端硬件成本模型",
+            "points": [
+              "Forge-DSE 基于 NSGA-II，联合 GPU、脉动阵列、多芯片 ring 边缘加速器成本",
+              "四种硬件基底下搜索结果形态明显不同，与各自的成本瓶颈对应"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "ring 基底上的 3 个约 300M 变体：精度版 val loss 2.798；能效版每 token 能耗 −40%；时延版 TTFT/TPOT −43%",
+              "对标 SmolLM2-360M 与 Qwen-0.5B 架构，在相同数据（FineWeb-Edu-10BT）与配方下重训比较"
+            ]
+          }
+        ],
+        "model_capacity_zh": "面向亚十亿参数（约 300M 级）边缘 LM；能耗/时延收益基于论文成本模型与目标基底评估，非商用手机实测。"
+      }
+    ],
+    "overview": "Google I/O 与 MLSys 周（05-15~05-21）。Google 在 I/O 前后给出了本月最具体的端侧数字：LiteRT-LM 上 Gemma 4 E2B 的 decode 在 Galaxy S26 Ultra GPU 达 52 tok/s、iPhone 17 Pro GPU 56 tok/s、M4 Max 的 WebGPU 最高 76 tok/s，多 token 预测（MTP）再提速最多 2.2 倍；LiteRT-LM v0.12 的 CLI 支持 NPU 后端（含 Intel OpenVINO）。Chrome 148 的 Prompt API 转为稳定版，并新增 1.97 亿参数的 Gemma 197M 任务模型；Android 的 Gemini Intelligence 要求旗舰芯片和至少 12GB 内存。Google 发布 Android XR 眼镜（音频款今秋先发，芯片未披露），并与 Synaptics 展示首块基于开源 Coral NPU 的开发板（1 TOPS，可跑 Gemma 3 270M）。高通与 Stellantis 扩大合作（新增 Snapdragon Ride Pilot 智驾软件，aiMotive 拟并入高通），AI Hub 上架 Pi0.5 机器人 VLA 模型。联发科集中更新天玑 6500/7450/8550 等主流芯片，卢伟冰确认玄戒芯片年内迭代。MLSys 2026（05-18~22）上，Meta 的 ExecuTorch 在 Galaxy S25 Ultra 的 Hexagon NPU 上跑 Llama 3.2 1B，prefill 达 2813–2977 tok/s，约为 llama.cpp NPU 路径（330–374 tok/s）的 7.5–9 倍；上海交大 CORE 联合调 CPU/GPU/内存频率，手机 TPOT 降低 27.8–39.6%。arXiv 上，清华 Lever 把 8B–14B 目标模型放在手机闪存做投机解码，比直接从闪存读取快 2.93 倍；Quant.npu 在骁龙 8 Elite 上让 Qwen2.5-3B 的 prefill 达 970 tok/s。",
+    "takeaways_zh": [
+      "端侧 2B 级模型的 decode 已普遍进入 50 tok/s 档（Gemma 4 E2B 在手机 GPU 上 52–56 tok/s），体验门槛从“能不能跑”转向“内存门槛”：Google 和 Apple 都把 12GB 作为高级端侧 AI 的最低内存。",
+      "NPU 的实际吞吐取决于框架能否把整张图放上 NPU：同一颗 Hexagon，ExecuTorch 的 prefill 是 llama.cpp NPU 路径的 7.5–9 倍，软件栈差距大于芯片代差。",
+      "手机跑 8B–14B 模型的现实路线是“闪存存权重 + 投机解码 / 专家复用”，瓶颈是闪存 I/O（Lever 实测单次验证中 I/O 占 78–93%）。"
+    ]
   }
 }
