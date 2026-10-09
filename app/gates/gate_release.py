@@ -365,6 +365,15 @@ def check_hardware_radar(root: Path, errors: list) -> None:
     except hardware.HardwareValidationError as exc:
         _err(errors, f"data/hardware_radar.json 校验失败：{exc}")
         return
+    try:
+        hardware.check_fresh(expected, date.today())
+    except hardware.HardwareValidationError as exc:
+        _err(errors, f"data/hardware_radar.json 过期：{exc}")
+    index_path = root / "data" / "hardware-insights" / "index.json"
+    try:
+        hardware.check_insight_fresh(_read_json(index_path, default=[]) or [], date.today())
+    except hardware.HardwareValidationError as exc:
+        _err(errors, f"月度硬件洞察：{exc}")
     for p in sorted((root / "data" / "weeks").glob("*.json")):
         if p.name == "manifest.json":
             continue

@@ -156,3 +156,42 @@ def load_hardware(path: Path) -> dict:
     except json.JSONDecodeError as exc:
         raise HardwareValidationError(f"hardware radar 不是合法 JSON：{exc}") from exc
     return validate_hardware(raw)
+
+
+# The weekly radar must belong to the run's seven-day window, and the monthly
+# 硬件洞察 must not fall more than about a month behind.
+WEEK_DAYS = 7
+INSIGHT_MAX_AGE_DAYS = 38
+_RANGE_RE = re.compile(r"(\d{4}-\d{2}-\d{2})\s*~\s*(\d{4}-\d{2}-\d{2})")
+
+
+def check_fresh(payload: dict, today: date) -> None:
+    """Raise unless ``payload`` covers part of the seven days ending ``today``."""
+    window = (payload or {}).get("window") or {}
+    try:
+        end = date.fromisoformat(window["end"])
+    except (KeyError, TypeError, ValueError) as exc:
+        raise HardwareValidationError("window.end 缺失，无法判断硬件雷达是否为本周") from exc
+    lo = date.fromordinal(today.toordinal() - (WEEK_DAYS - 1))
+    if end < lo:
+        raise HardwareValidationError(
+            f"硬件雷达窗口截至 {end}，早于本周窗口 {lo}~{today}——本周硬件雷达还没做")
+
+
+def insight_end(entry: dict) -> date:
+    """End date of a monthly insight index entry, parsed from its title range."""
+    match = _RANGE_RE.search(str((entry or {}).get("title") or ""))
+    if not match:
+        raise HardwareValidationError(f"月报条目 title 不是 'YYYY-MM-DD ~ YYYY-MM-DD'：{entry!r}")
+    return date.fromisoformat(match.group(2))
+
+
+def check_insight_fresh(index: list, today: date) -> None:
+    """Raise unless the newest monthly insight ended within INSIGHT_MAX_AGE_DAYS."""
+    if not index:
+        raise HardwareValidationError("data/hardware-insights/index.json 为空，没有任何月度硬件洞察")
+    latest = max(insight_end(e) for e in index)
+    age = today.toordinal() - latest.toordinal()
+    if age > INSIGHT_MAX_AGE_DAYS:
+        raise HardwareValidationError(
+            f"最新月度硬件洞察截至 {latest}，已过去 {age} 天（上限 {INSIGHT_MAX_AGE_DAYS}）——该写新一期月报了")

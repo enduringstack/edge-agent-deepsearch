@@ -52,6 +52,10 @@
 | `site/` | 静态 fallback 产物，不提交 |
 | `data/` | index.json / vendors.yaml 共享数据 |
 | `data/community_radar.json` | X/Bluesky/Reddit/HN/Mastodon/GitHub Discussions/Hugging Face/视频/厂商论坛的独立社区线索与覆盖证据 |
+| `data/hardware_radar.json` | 本周硬件雷达（移动 SoC / PC 芯片 / NPU / 低功耗 / PIM / 内存 / 论文），契约见 `app/hardware.py` |
+| `data/hardware-insights/` | 月度硬件洞察 markdown + `index.json`（页面 `hardware.html` 的月份切换） |
+| `agent/hardware_week.py` | 硬件雷达合并去重写入（merge）、本周覆盖检查（check）、月报组装（month） |
+| `docs/agent-guide/hardware-radar.md` | 硬件雷达/硬件洞察的子 agent 调研规范、契约和每周/每月步骤 |
 | `docs/` | 文档（agent-guide / site / design-docs / plans / references） |
 | `README.md` | 人类入口和常用命令 |
 | `ARCHITECTURE.md` | 顶层架构和数据流 |
@@ -70,6 +74,7 @@
 8. validate 失败：修正或丢弃不合格条目，**不许凑数**。找不到官方 URL 就丢，大厂不足就少收。
 9. publish 前主 agent 抽检 `source_tier=官方动态` 和 `source_tier=开源大项目` 条目：fetch 每个 URL，对比页面内容 vs 标题摘要。URL 能开 ≠ 内容对题，对不上就丢。
 10. **独立采集社区雷达**：以运行日为末日检索最近 7 个自然日的 X、Bluesky、Reddit、Hacker News、Mastodon、GitHub Discussions、Hugging Face（Discussions/Models/Spaces）、YouTube / Bilibili 和厂商论坛，写 `data/community_radar.json`。九类来源逐一写 `found/no_match/limited/unavailable` + 中文说明；X 只用无需登录即可打开并核验日期的公开原帖，受限就写 `limited`，不得拿转述冒充原帖。视频只收官方频道或可回链一手项目的演示。社区条目只进“社区雷达”，不得直接进入正式 run；必须回链一手材料并重新满足正式来源契约后才可晋升。
+10.5 **独立采集硬件雷达**：按 `docs/agent-guide/hardware-radar.md` 派 6 个硬件子 agent（高通 / Apple 与 Google / 其他 SoC 与 PC / 低功耗·存内计算·内存 / 顶会 / arXiv），prompt 注入该文档第 2–4 节全文；主 agent 抽检冲突数字、写本周 overview + takeaways，用 `python agent/hardware_week.py merge … --text …` 写 `data/hardware_radar.json`（自动与往周去重），`python agent/hardware_week.py check` 确认覆盖本周。每月第一次周调研时，再按该文档第 6 节写上个月的硬件洞察（`hardware_week.py month`）。
 11. 运行 `python agent/publish_results.py research_runs/<run_id>.json --server <SERVER_URL>`。
 12. 服务器 upsert，`GET /api/papers` 刷新最新 run；`GET /api/community` 读取独立社区雷达。
 13. 详情页展示短摘要 + tags + 原文链接。publish 后列表页、社区雷达和详情页立即可见。
@@ -120,7 +125,7 @@
 - `paper_url` 必须和论文标题、摘要匹配。
 - `effects` 必须来自论文原文；没有报告写 `未报告`。
 - 发布前必须跑 `validate_research_run.py`。
-- **发布前必须跑 `python app/gates/gate_all.py`（含 `gate_release.py`）**。`gate_release` 是机械门，作用在构建产物 `site/` + `data/`，拦：__PAPERS__ 契约、推荐中文项目名/摘要/理由缺失或含内部占位词、项目名复用介绍、非空周报 0 推荐、内链 404、热点复读论文列表、0 官方动态静默、社区九来源覆盖缺失、静态社区快照不一致和社媒链接污染正式周报。**它 FAIL 就不许部署**——比 assertIn 子串测试强，子串测试测不出的功能回归它都能拦。
+- **发布前必须跑 `python app/gates/gate_all.py`（含 `gate_release.py`）**。`gate_release` 是机械门，作用在构建产物 `site/` + `data/`，拦：__PAPERS__ 契约、推荐中文项目名/摘要/理由缺失或含内部占位词、项目名复用介绍、非空周报 0 推荐、内链 404、热点复读论文列表、0 官方动态静默、社区九来源覆盖缺失、静态社区快照不一致、社媒链接污染正式周报、硬件雷达不是本周或月度硬件洞察超过 38 天未更新。**它 FAIL 就不许部署**——比 assertIn 子串测试强，子串测试测不出的功能回归它都能拦。
 - `data/weekly_summary.json` 是**独立编辑产物**，不是 run 的派生字段。`highlights` 必须是编辑性新闻（厂商博客/动态/行业事件，带**外部 URL**，≥5 条），不许用 run 的 paper_id 切 top N 填充——那会让热点复读下面的论文列表。流程顺序：先采厂商动态（`官方动态`）→ 再写 weekly_summary（从新闻 + 判断）→ run 论文列表是另一层。
 - **0 官方动态是流程告警，不是可接受结果**。research-prompt 和 collection manifest 强制查 24 个规范厂商/模型实验室来源。run 里 `官方动态` count==0 时，必须要么去补采，要么在 `data/weeks/<label>-no-vendor.md` 写明逐厂证据，不许静默接受 0。
 - 修改完成前至少跑 `python tests/test_research_pipeline.py`、`python tests/test_build.py`、`python app/gates/gate_all.py`。
@@ -172,3 +177,4 @@
 - [2026-09-22] Qualcomm OnQ/developer blog 模板关掉了日期显示（`showDate: ""`），正文里没有任何发布日，一度要在"丢弃真动态"和"拿 sitemap lastmod 凑数"之间二选一。修复：允许取该文章 URL 自己返回的 CMS 正文载荷（`<article-url>.model.json` 的 `pagePublishDate`，epoch 毫秒）并与 URL 路径 `/YYYY/MM/` 交叉印证，写进 `validation-rules.md` 第 26 条和 `vendor-research-guide.md`；整站 JS 壳、只拿得到标题、或 canonical 指向另一篇的仍然一律丢弃。**"正文日期"要防的是发现层时间戳，不是一手结构化数据；规则的意图比字面重要，但放宽必须写进 repo 而不是个案决定。**
 - [2026-09-28] 厂商核验 agent 查到 vLLM v0.30.0、TensorRT v11.3、ollama v0.34.4 都在窗口内有正式 release，差点当成漏采补进白名单——根因是 `output-contract.md` 和 `research-prompt.md` 举例时写了「如 vLLM/SGLang/llama.cpp/ExecuTorch/ADK/TensorRT 等」，而 `big-projects-whitelist.md` 的实际清单刻意只有端侧/边缘推理引擎 + Agent 应用，从来没有这几个服务端 serving 栈。修复：两处举例改成与白名单一致，并明写「服务端 serving 栈不在边界内」。**文档举例和机器清单不一致时，agent 会信举例；举例必须从清单里取，不能随手写。**
 - [2026-09-28] 社区雷达九类来源第一次全部 `found`。此前 X 长期只能记 `limited`（未登录拿不到原帖发布时间，又不许拿转述冒充），本周验证出可行办法：x.com 状态页未登录即可取到 `og:description` 正文和 `<meta property="article:published_time">` 精确 ISO 发布时间，足以满足「公开可打开 + 日期可核验」。同批还验证：Bluesky 用 `api.bsky.app`（不是 403 的 `public.api.bsky.app`）的 `searchPosts` 带 since/until；Reddit 用浏览器 UA 打 `/r/<sub>/top/.rss?t=week`（`.json` 与 old.reddit 仍 403，429 需退避重试）。**「检索受限」要区分是真受限还是没找对入口；记 `limited` 之前先把一手接口试完。**
+- [2026-10-09] 硬件雷达/硬件洞察（2026-05~09 回填）一直靠一次性脚本手工补，周调研流程里没有这一步，下周起就会断更。修复：新增 `docs/agent-guide/hardware-radar.md`（6 路子 agent 规范 + 契约 + 每周/每月步骤）和 `agent/hardware_week.py`（merge 自动与往周归档去重、窗口外自动丢、check、month 组装）；`run_weekly.sh` 在 build 前强制 `hardware_week.py check`；`gate_release` 新增硬件雷达新鲜度和月报 38 天上限。回填中暴露的问题（多篇论文共用一个目录页 URL 被合并、同一新闻多源重复、子 agent 对同一数字结论相反、跨月重复收录）都写进该文档的已知教训。**新增编辑层时，产物、流程脚本、发布门三件事要一起落地，否则只是一次性的数据。**

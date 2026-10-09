@@ -55,6 +55,18 @@ publish 前对 `source_tier=官方动态` 和 `source_tier=开源大项目` 条�
 
 检索当前日期过去 7 个自然日的 X、Bluesky、Reddit、Hacker News、Mastodon、GitHub Discussions、Hugging Face（Discussions/Models/Spaces）、YouTube / Bilibili 和厂商论坛，写 `data/community_radar.json`。九类来源必须分别记录覆盖状态与说明；条目按手机 > PC > 其他端侧 > 通用技术排序，并填写中文名称、总结、价值判断和核验状态。X 只能使用无需登录可打开、能核验发布时间的原帖；受限就明确写 `limited`。视频只收官方频道或可回链一手项目的演示。社区讨论不进入 research run，找到一手材料后仍须重新走正式来源校验。
 
+## 9.5 采集独立硬件雷达
+
+按 `docs/agent-guide/hardware-radar.md` 第 5 节：派 6 个硬件子 agent（prompt 注入该文档第 2–4 节全文和本周窗口），主 agent 亲自核实子 agent 之间冲突的数字，写本周 overview + takeaways，然后：
+
+```powershell
+python agent/hardware_week.py merge research_runs/hardware/deep_*.json --dry-run
+python agent/hardware_week.py merge research_runs/hardware/deep_*.json --text research_runs/hardware/weekly_text.json
+python agent/hardware_week.py check
+```
+
+每月第一次周调研时，按该文档第 6 节写上个月的硬件洞察（`hardware_week.py month`）。硬件雷达是独立编辑层，不进入 research run。
+
 ## 10. 发布到服务器
 
 ```powershell

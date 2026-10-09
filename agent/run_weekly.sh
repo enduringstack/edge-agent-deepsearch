@@ -92,7 +92,15 @@ cat << 'AGENT_INSTRUCTIONS'
 
   5. 主 agent 策展推荐：逐条读摘要，手选推荐+写 recommendation_reason
 
-详见 docs/agent-guide/research-prompt.md
+  6. 硬件雷达：按 docs/agent-guide/hardware-radar.md 派 6 个硬件子 agent
+     （高通 / Apple与Google / 其他SoC与PC / 低功耗·存内计算·内存 / 顶会 / arXiv）
+     → 写 research_runs/hardware/deep_*.json
+     → 主 agent 写 research_runs/hardware/weekly_text.json（overview + takeaways）
+     → python agent/hardware_week.py merge research_runs/hardware/deep_*.json \
+          --text research_runs/hardware/weekly_text.json
+     每月第一次周调研时，再按该文档第 6 节写上个月的硬件洞察月报
+
+详见 docs/agent-guide/research-prompt.md、docs/agent-guide/hardware-radar.md
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 AGENT_INSTRUCTIONS
 
@@ -154,6 +162,14 @@ try:
 except Exception as e: print('POST failed:',e); sys.exit(1)
 " 2>/dev/null && ok "publish 成功（直接 POST）" || fail "publish 失败"
 }
+
+# ── 8.5 硬件雷达（独立编辑层，必须覆盖本周） ──
+info "Step 8.5/10: 硬件雷达检查..."
+python agent/hardware_week.py check || {
+  wait "本周硬件雷达未完成——按 docs/agent-guide/hardware-radar.md 第 5 节完成后重新运行此脚本"
+  exit 1
+}
+ok "硬件雷达覆盖本周"
 
 # ── 9. build + gate ──
 info "Step 9/10: build all + gate..."

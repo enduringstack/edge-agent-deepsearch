@@ -11,6 +11,7 @@
   - weekly_summary highlights 外部 URL（厂商博客/新闻）≥5，非 paper_id 复读
   - 当前周 `官方动态` ≥1；为 0 则有 `data/weeks/<label>-no-vendor.md` 逐厂证据
   - `data/github_trending_top20.json` mtime ≤7 天（>7 天 FAIL——防止 trending 区显示过期仓）
+  - `data/hardware_radar.json` 通过 `app/hardware.py` 契约且窗口覆盖本周；`data/hardware-insights/index.json` 最新一期月报结束日距今 ≤38 天；静态 `__HARDWARE__` 与源数据一致，`site/hardware.html` 存在
   - `data/community_radar.json` 是截至运行日的完整 7 日窗口；X/Bluesky/Reddit/HN/Mastodon/GitHub Discussions/Hugging Face/YouTube-Bilibili/厂商论坛九类覆盖齐全；静态 `__COMMUNITY__` 与源数据一致；正式 papers 没有社媒讨论 URL
 
 ## 厂商覆盖自检（防漏大新闻，07-15 阶跃星辰 AI 手机漏掉后补）
@@ -45,6 +46,7 @@ gate 拦不住「漏一个厂商」——它只检查 官方动态 ≥1，不检
 - [ ] **trending 区第一仓**：repo 名是本周新建/本周高星的吗？trending 随主 agent 每次刷新跑 `agent/refresh_trending.py`（英文 desc）+ 翻译 subagent 翻中文 desc。不是本周的/英文 desc → 主 agent 补跑 `python agent/refresh_trending.py` + 翻译
 - [ ] **扫官方动态列表**：中国头部模型厂/终端厂有没有明显遗漏（如本周有模型厂发端侧硬件却没收录）→ 回采集层补
 - [ ] **weekly highlights 置顶**：是本周最大动态吗？链接点开是**对应新闻/官方 blog**（不是首页壳）吗？（07-15 阶跃星辰错用官网首页当新闻链接，内容对不上题）
+- [ ] **硬件雷达**：本周综述是否点出最重要的 3–6 件事并带数字？抽 2–3 条看“能跑多大模型”是否标了口径（官方/实测/爆料/推算），爆料是否标明？本周有对题的硬件发布却没收录 → 回硬件子 agent 补
 - [ ] **社区线索边界**：每条都有中文名称、总结、价值判断、设备和核验状态；X/论坛转述没有冒充正式一手来源；发现可晋升线索时，正式周报使用回链后的一手 URL，不复用讨论 URL
 
 ## 编辑项（跟设计/上周对比）

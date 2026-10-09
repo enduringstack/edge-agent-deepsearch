@@ -68,6 +68,10 @@ class GateReleaseTest(unittest.TestCase):
         }
         self.hardware = hardware
         _write(self.root, "data/hardware_radar.json", json.dumps(hardware, ensure_ascii=False))
+        _write(self.root, "data/hardware-insights/index.json", json.dumps([{
+            "month": today.strftime("%Y-%m"),
+            "title": f"{(today - timedelta(days=30)).isoformat()} ~ {today.isoformat()}",
+            "file": today.strftime("%Y-%m") + ".md"}], ensure_ascii=False))
         # current week archive (1 paper, 1 官方动态 so the vendor gate passes)
         _write(self.root, "data/weeks/2026-07-02.json", json.dumps({
             "label": "2026-07-02", "title": "07-02~07-09",
@@ -442,6 +446,32 @@ class GateReleaseTest(unittest.TestCase):
         _write(self.root, "data/hardware_radar.json", json.dumps(changed, ensure_ascii=False))
         errs = gr.run_all(self.root)
         self.assertTrue(any("__HARDWARE__" in e and "不一致" in e for e in errs), errs)
+
+    def test_fail_when_hardware_radar_is_last_week(self):
+        self._seed_good()
+        old = date.today() - timedelta(days=10)
+        stale = dict(self.hardware,
+                     window={"start": (old - timedelta(days=6)).isoformat(), "end": old.isoformat()},
+                     items=[dict(self.hardware["items"][0], date=old.isoformat())])
+        _write(self.root, "data/hardware_radar.json", json.dumps(stale, ensure_ascii=False))
+        errs = gr.run_all(self.root)
+        self.assertTrue(any("hardware_radar.json 过期" in e for e in errs), errs)
+
+    def test_fail_when_monthly_insight_overdue(self):
+        self._seed_good()
+        old = date.today() - timedelta(days=45)
+        _write(self.root, "data/hardware-insights/index.json", json.dumps([{
+            "month": old.strftime("%Y-%m"),
+            "title": f"{(old - timedelta(days=30)).isoformat()} ~ {old.isoformat()}",
+            "file": "x.md"}], ensure_ascii=False))
+        errs = gr.run_all(self.root)
+        self.assertTrue(any("月度硬件洞察" in e and "该写新一期月报" in e for e in errs), errs)
+
+    def test_fail_when_monthly_insight_index_missing(self):
+        self._seed_good()
+        (self.root / "data" / "hardware-insights" / "index.json").unlink()
+        errs = gr.run_all(self.root)
+        self.assertTrue(any("月度硬件洞察" in e for e in errs), errs)
 
     def test_fail_when_archived_week_hardware_invalid(self):
         self._seed_good()
