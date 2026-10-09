@@ -5456,5 +5456,1033 @@
         "desc": "本地优先多运动训练引擎——把 Strava 数据同步到 SQLite"
       }
     ]
+  },
+  "hardware": {
+    "window": {
+      "start": "2026-07-25",
+      "end": "2026-07-30"
+    },
+    "items": [
+      {
+        "date": "2026-07-25",
+        "vendor": "Qualcomm（爆料）",
+        "category": "移动SoC",
+        "title": "New Snapdragon 8 Elite Gen 5 (SM8850-1-AB) Version Tipped to Launch in H2 2026",
+        "title_zh": "【爆料】第四款8 Elite Gen5变体SM8850-1-AB",
+        "url": "https://www.thetechoutlook.com/tech-whispers/new-snapdragon-8-elite-gen-5-sm8850-1-ab-version-tipped-to-launch-in-h2-2026/",
+        "source_type": "媒体",
+        "summary_zh": "数码闲聊站爆料，高通在准备第四款Snapdragon 8 Elite Gen 5变体SM8850-1-AB，面向售价约4,000元人民币的子品牌机型。Android Authority在7月23日、The Tech Outlook在7月25日报道，预估Geekbench 6单核约3,600、多核约11,300。8月该芯片以“8 Elite Gen 5 V系列”名义上线，唯一已知差异是Adreno HPM从18MB降到12MB（8月事件，仅作背景）。",
+        "whats_new_zh": [
+          "型号SM8850-1-AB，2026下半年（可能是Q4）推出（爆料）",
+          "预估GB6单核约3,600、多核约11,300（爆料）",
+          "定位：售价4,000元以下（约600美元）的机型；另有来源称面向400至500美元价位",
+          "背景（8月）：官方V系列的HPM为12MB（标准版18MB），NPU、调制解调器、LPDDR5X与标准版相同"
+        ],
+        "key_specs": {
+          "process": "3nm（同Gen 5）",
+          "gpu": "Adreno，HPM 12MB（8月官方信息）",
+          "npu": "Hexagon，与标准版相同（8月信息）",
+          "memory": "LPDDR5X"
+        },
+        "edge_ai_impact_zh": "通过砍GPU片上缓存而保留NPU来降低成本，旗舰级Hexagon因此下放到约600美元的机型；在内存涨价的背景下，这是让端侧大模型能力下沉的较便宜办法。",
+        "evidence_urls": [
+          "https://www.androidauthority.com/cheaper-snapdragon-8-elite-gen-5-variant-leak-3686373/",
+          "https://gadgets.beebom.com/news/qualcomm-introduces-snapdragon-8-elite-gen-5-v-series-with-key-gaming-upgrade"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "SM8850家族",
+            "points": [
+              "SM8850-AC标准版；SM8850-1-AD高频版（三星、红魔、拯救者）；SM8850-5-AC 7核版（OPPO Find N6）；SM8850-1-AB削减HPM（V系列）。",
+              "爆料的定位是降本，8月官方宣传的是游戏（“Game smarter, not harder”），两者口径不同。"
+            ]
+          },
+          {
+            "heading": "对端侧AI的影响",
+            "points": [
+              "HPM（GPU片上内存）从18MB降到12MB，主要影响GPU的分块渲染带宽，对Hexagon NPU没有直接影响（官方称NPU相同）。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露。按8月信息NPU与标准版相同，理论上模型能力与标准Gen 5一致，实际取决于OEM配置的内存（在内存紧张时可能是12GB或更低）。"
+      },
+      {
+        "date": "2026-07-27",
+        "vendor": "Qualcomm（爆料）",
+        "category": "移动SoC",
+        "title": "Snapdragon 8 Elite Gen 6 Pro: Exclusive Die Size, LPDDR6 First, AI Frame Fusion Detailed",
+        "title_zh": "【爆料】骁龙8 Elite Gen6 Pro die约134mm²、LPDDR6",
+        "url": "https://www.techtimes.com/articles/321683/20260727/snapdragon-8-elite-gen-6-pro-exclusive-die-size-lpddr6-first-ai-frame-fusion-detailed.htm",
+        "source_type": "媒体",
+        "summary_zh": "TechTimes在7月27日引用Notebookcheck 7月26日的调查（封装照片测量和泄露的GPU文档），称SM8975 die尺寸约12.6×10.67mm（约134mm²），比Gen 5的126.2mm²更大。原因被认为是Adreno 850中新增了2个Matrix ALU、更大的LLC和改版GPU。爆料还称LPDDR6峰值为14.4Gbps/pin，AI Frame Fusion（超分和插帧）为Pro版独占。7月24日另有爆料称小米18 Pro Max首发。以上均为爆料，高通未确认。",
+        "whats_new_zh": [
+          "die约134mm²（21.2×14mm封装推算），Gen 5为126.2mm²；工艺为台积电N2P",
+          "CPU 2+3+3 Oryon，频率未定（4.8至5.0GHz属推测）；L2共享16MB，LLC 8MB（标准版6MB）",
+          "Adreno 850 + 18MB GMEM（标准版Adreno 845 + 12MB），shader processor中有2个Matrix ALU，用于GEMM和卷积",
+          "内存：LPDDR6 4×24bit，最高14.4Gbps/pin，或LPDDR5X 4×16bit 10.67Gbps；UFS 5.0双通道",
+          "成本模型：N2P晶圆约3.3万美元（3nm约2万），每颗良品die约84美元（文章自建模型）；LPDDR6比LPDDR5X贵约20%"
+        ],
+        "key_specs": {
+          "process": "TSMC N2P（爆料）",
+          "cpu": "2+3+3 Oryon，16MB L2（爆料）",
+          "gpu": "Adreno 850，18MB GMEM，2×Matrix ALU（爆料）",
+          "npu": "未泄露",
+          "memory": "LPDDR6 14.4Gbps/pin或LPDDR5X 10.67Gbps；8MB LLC（爆料）",
+          "other": "die约134mm²"
+        },
+        "edge_ai_impact_zh": "7月的爆料已经指出AI算力在向GPU矩阵单元外溢，以及LPDDR6带来的带宽提升，但NPU信息完全空白。从9月官方结果看，GPU矩阵核心和LPDDR6都得到确认，但官方LPDDR6速率为10.6Gbps（127.2GB/s），低于爆料的14.4Gbps。",
+        "evidence_urls": [
+          "https://www.gizmochina.com/2026/07/28/snapdragon-8-elite-gen-6-pro-details-leaked-larger-than-8-elite-gen-5-despite-2nm-process/"
+        ],
+        "confidence": "low",
+        "deep_dive_zh": [
+          {
+            "heading": "面积去向",
+            "points": [
+              "从3nm换到N2P后die反而变大约6%（126.2到约134mm²），说明晶体管预算主要花在缓存（LLC 8MB、GMEM 18MB）和GPU矩阵单元上，而不是CPU核心。",
+              "Matrix ALU嵌在shader processor里，用于GEMM和卷积，为AI Frame Fusion（1080p/1440p超分和插帧）服务。"
+            ]
+          },
+          {
+            "heading": "带宽爆料与官方对照",
+            "points": [
+              "爆料：LPDDR6 14.4Gbps/pin；9月官方（见9月报告）：10.6Gbps，4×24bit，127.2GB/s。爆料的速率偏乐观。",
+              "标准版保留LPDDR5X 4×16bit，与9月官方的84.8GB/s一致。"
+            ]
+          },
+          {
+            "heading": "成本",
+            "points": [
+              "N2P晶圆约3.3万美元，3nm约2万美元（文章模型）；Counterpoint估计高端安卓零售价可能上涨150至200美元。百度百科汇总的爆料称Pro版芯片价格超过300美元（未证实）。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露（爆料没有涉及NPU）。如果按爆料的14.4Gbps × 96bit计算，理论峰值约172.8GB/s（本文推算）；9月官方口径为10.6Gbps、127.2GB/s，以官方为准。"
+      },
+      {
+        "date": "2026-07-27",
+        "vendor": "BrainChip",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "BrainChip quarterly activities report (June 2026 quarter)",
+        "title_zh": "BrainChip收到首批2000颗AKD1500",
+        "url": "https://www.fool.com.au/2026/07/27/brainchip-posts-q2-cash-chips-hit-commercial-production/",
+        "source_type": "媒体",
+        "summary_zh": "BrainChip 7月27日季报：收到首批2,000颗AKD1500类脑处理器，开始商业制造；首轮产量由此前预期约7万颗下调至约6万颗（初始良率低于预期）；期末现金2,030万美元，单季经营现金净流出470万美元。",
+        "whats_new_zh": [
+          "首批2,000颗AKD1500到货，计划做M.2、PCIe卡与树莓派开发板",
+          "首轮产量约60,000颗（4月口径约70,000），良率低于预期",
+          "向EDGEAI交付Akida 2.0 RTL授权资产",
+          "现金20.3M美元（上季25.3M），经营净流出4.7M美元"
+        ],
+        "key_specs": {
+          "npu": "Akida类脑（事件驱动）AKD1500；TOPS/功耗本次未披露",
+          "other": "首轮约6万颗"
+        },
+        "edge_ai_impact_zh": "类脑芯片首次进入小批量商用，但产量仅数万颗、良率不达预期，短期仍是国防/工业小众市场。",
+        "evidence_urls": [
+          "https://announcements.asx.com.au/asxpdf/20260727/pdf/0722fx6s9yf2w9.pdf"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "量产进度",
+            "points": [
+              "4月季报：首轮约7万颗、7月起4–6周交付；7月实际：首批2,000颗、总量下调至约6万颗。",
+              "首批全部用于自家硬件形态开发，客户交付在H2。"
+            ]
+          },
+          {
+            "heading": "财务",
+            "points": [
+              "现金20.3M美元，按每季约4.7M流出约可支撑4个季度（推算）。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露；类脑SNN面向传感器事件/关键词等小模型，不面向LLM。"
+      },
+      {
+        "date": "2026-07-28",
+        "vendor": "北京大学（推断）",
+        "category": "存内计算/PIM",
+        "title": "Beyond Prefill-Decode Disaggregation: Dissecting LLM Inference for Heterogeneous Platforms via Dynamic Operator Scheduling",
+        "title_zh": "DOPS：NPU+PIM 动态算子调度",
+        "url": "https://arxiv.org/abs/2607.25498",
+        "source_type": "论文",
+        "summary_zh": "PD 分离和 roofline 式算子放置在 NPU+PIM 异构系统上不够：端到端延迟还取决于负载形状、运行时争用与持久化权重布局。DOPS 构建阶段感知 DAG，用 Bifocal 调度器动态决定算子放置，用 Weight Layout Arbiter 在内存约束下选择 NPU/PIM 友好的分块权重布局。",
+        "whats_new_zh": [
+          "Bifocal 对 PD 基线几何平均加速 1.20–2.23×",
+          "WLA 在 Bifocal/Linear 之上再加 1.28–1.33×",
+          "开源（TriForm）并提供可视化工具"
+        ],
+        "key_specs": {
+          "npu": "Huawei Ascend 910B",
+          "memory": "SK hynix AiM GDDR6-PIM；亦建模 HB-PIM、HBM-PIM",
+          "other": "支持 NPU:PIM 比例的硬件探索"
+        },
+        "edge_ai_impact_zh": "虽然评测平台是云侧，但“权重布局同时服务 NPU 分形格式与 PIM bank 对齐”的矛盾在 LPDDR-PIM 进手机 SoC 后同样存在，是 PIM 量产后软件栈的必答题。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2607.25498",
+          "https://microarch.org/micro59/program/",
+          "https://arxiv.org/pdf/2607.25498"
+        ],
+        "confidence": "medium",
+        "venue": "MICRO 2026",
+        "affiliation": "论文 HTML 未列机构；通讯作者 Bonan Yan、Yuchao Yang 推断为北京大学",
+        "authors": "Jiaqi Yang, Jiayi Li, Yihan Fu et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "Ascend 等 NPU 使用 ZZ/NZ/ZN 分形布局，而 PIM 需要 bank/channel/row 对齐布局；同一份权重难以同时最优。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "阶段感知 DAG；Bifocal 动态算子—设备放置（闭环）；WLA 在严格内存约束下为分块权重选择 Linear/NPU_OPT/PIM_OPT 布局；建模量化与稀疏对字节数和通信量的影响。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "几何平均 1.20–2.23×（对 PD），WLA 再 +1.28–1.33×。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "把“布局”提升为与“放置”同级的调度维度。局限：基于模拟/建模平台，非端侧 SoC。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "硬件模型：Ascend 910B NPU 配 0/2/4/8 颗 AiM GDDR6-PIM，PCIe Gen4 x16 全连接；NPU 侧用校准过的 roofline 模型。",
+              "验证：NPU 硬件程序片段 + AiM 模拟器；论文报告了模拟值与验证值之间的偏差分布。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "评测模型：Llama-7B/13B/70B、Qwen-1.8B/7B/14B、Mixtral-8x7B；Llama-70B 和 Mixtral 用 INT8 量化以装入 HP128（128 GB PIM）。指标为相对加速比，tokens/s 绝对值未作为主要结果披露。"
+      },
+      {
+        "date": "2026-07-29",
+        "vendor": "Kioxia",
+        "category": "存储与内存",
+        "title": "New UFS 5.0 Embedded Flash Memory Devices from Kioxia Enable On-Device AI",
+        "title_zh": "铠侠UFS 5.0商用样品：读10GB/s、写9GB/s",
+        "url": "https://www.kioxia.com/en-jp/business/news/2026/20260729-2.html",
+        "source_type": "官方",
+        "summary_zh": "铠侠7月29日宣布UFS 5.0嵌入式闪存进入商用样品阶段（512GB/1TB），顺序读最高10GB/s、顺序写最高9.0GB/s，7.5×13mm BGA，计划2026年底前量产，FMS 2026展示。",
+        "whats_new_zh": [
+          "从2月“评估样品”升级为“商用样品”，容量512GB与1TB",
+          "顺序读最高10GB/s、写最高9.0GB/s；接口理论46.6Gb/s/lane、双lane有效约10.8GB/s",
+          "7.5×13mm BGA，改进热管理；2026年底前量产"
+        ],
+        "key_specs": {
+          "memory": "UFS 5.0（M-PHY 6.0 HS-G6、UniPro 3.0），BiCS FLASH第8代（2月样品口径）",
+          "other": "512GB/1TB；7.5×13mm"
+        },
+        "edge_ai_impact_zh": "闪存带宽翻倍让“权重放闪存、按需加载”的MoE方案在手机上更可行，但10GB/s仍比LPDDR低一个数量级，只能作为冷专家/冷层的后备。",
+        "evidence_urls": [
+          "https://www.businesswire.com/news/home/20260729429282/en/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "规格",
+            "points": [
+              "标题“10GB/s读”与正文“约10.8GB/s有效双lane读写”口径不同，前者为器件顺序读、后者为接口理论有效值。",
+              "写9.0GB/s低于三星6月公布的9.5GB/s（不同厂商口径）。"
+            ]
+          },
+          {
+            "heading": "端侧意义",
+            "points": [
+              "UFS 4.x约4–5GB/s → UFS 5.0约10GB/s，冷专家加载延迟减半。",
+              "量产在2026年底，搭载机型最早2027年。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "推算：每token若需从闪存补读0.5GB专家权重，仅闪存一项上限约20 t/s；30B-A3B INT4激活约1.65GB全部走闪存则≤6 t/s。实际取决于专家缓存命中率与随机读性能（未披露）。"
+      },
+      {
+        "date": "2026-07-30",
+        "vendor": "Samsung",
+        "category": "存储与内存",
+        "title": "Samsung Electronics Announces Second Quarter 2026 Results",
+        "title_zh": "三星Q2：DS部门贡献99.7%利润，DRAM ASP涨四成多",
+        "url": "https://www.digitaltoday.co.kr/en/view/87308/samsung-electronics-chip-unit-makes-up-99-7-percent-of-company-operating-profit",
+        "source_type": "媒体",
+        "summary_zh": "三星7月30日公布Q2 2026：合并营收171.5万亿韩元、营业利润89.5万亿韩元，DS部门营收127.5万亿、营业利润89.2万亿（占全公司99.7%）。DRAM ASP环比涨“40%中段”、NAND涨“60%高段”；HBM4放量，首批HBM4E送样；公司称已在出货UFS 5.0。",
+        "whats_new_zh": [
+          "DRAM ASP环比+40%中段、NAND +60%高段；DRAM bit出货环比+10%低段，NAND +个位数低段",
+          "Q3指引：DRAM bit +个位数中段、NAND +个位数高段；库存“明显偏低”",
+          "HBM4销售Q3预计环比增长3倍以上，下半年占HBM营收60%以上",
+          "CFO：2027年供给约束“比2026年更严重”，短缺延续至2028年；约60–70%产能分配给长约",
+          "DX（整机）部门营收环比-9%，公司称下半年手机/PC需求“部分放缓”"
+        ],
+        "key_specs": {
+          "memory": "HBM4/HBM4E、DDR5、SOCAMM2、UFS 5.0、V10 V-NAND（8月量产）",
+          "other": "电话会公开报道未见LPDDR6出货指引"
+        },
+        "edge_ai_impact_zh": "三星自己的手机业务（DX）在为内存涨价买单：整机部门营收下滑、内存部门利润创纪录。对端侧AI而言，2027年RAM容量难以随模型增长而增长，“带宽/容量受限下的模型设计”将是常态。",
+        "evidence_urls": [
+          "https://blocksandfiles.com/flash/2026/07/31/for-samsung-hbm-is-the-gift-that-keeps-on-giving/5281709",
+          "https://news.samsung.com/my/samsung-electronics-announces-second-quarter-2026-results"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "利润集中度",
+            "points": [
+              "DS 89.2万亿 / 全公司89.5万亿韩元＝99.7%；整机侧几乎不贡献利润。",
+              "Q2 DRAM ASP +40%中段，同季SK海力士称HBM合约价下滑——三星的涨价更多来自通用DRAM（含LPDDR）。"
+            ]
+          },
+          {
+            "heading": "端侧相关产品",
+            "points": [
+              "UFS 5.0已出货（电话会），6月发布的规格为顺序读10.8GB/s、写9.5GB/s、能效较UFS 4.1提升40%以上、7.5×13×0.9mm、最高1TB、4Q26量产（窗口前背景）。",
+              "公司称正把系统架构重做为“AI OS”（移动侧），未给芯片数字。"
+            ]
+          },
+          {
+            "heading": "2027供给判断",
+            "points": [
+              "CFO：2027年约束更严、短缺持续到2028；Blocks & Files推断新厂需3年以上才出晶圆，或要到2029年才缓解（媒体分析）。",
+              "60–70%产能锁定长约意味着手机品牌的现货议价空间进一步收窄。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-07-29",
+        "vendor": "SK hynix",
+        "category": "存储与内存",
+        "title": "SK hynix Q2 2026 results: record revenue, HBM4 mass shipments, long-term agreements",
+        "title_zh": "SK海力士Q2：营收79.3万亿韩元，HBM4量产出货",
+        "url": "https://xenospectrum.com/en/sk-hynix-q2-hbm-lta/",
+        "source_type": "媒体",
+        "summary_zh": "SK海力士7月29日公布Q2 2026：营收79.3万亿韩元、营业利润60.5万亿韩元（营业利润率76%），均创纪录但低于市场预期（一致预期84.1/64.1万亿）。HBM4在Q2开始量产出货，下半年全面爬坡；上半年完成HBM4E送样；与约10家客户签订长约。",
+        "whats_new_zh": [
+          "营收79.3万亿、营业利润60.5万亿、净利润93.9万亿韩元（6-K初步数）",
+          "HBM4 Q2开始量产出货，良率/质量“接近HBM3成熟水平”（电话会）",
+          "服务器LPDDR（含SOCAMM2）销售显著增长（媒体转述）",
+          "2026年DRAM需求bit增长中20%区间、NAND高十几%；资本开支“40万亿韩元高段”",
+          "约10家客户签订长约，期限一般约5年；龙仁一期洁净室2027年初启用"
+        ],
+        "key_specs": {
+          "memory": "HBM4/HBM4E、SOCAMM2（LPDDR5X）、LPDDR6（1c，2H26量产）",
+          "other": "未单独披露HBM营收占比"
+        },
+        "edge_ai_impact_zh": "原厂利润极度集中于HBM和服务器（含LPDDR形态的SOCAMM2），手机LPDDR在产能分配上处于次要地位；公司自己也提到手机/PC因内存供应紧张出现阶段性销量回落。",
+        "evidence_urls": [
+          "https://www.sec.gov/Archives/edgar/data/0002120882/000119312526321989/d115239d6k.htm",
+          "https://www.nasdaq.com/articles/sk-hynix-q2-earnings-call-highlights",
+          "https://www.proactiveinvestors.com/companies/news/1096215/sk-hynix-misses-revenue-and-profit-estimates-despite-record-margins-1096215.html"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "业绩结构",
+            "points": [
+              "营业利润率76%，但低于一致预期约4–5万亿韩元；媒体归因为高价值产品出货推迟到下半年、产品组合与NAND影响，公司未披露HBM营收占比。",
+              "TrendForce称2026年HBM合约价有所下降，拖累DRAM整体ASP增速（媒体转述）。"
+            ]
+          },
+          {
+            "heading": "LPDDR的两条线",
+            "points": [
+              "服务器侧：SOCAMM2（LPDDR5X模组）销售显著增长，面向NVIDIA Vera Rubin等平台——LPDDR正被数据中心“抢走”一部分产能。",
+              "手机侧：LPDDR6（1c工艺）3月完成开发，计划2H26量产（见下一条），电话会公开材料未见具体手机LPDDR6出货指引。"
+            ]
+          },
+          {
+            "heading": "供给与资本开支",
+            "points": [
+              "约10家客户签订长约，期限约5年、定价方式因客户而异；M15X提速，龙仁一期2027年初启用。",
+              "DRAM需求bit增长中20%区间，大于供给增速，意味着2027年手机RAM成本难有明显回落。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-07-28",
+        "vendor": "SK hynix",
+        "category": "存储与内存",
+        "title": "SK hynix to mass-produce LPDDR6 in 2H26, first supply reportedly to Xiaomi",
+        "title_zh": "SK海力士LPDDR6下半年量产，传首供小米",
+        "url": "https://www.ithome.com/0/982/326.htm",
+        "source_type": "媒体",
+        "summary_zh": "IT之家7月28日援引韩国Herald报道：SK海力士已于3月完成LPDDR6开发，采用第六代10nm级（1c）工艺，计划2026年下半年量产出货，首批据称供应小米下一代旗舰；SK海力士称无法确认客户。",
+        "whats_new_zh": [
+          "1c工艺、16Gb颗粒，3月完成开发验证",
+          "厂商口径：速度较LPDDR5X提升33%、功耗降低20%以上",
+          "2H26开始供货，首家客户据报为小米（单一来源，爆料性质）"
+        ],
+        "key_specs": {
+          "process": "1c（第六代10nm级）DRAM",
+          "memory": "LPDDR6 16Gb",
+          "power": "较LPDDR5X -20%以上（厂商口径）"
+        },
+        "edge_ai_impact_zh": "LPDDR6首批商用落在中国旗舰，意味着2026年底起手机SoC的Decode带宽上限从~85GB/s（LPDDR5X-10667/64bit）跳到~114GB/s以上（96bit）。",
+        "evidence_urls": [
+          "https://www.yicai.com/news/103301625.html"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "规格口径",
+            "points": [
+              "“速度+33%”来自厂商对比LPDDR5X，未给Gbps；按JEDEC LPDDR6起步10.667Gbps、96bit计算，与三星、玄戒公布的~114GB/s一致。",
+              "功耗-20%以上主要来自更细的子通道与DVFS档位（厂商口径，无实测）。"
+            ]
+          },
+          {
+            "heading": "供应链信号",
+            "points": [
+              "SK海力士自2013年为小米供LPDDR3，最近一代为LPDDR5X；首供小米属于媒体报道，公司未确认。",
+              "长鑫（CXMT）LPDDR6同期接近验证尾声（见下一条），国产与韩系在LPDDR6上几乎同步。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "推算：LPDDR6-10667/96bit有效约113.8GB/s，8B INT4（含4K上下文约4.5GB/token）Decode上限约25 t/s；“+33%”是96bit对64bit的系统级比较，同位宽同频并无优势。"
+      },
+      {
+        "date": "2026-07-29",
+        "vendor": "Qualcomm",
+        "category": "车载/机器人",
+        "title": "Qualcomm Named BMW Group's Lead Compute Silicon Provider for Digital Cockpit and Automated Driving Through the Next Decade",
+        "title_zh": "高通成为宝马下一个十年座舱+智驾主算力供应商",
+        "url": "https://www.qualcomm.com/news/releases/2026/07/qualcomm-named-bmw-group-s-lead-compute-silicon-provider-for-dig",
+        "source_type": "官方",
+        "summary_zh": "高通在一次竞争性选型中胜出，成为宝马下一代数字座舱和ADAS/AD的lead compute silicon provider，合作覆盖“下一个十年”的多个车型项目。供货范围包括Snapdragon Cockpit、Snapdragon Ride、Snapdragon Elite汽车平台以及专用AI加速器。此前的合作成果是2025年11月随Neue Klasse iX3量产的Snapdragon Ride Pilot。",
+        "whats_new_zh": [
+          "范围：座舱 + ADAS/AD主计算芯片，同一家供应商同时负责两个域",
+          "平台：Snapdragon Cockpit / Ride / Elite汽车平台 + 专用AI加速器（媒体转述）",
+          "财务条款未披露；电话会称这是Automotive管道的实质性扩张",
+          "同季度汽车营收15.88亿美元（+61%），FY26末年化run-rate目标上调至约70亿美元"
+        ],
+        "key_specs": {
+          "npu": "专用AI加速器（规格未披露）",
+          "other": "Snapdragon Elite汽车平台；Ride Pilot已在BMW iX3量产"
+        },
+        "edge_ai_impact_zh": "座舱和智驾由同一供应商提供，为舱驾融合以及车端大模型（VLA、座舱LLM）共享算力和内存池打下基础；“专用AI加速器”说明单靠SoC内的NPU已经不够用。",
+        "evidence_urls": [
+          "https://www.bmwblog.com/2026/07/29/qualcomm-bmw-chip-deal-digital-cockpit-adas/",
+          "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q3/Q3FY26_Earnings_Call-Transcript_7-30-26_FINAL.pdf"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "合作结构",
+            "points": [
+              "过去座舱和智驾芯片通常来自不同供应商；这次由高通一家负责两者，宝马的算力路线图因此更依赖高通的研发节奏（媒体分析）。",
+              "Amon称客户正从按socket逐个定点，转向多代、战略性的合作；同季度还有Stellantis的合作，延续到2030年代。"
+            ]
+          },
+          {
+            "heading": "算力与模型",
+            "points": [
+              "公告里的“dedicated AI accelerators”没有给出型号和TOPS；Snapdragon Elite汽车平台此前已公开的规格本文没有在窗口内重新核实，因此不引用具体数字。",
+              "WAIC演讲口径：座舱芯片可跑10B以上参数的模型（官方演讲，无精度和tokens/s数据）。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露（官方稿没有TOPS或模型规模）。作为参考，徐晧7月19日在WAIC称高通座舱芯片“可稳定运行百亿以上参数模型”，但没有说明是哪颗芯片及其精度。"
+      },
+      {
+        "date": "2026-07-29",
+        "vendor": "Qualcomm",
+        "category": "数据中心(对端侧有参考)",
+        "title": "Q3 FY26 Earnings Call: HBC Gen 1 tape-out completed",
+        "title_zh": "高通HBC近存计算Gen 1完成流片",
+        "url": "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q3/Q3FY26_Earnings_Call-Transcript_7-30-26_FINAL.pdf",
+        "source_type": "官方",
+        "summary_zh": "Amon在FQ3电话会上宣布，HBC（high-bandwidth compute）Gen 1已经完成流片。HBC把计算直接集成到高密度内存上，用来缓解推理中的内存带宽和容量瓶颈。未来几个季度将展示硅片性能，首款HBC方案预计2027年中推出，基于HBC的加速器、SerDes和CPU正在与“几乎所有”头部数据中心厂商洽谈。",
+        "whats_new_zh": [
+          "HBC Gen 1完成tape-out（7/29电话会，官方口径）",
+          "首款HBC方案时间点：2027年中（mid-2027）",
+          "硅片性能演示安排在“未来几个季度”；Amon称部分客户要先看到硅片再做决定",
+          "带宽、容量、工艺、功耗、TOPS等规格均未披露"
+        ],
+        "key_specs": {
+          "process": "未披露",
+          "npu": "未披露（预计为Hexagon系列加速器，属推断）",
+          "memory": "“高密度内存”与计算集成，带宽和容量未披露",
+          "other": "2027年中推出首款方案"
+        },
+        "edge_ai_impact_zh": "HBC是高通对内存墙给出的长期方案，目前先用在数据中心。端侧上，与之对应的是Gen 6的NPU共享内存+50%和LPDDR6（9月发布），两者都把带宽和容量放在比TOPS更优先的位置。",
+        "evidence_urls": [
+          "https://futurumgroup.com/insights/qualcomm-q3-fy-2026-automotive-growth-offsets-handset-weakness/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "已知信息",
+            "points": [
+              "官方描述：integrating compute directly with high-density memory，目标是提升performance per watt、memory efficiency和TCO。",
+              "流片属于工程里程碑，之后进入下一阶段的客户接洽；Amon在问答中称“Everything is going according to plan on HBC”。"
+            ]
+          },
+          {
+            "heading": "与端侧的关系",
+            "points": [
+              "LLM decode阶段受内存带宽限制，端侧和云端都是如此。高通在两端的做法一致：云端用HBC，手机端（9月）扩大NPU共享内存、升级LPDDR6。",
+              "8月德意志银行会议上的后续表态（“back in the lab, looking good”）留给8月报告，这里不重复。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露（没有给出模型规模、带宽、容量和tokens/s）。"
+      },
+      {
+        "date": "2026-07-29",
+        "vendor": "SK hynix / KAIST",
+        "category": "数据中心(对端侧有参考)",
+        "title": "NELSSA: A GPU-PNM Heterogeneous System for Mixed-Length LLM Serving via Length-based Request Placement",
+        "title_zh": "NELSSA：GPU+CXL 近存长上下文服务",
+        "url": "https://arxiv.org/abs/2607.26633",
+        "source_type": "论文",
+        "summary_zh": "按上下文长度放置请求：短请求走 GPU，长请求走真实 CXL 连接的近存处理（PNM）设备，设备上实现稀疏 attention，并支持随上下文增长无需重算的运行时迁移。端到端原型含 RDMA/gRPC 与跨层 KV 管理。",
+        "whats_new_zh": [
+          "decode 吞吐最高 5.5×（tokens/s）",
+          "P99 延迟最多降 15×（对 GPU-only）",
+          "真实 PNM 硬件原型 + CXL 解耦"
+        ],
+        "key_specs": {
+          "memory": "CXL 连接 PNM 设备，设备级稀疏 attention",
+          "other": "GPU decode kernel + host runtime（RDMA、gRPC/TCP）"
+        },
+        "edge_ai_impact_zh": "Agent/推理负载使上下文长度两极分化；“长上下文 attention 放近存”的分工对端侧同样成立（KV 放 PIM、权重计算放 NPU）。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2607.26633",
+          "https://microarch.org/micro59/program/"
+        ],
+        "confidence": "high",
+        "venue": "MICRO 2026",
+        "affiliation": "SK hynix、KAIST",
+        "authors": "Sookyung Choi, Seungyong Lee, Kangkyu Park et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "GPU 吞吐依赖大 batch，而长上下文请求的 KV 占满 HBM，混合长度负载下效率塌缩。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "长度感知放置 + 运行时迁移；GPU 侧质心相似度搜索 + PNM 侧分布式稀疏 attention。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "decode 5.5×、P99 15×。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "SK hynix 在 PNM 上的系统级布局。局限：数据中心场景；PNM 设备型号与功耗在摘要中未披露。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-07-29",
+        "vendor": "Qualcomm",
+        "category": "软件栈/工具链",
+        "title": "Qualcomm Completes Acquisition of Modular",
+        "title_zh": "高通完成收购Modular（Mojo/MAX）",
+        "url": "https://www.qualcomm.com/news/releases/2026/07/qualcomm-completes-acquisition-of-modular",
+        "source_type": "官方",
+        "summary_zh": "高通在7月29日完成对Modular Inc.的收购，距6月24日宣布约5周，比签约时预期的“2026下半年”更早。Mojo、MAX和Modular Cloud保留品牌并获得追加投资，联合创始人兼CEO Chris Lattner出任高通Advanced AI Software and Platforms执行副总裁。官方定位是“硬件无关”的开放AI软件栈，覆盖数据中心和边缘部署。",
+        "whats_new_zh": [
+          "6/24宣布，7/29交割；交易对价官方未披露（媒体引Axios称约39亿美元全股票，未经证实）",
+          "Chris Lattner出任EVP, Advanced AI Software and Platforms",
+          "Mojo、MAX、Modular Cloud保留品牌；FQ4 OpEx约27亿美元，已计入Modular",
+          "Amon：目标是推动AI软件从封闭走向开放；Modular将在8月举办ModCon"
+        ],
+        "key_specs": {
+          "other": "软件：Mojo语言 + MAX推理引擎 + Modular Cloud；官方称hardware-agnostic"
+        },
+        "edge_ai_impact_zh": "高通的端侧AI工具链目前是QNN/QAIRT + Genie/GenieX + AI Hub。Modular带来一套可以同时覆盖CPU、GPU和加速器的编译与推理栈；如果之后加入Hexagon后端，开发者就能用同一套语言覆盖云端AI200/HBC和端侧NPU。截至7月，官方没有提到Hexagon支持。",
+        "evidence_urls": [
+          "https://www.nasdaq.com/press-release/qualcomm-completes-acquisition-modular-2026-07-29",
+          "https://forum.modular.com/t/qualcomm-completes-acquisition-of-modular/3353",
+          "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q3/Q3FY26_Earnings_Call-Transcript_7-30-26_FINAL.pdf"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "技术资产",
+            "points": [
+              "Mojo：兼容Python语法的系统编程语言，面向异构加速器的kernel编写；MAX：推理服务引擎；Modular Cloud：部署平台。",
+              "官方表述：在多个平台之间简化AI软件的复杂度，为异构计算提供现代、开放的开发环境。"
+            ]
+          },
+          {
+            "heading": "对Hexagon工具链的意义",
+            "points": [
+              "现有的端侧路径是ONNX/PyTorch → QAIRT（QNN）→ HTP context binary，kernel主要由高通自己优化；Mojo有可能让第三方直接为加速器编写高性能kernel。",
+              "7月的交割公告和电话会都只提到“数据中心与边缘部署”，没有给出Hexagon后端的时间表（8月开源Mojo的事件见8月报告）。"
+            ]
+          },
+          {
+            "heading": "财务与组织",
+            "points": [
+              "FQ4 Non-GAAP OpEx指引约27亿美元，“reflecting the acquisition of Modular”；CFO称Alphawave和Modular都已计入成本规模。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-07-30",
+        "vendor": "Apple",
+        "category": "产业动态",
+        "title": "Apple reports third quarter results",
+        "title_zh": "Apple Q3 FY26 财报：Siri AI、存储涨价与先进制程",
+        "url": "https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/",
+        "source_type": "官方",
+        "summary_zh": "Apple 7 月 30 日公布 FY26 Q3（截至 6 月 27 日）财报：营收 US$1094 亿（+16%），iPhone US$543 亿（+22%），Mac US$104 亿（+29%）。这是 Cook 作为 CEO 的最后一次财报，9 月 1 日由 Ternus 接任。电话会上与 AI 硬件相关的信息有三点：Siri AI 由“端侧和 PCC 服务器上的最新模型”共同驱动；存储价格处于“百年一遇的洪水”；Mac 供应受先进制程可用性限制。",
+        "whats_new_zh": [
+          "营收 US$1094 亿（+16%），毛利率 50.1%（含约 2 点关税退款）；EPS US$2.02（+29%）",
+          "iPhone US$543 亿（+22%）、Mac US$104 亿（+29%）、iPad US$62 亿（-6%）、服务 US$307 亿（+12%）",
+          "Q4 指引：营收同比 +9–11%，毛利率 47–48%（媒体/纪要口径）",
+          "Cook：存储价格是“100-year flood”，并将继续上涨；Mac 供应受先进制程可用性限制，9 月季度影响将“显著增加”",
+          "Cook：有企业“部署 Mac Studio 集群在本地运行前沿级模型”；将为 Siri AI 重度用户提供更高的 iCloud+ 档位"
+        ],
+        "key_specs": {
+          "other": "活跃设备装机量 >25 亿；AI 支出同时计入 OpEx 与 COGS（Cook）"
+        },
+        "edge_ai_impact_zh": "财报给端侧 AI 硬件提供了两个约束信号：DRAM 涨价会压制手机内存容量的继续提升（A20 Pro 维持 12GB、改为加宽位宽即与此一致）；先进制程紧张让 2nm 首年只能覆盖少数芯片。",
+        "evidence_urls": [
+          "https://tidbits.com/2026/07/31/apples-q3-2026-earnings-record-revenue-and-marketing-to-the-street/",
+          "https://www.webull.com/news/15364638775387136",
+          "https://macstories.net/news/apple-reports-q3-2026-earnings/",
+          "https://transcripts.platformaeronaut.com/summaries/AAPL-3Q26-AI-Summary"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "AI 口径",
+            "points": [
+              "Cook 把 Apple 的 AI 优势归结为“芯片、系统与可扩展统一内存架构”，并追溯到 2017 年的 Neural Engine",
+              "端云分工仍只用“端侧 + PCC”概括，未给比例；Cook 确认同时使用第三方云和自建数据中心",
+              "AI 支出“增长了相当多”，并且不只计入 OpEx，也计入 COGS 等科目；没有给出 capex 数字"
+            ]
+          },
+          {
+            "heading": "存储与制程",
+            "points": [
+              "存储价格连续上涨，Cook 称为“100-year flood”并预计继续上行；媒体称 Apple 在评估中国存储供应商（用于中国市场机型）",
+              "Mac 供应受限“主要来自 SoC 所用先进制程的可用性”，与 TSMC N2 爬坡、3nm 满载一致"
+            ]
+          },
+          {
+            "heading": "Mac 作为本地 AI 平台",
+            "points": [
+              "Mac 营收 +29%，Cook 举例企业用 Mac Studio 集群在本地运行前沿级模型；纪要摘要提到 Disney 用 Mac 做端侧 AI 以降低云端 token 成本",
+              "这为 8 月发布的 M5 Ultra（512GB、1.2TB/s）做了铺垫"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露任何模型规模或 PCC 算力数字。"
+      },
+      {
+        "date": "2026-07-29",
+        "vendor": "Qualcomm",
+        "category": "产业动态",
+        "title": "Qualcomm Announces Third Quarter Fiscal 2026 Results",
+        "title_zh": "高通FQ3 FY26财报：手机-20%、汽车+61%",
+        "url": "https://www.qualcomm.com/news/releases/2026/07/qualcomm-announces-third-quarter-fiscal-2026-results",
+        "source_type": "官方",
+        "summary_zh": "截至2026年6月28日的FQ3营收99.47亿美元（同比-4%），Non-GAAP EPS 2.21美元（同比-20%），处于指引上沿。QCT手机收入50.86亿美元，同比-20%，主因是全行业内存涨价和缺货；汽车收入15.88亿美元，同比+61%；IoT收入18.30亿美元，同比+9%。管理层宣布对产品进行两位数提价，以转嫁晶圆、封测和内存成本，并确认HBC Gen 1已流片。",
+        "whats_new_zh": [
+          "营收9,947百万美元（上年同期10,365）；QCT 8,504（-5%）；QTL 1,278（-3%）；Non-GAAP EPS 2.21美元（上年同期2.77）",
+          "QCT手机5,086百万美元（上年同期6,328，-20%）；汽车1,588（上年同期984，+61%，连续23个季度两位数增长）；IoT 1,830（上年同期1,681，+9%）",
+          "FQ4指引：营收97至105亿美元，Non-GAAP EPS 2.05至2.25美元；QCT手机约52亿美元；汽车同比约+60%；IoT与上年持平（平板等消费品受内存约束）",
+          "汽车年化营收run-rate目标从60亿上调至约70亿美元（FY26末）；工业design-win管道超70亿美元，FY26已锁定超35亿美元",
+          "数据中心：两个定制芯片项目12月季度开始贡献收入，已开始投片；FY27目标50亿美元，FY29目标150亿美元；HBC Gen 1流片完成，首款HBC方案预计2027年中推出",
+          "三星Unpacked机型中约70%的旗舰使用骁龙；新iPhone中的份额将“明显低于”此前估计的20%"
+        ],
+        "key_specs": {
+          "other": "财报，非芯片规格；FQ4 Non-GAAP OpEx约27亿美元（含Modular）"
+        },
+        "edge_ai_impact_zh": "内存涨价同时压缩了出货量和端侧大模型所需的DRAM配置，高通由此转向“提价 + 非手机业务”的组合。对端侧AI而言，“能跑多大模型”越来越受BOM成本约束，而不只是NPU算力。",
+        "evidence_urls": [
+          "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q3/FY2026-3rd-Quarter-Earnings-Release.pdf",
+          "https://s204.q4cdn.com/645488518/files/doc_financials/2026/q3/Q3FY26_Earnings_Call-Transcript_7-30-26_FINAL.pdf",
+          "https://futurumgroup.com/insights/qualcomm-q3-fy-2026-automotive-growth-offsets-handset-weakness/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "分部数字（官方口径）",
+            "points": [
+              "手机5,086百万美元，同比-20%；CFO称这是“全行业内存动态”造成的，中国OEM的手机收入在FQ3见底，FQ4预计环比两位数增长。",
+              "汽车1,588百万美元，同比+61%；第五代Snapdragon Digital Chassis于9月放量，单车价值量明显提升；FQ4预计同比约+60%。",
+              "IoT 1,830百万美元，同比+9%，增长来自工业、网络和机器人；FQ4预计持平，原因是平板等消费品受内存短缺拖累。",
+              "非手机业务（汽车+IoT）同比+28%；管理层预计非手机业务增速从FY26的24%加速到FY27的60%以上，FY27非手机收入将占QCT一半以上。"
+            ]
+          },
+          {
+            "heading": "内存墙在财务上的体现",
+            "points": [
+              "Amon在电话会上说：即使两位数提价，也只是转嫁晶圆和输入成本，与内存BOM的上涨幅度相比“很小”。",
+              "OEM在应对内存成本时会改选芯片档位，甚至改用上一代芯片，这会直接影响高端NPU的普及速度。",
+              "FQ4 IoT中，平板等消费品受内存约束拖累，而工业品保持两位数增长。说明在内存紧张时，单价高、对内存不敏感的边缘AI产品更有韧性。"
+            ]
+          },
+          {
+            "heading": "数据中心与HBC（端侧的参考）",
+            "points": [
+              "HBC（high-bandwidth compute）把计算直接集成到高密度内存旁，目标是提升perf/W、内存效率和TCO；Gen 1已流片，未来几个季度会有硅片演示，首款方案预计2027年中推出。",
+              "产品节奏：FY26做互连（SerDes，来自Alphawave），FY27做定制芯片和AI加速器，FY28做服务器CPU；FY27数据中心收入50亿美元中，约10亿美元来自新的定制芯片客户（二手转述）。",
+              "AI200/AI250在本次电话会上没有被单独点名，管理层改用“基于HBC的AI加速器”的说法。"
+            ]
+          },
+          {
+            "heading": "端侧AI相关表态",
+            "points": [
+              "Amon称已看到“agentic smartphone cycle”的早期迹象：中国大型OEM正在准备推出端侧agent和orchestrator。",
+              "PC：GoogleBooks的design-win份额领先，与Gemini Intelligence结合；与Microsoft合作Project Solara（chip-to-cloud、agent-first企业设备，6月Build发布）。",
+              "眼镜：Snapdragon START参考平台面向全球每年约6亿副的眼镜出货量，更多细节放到9月骁龙峰会公布。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-07-29",
+        "vendor": "Arm",
+        "category": "产业动态",
+        "title": "Arm Holdings plc Reports Results for the First Quarter of the Fiscal Year Ending 2027",
+        "title_zh": "Arm FQ1：版税 +22%，增量主要来自数据中心",
+        "url": "https://newsroom.arm.com/news/arm-q1-fye27-results",
+        "source_type": "官方",
+        "summary_zh": "Arm 7 月 29 日公布 FQ1 FY27（截至 6 月 30 日）营收 12.89 亿美元，同比 +22%；版税 7.15 亿美元（+22%），授权 5.74 亿美元（+23%）。数据中心版税同比翻倍以上，Armv9 和 CSS 推高单芯片费率。官方把 RTX Spark 称为“首个基于 Arm CSS 的 Agentic PC 平台”，通稿没有手机专项数字。",
+        "whats_new_zh": [
+          "营收 12.89 亿美元，同比 +22%；Non-GAAP EPS 0.45 美元",
+          "Arm AGI CPU 客户需求在 FYE27～28 超过 20 亿美元",
+          "Neoverse 累计出货超 15 亿核，其中最近 5 亿核在过去 9 个月出货",
+          "下季指引营收约 13.8 亿美元 ±0.5 亿；当日股价收跌 8.11%（媒体）"
+        ],
+        "key_specs": {
+          "other": "RTX Spark 基于 Arm CSS；Windows on Arm 新增 Snapdragon AI PC"
+        },
+        "edge_ai_impact_zh": "Arm 的增长弹性已从手机 Lumex/SME2 转向数据中心和 PC。媒体称版税增长展望下调的原因是“手机内存价格”，说明手机端侧 AI 的出货量受 DRAM 成本拖累。",
+        "evidence_urls": [
+          "https://www.datacenterdynamics.com/en/news/arm-says-agi-cpu-demand-has-surpassed-2bn-reports-record-royalty-and-licensing-results/",
+          "https://www.kavout.com/market-lens/arm-s-royalty-uplift-is-priced-a-49x-sales-multiple-meets-normalizing-growth"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "版税结构",
+            "points": [
+              "版税增速（+22%）与总营收增速持平，分析师认为 Armv9/CSS 的费率红利已经计入基数（Kavout）",
+              "FY26 手机 AP 版税约占总版税的 43%（媒体转述）",
+              "通稿未提 Lumex，也没有 Armv9 渗透率数据"
+            ]
+          },
+          {
+            "heading": "端侧/PC",
+            "points": [
+              "RTX Spark 由 Acer、ASUS、Dell、HP、Lenovo 年内出货（官方）",
+              "Arm 把 PC、汽车、机器人、工业系统列为 Agentic AI 外溢到端侧的主要场景"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-07-30",
+        "vendor": "Samsung",
+        "category": "产业动态",
+        "title": "Samsung Electronics Announces Second Quarter 2026 Results",
+        "title_zh": "三星 Q2：System LSI 受挫，下半年量产第二代 2nm 手机芯片",
+        "url": "https://news.samsung.com/my/samsung-electronics-announces-second-quarter-2026-results",
+        "source_type": "官方",
+        "summary_zh": "三星电子 7 月 30 日公布 Q2 营收 171.5 万亿韩元（环比 +28%），营业利润 89.5 万亿韩元，其中 DS 部门 89.2 万亿韩元，主要来自存储。System LSI 受旗舰淡季和中国手机需求疲软影响，靠中端 SoC 和图像传感器维持营收，并拿下下一代旗舰 SoC 订单。Foundry 下半年将量产第二代 2nm 手机产品。",
+        "whats_new_zh": [
+          "营收 171.5 万亿韩元，营业利润 89.5 万亿韩元",
+          "System LSI：上半年营收创新高；获得下一代旗舰 SoC 订单",
+          "Foundry：HBM base die 和美国客户订单推动改善；下半年量产第二代 2nm 手机产品"
+        ],
+        "key_specs": {
+          "process": "SF2 第二代 2nm 手机产品下半年量产"
+        },
+        "edge_ai_impact_zh": "存储大涨让三星利润创纪录，但同一因素压制了手机需求。Exynos 的下一代旗舰订单和第二代 2nm 决定了 2027 年 Galaxy S 系列 Exynos 的比例。",
+        "evidence_urls": [
+          "https://www.koreatimes.co.kr/business/companies/20260730/samsung-electronics-posts-q2-profit-of-62-bil-up-nearly-20-fold"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "System LSI 与 Foundry",
+            "points": [
+              "通稿没有点名 Exynos 2600，也没有给出 System LSI/Foundry 的盈亏",
+              "预计下半年零部件成本上涨和需求疲软将持续（官方）"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-07-29",
+        "vendor": "Meta",
+        "category": "产业动态",
+        "title": "Meta Reality Labs Q2 2026: AI glasses drive revenue growth",
+        "title_zh": "Meta Reality Labs Q2：AI眼镜拉动营收+16%",
+        "url": "https://www.shacknews.com/article/150184/facebook-meta-reality-labs-q2-2026-losses",
+        "source_type": "媒体",
+        "summary_zh": "Meta 7月29日财报：Reality Labs Q2营收4.31亿美元（同比+16%）、营业亏损46.2亿美元；CFO称增长主要来自AI眼镜，部分被Quest销量下滑抵消。扎克伯格称当前亏损“可能是峰值”。",
+        "whats_new_zh": [
+          "RL营收431M美元（去年同期370M，+16%）；营业亏损4.62B美元（Q1为4.03B）",
+          "增长主要来自AI眼镜，Quest销量下降",
+          "亏损低于StreetAccount预期的5.07B美元"
+        ],
+        "key_specs": {
+          "other": "财报，无芯片新规格"
+        },
+        "edge_ai_impact_zh": "AI眼镜已是Reality Labs唯一的增长引擎，但单季4亿美元级营收说明出货仍是百万级量级，眼镜专用低功耗SoC/协处理器的规模经济仍有限。",
+        "evidence_urls": [
+          "https://vr.org/articles/meta-reality-labs-q2-2026-earnings-loss-widens-88-billion"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "数字",
+            "points": [
+              "营收431M、亏损4.62B美元，亏损/营收约10.7倍。",
+              "累计亏损口径不一（约836亿–880亿美元）。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-07-30",
+        "vendor": "KAIST",
+        "category": "学术研究",
+        "title": "GyRot: Leveraging Hidden Synergy between Rotation and Fine-grained Group Quantization for Low-bit LLM Inference",
+        "title_zh": "GyRot：旋转+细分组4-bit LLM加速器",
+        "url": "https://arxiv.org/abs/2607.27694",
+        "source_type": "论文",
+        "summary_zh": "KAIST Hoi-Jun Yoo 组的 HPCA 2026 论文，7 月上传 arXiv。论文发现全局 Hadamard 旋转与小分组量化（如 group 32）互相冲突，于是提出 CoRFiG（粗粒度局部旋转、细粒度分组）和 HAP（把离群通道对齐到 Hadamard 的“谐波行”），并改写非对称量化，使反量化完全用整数完成。在 Samsung 28nm、1 GHz 综合下，最高比基线 LLM 加速器快 3.4×、能效高 3.6×。同组的 LightRot（JETCAS 2025，28nm，4-bit 峰值能效 27.4 TOPS/W）同月上传，是它的前作。",
+        "whats_new_zh": [
+          "相对 8-bit Tender 加速器：最高 3.4× 加速、3.6× 能效（摘要）；GyRot-INT 面积降 65.2%、能耗降 69.2%",
+          "相对 MANT、LightRot 等分组量化加速器：平均加速高 41.7–67.5%，能效高 19.8–31.4%",
+          "LLaMA-3-8B 下游任务：QuaRot 比全精度掉 7.3%，GyRot-INT 只掉 1.2%（72.98%）",
+          "整体 2.10 mm²、740.95 mW（28nm、1 GHz 综合）；512 KB 全局缓冲占 57.1% 面积"
+        ],
+        "key_specs": {
+          "process": "Samsung 28nm，Synopsys DC 综合 @1 GHz（非流片）；SRAM 用商用编译器生成",
+          "npu": "8×8×32 INT 张量 PE 阵列（3D 张量 PE + 脉动数据流）；8×8 整数反量化+累加；32 路 FHT 旋转/向量单元",
+          "memory": "输入缓冲 64 KB+8 KB（SF/ZP），权重缓冲 64 KB+4 KB，全局缓冲 512 KB；DRAM 功耗按 Micron DDR4 模型估算",
+          "power": "总 740.95 mW，其中 INT 张量 PE 占 55.4%，反量化+累加占 16.0%，FHT/向量单元仅 0.9%",
+          "other": "LightRot（2607.27704，JETCAS 2025）：28nm CMOS 实现，4-bit 推理峰值 27.4 TOPS/W，面向 LLaMA2-13B / LLaMA3-8B，并做了 MT-Bench 验证"
+        },
+        "edge_ai_impact_zh": "端侧 NPU 想把权重和激活都做到 4-bit，难点在于离群值和反量化开销。GyRot 说明，旋转与小分组并不冲突，关键是把旋转粒度放得比分组粒度粗；同时用整数 SF/ZP 去掉浮点反量化。这条路线对手机 NPU 的 W4A4 支持有直接参考价值。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2607.27694",
+          "https://arxiv.org/abs/2607.27704"
+        ],
+        "confidence": "high",
+        "venue": "HPCA 2026（LightRot：IEEE JETCAS 2025）",
+        "affiliation": "KAIST（韩国科学技术院）",
+        "authors": "Sangjin Kim, Yuseon Choi, Byeongcheol Kim et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "Hadamard 旋转会把离群值分散到各通道，而小分组量化依赖组内的局部方差，两者直接组合会互相抵消；AMXFP 也报告过 group 32 加旋转反而掉点。",
+              "分组越小，反量化越频繁；非对称量化还要逐组处理零点，浮点 SF/ZP 带来大量面积和功耗开销。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "CoRFiG：局部旋转，但旋转块比量化组大，既保留组内方差，又抑制离群值。",
+              "HAP：把离群通道映射到 Hadamard 矩阵的谐波行（LightRot 是对齐到全 1 行），降低 SF/ZP 的精度需求。",
+              "改写非对称量化，并配合零点取整策略，让 SF 和 ZP 都能用 INT8 表示，实现全整数反量化。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "RTL 用 SystemVerilog 实现，Samsung 28nm、Synopsys DC @1 GHz；在等计算面积条件下对比 Tender、MANT、LightRot。",
+              "精度在 WikiText-2 PPL 和多个下游任务上评测，对比 QuaRot、SpinQuant、DuQuant、LightRot。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "相对 Tender：GyRot-FP 面积降 45.6%、能耗降 51.0%；GyRot-INT 面积降 65.2%、能耗降 69.2%。",
+              "LLaMA3-8B 能耗拆分显示，主要节省来自 4-bit 带来的 DRAM 访问减少，以及更高面积效率带来的静态功耗下降。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "KAIST 是端侧 LLM 芯片的主要流片团队之一，GyRot+LightRot 给出了从算法到 28nm 实现的完整 4-bit 路线。",
+              "局限：GyRot 是综合结果，不是流片；论文本身在 2026 年初已于 HPCA 发表，7 月只是上传 arXiv。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "评测 LLaMA-1-7B/13B、LLaMA-2-7B/13B、LLaMA-3-8B。W4A4 下精度接近全精度；W3A4 下 GyRot-FP 在 LLaMA-1-7B/13B 上 PPL 为 6.20/5.48。加速器为 28nm 综合结果，没有给出 tokens/s 绝对值。"
+      },
+      {
+        "date": "2026-07-29",
+        "vendor": "Independent",
+        "category": "学术研究",
+        "title": "Budgeting Bytes: A Windowed Storage Roofline and Dual-Budget Architecture Ablations for Storage-Bound LLM Decoding",
+        "title_zh": "Budgeting Bytes：存储受限解码roofline",
+        "url": "https://arxiv.org/abs/2609.04238",
+        "source_type": "论文",
+        "summary_zh": "论文把“每 token 需要搬运的字节数（bpt）”作为一等设计轴，按参数地址何时确定（A0 采样时 / A1 attention 前 / A2 逐层数据相关 / A3 每次必读）分类，推出闭式的窗口化存储 roofline。在 8 GB RK3588 板上部署 Qwen3-30B-A3B（4-bit，18 GB）时，decode 被 eMMC 带宽封顶，时间局部性预取是负收益，连完美 oracle 预取也无效。真正有效的是降低 bpt，让模型放进快层：量化到 Q2_K（11 GB）放进 16 GB M4 后，GPU 常驻可跑 11.5 tok/s（22×）。（arXiv 编号为 2609，但 v1 提交日期为 2026-07-29。）",
+        "whats_new_zh": [
+          "8 GB RK3588（eMMC）跑 Qwen3-30B-A3B 4-bit（18 GB）：模型溢出 RAM，decode 被 eMMC 带宽封顶",
+          "时间局部性专家预取为负收益；即使用 trace 驱动的完美 oracle 也无法提速，因为瓶颈是饱和总线上的字节量",
+          "Q2_K（11 GB）放进 Apple M4 16 GB 统一内存后，Metal GPU 常驻 decode 11.5 tok/s，相对 eMMC 溢出基线为 22×",
+          "冻结的 Qwen3-30B 上，用 attention 前隐状态的 probe 预测路由准确率 91.2%，但这只在快层能缓存大部分模型时才能转化为速度（A100 PCIe 卸载成立，边缘存储不成立）"
+        ],
+        "key_specs": {
+          "process": "未涉及",
+          "cpu": "RK3588（Cortex-A76/A55）",
+          "gpu": "Apple M4 GPU（Metal）",
+          "npu": "未使用",
+          "memory": "RK3588 8 GB + eMMC；Apple M4 16 GB 统一内存；A100 PCIe 卸载对照",
+          "power": "未测",
+          "other": "自研 C 流式引擎（F_NOCACHE 绕开 page cache）；Strata 部署规划器；llama.cpp + madvise(WILLNEED) 预取"
+        },
+        "edge_ai_impact_zh": "这是一篇很好的反例式工作：在 eMMC/UFS 级别的慢存储上，“预测专家预取”并不能救 MoE；能救的是把 bpt 降到让模型放进 DRAM。这对手机/IoT 上是否用 Flash 卸载大 MoE 的判断有直接参考。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2609.04238",
+          "https://github.com/William2333ZZ/budgeting-bytes"
+        ],
+        "confidence": "medium",
+        "venue": "Workshop draft（arXiv）",
+        "affiliation": "独立作者",
+        "authors": "Hanhaodi Zhang",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "在廉价硬件上，单流 decode 的上限不由 FLOPs 决定，而由每个 token 需要穿过最慢存储层的字节数决定。",
+              "社区普遍认为“预测专家 + 预取”能缓解 Flash 卸载 MoE，但缺少在真实边缘存储上的检验。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "地址确定性分类 A0–A3，把预取调度归约为带释放时间的单机抢占可行性问题，得到闭式的隐藏条件（Theorem 1）。",
+              "在 sub-100M 规模上做“bpt × 存储”双预算消融（TinyStories），并用自研 C 流式引擎验证。",
+              "把真实预测预取 advisor 接入 llama.cpp decode 循环。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "边缘板：8 GB RK3588（Cortex-A76/A55，Debian，eMMC）；Apple M4 16 GB；A100 PCIe 卸载路径作为对照。",
+              "测得全速流式读取（3.7 GB/s，绕开 page cache）只让饱和计算慢 5.7%；重叠流水线与 Theorem 1 误差在 7% 以内（串行 224 vs 预测 209 ms/token）。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "eMMC 溢出时预取无效；减小 KV cache（上下文）可以释放 page cache，从而提高 decode。",
+              "量化到放进快层是唯一有效的杠杆（M4 上 11.5 tok/s）。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "把“可预测性 ≠ 加速”讲清楚了，给出何时预取有效的判据，并发布 Strata 规划器。",
+              "局限：单作者 workshop 草稿，单次运行；部分数值在 HTML 公式中丢失；没有手机 UFS 实测。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "实测：Qwen3-30B-A3B（48 层、128 专家、top-8）。8 GB RK3588 + eMMC 下溢出，被 eMMC 封顶（具体 tok/s 在 HTML 中缺失，未披露）；M4 16 GB 上 Q2_K 11 GB 跑 11.5 tok/s。另有 sub-100M 自训模型在 RK3588 上 94.5 tok/s。"
+      },
+      {
+        "date": "2026-07-27",
+        "vendor": "未披露",
+        "category": "学术研究",
+        "title": "DraftExpert: Expansion-Aware Self-Speculative Decoding for End-Device MoE Inference",
+        "title_zh": "DraftExpert：端侧 MoE 专家卸载下的自投机解码",
+        "url": "https://arxiv.org/abs/2607.24434",
+        "source_type": "论文",
+        "summary_zh": "面向专家卸载的端侧 MoE：路由专家放在 CPU 内存（独显）或 Flash（手机 NPU），按需加载。作者指出，在这种设置下，自投机解码的 draft 不再便宜（top-k 越大，加载的专家越多），并行验证也不再接近一步（多 token 激活的专家并集变大）。DraftExpert 每层自蒸馏一个常驻加速器的轻量 draft expert，用 shared+top-1+draft-expert 的固定占用 drafter，并配合置信度–扩张截断和目标专家预取。在骁龙手机 Hexagon NPU 上实现 Flash 卸载，decode 平均提速 1.45×。",
+        "whats_new_zh": [
+          "4 组（2 模型 × 2 平台）平均 decode 提速 1.45×，接受率 84–87%，预取命中率 86–88%",
+          "手机 Flash→NPU：DeepSeek-V2-Lite Q4_0 从 10.18 提到 15.47 TPS（1.52×），Moonlight-16B-A3B 从 8.50 提到 13.69 TPS（1.61×）",
+          "对比：同一模型专家全部常驻内存时 AR 约 14.36 TPS，即 DraftExpert 在 Flash 卸载下超过了常驻 AR 参考",
+          "最强的免训练 shared+top-k 自投机在两个平台上都比 AR 慢（如 DS 手机 4.80 TPS）"
+        ],
+        "key_specs": {
+          "process": "手机 SoC 标注为 TSMC N3E（论文口径）",
+          "cpu": "未涉及",
+          "gpu": "CG 平台：RTX 4090 24 GB，BF16，PyTorch 2.11",
+          "npu": "Hexagon HTP v81，论文给出 INT8/INT4 峰值约 73/146 TOPS，约 8 MB 片上 SRAM",
+          "memory": "手机：CPU/GPU/NPU 共享 DRAM，路由专家驻留 Flash，按需加载",
+          "power": "未测",
+          "other": "设备：Xiaomi MIX Flip 2（2509FPN0BC），Android 16，论文写作 Snapdragon 8 Elite（SM8850）；llama.cpp Q4_0"
+        },
+        "edge_ai_impact_zh": "这是少数在真实手机 NPU 上做“MoE 专家放 Flash + 投机解码”的工作。结果说明手机上 16B 级 MoE 可以达到 13–15 tok/s，关键是减少每个被接受 token 需要新加载的专家数。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2607.24434"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv",
+        "affiliation": "未披露",
+        "authors": "Dengke Han",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "端侧部署大 MoE 时，非路由权重常驻加速器，路由专家放 CPU DRAM 或 Flash。此时专家加载主导时延。",
+              "自投机的三个前提失效：draft 便宜（top-1→top-3 时接受率 22%→42%，但 drafter 相对完整目标模型的加速从 4.7× 降到 2.0×）、验证近似一步、接受率高。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "每层训练一个常驻加速器的 draft expert，从冻结的目标 MoE 自蒸馏 residual、logit/token 和 router-agreement 信号。",
+              "Drafter 固定为 shared + top-1 + draft expert，占用固定；按置信度–扩张做截断，控制验证时激活的专家并集。",
+              "利用与目标路由对齐的 draft 隐状态，非阻塞预取验证阶段需要的专家；最终 token 仍由目标模型精确验证，输出无损。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "CG：RTX 4090 24 GB，BF16，专家从主机内存经 PCIe 加载。",
+              "MN：Xiaomi MIX Flip 2，Hexagon HTP v81，llama.cpp Q4_0，专家驻留 Flash，加载到共享内存后由 NPU 执行。",
+              "负载：Chat、GSM8K、MBPP、摘要、指令跟随。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "DS：CG 2.19→2.99 TPS（1.36×），MN 10.18→15.47（1.52×）；ML：CG 1.94→2.50（1.29×），MN 8.50→13.69（1.61×）。",
+              "消融：residual/logit/token 损失恢复接受率，router-agreement 损失提高预取命中率。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "把投机解码重新表述为“每新加载一个专家能换来多少被接受的 token”，对手机 MoE 的设计有直接参考。",
+              "局限：单作者，机构未披露；只测 16B 级 MoE；没有能耗和热数据；论文把 SM8850 写成 Snapdragon 8 Elite，TOPS 数值为论文口径，未经厂商确认。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "实测：DeepSeek-V2-Lite（16B，激活 2.4B）和 Moonlight-16B-A3B，各 27 层、64 路由 + 2 共享专家、top-6。手机 Q4_0 Flash 卸载下 decode 13.69–15.47 TPS；RTX 4090 BF16 CPU 卸载下 2.50–2.99 TPS。上下文长度与能耗未披露。"
+      }
+    ],
+    "overview": "7 月最后一周是财报周，主题是成本。高通 FQ3 手机收入同比降 20%，原因是内存涨价，汽车收入增 61%，宣布 HBC 近存计算 Gen 1 流片，首个产品 2027 年年中推出；同日完成收购 Modular（Mojo/MAX），并成为宝马下一个十年座舱和智驾的主算力供应商。SK 海力士 Q2 营业利润率 76%，HBM4 量产出货，LPDDR6 下半年量产；三星 Q2 半导体部门贡献了 99.7% 的利润，DRAM 均价涨四成多，CFO 称 2027 年供给比 2026 年更紧；铠侠推出 UFS 5.0 商用样品（读 10GB/s）。Apple 财报称存储涨价是“百年一遇的洪水”，Mac 增长受先进制程供给限制；Arm 版税增 22%，增量主要来自数据中心。爆料方面，骁龙 8 Elite Gen 6 Pro 的 die 约 134mm²，配 LPDDR6（爆料速率 14.4Gbps，9 月官方为 10.6Gbps）。论文侧，DOPS（MICRO 2026）做 NPU+PIM 动态算子调度，DraftExpert 在手机 NPU 上用闪存卸载专家，DeepSeek-V2-Lite 达 15.47 tok/s；Budgeting Bytes 指出在 eMMC 级存储上，即便专家预取完美也无济于事。",
+    "takeaways_zh": [
+      "内存厂商的利润几乎全部来自 HBM 和服务器，2027 年供给更紧，手机端内存容量短期内很难增长，“每 GB 能撑多大模型”成为端侧 SoC 的核心约束。",
+      "高通的 HBC 流片和 Modular 收购，说明端侧 AI 的下一阶段竞争在内存子系统和软件栈，而不是 NPU 峰值。",
+      "MoE 专家外存分页高度依赖存储带宽：UFS 5.0（10GB/s）是让手机跑大总参 MoE 的必要条件，eMMC 级设备基本无解。"
+    ]
   }
 }

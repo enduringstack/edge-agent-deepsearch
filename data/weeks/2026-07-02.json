@@ -2773,5 +2773,1043 @@
         "desc": "agent multiplexer that lives in your terminal."
       }
     ]
+  },
+  "hardware": {
+    "window": {
+      "start": "2026-07-02",
+      "end": "2026-07-09"
+    },
+    "items": [
+      {
+        "date": "2026-07-05",
+        "vendor": "华为",
+        "category": "NPU/AI加速器",
+        "title": "HiFA4: Training-Free 4-bit FlashAttention on Ascend HIF4 NPUs for LLM Inference",
+        "title_zh": "HiFA4：昇腾 HIF4 上的 4-bit FlashAttention",
+        "url": "https://arxiv.org/abs/2607.04302",
+        "source_type": "论文",
+        "summary_zh": "把 FlashAttention 中 QKᵀ 与 PV 两个 GEMM 都用昇腾 HIF4（4-bit）Cube 执行，online softmax 状态保持 FP16。提出 Smooth-QK（RoPE 后按通道把量化难度从 K 转移到 Q）与 P-Reordering（用同一量化后的 P̂ 累加归一化因子，并可融合进 PV GEMM）。",
+        "whats_new_zh": [
+          "Qwen3-8B：恢复直接 HIF4 量化 37.5% 的精度差距；加权精度损失 1.12 pp → 0.70 pp",
+          "MMLU 回退样本 1071 → 465（−57%）；BF16 不一致预测 16.3% → 8.2%",
+          "指令调度分析预计关键路径延迟比 BF16 降 35.4%（尚未上板验证）"
+        ],
+        "key_specs": {
+          "npu": "Ascend NPU，HIF4 4-bit Cube GEMM",
+          "other": "softmax 状态 FP16；免训练（PTQ）"
+        },
+        "edge_ai_impact_zh": "4-bit attention（不仅是 4-bit 权重）是端侧长上下文降带宽的关键一步；HIF4 这类厂商自定义 4-bit 格式的 attention 量化经验可迁移到手机 NPU 的 FP4/INT4 attention。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2607.04302"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv 预印本",
+        "affiliation": "华为技术有限公司",
+        "authors": "Hui Dong, Yanzhao Li, Jie Gao et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "直接把 attention 两个 GEMM 量化到 HIF4 会导致决策漂移；作者发现“归一化因子用高精度、PV 用量化 P̂”的不一致会造成系统性输出缩放误差——Qwen3-8B Layer-0 上 3.6M 个 tile 全部出现概率质量损失（中位 ε̄=−0.064）。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "Smooth-QK：标定得到静态的逐通道等价缩放，推理时无需 per-tile 在线归约。",
+              "P-Reordering：用量化后 P̂ 计算归一化因子，使之一致，并可融合进 PV Cube GEMM。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "Gemma2-9B 与 BF16 差距在 0.7 pp 以内，MMLU 回退降 27%；LLaMA3.1-8B/Mistral-7B/Phi-4B 关闭 Smooth-QK 时 P-Reordering 仍降回退 41–52%。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "厂商一线团队给出的 4-bit attention 工程细节。局限：延迟收益为调度模型推算，“on-hardware validation is left to future work”；面向昇腾云侧 NPU。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "评测 Qwen3-8B、Gemma2-9B、LLaMA3.1-8B、Mistral-7B、Phi-4B；仅精度评测，吞吐/延迟为模型推算（35.4%），未上板。"
+      },
+      {
+        "date": "2026-07-06",
+        "vendor": "Syntiant",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Syntiant Corp. Form S-1",
+        "title_zh": "Syntiant递交S-1拟纳斯达克上市",
+        "url": "https://www.sec.gov/Archives/edgar/data/0001718728/000119312526296426/ck0001718728-20260706.htm",
+        "source_type": "官方",
+        "summary_zh": "超低功耗常开AI芯片公司Syntiant 7月6日公开递交S-1，7月13日提交修订版，Renaissance Capital估计募资可达3亿美元。S-1显示2026Q1营收6450万美元、净亏损2090万美元；公司于2024年12月收购Knowles消费级MEMS麦克风业务（SiSonic），S-1摘要未列分部营收。",
+        "whats_new_zh": [
+          "2026Q1营收64.5M美元、净亏损20.9M美元；2025年净亏损60.9M美元",
+          "SiSonic累计出货超250亿颗传感器，2025年超10亿颗；AI技术部署于“数千万”设备",
+          "客户100+；NDP100/101/115/120（音频）、NDP200/250（视觉），规划NDP3 SoC"
+        ],
+        "key_specs": {
+          "npu": "NDP系列，毫瓦/亚毫瓦级（S-1未给逐型号mW与TOPS）",
+          "other": "SiSonic MEMS麦克风"
+        },
+        "edge_ai_impact_zh": "常开AI的商业化靠“传感器+NPU”捆绑：Syntiant靠收购麦克风业务获得出货规模（推断NDP为增值部分，S-1未列分部营收）；纯μW级NPU作为独立业务尚难支撑上市估值。",
+        "evidence_urls": [
+          "https://www.renaissancecapital.com/IPO-Center/News/120304/edge-ai-chip-designer-syntiant-files-for-an-estimated-300-million-ipo",
+          "https://aiweekly.co/alerts/edge-ai-chipmaker-syntiant-files-s-1-for-us-ipo-209m-q1-net-loss-on-645m"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "财务",
+            "points": [
+              "2024年净亏损25.7M→2025年60.9M美元，2026Q1单季20.9M；累计亏损215.5M美元。",
+              "分部营收/毛利表在S-1摘要中未填，股数与价格区间未定。"
+            ]
+          },
+          {
+            "heading": "产品",
+            "points": [
+              "音频NDP100/101/115/120 + 视觉NDP200/250 + AISonic音频处理器；下一代NDP3定位SoC。",
+              "增长方向列出机器人与汽车。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "不跑LLM：毫瓦级NDP用于唤醒词、VAD、声学事件与简单视觉检测；S-1未给参数规模。"
+      },
+      {
+        "date": "2026-07-03",
+        "vendor": "TrendForce",
+        "category": "存储与内存",
+        "title": "AI Server Demand Keeps Memory Prices Up in 3Q26, but Gains Moderate",
+        "title_zh": "TrendForce：3Q26 DRAM合约价+13–18%，涨幅收敛",
+        "url": "https://iconnect007.com/article/150656/ai-server-demand-keeps-memory-prices-up-in-3q26-but-gains-moderate/150653/pcb",
+        "source_type": "媒体",
+        "summary_zh": "TrendForce 7月3日发布3Q26内存价格预测：DRAM整体合约价环比+13–18%，NAND +10–15%，涨速明显慢于上半年。原厂继续收紧LPDRAM供给以支撑价格，eMMC/UFS涨幅较温和；手机品牌生产与采购趋于保守，LPDRAM需求可能进一步下修。",
+        "whats_new_zh": [
+          "3Q26 DRAM合约价环比+13–18%（2Q26 LPDDR5X为+78–83%、LPDDR4X为+70–75%，5月口径）",
+          "3Q26 NAND合约价环比+10–15%，eMMC/UFS涨幅“更温和”",
+          "服务器DRAM因部分采购走长约，涨幅收敛；GDDR6/7随大盘上涨",
+          "7月30日TrendForce另称DRAM产能缺口将从今年的1–2%进一步扩大，NAND供给2H27才趋于宽松"
+        ],
+        "key_specs": {
+          "memory": "LPDRAM/LPDDR5X、eMMC/UFS、服务器DRAM、GDDR6/7",
+          "other": "季度合约价预测，未单列LPDDR5X 3Q26涨幅"
+        },
+        "edge_ai_impact_zh": "2Q26的暴涨已进入整机BOM，3Q26在高基数上再涨一成多：手机端侧大模型的“常驻内存预算”被成本锁死，12GB而非16GB成为高端主流（TrendForce 5月口径），端侧模型只能在3–8B INT4区间做文章。",
+        "evidence_urls": [
+          "https://wantrich.chinatimes.com/news/20260515900291-420101",
+          "https://www.ithome.com/0/983/762.htm"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "价格曲线",
+            "points": [
+              "2Q26：LPDDR4X ≥+70–75%、LPDDR5X ≥+78–83%（TrendForce 5月），3Q26整体DRAM回落到+13–18%——是“涨幅收敛”而非“价格回落”。",
+              "NAND 3Q26 +10–15%，eMMC/UFS涨幅低于企业级SSD，手机存储的成本压力弱于DRAM。"
+            ]
+          },
+          {
+            "heading": "供需结构",
+            "points": [
+              "7/30 TrendForce：DRAM缺口从1–2%继续扩大；新DRAM厂多在2H27投产、2028年才明显贡献产出；HBM单位bit耗用晶圆远高于标准DRAM，新增晶圆不能按比例转化为有效产能。",
+              "NAND预计2H27转宽松，届时端侧“闪存放专家权重”的方案成本先改善。"
+            ]
+          },
+          {
+            "heading": "对端侧AI的含义",
+            "points": [
+              "手机品牌采购转保守→LPDRAM需求下修→原厂更倾向把产能留给HBM/服务器，形成负反馈。",
+              "端侧厂商的应对是少搬字节：低比特量化、MoE+闪存卸载、近存/存算硬件，这正是7月WAIC上存算与近存芯片集中亮相的背景。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "不直接对应模型。推算：在DRAM价格高位下，手机RAM主流停留在12GB（TrendForce称16GB机型占比回落），扣除系统后常驻约7–8B INT4或30B级MoE的“热专家”子集；8GB机型约3–4B INT4。"
+      },
+      {
+        "date": "2026-07-02",
+        "vendor": "Notre Dame / Georgia Tech",
+        "category": "存储与内存",
+        "title": "Probabilistic Memory for Trustworthy Edge Intelligence",
+        "title_zh": "概率内存 p-MEM：内存带宽级采样",
+        "url": "https://arxiv.org/abs/2607.02465",
+        "source_type": "论文",
+        "summary_zh": "概率计算（不确定性量化、贝叶斯网络）受限于高斯随机数生成（GRNG）与计算之间的吞吐鸿沟。p-MEM 在内存中存分布参数（均值、标准差），以原生内存带宽直接采样，确定性数据只是方差为零的特例。",
+        "whats_new_zh": [
+          "GRNG 吞吐 >1000 GSa/s/mm²（含阵列访问）",
+          "集成到 CPU/GPU：指令数 −2.19×/−4.37×，采样延迟 562×/3.45×，能耗 295.5×/3.53×（BNN 负载）"
+        ],
+        "key_specs": {
+          "memory": "新型内存原语：存 μ/σ 并在读出时采样",
+          "other": "版图验证模拟器，跨器件、规格与工艺节点探索"
+        },
+        "edge_ai_impact_zh": "端侧“可信 AI”（不确定性估计、隐私噪声）通常被忽视算力代价；把采样做进内存是一种新颖的 PIM 用法。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2607.02465"
+        ],
+        "confidence": "high",
+        "venue": "DAC 2026",
+        "affiliation": "University of Notre Dame、Georgia Tech、Villanova University",
+        "authors": "Likai Pei, Jiahao Zheng, Xueji Zhao et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "GRNG 吞吐比计算低数量级，且引入额外指令开销。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "统一内存原语 p-MEM；layout-validated 模拟器探索器件选择与技术节点。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              ">1000 GSa/s/mm²；CPU 上采样延迟 562×、能耗 295.5× 改善。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "DAC 2026（7/26–29，Long Beach）论文。局限：面向 BNN 等概率负载，对主流 LLM 推理直接收益有限。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-07-09",
+        "vendor": "SK hynix",
+        "category": "数据中心(对端侧有参考)",
+        "title": "StreamDQ: Near-Memory Weight DeQuantization in Custom HBM for Scalable AI Inference Acceleration",
+        "title_zh": "SK hynix：在 HBM base die 里反量化",
+        "url": "https://arxiv.org/abs/2607.08993",
+        "source_type": "论文",
+        "summary_zh": "GPU 上 CUDA core 做权重反量化带来指令、片上流量与流水停顿开销。StreamDQ 在 HBM base die 中加入紧凑的反量化块（DQB），通过读请求上的 sideband tag 选择模式，在普通 load 路径上内联反量化。",
+        "whats_new_zh": [
+          "混合精度 GEMM 最高 7.08× 加速、能耗 −90.23%",
+          "每个 DQB 0.127 mm²、0.355 W（12 nm）",
+          "端到端延迟 −54.68%，decode 吞吐最高 2.20×"
+        ],
+        "key_specs": {
+          "process": "12 nm CMOS（DQB 评估）",
+          "memory": "Custom HBM base die 内置 DQB",
+          "power": "0.355 W/DQB"
+        },
+        "edge_ai_impact_zh": "“在内存侧做格式转换”同样适用于 LPDDR：若 LPDDR6/PIM 能内联把 INT4 解成 FP16/INT8，端侧 NPU 可省去反量化 pass，这与三星 LPDDR5X-PIM 的精度组合设计相呼应。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2607.08993"
+        ],
+        "confidence": "high",
+        "venue": "arXiv 预印本",
+        "affiliation": "SK hynix",
+        "authors": "Minki Jeong, Daegun Yoon, Soohong Ahn et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "weight-only 量化在大 batch 下需把反量化结果写回 HBM 再读，CUDA core 反量化成为瓶颈。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "base die DQB + sideband tag，保持常规 load 语义。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "GEMM 7.08×、能耗 −90.23%；端到端延迟 −54.68%。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "存储厂商主导的“custom HBM”路线样本。局限：云侧大 batch 场景，端侧 batch=1 下收益需重估。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-07-09",
+        "vendor": "Google",
+        "category": "软件栈/工具链",
+        "title": "LiteRT.js, Google's high performance Web AI Inference",
+        "title_zh": "谷歌发布 LiteRT.js：浏览器端 CPU/GPU/NPU 推理",
+        "url": "https://developers.googleblog.com/litertjs-googles-high-performance-web-ai-inference/",
+        "source_type": "官方",
+        "summary_zh": "谷歌 7 月 9 日发布 LiteRT.js，通过 WebAssembly 把原生 LiteRT 运行时带进浏览器。CPU 走 XNNPACK，GPU 走 ML Drift/WebGPU，NPU 走实验性的 WebNN。官方称在经典 CV 和音频模型上比其他 Web 运行时快最多 3 倍；LLM 由单独的 LiteRT-LM.js 负责。",
+        "whats_new_zh": [
+          "CPU 和 GPU 推理比其他 Web 运行时快最多 3 倍（官方，M4 MacBook Pro）",
+          "WebGPU/WebNN 比纯 CPU 快 5～60 倍",
+          "NPU 经 WebNN（Chrome/Edge 实验性）调用，评测时走 Apple CoreML",
+          "npm 包 @litertjs/core；演示了 EmbeddingGemma 向量检索"
+        ],
+        "key_specs": {
+          "cpu": "XNNPACK，多线程 + relaxed SIMD",
+          "gpu": "ML Drift on WebGPU",
+          "npu": "WebNN（实验性）"
+        },
+        "edge_ai_impact_zh": "LiteRT 的“一次转换、多端部署”覆盖了 Android、iOS、Web 和 AI PC，但浏览器调用 NPU 依赖 WebNN 标准化进度。",
+        "evidence_urls": [
+          "https://gigazine.net/gsc_news/en/20260710-google-litert-js/",
+          "https://developers.googleblog.com/blazing-fast-on-device-genai-with-litert-lm/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "后端",
+            "points": [
+              "CPU：XNNPACK + relaxed SIMD；GPU：ML Drift/WebGPU；NPU：WebNN，不支持的算子回退 CPU（媒体）",
+              "5 月的 LiteRT-LM 已加入 MTP（最高 2.2 倍）和 WebGPU JS API，LiteRT.js 补上了非 LLM 部分"
+            ]
+          }
+        ],
+        "model_capacity_zh": "LiteRT.js 本体面向 CV、音频和嵌入模型（如 EmbeddingGemma），官方没有给出 LLM tokens/s；LLM 由 LiteRT-LM.js 负责，模型大小上限未披露。"
+      },
+      {
+        "date": "2026-07-07",
+        "vendor": "Apple",
+        "category": "软件栈/工具链",
+        "title": "MLX v0.32.0",
+        "title_zh": "MLX 0.32.0：NAX 内核修复与 iOS 默认 Metal",
+        "url": "https://github.com/ml-explore/mlx/releases/tag/v0.32.0",
+        "source_type": "官方",
+        "summary_zh": "MLX 0.32.0 于 7 月 7 日发布，是 7 月唯一的 MLX 主版本（距离上一版 0.31.2 已过去两个半月，下一版 0.32.1 要到 8 月 18 日）。端侧相关的更新包括：新增小 batch 量化 matvec 内核 qmv_wide；修复 M5 GPU Neural Accelerator（NAX）路径上 qmm 的 int16 溢出和 gather_qmm 内核名错误，并要求 NAX 构建 MACOSX_DEPLOYMENT_TARGET=26.2；iOS 上默认启用 Metal 后端；Metal 支持 DLPack 零拷贝。",
+        "whats_new_zh": [
+          "新增 qmv_wide 小 batch 量化 matvec 内核（#3764），针对解码阶段 batch=1~少量的场景",
+          "NAX（GPU Neural Accelerator）构建要求 macOS 26.2 部署目标（#3622）；修复 NAX qmm 边缘 tile int16 溢出（#3631）、gather_qmm 内核名不匹配（#3632）",
+          "iOS 默认启用 Metal 后端（#3617）；Metal DLPack 零拷贝（#3531）",
+          "SDPA 新增非对称 Q/V head dim（192/128）融合向量内核（#3637），对应 MLA 类注意力",
+          "Metal 拒绝 tensor-scale nvfp4 的 qqmm（#3551）；修复 Q4_1 GGUF 加载（#3664）",
+          "CUDA：qmm_sm80/sm90 等 JIT 编译并缓存；分布式 JACCL 增加 barrier；超过 50 位贡献者"
+        ],
+        "key_specs": {
+          "gpu": "M5 系 GPU Neural Accelerator（NAX）路径修复",
+          "other": "发布页无性能数字"
+        },
+        "edge_ai_impact_zh": "这次更新的重点是把 MLX 从“Mac 研究框架”推向 iPhone 部署（iOS 默认 Metal），并补齐 M5 Neural Accelerator 路径的量化 GEMM 正确性。7 月 Bonsai 27B 等第三方端侧大模型都依赖这条工具链。",
+        "evidence_urls": [
+          "https://pypi.org/project/mlx/",
+          "https://releasebot.io/updates/ml-explore/mlx"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "解码路径",
+            "points": [
+              "qmv_wide：解码阶段是 batch 很小的量化 matvec，属于带宽受限；新内核针对“小 batch 但不止 1”的情形（如投机解码验证、多请求并发）",
+              "修复输出维度 <8 时 FP 量化 matvec 的 bug（#3804），说明低位宽 FP 格式的端侧路径仍在完善"
+            ]
+          },
+          {
+            "heading": "iOS 与互操作",
+            "points": [
+              "iOS 默认 Metal 后端，再配合 Foundation Models 框架的 MLXLanguageModel 后端，第三方模型可以在 iPhone 上以 MLX 运行",
+              "DLPack 零拷贝让 MLX 与其他框架在统一内存上共享张量，不需要复制"
+            ]
+          },
+          {
+            "heading": "MLA / 新结构",
+            "points": [
+              "SDPA 支持 Q/K head dim 192、V head dim 128 的非对称融合内核，对应 DeepSeek 类 MLA 结构，说明 MLX 在跟进新一代开源模型"
+            ]
+          }
+        ],
+        "model_capacity_zh": "发布说明未给任何模型或性能数字。MLX 本身不限制模型规模，实际能跑多大取决于统一内存容量与带宽；本月第三方案例：Bonsai 27B（1-bit，3.9GB）在 M5 Max 上 87 tok/s（PrismML 自测）。"
+      },
+      {
+        "date": "2026-07-06",
+        "vendor": "Apple",
+        "category": "软件栈/工具链",
+        "title": "Here's what's new with iOS 27 beta 3",
+        "title_zh": "iOS 27 开发者 beta 3：Siri AI 资产重下载",
+        "url": "https://9to5mac.com/2026/07/06/heres-whats-new-with-ios-27-beta-3/",
+        "source_type": "媒体",
+        "summary_zh": "iOS 27 开发者 beta 3（build 24A5380h）于 7 月 6 日推送（Macworld 记为 7 月 3 日，各来源不一致）。AI 相关变化包括：部分设备在 beta 2→3 之间重新下载 Apple Intelligence 模型资产，期间暂时无法使用新 Siri；Siri 语音新增语速（Pace）和表现力（Expressivity）滑块；相机新增 Siri 模式；watchOS 27 beta 3 首次加入 Siri AI 和独立 Siri App。",
+        "whats_new_zh": [
+          "build 24A5380h；Apple Intelligence 资产在部分设备上重新下载（媒体观察）",
+          "Siri 语音 Pace / Expressivity 滑块仅在新 Siri 上可用；有媒体称语音自定义需要 iPhone 17 Pro/Pro Max/Air",
+          "索引设置文案改为“Optimizing Search and Siri”",
+          "watchOS 27 beta 3：加入 Siri AI 支持和独立 Siri App",
+          "含基带固件更新；媒体称续航仍差"
+        ],
+        "key_specs": {
+          "other": "build 24A5380h；模型资产大小未披露"
+        },
+        "edge_ai_impact_zh": "模型资产在 beta 之间整体重下载，说明端侧 AFM 权重和适配器仍在频繁更新；语音自定义限定在 A19 Pro / 12GB 机型，与 AFM 3 Core Advanced 的设备门槛一致（推断）。",
+        "evidence_urls": [
+          "https://www.iphoneincanada.ca/2026/07/07/whats-new-in-ios-27-beta-3-all-the-changes/",
+          "https://www.macworld.com/article/3190070/the-os-27-public-betas-are-out-now-with-siri-ai-platform-improvements-and-more.html"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "端侧模型行为",
+            "points": [
+              "beta 2→3 之间重下载 Apple Intelligence 资产，期间新 Siri 不可用，说明模型以独立资产形式分发，可以不随系统镜像更新",
+              "索引文案改为“Optimizing Search and Siri”，即个人上下文索引（邮件、消息、照片）由端侧完成，再供 Siri AI 检索"
+            ]
+          },
+          {
+            "heading": "设备分层",
+            "points": [
+              "有媒体称语音 Pace/Expressivity 自定义需要 iPhone 17 Pro/Pro Max/Air；另一来源只写“支持的设备”，口径不一",
+              "这些机型都是 12GB 内存；结合 MacRumors 所说“Core Advanced 驱动更具表现力的语音”，可以推断语音生成走的是 Core Advanced"
+            ]
+          },
+          {
+            "heading": "手表端",
+            "points": [
+              "watchOS 27 beta 3 首次加入 Siri AI 和独立 Siri App；手表端模型如何部署、是否依赖配对 iPhone，均未披露"
+            ]
+          }
+        ],
+        "model_capacity_zh": "Apple 未披露各 beta 的端侧模型版本、位宽或资产大小。可参照的官方口径：AFM 3 Core 为 3B 稠密，Core Advanced 为 20B 总参、激活 1–4B；MacRumors 转述称 Core Advanced 负责更具表现力的 Siri 语音和系统级听写，仅限 iPhone 17 Pro 与 iPhone Air。"
+      },
+      {
+        "date": "2026-07-09",
+        "vendor": "Apple",
+        "category": "产业动态",
+        "title": "Apple Exploring Ways to Run Much Larger AI Models Directly on iPhones",
+        "title_zh": "爆料：Apple 与 PrismML 洽谈端侧 27B 模型",
+        "url": "https://www.macrumors.com/2026/07/09/apple-prismml-larger-on-device-ai-models/",
+        "source_type": "媒体",
+        "summary_zh": "据 The Information（MacRumors 7 月 9 日转述），Apple 与做极致压缩模型的初创公司 PrismML 会面，评估其技术在 iPhone 上的速度、能效与性能。PrismML 把阿里 Qwen 3.6 27B 压缩到可以完整运行在 iPhone 17 Pro 上，参数量超过 Apple 自家端侧最大模型 AFM 3 Core Advanced（20B 总参、激活 1–4B）。报道称双方接触属于探索性质。",
+        "whats_new_zh": [
+          "PrismML 模型为 27B 稠密，“全部 27B 参数同时激活”；AFM 3 Core Advanced 为 20B 稀疏、激活 1–4B",
+          "报道称 PrismML 把模型从 54GB 压到约 4GB；在 iPhone 17 Pro 上运行",
+          "Apple 的动机：让更多 Apple Intelligence 功能从 PCC 转到端侧，降低服务器成本、加强隐私（媒体转述）",
+          "PrismML CEO 承认压缩会带来几个百分点的性能损失，事实记忆先于推理、数学能力退化（媒体转述）"
+        ],
+        "key_specs": {
+          "memory": "27B 1-bit 约 3.9–4GB 权重",
+          "other": "设备：iPhone 17 Pro（A19 Pro，12GB）"
+        },
+        "edge_ai_impact_zh": "这是 Apple 在 MoE + 闪存分层路线之外，评估“极低位宽稠密大模型”的信号。如果 1-bit 稠密 27B 能在 12GB 手机上实用，端侧模型的上限将由位宽而不是参数量决定。目前属于爆料，没有任何产品承诺。",
+        "evidence_urls": [
+          "https://www.businesstoday.in/technology/news/story/apple-wants-your-iphone-to-handle-bigger-ai-tasks-on-device-heres-how-542269-2026-07-10",
+          "https://prismml.com/news/prismml-releases-bonsai-27b"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "两条端侧大模型路线对比",
+            "points": [
+              "Apple 路线（官方）：20B MoE，共享专家常驻 DRAM，路由专家放在 NAND，按 prompt 路由；每 token 只读 1–4B 参数",
+              "PrismML 路线（第三方官方/爆料）：27B 稠密，1.125-bit/权重，全部权重常驻 DRAM（3.9GB），每 token 读全部 27B",
+              "前者靠稀疏降低每 token 读取的字节数，后者靠位宽降低；两种方式的带宽负担处于同一量级（推算）"
+            ]
+          },
+          {
+            "heading": "带宽推算",
+            "points": [
+              "1-bit 27B 每 token 约读 3.9GB；11 tok/s 对应约 43GB/s 有效权重带宽（推算）",
+              "若 Core Advanced 激活 4B、按 4-bit 计约 2GB/token，同样带宽下理论上可以更快；Apple 未披露其位宽与 tok/s"
+            ]
+          },
+          {
+            "heading": "风险与口径",
+            "points": [
+              "原始来源为 The Information 付费报道，MacRumors 等转述；没有 Apple 官方回应",
+              "关于可运行设备说法不一：MacRumors 写 iPhone 17 Pro，另有报道称 iPhone 15 及以上",
+              "分析人士提醒：长 prompt、续航和大规模可靠性都还没有在受控演示之外得到验证"
+            ]
+          }
+        ],
+        "model_capacity_zh": "爆料口径：27B 稠密、全激活，约 4GB，可在 iPhone 17 Pro 上运行；PrismML 官方口径为 11 tok/s（1-bit）。对比 Apple 官方：AFM 3 Core Advanced 为 20B 总参、激活 1–4B，位宽未披露。"
+      },
+      {
+        "date": "2026-07-04",
+        "vendor": "Apple",
+        "category": "学术研究",
+        "title": "Apple at the International Conference on Machine Learning (ICML) 2026",
+        "title_zh": "Apple 亮相 ICML 2026：端侧推理论文集中出现",
+        "url": "https://machinelearning.apple.com/updates/apple-at-icml-2026",
+        "source_type": "官方",
+        "summary_zh": "Apple 机器学习研究站 7 月 4 日发布 ICML 2026（首尔，7 月 6–11 日）参会页，列出约 25 篇主会论文、10 余篇 workshop 论文，展台每天演示“Local agentic coding with MLX”。与端侧推理直接相关的论文集中在三类：MoE 专家缓存（SpecMD）、KV Cache 压缩/淘汰（EpiCache、KV Policy）、扩散语言模型（RCD、Unmasking Policy，后者为 Oral），另有把 FFN 变成可外存查表的 MemoryLLM。",
+        "whats_new_zh": [
+          "主会论文约 25 篇，分布在 8 个 poster session；Oral 1 篇（Learning Unmasking Policies for Diffusion LMs，7 月 7 日）",
+          "端侧效率相关至少 6 篇：SpecMD、EpiCache、Learning to Evict（KVP）、MemoryLLM、Residual Context Diffusion、Unmasking Policy",
+          "展台 #B305 每日演示“Local agentic coding with MLX”，即在 Mac 本地用 MLX 跑编码 Agent",
+          "Minsik Cho 团队一次出 3 篇（SpecMD、EpiCache、MemoryLLM），方向都是“权重/KV 在 DRAM 与外存之间如何搬运”"
+        ],
+        "key_specs": {
+          "other": "ICML 2026，首尔，2026-07-06~11；展台 #B305 Hall B1"
+        },
+        "edge_ai_impact_zh": "这批论文与 AFM 3 Core Advanced“共享专家常驻 DRAM、路由专家从 NAND 按需载入”的设计高度对应：专家预取、KV 预算管理和 FFN 外存化，都是在 12GB 级内存里跑 20B 级模型时必须解决的问题。",
+        "evidence_urls": [
+          "https://machinelearning.apple.com/research/specmd-expert-prefetching",
+          "https://machinelearning.apple.com/research/epicache"
+        ],
+        "confidence": "high",
+        "venue": "ICML 2026",
+        "affiliation": "Apple",
+        "authors": "Apple MLR 多个团队",
+        "deep_dive_zh": [
+          {
+            "heading": "与端侧推理相关的论文分组",
+            "points": [
+              "MoE 专家缓存：SpecMD（Least-Stale 淘汰策略，命中率 >88%，OLMoE 上 TTFT 最多 -34.7%）",
+              "KV Cache：EpiCache（4–6 倍压缩接近全缓存精度，峰值内存最多 -3.7 倍）、Learning to Evict（每个 head 一个 RL 小 agent 排序 token，测到 128K）",
+              "扩散 LM：Residual Context Diffusion（去噪步数最多减 4–5 倍）、Learning Unmasking Policies（单层 Transformer 策略网络，Oral）",
+              "FFN 外存化：MemoryLLM 把 FFN 训练成与上下文无关的 token 级查表，可在显存与存储之间按需搬运"
+            ]
+          },
+          {
+            "heading": "与 Apple 产品路线的对应",
+            "points": [
+              "AFM 3 Core Advanced 官方架构为“按 prompt 路由、路由专家从 NAND 载入”，SpecMD 研究的正是专家缓存命中率与淘汰策略",
+              "iOS 27 的 Siri AI 主打个人上下文与多轮对话，EpiCache 的目标场景就是长期对话的 KV 预算管理",
+              "扩散 LM 能一次解码多个 token，可以缓解端侧解码受内存带宽限制的问题；Apple 本月有 2 篇相关论文，均未披露是否进入产品"
+            ]
+          },
+          {
+            "heading": "未披露 / 需注意",
+            "points": [
+              "会议页没有提到任何量化位宽或 Apple 硬件实测；论文实验多在 GPU 上完成，硬件型号在摘要中未披露",
+              "SpecMD、EpiCache、KVP 的 arXiv 首版均早于 7 月（2025-09 至 2026-02），7 月是正式发表与展示时间"
+            ]
+          }
+        ],
+        "model_capacity_zh": "会议页本身不涉及具体模型规模；相关论文的实验模型见各单条（SpecMD 用 OLMoE、KVP 测到 128K 上下文）。Apple 自家端侧模型 AFM 3 Core Advanced 为 20B 总参、激活 1–4B（官方口径），位宽未披露。"
+      },
+      {
+        "date": "2026-07-09",
+        "vendor": "Apple",
+        "category": "学术研究",
+        "title": "EpiCache: Episodic KV Cache Management for Long-Term Conversation on Resource-Constrained Environments",
+        "title_zh": "EpiCache：面向资源受限设备的长对话 KV 管理",
+        "url": "https://machinelearning.apple.com/research/epicache",
+        "source_type": "论文",
+        "summary_zh": "EpiCache 是一个免训练的 KV Cache 管理框架，面向固定内存预算下的长期对话问答，7 月 9 日在 ICML 2026 Poster Session 6 展示。方法分两步：先用分块 prefill 限制峰值内存，再把对话历史按主题聚成若干“episode”，在每个 episode 内部做 KV 淘汰。代码已开源。",
+        "whats_new_zh": [
+          "在 LongMemEval、Realtalk、LoCoMo 上准确率最多提升 30%（相对基线压缩方法）",
+          "4–6 倍 KV 压缩下准确率接近全缓存",
+          "延迟最多降低 2.4 倍，峰值内存最多降低 3.7 倍",
+          "代码：github.com/apple/ml-epicache"
+        ],
+        "key_specs": {
+          "memory": "固定 KV 预算，4–6× 压缩；峰值内存 -3.7×",
+          "other": "免训练；评测模型摘要未列出"
+        },
+        "edge_ai_impact_zh": "端侧助手的瓶颈往往不是权重，而是多轮对话累积的 KV。EpiCache 用分块 prefill 把峰值内存控制住，这对 8–12GB 手机上的长期个人助理（例如 Siri AI 的个人上下文）更实用。",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2509.17396",
+          "https://github.com/apple/ml-epicache",
+          "https://machinelearning.apple.com/updates/apple-at-icml-2026"
+        ],
+        "confidence": "high",
+        "venue": "ICML 2026",
+        "affiliation": "Apple",
+        "authors": "Minsoo Kim, Arnav Kundu, Han-Byul Kim et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "为什么现有方法不够",
+            "points": [
+              "多数 KV 压缩在整段上下文 prefill 完成之后才淘汰，峰值内存仍然没有上限，在手机上会直接 OOM",
+              "按当前 query 淘汰的方法，会丢掉后续轮次才用得上的信息，多轮对话的准确率因此下降"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "分块 prefill：边读边压缩，使峰值 KV 始终不超过预算",
+              "情节化（episodic）压缩：先把对话历史按主题聚成 episode，再为每个 episode 维护一份压缩后的 KV，提问时按相关 episode 取用",
+              "免训练，可直接套在现有模型上"
+            ]
+          },
+          {
+            "heading": "效果与适用性",
+            "points": [
+              "三个长期对话基准上准确率最多 +30%；4–6 倍压缩时接近全缓存精度",
+              "延迟最多 -2.4 倍、峰值内存最多 -3.7 倍，都直接对应端侧的功耗和可用内存",
+              "arXiv v1 为 2025-09-22，v4 为 2026-05-19；7 月是 ICML 正式发表"
+            ]
+          }
+        ],
+        "model_capacity_zh": "论文针对“KV 随对话线性增长、超出设备内存”的场景；具体评测模型和 KV 预算（GB）摘要未披露，只给出 4–6 倍压缩、峰值内存最多 -3.7 倍。"
+      },
+      {
+        "date": "2026-07-08",
+        "vendor": "Apple",
+        "category": "学术研究",
+        "title": "SpecMD: A Comprehensive Study On Speculative Expert Prefetching",
+        "title_zh": "SpecMD：MoE 专家预取与缓存策略研究",
+        "url": "https://machinelearning.apple.com/research/specmd-expert-prefetching",
+        "source_type": "论文",
+        "summary_zh": "Apple 在 ICML 2026（7 月 8 日 Poster Session 5 及展台讲解）发表 SpecMD，搭建了一个可在不同硬件配置上统一评测 MoE 专家缓存策略的框架。论文发现 MoE 专家访问不满足 LRU/LFU 假设的时间局部性，因此提出 Least-Stale 淘汰策略。在 OLMoE 上，只用约 0.6GB 缓存就能做到 88% 以上的命中率。",
+        "whats_new_zh": [
+          "Least-Stale 相对 LRU 的冲突缺失（collision miss）最多减少 85 倍",
+          "缓存命中率 >88%，缓存容量仅为约 5% 显存（约 0.6GB）",
+          "OLMoE 上 TTFT 最多降低 34.7%",
+          "结论：MoE 专家访问“不符合时间局部性假设”，传统 LRU/LFU 不适用"
+        ],
+        "key_specs": {
+          "memory": "专家缓存约 0.6GB（约 5% VRAM）",
+          "other": "模型 OLMoE；评测硬件型号摘要未披露"
+        },
+        "edge_ai_impact_zh": "端侧跑 MoE 时，总参数放不进 DRAM，只能缓存一部分专家，命中率直接决定速度和功耗。SpecMD 给出的是一套可复现的评测基线和更合适的淘汰策略，可以直接借鉴到“NAND/闪存 → DRAM”的专家换入换出上。",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2602.03921",
+          "https://machinelearning.apple.com/updates/apple-at-icml-2026"
+        ],
+        "confidence": "high",
+        "venue": "ICML 2026",
+        "affiliation": "Apple",
+        "authors": "Duc Hoang, Mohammad Samragh, Ajay Jaiswal et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题设定",
+            "points": [
+              "MoE 每个 token 只激活少数专家，理论上只需把被激活的专家放进快速内存；实际收益取决于专家缓存命中率",
+              "此前各家缓存策略多为临时设计，评测条件各不相同；SpecMD 把它们放进统一框架里，并在不同硬件配置下复现"
+            ]
+          },
+          {
+            "heading": "关键发现与方法",
+            "points": [
+              "专家访问不满足时间局部性：最近用过的专家，下一步不一定还会被用到，所以 LRU/LFU 会出现大量冲突缺失",
+              "Least-Stale 利用 MoE 访问模式可预测的特点，优先淘汰“最陈旧”的预取结果，冲突缺失比 LRU 最多少 85 倍",
+              "结合投机预取（speculative prefetching），在 prefill 阶段即可提前搬运下一层可能用到的专家，TTFT 最多 -34.7%"
+            ]
+          },
+          {
+            "heading": "对 Apple 端侧的意义",
+            "points": [
+              "AFM 3 Core Advanced 官方为 20B 总参、激活 1–4B，共享专家常驻 DRAM，路由专家从 NAND 载入（见 AFM 3 技术博客）",
+              "NAND→DRAM 带宽远低于 DRAM→SoC，一次未命中的代价远高于 GPU 显存场景，命中率每提高几个点都会明显影响 TTFT",
+              "Apple 产品里选择“按 prompt 路由”而不是按 token 换专家，与 SpecMD“专家访问难以按时间局部性缓存”的结论一致（推断）"
+            ]
+          }
+        ],
+        "model_capacity_zh": "实验模型 OLMoE（参数规模在摘要中未写；公开资料为 7B 总参/约 1B 激活级别的 MoE，此处不作为论文口径）。缓存 0.6GB 即可达到 >88% 命中率；目标场景是“总参数放不进快速内存、只缓存部分专家”。"
+      },
+      {
+        "date": "2026-07-08",
+        "vendor": "City University of Hong Kong",
+        "category": "学术研究",
+        "title": "DVFS for Small Language Model Inference on Mobile Edge Devices",
+        "title_zh": "DVFSLM：面向端侧小模型推理的 GPU/EMC 协同调频",
+        "url": "https://arxiv.org/abs/2609.13153",
+        "source_type": "论文",
+        "summary_zh": "DVFSLM 针对 Jetson 类移动边缘设备上的 SLM 自回归推理，设计了一个面向截止时间的调频器：用基于矩阵运算规模和硬件计数器的功耗/时延估计器，在 CPU 固定于预标定阈值频率的前提下，联合选择 GPU 与 EMC（外部内存控制器）频率，在满足 token 生成速率的同时最小化每 token 能耗。在 Jetson AGX Orin 上，比内置调频器节能最多 12.4%、比 GearDVFS 多 8.4%，时延 QoS 分别提升最多 93.12% 和 69.14%。注意：arXiv 编号为 2609.*，但 abs 页显示 v1 提交于 2026-07-08（arXiv 延后公告）。",
+        "whats_new_zh": [
+          "对比内置规则调频（nvhost_podgov + schedutil，EMC 固定 2.133 GHz）每 token 能耗最多降 12.4%，对比 GearDVFS 降 8.4%",
+          "内置调频器每 token 能耗 329.4–423.4 mJ；OLMoE-1B-7B 上 GearDVFS 为 520.9–521.4 mJ，且在 40 tok/s 截止要求下 QoS 只有 61.6%",
+          "单次调频决策 1.73 ms，剪枝后降到 0.81 ms；调频器自身功耗开销 0.2%（20.77 W→20.81 W）",
+          "离线标定每个设备-模型对约 1 天、<0.33 kWh、<0.61 GB 存储"
+        ],
+        "key_specs": {
+          "process": "未涉及",
+          "cpu": "Jetson AGX Orin Arm Cortex-A78AE，0.1–2.2 GHz（运行时固定在 0.6528 GHz 阈值）",
+          "gpu": "NVIDIA Ampere GPU，0.3–1.3 GHz",
+          "npu": "未使用",
+          "memory": "EMC 0.2–3.2 GHz（共 4 档）；AGX Orin 上 GPU–EMC 搜索空间 44 种组合，Orin NX 为 28 种",
+          "power": "板载 INA3221 以 200 Hz 采样；满频运行约 20.8 W",
+          "other": "中间件形式部署在内核与应用之间，无需改模型或推理框架；默认截止 50 ms/token（20 tok/s），每 50 token 一个决策窗"
+        },
+        "edge_ai_impact_zh": "把“内存控制器频率”明确纳入端侧 LLM 调频，说明 decode 阶段带宽才是能耗与时延的关键旋钮；这类按截止时间（用户阅读速度）降频的思路可以直接迁移到手机 SoC 的 CPU/GPU/NPU/DDR 联合调频。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2609.13153"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "香港城市大学（李振江组）",
+        "authors": "Jiesong Chen, Lixiang Han, Jiani Cao et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "SLM 在 Jetson 等边缘设备上推理时，GPU、CPU、EMC 三者协同工作，但各自对功耗/时延的贡献是“黑盒”；自回归带来的上下文增长还会让每 token 负载持续变化。",
+              "内置规则调频不感知 token 生成速率；学习型调频（GearDVFS、zTT）模型过轻，无法刻画 SLM 负载，在高速率要求下会严重违约。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "用 XGBoost 解析硬件计数器（Linux Perf + CUPTI）得到负载“指纹”，再以矩阵乘规模为基础构建线性功耗/时延估计器（功耗含频率三次项）。",
+              "通过“固定另外两个处理器、单独扫一个”的解耦方式拟合参数；发现 CPU 只需固定在一个低频阈值（实测多个模型都是 0.6528 GHz），运行时只搜索 GPU–EMC 二维空间。",
+              "运行时：prefill 阶段 GPU/EMC 拉满；decode 阶段每 50 token 决策一次，带延迟反馈修正；截止要求不可行时退化为全频尽力而为。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "主平台为 Jetson AGX Orin，另在 Orin NX 上验证；能耗由 INA3221 在 200 Hz 下采样后积分。",
+              "基线：内置规则调频（GPU nvhost_podgov、CPU schedutil、EMC 固定 2.133 GHz）与加入截止项后重新训练的 GearDVFS。",
+              "每次生成 1024 token，重复 5 次报告均值与 95% 置信区间。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "每 token 能耗：比规则调频最多低 12.4%，比 GearDVFS 最多低 8.4%；时延 QoS 最多分别高 93.12% 和 69.14%。",
+              "高速率（≥40 tok/s）下，规则调频和 GearDVFS 开始错过截止；在 TinyLLaMA 60–100 tok/s 区间，GearDVFS 看似更省电，实际是因为严重违约。",
+              "EMC 频率敏感性：EMC 过低（0.204 GHz）时所有模型 QoS 显著下降，每 token 能耗反而上升；EMC 过高也不一定省电。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "说明端侧 LLM 的能效优化要把 DDR/EMC 当作一级变量，而不是只调 GPU。",
+              "局限：只在 Jetson（GPU 为主）上验证，没有涉及手机 NPU；节能幅度（≤12.4%）不大；每个设备-模型对需约 1 天离线标定。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "实测模型为 117M–7B：GPT2-small/medium/large/xl、Qwen2.5-0.5B、TinyLLaMA-1.1B、OLMoE-1B-7B（MoE），统一 q4_0 量化（llama.cpp 生态）。目标速率 10–100 tok/s；80/100 tok/s 超出设备持续峰值（具体模型的峰值速率未披露）。"
+      },
+      {
+        "date": "2026-07-06",
+        "vendor": "Apple",
+        "category": "学术研究",
+        "title": "Residual Context Diffusion Language Models",
+        "title_zh": "RCD：残差上下文扩散语言模型",
+        "url": "https://machinelearning.apple.com/research/residual-context-diffusion",
+        "source_type": "论文",
+        "summary_zh": "块式扩散 LLM（dLLM）每一步并行解码多个 token，但 remasking 只保留置信度最高的 token，其余计算被浪费。RCD 把被丢弃 token 的表示作为“上下文残差”送入下一步去噪，用约 1B tokens 的两阶段训练即可把标准 dLLM 转成 RCD。同场还有 Apple 的 Oral 论文“Learning Unmasking Policies”，用单层 Transformer 的 RL 策略决定每步解开哪些 token。",
+        "whats_new_zh": [
+          "在多项基准上为前沿 dLLM 带来 5–10 个点的准确率提升",
+          "AIME 类任务准确率接近翻倍",
+          "在同等精度下去噪步数最多减少 4–5 倍",
+          "转换成本：约 1B tokens 训练；在 SDAR（长 CoT）与 LLaDA（短 CoT）上验证",
+          "配套 Oral：Unmasking Policy 在块式生成下追平 SOTA 启发式，在全扩散生成下超过启发式（摘要未给具体数字）"
+        ],
+        "key_specs": {
+          "other": "基座 SDAR / LLaDA；转换训练约 1B tokens"
+        },
+        "edge_ai_impact_zh": "端侧自回归解码受内存带宽限制，每生成一个 token 就要把权重完整读一遍。扩散 LM 一步能出多个 token，步数再减 4–5 倍，相当于把同样的带宽摊到更多 token 上，这是绕开手机带宽墙的一条候选路线。",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2601.22954",
+          "https://machinelearning.apple.com/research/unmasking",
+          "https://arxiv.org/abs/2512.09106",
+          "https://machinelearning.apple.com/updates/apple-at-icml-2026"
+        ],
+        "confidence": "high",
+        "venue": "ICML 2026",
+        "affiliation": "Apple 与 UC Berkeley 合作者（Keutzer、Mahoney 等）",
+        "authors": "Amir Gholami, Chenfeng Xu, Coleman Hooper et al.（Apple 页面按字母序）",
+        "deep_dive_zh": [
+          {
+            "heading": "为什么关注扩散 LM",
+            "points": [
+              "自回归解码：每个 token 都要把全部激活权重读一遍，速度上限约为“带宽 ÷ 每 token 读取的权重字节数”",
+              "块式 dLLM 一次去噪一个块内的多个位置，同一次权重读取可以产出多个 token，更接近计算受限，适合有大量闲置算力的 NE/GPU"
+            ]
+          },
+          {
+            "heading": "RCD 的机制",
+            "points": [
+              "remasking 丢掉的低置信 token，其隐藏表示仍携带信息；RCD 把这些表示作为残差注入下一步",
+              "两阶段解耦训练，避免跨步反传带来的显存瓶颈；约 1B tokens 即可完成转换",
+              "效果：+5–10 点准确率，AIME 近翻倍；或在同等精度下步数减少 4–5 倍"
+            ]
+          }
+        ],
+        "model_capacity_zh": "基座为 SDAR、LLaDA 等开源 dLLM（参数量摘要未写）；论文不涉及端侧部署实测，tokens/s 未披露。"
+      },
+      {
+        "date": "2026-07-06",
+        "vendor": "清华大学 / 北京交通大学",
+        "category": "学术研究",
+        "title": "Is Your NPU Ready for LLMs? Dissecting the Hidden Efficiency Bottlenecks in Mobile LLM Inference",
+        "title_zh": "手机 NPU 跑 LLM 的隐藏效率瓶颈实测",
+        "url": "https://arxiv.org/abs/2607.05475",
+        "source_type": "论文",
+        "summary_zh": "首个跨 5 个框架（llama.cpp、GENIE、MNN、MLC-LLM、mllm）× CPU/GPU/NPU 三后端的手机 LLM 测量研究，自研 PowerBench 做后端级能耗归因。结论：NPU 擅长 prefill，decode 反而 CPU 最快；框架差异在 NPU 上被放大到 10×；调度不当造成最多 40% 能耗浪费。",
+        "whats_new_zh": [
+          "小米 17 / OnePlus 15（SM8850, Hexagon V81）上 GENIE NPU prefill 达 1213–1464 tokens/s（Qwen2.5-1.5B, W4），llama.cpp NPU 后端仅 108–115 tokens/s",
+          "同模型 decode：CPU llama.cpp 约 52–56 tokens/s，NPU GENIE 仅约 23 tokens/s",
+          "线程配置、NPU 休眠延迟与 CPU 轮询间隔不当导致最多 40% 能耗浪费；最佳实践配置估计可使 NPU 后端能耗降最多 54.8%"
+        ],
+        "key_specs": {
+          "npu": "Hexagon V75/V79/V81（SM8650/8750/8850）",
+          "memory": "16 GB",
+          "other": "设备：小米 14/15/17、OnePlus 15；Qualcomm QNN 后端"
+        },
+        "edge_ai_impact_zh": "直接回答“手机 NPU 是否适合 decode”：在当前静态图 NPU 栈下答案是否定的，prefill-NPU / decode-CPU 的阶段拆分是更务实的部署策略，也是下一代 NPU 需补的动态形状能力。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2607.05475"
+        ],
+        "confidence": "high",
+        "venue": "arXiv 预印本（未标注会议）",
+        "affiliation": "清华大学、北京交通大学",
+        "authors": "Guanyu Cai, Ruiming Tian, Lang Yang et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "已有工作只看设备级功耗，无法区分 CPU/GPU/NPU 各自开销；也缺乏跨框架、跨代 SoC 的统一对比。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "PowerBench：后端级能耗归因工具；覆盖 5 框架 × 3 后端 × 4 部手机（SM8650→SM8850 三代 Hexagon）。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "同为 QNN 后端，GENIE 1219.2 vs MNN 700.9 tokens/s（prefill），差异来自卸载策略与布局转换。",
+              "Phase split：NPU prefill 峰值 >1400 tokens/s，但 decode 中 CPU 最快（约 70 tokens/s 级），GPU 其次，NPU 落后——原因是 NPU 偏好大且固定形状的 workload，与 decode 的小 kernel、动态 KV 长度冲突。",
+              "激活量化可提升吞吐并降能耗 50% 以上，但存在精度代价。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "给出“prefill 上 NPU、decode 上 CPU”的量化依据，与 HeteroMosaic 在 AI PC 上的结论互相印证。",
+              "局限：只测高通平台（因其 NPU 栈支持最广），联发科/苹果 NPU 未覆盖；能耗节省 54.8% 为估计值。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "4 台手机：Xiaomi 17、OnePlus 15（SM8850/V81）、Xiaomi 15（SM8750/V79）、Xiaomi 14（SM8650/V75），均为 16 GB DRAM。",
+              "模型：Llama 3.2-1B/3B、Qwen 2.5-1.5B/7B、Phi 3.5-3.8B；MLLM 统一 W4A16，GENIE 仅 Qwen2.5-7B 用 W4A16，其余为 W4。",
+              "能效最佳实践用 MathQA、RoleBench、LongBench 三个数据集做端到端估算。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "实测口径：Qwen2.5-1.5B / Qwen2.5-7B（W4 或 W4A16），256 token；7B 在 CPU llama.cpp 上 decode 约 8.7–14.3 tokens/s（随机型）。"
+      },
+      {
+        "date": "2026-07-09",
+        "vendor": "ETRI",
+        "category": "学术研究",
+        "title": "Rethinking Small VLM Quantization: From Component-Wise Analysis to Hardware-Aware Edge Deployment",
+        "title_zh": "小型 VLM 分组件量化与 Jetson 部署",
+        "url": "https://arxiv.org/abs/2607.08029",
+        "source_type": "论文",
+        "summary_zh": "针对 <3B 的 VLM，把视觉编码器、projector、LLM 主干分开量化，在 Jetson Orin NX/AGX 上验证 5 个假设、6 种配置。关键发现：INT4 虽省显存，却因反量化开销导致 token 生成变慢；MoE 主干比稠密主干更抗 INT4 噪声。",
+        "whats_new_zh": [
+          "量化敏感度由结构（MoE vs dense）而非规模决定",
+          "SigLIP 编码器在 Jetson Ampere 上 INT8 延迟异常偏高（kernel-硬件交互问题）",
+          "INT4 LLM 主干：显存大降但 token 生成更慢（反量化开销）",
+          "Qwen3-VL-2B 某些配置 MME 总分反升 2.77%（NX）/4.32%（AGX）"
+        ],
+        "key_specs": {
+          "gpu": "Jetson Orin NX / AGX Orin（Ampere）"
+        },
+        "edge_ai_impact_zh": "提醒端侧部署者：INT4 不等于更快，在缺乏原生 INT4 MAC 的硬件上反量化可能吃掉带宽收益——这正是 NPU 原生 W4A8/FP4 支持的价值。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2607.08029"
+        ],
+        "confidence": "medium",
+        "venue": "ICML 2026 Workshop（Hypothesis Testing）",
+        "affiliation": "韩国电子通信研究院（ETRI）",
+        "authors": "Hyeju Shin, Chorwon Kim, Ryangsoo Kim et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "<3B VLM 正成为端侧多模态主力，但业界通常整体量化，缺乏对视觉编码器、projector、语言主干各自敏感度的拆分认识。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "vision encoder / projector / LLM backbone 分组件量化，6 种配置 × 2 平台（Orin NX / AGX Orin），以 5 个可证伪假设组织实验。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "复合误差大体可加，唯模态对齐路径例外；intelligence-per-joule 随平台带宽显著变化。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "ICML 2026（7/6–11，首尔）workshop 论文，非主会。局限：仅 NVIDIA Jetson，BitsAndBytes 为主（附 AWQ 校验）。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "Qwen3-VL-2B-Instruct、DeepSeek-VL2-Tiny 等 <3B VLM；tokens/s 详见论文表格（此处未摘录）。"
+      },
+      {
+        "date": "2026-07-08",
+        "vendor": "Apple",
+        "category": "学术研究",
+        "title": "Learning to Evict from Key-Value Cache",
+        "title_zh": "Learning to Evict：用强化学习做 KV 淘汰",
+        "url": "https://machinelearning.apple.com/research/evict",
+        "source_type": "论文",
+        "summary_zh": "论文把 KV Cache 淘汰建模为强化学习问题，提出 KV Policy（KVP）：为每个 attention head 训练一个轻量 agent，基于预先采集的生成轨迹，学习按“未来有用程度”给 token 排序。方法不需要修改底层 LLM，7 月 8 日在 ICML Poster Session 4 展示，代码已开源。",
+        "whats_new_zh": [
+          "在 RULER（最长 128K 上下文）和 OASST2-4k 多轮对话上优于强基线（摘要未给具体百分比）",
+          "在 BoolQ、LongBench passage retrieval、GovReport 上零样本泛化，并可泛化到更长序列",
+          "在两个模型家族上验证；不改动 LLM 本身",
+          "代码：github.com/apple/ml-learning-to-evict"
+        ],
+        "key_specs": {
+          "other": "per-head 轻量 RL agent；上下文最长 128K"
+        },
+        "edge_ai_impact_zh": "与启发式的 H2O/SnapKV 类方法相比，学习式淘汰策略的推理开销很小，适合部署在端侧，用来在固定 KV 预算下提升长上下文质量。",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2602.10238",
+          "https://github.com/apple/ml-learning-to-evict",
+          "https://machinelearning.apple.com/updates/apple-at-icml-2026"
+        ],
+        "confidence": "medium",
+        "venue": "ICML 2026",
+        "affiliation": "Apple",
+        "authors": "Luca Moschella, Laura Manduchi, Ozan Sener",
+        "deep_dive_zh": [
+          {
+            "heading": "方法",
+            "points": [
+              "每个 head 一个小 agent，输入为 token 特征，输出为保留优先级；只在离线采集的生成轨迹上训练，推理时不需要回传梯度",
+              "淘汰决策只依赖“未来有用程度”的预测，所以可以和任何 KV 预算组合使用"
+            ]
+          },
+          {
+            "heading": "评测",
+            "points": [
+              "长上下文 RULER（最长 128K）和多轮对话 OASST2-4k 上优于强基线；摘要没有给出具体分数",
+              "零样本迁移到 BoolQ、LongBench 检索、GovReport，并能泛化到训练时没见过的更长序列"
+            ]
+          },
+          {
+            "heading": "与 EpiCache 的关系",
+            "points": [
+              "EpiCache 是免训练、按主题分段；KVP 是学习式、按 head 打分。两者都面向固定 KV 预算，可以互补（推断）",
+              "两篇都给出了开源代码，便于在 MLX/端侧框架上复现"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露具体模型规模；评测上下文最长 128K tokens（RULER）。"
+      },
+      {
+        "date": "2026-07-08",
+        "vendor": "Apple",
+        "category": "学术研究",
+        "title": "MemoryLLM: Plug-n-Play Interpretable Feed-Forward Memory for Transformers",
+        "title_zh": "MemoryLLM：可外存查表的 FFN 记忆",
+        "url": "https://machinelearning.apple.com/research/memoryllm",
+        "source_type": "论文",
+        "summary_zh": "MemoryLLM 把 FFN 与自注意力解耦，直接用 token embedding 单独训练 FFN，使其成为“与上下文无关的 token 级检索记忆”。这样 FFN 输出可以预先计算成 token 查表（ToL），按需在显存与存储之间搬运。论文同时提出折中架构 Flex-MemoryLLM，用来弥补去上下文训练带来的性能损失。7 月 8 日在 ICML 展示。",
+        "whats_new_zh": [
+          "FFN 改为只依赖 token embedding，可离线预计算为 token-wise lookup（ToL）",
+          "ToL 支持在 VRAM 与存储之间按需传输，以提升推理效率（摘要未给出具体倍数）",
+          "Flex-MemoryLLM 介于标准 Transformer 与 MemoryLLM 之间，用于缩小性能差距",
+          "arXiv 2602.00398，2026-01-30 提交"
+        ],
+        "key_specs": {
+          "memory": "FFN → 预计算查表，可放在存储中按需载入",
+          "other": "具体模型规模与加速比未披露"
+        },
+        "edge_ai_impact_zh": "Transformer 中 FFN 通常占参数的大头。如果 FFN 能变成按 token 索引的查表，就可以放到闪存里按需读取，与 AFM 3 把路由专家放在 NAND 的思路一致，可进一步降低 DRAM 占用。",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2602.00398",
+          "https://machinelearning.apple.com/updates/apple-at-icml-2026"
+        ],
+        "confidence": "medium",
+        "venue": "ICML 2026",
+        "affiliation": "Apple",
+        "authors": "Ajay Jaiswal, Lauren Hannah, Arnav Kundu et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "机制",
+            "points": [
+              "标准 FFN 的输入是经过注意力混合的上下文表示，无法预先计算；MemoryLLM 让 FFN 直接吃 token embedding，输出只取决于 token id",
+              "因此每个词表项的 FFN 输出都可以离线算好，推理时变成查表，查表结果可以放在存储里"
+            ]
+          },
+          {
+            "heading": "代价与折中",
+            "points": [
+              "去掉上下文后 FFN 表达能力下降，论文用 Flex-MemoryLLM 部分保留上下文相关的 FFN 来弥补",
+              "具体精度损失与存储开销摘要未披露"
+            ]
+          },
+          {
+            "heading": "端侧意义",
+            "points": [
+              "把“计算”换成“查表 + 闪存读取”，对 DRAM 容量紧张、闪存容量充裕的手机更友好（推断）",
+              "与同团队的 SpecMD、EpiCache 一起，构成“权重/KV 分层存放”的研究组合"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露（摘要和 Apple 页面均没有模型规模、卸载比例和速度数字）。"
+      },
+      {
+        "date": "2026-07-02",
+        "vendor": "University of Macau / GDIIST",
+        "category": "学术研究",
+        "title": "MxGLUT: A Reconfigurable LUT-Centric Broadcast Dataflow Accelerator for Mixed-Precision GEMM",
+        "title_zh": "MxGLUT：统一FP8-INT4/FP8的LUT加速器",
+        "url": "https://arxiv.org/abs/2607.01607",
+        "source_type": "论文",
+        "summary_zh": "澳门大学与广东省智能科学与技术研究院提出 MxGLUT。它在同一套 LUT 查表累加（RAC）机制下同时执行 FP8-INT4（线性层）和 FP8-FP8（attention）GEMM，不需要专门的 FP 乘法器，也不用把 attention 交给向量单元。数据流可重构：prefill 用 OS 数据流，把部分和留在本地；decode 用 WS 数据流，提高权重复用。UMC 28nm、200 MHz 综合，加速器级 0.492 TFLOPS/mm²、11.58 TFLOPS/W。",
+        "whats_new_zh": [
+          "乘法器面积最多降 56.92%；FP8-INT4 和 FP8-FP8 模式下功耗分别最多降 77.07% 和 78.35%",
+          "加速器级 0.492 TFLOPS/mm²、11.58 TFLOPS/W；相对只支持 FP8-INT4 的 FIGLUT，增加原生 FP8-FP8 支持只让面积效率降 2.57%、能效降 3.34%",
+          "Llama 系列（1B–8B）：prefill/decode 最多加速 2.16×/1.49×，归一化能耗降到 0.44×/0.71×；PPL 最多升 1.70%"
+        ],
+        "key_specs": {
+          "process": "UMC 28nm CMOS 综合 @200 MHz（非流片）",
+          "npu": "MxMPU 由混合精度 LUT PE（MxLPE）组成，FP8 激活拆成符号/4 bit 指数/3 bit 尾数后用 BCQ 编码生成 LUT；RLB 数据流在 WS 和 OS 间切换",
+          "memory": "16 块激活 SRAM、16 块权重 SRAM、16 块输出 SRAM，每块 8 KB；256 bit AXI + DMA 接片外 DRAM；SRAM/DRAM 能耗用 CACTI 建模",
+          "other": "评测：Timeloop 映射优化，Llama-3 1B/3B/8B，上下文 1K–8K，batch 64"
+        },
+        "edge_ai_impact_zh": "W4A8（FP8 激活、INT4 权重）是端侧 NPU 的常见精度点，但 attention 里的 FP8×FP8 常常要另设一条数据通路。MxGLUT 用一套 LUT 机制同时覆盖两种精度，只多付出约 3% 的效率，对追求面积效率的端侧 NPU 有参考价值。不过论文用 batch 64 评测，更偏向服务器场景。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2607.01607"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv",
+        "affiliation": "澳门大学、广东省智能科学与技术研究院",
+        "authors": "Weiyu Zhou, Chen Ding, Mingyuan Liu et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "仅量化权重时，FP8 激活 × INT4 权重适合用 LUT 加速，但 attention 中的 FP8×FP8 GEMM 仍要走 VPU，复用度低，硬件也重复。",
+              "静态数据流无法同时适配计算密集的 prefill 和 GEMV 式、带宽受限的 decode。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "统一 LUT 执行框架：FP8 激活分解后经 BCQ 编码构造查找表，FP8-INT4 和 FP8-FP8 共用一套 RAC 硬件。",
+              "RLB 广播数据流：prefill 用 OS，把 FP32 部分和留在本地，减少写回；decode 用 WS，提高权重驻留。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "UMC 28nm、200 MHz 综合；所有对比加速器使用相同的时钟、阵列规模、SRAM 预算、AXI/DMA 和内存接口，用 Timeloop 做相同的映射优化。",
+              "基线：FP8 脉动阵列（WS/OS）、FP8+反量化、FIGLUT+VPU。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "上下文越长，执行越受 DRAM 主导，decode 阶段的收益随上下文增加而下降。",
+              "对比 FIGLUT+VPU，可以分离出原生 FP8-FP8 LUT 执行和 RLB 数据流选择各自的贡献。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "说明 LUT 型低比特加速器可以覆盖整个 Transformer，而不仅仅是线性层。",
+              "局限：只有综合结果，频率仅 200 MHz；batch 64 不符合端侧单用户场景；没有实测。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "评测 Llama-3 1B/3B/8B，W4A8（FP8-INT4）线性层 + FP8 attention，上下文 1K–8K，batch 64；PPL 最多升 1.70%。没有给出 tokens/s 绝对值。"
+      }
+    ],
+    "overview": "7 月第一周（07-02~07-09）没有芯片发布，信息集中在研究侧。Apple 在 ICML 2026 一次发布了一批端侧推理论文，主题都是“权重和 KV 如何在 DRAM 与闪存之间搬运”：SpecMD 做 MoE 专家预取，0.6GB 缓存命中率超过 88%；EpiCache 把长对话 KV 压缩 4–6 倍，峰值内存最多降 3.7 倍；MemoryLLM 把 FFN 改成可放在外存的查表结构。清华与北交大的实测论文在 4 款骁龙手机（8 Gen3 到 SM8850）上发现：NPU 的 prefill 可达 1463.7 tok/s，decode 却是 CPU 最快；调整休眠、轮询和调频参数，NPU 后端能耗可降约 54.8%（推算）。传闻 Apple 与 PrismML 洽谈在 iPhone 上跑稠密 27B 模型。内存方面，TrendForce 预计 3Q26 DRAM 合约价再涨 13–18%。谷歌发布 LiteRT.js，浏览器内可以调用 NPU（实验性）。",
+    "takeaways_zh": [
+      "手机 NPU 的优势集中在 prefill，decode 受静态图、调度开销和 LPDDR 带宽限制。“NPU 跑大模型”的体验瓶颈在解码和软件栈，而不在 TOPS。",
+      "Apple 的研究路线（专家缓存、KV 预算、FFN 外存化）和 9 月发布的 AFM 3“闪存存专家、按需载入”一脉相承：在 12GB 内存下放进更大的模型，靠的是存储分层。",
+      "DRAM 涨幅虽在收敛，3Q 仍涨 13–18%，端侧内存预算没有松动的迹象。"
+    ]
   }
 }

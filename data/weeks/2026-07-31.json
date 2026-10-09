@@ -4626,5 +4626,220 @@
         "desc": "命令行调用 Apple 端侧 Foundation Models：小巧、快速、无需 API key，致敬 Simon Willison 的 llm。"
       }
     ]
+  },
+  "hardware": {
+    "window": {
+      "start": "2026-07-31",
+      "end": "2026-08-01"
+    },
+    "items": [
+      {
+        "date": "2026-07-31",
+        "vendor": "北航 / 港大 等",
+        "category": "存内计算/PIM",
+        "title": "Selective KV Cache Protection for Noise-Resilient LLM Inference on Analog Compute-In-Memory Systems",
+        "title_zh": "模拟 CIM 上 KV Cache 的选择性保护",
+        "url": "https://arxiv.org/abs/2607.29076",
+        "source_type": "论文",
+        "summary_zh": "首个系统研究模拟 CIM 上动态 attention（KV Cache 需反复原位写入）噪声问题的工作：sink token 与最近 token 对噪声最敏感。方案把 sink + 最近窗口放高精度数字路径，其余 KV 走模拟 CIM，并协同调度编程、所有权迁移与批量 MVM tile。",
+        "whats_new_zh": [
+          "9 个 LLM 平均 perplexity（噪声下）33.91 → 11.95，接近干净基线 11.06",
+          "动态 KV 编程行利用率 23.1% → 91.2%",
+          "动机：注入 KV 噪声使 Qwen3-8B PPL 10.64→21.54、Qwen3-14B 9.05→19.11"
+        ],
+        "key_specs": {
+          "memory": "模拟 CIM 阵列存大部分 KV；数字路径存 sink/近期 token"
+        },
+        "edge_ai_impact_zh": "模拟 CIM 若要从“权重静态”走向“KV 动态”，必须做 token 级精度分级；这是 CIM 进端侧长上下文 LLM 的前置条件。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2607.29076"
+        ],
+        "confidence": "high",
+        "venue": "arXiv 预印本",
+        "affiliation": "北京航空航天大学、香港大学、中国科学技术大学、北京大学",
+        "authors": "Yuannuo Feng, Wenyong Zhou, Yuang Ma et al.",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "KV Cache 需反复原位更新，与模拟 CIM 的 weight-stationary 范式冲突，动态计算暴露于器件噪声。"
+            ]
+          },
+          {
+            "heading": "方法",
+            "points": [
+              "Guard-of-Sink token 分区；合并迁移与 tile 调度；配套硬件架构。"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "PPL 33.91→11.95；编程行利用率 23.1%→91.2%。"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "与 StreamingLLM 的 sink 现象在硬件可靠性上的再发现。局限：噪声为建模注入，非流片测量；未给出能效数字。"
+            ]
+          },
+          {
+            "heading": "实验设置",
+            "points": [
+              "噪声模型由数百颗 CIM 芯片的实测误差分布拟合，并按温度区分噪声强度；数据集为 WikiText-2、ARC-C、PIQA、GSM8K、MATH500。",
+              "对比基线：无保护模拟、多次读取平均、校准补偿；另比较只保护 sink、只保护最近、随机保护三种策略。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "评测 9 个模型，包括 Qwen3（0.6B/8B/14B）、Llama3.2-1B、Llama3、DeepSeek、OLMo、OLMoE；上下文从 2K 扩到 512K。所有结果来自基于实测标定噪声的仿真，没有给出 tokens/s。"
+      },
+      {
+        "date": "2026-08-01",
+        "vendor": "CXMT（长鑫存储）",
+        "category": "存储与内存",
+        "title": "长鑫LPDDR6接近研发验证尾声",
+        "title_zh": "长鑫LPDDR6接近验证尾声，设计速率12800Mbps",
+        "url": "https://www.yicai.com/news/103301625.html",
+        "source_type": "媒体",
+        "summary_zh": "第一财经8月1日援引业内人士：长鑫LPDDR6已接近研发验证尾声，设计规格速率12800Mbps，与SoC配合的基础运行速率10667Mbps，16Gb颗粒、1295球POP封装；若按期完成验证，或成为全球最早量产LPDDR6的厂商之一。",
+        "whats_new_zh": [
+          "设计速率12800Mbps、基础运行10667Mbps",
+          "单颗16Gb，1295-ball POP封装",
+          "低功耗与RAS特性较LPDDR5X“明显优化”（未给数字）",
+          "2025年长鑫LPDDR产品占主营收入66.43%"
+        ],
+        "key_specs": {
+          "memory": "LPDDR6 16Gb，12800/10667Mbps",
+          "other": "1295-ball POP；工艺节点未披露"
+        },
+        "edge_ai_impact_zh": "国产LPDDR6与SK海力士同步进入量产窗口，有利于国产手机/眼镜/机器人SoC在DRAM紧缺期获得第二供应源。",
+        "evidence_urls": [],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "规格",
+            "points": [
+              "12800Mbps为设计规格，SoC实际按10667Mbps起步——与当前LPDDR6 SoC（如骁龙/玄戒）首发频点一致。",
+              "1295-ball POP说明主要面向手机AP叠封。"
+            ]
+          },
+          {
+            "heading": "时间线",
+            "points": [
+              "3月市场报告称长鑫已向核心客户送样，或于2H26量产导入；LPDDR5/DDR5/LPDDR5X分别于2023/2024/2025年量产。",
+              "三星CES展示LPDDR6但量产时间未定；美光6月财报只谈过渡未给时间（媒体口径）。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "推算：12800Mbps×96bit原始153.6GB/s，扣除LPDDR6元数据开销（256/288）约136.5GB/s，8B INT4 Decode上限约30 t/s；10667Mbps下约25 t/s。"
+      },
+      {
+        "date": "2026-07-31",
+        "vendor": "Qualcomm",
+        "category": "软件栈/工具链",
+        "title": "GenieX releases v0.3.14 – v0.3.18 (July 2026)",
+        "title_zh": "GenieX 7月迭代：Gemma 4上HTP、投机解码泛化",
+        "url": "https://github.com/qualcomm/GenieX/releases",
+        "source_type": "官方",
+        "summary_zh": "高通开源的端侧生成式AI运行时GenieX在7月发布了v0.3.14（7/2）、v0.3.16（7/20）、v0.3.17（7/24）和v0.3.18（7/31）四个版本。主要变化：默认使用NPU；通过QAIRT在Hexagon HTP上跑Gemma 4 E2B/E4B；llama.cpp路径的投机解码扩展到所有模型类型；自动识别Dragonwing IQ-8275和Snapdragon X2 Plus；Windows上使用微软签名的HTP catalog，不用再导入证书。",
+        "whats_new_zh": [
+          "v0.3.14（7/2）：Hexagon toolchain升到v0.7，修复HTP v75构建被误编译的问题；geniex-bench自动识别QAIRT VLM包；AI Hub固定为v0.57.0",
+          "v0.3.16（7/20）：默认使用NPU；Windows Hexagon SDK升到6.6.0.0；QAIRT prefill速率改按padded prompt长度统计（统计口径变化，不是速度变化）；QAIRT可选sliding window；修复gemma-4-E2B VLM和MTP量化选择；llama.cpp升到b10019",
+          "v0.3.17（7/24）：自动识别Dragonwing IQ-8275 EVK和Snapdragon X2 Plus；芯片识别改为基于Adreno GPU；AI Hub升到v0.58.0；tool_calls补充id和type",
+          "v0.3.18（7/31）：通过QAIRT在HTP上跑Gemma 4 E2B/E4B；llama.cpp投机解码扩展到所有模型类型；bench和serve可输出原始logits",
+          "所有版本均没有给出tokens/s或功耗数据"
+        ],
+        "key_specs": {
+          "npu": "Hexagon HTP（含v75）；QAIRT + llama.cpp Hexagon双后端",
+          "other": "Windows Hexagon SDK 6.6.0.0；QAIRT 2.45（AI Hub默认）"
+        },
+        "edge_ai_impact_zh": "7月为8月的MoE和MTP铺好了基础设施：默认NPU、Gemma 4小模型进入HTP、投机解码泛化。sliding window选项和按padded长度统计prefill，说明高通开始处理长上下文的KV Cache与统计口径问题。",
+        "evidence_urls": [],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU执行路径",
+            "points": [
+              "两条路径：QAIRT（QNN context binary，Hexagon HTP原生执行）和llama.cpp的Hexagon后端（ggml，使用微软签名的HTP catalog）。v0.3.18把Gemma 4放上了QAIRT路径。",
+              "v0.3.14修复了HTP v75被误编译的问题（toolchain v0.7），说明老一代（v75）HTP仍在支持范围内。",
+              "v0.3.16不再覆盖用户显式设置的ngl，在CPU缺少armv8.2特性时干净地退出，为多代设备做兼容。"
+            ]
+          },
+          {
+            "heading": "解码与上下文",
+            "points": [
+              "投机解码在v0.3.18扩展到所有模型类型（llama.cpp路径），8月的v0.3.20/v0.5.0再加入MTP（见8月报告）。",
+              "QAIRT新增可选sliding window，用于在固定大小的KV Cache上处理长输入。",
+              "prefill速率改按padded长度统计。QAIRT按固定AR/CL形状补齐输入，因此按padding统计更接近硬件实际的计算量，但跨版本比较时要注意口径变化。"
+            ]
+          },
+          {
+            "heading": "平台覆盖",
+            "points": [
+              "新增自动识别Dragonwing IQ-8275 EVK（工业）和Snapdragon X2 Plus（PC），芯片识别改为基于Adreno GPU。",
+              "Windows on Snapdragon不再需要导入证书，降低PC上的部署门槛。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方支持的HTP模型：Gemma 4 E2B/E4B（QAIRT路径，7/31）；另有gemma-4-E2B VLM、Qwen3-4B-Instruct-2507（llama.cpp路径，见AI Hub）。精度和tokens/s在release notes中未披露。"
+      },
+      {
+        "date": "2026-07-31",
+        "vendor": "MediaTek",
+        "category": "产业动态",
+        "title": "MediaTek 2Q26 Earnings Call Prepared Remarks",
+        "title_zh": "联发科 Q2 财报：手机降 20%，Q3 推 2nm Agentic AI 旗舰",
+        "url": "https://www.mediatek.com/hubfs/MediaTek%20Assets/Pdfs/Quarterly%20Earnings%20Release/2026/Quarterly%20Earnings%20Release-2026Q2/Prepared%20remarks.pdf",
+        "source_type": "官方",
+        "summary_zh": "联发科 7 月 31 日公布 Q2 营收 1,522 亿新台币（环比 +2%），超出指引上限。手机业务环比 -14%、同比 -20%，占比降至 41%，原因是手机 BOM 成本上涨导致需求疲弱；全年手机出货预计下滑约 15%。管理层确认 Q3 推出 2nm 旗舰 SoC，主打 Agentic AI；RTX Spark PC 年底旺季上市；首款数据中心 AI ASIC 将于 Q4 量产。",
+        "whats_new_zh": [
+          "营收 1,522 亿新台币，毛利率 46.2%，EPS 15.28 新台币",
+          "手机：环比 -14%，同比 -20%，占营收 41%；Q3 指引持平至下滑中个位数",
+          "智慧边缘平台：环比 +19%，同比 +26%，占营收 53%",
+          "Q3 营收指引 1,522～1,598 亿新台币；全年美元营收高个位数增长",
+          "2026 数据中心营收超过 20 亿美元；2027 SAM 800 亿美元，份额目标上调至 15～20%；董事会批准 50 亿美元弹性融资"
+        ],
+        "key_specs": {
+          "process": "2nm 旗舰 SoC（Q3 推出）",
+          "npu": "未披露（“强大的 Agentic AI 运算能力”）",
+          "other": "RTX Spark：与 NVIDIA 合作的 Windows Arm PC，年底上市"
+        },
+        "edge_ai_impact_zh": "这是联发科第一次在财报中把手机卖点从 TOPS 换成 Agentic AI，同时提出入门机的“内存使用效率”技术。存储涨价使端侧大模型向旗舰集中，中低端机不会为 AI 多配内存。",
+        "evidence_urls": [
+          "https://quartr.com/events/mediatek-inc-2454-q2-2026_F96v0c0d"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "手机业务与成本",
+            "points": [
+              "手机同比 -20% 的原因是“智能手机 BOM 成本上升导致需求疲弱”（官方），全年出货预计 -15%",
+              "客户集中做两类产品：差异化旗舰和价格敏感的入门机；联发科正在提价，以转嫁供应链成本",
+              "入门段强调“提升内存使用效率的技术”，即在少内存的机型上维持 AI 体验"
+            ]
+          },
+          {
+            "heading": "端侧 AI 叙事",
+            "points": [
+              "CEO 把 Agentic AI 定义为“规划、推理、执行与自我修正”的多步任务，认为它同时推高云端和端侧的算力需求",
+              "2nm 旗舰的卖点是“更具成本效益的架构下实现 Agentic AI 运算”，暗示面积和成本也是设计目标"
+            ]
+          },
+          {
+            "heading": "PC 与智慧边缘",
+            "points": [
+              "与 NVIDIA 合作的 RTX Spark 年底上市，联发科称这“验证了高性能 CPU 系统整合能力”",
+              "智慧边缘平台占比 53%，已超过手机，Q3 指引环比再增长中高个位数"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露：财报只说 2nm SoC 将“为客户次世代 Agentic AI 模型提供运算能力”，没有给出参数量、TOPS 或 tokens/s。"
+      }
+    ],
+    "overview": "7 月最后两天（07-31~08-01）：联发科 Q2 财报显示手机业务同比下降 20%（零部件涨价），Q3 将推出 2nm 的“Agentic AI”旗舰（即 9 月发布的天玑 9600 Pro）；长鑫 LPDDR6 接近验证尾声，设计速率 12800Mbps；高通 GenieX 7 月版本把 Gemma 4 E2B/E4B 放上 NPU，投机解码扩展到所有模型类型；北航与港大的论文研究模拟 CIM 上 KV Cache 的选择性保护。",
+    "takeaways_zh": [
+      "联发科、高通两家手机芯片龙头在同一周给出相同信号：内存涨价压缩了手机业务，下一代旗舰的卖点转向“Agentic AI”。",
+      "国产 LPDDR6（长鑫）进入验证尾声，为 9 月小米 18 Fold 首发国产 LPDDR6 做好了准备。"
+    ]
   }
 }
