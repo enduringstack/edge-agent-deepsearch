@@ -10,7 +10,7 @@ from app.waic_page import WAIC_HTML
 
 _MONTH_JS = r"""var MONTH = (location.search.match(/[?&]m=(\d{4}-\d{2})/) || [])[1] || '';
     var MD_URL = MONTH ? 'hardware/insight-' + MONTH + '.md' : 'hardware/hardware-insight.md';
-    fetch('hardware/index.json').then(function(r){return r.ok ? r.json() : [];}).then(function(months){
+    fetch('hardware/index.json', {cache: 'no-cache'}).then(function(r){return r.ok ? r.json() : [];}).then(function(months){
       var el = document.getElementById('months');
       if(!el || !months.length) return;
       var current = MONTH || months[0].month;
@@ -38,5 +38,6 @@ for _old, _new in (
      ".month{font-family:\"IBM Plex Mono\",monospace;font-size:11px;padding:2px 8px;border:1px solid var(--rule);border-radius:3px;color:var(--muted)}"
      ".month.on{background:var(--amber);border-color:var(--amber);color:#fff}\n    .back{"),
     ("var MD_URL = 'waic/WAIC-insight.md';", _MONTH_JS),
+    ("fetch(MD_URL)", "fetch(MD_URL, {cache: 'no-cache'})"),
 ):
     HARDWARE_HTML = _swap(HARDWARE_HTML, _old, _new)
