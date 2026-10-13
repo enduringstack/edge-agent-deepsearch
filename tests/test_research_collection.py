@@ -44,6 +44,20 @@ class ResearchWindowTests(unittest.TestCase):
         ])
 
 
+class ArxivCategoryAliasTests(unittest.TestCase):
+    def test_systems_and_control_sweeps_query_eess_sy(self):
+        # cat:cs.SY alone returns 0 rows since arXiv files these papers under eess.SY.
+        sy = dict(arxiv_curl_sweep.QUERIES)["cs.SY-broad"]
+        self.assertIn("cat:eess.SY", sy)
+        self.assertIn("cat:cs.SY", sy)
+        [(_, updated_queries, _, _)] = arxiv_curl_sweep.query_specs(only_updates=True)
+        self.assertIn("(cat:cs.SY OR cat:eess.SY)", updated_queries)
+        self.assertIn("cat:eess.SY", arxiv_curl_sweep.CATS)
+
+    def test_other_categories_are_unchanged(self):
+        self.assertEqual(arxiv_curl_sweep.cat_query("cs.AR"), "cat:cs.AR")
+
+
 class ArxivPaginationTests(unittest.TestCase):
     def test_atom_parser_preserves_published_and_updated_dates(self):
         xml = """<feed xmlns="http://www.w3.org/2005/Atom">
@@ -699,6 +713,29 @@ class CollectionManifestTests(unittest.TestCase):
         })
         self.assertIsNotNone(got)
         self.assertEqual(got["source_tier"], "开源大项目")
+
+    def test_archived_papers_are_recognised_across_link_forms(self):
+        import sys, tempfile, json as _json
+        from pathlib import Path
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "agent"))
+        import build_run_week
+        with tempfile.TemporaryDirectory() as d:
+            weeks = Path(d)
+            (weeks / "2026-09-29.json").write_text(_json.dumps({"papers": [
+                {"paper_url": "https://arxiv.org/abs/2610.00864"}]}), encoding="utf-8")
+            (weeks / "manifest.json").write_text("[]", encoding="utf-8")
+            seen = build_run_week.published_identities(weeks)
+        self.assertIn(build_run_week.content_identity("https://huggingface.co/papers/2610.00864"), seen)
+        self.assertNotIn(build_run_week.content_identity("https://arxiv.org/abs/2610.07641"), seen)
+
+    def test_llama_cpp_daily_ci_builds_are_not_releases(self):
+        base = {"repo": "ggml-org/llama.cpp", "title": "b11577", "summary": "model: fix multi seq case",
+                "release_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11577",
+                "date": "2026-10-12", "event_type": "release"}
+        self.assertIsNone(self._convert_github({**base, "tag": "b11577"}))
+        # a versioned release and a major code drop of the same project still count
+        self.assertIsNotNone(self._convert_github({**base, "tag": "v2.0.0", "title": "llama.cpp v2.0.0"}))
+        self.assertIsNotNone(self._convert_github({**base, "tag": "b11577", "event_type": "major_commit"}))
 
     def test_non_whitelisted_repo_is_still_dropped(self):
         # The guard must not become a back door for arbitrary repos.

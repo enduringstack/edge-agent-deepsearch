@@ -154,9 +154,22 @@ def _run_deploy() -> None:
             _deploy_running = False
 
 
+def auto_deploy_enabled() -> bool:
+    """EDGE_AUTO_DEPLOY=0 turns off the publish-triggered gh-pages push.
+
+    The auto deploy replaces gh-pages with the local site/ wholesale. A machine
+    without every page's sources (e.g. the notes) must publish with it off and
+    overlay only the pages it rebuilt.
+    """
+    return os.environ.get("EDGE_AUTO_DEPLOY", "1").strip().lower() not in {"0", "false", "no", "off"}
+
+
 def _trigger_deploy() -> None:
     """Debounced trigger: deploy runs DEPLOY_DEBOUNCE_SECONDS after last call."""
     global _deploy_timer
+    if not auto_deploy_enabled():
+        print("[DEPLOY] EDGE_AUTO_DEPLOY=0, skipping auto deploy", flush=True)
+        return
     with _deploy_lock:
         if _deploy_timer is not None:
             _deploy_timer.cancel()

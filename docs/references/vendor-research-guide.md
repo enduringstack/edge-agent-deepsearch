@@ -47,7 +47,7 @@ arXiv 自身搜索只匹配标题和摘要，不直接按作者 affiliation 过�
 | 厂商 | 官方动态来源 | websearch 关键词 | arXiv affiliation | GitHub / 重要页面 |
 |---|---|---|---|---|
 | Google | `blog.google`、`ai.google.dev`、`developers.googleblog.com`（android-developers）、`developer.android.com/ai` | `"Gemini Nano"`、`"Google MediaPipe"`、`"Android AICore"`、`site:ai.google.dev on-device` | `Google`、`Google Research`、`Google DeepMind` | `ai.google.dev`、`developer.android.com/ai` |
-| Microsoft | `techcommunity.microsoft.com`（Phi 博客）、`azure.microsoft.com/blog`、`microsoft.com/research` | `"Microsoft Phi-4"`、`"Phi-3-mini"`、`"Windows Copilot Runtime"`、`site:techcommunity.microsoft.com` | `Microsoft Research`、`Microsoft` | `techcommunity.microsoft.com`、`microsoft.com/research` |
+| Microsoft | `techcommunity.microsoft.com`（Phi 博客）、`azure.microsoft.com/blog`、`microsoft.com/research`、`blogs.windows.com`（Windows 官方博客，`/feed/` 带 pubDate；Windows AI / Windows ML / Copilot+ PC 发布会稿都在这里） | `"Microsoft Phi-4"`、`"Phi-3-mini"`、`"Windows Copilot Runtime"`、`site:techcommunity.microsoft.com` | `Microsoft Research`、`Microsoft` | `techcommunity.microsoft.com`、`microsoft.com/research` |
 | OpenAI | `openai.com/research`、`openai.com/blog` | `site:openai.com`、`"OpenAI" edge on-device`、`"OpenAI" function calling mobile` | `OpenAI` | `openai.com/research` |
 | Anthropic | `anthropic.com/research`、`anthropic.com/news` | `site:anthropic.com`、`"Anthropic Haiku"`、`"Claude" edge deployment` | `Anthropic` | `anthropic.com/research` |
 | Meta | `ai.meta.com`（博客 + 研究）、`about.fb.com` | `"Meta Llama" on-device`、`"Llama 3.2 1B 3B"`、`"Llama 4 Scout"`、`site:ai.meta.com` | `Meta AI`、`Meta FAIR`、`Fundamental AI Research` | `ai.meta.com/blog`、`github.com/meta-llama` |
@@ -230,6 +230,15 @@ arXiv 自身搜索只匹配标题和摘要，不直接按作者 affiliation 过�
   直接 `findall` 会让时间和标题错位
 - **YouTube 频道 RSS 的覆盖窗约 6 周**（实测 5 个频道最早 published 落在约 6 周前），不是「最近两周」。
   对更早的窗口是结构性够不到，应记 `limited`
+
+**10-06~10-12 周新增实测**：
+
+- **Microsoft 的 Windows 发布会稿在 `blogs.windows.com`**（已加入白名单），`https://blogs.windows.com/feed/` 带 pubDate，可直接定日；浏览器 UA 才返回 200
+- **StepFun**：新闻列表内嵌在官网自己的 JS bundle 里，带日期，可枚举
+- **MiniMax**：`minimax.io/api/news` 接口直接返回发布日期
+- **Samsung Semiconductor**：sitemap 的 lastmod 全部是当天，只能逐页读正文发布日期（本周读了 751 个新闻与技术博客页）
+- **ModelBest**：官网内嵌索引截至 2026-07-03，链接全部指向微信公众号（域名不合规），只能记 no_match 并注明“确认有但域名不合规”
+- **Samsung 技术博客的 JSON-LD `datePublished` 会晚于正文日期**：Memory Innovation Part 2 元数据写 10-08，文章头是 09-02，以正文为准
 
 **无效 / 陷阱**（都实测过，别重复踩）：
 

@@ -25,7 +25,7 @@ VENDORS = {
   "vivo":        ("https://www.vivo.com", ["https://www.vivo.com/sitemap.xml"]),
   "Honor":       ("https://www.honor.com", ["https://www.honor.com/sitemap.xml"]),
   "Google":      ("https://blog.google", ["https://blog.google/sitemap.xml","https://blog.google/feed/rss/","https://developers.googleblog.com/feed/"]),
-  "Microsoft":   ("https://blogs.microsoft.com", ["https://blogs.microsoft.com/ai/feed/","https://blogs.microsoft.com/sitemap.xml","https://techcommunity.microsoft.com/gxcuf89792/sitemap.xml"]),
+  "Microsoft":   ("https://blogs.microsoft.com", ["https://blogs.microsoft.com/ai/feed/","https://blogs.microsoft.com/sitemap.xml","https://techcommunity.microsoft.com/gxcuf89792/sitemap.xml","https://blogs.windows.com/feed/"]),
   "OpenAI":      ("https://openai.com", ["https://openai.com/news/rss.xml","https://openai.com/sitemap.xml"]),
   "Anthropic":   ("https://www.anthropic.com", ["https://www.anthropic.com/sitemap.xml"]),
   "Meta":        ("https://ai.meta.com", ["https://ai.meta.com/blog/feed/","https://ai.meta.com/sitemap.xml"]),

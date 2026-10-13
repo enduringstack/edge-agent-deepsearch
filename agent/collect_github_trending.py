@@ -10,6 +10,7 @@ Filter for端侧 AI relevance, output data/_github_trending.json with repo + sta
 The seven-date window is computed at runtime; no weekly source edit is required.
 """
 import argparse
+import html as html_lib
 import urllib.request, urllib.parse, re, sys, json, time, os
 from datetime import datetime, timezone
 
@@ -24,6 +25,48 @@ EDGE_KW = [
   "gemma","minicpm","qwen","coreml","mlx","neural-engine","copilot","phi-","llama",
   "deepseek","xdna","ascend","rknn","hexagon","snapdragon",
 ]
+
+# Repos from the trending *page* are not limited to this week's creations and the
+# loose EDGE_KW above lets in any coding-agent tool ("agent", "llm"). To reach the
+# display list they need both an on-device/local inference-stack signal and an AI
+# signal. Bare "tiny"/"mobile" are deliberately absent: "tinyhumansai" and
+# "web and mobile apps" are not edge AI.
+EDGE_STACK_KW = [
+  "on-device","on device","edge ai","edge device","edge inference","npu","embedded","mcu",
+  "microcontroller","tinyml","iot","local-first","local llm","locally","offline","on your own machine",
+  "your own device","llama.cpp","ggml","gguf","mlx","executorch","onnx","openvino","litert","tflite",
+  "coreml","core ml","neural engine","apple silicon","quantiz","1-bit","bitnet","ternary","jetson",
+  "raspberry","rknn","hexagon","snapdragon","webgpu","wasm","inference engine","inference framework",
+  "android","ios app",
+]
+AI_KW = ["llm","language model","model","inference","neural","transformer","gemma","llama","qwen",
+         " ai ","ai agent","agent","speech","vision"]
+
+
+def is_edge_trending(item: dict) -> bool:
+    """True when a trending-page repo is about running AI on-device / locally."""
+    hay = " " + (item.get("repo", "") + " " + (item.get("desc") or "")).lower() + " "
+    return any(k in hay for k in EDGE_STACK_KW) and any(k in hay for k in AI_KW)
+
+
+def display_top(items: list, limit: int = 20) -> list:
+    """Rank this week's GitHub leads by stars gained this week.
+
+    New repos from the search API (created in the window) count every star as a
+    weekly star; trending-page repos keep GitHub's "stars this week" figure but
+    must pass ``is_edge_trending``.
+    """
+    pool = []
+    for x in items:
+        week = x.get("week_stars")
+        if not week:
+            continue
+        if x.get("source") == "trending" and not is_edge_trending(x):
+            continue
+        pool.append(x)
+    pool.sort(key=lambda x: (x["week_stars"], x.get("stars") or 0), reverse=True)
+    return pool[:limit]
+
 
 UA = "Mozilla/5.0 (compatible: edge-agent-github-collector/1.0)"
 TOKEN = os.environ.get("GITHUB_PERSONAL_ACCESS_TOKEN","")
@@ -41,18 +84,33 @@ def fetch(url, timeout=25, headers=None):
     except Exception:
         return "", 0
 
+def _count(text):
+    m = re.search(r"([\d,]+)", text or "")
+    return int(m.group(1).replace(",", "")) if m else None
+
+
 def parse_trending(html):
-    """Return [(full_name, desc)] from trending HTML."""
+    """Return [(full_name, desc, total_stars, stars_this_week)] from trending HTML.
+
+    ``<p[^>]*>`` would also match the SVG ``<path ...>`` in the star button and
+    swallow "Star owner / repo" into the description, so the paragraph pattern
+    requires a real ``<p>`` tag. Star counts come from the stargazers link and
+    the "N stars this week" line; either may be None if GitHub changes markup.
+    """
     out=[]
     for art in re.finditer(r'<article[^>]*>(.*?)</article>', html, re.S):
         body=art.group(1)
         m=re.search(r'<h2[^>]*>\s*<a[^>]*href="(/[^"]+)"', body)
         if not m: continue
         full=m.group(1).strip('/')
-        dm=re.search(r'<p[^>]*>(.*?)</p>', body, re.S)
+        dm=re.search(r'<p(?:\s[^>]*)?>(.*?)</p>', body, re.S)
         desc=re.sub(r'<[^>]+>','',(dm.group(1) if dm else '')).strip()
-        desc=re.sub(r'\s+',' ',desc)
-        out.append((full,desc))
+        desc=re.sub(r'\s+',' ',html_lib.unescape(desc))
+        tm=re.search(r'href="/' + re.escape(full) + r'/stargazers"[^>]*>(.*?)</a>', body, re.S)
+        total=_count(re.sub(r'<[^>]+>', '', tm.group(1))) if tm else None
+        wm=re.search(r'([\d,]+)\s+stars\s+this\s+week', body)
+        week=_count(wm.group(1)) if wm else None
+        out.append((full,desc,total,week))
     return out
 
 def search_api(query, date_from, per_page=30, date_to=None):
@@ -85,16 +143,17 @@ def main(argv=None):
         url=f"https://github.com/trending{lang}?since=weekly"
         html,st=fetch(url)
         if not html: continue
-        for full,desc in parse_trending(html):
+        for full,desc,total,week in parse_trending(html):
             if full not in repos:
-                repos[full]={"desc":desc,"stars":None,"url":f"https://github.com/{full}","created":None,"source":"trending"}
+                repos[full]={"desc":desc,"stars":total,"week_stars":week,"url":f"https://github.com/{full}","created":None,"source":"trending"}
         time.sleep(1)
     # 2) search API for端侧 keywords created this week
     for q in ['on-device LLM','edge AI inference','mobile LLM agent','NPU inference',
               'speculative decoding','local LLM engine','edge device agent','llama.cpp executorch']:
         for full,desc,stars,url,created in search_api(q, date_from, date_to=date_to):
-            if full not in repos or repos[full]['stars'] is None:
-                repos[full]={"desc":desc,"stars":stars,"url":url,"created":created,"source":"search"}
+            if full not in repos:
+                # created inside the window, so every star was earned this week
+                repos[full]={"desc":desc,"stars":stars,"week_stars":stars,"url":url,"created":created,"source":"search"}
         time.sleep(2)
     # filter端侧 relevance
     out=[]
@@ -104,8 +163,9 @@ def main(argv=None):
         # Keep the FULL description here. The 140-char cap belongs to the display file
         # (refresh_trending), and truncating twice left the translator a half sentence
         # with no way to see the tail.
-        out.append({"repo":full,"desc":r['desc'],"stars":r['stars'],"url":r['url'],"created":r['created'],"source":r['source']})
-    out.sort(key=lambda x:(x['stars'] or 0), reverse=True)
+        out.append({"repo":full,"desc":r['desc'],"stars":r['stars'],"week_stars":r.get('week_stars'),
+                    "url":r['url'],"created":r['created'],"source":r['source']})
+    out.sort(key=lambda x:(x['week_stars'] or 0), reverse=True)
     json.dump(out, open("data/_github_trending.json","w",encoding="utf-8"), ensure_ascii=False, indent=2)
     update_source_coverage(
         args.manifest,
@@ -118,7 +178,7 @@ def main(argv=None):
     )
     print(f"# {len(out)}端侧-AI repos (trending + created:{date_from}..{date_to})")
     for r in out[:40]:
-        print(f"  {str(r['stars'] or '?'):>4}★ [{r['source']}] {r['repo']}  -- {r['desc'][:60]}")
+        print(f"  +{str(r['week_stars'] or '?'):>6}/wk {str(r['stars'] or '?'):>7}★ [{r['source']}] {r['repo']}  -- {r['desc'][:60]}")
         print(f"      {r['url']}")
 
 if __name__=="__main__":

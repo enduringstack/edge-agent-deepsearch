@@ -383,6 +383,12 @@ class ResearchRunValidationTests(unittest.TestCase):
 
         self.assertIn("tags", str(ctx.exception))
 
+    def test_windows_blog_is_an_official_microsoft_source(self):
+        # Microsoft's Windows AI / Windows ML / Copilot+ PC launches publish on blogs.windows.com.
+        self.assertTrue(research_run.is_official_source_url(
+            "https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/"))
+        self.assertFalse(research_run.is_official_source_url("https://windows-blog.example.com/post"))
+
     def test_accepts_official_tier_blog(self):
         path = write_json(
             run_payload(
@@ -931,6 +937,15 @@ class StorageMigrationTests(unittest.TestCase):
 
 
 class AutoDeployGateTests(unittest.TestCase):
+    def test_auto_deploy_can_be_switched_off(self):
+        with mock.patch.dict("os.environ", {"EDGE_AUTO_DEPLOY": "0"}),                 mock.patch.object(server_app.threading, "Timer") as timer:
+            server_app._trigger_deploy()
+        timer.assert_not_called()
+        with mock.patch.dict("os.environ", {}, clear=False):
+            os_env = __import__("os").environ
+            os_env.pop("EDGE_AUTO_DEPLOY", None)
+            self.assertTrue(server_app.auto_deploy_enabled())
+
     def test_ghpages_deploy_builds_all_navigation_pages_before_gate(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             root = Path(tmpdir)

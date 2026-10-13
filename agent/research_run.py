@@ -78,6 +78,7 @@ OFFICIAL_SOURCE_DOMAINS = (
     "microsoft.com",
     "azure.microsoft.com",
     "techcommunity.microsoft.com",
+    "blogs.windows.com",
     "openai.com",
     "anthropic.com",
     "meta.com",

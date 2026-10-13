@@ -364,10 +364,21 @@ def convert_hf(c: dict, seen_arxiv: set) -> dict | None:
     }
 
 
+# llama.cpp tags every merged commit as a CI build ("b11577"). The whitelist rule
+# counts only versioned or feature releases, so builds never become run items.
+DAILY_BUILD_TAG = re.compile(r"^b\d{3,}$")
+
+
+def is_daily_build(c: dict) -> bool:
+    return c.get("event_type", "release") == "release" and bool(DAILY_BUILD_TAG.match(str(c.get("tag") or "")))
+
+
 def convert_github(c: dict) -> dict | None:
     repo = c.get("repo") or ""
     tag = c.get("tag") or ""
     if not is_required_github_project(repo):
+        return None
+    if is_daily_build(c):
         return None
     title, url, source_date = candidate_output_identity("github", c)
     summary = c.get("summary") or ""
@@ -453,6 +464,30 @@ def convert_vendor(c: dict) -> dict | None:
     }
 
 
+WEEKS_DIR = ROOT / "data" / "weeks"
+
+
+def content_identity(url: str) -> str:
+    """arXiv and HF paper links collapse to the arXiv id; other URLs to themselves."""
+    m = re.search(r"(?:arxiv\.org/(?:abs|pdf|html)|huggingface\.co/papers)/(\d{4}\.\d{4,5})", url or "")
+    return f"arxiv:{m.group(1)}" if m else (url or "").rstrip("/")
+
+
+def published_identities(weeks_dir: Path | None = None) -> set:
+    """Identities of every paper in an archived week (data/weeks/<label>.json)."""
+    out = set()
+    for f in sorted((weeks_dir or WEEKS_DIR).glob("*.json")):
+        if f.name == "manifest.json":
+            continue
+        try:
+            rec = json.loads(f.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        for paper in rec.get("papers") or []:
+            out.add(content_identity(paper.get("paper_url")))
+    return out
+
+
 def load(path: Path, required: bool = False):
     if not path.exists():
         if required:
@@ -533,6 +568,14 @@ def main(argv=None) -> int:
             continue
         seen.add(pid)
         uniq.append(p)
+
+    # HF Daily Papers resurfaces papers submitted (and already published here) in
+    # earlier weeks; an archived week is the authoritative "already shipped" record.
+    published = published_identities()
+    before = len(uniq)
+    uniq = [p for p in uniq if content_identity(p["paper_url"]) not in published]
+    if len(uniq) < before:
+        print(f"[ASSEMBLE] dropped {before - len(uniq)} entries already published in an archived week")
 
     # drop entries with empty paper_url or empty date (validation would fail)
     uniq = [p for p in uniq if p["paper_url"] and p["date"]]

@@ -69,6 +69,8 @@ python agent/hardware_week.py check
 
 ## 10. 发布到服务器
 
+> 本机缺少任何页面的源文件（例如调研笔记）时，启动服务器前先设 `EDGE_AUTO_DEPLOY=0`：自动部署会用本地 `site/` 整体替换 gh-pages。随后只把本次重建的页面覆盖到 gh-pages。
+
 ```powershell
 $env:EDGE_PUBLISH_TOKEN = "<服务端与发布端共享的随机长令牌>"
 python app/server.py --host 127.0.0.1 --port 8001

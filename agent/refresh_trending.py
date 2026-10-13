@@ -48,18 +48,21 @@ def _clip(desc: str, limit: int = 140) -> str:
 
 src = ROOT / "data" / "_github_trending.json"
 d = json.loads(src.read_text(encoding="utf-8"))
-items = [x for x in d if x.get("source") == "search" and x.get("stars")]
-items.sort(key=lambda x: x["stars"], reverse=True)
+from collect_github_trending import display_top  # noqa: E402
+
+for x in d:  # artifacts written before week_stars existed: search repos were created in-window
+    if "week_stars" not in x and x.get("source") == "search":
+        x["week_stars"] = x.get("stars")
 out = [
     {
         "rank": i + 1,
         "repo": x["repo"],
         "url": x["url"],
-        "total": str(x["stars"]) + "★",
-        "week": str(x["stars"]),
+        "total": f"{x['stars']:,}★" if x.get("stars") is not None else "",
+        "week": f"{x['week_stars']:,}",
         "desc": _clip(x["desc"]),
     }
-    for i, x in enumerate(items[:20])
+    for i, x in enumerate(display_top(d))
 ]
 dest = ROOT / "data" / "github_trending_top20.json"
 dest.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")

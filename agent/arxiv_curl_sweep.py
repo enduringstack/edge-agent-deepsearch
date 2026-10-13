@@ -30,7 +30,18 @@ ROOT = Path(__file__).resolve().parents[1]
 RUN = ROOT / "research_runs" / "_nodup_placeholder.json"  # nonexistent → no dedup (complete fresh re-sweep of the window)
 OUT = ROOT / ".superpowers" / "sdd" / "arxiv_candidates.json"
 MANIFEST = ROOT / "research_runs" / "collection-manifest.json"
-CATS = "(cat:cs.AI OR cat:cs.LG OR cat:cs.CL OR cat:cs.RO OR cat:cs.AR OR cat:cs.DC OR cat:cs.ET OR cat:cs.SY OR cat:cs.NE)"
+# arXiv files Systems and Control under eess.SY; cs.SY is only an alias and
+# `cat:cs.SY` now returns 0 rows (checked 2026-10-12: eess.SY had 136 papers in a
+# week while cs.SY had none). Every category clause goes through cat_query().
+CAT_ALIASES = {"cs.SY": "eess.SY"}
+
+
+def cat_query(cat: str) -> str:
+    alias = CAT_ALIASES.get(cat)
+    return f"(cat:{cat} OR cat:{alias})" if alias else f"cat:{cat}"
+
+
+CATS = "(cat:cs.AI OR cat:cs.LG OR cat:cs.CL OR cat:cs.RO OR cat:cs.AR OR cat:cs.DC OR cat:cs.ET OR cat:cs.SY OR cat:eess.SY OR cat:cs.NE)"
 
 # (label, search_query_fragment)  -- single words quoted, multi-word via AND
 # Broad category sweeps (no keyword filter, catch ALL recent papers by date)
@@ -46,7 +57,7 @@ QUERIES = [
     ("cs.AR-broad", "cat:cs.AR"),
     ("cs.DC-broad", "cat:cs.DC"),
     ("cs.ET-broad", "cat:cs.ET"),
-    ("cs.SY-broad", "cat:cs.SY"),
+    ("cs.SY-broad", cat_query("cs.SY")),
     ("cs.NE-broad", "cat:cs.NE"),
     # Specific edge-AI keyword queries (catch explicitly edge papers)
     ("on-device", 'abs:"on-device"'),
@@ -103,7 +114,7 @@ def query_specs(
     submitted = [(label, [query], "submittedDate", "submitted") for label, query in QUERIES]
     # One sweep per category: a single nine-category sweep exceeds the API's
     # 10000-row ceiling for any window more than a few days back.
-    updated = [("recent-updates", [f"cat:{cat}" for cat in CAT_LIST], "lastUpdatedDate", "updated")]
+    updated = [("recent-updates", [cat_query(cat) for cat in CAT_LIST], "lastUpdatedDate", "updated")]
     specs = updated if only_updates else submitted + updated
     if labels:
         wanted = {label.strip() for label in labels if label.strip()}
@@ -265,7 +276,7 @@ def probe_updates_reach(categories: list[str], page_size: int = 1) -> dict:
     reach = {}
     for cat in categories:
         xml = curl_url(
-            build_api_url(f"cat:{cat}", start=PAGING_CEILING, page_size=page_size,
+            build_api_url(cat_query(cat), start=PAGING_CEILING, page_size=page_size,
                           sort_by="lastUpdatedDate")
         )
         entries = parse(xml) if xml else []

@@ -39,7 +39,7 @@ NeurIPS / ICML / ICLR / MobiSys / SenSys / ASPLOS / CVPR / ICCV / ACL / EMNLP / 
 
 Apple: `apple.com`, `developer.apple.com`, `machinelearning.apple.com`
 Google: `google.com`, `blog.google`, `googleblog.com`, `android-developers.googleblog.com`, `ai.google.dev`
-Microsoft: `microsoft.com`, `azure.microsoft.com`, `techcommunity.microsoft.com`
+Microsoft: `microsoft.com`, `azure.microsoft.com`, `techcommunity.microsoft.com`, `blogs.windows.com`（Windows 官方博客：Windows AI、Windows ML、Copilot+ PC、开发者平台发布都在这里）
 OpenAI: `openai.com`
 Anthropic: `anthropic.com`
 Meta: `meta.com`, `ai.meta.com`, `about.fb.com`
