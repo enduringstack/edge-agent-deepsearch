@@ -1,0 +1,143 @@
+{
+ "window": {
+  "start": "2026-10-06",
+  "end": "2026-10-12"
+ },
+ "method": "独立对账，未读取本项目任何周报/run/data/site 文件。窗口 2026-10-06~2026-10-12。【社区热榜】Hacker News：用 Algolia API（hn.algolia.com/api/v1/search，tags=story，numericFilters=created_at_i 介于 2026-10-06 00:00 与 10-13 00:00 UTC，points>150，共 213 条，分三段读完）+ tags=front_page 补查；GitHub Trending 周榜（github.com/trending?since=weekly，本周上榜均为通用 Agent 工具，无端侧推理项目）；Reddit r/LocalLLaMA 周榜：reddit.com JSON、old.reddit.com 均被抓取工具拒绝，改用第三方 reddtrends 镜像（页面为空）及 WebSearch，未能拿到可核实日期的周榜，此项为缺口；另查 Hugging Face Papers 周榜（huggingface.co/papers/week/2026-W41）作为论文热榜补充。【中文】量子位（qbitai.com 首页列表并打开相关文章）、IT之家（ithome.com 首页 + 逐篇打开麒麟、AMD、Google AI Edge Foresight、高通安蒙、小鹏、一加16 等报道）、机器之心（jiqizhixin.com 首页，仅露出 3 篇 PRO 文章与 Week 41 简报，无端侧条目）、新智元（aiera.com.cn 首页，最新条目停在 09/30，无窗口内内容）、36氪（36kr.com/information/AI 被安全检测页拦截，WebSearch 限定 36kr.com 也未返回窗口内文章）；另用 datalearner 模型发布追踪核对窗口内模型发布。【英文】9to5Google、9to5Mac 首页逐条核对（窗口内无 Gemini Nano/Apple Intelligence 端侧发布，Apple “Welcome Home” 发布会在 10-13，窗口外）；Tom's Hardware、The Register 用 WebSearch 限定域名检索；MarkTechPost 直连 403，改用 WebSearch 限定域名检索后打开厂商原文核实；Android Authority 直连 403，用 WebSearch 限定域名检索（窗口内无端侧手机发布）；The Verge 与 Ars Technica 对抓取/检索工具均不可访问，未能覆盖；另参考 techstartups 周度 AI 新闻汇总做交叉核对。【发布会/大会】Microsoft Windows & Surface 发布会（10-07，含 NVIDIA RTX Spark）、华为终端创新技术沟通会（10-12，上海练秋湖）、AMD Ryzen AI Halo 新平台（10-12）、小鹏巴黎车展（10-12）、一加 16 发布会（10-12，端侧 AI 内容弱未列入）。【已核实但因日期在窗口外剔除】华为 Mate 90（10-01）、荣耀 Magic9（09-28）、Cactus Whistle 语音模型（10-02，HN 10-08 才上热榜）、Strands Decider 2B（10-01）、NVIDIA DGX Spark 64GB（10-02 公布）、Meta Muse Gadgets/Home Link（10-03）、DeepSeek V4.1 Flash（09-10）、Apple Welcome Home 发布会（10-13）、OPPO Find X10 全球发布（10-21）。【未列入的云端事件】Mistral Large 4、Claude Haiku 5.5、GPT-6 for everyone、Meta Muse Wonder、Microsoft-Decision-1（仅云端 API）、微软 Maia 300、Intel GPU D 系列等。每条均实际打开过对应页面；共约 70 次检索/抓取。",
+ "summary": "15 条独立来源列出的本周大事中，10 条已在本周报里，3 条补收（AMD 新一代锐龙 AI Halo 进硬件雷达；Perplexity 端侧检索模型、Janas 闪存流式推理引擎进社区雷达），2 条有理由不收。三条补收里有两条发生在运行当天（10-12），说明运行日当天的事件需要在发布前再扫一遍；Perplexity 不在 24 家厂商名单里，只能靠社区与对账发现。",
+ "items": [
+  {
+   "headline": "微软发布“为混合智能打造 Windows”：Windows 让 Agent 优先在本地运行，Windows ML 新增 llama.cpp 支持，GitHub HydraFusion 在本地/云端模型间路由",
+   "url": "https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/",
+   "source": "Windows Experience Blog（微软官方）",
+   "date": "2026-10-07",
+   "status": "已收录",
+   "place": "正式周报",
+   "match": "vendor-microsoft-building-windows-for-hybrid-intelligence"
+  },
+  {
+   "headline": "微软与 NVIDIA 推出搭载 RTX Spark 的 Surface Laptop Ultra（2599 美元起，最高 128GB 统一内存）及 Surface RTX Spark Dev Box，多家 OEM 的 RTX Spark 笔记本同步开启预订",
+   "url": "https://news.microsoft.com/windows-surface-october-2026-news/",
+   "source": "Microsoft News（官方发布会页面）",
+   "date": "2026-10-07",
+   "status": "已收录",
+   "place": "硬件雷达",
+   "match": "https://blogs.windows.com/devices/2026/10/07/pre-order-our-most-powerful-surface-devices-ever/"
+  },
+  {
+   "headline": "华为在终端创新技术沟通会上首次线下展出麒麟 9050 Pro，其达芬奇架构 NPU 可在手机端本地运行 30B MoE 大模型",
+   "url": "https://www.ithome.com/1/011/756.htm",
+   "source": "IT之家",
+   "date": "2026-10-12",
+   "status": "不收",
+   "reason": "麒麟 9050 Pro 已在 09-07 周硬件雷达收录（Mate XT2 首发），09-22、09-29 周有后续；本周沟通会只是首次线下展出，未给出新的技术口径，不重复收录。"
+  },
+  {
+   "headline": "面壁智能/OpenBMB 开源 MiniCPM-V 4.7（35B-A3B MoE 与 1B 两版），称是首个可在端侧流畅运行且不牺牲性能的开源 MoE 多模态模型",
+   "url": "https://github.com/OpenBMB/MiniCPM-V",
+   "source": "GitHub（OpenBMB 官方仓库）",
+   "date": "2026-10-12",
+   "status": "已收录",
+   "place": "本周判断",
+   "match": "https://huggingface.co/openbmb/MiniCPM-V-4.7-35B-A3B"
+  },
+  {
+   "headline": "Google DeepMind 发布开源多模态嵌入模型 EmbeddingGemma 2（740M，基于 Gemma 4），在 Pixel 11 Pro 上量化后纯文本仅占约 191MB 内存",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+   "source": "Google Blog（官方）",
+   "date": "2026-10-06",
+   "status": "已收录",
+   "place": "正式周报",
+   "match": "vendor-google-embeddinggemma-2-an-open-lightweight-multimodal-embedding-model"
+  },
+  {
+   "headline": "微软 MAI-Code-1.1-Flash 推出可本地运行的 3-bit 版本，保留完整 256K 上下文，将进入 GitHub Copilot 应用/CLI/VS Code，本地调用零推理费用",
+   "url": "https://microsoft.ai/news/mai-code-1-1-flash-br-better-faster-at-a-quarter-of-the-cost/",
+   "source": "Microsoft AI（官方）",
+   "date": "2026-10-07",
+   "status": "已收录",
+   "place": "正式周报",
+   "match": "vendor-microsoft-building-windows-for-hybrid-intelligence"
+  },
+  {
+   "headline": "微软发布 Microsoft Execution Containers（MXC）1.0 并在 Windows 11 上 GA，为本地 AI Agent 提供策略驱动的文件/网络访问隔离",
+   "url": "https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/",
+   "source": "Windows Developer Blog（微软官方）",
+   "date": "2026-10-07",
+   "status": "已收录",
+   "place": "正式周报",
+   "match": "vendor-microsoft-microsoft-execution-containers-policy-driven-containment-for"
+  },
+  {
+   "headline": "AMD 发布新一代锐龙 AI Halo 开发者平台：锐龙 AI Max+ PRO 495，最高 192GB LPDDR5X（160GB 可作显存），可本地运行 300B+ 模型，Linux 版 7299.99 美元",
+   "url": "https://www.ithome.com/1/012/104.htm",
+   "source": "IT之家",
+   "date": "2026-10-12",
+   "status": "补收",
+   "place": "硬件雷达",
+   "match": "https://www.ithome.com/1/012/104.htm"
+  },
+  {
+   "headline": "Liquid AI 开源 d1 端侧“决策模型”d1-3B 与 d1-omni-600M：单次前向直接输出类型化答案、零输出 token，支持文本+图像/音频",
+   "url": "https://www.liquid.ai/blog/d1-open",
+   "source": "Liquid AI Blog（官方）",
+   "date": "2026-10-07",
+   "status": "已收录",
+   "place": "社区雷达",
+   "match": "https://huggingface.co/litert-community/d1-omni-600M-LiteRT"
+  },
+  {
+   "headline": "谷歌推出 macOS 应用 AI Edge Foresight，基于端侧多模态模型完全离线生成会议纪要并支持实时问答",
+   "url": "https://www.ithome.com/1/010/214.htm",
+   "source": "IT之家",
+   "date": "2026-10-07",
+   "status": "已收录",
+   "place": "社区雷达",
+   "match": "https://news.ycombinator.com/item?id=49998314"
+  },
+  {
+   "headline": "Perplexity 开源 pplx-embed-v2-late 多模态后期交互检索模型，其中 0.6B 版本面向边缘设备、支持 100% 本地推理",
+   "url": "https://www.perplexity.ai/hub/blog/multimodal-embeddings-beyond-a-single-vector",
+   "source": "Perplexity Blog（官方）",
+   "date": "2026-10-07",
+   "status": "补收",
+   "place": "社区雷达",
+   "match": "https://bsky.app/profile/muninn.austegard.com/post/3mxk3shdyee26"
+  },
+  {
+   "headline": "高通 CEO 安蒙：已有 AI 企业要求高通在 2028 年推出可本地运行 100B 参数模型的手机平台",
+   "url": "https://www.ithome.com/1/011/991.htm",
+   "source": "IT之家",
+   "date": "2026-10-12",
+   "status": "已收录",
+   "place": "硬件雷达",
+   "match": "https://tech.yahoo.com/ai/apple-intelligence/articles/qcom-ceo-cristiano-amon-says-105424604.html"
+  },
+  {
+   "headline": "开源 C 语言推理引擎 Janas 登上 HN：从 NVMe SSD 流式加载 MoE 专家，在 32GB 内存笔记本上运行 80B 模型",
+   "url": "https://github.com/prabanta-dev/janas",
+   "source": "GitHub（Hacker News 首页 10-12）",
+   "date": "2026-10-12",
+   "status": "补收",
+   "place": "社区雷达",
+   "match": "https://news.ycombinator.com/item?id=50063717"
+  },
+  {
+   "headline": "浙江大学发布开源个人 Agent nanoMuse 论文：一个 Agent 覆盖用户所有设备，Android/桌面端可直接操作屏幕，可接本地模型服务",
+   "url": "https://huggingface.co/papers/2610.08699",
+   "source": "Hugging Face Papers / arXiv 2610.08699",
+   "date": "2026-10-07",
+   "status": "已收录",
+   "place": "正式周报",
+   "match": "arxiv-2610.08699"
+  },
+  {
+   "headline": "小鹏在巴黎车展宣布人形机器人 2026 年底量产、2027 年上半年开始交付，第二代 VLA 覆盖 L2–L4 并已部署于 L4 Robotaxi",
+   "url": "https://www.ithome.com/1/012/094.htm",
+   "source": "IT之家",
+   "date": "2026-10-12",
+   "status": "不收",
+   "reason": "小鹏发布的是人形机器人量产与交付时间表，以及 VLA 覆盖 L2–L4 的产品口径，没有披露车端或机器人端的算力、模型规模或实测数据，不足以构成端侧 AI 条目。"
+  }
+ ]
+}

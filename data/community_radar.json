@@ -624,6 +624,34 @@
    "topic": "稀疏记忆层 / 闪存卸载",
    "verification": "已回链原始材料",
    "evidence_url": "https://github.com/re133/sparse-memory-lm"
+  },
+  {
+   "id": "hn-janas-moe-ssd-streaming",
+   "source": "Hacker News",
+   "author": "camauri（Maurizio Cammalleri）",
+   "url": "https://news.ycombinator.com/item?id=50063717",
+   "published_at": "2026-10-12T22:05:43Z",
+   "title_zh": "Janas：从 NVMe SSD 流式加载 MoE 专家，32GB 笔记本跑 80B 模型",
+   "summary_zh": "一个纯 C 写成、无第三方依赖的推理引擎登上 HN：权重留在磁盘，每个 token 需要的专家从 NVMe SSD 流式读入，常用专家常驻内存。作者在 32GB 内存、Core Ultra 9 185H 集显的笔记本上实测，48GB 的 Qwen3-Next-80B-A3B 解码 24 tok/s（加草稿 37 tok/s），同机 llama.cpp 只有 2.8 tok/s。数据为作者自测，项目标注为实验性。",
+   "why_it_matters": "“模型比内存大”是端侧跑大 MoE 的核心障碍，这个项目在普通笔记本上把闪存流式加载做到了可用速度，和本周论文里的闪存驻留、专家预取路线互相印证。",
+   "device_scope": "PC",
+   "topic": "端侧推理引擎 / MoE 闪存流式加载",
+   "verification": "已回链原始材料",
+   "evidence_url": "https://github.com/prabanta-dev/janas"
+  },
+  {
+   "id": "bsky-pplx-embed-v2-late-index",
+   "source": "Bluesky",
+   "author": "muninn.austegard.com",
+   "url": "https://bsky.app/profile/muninn.austegard.com/post/3mxk3shdyee26",
+   "published_at": "2026-10-10T18:14:49Z",
+   "title_zh": "Perplexity 开源端侧可用的 0.6B 多模态检索模型，社区把索引压小 16 倍",
+   "summary_zh": "Perplexity 10 月 7 日开源 pplx-embed-v2-late（0.6B 与 9B，MIT 许可），按 token 输出向量做后期交互检索，0.6B 版本可在设备上做查询端编码、检索 9B 建的索引。社区实测每篇文档的 token 向量索引约 154KB，用一个共享均值加 2 比特量化能压到 9.6KB、在 SciFact 上没有可测的精度损失，但 2.4GB 的模型本身没有变小。",
+   "why_it_matters": "端侧本地检索的瓶颈除了模型大小还有索引体积；“大模型建索引、小模型在设备上查”的分工加上索引量化，是手机和 PC 做本地 RAG 的一条现实路线。",
+   "device_scope": "通用技术",
+   "topic": "端侧检索 / 多模态向量",
+   "verification": "已回链原始材料",
+   "evidence_url": "https://www.perplexity.ai/hub/blog/multimodal-embeddings-beyond-a-single-vector"
   }
  ]
 }

@@ -87,6 +87,56 @@
       "model_capacity_zh": "官方口径：Surface可本地运行超过120B参数的模型；NVIDIA产品页写的是最高120B、100万token上下文；Dell写的是200B（媒体转述）。这些数字只说明内存装得下。媒体转述的微软数据：MAI Code 1.1 Flash是MoE，总参137B、激活6.8B，每权重约3.3 bit，权重53GB，256K上下文时峰值占用75.5GB。在Surface Laptop Ultra上，decode速度从2K上下文的约63 tok/s降到256K的约39 tok/s；这些数是StorageReview作者从图表上读出来的。推算：300.8GB/s除以每token读取的约2.8GB（6.8B×3.3bit），decode理论上限约107 tok/s；实测低于上限，但是否用了投机解码会影响这个比较。推算：稠密120B模型按4-bit每token要读约60GB，decode上限只有约5 tok/s。24GB基础款扣掉系统和KV缓存，大约只能放下14–20B级的4-bit稠密模型。"
     },
     {
+      "date": "2026-10-12",
+      "vendor": "AMD",
+      "category": "PC芯片",
+      "title": "AMD launches next-generation Ryzen AI Halo developer platform with Ryzen AI Max+ PRO 495",
+      "title_zh": "AMD 新一代锐龙 AI Halo：192GB，7299 美元",
+      "url": "https://www.ithome.com/1/012/104.htm",
+      "source_type": "媒体",
+      "summary_zh": "AMD 发布基于锐龙 AI Max+ PRO 495 的新一代锐龙 AI Halo 开发者平台，最高 192GB LPDDR5X-8533、其中 160GB 可作共享显存，称可本地运行 300B 以上模型。Linux 版售价 7,299.99 美元，预装 Windows 的版本稍后推出。6 月发布的初代 Halo 基于 Max+ 395、最高 128GB、3,999 美元起。",
+      "whats_new_zh": [
+        "内存上限从初代的 128GB 提到 192GB（160GB 可作显存）",
+        "Linux 版 7,299.99 美元，初代起价 3,999 美元，价格接近翻倍",
+        "处理器换成锐龙 AI Max+ PRO 495（16 核、NPU 55 TOPS）"
+      ],
+      "key_specs": {
+        "cpu": "锐龙 AI Max+ PRO 495，16 核 32 线程",
+        "npu": "最高 55 TOPS（6 月 PRO 400 系列官方口径）",
+        "memory": "最高 192GB LPDDR5X-8533，160GB 可作共享显存",
+        "other": "Linux 版 7,299.99 美元"
+      },
+      "model_capacity_zh": "厂商口径“可本地运行 300B+ 模型”指 4-bit 下内存装得下；带宽官方未在本文披露，按 256-bit LPDDR5X-8533 约 273GB/s 推算，4-bit 稠密 70B 的 decode 上限约 7 tok/s，实用的大模型仍是激活参数少的 MoE（推算）。",
+      "deep_dive_zh": [
+        {
+          "heading": "与初代的差别",
+          "points": [
+            "初代基于 Max+ 395、最高 128GB、3,999 美元起；新一代换 Max+ PRO 495、最高 192GB。",
+            "价格接近翻倍，和本周三星业绩、TrendForce 笔电成本报告反映的内存涨价一致。"
+          ]
+        },
+        {
+          "heading": "内存与带宽",
+          "points": [
+            "192GB LPDDR5X-8533 中 160GB 可分给 GPU 做显存。",
+            "带宽未在本文披露；按 256-bit 位宽推算约 273GB/s，属推算。"
+          ]
+        },
+        {
+          "heading": "能跑多大模型",
+          "points": [
+            "“300B+”是容量口径：4-bit 300B 约 150GB 权重，装得下但 decode 受带宽限制。",
+            "按带宽推算稠密 70B 4-bit 约 7 tok/s，MoE（如激活 10B 级）才有可用速度（推算）。"
+          ]
+        }
+      ],
+      "edge_ai_impact_zh": "本地大模型开发机的内存上限继续上探，但价格随内存涨价接近翻倍；对端侧团队而言，“能装下”和“跑得快、买得起”之间的差距在拉大。",
+      "evidence_urls": [
+        "https://www.storagereview.com/news/amd-expands-local-ai-pc-portfolio-with-ryzen-ai-halo-developer-platform-and-ryzen-ai-max-pro-400-series"
+      ],
+      "confidence": "medium"
+    },
+    {
       "date": "2026-10-09",
       "vendor": "Apple（爆料，Bloomberg/Gurman）",
       "category": "PC芯片",
