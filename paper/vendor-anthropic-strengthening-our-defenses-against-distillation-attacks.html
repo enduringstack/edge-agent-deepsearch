@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Strengthening our defenses against distillation attacks</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Strengthening our defenses against distillation attacks</h1>
+<div class="meta"><span class="score">6</span> <span class="tier">官方动态</span>  2026-10-12 · Anthropic / Anthropic</div>
+<div class="tags"><span class="vendor-tag">Anthropic</span><span class="tag">方向:蒸馏</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Anthropic 介绍针对“蒸馏攻击”的新防御：攻击者通过大量虚假账号批量调用 Claude、套取其推理过程来训练自己的模型，新方法大幅减少了这类数据外流。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">初步证据显示蒸馏者获取的数据减少约 90%-99%，平台上被提取的推理 token 下降到原来的十分之一到百分之一以下；只给出推理摘要时，用其训练的模型在 SWE-bench Verified 上为 71.8%，用完整推理训练则为 80.4%；新分类器误报率低于 0.1%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">三类手段：限制推理内容的流向（新账号不能编辑历史上下文、推理记录只对发起请求的组织可见、旧模型不能读取新模型的推理）；用两级分类器拦截套取推理的请求，并通过内外部红队持续修补；对反复尝试的账号收紧额度直至封禁。</span></div>
+<div class="score-reason">评分依据：这是云端模型的安全防护措施，与端侧部署无关。给出了蒸馏防御的具体做法和效果数据，对模型安全有参考价值，贡献中等。</div>
+<div class="source"><a href="https://www.anthropic.com/research/distillation-defenses" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>
