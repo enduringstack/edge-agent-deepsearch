@@ -32,26 +32,12 @@ import research_run  # noqa: E402
 from research_collection import content_identity, published_identities  # noqa: E402
 
 WEEKS = ROOT / "data" / "weeks"
-# Recognisable companies only; small or secondary affiliations stay in the school tiers.
-COMPANIES = {
-    "Google", "Apple", "Meta", "Microsoft", "NVIDIA", "Qualcomm", "Samsung", "Huawei", "MediaTek",
-    "Xiaomi", "OPPO", "vivo", "Honor", "Alibaba", "ByteDance", "Tencent", "Baidu", "Kuaishou",
-    "Meituan", "JD", "Pinduoduo", "NetEase", "Intel", "AMD", "Arm", "Amazon", "IBM", "Adobe",
-    "Waymo", "Toyota Research Institute", "Xiaohongshu", "eBay", "NEC", "Midea",
-    "Black Sesame Technologies", "d-Matrix", "SK hynix",
-    "Anthropic", "OpenAI", "Mistral", "DeepSeek", "Moonshot", "Zhipu", "MiniMax", "Baichuan",
-    "StepFun", "ModelBest", "Workday", "Ant Group", "Yandex", "Ericsson", "Shopify", "Salesforce", "Toshiba", "HP", "Panasonic", "iFLYTEK", "China Unicom", "China Mobile", "Nokia", "Changan Automobile", "ZTE", "Volkswagen", "Honda", "Cohere", "Scania", "PwC",
-}
-EDGE_SCOPES = ("手机", "PC", "其他端侧")
+from curation_merge import COMPANIES, apply_curation as _apply, canonical_company  # noqa: E402,F401
 
-def canonical_company(name: str) -> str:
-    """'Microsoft Research Cambridge' -> 'Microsoft'; unknown or small firms -> ''."""
-    name = (name or "").strip()
-    for company in sorted(COMPANIES, key=len, reverse=True):
-        if name == company or name.startswith(company + " ") or name.startswith(company + "（"):
-            return company
-    return ""
 
+def apply_curation(draft: dict, cur: dict) -> dict | None:
+    """Curated paper for an archive (no collection lineage), or None if dropped."""
+    return _apply(draft, cur, keep_lineage=False)
 
 
 def cmd_draft(args) -> int:
@@ -79,40 +65,6 @@ def cmd_draft(args) -> int:
     print(f"[GAP] {len(cands)} candidates -> {len(drafts)} relevant drafts "
           f"({skipped_published} already published) -> {args.out}")
     return 0
-
-
-def apply_curation(draft: dict, cur: dict) -> dict | None:
-    """Turn a draft plus its curation record into a publishable paper, or None if dropped."""
-    if cur.get("drop"):
-        return None
-    q = {k: v for k, v in draft.items() if k not in ("source_summary", "categories")}
-    for f in ("abstract", "effects", "mechanism", "score_reason", "tags", "edge_agent_scope", "edge_agent_evidence"):
-        q[f] = cur[f]
-    q["score_relevance"], q["score_contribution"] = cur["score_relevance"], cur["score_contribution"]
-    q["score"] = q["score_relevance"] + q["score_contribution"]
-    q["open_source"] = bool(cur.get("open_source"))
-    if cur.get("venue"):
-        q["venue"] = cur["venue"]
-    comp = cur.get("company") or {}
-    names = [canonical_company(n) for n in re.split(r"[;,]", comp.get("vendors") or "")]
-    names = list(dict.fromkeys(n for n in names if n))
-    if names and str(comp.get("evidence_url", "")).startswith("https://arxiv.org/pdf/"):
-        q["source_tier"], q["vendors"] = "公司项目", "; ".join(names)
-        q["affiliation_evidence_url"] = comp["evidence_url"]
-        note = (comp.get("evidence_note") or "").strip().rstrip("。")
-        q["score_reason"] = (q["score_reason"].rstrip() + f" 作者机构依据：arXiv PDF 首页署名 {', '.join(names)}"
-                             + (f"（{note}）" if note else "") + "。")
-    else:
-        q["vendors"], q["affiliation_evidence_url"] = "", ""
-        q["source_tier"] = "学校顶会" if cur.get("accepted_top_venue") else "学校预印本"
-    rec = bool(cur.get("recommend")) or q["edge_agent_scope"] in EDGE_SCOPES
-    q["recommendation"] = "推荐" if rec else "纳入"
-    q["title_zh"] = cur.get("title_zh", "") if rec else ""
-    q["recommendation_reason"] = cur.get("recommendation_reason", "") if rec else ""
-    # archived papers carry no collection lineage
-    q.pop("candidate_source", None)
-    q.pop("candidate_ref", None)
-    return q
 
 
 def cmd_apply(args) -> int:

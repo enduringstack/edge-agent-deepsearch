@@ -97,6 +97,37 @@ class CoverageAnomalyTests(unittest.TestCase):
         self.assertEqual(history[0]["counts"]["huggingface:candidates"], 260)
 
 
+class CurationMergeTests(unittest.TestCase):
+    def _cur(self, **over):
+        cur = {"drop": False, "abstract": "这是一项端侧推理工作，在手机上验证。", "effects": "未报告",
+               "mechanism": "通过量化和缓存复用减少内存。", "score_reason": "端侧部署明确，方法常见。",
+               "tags": ["方向:量化"], "edge_agent_scope": "非端侧Agent", "edge_agent_evidence": "",
+               "score_relevance": 7, "score_contribution": 5, "company": {}, "recommend": False}
+        cur.update(over)
+        return cur
+
+    def test_vendor_items_keep_their_tier_and_lineage(self):
+        import curation_merge as cm
+        paper = {"id": "vendor-x", "paper_url": "https://blog.google/x", "source_tier": "官方动态",
+                 "vendors": "Google", "candidate_source": "vendors", "candidate_ref": "r1"}
+        run, dropped, missing = cm.merge_run({"papers": [paper]}, {"vendor-x": self._cur()})
+        q = run["papers"][0]
+        self.assertEqual((q["source_tier"], q["vendors"], q["candidate_ref"]), ("官方动态", "Google", "r1"))
+
+    def test_decisions_drop_and_downgrade(self):
+        import curation_merge as cm
+        papers = [{"id": "a", "paper_url": "https://arxiv.org/abs/2610.1", "candidate_source": "arxiv"},
+                  {"id": "b", "paper_url": "https://arxiv.org/abs/2610.2", "candidate_source": "arxiv"}]
+        agent = self._cur(edge_agent_scope="PC", edge_agent_evidence="闭环在本机运行。", tags=["方向:端侧agent"],
+                          score_relevance=9, title_zh="本机智能体", recommendation_reason="真机闭环。")
+        run, dropped, _ = cm.merge_run({"papers": papers}, {"a": self._cur(), "b": agent},
+                                       {"force_drop": {"a": "重复"}, "not_edge_agent": ["b"]})
+        self.assertEqual(dropped, [("a", "重复")])
+        b = run["papers"][0]
+        self.assertEqual(b["edge_agent_scope"], "非端侧Agent")
+        self.assertNotIn("方向:端侧agent", b["tags"])
+
+
 class GapBackfillTests(unittest.TestCase):
     def _cur(self, **over):
         cur = {"drop": False, "abstract": "这是一项端侧推理工作，在手机上验证。", "effects": "未报告",
