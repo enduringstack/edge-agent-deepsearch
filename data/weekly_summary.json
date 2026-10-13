@@ -1,35 +1,45 @@
 {
-  "overview": "本周端侧 AI 动态（09-29~10-05）：厂商侧的关键词是算力下沉和链路打通。三星发布 Galaxy Tab S12 系列，官方给出三纳米处理器相比上代 NPU 处理速度提升 61%、CPU 提升 19%、GPU 提升 17%，芯片来自联发科天玑 9500，旗舰手机平台首次进入三星高端平板。高通开发者博客罕见地把「模型调用如何跨处理器域抵达 Hexagon NPU」整条链路讲透，FastRPC 负责把调用从应用处理器递到 DSP 域，stub 和 skel 各管一端。英伟达则开源了一套 C++ 示例，教开发者把模型做成 Windows 和 Linux 上的本机应用，并给出语音识别 206 倍实时、交互式分割从每秒 0.5 帧提到 38.3 帧的实测对比。学术侧有三条线索最值得看：一是真正落到手机运行时的优化，有工作在 MNN 上为安卓实现了与目标模型解耦的投机解码，并在四款真机、超过十二小时音频上验证；二是把整条智能体工作流留在本机，有系统为 Apple M4 的统一内存架构重排多智能体负载，拿到 1.77 倍加速；三是把重复计算彻底消掉，有工作实测真实负载里 98.7% 的提示词是模型此前读过的内容，接上键值缓存复用层后同一道题从 9.3 秒、2754 焦耳降到 0.59 秒、200 焦耳。单片机一侧还出现两个推翻常识的结论：在常见的 Armv7E-M 架构上十六比特量化并不比八比特慢，而被广泛引用的内存最优原地卷积公式其实存在会静默破坏数据的欠分配错误。",
+  "overview": "本周端侧 AI 动态（10-06~10-12）：主线是“智能体搬到本机”。微软 10 月 7 日的 Windows 发布会给出最完整的 PC 端路线：Copilot 在 Copilot+ PC 上获得本地上下文、本地动作和本地模型，官方口径的本地编码模型 MAI Code 1.1 Flash 总参 1370 亿、激活 68 亿，以 3 比特在本机运行并保留 256K 上下文；同日正式可用的执行容器 MXC 用一份声明式策略限定本机智能体能碰的文件、网络和进程，Windows ML 也开始直接加载 GGUF 模型。手机侧，Android 推出端侧 AI 隔离区 AISeal，把个人上下文、端侧推理和系统级智能体放进 pKVM 硬件隔离环境，天玑 9600 Pro 已支持；谷歌同一周开源了 LiteRT 背后的 GPU 推理引擎 ML Drift，并发布可在 Pixel 上只占约 191MB 内存的多模态嵌入模型 EmbeddingGemma 2。研究侧有三条线索最值得看：一是高通团队在 Galaxy S26 Ultra 的 NPU 上跑 3B 模型的语音智能体，边听边提前调用工具，首段语音时延从 5.79 秒降到 4.60 秒；二是机器人端侧智能体集中出现，9B 模型智能体完整跑在 Spot 四足机器人的 Jetson Thor 上，无人机和地面车上的小模型技能编排把新任务成功率从三成提到九成以上；三是端云分工开始被逐个调用点量化，真实部署的家居智能体只把规划和写代码交给云端，就能以 28% 的花费拿到全云端效果。家庭网关也加入了端侧智能体的行列：gFiber、高通与 Gemtek 的 Wi-Fi 8 网关在 Hexagon NPU 上本地理解语音指令并执行网络操作。",
   "highlights": [
     {
-      "url": "https://www.qualcomm.com/developer/blog/2026/10/how-ai-models-reach-hexagon-npu-qairt-fastrpc-hexagon-explained",
-      "topic": "模型如何抵达 Hexagon NPU",
-      "why": "端侧部署的文章大多只讲模型怎么量化，这篇把量化之后「调用怎么跨处理器域送到 NPU」讲透了：FastRPC 在同一颗 SoC 内把函数调用从应用处理器域递到 Hexagon DSP 域，stub 发请求、skel 在硬件侧执行，调试端侧推理卡顿时用得上。"
+      "url": "https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/",
+      "topic": "Windows 的混合智能路线：本地上下文、本地动作、本地模型",
+      "why": "微软第一次把 PC 端智能体的分工讲成平台路线：能在本机跑就用本地模型，需要时再上云。官方给出的本地模型口径很具体——总参 1370 亿、激活 68 亿的编码模型以 3 比特跑在本机并保留 256K 上下文，700 亿级模型 2 比特量化后约 20GB，Copilot+ PC 每月本地推理已超过 2 万亿次。"
     },
     {
-      "url": "https://news.samsung.com/global/samsung-introduces-galaxy-tab-s12-series-the-ultimate-productivity-powerhouse-built-for-growth",
-      "topic": "Galaxy Tab S12 系列的 NPU 代际数字",
-      "why": "厂商官方给出了可对照的代际提升：三纳米处理器相比 Tab S11 Ultra，NPU 处理速度最高提升 61%、CPU 提升 19%、GPU 提升 17%，是本周少有的能用来判断移动端 AI 算力增长节奏的一手数据。"
+      "url": "https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/",
+      "topic": "给本机智能体上锁：执行容器 MXC 正式可用",
+      "why": "本地智能体能改文件、跑代码之后，第一道问题是权限边界。MXC 用一份声明式策略同时约束 Windows、macOS、Linux 上智能体能访问的文件、网络、进程和界面，支持强制、学习、放行三种模式，是目前最完整的 PC 端智能体隔离方案。"
     },
     {
-      "url": "https://developer.nvidia.com/blog/build-local-ai-apps-with-c-and-nvidia-tensorrt-rtx-samples/",
-      "topic": "本地 AI 应用的 C++ 示例集",
-      "why": "官方给出把模型做成本机原生应用的完整可跑范例，并附上可核对的数字：Parakeet TDT 语音识别 206.41 倍实时，SAM 2.1 从 CPU 的每秒 0.5 帧提到 GPU 的 38.3 帧，FLUX.2 用 NVFP4 相对 BF16 加速 1.63 倍。"
+      "url": "https://blog.google/security/enabling-the-next-gen-enclave-architecture-for-on-device-ai-on-android/",
+      "topic": "Android 端侧 AI 隔离区 AISeal",
+      "why": "手机助手要读邮件、消息、日程才有用，宿主系统一旦被攻破就会全部泄露。谷歌把个人上下文、端侧推理和系统级智能体放进 pKVM 硬件隔离区，天玑 9600 Pro 已支持、骁龙将跟进，这是手机端侧智能体安全读取个人数据的第一套平台级方案。"
     },
     {
-      "url": "https://arxiv.org/abs/2609.37617",
-      "topic": "手机端音频模型的解耦式投机解码",
-      "why": "本周唯一真正落到手机运行时的推理优化：在 MNN 上为安卓实现，在四款真机、七个数据集、12.2 小时音频上评测，并且打破了「草稿必须跟着目标模型已验证前缀走」这个一直被当作前提的串行依赖。"
+      "url": "https://arxiv.org/abs/2610.07641",
+      "topic": "手机语音智能体边听边调工具",
+      "why": "本周最贴题的手机端智能体工作：高通团队在 Galaxy S26 Ultra 上把 W4A16 的 Llama-3.2-3B 跑在 NPU 上，用户还在说话时就预测并提前执行工具调用，首段语音时延中位数从 5.79 秒降到 4.60 秒，工具调用 F1 也从 44.8% 升到 60.6%。"
     },
     {
-      "url": "https://arxiv.org/abs/2610.03394",
-      "topic": "个人电脑上的多智能体推理系统",
-      "why": "少见地把「多个智能体一起跑在自己电脑上」当成系统问题正面解决，指出统一内存上的总线争抢和工具调用停顿才是真瓶颈，在 Apple M4 上实测整体加速 1.77 倍。"
+      "url": "https://developers.googleblog.com/ml-drift-next-gen-gpu-aiml-inference-at-the-edge/",
+      "topic": "谷歌开源端侧 GPU 推理引擎 ML Drift",
+      "why": "LiteRT 新一代 GPU 后端正式开源，一套代码覆盖 OpenGL ES、OpenCL、Metal 和 WebGPU，并为端侧大模型按预填充和解码切换内核；Chrome 里的 Gemini Nano 就跑在它上面，YouTube Shorts、Adobe、Snap 的线上应用报告延迟降低 30%–40%。"
     },
     {
-      "url": "https://arxiv.org/abs/2609.39358",
-      "topic": "让模型读同一份文档只付一次钱",
-      "why": "先在七个真实数据集上测出 98.7% 的提示词是模型已经读过的内容，再把键值缓存复用层接到 llama.cpp 等三个真实运行时上，同一道召回题从 9.3 秒、2754 焦耳降到 0.59 秒、200 焦耳。"
+      "url": "https://www.qualcomm.com/news/releases/2026/10/gfiber--qualcomm--and-gemtek-unveil-an-ai-native-wi-fi-8-broadba",
+      "topic": "家庭网关上的本地智能体",
+      "why": "端侧智能体从手机、电脑延伸到家庭网关：官方说明语音意图理解以及暂停孩子设备社交应用、生成访客二维码等网络操作，都在网关的 Hexagon NPU 上本地完成。目前还是展会演示，没有性能数据。"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.13862",
+      "topic": "9B 模型智能体完整跑在四足机器人上",
+      "why": "任务规划、场景记忆检索、技能执行和运动控制全部跑在 Spot 机器人自带的 Jetson Thor 上，不依赖远程算力；它用行为树把慢的模型决策和快的本地安全检查分开，人工干预时 19 毫秒内停车，而模型决策要 3 秒以上。"
+    },
+    {
+      "url": "https://huggingface.co/openbmb/MiniCPM-V-4.7-35B-A3B",
+      "topic": "35B MoE 多模态模型上 iPhone",
+      "why": "面壁智能发布 MiniCPM-V 4.7 35B-A3B，官方称在 iPhone 17 Pro Max 上解码超过每秒 13 个 token，靠的是前瞻式专家预加载、逐层量化和投机采样。这是官方自测口径、尚无第三方复现，但说明“大总参、小激活”的 MoE 正在成为手机端跑大模型的主要路线。"
     }
   ]
 }
