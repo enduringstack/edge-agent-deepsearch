@@ -29,7 +29,7 @@ research_runs/<run_id>.json
 | `effects` | string | agent 大白话整理版。回答「有什么结果」，只写最关键结果；必须来自原文，没有报告写 `未报告` |
 | `mechanism` | string | agent 大白话整理版。回答「怎么做到的」，普通话解释核心方法 |
 | `paper_url` | string | 论文原文 / 权威论文页 / 官方来源页 / github 仓 URL |
-| `date` | string | `YYYY-MM-DD`，必须在以运行日为末日、包含当日的最近 7 个自然日内。arXiv 新稿取提交日；旧稿仅在本周有实质修订时可取更新日 |
+| `date` | string | `YYYY-MM-DD`，必须在以运行日为末日、包含当日的最近 7 个自然日内（arXiv 按提交日收录的论文可回看窗口前 5 天，且不得在往期发布过）。arXiv 新稿取提交日；旧稿仅在本周有实质修订时可取更新日 |
 | `arxiv_date_basis` | string | `submitted` / `updated`。自动搜集保留日期来源 |
 | `arxiv_revision_note` | string | `arxiv_date_basis=updated` 时必填的中文版本对比结论；必须说明实验、方法、数据、代码或结论的实质变化，排版/勘误不算 |
 | `score` | integer | 0 到 20，必须等于 `score_relevance + score_contribution` |

@@ -56,6 +56,9 @@
 | `data/hardware-insights/` | 月度硬件洞察 markdown + `index.json`（页面 `hardware.html` 的月份切换） |
 | `agent/hardware_week.py` | 硬件雷达合并去重写入（merge）、本周覆盖检查（check）、月报组装（month） |
 | `docs/agent-guide/hardware-radar.md` | 硬件雷达/硬件洞察的子 agent 调研规范、契约和每周/每月步骤 |
+| `docs/agent-guide/recall-audit.md` | 漏检对账：独立列本周大事并逐条对账的规范 |
+| `app/recall.py` / `data/recall_audit.json` | 漏检对账契约与本周对账结果 |
+| `data/collection_history.json` | 每周各来源采集条数，覆盖异常门的比较基线 |
 | `docs/` | 文档（agent-guide / site / design-docs / plans / references） |
 | `README.md` | 人类入口和常用命令 |
 | `ARCHITECTURE.md` | 顶层架构和数据流 |
@@ -75,7 +78,8 @@
 9. publish 前主 agent 抽检 `source_tier=官方动态` 和 `source_tier=开源大项目` 条目：fetch 每个 URL，对比页面内容 vs 标题摘要。URL 能开 ≠ 内容对题，对不上就丢。
 10. **独立采集社区雷达**：以运行日为末日检索最近 7 个自然日的 X、Bluesky、Reddit、Hacker News、Mastodon、GitHub Discussions、Hugging Face（Discussions/Models/Spaces）、YouTube / Bilibili 和厂商论坛，写 `data/community_radar.json`。九类来源逐一写 `found/no_match/limited/unavailable` + 中文说明；X 只用无需登录即可打开并核验日期的公开原帖，受限就写 `limited`，不得拿转述冒充原帖。视频只收官方频道或可回链一手项目的演示。社区条目只进“社区雷达”，不得直接进入正式 run；必须回链一手材料并重新满足正式来源契约后才可晋升。
 10.5 **独立采集硬件雷达**：按 `docs/agent-guide/hardware-radar.md` 派 6 个硬件子 agent（高通 / Apple 与 Google / 其他 SoC 与 PC / 低功耗·存内计算·内存 / 顶会 / arXiv），prompt 注入该文档第 2–4 节全文；主 agent 抽检冲突数字、写本周 overview + takeaways，用 `python agent/hardware_week.py merge … --text …` 写 `data/hardware_radar.json`（自动与往周去重），`python agent/hardware_week.py check` 确认覆盖本周。每月第一次周调研时，再按该文档第 6 节写上个月的硬件洞察（`hardware_week.py month`）。
-11. 运行 `python agent/publish_results.py research_runs/<run_id>.json --server <SERVER_URL>`。
+10.6 **漏检对账**：按 `docs/agent-guide/recall-audit.md` 派一个不看本周报的子 agent，从独立媒体、聚合站和社区热榜列出本周端侧 AI 大事；主 agent 逐条对账写 `data/recall_audit.json`（已收录 / 补收 / 不收）。补收的回到对应采集层走完整流程，每个补收都要查根因写进教训。`gate_release` 拦缺失、理由缺失和“声称已收录但页面没有”。
+11. 运行 `python agent/publish_results.py research_runs/<run_id>.json --server <SERVER_URL>`（缺少页面源文件的机器先设 `EDGE_AUTO_DEPLOY=0`）。发布后运行 `python agent/record_collection_history.py` 记录本周各来源条数，供覆盖异常门做比较。
 12. 服务器 upsert，`GET /api/papers` 刷新最新 run；`GET /api/community` 读取独立社区雷达。
 13. 详情页展示短摘要 + tags + 原文链接。publish 后列表页、社区雷达和详情页立即可见。
 14. 更新 `data/.last_run` 时间戳为本次调研时间。
@@ -125,7 +129,7 @@
 - `paper_url` 必须和论文标题、摘要匹配。
 - `effects` 必须来自论文原文；没有报告写 `未报告`。
 - 发布前必须跑 `validate_research_run.py`。
-- **发布前必须跑 `python app/gates/gate_all.py`（含 `gate_release.py`）**。`gate_release` 是机械门，作用在构建产物 `site/` + `data/`，拦：__PAPERS__ 契约、推荐中文项目名/摘要/理由缺失或含内部占位词、项目名复用介绍、非空周报 0 推荐、内链 404、热点复读论文列表、0 官方动态静默、社区九来源覆盖缺失、静态社区快照不一致、社媒链接污染正式周报、硬件雷达不是本周或月度硬件洞察超过 38 天未更新。**它 FAIL 就不许部署**——比 assertIn 子串测试强，子串测试测不出的功能回归它都能拦。
+- **发布前必须跑 `python app/gates/gate_all.py`（含 `gate_release.py`）**。`gate_release` 是机械门，作用在构建产物 `site/` + `data/`，拦：__PAPERS__ 契约、推荐中文项目名/摘要/理由缺失或含内部占位词、项目名复用介绍、非空周报 0 推荐、内链 404、热点复读论文列表、0 官方动态静默、社区九来源覆盖缺失、静态社区快照不一致、社媒链接污染正式周报、硬件雷达不是本周或月度硬件洞察超过 38 天未更新、漏检对账缺失或不实。**它 FAIL 就不许部署**——比 assertIn 子串测试强，子串测试测不出的功能回归它都能拦。
 - `data/weekly_summary.json` 是**独立编辑产物**，不是 run 的派生字段。`highlights` 必须是编辑性新闻（厂商博客/动态/行业事件，带**外部 URL**，≥5 条），不许用 run 的 paper_id 切 top N 填充——那会让热点复读下面的论文列表。流程顺序：先采厂商动态（`官方动态`）→ 再写 weekly_summary（从新闻 + 判断）→ run 论文列表是另一层。
 - **0 官方动态是流程告警，不是可接受结果**。research-prompt 和 collection manifest 强制查 24 个规范厂商/模型实验室来源。run 里 `官方动态` count==0 时，必须要么去补采，要么在 `data/weeks/<label>-no-vendor.md` 写明逐厂证据，不许静默接受 0。
 - 修改完成前至少跑 `python tests/test_research_pipeline.py`、`python tests/test_build.py`、`python app/gates/gate_all.py`。
@@ -181,4 +185,7 @@
 - [2026-10-12] 本周 10-06~10-12 周报一次暴露四个“采集自报完整、实际漏或混”的问题。(1) arXiv 的 Systems and Control 论文现在挂在 `eess.SY`，`cat:cs.SY` 返回 0 行，`cs.SY-broad` 却照样记为 complete（同窗口 eess.SY 有 136 篇）。修复：`arxiv_curl_sweep.cat_query` 对 cs.SY 一律查 `(cat:cs.SY OR cat:eess.SY)`，含 recent-updates 与可达性探测，并加回归测试。**某个大类突然 0 条不是“本周没有”，先直接查 API 的 totalResults 确认分类没改名。** (2) GitHub Trending 解析器的 `<p[^>]*>` 会匹配到星标按钮里的 SVG `<path>`，描述被吞成 “Star owner / repo”，而且从不解析星数，真正上榜的端侧仓（BitNet、uzu、Llama-macOS、atomic-agent）全部排到末尾、Top20 只剩 1–5 星新仓。修复：解析总星数和本周新增星，Trending 页仓库须同时命中端侧推理栈词和 AI 词（`is_edge_trending`，带“web and mobile apps”“tinyhumansai”等碰撞负例），按本周新增星排序。(3) llama.cpp 每合一个 PR 就打一个 `bNNNNN` CI 构建 tag，本周 110 个全部被组装成“开源大项目”；白名单早写了“每日 CI build 不算”，但只存在于文档。修复：`build_run_week.is_daily_build` 机械过滤。(4) HF 日榜会把上周已发布的论文再推一遍（本周 3 条，其中 2 条差点作为推荐重发）；validate 只对“上一期”给 warning。修复：组装器按 arXiv/HF 统一身份与全部 `data/weeks/*.json` 去重。**文档里写了的规则，只要还能被脚本绕过，就等于没写。**
 - [2026-10-12] 本地 `app/server.py` 收到 publish 后 10 秒会自动 build 并把 `site/` **整体替换**推到 gh-pages；本机没有调研笔记源文件时，这会把线上笔记页一起抹掉（本次因 origin 不带凭证才没推出去）。修复：新增 `EDGE_AUTO_DEPLOY=0` 开关；缺少任何页面源文件的机器发布时必须关掉自动部署，改为只把本次重建的页面（index、week/*、paper/*、hardware*）覆盖到 gh-pages。
 - [2026-10-12] 微软 10-07 Windows 发布会的官方稿（MXC 执行容器正式版、Building Windows for hybrid intelligence）发在 `blogs.windows.com`，不在官方域名白名单，厂商子 agent 按规则只能漏掉本周 PC 端 Agent 最重要的一手来源。核实为微软官方 Windows 博客、`/feed/` 带 pubDate 后加入白名单（`vendor-whitelist.md` + `OFFICIAL_SOURCE_DOMAINS` + 采集入口 + 回归测试）。**子 agent 报告“官方稿在白名单外”时，主 agent 要当场核实并决定是否扩白名单，而不是默认放弃。**
+- [2026-10-12] 追问“怎么保证不遗漏”时按日期盘点历史周，发现最大的漏洞不在任何单一来源：arXiv 周一晚上才公开周四下午到周日的投稿，而周报周一跑、下周窗口又已越过，**这几天的论文从上线起就永远进不了任何一周**（07-02、07-25、08-12、09-22、09-29、10-06 等周的窗口末尾都是 0 篇；仅 cs.LG 一个类 10-03~10-05 就有 647 篇投稿，最终只收了 1 条）。修复：(1) arXiv 按提交日收录允许回看窗口前 5 天（`ARXIV_CATCHUP_DAYS`），与所有往期去重，validate 同步放行并拦重复；(2) 覆盖异常门：大类 0 条、已公开工作日 0 篇、来源条数崩到中位数 30% 以下都拦组装；(3) 每周漏检对账：独立子 agent 列本周大事，主 agent 逐条对账，gate 拦。历史缺口用 `arxiv_curl_sweep.py --since/--until/--out` 补采后并入原周存档。**“每个来源都查过”不等于“没有漏”：要按输出的日期、类别分布反查覆盖，再用外部视角对账。**
+- [2026-10-12] 第一次漏检对账（15 条独立来源列出的本周大事）：10 条已收录、3 条补收、2 条有理由不收。补收的根因：(1) AMD 新一代锐龙 AI Halo（10-12 美国时间发布）和 Janas 登上 HN（10-12 22:05 UTC）都发生在运行当天、晚于各路子 agent 的采集时间；(2) Perplexity 开源的端侧检索模型来自 24 家规范厂商之外，官方采集层天然覆盖不到，只能靠社区与对账发现。修复：对账子 agent 放在 build 前最后一步派出，并专门补扫运行当天；名单外公司的端侧发布以社区雷达承接（回链官方原文）。**名单是起步集，对账才是检验名单够不够的手段。**
+- [2026-10-12] 这一周的整理跨过午夜，10-13 才发布。服务器端早有 `EDGE_TODAY` 覆盖“今天”，但社区雷达、漏检对账、`gate_release`、`gate_window`、validate 默认值和 `hardware_week.py` 都直接用 `date.today()`，晚一天发布会被判过期，build 还会把社区雷达写成空。修复：统一走 `app/clock.report_today()`（读 `EDGE_TODAY`），发布门加“隔天发布”回归测试。**同一个“今天”在一条流水线里必须只有一个来源。**
 

@@ -11,7 +11,7 @@
 5. `学校顶会` 条目作者须来自任何正规大学（不再卡中美名校，见 `research-prompt.md` 硬约束），且发表在顶会顶刊。`学校预印本` 是任何大学作者的 arXiv 预印本（非顶会但强相关）。
 6. `paper_url` 必须指向论文原文、权威论文页、官方来源页或 github 仓。
 7. 标题、摘要、链接必须对应同一篇论文或同一条官方动态。
-8. `date` 必须在以运行日为末日、包含当日的最近 7 个自然日内。窗口由 `research_collection.collection_window` 动态计算，不允许采集脚本写死。**arXiv 条目 date 必须取自 arXiv 元数据提交日**。
+8. `date` 必须在以运行日为末日、包含当日的最近 7 个自然日内。窗口由 `research_collection.collection_window` 动态计算，不允许采集脚本写死。**arXiv 条目 date 必须取自 arXiv 元数据提交日**。**arXiv 回看例外**：按提交日收录的 arXiv 论文允许提交日早于窗口最多 `ARXIV_CATCHUP_DAYS`（5）天——arXiv 周一晚上才公开周四下午到周日的投稿，周一跑的周报永远拿不到它们；回看条目必须没有在任何已发布周（`data/weeks/*.json`）出现过，validate 拦重复。更新稿（`updated`）和其他来源仍严格 7 天。
 9. `effects` 必须来自论文原文或官方来源；没有报告就写 `未报告`。
 10. `tags` 必须是 1 到 8 个，取自 `data/tags.yaml` 词表，多标签。词表外的标签先加进 `data/tags.yaml` 再用。
 11. `score` = `score_relevance`(0-10) + `score_contribution`(0-10)，上限 20。validate 校验加总。
@@ -81,3 +81,9 @@ python agent/validate_research_run.py research_runs/<run_id>.json
 - 推荐缺少简短中文项目名或具体中文理由：降级为 `纳入`，或由主 agent 阅读来源后补全；不能拿 abstract 冒充项目名，也不能拿 `score_reason` 顶替推荐理由。
 
 不能为了凑数量发布不合格内容。本周合格内容不足就少收。
+
+## 覆盖异常与漏检对账（2026-10-12 起）
+
+- **覆盖异常门**（`research_collection.check_coverage_anomalies`，组装器执行）：任一 arXiv 大类扫描 0 条、回看范围内早于 4 天前的工作日 0 篇投稿、任一来源条数低于近期中位数的 30%（需 ≥3 周历史，历史在 `data/collection_history.json`，每周由 `agent/record_collection_history.py` 追加），都会拦下组装。确属正常的写进 manifest 的 `anomaly_waivers`（键为问题项，值为中文理由）。
+- **漏检对账**（`docs/agent-guide/recall-audit.md`，`gate_release` 执行）：`data/recall_audit.json` 必须覆盖本周 7 天、至少 10 条独立来源列出的本周大事，每条为 已收录 / 补收 / 不收；声称收录的必须真在页面对应位置，不收必须有理由。
+

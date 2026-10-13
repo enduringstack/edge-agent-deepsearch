@@ -38,7 +38,8 @@
 | 10 | 主 agent 抽检 `source_tier=官方动态` 和 `开源大项目` 条目：fetch URL 对比页面内容 vs 标题摘要 | 半自动 |
 | 11 | 独立检索 X / Bluesky / Reddit / Hacker News / Mastodon / GitHub Discussions / Hugging Face / YouTube-Bilibili / 厂商论坛，写 `data/community_radar.json`；九来源逐项留覆盖状态，社媒链接不进入正式 run | 主 agent + 自动拦 |
 | 11.5 | 按 `docs/agent-guide/hardware-radar.md` 派 6 个硬件子 agent，主 agent 核实冲突数字、写本周综述，`agent/hardware_week.py merge` 写 `data/hardware_radar.json`（自动与往周去重）并 `check`；每月第一次周调研再写上月硬件洞察（`hardware_week.py month`） | 主 agent + 自动拦 |
-| 12 | `python agent/publish_results.py --server <URL>` | 主 agent |
+| 11.6 | 漏检对账：独立子 agent 列本周端侧大事（不看本周报），主 agent 逐条对账写 `data/recall_audit.json`，补收项回采集层并记根因 | 主 agent + 自动拦 |
+| 12 | `python agent/publish_results.py --server <URL>`；之后 `agent/record_collection_history.py` 记录各来源条数 | 主 agent |
 | 13 | 服务器 upsert，`GET /api/papers` 刷新最新 run；`GET /api/community` 返回独立社区层 | 自动 |
 | 14 | 详情页展示短摘要 + tags + 原文链接（整理 agent 已停用，无 6 段 detail，无「整理中」状态） | 自动 |
 | 15 | publish 后列表页、社区雷达和详情页立即可见；推荐区按手机端 Agent > PC 端 Agent > 其他端侧 Agent > 普通推荐，再按 source_tier + score 排序 | 自动 |

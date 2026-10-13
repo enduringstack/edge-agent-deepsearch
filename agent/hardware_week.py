@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 from datetime import date, timedelta
@@ -34,6 +35,12 @@ sys.path.insert(0, str(ROOT))
 from app import hardware  # noqa: E402
 
 DATA = ROOT / "data"
+
+
+def _today() -> date:
+    raw = os.environ.get("EDGE_TODAY", "").strip()
+    return date.fromisoformat(raw) if raw else date.today()
+
 RADAR = DATA / "hardware_radar.json"
 WEEKS = DATA / "weeks"
 INSIGHTS = DATA / "hardware-insights"
@@ -168,7 +175,7 @@ def merge(paths, start: date, end: date, *, dupes=None, drop=()) -> tuple:
 
 
 def cmd_merge(args) -> int:
-    today = date.today()
+    today = _today()
     start = date.fromisoformat(args.start) if args.start else today - timedelta(days=hardware.WEEK_DAYS - 1)
     end = date.fromisoformat(args.end) if args.end else today
     dupes = json.loads(Path(args.dupes).read_text(encoding="utf-8")) if args.dupes else {}
@@ -212,7 +219,7 @@ def cmd_merge(args) -> int:
 def cmd_check(args) -> int:
     try:
         block = hardware.load_hardware(Path(args.path))
-        hardware.check_fresh(block, date.today())
+        hardware.check_fresh(block, _today())
     except hardware.HardwareValidationError as exc:
         print(f"[HW] FAIL: {exc}")
         return 1

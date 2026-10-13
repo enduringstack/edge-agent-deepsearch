@@ -67,8 +67,14 @@ python agent/hardware_week.py check
 
 每月第一次周调研时，按该文档第 6 节写上个月的硬件洞察（`hardware_week.py month`）。硬件雷达是独立编辑层，不进入 research run。
 
+## 9.6 漏检对账
+
+按 `docs/agent-guide/recall-audit.md`：派不看本周报的子 agent 列本周端侧大事，主 agent 逐条对账写 `data/recall_audit.json`。每个“补收”都回到对应采集层补，并把根因写进 AGENTS.md 已知教训。
+
 ## 10. 发布到服务器
 
+> 周报跨过午夜、在窗口结束后的第二天才发布时，服务器、`app/build.py`、`gate_release`、validate 和 `hardware_week.py` 都要在同一环境里设 `EDGE_TODAY=<窗口最后一天>`（见 `app/clock.py`），否则 7 日窗口按墙上时钟判断，社区雷达、漏检对账会被判过期，build 还会把社区雷达清空。采集脚本另用各自的 `--today`。
+>
 > 本机缺少任何页面的源文件（例如调研笔记）时，启动服务器前先设 `EDGE_AUTO_DEPLOY=0`：自动部署会用本地 `site/` 整体替换 gh-pages。随后只把本次重建的页面覆盖到 gh-pages。
 
 ```powershell

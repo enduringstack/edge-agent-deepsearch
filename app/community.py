@@ -5,6 +5,8 @@ import json
 import re
 from datetime import date, datetime
 from pathlib import Path
+
+from app.clock import report_today
 from urllib.parse import urlparse
 
 SOURCES = (
@@ -45,7 +47,7 @@ def _parse_published_date(value: str) -> date:
 
 
 def validate_community(payload: dict, *, today: date | None = None) -> dict:
-    today = today or date.today()
+    today = today or report_today()
     if not isinstance(payload, dict):
         raise CommunityValidationError("community radar 必须是 JSON object")
 
@@ -133,7 +135,7 @@ def validate_community(payload: dict, *, today: date | None = None) -> dict:
 
 
 def empty_community(today: date | None = None, note: str = "社区数据文件不存在") -> dict:
-    today = today or date.today()
+    today = today or report_today()
     start = date.fromordinal(today.toordinal() - 6)
     return {
         "window": {"start": start.isoformat(), "end": today.isoformat()},

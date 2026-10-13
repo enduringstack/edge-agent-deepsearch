@@ -100,6 +100,10 @@ cat << 'AGENT_INSTRUCTIONS'
           --text research_runs/hardware/weekly_text.json
      每月第一次周调研时，再按该文档第 6 节写上个月的硬件洞察月报
 
+  7. 漏检对账：按 docs/agent-guide/recall-audit.md 派一个不看本周报的子 agent
+     列本周端侧大事 → 主 agent 逐条对账写 data/recall_audit.json
+     （已收录 / 补收 / 不收），补收项回到对应采集层补齐
+
 详见 docs/agent-guide/research-prompt.md、docs/agent-guide/hardware-radar.md
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 AGENT_INSTRUCTIONS
@@ -146,7 +150,7 @@ python agent/validate_research_run.py "${LATEST_RUN}" --today "${TODAY}" > /dev/
 
 # ── 8. publish ──
 info "Step 8/10: publish..."
-python agent/publish_results.py "${LATEST_RUN}" --server "${SERVER}" --token "${EDGE_PUBLISH_TOKEN}" 2>/dev/null && ok "publish 成功" || {
+python agent/publish_results.py "${LATEST_RUN}" --server "${SERVER}" --token "${EDGE_PUBLISH_TOKEN}" 2>/dev/null && ok "publish 成功" && python agent/record_collection_history.py || {
   # 如果 publish 失败（token/validate），尝试直接 POST
   python -c "
 import json,sys

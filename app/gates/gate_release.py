@@ -42,6 +42,8 @@ if str(ROOT) not in sys.path:
 
 from app import community  # noqa: E402
 from app import hardware  # noqa: E402
+from app import recall  # noqa: E402
+from app.clock import report_today  # noqa: E402
 
 MIN_EXTERNAL_HIGHLIGHTS = 5
 MIN_CHINESE_CHARS = 8
@@ -154,7 +156,7 @@ def check_community_radar(root: Path, errors: list) -> None:
         return
     try:
         raw = json.loads(data_path.read_text(encoding="utf-8"))
-        expected = community.validate_community(raw, today=date.today())
+        expected = community.validate_community(raw, today=report_today())
     except (OSError, json.JSONDecodeError, community.CommunityValidationError) as exc:
         _err(errors, f"data/community_radar.json 校验失败（window/coverage/items）：{exc}")
         return
@@ -168,7 +170,7 @@ def check_community_radar(root: Path, errors: list) -> None:
         _err(errors, "site/index.html: window.__COMMUNITY__ missing — 静态社区快照未构建")
         return
     try:
-        actual = community.validate_community(json.loads(match.group(1)), today=date.today())
+        actual = community.validate_community(json.loads(match.group(1)), today=report_today())
     except (json.JSONDecodeError, community.CommunityValidationError) as exc:
         _err(errors, f"site/index.html: __COMMUNITY__ 无效：{exc}")
         return
@@ -366,12 +368,12 @@ def check_hardware_radar(root: Path, errors: list) -> None:
         _err(errors, f"data/hardware_radar.json 校验失败：{exc}")
         return
     try:
-        hardware.check_fresh(expected, date.today())
+        hardware.check_fresh(expected, report_today())
     except hardware.HardwareValidationError as exc:
         _err(errors, f"data/hardware_radar.json 过期：{exc}")
     index_path = root / "data" / "hardware-insights" / "index.json"
     try:
-        hardware.check_insight_fresh(_read_json(index_path, default=[]) or [], date.today())
+        hardware.check_insight_fresh(_read_json(index_path, default=[]) or [], report_today())
     except hardware.HardwareValidationError as exc:
         _err(errors, f"月度硬件洞察：{exc}")
     for p in sorted((root / "data" / "weeks").glob("*.json")):
@@ -404,6 +406,27 @@ def check_hardware_radar(root: Path, errors: list) -> None:
         _err(errors, "site/hardware.html missing — run agent/build_hardware.py (硬件洞察 nav 链接会 404)")
 
 
+def check_recall_audit(root: Path, errors: list) -> None:
+    """The week's independent big-event list exists and every 'included' claim is true."""
+    path = root / "data" / "recall_audit.json"
+    if not path.exists():
+        _err(errors, "data/recall_audit.json missing — 本周没有做漏检对账")
+        return
+    try:
+        audit = recall.load_recall_audit(path, today=report_today())
+    except recall.RecallAuditError as exc:
+        _err(errors, f"data/recall_audit.json 校验失败：{exc}")
+        return
+    keys = recall.report_keys(
+        _papers_from_index(root),
+        _read_json(root / "data" / "weekly_summary.json", default={}) or {},
+        _read_json(root / "data" / "community_radar.json", default={}) or {},
+        _read_json(root / "data" / "hardware_radar.json", default={}) or {},
+    )
+    for problem in recall.unmatched(audit, keys):
+        _err(errors, f"漏检对账声称已收录但页面里没有：{problem}")
+
+
 def check_waic_page(root: Path, errors: list) -> None:
     """site/waic.html must exist — the WAIC insight page nav link points at it."""
     if not (root / "site" / "waic.html").exists():
@@ -434,6 +457,7 @@ def run_all(root: Path) -> list:
     check_snn_page(root, errors)
     check_waic_page(root, errors)
     check_hardware_radar(root, errors)
+    check_recall_audit(root, errors)
     return errors
 
 

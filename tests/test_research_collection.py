@@ -44,6 +44,101 @@ class ResearchWindowTests(unittest.TestCase):
         ])
 
 
+class CoverageAnomalyTests(unittest.TestCase):
+    RUN_DAY = date(2026, 10, 12)  # a Monday
+
+    def _manifest(self, by_query=None, by_date=None, hf=250, waivers=None):
+        import research_collection as rc
+        full = {label: 100 for label in rc.REQUIRED_ARXIV_SWEEPS if label != "recent-updates"}
+        full.update(by_query or {})
+        days = {d: 300 for d in ("2026-10-01", "2026-10-02", "2026-10-05", "2026-10-06",
+                                 "2026-10-07", "2026-10-08")}
+        days.update(by_date or {})
+        manifest = {"window_start": "2026-10-06", "window_end": "2026-10-12", "sources": {
+            "arxiv": {"in_window_by_query": full, "in_window_by_date": days,
+                      "submitted_window_start": "2026-10-01"},
+            "huggingface": {"candidate_count": hf}}}
+        if waivers:
+            manifest["anomaly_waivers"] = waivers
+        return manifest
+
+    def _check(self, manifest, history=()):
+        import research_collection as rc
+        return rc.check_coverage_anomalies(manifest, list(history), today=self.RUN_DAY)
+
+    def test_clean_week_passes(self):
+        self.assertEqual(self._check(self._manifest()), [])
+
+    def test_silent_zero_category_is_caught(self):
+        problems = self._check(self._manifest(by_query={"cs.SY-broad": 0}))
+        self.assertTrue(any("cs.SY-broad" in p for p in problems), problems)
+
+    def test_missing_announced_weekday_is_caught_but_recent_tail_is_not(self):
+        # 10-05 (Mon) is old enough to be announced; 10-09 (Fri) is not yet.
+        problems = self._check(self._manifest(by_date={"2026-10-05": 0}))
+        self.assertTrue(any("2026-10-05" in p for p in problems), problems)
+        self.assertEqual(self._check(self._manifest(by_date={"2026-10-09": 0})), [])
+
+    def test_collapse_against_history_and_waiver(self):
+        history = [{"counts": {"huggingface:candidates": 250}} for _ in range(4)]
+        self.assertTrue(self._check(self._manifest(hf=40), history))
+        waived = self._manifest(hf=40, waivers={"huggingface:candidates": "HF 当周停更两天"})
+        self.assertEqual(self._check(waived, history), [])
+        self.assertEqual(self._check(self._manifest(hf=40), history[:2]), [])  # not enough history yet
+
+    def test_history_records_one_entry_per_window(self):
+        import research_collection as rc
+        with tempfile.TemporaryDirectory() as d:
+            path = Path(d) / "history.json"
+            rc.record_collection_history(self._manifest(), path)
+            rc.record_collection_history(self._manifest(hf=260), path)
+            history = rc.load_collection_history(path)
+        self.assertEqual(len(history), 1)
+        self.assertEqual(history[0]["counts"]["huggingface:candidates"], 260)
+
+
+class GapBackfillTests(unittest.TestCase):
+    def _cur(self, **over):
+        cur = {"drop": False, "abstract": "这是一项端侧推理工作，在手机上验证。", "effects": "未报告",
+               "mechanism": "通过量化和缓存复用减少内存。", "score_reason": "端侧部署明确，方法常见。",
+               "tags": ["方向:量化"], "edge_agent_scope": "非端侧Agent", "edge_agent_evidence": "",
+               "score_relevance": 7, "score_contribution": 5, "open_source": False,
+               "company": {"vendors": "", "evidence_url": ""}, "recommend": False}
+        cur.update(over)
+        return cur
+
+    def _draft(self):
+        return {"id": "arxiv-2609.00001", "paper_url": "https://arxiv.org/abs/2609.00001", "date": "2026-09-26",
+                "title": "X", "source_tier": "学校预印本", "candidate_source": "arxiv", "candidate_ref": "abc",
+                "source_summary": "...", "categories": ["cs.LG"]}
+
+    def test_drop_and_lineage_stripped(self):
+        import arxiv_gap_backfill as g
+        self.assertIsNone(g.apply_curation(self._draft(), self._cur(drop=True, drop_reason="无关")))
+        paper = g.apply_curation(self._draft(), self._cur())
+        self.assertNotIn("candidate_ref", paper)
+        self.assertNotIn("source_summary", paper)
+        self.assertEqual(paper["score"], 12)
+
+    def test_only_recognised_companies_become_company_projects(self):
+        import arxiv_gap_backfill as g
+        big = g.apply_curation(self._draft(), self._cur(company={
+            "vendors": "Qualcomm; Tiny Startup", "evidence_url": "https://arxiv.org/pdf/2609.00001",
+            "evidence_note": "首页署名"}))
+        self.assertEqual((big["source_tier"], big["vendors"]), ("公司项目", "Qualcomm"))
+        self.assertIn("Qualcomm", big["score_reason"])
+        small = g.apply_curation(self._draft(), self._cur(company={
+            "vendors": "Tiny Startup", "evidence_url": "https://arxiv.org/pdf/2609.00001"}))
+        self.assertEqual(small["source_tier"], "学校预印本")
+
+    def test_edge_agent_is_always_recommended(self):
+        import arxiv_gap_backfill as g
+        paper = g.apply_curation(self._draft(), self._cur(
+            edge_agent_scope="手机", edge_agent_evidence="规划与工具调用闭环在手机上运行。",
+            tags=["方向:端侧agent"], score_relevance=9, title_zh="手机智能体", recommendation_reason="真机闭环。"))
+        self.assertEqual(paper["recommendation"], "推荐")
+
+
 class ArxivCategoryAliasTests(unittest.TestCase):
     def test_systems_and_control_sweeps_query_eess_sy(self):
         # cat:cs.SY alone returns 0 rows since arXiv files these papers under eess.SY.

@@ -11,6 +11,7 @@ import json
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -72,6 +73,15 @@ class GateReleaseTest(unittest.TestCase):
             "month": today.strftime("%Y-%m"),
             "title": f"{(today - timedelta(days=30)).isoformat()} ~ {today.isoformat()}",
             "file": today.strftime("%Y-%m") + ".md"}], ensure_ascii=False))
+        audit_items = [{"headline": f"第{i}条本周端侧大事", "url": f"https://news.example.com/{i}",
+                        "status": "不收", "reason": "与端侧 AI 无直接关系，属于云端业务新闻。"} for i in range(9)]
+        audit_items.append({"headline": "高通发布新旗舰移动平台", "url": "https://media.example.com/qcom",
+                            "status": "已收录", "place": "硬件雷达",
+                            "match": "https://www.qualcomm.com/news/releases/flagship"})
+        self.audit = {"window": {"start": (today - timedelta(days=6)).isoformat(), "end": today.isoformat()},
+                      "method": "检索了科技媒体、聚合站和社区热榜，逐条与本周页面对账。",
+                      "items": audit_items}
+        _write(self.root, "data/recall_audit.json", json.dumps(self.audit, ensure_ascii=False))
         # current week archive (1 paper, 1 官方动态 so the vendor gate passes)
         _write(self.root, "data/weeks/2026-07-02.json", json.dumps({
             "label": "2026-07-02", "title": "07-02~07-09",
@@ -472,6 +482,37 @@ class GateReleaseTest(unittest.TestCase):
         (self.root / "data" / "hardware-insights" / "index.json").unlink()
         errs = gr.run_all(self.root)
         self.assertTrue(any("月度硬件洞察" in e for e in errs), errs)
+
+    def test_edge_today_lets_a_week_publish_the_day_after(self):
+        self._seed_good()  # every window ends on the real today
+        tomorrow = (date.today() + timedelta(days=1)).isoformat()
+        with mock.patch.dict("os.environ", {"EDGE_TODAY": tomorrow}):
+            late = gr.run_all(self.root)
+        self.assertTrue(any("community" in e for e in late), late)  # wall clock moved on: stale
+        with mock.patch.dict("os.environ", {"EDGE_TODAY": date.today().isoformat()}):
+            self.assertEqual(gr.run_all(self.root), [])
+
+    def test_fail_when_recall_audit_missing(self):
+        self._seed_good()
+        (self.root / "data" / "recall_audit.json").unlink()
+        errs = gr.run_all(self.root)
+        self.assertTrue(any("漏检对账" in e for e in errs), errs)
+
+    def test_fail_when_recall_audit_claims_missing_item(self):
+        self._seed_good()
+        bad = dict(self.audit)
+        bad["items"] = self.audit["items"][:-1] + [dict(self.audit["items"][-1], match="https://elsewhere.example.com/x")]
+        _write(self.root, "data/recall_audit.json", json.dumps(bad, ensure_ascii=False))
+        errs = gr.run_all(self.root)
+        self.assertTrue(any("声称已收录" in e for e in errs), errs)
+
+    def test_fail_when_recall_audit_excludes_without_reason(self):
+        self._seed_good()
+        bad = dict(self.audit)
+        bad["items"] = [dict(self.audit["items"][0], reason="")] + self.audit["items"][1:]
+        _write(self.root, "data/recall_audit.json", json.dumps(bad, ensure_ascii=False))
+        errs = gr.run_all(self.root)
+        self.assertTrue(any("recall_audit.json" in e and "理由" in e for e in errs), errs)
 
     def test_fail_when_archived_week_hardware_invalid(self):
         self._seed_good()

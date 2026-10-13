@@ -101,6 +101,136 @@ def collection_window(today: str | date | None = None, days: int = 7) -> tuple[d
     return start, end, dates
 
 
+# arXiv announces Thursday-afternoon-to-Sunday submissions on Monday evening,
+# after a Monday run has collected, and next week's 7-day window has moved past
+# them — before 2026-10-12 those submissions never entered any week (cs.LG alone
+# had 647 such papers for 10-03~10-05). arXiv items therefore look back this many
+# extra days; anything already published in an archived week is excluded.
+ARXIV_CATCHUP_DAYS = 5
+WEEKS_DIR = Path(__file__).resolve().parents[1] / "data" / "weeks"
+
+
+def arxiv_collection_window(today: str | date | None = None) -> tuple[date, date]:
+    """Inclusive arXiv submitted-date range: the weekly window plus the catch-up days."""
+    start, end, _ = collection_window(today)
+    return start - timedelta(days=ARXIV_CATCHUP_DAYS), end
+
+
+def content_identity(url: str) -> str:
+    """arXiv and HF paper links collapse to the arXiv id; other URLs to themselves."""
+    m = re.search(r"(?:arxiv\.org/(?:abs|pdf|html)|huggingface\.co/papers)/(\d{4}\.\d{4,5})", url or "")
+    return f"arxiv:{m.group(1)}" if m else (url or "").rstrip("/")
+
+
+_PUBLISHED_CACHE: dict = {}
+
+
+def published_identities(weeks_dir: Path | None = None, exclude_label: str | None = None) -> dict:
+    """content identity -> week label for every paper in an archived week.
+
+    ``exclude_label`` skips one archive (the week being rebuilt), so re-running a
+    week does not count its own papers as already published. Cached per archive
+    state: validating a run calls this once per catch-up paper.
+    """
+    folder = Path(weeks_dir or WEEKS_DIR)
+    files = sorted(folder.glob("*.json"))
+    key = (str(folder), exclude_label, tuple((f.name, f.stat().st_mtime_ns) for f in files))
+    if key in _PUBLISHED_CACHE:
+        return _PUBLISHED_CACHE[key]
+    out: dict = {}
+    for f in files:
+        if f.name == "manifest.json" or f.stem == exclude_label:
+            continue
+        try:
+            rec = json.loads(f.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        for paper in rec.get("papers") or []:
+            out.setdefault(content_identity(paper.get("paper_url")), f.stem)
+    _PUBLISHED_CACHE.clear()
+    _PUBLISHED_CACHE[key] = out
+    return out
+
+
+# Coverage anomaly gate. Three failure shapes have each gone unnoticed for weeks:
+# a category sweep that silently returns 0 (cs.SY), whole days of submissions
+# never collected (the Monday-run weekend gap), and a source quietly collapsing.
+ANOMALY_MIN_HISTORY = 3
+ANOMALY_MIN_MEDIAN = 10
+ANOMALY_DROP_RATIO = 0.3
+ANNOUNCE_LAG_DAYS = 4
+HISTORY_PATH = Path(__file__).resolve().parents[1] / "data" / "collection_history.json"
+
+
+def coverage_counts(manifest: dict) -> dict:
+    """Comparable per-source counts from a collection manifest."""
+    sources = (manifest or {}).get("sources") or {}
+    counts = {}
+    for label, n in ((sources.get("arxiv") or {}).get("in_window_by_query") or {}).items():
+        counts[f"arxiv:{label}"] = n
+    for name in ("huggingface", "github", "vendors"):
+        n = (sources.get(name) or {}).get("candidate_count")
+        if n is not None:
+            counts[f"{name}:candidates"] = n
+    checks = (sources.get("vendors") or {}).get("vendor_checks") or {}
+    if checks:
+        counts["vendors:found"] = sum(1 for c in checks.values() if (c or {}).get("status") == "found")
+    return {k: v for k, v in counts.items() if isinstance(v, int)}
+
+
+def load_collection_history(path: Path | None = None) -> list:
+    p = Path(path or HISTORY_PATH)
+    try:
+        data = json.loads(p.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return []
+    return data if isinstance(data, list) else []
+
+
+def check_coverage_anomalies(manifest: dict, history: list, today: str | date | None = None) -> list:
+    """Problems that block assembly unless the manifest waives them with a reason."""
+    waivers = (manifest or {}).get("anomaly_waivers") or {}
+    arxiv = ((manifest or {}).get("sources") or {}).get("arxiv") or {}
+    by_query = arxiv.get("in_window_by_query") or {}
+    problems = []
+    for label in sorted(REQUIRED_ARXIV_SWEEPS - {"recent-updates"}):
+        if by_query.get(label) == 0 and f"arxiv:{label}" not in waivers:
+            problems.append(f"arxiv {label} returned 0 in-window papers (silent zero — check the category still exists)")
+    by_date = arxiv.get("in_window_by_date") or {}
+    start = arxiv.get("submitted_window_start")
+    if by_date and start:
+        run_day = parse_collection_date(today)
+        day = date.fromisoformat(start)
+        last_announced = run_day - timedelta(days=ANNOUNCE_LAG_DAYS)
+        while day <= last_announced:
+            key = day.isoformat()
+            if day.weekday() < 5 and not by_date.get(key) and f"arxiv:date:{key}" not in waivers:
+                problems.append(f"arxiv has 0 submissions dated {key} (a weekday already announced)")
+            day += timedelta(days=1)
+    for key, n in coverage_counts(manifest).items():
+        past = [h["counts"][key] for h in history[-6:] if key in (h.get("counts") or {})]
+        if len(past) < ANOMALY_MIN_HISTORY or key in waivers:
+            continue
+        median = sorted(past)[len(past) // 2]
+        if median >= ANOMALY_MIN_MEDIAN and n < ANOMALY_DROP_RATIO * median:
+            problems.append(f"{key}={n} collapsed below {int(ANOMALY_DROP_RATIO * 100)}% of the recent median {median}")
+    return problems
+
+
+def record_collection_history(manifest: dict, path: Path | None = None) -> list:
+    """Append (or replace) this window's counts in the committed history file."""
+    p = Path(path or HISTORY_PATH)
+    history = [h for h in load_collection_history(p) if h.get("window_start") != manifest.get("window_start")]
+    history.append({
+        "window_start": manifest.get("window_start"),
+        "window_end": manifest.get("window_end"),
+        "counts": coverage_counts(manifest),
+    })
+    history.sort(key=lambda h: h.get("window_start") or "")
+    p.write_text(json.dumps(history, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    return history
+
+
 def _require_source(sources: dict, name: str) -> dict:
     value = sources.get(name)
     if not isinstance(value, dict):

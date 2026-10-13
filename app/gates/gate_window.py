@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Gate 3: every content/papers item must be within the current 7-day window."""
 
+import os
 import sys
 from datetime import date, datetime
 from pathlib import Path
@@ -11,7 +12,8 @@ import gate_common as gc
 from research_collection import collection_window
 
 
-today = date.today()
+_override = os.environ.get("EDGE_TODAY", "").strip()  # see app/clock.py
+today = date.fromisoformat(_override) if _override else date.today()
 cutoff_date, _, _ = collection_window(today)
 
 

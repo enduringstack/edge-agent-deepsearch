@@ -20,6 +20,7 @@ from pathlib import Path
 
 from research_collection import (
     REQUIRED_ARXIV_SWEEPS,
+    arxiv_collection_window,
     candidate_artifact_attestation,
     collection_window,
     parse_collection_date,
@@ -310,9 +311,21 @@ def main(argv=None):
              "discarding a complete window and starting over.",
     )
     parser.add_argument("--manifest", default=str(MANIFEST))
+    parser.add_argument("--since", help="Gap backfill: submitted-date range start (YYYY-MM-DD)")
+    parser.add_argument("--until", help="Gap backfill: submitted-date range end (YYYY-MM-DD)")
+    parser.add_argument("--out", help="Gap backfill: candidate output path (the weekly artifact is untouched)")
     args = parser.parse_args(argv)
     run_date = parse_collection_date(args.today)
     window_start, window_end, _ = collection_window(run_date)
+    # Submitted sweeps reach back ARXIV_CATCHUP_DAYS further: Thursday-to-Sunday
+    # submissions are announced after a Monday run and would otherwise never land.
+    submitted_start, _ = arxiv_collection_window(run_date)
+    gap_mode = bool(args.since or args.until)
+    if gap_mode:
+        if not (args.since and args.until and args.out):
+            parser.error("--since, --until and --out go together")
+        submitted_start = date.fromisoformat(args.since)
+        window_end = date.fromisoformat(args.until)
 
     existing = set()
     if RUN.exists():
@@ -340,8 +353,13 @@ def main(argv=None):
     failed_queries = list(previous_coverage.get("queries_failed") or [])
     pages_fetched = int(previous_coverage.get("pages_fetched") or 0)
     # The lastUpdatedDate sweep catches meaningful revisions of older papers.
-    for label, sub_queries, sort_by, date_basis in query_specs(args.only_updates, retry_labels):
+    in_window_by_query = dict(previous_coverage.get("in_window_by_query") or {})
+    specs = query_specs(args.only_updates, retry_labels)
+    if gap_mode:  # a closed historical range: only the submitted-date sweeps apply
+        specs = [spec for spec in specs if spec[3] == "submitted"]
+    for label, sub_queries, sort_by, date_basis in specs:
         page_counter = 0
+        lo = submitted_start if date_basis == "submitted" else window_start
 
         def counted_fetch(query, start, page_size):
             nonlocal page_counter, pages_fetched
@@ -357,13 +375,13 @@ def main(argv=None):
         in_win = []
         sweep_failed = False
         for sub_query in sub_queries:
-            clause = window_filter(date_basis, window_start, window_end)
+            clause = window_filter(date_basis, lo, window_end)
             bounded = f"{sub_query} AND {clause}" if clause else sub_query
             try:
                 in_win.extend(collect_query_pages(
                     bounded,
                     fetch_page=counted_fetch,
-                    window_start=window_start,
+                    window_start=lo,
                     window_end=window_end,
                     page_size=args.page_size,
                     max_pages=args.max_pages,
@@ -386,6 +404,7 @@ def main(argv=None):
             if failed not in seen_failed:
                 seen_failed.append(failed)
         failed_queries = seen_failed
+        in_window_by_query[label] = len(in_win)
         new = [e for e in in_win if e["id"] not in existing]
         for e in new:
             if e["id"] not in seen:
@@ -430,8 +449,20 @@ def main(argv=None):
 
     cands = list(seen.values())
     cands.sort(key=lambda e: e["date"], reverse=True)
+    if gap_mode:
+        out = Path(args.out)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps(cands, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"\n==> gap backfill: {len(cands)} candidates submitted {submitted_start}..{window_end} -> {out}; "
+              f"failed={failed_queries}")
+        return 0 if not failed_queries else 1
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(cands, ensure_ascii=False, indent=2), encoding="utf-8")
+    in_window_by_date: dict = {}
+    for entry in cands:
+        if entry.get("date_basis", "submitted") == "submitted":
+            day = str(entry.get("date") or "")[:10]
+            in_window_by_date[day] = in_window_by_date.get(day, 0) + 1
     # A proven-unreachable revision sweep is covered by the manifest's probe evidence,
     # so it must not hold the source at "incomplete" forever; every other gap still does.
     waived = {"recent-updates"} if unreachable_probe else set()
@@ -450,6 +481,9 @@ def main(argv=None):
             "queries_failed": failed_queries,
             "pages_fetched": pages_fetched,
             "candidate_count": len(cands),
+            "submitted_window_start": submitted_start.isoformat(),
+            "in_window_by_query": in_window_by_query,
+            "in_window_by_date": dict(sorted(in_window_by_date.items())),
             **({"recent_updates_unreachable": unreachable_probe} if unreachable_probe else {}),
             **candidate_artifact_attestation(OUT, "arxiv"),
         },

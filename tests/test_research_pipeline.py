@@ -359,6 +359,36 @@ class ResearchRunValidationTests(unittest.TestCase):
 
         self.assertIn("outside window", str(ctx.exception))
 
+    def _catchup(self, days_before_window, url="https://arxiv.org/abs/2610.00001", published=None, **extra):
+        day = (TODAY - timedelta(days=6 + days_before_window)).isoformat()
+        paper = valid_paper(paper_url=url, date=day, arxiv_date_basis="submitted", **extra)
+        with mock.patch.object(research_run, "published_identities", return_value=published or {}):
+            return research_run.validate_payload(run_payload(paper), today=TODAY, skip_network=True)
+
+    def test_arxiv_catchup_accepts_submissions_announced_after_last_run(self):
+        self.assertEqual(len(self._catchup(3)["papers"]), 1)
+        self.assertEqual(len(self._catchup(5)["papers"]), 1)
+
+    def test_arxiv_catchup_is_bounded(self):
+        with self.assertRaises(research_run.ValidationError) as ctx:
+            self._catchup(6)
+        self.assertIn("outside window", str(ctx.exception))
+
+    def test_catchup_only_applies_to_arxiv_submissions(self):
+        with self.assertRaises(research_run.ValidationError):
+            self._catchup(2, url="https://openreview.net/forum?id=x")
+        revised_old_paper = valid_paper(
+            paper_url="https://arxiv.org/abs/2610.00001", arxiv_date_basis="updated",
+            arxiv_revision_note="新增了 Jetson 真机实验和能耗对比，结论有实质变化。",
+            date=(TODAY - timedelta(days=8)).isoformat())
+        with self.assertRaises(research_run.ValidationError):
+            research_run.validate_payload(run_payload(revised_old_paper), today=TODAY, skip_network=True)
+
+    def test_catchup_rejects_papers_already_published(self):
+        with self.assertRaises(research_run.ValidationError) as ctx:
+            self._catchup(2, published={"arxiv:2610.00001": "2026-09-29"})
+        self.assertIn("already published", str(ctx.exception))
+
     def test_rejects_invalid_source_tier(self):
         path = write_json(run_payload(valid_paper(source_tier="厂商博客")))
 

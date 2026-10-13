@@ -13,6 +13,7 @@ Schema (方案 B, 2 维评分 + 多标签 + source_tier):
 from __future__ import annotations
 
 import json
+import os
 import re
 import socket
 import sys
@@ -24,7 +25,10 @@ from urllib.parse import urlparse
 
 from research_collection import (
     CollectionCoverageError,
+    arxiv_collection_window,
     collection_window,
+    content_identity,
+    published_identities,
     is_required_github_project,
     validate_collection_manifest,
     validate_run_candidate_lineage,
@@ -157,7 +161,8 @@ def load_run_file(path: str | Path) -> dict:
 
 def parse_today(value: str | date | None = None) -> date:
     if value is None:
-        return date.today()
+        override = os.environ.get("EDGE_TODAY", "").strip()
+        return date.fromisoformat(override) if override else date.today()
     if isinstance(value, date):
         return value
     try:
@@ -475,8 +480,24 @@ def normalize_paper(raw: dict, today: date, seen_ids: set[str], vocab: dict[str,
         raise ValidationError(f"{paper_id}: invalid date {paper.get('date')!r}") from exc
 
     cutoff, _, _ = collection_window(today)
-    if paper_date < cutoff or paper_date > today:
+    if paper_date > today:
         raise ValidationError(f"{paper_id}: date {paper_date} outside window [{cutoff} .. {today}]")
+    if paper_date < cutoff:
+        # arXiv catch-up: submissions announced after last week's run may carry a
+        # submitted date up to ARXIV_CATCHUP_DAYS before the window, once only.
+        raw_url = text_value(paper.get("paper_url"))
+        catchup_start, _ = arxiv_collection_window(today)
+        is_arxiv_submission = (
+            content_identity(raw_url).startswith("arxiv:")
+            and (text_value(paper.get("arxiv_date_basis")) or "submitted") == "submitted"
+        )
+        if not (is_arxiv_submission and paper_date >= catchup_start):
+            raise ValidationError(f"{paper_id}: date {paper_date} outside window [{cutoff} .. {today}]")
+        earlier = published_identities(exclude_label=cutoff.isoformat()).get(content_identity(raw_url))
+        if earlier:
+            raise ValidationError(
+                f"{paper_id}: arXiv catch-up item {content_identity(raw_url)} was already published in week {earlier}"
+            )
 
     try:
         score = int(paper.get("score"))

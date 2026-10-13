@@ -11,6 +11,7 @@
   - weekly_summary highlights 外部 URL（厂商博客/新闻）≥5，非 paper_id 复读
   - 当前周 `官方动态` ≥1；为 0 则有 `data/weeks/<label>-no-vendor.md` 逐厂证据
   - `data/github_trending_top20.json` mtime ≤7 天（>7 天 FAIL——防止 trending 区显示过期仓）
+  - `data/recall_audit.json` 覆盖本周 7 天、≥10 条独立来源列出的大事；“已收录/补收”都能在页面对应位置找到，“不收”都有理由
   - `data/hardware_radar.json` 通过 `app/hardware.py` 契约且窗口覆盖本周；`data/hardware-insights/index.json` 最新一期月报结束日距今 ≤38 天；静态 `__HARDWARE__` 与源数据一致，`site/hardware.html` 存在
   - `data/community_radar.json` 是截至运行日的完整 7 日窗口；X/Bluesky/Reddit/HN/Mastodon/GitHub Discussions/Hugging Face/YouTube-Bilibili/厂商论坛九类覆盖齐全；静态 `__COMMUNITY__` 与源数据一致；正式 papers 没有社媒讨论 URL
 

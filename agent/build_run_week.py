@@ -33,6 +33,11 @@ from build_run_from_arxiv import auto_tags, first_sentence, TAG_RULES  # noqa: E
 from research_collection import (  # noqa: E402
     CollectionCoverageError,
     candidate_output_identity,
+    check_coverage_anomalies,
+    load_collection_history,
+    collection_window,
+    content_identity,
+    published_identities,
     candidate_record_ref,
     is_required_github_project,
     load_collection_manifest,
@@ -464,30 +469,6 @@ def convert_vendor(c: dict) -> dict | None:
     }
 
 
-WEEKS_DIR = ROOT / "data" / "weeks"
-
-
-def content_identity(url: str) -> str:
-    """arXiv and HF paper links collapse to the arXiv id; other URLs to themselves."""
-    m = re.search(r"(?:arxiv\.org/(?:abs|pdf|html)|huggingface\.co/papers)/(\d{4}\.\d{4,5})", url or "")
-    return f"arxiv:{m.group(1)}" if m else (url or "").rstrip("/")
-
-
-def published_identities(weeks_dir: Path | None = None) -> set:
-    """Identities of every paper in an archived week (data/weeks/<label>.json)."""
-    out = set()
-    for f in sorted((weeks_dir or WEEKS_DIR).glob("*.json")):
-        if f.name == "manifest.json":
-            continue
-        try:
-            rec = json.loads(f.read_text(encoding="utf-8"))
-        except (OSError, json.JSONDecodeError):
-            continue
-        for paper in rec.get("papers") or []:
-            out.add(content_identity(paper.get("paper_url")))
-    return out
-
-
 def load(path: Path, required: bool = False):
     if not path.exists():
         if required:
@@ -523,6 +504,12 @@ def main(argv=None) -> int:
     manifest = None
     if not args.allow_incomplete_coverage:
         manifest = load_collection_manifest(args.manifest, today=run_date)
+        problems = check_coverage_anomalies(manifest, load_collection_history(), today=run_date)
+        if problems:
+            raise CollectionCoverageError(
+                "coverage anomalies (fix the collector, or waive each with a reason in the "
+                "manifest's anomaly_waivers):\n  - " + "\n  - ".join(problems)
+            )
 
     require_artifacts = not args.allow_incomplete_coverage
     arxiv = load(ARXIV_CAND, required=require_artifacts)
@@ -571,7 +558,8 @@ def main(argv=None) -> int:
 
     # HF Daily Papers resurfaces papers submitted (and already published here) in
     # earlier weeks; an archived week is the authoritative "already shipped" record.
-    published = published_identities()
+    window_start, _, _ = collection_window(args.today)
+    published = published_identities(exclude_label=window_start.isoformat())
     before = len(uniq)
     uniq = [p for p in uniq if content_identity(p["paper_url"]) not in published]
     if len(uniq) < before:
