@@ -20,13 +20,14 @@ from pathlib import Path
 from research_collection import (
     REQUIRED_GITHUB_PROJECTS,
     collection_window,
+    run_dir,
     parse_collection_date,
     update_source_coverage,
 )
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "research_runs" / "candidates-github.json"
+OUT = run_dir() / "candidates-github.json"
 UA = "edge-agent-github-release-collector/1.0"
 TOKEN = os.environ.get("GITHUB_PERSONAL_ACCESS_TOKEN", "")
 
@@ -165,7 +166,7 @@ def collect_project(repo: str, window_start: str, window_end: str) -> list[dict]
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description="Collect whitelist GitHub releases and major code drops.")
     parser.add_argument("--today", help="Override collection date as YYYY-MM-DD")
-    parser.add_argument("--manifest", default=str(ROOT / "research_runs" / "collection-manifest.json"))
+    parser.add_argument("--manifest", default=str(run_dir() / "collection-manifest.json"))
     parser.add_argument("--out", default=str(OUT))
     args = parser.parse_args(argv)
     run_date = parse_collection_date(args.today)

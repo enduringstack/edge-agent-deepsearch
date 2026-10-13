@@ -46,7 +46,12 @@ def _clip(desc: str, limit: int = 140) -> str:
     return head.rstrip(" ,;:-") + "…"
 
 
-src = ROOT / "data" / "_github_trending.json"
+from collect_github_trending import trending_raw_path  # noqa: E402
+from research_collection import isolated_run, run_dir  # noqa: E402
+
+src = Path(trending_raw_path())
+if not src.is_absolute():
+    src = ROOT / src
 d = json.loads(src.read_text(encoding="utf-8"))
 from collect_github_trending import display_top  # noqa: E402
 
@@ -64,6 +69,7 @@ out = [
     }
     for i, x in enumerate(display_top(d))
 ]
-dest = ROOT / "data" / "github_trending_top20.json"
+# A backfill run must not overwrite the live week's translated top-20.
+dest = run_dir() / "github_trending_top20.json" if isolated_run() else ROOT / "data" / "github_trending_top20.json"
 dest.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
 print(f"[TRENDING] refreshed top20 -> {dest} · {len(out)} items, first: {out[0]['repo'] if out else 'NONE'}")

@@ -20,12 +20,13 @@ from pathlib import Path
 
 from research_collection import (
     collection_window,
+    run_dir,
     parse_collection_date,
     update_source_coverage,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "research_runs" / "candidates-hf.json"
+OUT = run_dir() / "candidates-hf.json"
 API = "https://huggingface.co/api/daily_papers?date={day}"
 UA = "Mozilla/5.0 (edge-agent-research/1.0)"
 
@@ -70,7 +71,7 @@ def to_candidate(entry: dict, day: str) -> dict | None:
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description="Collect HF Daily Papers for the weekly window.")
     parser.add_argument("--today", help="Override collection date as YYYY-MM-DD")
-    parser.add_argument("--manifest", default=str(ROOT / "research_runs" / "collection-manifest.json"))
+    parser.add_argument("--manifest", default=str(run_dir() / "collection-manifest.json"))
     parser.add_argument("--out", default=str(OUT))
     args = parser.parse_args(argv)
     run_date = parse_collection_date(args.today)

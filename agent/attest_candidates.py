@@ -8,7 +8,9 @@ from pathlib import Path
 
 from research_collection import (
     CollectionCoverageError,
+    arxiv_artifact,
     candidate_artifact_attestation,
+    run_dir,
     load_collection_manifest,
     parse_collection_date,
     update_source_coverage,
@@ -17,10 +19,10 @@ from research_collection import (
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_ARTIFACTS = {
-    "arxiv": ROOT / ".superpowers" / "sdd" / "arxiv_candidates.json",
-    "huggingface": ROOT / "research_runs" / "candidates-hf.json",
-    "github": ROOT / "research_runs" / "candidates-github.json",
-    "vendors": ROOT / "research_runs" / "candidates-vendor.json",
+    "arxiv": arxiv_artifact(),
+    "huggingface": run_dir() / "candidates-hf.json",
+    "github": run_dir() / "candidates-github.json",
+    "vendors": run_dir() / "candidates-vendor.json",
 }
 
 
@@ -31,7 +33,7 @@ def main(argv=None) -> int:
     parser.add_argument("--today", help="Override collection date as YYYY-MM-DD")
     parser.add_argument(
         "--manifest",
-        default=str(ROOT / "research_runs" / "collection-manifest.json"),
+        default=str(run_dir() / "collection-manifest.json"),
     )
     args = parser.parse_args(argv)
     run_date = parse_collection_date(args.today)

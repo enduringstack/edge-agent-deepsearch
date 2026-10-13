@@ -5,10 +5,33 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from urllib.parse import urlparse
+
+
+_REPO = Path(__file__).resolve().parents[1]
+
+
+def run_dir() -> Path:
+    """Where one week's collection artifacts live.
+
+    Default ``research_runs/``. Backfilling several historical weeks in parallel
+    sets EDGE_RUN_DIR to a per-week folder so candidate files, the manifest,
+    the attested artifacts and the assembled run never collide.
+    """
+    raw = os.environ.get("EDGE_RUN_DIR", "").strip()
+    return Path(raw) if raw else _REPO / "research_runs"
+
+
+def isolated_run() -> bool:
+    return bool(os.environ.get("EDGE_RUN_DIR", "").strip())
+
+
+def arxiv_artifact() -> Path:
+    return run_dir() / "arxiv_candidates.json" if isolated_run() else _REPO / ".superpowers" / "sdd" / "arxiv_candidates.json"
 
 
 class CollectionCoverageError(ValueError):

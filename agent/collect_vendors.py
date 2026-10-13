@@ -11,7 +11,7 @@ import urllib.request, re, sys, json, time, gzip, io
 from datetime import datetime, timezone
 import xml.etree.ElementTree as ET
 
-from research_collection import collection_window, parse_collection_date, update_source_coverage
+from research_collection import collection_window, isolated_run, parse_collection_date, run_dir, update_source_coverage
 
 # vendor -> (base_domain_for_robots, [known RSS/sitemap URLs to try first])
 VENDORS = {
@@ -190,7 +190,7 @@ def collect_vendor(vendor, base, known, window_start, window_end):
 def main(argv=None):
     parser = argparse.ArgumentParser(description="Collect official vendor dynamics for the latest seven dates.")
     parser.add_argument("--today", help="Override collection date as YYYY-MM-DD")
-    parser.add_argument("--manifest", default="research_runs/collection-manifest.json")
+    parser.add_argument("--manifest", default=str(run_dir() / "collection-manifest.json"))
     args = parser.parse_args(argv)
     run_date = parse_collection_date(args.today)
     window_start, window_end, _ = collection_window(run_date)
@@ -207,7 +207,8 @@ def main(argv=None):
         if r['url'] in seen: continue
         seen.add(r['url']); r['alive']=alive(r['url']); uniq.append(r)
     uniq.sort(key=lambda x:(x['date'],x['vendor']), reverse=True)
-    json.dump(uniq, open("data/_vendors_collected.json","w",encoding="utf-8"), ensure_ascii=False, indent=2)
+    out_path = run_dir() / "_vendors_collected.json" if isolated_run() else "data/_vendors_collected.json"
+    json.dump(uniq, open(out_path,"w",encoding="utf-8"), ensure_ascii=False, indent=2)
     complete = all(check["status"] in {"found", "no_match"} for check in vendor_checks.values())
     update_source_coverage(
         args.manifest,

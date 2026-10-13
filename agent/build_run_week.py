@@ -32,7 +32,9 @@ sys.path.insert(0, str(ROOT))
 from build_run_from_arxiv import auto_tags, first_sentence, TAG_RULES  # noqa: E402
 from research_collection import (  # noqa: E402
     CollectionCoverageError,
+    arxiv_artifact,
     candidate_output_identity,
+    run_dir,
     check_coverage_anomalies,
     load_collection_history,
     collection_window,
@@ -45,11 +47,11 @@ from research_collection import (  # noqa: E402
     validate_candidate_artifacts,
 )
 
-ARXIV_CAND = ROOT / ".superpowers" / "sdd" / "arxiv_candidates.json"
-HF_CAND = ROOT / "research_runs" / "candidates-hf.json"
-GH_CAND = ROOT / "research_runs" / "candidates-github.json"
-VENDOR_CAND = ROOT / "research_runs" / "candidates-vendor.json"
-COLLECTION_MANIFEST = ROOT / "research_runs" / "collection-manifest.json"
+ARXIV_CAND = arxiv_artifact()
+HF_CAND = run_dir() / "candidates-hf.json"
+GH_CAND = run_dir() / "candidates-github.json"
+VENDOR_CAND = run_dir() / "candidates-vendor.json"
+COLLECTION_MANIFEST = run_dir() / "collection-manifest.json"
 
 # keyword -> (vendors english name, source_tier). From vendor-whitelist.md.
 # Used to detect company affiliation in arxiv author strings / summaries so
@@ -583,7 +585,7 @@ def main(argv=None) -> int:
     }
     if manifest is not None:
         payload["collection_manifest"] = manifest
-    out = ROOT / "research_runs" / f"run-{ts}.json"
+    out = run_dir() / f"run-{ts}.json"
     out.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
     # tier breakdown

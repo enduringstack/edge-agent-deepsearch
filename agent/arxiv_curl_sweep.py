@@ -20,7 +20,9 @@ from pathlib import Path
 
 from research_collection import (
     REQUIRED_ARXIV_SWEEPS,
+    arxiv_artifact,
     arxiv_collection_window,
+    run_dir,
     candidate_artifact_attestation,
     collection_window,
     parse_collection_date,
@@ -29,8 +31,8 @@ from research_collection import (
 
 ROOT = Path(__file__).resolve().parents[1]
 RUN = ROOT / "research_runs" / "_nodup_placeholder.json"  # nonexistent → no dedup (complete fresh re-sweep of the window)
-OUT = ROOT / ".superpowers" / "sdd" / "arxiv_candidates.json"
-MANIFEST = ROOT / "research_runs" / "collection-manifest.json"
+OUT = arxiv_artifact()
+MANIFEST = run_dir() / "collection-manifest.json"
 # arXiv files Systems and Control under eess.SY; cs.SY is only an alias and
 # `cat:cs.SY` now returns 0 rows (checked 2026-10-12: eess.SY had 136 papers in a
 # week while cs.SY had none). Every category clause goes through cat_query().
@@ -314,12 +316,16 @@ def main(argv=None):
     parser.add_argument("--since", help="Gap backfill: submitted-date range start (YYYY-MM-DD)")
     parser.add_argument("--until", help="Gap backfill: submitted-date range end (YYYY-MM-DD)")
     parser.add_argument("--out", help="Gap backfill: candidate output path (the weekly artifact is untouched)")
+    parser.add_argument("--no-catchup", action="store_true",
+                        help="Historical backfill: every day is long announced, so sweep the exact 7-day window")
     args = parser.parse_args(argv)
     run_date = parse_collection_date(args.today)
     window_start, window_end, _ = collection_window(run_date)
     # Submitted sweeps reach back ARXIV_CATCHUP_DAYS further: Thursday-to-Sunday
     # submissions are announced after a Monday run and would otherwise never land.
     submitted_start, _ = arxiv_collection_window(run_date)
+    if args.no_catchup:
+        submitted_start = window_start
     gap_mode = bool(args.since or args.until)
     if gap_mode:
         if not (args.since and args.until and args.out):

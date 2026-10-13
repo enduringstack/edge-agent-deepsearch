@@ -12,9 +12,9 @@ The seven-date window is computed at runtime; no weekly source edit is required.
 import argparse
 import html as html_lib
 import urllib.request, urllib.parse, re, sys, json, time, os
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
-from research_collection import collection_window, parse_collection_date, update_source_coverage
+from research_collection import collection_window, isolated_run, parse_collection_date, run_dir, update_source_coverage
 
 EDGE_KW = [
   "on-device","on device","edge","mobile","npu","embedded","mcu","iot","llm","agent",
@@ -47,6 +47,10 @@ def is_edge_trending(item: dict) -> bool:
     """True when a trending-page repo is about running AI on-device / locally."""
     hay = " " + (item.get("repo", "") + " " + (item.get("desc") or "")).lower() + " "
     return any(k in hay for k in EDGE_STACK_KW) and any(k in hay for k in AI_KW)
+
+
+def trending_raw_path():
+    return run_dir() / "_github_trending.json" if isolated_run() else "data/_github_trending.json"
 
 
 def display_top(items: list, limit: int = 20) -> list:
@@ -130,7 +134,7 @@ def search_api(query, date_from, per_page=30, date_to=None):
 def main(argv=None):
     parser = argparse.ArgumentParser(description="Refresh weekly edge-AI GitHub trending data.")
     parser.add_argument("--today", help="Override collection date as YYYY-MM-DD")
-    parser.add_argument("--manifest", default="research_runs/collection-manifest.json")
+    parser.add_argument("--manifest", default=str(run_dir() / "collection-manifest.json"))
     args = parser.parse_args(argv)
     run_date = parse_collection_date(args.today)
     window_start, window_end, _ = collection_window(run_date)
@@ -138,8 +142,10 @@ def main(argv=None):
     date_to = window_end.isoformat()
 
     repos={}  # full_name -> {desc, stars, url, created, source}
-    # 1) trending
-    for lang in ["","/python","/c","/c%2B%2B","/rust","/jupyter-notebook","/swift","/typescript"]:
+    # 1) trending — github.com/trending only ever shows the live week, so a
+    # historical window (backfill) must not mix today's trending repos in.
+    historical = run_date < datetime.now(timezone.utc).date() - timedelta(days=1)
+    for lang in ([] if historical else ["","/python","/c","/c%2B%2B","/rust","/jupyter-notebook","/swift","/typescript"]):
         url=f"https://github.com/trending{lang}?since=weekly"
         html,st=fetch(url)
         if not html: continue
@@ -166,7 +172,7 @@ def main(argv=None):
         out.append({"repo":full,"desc":r['desc'],"stars":r['stars'],"week_stars":r.get('week_stars'),
                     "url":r['url'],"created":r['created'],"source":r['source']})
     out.sort(key=lambda x:(x['week_stars'] or 0), reverse=True)
-    json.dump(out, open("data/_github_trending.json","w",encoding="utf-8"), ensure_ascii=False, indent=2)
+    json.dump(out, open(trending_raw_path(),"w",encoding="utf-8"), ensure_ascii=False, indent=2)
     update_source_coverage(
         args.manifest,
         "github",
