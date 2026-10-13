@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The AnyLog Edge Data Fabric</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>The AnyLog Edge Data Fabric</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-30 · Roy Shadmon; Mark Davidson; Eric Aquaronne; Massimiliano Pinto; Ori Shadmon; Moshe Shadmon / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">工业和自动化系统的数据通常要先汇到云端平台才能做决策，时延高、依赖重。AnyLog 边缘数据编织把数据留在产生它的边缘节点上管理，同时对外呈现成一个统一的逻辑系统，供应用和 AI 智能体直接查询和调用。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每个节点运行同一套 AnyLog 代理软件（可部署在工业网关、嵌入式计算机、树莓派到服务器上），通过分布式元数据层、虚拟数据湖、统一命名空间和单系统镜像描述分布资源；查询和计算下发到持有数据的节点执行，只回传结果，并通过 MCP 服务器把数据和工具开放给 AI 智能体。</span></div>
+<div class="score-reason">评分依据：系统运行在边缘设备上并为 AI 智能体提供 MCP 数据与工具接口，与端侧智能体基础设施相关，但论文以平台架构描述为主，没有 AI 推理或智能体闭环的实验，相关度 4。属于工程系统整合，贡献 4。</div>
+<div class="source"><a href="https://arxiv.org/abs/2607.28836" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

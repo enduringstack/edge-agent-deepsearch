@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>EgoGazeLite: On-Device Egocentric Gaze Prediction for Token-Efficient Multimodal LLM Video Input</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-16 · Matteo Stoiber; Niels Buus Lassen / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">硬件:手机</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作让智能眼镜视频无需专用眼动硬件，也能在手机级设备上预测佩戴者注视位置，再只把关注区域交给多模态大模型处理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">模型仅有 1570 万参数、计算量为 6.71 GFLOPs，完整注视预测与裁剪流程在消费级加速硬件上达到每帧 21.6 毫秒；在两种多模态大模型的十组比较中，预测注视裁剪与真实注视裁剪均达到等效结果。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">方法采用轻量双过程注视预测器，从第一视角视频估计关注区域并实时裁剪画面，以减少送入多模态大模型的视觉 token。</span></div>
-<div class="score-reason">评分依据：方法明确在消费级设备上实时运行并减少可穿戴视频的视觉 token，端侧相关性高；轻量注视预测与下游等效验证较完整，但属于特定视频输入压缩环节，贡献度中等。</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-08-16 · Matteo Stoiber; Niels Buus Lassen / ECCV 2026 WearableAI Workshop</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:端云协同</span><span class="tag">方向:高效推理</span><span class="tag">应用:视频</span><span class="tag">硬件:手机</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能眼镜把第一视角视频交给多模态大模型理解时，视觉 token 太多、成本太高。已有做法按眼动注视点裁剪画面能省约十倍 token，但消费级眼镜没有眼动仪。EgoGazeLite 用一个轻量模型直接从视频预测注视点，替代眼动硬件。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">用 Gemini 2.5 Flash 和 Pro 两个模型、三项自动指标和两个大模型评委评估，按预测注视点裁剪与按真实眼动裁剪的描述质量没有显著差异，十组等效性检验全部通过；模型 1570 万参数、6.71 GFLOPs，在 iPhone 15 Pro 上整条“预测注视点加裁剪”流水线每帧 21.6 毫秒（约 46 FPS），P95 为 30.8 毫秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">设计一个双通路的轻量注视点预测器，从第一视角视频帧推断佩戴者正在看哪里，再在手机上按预测点把高分辨率画面裁成小图后发给云端多模态大模型，从源头减少视觉 token。</span></div>
+<div class="score-reason">评分依据：注视点预测和裁剪在 iPhone 15 Pro 上实测实时运行，是给云端多模态大模型做端侧前置压缩的部署方案（相关度 8）。用软件预测替代眼动仪并做了严格的等效性检验，有实用新意（贡献 6）。论文被 ECCV 2026 WearableAI 研讨会收录，不是主会。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.15614" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SchurQuant: Groupwise Discrete Optimization for Layer-Wise LLM Quantization</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-16 · Gunjun Lee; Sehwan Son; Younjoo Lee; Byungjun Kim; Jung Ho Ahn / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">模型:Llama</span><span class="tag">模型:Qwen</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">SchurQuant 是面向大语言模型的低比特权重量化方法，重点解决 2 至 3 比特量化时精度容易大幅下降的问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 2 比特 Qwen3-4B 上，SCHUROPT 将平均零样本准确率提高 11.88 个百分点；在 8 个 Llama 和 Qwen 模型上，SCHURQUANT 的平均零样本准确率比最强的无反向传播基线高 9.65 个百分点。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">其核心优化器用 Schur 补消去后续连续变量的最优响应，再交替重估每行缩放与零点并优化整数编码；完整方法还加入量化前缀教师重建、参考权重正则、残差目标和教师决策 token 加权。</span></div>
-<div class="score-reason">评分依据：极低比特权重量化可显著降低大模型的显存占用，因而对端侧和资源受限推理有直接迁移价值；贡献集中在新的分组离散优化方法及其在 2 比特精度上的明显改善，但论文未报告具体端侧设备部署。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-16 · Gunjun Lee; Sehwan Son; Younjoo Lee; Byungjun Kim; Jung Ho Ahn / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">模型:Qwen</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">只量化权重的训练后量化能让大模型塞进很小的内存，但到 2–3 比特时准确率常常崩掉。SchurQuant 是一种不需要反向传播的逐层量化方法，专门提升极低比特下的精度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在固定 GPTQ 目标的条件下，其中的 SchurOpt 让 2 比特 Qwen3-4B 的零样本平均准确率提升 11.88 个百分点；在 8 个 Llama 和 Qwen 模型上，SchurQuant 的零样本平均准确率是所有免反传量化基线中最高的，2 比特时比最强基线高 9.65 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 Schur 补把后续未量化部分能吸收的连续修正解析地消掉，得到精确的分组二次目标；再交替做逐行缩放和零点的闭式重拟合以及整数码的坐标下降；完整方案另外加入量化前缀的老师重建、参考权重正则等手段。</span></div>
+<div class="score-reason">评分依据：2–3 比特权重量化直接决定大模型能否装进手机等小内存设备，属于可直接迁移的端侧技术栈，但论文没有做设备实测（相关度 5）。用 Schur 补把分组决策和量化网格一起优化，方法上有新意（贡献 6）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.15567" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

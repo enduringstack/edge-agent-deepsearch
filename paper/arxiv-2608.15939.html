@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Aborted but Not Forgotten: KV-Cache Retention Breaks Rollback Consistency in Language Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-16 · Guijia Zhang; Harry Yang / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作发现语言 Agent 即使从应用记录中撤销了一条分支，推理服务保留的旧 KV 缓存仍可能让模型继续读取本应丢弃的内容。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 7 个、规模覆盖 3.8B 至 36B 的开放权重模型家族中，仅保留旧 KV 缓存就在 63 个审计单元中的 25 个改变了受保护行为；从已提交状态重建缓存后，63 个单元的问题全部消失。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者提出同 token、不同缓存的对照审计，只改变决策时使用的缓存是否陈旧，并用事务级缓存恢复让逻辑回滚与模型实际注意到的状态保持一致。</span></div>
-<div class="score-reason">评分依据：问题位于 Agent 运行时与 KV 缓存管理的交界，可直接影响本地或云端 Agent 的状态安全，但不专指端侧部署；论文给出跨框架复现、隔离实验和修复方案，贡献度中等。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-16 · Guijia Zhang; Harry Yang / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:安全隐私</span><span class="tag">方向:记忆</span><span class="tag">模型:Phi</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">有状态的语言 Agent 默认：把一个被否决的分支从对话记录里删掉，就等于撤回了它。本文发现，如果推理服务在逻辑回滚后仍保留 KV cache，模型其实还在“看”应用以为已经删掉的内容，可能被攻击者利用。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 7 个 3.8B–36B 开源模型家族上审计 63 个单元，仅靠残留的 KV cache 就在 25 个单元里翻转了受保护的行为，而攻击者的 token 在全部 63 个单元的实际请求中都不存在；重建缓存后所有单元恢复正常。该问题在端到端会话应用、Hugging Face Transformers 默认缓存复用路径和 LangGraph 时间回溯中都能复现。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">提出“回滚一致性”：完整的撤销必须恢复模型实际关注的状态，而不只是对话文本；设计“相同 token、不同缓存”的审计方法，决策步输入完全一致，只改变缓存前缀是陈旧的还是从已提交状态重建的；修复只需在事务内局部恢复缓存，无需全局清空。</span></div>
+<div class="score-reason">评分依据：问题出在 Agent 运行时的 KV cache 复用上，本地小模型（如 Phi-3.5-mini、GLM-4-9B）同样受影响，对端侧 Agent 运行时设计有直接借鉴（相关度 5）。指出逻辑回滚与推理状态之间的跨层漏洞并给出低成本修复，是新颖的安全发现（贡献 7）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.15939" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

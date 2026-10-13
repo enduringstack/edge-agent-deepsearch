@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Pallas: A Proactive KV Cache Migration Framework for LLM Inference in AI-RAN</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-17 · Tianhang Ding; Jianchun Liu; Hongli Xu / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作面向移动网络中的大模型推理，在用户切换基站前主动迁移 KV 缓存，避免请求到了新基站而推理状态仍留在旧基站。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在三个大模型和 100 至 500 Mbps 的基站间链路上，平均服务中断时间比切换后再恢复状态的方案缩短 2.28 至 89.68 倍，平均 token 间时延比从原基站转发降低 16.0% 至 50.0%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">系统把已有 token 分成稳定前缀和持续增长的后缀：新基站提前重算前缀，旧基站同步传输后缀 KV 块，再由在线调度器根据移动预测和运行状态决定提前多久开始准备。</span></div>
-<div class="score-reason">评分依据：KV 缓存迁移直接服务靠近移动用户的推理系统，对端云协同和受限链路部署有迁移价值，但推理仍主要运行在基站侧；主动迁移与在线窗口调度构成较完整的系统方案，相关性和贡献度均为中等。</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:调度服务</span><span class="tag">方向:端云协同</span><span class="tag">硬件:GPU</span><span class="tag">模型:Qwen</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">AI-RAN 把大模型推理放到基站旁的边缘服务器上服务手机用户，但用户切换基站时，正在生成的请求的 KV cache 还留在原基站。Pallas 在切换发生之前就把推理状态提前准备到预测的目标基站，减少服务中断。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">基于 vLLM 的原型部署在两台各配一块 RTX A6000 的服务器上，在 3 个模型和 100–500 Mbps 基站间链路下测试：平均服务中断时间比目标侧恢复方案缩短 2.28–89.68 倍，平均逐 token 时延比源侧转发方案降低 16.0%–50.0%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">开始准备时把已生成的序列切成稳定的历史前缀和仍在增长的后缀：目标基站自己对前缀做预填充重建，源基站把后缀的 KV 块边生成边发过去；切换时两部分拼成最新 KV cache 后在目标基站继续解码，提前多久开始准备由在线调度器按移动性预测和运行时遥测决定。</span></div>
+<div class="score-reason">评分依据：服务对象是移动用户，但推理跑在基站侧 GPU 服务器上，属于边缘 serving 与 KV cache 管理技术，可迁移但不是终端部署（相关度 4）。把 KV 迁移提前到切换之前、前缀重算与后缀传输并行，是针对移动网络场景的新思路（贡献 6）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.16477" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

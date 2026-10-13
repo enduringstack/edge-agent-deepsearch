@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EP-Mem: Elastic Privacy Memory for Social Relationship-Aware LLM Agents</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>EP-Mem: Elastic Privacy Memory for Social Relationship-Aware LLM Agents</h1>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-09-28 · Fengzhou Sun; Yuan Zhang; Xintong Yu; Jinyao Yan / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型智能体替用户与别人沟通时，可能把不该说的隐私说出去。EP-Mem 给智能体的记忆加上一层由用户掌控的隐私边界，按社交关系决定哪些人、哪些事可以透露给谁。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">隐私分类准确率 94.0%，“能否透露”的判断准确率从 22% 提到 68%，隐私泄露减少 75.6%，同时检索性能和跨基准泛化基本不受影响。作者还构建了 EP-Bench，据其所知是首个含跨会话关联事件的长期多方隐私披露基准。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">记忆按 token 粒度存储，并由用户可配置的隐私策略把人和事件分层：领域级默认流转规则加事实级白名单/黑名单例外；再用一个可插拔的隐私引擎旁路模块，在生成、存储和检索三个环节按摘要、细节、边界三种粒度执行披露控制。</span></div>
+<div class="score-reason">评分依据：个人助理智能体的长期记忆与隐私控制是端侧个人智能体的核心需求之一，方案可以迁移，但没有涉及设备端运行，相关度 4。把隐私问题从单次对话扩展到长期社交关系，并配套新基准，有新意，贡献 6。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.35233" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

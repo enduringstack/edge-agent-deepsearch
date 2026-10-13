@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Large Models for Small Devices: Recent Advances and Empirical Analysis of Edge AI Deployment</h1>
 <div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-16 · Subhransu Das; Jiaming Cheng; Arnav Kumar; Sadia Afrose; Mingzhe Han; Michael Silagy; Shreya Palande; Brijesh Soni / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:剪枝稀疏</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作梳理大模型压缩在真实硬件上的部署经验，并在 GPU、CPU 和树莓派上实测语言模型与图像模型，说明压缩率高并不等于实际部署效果好。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">问答实验中，Qwen3.5 0.8B 经 Q5_K_M 量化达到 93.85 SQuAD F1 和 92 EM，同精度下 1% 结构化剪枝使 F1 下降 16；分割任务中剪枝在 mIoU 基本不变时将模型缩小近 80%，但还可能令部署文件膨胀 21%–49%，使树莓派延迟最高增至 3.4 倍。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">研究从真实部署论文中提炼规则，再用神经流图分析和预填充、解码分段延迟分析解释量化、剪枝及 LoRA 恢复在不同任务、模型和硬件上的差异。</span></div>
-<div class="score-reason">评分依据：工作直接研究资源受限设备上的模型压缩与实测部署，对端侧模型选型、量化、剪枝和延迟诊断都有直接参考价值；主要贡献是揭示压缩指标与真实运行结果可能背离，并给出任务相关的部署证据。</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:编译部署</span><span class="tag">方向:评测基准</span><span class="tag">硬件:CPU</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型上边缘设备离不开压缩，但“压得好”不等于“部署得好”。这篇综述梳理了几十篇在真实硬件上报告压缩结果的工作，并亲自在 GPU、CPU 和树莓派上部署小型语言模型和图像分割模型做对照实验。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">问答任务上 Qwen3.5 0.8B 用 Q5_K_M GGUF 量化达到 SQuAD F1 93.85、EM 92，而同精度下仅 1% 比例的结构化剪枝就掉 16 个 F1；分割任务则相反，默认量化几乎不减参数和计算量，剪枝能把模型缩小近 80% 且 mIoU 基本不变。剪枝还会破坏 k-quant 超块对齐，让部署文件反而变大 21%–49%，加上输出变长，树莓派上时延最多增加 3.4 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先从文献里提炼部署准则，再按准则用 llama.cpp 等工具在 RTX 4070 笔记本 GPU、AMD Ryzen 9 CPU 和树莓派 4B 上部署压缩后的语言模型和分割模型；用神经流图分析和预填充/解码时延分解来解释这些反直觉现象。</span></div>
+<div class="score-reason">评分依据：在树莓派 4B 等真实边缘硬件上用 llama.cpp 实测压缩后的模型，结论直接面向端侧部署（相关度 8）。主体是综述加实证，方法本身不新，但揭示了剪枝与 GGUF 量化格式冲突等实用陷阱（贡献 5）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.15693" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

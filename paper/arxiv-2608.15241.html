@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LOCAL: Enabling Learning On-device Contiguously for Agent LLMs</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-15 · Xinxin Liu; Jiaxin Li; Zibo Wang; Yun Ji; Zhangqi Zhu; Qing Hu; Zhibin Wang; Rong Gu / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作提出 LOCAL，让大模型 Agent 在单张本地 GPU 上一边服务用户、一边利用私有交互持续学习，不必把数据上传或暂停前台推理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在单张 24 GB GPU 和 7B 级模型上，前台排队等待时间 p95 比 FIFO 降低 3.1 倍，首次 token 时间 p95 比不可抢占训练降低 1.55 倍；模型更新后的首次缓存预填充 p99 降低 25.6%，跨 Agent 首次 token 时间 p99 降低 21.9%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">系统让协作式调度器、版本感知 KV 缓存管理器和多 Agent 模型运行时共享适配器版本、任务优先级与缓存状态，使训练更新、请求抢占和失效缓存清理保持一致。</span></div>
-<div class="score-reason">评分依据：论文明确实现单 GPU 上的本地 Agent 连续学习和在线推理，设备侧闭环证据强，相关性高；把调度、适配器版本与 KV 缓存一致性联合起来解决运行时冲突，贡献度中等。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-08-15 · Xinxin Liu; Jiaxin Li; Zibo Wang; Yun Ji; Zhangqi Zhu; Qing Hu; Zhibin Wang; Rong Gu / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:端侧训练</span><span class="tag">方向:KV cache</span><span class="tag">方向:推理框架</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让本地运行的大模型智能体用用户每次交互产生的私有数据持续微调自己，同时不打断前台响应。LOCAL 是一个在单张消费级显卡上同时承担推理、评判、训练和缓存维护的运行时。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 24GB 的 RTX 3090 级显卡上用 xLAM-7b-r 跑 tau-bench 零售工具调用任务：前台排队等待 p95 比 FIFO 低 3.1 倍（p99 低 3.4 倍），同时完成 34 次适配器训练提交；可中断训练让 p95 首字延迟比不可抢占训练低 1.55 倍；相比 vLLM 全量 LoRA 的睡眠-训练-唤醒方案，p95 排队降低 5.9–12.8 倍；适配器发布后首次命中的预填充 p99 降 25.6%，跨智能体首字延迟 p99 降 21.9%，显存峰值保持在 21.6–23.5 GB。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">让调度器、KV cache 管理器和多智能体模型运行时共享适配器版本、任务优先级和缓存状态：前台请求严格优先，评判和训练被切成能在安全边界让出的小块；KV cache 以适配器版本为键，避免旧版本缓存被误用，并对热门前缀提前重算、在显存紧张时把冷数据卸载到内存。</span></div>
+<div class="score-reason">评分依据：智能体的工具调用推理和基于本地交互的在线 LoRA 学习都在一台消费级显卡机器上完成，属于 PC 端侧智能体，相关度给 8。首次把在线学习、版本感知 KV cache 和前后台协同调度合成一个单卡运行时，贡献给 7。作者均来自南京大学，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.15241" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

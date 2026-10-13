@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>NPU Offloading of a Frozen Visual Encoder for Robot Policy Training</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-15 · Hyojun Yun; Seungjae Won; Hyungpil Moon / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:端云协同</span><span class="tag">方向:评测基准</span><span class="tag">硬件:NPU</span><span class="tag">硬件:GPU</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作把机器人策略训练中冻结的视觉编码器从 GPU 卸载到低功耗 NPU，衡量节能、训练时长、显存和策略成功率之间的真实权衡。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">卸载一层时每样本能耗降低 17.1%，卸载四层时降低 27.9%；相应训练时间增加 15.2% 和 37.7%，峰值 GPU 显存降低 19.8%–20.7%，策略成功率比 GPU 单独训练低 0.44–1.89 个百分点。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">构建异步 GPU+NPU 训练流水线：冻结的视觉编码器以 A8W8 INT8 运行在 Mobilint Aries2 NPU，FP32 动作模块在 RTX 5060 Ti 上训练，并逐步增加卸载的 Transformer 层数。</span></div>
-<div class="score-reason">评分依据：在真实 NPU/GPU 异构平台上量化机器人模型训练的功耗和性能取舍，端侧硬件相关性高；实测完整但方法以工程卸载为主，贡献度中等。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-15 · Hyojun Yun; Seungjae Won; Hyungpil Moon / arXiv</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:量化</span><span class="tag">硬件:NPU</span><span class="tag">硬件:GPU</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">训练机器人策略时常把视觉编码器冻结，但它的前向计算每一步仍要在 GPU 上跑。这篇研究把这部分搬到低功耗 NPU 上能否省电，以及会不会影响策略效果。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">把 ResNet18 加 1 到 4 层 Transformer 编码器以 INT8 卸载到 Mobilint Aries2 NPU 后，每样本训练能耗降低 17.1%–27.9%，GPU 峰值显存降 19.8%–20.7%，但每样本训练时间增加 15.2%–37.7%；4,500 次仿真评测中成功率从纯 GPU 的 93.33% 降到 91.44%–92.89%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">搭建 GPU 加 NPU 的异步训练流水线：冻结的视觉编码器以 A8W8 INT8 在 NPU 上推理，FP32 动作专家在 RTX 5060 Ti 上训练，按四档逐步增加卸载层数，并实测两块板卡的功耗。</span></div>
+<div class="score-reason">评分依据：在真实 NPU 加速卡上做 INT8 推理卸载并实测功耗，与端侧异构加速技术栈相关，但场景是工作站上的策略训练而非设备端运行，相关度给 5。属于实测型工程研究，方法直接，贡献给 4。作者来自韩国成均馆大学，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.15002" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

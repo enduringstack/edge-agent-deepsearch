@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>EcoVLA: Energy-Efficient Device-Edge Co-Inference for Vision-Language-Action Models under Real-Time Constraints</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-16 · Ao Zhou; Bo Dai; Le Yu; Xingyu Liu; Zeyu Hao; Lingkun Long; Chunming Hu; Jianlei Yang / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:多模态</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:端云协同</span><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">EcoVLA 是面向机器人视觉—语言—动作模型的设备—边缘协同推理框架，在实时控制约束下动态选择更省能的任务切分方案。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 20 Hz 动作输出约束下，相比现有协同推理方法，系统能源效率最高提升 236%，并在网络和边缘负载变化时持续满足服务目标。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把不同 VLA 架构统一拆成阶段，预测设备、网络和边缘服务器的时延与能耗，再以毫秒级开销持续选择满足实时要求的最低能耗方案，并压缩跨设备传输的中间张量。</span></div>
-<div class="score-reason">评分依据：直接处理机器人设备算力、能耗和网络波动下的端云协同，端侧相关性高；统一切分空间、在线调度和明确能效结果构成中等贡献。</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-08-16 · Ao Zhou; Bo Dai; Le Yu; Xingyu Liu; Zeyu Hao; Lingkun Long; Chunming Hu; Jianlei Yang / APPT 2026</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span><span class="tag">硬件:Jetson</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">机器人上跑 VLA 模型，本机算力和电量撑不住实时控制，全部卸载到边缘服务器又怕网络波动。EcoVLA 是一个端边协同推理框架，在满足实时约束的前提下动态决定 VLA 各阶段放在机器人本机还是边缘服务器上，使整体能效最高。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Jetson AGX Orin 32GB（机器人端）加 RTX 4090（边缘服务器）的真实测试床上，以 20 Hz 动作输出为约束，5 个 VLA 模型的能效比固定切分方案提升 58%–236%（OpenVLA 最高 236%）；纯本机推理在 5 个模型中有 4 个达不到实时要求；带宽下降时能在线改用更偏本机的方案保持稳定。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把不同范式的 VLA 统一抽象成阶段级计算图，建立端、边、网络联合的时延与能耗预测模型，运行时以毫秒级开销在满足实时约束的方案中挑出能效最优的切分，并随网络和负载变化重新调度；跨设备传输的中间张量做轻量化处理以降低通信开销。</span></div>
+<div class="score-reason">评分依据：在 Jetson AGX Orin 真实设备上测量 VLA 推理的时延与功耗并做端边切分，直接面向机器人端部署（相关度 8）；不过实验只评估推理切分，没有在真实机器人上跑完整控制闭环。把实时约束和系统能效一起纳入 VLA 端边协同推理，工程完整（贡献 6）。论文已被 APPT 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.15502" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

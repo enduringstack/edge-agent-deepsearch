@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Self-Evolving Time-Series Forecasting Agents with Episodic Memory and Online Policy Learning</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Self-Evolving Time-Series Forecasting Agents with Episodic Memory and Online Policy Learning</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-09-26 · Junyi Wang; Yilin Wang; Wen Wu; Chao Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用大模型做时间序列预测的智能体通常每次都从零开始，不会利用那些已经揭晓真实值的历史预测。FASE 让预测智能体在线积累这些反馈，越用越准。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 GIFT-Eval 中选出的 29 组数据配置上，整体点预测成绩最好，归一化 MAE 比最强的单个时序基础模型低 9.1%；随着延迟反馈不断累积，优势还在扩大。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以 Qwen3.8-27B 为控制器，从 Chronos-2、TimesFM 2.5 等时序基础模型组成的工具池中挑选和组合；情景记忆检索相似的已完成预测，在线策略学习把累积反馈总结成工具排序建议，全程不更新大模型参数。</span></div>
+<div class="score-reason">评分依据：属于智能体记忆与工具选择的方法研究，运行在服务器级 27B 模型之上，与端侧只有间接关系。把预测的延迟反馈转成可复用经验有一定新意，但场景较专门。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.32689" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

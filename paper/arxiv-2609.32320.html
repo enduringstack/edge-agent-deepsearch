@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Superposed Inference for Hyperdimensional Computing</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Superposed Inference for Hyperdimensional Computing</h1>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-09-26 · Quanling Zhao; Nilesh Prasad Pandey; Ye Tian; Tajana Rosing / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">超维计算（HDC）以高效、鲁棒著称，但推理时每个查询都要单独做一次高维投影编码，这部分开销占了大头。SupHDC 让多个查询叠加后共享一次编码，再分别取回各自的预测。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 10 个数据集上，理论加速 1.39 倍且平均准确率无损，激进设置下加速 2.08 倍、平均准确率下降 2.67 个百分点；在 Raspberry Pi 5 上实测墙钟加速 2.01 倍，平均准确率下降 2.26 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">给每个查询分配一个轻量的随机槽位键，叠加后只做一次编码，再用每个槽位专用的分类器取回各自的预测；分类器针对混合输入做适配，置信度低的预测再走一遍常规路径兜底。从随机特征核的角度看，推理只需保留决定类别的证据，无需精确还原每个超向量。</span></div>
+<div class="score-reason">评分依据：面向轻量设备的 HDC 推理加速，并在 Raspberry Pi 5 上实测墙钟时间，相关度 7；把超维表示的冗余当作“并行容量”来共享编码是新颖思路，但适用范围限于投影式 HDC 分类，贡献 6。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.32320" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

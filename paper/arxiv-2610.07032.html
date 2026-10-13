@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Investigating Model Compression for Neural Machine Translation in the Biomedical Domain</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Investigating Model Compression for Neural Machine Translation in the Biomedical Domain</h1>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-10-04 · Maria Zafar; Souhail Bakkali; Rejwanul Haque / AICS 2025</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:量化</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">生物医学领域的法译英翻译术语多、平行语料少，直接压缩模型容易掉质量。这篇工作研究把知识蒸馏和量化结合起来，得到体积小、速度快、翻译质量不降的学生模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">蒸馏并量化后的学生模型相比原基线体积减少 69%、推理速度提升 98.21%、碳排放减少 98.46%，翻译质量没有下降。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以 MarianMT 大模型（opus-mt-tc-big-fr-en）为教师、小模型（opus-mt-fr-en）为学生做序列级蒸馏，比较包括 QLoRA 在内的多种微调策略，最后用 CTranslate2 转换学生模型并降低数值精度来加速推理。</span></div>
+<div class="score-reason">评分依据：蒸馏加量化是端侧部署常用的压缩手段，但本文面向翻译服务商的服务器部署，没有在端侧设备上评测，相关度 3。方法是现有蒸馏与量化工具的组合应用，贡献 3。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.07032" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

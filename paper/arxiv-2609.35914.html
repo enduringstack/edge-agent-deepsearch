@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Agentic Federated Learning: Rule-Based Client and Server Agents for Adaptive Training</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Agentic Federated Learning: Rule-Based Client and Server Agents for Adaptive Training</h1>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-09-28 · Deepthy K. Bhaskar; VP Binu; B Minimol / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">联邦学习里客户端参与方式和聚合策略通常是固定的，遇到数据分布不均或客户端不可靠时效果会变差。论文在客户端和服务器两侧各放一个基于规则的轻量“智能体”，在训练过程中动态调整参与和聚合。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 CIFAR-10 的 IID、非 IID 和含噪客户端三种设置下，分类准确率、收敛速度、对损坏更新的鲁棒性和通信效率都优于 FedAvg 与 FedProx；摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">客户端代理根据本地情况调整训练参数、决定是否参与并评估自身更新是否可靠；服务器端编排代理按质量挑选客户端并自适应加权聚合。这里的“智能体”是规则引擎，不是大模型。</span></div>
+<div class="score-reason">评分依据：联邦学习与边缘设备协同训练有关，但实验只在 CIFAR-10 上模拟、没有真实设备，与端侧推理或智能体运行时关系较远；规则式客户端选择加自适应聚合属于常见思路的组合。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.35914" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Anatomy of a Quantized Agent: VRAM Stability and Forecasting in Code-Synthesis Agentic Workloads</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-15 · Anubhab Banerjee / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span><span class="tag">模型:Phi</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项研究分析 4 比特代码生成智能体运行时的显存峰值，比较简单解析公式与学习模型能否准确预测不同轨迹的显存需求。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在单张 H100、4 个模型骨干和 1,920 条轨迹上，解析模型在 3 个骨干上达到 2.2%–4.4% 的测试 MAPE，学习基线为 3.4%–6.5%；编译成功率从 Phi-4-mini 的 5.7% 到 Qwen2.5-Coder-14B 的 62.0%，各骨干显存变异系数仅 0.3%–9.4%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">方法把峰值显存拆成权重、KV 缓存和激活三部分，并结合步骤数、工具调用、上下文扩展、已加载权重显存及固定激活开销进行预测，再与提示特征回归模型比较。</span></div>
-<div class="score-reason">评分依据：工作针对量化代码智能体的显存稳定性和容量规划，对本地推理的内存预算、KV 缓存管理与模型选择有迁移价值；贡献主要是严格测量并表明在权重占主导的场景中，简单解析模型已足够，复杂预测器收益有限。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-08-15 · Anubhab Banerjee / arXiv</div>
+<div class="tags"><span class="vendor-tag">Nokia</span><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span><span class="tag">硬件:H100</span><span class="tag">应用:代码</span><span class="tag">模型:Phi</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究 4 位量化大模型驱动的代码生成 Agent 在运行中显存峰值怎么变化、能不能提前预测，回答“部署量化 Agent 时是否值得上复杂的显存预测器”。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在单张 H100 上用 4 个基座模型跑了 1,920 条轨迹：给定加载权重显存和固定激活开销两个实测常数后，闭式解析模型在其中 3 个基座上误差为 2.2%–4.4%，与最好的学习型基线（3.4%–6.5%）相当；显存峰值的变异系数只有 0.3%–9.4%；编译成功率从 Phi-4-mini 的 5.7% 到 Qwen2.5-Coder-14B 的 62.0%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把显存峰值拆成权重、KV cache 和激活三项，按步数、工具调用次数和上下文膨胀系数参数化，再与回归等学习型预测器在真实 Agent 轨迹上逐一对比。</span></div>
+<div class="score-reason">评分依据：量化模型的显存预算与端侧部署直接相关，但实验只在 H100 上进行，相关度给 4。属于测量分析类工作，结论是量化后权重占主导时不需要复杂的预测模型，贡献给 4。论文首页唯一作者署名 Nokia Germany，邮箱为 nokia.com。 作者机构依据：arXiv PDF 首页署名 Nokia（论文首页唯一作者 Anubhab Banerjee 署名 Nokia Germany，邮箱为 nokia.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.15117" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

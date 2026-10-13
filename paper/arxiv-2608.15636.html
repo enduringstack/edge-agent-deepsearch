@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Algorithm-Architecture Co-Design for Efficient VLA Inference via Speculative Inference and Verification</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-16 · Chunyu Qi; Zhuoran Song; Jian Weng; Haozhe Jiang; Xueyuan Liu; Naifeng Jing; Guanghui He; Xiaoyao Liang / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">SpecVLA 是一套视觉—语言—动作模型的算法与硬件协同推理方案，利用机器人环境中“忙碌状态”和“空闲状态”的差异，在保证动作可靠性的同时争取实时运行。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在影响较小的空闲状态一次预测更长动作，在关键活动状态进行选择性验证；同时用差分残差和分块混合精度量化构建小型验证模型，并让 GPU 与机器人专用硬件并行执行。</span></div>
-<div class="score-reason">评分依据：面向机器人 VLA 的实时推理与异构硬件协同，具备端侧迁移价值，但摘要未明确具体设备或量化时延；状态感知推测与验证机制有中等贡献。</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-16 · Chunyu Qi; Zhuoran Song; Jian Weng; Haozhe Jiang; Xueyuan Liu; Naifeng Jing; Guanghui He; Xiaoyao Liang / arXiv</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:量化</span><span class="tag">方向:多模态</span><span class="tag">方向:能耗功耗</span><span class="tag">应用:机器人</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">视觉-语言-动作（VLA）模型控制机器人时计算量大、每次只能预测很短的动作序列，难以实时。SpecVLA 发现机械臂在“空中移动”阶段的动作对成败影响不大，于是让大模型在这些阶段一次多预测，只在精细操作阶段用小模型逐步核验。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LIBERO 和 ManiSkill 上以 OpenVLA、RDT 为对象，任务成功率与基线相当；端到端比 A100 GPU 快 2.9 倍、比专用加速框架 Dadu-Corki 快 1.9 倍、比 CPU 快 12.1 倍，能效比 GPU 高 2.1 倍；机器人专用硬件模块在 28nm 工艺下面积 1.93 平方毫米、功耗 567.74 毫瓦。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按机械臂与物体的距离判断当前处于活跃还是非活跃状态：非活跃时直接执行大模型预测的长动作序列，活跃时用差分残差加分块混合精度量化构造的小验证模型逐个核验；系统上由 GPU 跑完整 VLA，机器人专用硬件模块并行跑小验证模型和状态判断。</span></div>
+<div class="score-reason">评分依据：面向机器人实时控制的 VLA 推理加速，并设计了机器人侧专用硬件，但硬件结果来自周期级仿真和逻辑综合，完整 VLA 仍跑在 A100 上（相关度 6）。把投机预测与选择性核验用到动作生成上，并做到算法与架构协同设计，新意较高（贡献 7）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.15636" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Runtime Authorization of Self-Generated Subgoals in Long-Horizon Tool-Using AI Agents</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Runtime Authorization of Self-Generated Subgoals in Long-Horizon Tool-Using AI Agents</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-10-04 · Genliang Zhu; Chu Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长程工具调用智能体会自己生成子目标、重新规划、分派任务，逐个工具的权限检查无法保证不断变化的目标图仍在用户批准的范围内。这篇工作提出一套运行时授权机制，确保智能体自己生成的子目标不会变成新的权限来源。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在覆盖 25 种结构模板的 96 组配对用例中，完整机制在 48 个目标漂移用例里没有提交任何禁止状态，同时完成了全部 48 个正常对照用例；在两个公开上游运行时路径上执行 258 次原生调度，32 个用例的决策和凭证链全部一致；可执行模型共探索 340 个状态、419 次转移。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每次修改目标图都必须附带与版本绑定的证明，说明后续轨迹、资源、义务、不变量和结束条件都细化自用户批准的根契约；所有受保护的副作用在原子提交点重新检查；自由文本形式的目标描述不赋予任何权限，并给出形式化的安全性证明。</span></div>
+<div class="score-reason">评分依据：面向工具调用智能体运行时的安全授权，端侧智能体执行本地操作时同样需要这类约束，但论文没有涉及设备端部署，相关度 3。把子目标授权形式化并给出可证明的安全性质，方法严谨，贡献 6。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.04975" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>
