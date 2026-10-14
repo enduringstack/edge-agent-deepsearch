@@ -48,6 +48,11 @@
 - **score_contribution**（0-10）：创新度高 7-10；常见方法/工程整合 1-6。
 - **tags**：1-8 个，必须取自 `data/tags.yaml`。`方向:端侧agent` 只在 edge_agent_scope 为手机/PC/其他端侧时使用。
 - **edge_agent_scope**：真正端侧 Agent = 同时具备 Agent 闭环（规划/记忆/工具调用/环境交互/行动之一）**和**设备端执行证据（关键闭环至少部分实际运行在手机/PC/机器人/汽车/IoT 上；端云协同时终端承担时延敏感闭环）。手机/PC 只是云端 Agent 的入口、普通端侧推理/量化/缓存/检测、纯云端 Agent 训练基础设施，一律 `非端侧Agent`。凡判为 手机/PC/其他端侧，必须写 edge_agent_evidence，并且 score_relevance ≥ 8、recommend=true。
+  判例（各周保持一致）：
+  - 本地模型驱动、智能体闭环在设备上（如 Android Studio Agent Mode 经 Ollama 跑本地 Gemma 4、NemoClaw 在 DGX Spark 跑本地 Nemotron、Gemma 4 Agent Skills 在手机本地多步执行）→ 端侧。
+  - 智能体运行时与编排闭环（多设备互相委派、状态、记忆、授权、设备执行）在本地，仅大模型推理调用云端（如 EdgeCitadel、HearthNet、PowerLens）→ 端侧。
+  - 单机只执行云端智能体下发的命令（如 Codex Windows 沙箱、VIGIL），或原文没说明模型在本地（如新版 Bixby、极氪 Eva、模型位置不明的桌面 Agent）→ 非端侧Agent，可仍推荐。
+  - 纯动作/控制策略、VLA 动作模型、强化学习控制器（无规划/记忆/工具）→ 非端侧Agent。只在仿真里评测的 → 非端侧Agent。
 - **company**：只有在论文首页作者机构（arXiv HTML/PDF 署名或邮箱域名）明确出现公司时才填，例如 Google、Apple、Meta、Microsoft、NVIDIA、Qualcomm、Samsung、Huawei、MediaTek、Xiaomi、OPPO、vivo、Honor、Alibaba/Qwen、ByteDance、Tencent、Baidu、Kuaishou、Meituan、JD、Pinduoduo、NetEase、Intel、AMD、Arm、SK hynix 等。`vendors` 写公司英文名（多家用 `; ` 分隔），`evidence_url` 写 `https://arxiv.org/pdf/<id>`，`evidence_note` 写中文依据（如“PDF 首页作者 3、4 署名 Qualcomm AI Research”）。不许凭作者名、模型名、被研究的平台名推测；不确定就留空。作者注明“以个人身份”或只写“现就职于”的不算该公司的项目。
 - **accepted_top_venue**：Comments 明确写被 NeurIPS/ICML/ICLR/MobiSys/SenSys/ASPLOS/ACL/CVPR/ICCV/EMNLP/AAAI/IJCAI/TPAMI/TNNLS/ToN（或同级：MICRO/ISCA/HPCA/EuroSys/OSDI/SOSP/MobiCom/DAC）接收时为 true，并把 venue 写成会议名+年份。Findings、Industry Track、Workshop、学生研讨会（SRW）一律不算顶会（`accepted_top_venue=false`，venue 照写，如“ACL 2026 Findings”）；ACM CCS、IEEE S&P 等安全四大按同级算。
 - **recommend**：值得读者优先看的才 true（端侧真机结果扎实、方法有新意、或对端侧 Agent 有直接价值）。整批通常只有少数几条。recommend=true 时必须写：
