@@ -112,21 +112,43 @@ def _reclaim_hf_pick(paper: dict, label: str) -> bool:
     week's HF copy would win every time. Only an arxiv.org copy dated by submission
     reclaims, and only from a later week whose copy is the HF page.
     """
-    if not str(paper.get("paper_url", "")).startswith("https://arxiv.org/abs/"):
+    rec = _reclaimable_from(paper, label)
+    if rec is None:
         return False
+    key = content_identity(paper["paper_url"])
+    rec["papers"] = [p for p in rec["papers"] if content_identity(p["paper_url"]) != key]
+    weeks_mod.archive_path(label).write_text(json.dumps(rec, ensure_ascii=False, indent=2), encoding="utf-8")
+    return True
+
+
+def hf_pick_reclaimable(paper: dict, label: str) -> bool:
+    """True when ``paper`` may take its HF-dated copy back from week ``label``.
+
+    The assembler asks this before dropping an already-published entry, so the
+    reclaim in ``write`` gets to see it.
+    """
+    return _reclaimable_from(paper, label) is not None
+
+
+def _reclaimable_from(paper: dict, label: str) -> dict | None:
+    """The later week's archive if it only holds ``paper`` as an HF pick it never featured."""
+    if not str(paper.get("paper_url", "")).startswith("https://arxiv.org/abs/"):
+        return None
     path = weeks_mod.archive_path(label)
     rec = json.loads(path.read_text(encoding="utf-8"))
     if rec["range"]["start"] <= paper["date"]:
-        return False
+        return None
     key = content_identity(paper["paper_url"])
-    kept = [p for p in rec["papers"]
-            if not (content_identity(p["paper_url"]) == key
-                    and str(p["paper_url"]).startswith("https://huggingface.co/papers/"))]
-    if len(kept) == len(rec["papers"]):
-        return False
-    rec["papers"] = kept
-    path.write_text(json.dumps(rec, ensure_ascii=False, indent=2), encoding="utf-8")
-    return True
+    copies = [p for p in rec["papers"] if content_identity(p["paper_url"]) == key]
+    if not copies or not all(str(p["paper_url"]).startswith("https://huggingface.co/papers/") for p in copies):
+        return None
+    # A week whose summary already features the paper keeps it: moving it would
+    # leave that summary pointing at another week's item.
+    featured = {content_identity(h.get("url", "")) for h in (rec.get("weekly") or {}).get("highlights") or []
+                if str(h.get("url", "")).startswith("http")}
+    if key in featured:
+        return None
+    return rec
 
 
 def _update(label: str, key: str, block: dict) -> None:

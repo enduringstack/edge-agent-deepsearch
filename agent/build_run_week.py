@@ -492,6 +492,16 @@ def load(path: Path, required: bool = False):
     return value
 
 
+def _hf_pick_reclaimable(paper: dict, label: str) -> bool:
+    """Backfill only: a later, already-written week holds this arXiv paper as an HF pick.
+
+    ``backfill_week.py write`` moves it back to its submission week; see there.
+    Live runs go forward, so a later archived week never exists and this is False.
+    """
+    import backfill_week  # noqa: PLC0415 - backfill-only path, keeps the live import graph lean
+    return backfill_week.hf_pick_reclaimable(paper, label)
+
+
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description="Assemble a weekly research run from four source files.")
     parser.add_argument("--today", help="Override collection date as YYYY-MM-DD")
@@ -563,7 +573,8 @@ def main(argv=None) -> int:
     window_start, _, _ = collection_window(args.today)
     published = published_identities(exclude_label=window_start.isoformat())
     before = len(uniq)
-    uniq = [p for p in uniq if content_identity(p["paper_url"]) not in published]
+    uniq = [p for p in uniq if content_identity(p["paper_url"]) not in published
+            or _hf_pick_reclaimable(p, published[content_identity(p["paper_url"])])]
     if len(uniq) < before:
         print(f"[ASSEMBLE] dropped {before - len(uniq)} entries already published in an archived week")
 

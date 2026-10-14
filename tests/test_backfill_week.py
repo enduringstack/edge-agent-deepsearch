@@ -50,6 +50,15 @@ class ReclaimHfPickTest(unittest.TestCase):
         self.write_later_week([hf("2605.04647", "2026-05-08")])
         self.assertFalse(backfill_week._reclaim_hf_pick(hf("2605.04647", "2026-05-06"), "2026-05-08"))
 
+    def test_paper_featured_in_later_weekly_stays_there(self):
+        self.write_later_week([hf("2605.04647", "2026-05-08")])
+        rec = json.loads(self.path.read_text(encoding="utf-8"))
+        rec["weekly"] = {"highlights": [{"url": "https://huggingface.co/papers/2605.04647"}]}
+        self.path.write_text(json.dumps(rec), encoding="utf-8")
+        self.assertFalse(backfill_week.hf_pick_reclaimable(arxiv("2605.04647", "2026-05-06"), "2026-05-08"))
+        self.assertFalse(backfill_week._reclaim_hf_pick(arxiv("2605.04647", "2026-05-06"), "2026-05-08"))
+        self.assertEqual(self.later_ids(), ["arxiv-2605.04647"])
+
     def test_earlier_week_is_never_raided(self):
         self.write_later_week([hf("2605.04647", "2026-05-08")])
         self.assertFalse(backfill_week._reclaim_hf_pick(arxiv("2605.04647", "2026-05-09"), "2026-05-08"))
