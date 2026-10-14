@@ -77,9 +77,12 @@ def cmd_write(args) -> int:
     normalized = research_run.validate_payload(run, today=end, skip_network=True,
                                                require_collection_manifest=not args.no_manifest)
     others = published_identities(exclude_label=args.label)
-    papers, dupes = [], []
+    papers, dupes, reclaimed = [], [], []
     for paper in normalized["papers"]:
         week = others.get(content_identity(paper["paper_url"]))
+        if week and _reclaim_hf_pick(paper, week):
+            reclaimed.append((paper["id"], week))
+            week = None
         (dupes if week else papers).append(paper if not week else (paper["id"], week))
     weekly = _load(args.weekly)
     check_weekly(weekly, start, end)
@@ -95,8 +98,35 @@ def cmd_write(args) -> int:
     rec = sum(p.get("recommendation") == "推荐" for p in papers)
     print(f"[BACKFILL] {args.label}: {len(papers)} papers ({rec} recommended), "
           f"{len(comm['items'])} community, {len((hw or {}).get('items', []))} hardware; "
-          f"dropped {len(dupes)} already in other weeks {dupes[:5]}")
+          f"dropped {len(dupes)} already in other weeks {dupes[:5]}; "
+          f"reclaimed {len(reclaimed)} HF-dated picks from later weeks {reclaimed[:5]}")
     return 0
+
+
+def _reclaim_hf_pick(paper: dict, label: str) -> bool:
+    """Move an arXiv paper back from a later week that only holds its HF daily-pick copy.
+
+    Hugging Face picks are dated by the day they were featured, often a week after
+    arXiv submission. Live runs go forward, so the submission week's arXiv sweep
+    claims the paper first; a backfill goes newest-first, so without this the later
+    week's HF copy would win every time. Only an arxiv.org copy dated by submission
+    reclaims, and only from a later week whose copy is the HF page.
+    """
+    if not str(paper.get("paper_url", "")).startswith("https://arxiv.org/abs/"):
+        return False
+    path = weeks_mod.archive_path(label)
+    rec = json.loads(path.read_text(encoding="utf-8"))
+    if rec["range"]["start"] <= paper["date"]:
+        return False
+    key = content_identity(paper["paper_url"])
+    kept = [p for p in rec["papers"]
+            if not (content_identity(p["paper_url"]) == key
+                    and str(p["paper_url"]).startswith("https://huggingface.co/papers/"))]
+    if len(kept) == len(rec["papers"]):
+        return False
+    rec["papers"] = kept
+    path.write_text(json.dumps(rec, ensure_ascii=False, indent=2), encoding="utf-8")
+    return True
 
 
 def _update(label: str, key: str, block: dict) -> None:
