@@ -4953,5 +4953,284 @@
       "投机解码正在从软件技巧变成硬件数据通路的一部分：draft 与 verify 写进了调度器，NPU 指令集需要为此预留支持。",
       "机器人 VLA 推理的瓶颈是“实时性”而不是吞吐，比特稀疏、减少访存是这一类芯片的主要手段。"
     ]
+  },
+  "community": {
+    "window": {
+      "start": "2026-07-30",
+      "end": "2026-08-05"
+    },
+    "coverage": [
+      {
+        "source": "X",
+        "status": "limited",
+        "note": "X 无原生检索入口，只能从 HN 当天外链（18 条 twitter.com/status）和 r/LocalLLaMA、r/LocalLLM 帖文中提取原帖；当天能核验的原帖都是 Prime Agent、Jeff Dean 离职、Muse Code 等非端侧话题，Pokee-Isaac 原帖按 snowflake 算是 08-04，越窗。VibeVoice iPhone 作者称会发 X，但找不到可核验的原帖链接，所以记为受限，不拿转述冒充。（本次为单日回填，只检索 2026-08-05 当天发布内容）"
+      },
+      {
+        "source": "Bluesky",
+        "status": "found",
+        "note": "api.bsky.app searchPosts 8 个端侧关键词带 since/until 限定 08-05，收 MacPaw×Liquid AI 端侧推理、heise 锐龙 NPU 实测、Mila 全端侧导盲机器狗 3 条；另有大量“Google 用 Gemini 替换手机助手”的吐槽帖，属于云端争议，不收。（本次为单日回填，只检索 2026-08-05 当天发布内容）"
+      },
+      {
+        "source": "Reddit",
+        "status": "found",
+        "note": "arctic-shift 抽样 r/LocalLLaMA、r/LocalLLM、r/androiddev、r/MachineLearning、r/JetsonNano 08-05 帖子，收 7 条（手机 3 条：OnePlus 13 跑 LFM2.5、iPhone 跑 VibeVoice、iPhone 离线 ASR），均记为仅线索。（本次为单日回填，只检索 2026-08-05 当天发布内容）"
+      },
+      {
+        "source": "Hacker News",
+        "status": "found",
+        "note": "hn.algolia search_by_date 15 个端侧关键词、created_at_i 限定 08-05 UTC，去重 42 个 story，收 Frink Rust 推理引擎（23 分/41 评论）与 PageForth 端侧新闻阅读器 2 条。（本次为单日回填，只检索 2026-08-05 当天发布内容）"
+      },
+      {
+        "source": "Mastodon",
+        "status": "found",
+        "note": "mastodon.social 标签时间线（localllm/ollama/llamacpp/edgeai/ondeviceai/llm/localai/npu/mlx）用 08-05 雪花 ID 圈定当天，收 LFM2.5-2.6B 端侧 Agent 模型发布讨论 1 条；当天“Qwen3.8-27B 可在 17GB 本地运行”帖经核实权重 08-14 才开放，不收。（本次为单日回填，只检索 2026-08-05 当天发布内容）"
+      },
+      {
+        "source": "GitHub Discussions",
+        "status": "found",
+        "note": "llama.cpp、mlx、executorch、LiteRT-LM、mlc-llm、ollama、transformers.js 讨论区用 discussions_q=created:2026-08-05 过滤，只有 llama.cpp 新增 1 条（HIP fast-math 破坏投机解码一致性），收录；其余仓当天无新讨论。（本次为单日回填，只检索 2026-08-05 当天发布内容）"
+      },
+      {
+        "source": "Hugging Face",
+        "status": "no_match",
+        "note": "HF API 按 createdAt 扫 LiquidAI/Qwen/nvidia/unsloth/amd/litert-community 等 24 个 org。08-05 新建的 Qwen/Qwen3.8-27B 实际 08-14 才公开权重（当天社区帖仍在“等待”），按回填规则排除；LFM2.5-2.6B 系列仓库建于 07-28~08-01、MLX 版本建于 08-06，都不在当天；Nemotron-3.5-Lightning、unsloth FLUX 系列、litert-community granite-350m 当天创建，但前两者与端侧无关，后者当天没有公开讨论或官方发布佐证。（本次为单日回填，只检索 2026-08-05 当天发布内容）"
+      },
+      {
+        "source": "YouTube / Bilibili",
+        "status": "found",
+        "note": "YouTube 频道 RSS 已不可用，约 10 周前窗口无法按日回溯，记为结构性受限；Bilibili 搜索 API 按 pubtime 限定 08-05，收安卓手机 Ubuntu 容器跑 llama.cpp GPU 推理的演示 1 条（可回链 llama.cpp 一手项目）；LFM2.5 去审查版、OpenClaw 教程等不符合“官方或一手项目演示”的不收。（本次为单日回填，只检索 2026-08-05 当天发布内容）"
+      },
+      {
+        "source": "厂商论坛",
+        "status": "found",
+        "note": "NVIDIA 开发者论坛 Discourse search.json（after/before 限定 08-04~08-06，再按 created_at 筛 08-05），收单台 DGX Spark 跑 DeepSeek-V4-Flash-0731 的部署配方 1 条；其余为 Jetson Thor 驱动或账号问题。（本次为单日回填，只检索 2026-08-05 当天发布内容）"
+      }
+    ],
+    "items": [
+      {
+        "id": "reddit-live-transcriber-iphone-offline-asr",
+        "source": "Reddit",
+        "author": "marshmallow_ki",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1vgbl7w/",
+        "published_at": "2026-08-05T16:04:42Z",
+        "title_zh": "Live Transcriber：iPhone 上离线运行 Whisper/Qwen3-ASR/Nemotron/MOSS",
+        "summary_zh": "作者开源 iOS 应用 Live Transcriber，在 iPhone 上完全离线运行 Whisper、Qwen3-ASR、NVIDIA Nemotron Streaming 和 MOSS 多说话人识别，支持离线分说话人转写、实时翻译、AI 摘要和 Apple Watch 录音同步。作者提到基准准确率只是选型的一个维度。热度较低（4 分）。",
+        "why_it_matters": "汇集多种开源 ASR 在同一手机上做离线对比，对手机端语音模型选型有参考价值。",
+        "device_scope": "手机",
+        "topic": "手机端离线语音识别",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "reddit-lfm25-2-6b-oneplus13-cpu",
+        "source": "Reddit",
+        "author": "trikboomie",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vg8qfv/",
+        "published_at": "2026-08-05T14:20:47Z",
+        "title_zh": "OnePlus 13 纯 CPU 跑 LFM2.5-2.6B：17 tok/s",
+        "summary_zh": "作者用自研的 450KB 推理引擎在 OnePlus 13 上纯 CPU 运行 Liquid AI 前一天发布的 LFM2.5-2.6B（Q4_K_M GGUF），约 17 tok/s，并通过 ADB 跑自制的设备探测 TUI，目标是 30 tok/s。常识核算：Q4 约 1.6GB 权重，手机 LPDDR5X 带宽支撑 17 tok/s 合理。引擎未开源，数据为个人实测。",
+        "why_it_matters": "面向多步 Agent 的 2.6B 模型在旗舰手机 CPU 上已可用，手机端侧 Agent 闭环的算力门槛正在下降。",
+        "device_scope": "手机",
+        "topic": "手机端侧 Agent 模型实测",
+        "verification": "仅线索",
+        "evidence_url": "https://huggingface.co/blog/LiquidAI/lfm2-5-2-6b"
+      },
+      {
+        "id": "mastodon-lfm25-2-6b-agentic-on-device",
+        "source": "Mastodon",
+        "author": "michabbb@vivaldi.net",
+        "url": "https://social.vivaldi.net/@michabbb/117041403833506714",
+        "published_at": "2026-08-05T06:08:12Z",
+        "title_zh": "Liquid AI LFM2.5-2.6B：完全端侧运行的 Agent 模型",
+        "summary_zh": "帖子介绍 Liquid AI 发布的 LFM2.5-2.6B（08-04 发布），主打在设备端完成规划、工具调用和多步任务；官方数据为 M5 Max CPU 约 220 tok/s、锐龙 AI Max+ 395 约 113 tok/s、手机约 30 tok/s，内存低于 2.5GB，指令遵循和工具调用领先 4 倍体量的模型。性能数字均为厂商自报。",
+        "why_it_matters": "专为端侧 Agent 闭环设计的小模型，覆盖手机与 PC，同日已有 OnePlus 13 实测跟进。",
+        "device_scope": "手机",
+        "topic": "端侧 Agent 小模型",
+        "verification": "仅线索",
+        "evidence_url": "https://huggingface.co/blog/LiquidAI/lfm2-5-2-6b"
+      },
+      {
+        "id": "bili-android-ubuntu-llamacpp-gpu",
+        "source": "YouTube / Bilibili",
+        "author": "_v-8-v_",
+        "url": "https://www.bilibili.com/video/BV1fiMr6MEvp",
+        "published_at": "2026-08-05T02:18:26Z",
+        "title_zh": "安卓手机免 Root 装 Ubuntu 用 llama.cpp 调 GPU 跑模型",
+        "summary_zh": "UP 主演示在安卓手机上通过软件装 Ubuntu 环境、编译 llama.cpp 并调用手机 GPU 推理，称速度有提升，但因设备差异没有给出具体倍数。个人演示视频，可回链 llama.cpp 项目，没有严格基准。",
+        "why_it_matters": "反映普通用户在手机上用通用 Linux 工具链跑本地模型的需求，以及手机 GPU 后端的可用性问题。",
+        "device_scope": "手机",
+        "topic": "手机 GPU 本地推理",
+        "verification": "仅线索",
+        "evidence_url": "https://github.com/ggml-org/llama.cpp"
+      },
+      {
+        "id": "reddit-vibevoice-1-5b-iphone",
+        "source": "Reddit",
+        "author": "Acceptable-Cycle4645",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vfuawi/",
+        "published_at": "2026-08-05T02:14:35Z",
+        "title_zh": "VibeVoice 1.5B 在 iPhone 本地运行：约 2.2GB 内存、最高 1.28× 实时",
+        "summary_zh": "audio.cpp 作者展示在 iPhone 上本地运行 VibeVoice 1.5B 语音合成，内存约 2.2GB，生成速度最高为实时的 1.28 倍，长文本生成时内存稳定。模型已上传到 audio.cpp 的 HF 仓库，xcframework 与代码待 0.6 版本发布后推送。",
+        "why_it_matters": "长文本 TTS 在手机端达到实时，是手机端侧语音 Agent 的关键拼图。",
+        "device_scope": "手机",
+        "topic": "手机端侧语音合成",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "reddit-ds-v4-flash-macbook-m5-pro-ssd",
+        "source": "Reddit",
+        "author": "vogelvogelvogelvogel",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vge4l5/",
+        "published_at": "2026-08-05T17:34:25Z",
+        "title_zh": "MacBook M5 Pro 64GB 跑 DeepSeek-V4-Flash-0731：10–17 t/s（部分 SSD 流式）",
+        "summary_zh": "作者借助 antirez 的 ds4（DwarfStar）SSD 流式模式，在 64GB MacBook M5 Pro 上运行 DeepSeek-V4-Flash-0731：非路由权重常驻内存，路由专家部分缓存在内存、未命中时从 GGUF 读取，非思考模式 10–17 t/s。常识核算：13B 激活按 Q8/混合精度计每 token 需读取数 GB，速度高度依赖专家缓存命中，数字可信但随负载波动。",
+        "why_it_matters": "说明 SSD 流式 MoE 能让 64GB 笔记本跑约 280B 级模型，是 PC 端侧部署边界的新数据点。",
+        "device_scope": "PC",
+        "topic": "笔记本 SSD 流式 MoE",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "hn-pageforth-on-device-news-reader",
+        "source": "Hacker News",
+        "author": "Show HN",
+        "url": "https://news.ycombinator.com/item?id=49182365",
+        "published_at": "2026-08-05T13:09:00Z",
+        "title_zh": "PageForth：用 Apple Intelligence 在端侧总结新闻的 Mac 阅读器",
+        "summary_zh": "Show HN 产品 PageForth 是 Mac 新闻阅读器，无需 RSS 即可抓取任意站点，并用 Apple Intelligence 在设备端为每篇文章生成摘要；要求 macOS 26 与 Apple Intelligence，订阅价 29.99 美元/年。HN 热度很低。",
+        "why_it_matters": "第三方应用开始直接调用系统端侧模型做产品功能，体现 Apple 端侧模型 API 的落地。",
+        "device_scope": "PC",
+        "topic": "系统端侧模型应用",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://pageforth.com/"
+      },
+      {
+        "id": "bsky-macpaw-liquid-ai-on-device",
+        "source": "Bluesky",
+        "author": "techcrunch.com",
+        "url": "https://bsky.app/profile/techcrunch.com/post/3msdjpgl26w26",
+        "published_at": "2026-08-05T12:29:04Z",
+        "title_zh": "MacPaw 联合 Liquid AI 为其应用商店开发者提供端侧推理",
+        "summary_zh": "TechCrunch 官方账号当天推送报道：MacPaw 采用 Liquid AI 模型，为其 Mac 应用商店开发者提供端侧推理能力；9to5Mac 同日报道 MacPaw 在做一个跨 Mac 应用的端侧 AI 层。细节以报道为准，未见 MacPaw 官方技术文档。",
+        "why_it_matters": "第三方平台把端侧模型做成面向开发者的系统级能力，是 PC 端侧 AI 分发方式的新动向。",
+        "device_scope": "PC",
+        "topic": "Mac 端侧推理平台",
+        "verification": "仅线索",
+        "evidence_url": "https://techcrunch.com/2026/08/05/macpaw-taps-liquid-ai-to-offer-on-device-inference-to-devs-building-for-its-app-store/"
+      },
+      {
+        "id": "hn-frink-rust-gguf-engine",
+        "source": "Hacker News",
+        "author": "Antonello Fratepietro",
+        "url": "https://news.ycombinator.com/item?id=49180302",
+        "published_at": "2026-08-05T09:00:07Z",
+        "title_zh": "Frink：纯 Rust 的 GGUF 推理引擎，与 llama.cpp 对比实测",
+        "summary_zh": "作者介绍两周内写成的纯 Rust GGUF 推理引擎（原名 Ferrox，后改名 Frink），支持稠密与 MoE、CPU/Metal/CUDA，不依赖 ggml。文章 08-05 发布时为 v0.4，后续更新称 Metal 预填充已与 llama.cpp 持平或略快，CPU 仍慢 1.4–5 倍。HN 23 分、41 条评论。",
+        "why_it_matters": "又一个可替代 llama.cpp 的本地推理引擎，Metal 路径对 Mac 端侧部署有参考价值。",
+        "device_scope": "PC",
+        "topic": "本地推理引擎",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://www.fratepietro.com/2026/frink-rust-gguf-inference-engine/"
+      },
+      {
+        "id": "gh-llamacpp-hip-fastmath-spec-decoding",
+        "source": "GitHub Discussions",
+        "author": "jimw567",
+        "url": "https://github.com/ggml-org/llama.cpp/discussions/26611",
+        "published_at": "2026-08-05T05:28:20Z",
+        "title_zh": "llama.cpp：HIP 后端默认 -ffast-math 破坏投机解码一致性",
+        "summary_zh": "讨论指出 PR #23862 在 HIP（AMD GPU）后端默认且强制开启 fast-math，带来约 6% 提速，但破坏了“投机解码输出与非投机输出一致”的基本约定，MTP 自投机贪心解码的结果不再一致。帖子建议改为可选开关。",
+        "why_it_matters": "AMD GPU/APU 本地推理里速度和正确性的取舍，影响依赖确定性输出的 Agent 应用。",
+        "device_scope": "PC",
+        "topic": "推理引擎数值正确性",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "bsky-heise-amd-lemonade-ryzen-npu",
+        "source": "Bluesky",
+        "author": "ct.de",
+        "url": "https://bsky.app/profile/ct.de/post/3mscqrw7ydn2a",
+        "published_at": "2026-08-05T05:03:04Z",
+        "title_zh": "c't 实测 AMD Lemonade：锐龙 NPU 上哪些 AI 任务能本地跑",
+        "summary_zh": "德国 c't 杂志官方账号推送 heise+ 文章，测试免费软件 AMD Lemonade 在锐龙处理器 NPU 上运行 AI 模型，检验哪些任务能本地完成、NPU 在哪些场景失效。全文在付费墙后，结论细节未能核读。",
+        "why_it_matters": "独立媒体对 PC NPU 实际可用性的评测，能校正厂商 TOPS 宣传。",
+        "device_scope": "PC",
+        "topic": "PC NPU 实测",
+        "verification": "仅线索",
+        "evidence_url": "https://www.heise.de/ratgeber/KI-ohne-Cloud-So-nutzen-Sie-AMD-Lemonade-auf-Ryzen-Prozessoren-11373128.html"
+      },
+      {
+        "id": "forum-nvidia-ds-v4-single-spark-40tps",
+        "source": "厂商论坛",
+        "author": "styles01",
+        "url": "https://forums.developer.nvidia.com/t/379192",
+        "published_at": "2026-08-05T00:57:36Z",
+        "title_zh": "单台 DGX Spark 跑 DeepSeek-V4-Flash-0731：40 t/s 解码、131k 上下文",
+        "summary_zh": "用户分享在单台 DGX Spark 上用 ds4 自定义 CUDA 引擎（Entrpi/ds4 分支）+ DSpark 投机解码（k=2）运行 DeepSeek-V4-Flash-0731 的配方，131k 上下文、2 路并发、约 40 t/s 解码。常识核算：GB10 带宽约 273GB/s、13B 激活，不开投机解码上限约数十 t/s，加 k=2 投机解码达到 40 t/s 合理。",
+        "why_it_matters": "桌面 AI 主机单机跑最新大 MoE 的可复现配方，是本地部署实操参考。",
+        "device_scope": "PC",
+        "topic": "桌面 AI 主机部署",
+        "verification": "仅线索",
+        "evidence_url": "https://github.com/styles01/sparkrun-recipes"
+      },
+      {
+        "id": "bsky-mila-milo-robot-guide-dog",
+        "source": "Bluesky",
+        "author": "mila-quebec.bsky.social",
+        "url": "https://bsky.app/profile/mila-quebec.bsky.social/post/3msdpriyzfs2f",
+        "published_at": "2026-08-05T14:17:37Z",
+        "title_zh": "Mila 发布 Milo：全端侧 AI 的开源自主导盲机器狗",
+        "summary_zh": "Mila 官方账号介绍 Florian Golemo 开发的 Milo，称其为首个完全自主的机器人导盲犬，用端侧 AI 在陌生环境导航、避障，无需联网或线缆，并且 100% 开源、可量产。“首个”为官方自述，所用模型与硬件需看项目材料。",
+        "why_it_matters": "具身场景中全离线感知与导航的开源方案，是其他端侧 Agent 的代表性案例。",
+        "device_scope": "其他端侧",
+        "topic": "具身端侧导航",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "reddit-esp32-s3-transformer-training",
+        "source": "Reddit",
+        "author": "wikisailor",
+        "url": "https://www.reddit.com/r/LocalLLM/comments/1vg13xz/",
+        "published_at": "2026-08-05T08:10:16Z",
+        "title_zh": "在 8 美元的 ESP32-S3 上完整训练一个 Transformer",
+        "summary_zh": "作者在 8MB PSRAM 的 ESP32-S3 上从随机初始化开始完成分词、前向、交叉熵、手写反向传播、动量 SGD、写 flash 检查点和生成，全部在芯片上进行，不用框架。模型只有 319K 参数，作者明确说模型本身没有实用价值，重点是训练循环能装进去。",
+        "why_it_matters": "证明 MCU 级设备可做端上训练闭环，对端侧持续学习/个性化有启发意义。",
+        "device_scope": "其他端侧",
+        "topic": "MCU 端上训练",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "reddit-llamacpp-rce-misconfig",
+        "source": "Reddit",
+        "author": "AdamLangePL",
+        "url": "https://www.reddit.com/r/LocalLLM/comments/1vg7t61/",
+        "published_at": "2026-08-05T13:45:04Z",
+        "title_zh": "安全提醒：llama.cpp 开 --tools / -ag 却不设 API key 可被远程执行命令",
+        "summary_zh": "帖子提醒：如果 llama-server 启用了 --tools 或 -ag（Agent 工具）却没有设置 API key，任何能访问端口的人都能调用工具，造成远程命令执行。这是配置风险提醒，不是已披露的漏洞编号。",
+        "why_it_matters": "本地 Agent 一旦带上工具执行能力，默认网络暴露就成了安全问题，端侧部署要把鉴权当作必选项。",
+        "device_scope": "通用技术",
+        "topic": "本地 Agent 安全",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "reddit-qwen3-tts-mainline-llamacpp",
+        "source": "Reddit",
+        "author": "BTA_Labs",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vg0q6r/",
+        "published_at": "2026-08-05T07:47:51Z",
+        "title_zh": "Qwen3-TTS 声音克隆并入 llama.cpp 主线",
+        "summary_zh": "帖子称 Qwen3-TTS-12Hz-1.7B-Base 的 llama.cpp 实现已在前一天合入主线：支持 GGUF、用 WAV/MP3 作参考音色、10 种语言，通过 llama-tts 生成音频。ggml-org 的 GGUF 仓库创建于 08-03。",
+        "why_it_matters": "llama.cpp 从文本扩展到语音合成，本地语音 Agent 可以用同一套推理栈。",
+        "device_scope": "通用技术",
+        "topic": "本地语音合成",
+        "verification": "仅线索",
+        "evidence_url": "https://huggingface.co/ggml-org/Qwen3-TTS-12Hz-1.7B-Base-GGUF"
+      }
+    ]
   }
 }

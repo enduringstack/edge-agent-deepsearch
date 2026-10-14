@@ -4841,5 +4841,340 @@
       "联发科、高通两家手机芯片龙头在同一周给出相同信号：内存涨价压缩了手机业务，下一代旗舰的卖点转向“Agentic AI”。",
       "国产 LPDDR6（长鑫）进入验证尾声，为 9 月小米 18 Fold 首发国产 LPDDR6 做好了准备。"
     ]
+  },
+  "community": {
+    "window": {
+      "start": "2026-07-25",
+      "end": "2026-07-31"
+    },
+    "coverage": [
+      {
+        "source": "X",
+        "status": "found",
+        "note": "X 无原生检索入口，从 HN 当天外链与 r/LocalLLaMA、r/LocalLLM 帖文中提取 x.com/status 链接，按 snowflake 筛进 07-31 后用 curl/8.4.0 回核 article:published_time。端侧相关只有 BarunLM 1 条；deepseek_ai 当天原帖为 API 上线公告、MiniMax H3 为视频模型，不收。（本次为单日回填，只检索 2026-07-31 当天发布内容）"
+      },
+      {
+        "source": "Bluesky",
+        "status": "found",
+        "note": "api.bsky.app searchPosts（local LLM / on-device AI / llama.cpp / NPU / ollama / MLX / edge AI / LocalLLaMA）带 since/until 限定 07-31，去重 250 帖，收 unsloth 官方本地运行公告与 Arm 端侧游戏推理演讲分享 2 条。（本次为单日回填，只检索 2026-07-31 当天发布内容）"
+      },
+      {
+        "source": "Reddit",
+        "status": "found",
+        "note": "arctic-shift 抽样 r/LocalLLaMA、r/LocalLLM、r/androiddev、r/MachineLearning、r/JetsonNano 07-31 全部帖子；当天主线是 DeepSeek-V4-Flash-0731 开放权重，收与本地/端侧部署直接相关的 6 条，均记为仅线索。（本次为单日回填，只检索 2026-07-31 当天发布内容）"
+      },
+      {
+        "source": "Hacker News",
+        "status": "found",
+        "note": "hn.algolia search_by_date 15 个端侧关键词、created_at_i 限定 07-31 UTC，去重 52 个 story，收 MLX 内核迁移与带宽测速两条；其余多为无关热帖。（本次为单日回填，只检索 2026-07-31 当天发布内容）"
+      },
+      {
+        "source": "Mastodon",
+        "status": "found",
+        "note": "mastodon.social 标签时间线（localllm/ollama/llamacpp/edgeai/ondeviceai/llm/localai/npu/mlx）用 07-31 雪花 ID 作 min_id/max_id 圈定当天，收 2 条（苹果端侧策略讨论、太阳能自托管 Agent 自修复）。（本次为单日回填，只检索 2026-07-31 当天发布内容）"
+      },
+      {
+        "source": "GitHub Discussions",
+        "status": "found",
+        "note": "llama.cpp、mlx、executorch、LiteRT-LM、mlc-llm、ollama、transformers.js 讨论区用 discussions_q=created:2026-07-31 过滤；llama.cpp 有 AMD 提交的 6 组优化 PR 说明、mlx 有本地推理性能 PR 概述，收 2 条，其余仓当天无新讨论。（本次为单日回填，只检索 2026-07-31 当天发布内容）"
+      },
+      {
+        "source": "Hugging Face",
+        "status": "found",
+        "note": "HF API 按 createdAt 扫 unsloth/ggml-org/Qwen/nvidia/meituan-longcat 等 24 个 org，07-31 新建且当天有官方发布佐证的仓库收 2 条（DeepSeek-V4-Flash-0731 官方权重、LongCat-Flash-Lite-Sparse）；unsloth GGUF 并入 Bluesky 条目。（本次为单日回填，只检索 2026-07-31 当天发布内容）"
+      },
+      {
+        "source": "YouTube / Bilibili",
+        "status": "found",
+        "note": "YouTube 频道 RSS 已不可用，约 10 周前窗口无法按日回溯，记为结构性受限；Bilibili 搜索 API 按 pubtime 限定 07-31，收中科创达、迅为两家厂商官方号视频 2 条。（本次为单日回填，只检索 2026-07-31 当天发布内容）"
+      },
+      {
+        "source": "厂商论坛",
+        "status": "found",
+        "note": "NVIDIA 开发者论坛 Discourse search.json（after/before 限定 07-30~08-01，再按 created_at 筛 07-31），收 Jetson Orin Nano 手势游戏与 2× DGX Spark 跑 DeepSeek-V4-Flash-0731 两帖。（本次为单日回填，只检索 2026-07-31 当天发布内容）"
+      }
+    ],
+    "items": [
+      {
+        "id": "bsky-arm-on-device-ml-mobile-games",
+        "source": "Bluesky",
+        "author": "conference.aiandgames.com",
+        "url": "https://bsky.app/profile/conference.aiandgames.com/post/3mrxbcxmby22j",
+        "published_at": "2026-07-31T15:26:59Z",
+        "title_zh": "Arm 演讲：移动游戏里的端侧 ML 推理",
+        "summary_zh": "AI and Games Conference 官方账号当天推送 Arm 工程师 Yusuf Duman 的演讲录像，主题是在移动游戏中用端侧推理跑本地 LLM、智能 NPC 和神经图形。视频为 2025 年大会录像，帖子本身只是推荐，不含新数据。",
+        "why_it_matters": "说明芯片厂在推动手机游戏场景的本地 LLM/NPC，是手机端侧推理的一个应用方向线索。",
+        "device_scope": "手机",
+        "topic": "移动游戏端侧推理",
+        "verification": "仅线索",
+        "evidence_url": "https://youtu.be/czVSnRfx49Q"
+      },
+      {
+        "id": "reddit-android-remote-control-mcp-v1-10",
+        "source": "Reddit",
+        "author": "daniele_dll",
+        "url": "https://www.reddit.com/r/androiddev/comments/1vbpxwd/",
+        "published_at": "2026-07-31T12:45:09Z",
+        "title_zh": "Android Remote Control MCP 1.10：装在手机上的 MCP 服务端",
+        "summary_zh": "作者发布 Android Remote Control MCP v1.10.0，这是一个运行在手机上的 MCP 服务，让外部 AI Agent 无需数据线或 root 即可操作任意 App，用于 UI/UX 测试与自动化。新版提供正式签名 APK，并能处理把整屏标为敏感内容的 App（如 GitHub App）。Agent 的推理仍在外部模型，手机端只负责执行和屏幕读取。",
+        "why_it_matters": "手机 GUI Agent 的执行层正在被做成标准 MCP 服务，后续接入本地小模型就能形成完整端侧闭环，值得跟踪。",
+        "device_scope": "手机",
+        "topic": "手机 GUI Agent / MCP",
+        "verification": "仅线索",
+        "evidence_url": "https://github.com/danielealbano/android-remote-control-mcp/releases/tag/v1.10.0"
+      },
+      {
+        "id": "mastodon-apple-hybrid-on-device-strategy",
+        "source": "Mastodon",
+        "author": "ai@defcon.social",
+        "url": "https://defcon.social/@ai/117012581514424308",
+        "published_at": "2026-07-31T03:58:19Z",
+        "title_zh": "库克财报会强调苹果“端侧优先”的混合 AI 策略",
+        "summary_zh": "帖子转述 CNBC 报道：苹果 CEO 库克在 Q3 财报电话会上把 Apple Intelligence 的端侧处理能力作为相对云厂商的竞争优势，部分任务仍走云端，并计划通过 iCloud 订阅变现 AI。内容是二手转述，没有新的技术细节。",
+        "why_it_matters": "苹果高层继续把端侧推理定位为差异化卖点，影响 iPhone/Mac 端侧模型投入预期。",
+        "device_scope": "手机",
+        "topic": "苹果端侧 AI 策略",
+        "verification": "仅线索",
+        "evidence_url": "https://www.cnbc.com/2026/07/30/tim-cook-sees-apples-hybrid-ai-strategy-as-a-competitive-weapon-.html"
+      },
+      {
+        "id": "gh-mlx-local-serving-perf-prs",
+        "source": "GitHub Discussions",
+        "author": "spokvulcan",
+        "url": "https://github.com/ml-explore/mlx/discussions/4031",
+        "published_at": "2026-07-31T18:21:12Z",
+        "title_zh": "MLX：针对本地 LLM 服务的三个性能 PR",
+        "summary_zh": "作者在 M3 Max 上对 MLX 本地 LLM 服务做端到端剖析，提交三个独立小 PR（#3918、#3919、#3920），分别覆盖本地服务中占主导的预填充与解码阶段。帖子是概述，是否合入及收益需看 PR 本身。",
+        "why_it_matters": "MLX 是 Mac 端侧推理主力框架，社区剖析驱动的优化直接影响 Mac 本地 Agent 体验。",
+        "device_scope": "PC",
+        "topic": "MLX 推理性能",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "gh-llamacpp-amd-pr-set-rdna35",
+        "source": "GitHub Discussions",
+        "author": "Geramy",
+        "url": "https://github.com/ggml-org/llama.cpp/discussions/26377",
+        "published_at": "2026-07-31T17:56:18Z",
+        "title_zh": "llama.cpp：AMD 提交 6 组优化 PR（RDNA3.5 Flash Attention 等）",
+        "summary_zh": "llama.cpp 讨论区当天出现 6 组标注来自 AMD 的 PR 说明（#26377–#26380 等），涵盖 RDNA3.5 Flash Attention、Matvec 与解码融合、GEMM 预填充权重、布局与并发优化。RDNA3.5 对应锐龙 AI 系列核显；具体收益要看各 PR 合入后的基准。",
+        "why_it_matters": "AMD 直接向 llama.cpp 投入核显优化，影响锐龙 AI PC 上本地大模型的速度。",
+        "device_scope": "PC",
+        "topic": "llama.cpp AMD 核显优化",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "bsky-unsloth-deepseek-v4-flash-0731-local",
+        "source": "Bluesky",
+        "author": "unsloth.ai",
+        "url": "https://bsky.app/profile/unsloth.ai/post/3mrxfgg6hek2h",
+        "published_at": "2026-07-31T16:40:30Z",
+        "title_zh": "Unsloth：DeepSeek-V4-Flash-0731 可本地运行",
+        "summary_zh": "Unsloth 官方账号宣布 DeepSeek-V4-Flash-0731 GGUF 已上线，4-bit 需约 168GB 内存、3-bit 约 110GB，可用 Unsloth 或 llama.cpp 运行，并称当天还会放出更小的量化。HF 仓库 unsloth/DeepSeek-V4-Flash-0731-GGUF 创建于 07-31 12:24 UTC，与帖子一致。门槛仍是高内存工作站，而不是普通笔记本。",
+        "why_it_matters": "最新开放权重模型当天即有本地量化版本，体现开源模型本地化速度；但 100GB+ 内存门槛说明它属于工作站级本地部署。",
+        "device_scope": "PC",
+        "topic": "大模型本地量化部署",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://huggingface.co/unsloth/DeepSeek-V4-Flash-0731-GGUF"
+      },
+      {
+        "id": "forum-nvidia-ds-v4-flash-0731-2x-dgx-spark",
+        "source": "厂商论坛",
+        "author": "tonyd615",
+        "url": "https://forums.developer.nvidia.com/t/378824",
+        "published_at": "2026-07-31T16:20:11Z",
+        "title_zh": "2× DGX Spark 跑 DeepSeek-V4-Flash-0731：投机解码接受率问题",
+        "summary_zh": "用户把 DeepSeek-V4-Flash-0731 部署到两台 DGX Spark 后解码速度减半，排查发现是 vLLM 的 DSpark 草稿模型加载器没有映射 w1/w3 权重，导致草稿接受率下降；修改配置后恢复到预览版速度。帖子当天约 1.2 万浏览。",
+        "why_it_matters": "桌面级 AI 主机跑最新大模型时，投机解码配置细节决定速度，是本地部署的实操经验。",
+        "device_scope": "PC",
+        "topic": "桌面 AI 主机部署",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "reddit-turbofieldfare-qwen36-35b-1-4gb",
+        "source": "Reddit",
+        "author": "Blahblahblakha",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vbp8te/",
+        "published_at": "2026-07-31T12:14:10Z",
+        "title_zh": "TurboFieldfare 移植 Qwen3.6-35B：Mac 上常驻内存约 1.4GB",
+        "summary_zh": "作者把 Mac 推理引擎 TurboFieldfare（从 SSD 流式读取 MoE 专家而不整体加载）扩展到 Qwen3.6-35B-A3B，常驻内存约 1.4GB，M5 上 19–23 tok/s。1.4GB 指常驻内存而非模型总大小，约 18GB 专家权重仍在 SSD 上按需读取，速度依赖系统页缓存命中。",
+        "why_it_matters": "SSD 流式 MoE 专家让小内存设备跑大 MoE 成为可能，是 PC/手机端侧部署的重要工程方向。",
+        "device_scope": "PC",
+        "topic": "MoE 专家 SSD 流式推理",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "reddit-mbp-m2-long-context-qwen36",
+        "source": "Reddit",
+        "author": "ghisguth",
+        "url": "https://www.reddit.com/r/LocalLLM/comments/1vbe06e/",
+        "published_at": "2026-07-31T02:32:19Z",
+        "title_zh": "MacBook Pro M2 Max 64GB 长上下文实测",
+        "summary_zh": "作者在 M2 Max 64GB 上用 llama.cpp（开 MTP）测试多款模型做 Agent 编程，结论是 Qwen3.6-35B-A3B（UD-Q4_K_XL）小上下文约 60–70 t/s、128k 上下文仍有约 35 t/s。属于个人实测，未给出统一测试脚本。",
+        "why_it_matters": "给出 64GB 笔记本跑 128k 上下文 Agent 编程的可用配置参考。",
+        "device_scope": "PC",
+        "topic": "笔记本长上下文本地推理",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "hn-bair-k-search-cuda-to-mlx",
+        "source": "Hacker News",
+        "author": "HN 投稿",
+        "url": "https://news.ycombinator.com/item?id=49118363",
+        "published_at": "2026-07-31T02:31:18Z",
+        "title_zh": "BAIR：K-Search 把 CUDA 内核优化经验迁移到 Apple Silicon（MLX）",
+        "summary_zh": "HN 讨论 UC Berkeley 与 IBM Research 的 BAIR 博客（07-29 发布），介绍 K-Search 如何把 CUDA 优化知识翻译成面向 MLX 的原生策略，而非逐条照搬指令。HN 讨论热度很低（2 分）。",
+        "why_it_matters": "Apple Silicon 本地推理的内核优化长期缺人工积累，自动迁移方法可直接提升 Mac 端侧推理效率。",
+        "device_scope": "PC",
+        "topic": "Apple Silicon 内核优化",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://bair.berkeley.edu/blog/2026/07/29/cuda-to-mlx-k-search/"
+      },
+      {
+        "id": "forum-nvidia-gesture-arena-orin-nano",
+        "source": "厂商论坛",
+        "author": "NVIDIA 论坛用户",
+        "url": "https://forums.developer.nvidia.com/t/378819",
+        "published_at": "2026-07-31T15:32:09Z",
+        "title_zh": "Gesture Arena：Jetson Orin Nano 上的 YOLOv8 手势对战游戏",
+        "summary_zh": "开发者分享在 Jetson Orin Nano / Orin Nano Super 上运行的 3D 手势对战游戏：USB 摄像头采集，YOLOv8 + TensorRT 本地识别手势，CUDA 与 OpenGL 渲染特效，全程无云端推理。属于个人项目展示，未给出延迟数据。",
+        "why_it_matters": "展示了边缘 GPU 上“感知-推理-渲染”全本地闭环的完整管线。",
+        "device_scope": "其他端侧",
+        "topic": "Jetson 端侧视觉应用",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "reddit-rf-detr-int8-orin-nano-super",
+        "source": "Reddit",
+        "author": "Any_Frame9721",
+        "url": "https://www.reddit.com/r/JetsonNano/comments/1vboruu/",
+        "published_at": "2026-07-31T11:52:52Z",
+        "title_zh": "RF-DETR INT8 量化在 Orin Nano Super 上提速 1.26 倍",
+        "summary_zh": "帖子介绍用 embedl-deploy 把 Roboflow RF-DETR-base 做成 INT8 TensorRT 版本，在 Orin Nano Super 上平均延迟从 FP16 的 14.83ms 降到 11.77ms（1.26×）。对应 HF 仓库创建于 07-29，帖子为宣传性质，数据未独立复核。",
+        "why_it_matters": "检测 Transformer 在边缘 GPU 上的 INT8 部署实测数据，可参考量化收益幅度。",
+        "device_scope": "其他端侧",
+        "topic": "边缘检测模型量化",
+        "verification": "仅线索",
+        "evidence_url": "https://huggingface.co/embedl/rf-detr-base-quantized-tensorrt"
+      },
+      {
+        "id": "mastodon-solar-hermes-self-debug",
+        "source": "Mastodon",
+        "author": "Lydie@tech.lgbt",
+        "url": "https://tech.lgbt/@Lydie/117013987822025606",
+        "published_at": "2026-07-31T09:55:57Z",
+        "title_zh": "太阳能供电的自托管 Hermes Agent 自己修好了语音识别",
+        "summary_zh": "用户的太阳能供电自托管 Hermes Agent 因调大 LLM 上下文占满显存，本地语音识别模型无法加载；Agent 被要求自修后定位到显存不足，把 STT 切到 CPU，又修复了代码不读取该设置的 bug 并重启成功。属于个人体验分享。",
+        "why_it_matters": "本地 Agent 在资源受限主机上自行诊断显存冲突，是端侧 Agent 自运维的真实案例。",
+        "device_scope": "其他端侧",
+        "topic": "自托管 Agent 自修复",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "bili-topeet-rk182x-card",
+        "source": "YouTube / Bilibili",
+        "author": "北京迅为电子（官方号）",
+        "url": "https://www.bilibili.com/video/BV1VyGF64E2R",
+        "published_at": "2026-07-31T05:21:21Z",
+        "title_zh": "迅为 RK182X 算力卡：20TOPS 插卡跑大模型",
+        "summary_zh": "开发板厂商迅为官方账号介绍基于瑞芯微 RK182X 的 20TOPS 算力卡，定位为给嵌入式主板外挂 NPU 以运行大模型。属于厂商宣传视频，未见独立实测数据。",
+        "why_it_matters": "外挂 NPU 加速卡是边缘设备跑大模型的常见路线，可作为 RK182X 生态线索。",
+        "device_scope": "其他端侧",
+        "topic": "边缘 NPU 加速卡",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "bili-thundercomm-aquaclaw-iot",
+        "source": "YouTube / Bilibili",
+        "author": "中科创达（官方号）",
+        "url": "https://www.bilibili.com/video/BV133Gw6oEsW",
+        "published_at": "2026-07-31T02:44:37Z",
+        "title_zh": "中科创达：AquaClaw for IoT 在原生 AI 终端上的表现",
+        "summary_zh": "中科创达官方 B 站账号发布视频，演示 AquaClaw for IoT 在其原生 AI 终端设备上的运行效果。视频播放量较低（约 77），具体模型规模与端侧/云端分工需看视频与官方材料。",
+        "why_it_matters": "国内端侧 OS/方案厂商在 IoT 终端上推 Agent 方案，属于其他端侧 Agent 的厂商动向。",
+        "device_scope": "其他端侧",
+        "topic": "IoT 端侧 Agent",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "x-barunlm-35m",
+        "source": "X",
+        "author": "HarshalsinghCN",
+        "url": "https://x.com/HarshalsinghCN/status/2083223503554449745",
+        "published_at": "2026-07-31T16:09:22Z",
+        "title_zh": "BarunLM：35M 参数小模型发布",
+        "summary_zh": "作者在 X 上发布 BarunLM（35M 参数），HN 同日以“我预训练了 100M 以下最好的小模型”为题转发。“最好”只是作者自称，未见独立评测；原帖正文只有发布信息。",
+        "why_it_matters": "超小模型适合 MCU/手机等极受限设备，可留作小模型线索。",
+        "device_scope": "通用技术",
+        "topic": "超小语言模型",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "hn-tokens-per-second-memory-bandwidth",
+        "source": "Hacker News",
+        "author": "Rohit Ghumare",
+        "url": "https://news.ycombinator.com/item?id=49121598",
+        "published_at": "2026-07-31T11:00:50Z",
+        "title_zh": "“每秒 token 数本质是内存带宽数字”",
+        "summary_zh": "文章（作者 07-31 发布）讲解批大小为 1 的本地生成速度约等于内存带宽除以每 token 读取的权重字节数，可在下载模型前估算速度，并讨论量化与 MoE 的影响。HN 讨论很少。",
+        "why_it_matters": "给端侧部署提供一个简单可靠的速度预估方法，也可用来核验社区里夸张的性能声明。",
+        "device_scope": "通用技术",
+        "topic": "本地推理性能建模",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://portfolio-orcin-beta-29.vercel.app/blog/tokens-per-second-memory-bandwidth/"
+      },
+      {
+        "id": "hf-longcat-flash-lite-sparse",
+        "source": "Hugging Face",
+        "author": "meituan-longcat",
+        "url": "https://huggingface.co/meituan-longcat/LongCat-Flash-Lite-Sparse",
+        "published_at": "2026-07-31T09:53:45Z",
+        "title_zh": "美团 LongCat-Flash-Lite-Sparse 上线",
+        "summary_zh": "美团 LongCat 官方 org 07-31 创建 LongCat-Flash-Lite-Sparse 仓库，r/LocalLLaMA 同日发帖讨论（约 164 赞）。属于稀疏化轻量版本，具体参数与端侧适配情况需看模型卡。",
+        "why_it_matters": "国内公司持续发布稀疏/轻量开放模型，可作为本地部署候选。",
+        "device_scope": "通用技术",
+        "topic": "稀疏轻量模型",
+        "verification": "仅线索",
+        "evidence_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vbsztw/"
+      },
+      {
+        "id": "hf-deepseek-v4-flash-0731",
+        "source": "Hugging Face",
+        "author": "deepseek-ai",
+        "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
+        "published_at": "2026-07-31T07:30:24Z",
+        "title_zh": "DeepSeek-V4-Flash-0731 开放权重上线 HF",
+        "summary_zh": "deepseek-ai 官方仓库 07-31 07:30 UTC 创建，DeepSeek 官方 X 同日宣布 V4-Flash API 正式版，r/LocalLLaMA 相关帖子上千赞。该模型约 284B 总参数、13B 激活，本地运行需百 GB 级内存；当天 unsloth、ggml-org 都发布了 GGUF。",
+        "why_it_matters": "当天最大的开放权重事件，带动了大量工作站与桌面 AI 主机的本地部署实测。",
+        "device_scope": "通用技术",
+        "topic": "开放权重大模型",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://x.com/deepseek_ai/status/2083084415157022911"
+      },
+      {
+        "id": "reddit-runnburn-rust-gguf-runtime",
+        "source": "Reddit",
+        "author": "coderyeon",
+        "url": "https://www.reddit.com/r/LocalLLM/comments/1vbfhnf/",
+        "published_at": "2026-07-31T03:41:03Z",
+        "title_zh": "runNburn：面向“内存装不下”模型的 Rust GGUF 运行时",
+        "summary_zh": "作者开源 Rust 写的 GGUF 推理运行时 runNburn，支持 CPU、CUDA、Metal 和 Android（Vulkan/OpenCL 实验中）。它把内存当显式预算，权重保持文件映射，内存小的机器跑同一模型只会更慢，不会悄悄重新量化。早期个人项目，未给出系统基准。",
+        "why_it_matters": "针对端侧内存不足的场景给出另一种运行时设计，覆盖手机与 PC。",
+        "device_scope": "通用技术",
+        "topic": "内存受限推理运行时",
+        "verification": "仅线索",
+        "evidence_url": ""
+      }
+    ]
   }
 }
