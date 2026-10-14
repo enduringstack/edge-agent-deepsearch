@@ -10,8 +10,10 @@ substantive code drops, while preserving the same whitelist boundary.
 from __future__ import annotations
 
 import argparse
+import http.client
 import json
 import os
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -37,11 +39,18 @@ def fetch_json(url: str, timeout: int = 30):
     if TOKEN:
         headers["Authorization"] = f"Bearer {TOKEN}"
     req = urllib.request.Request(url, headers=headers)
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as response:
-            return json.loads(response.read().decode("utf-8"))
-    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError):
-        return None
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except urllib.error.HTTPError:
+            return None  # a real answer (404, 422 past the paging cap): retrying won't change it
+        except (urllib.error.URLError, http.client.HTTPException, ConnectionError, TimeoutError,
+                json.JSONDecodeError):
+            if attempt == 2:
+                return None
+            time.sleep(2 * (attempt + 1))
+    return None
 
 
 def is_major_code_drop(commit: dict) -> bool:
@@ -192,8 +201,9 @@ def main(argv=None) -> int:
             "status": "complete",
             "candidate_count": len(candidates),
             "release_projects_checked": checked,
-            **({"release_scan_unproven": sorted(set(UNPROVEN_RELEASE_SCANS))}
-               if UNPROVEN_RELEASE_SCANS else {}),
+            # Always written: the manifest merges per-source dicts, so omitting the key
+            # on a clean rerun would leave a stale list from an earlier rate-limited scan.
+            "release_scan_unproven": sorted(set(UNPROVEN_RELEASE_SCANS)),
         },
         today=run_date,
     )
