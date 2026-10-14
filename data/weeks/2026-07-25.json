@@ -7287,5 +7287,284 @@
       "高通的 HBC 流片和 Modular 收购，说明端侧 AI 的下一阶段竞争在内存子系统和软件栈，而不是 NPU 峰值。",
       "MoE 专家外存分页高度依赖存储带宽：UFS 5.0（10GB/s）是让手机跑大总参 MoE 的必要条件，eMMC 级设备基本无解。"
     ]
+  },
+  "community": {
+    "window": {
+      "start": "2026-07-24",
+      "end": "2026-07-30"
+    },
+    "coverage": [
+      {
+        "source": "X",
+        "status": "found",
+        "note": "未登录无法检索 X；从 Hacker News 窗口内帖子回链到 antirez 的公开原帖，snowflake 换算为 2026-07-28 16:09 UTC，再用 curl UA 回核 article:published_time=2026-07-28T16:09:20Z 与 og:description 正文，收 1 条；其余 X 链接未在社区来源中出现，未做转述替代。"
+      },
+      {
+        "source": "Bluesky",
+        "status": "found",
+        "note": "api.bsky.app searchPosts 以 on-device AI / local LLM / llama.cpp / NPU / MLX / Gemma 4 phone / edge AI 等词带 since/until 检索窗口，绝大多数为 AI 争议闲聊与 AI 绘图；收 Gemma 4 本地基准实测线程与 Hackster 报道 NightRun 树莓派裸机推理 2 条。"
+      },
+      {
+        "source": "Reddit",
+        "status": "found",
+        "note": "arctic-shift 按窗口抽样 r/LocalLLaMA、r/LocalLLM、r/androiddev、r/MachineLearning、r/JetsonNano（LocalLLaMA/LocalLLM 额外分段翻到 07-25），收手机 MoE、Strix Halo、Jetson 1-bit 等 3 条，均为仅线索。"
+      },
+      {
+        "source": "Hacker News",
+        "status": "found",
+        "note": "hn.algolia search_by_date 以 on-device / local llm / llama.cpp / npu / mlx / gguf / quantization 等 15 个词限定 07-25~07-30 检索 story；收 TurboFieldfare、Kimi K3 M1 Max、Yap、微软 MLVC 4 条，并逐条打开原帖或仓库核对；校验器要求 7 个自然日故窗口起点为 07-24，另补查 07-24 当天 HN，无端侧相关高热帖。"
+      },
+      {
+        "source": "Mastodon",
+        "status": "found",
+        "note": "mastodon.social 标签时间线（LocalLLM、llamacpp、OnDeviceAI、LocalAI、ollama、MLX、EdgeAI、NPU）用 max_id/min_id 限定窗口，多为自建 AI 与模型价格营销帖；收 1 条嵌入式 Edge AI 部署专家讨论线索。"
+      },
+      {
+        "source": "GitHub Discussions",
+        "status": "found",
+        "note": "按 date_created 翻 ggml-org/llama.cpp（第 11~12 页覆盖窗口）、ml-explore/mlx、pytorch/executorch、google-ai-edge/gallery 讨论列表，按 relative-time 切块；LiteRT-LM、mlc-llm 未开 Discussions。收 MLX 四台 M3 Ultra 跑 Kimi-K3 与 llama.cpp Intel Arc Pro B70 MTP 实测 2 条。"
+      },
+      {
+        "source": "Hugging Face",
+        "status": "found",
+        "note": "HF models API 按 createdAt 查 unsloth、thinkingmachines、google、OpenMed 及 gemma-4/litert/executorch 关键词；仅收窗口内有公开讨论佐证的 unsloth/Kimi-K3-GGUF（07-27 建库，07-29 HN 讨论）。Inkling-Small 为 276B 云端级模型，不属端侧，不收。"
+      },
+      {
+        "source": "YouTube / Bilibili",
+        "status": "limited",
+        "note": "YouTube 频道 RSS 不可用，超过 6 周的历史窗口结构性够不到；Bilibili 搜索 API 按“端侧大模型”等词翻到窗口，命中的均为板卡代理商/经销商宣传（RK182X 算力卡、Jetson 部署课程）与论文二手解读，无官方频道或可回链一手项目的演示，未收录；后续 view 接口被限流。"
+      },
+      {
+        "source": "厂商论坛",
+        "status": "found",
+        "note": "NVIDIA 开发者论坛 Discourse search.json 以 after:2026-07-24 before:2026-07-31 检索 llm/vlm/llama.cpp/jetson thor/ollama，逐帖打开首帖；收 DGX Spark 过热断电争议与 AGX Orin JetPack 7.2 的 PyTorch sm_87 支持问题 2 条。"
+      }
+    ],
+    "items": [
+      {
+        "id": "reddit-bigedgeonmoe-moe-on-phone",
+        "source": "Reddit",
+        "author": "u/dai_app",
+        "url": "https://www.reddit.com/r/LocalLLM/comments/1vaxpr0/",
+        "published_at": "2026-07-30T16:00:00Z",
+        "title_zh": "bigedgeonmoe：在中端安卓手机上跑 35B~120B MoE 模型",
+        "summary_zh": "作者开源 bigedgeonmoe，基于 llama.cpp 做模块化扩展，声称 Qwen 35B（Q4）在 12GB 内存中端手机上约 6 tok/s，也支持 Windows CPU。作者自述目前缺乏明确应用场景、关注度远低于 Mac 上的同类项目。速度为作者自报，未见独立复现；35B-A3B 每 token 只激活约 3B 参数，量级上可行，但依赖闪存换入专家。",
+        "why_it_matters": "大 MoE 模型借专家稀疏和存储换入下沉到普通手机，是手机端“超内存模型”路线的社区样本，值得跟踪复现数据与功耗。",
+        "device_scope": "手机",
+        "topic": "手机端 MoE 推理 / 专家换入",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "hn-turbofieldfare-gemma4-2gb-mac",
+        "source": "Hacker News",
+        "author": "gitpusher42",
+        "url": "https://news.ycombinator.com/item?id=49098510",
+        "published_at": "2026-07-29T15:05:43Z",
+        "title_zh": "TurboFieldfare：约 2GB 内存在 M 系列 Mac 上跑 Gemma 4 26B",
+        "summary_zh": "Show HN 项目（919 分、342 评论），用 Swift + Metal 写的专用推理引擎，只常驻 1.35GB 共享核心与 KV cache，按 token 从 SSD 流式加载所需专家，4-bit 模型总计约 14.3GB。仓库自报 8GB M2 MacBook Air 解码 5.1~6.3 tok/s、24GB M5 Pro 31~35 tok/s。“2GB”指进程常驻权重，系统页缓存仍会参与加速；仅支持 Gemma 4 26B-A4B 单一模型。",
+        "why_it_matters": "把“权重放不进内存”的 MoE 模型落到 8GB 设备，SSD 专家流式化是 PC 与未来手机端都可迁移的工程路线。",
+        "device_scope": "PC",
+        "topic": "MoE 专家 SSD 流式推理 / Apple Silicon",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://github.com/drumih/turbo-fieldfare"
+      },
+      {
+        "id": "nvforum-dgx-spark-thermal-dispute",
+        "source": "厂商论坛",
+        "author": "spamshaker",
+        "url": "https://forums.developer.nvidia.com/t/378500",
+        "published_at": "2026-07-29T13:54:12Z",
+        "title_zh": "DGX Spark 用户投诉长负载过热直接断电，引发 50 楼争论",
+        "summary_zh": "用户在 NVIDIA 官方论坛称 DGX Spark 在持续 AI 负载下会过热并直接硬断电，而非先降频保护，同时缺少企业级管理功能，因此不推荐用于专业生产环境。帖子引来约 50 条回复讨论散热与使用环境，属个别用户体验，非官方结论。",
+        "why_it_matters": "桌面 AI 盒子的散热与稳定性直接影响本地大模型部署的可靠性，是选购与评估此类设备时的现实风险信号。",
+        "device_scope": "PC",
+        "topic": "桌面 AI 设备稳定性争议",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "hn-deltafin-kimi-k3-m1-max",
+        "source": "Hacker News",
+        "author": "tito",
+        "url": "https://news.ycombinator.com/item?id=49090233",
+        "published_at": "2026-07-28T21:35:19Z",
+        "title_zh": "Deltafin：在 64GB M1 Max 笔记本上跑完整 2.8T 参数 Kimi K3",
+        "summary_zh": "HN 138 分讨论 Deltafin 项目，项目负责人称在不剪枝、不蒸馏的前提下从本地存储流式运行完整 Kimi K3；07-30 其 Reddit 更新帖自报在 64GB M1 Max 上约 3.8~4.7 秒/token。提速主要来自一次完整前向验证多个候选 token 与更高效的权重流式加载。速度仅能演示可行性，远达不到交互使用。",
+        "why_it_matters": "展示万亿级模型在消费级笔记本上“能跑”的下限，也引发本地模型能否替代数据中心的讨论，但实用性有限。",
+        "device_scope": "PC",
+        "topic": "超大模型本地流式推理",
+        "verification": "仅线索",
+        "evidence_url": "https://github.com/gavamedia/deltafin"
+      },
+      {
+        "id": "x-antirez-kimi-k3-m5-max-stream",
+        "source": "X",
+        "author": "@antirez",
+        "url": "https://x.com/antirez/status/2082136334160818528",
+        "published_at": "2026-07-28T16:09:20Z",
+        "title_zh": "antirez 在 128GB M5 Max 上直接流式运行 Kimi K3 官方权重",
+        "summary_zh": "Redis 作者 antirez 发帖称在 M5 Max 128GB 上直接流式读取 Hugging Face 上 1.6TB 的 Kimi K3 官方 mxfp4 权重进行推理，并自评“有点慢”。帖子未给出具体速度数字；原帖经 article:published_time 回核为 07-28。",
+        "why_it_matters": "知名开发者亲自验证“超内存权重流式推理”在高端笔记本上的可行性，与 Deltafin、TurboFieldfare 同属本周 Mac 端流式推理热潮。",
+        "device_scope": "PC",
+        "topic": "超大模型本地流式推理",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "reddit-deepseek-v4-flash-strix-halo",
+        "source": "Reddit",
+        "author": "u/sandropuppo",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1v9100b/",
+        "published_at": "2026-07-28T15:00:00Z",
+        "title_zh": "DeepSeek V4 Flash 在单台 Ryzen AI MAX+ 395 上最高 32 tok/s",
+        "summary_zh": "Lucebox 团队称把 DeepSeek V4 Flash 与投机解码草稿模型一起塞进 128GB 统一内存的 Strix Halo，最高解码约 32 tok/s，比 LocalMaxxing 上同平台此前最好成绩高约 68%。“最高”依赖投机解码与低比特量化，对比对象是公开榜单而非受控 A/B；代码 Apache-2.0 开源。",
+        "why_it_matters": "AMD 大内存 APU 正在成为本地跑大 MoE 的 PC 平台，社区优化把可用性推到新水平。",
+        "device_scope": "PC",
+        "topic": "AMD Strix Halo 本地大模型",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "ghd-mlx-kimi-k3-four-m3-ultra",
+        "source": "GitHub Discussions",
+        "author": "guruswami-ai",
+        "url": "https://github.com/ml-explore/mlx/discussions/3939",
+        "published_at": "2026-07-28T14:12:42Z",
+        "title_zh": "四台 M3 Ultra 张量并行运行 Kimi-K3：解码受调度开销限制而非带宽",
+        "summary_zh": "作者用 mlx 0.32 + Thunderbolt 5 RDMA 把 2.78T 参数 Kimi-K3（MXFP4，1.42TiB）切到四台 512GB M3 Ultra 上，单流解码约 2.0 tok/s、32 并发合计 21.2 tok/s，预填约 170 tok/s，可容纳 100 万 token 上下文，整簇平均功耗 559W。作者认为单批解码主要受 kernel 调度开销限制，并说明仍有未定位的挂起问题。",
+        "why_it_matters": "给出桌面级 Apple 集群跑万亿模型的完整功耗与瓶颈数据，对端侧集群推理的优化方向有参考价值。",
+        "device_scope": "PC",
+        "topic": "MLX 分布式推理 / Apple Silicon 集群",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "hn-yap-macos-on-device-dictation",
+        "source": "Hacker News",
+        "author": "pancomplex",
+        "url": "https://news.ycombinator.com/item?id=49073834",
+        "published_at": "2026-07-27T18:36:02Z",
+        "title_zh": "Yap：调用 macOS 26 系统语音模型的开源本地听写工具",
+        "summary_zh": "Show HN 菜单栏应用，按快捷键即可把语音转文字粘贴到任意输入框。它不自带模型，直接调用 macOS 26 新增的 SpeechAnalyzer / SpeechTranscriber 系统接口，在本机流式转写，MIT 开源。评论区补充了多语言听写与旧系统版本无法使用等限制。",
+        "why_it_matters": "说明操作系统内置端侧模型正在成为应用的“免下载”能力底座，PC 端 AI 应用的形态在变化。",
+        "device_scope": "PC",
+        "topic": "系统级端侧语音识别",
+        "verification": "仅线索",
+        "evidence_url": "https://github.com/FrigadeHQ/yap"
+      },
+      {
+        "id": "ghd-llamacpp-arc-b70-mtp-dflash",
+        "source": "GitHub Discussions",
+        "author": "atlasAuto",
+        "url": "https://github.com/ggml-org/llama.cpp/discussions/26184",
+        "published_at": "2026-07-27T17:30:17Z",
+        "title_zh": "Intel Arc Pro B70 用 SYCL 版 llama.cpp 跑 Qwen3.6 MTP / DFlash 实测",
+        "summary_zh": "用户在 Intel Arc Pro B70 上用 SYCL 后端跑 Qwen3.6-27B 与 35B-A3B 作本地 Agent。MTP 让 27B 提速约 1.8 倍，DFlash 反而变慢；35B MoE 开 MTP 或 DFlash 都更慢，帖子附 systemd 配置与 SYCL 稳定性环境变量，寻求优化建议。",
+        "why_it_matters": "反映投机解码在 Intel 独显与 MoE 模型上收益不稳定，是 PC 端非 NVIDIA 平台部署的真实痛点。",
+        "device_scope": "PC",
+        "topic": "Intel GPU / 投机解码实测",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "hf-unsloth-kimi-k3-gguf",
+        "source": "Hugging Face",
+        "author": "unsloth",
+        "url": "https://huggingface.co/unsloth/Kimi-K3-GGUF",
+        "published_at": "2026-07-27T17:24:30Z",
+        "title_zh": "Unsloth 发布 Kimi K3 GGUF 量化版：1.56TB 压到 594GB",
+        "summary_zh": "Unsloth 在 Kimi K3 发布当天建立 GGUF 量化仓库，07-29 HN 帖称已把 1.56TB 权重压到约 594GB 供本地运行。即便压缩后仍需大内存工作站或多机才能实用，普通 PC 只能配合 SSD 流式方案低速运行。",
+        "why_it_matters": "前沿开放权重模型发布当天就有本地量化版，是 llama.cpp 生态跟进速度的体现，也带动本周一系列本地跑 K3 的尝试。",
+        "device_scope": "PC",
+        "topic": "超大模型低比特量化",
+        "verification": "仅线索",
+        "evidence_url": "https://news.ycombinator.com/item?id=49102192"
+      },
+      {
+        "id": "hn-microsoft-mlvc-npu-video-codec",
+        "source": "Hacker News",
+        "author": "andosa",
+        "url": "https://news.ycombinator.com/item?id=49070675",
+        "published_at": "2026-07-27T15:01:06Z",
+        "title_zh": "微软 MLVC：面向消费级 NPU 的实时神经视频编解码器",
+        "summary_zh": "HN 讨论微软开源的 MLVC 仓库：README 称在 Apple、Intel、高通的商用 NPU 上 540p 编解码平均约 100 FPS，MOS 口径 BD-rate 较硬件 HEVC 提升 70% 以上，并提供 CoreML、OpenVINO、QNN 导出工具与 C++ 熵编码器，对应论文 arXiv 2606.28027。仓库建于 2026 年 1 月，本周为社区讨论时间。",
+        "why_it_matters": "把神经编解码从 GPU 推到跨厂商 NPU，是 PC NPU 除大模型外的实际负载样例。",
+        "device_scope": "PC",
+        "topic": "NPU 神经视频编解码",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://github.com/microsoft/mlvc"
+      },
+      {
+        "id": "bsky-glaforge-gemma4-mac-benchmark",
+        "source": "Bluesky",
+        "author": "glaforge.dev",
+        "url": "https://bsky.app/profile/glaforge.dev/post/3mrn5iunbpr2y",
+        "published_at": "2026-07-27T14:52:05Z",
+        "title_zh": "Gemma 4 26B-A4B 在 M4 Pro 上的 MLX / llama.cpp / Java 本地推理对比",
+        "summary_zh": "开发者 Guillaume Laforge 在 Gemma 系列下载破 9 亿之际发布实测线程：M4 Pro 上 mlx-lm 预填 211.5 tok/s、生成 44.7 tok/s；llama.cpp 加 Q4 MTP 草稿模型投机解码生成 45.3 tok/s、占 13.1GB；纯 Java 25 Vector API 推理生成 8.1 tok/s。属个人单机测试，非受控基准。",
+        "why_it_matters": "给出同一 MoE 模型在 Apple Silicon 上不同运行时的可比数字，可作 PC 端部署选型参考。",
+        "device_scope": "PC",
+        "topic": "本地推理运行时对比 / Gemma 4",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "mastodon-shawnhymel-edgeai-panel",
+        "source": "Mastodon",
+        "author": "@shawnhymel@masto.ai",
+        "url": "https://masto.ai/@shawnhymel/117003929210377994",
+        "published_at": "2026-07-29T15:17:55Z",
+        "title_zh": "DigiKey 专家圆桌：把 Edge AI 模型部署到嵌入式系统的真实流程",
+        "summary_zh": "嵌入式开发者 Shawn Hymel 宣传其参与的 DigiKey 技术访谈视频圆桌，讨论 Edge AI 模型部署到嵌入式系统的现状与流程。帖子本身只是视频导流，未包含具体技术结论。",
+        "why_it_matters": "反映嵌入式工程社区对 Edge AI 落地流程的关注，可作为 MCU 级部署经验的线索入口。",
+        "device_scope": "其他端侧",
+        "topic": "嵌入式 Edge AI 部署",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "bsky-hackster-nightrun-pi-bare-metal",
+        "source": "Bluesky",
+        "author": "hacksterio.bsky.social",
+        "url": "https://bsky.app/profile/hacksterio.bsky.social/post/3mrqq62dei22a",
+        "published_at": "2026-07-29T01:04:02Z",
+        "title_zh": "NightRun：不装操作系统，在树莓派裸机上直接启动本地大模型",
+        "summary_zh": "Hackster 报道 NightRun 项目：作为 UEFI 应用从 U 盘直接启动并运行本地 LLM，无需 Linux，支持 x86-64 与 Raspberry Pi 5；作者 07-28 也在 r/LocalLLM 发帖介绍。目前为个人项目演示，未见性能与模型规模的系统测试。",
+        "why_it_matters": "去掉操作系统层的极简推理形态，对专用边缘设备、离线一体机的启动与攻击面都有启发。",
+        "device_scope": "其他端侧",
+        "topic": "裸机 LLM 推理 / 树莓派",
+        "verification": "仅线索",
+        "evidence_url": "https://www.hackster.io/news/run-a-local-llm-on-raspberry-pi-s-bare-metal-linux-not-necessary-6c7e3817293f"
+      },
+      {
+        "id": "nvforum-agx-orin-jp72-sm87-pytorch",
+        "source": "厂商论坛",
+        "author": "saskia.hold",
+        "url": "https://forums.developer.nvidia.com/t/378368",
+        "published_at": "2026-07-28T05:55:52Z",
+        "title_zh": "AGX Orin 刷 JetPack 7.2 后 PyTorch / vLLM 提示不支持 sm_87",
+        "summary_zh": "用户想在 AGX Orin（JetPack 7.2）上以低功耗高吞吐跑日常 LLM，安装 PyTorch 时提示不支持 sm_87（CC 8.7），询问是否需自行用 TORCH_CUDA_ARCH_LIST=8.7 从源码编译 PyTorch 与 vLLM，帖子有 19 条回复。",
+        "why_it_matters": "暴露 Orin 在新 JetPack 上的上游框架支持缺口，是边缘设备部署大模型的常见门槛。",
+        "device_scope": "其他端侧",
+        "topic": "Jetson 软件栈兼容性",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "reddit-jetson-orin-nx-27b-1bit",
+        "source": "Reddit",
+        "author": "u/Clean-Mention6543",
+        "url": "https://www.reddit.com/r/JetsonNano/comments/1v6evme/",
+        "published_at": "2026-07-25T17:47:00Z",
+        "title_zh": "Jetson Orin NX 16GB 上本地跑通 27B 1-bit 模型",
+        "summary_zh": "用户发帖展示在 Jetson Orin NX 16GB 上以 1-bit 量化运行 27B 模型的演示动图。27B 在 1-bit 下约 3~4GB，16GB 板卡装得下；帖子没有正文，未给出速度、精度和具体模型来源。",
+        "why_it_matters": "极低比特量化让中端嵌入式板卡跑二十亿级以上模型成为可能，但质量损失需另行验证。",
+        "device_scope": "其他端侧",
+        "topic": "极低比特量化 / Jetson",
+        "verification": "仅线索",
+        "evidence_url": ""
+      }
+    ]
   }
 }

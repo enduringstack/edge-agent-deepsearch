@@ -7424,5 +7424,228 @@
       "机器人边缘计算开始“砍容量、保带宽”（Jetson T3000），说明对 VLA/VLM 推理来说，带宽比峰值算力更稀缺。",
       "端侧 VLM 省电最有效的手段是控制输出长度，而不是剪视觉 token：decode 能耗占比高达 86–97%。"
     ]
+  },
+  "community": {
+    "window": {
+      "start": "2026-07-10",
+      "end": "2026-07-16"
+    },
+    "coverage": [
+      {
+        "source": "X",
+        "status": "found",
+        "note": "没有直接搜 X 时间线。候选来自本周已抓到的 Reddit、HN、Bluesky 正文里的 x.com/twitter.com 状态链接：先用 snowflake 离线筛出 20 条落在 07-10~07-16 的帖子，再用 UA curl/8.4.0 回核 14 条的 article:published_time 和 og:description，其中 x.com/i/status 形式的链接已通过 og:url 还原成完整的 x.com/<handle>/status/<id>，cocktailpeanut 一条已被删除。收录 1 条：@googlegemma 07-15 宣布 Gemma 4 聊天模板和工具调用修复。rohanpaul_ai 转发的“GLM-5.2（744B MoE）在 25GB 内存的消费级机器上运行”没有给出速度和方法，按内存容量估算只能靠 SSD 流式换入，实际体验无法核算，因此未收；Kimi K3、Soofi、Grok Build 等帖子与端侧无关，已剔除。因为只能从其他社区反查，覆盖偏向被转帖的热门帖。PrismML 发布 Bonsai 27B 的官方原帖没有在任何社区帖子里出现，WebSearch 也没找到，所以没能作为 X 条目收录。"
+      },
+      {
+        "source": "Bluesky",
+        "status": "found",
+        "note": "用 api.bsky.app 的 searchPosts（sort=top），since/until 限定 2026-07-10T00:00Z~07-16T23:59Z，检索 on-device AI、on-device LLM、local LLM、LiteRT、llama.cpp、Snapdragon AI、NPU、edge AI、ExecuTorch、MLX、ollama、Gemini Nano、Bonsai 27B、PrismML、Copilot+ PC、Apple Intelligence、local model、1-bit LLM、Gemma 4、Jetson、on-device、Foundation Models framework 共 22 组词，每组最多翻 3 页，去重后 1480 条。多数词在翻第 2、3 页时返回 403，所以基本只拿到第一页。本周端侧话题被 PrismML Bonsai 27B 占满，sungkim、techmeme、appleinsider、gigazine 都在转。Jetson、Gemini（Nano Banana）被卡通人物和 AI 绘图严重污染。Bonsai 的内容已由 Reddit 和 Hugging Face 收录，这里收录 1 条：Collabora 介绍 RK3576 NPU 逆向工程进入主线 Linux 的讨论串。Karl Bode 那条“借国家安全之名打压端侧开源 AI”（150 赞）只是观点，没有一手材料，未收。"
+      },
+      {
+        "source": "Reddit",
+        "status": "found",
+        "note": "用 arctic-shift 的 posts/search 接口按 created_utc 升序翻页（after=2026-07-10、before=2026-07-17），抓到 r/LocalLLaMA 535 条、r/LocalLLM 691 条、r/androiddev 191 条、r/MachineLearning 166 条、r/JetsonNano 15 条。翻页时偶尔返回 422，重试后可以继续。LocalLLaMA 一周只有 535 条，明显是抽样；分数是归档时的快照，所以 verification 统一记“仅线索”。收录 2 条：PrismML Bonsai 27B 号称首个能在手机上跑的 27B 级模型（同周 CNBC 报道苹果在与 PrismML 谈判，这条一并写进摘要），以及 Google 端侧 AI API 产品负责人在 r/androiddev 发问卷征集需求。没收但值得一提的：swift-mlx 移植混元 3D 到 iPhone（824 分）、只用 GDScript 加 Vulkan 在 Godot 里跑 Gemma 4 E2B（342 分）、EdgeLM 用 Binder 在多个 App 之间共享一份 llama.cpp 运行时（1 分）、Jetson Orin Nano 换内存翻车（32 分）。苹果 M7 Ultra 1.5TB 内存的帖子（1381 分）只是转述 Bloomberg 爆料，未收。"
+      },
+      {
+        "source": "Hacker News",
+        "status": "found",
+        "note": "用 Algolia 的 search_by_date（tags=story），numericFilters 限定 created_at_i 在 1783641600~1784246400，检索 on-device、local LLM、llama.cpp、Snapdragon、Jetson、NPU、edge AI、MLX、ollama、local model、LiteRT、ExecuTorch、Gemma、offline AI、quantization、Raspberry Pi、Apple Intelligence、Copilot+、local AI、WebGPU、GGUF、small model、Foundation Models、on-device AI、Gemini Nano、phone LLM、Android AI、local inference 共 28 组词。edge、NPU 命中大量无关的德国新闻和字体帖，已剔除。再用 items/<id> 接口核对时间、分数和热门评论后收录 3 条：在没有 GPU 的 13 年前 Xeon 上跑 Gemma 4 26B（329 分）、三值权重怎么打包进 8 位字节（110 分）、Qwen3.5-122B 在 Mac Studio 上的三个首 token 延迟 bug（65 分）。“1-Bit LLM in the Browser”（124 分）链接的是 4 月就建好的旧版 Bonsai WebGPU Space，这周的新版 Space 改由 Hugging Face 条目收录。欧盟要求 Google 向 AI 对手开放 Android（16 分）没有端侧技术细节，未收。"
+      },
+      {
+        "source": "Mastodon",
+        "status": "found",
+        "note": "拉 mastodon.social 的 #LocalLLM、#OnDeviceAI、#LocalAI、#EdgeAI、#llamacpp、#TinyML、#ollama、#MLX、#Gemma、#NPU、#Bonsai、#PrismML、#1bit、#LLM 共 14 个标签时间线。用 max_id=(07-17 毫秒时间戳<<16) 直接跳到窗口末尾，再往前翻到 07-10，去重后 501 条，其中 #LLM 占 400 条，基本与端侧无关；#TinyML、#NPU 窗口内各只有 1 条。收录 1 条：Centricular 发布基于 llama.cpp 的 GStreamer 本地 LLM 文本翻译元素。Collabora 的 RK3576 NPU 帖在 Mastodon 也有，已归入 Bluesky 条目；Home Assistant 接 Hermes Agent 的个人分享没有可核验的技术材料，未收。"
+      },
+      {
+        "source": "GitHub Discussions",
+        "status": "found",
+        "note": "用 discussions_q=created:2026-07-10..2026-07-16 筛选，抓了 12 个仓，再打开详情页用 <relative-time> 核对创建时间（筛选结果里会混进置顶帖和更新时间落在窗口内的旧帖，比如 alibaba/MNN #4012 实际是 2025-11 发的）。ggml-org/llama.cpp 窗口内约 17 个新主题；ml-explore/mlx 2 个（#3829 流式视频 VLM 在 M3 Max 上的瓶颈测量，正文提出 M5 Neural Accelerator 的假设，但 0 回复）；ml-explore/mlx-lm 2 个；microsoft/onnxruntime 有 onnxruntime-web 机器人课程等 3 个；google-ai-edge/gallery、google-ai-edge/LiteRT、pytorch/executorch、alibaba/MNN、openvinotoolkit/openvino、cactus-compute/cactus、microsoft/BitNet 窗口内没有新主题；PrismML-Eng/Bonsai-demo 没有开 discussions。收录 1 条：llama.cpp #25779，MoE 专家显式预读，在内存装不下模型时提速 31%~52%。"
+      },
+      {
+        "source": "Hugging Face",
+        "status": "found",
+        "note": "用 models 接口（sort=createdAt）拉了 prism-ml、litert-community、google、onnx-community、LiquidAI、XiaomiMiMo、openbmb、mlx-community 这些作者的模型，再用 spaces 接口核对 webml-community/bonsai-webgpu、bonsai-webgpu-kernels 和 google/gemma4_vision_token_budget。prism-ml 的 Bonsai 27B 主仓都建于窗口之前（仓库是提前建好的），窗口内只新建了 2 个 AWQ 4bit 仓（07-11）；litert-community 新建 4 个，其中 gemma-4-31B 和 26B-A4B 的 litert-lm 包下载量较高；LiquidAI 新建 3 个 LFM2.5-Encoder-350M；mlx-community 新建 31 个，多是 Inkling 和 Hy3 的量化版；google、openbmb、XiaomiMiMo 窗口内没有新仓。收录 1 条：webml-community/bonsai-webgpu-kernels，07-14 新建，同日 Reddit 有 593 分的讨论，PrismML 官方稿也可以佐证。Gemma 视觉 token 预算 Space（07-14）已并入 X 条目。"
+      },
+      {
+        "source": "YouTube / Bilibili",
+        "status": "limited",
+        "note": "YouTube 频道 RSS 只覆盖约 6 周，这个窗口在结构上够不到。改用 WebSearch 找窗口内官方频道的端侧视频（Gemma、LiteRT、Foundation Models、Qualcomm、Galaxy Unpacked），没找到：Galaxy Unpacked 定在 07-22，在窗口之外。Bilibili 先取首页 cookie，再调搜索接口，用 pubtime 限定窗口，检索端侧大模型、端侧AI、高通 端侧、面壁智能、摩尔线程 端侧等词；Bonsai 27B、NPU 大模型、Gemma 4 三组词被风控，返回非 JSON。窗口内的结果多是媒体和个人对“7 款手机端侧大模型完成备案”的解读，以及投资类视频，都不收。官方号只有“摩尔线程开发者”07-15 发了《高效端侧模型＋全功能芯片》（19 分钟），但简介是空的，视频页又被风控拦住，内容无法核验，未收。"
+      },
+      {
+        "source": "厂商论坛",
+        "status": "found",
+        "note": "NVIDIA 开发者论坛用 Discourse 的 search.json，带 after:2026-07-10 before:2026-07-17，分别按 jetson、llm category:70、thor 检索，得到约 80 个主题，再用 /t/<id>.json 核对首帖时间和楼层原文。本周以 JetPack 7.2 刷机、载板和相机驱动问题为主，几乎没有 LLM 相关的新帖。收录 2 条：Jetson AI Lab 官方三期直播（本地 GenAI 到本地 Agent），以及 Orin NX 跑 Docker+YOLO 时随机复位、NVIDIA 定位到 host1x 驱动竞态。Apple、Qualcomm、Arm 论坛前几周已确认是人机验证页或跳转壳，这次没有再试。"
+      }
+    ],
+    "items": [
+      {
+        "id": "reddit-google-android-on-device-genai-api-survey",
+        "source": "Reddit",
+        "author": "u/No_Quote_6331（自称 Google 端侧 AI API 产品负责人）",
+        "url": "https://www.reddit.com/r/androiddev/comments/1uy9qw1/request_for_feedback_android_ondevice_genai_apis/",
+        "published_at": "2026-07-16T17:39:59Z",
+        "title_zh": "Google 端侧 GenAI API 负责人在 r/androiddev 征集开发者需求",
+        "summary_zh": "发帖人自称是 Google 端侧 AI API 的产品负责人（帖中附了 LinkedIn 和 google.com 邮箱），请 Android 开发者花 10 分钟填问卷，说明核心需求和痛点，用于规划路线图。帖子只有 9 分、1 条评论，没有透露任何具体的 API 变化。发帖人身份只凭帖中自述，没有从 Google 官方渠道核实。",
+        "why_it_matters": "这说明 Google 正在为 Android 端侧 GenAI API（ML Kit GenAI / AICore 一线）收集下一阶段需求。可以留意后续有没有新的开发者预览，以及开放给第三方 App 的端侧模型能力会不会扩大。",
+        "device_scope": "手机",
+        "topic": "Android 端侧 GenAI API",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "reddit-prismml-bonsai-27b-phone",
+        "source": "Reddit",
+        "author": "u/yogthos（r/LocalLLaMA 转帖 PrismML 官方稿）",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uwhukq/bonsai_27b_the_first_27bclass_model_to_run_on_a/",
+        "published_at": "2026-07-14T18:57:20Z",
+        "title_zh": "PrismML 发布 Bonsai 27B：号称首个能装进手机的 27B 级模型",
+        "summary_zh": "PrismML 07-14 发布 Bonsai 27B，基于 Qwen3.6 27B，有两个版本：三值权重版有效约 1.71 bit/权重，体积 5.9GB，面向笔记本；1-bit 版有效约 1.125 bit/权重，体积 3.9GB，官方称能放进 iPhone 17 Pro 的内存预算。两个版本都是多模态（视觉塔用 4-bit），支持 262K 上下文和投机解码，Apache 2.0 开源。官方称三值版在 15 项评测上保留了约 95% 的原模型成绩。这条帖子 508 分；同周 r/LocalLLaMA 转帖 CNBC 报道称苹果在与 PrismML 谈判（304 分）。手机端的实际速度、发热和长链 Agent 稳定性目前只有官方自述，社区实测主要在 Mac 和浏览器上。",
+        "why_it_matters": "这是第一次有人把 27B 级、带工具调用和视觉能力的模型做到 4GB 以下，手机本地 Agent 能用的模型档次因此可能从 3B~8B 升到 27B。再加上苹果在评估这项技术的传闻，值得跟进两件事：手机真机上的 tok/s 和功耗，以及 1-bit 权重在多步工具调用中的掉点情况。",
+        "device_scope": "手机",
+        "topic": "1-bit/三值量化 / 手机端大模型",
+        "verification": "仅线索",
+        "evidence_url": "https://prismml.com/news/bonsai-27b"
+      },
+      {
+        "id": "ghd-llamacpp-moe-expert-prefetch",
+        "source": "GitHub Discussions",
+        "author": "doramirdor",
+        "url": "https://github.com/ggml-org/llama.cpp/discussions/25779",
+        "published_at": "2026-07-16T15:01:33Z",
+        "title_zh": "llama.cpp 提案：MoE 专家显式预读，内存装不下模型时提速 31%~52%",
+        "summary_zh": "作者提出一个思路：MoE 模型装不进内存时，在路由算出 top-k 专家后，立即对这些专家的权重切片发起排序、合并后的并行 pread，代替原来零散的缺页读取。在 M5 Pro 的 SSD 上跑 Qwen3-Next-80B-A3B（33GB），解码提速 31%~52%，读调用从 2.86 万次降到 0.85 万次，平均读块从 450KB 增大到 1.5MB。实现通过环境变量开启，需要离线生成一个记录专家偏移的 sidecar 文件，核心改动只有 8 行钩子，367 行的分支已经准备好。目前只有单一模型、单一硬件的数据，帖子 0 回复，维护者还没表态。",
+        "why_it_matters": "笔记本和手机的内存往往装不下大 MoE，靠 SSD 流式加载专家是端侧跑大模型的主流路线之一。把随机缺页改成按路由结果预读，是低成本又通用的优化，值得跟进它能否合入上游。",
+        "device_scope": "PC",
+        "topic": "MoE 专家卸载 / SSD 流式加载",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://github.com/ggml-org/llama.cpp/discussions/25779"
+      },
+      {
+        "id": "hn-gemma4-26b-old-xeon-cpu",
+        "source": "Hacker News",
+        "author": "neomindryan（Neomind Labs）",
+        "url": "https://news.ycombinator.com/item?id=48922434",
+        "published_at": "2026-07-15T15:34:05Z",
+        "title_zh": "在没有 GPU 的 13 年前 Xeon 上以 5 tok/s 跑 Gemma 4 26B",
+        "summary_zh": "作者用 ik_llama.cpp 在 2013 年的 Ivy Bridge Xeon（不支持 AVX2）上跑 Gemma 4 26B MoE，达到约 5 tok/s。最棘手的是一个静默 bug：在非 AVX2 构建下，两个 MoE 图算子没有对应的分发分支，所有专家 FFN 的输出都是错的，但程序不报错。修复已作为 ik_llama.cpp PR #2138 提交上游。帖子 329 分、212 条评论，有评论称同代 CPU 能跑到 8~12 tok/s，但没给出配置。",
+        "why_it_matters": "MoE 只激活少量参数，所以老旧 CPU 也能跑出可用的速度。这个“没有 AVX2 时 MoE 算子静默出错”的问题，也提醒端侧推理引擎要在非主流 SIMD 路径上做正确性测试。",
+        "device_scope": "PC",
+        "topic": "CPU 推理 / MoE / llama.cpp 分支",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://www.neomindlabs.com/2026/06/08/running-gemma-4-26b-at-5-tokens-sec-on-a-13-year-old-xeon-with-no-gpu/"
+      },
+      {
+        "id": "mastodon-centricular-gstreamer-llamacpp",
+        "source": "Mastodon",
+        "author": "@centricular@floss.social（Sebastian Dröge）",
+        "url": "https://floss.social/@centricular/116919423714126703",
+        "published_at": "2026-07-14T17:07:03Z",
+        "title_zh": "GStreamer 新增 llama.cpp 元素，可在本地做实时字幕翻译",
+        "summary_zh": "Centricular 的 Sebastian Dröge 写了一个封装 llama.cpp 的 GStreamer 元素：输入文本流，经可配置的系统提示交给本地 LLM，再把输出往下游传，还可以保留历史输入输出，让结果更连贯。和 whisper 语音转写元素串起来，就能把英文音轨实时转写、翻译成德文字幕叠加在视频上。默认只编译 CPU 后端，可以选 Vulkan、ROCm 或 CUDA。帖子有 8 个收藏、7 次转发，Bluesky 上也有同步转发。",
+        "why_it_matters": "这把本地 LLM 接进了成熟的多媒体管线框架，让离线实时翻译、改写成为可组装的组件，适合 PC 和边缘盒子做隐私友好的本地流媒体处理。",
+        "device_scope": "PC",
+        "topic": "本地 LLM 集成 / 多媒体管线",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://centricular.com/devlog/2026-07/llama-cpp/"
+      },
+      {
+        "id": "hf-bonsai-webgpu-kernels-space",
+        "source": "Hugging Face",
+        "author": "webml-community（xenovatech）",
+        "url": "https://huggingface.co/spaces/webml-community/bonsai-webgpu-kernels",
+        "published_at": "2026-07-14T16:49:51Z",
+        "title_zh": "Bonsai 27B 浏览器演示：用自定义 WebGPU 内核在本地跑 1-bit 模型",
+        "summary_zh": "webml-community 07-14 新建了这个 Space，用自定义 WebGPU 内核在浏览器里本地运行 1-bit Bonsai 27B，模型从 54GB 压到 3.8GB。xenovatech 同日在 r/LocalLLaMA 发了演示视频（593 分），Bluesky 上也有大量转发。截至核对时 Space 有 471 个赞。HN 上有用户反馈，在 7900XTX 上跑最小的旧版模型也只有约 2.5 tok/s，输出质量也受到质疑，所以这条目前更像能力演示，还谈不上可用。",
+        "why_it_matters": "这说明 27B 级模型已经可以零安装在 PC 浏览器里本地运行，WebGPU 正在成为 1-bit 模型的另一个部署目标。速度和质量的问题说明，低比特模型能不能用还要看专用内核的成熟度。",
+        "device_scope": "PC",
+        "topic": "WebGPU / 浏览器端 1-bit 推理",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://prismml.com/news/bonsai-27b"
+      },
+      {
+        "id": "hn-qmlx-qwen-122b-mac-studio",
+        "source": "Hacker News",
+        "author": "marzukia",
+        "url": "https://news.ycombinator.com/item?id=48876619",
+        "published_at": "2026-07-11T22:54:06Z",
+        "title_zh": "修掉三个 bug，Qwen3.5-122B 在 Mac Studio 上首 token 延迟从数分钟降到可日用",
+        "summary_zh": "作者在 M3 Ultra Mac Studio 上用 MLX 跑 Qwen3.5-122B，追问时首 token 要等 3~5 分钟。排查三周后发现，根源是服务栈的三个 bug，而不是模型本身。最反直觉的一个是：系统提示里带了唯一的消息 ID，导致前缀缓存每轮都无法字节级命中，“热”上下文每次都被当成冷上下文重算。作者开源了修复后的分支 qMLX 和基准脚本。帖子 65 分，有评论追问 mlx-lm / mlx-engine 是否也有同样的问题。",
+        "why_it_matters": "在本地大模型做多轮 Agent 时，体验瓶颈常在 KV 前缀缓存能不能命中，而不在算力。这对所有在 PC 和 Mac 上做本地 Agent 的框架都有直接参考价值。",
+        "device_scope": "PC",
+        "topic": "Apple Silicon / KV 前缀缓存 / 本地服务栈",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://mrzk.io/posts/qmlx-maximising-ai-psychosis-minmaxing-mac-studio/"
+      },
+      {
+        "id": "nvforum-jetson-ai-lab-make-it-think",
+        "source": "厂商论坛",
+        "author": "emendizabal（NVIDIA）",
+        "url": "https://forums.developer.nvidia.com/t/make-it-think-nvidia-jetson-ai-lab-livestream-series/376967",
+        "published_at": "2026-07-15T16:32:10Z",
+        "title_zh": "NVIDIA Jetson AI Lab 推出三期直播：从本地 GenAI 到 Jetson 上的本地 Agent",
+        "summary_zh": "NVIDIA 在开发者论坛宣布 Jetson AI Lab 的“Make It Think”三期直播，面向学生、教育者和创客。7 月 28 日一期讲在 Jetson 上用 Gemma、Qwen 等开源模型做第一个本地 GenAI 应用，并比较 Ollama、vLLM、llama.cpp 各自适合的场景，以及选模型、量化和调优的经验；8 月 4 日一期讲在 Jetson 上构建 Claw 类本地 Agent。帖子是 07-15 发的，直播本身在窗口之后。",
+        "why_it_matters": "NVIDIA 官方把“在 Jetson 上跑本地 Agent”作为面向开发者的主推内容，说明边缘设备的叙事正从跑模型转向跑 Agent。可以关注直播里给出的推理框架选型和量化建议。",
+        "device_scope": "其他端侧",
+        "topic": "Jetson / 本地 Agent / 开发者教育",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://forums.developer.nvidia.com/t/make-it-think-nvidia-jetson-ai-lab-livestream-series/376967"
+      },
+      {
+        "id": "bsky-collabora-rk3576-npu-mainline",
+        "source": "Bluesky",
+        "author": "collabora.com",
+        "url": "https://bsky.app/profile/collabora.com/post/3mqp2hs6axk2z",
+        "published_at": "2026-07-15T15:37:56Z",
+        "title_zh": "逆向工程让 RK3576 NPU 向主线 Linux 开源 Rocket 驱动迈进",
+        "summary_zh": "Collabora 介绍了 Ga Hing Woo 的工作：RK3576 的技术参考手册没有公开 NPU 的计算寄存器，他通过逆向工程，在 Radxa ROCK 4D 上用开源栈跑通了单个 int8 卷积，输出与 CPU 参考逐字节一致。但多层串联任务仍会卡住，论文把这一点作为负面结果写明。成果已整理成 Zenodo 论文，内核补丁放在 GitHub。作者另外打包的厂商 RKLLM 运行时可以跑 Llama-3.2-1B，约 13 tok/s，但这个数字来自厂商驱动，不是开源驱动。补丁还没有合入主线。",
+        "why_it_matters": "RK3576 是大量国产边缘盒子和开发板的主控，开源 NPU 驱动一旦可用，端侧模型就能摆脱厂商闭源 BSP 部署。不过目前只完成了单算子，离跑 LLM 还很远。",
+        "device_scope": "其他端侧",
+        "topic": "NPU 开源驱动 / Rockchip",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://www.cnx-software.com/2026/07/15/reverse-engineering-brings-rk3576-npu-support-to-open-source-rocket-driver-for-mainline-linux/"
+      },
+      {
+        "id": "nvforum-orin-nx-reset-host1x-race",
+        "source": "厂商论坛",
+        "author": "imran.khalid",
+        "url": "https://forums.developer.nvidia.com/t/jetson-orin-nx-randomly-resets-sys-reset-n-during-docker-yolo-inference-workload-hardware-watchdog-suspected/376440",
+        "published_at": "2026-07-10T11:31:13Z",
+        "title_zh": "Orin NX 在无人机上跑 YOLO 推理随机复位，NVIDIA 指向 host1x 驱动竞态",
+        "summary_zh": "楼主的 Jetson Orin NX 装在无人机上，用 12V 锂电池供电，在 Docker 里持续跑 YOLO OBB 推理时会随机硬复位（SYS_RESET_N），每次文件系统都被弄脏。用台式电源时反而不会复位。NVIDIA 工程师 07-13 回复说，这可能是 host1x 驱动里中断上下文与进程上下文的锁竞态，并给出内核补丁。楼主打完补丁后，复位仍然存在，讨论在继续。",
+        "why_it_matters": "边缘设备长时间跑 AI 推理时的稳定性，往往卡在驱动和供电这类底层问题上，而不在模型本身。部署在移动平台上的 Jetson 项目可以参考这个排查过程。",
+        "device_scope": "其他端侧",
+        "topic": "Jetson 稳定性 / 边缘推理部署",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://forums.developer.nvidia.com/t/jetson-orin-nx-randomly-resets-sys-reset-n-during-docker-yolo-inference-workload-hardware-watchdog-suspected/376440"
+      },
+      {
+        "id": "x-googlegemma-gemma4-template-fixes",
+        "source": "X",
+        "author": "@googlegemma（Google 官方账号）",
+        "url": "https://x.com/googlegemma/status/2077449152062247219",
+        "published_at": "2026-07-15T17:44:09Z",
+        "title_zh": "Google 更新 Gemma 4 聊天模板：修复工具调用、减少“偷懒”",
+        "summary_zh": "@googlegemma 07-15 宣布基于社区反馈对 Gemma 4 做了一批改进。按 r/LocalLLaMA 同日转帖（694 分）的整理，内容包括：更新聊天模板，修复工具调用问题，减少模型“偷懒”；在 Hopper GPU 上启用 Flash Attention 4；另外 07-14 上线了一个交互式 Space，用来调整视觉 token 预算。原帖正文只能拿到第一句，具体修复清单要以后续楼层和官方文档为准。",
+        "why_it_matters": "Gemma 4 E2B/E4B 是目前手机和边缘设备上最常用的开源 Agent 基座之一。聊天模板和工具调用的修复会直接影响端侧 Agent 的调用成功率，用本地部署的项目需要重新拉取模板。",
+        "device_scope": "通用技术",
+        "topic": "Gemma 4 / 工具调用模板",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://huggingface.co/spaces/google/gemma4_vision_token_budget"
+      },
+      {
+        "id": "hn-ternary-packing-8bit",
+        "source": "Hacker News",
+        "author": "compilade",
+        "url": "https://news.ycombinator.com/item?id=48912812",
+        "published_at": "2026-07-14T20:53:52Z",
+        "title_zh": "怎么把三值权重打包进 8 位字节：每字节存 5 个三值数",
+        "summary_zh": "compilade（llama.cpp 三值量化格式的贡献者）写文章讲解：每字节放 5 个三值数（3^5=243≤256，即 1.6 trit/字节），再用定点乘法而不是除法和取模来快速解包，从结果的高位直接取出各位数字。HN 110 分、50 条评论，有人算出要超过这个效率，至少要 111 个三值数一组才能在字节对齐下胜出。",
+        "why_it_matters": "同周 Bonsai 27B 等三值、1-bit 模型集中出现，这类打包和解包方式直接决定低比特权重在 CPU 和移动端上的内存占用和解码速度，是端侧推理引擎的底层基础。",
+        "device_scope": "通用技术",
+        "topic": "三值量化 / 权重打包",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://compilade.net/blog/ternary-packing"
+      }
+    ]
   }
 }

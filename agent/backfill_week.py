@@ -169,8 +169,14 @@ def cmd_set_hardware(args) -> int:
 
 def cmd_set_community(args) -> int:
     rec = weeks_mod.read_archive(args.label)
-    end = date.fromisoformat(rec["range"]["end"])
-    block = community.validate_community(_load(args.community), today=end)
+    start, end = date.fromisoformat(rec["range"]["start"]), date.fromisoformat(rec["range"]["end"])
+    payload = _load(args.community)
+    # Old-schema weeks overlap, so their radars use non-overlapping windows that can
+    # end before the archive does; validate against the radar's own 7-day window.
+    radar_end = date.fromisoformat((payload.get("window") or {}).get("end", end.isoformat()))
+    if not start <= radar_end <= end:
+        raise SystemExit(f"community window end {radar_end} is outside the week {start}~{end}")
+    block = community.validate_community(payload, today=radar_end)
     _update(args.label, "community", block)
     print(f"[BACKFILL] {args.label}: community {len(block['items'])} items")
     return 0

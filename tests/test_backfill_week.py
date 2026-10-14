@@ -64,5 +64,25 @@ class ReclaimHfPickTest(unittest.TestCase):
         self.assertFalse(backfill_week._reclaim_hf_pick(arxiv("2605.04647", "2026-05-09"), "2026-05-08"))
 
 
+class SetCommunityWindowTest(unittest.TestCase):
+    """Old-schema weeks overlap, so their radars may end before the archive does."""
+
+    def run_set(self, radar_end):
+        archive = {"range": {"start": "2026-06-26", "end": "2026-07-03"}}
+        payload = {"window": {"start": "2026-06-26", "end": radar_end}, "coverage": [], "items": []}
+        seen = {}
+        with mock.patch.object(backfill_week.weeks_mod, "read_archive", lambda label: archive),              mock.patch.object(backfill_week, "_load", lambda path: payload),              mock.patch.object(backfill_week, "_update", lambda *a: None),              mock.patch.object(backfill_week.community, "validate_community",
+                               lambda p, today: seen.setdefault("today", today) and {"items": []}):
+            backfill_week.cmd_set_community(mock.Mock(label="2026-06-26", community="c.json"))
+        return seen["today"].isoformat()
+
+    def test_validates_against_radar_window_end(self):
+        self.assertEqual(self.run_set("2026-07-02"), "2026-07-02")
+
+    def test_radar_ending_after_the_week_is_refused(self):
+        with self.assertRaises(SystemExit):
+            self.run_set("2026-07-04")
+
+
 if __name__ == "__main__":
     unittest.main()

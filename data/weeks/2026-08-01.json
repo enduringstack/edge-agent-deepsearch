@@ -19435,5 +19435,326 @@
       "FP4 数值格式竞争的重点从“几 bit”转到“怎么缩放”（AdaMX），下一代 NPU 的数据通路很可能采用块级自适应缩放。",
       "PIM 的端到端收益必须把静态功耗算进去。IBM 的仿真提示，batch=1 场景下 PIM 不是天然的赢家。"
     ]
+  },
+  "community": {
+    "window": {
+      "start": "2026-07-31",
+      "end": "2026-08-06"
+    },
+    "coverage": [
+      {
+        "source": "X",
+        "status": "found",
+        "note": "从 HN/Reddit/Mastodon 帖子中提取 x.com 状态链接，用 snowflake 换算时间筛进窗口，再以 curl/8.4.0 UA 未登录打开核验 article:published_time。收录 @googlegemma（08-04）与 @Alibaba_Qwen（08-03）2 条；@osanseviero 的 Gemma Translator 帖为 08-05，属另一周，未收。"
+      },
+      {
+        "source": "Bluesky",
+        "status": "found",
+        "note": "用 api.bsky.app searchPosts（since/until 限定窗口）检索 on-device AI、local LLM、llama.cpp、NPU、LFM2.5、MLX 等 12 个词。收录 Google 助理被 Gemini 替换的用户争议 1 条；LFM2.5-2.6B 讨论与 HF 条目重复，未单列；The Ethical Assistant 页面未说明是否本地运行，未收。"
+      },
+      {
+        "source": "Reddit",
+        "status": "found",
+        "note": "用 arctic-shift 抽样 r/LocalLLaMA、r/LocalLLM、r/androiddev、r/MachineLearning、r/JetsonNano 在 08-01~08-04 及 08-06 的 814 帖，按热度和端侧关键词筛选，收录 8 条，一律记为仅线索。"
+      },
+      {
+        "source": "Hacker News",
+        "status": "found",
+        "note": "用 HN Algolia search_by_date 按 20 个端侧词检索 08-01~08-07 的 story，剔除 08-05。收录 Swiftlet、Nightcrawler、Homebench、Arduino UNO Q 语音 Agent 4 条。"
+      },
+      {
+        "source": "Mastodon",
+        "status": "found",
+        "note": "在 mastodon.social、fosstodon.org 的 llm/localllm/llamacpp/ollama/edgeai/ondeviceai/localai/gemma 标签时间线上，用 snowflake max_id/min_id 直接框定窗口。收录 Banana Pi BPI-AI2N 1 条；其余多为教程转发或观点帖，Gemma Translator 转发帖的原帖在 08-05，未收。"
+      },
+      {
+        "source": "GitHub Discussions",
+        "status": "found",
+        "note": "按创建时间排序翻 llama.cpp discussions 到第 10–12 页覆盖窗口，并扫了 mlx、executorch（窗口内无新帖），LiteRT-LM 未开启 discussions。收录 llama.cpp #26491 MoE-Direct 1 条。"
+      },
+      {
+        "source": "Hugging Face",
+        "status": "found",
+        "note": "查 LiquidAI、inclusionAI、nvidia 等组织及 Swiftlet qpack 仓库的 createdAt，只收有窗口内官方发布佐证的仓库：LFM2.5-2.6B（仓库 07-28 预建，官方博客 08-04 发布）。Ling-3.0-tiny 仓库 08-10 才建，NemotronLabs-VoiceChat 07-29 建且无窗口内官方稿，均未收。"
+      },
+      {
+        "source": "YouTube / Bilibili",
+        "status": "found",
+        "note": "YouTube 频道 RSS 不可用，窗口距今已超 6 周，结构性够不到（找到的 Local-First Conf 端侧演讲为 07-31 上传，在窗口外）。B 站用搜索接口按 pubtime 限定窗口，收录 Google 中国官方账号 08-06 发布的 ML Kit GenAI / LiteRT-LM 视频 1 条；其余为非官方解读或炒股类视频，未收。"
+      },
+      {
+        "source": "厂商论坛",
+        "status": "found",
+        "note": "用 NVIDIA 开发者论坛 Discourse search.json 的 after/before 限定窗口，检索 llm/jetson/ollama/TensorRT-LLM/vlm/gemma。收录 DGX Spark 板块 ds4-on-spark v0.5 热帖 1 条；31 个模型 Spark 基准帖只有 1 楼、讨论太少，未收。"
+      }
+    ],
+    "items": [
+      {
+        "id": "bilibili-google-china-mlkit-genai-litert-lm",
+        "source": "YouTube / Bilibili",
+        "author": "Google中国",
+        "url": "https://www.bilibili.com/video/BV1yzuH6tEnC/",
+        "published_at": "2026-08-06T22:12:26+08:00",
+        "title_zh": "Google 中国官方视频：用 ML Kit GenAI 与 LiteRT-LM 部署 Android 端侧 AI",
+        "summary_zh": "Google 中国官方 B 站账号发布，介绍 Android 应用接入端侧 AI 的两条路径：直接用 Gemini Nano 驱动的 ML Kit GenAI API，或用 LiteRT-LM 部署自有模型。属于开发者教学视频，不含新产品发布。",
+        "why_it_matters": "官方给出的 Android 端侧生成式 AI 推荐技术栈，对国内开发者选型有直接参考价值。",
+        "device_scope": "手机",
+        "topic": "Android 端侧部署 / LiteRT-LM",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://www.bilibili.com/video/BV1yzuH6tEnC/"
+      },
+      {
+        "id": "bluesky-google-assistant-replaced-by-gemini",
+        "source": "Bluesky",
+        "author": "852dude.bsky.social",
+        "url": "https://bsky.app/profile/852dude.bsky.social/post/3msf2en3dj227",
+        "published_at": "2026-08-06T02:59:56Z",
+        "title_zh": "用户抱怨：Google 将于 9 月 4 日在安卓上用 Gemini 全面替换 Google 助理",
+        "summary_zh": "8 月 6 日起，Bluesky 上大量用户转述 Google 邮件：9 月 4 日起手机、平板、Wear OS 和投屏 Android Auto 上的 Google 助理将逐步下线，强制换成 Gemini，且不能回退。用户主要不满车载等简单语音指令也被迫交给 AI 助手。消息来自用户邮件和媒体报道，没有找到 Google 官方帮助页确认。",
+        "why_it_matters": "手机助手入口全面切换到大模型，但 Gemini 主体仍在云端；反映用户对“强推 AI”的抵触，也是端侧与云端分工的现实争议。",
+        "device_scope": "手机",
+        "topic": "手机 AI 助手 / 用户争议",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "x-googlegemma-gemma4-iphone-500mb",
+        "source": "X",
+        "author": "googlegemma",
+        "url": "https://x.com/googlegemma/status/2084656348617392261",
+        "published_at": "2026-08-04T15:02:59Z",
+        "title_zh": "Gemma 官方转发：Gemma 4 在 iPhone 上仅用约 500MB 内存运行",
+        "summary_zh": "Gemma 官方账号转发 r/LLMDevs 用户 Antikythera 的做法：用校准感知量化压缩 Gemma 4，在 iPhone 上以约 516MB 活跃内存运行一个离线日程助理。帖子未写明具体模型档位、速度与精度数据，量化细节在原始社区帖中，尚未独立复现。",
+        "why_it_matters": "官方账号背书社区的极限量化成果，说明手机离线 Agent 的内存门槛正逼近 500MB；按 E2B 级有效参数、约 2 比特核算，这个内存数字说得通。",
+        "device_scope": "手机",
+        "topic": "端侧量化 / 手机离线助理",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "hf-liquidai-lfm2-5-2-6b",
+        "source": "Hugging Face",
+        "author": "LiquidAI",
+        "url": "https://huggingface.co/LiquidAI/LFM2.5-2.6B",
+        "published_at": "2026-08-04T00:00:00Z",
+        "title_zh": "Liquid AI 发布 LFM2.5-2.6B：面向端侧 Agent 的 2.6B 工具调用模型",
+        "summary_zh": "Liquid AI 官方博客 8 月 4 日正式发布，HF 权重同步公开（仓库 7 月 28 日预建，GGUF 版 8 月 1 日上传）。模型 2.69B 参数、128K 上下文，针对多步 Agent 工作流后训练；官方称手机 CPU 约 30 tok/s、内存低于 2.5GB，ToolSandbox 77.83，高于 Qwen3.5-9B。速度和分数均为厂商自测。",
+        "why_it_matters": "不到 3B、能在手机上流畅做工具调用的开源模型，是手机端 Agent 的直接候选底座；Reddit、Bluesky 当周都有集中讨论。",
+        "device_scope": "手机",
+        "topic": "端侧小模型 / 工具调用",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://www.liquid.ai/blog/lfm2-5-2-6b"
+      },
+      {
+        "id": "hn-swiftlet-moe-streaming-iphone",
+        "source": "Hacker News",
+        "author": "leonickson1",
+        "url": "https://news.ycombinator.com/item?id=49158333",
+        "published_at": "2026-08-03T16:54:00Z",
+        "title_zh": "Swiftlet：从闪存按需加载专家，在 iPhone 上跑 35B、在 Mac 上用 4.3GB 内存跑 80B Qwen",
+        "summary_zh": "Show HN 获 312 分、141 条评论。Swiftlet 是 Swift + Metal 运行时，只把 Qwen3-Next / Qwen3.6 MoE 的稠密核心常驻内存，路由专家从存储按需读取：M5 Mac 上 80B-A3B 4 比特峰值内存 4.3GB、约 5 tok/s；iPhone 17 上 35B-A3B 约 2.5GB 内存、约 1 tok/s。速度有限、长提示预填充代价高，作者在 README 中已写明。",
+        "why_it_matters": "MoE 专家流式加载让手机首次能跑 35B 级模型；激活参数仅 3B，按闪存带宽核算 1 tok/s 合理。这是本周端侧大模型最受关注的社区项目，代码开源可核验。",
+        "device_scope": "手机",
+        "topic": "MoE 专家流式加载 / Apple Metal",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://github.com/leonickson1/Swiftlet"
+      },
+      {
+        "id": "hn-nightcrawler-phone-pentest-agent",
+        "source": "Hacker News",
+        "author": "garagehq",
+        "url": "https://news.ycombinator.com/item?id=49154127",
+        "published_at": "2026-08-03T11:06:00Z",
+        "title_zh": "Nightcrawler：完全在手机上运行的本地 AI 渗透测试 Agent",
+        "summary_zh": "Show HN 获 120 分。项目在 OnePlus 8（NetHunter）上用手机 GPU 跑 LFM2.5-1.2B 小模型，自主决定扫描哪台主机、调用哪个工具，完成侦察、枚举、漏洞验证到生成报告，全程不连云。仓库 4 月已建，本周因 Show HN 集中讨论；仅适用于获授权的测试。",
+        "why_it_matters": "少见的“规划 + 工具调用 + 行动”闭环完全跑在手机上的真实 Agent 案例，展示 1B 级模型在长时间多步任务中的可用边界。",
+        "device_scope": "手机",
+        "topic": "端侧 Agent / 安全工具",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://github.com/garagehq/nightcrawler"
+      },
+      {
+        "id": "reddit-canary-180m-android-offline-asr",
+        "source": "Reddit",
+        "author": "ivan_digital",
+        "url": "https://www.reddit.com/r/androiddev/comments/1vdeh3o/",
+        "published_at": "2026-08-02T10:22:09Z",
+        "title_zh": "NVIDIA Canary 180M 接入安卓：离线四语转写与互译",
+        "summary_zh": "开源 Kotlin SDK speech-android 的维护者把 NVIDIA Canary 180M 接入安卓：int8、纯 CPU，在 Galaxy S23 Ultra 上加载约 4 秒，3 秒语音 RTF 0.15；下载 273MB，但常驻内存约 780MB。模型按整段语音处理，不支持流式。",
+        "why_it_matters": "给出了真实手机上的延迟与内存数字，提醒开发者规划端侧语音时要看常驻内存，而不是下载体积。",
+        "device_scope": "手机",
+        "topic": "端侧语音识别 / 翻译",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "reddit-ds4-flash-android-12gb",
+        "source": "Reddit",
+        "author": "dai_app",
+        "url": "https://www.reddit.com/r/LocalLLM/comments/1vd0laf/",
+        "published_at": "2026-08-01T22:22:53Z",
+        "title_zh": "92GB 的 DeepSeek V4 Flash 在 12GB 内存安卓手机上跑到 1 tok/s",
+        "summary_zh": "r/LocalLLM 用户展示自研引擎 BigMoeOnEdge（基于 llama.cpp），在 12GB 内存的中端安卓机上运行 IQ2_M 量化的 DeepSeek V4 Flash（284B-A13B，92GB），约 1 tok/s。作者自己也说还不能实用，只是验证引擎可行。",
+        "why_it_matters": "与 Swiftlet 同一思路：MoE 只激活少量专家，靠闪存流式读取突破手机内存上限。按 UFS 读取带宽核算 1 tok/s 合理，但离实用仍远。",
+        "device_scope": "手机",
+        "topic": "MoE 闪存流式 / 安卓",
+        "verification": "仅线索",
+        "evidence_url": "https://github.com/Helldez/BigMoeOnEdge"
+      },
+      {
+        "id": "reddit-llamacpp-hot-expert-cache-pr",
+        "source": "Reddit",
+        "author": "BTA_Labs",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vfhns3/",
+        "published_at": "2026-08-04T17:52:04Z",
+        "title_zh": "llama.cpp PR：把常用 MoE 专家缓存到 GPU，8GB 显存提速最高 2 倍",
+        "summary_zh": "PR #26563 统计专家使用热度，把高频专家放进显存、冷专家留在 CPU。作者在 8GB 显存上测 Qwen3.6-35B-A3B：Q2 从 33 提到 56 tok/s，Q5 从 17 提到 36 tok/s；但 Qwen3.5-122B 等模型开启后反而变慢。目前仅支持 CUDA 和单 token 解码，输出会有轻微差异。",
+        "why_it_matters": "对 8GB 显存这类主流游戏本和台式机最实用的 MoE 加速思路；负面结果也说明它不是通用开关。",
+        "device_scope": "PC",
+        "topic": "MoE 卸载 / llama.cpp",
+        "verification": "仅线索",
+        "evidence_url": "https://github.com/ggml-org/llama.cpp/pull/26563"
+      },
+      {
+        "id": "hn-homebench-local-llm-benchmark",
+        "source": "Hacker News",
+        "author": "david-g-3654",
+        "url": "https://news.ycombinator.com/item?id=49166308",
+        "published_at": "2026-08-04T09:48:00Z",
+        "title_zh": "Homebench：一条命令在本机测本地大模型的速度、内存和质量",
+        "summary_zh": "HN 获 59 分。工具自动发现 Ollama、LM Studio、llama.cpp、vLLM 等本地运行时里的模型，测 tok/s、首 token 延迟和内存占用，再跑一套质量题，以终端排行榜展示。作者说明 Mac 统一内存下峰值内存读数可能偏低。",
+        "why_it_matters": "把“这台电脑上哪个本地模型又快又好”变成可复现的测量，方便个人用户和团队做端侧选型。",
+        "device_scope": "PC",
+        "topic": "本地模型评测工具",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://github.com/david-g-3654/homebench"
+      },
+      {
+        "id": "ghd-llamacpp-moe-direct-nvme",
+        "source": "GitHub Discussions",
+        "author": "tmxkzm1925-max",
+        "url": "https://github.com/ggml-org/llama.cpp/discussions/26491",
+        "published_at": "2026-08-03T05:05:55Z",
+        "title_zh": "MoE-Direct：在 32GB 台式机上从 NVMe 跑 DeepSeek-V4-Flash 和万亿参数 Kimi",
+        "summary_zh": "llama.cpp Show and tell 板块帖子。基于 llama.cpp 的分支，把专家权重留在 NVMe，只读当前路由到的专家并配专家缓存：7800X3D + 32GB + RTX 5080 上 Qwen3.5-122B 约 6 tok/s（比 mmap 快 2.3 倍），DeepSeek-V4-Flash 约 3.2 tok/s，Kimi K2.6 约 1 tok/s。目前仅支持 Windows、单请求，尚未合入主线，也没有维护者回复。",
+        "why_it_matters": "把专家流式加载带到普通 PC，作者正在准备上游 PR，有可能成为 llama.cpp 主线能力。",
+        "device_scope": "PC",
+        "topic": "MoE 专家流式 / llama.cpp",
+        "verification": "仅线索",
+        "evidence_url": "https://github.com/tmxkzm1925-max/moe-direct"
+      },
+      {
+        "id": "reddit-mference-ds4-flash-5gb",
+        "source": "Reddit",
+        "author": "Blahblahblakha",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vdbix4/",
+        "published_at": "2026-08-02T07:28:04Z",
+        "title_zh": "Mference：在 24GB 内存的 M5 Pro 上用约 5.3GB 内存跑 DeepSeek-V4-Flash",
+        "summary_zh": "r/LocalLLaMA 近 300 分。Mference 引擎常驻共享层和 KV 缓存、从 SSD 流式读取专家：Gemma 4 26B-A4B 约 2GB 内存、31–35 tok/s；Qwen3.6 35B-A3B 约 1.45GB、19–23 tok/s；DeepSeek-V4-Flash 2 比特（盘上 91GB）峰值 6.8GB、最高 4.8 tok/s。“最高”速度依赖缓存命中，为作者自测。",
+        "why_it_matters": "同一周多个独立项目都走到同一条技术路线，说明 MoE 流式加载正在成为笔记本跑大模型的主流做法。",
+        "device_scope": "PC",
+        "topic": "MoE 专家流式 / Apple Silicon",
+        "verification": "仅线索",
+        "evidence_url": "https://github.com/NeelM0906/Mference"
+      },
+      {
+        "id": "nvforum-ds4-on-spark-v05",
+        "source": "厂商论坛",
+        "author": "entrpi",
+        "url": "https://forums.developer.nvidia.com/t/378855",
+        "published_at": "2026-08-01T05:54:40Z",
+        "title_zh": "单台 DGX Spark 跑 DeepSeek-V4-Flash：预填充 1000 tok/s、多 Agent 并发 59 tok/s",
+        "summary_zh": "NVIDIA 开发者论坛 DGX Spark 板块热帖（115 楼）。作者维护 antirez ds4 引擎针对 GB10 调优的分支，v0.5 支持 07-31 新版模型，加入连续批处理、前缀缓存、为并行 Agent 分支复制 KV、磁盘 KV 持久化和无损投机解码。59 tok/s 是多 Agent 并发总吞吐，不是单流速度。",
+        "why_it_matters": "说明桌面级 AI 主机已能在本地承载前沿 MoE 模型的多 Agent 服务，是“个人 AI 工作站”方向的实测参考。",
+        "device_scope": "PC",
+        "topic": "桌面 AI 主机 / 多 Agent 本地服务",
+        "verification": "仅线索",
+        "evidence_url": "https://github.com/entrpi/ds4-on-spark"
+      },
+      {
+        "id": "reddit-rpi5-hailo10h-voice-assistant",
+        "source": "Reddit",
+        "author": "martincerven",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vfnzz9/",
+        "published_at": "2026-08-04T21:43:20Z",
+        "title_zh": "树莓派 5 + 两块 Hailo-10H 跑整套离线语音助手",
+        "summary_zh": "作者在树莓派 5 上接两块 M.2 Hailo-10H 加速卡，实时跑通唤醒词、VAD、语音识别、大模型和语音合成整条链路，附 Web 界面、演示视频和代码。没有给出完整的延迟和功耗数字。",
+        "why_it_matters": "低功耗 NPU 加速卡上的完整语音 Agent 流水线，可作为边缘设备语音交互的基准参考。",
+        "device_scope": "其他端侧",
+        "topic": "边缘 NPU / 离线语音助手",
+        "verification": "仅线索",
+        "evidence_url": "https://github.com/martincerven/hailo_learn/tree/main/voice_assistant"
+      },
+      {
+        "id": "hn-arduino-uno-q-voice-kiosk",
+        "source": "Hacker News",
+        "author": "supportm",
+        "url": "https://news.ycombinator.com/item?id=49175303",
+        "published_at": "2026-08-04T21:18:02Z",
+        "title_zh": "在 50 美元 Arduino UNO Q 上本地运行的零售语音 Agent",
+        "summary_zh": "Arduino Project Hub 教程：在 Arduino UNO Q 上搭建零售店语音问询机，语音识别、检索和回答都在本地完成。HN 评论认为 STT→LLM→TTS 链路实际用起来并不简单，也有人追问演示视频。",
+        "why_it_matters": "展示了极低成本开发板上的本地语音 Agent，可作为零售等边缘场景的入门方案。",
+        "device_scope": "其他端侧",
+        "topic": "开发板 / 本地语音 Agent",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://projecthub.arduino.cc/neelbuilds/build-a-voice-based-kiosk-for-retail-store-using-moorcheh-edge-and-arduino-uno-q-7f3c7b"
+      },
+      {
+        "id": "mastodon-bananapi-bpi-ai2n",
+        "source": "Mastodon",
+        "author": "bananapi",
+        "url": "https://mastodon.social/@bananapi/117034576420058041",
+        "published_at": "2026-08-04T01:11:54Z",
+        "title_zh": "Banana Pi BPI-AI2N 开售：瑞萨 RZ/V2N、15 TOPS 的开源 AI 模组",
+        "summary_zh": "Banana Pi 官方账号宣布 BPI-AI2N 公开销售。这是基于瑞萨 RZ/V2N 的开源 SOM，DRP-AI 加速器最高 15 TOPS，支持 Yocto 和 Armbian。帖子只列了规格，没有大模型实测。",
+        "why_it_matters": "又一款低功耗边缘 AI 模组上市，适合视觉类端侧推理；能否跑语言模型仍需实测。",
+        "device_scope": "其他端侧",
+        "topic": "边缘 AI 模组 / NPU",
+        "verification": "仅线索",
+        "evidence_url": "https://docs.banana-pi.org/en/BPI-AI2N/BananaPi_BPI-AI2N"
+      },
+      {
+        "id": "reddit-jetson-orin-nano-finetune",
+        "source": "Reddit",
+        "author": "WaveRiderDZ",
+        "url": "https://www.reddit.com/r/JetsonNano/comments/1vdrv1q/",
+        "published_at": "2026-08-02T19:58:12Z",
+        "title_zh": "在 Jetson Orin Nano 8GB 上直接微调 Llama 3.2 3B 的自动化流程",
+        "summary_zh": "作者为本地 AI 助理在 Jetson Orin Nano 8GB 上做 Llama 3.2 3B 微调实验，并做成带 Web UI 的自动化流程；帖子记录了 8GB 统一内存下同时常驻多个模型、STT/TTS 和 3D 界面时的内存取舍。属于个人实测。",
+        "why_it_matters": "表明边缘设备不仅能推理，还能做小规模本地微调，适合需要按场景定制的离线设备。",
+        "device_scope": "其他端侧",
+        "topic": "边缘设备微调 / Jetson",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "x-alibaba-qwen-qwen38-27b-open-weights",
+        "source": "X",
+        "author": "Alibaba_Qwen",
+        "url": "https://x.com/Alibaba_Qwen/status/2084100707423289643",
+        "published_at": "2026-08-03T02:15:04Z",
+        "title_zh": "Qwen 官方：发布 Qwen3.8-Max，下周开源，Qwen3.8-27B 也将开放权重",
+        "summary_zh": "Qwen 官方账号发布 2.4T 参数的 Qwen3.8-Max，主打编程与协作，宣布下周开放其权重，同时 Qwen3.8-27B 也会开源。帖子没有给出 27B 的发布时间和细节。HN、Reddit 当周热度都很高。",
+        "why_it_matters": "Max 本身是数据中心级模型；对端侧更重要的是 27B 档开源，这是高配 PC 和工作站本地部署的常用尺寸。",
+        "device_scope": "通用技术",
+        "topic": "开源模型发布",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://qwen.ai/blog?id=qwen3.8"
+      },
+      {
+        "id": "reddit-kimi-k3-one-cpu-8gb",
+        "source": "Reddit",
+        "author": "FareedKhan557",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vd874t/",
+        "published_at": "2026-08-02T04:26:21Z",
+        "title_zh": "自写 C99 引擎，在 8GB 内存的单 CPU 上跑 1.56TB 的 Kimi K3",
+        "summary_zh": "作者写了一个 C99 推理引擎：路由专家从 NVMe 按需读取并直接用 4 比特打包格式计算，稠密主干逐层流式加载。双路 EPYC 上峰值内存 8.24GB 时约 33 秒/token，128GB 内存时约 20 秒/token。纯可行性演示，速度不可用。",
+        "why_it_matters": "把“内存不够就从 SSD 流式读取”推到万亿参数的极端，给出内存与速度的权衡曲线，可作为端侧 MoE 流式方案的上限参照。",
+        "device_scope": "通用技术",
+        "topic": "MoE 流式 / CPU 推理",
+        "verification": "仅线索",
+        "evidence_url": ""
+      }
+    ]
   }
 }

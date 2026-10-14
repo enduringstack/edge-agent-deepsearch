@@ -5808,5 +5808,298 @@
       "NPU 的冷启动和图编译开销（纯 NPU 管线冷启动 26.8 秒 vs 热启动 2.1 秒）是被忽视的体验问题，常驻进程与预编译比峰值算力更影响智能体响应。",
       "常驻语音等小模型在手机 NPU 上已能做到亚瓦级（Whisper base 0.46W），“常开 AI”的门槛在软件而不在芯片。"
     ]
+  },
+  "community": {
+    "window": {
+      "start": "2026-06-26",
+      "end": "2026-07-02"
+    },
+    "coverage": [
+      {
+        "source": "X",
+        "status": "found",
+        "note": "实际采集区间为 06-26~07-01，06-25 当天（不在本周窗口内）未采集；window.start 写 06-25，是为了满足校验器的 7 日契约。没有直接搜 X 时间线。候选全部从本窗口已抓的 Reddit、HN、Bluesky 正文里提取 x.com/twitter.com 状态链接，按 snowflake 离线筛出 17 条落在 06-26~07-01。其中 13 条用 UA curl/8.4.0、完整 x.com/<handle>/status/<id> 形式回核，全部拿到 article:published_time。收录 2 条：OpenClaw 官方宣布上架 iOS/Android，以及 syntts 作者自己发布的 89M 浏览器端 TTS。albertgao 的 M5 Max 七模型测速只有标题、拿不到正文；WumpusCentral 的 Discord Incode 端侧年龄验证是转述；华为 openPangu-2.0-Flash（92B）与端侧无关；马斯克的 Grok 帖不相关。以上都未收。因为只能从其他社区反查，覆盖偏向被转帖的热门帖。"
+      },
+      {
+        "source": "Bluesky",
+        "status": "found",
+        "note": "实际采集区间为 06-26~07-01，06-25 当天（不在本周窗口内）未采集；window.start 写 06-25，是为了满足校验器的 7 日契约。用 api.bsky.app 的 searchPosts（sort=top），since/until 限定 2026-06-26T00:00Z~07-01T23:59Z，检索 on-device AI、on-device LLM、local LLM、llama.cpp、LiteRT、Snapdragon、NPU、edge AI、ExecuTorch、ollama、Gemini Nano、Apple Intelligence、Copilot+ PC、local model、LFM2.5、Foundation Models framework、MLX 共 17 组词，去重 1108 条。Gemini Nano 一词几乎全被 Nano Banana 2 Lite 图像模型刷屏，edge AI、Snapdragon、local model 混入大量无关内容。收录 2 条（都只是线索）：转发 Bloomberg 报道的“苹果跳过高端 M6、直接上 AI 导向的 M7”，以及借 OSnews 报道吐槽“微软改口 8GB 内存够用，与本地模型需求相悖”。OpenClaw 移动端的讨论已由 X 原帖收录。"
+      },
+      {
+        "source": "Reddit",
+        "status": "found",
+        "note": "实际采集区间为 06-26~07-01，06-25 当天（不在本周窗口内）未采集；window.start 写 06-25，是为了满足校验器的 7 日契约。用 arctic-shift 的 posts/search 接口按 created_utc 升序翻页（after=2026-06-26、before=2026-07-02），抓到 r/LocalLLaMA 528 条、r/LocalLLM 542 条、r/androiddev 176 条、r/MachineLearning 156 条、r/JetsonNano 5 条，明显是抽样，分数是归档时的快照，所以 verification 一律记“仅线索”。收录 4 条：安卓手机在无信号山区离线跑 LFM2 700M、Jetson Orin Nano Super 上 8 个小模型的 llama.cpp 与 Ollama 对比、两台 M5 Max 用雷电 5 串联跑 753B 的 GLM-5.2、DFlash 投机解码合入 llama.cpp。本周 LocalLLaMA 高赞帖多是 GLM-5.2、对 Anthropic 和开源政策的争论，以及显卡魔改话题；androiddev 唯一一条 JNI 加载量化 LLM 的提问已被删除；MachineLearning 没有端侧相关帖。"
+      },
+      {
+        "source": "Hacker News",
+        "status": "found",
+        "note": "实际采集区间为 06-26~07-01，06-25 当天（不在本周窗口内）未采集；window.start 写 06-25，是为了满足校验器的 7 日契约。用 Algolia search_by_date（tags=story），numericFilters 限定 created_at_i 在 1782432000~1782950400，检索 on-device、local LLM、llama.cpp、Snapdragon、Jetson、NPU、edge AI、MLX、ollama、local model、LiteRT、ExecuTorch、Gemma、offline AI、quantization、Raspberry Pi、Apple Intelligence、Copilot、local AI、WebGPU、GGUF、small model、Foundation Models、Gemini Nano、on device、phone 共 26 组词，再用 items/<id> 逐条核对时间和评论。收录 3 条：Liquid AI 的 LFM2.5-230M（面向手机、树莓派和机器人）、Wayfinder 本地/云端模型路由（123 分）、i9 纯 CPU 跑 Gemma-4 26B。纯 CPU 那条按内存带宽核算过：Q4_0 每 token 约读 2GB，双通道 DDR5 下 25 tok/s 说得通。Nano Banana 2 Lite（435 分）、Jolla Phone、TabFM 与端侧 AI 推理无关，未收；Off Grid（Mac 离线 AI 套件）只有 11 分，未收。（另：07-02 当天的“保护本地运行 AI 的权利”倡议帖 554 分，由 07-02 周的检索发现，按不重叠窗口归入本周。）"
+      },
+      {
+        "source": "Mastodon",
+        "status": "found",
+        "note": "实际采集区间为 06-26~07-01，06-25 当天（不在本周窗口内）未采集；window.start 写 06-25，是为了满足校验器的 7 日契约。拉 mastodon.social 的 #LocalLLM、#LocalAI、#EdgeAI、#llamacpp、#ollama、#MLX、#Gemma、#NPU、#OpenClaw、#LLM 标签时间线，用 max_id=(07-02 毫秒时间戳<<16) 跳到窗口末尾，往前翻到 06-26，去重 408 条。#OnDeviceAI、#TinyML、#LiteRT、#AIPC 窗口内都是 0 条；#LLM 大部分是一个日文 Apple 新闻机器人的转发。收录 1 条：ArmSoM 官方账号介绍的 RK3588 低功耗 Frigate NVR 案例。另有 Calendar 366 在 Mac 上通过 MCP 接入 LM Studio，互动太少，未收。"
+      },
+      {
+        "source": "GitHub Discussions",
+        "status": "found",
+        "note": "实际采集区间为 06-26~07-01，06-25 当天（不在本周窗口内）未采集；window.start 写 06-25，是为了满足校验器的 7 日契约。用 discussions_q=created:2026-06-26..2026-07-01 筛了 15 个仓。ggml-org/llama.cpp 窗口内约 22 个新主题；ml-explore/mlx、openvino、whisper.cpp、cactus 的命中都是置顶旧帖，窗口内没有新主题；google-ai-edge/gallery 只有 1 个（第三方 Web Search 技能投稿）；microsoft/Foundry-Local 1 个（问怎么给视觉模型传图）；executorch、onnxruntime、MNN、mlx-lm、LiteRT-LM、ollama、transformers.js、mlc-llm 窗口内都是 0。收录 1 条：llama.cpp #25198，用 --spec-draft-p-min 调 MTP 投机解码，作者自报提速 15%。sussurro.cpp（基于 ggml 的离线翻译加语音，#25163）的页面连续返回 Server Error，没法核对，未收；#25065“Apple 芯片如何估算可跑的模型大小”是入门科普，未收。"
+      },
+      {
+        "source": "Hugging Face",
+        "status": "found",
+        "note": "实际采集区间为 06-26~07-01，06-25 当天（不在本周窗口内）未采集；window.start 写 06-25，是为了满足校验器的 7 日契约。用 models 接口（author=…、sort=createdAt）拉了这些作者：LiquidAI、litert-community、google、openbmb、apple、nvidia、qualcomm、Cactus-Compute、HuggingFaceTB、microsoft、onnx-community、OpenVINO、mlx-community、Qwen、MiniMaxAI、amd、stepfun-ai，筛 createdAt 落在窗口内的仓。qualcomm 07-01 新建了 17 个仓（Gemma-4-E4B/E2B、Qwen3.5-2B、Qwen3-VL-4B 等），和同日 ai-hub-models v0.57.0 发布的 GenieX 运行时对得上，收录 1 条。nvidia/Cosmos3-Edge 的 createdAt 是 07-01，但模型卡写明 07-20 才发布，属于提前建仓，不收。litert-community 窗口内有 69 个新仓，都是批量转换，没有官方发布说明，不收。microsoft/GELab-Zero-4B 手机 GUI Agent 变体是门控仓，读不到卡片，不收。LiquidAI 的 LFM2.5-230M 06-25 就建了仓，已改由 HN 讨论收录。"
+      },
+      {
+        "source": "YouTube / Bilibili",
+        "status": "found",
+        "note": "实际采集区间为 06-26~07-01，06-25 当天（不在本周窗口内）未采集；window.start 写 06-25，是为了满足校验器的 7 日契约。YouTube 频道 RSS 只覆盖约 6 周，这个窗口在结构上够不到，本次没有枚举官方频道。YouTube 部分实际是 limited。Bilibili 先取首页 cookie，再调搜索接口，用 pubtime 限定 06-26~07-01，搜“端侧大模型”“端侧AI”“高通 骁龙 AI”“面壁智能”“端侧 Agent”“NPU 大模型”：多数是带货、财经和第三方解读；view 接口被风控拦截，只能读搜索结果里的简介。收录 1 条：全国大学生系统能力大赛 proj59 团队自己的 SLIM-ARC 演示（MoE 推理加内存感知，面向端侧 Agent），可以回链到大赛 GitLab 项目页。Toradex 官方号 06-29 发了 i.MX 95 NPU 单目深度估计 30 FPS 的短片，但简介为空，没有可核的技术信息，未收；面壁智能井晨哲的访谈是第三方会议号上传，未收。"
+      },
+      {
+        "source": "厂商论坛",
+        "status": "found",
+        "note": "实际采集区间为 06-26~07-01，06-25 当天（不在本周窗口内）未采集；window.start 写 06-25，是为了满足校验器的 7 日契约。NVIDIA 开发者论坛用 Discourse 的 search.json，带 after:2026-06-26 before:2026-07-02，分别按 jetson、llm category:70、thor 检索，再用 /t/<id>.json 核对首帖时间和楼层原文。收录 1 条：TensorRT-Edge-LLM 的高层 Python API 在 Jetson AGX Thor（JetPack 7.2）上报“No math backend found”。另有 NVIDIA 官方 07-01 公告 JetPack 7.2 首个官方 Yocto 版本（#375043），属于 BSP 层，与 AI 推理无直接关系，只在这里提及。Apple、Qualcomm、Arm 论坛前几次回填已确认是人机验证页或跳转壳，这次没有再试。"
+      }
+    ],
+    "items": [
+      {
+        "id": "hf-qualcomm-geniex-gemma4-e4b",
+        "source": "Hugging Face",
+        "author": "qualcomm（官方 org）",
+        "url": "https://huggingface.co/qualcomm/Gemma-4-E4B-it",
+        "published_at": "2026-07-01T21:14:21Z",
+        "title_zh": "高通 HF 官方号批量上架 GenieX 预编译端侧模型（Gemma-4-E4B 等）",
+        "summary_zh": "07-01 qualcomm org 在 HF 新建 17 个仓，包括 Gemma-4-E4B/E2B、Qwen3.5-2B、Qwen3-VL-4B、Ministral-3-3B 等，提供面向骁龙 8 Elite（Gen 5）手机、骁龙 X/X2 Elite PC 和 Dragonwing 物联网芯片的 w4a16 预编译包。同日 ai-hub-models v0.57.0 正式发布 GenieX 运行时，有两种后端：geniex_qairt 只跑 NPU；geniex_llamacpp 可以直接跑 HF 上的 GGUF，覆盖 NPU、GPU、CPU，官方推荐用 q4_0 以获得最好的 Hexagon NPU 支持。旧的 Genie 运行时同时宣布弃用。模型卡后来还更新过，此处只看建仓日和同日的 release。",
+        "why_it_matters": "高通把手机和 PC 的端侧 LLM 部署收拢到一个统一运行时，并且直接接上 llama.cpp 和 GGUF 生态。开发者不用再为 NPU 单独走一套转换链，这会降低在骁龙设备上跑端侧 Agent 的门槛。",
+        "device_scope": "手机",
+        "topic": "NPU 推理运行时 / 预编译模型",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://github.com/qualcomm/ai-hub-models/releases/tag/v0.57.0"
+      },
+      {
+        "id": "hn-liquid-lfm25-230m",
+        "source": "Hacker News",
+        "author": "mpfect",
+        "url": "https://news.ycombinator.com/item?id=48743203",
+        "published_at": "2026-07-01T07:03:12Z",
+        "title_zh": "Liquid AI 发布 230M 参数 LFM2.5-230M，主打手机、树莓派和机器人",
+        "summary_zh": "HN 07-01 转帖 Liquid AI 06-25 的官方博客。LFM2.5-230M 是该系列最小的模型，预训练 19T token，后训练做了从 350M 版本蒸馏、DPO 和多领域 RL。官方实测在 Galaxy S25 Ultra 上解码 213 tok/s、树莓派 5 上 42 tok/s。官方还展示了在宇树 G1 人形机器人的板载 Jetson Orin 上完全本地运行：它作为技能选择层，把自然语言指令拆成一串工具调用。帖子只有 20 分；唯一的评论说同系列 8B-A1B 在老 6 核 CPU 上能跑 35–40 tok/s，工具调用也好用。",
+        "why_it_matters": "手机和机器人上的 Agent 需要一个极小、极快、能稳定输出工具调用的“调度层”模型。230M 加机器人上的完全本地演示，正好补上这一档。需要跟进的是第三方在真机上的复现，以及微调后工具调用的准确率。",
+        "device_scope": "手机",
+        "topic": "端侧小模型 / 工具调用",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://www.liquid.ai/blog/lfm2-5-230m"
+      },
+      {
+        "id": "x-openclaw-ios-android-app",
+        "source": "X",
+        "author": "OpenClaw（@openclaw 官方账号）",
+        "url": "https://x.com/openclaw/status/2071688039114342592",
+        "published_at": "2026-06-29T20:11:33Z",
+        "title_zh": "OpenClaw 官方宣布上架 iOS 与 Android，手机是 Agent 的遥控端和传感器节点",
+        "summary_zh": "OpenClaw 官方账号 06-29 发帖称应用已上架 iOS 和 Android。官方文档说明，手机 App 是一个配套节点，必须和用户自建的 Gateway 配对使用（Gateway 跑在 Mac、Linux 或 Windows 上），模型推理不在手机上跑；手机负责聊天、语音，并可选择把相机、定位、通讯录等能力开放给 Agent 调用，Gateway 的每个动作都要用户批准。上架首周评价两极：Play 商店 2.2 星，差评集中在配对失败和不稳定。",
+        "why_it_matters": "这是开源个人 Agent 第一次正式走进手机，但走的是“云边分离”：手机当入口和传感器，大脑放在用户自己的电脑上。按项目口径，这不算真正的端侧 Agent。值得观察的是，手机本地能力开放给远端 Agent 之后，权限和提示注入风险怎么管。",
+        "device_scope": "手机",
+        "topic": "手机 Agent 入口 / 自托管网关",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://docs.openclaw.ai/platforms/android"
+      },
+      {
+        "id": "reddit-offline-llm-android-mountain",
+        "source": "Reddit",
+        "author": "u/TayyabAliKhan",
+        "url": "https://www.reddit.com/r/LocalLLM/comments/1uiphvb/using_local_llm_on_mobile_in_mountain_no_internet/",
+        "published_at": "2026-06-29T11:11:21Z",
+        "title_zh": "无信号山区实测：安卓手机离线跑小模型，LFM2 700M 比带思考的 Qwen 0.8B 更好用",
+        "summary_zh": "发帖人在没有手机信号的山区，用 Atomic Chat 在安卓手机上离线跑本地模型。先试了带思考模式的 Qwen 0.8B，发现日常问答要等思考过程，体验差；换成不带思考的 LFM2 700M（约 447MB）后，响应明显更快，质量“够用但谈不上惊艳”。帖子 56 分、58 条评论。没有给出手机型号和 tok/s 数据，属于个人体验。",
+        "why_it_matters": "真实离线场景说明：手机上的小模型，延迟比推理深度更影响体验，“非思考的小模型”在端侧可能是更合适的默认选项。这对手机助手的模型选型和思考模式开关设计有参考价值。",
+        "device_scope": "手机",
+        "topic": "手机离线 LLM 实测",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "bsky-microsoft-8gb-ram-local-ai",
+        "source": "Bluesky",
+        "author": "goutou.bsky.social",
+        "url": "https://bsky.app/profile/goutou.bsky.social/post/3mpk27ctsp22j",
+        "published_at": "2026-06-30T22:24:41Z",
+        "title_zh": "微软改口称 8GB 内存够跑 Windows 11，被吐槽与本地 AI 背道而驰",
+        "summary_zh": "用户引用 OSnews 报道“微软推了多年 16GB 后，现在说 8GB 足够运行 Windows 11”，并吐槽：去年还在推 NPU 和 AI PC，今年就倒车回 8GB；16GB 的笔记本开着浏览器、IDE 和笔记就没内存了，根本跑不动本地模型。这条只是个人观点加二手报道，微软的原始表态没有回核。",
+        "why_it_matters": "PC 端跑本地模型，真正的瓶颈往往是内存而不是 NPU 的 TOPS。如果 OEM 因为内存涨价把基础款压回 8GB，Copilot+ 一类端侧功能的实际可用面会缩小，值得跟踪厂商的内存配置口径。",
+        "device_scope": "PC",
+        "topic": "AI PC 内存配置争议",
+        "verification": "仅线索",
+        "evidence_url": "https://www.osnews.com/story/145390/microsoft-now-says-8gb-ram-is-fine-for-windows-11-after-years-of-pushing-for-16gb/"
+      },
+      {
+        "id": "hn-gemma4-26b-cpu-only",
+        "source": "Hacker News",
+        "author": "arun-prasath",
+        "url": "https://news.ycombinator.com/item?id=48731643",
+        "published_at": "2026-06-30T12:17:31Z",
+        "title_zh": "纯 CPU 跑 Gemma-4 26B：单流 40 tok/s 无损，压缩输出头比压缩专家更划算",
+        "summary_zh": "作者在 i9-13900K 加 64GB DDR5、没有显卡的台式机上跑 Gemma-4-26B-A4B（每 token 约激活 3.8B 参数）。Q4_0 基线 25 tok/s，加线程也不变，说明瓶颈在内存带宽。加上官方草稿模型做投机解码，提到约 40 tok/s，输出与原模型逐 token 一致；batch 32 时总吞吐约 124 tok/s；把激活专家从 8 个减到 3 个是有损近似。核心发现是：每 token 读取的字节里，262K 词表的输出头占 32%，专家只占 16%，应该优先压缩输出头。按双通道 DDR5 带宽核算，这些数字说得通；HN 只有 10 分。",
+        "why_it_matters": "“按每 token 读取的字节数而不是磁盘大小做量化预算”这条方法，同样适用于手机和 PC 这类受带宽限制的端侧 MoE 推理。大词表模型的输出头，是端侧量化常被忽视的地方。",
+        "device_scope": "PC",
+        "topic": "CPU 推理 / MoE 量化预算",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://github.com/arun-prasath2005/gemma4-cpu-moe"
+      },
+      {
+        "id": "reddit-glm52-753b-two-m5-max",
+        "source": "Reddit",
+        "author": "u/AiLocalGuy",
+        "url": "https://www.reddit.com/r/LocalLLM/comments/1uiuhec/glm52_753b_iq1_s_fully_local_across_2m5_max_over/",
+        "published_at": "2026-06-29T14:44:21Z",
+        "title_zh": "两台 M5 Max 用一根雷电 5 线串联，本地跑 753B 的 GLM-5.2，约 16 tok/s",
+        "summary_zh": "发帖人用两台 128GB 的 M5 Max 合成 256GB 统一内存，通过 llama.cpp RPC 后端加一根雷电 5 线互联，加载 Unsloth 的 GLM-5.2 动态 IQ1_S 量化（标称约 1.6 bit、实际约 2.1 bit，共 202GB），全部常驻内存，生成约 16 tok/s，上下文 16k、KV 用 q8。作者坦言比不过租的 H100，量化有损但仍连贯。帖子 316 分；同一作者次日又发了让它写吃豆人的演示。",
+        "why_it_matters": "“多台消费级 Mac 拼内存跑前沿 MoE”正在成为 PC 端本地推理的一条路线。超低比特量化加 RPC 分片的可用性，值得端侧团队关注。只是 IQ1 的质量损失还没有系统评测，速度也只是单人自测。",
+        "device_scope": "PC",
+        "topic": "Mac 多机分片推理 / 超低比特量化",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "hn-wayfinder-local-hosted-router",
+        "source": "Hacker News",
+        "author": "handfuloflight",
+        "url": "https://news.ycombinator.com/item?id=48704373",
+        "published_at": "2026-06-28T04:31:18Z",
+        "title_zh": "Wayfinder：在本地模型和云端模型之间做确定性路由的桌面路由器",
+        "summary_zh": "Wayfinder 给 Omarchy（Linux 桌面发行版）提供一个统一的本地端点。它按策略为每个请求在本地运行时、账号型服务和 API 模型之间选择，并为每次选择留下可复查的“路由回执”。它只从回环地址的目录发现本地模型，不会静默下载或切换模型；Codex、Claude Code、OpenCode 等编码 Agent 可以接到同一策略上。HN 123 分、56 条评论，有人说自己也在做类似的本地/远端路由器，也有人希望能用 /local 这样的前缀手动指定。",
+        "why_it_matters": "PC 上的 Agent 越来越常见“本地小模型加云端大模型”混合使用。把路由决策做成确定性、可审计的，是端云协同 Agent 落地时隐私和成本控制的关键一环。",
+        "device_scope": "PC",
+        "topic": "端云模型路由",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://github.com/itsthelore/wayfinder-router"
+      },
+      {
+        "id": "bsky-apple-m7-ai-chips",
+        "source": "Bluesky",
+        "author": "lunamoth.bsky.social",
+        "url": "https://bsky.app/profile/lunamoth.bsky.social/post/3mp5vn23cmc27",
+        "published_at": "2026-06-26T02:30:56Z",
+        "title_zh": "传闻：苹果跳过高端 M6 芯片，直接推面向 AI 的 M7 Pro/Max/Ultra",
+        "summary_zh": "用户转发 Bloomberg 06-25 的报道：苹果将跳过 M6 Pro/Max，直接从 2027 年起推出主打 AI 能力的 M7 高端芯片，以加快端侧 AI 能力的建设。只看到报道标题和摘要，正文在付费墙后；属于供应链传闻，不是苹果官方表态。",
+        "why_it_matters": "如果属实，说明苹果把 Mac 芯片路线的重心放到端侧 AI 推理（内存带宽、神经引擎）上，会影响未来两年 Mac 本地大模型的上限。目前只能当线索，等官方或更多信源印证。",
+        "device_scope": "PC",
+        "topic": "Mac 芯片路线 / 端侧 AI",
+        "verification": "仅线索",
+        "evidence_url": "https://www.bloomberg.com/news/articles/2026-06-25/apple-to-skip-high-end-m6-mac-chips-to-launch-m7-pro-m7-max-m7-ultra-instead"
+      },
+      {
+        "id": "nvforum-tensorrt-edge-llm-thor-math-backend",
+        "source": "厂商论坛",
+        "author": "g.rado",
+        "url": "https://forums.developer.nvidia.com/t/tensorrt-edge-llm-on-jetson-agx-thor-no-math-backend-found-although-cuda-is-installed/375013",
+        "published_at": "2026-06-30T21:03:19Z",
+        "title_zh": "Jetson AGX Thor 上 TensorRT-Edge-LLM 高层 Python API 报“No math backend found”",
+        "summary_zh": "一位做机器人平台的开发者想把 TensorRT-Edge-LLM 当作 Jetson AGX Thor（JetPack 7.2）上的主力本地 LLM 运行时。底层的 llm_inference 二进制、引擎构建和推理都正常，但高层 Python API 一调用就报找不到 math backend；装上 nvmath-python、cu13 版 torch 等包仍然不行。社区用户提示 v0.8.0 才扩展了高层 API；截至 07-01，NVIDIA 版主还在追问细节，没有结论。",
+        "why_it_matters": "TensorRT-Edge-LLM 是 NVIDIA 面向车载和机器人的端侧 LLM 运行时。高层 API 在最新 Thor 平台上踩坑，说明它离“开箱可用的端侧 Agent 运行时”还有距离，选型时要预留集成成本。",
+        "device_scope": "其他端侧",
+        "topic": "边缘 LLM 运行时 / Jetson Thor",
+        "verification": "仅线索",
+        "evidence_url": "https://github.com/NVIDIA/TensorRT-Edge-LLM"
+      },
+      {
+        "id": "bili-slim-arc-moe-edge-agent",
+        "source": "YouTube / Bilibili",
+        "author": "MegaKernel（proj59 参赛团队）",
+        "url": "https://www.bilibili.com/video/BV1fXTF6HEAw",
+        "published_at": "2026-06-30T09:53:18Z",
+        "title_zh": "大学生系统能力大赛项目 SLIM-ARC：内存感知的 MoE 推理，号称在手机级内存里跑 80B 模型",
+        "summary_zh": "全国大学生系统能力大赛操作系统功能挑战赛 proj59 团队上传了项目介绍视频，题目是“SLIM-ARC：面向端侧 Agent 的内存感知 MoE 大模型推理协同优化”；第 2 部分是决赛现场在开发板上运行大模型。视频标题称让 800 亿参数模型在“手机大小的内存”里跑起来，推测是靠 MoE 专家按需从存储加载。B 站详情接口被风控拦截，只读到搜索结果里的简介，没有看到速度和精度数据；大赛 GitLab 项目页可以打开。",
+        "why_it_matters": "在小内存设备上跑大 MoE 模型，难点在专家怎么换入换出、怎么和 Agent 的工作负载协同调度，这正是手机端 Agent 绕不开的系统问题。只是学生项目，速度可能很低，先作为方向线索。",
+        "device_scope": "其他端侧",
+        "topic": "MoE 专家卸载 / 端侧 Agent 系统",
+        "verification": "仅线索",
+        "evidence_url": "https://gitlab.eduxiji.net/T2026105589911358/project3136859-389100"
+      },
+      {
+        "id": "mastodon-armsom-rk3588-frigate-nvr",
+        "source": "Mastodon",
+        "author": "@armsom_jackson（ArmSoM 官方）",
+        "url": "https://mastodon.social/@armsom_jackson/116838302203014286",
+        "published_at": "2026-06-30T09:16:47Z",
+        "title_zh": "ArmSoM 案例：RK3588 板子做 8 路 1080p 的 AI 录像机，峰值功耗 8W",
+        "summary_zh": "ArmSoM 官方账号介绍了一位悉尼开发者在 Sige7（RK3588）上搭的 Frigate NVR：同时录 8 路 1080p，实时做目标检测和车牌识别，识别后 2 秒内触发车库门开启；峰值功耗 8W，在 45°C 环境下被动散热，检测、解码交给 NPU/VPU/GPU，CPU 负载很低。附有完整搭建指南。这是厂商的营销案例，数据没有第三方复测。",
+        "why_it_matters": "这是 RK3588 一类国产 SoC 在家庭边缘视觉 AI 上的典型落地：多路视频加检测加联动执行，全部在本地完成。它说明低功耗 NPU 加 VPU 的组合，已经能承担持续运行的感知加动作闭环。",
+        "device_scope": "其他端侧",
+        "topic": "边缘视觉 AI / RK3588 NPU",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://www.armsom.org/post/building-a-low-power-high-performance-frigate-nvr-system-with-armsom-sige7"
+      },
+      {
+        "id": "reddit-jetson-orin-nano-super-8-models",
+        "source": "Reddit",
+        "author": "u/East-Muffin-6472",
+        "url": "https://www.reddit.com/r/JetsonNano/comments/1ug4bun/tiny_jetson_orin_nano_super_benchmark_across_8/",
+        "published_at": "2026-06-26T11:36:38Z",
+        "title_zh": "Jetson Orin Nano Super 上 8 个小模型实测：llama.cpp 在 1B 以下明显快于 Ollama",
+        "summary_zh": "作者在 250 美元的 Jetson Orin Nano Super 8GB 上，用 llama.cpp CUDA 和 Ollama 两种后端、7W/15W/25W/MAXN 四档功耗，测了 SmolLM2-135M 到 LFM2.5-1.2B 等 8 个小模型。在 25W 下，SmolLM2-135M Q4_K_M 用 llama.cpp 约 165 tok/s（Ollama 121），每焦耳输出 token 数高 1.39 倍；LFM2.5-350M 用 llama.cpp 115 tok/s，Ollama 只有 28 tok/s，差 4.2 倍，作者归因为 kernel 问题。接近 1B 的模型两者差不多。只是个人测试。",
+        "why_it_matters": "边缘设备选推理后端，同一个模型可能差几倍的速度和能效。能效（tok/J）加功耗档位的测法，可以直接给边缘 Agent 的部署选型当参照。",
+        "device_scope": "其他端侧",
+        "topic": "Jetson 小模型推理基准",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "hn-right-to-run-local-ai",
+        "source": "Hacker News",
+        "author": "thoughtpeddler",
+        "url": "https://news.ycombinator.com/item?id=48768951",
+        "published_at": "2026-07-02T23:54:03Z",
+        "title_zh": "“保护你在本地运行 AI 的权利”倡议登上 HN 热门，社区担心开源权重受限",
+        "summary_zh": "righttointelligence.org 发起“保护本地运行 AI 的权利”倡议，HN 554 分、200 条评论。高赞评论指出页面没有说明具体针对哪项法案或政策；讨论主要围绕闭源厂商是否会游说限制开源权重，以及中国开源模型在本地生态中的比重。倡议页面几乎只有标题，信息量很少。",
+        "why_it_matters": "端侧和本地推理能否持续，取决于开源权重能否自由获取；这一话题的热度说明社区对监管风险很敏感，但这份倡议本身缺少具体诉求，只能作为舆情信号。",
+        "device_scope": "通用技术",
+        "topic": "开源权重 / 政策争议",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "gh-llamacpp-mtp-spec-draft-p-min",
+        "source": "GitHub Discussions",
+        "author": "sanmai",
+        "url": "https://github.com/ggml-org/llama.cpp/discussions/25198",
+        "published_at": "2026-07-01T11:46:48Z",
+        "title_zh": "llama.cpp 讨论：用 --spec-draft-p-min 调 MTP 投机解码，再快约 15%",
+        "summary_zh": "作者指出，MTP 草稿头的教程通常只调 n-max（每次草拟的 token 数），但 n-max 调大后速度反而下降。他建议同时调高 --spec-draft-p-min（例如 0.8）：草稿头没把握时提前停止，避免无效草拟；输出内容已经在上下文里时，草稿头又能高置信度连续草拟。配合调大 n-max，作者自报提速约 15%。这是社区经验帖，没有跨模型的系统测试。",
+        "why_it_matters": "MTP 和投机解码是本地推理提速的主要手段，其收益高度依赖参数。这类调参经验可以直接用于手机和 PC 上内存带宽受限的解码场景。",
+        "device_scope": "通用技术",
+        "topic": "投机解码调参 / llama.cpp",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "reddit-dflash-merged-llamacpp",
+        "source": "Reddit",
+        "author": "u/sammcj",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uhx862/dflash_support_merged_into_llamacpp/",
+        "published_at": "2026-06-28T13:24:00Z",
+        "title_zh": "DFlash 块状投机解码合入 llama.cpp",
+        "summary_zh": "r/LocalLLaMA 帖子（276 分）通报 llama.cpp PR #22105 合入。该 PR 于 06-28 13:01 UTC 合并，作者 ruixiang63。DFlash 用多层 Transformer 草稿模型一次前向就生成一整块候选 token，而 EAGLE3 是逐 token 自回归草拟；PR 称在 Qwen3 上最高约 8 倍加速，输出与参考实现数值一致，并说明还有较大优化空间。“8 倍”是 PR 作者在特定模型上的上限值。",
+        "why_it_matters": "块状投机解码进入最主流的本地推理引擎，意味着手机和 PC 上用 GGUF 的应用不换框架就能用上新一代解码加速。端侧要关注的是草稿模型额外占用的内存和真实设备上的加速比。",
+        "device_scope": "通用技术",
+        "topic": "投机解码 / 推理引擎",
+        "verification": "仅线索",
+        "evidence_url": "https://github.com/ggml-org/llama.cpp/pull/22105"
+      },
+      {
+        "id": "x-syntts-89m-webgpu-tts",
+        "source": "X",
+        "author": "Harshal Singh（@HarshalsinghCN）",
+        "url": "https://x.com/HarshalsinghCN/status/2070903558741053723",
+        "published_at": "2026-06-27T16:14:18Z",
+        "title_zh": "syntts：89M 参数、纯合成数据训练的印英混合 TTS，能在浏览器里用 WebGPU 跑",
+        "summary_zh": "作者在 X 发布 syntts（89M），并在 r/LocalLLM 补充说明：模型完全用合成数据训练，主打印地语和英语混合（Hinglish）语音，号称效果超过大 10–50 倍的同类开源模型；可以在浏览器里用 WebGPU 运行，也能在低端 CPU 上流畅跑，提供在线演示、GitHub 仓库和 HF 权重。“超过所有开源模型”是作者自评，没有给出标准评测。",
+        "why_it_matters": "不到 1 亿参数的语音合成可以在浏览器和低端设备本地运行，说明端侧语音交互（Agent 的语音输出层）可以做得很轻；用合成数据训小语种模型，也给本地化语音提供了低成本路线。",
+        "device_scope": "通用技术",
+        "topic": "端侧 TTS / WebGPU",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://github.com/harrrshall/syntts"
+      }
+    ]
   }
 }
