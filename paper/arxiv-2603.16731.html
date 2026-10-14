@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Understanding Quantization of Optimizer States in LLM Pre-training: Dynamics of State Staleness and Effectiveness of State Resets</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Understanding Quantization of Optimizer States in LLM Pre-training: Dynamics of State Staleness and Effectiveness of State Resets</h1>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-03-17 · Kristi Topollai; Anna Choromanska / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型预训练时把优化器状态量化成低精度能省显存，但会让状态更新“卡住”不动；这篇解释原因，并给出何时重置优化器状态的方法。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在受控模拟和大模型预训练中，合适的重置周期能找回低精度状态带来的性能损失，同时大幅减少优化器状态内存（摘要未给出具体数字）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">分析低精度指数滑动平均状态中许多更新被舍入回原值的现象，建立预测“停滞”概率的模型，并据此推导重置周期。</span></div>
+<div class="score-reason">评分依据：这是云端预训练阶段的显存优化，与端侧推理关系弱；对量化导致优化器停滞给出了机理解释，有一定理论贡献。</div>
+<div class="source"><a href="https://arxiv.org/abs/2603.16731" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

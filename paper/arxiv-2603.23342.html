@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Edge Radar Material Classification Under Geometry Shifts</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Edge Radar Material Classification Under Geometry Shifts</h1>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-03-24 · Jannik Hohmann; Dong Wang; Andreas Nüchter / arXiv</div>
+<div class="tags"><span class="tag">方向:测试时自适应</span><span class="tag">应用:机器人</span><span class="tag">硬件:MCU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在超低功耗毫米波雷达芯片上直接跑一个小分类器识别材质，帮助机器人在摄像头和激光雷达失效时感知环境，并分析传感器摆放变化带来的性能下滑。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">部署在 TI IWRL6432 上，单次推理约 20 微秒；标准几何条件下宏平均 F1 为 94.2%，但传感器高度和倾角变化后跌到约 68.5%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从雷达距离单元强度中提取 12 维紧凑特征，用多层感知机在雷达芯片上实时分类，再系统分析几何偏移导致的强度缩放和角度相关反射效应。</span></div>
+<div class="score-reason">评分依据：模型实际运行在超低功耗雷达芯片上并给出端上时延，端侧部署证据明确；但模型和方法较简单，主要价值在于对部署失效模式的分析。</div>
+<div class="source"><a href="https://arxiv.org/abs/2603.23342" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

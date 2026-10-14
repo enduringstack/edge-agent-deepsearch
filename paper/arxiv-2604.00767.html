@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ActivityNarrated: An Open-Ended Narrative Paradigm for Wearable Human Activity Understanding</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>ActivityNarrated: An Open-Ended Narrative Paradigm for Wearable Human Activity Understanding</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-04-01 · Lala Shakti Swarup Ray; Mengxi Liu; Alcina Pinto; Deepika Gurung; Daniel Geissler; Paul Lukowoicz; Bo Zhou / arXiv</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">可穿戴设备的人体活动识别过去只做固定类别分类，这项工作把它改成“看传感器写说明”，用自然语言描述任意活动，并配套了基准。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在下游分类上，宏平均 F1 比现有最好的活动识别模型高 3.8% 到 31.6%，并支持长时间跨度的问答。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先把连续的 IMU 信号离散成可复用的动作 token，再交给一个冻结的语言模型（主配置为 Qwen2.5 7B）生成开放词汇的活动描述。</span></div>
+<div class="score-reason">评分依据：面向可穿戴传感器数据，但语言模型部分是 7B 规模的离线推理，没有讨论设备端部署，端侧相关度较低；把活动识别改造成传感器描述生成的范式较新。</div>
+<div class="source"><a href="https://arxiv.org/abs/2604.00767" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GoalSwarm: Multi-UAV Semantic Coordination for Open-Vocabulary Object Navigation</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>GoalSwarm: Multi-UAV Semantic Coordination for Open-Vocabulary Object Navigation</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-03-13 · MoniJesu Wonders James; Amir Atef Habel; Aleksey Fedoseev; Dzmitry Tsetserokou / arXiv</div>
+<div class="tags"><span class="tag">应用:机器人</span><span class="tag">方向:规划推理</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">GoalSwarm 让多架无人机在未知环境里分工合作，按开放词汇找到指定物体。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Habitat 模拟器的 GOAT-Bench 上，成功率 45.0%、SPL 0.179，高于单机基线（10.0%）和不共享地图的多机方案（40.0%、SPL 0.130）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每架无人机把深度观测投影成轻量的二维语义占据地图并共享；用 SAM3 做开放词汇检测分割，用贝叶斯价值图融合多视角置信度并按 UCB 选探索边界，再用竞价和间距惩罚做去中心化任务分配。</span></div>
+<div class="score-reason">评分依据：用二维地图替代三维重建是为机载算力考虑，但实验全部在模拟器中完成，没有机载实测，不能算端侧智能体实证；方法是已有组件的组合。</div>
+<div class="source"><a href="https://arxiv.org/abs/2603.12908" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

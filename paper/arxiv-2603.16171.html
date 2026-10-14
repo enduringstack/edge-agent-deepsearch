@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MemX: A Local-First Long-Term Memory System for AI Assistants</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>MemX: A Local-First Long-Term Memory System for AI Assistants</h1>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-03-17 · Lizheng Sun / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">MemX 是给本地 AI 助手用的长期记忆系统，强调数据留在本地、检索稳定可解释，并在找不到相关记忆时主动拒答，避免乱召回。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">自建中文测试集上 Hit@1 为 91.3%，高混淆场景下 100%；LongMemEval 上事实粒度 Hit@5 为 51.6%，约为会话粒度的两倍；FTS5 全文索引让 10 万条记录下关键词检索快 1100 倍，端到端检索低于 90 毫秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 Rust 基于 libSQL 实现，检索管线结合向量召回、关键词召回、倒数排名融合和四因子重排，并设置低置信度拒答规则；嵌入向量通过兼容 OpenAI 的接口获取。</span></div>
+<div class="score-reason">评分依据：本地优先的助手记忆系统，对端侧 Agent 记忆有直接参考价值；但只是记忆组件，没有完整智能体闭环，嵌入也依赖外部接口，方法以工程整合为主。</div>
+<div class="source"><a href="https://arxiv.org/abs/2603.16171" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

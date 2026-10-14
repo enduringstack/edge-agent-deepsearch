@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Evaluating Prompt Injection Defenses for Educational LLM Tutors: Security-Usability-Latency Trade-offs</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Evaluating Prompt Injection Defenses for Educational LLM Tutors: Security-Usability-Latency Trade-offs</h1>
+<div class="meta"><span class="score">4</span> <span class="tier school">学校预印本</span>  2026-03-29 · Alexandre Cristovão Maiorano / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">应用:安全</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">教育辅导类大模型要防提示注入攻击，又不能误伤正常提问、拖慢响应。这篇给出一套评估防护方案的方法，并比较了多层防护管线和现成护栏工具。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">NeMo Guardrails 绕过率 0%，但误报率 16.22%、延迟约 1.5 秒；Prompt Guard 绕过率 38.48%、误报率 3.60%；作者的多层管线在保持零误报的同时取得较低绕过率。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">组合确定性规则过滤、结构校验、上下文沙箱和会话级行为检查，在统一的留出集和统计检验下与现成护栏工具正面比较。</span></div>
+<div class="score-reason">评分依据：研究的是云端教育应用的提示注入防护，与端侧部署几乎无关，只因关注防护延迟而保留；贡献主要在评测方法。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.06669" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

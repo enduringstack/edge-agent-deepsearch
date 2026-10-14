@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AgentComm-Bench: Stress-Testing Cooperative Embodied AI Under Latency, Packet Loss, and Bandwidth Collapse</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>AgentComm-Bench: Stress-Testing Cooperative Embodied AI Under Latency, Packet Loss, and Bandwidth Collapse</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-03-18 · Aayam Bansal; Ishaan Gangwani / arXiv</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多智能体协作的具身 AI 通常假设通信完美，这个基准专门测试它们在延迟、丢包、带宽骤降等真实网络问题下会不会崩。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">通信依赖型任务退化严重：记忆过期和带宽崩塌让导航性能下降超过 96%，过期或冲突数据让协同感知 F1 下降超过 85%；提出的冗余消息编码在 80% 丢包下让导航性能提升一倍以上。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">覆盖协同感知、多智能体航点导航、协同区域搜索三类任务，系统注入六种通信损伤，对比五种通信策略，其中包括作者提出的冗余编码加“按新鲜度加权”的融合方法。</span></div>
+<div class="score-reason">评分依据：关注机器人、车辆、无人机等多智能体在真实无线链路下的鲁棒性，与端侧多智能体部署相关，但评测在仿真中完成，没有设备端执行；基准设计扎实，方法本身较轻量。</div>
+<div class="source"><a href="https://arxiv.org/abs/2603.20285" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Prose2Policy (P2P): A Practical LLM Pipeline for Translating Natural-Language Access Policies into Executable Rego</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Prose2Policy (P2P): A Practical LLM Pipeline for Translating Natural-Language Access Policies into Executable Rego</h1>
+<div class="meta"><span class="score">4</span> <span class="tier">官方动态</span>  2026-03-18 · Apple / Apple</div>
+<div class="tags"><span class="vendor-tag">Apple</span><span class="tag">应用:代码</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">苹果提出 Prose2Policy：用大模型把自然语言写的访问控制规则自动翻译成 Open Policy Agent 可执行的 Rego 策略代码，并自带校验和测试。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ACRE 数据集上，被接受策略的编译通过率 95.3%，自动生成测试的正例通过率 82.2%、反例通过率 98.9%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">流水线依次做策略识别、要素抽取、模式校验、代码规范检查、编译，再自动生成并执行测试用例，用工程化的多级检查兜住大模型生成代码的可靠性。</span></div>
+<div class="score-reason">评分依据：属于大模型在安全合规领域的应用工具，与端侧推理、部署和 Agent 运行时无直接关系，低分收录；方法是常见的多级校验工程整合。</div>
+<div class="source"><a href="https://machinelearning.apple.com/research/prose2policy" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>
