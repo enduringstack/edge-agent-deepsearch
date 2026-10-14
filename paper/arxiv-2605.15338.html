@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hidden in Memory: Sleeper Memory Poisoning in LLM Agents</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Hidden in Memory: Sleeper Memory Poisoning in LLM Agents</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-05-14 · Sidharth Pulipaka; Stanislau Hlebik; Leonidas Raghav; Sahar Abdelnabi; Vyas Raina; Ivaxi Sheth; Mario Fritz / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:安全隐私</span><span class="tag">应用:安全</span><span class="tag">模型:GPT</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">带持久记忆的大模型助理可能被网页、文档里的恶意内容写入一条关于用户的虚假记忆，并在之后多次对话中潜伏发作。本文系统研究这种“潜伏式记忆投毒”。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">虚假记忆写入成功率在 GPT-5.5 上最高达 99.8%，在 Kimi-K2.6 上达 95%；在成功被检索到的情况下，有 60%-89% 的评测会导致攻击者预期的 Agent 行为。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">攻击者操纵外部上下文诱导助理存下伪造记忆，作者按“写入—检索—影响后续对话”完整链路评测多个有状态大模型助理。</span></div>
+<div class="score-reason">评分依据：揭示 Agent 持久记忆的长期攻击面，对端侧个人助理的记忆设计有警示意义，但实验在云端助理上进行，相关度 3；首次完整评估潜伏式记忆投毒链路，贡献 6。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.15338" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

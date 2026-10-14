@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Coral: Cost-Efficient Multi-LLM Serving over Heterogeneous Cloud GPUs</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Coral: Cost-Efficient Multi-LLM Serving over Heterogeneous Cloud GPUs</h1>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-05-05 · Yixuan Mei; Zikun Li; Zixuan Chen; Shiqi Pan; Mengdi Wu; Xupeng Miao; Zhihao Jia; K. V. Rashmi / arXiv</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">云上有大量中端和老一代 GPU，Coral 要解决的是如何用这些异构 GPU 同时服务多个大模型、把成本压下来。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 6 个模型、20 种 GPU 配置上，服务成本比最佳基线最多降低 2.79 倍；资源紧张时有效吞吐最多提高 2.39 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把所有模型的资源分配和每个副本的并行/服务策略放在一起联合优化，并用无损的两阶段分解把在线求解时间从数小时缩到几十秒，以跟上需求变化。</span></div>
+<div class="score-reason">评分依据：纯云端多模型 serving 调度，与端侧部署关系较远；联合优化加快速求解是扎实的系统工程。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.04357" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

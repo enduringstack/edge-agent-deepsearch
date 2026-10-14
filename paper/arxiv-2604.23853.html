@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ClawTrace: Cost-Aware Tracing for LLM Agent Skill Distillation</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>ClawTrace: Cost-Aware Tracing for LLM Agent Skill Distillation</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-04-26 · Boqin Yuan; Yue Su; Renchu Song; Sen Yang; Jing Qin / Agent Skills '26 Workshop (CAIS 2026)</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:评测基准</span><span class="tag">方向:工具调用</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">从大模型智能体的执行轨迹里提炼可复用“技能”时，以往不知道每一步花了多少钱。ClawTrace 给每一步记上成本，再看提炼出的技能规则在新任务上是否真的有用。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 30 个 SpreadsheetBench 留出任务上，去掉“裁剪”类补丁后质量回退次数约增加到 3 倍，而中位成本并未下降；在完整 84 个 SkillsBench 迁移任务上整体没有省钱，3 次质量回退都来自“保留”类补丁，2 次质量提升都来自“裁剪”类补丁。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把带成本归因的智能体轨迹整理成 TraceCard，再由 CostCraft 生成“保留、裁剪、修复”三类技能补丁，按规则类型分别评估迁移效果。</span></div>
+<div class="score-reason">评分依据：研究对象是云端智能体的技能蒸馏与成本追踪，与端侧部署关系较远；按规则类型评估技能的视角有一定新意，并开源了追踪工具和技能集。</div>
+<div class="source"><a href="https://arxiv.org/abs/2604.23853" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

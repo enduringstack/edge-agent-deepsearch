@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A Queueing-Theoretic Framework for Stability Analysis of LLM Inference with KV Cache Memory Constraints</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>A Queueing-Theoretic Framework for Stability Analysis of LLM Inference with KV Cache Memory Constraints</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校顶会</span>  2026-05-06 · Chengyi Nie; Nian Si; Zijie Zhou / ICML 2026</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:KV cache</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型推理服务既受算力限制、又受 KV 缓存占用显存的限制，这篇论文用排队论回答“多大集群才能扛住某个请求速率而不排爆”。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在真实 GPU 生产环境中验证，推导出的稳定性条件与实测偏差通常在 10% 以内。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">建立首个同时把计算量和显存（KV 缓存）约束纳入的排队模型，推导服务稳定与不稳定的充分条件，再结合到达率估算所需集群规模。</span></div>
+<div class="score-reason">评分依据：面向云端 GPU 集群容量规划，与端侧关联较弱；把 KV 缓存显存约束纳入排队论分析有理论贡献，已被 ICML 2026 接收。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.04595" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

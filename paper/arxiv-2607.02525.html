@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PEEK: Predictive Queue-Informed KV Cache Management for LLM Serving</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>PEEK: Predictive Queue-Informed KV Cache Management for LLM Serving</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-05-10 · Bing Xie; Zhipeng Wang; Masahiro Tanaka; Zhen Zheng / arXiv</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:KV cache</span><span class="tag">方向:调度服务</span><span class="tag">硬件:H100</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">云端大模型服务里，排队中的请求常常共享相同前缀，但现有引擎只看已缓存内容、不看队列，导致缓存反复被冲掉。PEEK 让调度和缓存淘汰都提前参考等待队列。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 SGLang 和 vLLM 上、最多 4 张 H100 的五类负载中，相比各自最强默认基线，缓存命中最多提升 3.0/2.6 倍，首 token 时延改善 7.9/7.1 倍，端到端时延改善 6.7/5.5 倍，吞吐提升 3.6/4.5 倍；没有前缀可复用的负载上与基线持平。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对等待队列维护增量基数树，与引擎前缀缓存双向匹配找出每个请求的最长前缀；让同一前缀簇的先头请求先进入、后续请求直接复用，淘汰时保护被排队请求依赖的缓存块，并用多通道步幅调度防止饿死。</span></div>
+<div class="score-reason">评分依据：面向数据中心多卡的云端服务调度，与端侧部署关系较远。把等待队列信息引入前缀缓存调度是有新意的改进，收益数字显著。</div>
+<div class="source"><a href="https://arxiv.org/abs/2607.02525" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

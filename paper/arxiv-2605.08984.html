@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hardware-Accelerated Line-Rate Bitstream Screening for Secure FPGA Reconfiguration</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Hardware-Accelerated Line-Rate Bitstream Screening for Secure FPGA Reconfiguration</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-05-09 · Rye Stahle-Smith; Carter Antley; Jason D. Bakos; Rasha Karakchi / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">硬件:FPGA</span><span class="tag">应用:安全</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多租户云和边缘 AI 场景下，FPGA 配置文件可能被植入硬件木马。BLADEI 在加载前直接从原始比特流判断配置是否异常，不需要源码或网表。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 PYNQ-Z1 上评测 1383 个比特流，宏 F1 为 0.91；总时延 16.4 秒中软件特征提取占 92%，模型推理仅 1.4 秒，改用可编程逻辑上的流式硬件特征提取后可降到毫秒级。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">结合多尺度字节序列学习和紧凑统计特征做异常检测，并把耗时的特征提取搬到 FPGA 可编程逻辑上流式执行。</span></div>
+<div class="score-reason">评分依据：边缘 FPGA 的安全检测，用到端侧小模型推理，但主题是硬件安全，相关度偏低；发现预处理才是瓶颈并用硬件加速有一定价值。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.08984" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

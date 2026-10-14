@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Continuous Discovery of Vulnerabilities in LLM Serving Systems with Fuzzing</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Continuous Discovery of Vulnerabilities in LLM Serving Systems with Fuzzing</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-05-11 · Yunze Zhao; Yibo Zhao; Yuchen Zhang; Zaoxing Liu; Michelle L. Mazurek / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:云端serving</span><span class="tag">方向:KV cache</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型推理引擎的很多故障来自并发、缓存共享等服务层行为，常规测试抓不到。GRIEF 是一个专门给推理引擎做模糊测试的工具。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 vLLM 和 SGLang 上发现 15 个漏洞，其中 10 个获开发者确认、2 个获 CVE 编号，涵盖 KV cache 隔离失效、跨请求性能干扰和崩溃等。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把带时间信息的多请求轨迹当作测试输入，用轻量判定器检测崩溃、卡死、性能异常和静默输出污染，再通过受控重放和对数概率比对确认问题可复现。</span></div>
+<div class="score-reason">评分依据：针对云端推理服务引擎的安全测试，与端侧关系较弱；把并发服务行为作为安全边界来测，思路有价值。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.11202" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

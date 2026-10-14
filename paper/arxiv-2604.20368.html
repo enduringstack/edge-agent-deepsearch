@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LaplacianFormer:Rethinking Linear Attention with Laplacian Kernel</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>LaplacianFormer:Rethinking Linear Attention with Laplacian Kernel</h1>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-04-22 · Zhe Feng; Sen Lian; Changwei Wang; Muyang Zhang; Tianlong Tan; Rongtao Xu; Weiliang Meng; Xiaopeng Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:高效注意力</span><span class="tag">方向:模型架构</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">视觉 Transformer 的注意力计算量随分辨率平方增长。LaplacianFormer 用拉普拉斯核替代 softmax，做成线性复杂度的注意力。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ImageNet 上取得更好的精度与计算量平衡，在各个计算量区间都优于此前的线性注意力模型，摘要未给具体数值。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用拉普拉斯核衡量 token 相似度，配合保证单射的特征映射保留细节；用 Nyström 近似核矩阵、Newton-Schulz 迭代代替矩阵求逆，并编写了定制 CUDA 内核。</span></div>
+<div class="score-reason">评分依据：线性注意力属于高效推理技术栈，论文声称适合边缘部署但只在 GPU 上测试；核函数选择有理论依据，贡献中等。</div>
+<div class="source"><a href="https://arxiv.org/abs/2604.20368" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

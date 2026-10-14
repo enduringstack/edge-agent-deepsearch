@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dywave: Event-Aligned Dynamic Tokenization for Heterogeneous IoT Sensing Signals</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Dywave: Event-Aligned Dynamic Tokenization for Heterogeneous IoT Sensing Signals</h1>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-05-13 · Tomoyoshi Kimura; Denizhan Kara; Jinyang Li; Hongjue Zhao; Yigong Hu; Yizhuo Chen; Xiaomin Ouyang; Shengzhong Liu / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">应用:IoT命令</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">物联网传感器信号（加速度、音频、地震波等）长短不一、节奏多变，按固定窗口切 token 既浪费算力又切碎事件。Dywave 按信号里真实发生的事件动态切分并压缩 token。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在五个真实物联网数据集上，准确率最多比现有方法高 12%，输入 token 长度最多减少 75%；在树莓派 4 上实测，序列模型主干推理延迟普遍低于固定切块的 PatchTST 基线，长序列场景差距最明显。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用小波做多层分解，找出对应物理事件的时间边界，再把冗余平稳区间合并压缩，保留时间连贯性，生成更短但对齐事件的输入表示。</span></div>
+<div class="score-reason">评分依据：面向物联网端侧感知，并在树莓派 4 上做了真机延迟剖析，与资源受限设备直接相关，相关度 6；事件对齐的动态 token 化思路较新，贡献 6。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.14014" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

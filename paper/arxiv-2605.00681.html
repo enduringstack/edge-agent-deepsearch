@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Deployment-Efficient Short-Term Load Forecasting in AI Data Centers via Sequence-to-Point Knowledge Distillation</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Deployment-Efficient Short-Term Load Forecasting in AI Data Centers via Sequence-to-Point Knowledge Distillation</h1>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-05-01 · Lei Wang; Jiahao Chen; Fanping Sui; Ying Zhang; Di Shi / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:能耗功耗</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">美国几所大学提出一种蒸馏框架，用大模型教小模型来预测 AI 数据中心短时用电负载，让预测模型更容易大规模部署。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 MIT Supercloud 数据集上，学生模型预测精度优于近期深度学习基线，同时参数内存和模型体积缩小 10 倍以上。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先训练带残差学习的序列教师模型做多步负载预测，再训练逐点预测的轻量学生模型，通过对齐近期预测行为和时间池化表示实现“序列到点”的知识蒸馏。</span></div>
+<div class="score-reason">评分依据：属于数据中心运维场景的轻量预测模型，与端侧 AI 推理关系弱；蒸馏压缩思路较常规。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.00681" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

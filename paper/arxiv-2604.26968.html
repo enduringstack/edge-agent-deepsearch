@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Predictive Multi-Tier Memory Management for KV Cache in Large-Scale GPU Inference</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Predictive Multi-Tier Memory Management for KV Cache in Large-Scale GPU Inference</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-04-19 · Sanjeev Rao Ganjihal / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span><span class="tag">模型:DeepSeek</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大规模 GPU 推理服务中 KV cache 内存是主要瓶颈，这项工作统一计算各种注意力结构的缓存大小，并把缓存扩展到六级存储层次。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">对 DeepSeek-V3 这类 MLA 模型批大小提升 7.4 倍；单节点有效缓存容量从 40 GB 扩到 38 TB 以上，热数据首字时延保持亚毫秒；轨迹回放缓存命中率 70-84%；集群级收益为分析推算。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按注意力类型精确计算缓存需求，用贝叶斯复用预测器驱动按头粒度的淘汰和预取，在 GPU 显存、CPU 内存、CXL、NVMe 等层之间搬运缓存。</span></div>
+<div class="score-reason">评分依据：属于云端大规模 serving 的 KV cache 管理，对端侧只有思路参考；部分结果是分析推算而非实测。</div>
+<div class="source"><a href="https://arxiv.org/abs/2604.26968" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

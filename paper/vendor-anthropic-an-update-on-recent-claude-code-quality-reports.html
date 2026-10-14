@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>An update on recent Claude Code quality reports</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>An update on recent Claude Code quality reports</h1>
+<div class="meta"><span class="score">5</span> <span class="tier">官方动态</span>  2026-04-23 · Anthropic / Anthropic</div>
+<div class="tags"><span class="vendor-tag">Anthropic</span><span class="tag">应用:代码</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Anthropic 复盘近期 Claude Code 质量下降的原因：查出三处产品层改动叠加，导致编码质量和体验变差。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">原文未给出质量下降的量化幅度；三处问题分别于 4 月 7 日回滚、4 月 10 日修复、4 月 20 日回滚，到 v2.1.116 全部解决，4 月 23 日起重置所有订阅用户的用量额度。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">逐一排查后定位到：默认推理强度从高调到中、空闲会话后每轮都清掉旧思考内容的 bug、以及一条压缩回复长度的系统提示，三者分别回滚或修复，API 和推理层本身没有受影响。</span></div>
+<div class="score-reason">评分依据：这是云端编码 Agent 的产品事故复盘，与端侧部署无关；推理强度与上下文管理的取舍对 Agent 工程有一定借鉴，但没有新方法。</div>
+<div class="source"><a href="https://www.anthropic.com/engineering/april-23-postmortem" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

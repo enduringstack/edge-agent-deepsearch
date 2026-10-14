@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Improving the Performance and Learning Stability of Parallelizable RNNs Designed for Ultra-Low Power Applications</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Improving the Performance and Learning Stability of Parallelizable RNNs Designed for Ultra-Low Power Applications</h1>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-05-12 · Julien Brandoit; Arthur Fyon; Damien Ernst; Guillaume Drion / ICML 2026</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:能耗功耗</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">为超低功耗模拟电路设计的循环网络单元 BMRU 能持久记忆，但在复杂序列任务上表现落后。本文找到梯度被阻断的原因并提出改进版 CMRU。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">CMRU 与 αCMRU 显著提升收敛稳定性、降低对初始化的敏感度，在小模型规模下多个基准上追平或超过 LRU 和 minGRU，尤其擅长需要离散长程记忆的任务。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把状态更新改成累加形式，在时间维上形成跳跃连接以恢复梯度流，同时保留量化状态、滞回持久记忆和抗噪特性，可直接映射到模拟电路。</span></div>
+<div class="score-reason">评分依据：面向超低功耗模拟硬件的软硬件协同循环网络，对极低功耗端侧序列处理有直接意义，但尚无芯片实测。ICML 2026 接收为 Spotlight。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.11855" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

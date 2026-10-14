@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TinyBayes: Closed-Form Bayesian Inference via Jacobi Prior for Real-Time Image Classification on Edge Devices</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>TinyBayes: Closed-Form Bayesian Inference via Jacobi Prior for Real-Time Image Classification on Edge Devices</h1>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-05-07 · Shouvik Sardar; Sourish Das / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">西非可可种植户需要在没网、只有低端设备的情况下识别叶片病害。TinyBayes 把轻量视觉模型和一个闭式贝叶斯分类器组合，做成可离线运行、带不确定性的病害识别流水线。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">整条流水线总大小在 9.5MB 以内（贝叶斯分类器只占 13.5KB），在 Amini 可可病害数据集上准确率 78.7%，CPU 端到端每张图推理不到 150 毫秒，在七种分类器对比中精度、体积、速度权衡最好。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 YOLOv8-Nano 定位病斑、MobileNetV3-Small 提特征，最后用基于 Jacobi 先验的分布式多项回归分类器，它通过投影直接给出闭式解、无需迭代训练。</span></div>
+<div class="score-reason">评分依据：明确面向离线、资源受限的边缘设备并给出 CPU 实测时延与模型体积，端侧相关度较高；闭式贝叶斯分类器与轻量视觉模型的组合有一定新意，但整体以应用整合为主。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.06333" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MemQ: Integrating Q-Learning into Self-Evolving Memory Agents over Provenance DAGs</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>MemQ: Integrating Q-Learning into Self-Evolving Memory Agents over Provenance DAGs</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-05-08 · Junwei Liao; Haoting Shi; Ruiwen Zhou; Jiaqian Wang; Shengtao Zhang; Wei Zhang; Ying Wen; Zhiyu Li / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体积累的经验记忆往往被逐条孤立评价，忽略了一条记忆会帮助产生后续记忆。MemQ 用强化学习的办法沿记忆之间的“来源链”回传价值，让智能体学会用更有价值的记忆。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在操作系统交互、函数调用、代码生成、多模态推理、具身推理、专家问答 6 个基准上成功率全部最高；多步任务提升最大，最多 5.7 个百分点，单步分类仅 0.77 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">记录每条新记忆生成时检索了哪些旧记忆，形成有向无环图，再用 TD(λ) 资格迹把回报沿图回传给各记忆的 Q 值，权重随图深度衰减。</span></div>
+<div class="score-reason">评分依据：属于 Agent 记忆机制，与端侧运行时有间接关系，相关度偏低；把记忆依赖链纳入信用分配有新意。PDF 首页有作者署名 MemTensor (Shanghai) Technology Co., Ltd.。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.08374" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

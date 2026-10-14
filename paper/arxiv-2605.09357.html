@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Split CNN Inference on Networked Microcontrollers</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Split CNN Inference on Networked Microcontrollers</h1>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-05-10 · Junyu Lu; Shashwath Suresh; Hao Liu; Qi Hong; Qing Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:端云协同</span><span class="tag">硬件:MCU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">单片机内存太小，很多 CNN 推理时中间激活一放就超出 RAM。这篇让多块联网的单片机细粒度地分摊一次推理，把单片跑不动的模型跑起来。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 8 块 Teensy 4.1 单片机组成的真机测试床上跑通了单片放不下的 MobileNetV2；3、5、8 块时端到端推理分别为 42.97、45.61、56.89 秒，计算时间从 15.37 秒降到 7.07 秒，通信成为主要开销；考虑通信的调度在异构场景下把时延从 54.83 秒降到 44.45 秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把卷积按卷积核、全连接按神经元拆到不同单片机上，同时分散权重和中间激活；一个轻量协调器按各设备的算力、内存、带宽评分分配负载。</span></div>
+<div class="score-reason">评分依据：在真实单片机集群上实测推理，直接解决 TinyML 的峰值内存瓶颈，端侧相关度高。子层粒度的跨单片机切分有新意，但秒级时延说明离实用还有距离。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.09357" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

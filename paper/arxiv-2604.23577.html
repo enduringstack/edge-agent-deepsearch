@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RouteNLP: Closed-Loop LLM Routing with Conformal Cascading and Distillation Co-Optimization</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>RouteNLP: Closed-Loop LLM Routing with Conformal Cascading and Distillation Co-Optimization</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-04-26 · Dongxin Guo; Jikun Wu; Siu Ming Yiu / ACL 2026 Industry Track</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">方向:蒸馏</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">企业里七成以上的大模型请求其实小模型就能处理。RouteNLP 把请求分流到不同大小的模型上，在满足质量要求的前提下尽量省钱。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在某企业客服部门 8 周试点（每天约 5000 条请求）中，推理成本降低 58%，回复采纳率保持 91%，P99 延迟从 1847 毫秒降到 387 毫秒；在金融、客服、法律六项任务上成本降低 40%-85%，结构化任务保留 96%-100% 质量。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">难度感知路由器决定用哪个模型，基于保形预测的置信度级联决定是否升级；再把升级失败的案例聚类，针对性蒸馏小模型并自动重训路由器，形成闭环。</span></div>
+<div class="score-reason">评分依据：属于云端多模型路由与降本，思路可迁移到端云协同分流，但没有端侧实验，相关度低；路由、级联、定向蒸馏闭环联动并有真实部署数据，贡献中等。已被 ACL 2026 Industry Track 接收；公司归属依据 arXiv 论文首页作者 2 署名 Stellaris AI Limited。</div>
+<div class="source"><a href="https://arxiv.org/abs/2604.23577" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

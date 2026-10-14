@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hardware-Software Co-Design of Scalable, Energy-Efficient Analog Recurrent Computations</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Hardware-Software Co-Design of Scalable, Energy-Efficient Analog Recurrent Computations</h1>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-05-12 · Arthur Fyon; Julien Brandoit; Loris Mendolia; Damien Ernst; Jean-Michel Redouté; Guillaume Drion / arXiv</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:模型架构</span><span class="tag">应用:语音</span><span class="tag">硬件:CIM</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">常开型 AI（环境传感器、植入式医疗设备）需要亚微瓦级功耗，但模拟电路以前只能做前馈网络。本文通过软硬件协同设计，首次让循环神经网络也能用超低功耗模拟电路实现。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">180 纳米 CMOS 晶体管级仿真显示，软件模型与电路行为几乎完全一致；离散输出让每个单元边界的模拟噪声至少降低 20 倍；关键词唤醒任务中循环网络核心功耗约 100 纳瓦。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">选用输出离散、带滞回特性的双稳态记忆循环单元，并从第一性原理设计电流模式模拟电路，让每个可学习参数对应一个电路元件；再把单元改写为第一象限、固定阈值的形式，保证可训练性。</span></div>
+<div class="score-reason">评分依据：直接面向常开型极低功耗端侧推理，并给出晶体管级仿真的关键词唤醒功耗，但尚无流片实测，相关度 7；突破模拟电路做循环网络的噪声累积障碍，贡献 7。</div>
+<div class="source"><a href="https://arxiv.org/abs/2605.15216" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>
