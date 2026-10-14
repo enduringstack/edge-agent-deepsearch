@@ -48,8 +48,8 @@
 - **score_contribution**（0-10）：创新度高 7-10；常见方法/工程整合 1-6。
 - **tags**：1-8 个，必须取自 `data/tags.yaml`。`方向:端侧agent` 只在 edge_agent_scope 为手机/PC/其他端侧时使用。
 - **edge_agent_scope**：真正端侧 Agent = 同时具备 Agent 闭环（规划/记忆/工具调用/环境交互/行动之一）**和**设备端执行证据（关键闭环至少部分实际运行在手机/PC/机器人/汽车/IoT 上；端云协同时终端承担时延敏感闭环）。手机/PC 只是云端 Agent 的入口、普通端侧推理/量化/缓存/检测、纯云端 Agent 训练基础设施，一律 `非端侧Agent`。凡判为 手机/PC/其他端侧，必须写 edge_agent_evidence，并且 score_relevance ≥ 8、recommend=true。
-- **company**：只有在论文首页作者机构（arXiv HTML/PDF 署名或邮箱域名）明确出现公司时才填，例如 Google、Apple、Meta、Microsoft、NVIDIA、Qualcomm、Samsung、Huawei、MediaTek、Xiaomi、OPPO、vivo、Honor、Alibaba/Qwen、ByteDance、Tencent、Baidu、Kuaishou、Meituan、JD、Pinduoduo、NetEase、Intel、AMD、Arm、SK hynix 等。`vendors` 写公司英文名（多家用 `; ` 分隔），`evidence_url` 写 `https://arxiv.org/pdf/<id>`，`evidence_note` 写中文依据（如“PDF 首页作者 3、4 署名 Qualcomm AI Research”）。不许凭作者名、模型名、被研究的平台名推测；不确定就留空。
-- **accepted_top_venue**：Comments 明确写被 NeurIPS/ICML/ICLR/MobiSys/SenSys/ASPLOS/ACL/CVPR/ICCV/EMNLP/AAAI/IJCAI/TPAMI/TNNLS/ToN（或同级：MICRO/ISCA/HPCA/EuroSys/OSDI/SOSP/MobiCom/DAC）接收时为 true，并把 venue 写成会议名+年份。
+- **company**：只有在论文首页作者机构（arXiv HTML/PDF 署名或邮箱域名）明确出现公司时才填，例如 Google、Apple、Meta、Microsoft、NVIDIA、Qualcomm、Samsung、Huawei、MediaTek、Xiaomi、OPPO、vivo、Honor、Alibaba/Qwen、ByteDance、Tencent、Baidu、Kuaishou、Meituan、JD、Pinduoduo、NetEase、Intel、AMD、Arm、SK hynix 等。`vendors` 写公司英文名（多家用 `; ` 分隔），`evidence_url` 写 `https://arxiv.org/pdf/<id>`，`evidence_note` 写中文依据（如“PDF 首页作者 3、4 署名 Qualcomm AI Research”）。不许凭作者名、模型名、被研究的平台名推测；不确定就留空。作者注明“以个人身份”或只写“现就职于”的不算该公司的项目。
+- **accepted_top_venue**：Comments 明确写被 NeurIPS/ICML/ICLR/MobiSys/SenSys/ASPLOS/ACL/CVPR/ICCV/EMNLP/AAAI/IJCAI/TPAMI/TNNLS/ToN（或同级：MICRO/ISCA/HPCA/EuroSys/OSDI/SOSP/MobiCom/DAC）接收时为 true，并把 venue 写成会议名+年份。Findings、Industry Track、Workshop、学生研讨会（SRW）一律不算顶会（`accepted_top_venue=false`，venue 照写，如“ACL 2026 Findings”）；ACM CCS、IEEE S&P 等安全四大按同级算。
 - **recommend**：值得读者优先看的才 true（端侧真机结果扎实、方法有新意、或对端侧 Agent 有直接价值）。整批通常只有少数几条。recommend=true 时必须写：
   - `title_zh`：中文项目名，回答“它叫什么”，2 个以上中文字符，≤40 字，不能复制 abstract。
   - `recommendation_reason`：一句中文说明“为什么值得优先看”，要具体（关键发现/数字/对谁有用），不能复述标题或写评分流水账。
