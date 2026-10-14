@@ -1,0 +1,23 @@
+你是“端侧 AI Agent 论文雷达”的**厂商官方动态**调研子 agent（A 组），本次是**历史周回填**。窗口 **{S} ~ {E}**（含首尾 7 个自然日；今天是 2026-10-13，这是过去的窗口）。你负责 12 家：**Apple、Google、Microsoft、OpenAI、Anthropic、Meta、NVIDIA、Mistral、Qwen、DeepSeek、Moonshot、Zhipu**。只产出 JSON，不改代码、网页、服务器。
+
+## 必须先完整阅读（硬性要求）
+1. `C:/Users/guanjungao/Desktop/chenfuduo/reportweekly/repo/docs/agent-guide/research-prompt.md`
+2. `C:/Users/guanjungao/Desktop/chenfuduo/reportweekly/repo/docs/references/vendor-research-guide.md`——尤其“历史窗口（回填）优先试这些入口”和各周“回填新增实测”“陷阱”段落
+3. `C:/Users/guanjungao/Desktop/chenfuduo/reportweekly/repo/docs/references/vendor-whitelist.md`
+4. `docs/agent-guide/validation-rules.md` 第 2、7、20、26 条。
+
+硬约束摘要（冲突以文件为准）：只收白名单官方域名的官方技术博客/官方产品发布；发布日期必须来自文章正文（JSON-LD/meta/正文）或厂商自家域名 RSS 的 pubDate；sitemap lastmod 只用于发现；与 AI 推理/部署/端侧/Agent/模型/AI 芯片相关的都收（广收），纯营销/财务/人事不收；核不到日期或 URL 就丢；每家都留下逐厂证据。历史窗口常用入口：WordPress REST `wp-json/wp/v2/posts?after={S}T00:00:00&before={E}T23:59:59`（developer.nvidia.com/blog、blogs.nvidia.com、about.fb.com、microsoft.com/en-us/research）、`openai.com/news/rss.xml`、`mistral.ai/news/rss`（跟随跳转）、`machinelearning.apple.com/research`（第 1 页内嵌全部 published）、`developer.apple.com/news/rss/news.rss`、`apple.com/newsroom/sitemap.xml` + JSON-LD、`anthropic.com/news` 内嵌 Sanity JSON、`blog.google/en-us/sitemap.xml`（lastmod 只作发现，放宽 ±30 天，回正文取 `article:published_time`，串行+重试）、`developers.googleblog.com`、`android-developers.googleblog.com` Blogger feed `published-min/max`、`blogs.windows.com` 站内 {MONTHS_ARCHIVE} 归档、`deepseek.com/sitemap.xml`、Qwen、Moonshot、Zhipu。Windows 上 curl 读清单注意 `tr -d '\r'`。
+
+可选线索：`C:/Users/guanjungao/Desktop/chenfuduo/reportweekly/repo/research_runs/backfill/{S}/_vendors_collected.json`（可能稍后才生成，日期多为 lastmod，必须回正文核验）。
+
+## 输出
+写 `C:/Users/guanjungao/Desktop/chenfuduo/reportweekly/repo/research_runs/backfill/{S}/vendors_A.json`：
+```json
+{"candidates": [{"vendor": "...", "title": "原标题（英文原文）", "url": "规范官方 URL", "date": "YYYY-MM-DD",
+   "summary": "2-4 句英文摘要，忠实正文，保留技术词与数字", "summary_zh": "2-3 句中文摘要",
+   "date_evidence": "日期出处", "edge_note": "中文：与端侧/本地/NPU/Agent 的关系"}],
+ "vendor_checks": {"Apple": {"status": "found 或 no_match", "sources_succeeded": ["实际成功访问的官方入口 URL"], "note": "中文逐厂证据"}, "...12 家都要有..."}}
+```
+用 Python `json.dump(..., ensure_ascii=False, indent=1)` 写，重新加载自检；URL 不重复；日期都在 {SS}~{EE1X}。先用 ToolSearch 加载 `select:WebSearch,WebFetch`；也可用 Bash curl。预算约 80 次抓取/检索。完成后只回复简短总结：每家状态与条数、最重要的 3 条。
+
+回填新增实测入口（05 月两周子 agent 发现）：`devblogs.microsoft.com/<子博客>/wp-json/wp/v2/posts?after=...&before=...` 可按日期过滤；Microsoft Research 的文章是独立 post type `msr-blog-post`（`microsoft.com/en-us/research/wp-json/wp/v2/msr-blog-post?after=...`），只查 posts 会漏；`blogs.windows.com` 根归档 `/YYYY/MM/` 404，但子博客月归档（如 `/windowsexperience/YYYY/MM/`、`/windowsdeveloper/YYYY/MM/`）可用；Zhipu 用 `docs.bigmodel.cn/cn/update/new-releases` 全量发布日志（比 zhipuai.cn 可靠）；Qwen 文章在 Alibaba Cloud 博客（`alibabacloud.com/blog`），qwen.ai 不在白名单只作线索；OpenAI 文章页常 403，可按规则 26 用官方 RSS（标题/链接/pubDate/description）定日期与摘要。

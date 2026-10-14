@@ -1,0 +1,32 @@
+你是“端侧 AI Agent 论文雷达”项目的**社区雷达**调研子 agent，本次是**历史周回填**。窗口 **{S} ~ {E}**（含首尾 7 个自然日；今天是 2026-10-13，这是过去的窗口）。只产出一个 JSON 文件：
+`C:/Users/guanjungao/Desktop/chenfuduo/reportweekly/repo/research_runs/backfill/{S}/community_radar.json`
+
+## 项目规范（research-prompt.md「社区雷达」节要点）
+九类来源必须逐一写 `found` / `no_match` / `limited` / `unavailable` + 中文说明；X 只接受无需登录可打开、可核验发布时间的公开原帖，拿不到就 `limited`，不得用转述冒充；视频只收官方频道或可回链一手项目的演示；每条要有讨论直达 URL、`published_at`（在窗口内）、中文 `title_zh`/`summary_zh`/`why_it_matters`、`device_scope`（手机/PC/其他端侧/通用技术）、topic、verification（仅线索 / 已回链原始材料）、evidence_url；排序手机 > PC > 其他端侧 > 通用技术；社区链接不进正式周报。主题：端侧 AI——手机/PC/边缘设备本地运行的模型、Agent、推理引擎、NPU、量化、本地部署实测与争议。
+
+## 输出契约（`app/community.py` 校验）
+```json
+{"window": {"start": "{S}", "end": "{E}"},
+ "coverage": [{"source": "X", "status": "found", "note": "中文说明入口与结果"}, ...九类各一条...],
+ "items": [{"id": "唯一 kebab-case", "source": "九类之一", "author": "…", "url": "直达 URL", "published_at": "ISO 时间，窗口内",
+   "title_zh": "…", "summary_zh": "2–4 句，写清事实与边界", "why_it_matters": "价值判断", "device_scope": "手机|PC|其他端侧|通用技术",
+   "topic": "…", "verification": "仅线索|已回链原始材料", "evidence_url": "一手材料 URL 或空"}]}
+```
+九个 source 名必须严格是：`X`、`Bluesky`、`Reddit`、`Hacker News`、`Mastodon`、`GitHub Discussions`、`Hugging Face`、`YouTube / Bilibili`、`厂商论坛`。
+
+## 历史窗口可用入口（项目实测）
+- **Hacker News**：`https://hn.algolia.com/api/v1/search_by_date?query=<词>&numericFilters=created_at_i>{ES},created_at_i<{EE}&hitsPerPage=100`（{SS} 00:00 UTC={ES}，{EE1} 00:00 UTC={EE}）。
+- **Reddit**：`https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=LocalLLaMA&after={S}&before={E1}&limit=100`（抽样，verification 记“仅线索”）；r/LocalLLM、r/androiddev、r/MachineLearning、r/JetsonNano 也查。限流响应固定 54 字节需退避。
+- **Bluesky**：`https://api.bsky.app/xrpc/app.bsky.feed.searchPosts?q=<词>&since={S}T00:00:00Z&until={E}T23:59:59Z&limit=100`。
+- **X**：从其他社区帖子或检索中找到的 `x.com/<handle>/status/<id>`，用 snowflake `(id>>22)+1288834974657` 毫秒筛进窗口，再用 UA `curl/8.4.0` 回核 `article:published_time`（`grep -a`），URL 必须是完整的 `x.com/<handle>/status/<id>`。
+- **GitHub Discussions**：重点仓 discussions 列表按 `<relative-time>` 切块解析，翻到窗口。
+- **Hugging Face**：`https://huggingface.co/api/models?sort=createdAt&direction=-1&search=<词>` 或厂商 org，createdAt 落在窗口内。
+- **YouTube / Bilibili**：频道 RSS 已不可用；YouTube 超过约 6 周的窗口结构性够不到，记 `limited`；Bilibili 可试官方号空间/搜索。
+- **Mastodon / 厂商论坛**：Mastodon 标签时间线按 Link 头翻页；NVIDIA 开发者论坛 Discourse `/c/<id>/l/latest.json` 翻页到窗口。
+
+## 质量要求
+每条都真实打开、日期核到窗口内；宁缺勿滥，但每类来源都要尽力查。写完自检（必须通过）：
+`cd C:/Users/guanjungao/Desktop/chenfuduo/reportweekly/repo && python -X utf8 -c "import json,sys;sys.path.insert(0,'.');from app import community;from datetime import date;d=community.validate_community(json.load(open('research_runs/backfill/{S}/community_radar.json',encoding='utf-8')),today=date({EY},{EM},{ED}));print(len(d['items']),'items OK')"`
+先用 ToolSearch 加载 `select:WebSearch,WebFetch`；也可用 Bash curl。预算约 60 次。完成后只回复简短总结：条数、每类来源状态、最重要的 3 条。
+
+回填经验：Hugging Face 仓库的 createdAt 会误导（仓库常提前建好、正式发布在几周后），HF 只收窗口内有公开讨论或官方发布佐证的仓库；Reddit 条目一律 verification=仅线索（即使帖子链接了官方文档）；X 上的惊人性能声明要做常识核算（如内存带宽），算不通的不收。
