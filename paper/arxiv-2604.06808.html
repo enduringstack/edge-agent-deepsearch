@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CBM-Dual: A 65-nm Fully Connected Chaotic Boltzmann Machine Processor for Dual Function Simulated Annealing and Reservoir Computing</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>CBM-Dual: A 65-nm Fully Connected Chaotic Boltzmann Machine Processor for Dual Function Simulated Annealing and Reservoir Computing</h1>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-04-08 · Kanta Yoshioka; Soshi Hirayae; Yuichiro Tanaka; Yuichi Katori; Takashi Morie; Hakaru Tamukoh / arXiv</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">硬件:神经形态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">CBM-Dual 是一颗 65nm 流片的混沌玻尔兹曼机芯片，同一颗芯片既能做组合优化（模拟退火），又能做时间序列识别（储备池计算），面向自主边缘 AI。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">芯片面积 12mm²，1024 个全连接神经元；乘加运算减少 99%、面积减少 59%，能效在模拟退火和储备池计算上分别提升 25 到 54 倍和 4.5 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用神经元翻转率低的特点设计专用调度器跳过大部分乘加，再用乘法拆分方案压缩电路面积，在数字电路上实现大规模混沌动力学计算。</span></div>
+<div class="score-reason">评分依据：实打实的流片芯片，面向边缘实时决策和轻量自适应，硬件证据扎实；但计算范式是混沌动力学而非主流神经网络推理，对端侧大模型或 Agent 的直接迁移价值有限。</div>
+<div class="source"><a href="https://arxiv.org/abs/2604.06808" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

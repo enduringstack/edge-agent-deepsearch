@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SOLARIS: Speculative Offloading of Latent-bAsed Representation for Inference Scaling</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>SOLARIS: Speculative Offloading of Latent-bAsed Representation for Inference Scaling</h1>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span>  2026-04-13 · Zikun Liu; Liang Luo; Qianru Li; Zhengyu Zhang; Wei Ling; Jingyi Shen; Zeliang Chen; Yaning Huang / SIGIR 2026 Industry Track</div>
+<div class="tags"><span class="vendor-tag">Meta</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">广告推荐的基础大模型太贵，无法放进实时服务链路。SOLARIS 借鉴投机解码的思路，提前异步算好未来可能用到的用户-物品表示。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">部署在 Meta 广告系统（每天数十亿请求）后，带来 0.67% 的营收相关核心指标提升。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">预测哪些用户-物品组合会在后续请求中出现，提前异步调用基础模型生成它们的表示，把昂贵推理从时延敏感的服务路径中剥离。</span></div>
+<div class="score-reason">评分依据：是云端推荐系统的服务优化，与端侧关系弱；把投机思想用于表示预计算有一定新意，已被 SIGIR 2026 Industry Track 接收。PDF 首页作者机构为 Meta AI。 作者机构依据：arXiv PDF 首页署名 Meta（PDF 首页全部作者署名 Meta AI, Menlo Park）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2604.12110" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

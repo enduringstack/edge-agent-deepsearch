@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rethinking Residual Errors in Compensation-based LLM Quantization</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Rethinking Residual Errors in Compensation-based LLM Quantization</h1>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-04-09 · Shuaiting Li; Juncan Deng; Kedong Xu; Rongtao Deng; Hong Gu; Minghan Jiang; Haibin Shen; Kejie Huang / ICLR 2026</div>
+<div class="tags"><span class="vendor-tag">vivo</span><span class="tag">方向:量化</span><span class="tag">方向:编译部署</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">GPTQ 这类逐层量化补偿方法在校准时对齐的目标其实有偏差。论文重新推导残差误差，让量化模型每一步都对齐原始全精度模型的输出。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">原文称在多种大模型和量化设置下，作为插件接入 GPTQ 和 GPTAQ 后都显著提升量化效果；摘要未给出统一的核心数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把校准目标从对齐补偿后权重的输出改为对齐原始全精度输出，并指出层内补偿权重与原权重的差异也会产生误差，借用 GPTAQ 的神经元分解把这部分误差高效并入权重更新。</span></div>
+<div class="score-reason">评分依据：大模型权重量化是端侧部署的核心技术，改进可直接用于 GPTQ 类流程；作者来自手机厂商 vivo。被 ICLR 2026 接收，属于对现有方法的精细改进。 作者机构依据：arXiv PDF 首页署名 vivo（PDF 首页多位作者署名 vivo Mobile Communication Co., Ltd，含 vivo.com 邮箱）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2604.07955" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

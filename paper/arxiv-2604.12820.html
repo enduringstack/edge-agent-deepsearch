@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RePAIR: Interactive Machine Unlearning through Prompt-Aware Model Repair</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>RePAIR: Interactive Machine Unlearning through Prompt-Aware Model Repair</h1>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-04-14 · Jagadeesh Rachapudi; Pranav Singh; Ritali Vatsi; Praful Hambarde; Amit Shukla / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:测试时自适应</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型会记住有害知识、错误信息和个人数据，而现有遗忘方法都要服务商重训。RePAIR 让用户在推理时用一句自然语言让模型忘掉指定内容。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在有害知识抑制、错误信息纠正和个人数据删除任务上，遗忘指标接近 0（Acc_f=0.00），同时保留效用（Acc_r 最高 84.47），优于 6 个基线；低秩版本比基于训练的方法最多快约 3 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">由看门狗模型识别遗忘意图、外科医生模型生成修复步骤，再用免训练的伪逆闭式更新把相关 MLP 激活引向拒答子空间；低秩版本把计算复杂度从 d³ 降到 r³+r²d。</span></div>
+<div class="score-reason">评分依据：作者把低成本、免训练的单样本遗忘定位为可在端侧进行的模型编辑，但论文没有设备上的实测；交互式遗忘的设定和闭式更新方法有新意。</div>
+<div class="source"><a href="https://arxiv.org/abs/2604.12820" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

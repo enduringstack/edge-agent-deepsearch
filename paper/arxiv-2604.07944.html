@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>On-Policy Distillation of Language Models for Autonomous Vehicle Motion Planning</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>On-Policy Distillation of Language Models for Autonomous Vehicle Motion Planning</h1>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-04-09 · Amirhossein Afsharrad; Amirhesam Abedsoltan; Ahmadreza Moradipari; Sanjay Lall / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:规划推理</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用大模型做自动驾驶轨迹规划效果不错，但车上算力放不下大模型。论文研究怎样把大模型老师的规划能力有效迁移给小 5 倍的学生模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 nuScenes 上，在线策略广义知识蒸馏（GKD）明显优于用老师对数概率做奖励的强化学习基线，学生模型在体积缩小 5 倍的情况下接近老师水平。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">基于 GPT-Driver 框架把驾驶场景写成文本并生成航点；学生在自己生成的输出上训练，由老师逐 token 给出密集反馈。</span></div>
+<div class="score-reason">评分依据：直接面向车载受限算力部署大模型规划器，属于端侧可迁移工作，但没有车载硬件实测。方法是现成在线蒸馏技术在驾驶规划上的应用。</div>
+<div class="source"><a href="https://arxiv.org/abs/2604.07944" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

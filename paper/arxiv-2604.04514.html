@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SuperLocalMemory V3.3: The Living Brain -- Biologically-Inspired Forgetting, Cognitive Quantization, and Multi-Channel Retrieval for Zero-LLM Agent Memory Systems</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-04-17 · Varun Pratap Bhardwaj / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:量化</span><span class="tag">应用:RAG</span><span class="tag">硬件:CPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">SuperLocalMemory V3.3 是给编程智能体用的本地记忆系统，不依赖云端大模型、只用 CPU 就能完成记忆的存储、遗忘和检索。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 LoCoMo 长对话记忆基准上，零大模型模式得分 70.4%，多跳题 +23.8 个百分点、对抗题 +12.7 个百分点；上一版 V3.2 该模式为 74.8%。新距离度量在区分高保真与量化向量时精度 100%（余弦为 85.6%）。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用模仿人脑遗忘曲线的机制决定记忆何时逐步压缩成更低精度的向量，再用语义、关键词、实体图、时间、联想等 7 路通道联合检索；以守护进程常驻本机，通过 MCP 工具接入 Claude Code 等智能体。</span></div>
-<div class="score-reason">评分依据：记忆存取与检索完全在本机 CPU 上运行，但它服务的编程智能体主体仍依赖云端模型，整体不算端侧智能体；作者为独立研究者，部分新颖性表述偏强，属工程整合。</div>
-<div class="source"><a href="https://huggingface.co/papers/2604.04514" target="_blank" rel="noopener">查看原文 →</a></div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-04-06 · Varun Pratap Bhardwaj / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">方向:量化</span><span class="tag">应用:代码</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">AI 编程助手每次开新会话都会忘记之前聊过的内容。SuperLocalMemory V3.3 是一个完全在本地 CPU 上运行、核心操作不依赖大模型的 Agent 记忆系统，模仿人类记忆的遗忘和多通道回忆。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LoCoMo 长对话记忆基准上，不调用大模型的模式 A 得分 70.4%，多跳题提升 23.8 个百分点、对抗题提升 12.7 个百分点；上一版 V3.2 模式 A 为 74.8%。新距离度量在区分高保真与量化嵌入时准确率 100%（余弦距离为 85.6%）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按艾宾浩斯遗忘曲线管理记忆生命周期，越久不用的记忆嵌入压缩得越狠；检索同时走语义、关键词、实体图、时间等 7 个通道；用 SQLite 加向量扩展本地存储，通过 MCP 工具接入 Claude Code 等编程助手。</span></div>
+<div class="score-reason">评分依据：记忆的存储、遗忘和检索完全在本地 CPU 运行，属于可直接用于端侧 Agent 的记忆运行时；但它服务的编程助手本身仍依赖云端模型，论文也没有给出具体设备上的性能测试，因此不算端侧 Agent。作者为独立研究者，评估以单一基准为主。</div>
+<div class="source"><a href="https://arxiv.org/abs/2604.04514" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>
