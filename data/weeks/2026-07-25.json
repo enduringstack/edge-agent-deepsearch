@@ -7297,17 +7297,17 @@
       {
         "source": "X",
         "status": "found",
-        "note": "未登录无法检索 X；从 Hacker News 窗口内帖子回链到 antirez 的公开原帖，snowflake 换算为 2026-07-28 16:09 UTC，再用 curl UA 回核 article:published_time=2026-07-28T16:09:20Z 与 og:description 正文，收 1 条；其余 X 链接未在社区来源中出现，未做转述替代。"
+        "note": "未登录无法检索 X；从 Hacker News 窗口内帖子回链到 antirez 的公开原帖，snowflake 换算为 2026-07-28 16:09 UTC，再用 curl UA 回核 article:published_time=2026-07-28T16:09:20Z 与 og:description 正文，收 1 条；其余 X 链接未在社区来源中出现，未做转述替代。（07-24 当天的条目由 07-17 周的检索发现，按不重叠窗口归入本周。）"
       },
       {
         "source": "Bluesky",
         "status": "found",
-        "note": "api.bsky.app searchPosts 以 on-device AI / local LLM / llama.cpp / NPU / MLX / Gemma 4 phone / edge AI 等词带 since/until 检索窗口，绝大多数为 AI 争议闲聊与 AI 绘图；收 Gemma 4 本地基准实测线程与 Hackster 报道 NightRun 树莓派裸机推理 2 条。"
+        "note": "api.bsky.app searchPosts 以 on-device AI / local LLM / llama.cpp / NPU / MLX / Gemma 4 phone / edge AI 等词带 since/until 检索窗口，绝大多数为 AI 争议闲聊与 AI 绘图；收 Gemma 4 本地基准实测线程与 Hackster 报道 NightRun 树莓派裸机推理 2 条。（07-24 当天的条目由 07-17 周的检索发现，按不重叠窗口归入本周。）"
       },
       {
         "source": "Reddit",
         "status": "found",
-        "note": "arctic-shift 按窗口抽样 r/LocalLLaMA、r/LocalLLM、r/androiddev、r/MachineLearning、r/JetsonNano（LocalLLaMA/LocalLLM 额外分段翻到 07-25），收手机 MoE、Strix Halo、Jetson 1-bit 等 3 条，均为仅线索。"
+        "note": "arctic-shift 按窗口抽样 r/LocalLLaMA、r/LocalLLM、r/androiddev、r/MachineLearning、r/JetsonNano（LocalLLaMA/LocalLLM 额外分段翻到 07-25），收手机 MoE、Strix Halo、Jetson 1-bit 等 3 条，均为仅线索。（07-24 当天的条目由 07-17 周的检索发现，按不重叠窗口归入本周。）"
       },
       {
         "source": "Hacker News",
@@ -7317,22 +7317,22 @@
       {
         "source": "Mastodon",
         "status": "found",
-        "note": "mastodon.social 标签时间线（LocalLLM、llamacpp、OnDeviceAI、LocalAI、ollama、MLX、EdgeAI、NPU）用 max_id/min_id 限定窗口，多为自建 AI 与模型价格营销帖；收 1 条嵌入式 Edge AI 部署专家讨论线索。"
+        "note": "mastodon.social 标签时间线（LocalLLM、llamacpp、OnDeviceAI、LocalAI、ollama、MLX、EdgeAI、NPU）用 max_id/min_id 限定窗口，多为自建 AI 与模型价格营销帖；收 1 条嵌入式 Edge AI 部署专家讨论线索。（07-24 当天的条目由 07-17 周的检索发现，按不重叠窗口归入本周。）"
       },
       {
         "source": "GitHub Discussions",
         "status": "found",
-        "note": "按 date_created 翻 ggml-org/llama.cpp（第 11~12 页覆盖窗口）、ml-explore/mlx、pytorch/executorch、google-ai-edge/gallery 讨论列表，按 relative-time 切块；LiteRT-LM、mlc-llm 未开 Discussions。收 MLX 四台 M3 Ultra 跑 Kimi-K3 与 llama.cpp Intel Arc Pro B70 MTP 实测 2 条。"
+        "note": "按 date_created 翻 ggml-org/llama.cpp（第 11~12 页覆盖窗口）、ml-explore/mlx、pytorch/executorch、google-ai-edge/gallery 讨论列表，按 relative-time 切块；LiteRT-LM、mlc-llm 未开 Discussions。收 MLX 四台 M3 Ultra 跑 Kimi-K3 与 llama.cpp Intel Arc Pro B70 MTP 实测 2 条。（07-24 当天的条目由 07-17 周的检索发现，按不重叠窗口归入本周。）"
       },
       {
         "source": "Hugging Face",
         "status": "found",
-        "note": "HF models API 按 createdAt 查 unsloth、thinkingmachines、google、OpenMed 及 gemma-4/litert/executorch 关键词；仅收窗口内有公开讨论佐证的 unsloth/Kimi-K3-GGUF（07-27 建库，07-29 HN 讨论）。Inkling-Small 为 276B 云端级模型，不属端侧，不收。"
+        "note": "HF models API 按 createdAt 查 unsloth、thinkingmachines、google、OpenMed 及 gemma-4/litert/executorch 关键词；仅收窗口内有公开讨论佐证的 unsloth/Kimi-K3-GGUF（07-27 建库，07-29 HN 讨论）。Inkling-Small 为 276B 云端级模型，不属端侧，不收。（07-24 当天的条目由 07-17 周的检索发现，按不重叠窗口归入本周。）"
       },
       {
         "source": "YouTube / Bilibili",
         "status": "limited",
-        "note": "YouTube 频道 RSS 不可用，超过 6 周的历史窗口结构性够不到；Bilibili 搜索 API 按“端侧大模型”等词翻到窗口，命中的均为板卡代理商/经销商宣传（RK182X 算力卡、Jetson 部署课程）与论文二手解读，无官方频道或可回链一手项目的演示，未收录；后续 view 接口被限流。"
+        "note": "YouTube 频道 RSS 不可用，超过 6 周的历史窗口结构性够不到；Bilibili 搜索 API 按“端侧大模型”等词翻到窗口，命中的均为板卡代理商/经销商宣传（RK182X 算力卡、Jetson 部署课程）与论文二手解读，无官方频道或可回链一手项目的演示，未收录；后续 view 接口被限流。（07-24 当天的条目由 07-17 周的检索发现，按不重叠窗口归入本周。）"
       },
       {
         "source": "厂商论坛",
@@ -7352,6 +7352,20 @@
         "why_it_matters": "大 MoE 模型借专家稀疏和存储换入下沉到普通手机，是手机端“超内存模型”路线的社区样本，值得跟踪复现数据与功耗。",
         "device_scope": "手机",
         "topic": "手机端 MoE 推理 / 专家换入",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "gemma4-26b-iphone17pro-paging",
+        "source": "Reddit",
+        "author": "u/Agreeable-Rest9162",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1v5p5sf/",
+        "published_at": "2026-07-24T21:47:40Z",
+        "title_zh": "iPhone 17 Pro 用分页加载跑 Gemma 4 26B-A4B",
+        "summary_zh": "Noema 应用创始人展示 Q4_K_M 量化的 Gemma 4 26B-A4B 在 iPhone 17 Pro 上运行：非专家权重常驻内存，专家权重从闪存按需读取。实测 699 token 提示的预填充 34.4 tok/s、耗时约 20 秒，解码只有 3.5 tok/s，一次回答约 6 分钟。作者自己是开发方，数据未经第三方复现。",
+        "why_it_matters": "用闪存换内存让手机跑超出内存的 MoE 模型，可行但很慢，适合“要准不要快”的场景，划出了当前手机跑大 MoE 的实际边界。",
+        "device_scope": "手机",
+        "topic": "MoE 闪存分页",
         "verification": "仅线索",
         "evidence_url": ""
       },
@@ -7508,6 +7522,34 @@
         "topic": "本地推理运行时对比 / Gemma 4",
         "verification": "仅线索",
         "evidence_url": ""
+      },
+      {
+        "id": "antirez-laguna-s21-macbook-quants",
+        "source": "Bluesky",
+        "author": "antirez",
+        "url": "https://bsky.app/profile/antirez.bsky.social/post/3mrfd4wutkk2m",
+        "published_at": "2026-07-24T12:11:30Z",
+        "title_zh": "antirez 发布 Laguna S2.1 混合 q2/q3 量化，64GB MacBook 可跑",
+        "summary_zh": "antirez 发布 poolside Laguna S2.1 的混合 q2/q3 量化版，称可在 64GB 内存的 MacBook 上运行、质量接近 q4。需用他的 DwarfStar laguna-s2.1 分支或 llama.cpp；在 DwarfStar 上生成约 65 tok/s、预填充约 570 tok/s。该模型约 118B 总参数、8B 激活，按约 3 bit 估算权重约 40GB，在 64GB 内放得下，速度也在 Max 级芯片带宽可支撑范围内。",
+        "why_it_matters": "把本周新发的 100B 级开源 MoE 带到 64GB 笔记本，说明混合低比特量化正在降低本地大模型的硬件门槛。",
+        "device_scope": "PC",
+        "topic": "混合低比特量化",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "vibevoice-asr-bitnet",
+        "source": "Hugging Face",
+        "author": "microsoft",
+        "url": "https://huggingface.co/microsoft/VibeVoice-ASR-BitNet",
+        "published_at": "2026-07-24T06:03:00Z",
+        "title_zh": "微软 VibeVoice-ASR-BitNet：语音识别压到 1.58GB，纯 CPU 实时",
+        "summary_zh": "微软把 VibeVoice-ASR 做异构量化（语言模型解码器用 2 bit 加 Q6_K、声学分词器用 8 bit），从 4.62GB 压到 1.58GB，配套 ggml 上的 VibeASR.cpp 和 x86/ARM 自定义 SIMD 内核。官方称 3 线程即可实时（RTF 0.77），比 Whisper.cpp 快 1.6~2.3 倍；速度测试用的是服务器 CPU，在笔记本或手机上的表现还没有数据。技术报告 07-23 上 arXiv。",
+        "why_it_matters": "BitNet 式极低比特量化第一次用在大型语音识别模型上并给出可用的 CPU 推理引擎，是笔记本和边缘设备本地听写的新选项。",
+        "device_scope": "PC",
+        "topic": "低比特语音识别",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://arxiv.org/abs/2607.21075"
       },
       {
         "id": "mastodon-shawnhymel-edgeai-panel",

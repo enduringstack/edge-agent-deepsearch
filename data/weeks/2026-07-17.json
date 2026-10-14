@@ -11162,5 +11162,368 @@
       "AI 眼镜进入价格分层和走量阶段，但端侧只做感知和唤醒，大模型都在手机或云端。眼镜芯片的瓶颈是功耗和重量，不是算力。",
       "手机旗舰在 2026 年下半年仍以“2B–3B 常驻 + 云端 Agent”为主，30B MoE 要等 9 月的新一代 SoC 和 LPDDR6。"
     ]
+  },
+  "community": {
+    "window": {
+      "start": "2026-07-17",
+      "end": "2026-07-23"
+    },
+    "coverage": [
+      {
+        "source": "X",
+        "status": "found",
+        "note": "X 历史时间线拿不到，候选全部从 Reddit、HN、Bluesky 抓取结果里提取的 x.com 状态链接（30 条），先用 snowflake 换算筛进 07-17~07-23 窗口（07-17 当天另补查到 4 条链接，均为 WAIC 政要讲话、Kimi 员工闲聊等与端侧无关的帖子），再用 UA curl/8.4.0 取原帖页核对 article:published_time 和 og:url。只有 x.com/i/status 的链接（MiniCPM5-2B）先用 fxtwitter 解析出作者，再回 x.com 原帖核时间。收录 3 条：智东西发布的面壁 MiniCPM5-2B（WAIC）、Imbue 的 iOS 端侧 AI 文本检测、Felix Rieseberg 的 Mac 上自训语言模型应用。日本博主转述 Bonsai 27B 上 iPhone 属于二手转述，Badtheorylabs BTL-3 的“保留 92.2% 能力”没有可核材料，Jensen Huang 开源模型联名信等与端侧无关，均未收。因为只能从别的社区反查，覆盖偏向被转帖的热门帖。"
+      },
+      {
+        "source": "Bluesky",
+        "status": "found",
+        "note": "用 api.bsky.app 的 searchPosts（sort=top），since/until 先限定 2026-07-18~07-24、再单独补查 07-17 当天（on-device AI、local LLM、llama.cpp、on-device、LM Studio、Bonsai、MLX、edge AI 共 8 组词，429 条），检索 on-device AI、on-device LLM、local LLM、llama.cpp、NPU、edge AI、ExecuTorch、MLX、ollama、Gemini Nano、Gemma 4、Apple Intelligence、Copilot+ PC、local AI、on-device model、LiteRT、Snapdragon、MiniCPM、Bonsai 1-bit、Foundation Models framework 共 20 组词，合计去重约 1690 条。大多数热帖是反 AI 情绪、数据中心选址和 AI 绘图，与端侧无关。收录 1 条：Google Gemma 团队成员转发 Gemma 4 下载量破 3 亿。07-17 当天 Unsloth 关于 Gemma 4 更新的帖子与上周已收的 Gemma 4 聊天模板更新重复，未收。antirez 07-24 发布的 Laguna S2.1 64GB MacBook 量化归入下一周。"
+      },
+      {
+        "source": "Reddit",
+        "status": "found",
+        "note": "用 arctic-shift 按 created_utc 往回翻页，覆盖 r/LocalLLaMA（7 页）、r/LocalLLM（8 页）、r/androiddev、r/MachineLearning、r/JetsonNano 在 07-18~07-24 的帖子，并按 after=2026-07-17&before=2026-07-18 单独补查 07-17 当天（再得 225 条），合计约 1990 条；按热度和端侧关键词筛。本周 r/LocalLLaMA 头部讨论几乎全是美国可能限制开源模型、OpenAI 内部评测 Agent 攻击 Hugging Face、Kimi K3 与“蒸馏”指控，和端侧部署关系弱。收录 7 条：一加 15R 靠闪存流式加载跑 gpt-oss-120b、Galaxy Fold 7 本地 TTS、LM Studio Bionic 发布、MacBook 与双 DGX Spark 跑 DeepSeek-V4-Flash 对照、8GB 显卡跑 Bonsai 27B 测 Terminal-Bench、Orange Pi 6 Plus 跑 Qwen3-30B-A3B、ESP32-S3 跑 13M 语音识别。07-17 的“Bonsai 27B 在 iPhone 上运行”与上周已收的 Bonsai 27B 发布重复，未收。iPhone 17 Pro 分页跑 Gemma 4 26B（07-24）归入下一周。Nanbeige4.2-3B、MiniCPM-Robot、NeuTTS-2E 的 Reddit 讨论并入 Hugging Face 条目。Reddit 条目一律记为仅线索。"
+      },
+      {
+        "source": "Hacker News",
+        "status": "found",
+        "note": "用 hn.algolia.com search_by_date，numericFilters 限定 created_at_i 1784246400~1784937600（含 07-17 当天，07-24 条目后移到下一周），检索 on-device、local LLM、llama.cpp、NPU、edge AI、ollama、MLX、local model、Gemini Nano、Apple Intelligence、quantization、Snapdragon、ExecuTorch、LiteRT、Copilot+、small model、phone、Jetson、local AI、offline、Raspberry Pi 等 22 组词，再用 items 接口读正文和评论。收录 2 条：Cactus Hybrid（让 Gemma 4 E2B 给出置信度、低置信才转云端，191 分）、Framework Desktop 192GB 版 Ryzen AI Max+ Pro 495（79 分）。Imbue 的 iPhone 端侧检测与 X 条目重复，未单列；“DDR4 时序违规在 DRAM 里跑 Bonsai”一帖声称 13 倍提速但没有可复现材料、评论普遍质疑，未收；Ollama 融资博文发布于 07-09，在窗口外。"
+      },
+      {
+        "source": "Mastodon",
+        "status": "found",
+        "note": "用 mastodon.social 与 fosstodon.org 的标签时间线，按 Mastodon ID 内含的毫秒时间构造 max_id/min_id 直接框住窗口（07-17 当天在 mastodon.social 另补查 8 个标签，59 条，只有对 LM Studio Bionic 的转述），检索 #localllm #llamacpp #ollama #edgeai #localai #ondeviceai #mlx #llm #npu #gemma，去重 192 条。多数是本地 AI 教程推广和泛泛感想。收录 1 条：盲人无障碍测评者对 LM Studio Bionic 的读屏可用性拆解。Prince Canuma 的 Nativ（MLX 本地应用）是同一作者的同类测评，未重复收录。"
+      },
+      {
+        "source": "GitHub Discussions",
+        "status": "found",
+        "note": "对 ggml-org/llama.cpp、ml-explore/mlx、ml-explore/mlx-lm、pytorch/executorch、google-ai-edge/LiteRT、google-ai-edge/gallery 用 discussions_q=created:2026-07-18..2026-07-24 和 created:2026-07-17 直接筛窗口内新帖（07-17 当天只有 ROCm 求助等两帖），正文用 api.github.com 的 discussions 接口读取（网页正文为动态加载）；mlc-llm、LiteRT-LM、ollama、transformers.js 未开 Discussions。llama.cpp 窗口内约 25 帖，多为问题求助和泛泛提案（嵌入式推理接口、开源 AI 协处理器构想等）。收录 1 条：LiteRT 讨论区里 speech-android 维护者发布的 Android 全离线语音 Agent 实测（FunctionGemma 270M 做工具路由）。"
+      },
+      {
+        "source": "Hugging Face",
+        "status": "found",
+        "note": "用 huggingface.co/api/models 按 author 和 createdAt 扫 openbmb、google、Qwen、apple、qualcomm、nvidia、microsoft、LiquidAI、HuggingFaceTB、stepfun-ai、XiaomiMiMo、tencent、Nanbeige、neuphonic、amd、moonshotai、ibm-granite 等组织，并按关键词查 Bonsai、MiniCPM5、neutts。按回填经验只收窗口内有公开讨论或官方发布佐证的仓库，收录 3 条：面壁 MiniCPM-Robot、Nanbeige4.2-3B、NeuTTS-2E（均有窗口内 Reddit 发布帖）。微软 VibeVoice-ASR-BitNet 仓库建于 07-24，归入下一周。07-17 当天微软建了 Fara1.5-4B 电脑操作 Agent 模型，但模型卡所谓“可在设备端运行”指的是单张 A100/H100，不算端侧，未收。Bonsai 27B 仓库建于 07-04、MiniCPM5-2B 仓库要到 09-06 才建，均不在窗口内；微软 Fara1.5-27B 同样是数据中心级浏览器 Agent，未收。"
+      },
+      {
+        "source": "YouTube / Bilibili",
+        "status": "found",
+        "note": "YouTube 频道 RSS 已不可用，超过约 6 周的窗口无法系统检索，只能顺着其他社区帖子里的视频链接核对：LiteRT 讨论帖里的 90 秒演示（youtu.be/7L7_Uvvxtv0，频道 aufklarer，publishDate 2026-07-18）可回链一手项目，已并入 GitHub Discussions 条目，不重复列。Bilibili 用搜索接口按发布时间排序，检索（07-17~07-23）MiniCPM5、面壁智能 WAIC、端侧大模型 WAIC、MiniCPM-Robot、端侧智能体手机、OpenBMB、高通/联发科 WAIC、vivo 端侧、荣耀智能体等词；窗口内 WAIC 相关视频多为自媒体探展，不收。收录 1 条官方号视频：荣耀手机官方账号发布的 AI 首席科学家谈智能体终端。视频详情接口被风控拦截，发布时间和简介取自搜索接口返回。"
+      },
+      {
+        "source": "厂商论坛",
+        "status": "found",
+        "note": "NVIDIA 开发者论坛（Discourse）用 search.json 加 after:2026-07-18 before:2026-07-25，07-17 当天另用 after:2026-07-17 before:2026-07-18 补查，检索 llm、vlm、ollama、llama.cpp、tensorrt-edge-llm、gemma、qwen、agent 以及 jetson orin llm、jetson thor、jetson model、orin nano，再读 /t/<id>.json 全帖。Jetson 板块窗口内基本都是启动、刷机、相机、SPI 等硬件问题，没有本地模型部署帖；DGX Spark 板块较活跃。收录 3 条：“单台 DGX Spark 还有用吗”126 楼争论帖（07-17）、Laguna S 2.1 在 DGX Spark 上的配置与性能长帖、GB10 上跑语音对话流水线时 Qwen3-TTS 的 GGML CUDA 崩溃绕过办法。veloGB10 新推理引擎声称单台 GB10 跑稠密 27B NVFP4 约 40 tok/s，超过 273GB/s 带宽能支撑的上限且没有说明投机解码，按规则不收；AGX Thor“零幻觉 JSON”一帖疑似推广，未收。"
+      }
+    ],
+    "items": [
+      {
+        "id": "cactus-hybrid-gemma4-confidence",
+        "source": "Hacker News",
+        "author": "HenryNdubuaku (Cactus)",
+        "url": "https://news.ycombinator.com/item?id=49010782",
+        "published_at": "2026-07-22T17:56:29Z",
+        "title_zh": "Cactus Hybrid：让端侧 Gemma 4 给出置信度，没把握才转云端",
+        "summary_zh": "Cactus 后训练了 Gemma 4 E2B，每个回答附带 0~1 的置信分，开发者可在高置信时直接用端侧结果、低置信时交给云端大模型。团队称只把 15%~35% 的请求转给 Gemini 3.1 Flash-Lite，多数基准就能追平后者；MMLU-Pro 需转 45%~55%。信号来自对隐藏层的探针，而不是让模型自评或看 token 熵。数字为团队自报。",
+        "why_it_matters": "端云协同的核心难题是何时上云，这给出了可落地的路由信号，直接影响手机端侧应用的成本和隐私设计。",
+        "device_scope": "手机",
+        "topic": "端云协同路由",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://github.com/cactus-compute/cactus-hybrid"
+      },
+      {
+        "id": "honor-bilibili-agent-terminal-waic",
+        "source": "YouTube / Bilibili",
+        "author": "荣耀手机官方账号",
+        "url": "https://www.bilibili.com/video/BV1jUKh6YEpp/",
+        "published_at": "2026-07-21T11:42:17Z",
+        "title_zh": "荣耀 AI 首席科学家在 WAIC 谈“智能体终端”",
+        "summary_zh": "荣耀手机官方 B 站账号发布约 4 分半视频，内容是央视新闻 WAIC 直播中荣耀 AI 首席科学家黄非的访谈：下一代 AI 终端的关键是能理解复杂需求、拆解任务并跨应用执行的智能体，终端正从被动响应转向主动协同。视频标签提到荣耀 Robot Phone 和 MagicOS。属于理念阐述，没有给出哪些能力在端侧运行。",
+        "why_it_matters": "手机厂商官方定调“跨应用执行的手机智能体”，是观察国内手机 Agent 产品路线的信号。",
+        "device_scope": "手机",
+        "topic": "手机智能体",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "imbue-bouncer-ios-on-device-detect",
+        "source": "X",
+        "author": "Imbue (@imbue_ai)",
+        "url": "https://x.com/imbue_ai/status/2079249427995541900",
+        "published_at": "2026-07-20T16:57:48Z",
+        "title_zh": "Imbue 在 iOS 上用 Gemma 4 E4B 本地检测 AI 生成文本",
+        "summary_zh": "Imbue 官方账号宣传其 Bouncer iOS 应用的 AI 文本检测完全在手机上运行，并称这可能是 Gemma-E4B 目前最好的用法。官方博文说明，直接让大模型判断是否为 AI 写作几乎等于随机，因此专门训练了检测模型并搬到本地运行。博文发布于 07-17，X 帖和 HN 讨论在窗口内。",
+        "why_it_matters": "一个具体、可上线的手机端侧小模型应用：分类任务在本地跑，省掉把用户浏览内容发到云端。",
+        "device_scope": "手机",
+        "topic": "端侧应用",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://imbue.com/blog/bouncer-leveraging-local-compute-to-detect-ai-slop"
+      },
+      {
+        "id": "scyllas-band-android-tts",
+        "source": "Reddit",
+        "author": "u/clockentyne",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1v1e2g2/",
+        "published_at": "2026-07-20T07:00:00Z",
+        "title_zh": "Scylla's Band：带安卓示例的本地情感 TTS，Fold 7 首音 0.5~0.8 秒",
+        "summary_zh": "开发者发布 TTS 模型和推理框架 Scylla's Band，提供 10 种音色、7 种情绪、英西意三种语言，并给出 LiteRT 和 ONNX 版本及安卓示例。在三星 Galaxy Fold 7 上首段音频约 500~800 毫秒出声，之后连续流式输出。性能为作者自测。",
+        "why_it_matters": "手机上可用的本地情感语音合成，补齐端侧语音 Agent 的输出环节。",
+        "device_scope": "手机",
+        "topic": "端侧语音合成",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "minicpm5-2b-waic-x",
+        "source": "X",
+        "author": "智东西 (@Chinazhidx)",
+        "url": "https://x.com/Chinazhidx/status/2079088670804767114",
+        "published_at": "2026-07-20T06:19:01Z",
+        "title_zh": "面壁在 WAIC 发布端侧模型 MiniCPM5-2B",
+        "summary_zh": "智东西在 WAIC 现场报道，面壁智能发布 2B 参数端侧模型 MiniCPM5-2B，称在 AA 指数上是 4B 以下第一，支持混合推理和 512K 上下文，可在 AMD、Intel、联发科、高通芯片上运行。这是媒体转发厂商口径，排名和适配情况未独立核实；Hugging Face 权重要到 9 月初才公开。",
+        "why_it_matters": "国内头部端侧模型厂的新一代手机级小模型，同时点名联发科和高通，直接关系安卓手机端侧部署选型。",
+        "device_scope": "手机",
+        "topic": "端侧小模型",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "litert-functiongemma-offline-voice-agent",
+        "source": "GitHub Discussions",
+        "author": "ivan-digital",
+        "url": "https://github.com/google-ai-edge/LiteRT/discussions/8786",
+        "published_at": "2026-07-18T21:18:45Z",
+        "title_zh": "安卓全离线语音 Agent：FunctionGemma 270M 做工具路由，整机 1.2GB",
+        "summary_zh": "speech-android 维护者在 LiteRT 讨论区发布演示：语音检测、流式识别、工具调用路由、执行设备操作、流式合成整条链路都在手机上跑，路由模型是经 LiteRT-LM 运行的 FunctionGemma 270M。Galaxy S23 Ultra 仅用 CPU，工具调用平均 294 毫秒，说完话到首个语音输出 908 毫秒，应用常驻内存约 1.1GB。可靠性靠按工具模式微调的 9.5MB LoRA 和只暴露当前状态下合法的工具。",
+        "why_it_matters": "少见的手机端完整 Agent 闭环实测，给出了延迟和内存数字，也说明 270M 小模型做工具路由要靠针对性微调和约束工具集。",
+        "device_scope": "手机",
+        "topic": "端侧语音 Agent",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://github.com/soniqo/speech-android"
+      },
+      {
+        "id": "android-oneplus15r-gptoss120b-flash-streaming",
+        "source": "Reddit",
+        "author": "u/dai_app",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uz5n2j/",
+        "published_at": "2026-07-17T17:05:37Z",
+        "title_zh": "安卓手机靠闪存流式加载专家，跑 60GB 的 gpt-oss-120b",
+        "summary_zh": "开发者在可用内存约 11GB 的一加 15R 上，只用 4 个 CPU 核心和闪存运行 Q4_K_M 量化的 gpt-oss-120b（磁盘 60GB，约为内存 5 倍），生成 1.3 tok/s；同机 Qwen3-30B 约 5.2 tok/s、Gemma 4 26B 约 4.1 tok/s。做法是共享权重常驻内存，每个 token 需要的专家在该层运行前用 O_DIRECT 从闪存读取并与计算重叠，比普通 mmap（0.089 tok/s）快约 14 倍。作者称基于原版 llama.cpp 子模块，并用 CI 逐 token 比对流式与全内存输出一致；最大难点是安卓在生成中途回收常驻权重。数据为作者自测。",
+        "why_it_matters": "手机跑超出内存的 MoE 模型的一次扎实工程实践：30B 级 MoE 已接近可用速度，120B 只能算演示。",
+        "device_scope": "手机",
+        "topic": "MoE 闪存流式加载",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "framework-desktop-192gb-ryzen-ai-max-495",
+        "source": "Hacker News",
+        "author": "PhilippGille",
+        "url": "https://news.ycombinator.com/item?id=49019694",
+        "published_at": "2026-07-23T11:09:48Z",
+        "title_zh": "Framework Desktop 预告 Ryzen AI Max+ Pro 495、192GB 内存版",
+        "summary_zh": "Framework 官网新增“即将推出”选项：Ryzen AI Max+ PRO 495 配 192GB LPDDR5X 的 Framework Desktop。HN 评论指出目前只有一句话预告，没有博客、价格和预订；老用户反映因内存涨价，128GB 版已贵了约 2000 加元且缺货。",
+        "why_it_matters": "统一内存从 128GB 提到 192GB，意味着单台桌面机能本地放下更大的 MoE 模型，但内存涨价正在抬高本地部署门槛。",
+        "device_scope": "PC",
+        "topic": "本地推理硬件",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://frame.work/desktop?tab=192gb-coming-soon"
+      },
+      {
+        "id": "nv-forum-gb10-qwen3-tts-ggml-crash",
+        "source": "厂商论坛",
+        "author": "swann.schilling",
+        "url": "https://forums.developer.nvidia.com/t/running-speech-to-speech-with-qwen3-tts-on-nvidia-gb10-dgx-spark-bypassing-ggml-cuda-crash/377743",
+        "published_at": "2026-07-22T12:51:02Z",
+        "title_zh": "DGX Spark 本地语音对话：Qwen3-TTS 的 GGML 后端崩溃，改用 PyTorch 绕过",
+        "summary_zh": "用户在 DGX Spark（GB10，128GB 统一内存）上搭本地语音对话流水线：Parakeet 识别、llama.cpp 跑 Gemma 4 E4B、Qwen3-TTS 合成。TTS 用默认 GGML 后端时首次推理即报 CUDA 错误崩溃，去掉 GGML 扩展、强制用 PyTorch 后端即可，不需重编 CUDA。回帖认为可能是内核编译的 SM 版本或 PDL 元数据与 Blackwell 不兼容，根因未定。",
+        "why_it_matters": "全本地语音 Agent 在新架构桌面机上的真实踩坑记录，说明 GGML 的 CUDA 后端在 GB10 上仍有兼容问题。",
+        "device_scope": "PC",
+        "topic": "本地语音流水线",
+        "verification": "仅线索",
+        "evidence_url": "https://github.com/huggingface/speech-to-speech"
+      },
+      {
+        "id": "nv-forum-laguna-s21-dgx-spark",
+        "source": "厂商论坛",
+        "author": "serapis",
+        "url": "https://forums.developer.nvidia.com/t/laguna-s-2-1-config-benchmarks/377663",
+        "published_at": "2026-07-21T18:32:17Z",
+        "title_zh": "DGX Spark 用户集体调 Laguna S 2.1：vLLM 崩溃、DFlash 接受率仅约 8%",
+        "summary_zh": "poolside 发布 Laguna S 2.1 当天，NVIDIA 论坛 DGX Spark 板块开出配置与跑分帖，截至抓取时 59 楼、约 8700 次浏览。楼主用 vLLM 0.25.1 加 FlashInfer 补丁在两台 GB10 上跑 NVFP4 版，吞吐测试时 vLLM 崩溃，配套 DFlash 投机模型接受率只有约 8%；有人把投机 token 数调到 7 后报告 40~50 tok/s，也有人指出单台 Spark 就能放下。",
+        "why_it_matters": "新模型在桌面 AI 机上的“首日可用性”实录：模型能放下，但推理栈和投机解码的适配往往滞后。",
+        "device_scope": "PC",
+        "topic": "桌面 AI 机部署",
+        "verification": "仅线索",
+        "evidence_url": "https://huggingface.co/poolside/Laguna-S-2.1-NVFP4"
+      },
+      {
+        "id": "felix-rieseberg-language-model-builder",
+        "source": "X",
+        "author": "Felix Rieseberg (@felixrieseberg)",
+        "url": "https://x.com/felixrieseberg/status/2079624265528475975",
+        "published_at": "2026-07-21T17:47:17Z",
+        "title_zh": "Felix Rieseberg 推出 Mac 应用，教人在本机从零训练小语言模型",
+        "summary_zh": "Anthropic 工程师、Electron 维护者 Felix Rieseberg 发布免费 Mac 应用 Language Model Builder，讲解语言模型基础并提供从零训练所需的工具。官网称默认设置约一天就能得到能写通顺段落的模型；在 M5 Max MacBook Pro 上约一周可训出 GPT-2 small 级（1 亿~1.5 亿参数）模型，并明确说练不出前沿模型。r/LocalLLaMA 相关帖获 428 分。",
+        "why_it_matters": "把本地算力从“跑模型”延伸到“训小模型”，是 Apple Silicon 作为个人 AI 开发机的一个信号。",
+        "device_scope": "PC",
+        "topic": "本地训练",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://languagemodelbuilder.com/"
+      },
+      {
+        "id": "lmstudio-bionic-a11y-teardown",
+        "source": "Mastodon",
+        "author": "@tayarndt@techopolis.social",
+        "url": "https://techopolis.social/@tayarndt/116955731849249289",
+        "published_at": "2026-07-21T03:00:41Z",
+        "title_zh": "盲人用户拆解 LM Studio Bionic 的读屏可用性",
+        "summary_zh": "无障碍测评者 Taylor Arndt 用 VoiceOver 和键盘实测本地 AI 应用 LM Studio Bionic：缺少标题结构、焦点错乱、模型下载进度没有语音提示，AI 回答完成时也不会播报。作者认可本地优先的思路，但认为读屏用户目前很难正常使用。属于个人测评，附 Substack 全文。",
+        "why_it_matters": "本地 AI 桌面应用开始走向大众，无障碍是容易被忽略的可用性门槛。",
+        "device_scope": "PC",
+        "topic": "本地 AI 应用体验",
+        "verification": "仅线索",
+        "evidence_url": "https://taylorarndt.substack.com/p/taylors-teardowns-lm-studio-bionic"
+      },
+      {
+        "id": "bonsai-27b-terminal-bench-8gb",
+        "source": "Reddit",
+        "author": "u/Creative-Regular6799",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1v1ya97/",
+        "published_at": "2026-07-20T21:15:29Z",
+        "title_zh": "8GB 显存笔记本测 Bonsai 27B：装得下，但 Agent 任务只有 7.9%",
+        "summary_zh": "网友在 RTX 5070 笔记本（8GB 显存）上用 PrismML 的 llama.cpp 分支，跑完 Terminal-Bench 2.0 全部 89 题。2 bit 三值 Bonsai-27B 得分 7.9%，低于同样能装进显卡的 Qwen3.5-9B（9.2%），远低于 Qwen3.6-35B-A3B（24.3%）；1 bit 版没能跑出分数。好的一面是模型完全装进显卡，工具调用零解析错误。",
+        "why_it_matters": "对“27B 装进手机/小显卡”宣传的一次冷静实测：放得下不等于好用，极低比特在 Agent 任务上的能力损失很明显。",
+        "device_scope": "PC",
+        "topic": "极低比特量化实测",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "macbook-vs-2x-dgx-spark-dsv4-flash-tb21",
+        "source": "Reddit",
+        "author": "u/anvarazizov",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uzaf54/",
+        "published_at": "2026-07-17T19:58:13Z",
+        "title_zh": "一台 MacBook 对两台 DGX Spark：DeepSeek-V4-Flash 跑 Terminal-Bench 2.1 得分 54% 对 52%",
+        "summary_zh": "网友用同一套 89 题 Terminal-Bench 2.1 对比两种本地部署：128GB M5 Max MacBook 上的激进量化 80.8GiB GGUF，以及两台 DGX Spark 上原生 FP8/FP4 权重加 DSpark 投机解码。Mac 通过 47/87（54%），双 Spark 通过 45/86（52%），共同评分的 86 题中 66 题结果一致。作者明确说这只是一次端到端运行，不能证明 2 bit 量化没有损失。",
+        "why_it_matters": "给“笔记本跑激进量化大模型”与“专用桌面 AI 机跑原生精度”提供了一组同题对照，结论边界也写得清楚。",
+        "device_scope": "PC",
+        "topic": "量化与部署对照",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "nv-forum-single-dgx-spark-usefulness",
+        "source": "厂商论坛",
+        "author": "jbourny",
+        "url": "https://forums.developer.nvidia.com/t/concern-about-the-usefulness-of-a-single-dgx-spark/377281",
+        "published_at": "2026-07-17T18:45:52Z",
+        "title_zh": "“单台 DGX Spark 还有用吗？”引发 126 楼争论",
+        "summary_zh": "开发者在 NVIDIA 论坛 DGX Spark 板块抱怨：买来几个月，能跑的编程模型里只有 Qwen3.6 27B 勉强可用，但太慢、出错多，新发布的好模型动辄需要两台 Spark，128GB 内存下自己微调也只能做 8K 上下文。回帖有人推荐单机调优的 DeepSeek-V4-Flash（约 35 tok/s），也有人认为 Spark 本来就不是推理机。帖子 126 楼、约 7700 次浏览，以用户主观体验为主。",
+        "why_it_matters": "反映桌面 AI 机用户的真实落差：模型尺寸增长快于单机内存，128GB 统一内存正在从“够用”变成“门槛”。",
+        "device_scope": "PC",
+        "topic": "桌面 AI 机体验",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "lm-studio-bionic-launch",
+        "source": "Reddit",
+        "author": "u/Vincenius_",
+        "url": "https://www.reddit.com/r/LocalLLM/comments/1uyspke/",
+        "published_at": "2026-07-17T07:25:56Z",
+        "title_zh": "LM Studio 推出独立 Agent 应用 Bionic，主打开源模型本地运行",
+        "summary_zh": "LM Studio 发布 Bionic：面向开源模型的 AI Agent 应用，用于编程、调研和文档文件处理，带本地语音转写；模型可在本机运行，也可通过 LM Link 连接其他机器，或切到 LM Studio 的云端开源大模型处理重任务，并承诺零数据保留、不用用户数据训练。官方博文日期为 07-16（美国时间），r/LocalLLM 与 r/LocalLLaMA 在 07-17 讨论。“本地”与“云端”混用，哪些任务真正在本机完成取决于用户选择的模型。",
+        "why_it_matters": "主流本地推理工具从“跑模型”转向“桌面 Agent”，PC 端本地 Agent 的门槛进一步降低。",
+        "device_scope": "PC",
+        "topic": "桌面本地 Agent",
+        "verification": "仅线索",
+        "evidence_url": "https://lmstudio.ai/blog/introducing-lm-studio-bionic"
+      },
+      {
+        "id": "orange-pi6-qwen3-30b",
+        "source": "Reddit",
+        "author": "u/Soft_Examination1158",
+        "url": "https://www.reddit.com/r/LocalLLM/comments/1v3rgsj/",
+        "published_at": "2026-07-22T20:06:36Z",
+        "title_zh": "Orange Pi 6 Plus 纯 CPU 跑 Qwen3-30B-A3B，生成 15.6 tok/s",
+        "summary_zh": "网友在 32GB 内存的 Orange Pi 6 Plus 上用 8 线程纯 CPU 跑 Q4_K_M 量化的 Qwen3-30B-A3B，4096 上下文、关闭思考。用 208 token 的实际分析类提示测试：预填充 32.2 tok/s，生成 15.6 tok/s，512 token 用时约 33 秒。只有单次测试，没有和其他板子对比。",
+        "why_it_matters": "说明 3B 激活的 MoE 在 ARM 单板机上已到可用速度，是低成本边缘部署的参考数据。",
+        "device_scope": "其他端侧",
+        "topic": "ARM 单板机推理",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "esp32-s3-13m-asr-conformer",
+        "source": "Reddit",
+        "author": "u/wunschpunsch3D",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1v1pume/",
+        "published_at": "2026-07-20T16:09:37Z",
+        "title_zh": "把 1310 万参数的语音识别模型塞进不到 10 美元的 ESP32-S3",
+        "summary_zh": "作者把 NVIDIA 小型 Conformer 识别模型蒸馏并量化后放进 ESP32-S3：占 14MB 闪存、256KB SRAM 加 4MB PSRAM，可转写 8 秒音频，但速度仍然很慢。最初版本转 5 秒音频要 10 分钟；试过 Whisper tiny，5 秒音频要 50 分钟以上。芯片有 8 位运算加速。",
+        "why_it_matters": "展示了微控制器跑神经网络语音识别的现实下限：能跑，但离实时还远。",
+        "device_scope": "其他端侧",
+        "topic": "微控制器语音识别",
+        "verification": "仅线索",
+        "evidence_url": ""
+      },
+      {
+        "id": "minicpm-robot-vla",
+        "source": "Hugging Face",
+        "author": "openbmb",
+        "url": "https://huggingface.co/openbmb/MiniCPM-RobotManip",
+        "published_at": "2026-07-18T11:47:54Z",
+        "title_zh": "面壁开源 MiniCPM-Robot：1.5B 机器人操作模型和 0.5B 跟踪模型",
+        "summary_zh": "面壁智能开源首个具身模型系列：1.5B 的视觉-语言-动作模型 MiniCPM-RobotManip、0.5B 的目标跟踪模型 MiniCPM-RobotTrack，以及面向具身模型的推理框架 PhyAI。两个仓库在 07-18 建立，r/LocalLLaMA 07-20 有发布帖，GitHub 仓库同步公开。模型卡未给出具体机器人硬件上的延迟数据。",
+        "why_it_matters": "端侧模型厂把小模型路线延伸到机器人，参数量级明显瞄准本体上运行。",
+        "device_scope": "其他端侧",
+        "topic": "具身小模型",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://github.com/OpenBMB/MiniCPM-Robot"
+      },
+      {
+        "id": "gemma4-300m-downloads",
+        "source": "Bluesky",
+        "author": "gusthema",
+        "url": "https://bsky.app/profile/gusthema.bsky.social/post/3mrbipnjsec25",
+        "published_at": "2026-07-22T23:40:47Z",
+        "title_zh": "Gemma 4 自 4 月发布以来下载量破 3 亿次",
+        "summary_zh": "Google 的 Gemma 团队成员转发称，Gemma 4 自 4 月发布以来下载已超过 3 亿次，并在 Alphabet 二季度财报电话会上被点名。帖子附的是 Google 官方博客上的 CEO 财报发言稿。下载量是累计口径，没有区分端侧和服务器使用。",
+        "why_it_matters": "Gemma 4 的小尺寸版本是手机和 PC 端侧部署的主力开源模型之一，下载规模反映开源端侧生态的热度。",
+        "device_scope": "通用技术",
+        "topic": "开源模型生态",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q2-2026/"
+      },
+      {
+        "id": "neutts-2e-emotion-tts",
+        "source": "Hugging Face",
+        "author": "neuphonic",
+        "url": "https://huggingface.co/neuphonic/neutts-2e",
+        "published_at": "2026-07-21T09:38:42Z",
+        "title_zh": "NeuTTS-2E：125M 激活参数的端侧情感 TTS，7 种可控情绪",
+        "summary_zh": "Neuphonic 开源 NeuTTS-2E alpha 版，125M 激活参数，可指定愤怒、恐惧、开心等 7 种情绪并保持同一音色，强调文本和音频不离开设备；同时提供 q4/q8 GGUF 版本。目前只支持英语，团队在 r/LocalLLaMA 07-22 发帖介绍。官方未给出具体设备上的延迟数据。",
+        "why_it_matters": "可控情绪的小型 TTS 让本地语音助手不必依赖云端合成。",
+        "device_scope": "通用技术",
+        "topic": "端侧语音合成",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://huggingface.co/neuphonic/neutts-2e"
+      },
+      {
+        "id": "nanbeige42-3b-looped",
+        "source": "Hugging Face",
+        "author": "Nanbeige",
+        "url": "https://huggingface.co/Nanbeige/Nanbeige4.2-3B",
+        "published_at": "2026-07-21T08:39:03Z",
+        "title_zh": "Nanbeige4.2-3B：循环 Transformer 小模型，主打本地 Agent",
+        "summary_zh": "Nanbeige 发布 3B 非嵌入参数的 Agent 模型，采用循环 Transformer 结构，重复使用同一组层来增加容量而不增加参数。官方称在通用 Agent 和代码 Agent 任务上超过体量约 4 倍的模型；r/LocalLLaMA 发布帖 436 分，也有网友提醒这是厂商自测。循环结构会增加每个 token 的计算量，端侧实际速度要另测。",
+        "why_it_matters": "用计算换参数的思路适合内存受限的设备，小模型做本地 Agent 有了新的结构选项。",
+        "device_scope": "通用技术",
+        "topic": "小模型架构",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://huggingface.co/Nanbeige/Nanbeige4.2-3B"
+      }
+    ]
   }
 }
