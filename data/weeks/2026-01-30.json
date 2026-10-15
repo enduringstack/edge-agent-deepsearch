@@ -7482,41 +7482,6 @@
       "recommendation_reason": "这一版同时补上苹果设备的 Metal 推理委托、32 位 armv7 支持和 LiteRT NPU 示例，做手机和嵌入式端模型部署的团队可以直接据此评估新后端。",
       "arxiv_date_basis": "submitted",
       "arxiv_revision_note": ""
-    },
-    {
-      "id": "arxiv-2601.15394",
-      "title": "Memorization Dynamics in Knowledge Distillation for Language Models",
-      "title_zh": "",
-      "abstract": "Meta 研究知识蒸馏过程中小模型会不会“背下”训练数据：比较蒸馏与普通微调在训练数据记忆上的差异，以及哪些样本最容易被记住。",
-      "effects": "在 Pythia、OLMo-2、Qwen-3 三个模型家族和三个数据集上，蒸馏模型的训练数据记忆比普通微调少 50% 以上；约 95% 以上的记忆集中在少数天生易记的样本上；硬标签蒸馏继承的教师特有记忆样本是软标签蒸馏的 2.7 倍。",
-      "mechanism": "跟踪蒸馏全流程中学生模型对训练样本的逐字复现情况，并用压缩熵、KL 散度和困惑度等特征在蒸馏开始前预测哪些样本会被记住。",
-      "paper_url": "https://huggingface.co/papers/2601.15394",
-      "date": "2026-02-02",
-      "score": 8,
-      "score_relevance": 3,
-      "score_contribution": 5,
-      "score_reason": "蒸馏是把大模型能力压进端侧小模型的常用手段，这项工作从隐私角度给出了软蒸馏优于硬蒸馏的依据；但不涉及部署与设备。 作者机构依据：arXiv PDF 首页署名 Meta（论文首页作者 Jaydeep Borkar、Yuchen Zhang、Zheng Xu、Diego Garcia-Olano 等署名 Meta Superintelligence Labs，并注明工作在 Meta 完成）。",
-      "source_tier": "公司项目",
-      "open_source": false,
-      "tags": [
-        "方向:蒸馏",
-        "方向:安全隐私",
-        "模型:Qwen"
-      ],
-      "edge_agent_scope": "非端侧Agent",
-      "edge_agent_evidence": "",
-      "insight_person": "",
-      "wiki_url": "",
-      "authors": "Jaydeep Borkar, Karan Chadha, Niloofar Mireshghallah, Yuchen Zhang, Irina-Elena Veliche, Archi Mitra, David A. Smith, Zheng Xu, Diego Garcia-Olano",
-      "vendors": "Meta",
-      "affiliation_evidence_url": "https://arxiv.org/pdf/2601.15394",
-      "candidate_source": "huggingface",
-      "candidate_ref": "8837f1122585f9c4546f5d9f3255e1cc7ba0788d042e73a704eff39f839cb1f1",
-      "venue": "arXiv",
-      "recommendation": "纳入",
-      "recommendation_reason": "",
-      "arxiv_date_basis": "submitted",
-      "arxiv_revision_note": ""
     }
   ],
   "weekly": {
