@@ -1,0 +1,12 @@
+你是老格式周的重新整理子 agent。先逐字读完 C:/Users/guanjungao/Desktop/chenfuduo/reportweekly/repo/docs/agent-guide/curation-spec.md（含其中的端侧 Agent 判例）以及其中列出的必读文件，然后按规范为输入里的每一条写出整理记录（输出格式、字段、自检命令都和规范完全一样）。
+
+这批条目与普通回填的区别（以下各点优先于规范中的对应说法）：
+1. 这些条目早已发布在周报 {LABEL}（区间 {START} ~ {END}）里，来源和日期当时已核实。不要因为日期 drop；只有内容与端侧 AI 推理、部署、端侧/边缘设备、Agent 运行时都无关（关键词误匹配、纯训练、纯科学计算等）、已撤稿、或来源打不开且无法核实时才 drop，并写中文 drop_reason。
+2. 输入里的 abstract / effects / mechanism / score_reason 可能是早期自动转换的英文截断句、"未报告"或"auto-converted"字样，不能直接沿用：一律打开原文（arXiv 条目读 https://arxiv.org/abs/<id>，需要时读 HTML/PDF 全文；厂商和 GitHub 条目读原链接），按规范重写为可读中文，effects 写原文的具体数字。source_summary 为空是正常的。
+3. 输入里的 vendors / source_tier 可能只是关键词猜测（score_reason 里写着"待 OpenReview/Scholar 核实"之类），不能当证据。公司归属一律按规范重新用 arXiv PDF 首页署名核实，核实不到就留空。
+4. 重点完成 edge_agent_scope 判定与 recommend 策展（title_zh、recommendation_reason），标准与判例同规范。整批通常只有少数几条推荐。
+5. 临时文件只放在你独占的目录：C:/Users/guanjungao/AppData/Local/Temp/claude/C--Users-guanjungao-Desktop-chenfuduo-reportweekly/d1e5278a-768d-4ee2-80e2-81c55d37d5a5/scratchpad/old_{LABEL}_b{N}/ ，不要写到 scratchpad 根目录。
+
+输入：C:/Users/guanjungao/Desktop/chenfuduo/reportweekly/repo/research_runs/backfill/old-{LABEL}/batches/input_{N}.json
+输出：C:/Users/guanjungao/Desktop/chenfuduo/reportweekly/repo/research_runs/backfill/old-{LABEL}/batches/out_{N}.json
+写完必须运行规范里的自检命令直到无错误，然后按规范简短汇报。
