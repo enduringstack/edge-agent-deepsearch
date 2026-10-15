@@ -6504,8 +6504,716 @@
     ]
   },
   "hardware": {
-    "window": {},
-    "overview": "",
-    "items": []
+    "window": {
+      "start": "2026-01-09",
+      "end": "2026-01-15"
+    },
+    "items": [
+      {
+        "date": "2026-01-15",
+        "vendor": "MediaTek",
+        "category": "移动SoC",
+        "title": "MediaTek Unveils Dimensity 9500s and Dimensity 8500 to Propel Performance, Gaming and Efficiency in Flagship and Premium Smartphones",
+        "title_zh": "联发科天玑9500s与天玑8500",
+        "url": "https://www.mediatek.com/press-room/mediatek-unveils-dimensity-9500s-and-dimensity-8500-to-propel-performance-gaming-and-efficiency-in-flagship-and-premium-smartphones",
+        "source_type": "官方",
+        "summary_zh": "联发科1月15日发布天玑9500s（3nm）和天玑8500（4nm）。9500s采用1×X925+3×X4+4×A720全大核，配Immortalis-G925；8500为8×A725全大核、Mali-G720，搭载第8代NPU，支持主流LLM/多模态和图像生成模型，内存支持LPDDR5X-9600。两款都没有公布TOPS或模型速度。",
+        "whats_new_zh": [
+          "官方口径：天玑9500s为3nm，1×Cortex-X925（最高3.73GHz）+3×X4+4×A720，GPU为Immortalis-G925（光追），5G R17、4CC、下行最高7Gbps。",
+          "官方口径：天玑8500为4nm，8×Cortex-A725（最高3.4GHz），Mali-G720 GPU峰值性能比上代+25%、功耗-20%；LPDDR5X-9600。",
+          "官方口径：8500为第8代联发科NPU，支持主流LLM/MLLM和图像生成模型；9500s的NPU被描述为“面向生成式推理和多模态模型优化的旗舰NPU”。",
+          "两款都没有公布NPU TOPS、tok/s或具体模型；首发机型发布稿未提（媒体与数据库记录8500发布日为1月15日）。"
+        ],
+        "key_specs": {
+          "process": "天玑9500s：3nm；天玑8500：4nm（媒体称台积电）",
+          "cpu": "9500s：1×X925 3.73GHz+3×X4+4×A720；8500：8×A725，最高3.4GHz",
+          "gpu": "9500s：Immortalis-G925；8500：Mali-G720（峰值+25%、功耗-20%）",
+          "npu": "8500：第8代联发科NPU（TOPS未披露）；9500s：旗舰NPU（TOPS未披露）",
+          "memory": "8500：LPDDR5X-9600；9500s：未写",
+          "other": "9500s：Imagiq ISP、8K Dolby Vision HDR；8500：AI语义引擎、AI长焦算法"
+        },
+        "edge_ai_impact_zh": "联发科把上代旗舰NPU下放到次旗舰和中高端，2026年上半年3B级端侧大模型会覆盖到更低价位；但厂商都不再公布TOPS，比较端侧AI要看实际模型速度。",
+        "evidence_urls": [
+          "https://www.mediatek.com/tek-talk-blogs/mediatek-dimensity-9500s-and-dimensity-8500-launch",
+          "https://www.notebookcheck.net/MediaTek-Dimensity-8500-Processor-Benchmarks-and-Specs.1213242.0.html"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "9500s的定位",
+            "points": [
+              "CPU组合（X925 3.73GHz+X4+A720）与2025年的天玑9400+相同，而不是天玑9500的新一代Arm核，推测是上一代旗舰的复用版本（推算，联发科未说明）。",
+              "用“s”后缀填补9500与8500之间的次旗舰价位，是存储涨价下手机厂商控制成本的选择。"
+            ]
+          },
+          {
+            "heading": "8500的AI能力",
+            "points": [
+              "第8代NPU与天玑9400同代（推算），支持INT4混合精度（媒体口径），可在中高端机上跑3B级端侧模型。",
+              "LPDDR5X-9600与旗舰同速，带宽不再是中端机的短板。"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "8500支持LPDDR5X-9600，与旗舰同速；按手机常见64-bit位宽约77GB/s（推算，位宽未披露）。",
+              "9500s发布稿未写内存规格，下行7Gbps、4CC载波聚合是其主要通信规格。"
+            ]
+          },
+          {
+            "heading": "能效与游戏",
+            "points": [
+              "8500 GPU峰值+25%、功耗-20%（官方口径，相对上一代），并加入光追。",
+              "9500s主打MAGT 3.0/MFRC 3.0游戏调度和5G UltraSave 4.0省电，没有给端侧AI能效数字。"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方未给模型规模和速度。推算：手机常见64-bit位宽下LPDDR5X-9600约77GB/s，3B模型4-bit（约1.7GB）decode上限约45 tok/s，7B约17 tok/s；实际受NPU利用率和功耗墙限制会更低。"
+      },
+      {
+        "date": "2026-01-15",
+        "vendor": "中佛罗里达大学 / CMU",
+        "category": "NPU/AI加速器",
+        "title": "Mugi: Value Level Parallelism For Efficient LLMs",
+        "title_zh": "Mugi：值级并行 LLM 加速器",
+        "url": "https://arxiv.org/abs/2601.10823",
+        "source_type": "论文",
+        "summary_zh": "UCF 与 CMU 把值级并行（VLP）从对称低精度 GEMM 推广到非线性近似和小批量非对称 GEMM，结合权重量化、KV Cache 量化与 GQA，设计出支持完整 LLM 负载的 Mugi 架构，ASPLOS 2026 收录。",
+        "whats_new_zh": [
+          "softmax 等非线性运算吞吐最高提升 45 倍、能效最高 668 倍",
+          "整体 LLM 吞吐提升 2.07 倍、能效提升 3.11 倍",
+          "运行碳排降 1.45 倍、隐含碳降 1.48 倍"
+        ],
+        "key_specs": {
+          "npu": "值级并行（VLP）阵列，支持非线性近似与小批量非对称 GEMM"
+        },
+        "edge_ai_impact_zh": "端侧 batch 小、softmax 等非线性占比高，Mugi 的思路适合嵌入手机 NPU 的向量/非线性单元。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2601.10823v1"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv（ASPLOS 2026）",
+        "affiliation": "University of Central Florida；Carnegie Mellon University",
+        "authors": "Daniel Price; Prabhu Vellaisamy; John Shen",
+        "deep_dive_zh": [
+          {
+            "heading": "非线性近似",
+            "points": [
+              "值中心近似：重要数值分配更高精度，端到端精度、性能与能效均优于现有非线性近似"
+            ]
+          },
+          {
+            "heading": "小批量 GEMM",
+            "points": [
+              "针对 weight-only 量化、KV 量化和 GQA 带来的非对称输入优化 VLP，切合端侧 batch=1"
+            ]
+          },
+          {
+            "heading": "口径",
+            "points": [
+              "结果为架构评估，论文摘要未给出具体模型规模与 tok/s"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-01-13",
+        "vendor": "韦恩州立大学 / 爱荷华州立大学",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "ZeroDVFS: Zero-Shot LLM-Guided Core and Frequency Allocation for Embedded Platforms",
+        "title_zh": "ZeroDVFS：大模型指导嵌入式调频",
+        "url": "https://arxiv.org/abs/2601.08166",
+        "source_type": "论文",
+        "summary_zh": "研究者用模型强化学习加 LLM 代码语义特征，为嵌入式平台做零样本的核分配与 DVFS，在 Jetson TX2、Jetson Orin NX、RubikPi和 Intel i7 上实测。",
+        "whats_new_zh": [
+          "相比现有功耗管理方法能效提升 7.09 倍、完工时间缩短 4.0 倍",
+          "新负载零样本部署 5 秒内完成，后续决策延迟 358 ms",
+          "模型强化学习收敛速度比无模型方法快 20 倍"
+        ],
+        "key_specs": {
+          "other": "Jetson TX2 / Jetson Orin NX / RubikPi / Intel Core i7 实测"
+        },
+        "edge_ai_impact_zh": "端侧 AI 负载的功耗/温控同样依赖 DVFS，这种零样本调频思路可迁移到 NPU+CPU 混合调度。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2601.08166v1"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv",
+        "affiliation": "Wayne State University；Iowa State University；UT Dallas",
+        "authors": "Mohammad Pivezhandi; Mahdi Banisharif; Abusayeed Saifullah",
+        "deep_dive_zh": [
+          {
+            "heading": "方法",
+            "points": [
+              "分层多智能体调度，两个协作智能体分解指数级动作空间",
+              "LLM 从 OpenMP 代码中提取语义特征，无需执行剖析"
+            ]
+          },
+          {
+            "heading": "实测",
+            "points": [
+              "BOTS 与 PolybenchC 基准，四种平台真机测试"
+            ]
+          },
+          {
+            "heading": "局限",
+            "points": [
+              "负载为 OpenMP 程序而非神经网络推理"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-01-10",
+        "vendor": "香港科技大学 / 华南理工大学",
+        "category": "存内计算/PIM",
+        "title": "DS-CIM: Digital Stochastic Computing-In-Memory Featuring Accurate OR-Accumulation via Sample Region Remapping for Edge AI Models",
+        "title_zh": "DS-CIM：数字随机存内计算",
+        "url": "https://arxiv.org/abs/2601.06724",
+        "source_type": "论文",
+        "summary_zh": "港科大等提出数字随机计算存内架构 DS-CIM，用紧凑的 OR 门电路替代数字 CIM 中昂贵的加法树做乘累加，并通过共享随机数发生器和数据重映射解决 OR 碰撞与“1 饱和”问题。",
+        "whats_new_zh": [
+          "高效版 DS-CIM2：能效 3566.1 TOPS/W、面积效率 363.7 TOPS/mm²，RMSE 3.81%",
+          "高精度版 DS-CIM1：INT8 ResNet18 在 CIFAR-10 上 94.45% 准确率，RMSE 0.74%",
+          "把低成本 OR 电路复制 64 份提升吞吐，面积仅约 1 倍增加",
+          "在 INT8 ResNet50（ImageNet）与 FP8 LLaMA-7B 上验证了大模型能力"
+        ],
+        "key_specs": {
+          "npu": "OR 累加的随机计算 MAC，复制 64 份",
+          "power": "3566.1 TOPS/W（DS-CIM2，论文口径）",
+          "other": "363.7 TOPS/mm²"
+        },
+        "edge_ai_impact_zh": "为常开/可穿戴 AI 提供了极高能效的 CIM 选项，并首次把随机计算 CIM 推到 7B LLM 的精度验证。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2601.06724v1"
+        ],
+        "confidence": "high",
+        "venue": "arXiv（DATE 2026 录用）",
+        "affiliation": "香港科技大学；华南理工大学；西湖大学",
+        "authors": "Kunming Shao; Liang Zhao; Jiangnan Yu",
+        "deep_dive_zh": [
+          {
+            "heading": "电路设计",
+            "points": [
+              "改变数据表示，让有符号 MAC 可用无符号 OR 门实现",
+              "共享 PRNG + 2D 分区，单周期互斥激活消除 OR 碰撞"
+            ]
+          },
+          {
+            "heading": "精度修复",
+            "points": [
+              "随机过程分析 + 采样区域重映射解决 1 饱和，提升对输入稀疏的鲁棒性"
+            ]
+          },
+          {
+            "heading": "能效口径",
+            "points": [
+              "3566.1 TOPS/W 为宏级能效，应与整机 TOPS/W 区分",
+              "DATE 2026 录用"
+            ]
+          }
+        ],
+        "model_capacity_zh": "论文在 FP8 LLaMA-7B 上做了精度验证，但未给出端到端 tok/s；能效数字为宏单元级口径，不能直接换算成整机 LLM 速度。"
+      },
+      {
+        "date": "2026-01-12",
+        "vendor": "DeepSeek-AI / 北京大学",
+        "category": "存储与内存",
+        "title": "Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models",
+        "title_zh": "DeepSeek Engram：条件记忆查表",
+        "url": "https://arxiv.org/abs/2601.07372",
+        "source_type": "论文",
+        "summary_zh": "DeepSeek 与北京大学提出 Engram 条件记忆模块，用 O(1) 的 N-gram 嵌入查表补充 MoE 的条件计算，形成“计算稀疏 + 记忆稀疏”两条轴。由于查表地址是确定性的，可以把超大嵌入表放到主机内存并提前预取，对硬件内存层级设计有直接含义。",
+        "whats_new_zh": [
+          "Engram-27B：总参数 26.7B、激活 3.8B，其中 Engram 模块 5.7B，与同参数同 FLOPs 的 MoE-27B 对比",
+          "MMLU +3.4、CMMLU +4.0、BBH +5.0、ARC-Challenge +3.7、HumanEval +3.0、MATH +2.4；Multi-Query NIAH 从 84.2 提升到 97.0",
+          "推理时把 100B 参数的 Engram 表卸载到主机内存、经 PCIe 异步预取：H800 上 8B Dense 吞吐 6315.52→6140.02 tok/s，峰值开销 2.8%",
+          "论文描述了多级缓存：高频嵌入放 HBM/主机 DRAM，低频模式可放 NVMe SSD（基准测试未使用该分层）"
+        ],
+        "key_specs": {
+          "memory": "100B 参数 Engram 表放主机内存，PCIe 预取开销 ≤2.8%（H800 实测）",
+          "other": "Engram-27B：26.7B 总参/3.8B 激活/5.7B Engram"
+        },
+        "edge_ai_impact_zh": "Engram 让“容量大但慢”的内存也能为模型能力出力，端侧芯片未来可以用便宜的 LPDDR/UFS 容量换模型知识量，而不必全靠带宽。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2601.07372v1"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "DeepSeek-AI；北京大学",
+        "authors": "Xin Cheng; Rui Tian; Wangding Zeng",
+        "deep_dive_zh": [
+          {
+            "heading": "机制",
+            "points": [
+              "把经典 N-gram 嵌入现代化为可扩展查表，作为 MoE 之外的第二种稀疏",
+              "提出稀疏度分配问题并发现 U 形缩放律，用于决定参数在 MoE 专家与静态记忆之间如何分配"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "查表地址只依赖输入 token，可在前几层计算时提前发起，因此能容忍较慢的大容量内存",
+              "H800 上 4B Dense +100B Engram 吞吐 9031.62→8858.28 tok/s，8B Dense 6315.52→6140.02 tok/s"
+            ]
+          },
+          {
+            "heading": "对硬件的含义",
+            "points": [
+              "把“容量”与“带宽”需求分离：大表要容量、不要高带宽，正适合 LPDDR/闪存/CXL 等层级",
+              "论文自己提出 HBM/DRAM/NVMe 多级缓存设想，与同月 Patterson 文中的 HBF 方向相互呼应"
+            ]
+          }
+        ],
+        "model_capacity_zh": "Engram-27B 总参 26.7B、激活 3.8B（官方口径）。若移植到端侧：查表部分只读少量行，主要带宽压力仍来自 3.8B 激活参数，4-bit 时每 token 约 1.9 GB，按 iPhone 15 Pro 级 51.2 GB/s LPDDR5（数字取自同月 CD-PIM 论文）推算 decode 上限约 27 tok/s（推算；Engram 论文本身未涉及端侧）。"
+      },
+      {
+        "date": "2026-01-15",
+        "vendor": "Google",
+        "category": "软件栈/工具链",
+        "title": "TranslateGemma: A new suite of open translation models",
+        "title_zh": "TranslateGemma 开放翻译模型，4B 面向手机",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/translategemma/",
+        "source_type": "官方",
+        "summary_zh": "Google 发布基于 Gemma 3 的开放翻译模型 TranslateGemma，提供 4B、12B、27B 三档：4B 面向移动和边缘设备，12B 面向消费级笔记本，27B 面向单张 H100 或云端 TPU。官方评测覆盖 55 种语言，另外用约 500 个语言对做了训练。",
+        "whats_new_zh": [
+          "三档尺寸：4B（“为移动和边缘部署优化”）、12B（“在消费级笔记本上流畅运行”）、27B（单张 H100/TPU）",
+          "技术报告中的 WMT24++ MetricX（越低越好）：4B 5.32，Gemma 3 4B 为 6.97；12B 3.60 vs 4.86；27B 3.09 vs 4.04",
+          "12B TranslateGemma（3.60）优于 Gemma 3 27B 基线（4.04），参数不到后者一半",
+          "训练：SFT（人工 + Gemini 生成的平行语料）+ 强化学习（MetricX-QE、AutoMQM 奖励模型）",
+          "保留多模态能力：Vistra 图片翻译上，4B 的 MetricX 为 2.58，基线为 2.60，提升很小"
+        ],
+        "key_specs": {
+          "other": "4B/12B/27B；55 种语言评测；权重发布在 Hugging Face 和 Kaggle"
+        },
+        "edge_ai_impact_zh": "专用小模型加强化学习，让 4B 模型在单一任务上接近约 3 倍参数的通用模型，这是端侧“小而专”路线的又一个例子。",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2601.09012",
+          "https://huggingface.co/collections/google/translategemma"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "小模型追平大模型",
+            "points": [
+              "4B 的 MetricX 为 5.32，接近 Gemma 3 12B 基线的 4.86；官方说法是 4B “可以媲美 12B 基线”",
+              "三档模型相对各自基线的 MetricX 降幅都在 23%~26%"
+            ]
+          },
+          {
+            "heading": "端侧意义",
+            "points": [
+              "翻译是最常见的端侧 AI 刚需（离线、隐私、低延迟），4B 档直接面向手机",
+              "4B 在图片翻译上几乎没有提升，技术报告认为原因是模型容量有限"
+            ]
+          },
+          {
+            "heading": "口径",
+            "points": [
+              "速度、内存占用和量化版本，官方都没有披露",
+              "技术报告 arXiv 2601.09012 的 v1 为 2026-01-13，博客发布于 01-15"
+            ]
+          }
+        ],
+        "model_capacity_zh": "4B 按 int4 约 2GB 权重，手机 decode 理论上限约 38 tok/s（按 76.8GB/s 带宽推算）；12B 按 int4 约 6GB，在约 100GB/s 带宽的笔记本上 decode 上限约 16 tok/s（推算）。官方没有给出任何设备上的速度。"
+      },
+      {
+        "date": "2026-01-13",
+        "vendor": "Apple",
+        "category": "软件栈/工具链",
+        "title": "MLX v0.30.3",
+        "title_zh": "MLX 0.30.3：Metal 支持 FP4/FP8",
+        "url": "https://github.com/ml-explore/mlx/releases/tag/v0.30.3",
+        "source_type": "官方",
+        "summary_zh": "Apple 开源机器学习框架 MLX 发布 v0.30.3，重点是在 Metal（Apple GPU）和 CPU 上支持 nvfp4、mxfp8 两种微缩放（microscaling）低精度格式，并让 CUDA 后端支持 nvfp4/mxfp8 的量化×量化矩阵乘。这样 Apple Silicon 可以直接加载按业界 FP4/FP8 标准量化的模型权重。",
+        "whats_new_zh": [
+          "Metal/CPU 新增 nvfp4、mxfp8 量化算子（PR #2946）",
+          "CUDA 后端支持 nvfp4/mxfp8 的量化×量化矩阵乘（QQ linear）",
+          "Python 侧开放 fp8 互转，加载 safetensors 时不再自动转换 fp8",
+          "PR 作者在 M4 Max 上测 Qwen3 4B（2048 上下文）：mxfp4 生成 141.3 tok/s、nvfp4 136.4、q4 138.2；mxfp8 88.1、q8 87.5（开发者实测，未调优）",
+          "CI 新增 macOS 26 目标；运行时缺少 NAX（M5 神经加速器）内核时不调用 NAX"
+        ],
+        "key_specs": {
+          "gpu": "Apple GPU（Metal）；PR 测试平台为 M4 Max",
+          "other": "新格式：nvfp4、mxfp8；CUDA 侧支持 QQ matmul"
+        },
+        "edge_ai_impact_zh": "FP4/FP8 微缩放格式进入 Apple GPU，端侧可以直接复用云端量化好的权重，降低本地大模型的部署门槛。",
+        "evidence_urls": [
+          "https://github.com/ml-explore/mlx/pull/2946",
+          "https://github.com/ml-explore/mlx-lm/releases/tag/v0.30.1"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "格式与精度",
+            "points": [
+              "nvfp4/mxfp4 使用 4-bit 元素 + 每块共享缩放因子，速度与 MLX 原有 q4（整数仿射量化）基本持平：141 vs 138 tok/s",
+              "mxfp8 与 q8 也基本持平（88.1 vs 87.5 tok/s），意义在于格式兼容，而不是提速"
+            ]
+          },
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "prefill 在各格式之间相差不到 3%（1574~1621 tok/s），说明 prefill 受算力限制，对权重格式不敏感",
+              "decode 随权重字节数下降而变快，是典型的带宽受限特征"
+            ]
+          },
+          {
+            "heading": "端云格式统一",
+            "points": [
+              "nvfp4 是 NVIDIA Blackwell 的原生格式；Metal 支持后，同一份 FP4 权重可以在云端 GPU 和 Mac 上通用，不必重复量化",
+              "PR 作者注明“尚未做性能调优”，这些数字属于早期结果"
+            ]
+          }
+        ],
+        "model_capacity_zh": "开发者实测（M4 Max，Qwen3 4B，prefill 2048、生成 128）：4-bit 档约 136~141 tok/s，8-bit 档约 88 tok/s，prefill 均约 1570~1620 tok/s。4-bit 与 8-bit 的生成速度比约 1.6，接近权重字节数之比 2，说明 decode 基本受内存带宽限制（推算）。"
+      },
+      {
+        "date": "2026-01-13",
+        "vendor": "Google",
+        "category": "软件栈/工具链",
+        "title": "Next generation medical image interpretation with MedGemma 1.5 and medical speech to text with MedASR",
+        "title_zh": "MedGemma 1.5 4B 与 MedASR 开放发布",
+        "url": "https://research.google/blog/next-generation-medical-image-interpretation-with-medgemma-15-and-medical-speech-to-text-with-medasr/",
+        "source_type": "官方",
+        "summary_zh": "Google Research 发布 MedGemma 1.5（4B 多模态医疗模型）和医疗语音识别模型 MedASR。MedGemma 1.5 新增 CT/MRI 等三维影像和时间序列影像的理解能力，官方称它“小到可以离线运行”。MedASR 在医疗口述转写上的词错率明显低于 Whisper large-v3。",
+        "whats_new_zh": [
+          "MedGemma 1.5 为 4B 参数，官方称“small enough to run offline”",
+          "MRI 发现分类 65%（上一版 51%）；CT 61%（上一版 58%）",
+          "病理 ROUGE-L 0.49（上一版 0.02）；胸片解剖定位 IoU 38%（上一版 3%）",
+          "化验单信息抽取 macro F1 78%（上一版 60%）；EHRQA 90%（68%）；MedQA 69%（64%）",
+          "MedASR 词错率：胸片口述 5.2%，Whisper large-v3 为 12.5%；内部医疗口述基准 5.2% vs 28.2%"
+        ],
+        "key_specs": {
+          "other": "MedGemma 1.5 4B（多模态）；MedASR 参数量未披露；运行时与端侧实测未披露"
+        },
+        "edge_ai_impact_zh": "医疗是对数据不出域要求最高的场景之一。4B 多模态模型加专用 ASR，构成了“本地语音录入 + 本地影像理解”医疗智能体的现成组件。",
+        "evidence_urls": [
+          "https://heise.de/-11145882"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "为什么是 4B",
+            "points": [
+              "官方把 4B 定位为“可离线运行”的高效起点，适合医院内网或无网络环境",
+              "CT/MRI 是三维体数据，输入 token 远多于单张图片，在端侧运行时 prefill 和内存是主要压力（推断）"
+            ]
+          },
+          {
+            "heading": "关键指标",
+            "points": [
+              "病理 ROUGE-L 从 0.02 提高到 0.49，追平专用模型 PolyPath 的 0.498",
+              "胸片定位 IoU 从 3% 提高到 38%"
+            ]
+          },
+          {
+            "heading": "口径",
+            "points": [
+              "所有数字均为 Google 内部评测口径",
+              "本文没有涉及端侧部署形态（LiteRT/手机）"
+            ]
+          }
+        ],
+        "model_capacity_zh": "4B 参数。按 int4 估算权重约 2GB，可以装进 8GB 内存的手机；以 LPDDR5X-9600 64-bit 约 76.8GB/s 的带宽计，decode 理论上限约 38 tok/s，实际通常是上限的 50%~70%（推算，官方未给端侧速度）。"
+      },
+      {
+        "date": "2026-01-12",
+        "vendor": "腾讯 / 香港城市大学",
+        "category": "软件栈/工具链",
+        "title": "Sherry: Hardware-Efficient 1.25-Bit Ternary Quantization via Fine-grained Sparsification",
+        "title_zh": "Sherry：1.25 bit 三值量化",
+        "url": "https://arxiv.org/abs/2601.07892",
+        "source_type": "论文",
+        "summary_zh": "香港城市大学与腾讯提出 Sherry，用 3:4 细粒度稀疏把每 4 个三值权重打包进 5 bit，得到 2 的幂对齐的 1.25 bit 权重，并用 Arenas 退火残差机制避免稀疏三值训练的表示坍缩，在 BitNet.cpp 框架下用 CPU 实测。",
+        "whats_new_zh": [
+          "LLaMA-3.2 上精度与 SOTA 三值方法持平",
+          "3B 模型：Sherry 45.55 tok/s、712.40 MB，对比 2-bit I2_S 41.87 tok/s/873.65 MB、1.67-bit TL2 38.80 tok/s/846.01 MB、BF16 7.55 tok/s/6190 MB",
+          "0.7B 模型：148.27 tok/s、205.50 MB，比 TL2（116.83 tok/s）快约 27%",
+          "摘要称 1B 模型提速 10%、省 25% 位宽，但表中只有 0.7B 与 3B"
+        ],
+        "key_specs": {
+          "cpu": "Intel i7-14700HX（正文另一处写 Intel 8263C，存在不一致）",
+          "other": "1.25 bit/权重，4 权重打包 5 bit"
+        },
+        "edge_ai_impact_zh": "把三值模型的位宽进一步压到 1.25 bit 且保持硬件对齐，对内存带宽受限的手机/PC CPU 推理直接有利。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2601.07892v1"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv",
+        "affiliation": "香港城市大学；腾讯；麦吉尔大学",
+        "authors": "Hong Huang; Decheng Wu; Qiangqiang Hu",
+        "deep_dive_zh": [
+          {
+            "heading": "打包格式",
+            "points": [
+              "2-bit 对齐浪费位宽，1.67-bit 不规则打包拖慢推理；3:4 稀疏使 1.25 bit 恢复 2 的幂对齐"
+            ]
+          },
+          {
+            "heading": "训练",
+            "points": [
+              "发现稀疏三值训练的权重困陷问题，用 Arenas 退火残差突触维持表示多样性"
+            ]
+          },
+          {
+            "heading": "实测与口径",
+            "points": [
+              "BitNet.cpp 框架内对比 I2_S/TL2",
+              "CPU 型号与模型规模在摘要/正文中有不一致，需谨慎引用"
+            ]
+          }
+        ],
+        "model_capacity_zh": "3B 三值模型约 712 MB，CPU 上 45.55 tok/s（论文实测）。按 51.2 GB/s（iPhone 15 Pro 级 LPDDR5）÷ 0.712 GB 推算，手机端 decode 带宽上限约 72 tok/s（推算，未计 KV 与激活）。"
+      },
+      {
+        "date": "2026-01-15",
+        "vendor": "TSMC",
+        "category": "产业动态",
+        "title": "TSMC Reports Fourth Quarter EPS of NT$19.50",
+        "title_zh": "台积电4Q25财报与2026年资本开支",
+        "url": "https://pr.tsmc.com/english/news/3281",
+        "source_type": "官方",
+        "summary_zh": "台积电4Q25营收337.3亿美元、毛利率62.3%，3nm占晶圆营收28%、5nm占35%、7nm及以下合计77%。2026年资本开支指引520–560亿美元，1Q26营收指引346–358亿美元。媒体整理的法说会信息：N2已于4Q25量产，智能手机占营收32%，AI加速器2024–2029年营收CAGR上调到接近50%中高段。",
+        "whats_new_zh": [
+          "官方口径：4Q25营收10,460.9亿新台币（337.3亿美元），同比+20.5%；净利润同比+35.0%；毛利率62.3%、营业利益率54.0%。",
+          "官方口径：晶圆营收中3nm占28%、5nm占35%、7nm占14%。",
+          "官方口径：1Q26营收指引346–358亿美元，毛利率63–65%；2026年资本预算520–560亿美元。",
+          "媒体报道（Futurum整理法说会）：4Q25按平台HPC占55%、智能手机32%、IoT 5%、汽车5%；N2在新竹和高雄量产、良率良好，2026年拉低毛利2–3个百分点；资本开支70–80%投向先进制程。"
+        ],
+        "key_specs": {
+          "process": "N2于4Q25在新竹、高雄量产（法说会口径，媒体报道）",
+          "other": "2026年资本开支520–560亿美元；3nm占晶圆营收28%"
+        },
+        "edge_ai_impact_zh": "先进制程产能继续向数据中心AI倾斜，2nm首年成本高，手机和PC的端侧AI芯片难靠工艺红利降本，2026年端侧AI的提升更多要靠架构和软件。",
+        "evidence_urls": [
+          "https://pr.tsmc.com/system/files/newspdf/attachment/96cb17348f1dd1f8e2ee91253ee28a64f53fce5c/4Q25%20(E)_with%20guidance_final_wmn.pdf",
+          "https://futurumgroup.com/insights/tsmc-q4-fy-2025-results-and-fy-2026-outlook-signal-ai-led-growth",
+          "https://datacenterdynamics.com/en/news/tsmc-announces-2026-capex-spend-of-56bn-after-posting-eighth-consecutive-quarter-of-growth/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "对手机SoC的含义",
+            "points": [
+              "3nm占比28%，主要来自旗舰手机SoC和AI加速器；2026年下半年旗舰手机芯片将陆续转向N2。",
+              "N2初期拉低毛利2–3个百分点，意味着2nm晶圆价格不会便宜，旗舰SoC成本继续上行（推算）。"
+            ]
+          },
+          {
+            "heading": "AI需求结构",
+            "points": [
+              "AI加速器占2025年营收约十几个百分点（high-teens），CAGR上调；HPC占比已超过手机，端侧芯片在台积电的议价地位相对下降。"
+            ]
+          },
+          {
+            "heading": "资本开支去向",
+            "points": [
+              "2026年520–560亿美元中70–80%投向先进制程，其余为特殊工艺与先进封装（媒体整理法说会）。",
+              "1Q26毛利率指引63–65%，高于4Q25的62.3%，汇率假设1美元兑31.6新台币（官方口径）。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-01-12",
+        "vendor": "Apple / Google",
+        "category": "产业动态",
+        "title": "Joint statement from Google and Apple",
+        "title_zh": "苹果下一代基础模型改用 Gemini 打底",
+        "url": "https://blog.google/company-news/inside-google/company-announcements/joint-statement-google-apple/",
+        "source_type": "官方",
+        "summary_zh": "Apple 与 Google 在 Google 官方博客发布联合声明：双方达成多年合作，Apple 下一代 Apple Foundation Models 将基于 Google 的 Gemini 模型和云技术。新模型将驱动未来的 Apple Intelligence 功能，包括“今年推出的更个性化的 Siri”。声明强调 Apple Intelligence 仍运行在 Apple 设备和 Private Cloud Compute（PCC）上。",
+        "whats_new_zh": [
+          "官方口径：合作为“多年期（multi-year）”，对象是“下一代 Apple Foundation Models”",
+          "Apple 称经过“仔细评估”后，认定 Google 的 AI 技术是 Apple Foundation Models“最有能力的基础”",
+          "承诺 Apple Intelligence 继续运行在 Apple 设备与 Private Cloud Compute 上，隐私标准不变",
+          "金额未在声明中披露；此前媒体报道约每年 10 亿美元（媒体口径，未经官方确认）"
+        ],
+        "key_specs": {
+          "other": "未披露模型参数、端侧/云端分工和硬件；仅声明“设备 + PCC”两层运行环境不变"
+        },
+        "edge_ai_impact_zh": "手机两大平台的基础模型首次出现“同源”：Apple 把前沿模型能力外采自 Google，自己守住端侧 + PCC 的隐私推理链路。端侧 AI 的竞争点从“谁的模型更强”转向“谁能把大模型能力安全地落到设备和私有云上”。",
+        "evidence_urls": [
+          "https://www.bloomberg.com/news/articles/2026-01-12/google-confirms-multiyear-ai-deal-to-power-apple-models-siri",
+          "https://engadget.com/ai/apples-siri-ai-will-be-powered-by-gemini-153636649.html",
+          "https://arxiv.org/abs/2507.13575v2"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "端云分工",
+            "points": [
+              "声明只写了“Apple Intelligence 继续运行在 Apple 设备和 PCC 上”，没有说明 Gemini 衍生模型是否有端侧版本",
+              "按 Apple 2025 技术报告，端侧模型约 3B，服务器模型跑在 PCC；“基于 Gemini”最可能先替换的是 PCC 上的大模型（推断）"
+            ]
+          },
+          {
+            "heading": "对 Apple 芯片路线的含义",
+            "points": [
+              "模型能力外采后，Apple 的差异化更依赖端侧 NPU/GPU，以及 PCC 自研服务器芯片组成的私有推理链路",
+              "PCC 若要承载 1.2T 级模型（爆料口径），对服务器内存容量和互联的要求远高于此前约 150B 的云端模型（同为爆料口径）"
+            ]
+          },
+          {
+            "heading": "口径与存疑",
+            "points": [
+              "声明为官方一手；金额、参数量、上线时间均来自媒体，不是官方数字",
+              "声明称个性化 Siri “今年推出”，但没有给出具体版本号"
+            ]
+          }
+        ],
+        "model_capacity_zh": "声明本身没有给参数。背景：Apple 2025 技术报告中的端侧模型约 3B 参数（2-bit 量化感知训练 + KV cache 共享），服务器模型为 PT-MoE，跑在 PCC。1 月 25 日 Gurman 爆料，Gemini 衍生的 AFM v10 约 1.2 万亿参数、跑在 PCC（爆料口径）。按 int4 估算，1.2T 参数的权重约 600GB，只可能放在云端；端侧仍需要另外的小模型（推算）。"
+      },
+      {
+        "date": "2026-01-09",
+        "vendor": "Arm",
+        "category": "产业动态",
+        "title": "How physical AI and edge AI defined CES 2026 in Las Vegas",
+        "title_zh": "Arm设物理AI事业部，CES主打边缘AI",
+        "url": "https://newsroom.arm.com/blog/arm-ces-2026-takeaways",
+        "source_type": "官方",
+        "summary_zh": "Arm在CES 2026期间调整组织，从原Edge（手机/PC）部门拆出物理AI（Physical AI）事业部，合并汽车和机器人业务，由EVP Drew Henry负责；公司形成云与AI、Edge、物理AI三条业务线（媒体报道）。Arm官方博客的CES回顾把车、机器人、PC、XR眼镜和智能家居的共同需求概括为“AI要在本地高效可靠地运行”。",
+        "whats_new_zh": [
+          "媒体报道（SiliconANGLE援引路透，01-07）：Arm新设物理AI事业部，从Edge部门拆出，聚焦机器人与智能汽车芯片，负责人为Drew Henry；Henry未透露客户名。",
+          "官方口径（Arm博客01-09）：Drew Henry任物理AI执行副总裁，Chris Bergey任边缘AI执行副总裁。",
+          "官方口径：列举的端侧案例包括Ambiq Atomiq SoC（Arm Ethos-U85）、联想Qira个人助理（在PC与手机上本地运行关键任务）、Samsung Galaxy Z TriFold（骁龙8 Elite）、Jetson Thor（Neoverse）等。"
+        ],
+        "key_specs": {
+          "other": "组织调整：云与AI / Edge（手机、PC）/ 物理AI（汽车+机器人）三条业务线（媒体报道）"
+        },
+        "edge_ai_impact_zh": "IP供应商按“物理AI”单独建事业部，说明机器人/车载端侧推理已被视为与手机同等量级的市场；后续Arm面向机器人的CSS子系统值得跟踪。",
+        "evidence_urls": [
+          "https://siliconangle.com/2026/01/07/chip-designer-arm-targets-robotics-new-physical-ai-business/",
+          "https://anysilicon.com/news/arm-launches-physical-ai-unit-to-expand-robotics-and-automotive-push/"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "组织调整的含义",
+            "points": [
+              "汽车与机器人在传感器、功耗和功能安全上的需求接近，Arm把两者合并，意味着Zena车载计算子系统等IP会向机器人复用。",
+              "手机/PC仍归Edge部门，Lumex等移动IP的路线不受影响（博客未提Lumex）。"
+            ]
+          },
+          {
+            "heading": "端侧案例",
+            "points": [
+              "Ethos-U85进入Ambiq的Atomiq SoC，说明Arm的微NPU开始落地到超低功耗可穿戴。",
+              "宝马2026款iX3的Alexa+语音助手将在车内本地运行（Arm博客口径）。"
+            ]
+          },
+          {
+            "heading": "PC与可穿戴",
+            "points": [
+              "博客列举CES上的Arm PC：多款骁龙X系列笔记本，以及Acer Chromebook 315、ASUS Chromebook CM32/CM14/CM15。",
+              "XREAL和ThinkAR展示了眼镜端的本地空间感知与手势输入；Samsung、LG、海信电视用Arm SoC做本地语音与内容处理。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-01-15",
+        "vendor": "TrendForce",
+        "category": "产业动态",
+        "title": "Price Hikes on New Models Weigh on Sales, Smartphone Production to Face Clear Headwinds from 2Q26, Says TrendForce",
+        "title_zh": "TrendForce：2026手机产量下调至-7%",
+        "url": "https://www.trendforce.com/presscenter/news/20260115-12880.html",
+        "source_type": "媒体",
+        "summary_zh": "TrendForce把2026年全球智能手机产量预测从同比-2%下调到-7%，原因是宏观疲软、消费者谨慎和内存涨价。品牌在新机上涨价后销量不及预期，部分头部品牌库存堆积，最早1Q26末可能减产，2Q26起产量压力明显。",
+        "whats_new_zh": [
+          "研究机构口径：2026年手机产量预测从-2%（2025年11月）下调到-7%。",
+          "研究机构口径：新机涨价导致销量低于预期，部分品牌最早在1Q26末减产，2Q26起影响明显。",
+          "后续背景（窗口外）：2月TrendForce进一步下调到-10%（约11.35亿部），悲观情景-15%以上。"
+        ],
+        "key_specs": {
+          "other": "2026年手机产量同比-7%（1月15日口径）"
+        },
+        "edge_ai_impact_zh": "手机出货下滑会让厂商更谨慎地给端侧AI加内存，2026年端侧模型更可能停留在3B以下或依赖内存压缩技术。",
+        "evidence_urls": [
+          "https://www.trendforce.com/presscenter/news/20260211-12922.html"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "对SoC厂商",
+            "points": [
+              "产量下滑叠加内存涨价，次旗舰和中端SoC（如天玑9500s/8500）面对更强的成本压力。",
+              "端侧AI卖点是品牌支撑涨价的理由之一，但需要更大内存，与成本控制矛盾。"
+            ]
+          },
+          {
+            "heading": "预测路径",
+            "points": [
+              "2025年11月为-2%，1月15日下调到-7%，2月11日再下调到-10%（约11.35亿部），悲观情景-15%以上（后两者为窗口外背景）。",
+              "1月的发布稿没有点名品牌，只说部分头部品牌库存堆积。"
+            ]
+          },
+          {
+            "heading": "对端侧AI的含义",
+            "points": [
+              "发布稿没有涉及AI或内存规格降配；但同期TrendForce判断LPDDR4X/5X持续缺货，二者叠加意味着大内存AI手机的成本压力最大（推算）。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-01-14",
+        "vendor": "Samsung Research India",
+        "category": "学术研究",
+        "title": "NanoSD: Edge Efficient Foundation Model for Real Time Image Restoration",
+        "title_zh": "NanoSD：手机 NPU 实时扩散复原",
+        "url": "https://arxiv.org/abs/2601.09823",
+        "source_type": "论文",
+        "summary_zh": "三星印度研究院从 Stable Diffusion 1.5 蒸馏出 130M–315M 参数的 NanoSD 系列，同时压缩 U-Net 与 VAE，在 Galaxy S25 Ultra 的骁龙 SM8750 NPU 与 iPhone A17 Pro 神经引擎上实测，最低 12 ms。",
+        "whats_new_zh": [
+          "SM8750 NPU（W8A16）：NanoSD 4 为 20 ms/297M，NanoSD 5 为 12 ms/170M，对比 TinySD 74 ms/323M",
+          "A17 Pro 神经引擎：NanoSD 5 为 20 ms，NanoSD 2 为 38 ms，TinySD 192 ms",
+          "SD 1.5（约 829M）在两家 NPU 上 FP32/INT16/INT8 都无法生成可执行文件；INT4 在 SM8750 上单步单 128×128 块约 116 ms",
+          "发现参数量与真机延迟不成正比：NanoSD 7 仅 130M 却 27 ms，慢于 297M 的 NanoSD 4"
+        ],
+        "key_specs": {
+          "npu": "Qualcomm SM8750 NPU（W8A16）；Apple A17 Pro Neural Engine",
+          "other": "130M–315M 参数扩散模型"
+        },
+        "edge_ai_impact_zh": "给出了同一扩散模型在骁龙 8 Elite 与 A17 Pro NPU 上的对照实测，证明“按 NPU 设计模型”比单纯减参更重要。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2601.09823v1"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "Samsung Research India, Bangalore",
+        "authors": "Subhajit Sanyal; Srinivas Soumitri Miriyala; Akshay Janardan Bankar",
+        "deep_dive_zh": [
+          {
+            "heading": "真机实测",
+            "points": [
+              "同一模型族在高通与苹果 NPU 上排序不同：NanoSD 6/7 在 A17 Pro 上 66–68 ms，远慢于在 SM8750 上",
+              "说明 NPU 编译器对算子形状和特征路由非常敏感"
+            ]
+          },
+          {
+            "heading": "架构平衡",
+            "points": [
+              "参数量减少不等于延迟降低，架构平衡、特征路由、潜空间保持共同决定端侧延迟"
+            ]
+          },
+          {
+            "heading": "应用",
+            "points": [
+              "作为通用骨干用于超分、去模糊、人脸复原和单目深度估计"
+            ]
+          }
+        ],
+        "model_capacity_zh": "130M–315M 参数，W8A16，单次推理 12–41 ms（SM8750 NPU 实测）；论文未清楚说明表 1 的输入分辨率。"
+      }
+    ],
+    "overview": "模型与软件栈周（01-09~01-15）。Apple 与 Google 发布联合声明，下一代 Apple Foundation Models 基于 Gemini，Apple Intelligence 仍运行在设备与 Private Cloud Compute 上；Google 开源 TranslateGemma（4B 面向手机）与 MedGemma 1.5 4B。MLX 0.30.3 让 Apple GPU 支持 FP4/FP8。芯片侧，联发科发布天玑 9500s 与 8500（未公布 TOPS），台积电公布 4Q25 财报与 2026 资本开支，Arm 设立物理 AI 事业部。学术侧，DeepSeek Engram 用条件记忆查表把 100B 参数放进主机内存、吞吐开销不超过 2.8%，三星 NanoSD 在 SM8750 NPU 上做到 12~41ms 的实时扩散复原，Sherry 把三值量化压到 1.25 比特。",
+    "takeaways_zh": [
+      "Apple 端侧与云端模型分工被重新定义：设备上继续跑小模型，Gemini 打底的大模型放在 Private Cloud Compute，端侧硬件路线不变但云端占比上升。",
+      "“把参数放到更便宜的存储层”成为一条明确的研究线：Engram 用主机内存承载查表参数，配合后续 FlashMoE、ZipMoE 等工作，端侧 MoE 的瓶颈正从计算转向存储层级。",
+      "手机 SoC 新品更新以 CPU/GPU 为主，NPU 规格披露在减少，评估端侧 AI 能力需要依赖第三方实测而不是厂商 TOPS。"
+    ]
   }
 }

@@ -5220,8 +5220,1059 @@
     ]
   },
   "hardware": {
-    "window": {},
-    "overview": "",
-    "items": []
+    "window": {
+      "start": "2026-01-16",
+      "end": "2026-01-22"
+    },
+    "items": [
+      {
+        "date": "2026-01-19",
+        "vendor": "Xiaomi",
+        "category": "移动SoC",
+        "title": "消息称小米玄戒 O2 自研芯片或继续用台积电 3nm，推广到平板、汽车、电脑等",
+        "title_zh": "爆料：玄戒O2或用台积电N3P",
+        "url": "https://www.ithome.com/0/914/432.htm",
+        "source_type": "媒体",
+        "summary_zh": "爆料：财联社援引未具名消息人士称，小米下一代自研SoC玄戒O2可能沿用台积电N3P（第三代3nm），而不是2nm；小米计划把玄戒O2推广到平板、汽车、电脑等非手机产品，平板先行，PC和汽车随后。小米官方未确认。",
+        "whats_new_zh": [
+          "爆料（财联社/IT之家，01-19）：玄戒O2或采用台积电N3P，而非2nm。",
+          "爆料：O2计划覆盖平板、汽车、电脑，平板先行。",
+          "爆料（快科技01-12转述博主）：O2预计2026年Q2–Q3亮相，可能采用Arm最新公版核；可信度更低。",
+          "背景：雷军曾表示2026年要在一款终端上实现自研芯片、自研OS、自研AI大模型“大会师”。"
+        ],
+        "key_specs": {
+          "process": "爆料：台积电N3P",
+          "other": "CPU、GPU、NPU规格均未披露"
+        },
+        "edge_ai_impact_zh": "国产手机厂商自研SoC开始向车和PC扩展，若成真，小米可以在自有硬件上统一部署端侧大模型与智能体框架；但目前只是爆料，等待官方发布。",
+        "evidence_urls": [
+          "https://m.c114.com.cn/w51-1304161.html"
+        ],
+        "confidence": "low",
+        "deep_dive_zh": [
+          {
+            "heading": "可信度",
+            "points": [
+              "来源为未具名消息人士，规格、时间都未经小米确认；5月卢伟冰公开表示网上的命名、规格和首发机型爆料可信度不高（窗口外背景）。",
+              "N3P而非2nm的说法与台积电N2产能紧张、成本高的背景相符（推算）。"
+            ]
+          },
+          {
+            "heading": "跨品类意义",
+            "points": [
+              "若O2同时用于手机、平板、车机和PC，小米将以一颗自研SoC统一“人车家”端侧AI硬件，与华为麒麟覆盖多终端的路线相似。"
+            ]
+          },
+          {
+            "heading": "时间线（爆料）",
+            "points": [
+              "1月12日快科技转述博主：O2预计Q2–Q3亮相，可能采用Arm最新公版核、IPC提升15%以上。",
+              "1月19日财联社：工艺或为N3P，平板先行，PC和汽车随后。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-01-22",
+        "vendor": "Shanghai Jiao Tong University",
+        "category": "NPU/AI加速器",
+        "title": "ROMA: a Read-Only-Memory-based Accelerator for QLoRA-based On-Device LLM",
+        "title_zh": "ROMA：ROM 固化基座的端侧 LLM 加速器",
+        "url": "https://arxiv.org/abs/2503.12988",
+        "source_type": "论文",
+        "summary_zh": "上海交大、北大与微软亚洲研究院提出 QLoRA 专用加速器：量化后的基座模型固化在 B-ROM 中，LoRA 权重和 KV 缓存放在 SRAM 里，整模放在片上，不需要外部 DRAM。论文在 ASP-DAC 2026 9F 场次（1 月 22 日，超低精度与量化）宣讲。数字来自 7nm 综合与功耗估算，没有流片。",
+        "whats_new_zh": [
+          "片上 1.86 GB B-ROM 加 304 MB SRAM，可整模放下 4-bit Llama3.2-3B 或 2-bit Llama3-8B（论文口径）",
+          "decode 峰值 24.1K tok/s（8B）和 31.8K tok/s（3B）；KV 达到 4K 时仍高于 10,000 tok/s；256 token 的 prefill 不到 7 ms",
+          "与 i5-1135G7 上的 llama.cpp（6.8 tok/s）和 RTX 4090 上的 TensorRT-LLM（219 tok/s）相比，平均约快 2,785 倍和 70.5 倍（4-bit 3B，论文口径）",
+          "B-ROM 与计算单元融合，L-Unit 面积比标准 ROM 小约 40%"
+        ],
+        "key_specs": {
+          "process": "TSMC 7nm（综合，非流片）",
+          "memory": "B-ROM 1.86 GB；SRAM 304 MB（288 MB 用于 LoRA 与 KV，16 MB 用于中间数据）",
+          "power": "33.1 W @ 500 MHz",
+          "other": "芯片面积 503.7 mm²；LoRA rank 最高 64；KV 上下文最长 4K"
+        },
+        "edge_ai_impact_zh": "这是 BitROM 的“大模型版”：用 ROM 去掉权重搬运，换来数量级的 decode 提速。但面积和功耗都是加速卡级别。对端侧的启示是：基座固定、只更新 LoRA 的部署模式，可以倒推出存储层级的设计。",
+        "evidence_urls": [
+          "https://www.aspdac.com/aspdac2026/pdf/ASP-DAC_2026_Full_Program.pdf",
+          "https://arxiv.org/html/2503.12988"
+        ],
+        "confidence": "high",
+        "venue": "ASP-DAC 2026",
+        "affiliation": "Shanghai Jiao Tong University; Peking University; Microsoft Research Asia",
+        "authors": "Wenqiang Wang, Yijia Zhang, Zikai Zhang",
+        "deep_dive_zh": [
+          {
+            "heading": "存储分层",
+            "points": [
+              "基座模型量化后已经收敛，不再变化，所以放 ROM；需要更新的 LoRA 和随上下文增长的 KV 放 SRAM",
+              "ROM 存储密度远高于 SRAM，这是 1.86 GB 能放进片上的前提"
+            ]
+          },
+          {
+            "heading": "速度从哪里来",
+            "points": [
+              "没有外部 DRAM，decode 不受 LPDDR 带宽限制，所以出现每秒上万 token；作为对比，LPDDR5X 约 77 GB/s 的手机跑 2-bit 8B（约 2 GB 权重），decode 上限约 38 tok/s（推算，batch 1，只计权重读取）",
+              "随 KV 增长，速度从 24K 降到 1 万出头，说明 SRAM 中的注意力计算成为新的瓶颈"
+            ]
+          },
+          {
+            "heading": "代价",
+            "points": [
+              "模型写死在掩模里，换基座就要重新流片，只适合长期不换基座的产品",
+              "33.1 W 的功耗说明它离手机还远，更可能用在车载或边缘盒子上"
+            ]
+          }
+        ],
+        "model_capacity_zh": "整模在片上：Llama3-8B（INT2 基座，FP8 LoRA）或 Llama3.2-3B（INT4 基座），KV 为 FP16，上下文最长 4K（论文口径）。SRAM 决定上下文：3B、rank 16 时，64 MB 只能放 736 token，256 MB 可放 3,808 token。注意 503.7 mm² 和 33.1 W 更接近一张独立加速卡，不是手机 SoC 的功耗与面积预算。"
+      },
+      {
+        "date": "2026-01-22",
+        "vendor": "Duke University",
+        "category": "NPU/AI加速器",
+        "title": "Platinum: Path-Adaptable LUT-Based Accelerator Tailored for Low-Bit Weights Matrix Multiplication",
+        "title_zh": "Platinum：面向三值权重的查表矩阵乘加速器",
+        "url": "https://arxiv.org/abs/2511.21910",
+        "source_type": "论文",
+        "summary_zh": "杜克大学（Hai Li、Yiran Chen 组）提出一款基于查找表（LUT）的低比特权重矩阵乘 ASIC。它离线生成 LUT 构建路径，以减少建表开销，并能在通用 bit-serial 和三值专用两种路径间切换。论文在 ASP-DAC 2026 9F 场次（1 月 22 日）宣讲，结果来自 28nm 综合加周期级仿真。",
+        "whats_new_zh": [
+          "BitNet b1.58-3B 上，prefill（N=1024）比 SpikingEyeriss、Prosperity、16 线程 T-MAC（M2 Pro CPU）分别快 73.6×、4.09×、2.15×，能耗分别降低 32.4×、3.23×、20.9×",
+          "decode（N=8）比 T-MAC 快 1.75×，能耗降低 15.0×",
+          "28nm、500 MHz，面积 0.955 mm²，416 个 PE，片上 324 KB SRAM（272 KB 缓冲 + 52 KB LUT），吞吐 1534 GOP/s",
+          "离线 MST 建表路径让加法次数减少约 10 倍；三值编码每权重 1.6 bit（chunk=5，128 项 LUT）"
+        ],
+        "key_specs": {
+          "process": "28nm（ARM 标准单元，综合）",
+          "npu": "416 PE，1534 GOP/s @ 500 MHz",
+          "memory": "片上 SRAM 324 KB；仿真 DRAM 为 DDR4-2133，64 GB/s",
+          "power": "b1.58-3B prefill 时 3.2 W（DRAM 占 53.5%）",
+          "other": "面积 0.955 mm²"
+        },
+        "edge_ai_impact_zh": "如果 1.58-bit 模型在端侧普及，NPU 可以加一个约 1 mm² 的查表单元，专门处理三值矩阵乘。但论文也显示 DRAM 仍占一半以上功耗，带宽问题依旧存在。",
+        "evidence_urls": [
+          "https://www.aspdac.com/aspdac2026/pdf/ASP-DAC_2026_Full_Program.pdf",
+          "https://arxiv.org/html/2511.21910v1",
+          "https://scholars.duke.edu/publication/1908342"
+        ],
+        "confidence": "high",
+        "venue": "ASP-DAC 2026",
+        "affiliation": "Duke University",
+        "authors": "Haoxuan Shan, Cong Guo, Chiyue Wei",
+        "deep_dive_zh": [
+          {
+            "heading": "LUT 计算的核心",
+            "points": [
+              "超低比特权重的组合有限，可以先把激活的部分和预算好存进表，再用权重索引查表，代替乘法",
+              "以往 LUT 方案每次都要在线建表；Platinum 用最小生成树离线规划建表顺序，复用中间结果"
+            ]
+          },
+          {
+            "heading": "功耗去向",
+            "points": [
+              "3.2 W 中 DRAM 占 53.5%，权重缓冲占 31.6%，计算本身已经不是主要开销",
+              "这再次说明端侧 LLM 的能耗大头在数据搬运"
+            ]
+          },
+          {
+            "heading": "与 CPU 方案对比",
+            "points": [
+              "对标的 T-MAC 是微软的 CPU 查表推理库；Platinum 用不到 1 mm² 的面积换来约 2 倍速度和 15–21 倍能效",
+              "这表明 NPU 增加一个 LUT 单元，可能比在 CPU 上做查表更划算"
+            ]
+          }
+        ],
+        "model_capacity_zh": "评测模型为 BitNet b1.58 的 700M、1.3B、3B 三档，论文未给 tok/s。推算：3B 三值模型按 1.6 bit/权重约 0.6 GB，在 64 GB/s 带宽下 batch=1 的 decode 上限约 100 tok/s（只计权重读取，属推算）。"
+      },
+      {
+        "date": "2026-01-21",
+        "vendor": "KU Leuven",
+        "category": "NPU/AI加速器",
+        "title": "Precision-Scalable Microscaling Datapaths with Optimized Reduction Tree for Efficient NPU Integration",
+        "title_zh": "精度可伸缩的 MX 格式 NPU 数据通路",
+        "url": "https://arxiv.org/abs/2511.06313",
+        "source_type": "论文",
+        "summary_zh": "KU Leuven MICAS（Marian Verhelst 组）针对 OCP Microscaling（MX）格式，设计了整数与浮点混合的可伸缩累加树，并把 8×8 MX MAC 阵列集成进开源 NPU 平台 SNAX，目标是在边缘设备上同时支持训练和推理（持续学习）。该文为 ASP-DAC 2026 特邀论文，在 4D 场次（1 月 21 日，混合精度专场）宣讲。",
+        "whats_new_zh": [
+          "系统能效：MXINT8 为 657 GOPS/W，MXFP8/6 为 1438–1675 GOPS/W，MXFP4 为 4065 GOPS/W；吞吐分别为 64、256、512 GOPS（论文口径）",
+          "GF 22FDX、0.8 V、500 MHz，系统面积 0.60 mm²，MX 张量核占 29.5%",
+          "论文称能效比此前最好的 MX 设计高 1.59×、3.05–3.21×、1.13×；但用论文自己的表格推算，MXFP8/6 约为 2.8–3.5×，两者不完全一致",
+          "ResNet18 和 ViT 的训练与推理负载下，阵列利用率为 94.41%–99.51%"
+        ],
+        "key_specs": {
+          "process": "GlobalFoundries 22FDX（综合），0.8 V",
+          "npu": "8×8 MX MAC，支持 MXINT8/MXFP8/MXFP6/MXFP4",
+          "power": "MXFP4 4065 GOPS/W",
+          "other": "面积 0.60 mm²，500 MHz；集成于 SNAX NPU 平台"
+        },
+        "edge_ai_impact_zh": "MXFP4/MXFP8 正在成为 NPU 的通用格式。这篇工作给出了在不足 1 mm² 面积内同时支持多种 MX 精度、兼顾端侧训练的数据通路方案，可作为 NPU 对接 MX 格式的参考。",
+        "evidence_urls": [
+          "https://www.aspdac.com/aspdac2026/pdf/ASP-DAC_2026_Full_Program.pdf",
+          "https://arxiv.org/html/2511.06313v1",
+          "https://micas.esat.kuleuven.be/research/topics/precision-scalable-microscaling-hardware-for-continual-learning-at-the-edge"
+        ],
+        "confidence": "high",
+        "venue": "ASP-DAC 2026",
+        "affiliation": "KU Leuven (ESAT-MICAS)",
+        "authors": "Stef Cuyckens, Xiaoling Yi, Robin Geens",
+        "deep_dive_zh": [
+          {
+            "heading": "为什么累加树是关键",
+            "points": [
+              "前人工作显示 MX MAC 的面积 88.7%、能耗约 85% 都花在累加树上",
+              "纯整数累加需要昂贵的格式转换，FP32 累加又有量化损失和归一化开销，混合累加树在两者之间折中"
+            ]
+          },
+          {
+            "heading": "端侧训练",
+            "points": [
+              "MX 让推理可以用窄位宽，训练又能保留大动态范围，一套数据通路覆盖两种负载",
+              "目标场景是机器人、可穿戴健康监测、自动驾驶上的持续学习"
+            ]
+          },
+          {
+            "heading": "口径提醒",
+            "points": [
+              "全部为综合与网表仿真结果，没有流片",
+              "单个 MAC 面积 2766 µm²，大于对比设计的 2080 µm²，能效的提升是用面积换来的"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-01-20",
+        "vendor": "Tsinghua University",
+        "category": "NPU/AI加速器",
+        "title": "BitStopper: An Efficient Transformer Attention Accelerator via Stage-fusion and Early Termination",
+        "title_zh": "BitStopper：按位提前终止的稀疏注意力加速器",
+        "url": "https://arxiv.org/abs/2512.06457",
+        "source_type": "论文",
+        "summary_zh": "清华大学（尹首一、胡杨组）提出一种不需要稀疏预测器的动态稀疏注意力加速器。它从 Key 的高位比特面开始逐位计算，边算边淘汰不重要的 token，低位部分和可以直接复用到正式计算中。论文在 ASP-DAC 2026 2A 场次（1 月 20 日）宣讲，结果来自 28nm 综合与周期级仿真。",
+        "whats_new_zh": [
+          "相比 Sanger、SOFA 分别提速 2.03× 和 1.89×，能效提升 2.4× 和 2.1×；相比稠密基线提速 3.2×、能效提升 3.7×（论文口径）",
+          "片外访存比 Sanger 少约 2.9 倍，比微调后的 SOFA 少约 2.1 倍；片外访存在总能耗中的占比降到 38%（Sanger 为 67%）",
+          "28nm、1 GHz，面积 6.84 mm²，功耗 703 mW，峰值 11.36 TOPS/W",
+          "同组的 LAPA（对数域预测驱动的动态稀疏）在同一场次发表"
+        ],
+        "key_specs": {
+          "process": "TSMC 28nm（综合）",
+          "npu": "32 条 bit-level PE 通道；V-PU 为 64 路 INT12 MAC",
+          "memory": "片上 K/V 缓冲 320 KB + Q 缓冲 8 KB；仿真使用 HBM2",
+          "power": "703 mW；11.36 TOPS/W",
+          "other": "面积 6.84 mm²"
+        },
+        "edge_ai_impact_zh": "长上下文端侧助手的注意力开销会随上下文增长。按位提前终止可以同时减少计算量和 KV 读取量，适合用作 NPU 注意力单元的设计参考。",
+        "evidence_urls": [
+          "https://www.aspdac.com/aspdac2026/pdf/ASP-DAC_2026_Full_Program.pdf",
+          "https://doi.org/10.1109/ASP-DAC66049.2026.11420780",
+          "https://arxiv.org/html/2512.06457v1"
+        ],
+        "confidence": "high",
+        "venue": "ASP-DAC 2026",
+        "affiliation": "Tsinghua University",
+        "authors": "Huizheng Wang, Hongbin Wang, Shaojun Wei",
+        "deep_dive_zh": [
+          {
+            "heading": "去掉预测阶段",
+            "points": [
+              "传统动态稀疏要先用低精度预测哪些 token 重要，在 2K 序列时，预测阶段功耗约为正式计算的 3 倍，4K 时升到 4.7 倍",
+              "BitStopper 把预测融合进 bit-serial 计算，高位就足以判断的 token 提前停算"
+            ]
+          },
+          {
+            "heading": "三项机制的贡献",
+            "points": [
+              "BESF（阶段融合）带来 1.25×，计算利用率为 48%",
+              "BAP（按位异步处理）再带来 1.63×，利用率提高到 83%",
+              "LATS（自适应 token 选择）再带来 1.57×"
+            ]
+          },
+          {
+            "heading": "口径提醒",
+            "points": [
+              "全部来自 RTL 综合加周期级仿真，主存按 HBM2 建模，与手机 LPDDR 的带宽差距很大",
+              "INT12 量化与 OPT-1.3B/Llama2-7B 为论文设定，在端侧主流的 INT4 权重下效果未验证"
+            ]
+          }
+        ],
+        "model_capacity_zh": "评测模型为 OPT-1.3B 和 Llama2-7B（INT12 训练后量化），序列长度 1K–4K。论文只报告注意力部分的加速比，未给端到端 tok/s。"
+      },
+      {
+        "date": "2026-01-16",
+        "vendor": "华中科技大学",
+        "category": "NPU/AI加速器",
+        "title": "SwiftKV: An Edge-Oriented Attention Algorithm and Multi-Head Accelerator for Fast, Efficient LLM Decoding",
+        "title_zh": "SwiftKV：边缘 LLM 解码加速器",
+        "url": "https://arxiv.org/abs/2601.10953",
+        "source_type": "论文",
+        "summary_zh": "华中科技大学集成电路学院提出单遍、逐 token 流水的注意力算法 SwiftKV Attention，以及在同一阵列上支持高精度注意力和低精度 GEMV 的 SwiftKV-MHA 加速器，在 FPGA 上实测 7B 级模型解码。",
+        "whats_new_zh": [
+          "Alveo U55C、225 MHz 实测：LLaMA2-7B 81.5 tok/s（12.3 ms/token），ChatGLM-6B 96.3 tok/s",
+          "能效 2.41 token/J（LLaMA2-7B）、2.85 token/J（ChatGLM-6B），对比 FlightLLM 1.22 token/J、EdgeLLM 1.22/1.51 token/J",
+          "注意力算法比原生注意力快 7.16 倍，加速器再把注意力延迟降 13.48 倍；生成速度比 SOTA 高 17.4%，token 能效高 1.98 倍",
+          "W4A8 精度；整机吞吐 1100.3 GOPS、60.12 GOPS/W"
+        ],
+        "key_specs": {
+          "npu": "多头并行阵列，同阵列支持高精度注意力 + 低精度 GEMV",
+          "power": "芯片约 18.3 W（其中 HBM 约 15.5 W）；表中系统功耗 33.8 W",
+          "other": "Alveo U55C FPGA，225 MHz"
+        },
+        "edge_ai_impact_zh": "表明注意力与 GEMV 共阵列是端侧 NPU 解码的可行设计方向，7B 模型 80+ tok/s 的 FPGA 数字可作为边缘加速器的基线。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2601.10953v1"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "华中科技大学集成电路学院",
+        "authors": "Junming Zhang; Qinyan Zhang; Huajun Sun",
+        "deep_dive_zh": [
+          {
+            "heading": "注意力算法",
+            "points": [
+              "每个 (k_t, v_t) 只处理一次，无分数矩阵物化、无分块 softmax、无第二遍",
+              "适合单套硬件、不依赖大规模并行的边缘加速器"
+            ]
+          },
+          {
+            "heading": "加速器微架构",
+            "points": [
+              "SwiftKV-MHA 让高精度注意力和低精度 GEMV 共用同一处理阵列",
+              "支持多头并行解码，弥补现有边缘加速器的多头支持不足"
+            ]
+          },
+          {
+            "heading": "能效与实测",
+            "points": [
+              "2.41–2.85 token/J，约为 FlightLLM/EdgeLLM 的 2 倍",
+              "论文表中功耗口径存在芯片 18.3 W 与系统 33.8 W 两个数，引用时需区分"
+            ]
+          }
+        ],
+        "model_capacity_zh": "LLaMA2-7B / ChatGLM-6B，W4A8，单 batch 解码 81.5 / 96.3 tok/s（论文 FPGA 实测）。按 7B×0.5 B≈3.5 GB 权重推算，81.5 tok/s 对应约 285 GB/s 有效权重带宽（推算），依赖 FPGA 板载 HBM，移植到 LPDDR 端侧需按带宽等比折算。"
+      },
+      {
+        "date": "2026-01-20",
+        "vendor": "RWTH Aachen University",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "ConfASR: A Conformer Block Accelerator for Speech Recognition Optimized for Edge Devices",
+        "title_zh": "ConfASR：端侧 Conformer 语音识别加速器",
+        "url": "https://doi.org/10.1109/ASP-DAC66049.2026.11420567",
+        "source_type": "论文",
+        "summary_zh": "亚琛工业大学提出首个 Conformer 块加速器，用于端侧语音识别。它在一个共享 MAC 阵列上支持全部 Transformer 运算以及深度可分离卷积，所有激活都留在片上。论文在 ASP-DAC 2026 2A 场次（1 月 20 日）宣讲。",
+        "whats_new_zh": [
+          "22nm FDSOI、250 MHz，功耗 359 mW，面积 1.19 mm²（论文口径）",
+          "速度为实时流式识别所需的 900 多倍",
+          "实时使用时，比以往方案延迟降低 4 倍以上、功耗降低 16 倍"
+        ],
+        "key_specs": {
+          "process": "22nm FDSOI",
+          "power": "359 mW @ 250 MHz",
+          "other": "面积 1.19 mm²；共享 MAC 阵列，激活全部在片上"
+        },
+        "edge_ai_impact_zh": "耳机、眼镜等可穿戴设备上的离线语音识别，需要毫瓦级的平均功耗。约 1 mm² 的 Conformer 专用块适合作为常驻语音前端，与大模型 NPU 分工。",
+        "evidence_urls": [
+          "https://www.aspdac.com/aspdac2026/pdf/ASP-DAC_2026_Full_Program.pdf"
+        ],
+        "confidence": "medium",
+        "venue": "ASP-DAC 2026",
+        "affiliation": "RWTH Aachen University",
+        "authors": "Malte Wabnitz, Max Nilovic, Finn Scholz",
+        "deep_dive_zh": [
+          {
+            "heading": "硬件友好改造",
+            "points": [
+              "使用硬件友好的归一化，非线性函数共享缩放因子",
+              "支持学习式位置编码和深度可分离卷积，这是 Conformer 与普通 Transformer 的差别"
+            ]
+          },
+          {
+            "heading": "常驻语音场景",
+            "points": [
+              "速度远超实时，意味着实际使用时可以大部分时间休眠、短时突发计算，这是降低平均功耗的关键",
+              "只看到摘要，评测模型规模和词错率未核实"
+            ]
+          },
+          {
+            "heading": "实现参数",
+            "points": [
+              "22nm FDSOI、250 MHz、359 mW、1.19 mm²（论文口径）",
+              "共享一个 MAC 阵列完成注意力、前馈与卷积，激活不出片，省掉外部存储访问"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-01-21",
+        "vendor": "Apple",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Not to be outdone by OpenAI, Apple is reportedly developing an AI wearable",
+        "title_zh": "爆料：Apple 研发 AirTag 大小 AI 胸针",
+        "url": "https://techcrunch.com/2026/01/21/not-to-be-outdone-by-openai-apple-is-reportedly-developing-an-ai-wearable/",
+        "source_type": "媒体",
+        "summary_zh": "TechCrunch 转述 The Information 的爆料：Apple 正在研发一款别在衣服上的 AI 胸针，大小接近 AirTag、略厚，带两颗摄像头、三个麦克风、扬声器和实体按键。项目还处于很早期，可能 2027 年推出，首发备货约 2000 万台。",
+        "whats_new_zh": [
+          "爆料：铝 + 玻璃外壳的扁平圆盘，尺寸接近 AirTag、略厚",
+          "爆料：两颗摄像头（标准 + 广角）、三个麦克风、扬声器、实体按键，背部是类似 Fitbit 的充电触点",
+          "爆料：可能 2027 年发布，首发约 2000 万台",
+          "背景：OpenAI 1 月 19 日表示可能在 2026 年下半年公布首款设备"
+        ],
+        "key_specs": {
+          "other": "芯片、内存、续航均未披露；项目可能被取消（爆料）"
+        },
+        "edge_ai_impact_zh": "AI 硬件正从手机外溢到“无屏可穿戴”，算力被分成“身上常开感知”和“手机/云端推理”两层，这对超低功耗视觉/语音 NPU 是利好。",
+        "evidence_urls": [
+          "https://www.wareable.com/wearable-tech/apple-developing-ai-siri-wearable-pin-clip-report"
+        ],
+        "confidence": "low",
+        "deep_dive_zh": [
+          {
+            "heading": "低功耗/常驻 AI",
+            "points": [
+              "两颗摄像头加三个麦克风意味着持续采集视觉和语音，需要常开 NPU/DSP 在本地做筛选，才能控制功耗和上传量（推断）",
+              "与 1 月 29 日收购 Q.ai（低语、面部微动作语音识别）的方向一致"
+            ]
+          },
+          {
+            "heading": "算力分层",
+            "points": [
+              "设备本体负责感知和触发，iPhone 或云端负责大模型推理，这与 Apple Watch、AirPods 依赖 iPhone 的模式类似（推断）",
+              "首发约 2000 万台的规模，意味着需要专门的低功耗芯片，而不是现成的手机 SoC（推断）"
+            ]
+          },
+          {
+            "heading": "口径",
+            "points": [
+              "The Information 原文需付费，本条依据 TechCrunch 的转述",
+              "报道明确说项目“非常早期，可能被取消”"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露。AirTag 大小的设备电池和散热都非常有限，大模型推理几乎只能交给 iPhone 或云端，设备本身只能运行唤醒词、视觉预处理等常开小模型（推断）。"
+      },
+      {
+        "date": "2026-01-21",
+        "vendor": "Keio University",
+        "category": "存内计算/PIM",
+        "title": "BitROM: Weight Reload-Free CiROM Architecture Towards Billion-Parameter 1.58-bit LLM Inference",
+        "title_zh": "BitROM：1.58-bit LLM 的 ROM 存内计算",
+        "url": "https://arxiv.org/abs/2509.08542",
+        "source_type": "论文",
+        "summary_zh": "庆应义塾大学把 BitNet 式 1.58-bit 三值权重固化进只读存储器（CiROM），运行时不再搬运权重，并用片上 eDRAM 缓存早期 token 的 KV。论文在 ASP-DAC 2026 4B 场次（1 月 21 日，近存/存内加速 LLM）宣讲。结果来自 65nm 后仿真，没有流片实测。",
+        "whats_new_zh": [
+          "双向 ROM 阵列：每个晶体管存 2 个三值权重，位密度 4,967 Kb/mm²，约为 ASP-DAC 2025 数字 CiROM（487 Kb/mm²）的 10 倍（论文口径；摘要写 kB/mm²，与表格单位不一致）",
+          "能效 20.8 TOPS/W（65nm，0.6/1.2 V，论文口径）；作者承认部分既有设计（含 ISSCC 2025 的数字 BitNet 加速器）能效更高",
+          "Decode-Refresh eDRAM：序列长 128、32 个早期 token 的 KV 放在片上时，外部 DRAM 访问减少 43.6%，所需 eDRAM 为 13.5 MB",
+          "LoRA 适配器（rank 16，6-bit），新增参数为模型的 0.22–0.30%，Falcon3-7B 上 EM 提升 8.33"
+        ],
+        "key_specs": {
+          "process": "TSMC 65nm（后仿真）；另给 14nm 投影",
+          "memory": "片上 DR eDRAM 13.5 MB（序列 128）；eDRAM 保持时间 64 ms",
+          "power": "未披露绝对功耗；20.8 TOPS/W",
+          "other": "BiROMA 宏 2048×1024，每单元 2 个三值权重；6 个宏分区，每区映射 3 层"
+        },
+        "edge_ai_impact_zh": "这项工作说明“权重固化 + 少量可调参数”可以去掉 decode 阶段的权重搬运。但面积账算下来，1B 级模型距离可量产的端侧芯片还很远，更现实的是先用在常驻小模型上。",
+        "evidence_urls": [
+          "https://www.aspdac.com/aspdac2026/pdf/ASP-DAC_2026_Full_Program.pdf",
+          "https://arxiv.org/html/2509.08542"
+        ],
+        "confidence": "high",
+        "venue": "ASP-DAC 2026",
+        "affiliation": "Keio University; Nanjing University",
+        "authors": "Wenlun Zhang, Xinyu Li, Shimpei Ando",
+        "deep_dive_zh": [
+          {
+            "heading": "为什么用 ROM",
+            "points": [
+              "端侧 LLM 的 decode 受限于每个 token 都要把权重从 DRAM 读一遍；把权重固化在 ROM 中直接计算，可以去掉这部分搬运",
+              "代价是模型不能更新，所以用 LoRA 承担下游任务的适配"
+            ]
+          },
+          {
+            "heading": "KV 缓存的处理",
+            "points": [
+              "早期 token 的 KV 放在片上 eDRAM 中，读取时顺带完成刷新，前提是 token 间隔短于 64 ms 的刷新周期",
+              "片上放约 1/4 的早期 token，外部 DRAM 读取几乎减半；研究的序列长度只有 32–256，适用于短上下文的端侧任务"
+            ]
+          },
+          {
+            "heading": "面积是硬伤",
+            "points": [
+              "即使是 1B 模型，14nm 下也需要十几到几十 cm²，说明 ROM 固化方案目前只适合更小的模型或专用唤醒模型",
+              "论文没有给出时钟频率、绝对功耗和 65nm 总面积"
+            ]
+          }
+        ],
+        "model_capacity_zh": "设计目标是 Falcon3-1B（1.58-bit），整模固化在 ROM。但 14nm 投影下 BitROM 本身要 16.71 cm²、eDRAM 再要 10.24 cm²（论文口径），远超手机 SoC 面积，现阶段只是方向性验证。论文未报告 tok/s。"
+      },
+      {
+        "date": "2026-01-18",
+        "vendor": "南京大学 / 中国移动研究院",
+        "category": "存内计算/PIM",
+        "title": "CD-PIM: A High-Bandwidth and Compute-Efficient LPDDR5-Based PIM for Low-Batch LLM Acceleration on Edge-Device",
+        "title_zh": "CD-PIM：面向端侧的 LPDDR5 存内计算",
+        "url": "https://arxiv.org/abs/2601.12298",
+        "source_type": "论文",
+        "summary_zh": "南京大学与中国移动研究院提出基于 LPDDR5 的数字 PIM 架构 CD-PIM，用于端侧低批量 LLM 的 GEMV 加速。通过伪 bank 切分提升内部带宽，并让 GEMV 与 GEMM 交叠执行，在 Jetson AGX Orin 与 iPhone 15 Pro 两种内存配置下做了模拟评估。",
+        "whats_new_zh": [
+          "单批次 HBCEM 模式下平均比纯 GPU 快 11.42 倍、比 SOTA PIM（AttAcc）快 4.25 倍",
+          "LLaMA-1B（输入 128/输出 2048）在 Jetson 上端到端 35.7 s，decode 卸载到 CD-PIM 后 3.53 s，decode 延迟降 90.2%",
+          "iPhone 15 Pro 配置（51.2 GB/s LPDDR5）下 LLaMA-1B 访存密集场景加速 18.6 倍，高于 Jetson 配置的 10.1 倍",
+          "计算单元 TSMC 28nm 综合：每个 14,941 µm²、4.5 mW，约占 32 Gb LPDDR5 die 面积 0.8%，总新增功耗 144 mW"
+        ],
+        "key_specs": {
+          "memory": "LPDDR5 6.4 Gbps/pin，每 die 4 GB、16 bank，每 bank 切 4 个伪 bank",
+          "npu": "INT8 MAC，400 MHz，每 bank 2 个 CU",
+          "power": "新增约 144 mW",
+          "process": "CU 以 TSMC 28nm 综合"
+        },
+        "edge_ai_impact_zh": "直接对准手机/边缘设备的 LPDDR5 带宽墙，证明 PIM 能在百毫瓦级功耗代价下把 decode 提速一个数量级，是 LPDDR6-PIM 讨论的学术参照。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2601.12298v1"
+        ],
+        "confidence": "high",
+        "venue": "arXiv（DATE 2026 录用）",
+        "affiliation": "南京大学电子科学与工程学院；中国移动研究院",
+        "authors": "Ye Lin; Chao Fang; Xiaoyong Song",
+        "deep_dive_zh": [
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "HBCEM：用分段全局位线把每个 bank 切成 4 个伪 bank，提升 bank 内并行带宽",
+              "K-cache 列映射、V-cache 行映射，让 attention 的 GEMV 也能吃满 CU"
+            ]
+          },
+          {
+            "heading": "混合负载",
+            "points": [
+              "LBIM 模式把 GEMV 与 GEMM 交叠，低批量时平均再快 1.12 倍",
+              "iPhone 15 Pro 配置 batch=4 时 LLaMA-7B 相对 HBCEM 1.01–1.46 倍"
+            ]
+          },
+          {
+            "heading": "能效与实测口径",
+            "points": [
+              "全部结果来自改造的 Ramulator2 模拟，非流片实测",
+              "硬件开销小：单 CU 4.5 mW，总增 144 mW，面积约 0.8%/die"
+            ]
+          }
+        ],
+        "model_capacity_zh": "评估模型 LLaMA-1B/7B/13B（INT8 计算单元）。iPhone 15 Pro 配置 16 GB、51.2 GB/s：纯 SoC 读权重时 7B INT8 decode 上限约 7 tok/s（推算），PIM 把 GEMV 放到 bank 内后有效带宽成倍提升，这正是论文 18.6 倍加速的来源。"
+      },
+      {
+        "date": "2026-01-21",
+        "vendor": "Peking University",
+        "category": "存内计算/PIM",
+        "title": "M3DKV: Monolithic 3D Gain Cell Memory Enabled Efficient KV Cache & Processing",
+        "title_zh": "M3DKV：单片 3D 增益单元 KV 近存计算",
+        "url": "https://doi.org/10.1109/ASP-DAC66049.2026.11420572",
+        "source_type": "论文",
+        "summary_zh": "北大与清华提出单片 3D 近存加速器：在后道（BEOL）堆叠增益单元存储层，就地缓存并计算 KV 矩阵；前道（FEOL）基底层负责完整的自注意力计算。论文在 ASP-DAC 2026 5A 场次（1 月 21 日，新兴存储架构）宣讲。目前只看到摘要，没有公开全文。",
+        "whats_new_zh": [
+          "片上带宽 0.29 TB/s/核（论文口径）",
+          "decode 阶段比 GPU 快 97.03×，比 CPU 快 268.01×（论文口径，未见具体型号）",
+          "每参数面积效率比现有加速器高 1.72×–262.16×"
+        ],
+        "key_specs": {
+          "memory": "BEOL 增益单元 KV 缓存层 + FEOL 计算基底层（单片 3D）",
+          "other": "具体工艺、容量、功耗在摘要中未披露"
+        },
+        "edge_ai_impact_zh": "上下文变长后，端侧的瓶颈会从权重转向 KV。把 KV 放到计算单元正上方的堆叠存储里，是继 HBF、LPDDR-PIM 之后又一条可选路线。",
+        "evidence_urls": [
+          "https://www.aspdac.com/aspdac2026/pdf/ASP-DAC_2026_Full_Program.pdf"
+        ],
+        "confidence": "medium",
+        "venue": "ASP-DAC 2026",
+        "affiliation": "Peking University; Tsinghua University",
+        "authors": "Jiaqi Yang, Yanbo Su, Yihan Fu",
+        "deep_dive_zh": [
+          {
+            "heading": "为什么是增益单元",
+            "points": [
+              "增益单元（2T 类）可以在 BEOL 用氧化物半导体制造并逐层堆叠，用来扩展片上存储，适合放长上下文中频繁重读的 KV",
+              "KV 就地计算，避免长上下文下 KV 在 DRAM 和计算单元之间反复搬运"
+            ]
+          },
+          {
+            "heading": "存疑点",
+            "points": [
+              "只拿到摘要，加速比基准、模型规模和工艺均未核实，可信度标为 medium",
+              "单片 3D 工艺离消费级 SoC 量产还有距离"
+            ]
+          },
+          {
+            "heading": "与同会议工作的关系",
+            "points": [
+              "BitROM 用片上 eDRAM 缓存早期 KV，M3DKV 则把全部 KV 搬到堆叠层，两者都在减少 KV 的片外读取",
+              "4B 场次的 BLADE、SpAct-NDP 走的是 DRAM 侧计算，路线不同但目标相同"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-01-21",
+        "vendor": "Shanghai Jiao Tong University",
+        "category": "存内计算/PIM",
+        "title": "SpAct-NDP: Efficient LLM Inference via Sparse Activation on NDP-GPU Heterogeneous Architecture",
+        "title_zh": "SpAct-NDP：近数据处理承接稀疏激活",
+        "url": "https://doi.org/10.1109/ASP-DAC66049.2026.11420624",
+        "source_type": "论文",
+        "summary_zh": "上海交大与清华（戴国浩、汪玉组）发现，稀疏激活 LLM 在 decode 时 GPU 利用率低，主要原因是动态数据搬运造成的同步开销。于是把稀疏 FFN 交给 DRAM 侧的近数据处理（NDP）单元，GPU 负责解析稀疏模式。论文在 ASP-DAC 2026 4B 场次（1 月 21 日）宣讲。",
+        "whats_new_zh": [
+          "相比 SOTA 稀疏激活软件框架，在 RTX 3090 和 A100 上端到端分别提速 2.17× 和 1.92×，能效提升 1.53× 和 1.45×（论文口径）",
+          "预测的动态稀疏度超过 80%",
+          "在 GPU 上解析请求-权重对，执行时间减少约 3 倍、内存减少约 9 倍"
+        ],
+        "key_specs": {
+          "memory": "DRAM 侧 NDP 单元；稀疏感知的权重映射，平衡 bank 负载",
+          "other": "对比平台为 RTX 3090、A100"
+        },
+        "edge_ai_impact_zh": "LPDDR-PIM 在端侧落地，需要一个能吃满 DRAM 带宽的负载。稀疏激活 FFN 是一个天然的候选。",
+        "evidence_urls": [
+          "https://www.aspdac.com/aspdac2026/pdf/ASP-DAC_2026_Full_Program.pdf"
+        ],
+        "confidence": "medium",
+        "venue": "ASP-DAC 2026",
+        "affiliation": "Shanghai Jiao Tong University; Tsinghua University",
+        "authors": "Jiaming Xu, Tongxin Xie, Yongkang Zhou",
+        "deep_dive_zh": [
+          {
+            "heading": "三个问题",
+            "points": [
+              "NDP 访存时 DRAM 带宽利用不足，靠稀疏感知的权重映射解决",
+              "各通道负载不均，靠两级启发式调度解决",
+              "稀疏模式解析耗时，改到并行度更高的 GPU 上做"
+            ]
+          },
+          {
+            "heading": "端侧迁移",
+            "points": [
+              "稀疏激活（ReLU 化）正是 PowerInfer 一类端侧推理的基础，DRAM 侧加计算能力可以缓解手机上的带宽墙",
+              "只看到摘要，硬件开销与模型规模未核实"
+            ]
+          },
+          {
+            "heading": "口径提醒",
+            "points": [
+              "对比对象是 RTX 3090、A100 上的软件框架，不是手机平台",
+              "提速 2.17×/1.92× 为端到端口径，能效提升为 1.53×/1.45×，都是论文口径"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-01-21",
+        "vendor": "Shanghai Jiao Tong University",
+        "category": "存内计算/PIM",
+        "title": "BLADE: Boosting LLM Decoding's Communication Efficiency in DRAM-based PIM",
+        "title_zh": "BLADE：降低 DRAM-PIM 解码的通信开销",
+        "url": "https://doi.org/10.1109/ASP-DAC66049.2026.11420462",
+        "source_type": "论文",
+        "summary_zh": "上海交大（蒋力组）联合清华、复旦提出 DRAM-PIM 解码架构。它针对 PIM 外部带宽有限导致的 bank 间通信，以及 V 缓存转置带来的额外开销，提出按序列长度动态调整 PIM 并行度，并在传输 V 缓存时利用 CPU 与 PIM 访问粒度的差异完成转置。论文在 ASP-DAC 2026 4B 场次（1 月 21 日）宣讲。",
+        "whats_new_zh": [
+          "相比 GPU 基线，提速 105.7×、能效提升 41.6×（论文口径，基线具体型号在摘要中未披露）",
+          "多头注意力的任务划分加动态 PIM 并行度伸缩，适应 decode 过程中不断增长的序列长度",
+          "利用访问粒度差异，让转置后的矩阵在 DRAM 行内连续存放，提高行缓冲命中率"
+        ],
+        "key_specs": {
+          "memory": "DRAM-based PIM（bank 级计算单元）",
+          "other": "摘要未披露具体 PIM 规格"
+        },
+        "edge_ai_impact_zh": "这篇工作说明 PIM 的瓶颈不止算力，还有 bank 间通信和数据布局。端侧 LPDDR-PIM 如果要承担 attention decode，同样需要解决这两类开销。",
+        "evidence_urls": [
+          "https://www.aspdac.com/aspdac2026/pdf/ASP-DAC_2026_Full_Program.pdf"
+        ],
+        "confidence": "medium",
+        "venue": "ASP-DAC 2026",
+        "affiliation": "Shanghai Jiao Tong University; Tsinghua University; Fudan University",
+        "authors": "Yilong Zhao, Fangxin Liu, Zongwu Wang",
+        "deep_dive_zh": [
+          {
+            "heading": "PIM 的隐性开销",
+            "points": [
+              "PIM 要靠高并行度吃满内部带宽，但这带来大量 bank 间通信；外部带宽有限时，通信反而成为瓶颈",
+              "V 缓存要沿序列方向连续存放才能提高行命中率，这又引入转置开销"
+            ]
+          },
+          {
+            "heading": "存疑点",
+            "points": [
+              "105.7 倍的对比基线不明，可能是在极长序列下得出，需看全文确认",
+              "只看到摘要，可信度标为 medium"
+            ]
+          },
+          {
+            "heading": "与 SpAct-NDP 的分工",
+            "points": [
+              "同场次的 SpAct-NDP 把 FFN 的稀疏激活放到 DRAM 侧，BLADE 处理的是注意力部分的 decode",
+              "两者合起来覆盖了 decode 中两类访存密集的算子"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-01-22",
+        "vendor": "未标注机构（作者含 Hoi-Jun Yoo）",
+        "category": "存储与内存",
+        "title": "FlashMoE: Reducing SSD I/O Bottlenecks via ML-Based Cache Replacement for Mixture-of-Experts Inference on Edge Devices",
+        "title_zh": "FlashMoE：专家放 SSD 的端侧 MoE",
+        "url": "https://arxiv.org/abs/2601.17063",
+        "source_type": "论文",
+        "summary_zh": "FlashMoE 把不活跃专家卸载到 SSD，并用轻量机器学习缓存替换策略结合近期性与频率信号，减少存储 I/O，在消费级台式机上实测 OLMoE 与 Qwen3-30B-A3B。",
+        "whats_new_zh": [
+          "缓存命中率比 LRU/LFU 最多高 51%，比 ARC、LeCaR 最多高 28%/21%",
+          "相比现有 MoE 推理系统最高 2.6 倍加速；初始加载比 llama.cpp 快 4 倍、比 Fiddler/DAOP 快 6.8 倍",
+          "decode 时间中专家加载占 70% 以上：一次 SSD 专家加载约 3 ms，而一次 FFN 计算约 158 µs",
+          "平台：Ryzen 9 9600X + RTX 5070 Ti 16GB + SK hynix P51 PCIe 5.0 SSD（7.4 GB/s）+ DDR5-6000"
+        ],
+        "key_specs": {
+          "memory": "SSD 卸载专家：SK hynix P51 PCIe 5.0，7.4 GB/s 读",
+          "gpu": "RTX 5070 Ti 16GB GDDR7",
+          "cpu": "Ryzen 9 9600X"
+        },
+        "edge_ai_impact_zh": "当 MoE 模型达到数百 GB 时，RAM 卸载不再现实，SSD/UFS 将成为端侧内存层级的一部分，缓存策略决定体验。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2601.17063v1"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv",
+        "affiliation": "论文未标注机构",
+        "authors": "Byeongju Kim; Jungwan Lee; Donghyeon Han",
+        "deep_dive_zh": [
+          {
+            "heading": "瓶颈量化",
+            "points": [
+              "专家加载占 decode 时间 70% 以上，SSD 加载 3 ms vs FFN 158 µs",
+              "32 输入 token 即触及约 47% 专家，256 token 时约 67%"
+            ]
+          },
+          {
+            "heading": "缓存策略",
+            "points": [
+              "轻量 ML 策略融合近期性与频率",
+              "对 OLMoE 比 LRU 减少 I/O 22%、比 LFU 减少 35%"
+            ]
+          },
+          {
+            "heading": "口径",
+            "points": [
+              "真机实测，但平台为台式机而非手机",
+              "论文 PDF 未标注作者机构"
+            ]
+          }
+        ],
+        "model_capacity_zh": "Qwen3-30B-A3B（30.3B 总参、3.3B 激活）与 OLMoE-1B-7B。按 7.4 GB/s SSD 推算，若每 token 有 1 GB 专家未命中需从 SSD 读，单 token 即需约 135 ms，因此命中率是决定性因素（推算）。"
+      },
+      {
+        "date": "2026-01-21",
+        "vendor": "UC San Diego",
+        "category": "存储与内存",
+        "title": "QMC: Efficient SLM Edge Inference via Outlier-Aware Quantization and Emergent Memories Co-Design",
+        "title_zh": "QMC：ReRAM+MRAM 混合内存跑小模型",
+        "url": "https://arxiv.org/abs/2601.14549",
+        "source_type": "论文",
+        "summary_zh": "UCSD Tajana Rosing 团队提出免重训的离群值感知量化与异构内存协同设计：普通权重存进多值 ReRAM，关键离群权重存进片上高精度 MRAM，以 Jetson AGX Orin 的 LPDDR5 体系为基线做模拟评估。",
+        "whats_new_zh": [
+          "相对 FP16：内存占用降 6.3–7.3 倍、外部数据搬运降 7.6 倍、能耗降 11.7 倍、延迟降 12.5 倍（摘要口径；正文为 10.98 倍/12.48 倍）",
+          "内点权重用 3-bit 或 2-bit MLC ReRAM，离群权重 5-bit 存 MRAM，离群比例 0.3 为平衡点",
+          "相对 AWQ/GPTQ 延迟快 3.12 倍，DRAM 访问减少 87%，相对 LPDDR5+Flash 内存降 14.54 倍",
+          "评估模型：Hymba-1.5B、LLaMA-3.2-3B、Phi-1.5B、Qwen2.5-1.5B"
+        ],
+        "key_specs": {
+          "memory": "MLC ReRAM（2/3-bit）+ 片上 MRAM（5-bit 离群值），对比 LPDDR5",
+          "other": "模拟评估（DL-RSim + NVMain），ReRAM 误差模型来自 40nm 流片数据"
+        },
+        "edge_ai_impact_zh": "提示端侧内存不必只有 LPDDR：新型非易失存储可让 1–3B 模型权重常驻、几乎零搬运，适合常开助手。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2601.14549v1"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv",
+        "affiliation": "UC San Diego；San Diego State University",
+        "authors": "Nilesh Prasad Pandey; Jangseon Park; Onat Gungor",
+        "deep_dive_zh": [
+          {
+            "heading": "内存层级问题",
+            "points": [
+              "SRAM 快但密度低；DRAM 同时装权重和 KV Cache 造成带宽争抢；Flash 密度高但推理时闲置"
+            ]
+          },
+          {
+            "heading": "协同设计",
+            "points": [
+              "按离群值切分权重：大量内点进高密度 ReRAM，少量离群点进高精度 MRAM，降低器件噪声影响"
+            ]
+          },
+          {
+            "heading": "口径提醒",
+            "points": [
+              "摘要与正文倍数不一致（11.7 vs 10.98、12.5 vs 12.48）",
+              "非真机：以 Jetson AGX Orin 为基线平台建模"
+            ]
+          }
+        ],
+        "model_capacity_zh": "1.5B–3B 小模型，内点 2–3 bit。全部为模拟结果，论文未给出 tok/s。"
+      },
+      {
+        "date": "2026-01-22",
+        "vendor": "Intel",
+        "category": "产业动态",
+        "title": "Intel Reports Fourth-Quarter and Full-Year 2025 Financial Results",
+        "title_zh": "英特尔4Q25财报：18A量产、1季度供给最低",
+        "url": "https://www.intc.com/news-events/press-releases/detail/1759/intel-reports-fourth-quarter-and-full-year-2025-financial",
+        "source_type": "官方",
+        "summary_zh": "英特尔4Q25营收137亿美元、同比-4%，客户端CCG营收82亿美元、同比-7%。公司称18A已在亚利桑那和俄勒冈进入大批量生产，酷睿Ultra 3将覆盖200多个OEM设计；但CFO表示一季度可用供给是最低点，二季度起改善。1Q26营收指引117–127亿美元，非GAAP毛利率34.5%。",
+        "whats_new_zh": [
+          "官方口径：4Q25营收137亿美元，非GAAP毛利率37.9%；CCG 82亿美元（-7%）、DCAI 47亿美元（+9%）、代工45亿美元（+4%）。",
+          "官方口径：2025全年营收529亿美元，持平。",
+          "官方口径：1Q26营收指引117–127亿美元，非GAAP毛利率34.5%，非GAAP EPS 0.00美元。",
+          "官方口径：18A已在亚利桑那和俄勒冈大批量生产；“预计一季度可用供给处于最低水平，二季度及以后改善”。",
+          "官方口径（风险提示）：如果拿不到重要外部客户，可能暂停或放弃Intel 14A。"
+        ],
+        "key_specs": {
+          "process": "Intel 18A大批量生产（亚利桑那、俄勒冈）；14A存在暂停风险",
+          "other": "1Q26营收指引117–127亿美元"
+        },
+        "edge_ai_impact_zh": "英特尔AI PC平台的技术已到位，但1Q26供给受限，上半年x86 AI PC的放量节奏可能慢于发布会预期，给AMD和高通留出窗口。",
+        "evidence_urls": [
+          "https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-26-000009/0000050863-26-000009.pdf",
+          "https://longportapp.cn/en/topics/38043009"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "Panther Lake的供给",
+            "points": [
+              "媒体整理法说会：18A良率每月提升约7–8个百分点，但仍低于业界领先水平；Panther Lake目前拉低毛利，随良率改善转正（二手转述，未见官方原文）。",
+              "TrendForce 1月26日报告同样指出英特尔低端CPU缺货持续到3月后，两者口径一致。"
+            ]
+          },
+          {
+            "heading": "分部业绩",
+            "points": [
+              "CCG（客户端）82亿美元，同比-7%；DCAI 47亿美元，+9%；代工45亿美元，+4%（官方口径）。",
+              "全年CCG 322亿美元，-3%，仍是英特尔最大的业务。"
+            ]
+          },
+          {
+            "heading": "14A与代工",
+            "points": [
+              "官方风险提示：若拿不到重要外部客户，可能暂停或放弃14A；18A则已在两个美国厂区大批量生产。"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-01-17",
+        "vendor": "Micron",
+        "category": "产业动态",
+        "title": "Micron Signs Letter of Intent to Purchase Tongluo Site, Begin Strategic Partnership with PSMC",
+        "title_zh": "美光18亿美元拟购力积电铜锣厂扩DRAM",
+        "url": "https://micron.gcs-web.com/node/49981",
+        "source_type": "官方",
+        "summary_zh": "美光1月17日宣布签署排他性意向书，以18亿美元现金收购力积电位于苗栗铜锣的P5晶圆厂，获得30万平方英尺的300mm洁净室，用于分阶段扩产DRAM。交易预计2026年二季度完成，有意义的DRAM晶圆产出要到2027年下半年。",
+        "whats_new_zh": [
+          "收购价18亿美元现金，含30万平方英尺300mm洁净室",
+          "预计2026年二季度完成交易，2027年下半年开始贡献有意义的DRAM产出",
+          "双方建立长期合作：力积电为美光做晶圆后段组装，美光支持力积电旧制程DRAM产品"
+        ],
+        "key_specs": {
+          "other": "300mm洁净室30万平方英尺；DRAM产出2H27"
+        },
+        "edge_ai_impact_zh": "内存原厂扩产以“收购现成洁净室”抢时间，但产出要到2027年下半年，意味着2026年端侧设备的内存成本压力不会缓解。",
+        "evidence_urls": [
+          "https://www.datacenterdynamics.com/en/news/micron-acquires-powerchips-p5-taiwanese-fab-for-18bn-will-ramp-up-dram-output-at-site-by-2027/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "供给时间表",
+            "points": [
+              "美光称市场“需求持续超过供给”；新产能最早2027下半年才有意义产出，2026年全年内存供应缓解有限",
+              "同月美光还在纽约州巨型晶圆厂动工（1月16日）、在新加坡新建晶圆厂（约240亿美元/10年，媒体转述）"
+            ]
+          },
+          {
+            "heading": "与端侧的关系",
+            "points": [
+              "新增DRAM产能会优先服务HBM和服务器，LPDDR供应改善要更晚（推断）"
+            ]
+          },
+          {
+            "heading": "合作条款",
+            "points": [
+              "力积电将在约定期限内迁出铜锣厂，并为美光承担晶圆后段组装",
+              "美光支持力积电的旧制程DRAM产品线，可能给利基型DRAM带来新供给"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-01-21",
+        "vendor": "Apple",
+        "category": "产业动态",
+        "title": "iOS 27: Apple to Revamp Siri as Built-In iPhone, Mac Chatbot to Fend Off OpenAI",
+        "title_zh": "爆料：Siri 将改为聊天机器人 Campos",
+        "url": "https://www.bloomberg.com/news/articles/2026-01-21/ios-27-apple-to-revamp-siri-as-built-in-iphone-mac-chatbot-to-fend-off-openai",
+        "source_type": "媒体",
+        "summary_zh": "Bloomberg 的 Mark Gurman 爆料：Apple 计划把 Siri 改造成内置于 iPhone、iPad、Mac 的 AI 聊天机器人，内部代号 Campos，支持语音和文字两种模式，预计 6 月 WWDC 亮相、秋季随 iOS 27 推出。报道称它由 Google 技术驱动，双方还在讨论直接把聊天机器人托管在 Google 服务器上。",
+        "whats_new_zh": [
+          "爆料：代号 Campos，语音 + 文字双模式，深度集成到系统核心应用",
+          "爆料：能感知屏幕内容，并可以代用户修改设置",
+          "爆料：6 月 WWDC 发布，秋季随 iOS 27/iPadOS 27/macOS 27 推出",
+          "爆料：Apple 与 Google 正在讨论把它“直接托管在 Google 服务器上”，而不是 Apple 的 PCC",
+          "另一项非聊天式的 Siri 升级计划放在 iOS 26.4"
+        ],
+        "key_specs": {
+          "other": "未披露端侧模型规模；托管方案仍在谈判中（爆料）"
+        },
+        "edge_ai_impact_zh": "Apple 的系统级智能体可能采用“云端负责思考、端侧负责执行”的形态：端侧芯片更多负责低延迟感知、隐私数据和动作执行，而不是运行完整的大模型。",
+        "evidence_urls": [
+          "https://www.thurrott.com/a-i/331929/apple-will-reportedly-transform-siri-into-a-chatbot-later-this-year",
+          "https://www.techradar.com/phones/iphone/report-apple-does-about-face-on-siri-chatbot-and-it-might-compete-directly-with-chatgpt-and-google"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "端云边界",
+            "points": [
+              "如果 Campos 跑在 Google 服务器上，就与 1 月 12 日声明里“继续运行在设备和 PCC 上”的表述存在张力；TechRadar 也指出这会削弱 PCC 的隐私承诺",
+              "这只是“讨论中”的方案，并非定案"
+            ]
+          },
+          {
+            "heading": "智能体能力",
+            "points": [
+              "屏幕感知 + 修改设置意味着系统级的动作能力，这是端侧智能体的关键闭环，需要在设备侧拥有执行权限",
+              "规划可能在云端完成，动作在端侧执行（推断）"
+            ]
+          },
+          {
+            "heading": "口径",
+            "points": [
+              "Bloomberg 原文需付费，本条依据检索摘要和 Thurrott 的转述",
+              "confidence 为 medium：Gurman 的 Apple 爆料准确率较高，但这次的时间表后来多次推迟"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露。如果托管在 Google 服务器上，核心推理不在端侧；端侧可能只负责唤醒、屏幕理解和个人数据检索等环节（推断）。"
+      },
+      {
+        "date": "2026-01-21",
+        "vendor": "Tsinghua University",
+        "category": "学术研究",
+        "title": "MoBiLE: Efficient Mixture-of-Experts Inference on Consumer GPU with Mixture of Big Little Experts",
+        "title_zh": "MoBiLE：大小专家混合的 MoE 卸载推理",
+        "url": "https://arxiv.org/abs/2510.12357",
+        "source_type": "论文",
+        "summary_zh": "清华大学（尹首一组）的 MoE 卸载推理框架：不重要的 token 只激活一半的专家（“小专家”），重要的 token 保留完整专家，并配套回退和预取机制，以减少 CPU 到 GPU 的专家搬运。论文在 ASP-DAC 2026 6F 场次（1 月 21 日）宣讲，测试平台为 RTX 4080 16GB 加 64GB DRAM。",
+        "whats_new_zh": [
+          "相比全模型卸载基线提速 1.60–1.72×（Qwen1.5-MoE 1.72×，OLMoE 1.57×），与 pre-gating 结合后平均 1.92×（论文口径）",
+          "比 Pre-gated MoE 平均快 1.28×，比 AdapMoE 快 1.21×",
+          "精度：Qwen MoE 的 GSM8K 从 0.641 降到 0.608，HumanEval 从 0.262 降到 0.256；OLMoE 的 GSM8K 从 0.515 降到 0.448，降幅较明显",
+          "即插即用，不需要额外训练预测模块"
+        ],
+        "key_specs": {
+          "gpu": "NVIDIA RTX 4080 16GB",
+          "cpu": "Intel i5-12400",
+          "memory": "64GB DRAM；PCIe 4.0（理论约 64 GB/s）",
+          "other": "回退阈值 γ=0.7"
+        },
+        "edge_ai_impact_zh": "MoE 进入端侧后，“每个 token 激活多少专家”可以作为一个运行时旋钮，在内存带宽和精度之间动态权衡。",
+        "evidence_urls": [
+          "https://www.aspdac.com/aspdac2026/pdf/ASP-DAC_2026_Full_Program.pdf",
+          "https://arxiv.org/html/2510.12357"
+        ],
+        "confidence": "high",
+        "venue": "ASP-DAC 2026",
+        "affiliation": "Tsinghua University",
+        "authors": "Yushu Zhao, Yubin Qin, Yang Wang",
+        "deep_dive_zh": [
+          {
+            "heading": "思路",
+            "points": [
+              "卸载式 MoE 的瓶颈在 PCIe 带宽；减少每个 token 激活的专家数，就是直接减少搬运量",
+              "按 token 重要性分配“大/小专家”，回退比例为 0.11–0.21"
+            ]
+          },
+          {
+            "heading": "对端侧的含义",
+            "points": [
+              "手机和 PC 的统一内存没有 PCIe 瓶颈，但同样受 DRAM 与闪存之间带宽的限制，按 token 动态降低激活专家数的思路可以迁移",
+              "精度损失因模型而异，OLMoE 的 GSM8K 掉了 6.7 个点，落地前需要逐个模型评估"
+            ]
+          },
+          {
+            "heading": "与同类工作的关系",
+            "points": [
+              "与 Pre-gated MoE、AdapMoE 这类训练预测器的方案不同，MoBiLE 不需要额外训练，可以和 pre-gating 叠加（合计 1.92×）",
+              "同会议台大的 CPU-GPU 协同方案从“未命中在哪里算”入手，两者可以组合"
+            ]
+          }
+        ],
+        "model_capacity_zh": "Qwen1.5-MoE（14.3B 总参数，2.7B 激活）和 OLMoE（64 个专家中激活 8 个）。论文只报告加速比，未给 tok/s 和精度格式。"
+      },
+      {
+        "date": "2026-01-20",
+        "vendor": "National Taiwan University",
+        "category": "学术研究",
+        "title": "Efficient CPU-GPU Collaborative Inference for MoE-based LLMs on Memory-Limited Systems",
+        "title_zh": "内存受限平台的 CPU-GPU 协同 MoE 推理",
+        "url": "https://arxiv.org/abs/2512.16473",
+        "source_type": "论文",
+        "summary_zh": "台大与清大提出的 MoE 推理框架：GPU 上用组相联缓存保存热点专家，缓存未命中的专家直接交给多线程 CPU 计算，不再经 PCIe 搬到 GPU。论文在 ASP-DAC 2026 3A 场次（1 月 20 日）宣讲，代码已开源。",
+        "whats_new_zh": [
+          "Mixtral 8x7B（46.7B，88 GB）单请求 4.8 tok/s，Phi-3.5-MoE（41.9B）10.4 tok/s（RTX 4090 24GB + Threadripper 7960X，论文口径）",
+          "比 Pre-gated MoE 快 4.4×（Mixtral）和 4.3×（Phi-3.5-MoE），比 Fiddler 快约 1.6×",
+          "每 token 能耗：Mixtral 为 51.1 J/token，Pre-gated MoE 为 171.3 J/token；Phi-3.5-MoE 为 21.9 J/token，对比方为 78.7 J/token",
+          "统计显示同一专家在下一个 token 被再次选中的概率为 40–60%，这是缓存有效的依据"
+        ],
+        "key_specs": {
+          "gpu": "NVIDIA RTX 4090 24GB",
+          "cpu": "AMD Threadripper 7960X 24 核",
+          "memory": "PCIe 4.0 x16",
+          "power": "CPU 147.5 W（Mixtral 运行时）",
+          "other": "GPU 上约 56 个专家槽位，4 路组相联"
+        },
+        "edge_ai_impact_zh": "AI PC 和统一内存设备跑大 MoE 时，“热专家常驻加速器、冷专家就地在 CPU 上算”是一种可行的分工。功耗数字说明它目前只适用于台式机，不适用于移动端。",
+        "evidence_urls": [
+          "https://www.aspdac.com/aspdac2026/pdf/ASP-DAC_2026_Full_Program.pdf",
+          "https://arxiv.org/html/2512.16473",
+          "https://github.com/elsa-lab/MoE-CPU-GPU-Collaborative-Inference"
+        ],
+        "confidence": "high",
+        "venue": "ASP-DAC 2026",
+        "affiliation": "National Taiwan University; National Tsing Hua University",
+        "authors": "En-Ming Huang, Li-Shang Lin, Chun-Yi Lee",
+        "deep_dive_zh": [
+          {
+            "heading": "计算与搬运的取舍",
+            "points": [
+              "Mixtral 单个专家层在 GPU 上计算只要 0.25 ms，但搬运要 28.02 ms；CPU 24 线程计算需 7.34 ms，比搬运快",
+              "所以未命中时把计算发给 CPU，比把权重搬到 GPU 划算"
+            ]
+          },
+          {
+            "heading": "能耗口径",
+            "points": [
+              "J/token 为论文测量的系统级数字，CPU 功耗 147.5 W，属于台式机平台，与手机差两个数量级"
+            ]
+          },
+          {
+            "heading": "缓存为什么有效",
+            "points": [
+              "相邻 token 重复选中同一专家的概率为 40–60%；约 44% 的情况下，相邻层路由到相同的专家编号",
+              "LRU 替换比随机替换在 Mixtral 上提升约 5–15%；GPU 上约 56 个槽位只覆盖第 0–13 层"
+            ]
+          }
+        ],
+        "model_capacity_zh": "Mixtral 8x7B 未量化（88 GB，每个专家 340 MB）能跑，但只有 4.8 tok/s。推算：top-2 × 32 层约需 21.8 GB 专家权重/token，如果全部经 PCIe 4.0 x16（单向约 32 GB/s）搬运，上限不到 1.5 tok/s，所以缓存命中加 CPU 计算未命中专家是必要的。"
+      }
+    ],
+    "overview": "存内计算与低比特加速器周（01-16~01-22）。ASP-DAC 2026 在香港召开，端侧 LLM 加速器集中亮相：ROMA 把基座固化进片上 ROM、2-bit Llama3-8B 全部放在片上（但 7nm、503.7mm²、33.1W，是加速卡级别），Platinum 用查表做三值矩阵乘、28nm 0.955mm² 下能耗比 T-MAC 低 15~21 倍，BitROM 以 1.58 比特 ROM 存内计算达 20.8 TOPS/W，BitStopper、M3DKV、SpAct-NDP、BLADE 从稀疏注意力、3D 增益单元和近数据处理等方向减少数据搬运。arXiv 上 CD-PIM 在 LPDDR5 里做存内计算，按 iPhone 15 Pro 级配置 LLaMA-1B 快 18.6 倍、新增功耗 144mW（模拟结果）；SwiftKV 在 FPGA 上加速边缘解码。产业侧，美光以 18 亿美元买下力积电铜锣厂扩 DRAM，但有意义的产出要到 2027 年下半年；Bloomberg 爆料 Siri 将改为聊天机器人 Campos，Apple 在研 AirTag 大小的 AI 胸针。",
+    "takeaways_zh": [
+      "本周 11 篇 ASP-DAC 论文没有一篇是流片实测，ROM 固化、三值查表、近存计算都还停在综合与仿真阶段，离手机 SoC 至少还有一代。",
+      "存内计算正从“算子加速”转向“替代 DRAM 读权重”：CD-PIM 与 BLADE 都瞄准 LPDDR/DRAM 带宽，这是端侧解码速度最直接的天花板。",
+      "DRAM 扩产要到 2027 年才见效，端侧设备在 2026 年面对的是“内存贵且紧”的确定环境。"
+    ]
   }
 }
