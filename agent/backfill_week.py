@@ -86,6 +86,12 @@ def cmd_write(args) -> int:
         (dupes if week else papers).append(paper if not week else (paper["id"], week))
     weekly = _load(args.weekly)
     check_weekly(weekly, start, end)
+    # Highlight URLs are hand-written; one wrong slug ships a dead link. Flag any
+    # that isn't an entry of this week so it gets copied from the curated run.
+    listed = {p["paper_url"] for p in papers}
+    for h in weekly.get("highlights") or []:
+        if str(h.get("url", "")).startswith("http") and h["url"] not in listed:
+            print(f"[BACKFILL] WARN highlight URL is not an entry of this week: {h['url']}")
     trending = _load(args.trending)
     trending = trending if isinstance(trending, dict) else {"items": trending}
     comm = community.validate_community(_load(args.community), today=end)
