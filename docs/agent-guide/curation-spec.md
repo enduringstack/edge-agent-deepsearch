@@ -54,7 +54,7 @@
   - 单机只执行云端智能体下发的命令（如 Codex Windows 沙箱、VIGIL），或原文没说明模型在本地（如新版 Bixby、极氪 Eva、模型位置不明的桌面 Agent）→ 非端侧Agent，可仍推荐。
   - 纯动作/控制策略、VLA 动作模型、强化学习控制器（无规划/记忆/工具）→ 非端侧Agent。只在仿真里评测的 → 非端侧Agent。
 - **company**：只有在论文首页作者机构（arXiv HTML/PDF 署名或邮箱域名）明确出现公司时才填，例如 Google、Apple、Meta、Microsoft、NVIDIA、Qualcomm、Samsung、Huawei、MediaTek、Xiaomi、OPPO、vivo、Honor、Alibaba/Qwen、ByteDance、Tencent、Baidu、Kuaishou、Meituan、JD、Pinduoduo、NetEase、Intel、AMD、Arm、SK hynix 等。`vendors` 写公司英文名（多家用 `; ` 分隔），`evidence_url` 写 `https://arxiv.org/pdf/<id>`，`evidence_note` 写中文依据（如“PDF 首页作者 3、4 署名 Qualcomm AI Research”）。不许凭作者名、模型名、被研究的平台名推测；不确定就留空。作者注明“以个人身份”或只写“现就职于”的不算该公司的项目。
-- **accepted_top_venue**：Comments 明确写被 NeurIPS/ICML/ICLR/MobiSys/SenSys/ASPLOS/ACL/CVPR/ICCV/EMNLP/AAAI/IJCAI/TPAMI/TNNLS/ToN（或同级：MICRO/ISCA/HPCA/EuroSys/OSDI/SOSP/MobiCom/DAC）接收时为 true，并把 venue 写成会议名+年份。Findings、Industry Track、Workshop、学生研讨会（SRW）一律不算顶会（`accepted_top_venue=false`，venue 照写，如“ACL 2026 Findings”）；ACM CCS、IEEE S&P 等安全四大按同级算。
+- **accepted_top_venue**：Comments 明确写被 NeurIPS/ICML/ICLR/MobiSys/SenSys/ASPLOS/ACL/CVPR/ICCV/EMNLP/AAAI/IJCAI/TPAMI/TNNLS/ToN（或同级：MICRO/ISCA/HPCA/EuroSys/OSDI/SOSP/NSDI/MobiCom/INFOCOM/DAC/ICCAD/ECCV/SIGMOD）接收时为 true，并把 venue 写成会议名+年份。Findings、Industry Track、Workshop、学生研讨会（SRW）一律不算顶会（`accepted_top_venue=false`，venue 照写，如“ACL 2026 Findings”）；ACM CCS、IEEE S&P 等安全四大按同级算。
 - **recommend**：值得读者优先看的才 true（端侧真机结果扎实、方法有新意、或对端侧 Agent 有直接价值）。整批通常只有少数几条。recommend=true 时必须写：
   - `title_zh`：中文项目名，回答“它叫什么”，2 个以上中文字符，≤40 字，不能复制 abstract。
   - `recommendation_reason`：一句中文说明“为什么值得优先看”，要具体（关键发现/数字/对谁有用），不能复述标题或写评分流水账。
