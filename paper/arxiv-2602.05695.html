@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SweetSpot: An Analytical Model for Predicting Energy Efficiency of LLM Inference</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>SweetSpot: An Analytical Model for Predicting Energy Efficiency of LLM Inference</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-02-05 · Hiari Pizzini Cavagna; Andrea Proia; Giacomo Madella; Giovanni B. Esposito; Francesco Antici; Daniele Cesarini; Zeynep Kiziltan; Andrea Bartolini / ICPE 2026</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:云端serving</span><span class="tag">硬件:H100</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">SweetSpot 是一个预测大模型推理能耗的解析模型，指出能耗和输入、输出长度并非线性关系，存在“最省电”的长度区间。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 H100 上用 TensorRT-LLM 测了 1B-9B 的多种模型、64-4096 令牌的输入输出长度，平均绝对百分比误差 1.79%；把序列长度对齐到高效区间可让能耗最多降低 33.41 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从 Transformer 的计算量和访存复杂度推导能耗随输入、输出长度变化的曲线，用实测数据拟合验证。</span></div>
+<div class="score-reason">评分依据：能耗建模思路对端侧能耗预算有参考意义，但实验只在数据中心 H100 上做；ICPE 不在顶会清单内。</div>
+<div class="source"><a href="https://arxiv.org/abs/2602.05695" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

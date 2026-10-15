@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rethinking Latency Denial-of-Service: Attacking the LLM Serving Framework, Not the Model</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Rethinking Latency Denial-of-Service: Attacking the LLM Serving Framework, Not the Model</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-02-08 · Tianyi Wang; Huawei Fan; Yuanchao Shu; Peng Cheng; Cong Wang / NeurIPS 2026</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:安全隐私</span><span class="tag">方向:KV cache</span><span class="tag">方向:调度服务</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">以往让大模型输出超长回答来拖慢服务的攻击，在 vLLM 这类带连续批处理的系统上基本无效。这篇改为攻击调度器本身，让同一服务上的其他用户严重变慢。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 vLLM 上，首字时延比正常情况劣化 75 到 742 倍；与已有攻击相比，每个输出词的平均时延多拖慢 1.5 到 4 倍，而攻击成本低 30%-40%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用请求把全局 KV cache 填满造成排队阻塞（Fill），再迫使系统反复抢占重算（Squeeze），并通过侧信道探测显存状态，在黑盒条件下控制输出长度。</span></div>
+<div class="score-reason">评分依据：攻击对象是云端 LLM serving 调度器，与端侧部署关系较远，相关度 2。首次从系统调度层构造时延拒绝服务攻击，发现新颖、已被 NeurIPS 2026 接收，贡献 7。</div>
+<div class="source"><a href="https://arxiv.org/abs/2602.07878" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

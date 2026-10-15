@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Hardware Co-Design Scaling Laws via Roofline Modelling for On-Device LLMs</h1>
-<div class="meta"><span class="score">15</span> <span class="tier company">公司项目</span>  2026-02-20 · Luoyang Sun, Jiwen Jiang, Yifeng Ding, Fengfa Li, Yan Song, Haifeng Zhang, Jian Ying, Lei Ren, Kun Zhan, Wei Chen, Yan Xie, Cheng Deng / arXiv</div>
-<div class="tags"><span class="vendor-tag">Li Auto</span><span class="tag">方向:模型架构</span><span class="tag">方向:MoE</span><span class="tag">方向:量化</span><span class="tag">硬件:Jetson</span><span class="tag">模型:Qwen</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">理想汽车等提出一套针对端侧大模型的“硬件协同设计缩放定律”：在给定芯片和时延预算下，直接算出该选什么结构的模型最准，把选型从几个月缩到几天。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 NVIDIA Jetson Orin 上评估 1942 种候选结构、训练 170 个模型（各 1000 亿 token）；同等时延下，协同设计出的结构在 WikiText-2 上困惑度比 Qwen2.5-0.5B 低 19.42%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用缩放定律把训练损失写成层数、宽度、专家数等结构参数的函数，用 roofline 模型预测目标硬件上的推理时延，两者结合求精度-时延帕累托前沿；发现批大小为 1 时帕累托最优全是混合专家结构，且偏宽偏浅、FFN 扩展比远小于 4 倍。</span></div>
-<div class="score-reason">评分依据：以车载/机器人等端侧场景为目标、在 Jetson Orin 上做真机时延建模并给出可执行的选型方法，端侧相关度高；把缩放定律和硬件 roofline 结合属于方法创新。PDF 首页多位作者署名 Li Auto。 作者机构依据：arXiv PDF 首页署名 Li Auto（PDF 首页作者 Luoyang Sun、Jiwen Jiang、Yifeng Ding、Fengfa Li、Lei Ren、Kun Zhan、Wei Chen、Yan Xie 署名 Li Auto（理想汽车））。</div>
-<div class="source"><a href="https://huggingface.co/papers/2602.10377" target="_blank" rel="noopener">查看原文 →</a></div>
+<div class="meta"><span class="score">16</span> <span class="tier company">公司项目</span>  2026-02-10 · Luoyang Sun; Jiwen Jiang; Yifeng Ding; Fengfa Li; Yan Song; Haifeng Zhang; Jian Ying; Lei Ren / arXiv</div>
+<div class="tags"><span class="vendor-tag">Li Auto</span><span class="tag">方向:模型架构</span><span class="tag">方向:编译部署</span><span class="tag">方向:MoE</span><span class="tag">硬件:Jetson</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">给车载、机器人等端侧设备挑选大模型骨干时，怎样同时兼顾精度和硬件时延？这篇提出一套“硬件协同设计缩放定律”，直接算出最优架构。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 NVIDIA Jetson Orin 上评估 1942 个候选架构、训练 170 个模型；同等时延下，协同设计的架构在 WikiText-2 上比 Qwen2.5-0.5B 困惑度低 19.42%，架构选型从数月缩短到数天。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把训练损失写成架构超参数的函数（缩放定律），用屋顶线模型预测推理时延，两者结合画出精度与时延的帕累托前沿，再在精度和性能间联合优化搜索架构。</span></div>
+<div class="score-reason">评分依据：直接面向端侧大模型部署并在 Jetson Orin 上实测，给出可操作的架构选型方法和设计准则，创新度较高。PDF 首页多名作者署名 Li Auto（理想汽车）。 作者机构依据：arXiv PDF 首页署名 Li Auto（PDF 首页作者 Luoyang Sun、Jiwen Jiang、Yifeng Ding、Fengfa Li、Lei Ren 等署名 Li Auto）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2602.10377" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

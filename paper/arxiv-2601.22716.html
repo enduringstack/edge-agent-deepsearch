@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Breaking the Blocks: Continuous Low-Rank Decomposed Scaling for Unified LLM Quantization and Adaptation</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Breaking the Blocks: Continuous Low-Rank Decomposed Scaling for Unified LLM Quantization and Adaptation</h1>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-01-30 · Pingzhi Tang; Ruijie Zhou; Fanxu Meng; Wenjie Pei; Muhan Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">硬件:GPU</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型量化通常按块共享缩放因子，表达力受限；这项工作把缩放因子建成连续的低秩矩阵，让逐元素量化也能和按块一样高效，并顺带支持微调。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Llama3-8B 上 3 比特量化精度比 NormalFloat 最多高 27.0%，在 RTX 4090 上推理加速 1.5 倍；下游微调效果比 4 比特 QLoRA 高 9.6%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把缩放矩阵分解成两个低秩矩阵相乘，先做训练后量化初始化再迭代优化，可联合训练权重和缩放因子，并把微调做成高秩的乘性更新，推理时不增加开销。</span></div>
+<div class="score-reason">评分依据：量化方法本身可直接迁移到端侧，但只在桌面 GPU 上测速，相关度中等；把量化粒度和参数高效微调统一起来有新意，贡献中上。</div>
+<div class="source"><a href="https://arxiv.org/abs/2601.22716" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

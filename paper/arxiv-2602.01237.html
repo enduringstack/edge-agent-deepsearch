@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Predictive Scheduling for Efficient Inference-Time Reasoning in Large Language Models</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Predictive Scheduling for Efficient Inference-Time Reasoning in Large Language Models</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-02-01 · Katrina Brown; Aneesh Muppidi; Rana Shahout / ICML 2025 ES-FoMo Workshop</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:调度服务</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型做推理题时，每题都给同样多的思考 token 会浪费在简单题上、又不够给难题。这篇工作在生成前先预测每题该给多少预算，再统一分配。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 GSM8K 上，同等 token 成本下比平均分配预算的准确率最多高 7.9 个百分点，弥合了与理想预知方案之间一半以上的差距；中间层（第 12–17 层）的隐状态对预测最有用。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用中间层隐状态上的小型 MLP 或 LoRA 微调的文本分类器，在正式生成前估计每道题需要的推理长度或难度，再用贪心算法把总 token 预算分给一批问题。</span></div>
+<div class="score-reason">评分依据：按难度分配推理预算可以降低时延和算力，对端侧推理有迁移价值，但实验是批量服务场景；方法简单实用。论文发表在 ICML 2025 ES-FoMo 研讨会。</div>
+<div class="source"><a href="https://arxiv.org/abs/2602.01237" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

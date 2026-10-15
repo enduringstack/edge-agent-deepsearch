@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Sink-Aware Pruning for Diffusion Language Models</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-02-23 · Aidar Myrzakhan, Tianyi Li, Bowei Guo, Shengkun Tang, Zhiqiang Shen / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">MBZUAI 发现扩散语言模型里的“注意力汇聚点”并不像自回归模型那样稳定，据此提出 Sink-Aware Pruning，剪枝时不再一味保留这些位置。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">无需重训，在多个扩散语言模型、基准和稀疏度下与强基线持平或更好，50% 到 75% 中高稀疏度时优势最明显；摘要未给出单一汇总数字。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">统计各去噪步里汇聚点位置的方差，识别出不稳定的汇聚点并降低其重要性权重，再接入 Wanda、SparseGPT 等现有剪枝准则。</span></div>
-<div class="score-reason">评分依据：剪枝是端侧压缩的常用手段，扩散语言模型推理开销大，方法可迁移到资源受限部署；观察有新意但属于对现有剪枝准则的修正，代码已开源。</div>
-<div class="source"><a href="https://huggingface.co/papers/2602.17664" target="_blank" rel="noopener">查看原文 →</a></div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-02-19 · Aidar Myrzakhan; Tianyi Li; Bowei Guo; Shengkun Tang; Zhiqiang Shen / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">扩散语言模型要反复去噪，推理很贵。研究发现它的“注意力汇聚点”会随去噪步骤漂移，不像自回归模型那样必须保留，于是提出专门针对这一点的剪枝方法。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">不需重新训练，在同等算力下取得比现有剪枝基线更好的质量-效率权衡；摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">统计各去噪步中主导汇聚位置的方差，自动识别不稳定的汇聚 token 并将其剪掉，而不是沿用自回归模型“保留汇聚点”的经验。</span></div>
+<div class="score-reason">评分依据：扩散语言模型的免训练剪枝，属可迁移到端侧的模型压缩技术；指出汇聚点在扩散模型中不稳定这一观察有新意。作者来自 MBZUAI。</div>
+<div class="source"><a href="https://arxiv.org/abs/2602.17664" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Broken Chains: The Cost of Incomplete Reasoning in LLMs</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Broken Chains: The Cost of Incomplete Reasoning in LLMs</h1>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-02-16 · Ian Su; Gaurav Purushothaman; Jey Narayan; Ruhika Goel; Kevin Zhu; Sunishchal Dev; Yash More; Maheep Chaudhary / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:评测基准</span><span class="tag">模型:DeepSeek</span><span class="tag">模型:GPT</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究推理模型在思考 token 被预算截断时会怎样：分别只用代码、只用自然语言注释、两者混合或不思考，看在 10%~70% 预算下数学题表现如何变化。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">DeepSeek-V3.2 不思考时能到 53%，但思维链被截到 50% 预算时只剩 17%；Gemini 用注释推理会跌到 0%，用代码推理仍保持 43%~47%；Grok 在 30% 预算下保持 80%~90%，OpenAI 和 DeepSeek 跌到 7%~27%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">设计一个约束框架，强制模型只用某一种推理形式，再系统性地把 token 预算压到最优值的固定比例，对比 GPT-5.1、Gemini 3 Flash、DeepSeek-V3.2、Grok 4.1 四个云端模型。</span></div>
+<div class="score-reason">评分依据：只在云端前沿模型上做推理预算消融，和端侧部署关系较远；结论对资源受限下控制思考长度有参考价值，但属于评测分析。</div>
+<div class="source"><a href="https://arxiv.org/abs/2602.14444" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

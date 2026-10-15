@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ALADIN: Accuracy-Latency-Aware Design-space Inference Analysis for Embedded AI Accelerators</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>ALADIN: Accuracy-Latency-Aware Design-space Inference Analysis for Embedded AI Accelerators</h1>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-02-12 · T. Baldi; D. Casini; A. Biondi / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:编译部署</span><span class="tag">硬件:MCU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">嵌入式 AI 加速器上部署混合精度量化网络时，精度、延迟和内存往往要反复上板试。ALADIN 让工程师在不上真机的情况下提前评估这些权衡。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 RISC-V 架构的 GAP8 平台周期精确模拟器上分析 MobileNetV1（CIFAR-10）的三种量化配置，全 int8 精度 0.83，int4/查表混合方案分别为 0.77 和 0.78，并逐层给出计算量、内存占用和延迟瓶颈；未报告与其他工具的量化对比。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从标准 QONNX 模型出发，逐步加入与平台无关的实现细节（im2col、查表等）和硬件特性（暂存器内存、调度），得到面向具体平台的模型，用来估算精度、延迟和资源消耗。</span></div>
+<div class="score-reason">评分依据：直接面向资源受限的嵌入式 AI 加速器和实时约束，属于端侧部署工具链，但验证依赖模拟器、未上真机。贡献在于把量化精度与平台延迟放进同一个分析流程，属于工程整合型工作。</div>
+<div class="source"><a href="https://arxiv.org/abs/2603.08722" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

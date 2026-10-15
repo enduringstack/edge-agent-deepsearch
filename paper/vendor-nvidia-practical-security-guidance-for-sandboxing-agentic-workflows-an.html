@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Practical Security Guidance for Sandboxing Agentic Workflows and Managing Execution Risk</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Practical Security Guidance for Sandboxing Agentic Workflows and Managing Execution Risk</h1>
+<div class="meta"><span class="score">9</span> <span class="tier">官方动态</span>  2026-01-30 · NVIDIA / NVIDIA</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:安全隐私</span><span class="tag">方向:工具调用</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">英伟达 AI 红队给出的实操建议：在开发者电脑上运行的编程智能体拥有和用户一样的权限，一旦被恶意仓库、配置文件或 MCP 返回内容做提示注入，就可能被劫持，需要在操作系统层面做沙箱隔离。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">必选措施包括：禁止访问未知网络、禁止写工作区以外的文件、禁止改写智能体配置文件；推荐措施包括把整个 IDE 及钩子、技能、工具调用都放进沙箱，用微型虚拟机隔离内核，敏感动作逐次人工批准，以及用密钥注入代替环境变量暴露凭据。</span></div>
+<div class="score-reason">评分依据：讨论的是在个人电脑上执行命令和工具的编程智能体的安全边界，对 PC 端智能体落地有直接参考；但原文没有说明模型在本地运行，属于安全实践总结而非新方法。</div>
+<div class="source"><a href="https://developer.nvidia.com/blog/practical-security-guidance-for-sandboxing-agentic-workflows-and-managing-execution-risk/" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

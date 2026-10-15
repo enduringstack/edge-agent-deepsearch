@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Resource-Efficient Gesture Recognition through Convexified Attention</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Resource-Efficient Gesture Recognition through Convexified Attention</h1>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-02-13 · Daniel Schwartz; Dario Salvucci; Yusuf Osmanlioglu; Richard Vallett; Genevieve Dion; Ali Shokoufandeh / EICS 2026</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:高效注意力</span><span class="tag">硬件:MCU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">织物上的手势识别受限于极低的功耗和算力，常规深度网络装不下。这篇提出凸化的注意力机制，让几百个参数的模型就能识别点击和滑动手势。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在四电极电容织物传感器上，点击和滑动手势识别准确率均为 100%，只需 120–360 个参数（比常规方法少 97%），在 Arduino Nano 33 BLE 上推理 290–296 微秒，存储不到 7KB；数据来自实验室单用户。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用欧氏投影到概率单纯形代替 softmax 注意力，配合多类 hinge 损失，使整个训练问题保持凸性、保证全局收敛，并用核范数正则进一步压缩参数。</span></div>
+<div class="score-reason">评分依据：在微控制器上实测的超小模型，属于典型 TinyML 端侧部署；但数据规模很小、任务简单，推广性有限。</div>
+<div class="source"><a href="https://arxiv.org/abs/2602.13030" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

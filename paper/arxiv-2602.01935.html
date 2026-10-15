@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LiteCoOp: Lightweight Multi-LLM Shared-Tree Reasoning for Model-Serving Compiler Optimizations</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>LiteCoOp: Lightweight Multi-LLM Shared-Tree Reasoning for Model-Serving Compiler Optimizations</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-02-02 · Annabelle Sujun Tang; Christopher Priebe; Lianhui Qin; Hadi Esmaeilzadeh / arXiv</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">硬件:GPU</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">LiteCoOp 让多个大小不同的语言模型一起指导张量程序的编译优化，用小模型承担大部分步骤，从而降低编译成本。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">8 个模型协作时，在 GPU 基准上总编译时间缩短 1.95 倍、API 成本降低 4.47 倍，最大模型只占 23.1% 的调用（CPU 基准分别为 1.74 倍、4.32 倍和 23.9%），并优于单模型基线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把编译优化的蒙特卡洛搜索树本身当作协作机制：每一步由一个模型提出变换并指定下一步调用哪个模型，所有决策记录在共享搜索树里回传奖励，选择时偏向更小的模型。</span></div>
+<div class="score-reason">评分依据：属于模型编译优化工具链，能为推理部署提速，但主要面向 GPU/CPU 服务器，端侧相关度一般；用共享搜索树替代智能体通信的设计有新意。</div>
+<div class="source"><a href="https://arxiv.org/abs/2602.01935" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Detecting Overflow in Compressed Token Representations for Retrieval-Augmented Generation</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Detecting Overflow in Compressed Token Representations for Retrieval-Augmented Generation</h1>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-02-12 · Julia Belikova; Danila Rozhevskii; Dennis Svirin; Konstantin Polev; Alexander Panchenko / EACL 2026 Student Research Workshop</div>
+<div class="tags"><span class="tag">应用:RAG</span><span class="tag">应用:长上下文推理</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究检索增强生成中把长文本压成少量“压缩 token”时，什么时候压过头导致答案信息丢失，并尝试提前检测这种情况。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 HotpotQA、SQuADv2、TriviaQA 上，结合问题和上下文表示的轻量探针检测压缩溢出的平均 AUC-ROC 为 0.72。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">分析 xRAG 软压缩表示的饱和统计特征，再训练小型探针分类器，在送入大模型前判断压缩后的信息是否还够回答问题。</span></div>
+<div class="score-reason">评分依据：上下文压缩能降低资源受限环境的长文本开销，但本文只是诊断工具，相关度一般；属于学生研讨会论文，贡献偏分析。</div>
+<div class="source"><a href="https://arxiv.org/abs/2602.12235" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

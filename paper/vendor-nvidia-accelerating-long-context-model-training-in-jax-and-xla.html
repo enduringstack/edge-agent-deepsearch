@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Accelerating Long-Context Model Training in JAX and XLA</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Accelerating Long-Context Model Training in JAX and XLA</h1>
+<div class="meta"><span class="score">5</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-02-03 · NVIDIA / NVIDIA</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">应用:长上下文推理</span><span class="tag">方向:编译部署</span><span class="tag">硬件:GPU</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">NVIDIA 介绍如何把 NVSHMEM 通信库集成进 XLA 编译器，加速 JAX 中长上下文大模型训练时的上下文并行（环形注意力）通信。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 GB200 NVL72 系统上训练 256K token 序列的 Llama 3 8B 时，NVSHMEM 比 NCCL 最多快 36%，序列越长收益越大，128K 以上的多节点场景提升明显。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">环形注意力需要在设备间频繁交换小块 KV 张量，XLA 会根据设备与 NVLink 拓扑自动为这类点对点通信和小消息归约选用 NVSHMEM，利用对称内存、流感知通信和 CUDA Graph 兼容实现低延迟交换，无需改 JAX 代码。</span></div>
+<div class="score-reason">评分依据：是数据中心大规模训练的通信优化，与端侧推理基本无关。属于成熟通信库与编译器的工程集成，贡献中等偏低。</div>
+<div class="source"><a href="https://developer.nvidia.com/blog/accelerating-long-context-model-training-in-jax-and-xla/" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>
