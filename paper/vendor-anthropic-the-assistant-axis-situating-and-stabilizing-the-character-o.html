@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The assistant axis: situating and stabilizing the character of large language models</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>The assistant axis: situating and stabilizing the character of large language models</h1>
+<div class="meta"><span class="score">8</span> <span class="tier">官方动态</span>  2026-01-19 · Anthropic / Anthropic</div>
+<div class="tags"><span class="vendor-tag">Anthropic</span><span class="tag">方向:安全隐私</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Anthropic 研究发现大模型内部存在一条“助手轴”：模型的人设会沿这条方向漂移到其他角色并产生有害输出，监控和限制这条方向能让模型行为更稳定。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 1100 次、覆盖 44 类危害的越狱尝试中，把激活向助手方向引导能显著降低有害回复率；轻量的“激活封顶”同样减少了基于角色扮演的越狱，且完全不损失模型能力。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 Llama 3.3 70B 等开源权重模型的激活空间里找出代表助手人设的方向，推理时监控该方向上的投影，并把激活值限制在正常范围内，防止人设漂移。</span></div>
+<div class="score-reason">评分依据：属于模型可解释性与安全研究，和端侧部署关系很弱；“激活封顶”是推理时的轻量干预，思路较新，但未涉及资源受限场景。</div>
+<div class="source"><a href="https://www.anthropic.com/research/assistant-axis" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>On the Adversarial Robustness of Large Vision-Language Models under Visual Token Compression</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>On the Adversarial Robustness of Large Vision-Language Models under Visual Token Compression</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校顶会</span>  2026-01-29 · Xinwei Zhang; Hangcheng Liu; Li Bai; Hao Wang; Qingqing Ye; Tianwei Zhang; Haibo Hu / ICML 2026</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:多模态</span><span class="tag">方向:剪枝稀疏</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">视觉语言模型常靠裁剪或合并视觉 token 来加速。这篇工作发现现有对抗攻击评测高估了这类压缩模型的鲁棒性，并提出针对性的攻击方法 CAGE。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多种即插即用的 token 压缩方法和数据集上，CAGE 都让模型的鲁棒准确率低于现有基线攻击（摘要未给出具体数值）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">让扰动优化与压缩后的推理过程对齐：把破坏集中在各种预算下都可能被保留的 token 上，并让 token 的失真程度与压缩排序分数一致，使被破坏的信息更容易留下来。</span></div>
+<div class="score-reason">评分依据：视觉 token 压缩是端侧多模态加速的常用手段，本文提醒其安全隐患，但不涉及部署本身；指出优化与推理错位的问题有新意，已被 ICML 2026 接收。</div>
+<div class="source"><a href="https://arxiv.org/abs/2601.21531" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

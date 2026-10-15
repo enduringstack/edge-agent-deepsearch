@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bare-Metal Tensor Virtualization: Overcoming the Memory Wall in Edge-AI Inference on ARM64</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Bare-Metal Tensor Virtualization: Overcoming the Memory Wall in Edge-AI Inference on ARM64</h1>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-01-06 · Bugra Kilictas; Faruk Alpay / arXiv</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:高效推理</span><span class="tag">硬件:CPU</span><span class="tag">硬件:Apple-Silicon</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在苹果 M2 这类 ARM64 芯片上手写一套大模型推理底层，绕开通用运行时的抽象开销，专门研究端侧推理的“内存墙”问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 M2 上运行 1.1 亿参数模型，稳定吞吐超过每秒 60 个 token，满足 200 毫秒交互时延门槛；作者承认峰值吞吐不及苹果 AMX 等专用加速器。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 mmap 直接映射权重、零拷贝加载，配合手写 NEON SIMD 内核和保证缓存行 100% 利用的张量布局，相当于在软件里做出“直接内存访问”。</span></div>
+<div class="score-reason">评分依据：真机在 Apple M2 上做端侧推理底层优化，与端侧推理栈直接相关（相关度 7）；但只测了 110M 小模型、没有和 llama.cpp 等主流框架正面对比，偏参考实现（贡献 3）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2601.03324" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

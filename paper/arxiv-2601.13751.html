@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Towards Onboard Continuous Change Detection for Floods</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Towards Onboard Continuous Change Detection for Floods</h1>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-01-20 · Daniel Kyselica; Jonáš Herec; Oliver Kutis; Rado Pitoňák / GISTAM 2026</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:高效推理</span><span class="tag">硬件:Jetson</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">小卫星在轨做洪水监测时，存储和算力都很紧，没法把每次拍到的历史影像都留着做对比。这项工作让一个小型遥感基础模型只保留压缩后的历史特征，就能在星上连续判断哪里新发了洪水。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Jetson Orin Nano 上跑到 43 FPS；历史特征相比原始 Sentinel-2 图块最多省下 99.6% 的存储；HiT-Prithvi 参数 7.8M（基线 8.5M），变化类 F1 为 0.38±0.08，与双时相基线 0.41±0.05 基本持平。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">提出历史注入机制 HiT：把以往观测压成很小的历史嵌入，推理时注入 Prithvi-tiny Transformer，代替保存和重读整幅历史影像。</span></div>
+<div class="score-reason">评分依据：在 Jetson Orin Nano 这类星载边缘硬件上实测帧率，并把存储压到小卫星可承受的范围，端侧部署证据明确；方法是轻量的历史特征压缩，创新中等。作者全部来自 Zaitra 公司。</div>
+<div class="source"><a href="https://arxiv.org/abs/2601.13751" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

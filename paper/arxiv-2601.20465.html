@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>BMAM: Brain-inspired Multi-Agent Memory Framework</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-01-30 · Yang Li, Jiaxiang Liu, Yusong Wang, Yujie Wu, Mingkun Xu / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">BMAM 是一个仿照人脑记忆系统设计的智能体记忆框架，解决智能体长期多轮交互中逐渐遗忘时间线、前后行为不一致的问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 LoCoMo 长程记忆评测上准确率 78.45%，优于对比基线；消融实验表明仿海马体的情景记忆模块对时间推理最关键。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把记忆拆成情景记忆、语义记忆、显著性记忆和控制记忆几个分工明确的子系统，各自在不同时间尺度工作；情景记忆按时间线组织，检索时融合关键词、语义和时间多路信号。</span></div>
-<div class="score-reason">评分依据：智能体长期记忆是端侧个人助理的核心模块之一，方法可迁移；但实验基于 GPT-4o-mini 等云端模型，没有设备端运行。</div>
-<div class="source"><a href="https://huggingface.co/papers/2601.20465" target="_blank" rel="noopener">查看原文 →</a></div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-01-28 · Yang Li; Jiaxiang Liu; Yusong Wang; Yujie Wu; Mingkun Xu / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">BMAM：受大脑记忆系统启发的 Agent 记忆架构，把记忆拆成情景、语义、显著性和控制几个子系统，解决长期交互中 Agent 前后行为不一致的问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">LoCoMo 基准标准长程设置下准确率 78.45%；消融显示类海马体的情景记忆子系统对时间推理最关键。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">情景记忆按明确时间线组织，检索时融合多种互补信号；各子系统在不同时间尺度上协同工作，而非一个无结构的记忆库。</span></div>
+<div class="score-reason">评分依据：属 Agent 记忆运行时设计，对端侧 Agent 有迁移价值，但未涉及设备部署；仿脑分区是已有思路的系统化组合。</div>
+<div class="source"><a href="https://arxiv.org/abs/2601.20465" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

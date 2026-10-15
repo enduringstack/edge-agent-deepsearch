@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>U-MASK: User-adaptive Spatio-Temporal Masking for Personalized Mobile AI Applications</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>U-MASK: User-adaptive Spatio-Temporal Masking for Personalized Mobile AI Applications</h1>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-01-11 · Shiyuan Zhang; Yilai Liu; Yuwei Du; Ruoxuan Yang; Dong In Kim; Hongyang Du / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">硬件:手机</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">手机上的个性化 AI 应用要从稀疏、不规律的使用和位置记录中预测用户行为，既要跟得上近期变化又要抗噪、还要照顾新用户。U-MASK 把这几类任务统一成“补全缺失数据”。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在真实移动数据集上，短期预测、长期预测和冷启动三类任务均稳定超过现有最好方法，数据越稀疏优势越大；摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把用户行为建成时空张量，用按用户可靠性和任务敏感度分配的掩码决定哪些数据当证据，再用共享的扩散 Transformer 做掩码引导的生成式补全。</span></div>
+<div class="score-reason">评分依据：服务于移动应用的用户行为建模，但模型并不在手机端运行，也没有部署实验，与端侧推理关系较远。</div>
+<div class="source"><a href="https://arxiv.org/abs/2601.06867" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

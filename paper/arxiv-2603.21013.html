@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A Framework for Low-Latency, LLM-driven Multimodal Interaction on the Pepper Robot</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>A Framework for Low-Latency, LLM-driven Multimodal Interaction on the Pepper Robot</h1>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-01-09 · Erich Studerus; Vivienne Jia Zhong; Stephan Vonschallen / HRI 2026</div>
+<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:工具调用</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span><span class="tag">应用:语音</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">为 Pepper 社交机器人做的开源安卓框架：机器人平板上本地跑智能体运行时，让大模型当规划器，通过函数调用指挥机器人导航、转头看、操作平板。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用端到端语音到语音模型替代“语音转文字-大模型-文字转语音”级联以降低时延；平板上的 TurnManager 状态机和 ToolRegistry 负责注册、校验和执行工具调用，并把视觉、触摸、人脸识别和系统状态等事件反馈给模型。</span></div>
+<div class="score-reason">评分依据：智能体的工具执行、状态管理和多模态感知闭环都运行在 Pepper 机器人自带的安卓平板上，人脸识别也在机器人本地完成，只有大模型推理调用云端接口，属于端侧 Agent；作为开源平台工程整合完整，但论文没有量化评测。</div>
+<div class="source"><a href="https://arxiv.org/abs/2603.21013" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

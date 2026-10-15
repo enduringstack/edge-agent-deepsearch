@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HALO: Semantic-Aware Distributed LLM Inference in Lossy Edge Network</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>HALO: Semantic-Aware Distributed LLM Inference in Lossy Edge Network</h1>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校顶会</span>  2026-01-16 · Peirong Zheng; Wenchao Xu; Haozhao Wang; Jinyu Chen; Xuemin Shen / INFOCOM 2026</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:调度服务</span><span class="tag">方向:量化</span><span class="tag">硬件:CPU</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">HALO 让多台边缘设备在丢包严重的网络里协同跑大模型推理，不必因为某台设备的包迟到而整体干等。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 8 台树莓派 4B 组成的真实集群上跑 Llama 系列 4-bit 模型（Llama-3.1-8B、Llama-2-13B），在网络不可靠时端到端提速 3.41 倍，性能接近理想网络条件，明显优于现有方法。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用语义感知预测器在激活前估计各组神经元的重要性，把不那么关键的神经元组分给网络不稳的设备；推理时并行加载神经元组，并用负载均衡调度器按设备能力分配任务，从而放宽同步要求。</span></div>
+<div class="score-reason">评分依据：在真实树莓派集群上做多设备协同的大模型推理，明确是端侧部署场景，结果扎实。按重要性放宽同步来对抗丢包是新的切入点。已被 INFOCOM 2026 接收。</div>
+<div class="source"><a href="https://arxiv.org/abs/2601.11676" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

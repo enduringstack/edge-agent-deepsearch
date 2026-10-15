@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AdaBoN: Adaptive Best-of-N Alignment</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>AdaBoN: Adaptive Best-of-N Alignment</h1>
+<div class="meta"><span class="score">8</span> <span class="tier">官方动态</span>  2026-01-09 · Apple / Apple</div>
+<div class="tags"><span class="vendor-tag">Apple</span><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">苹果研究如何把有限的推理算力按提示难度分配：难对齐的提示多采样、容易的少采样，从而在同样预算下让多次采样选最优的效果更好。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 12 组语言模型与奖励模型组合、50 批提示（AlpacaEval、HH-RLHF、PKU-SafeRLHF）上，同预算下优于平均分配，并且与多给 20% 预算的平均分配效果相当。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">两阶段算法：先花少量预算探测每个提示的奖励分布，再据此把剩余采样预算自适应地分给不同提示。</span></div>
+<div class="score-reason">评分依据：推理时算力分配可以迁移到算力受限的端侧推理，但论文本身面向通用对齐、不涉及设备；方法属于预算分配的改进。</div>
+<div class="source"><a href="https://machinelearning.apple.com/research/best-of-n" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

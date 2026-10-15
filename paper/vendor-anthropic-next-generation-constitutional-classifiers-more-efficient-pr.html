@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Next-generation Constitutional Classifiers: More efficient protection against universal jailbreaks</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Next-generation Constitutional Classifiers: More efficient protection against universal jailbreaks</h1>
+<div class="meta"><span class="score">9</span> <span class="tier">官方动态</span>  2026-01-09 · Anthropic / Anthropic</div>
+<div class="tags"><span class="vendor-tag">Anthropic</span><span class="tag">方向:安全隐私</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Anthropic 推出第二代越狱防护分类器，在几乎不增加算力的情况下拦截通用越狱攻击。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">第一代把越狱成功率从 86% 降到 4.4%，但多花 23.7% 算力；新一代只增加约 1% 算力，无害问题误拒率降到 0.05%（比原版降 87%），1700 多小时红队测试中尚未发现通用越狱。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用一个读取模型内部激活的轻量探针筛查全部流量，可疑对话再升级给更强的分类器，并把输入和输出放在一起判断。</span></div>
+<div class="score-reason">评分依据：安全护栏本身是云端方案，但「激活探针加级联判别」把防护开销压到约 1%，对算力紧张的端侧模型做安全防护有借鉴意义；方法组合有新意。</div>
+<div class="source"><a href="https://www.anthropic.com/research/next-generation-constitutional-classifiers" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

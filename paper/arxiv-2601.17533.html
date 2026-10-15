@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Reconstructing Training Data from Adapter-based Federated Large Language Models</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Reconstructing Training Data from Adapter-based Federated Large Language Models</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-01-24 · Silong Chen; Yuchuan Luo; Guilin Deng; Yi Liu; Min Xu; Shaojing Fu; Xiaohua Jia / WWW 2026</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">证明只训练低秩适配器的联邦大模型并不安全：攻击者能从适配器梯度里几乎完整地还原用户训练文本。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 GPT2-Large、BERT、Qwen2.5-7B 和 CoLA、SST-2、Rotten Tomatoes 上，重建 ROUGE-1/2 均超过 99，即使在先前攻击完全失效的大批量设置下也成立。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先从冻结层的注意力模式推断出现了哪些词，再在适配器梯度的低秩子空间里做句子级反演，最后用语言先验约束的贪心解码保证句子通顺。</span></div>
+<div class="score-reason">评分依据：联邦微调的隐私攻击，与端侧部署有间接关系（相关度 3）。针对适配器结构的新型梯度反演攻击，结果很强（贡献 6）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2601.17533" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>
