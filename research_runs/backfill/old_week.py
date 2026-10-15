@@ -49,13 +49,19 @@ def apply(label):
     rec = weeks_mod.read_archive(label)
     featured = {h.get("url") for h in (rec.get("weekly") or {}).get("highlights") or []}
     keep = {p["id"] for p in run["papers"] if p["paper_url"] in featured and curated.get(p["id"], {}).get("drop")}
-    for pid in keep:
-        curated[pid] = {**curated[pid], "drop": False}
+    # A featured item the curator dropped stays as published: its record carries no
+    # rewritten fields, and removing it would orphan the week's summary.
+    run = {**run, "papers": [p for p in run["papers"] if p["id"] not in keep]}
     merged, dropped, missing = merge_run(run, curated)
     if missing:
         raise SystemExit(f"curation missing for {len(missing)}: {missing[:8]}")
     new = {p["id"]: {k: v for k, v in p.items() if k not in ("candidate_source", "candidate_ref")}
            for p in merged["papers"]}
+    # Old GitHub entries carry keyword-guessed companies; a repo is not affiliation
+    # evidence, so they file under 开源大项目 like every new-schema week.
+    for pid, q in new.items():
+        if pid.startswith("github-"):
+            q["vendors"], q["source_tier"] = "", "开源大项目"
     gone = {pid for pid, _ in dropped}
     out = []
     for p in rec["papers"]:
@@ -67,7 +73,7 @@ def apply(label):
     backfill_week._render_details([p for p in out if p["id"] in new])
     rec_n = sum(p.get("recommendation") == "推荐" for p in out)
     print(f"[OLD-WEEK] {label}: {len(new)} re-curated, {len(gone)} dropped {sorted(gone)[:6]}, "
-          f"kept featured {sorted(keep)}; now {len(out)} items, {rec_n} recommended")
+          f"kept featured as published {sorted(keep)}; now {len(out)} items, {rec_n} recommended")
 
 
 if __name__ == "__main__":
