@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Actions Speak Louder Than Prompts: Rethinking How LLMs Reason Over Graph Data</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Actions Speak Louder Than Prompts: Rethinking How LLMs Reason Over Graph Data</h1>
+<div class="meta"><span class="score">8</span> <span class="tier">官方动态</span>  2026-03-03 · Microsoft / Microsoft</div>
+<div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">微软研究院与牛津大学系统比较了大模型做图节点分类的三种用法：把邻居直接塞进提示词、像 ReAct 那样一步步调工具查图、让模型写代码查图。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 4 个领域 14 个数据集上，给模型的自主度越高准确率越高，写代码查图整体最好，在长文本、高连接度的图上优势最明显；在异配图上三种方式都优于标签传播等经典基线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">提供结构化图 API，让模型生成并执行短程序，按需组合结构查询、特征查询和标签查询，只取需要的信息，避免把大量邻居文本塞进上下文窗口。</span></div>
+<div class="score-reason">评分依据：研究的是云端大模型的工具调用与代码执行范式，与端侧部署没有直接关系；代码优于逐步工具调用、还能节省上下文的结论对 Agent 设计有借鉴，论文为 ICLR 2026 口头报告。</div>
+<div class="source"><a href="https://www.microsoft.com/en-us/research/articles/actions-speak-louder-than-prompts-rethinking-how-llms-reason-over-graph-data/" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

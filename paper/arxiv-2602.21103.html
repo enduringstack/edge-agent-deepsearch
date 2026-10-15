@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Prompt-Level Distillation: A Non-Parametric Alternative to Model Fine-Tuning for Efficient Reasoning</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-16 · Sanket Badhe, Deep Shah / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span><span class="tag">模型:Gemma</span><span class="tag">模型:Mistral</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">想让小模型会推理，常规做法是微调；这篇改成把老师的推理套路写成一份结构化指令，直接塞进学生的系统提示里。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">用 Gemma-3 4B 时，StereoSet 的宏平均 F1 从 57% 提到 90.0%，Contract-NLI 从 67% 提到 83%，LogiQA 准确率提到 70%；在 Mistral Small 3.1 上也有类似结果，且几乎不增加时延。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">从老师模型里抽取显式的推理模式，整理成一份富有表达力的指令清单放进学生模型的系统提示，不改学生参数，因此也不引入微调的资源和运维开销。</span></div>
-<div class="score-reason">评分依据：让 40 亿参数级的小模型在不微调、不加时延的前提下接近大模型表现，对端侧部署很有吸引力，但论文没有做设备端实验。把蒸馏搬到提示层是轻量而讨巧的做法，可靠性边界尚待验证，贡献中等。</div>
-<div class="source"><a href="https://huggingface.co/papers/2602.21103" target="_blank" rel="noopener">查看原文 →</a></div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-02-24 · Sanket Badhe; Deep Shah / ACL 2026 Industry Track</div>
+<div class="tags"><span class="vendor-tag">Google</span><span class="tag">方向:蒸馏</span><span class="tag">方向:规划推理</span><span class="tag">模型:Gemma</span><span class="tag">模型:Mistral</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让小模型推理更准通常要么用思维链（慢、贵），要么微调（重、不透明）。这篇来自 Google 的工作把大模型的推理规律提炼成一条条指令写进小模型的系统提示，不改权重就提升效果。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以 Gemma-3 4B 为学生模型，StereoSet 的 Macro F1 从 57% 提升到 90.0%，Contract-NLI 从 67% 提升到 83%，LogiQA 准确率提升到 70%；在 Mistral Small 3.1 上也有类似结果，时延开销可忽略。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从老师模型的推理过程中抽取显式推理模式，整理成结构化的指令列表放进学生模型的系统提示，推理时不需要生成长思维链。</span></div>
+<div class="score-reason">评分依据：小模型配合提示级蒸馏、无需额外推理开销，作者明确提到适用于边缘设备，但没有端侧实测。被 ACL 2026 Industry Track 接收（不计顶会）。PDF 首页两位作者均署名 Google，邮箱为 google.com。 作者机构依据：arXiv PDF 首页署名 Google（PDF 首页两位作者 Sanket Badhe、Deep Shah 均署名 Google，邮箱为 google.com）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2602.21103" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

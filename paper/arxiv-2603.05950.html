@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Energy-Driven Adaptive Visual Token Pruning for Efficient Vision-Language Models</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Energy-Driven Adaptive Visual Token Pruning for Efficient Vision-Language Models</h1>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-03-06 · Jialuo He; Huangxun Chen / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">视觉语言模型把图片切成大量视觉 token，计算开销很大；现有剪枝方法对每张图都留固定数量的 token。E-AdaPrune 根据图片信息量自动决定每张图该留多少 token。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 4 个 VLM 骨干、3 种 token 选择器、9 个基准上测试；在 SQA-IMG 上用 Qwen2.5-VL-3B 时，简单样本少用 35.8% 的 token、相对性能只降 0.52%，省下的预算让困难样本多用 52.5% 的 token、相对性能提升 1.94%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对视觉特征矩阵做奇异值分解，按保留一定比例的谱能量来确定该图的 token 预算，再交给已有的 token 选择器执行，不引入可学习参数。</span></div>
+<div class="score-reason">评分依据：视觉 token 剪枝是端侧多模态推理常用的降本手段，可直接迁移；本文在已有选择器之上加一个自适应预算模块，思路简洁但属于增量改进，未做端侧设备实测。</div>
+<div class="source"><a href="https://arxiv.org/abs/2603.05950" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

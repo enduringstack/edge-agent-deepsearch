@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PlugMem: Transforming raw agent interactions into reusable knowledge</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>PlugMem: Transforming raw agent interactions into reusable knowledge</h1>
+<div class="meta"><span class="score">13</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-03-10 · Microsoft / Microsoft</div>
+<div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:记忆</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">微软研究院提出 PlugMem：一个可插到任意大模型 Agent 上的通用记忆模块，把杂乱的交互历史整理成可复用的知识，而不是原样检索旧文本。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在长对话问答、跨维基多跳事实查找、网页决策三类基准上都优于通用检索和专用记忆方法，同时占用更少的记忆 token；博文未给出具体数值。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把对话、文档和网页记录抽取成“事实”和“可复用技能”两类知识单元组成记忆图，按任务意图检索，再提炼成简短指导放进上下文。</span></div>
+<div class="score-reason">评分依据：更省上下文的 Agent 记忆对内存和算力受限的端侧 Agent 有直接迁移价值，但原文未涉及设备部署；把记忆单元从文本块换成事实与技能的思路有新意，代码已开源。</div>
+<div class="source"><a href="https://www.microsoft.com/en-us/research/blog/from-raw-interaction-to-reusable-knowledge-rethinking-memory-for-ai-agents/" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

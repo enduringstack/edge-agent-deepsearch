@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Evaluating Agents Across Runtime Contracts: When Mismatch Costs Efficiency or Quality</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Evaluating Agents Across Runtime Contracts: When Mismatch Costs Efficiency or Quality</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-03-01 · Victor May; Van Khue Nguyen; Aaditya Salgarkar; Yishan Wang; Diganta Misra; Huu Nguyen / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:评测基准</span><span class="tag">应用:代码</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">代码型智能体（CodeAct）的执行环境有的会保留 Python 变量、有的每步清空。论文研究在一种环境下训练的智能体换到另一种环境部署时会怎样。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">每轮允许 80 次工具调用时，按持久环境训练却在无状态环境部署的智能体只拿到最优值的 0.61（匹配部署为 0.77），且多用 4.4 倍 token；把上限收紧到 25 次，失配质量跌到 0.07，而匹配部署仍有 0.66。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">为同一批任务生成持久与无状态两套成对训练轨迹，分别微调 Qwen3-8B 智能体，再做四种训练/部署组合交叉评测，并改变每轮工具调用上限观察差异。</span></div>
+<div class="score-reason">评分依据：讨论的是智能体执行运行时契约对效果和开销的影响，属于 Agent 运行时问题，但实验不涉及端侧设备；结论对评测方法有提醒价值，方法本身是对比实验。</div>
+<div class="source"><a href="https://arxiv.org/abs/2603.01209" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

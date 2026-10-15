@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tiny-Critic RAG: Empowering Agentic Fallback with Parameter-Efficient Small Language Models</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Tiny-Critic RAG: Empowering Agentic Fallback with Parameter-Efficient Small Language Models</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-03-01 · Yichao Wu; Penghao Liang; Yafei Xiang; Mengwei Yuan; Jianan Liu; Jing Yang; Xianyou Li; Weiran Yan / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">应用:RAG</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体式 RAG 常用大模型判断检索结果好不好，这项工作改用一个 LoRA 微调的小模型来做这个二分类把关，省时又省钱。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">路由 F1 0.912，接近 GPT-4o-mini 方案的 0.934；首字时延 492ms 对比 1235ms，每万次查询成本 0.06 美元对比 3.00 美元。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">本地部署 LoRA 微调的 Qwen3-1.7B 作为评判器，用约束解码和非思考模式输出“检索可用/需回退搜索”的二元路由。</span></div>
+<div class="score-reason">评分依据：小模型本地把关、减少大模型调用，可迁移到端侧智能体的检索路由（相关度 5）；小模型当守门员属已有思路（贡献 4）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2603.00846" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

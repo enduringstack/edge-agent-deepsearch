@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Inference Energy and Latency in AI-Mediated Education: A Learning-per-Watt Analysis of Edge and Cloud Models</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Inference Energy and Latency in AI-Mediated Education: A Learning-per-Watt Analysis of Edge and Cloud Models</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-03-04 · Kushal Khemani / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">模型:Phi</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">AI 辅导场景下，量化到 4 比特的小模型到底比全精度省多少电、慢多少、教学质量差多少，这篇用 Phi-3 Mini 实测并提出“每瓦学习价值”指标。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 NVIDIA T4 上，NF4 量化单次推理能耗 329J，低于 FP16 的 369J，但时延 13.4 秒高于 9.2 秒；综合指标 FP16 领先 1.33 倍，关闭 KV 缓存时差距被夸大到 7.4 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对 500 条中学科目提示分别用 FP16 和 NF4 生成回答，由 10 位教师和 3 个前沿模型按量表打分，再结合等待窗口内的能耗算出每瓦学习价值。</span></div>
+<div class="score-reason">评分依据：量化在真实推理条件下的能耗与时延权衡对本地部署有参考，但测试硬件是 T4 服务器 GPU 而非终端设备；属于测量型研究。</div>
+<div class="source"><a href="https://arxiv.org/abs/2603.20223" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>
