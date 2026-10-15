@@ -6068,43 +6068,6 @@
       "recommendation_reason": "",
       "arxiv_date_basis": "submitted",
       "arxiv_revision_note": ""
-    },
-    {
-      "id": "arxiv-2602.06057",
-      "title": "QEIL v2: Heterogeneous Computing for Edge Intelligence via Roofline-Derived Pareto-Optimal Energy Modeling and Multi-Objective Orchestration",
-      "title_zh": "",
-      "abstract": "QEIL v2 是一套在异构边缘设备上调度大模型推理的框架，目标是同时压低能耗、保住答题质量并避免过热与故障。",
-      "effects": "在 Intel Core Ultra 9 285HX（含 NPU）+ RTX PRO 5000 + 集显的平台上，相比标准推理每瓦智能提升 2.86 倍、总能耗降 75.6%、延迟降 38.3%；4-bit Llama-3.1-8B 上 IPW 达 1.024（54.8W）。",
-      "mechanism": "用屋顶线模型、内存压力和芯片漏电发热推导出每种设备与负载组合的能耗模型，再用带动量的帕累托模拟退火把模型各阶段分配到 CPU/GPU/NPU，并用多次采样加早停挑答案。",
-      "paper_url": "https://huggingface.co/papers/2602.06057",
-      "date": "2026-04-10",
-      "score": 11,
-      "score_relevance": 6,
-      "score_contribution": 5,
-      "score_reason": "在笔记本级异构平台（CPU+NPU+GPU）上实测能耗与延迟，对端侧多处理器调度有参考价值；但实验平台包含工作站级独显，物理建模的普适性尚待更多设备验证。",
-      "source_tier": "学校预印本",
-      "open_source": false,
-      "tags": [
-        "方向:能耗功耗",
-        "方向:调度服务",
-        "硬件:NPU",
-        "硬件:GPU",
-        "模型:Llama"
-      ],
-      "edge_agent_scope": "非端侧Agent",
-      "edge_agent_evidence": "",
-      "insight_person": "",
-      "wiki_url": "",
-      "authors": "Satyam Kumar, Saurabh Jha",
-      "vendors": "",
-      "affiliation_evidence_url": "",
-      "candidate_source": "huggingface",
-      "candidate_ref": "ef55c7a02c155ed98b9900c8a3f3043c2eeb11b6181697927803959bfde3855b",
-      "venue": "arXiv",
-      "recommendation": "纳入",
-      "recommendation_reason": "",
-      "arxiv_date_basis": "submitted",
-      "arxiv_revision_note": ""
     }
   ],
   "weekly": {
