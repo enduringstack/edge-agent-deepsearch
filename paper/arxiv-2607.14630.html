@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Cross-Layer Error Compensation and Finite-Sample Feature-Statistics Matching for Extreme Low-Bit Quantization of Large Language Models</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-16 · Ryona Noda / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:量化</span><span class="tag">方向:蒸馏</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Layer-wise post-training quantization of large language models minimizes each layer's reconstruction error in isolation, allowing quantization errors to accumul…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-16 · Ryona Noda / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">针对大模型极低比特（约 1 比特）后训练量化中误差逐层累积的问题，提出把所有层联合优化，并对齐量化前后网络的特征统计量。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">Qwen2.5-1.5B 在 1.125 比特分组二值权重下，困惑度比值为 9.56，优于 logit 蒸馏的 14.09（相对好 32%），比逐层重建好两个数量级；迁移到 4 比特时为 1.060，对比逐层方法 1.088。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用递推式跟踪跨层累计误差并做补偿，同时匹配全精度与量化网络的均值、投影协方差和核统计；二值权重通过 tanh 镜像下降和退火温度优化。</span></div>
+<div class="score-reason">评分依据：极低比特量化直接决定端侧能否装下大模型，可迁移性强；跨层误差补偿有理论推导，但只在 1.5B 模型和困惑度上验证，未做设备实测。作者以个人邮箱署名，无机构信息。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.14630" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

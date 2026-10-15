@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ServerlessT2I: Efficient Text-to-Image Workflow Serving on a Serverless Platform</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-29 · Xiaoxiao Jiang; Suyi Li; Sheng Yao; Tianyu Feng; Lingyun Yang; Dapeng Nie; Haoran Yang; Wei Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">文生图（T2I）工作流越来越多地部署在无服务器平台上，因为用户常组合自定义工作流并间歇调用，作者针对此展开。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span>  2026-07-29 · Xiaoxiao Jiang; Suyi Li; Sheng Yao; Tianyu Feng; Lingyun Yang; Dapeng Nie; Haoran Yang; Wei Wang / arXiv</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ServerlessT2I 是一个在无服务器云平台上运行文生图工作流的系统，把一个工作流拆成可以单独扩缩容和调度的模型函数。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">基于生产流量的实验中，在相同 GPU 预算下可承载的请求率最高提升 2 倍；固定请求率时最多节省 3 倍 GPU 资源，同时满足服务等级目标。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把工作流拆成松耦合的单模型函数，利用文生图推理时闲置的 GPU 显存搭建数据面来减少模型加载和数据传输开销，并加入多租户公平调度器。</span></div>
+<div class="score-reason">评分依据：云端文生图服务系统，与端侧部署关系弱（相关度 2）；利用闲置显存做数据面的设计有工程价值（贡献 5）。PDF 首页署名为香港科技大学与阿里巴巴集团，文中使用阿里平台生产轨迹。 作者机构依据：arXiv PDF 首页署名 Alibaba（PDF 首页作者机构栏列出 Hong Kong University of Science and Technology 与 Alibaba Group）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.26566" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

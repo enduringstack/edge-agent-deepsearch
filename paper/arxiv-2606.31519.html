@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>RaBitQCache: Rotated Binary Quantization for KVCache in Long Context LLM Inference</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-30 · Wenhao Li, Jinhao Dong, Hailin Zhang et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:稀疏注意力</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出RaBitQCache长上下文稀疏注意力框架，用随机旋转二值量化和高吞吐二值-INT4运算估计注意力权重，作为无偏代理分数支持自适应Top-p检索，并做硬件感知异步流水线。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">显著加速推理、降低内存IO，生成质量保持，优于SOTA基线。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：KV缓存二值量化加速长上下文推理，可惠及端侧；无偏估计与误差界有创新。</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-06-30 · Wenhao Li, Jinhao Dong, Hailin Zhang et al. / ICML 2026</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:量化</span><span class="tag">方向:稀疏注意力</span><span class="tag">应用:长上下文推理</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长上下文推理时 KV 缓存又大又慢，稀疏注意力要先估算哪些 token 重要。RaBitQCache 用随机旋转后的二值量化来便宜又无偏地估算注意力权重。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">相对完整注意力，解码阶段在 30K 上下文下最多加速 3.88 倍；预填充阶段额外开销低于 10%；自研算子在不同配置下最高加速 3.43 倍，同时保持生成质量。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把 Key 随机旋转后压成二值码，用二值与 INT4 的高吞吐运算估算注意力分数，并给出误差上界；据此做自适应 Top-p 检索，按真实稀疏度动态调整读取的 token 数，再用异步流水和延迟更新掩盖开销。</span></div>
+<div class="score-reason">评分依据：KV 缓存量化加稀疏检索可直接降低内存带宽压力，对内存受限的端侧长上下文推理有迁移价值；无偏估计与自适应预算的设计有理论支撑，已被 ICML 2026 接收。作者来自中国人民大学和北京大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.31519" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

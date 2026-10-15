@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Compact convolutional neural networks for AI-based drone detection system</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-17 · Gábor Farkas; Gábor Fazekas; Karakai Patrik; András Németh; Gábor Farkas / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">The increasing use of first-person-view drones in modern conflicts has created a demand for compact and reliable detection systems capable of operating in compl…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-17 · Gábor Farkas; Gábor Fazekas; Karakai Patrik; András Németh; Gábor Farkas / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span><span class="tag">应用:安全</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">针对战场上第一人称视角无人机的射频视频信号，设计了一批极小的卷积网络，把信号转成时域图像后直接识别，目标是能塞进嵌入式电子战设备里实时运行。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在约 4 万张标注图像上测试，一个仅 5,921 个参数、25 kB 的模型训练准确率达 99.28%；不到 1,100 个参数的 C2233 在实时测试中表现稳定，部分模型推理吞吐超过每秒 3,000 张图，并已嵌入便携式电子战平台。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">跳过传统的频谱图变换，把软件无线电采到的信号直接栅格化成时域图像，再用层数和通道数都很小的定制卷积网络分类，并接入 GNU Radio 信号处理链做实时检测。</span></div>
+<div class="score-reason">评分依据：明确面向嵌入式设备的极小模型和实时部署，端侧相关度中等偏上；方法是常规轻量卷积网络设计，创新有限。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.16455" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

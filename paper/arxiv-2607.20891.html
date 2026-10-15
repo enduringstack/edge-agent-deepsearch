@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Is Deep Research Reliable? Misleading Knowledge Induces False Conclusions</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-31 · Pengyu Zhu, Lijun Li, Longju Yang, Sen Su / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Deep Research agent 把 LLM 助手延展到规划-检索-证据合成-报告生成的长流程工作流。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=3)；affiliation 待核实</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-31 · Pengyu Zhu, Lijun Li, Longju Yang, Sen Su / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究深度研究类智能体会不会被看似可信但错误的资料带偏：构造了专门诱导错误结论的文档，测试 DeerFlow、WebThinker 和 Gemini Deep Research。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">只注入一篇误导文档，报告采纳错误结论的平均比例就从 0% 升到 54.7%；文档权威性和呈现风格影响很大，而搜索排名和额外文档数量影响有限；研究前后加防御能降低但无法消除。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">基于 DeepResearch Bench 任务生成 5933 篇经过筛选、支持人工审核过的错误结论的文档，并控制权威线索和来源风格，用报告级错误结论采纳率衡量智能体是否被误导。</span></div>
+<div class="score-reason">评分依据：面向云端深度研究智能体的安全评测，与端侧部署无关；但量化了一篇误导文档即可让过半报告出错，对设计 Agent 检索与验证环节有参考价值。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.20891" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Unified Prediction and Planning via Conflict-Aware Disjoint Parameter Training</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-22 · Taewon Seo; Seonae Jeon; Giwon Lee; Kuk-Jin Yoon; Daehee Park / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Accurate motion prediction of surrounding agents and safe motion planning are two closely coupled key tasks for social robot navigation in crowded environments.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校顶会</span>  2026-07-22 · Taewon Seo; Seonae Jeon; Giwon Lee; Kuk-Jin Yoon; Daehee Park / ECCV 2026</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">社交机器人在人群里导航，需要同时预测周围行人轨迹和规划自身路线；为了能放进算力有限的边缘设备，两项任务被塞进一个紧凑模型，却会互相抢参数。本文专门解决这种“技能冲突”。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 JRDB 和 JTA 人群导航基准上优于现有统一模型；论文未给出边缘设备上的时延或能耗实测数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先找出预测和规划两项任务各自最关键的参数区域并分开训练，再用只保留每项任务最有影响力参数的稀疏合并，把两个能力合进同一个紧凑模型，可与多种模型合并方法叠加使用。</span></div>
+<div class="score-reason">评分依据：动机明确面向资源受限的边缘设备上的机器人导航，但没有真机或设备端部署实验（相关度 5）。用参数隔离加稀疏合并处理多任务冲突，思路清晰但属于模型合并方向的改良（贡献 5）。作者来自 DGIST 与 KAIST，论文已被 ECCV 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.19971" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

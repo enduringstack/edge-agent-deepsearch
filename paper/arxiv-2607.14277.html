@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Multi-Head Latent Control: A Unified Interface for LLM Agent Decision Making</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-27 · Amirhosein Ghasemabadi, Ruichen Chen, Bahador Rashidi, Di Niu / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">大模型越来越多地被部署为 agent，但可靠 agent 行为需要的不仅是下一 token 预测，作者针对此展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=9)；affiliation 待核实</div>
+<div class="meta"><span class="score">13</span> <span class="tier company">公司项目</span>  2026-07-27 · Amirhosein Ghasemabadi, Ruichen Chen, Bahador Rashidi, Di Niu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:端云协同</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让智能体在生成过程中自己判断：这题我能不能做、要不要交给更强的模型、该追问、调工具还是放弃。方法只读冻结模型的隐藏状态，不改模型本身。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">大小模型路由下，AndroidWorld 上大模型调用量最多减少 90.7%（Qwen3-VL-4B 转 32B 时得分 0.60，高于单用 32B 的 0.58，API 成本从 2.70 美元降到 0.25 美元），各基准平均减少 27% 到 53%；工具使用决策相对得分最高提升 158%，漏掉的必要工具调用减少 65.5%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在冻结的语言或视觉语言模型上加一个轻量层读取隐藏状态轨迹：能力头预测当前模型能否解决、是否该移交更强模型，处置头在澄清、调工具、弃答、直接回答四种决策中选择；两个头只用同一模型的隐状态训练，9B 级设置下单卡一天内完成，训练显存不超过 16GB。</span></div>
+<div class="score-reason">评分依据：小模型先做、必要时交给大模型的路由正是端云协同智能体的关键问题，但论文没有在真实设备上部署，相关度 6；直接从隐状态读出控制信号、不改模型的做法新颖，贡献 7。公司归属依据 arXiv PDF 首页：第 3 作者 Bahador Rashidi 署名 Huawei Technologies Canada。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页作者 3 Bahador Rashidi 署名 Huawei Technologies Canada Co., Ltd.，其余作者来自阿尔伯塔大学）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.14277" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

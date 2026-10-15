@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Dynamic-in-Few-Step: Unifying Dynamic Computation and Few-Step Distillation for Efficient Video Generation</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-07-07 · Yu Cheng, Siyue Yao, Zhongang Qi, Shanyan Guan, Wei Li, Fajie Yuan / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span><span class="tag">应用:视频</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把动态结构稀疏化直接集成进少步蒸馏，把视频扩散模型变成步级混合模型（MoM），按噪声级别动态裁结构。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">Wan-14B 上在 4 步蒸馏基础上再去 24% 每 step FLOPs，墙钟再快 1.2 倍，比 50 步教师共 30 倍加速。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">联合优化去噪步和结构稀疏性，渐进训练+输出去滚保证跨步结构决策一致性；专用推理引擎部署 MoM。</span></div>
-<div class="score-reason">评分依据：视频扩散加速，非显式端侧但效率技术可参考（relevance 6）。动态稀疏+少步蒸馏联合优化有创新（contribution 8）。作者含 Fajie Yuan，学校项目。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-07-07 · Yu Cheng, Siyue Yao, Zhongang Qi, Shanyan Guan, Wei Li, Fajie Yuan / arXiv</div>
+<div class="tags"><span class="vendor-tag">vivo</span><span class="tag">方向:蒸馏</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">视频扩散模型生成质量高但计算极贵；论文把“少步蒸馏”和“按步动态裁剪模型结构”放到一起优化，进一步加速视频生成。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Wan-14B 上，在 4 步蒸馏基础上再去掉每步 24% 的 FLOPs，墙钟时间再快 1.2 倍，相对 50 步教师模型总加速 30 倍，生成质量保持有竞争力。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把预训练视频扩散模型变成按步骤切换的多子模型组合，联合优化去噪步数和结构稀疏度，用渐进训练和输出回放稳定训练，并配专用推理引擎。</span></div>
+<div class="score-reason">评分依据：属于大模型视频生成的推理加速，与端侧关系较远；把动态稀疏融入蒸馏有一定新意。公司归属依据：PDF 首页作者单位 3 为 vivo BlueImage。 作者机构依据：arXiv PDF 首页署名 vivo（PDF 首页作者单位 3 为 BlueImage, vivo，第一作者等 4 人署名该单位）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.06631" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

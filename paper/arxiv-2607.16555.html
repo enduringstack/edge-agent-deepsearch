@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Mitigating Compiler Fusion-Induced Power Bursts in Mobile NPU Inference as the Battery Depletes</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-17 · Ryoga Yuzawa; Masayoshi Tomizuka / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:NPU</span><span class="tag">硬件:手机</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Mobile devices increasingly rely on real-time NPU inference for camera and perception workloads.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">16</span> <span class="tier company">公司项目</span>  2026-07-17 · Ryoga Yuzawa; Masayoshi Tomizuka / arXiv</div>
+<div class="tags"><span class="vendor-tag">Sony</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:编译部署</span><span class="tag">硬件:NPU</span><span class="tag">硬件:手机</span><span class="tag">硬件:Snapdragon</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">手机电量低、电压下降时，NPU 跑一次推理就可能引起瞬间电压跌落，触发系统降频导致变慢甚至关机。作者在真实手机上测量发现，NPU 编译器的激进算子融合是元凶之一，并给出不改厂商编译器的缓解办法。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Sony Xperia 1 VI（骁龙 8 Gen 3，Hexagon NPU）上跑 768×768 的 MobileNetV4，峰值电流从 3.12 A 降到 1.94 A，时延只增加 3.76%，低电压下保持稳定时延的区间更深，推算的降频电压余量改善约 173 mV。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先同步测量推理时的电流、电压和时延，定位融合后的“超级层”造成的电流尖峰；再在送入厂商编译器前改写计算图，在峰均功率比最高的位置插入屏障，阻止有害的层融合。</span></div>
+<div class="score-reason">评分依据：在商用手机 NPU 上实测，直接面向端侧推理的供电稳定性问题，相关度很高；首次把编译器算子融合与低电量降频联系起来，且方法无需改动厂商工具链。PDF 首页第一作者同时署名 UC Berkeley 与 Sony。 作者机构依据：arXiv PDF 首页署名 Sony（PDF 首页第一作者 Ryoga Yuzawa 署名 UC Berkeley 与 Sony）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.16555" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

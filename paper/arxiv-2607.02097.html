@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>WBMM: Windowed Batch Matrix Multiplication for Efficient Large Receptive Field Convolution</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-02 · Wan Song, Wei Zhou, Rui Wang et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出窗口化批矩阵乘(WBMM)替代大核深度卷积,通过连续窗口+相对位置偏置表实现规则内存访问,提升大感受野卷积效率。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">14x14 窗口比 5x5 深度卷积更快且感受野大 7.8 倍;ImageNet/COCO/ADE20K 上精度持平或更高,训练加速 1.31-1.88 倍,GPU/CPU/边缘设备一致受益。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：边缘设备适用算子,端侧技术栈;WBMM 思路新颖且有跨硬件收益。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-07-02 · Wan Song, Wei Zhou, Rui Wang et al. / ICML 2026</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span><span class="tag">硬件:GPU</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大核深度卷积在核变大时速度明显变慢。WBMM 把大感受野卷积改写成分窗口的批量矩阵乘，让访存变规整。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">14×14 窗口的 WBMM 比 5×5 深度卷积还快，同时单层感受野大 7.8 倍；在 ImageNet-1K、COCO、ADE20K 上精度持平或更高，训练提速 1.31–1.88 倍，并在 GPU、CPU 和边缘设备上都有优势。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把输入切成连续窗口，用紧凑的相对位置偏置表构造权重矩阵，用批量矩阵乘计算；再加跨窗口通信和层级窗口重参数化保证精度。</span></div>
+<div class="score-reason">评分依据：不依赖专用算子就能在 CPU 和边缘设备上提速，对端侧视觉骨干有直接价值（相关度 5）；窗口越大反而越快的算子设计有新意，ICML 2026 Spotlight（贡献 6）。合肥工业大学与高知工科大学为主，作者 2、3、6 署名合肥领扬工业互联网公司。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.02097" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

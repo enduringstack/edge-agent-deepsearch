@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SpikeDS: Dual Sparsity Spikformer for Perineural Invasion Prediction in 3D MRI</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-13 · Induk Um; Youngung Han; Kyeonghun Kim; Yului Jeong; Jina Jeong; Hyunsu Go; Dohyun Kweon; Sungha Park / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">方向:SNN</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Perineural invasion (PNI) is associated with poor prognosis in cholangiocarcinoma (CCA).</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-07-13 · Induk Um; Youngung Han; Kyeonghun Kim; Yului Jeong; Jina Jeong; Hyunsu Go; Dohyun Kweon; Sungha Park / arXiv</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:SNN</span><span class="tag">方向:稀疏注意力</span><span class="tag">方向:能耗功耗</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用脉冲神经网络做 3D 核磁影像上的胆管癌神经侵犯预测，同时利用脉冲的激活稀疏和按放电率剪掉不重要窗口的空间稀疏来省算力。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 139 例胆管癌患者的 5 折交叉验证中 AUC 达到 0.753，单次推理能耗仅 14.4 mJ，AUC 和能耗都优于最佳基线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">注意力只作用在放电率高的显著窗口上，被剪掉的窗口仍作为键值参与跨窗口的全局信息交换，从而在保留上下文的同时减少计算。</span></div>
+<div class="score-reason">评分依据：脉冲网络的双重稀疏属于低功耗推理的相邻方向，但应用是医学影像，没有端侧设备实测；稀疏注意力设计有一定新意。 作者机构依据：arXiv PDF 首页署名 NVIDIA（PDF 首页 17 位作者中第 8 位署名 NVIDIA AI Technology Center，主要作者来自首尔大学等高校）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.11986" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PReM: Learning What to Preserve and When to Refresh for Context Compression</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-15 · Bohan Yu; Lei Shen; Chenxi Zhou; Chen Han; Junlin Liu; Wenbo Su; Yu Cheng; Bo Zheng / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Efficient long-context inference is not only about reducing memory cost, but also about keeping useful contextual evidence accessible as generation proceeds.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-07-15 · Bohan Yu; Lei Shen; Chenxi Zhou; Chen Han; Junlin Liu; Wenbo Su; Yu Cheng; Bo Zheng / arXiv</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">PReM 是一种长上下文压缩方法，让模型自己学会在生成过程中保留哪些 KV 记忆、何时重新刷新，以便后面的推理步骤还能找到需要的证据。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 32K token 上下文下，16 倍和 32 倍压缩时都优于强基线，并在回答质量和推理效率之间取得较好平衡（摘要未给出具体分数）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把长上下文保存为模型内部逐层 KV 记忆，用专门的记忆层决定保留哪些内容，并引入特殊记忆 token 在生成中触发刷新；训练上采用分阶段刷新训练，让记忆选择与生成对齐。</span></div>
+<div class="score-reason">评分依据：KV cache 与上下文压缩直接关系到端侧长上下文推理的内存开销，可迁移性较强；学习式保留加刷新的设计比一次性丢弃更有新意，但未在设备上评测。PDF 首页署名阿里巴巴集团。 作者机构依据：arXiv PDF 首页署名 Alibaba（PDF 首页全部作者署名 Alibaba Group）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.14327" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

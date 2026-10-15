@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PFAdapter: Hierarchical LoRA Decomposition for Personalized Federated MLLMs</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-13 · Jing Liu; Kun Yang; Yan Wang; Dingkang Yang; Xiaoshuai Hao; Wei Zhang; Yang Liu; Wei Zhou / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Agentic AI systems are reshaping communications and networking by deploying autonomous intelligent agents capable of collaborative learning while maintaining da…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-13 · Jing Liu; Kun Yang; Yan Wang; Dingkang Yang; Xiaoshuai Hao; Wei Zhang; Yang Liu; Wei Zhou / IEEE TCCN</div>
+<div class="tags"><span class="vendor-tag">Ant Group; Xiaomi</span><span class="tag">方向:联邦学习</span><span class="tag">方向:多模态</span><span class="tag">方向:端侧训练</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在边缘设备上联邦微调多模态大模型时，把 LoRA 适配器拆成“全网共享”和“本地私有”两部分，兼顾全局知识和各设备的个性化，并减少通信。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">只同步共享部分，使通信开销降低近 50%；在 VQA-RAD、SLAKE、Hateful Memes 和 CrisisMMD 上，准确率比现有最好方法高 2.4% 到 4.8%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">注意力的查询和键投影走全局同步，值和输出投影留在本地做个性化，再用正交正则约束两部分不学重复特征。</span></div>
+<div class="score-reason">评分依据：面向边缘网络的联邦多模态微调，降低通信开销对资源受限设备有迁移价值，但没有真机部署评测；分层 LoRA 拆分属于联邦学习中的改进型设计。 作者机构依据：arXiv PDF 首页署名 Ant Group, Xiaomi（PDF 首页作者脚注：第 2 作者 Kun Yang 任职 Ant Group，第 5 作者 Xiaoshuai Hao 任职 Xiaomi EV（邮箱 xiaomi.com），第一作者来自复旦大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.12111" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Program-as-Weights: A Programming Paradigm for Fuzzy Functions</h1>
-<div class="meta"><span class="score">17</span> <span class="tier school">学校预印本</span>  2026-07-02 · Wentao Zhang, Liliana Hotsko, Woojeong Kim et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把自然语言描述的模糊函数(如日志告警、JSON修复、意图排序)编译成可在本地执行的小型神经网络适配器,让基础模型从每次都解题变成一次性生成可复用的小工具。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">0.6B Qwen3 解释器执行 PAW 程序性能匹配直接调用 Qwen3-32B,显存约 1/50,MacBook M3 上 30 tokens/s。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确本地/离线/MacBook M3 端侧执行;新范式,4B 编译器+FuzzyBench 10M 数据集,小模型逼近大模型。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-02 · Wentao Zhang, Liliana Hotsko, Woojeong Kim et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:编译部署</span><span class="tag">硬件:Apple-Silicon</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">很多“模糊函数”（如判断日志是否重要、修复坏 JSON）现在都靠调用大模型 API。PAW 把这类函数从自然语言描述“编译”成一个能在本地离线运行的小神经程序。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">0.6B 的 Qwen3 解释器执行 PAW 程序，效果与直接提示 Qwen3-32B 相当，推理内存只需约五十分之一，在 MacBook M3 上达到每秒 30 个 token。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用一个 4B 的“编译器”模型（在作者发布的 1000 万样本 FuzzyBench 上训练）根据函数描述生成参数高效适配器，挂到冻结的小型解释器模型上反复调用。</span></div>
+<div class="score-reason">评分依据：把云端大模型调用变成本地小模型离线执行，并在 MacBook M3 上实测（相关度 7）；“大模型造工具、小模型本地执行”的编程范式新颖（贡献 8）。作者机构为滑铁卢大学、康奈尔大学和哈佛大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.02512" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

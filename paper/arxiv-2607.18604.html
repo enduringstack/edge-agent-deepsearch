@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Intelligent Multi-UAV Navigation in ITNTNs: A Hierarchical LLM Approach</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-21 · Zijiang Yan; Hao Zhou; Wael Jaafar; Jianhua Pei; Ping Wang; Halim Yanikomeroglu; Hina Tabassum / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">The deployment of high-speed Uncrewed Aerial Vehicles (UAVs) in 3D aerial highways necessitates robust coordination of physical flight kinematics and multi-tier…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-07-21 · Zijiang Yan; Hao Zhou; Wael Jaafar; Jianhua Pei; Ping Wang; Halim Yanikomeroglu; Hina Tabassum / IEEE GLOBECOM 2026</div>
+<div class="tags"><span class="vendor-tag">Samsung</span><span class="tag">方向:端云协同</span><span class="tag">方向:规划推理</span><span class="tag">方向:量化</span><span class="tag">应用:机器人</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让大模型指挥高速无人机编队：云端大模型负责全局负载均衡和网络切换，每架无人机上的小模型把本地观测转成战术子目标，再交给强化学习控制器飞行。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 3D 物理仿真中，相比现有基线显著降低碰撞率并提升系统总吞吐；摘要未给出具体百分比。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">双时间尺度分层：高空平台上的 Qwen3.5-122B 慢速做全局决策，无人机端设想部署 4 比特量化的 Qwen3.5-9B 生成子目标，底层由 DDQN 控制器快速执行避障和切换感知的航迹。</span></div>
+<div class="score-reason">评分依据：设计了端云分层的无人机智能体，并讨论机载 4 比特 9B 模型的生成速度，端侧相关度中上；但全部结果来自仿真，没有真机运行证据，因此不算真正端侧 Agent。PDF 首页作者 2 署名 Samsung Research America，其余为 York University 等高校。 作者机构依据：arXiv PDF 首页署名 Samsung（PDF 首页作者 2 Hao Zhou 署名 Samsung Research America（多伦多），通讯与多数作者来自 York University）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.18604" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

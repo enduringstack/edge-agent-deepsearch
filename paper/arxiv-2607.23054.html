@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Through the Bottleneck: How Multi-head Latent Attention Separates Content from Position in Language Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-25 · Dhruvil S; Fenil Sojitra; Ravirajsinh Chauhan / arXiv</div>
-<div class="tags"><span class="vendor-tag">DeepSeek</span><span class="tag">方向:KV cache</span><span class="tag">模型:DeepSeek</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">DeepSeek-V2 提出的多头潜在注意力（MLA）通过共享低秩瓶颈（cKV）压缩键值对，实现 81% KV 缓存压缩，作者针对此展开。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 DeepSeek（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-25 · Dhruvil S; Fenil Sojitra; Ravirajsinh Chauhan / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效注意力</span><span class="tag">方向:模型架构</span><span class="tag">模型:DeepSeek</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">DeepSeek-V2 提出的多头潜在注意力（MLA）把键值压进一个共享的低秩瓶颈，能大幅缩小 KV 缓存。这篇首次从可解释性角度拆解这个瓶颈到底保留了什么、丢掉了什么。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 1.14 亿参数的自训模型上发现：压缩瓶颈保留了 98% 的实体身份信息而基本丢弃位置信息；归纳头集中出现在第 12 层；第 15 层是“语义枢纽”；瓶颈平均只用到 46% 的容量，存在冗余。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">训练一个采用 MLA 的小型 Transformer，用奇异值分解、注意力头分类、线性探针和扰动归因等方法分析各层表示与电路结构。</span></div>
+<div class="score-reason">评分依据：MLA 是压缩 KV 缓存的关键结构，瓶颈容量过剩的发现对端侧进一步压缩缓存有参考价值，但论文没有做部署实验（相关度 4）。属于小模型上的初步可解释性分析，作者自述结论范围有限（贡献 4）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.23054" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

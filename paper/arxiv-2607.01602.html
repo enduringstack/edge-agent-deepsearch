@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ProWAFT: A ROMA-LPD Instance for Workload-Aware and Dynamic Fault Tolerance in FPGA-Based CNN Accelerators</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-07-02 · Xinxin Chen, Haoran Qiao, Yiming Guo et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">ProWAFT 是 FPGA 上 CNN 加速器的主动负载感知容错框架,用部分重配置按工作负载关键性选择性施加 TMR,在延迟/能耗/可靠性风险上做联合优化。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">ZCU104 上 ResNet-18/MobileNetV2/EfficientNet-Lite 500 任务轨迹下,复合成本低于静态 TMR 和反应式重配置,任务成功率和高吞吐近基线。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确 network edge FPGA 加速器;主动部分重配置容错,创新较高。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-02 · Xinxin Chen, Haoran Qiao, Yiming Guo et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:FPGA</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ProWAFT 为部署在边缘的 FPGA 卷积网络加速器做按需容错：根据当前负载重要性和故障风险，只在需要的区域开启三模冗余。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ZCU104 平台六个可重配置分区、基于 ResNet-18、MobileNetV2、EfficientNet-Lite 的 500 个任务上，综合时延、能耗与可靠性的成本低于静态三模冗余和被动恢复，吞吐接近无保护基线，在线决策开销低于 1 毫秒；摘要未给出更细的数值。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用 FPGA 局部重配置按分区选择性启用三模冗余，建模任务关键度、故障传播和重配置开销，选出综合目标最优的配置。</span></div>
+<div class="score-reason">评分依据：直接面向边缘 FPGA 上的 CNN 推理可靠性，并在 Zynq UltraScale+ 实板上验证，端侧相关度高；属于容错调度的工程组合。作者来自中国科学院大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01602" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

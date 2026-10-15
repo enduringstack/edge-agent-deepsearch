@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Omni-Flow: A Unified Workflow Orchestration and Distributed KV Cache Sharing Framework for Multimodal Inference</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-30 · Bin Xiao, Jingfu Dong, Changran Wang et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Omni-Flow 是多模态推理的分布式调度框架,三层抽象(控制流/数据流/计算流)统一编排异构单元、跨角色 KV 缓存共享与多模态前缀复用。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">支持全模态对话(LongCat-Next)与复杂图像生成(HunyuanImage-3)等异构场景,统一编程模型。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：分布式多模态推理服务,云端;三层抽象有系统创新。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-06-30 · Bin Xiao, Jingfu Dong, Changran Wang et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">Meituan</span><span class="tag">方向:云端serving</span><span class="tag">方向:KV cache</span><span class="tag">方向:多模态</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">面向多模态大模型的分布式推理服务框架，把编码器、大语言模型、扩散模型、媒体解码器等组件统一编排，并在组件之间共享 KV 缓存等状态。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen3-Omni 上，四个基准的总体任务完成时间比 vLLM-Omni 和 SGLang-Omni 分别高 1.2% 和 4.9%；但在 50 轮多模态会话中，借助服务端会话状态平均完成时间分别降低 7.5% 和 19.3%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 Python 领域语言描述工作流依赖，运行时据此调度各组件；统一管理共享张量和分页 KV 缓存的放置、传输与生命周期，跨轮次、跨组件复用前缀 KV，并与 SGLang 执行接口集成。</span></div>
+<div class="score-reason">评分依据：属于云端多模态推理服务系统，对端侧只有间接参考价值；在多轮会话场景有收益，但单轮吞吐并未超过现有框架。PDF 首页作者除一名北京大学学生外均署名美团（meituan.com 邮箱）。 作者机构依据：arXiv PDF 首页署名 Meituan（PDF 首页 8 位作者中 7 位署名美团（北京），使用 meituan.com 邮箱，另一位为北京大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.31093" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

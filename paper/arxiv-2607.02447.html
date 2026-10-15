@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Understanding the Robustness of Distributed Self-Supervised Learning Frameworks Against Non-IID Data</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-02 · Xuanyu Chen, Nan Yang, Shuai Wang et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">对分布式自监督学习(D-SSL)在非独立同分布数据下的鲁棒性做理论分析,证明掩码图像建模(MIM)比对比学习更抗异构,并提出 MAR loss 改进。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告具体数字;跨架构和分布式设置实验验证理论。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：分布式/联邦训练理论,非显式端侧;理论分析+MAR loss 改进,中等创新。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校顶会</span>  2026-07-02 · Xuanyu Chen, Nan Yang, Shuai Wang et al. / ICLR 2026</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:端侧训练</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">从理论上分析分布式自监督学习（联邦学习、去中心化学习）在各端数据分布不一致时的鲁棒性，并据此改进训练目标。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">理论与实验表明：掩码图像建模比对比学习更能扛住数据异构；网络平均连通度越高越鲁棒，联邦学习不弱于去中心化学习；提出的 MAR 损失在多种架构和分布式设置下有效。摘要页未给出具体数值。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对不同分布式自监督框架做严格的非独立同分布分析，再在掩码图像建模目标上加入局部到全局的对齐正则，得到 MAR 损失。</span></div>
+<div class="score-reason">评分依据：联邦/去中心化学习与端侧数据相关，但属训练理论，不涉及推理部署（相关度 3）；给出了框架鲁棒性的理论刻画，被 ICLR 2026 接收（贡献 6）。作者机构为悉尼大学和西北工业大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.02447" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>An Explicit World Model Based on Data-First Ontology: DaoQL Multimodal Storage Validation and Counterfactual Reasoning Evaluation</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-19 · Zhanbo Li; Shifeng Wu; Xiangjin Meng; Wenjie Cai / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">模型:GPT</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Large language models encode world models implicitly in neural weights, which exposes four structural risks in high-precision domains such as medicine and finan…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-19 · Zhanbo Li; Shifeng Wu; Xiangjin Meng; Wenjie Cai / arXiv</div>
+<div class="tags"><span class="tag">应用:RAG</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">主张把确定性知识从大模型权重里搬到一个显式的多模态数据库 DaoQL 中，大模型只负责推理和语言，以减少幻觉、便于修改和解释。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">同机嵌入式部署下图遍历 1.20 毫秒、HNSW 向量检索 83.1 微秒、混合查询 105.8 微秒；五个领域的反事实实验中，DaoQL+GPT-4o 的可组合反事实分解率达 94%，比单独 GPT-4o 高 49 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在一个进程内整合图、列存、向量和全文检索引擎，作为外部显式世界模型，大模型通过确定性查询路径读取和修改知识。</span></div>
+<div class="score-reason">评分依据：属于大模型外部知识存储与检索层，和端侧部署关系较弱；论文自己说明 KV cache 图节点与 Agent 运行时仍是未来工作。理论框架有一定新意，但工程验证尚属初步。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.17269" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

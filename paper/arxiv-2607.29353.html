@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Versatile On-device Adaptation at the Edge by Unifying Few-shot, Zero-shot, Continual, and In-context Learning</h1>
-<div class="meta"><span class="score">18</span> <span class="tier school">学校预印本</span>  2026-07-31 · Douwe den Blanken; Martin Lefebvre; Charlotte Frenkel / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:安全隐私</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">智能边缘设备越来越多，对个性化应用（如自定义唤醒词识别）的需求也在涨。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">芯片实测覆盖四类学习场景：Omniglot 5-way 1-shot 达 96.8%，关键词持续学习 200-way 5-shot 达 71.8%，并在微瓦到毫瓦功耗下演示零样本和上下文学习。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">复用同一个嵌入器产生特征，再针对不同任务组织少样本原型、持续更新、语义映射或上下文适配，从而避免为每种学习方式部署一套专用模型。</span></div>
-<div class="score-reason">评分依据：明确面向受限边缘芯片的在线适配，并在硅上覆盖少样本、零样本、持续学习和上下文学习四类场景；端侧契合度与方法完整性都很高。</div>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-07-31 · Douwe den Blanken; Martin Lefebvre; Charlotte Frenkel / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:能耗功耗</span><span class="tag">应用:语音</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大多数端侧芯片出厂后只会推理、不会学习，个性化只能回云端重训。这篇工作提出“以嵌入器为中心的学习”（ECL），让同一颗低功耗芯片同时支持小样本、持续、零样本和上下文学习四种在设备上的自适应方式。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在自研 Chameleon SoC 上实测：Omniglot 5-way 1-shot 准确率 96.8%（32-way 1-shot 83.3%），小样本学习功耗低至 12.9µW（对比 FSL-HDnn 的 11.6mW），模型仅 59kB；首次给出关键词持续学习的硬件基线（NeuroBench 200-way 5-shot 71.8%），并首次在芯片上演示零样本口语句子分类（60.6%）和上下文学习（RegBench 第 500 个 token 46.2%，每 token 2.15ms、7.83mW）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">离线预训练一个通用嵌入网络（时间卷积网络，内存随序列长度对数增长），部署后只在嵌入向量层面做原型更新、语义对齐或上下文推断，因此芯片只需支持一种网络和极少量学习逻辑（学习逻辑面积开销约 0.5%）。</span></div>
+<div class="score-reason">评分依据：在自研低功耗芯片上真机验证了微瓦到毫瓦级的设备端学习与推理，端侧属性非常明确（相关度 9）；把四种在线学习场景统一到同一硬件框架并给出多项首次硬件演示，创新度高（贡献 7）。作者均来自代尔夫特理工大学微电子系。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29353" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

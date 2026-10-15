@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>VibeVoice-ASR-BitNet Technical Report</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-23 · Songchen Xu; Ting Song; Shaohan Huang; Zhiliang Peng; Yan Xia; Yujie Tu; Xin Huang; Jianwei Yu / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:端侧agent</span><span class="tag">模型:BitNet</span><span class="tag">应用:语音</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">We present VibeVoice-ASR-BitNet, a compressed variant of VibeVoice-ASR optimized for real-time inference on edge CPUs.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">16</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-23 · Songchen Xu; Ting Song; Shaohan Huang; Zhiliang Peng; Yan Xia; Yujie Tu; Xin Huang; Jianwei Yu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:量化</span><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span><span class="tag">应用:语音</span><span class="tag">硬件:CPU</span><span class="tag">模型:BitNet</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">微软把 VibeVoice-ASR 语音识别大模型压缩成可在普通边缘 CPU 上实时运行的版本：声学编码器用 INT8，语言模型用 BitNet 风格的三值权重。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">模型体积从 4.62 GB 压到 1.58 GB（缩小 2.9 倍），在 ARM 和 x86 的少线程 CPU 上实现实时识别（RTF&lt;1），比同等体积的 Whisper.cpp 快 1.6～2.3 倍；语言模型解码提速 4 倍、预填充提速 2.5 倍，多数基准词错率只比 FP16 高 1～4 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按各阶段计算特点做异构量化：IO 受限的卷积声学分词器全链路 INT8，自回归语言模型三值权重并用渐进式量化感知训练保精度；在 ggml 中手写 AVX2/NEON SIMD 内核和算子融合。</span></div>
+<div class="score-reason">评分依据：明确面向边缘 CPU 的实时语音识别部署，并在 ARM 与 x86 上实测（相关度 9）。把 BitNet 三值权重用于大模型语音识别并配套内核优化，工程与方法兼具（贡献 7）。PDF 首页脚注写明 Z. Peng、T. Song、F. Wei 等 10 位作者隶属 Microsoft Research。 作者机构依据：arXiv PDF 首页署名 Microsoft（PDF 首页脚注：Z. Peng、T. Song、Y. Xia、S. Huang、X. Wu、W. Wang、Y. Chang、J. Yu、L. Dong、F. Wei 隶属 Microsoft Research，通讯作者邮箱 fuwei@microsoft.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.21075" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

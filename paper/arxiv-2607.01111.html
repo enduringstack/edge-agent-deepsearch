@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FAR: Failure-Aware Retry for Test-Time Recovery and Continual Policy Improvement</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-01 · Haoran Hao, Shahram Najam Syed, Jeffrey Ichnowski et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">FAR 让机器人在测试时从失败中学习:用失败-对比偏好适配把策略推离失败行为,辅以轻量动作扰动,并将成功恢复轨迹回训持续改进。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">仿真上平均成功率提升 17.6%,真实世界提升 11.7%;在 reset 与时间步预算下数据效率显著提高。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：机器人策略,可端侧部署;失败偏好适配+持续改进框架较常见。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-01 · Haoran Hao, Shahram Najam Syed, Jeffrey Ichnowski et al. / CoRL 2026</div>
+<div class="tags"><span class="tag">方向:测试时自适应</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让机器人在部署现场失败后能从失败中学习、调整动作并重试，最终自主完成任务，同时把成功的恢复轨迹用于持续改进策略。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">相比标准扩散策略，仿真中平均成功率提升 17.6%，真实机械臂操作任务中提升 11.7%，并在重置次数和时间步预算下提高持续改进的数据效率。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从失败轨迹构造偏好数据，引导策略避开之前失败的动作，同时在重试时加入轻量动作扰动做局部探索。</span></div>
+<div class="score-reason">评分依据：关注机器人在真实部署中的测试时自适应，但本质是动作控制策略学习，与端侧推理栈关联较弱；方法组合有一定新意。作者来自卡内基梅隆大学机器人研究所，代码与视频已公开，论文被 CoRL 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01111" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

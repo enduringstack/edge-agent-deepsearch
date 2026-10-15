@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ELiTeFormer: An Efficient Transformer for FPGAs</h1>
-<div class="meta"><span class="score">17</span> <span class="tier school">学校预印本</span>  2026-07-04 · Victor Agostinelli, Nicolas Bohm Agostini, Antonino Tumeo / arXiv</div>
-<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:量化</span><span class="tag">方向:高效注意力</span><span class="tag">方向:编译部署</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">首个为 FPGA 部署联合设计混合线性注意力+三值超低精度线性投影的 Transformer 架构。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">比 LLaMA 3 权重压缩 10 倍、KV 缓存压缩 12.8 倍，MMLU 31.9%（BitNet b1.58 3% 以内）；FFN 9.6 倍加速、注意力 4.4 倍；端到端比 A100 GPU 延迟低 3.9 倍、能效高 3.2 倍。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">混合线性注意力+三值线性投影；处理单元微架构用 bitmask 消除三值投影所有乘法，完全不用 DSP 块；Xilinx VCK5000 Versal HLS 流程部署。</span></div>
-<div class="score-reason">评分依据：FPGA Transformer 联合架构-硬件设计，明确端侧硬件（relevance 9）。线性注意力+三值量化+无乘法 PE 微架构是范式级创新（contribution 8）。作者 Sunketa/Agostini (PNNL)，学校项目。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-04 · Victor Agostinelli, Nicolas Bohm Agostini, Antonino Tumeo / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效注意力</span><span class="tag">方向:模型架构</span><span class="tag">硬件:FPGA</span><span class="tag">模型:BitNet</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ELiTeFormer 是为 FPGA 量身设计的高效 Transformer：把混合线性注意力和三值（-1/0/1）权重结合起来，并配套设计硬件计算单元。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">相比 LLaMA 3，权重压缩 10 倍、KV cache 压缩 12.8 倍，MMLU 31.9%，与 BitNet b1.58 相差 3.0 个百分点以内；模块级 FFN 快 9.6 倍、注意力快 4.4 倍；在 Xilinx VCK5000 上端到端，长上下文时比 A100 上的 LLaMA 3 延迟低 3.9 倍、能效高 3.2 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">设计新的处理单元微架构，用位掩码操作替代三值线性层里的全部乘法，完全不占用 FPGA 的 DSP 资源，再通过高层次综合部署到板卡。</span></div>
+<div class="score-reason">评分依据：算法与硬件协同设计的低比特 Transformer，可迁移到资源受限的加速器，但验证平台是数据中心级 FPGA 加速卡；线性注意力与三值量化在 FPGA 上的首次结合有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.03652" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

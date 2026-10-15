@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Approximate Attention Weighting for Sustainable FPGA-Based Vision Transformer Inference</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-07-02 · Muhammad Usman, Shujaat Khan, Dorit Merhof / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出用于FPGA上ViT推理的无BRAM近似注意力加权单元，用16段分段线性函数近似softmax中的自然指数，全部用分布式LUT实现，保留预训练注意力温度无需重新校准。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在Xilinx Zynq-7020上注意力行核用1444 LUTs、77 DSP、零BRAM，硬件精确仿真与精确softmax相比绝对Top-1差距在0.20%以内。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确小FPGA边缘ViT推理加速，端侧属性强；近似softmax硬件设计有创新。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-02 · Muhammad Usman, Shujaat Khan, Dorit Merhof / arXiv</div>
+<div class="tags"><span class="tag">硬件:FPGA</span><span class="tag">方向:高效注意力</span><span class="tag">方向:能耗功耗</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">为在小型 FPGA 上跑视觉 Transformer，设计了一个不用片上 BRAM 的近似 softmax 注意力单元，面向工业巡检等边缘视觉场景。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Xilinx Zynq-7020 上，整行注意力核只用 1444 个 LUT、77 个 DSP、0 个 BRAM；硬件精确仿真下 ViT 系列模型 top-1 准确率与精确 softmax 相差不超过 0.20 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 16 段分段线性函数逼近自然指数，全部用分布式 LUT 实现；与以 2 为底的近似不同，它保留预训练模型的注意力温度，无需针对模型重新校准。</span></div>
+<div class="score-reason">评分依据：直接面向小型 FPGA 的 ViT 推理硬件实现，资源占用有实测（相关度 7）；分段线性 softmax 近似是成熟思路，亮点在免 BRAM 与免重校准（贡献 5）。作者机构为雷根斯堡大学、NUST 和 KFUPM。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01798" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

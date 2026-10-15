@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LUMA: Benchmarking Segmentation via a Lightweight Universal Mask Adapter</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-07-01 · Tobias Christian Nauen, Anosh Billimoria, Federico Raue et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出LUMA轻量通用mask适配器，把任意主干当黑盒特征提取器，用查询经廉价交叉注意力读取特征，固定该头后统一评测20个主干与11种预训练。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在ADE20K/Cityscapes上以更低成本匹配SOTA高效ViT分割器EoMT；发现纯ViT在各分辨率都占吞吐帕累托前沿，预训练目标比架构更决定质量。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：轻量分割头可适配多种主干，端侧视觉技术栈；统一基准与发现预训练为主杠杆有创新。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-07-01 · Tobias Christian Nauen, Anosh Billimoria, Federico Raue et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:高效注意力</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">提出一个可接到任意视觉骨干上的轻量分割头 LUMA，用统一的头和训练配方公平比较 20 种骨干网络在分割任务上的精度与速度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">LUMA 精度与当前高效 ViT 分割器 EoMT 持平且计算更省；在 ADE20K 和 Cityscapes 上比较 20 种骨干、11 种预训练方式后发现，所谓高效的 token 混合结构在高分辨率下也没有带来吞吐优势，普通 ViT 在各分辨率都处于吞吐最优前沿。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把骨干当成黑盒特征提取器，用一组查询通过廉价的交叉注意力读取特征生成掩码，从而固定解码头，只比较骨干本身。</span></div>
+<div class="score-reason">评分依据：关注视觉模型的推理效率对比，对端侧选型有参考价值，但没有在设备上测试；主要贡献是评测方法与结论，创新中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.00687" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

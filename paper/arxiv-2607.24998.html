@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>VPR-Evolve: Multi-Agent-Driven Algorithm Evolution for FPGA Place and Route</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-27 · Qihang Wu; Taizun Jafri; Aman Arora; Vidya A. Chhabria / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">CAD 工具通常对结构与时序特性差异巨大的电路施加相同固定手工算法，作者针对此展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-07-27 · Qihang Wu; Taizun Jafri; Aman Arora; Vidya A. Chhabria / ASP-DAC 2027</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span><span class="tag">应用:代码</span><span class="tag">硬件:FPGA</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用多个大模型智能体直接改写开源 FPGA 布局布线工具 VPR 的源代码，为每个电路“进化”出专用算法，而不仅是调参数。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 5 个 VTR-9 基准电路上，综合得分比原版 VPR 最多提升 2.7%；关键路径延迟最多降 9.8%、布线线长最多降 18.1%、工具运行时间最多降 79.3%；相对调参基线，延迟、线长、运行时间最多分别再降 6.0%、2.2%、7.8%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">智能体提出、实现并评估代码级修改，共享记忆记录以往尝试的结果来引导后续进化，每个候选都走一遍完整的 VPR 构建和运行，以延迟、线长和耗时的加权分作为优化目标。</span></div>
+<div class="score-reason">评分依据：这是智能体在芯片设计工具上的应用，与端侧部署无直接关系，只在多智能体带记忆迭代改代码的方式上有参考价值。作者来自亚利桑那州立大学，论文署名 ASP-DAC 2027。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.24998" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Mixture-of-Translators: Translating KV Caches Across Heterogeneous Large Language Models</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-31 · Jin-woo Lee; Minkyung Song; Junghyun Oh; Seunghoon Han; Soyoung Park; Gwangseon Jang; Sungsu Lim / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:端侧agent</span><span class="tag">模型:GPT</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">异构 LLM 系统越来越多依赖共享上下文、检索证据和多 agent 对话历史。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-07-31 · Jin-woo Lee; Minkyung Song; Junghyun Oh; Seunghoon Han; Soyoung Park; Gwangseon Jang; Sungsu Lim / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:高效推理</span><span class="tag">模型:Llama</span><span class="tag">模型:Gemma</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">不同架构的大模型各自的 KV 缓存互不相通，多模型协作时同一段上下文要反复预填。MoT 把一个模型的 KV 缓存翻译成另一个模型能直接用的缓存。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Llama-3.2 3B、Gemma-3 4B、Qwen-3 4B 之间互译，平均准确率 57.6%、F1 0.42，分别恢复目标模型原生表现的 95.0% 和 120.6%，是最强基线的 1.5 倍和 3.5 倍；多智能体讨论中 KV 内存占用不随智能体数量增长。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用多个翻译模块加逐令牌路由完成跨模型缓存映射，并用上下文校正损失让注入翻译缓存后的生成轨迹贴近目标模型原生轨迹。</span></div>
+<div class="score-reason">评分依据：跨异构小模型复用 KV 缓存，可减少多模型、多智能体场景的重复预填与内存占用，对资源受限设备直接可迁移（相关度 6）；多翻译器路由的跨架构缓存翻译思路新颖（贡献 7）。PDF 首页作者来自忠南国立大学、韩国科学技术信息研究院和蔚山科技院，未出现公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.28979" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

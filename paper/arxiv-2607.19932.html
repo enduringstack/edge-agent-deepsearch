@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Efficient Chain-of-Modality Reasoning via Progressive Compression for Spoken Language Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-22 · Pengchao Feng; Chao-Hong Tan; Qian Chen; Wen Wang; Xiangang Li; Xie Chen / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:语音</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Spoken language models (SLMs) enable natural human-computer interaction, but their reasoning ability still lags behind that of text-based large language models,…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-22 · Pengchao Feng; Chao-Hong Tan; Qian Chen; Wen Wang; Xiangang Li; Xie Chen / ACM MM 2026</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span><span class="tag">应用:语音</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让语音大模型在“边想边说”时用压缩后的文字推理：中间文字既当语音生成的引导又当推理过程，提升口语数学题的正确率同时少生成文字。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在口语数学问答基准上，比不带显式推理的标准链式模态方法准确率提升 21%，比带完整推理的版本再高 3%，而文字 token 只用 40%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">提出压缩式链式模态推理，并用渐进压缩课程训练：从完整推理逐步过渡到压缩推理；骨干为 Qwen2.5-1.5B 加 Whisper-Small 编码器。</span></div>
+<div class="score-reason">评分依据：压缩推理 token 降低语音模型推理开销，属于高效推理方向，可迁移到端侧语音助手，但未做设备部署，相关度给 4；首个把压缩推理引入语音大模型的框架，贡献给 6。PDF 首页 4 位作者署名 Token Foundry, Alibaba Group。 作者机构依据：arXiv PDF 首页署名 Alibaba（PDF 首页作者 Chao-Hong Tan、Qian Chen、Wen Wang、Xiangang Li 署名 Token Foundry, Alibaba Group；第一作者为上海交大学生、在阿里实习期间完成）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.19932" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

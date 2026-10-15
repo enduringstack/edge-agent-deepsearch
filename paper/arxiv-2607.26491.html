@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LLMET: Enabling Cross-Layer Evaluation of Emerging M3D Memories for Energy-Efficient LLM Serving</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-29 · Ming-Yen Lee; Hanchen Yang; Faaiq Waqar; Harsono Simka; Tushar Krishna; Muhammed Ahosan Ul Karim; Shimeng Yu / arXiv</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM 服务的能耗随部署规模扩大正成为主要系统挑战，受硬件功耗和热约束驱动，作者针对该问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 NVIDIA（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-29 · Ming-Yen Lee; Hanchen Yang; Faaiq Waqar; Harsono Simka; Tushar Krishna; Muhammed Ahosan Ul Karim; Shimeng Yu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Samsung</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">硬件:Jetson</span><span class="tag">硬件:GPU</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">LLMET 是一个跨层仿真框架，用来评估把超大片上缓存（单片三维集成存储）做进芯片后，能给大模型推理省多少电，覆盖服务器和边缘设备。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">双 A100 平台上把 L2 从 40MB 扩到 1GB，Llama3.1-70B 在 16K 上下文 prefill 阶段芯片能耗降低 44%；8 卡 B200 类平台把 L2 从 128MB 扩到 4GB，prefill 能耗最多降 24%；Jetson Orin NX 类边缘平台跑 Llama-3.2-1B INT4，L2 从 8MB 增到 256MB 时 decode 能耗最多降 30%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从存储器件、电路到系统建立经过校准的仿真链路，在不同模型、应用和平台上扫描片上缓存容量，量化片外内存访问减少带来的能耗收益。</span></div>
+<div class="score-reason">评分依据：包含 Jetson 类边缘加速器上 1B INT4 模型的能耗分析，对端侧芯片存储设计有参考价值，但以仿真为主（相关度 4）；新型存储与大模型负载的跨层评估有新意（贡献 6）。PDF 首页署名含 Samsung Semiconductor（2 位作者），由佐治亚理工主导。 作者机构依据：arXiv PDF 首页署名 Samsung（PDF 首页作者 Harsono Simka、Muhammed Ahosan Ul Karim 署名 Samsung Semiconductor Inc.，与佐治亚理工学院合作）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.26491" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

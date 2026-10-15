@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TokTier: Exact Stateful Tokenization for Agentic LLM Serving</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-31 · Zhenyu Zhang; Zhichao Cao / arXiv</div>
-<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span><span class="tag">模型:GPT</span><span class="tag">应用:代码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM serving 系统会缓存 prompt 的 KV 状态，但多数前端每次调用还在重新 tokenize 整段请求文本。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-31 · Zhenyu Zhang; Zhichao Cao / arXiv</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:推理框架</span><span class="tag">硬件:GPU</span><span class="tag">硬件:CPU</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">编程智能体每轮只在长对话末尾追加一小段内容，服务端却要把整段请求重新分词，提示缓存命中率越高，分词在首字时延中的占比就越大。TokTier 是一个有状态的分词服务，只重算追加部分附近的小窗口，同时保证结果与完整分词逐字一致。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 17 个生产分词器家族上做了 150 亿次切分校验和 9.3 万多步智能体回放，结果零偏差；增量修复 10 万到 300 万字符只需 0.5-1.1 毫秒，比 HF 分词快最多 437 倍；GPU 全量分词 100 万字符仅 0.87 毫秒；接入 vLLM 后首字时延中位数降低 16%-34%、P99 降低 23%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">保存会话上一次的分词结果，只对追加处附近的窗口重新分词，逐请求检查边界稳定才拼接，否则扩大窗口或退回完整分词；没有可复用前缀的请求则在 GPU 上执行精确的正则预分词和 BPE，并用抽样影子校验线上流量。</span></div>
+<div class="score-reason">评分依据：面向云端智能体推理服务的前端分词，与端侧设备无直接关系，相关度给 3；指出分词在高缓存命中下成为首字时延瓶颈，并给出精确增量方案和充分验证，贡献给 6。作者均来自亚利桑那州立大学，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29678" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

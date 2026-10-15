@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DBNN: Neural Spike Classification Using a Deep Binarized Neural Network</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-07-06 · Binyi Ren, Luca M. Meyer, Majid Zamani / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">硬件:MCU</span><span class="tag">应用:fault-detection</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">给植入式脑机接口做片上尖峰分类，用深度二值化 NN 实现无乘法推理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">98.7% 分类准确率；FPGA 原型 0.01ms 延迟/828 ALM/0 DSP；ASIC 综合 0.014mm²/122nW@20kHz。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">两层二值化隐藏层（256 神经元）+定点输出层，推理由符号控制累加和位逻辑主导，16 样本紧凑波形输入。</span></div>
-<div class="score-reason">评分依据：植入式 BCI 片上二值化 NN，超低功耗端侧（relevance 9）。无乘法二值化+FPGA+ASIC 全流程有工程创新（contribution 6）。作者学校项目。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-06 · Binyi Ren, Luca M. Meyer, Majid Zamani / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:FPGA</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">植入式脑机接口需要在芯片上就地完成神经脉冲分类，以减少无线传输带宽和功耗；论文设计了一个无乘法器的深度二值神经网络分类器。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">中位分类准确率 98.7%；Cyclone V FPGA 原型每个脉冲 528 个周期、计算延迟 0.01 毫秒，不用任何 DSP 块；45nm ASIC 综合估算面积 0.014 mm²，20 kHz 下功耗 122 nW。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">只用 16 个采样点的紧凑波形作输入，两层 256 神经元的二值隐藏层把运算变成符号控制累加和位运算，输出层用定点数。</span></div>
+<div class="score-reason">评分依据：属于超低功耗植入设备上的神经网络推理硬件，与端侧极限部署相关；但网络规模很小，方法以常规二值化为主。标题中的 spike 指生物神经元放电，并非脉冲神经网络。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.05590" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Federated Foundation Models Fine-Tuning with Heterogeneous Compressed Clients</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-31 · Shengkun Zhu; Jinshan Zeng; Zhihua Allen-Zhao; Mayi Xu; Quanqing Xu; Wei Ren; Qiang Yang; Yang Liu / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span><span class="tag">方向:记忆</span><span class="tag">方向:联邦学习</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">基础模型的联邦学习撞上资源不对称：最有数据的机构反而算不动，没法参与训练。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-31 · Shengkun Zhu; Jinshan Zeng; Zhihua Allen-Zhao; Mayi Xu; Quanqing Xu; Wei Ren; Qiang Yang; Yang Liu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Ant Group</span><span class="tag">方向:联邦学习</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">联邦微调大模型时，数据最有价值的机构往往跑不动整个模型。FedSLM 让各家按自己的显存拿到不同压缩程度、可独立运行的小模型参与联邦微调。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在语言和视觉语言基准上，独立同分布和非独立同分布划分下都优于现有联邦基线，客户端模型只需完整模型约 50% 的 GPU 显存。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 SVD 分解得到嵌套的低秩客户端模型，组内同步轻量适配器、组间对齐后融合全秩重建，最后用带置信度损失的弱到强蒸馏把知识交给服务器上的完整模型。</span></div>
+<div class="score-reason">评分依据：面向资源受限参与方的模型压缩与联邦微调，对算力有限的设备有迁移价值，但参与方是机构服务器而非终端设备。公司归属依据：arXiv PDF 首页脚注写明第一作者和通讯作者 Q. Xu 任职 OceanBase, Ant Group。 作者机构依据：arXiv PDF 首页署名 Ant Group（PDF 首页脚注：作者 1 S. Zhu 兼任 OceanBase, Ant Group（antgroup.com 邮箱），通讯作者 Q. Xu 任职 OceanBase, Ant Group）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29071" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

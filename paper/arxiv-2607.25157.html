@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PreDiff-LM: Pretrained Discrete Masked Diffusion Language Modeling with Hybrid Attention</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-28 · Zhengtao Yao; Runhao Li; Xupeng Chen; Jiayi Cheng; Chenqian Le; Michael Yue; Jesson Wang; Siheng Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">模型:GPT</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">离散掩码扩散语言模型支持双向生成与填充，但适配预训练自回归 Transformer 需要重构，作者针对此展开。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-07-28 · Zhengtao Yao; Runhao Li; Xupeng Chen; Jiayi Cheng; Chenqian Le; Michael Yue; Jesson Wang; Siheng Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:高效注意力</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究如何把已预训练好的自回归模型改造成离散掩码扩散语言模型：在提示部分保留因果注意力、在待生成部分用双向注意力。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">同样以 GPT-2 Medium 初始化，困惑度从 34.1 降到 28.7，MAUVE 从 0.71 升到 0.78；困惑度降到 50 以下所需训练步数从约 35 万步降到 8 千步；但同等算力下微调的自回归模型仍更好（18.9 对 28.7）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">设计混合注意力掩码：已知提示内部保持因果，掩码目标内部完全双向，再与 DiffuGPT 风格的目标函数适配组合。</span></div>
+<div class="score-reason">评分依据：扩散语言模型是另一种解码范式，与推理效率间接相关，但本文聚焦生成质量，且明确承认推理效率仍落后于自回归模型，相关度低。作者来自南加州大学、纽约大学等高校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.25157" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

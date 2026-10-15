@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>GSRQ: Gain-Shape Residual Quantization for Sub-1-bit KV Cache</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-07-01 · Soosung Kim, Minjae Park, Eui-Young Chung et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">模型:Llama</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">GSRQ 用 Gain-Shape K-means 替换标准 K-means 改善方向保真,做成残差量化把 KV 缓存压到亚 1 比特。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 LLaMA-3-8B 上 1 比特时 LongBench 平均准确率从 11.34 提到 33.54,比 VQLLM 高 22.20 个百分点。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：KV 缓存量化是端侧长上下文关键技术,创新点明确。</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校顶会</span>  2026-07-01 · Soosung Kim, Minjae Park, Eui-Young Chung et al. / ICML 2026</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:量化</span><span class="tag">应用:长上下文推理</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">GSRQ 把长上下文大模型的 KV cache 压到每个元素平均 1 比特以下，同时尽量保住精度，被 ICML 2026 接收。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LLaMA-3-8B 上各比特率都优于强基线；1 比特时 LongBench 平均精度从 VQLLM 的 11.34 提升到 33.54，提高 22.2 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">指出常规 K-means 在高维下会让码本中心缩短、方向保持变差，于是提出分别处理幅度与方向的 Gain-Shape K-means 作为替代，再把它的加权版本放进残差量化流程逐级编码 KV 残差。</span></div>
+<div class="score-reason">评分依据：亚 1 比特 KV cache 量化对内存紧张的端侧长上下文推理很有价值，但实验在服务器 GPU 上完成；对向量量化核心原语的改进有新意。作者均来自延世大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01065" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

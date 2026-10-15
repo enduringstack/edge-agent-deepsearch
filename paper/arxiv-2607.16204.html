@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Masked Diffusion Language Models are Strong and Steerable Text-Based World Models for Agentic RL</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-21 · Darshan Deshpande / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Recent growth in reinforcement learning (RL) has surfaced a need for diverse, specialized training environments.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=7)；affiliation 待核实</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-07-21 · Darshan Deshpande / NeurIPS 2026</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">模型:Qwen</span><span class="tag">模型:Mistral</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">训练会用工具的智能体需要大量多样的模拟环境。这篇工作用掩码扩散语言模型来充当“文本世界模型”，模拟工具调用后的环境状态，为智能体强化学习批量生成训练环境。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">整理了覆盖 9 个开源环境、12 个前沿模型家族的 239,403 条状态-动作轨迹；扩散世界模型在连贯性和多样性上胜过参数量 4 倍以上的自回归模型，推理时延相当；在 ScienceWorld、ALFWorld、AppWorld 三个未见环境上，对 1.2B–7B 的智能体骨干带来最高 47 个百分点的绝对提升。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把环境模拟拆成初始状态、任务上下文、工具定义、领域规则和引导指令几部分，利用扩散模型双向去噪的特点同时参照这些全局约束生成下一状态，再接入带确定性状态检查的 GRPO 训练框架。</span></div>
+<div class="score-reason">评分依据：本质是智能体训练用的环境模拟与数据生成，不涉及设备端部署，相关度低；对小尺寸工具调用智能体的训练有参考价值，已被 NeurIPS 2026 接收。PDF 首页作者署名 Patronus AI。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.16204" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

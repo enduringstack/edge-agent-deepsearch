@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Persona-as-Configuration: Generative Stakeholder Reporting for Agricultural Floods</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-20 · Oliver Aleksander Larsen; Tiziano Santilli; Francesco Daghero; Mahyar T. Moghaddam / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Cyber-physical systems built on deterministic edge inference, such as on-vehicle flood detection for agricultural fields, produce structured decision logs that …</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-07-20 · Oliver Aleksander Larsen; Tiziano Santilli; Francesco Daghero; Mahyar T. Moghaddam / CASA 2026 Workshop（ECSA 2026 同期）</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">农田积水检测这类边缘设备产生的决策日志，需要用大模型为农户、保险方等不同角色生成报告，但又不能让生成式结果反过来影响边缘端的可审计决策。论文提出一种架构模式来隔离两者。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">一次结构化专家评审在五个对齐 ISO/IEC 25010 的质量维度上对该模式给出正面评价，“关注点分离”一项认同度最高；面向终端用户的评测尚未开展。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">两条约束：生成层只读边缘决策日志、绝不回写；不同角色的报告差异做成带版本的提示词模板配置，而不是运行时临场发挥。</span></div>
+<div class="score-reason">评分依据：边缘推理只是背景，论文主体是在边缘决策日志之上接大模型生成报告的软件架构模式，与端侧推理部署关系较弱；以架构讨论和专家评审为主，缺少量化实验。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.17774" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

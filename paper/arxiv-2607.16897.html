@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>GLidE-SLAM: GL-Accelerated Indirect-Direct Embedded SLAM</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-18 · Carlos A. Pinheiro de Sousa; Heiko Hamann; Oliver Deussen / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">With the growing demand for robotics, autonomous drones, and wearable extended reality systems, the deployment of Visual SLAM on embedded devices remains challe…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-18 · Carlos A. Pinheiro de Sousa; Heiko Hamann; Oliver Deussen / IROS 2026</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">硬件:GPU</span><span class="tag">硬件:Jetson</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">无人机、机器人和 XR 头显上做视觉 SLAM 时，嵌入式芯片算力紧张。GLidE-SLAM 把逐帧跟踪交给 GPU 的通用计算着色器，让 CPU 腾出来做建图维护，且不依赖 CUDA。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Radxa Zero 3W（RK3566，Mali-G52 GPU）、Jetson Orin Nano 和一台开发笔记本上测试，帧率最高比纯 CPU 基线高 9 倍，轨迹精度保持不变。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">中间帧用基于图像对齐的直接法只估计位姿、不建地图点，用 OpenGL ES 3.1 计算着色器实现以适配各类嵌入式 GPU；关键帧仍走完整的特征点法流程负责扩图和全局一致性。</span></div>
+<div class="score-reason">评分依据：在廉价嵌入式板卡上实测，与边缘设备部署高度相关，但 SLAM 本身不是 AI 模型推理，相关度中等；跨厂商 GPU 加速的工程价值明显。已被 IROS 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.16897" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

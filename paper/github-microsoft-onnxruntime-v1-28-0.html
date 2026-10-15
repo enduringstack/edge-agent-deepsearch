@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ONNX Runtime v1.28.0</h1>
-<div class="meta"><span class="score">14</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-07-25 · microsoft / GitHub</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span><span class="tag">方向:推理框架</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">ONNX Runtime 升级到 ONNX 1.22.0 与 protobuf 6.33.5，CUDA EP 运行时不再强依赖 cuDNN/cuFFT（不再链接 nvrtc），显著缩小 CUDA 包体积；新增实验性 C/C++ 模型包 API（OrtModelPackageApi），并移除 CUDA EP 中的 TensorRT 融合因果注意力 kernel。</span></div>
+<div class="meta"><span class="score">12</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-07-25 · microsoft / GitHub</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:KV cache</span><span class="tag">方向:量化</span><span class="tag">硬件:GPU</span><span class="tag">硬件:NPU</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">微软跨平台推理引擎 ONNX Runtime 发布 1.28.0：浏览器和个人电脑常用的 WebGPU 后端加入 KV cache 量化和 Gemma 4 支持，Linux 上还能自动发现 NPU 设备。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：Upgraded to ONNX 1.22.0 and protobuf 6.33.5; cuDNN and cuFFT are now optional at runtime for the CUDA EP (nvrtc no longe</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">WebGPU 后端新增 KV cache 量化、融合的 FlashAttention 解码内核、Qwen3 式 Q/K RMSNorm 融合和 2 比特量化查表；插件式执行后端支持模型包和按名称切分计算图；CUDA 后端默认启用 XQA 解码并新增 GatedDeltaNet 线性注意力解码内核，cuDNN、cuFFT 改为运行时可选以缩小安装包；另修复了一批模型加载和算子越界的安全问题。</span></div>
+<div class="score-reason">评分依据：WebGPU、NPU 发现和量化相关改动直接服务端侧与本地推理，但同版也有大量服务端 CUDA 内容，相关度 7；是成熟引擎的常规大版本，贡献 5。</div>
 <div class="source"><a href="https://github.com/microsoft/onnxruntime/releases/tag/v1.28.0" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CIMERA: Compute-in-Interconnect and Memory with Reconfigurable Precision for LLM Inference</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-15 · Yue Jiet Chong; Yimin Wang; Wei Zhang; Xuanyao Fong / arXiv</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:云端serving</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM impose significant computational and memory demands, creating challenges for energy-efficient inference across platforms ranging from data centers to power-…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 NVIDIA（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-15 · Yue Jiet Chong; Yimin Wang; Wei Zhang; Xuanyao Fong / AICAS 2026</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:CIM</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">CIMERA 是一款可重构精度的大模型推理加速器，把计算放进片上互连和存储里，缓解“内存墙”，目标覆盖数据中心到功耗受限的边缘设备。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">相比 NVIDIA H100，1B 和 13B 模型的能效分别最高提升 25 倍和 10 倍；LLaMA-3.2 1B 在 4 比特下吞吐 1416.4 token/s、功耗 1.77 W。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在互连和存储单元中嵌入计算，并支持按负载切换权重精度，让不同层、不同请求以合适的比特宽度执行，减少数据搬运。</span></div>
+<div class="score-reason">评分依据：面向低功耗大模型推理的存算一体加速器，对端侧芯片设计有参考价值，但结果主要来自仿真和综合评估；可变精度与互连内计算结合有一定新意。作者来自新加坡国立大学，被 AICAS 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.13649" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

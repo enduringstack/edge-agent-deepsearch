@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AdaptiveSD A Stability-Aware, Runtime-Adaptive Speculative Decoding Framework with Multi-Policy Orchestration for CPU-Constrained LLM Inference</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-07-04 · Sadra Saremi / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">方向:KV cache</span><span class="tag">硬件:CPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">面向纯 CPU 约束的 on-device 量化 GGUF 模型推理的运行时自适应投机解码框架。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告量化结果（以浪费算力、token 间延迟离散等指标评估，未给单一加速比）。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">四组件反馈环：运行时监控引擎、十一规则优先级自适应草稿控制器、动态策略引擎（启发式+RL）、带 INT8 影子缓冲与位置感知驱逐的 KV cache 协调层。</span></div>
-<div class="score-reason">评分依据：明确 on-device CPU 量化 GGUF 推理（relevance 9）。运行时多策略自适应+资源优先于草稿量有创新（contribution 6）。vendors 空。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-04 · Sadra Saremi / arXiv</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:KV cache</span><span class="tag">方向:推理框架</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">AdaptiveSD 面向纯 CPU 上运行的小型量化 GGUF 模型，做了一个运行时自适应的投机解码框架，目标是避免固定深度投机解码在内存带宽受限时反而变慢甚至把系统拖垮。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">原文报告投机效率稳定在 68%~82%，即被浪费的草稿 token 不超过约 32%，并能压住 token 间延迟的突增；监控模块每步开销约 0.057 毫秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">由运行时监控、按 11 条规则分层决策的草稿长度控制器、结合启发式与强化学习的动态策略引擎，以及用 INT8 影子缓冲管理 KV cache 的协调层组成闭环，优先保护系统资源而非追求最大草稿数。</span></div>
+<div class="score-reason">评分依据：直接面向 CPU 本地推理的投机解码稳定性问题，与端侧部署相关；但以规则和启发式整合为主，部分实验依赖模拟层，证据较弱。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.03876" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

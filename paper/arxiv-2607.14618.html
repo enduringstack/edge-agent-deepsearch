@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PolyQ: Codesigning End-to-End Quantization Framework for Scalable Edge CPU LLM Inference</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-16 · Hyunwoo Oh; Suyeon Jang; Hanning Chen; KyungIn Nam; Sanggeon Yun; Ryozo Masukawa; Mohsen Imani / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:量化</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:云端serving</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">CPUs are the most universal target for on-device LLM inference, but existing low-bit quantization methods offer either coarse operating points or fine-grained m…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校顶会</span>  2026-07-16 · Hyunwoo Oh; Suyeon Jang; Hanning Chen; KyungIn Nam; Sanggeon Yun; Ryozo Masukawa; Mohsen Imani / ICCAD 2026</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:编译部署</span><span class="tag">硬件:CPU</span><span class="tag">模型:Qwen</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">PolyQ 是一套面向 CPU 的大模型量化与编译协同框架，让用户按平均比特预算（如 3.x 比特）给每个通道分配不同位宽，并能在纯 CPU 上高效跑起来。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">3 比特目标下困惑度比已有方法改善 2.4%~32.1%；在工作站、笔记本和移动级三种 CPU 上，激活重排流量最多减少 70.8%，每 token 能耗相比优化过的查表后端只多 0.8%~1.9%，延迟随比特预算近似线性变化。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按激活敏感度为每个通道在 2/3/4/8/16 比特中选位宽，编译期把通道重排聚成同位宽块，生成 SIMD 和查表兼容内核，并跨算子合并重排，避免运行时开销。</span></div>
+<div class="score-reason">评分依据：直接面向端侧 CPU 大模型推理，在 Ryzen 9950X、Ryzen 7840U 笔记本和 Intel N250 移动级 CPU 上实测延迟与能耗；把细粒度混合精度真正落到 CPU 可执行，贡献扎实。作者来自加州大学尔湾分校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.14618" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

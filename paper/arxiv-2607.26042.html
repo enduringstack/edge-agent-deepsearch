@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>VetClaw: An Edge-Cloud Multimodal Agentic System for Veterinary Disease Screening</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-28 · Syed Mhamudul Hasan; Anas AlSobeh; Hussein Zangoti; Abdur R. Shahid / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:端云协同</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">作者提出 VetClaw，一个用于早期兽医疾病筛查的端云协同多模态 agent 系统。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-07-28 · Syed Mhamudul Hasan; Anas AlSobeh; Hussein Zangoti; Abdur R. Shahid / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:端云协同</span><span class="tag">方向:工具调用</span><span class="tag">方向:多模态</span><span class="tag">硬件:CPU</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">VetClaw 是一个跑在树莓派上的宠物疾病初筛智能体：本地智能体负责定时拍照、调用工具、管理流程和发提醒，只把图片和症状描述发到服务器上的视觉语言模型做分类。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">Dogs Skin Disease 数据集上，仅用图像的宏 F1 只有 0.31，加入症状文字后升到 0.69（准确率 72.17%）；Pet Disease Images 数据集上宏 F1 达到 0.82，纯文本设置准确率 86.90%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">树莓派上部署 OpenClaw 作为面向用户的智能体，负责调度、工具调用和通知，LangGraph 在本地维护有状态的筛查流程（校验输入、调用远端模型、安全规则检查、失败重试和升级）；Qwen3-VL-32B 或 InternVL3-38B 部署在 A100 服务器上，只作为被调用的工具。</span></div>
+<div class="score-reason">评分依据：智能体的调度、工具调用、状态管理和安全决策都在树莓派上运行，只把视觉大模型推理放到云端，属于端侧 Agent（相关度 8）；系统以工程整合为主，分类效果仍依赖零样本大模型（贡献 5）。作者均来自高校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.26042" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

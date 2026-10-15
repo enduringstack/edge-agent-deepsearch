@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Faster IndexTTS-2: Accelerating and Streaming Autoregressive Zero-Shot Text-to-Speech Synthesis on GPUs</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-23 · Muyang Du; Shuang Yu; Junjie Lai / arXiv</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span><span class="tag">模型:GPT</span><span class="tag">应用:语音</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Autoregressive text-to-speech models achieve strong naturalness but suffer from slow inference due to sequential token generation, limiting their deployment in …</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 NVIDIA（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span>  2026-07-23 · Muyang Du; Shuang Yu; Junjie Lai / arXiv</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:云端serving</span><span class="tag">方向:推理框架</span><span class="tag">应用:语音</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">英伟达把开源语音合成模型 IndexTTS-2 的各个组件搬到 TensorRT 和 TensorRT-LLM 上加速，并加入流式输出和批处理，满足线上低时延语音合成需求。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Seed-TTS 中英文测试集上，自回归 GPT 部分最高加速 5.0 倍，端到端加速 3.6 倍，字错率、说话人相似度和自然度只有轻微下降。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对 GPT、流匹配 DiT 和声码器分别用 TensorRT-LLM / TensorRT 优化，并实现跨组件的流式合成和批量推理，以提高 GPU 利用率。</span></div>
+<div class="score-reason">评分依据：面向数据中心 GPU 的语音合成服务加速，属于云端 serving，对端侧只有间接参考（相关度 3）。主要是工程整合（贡献 4）。PDF 首页三位作者均署名 NVIDIA（上海），邮箱为 nvidia.com。 作者机构依据：arXiv PDF 首页署名 NVIDIA（PDF 首页三位作者均署名 NVIDIA, Shanghai, China，邮箱为 nvidia.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.21042" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

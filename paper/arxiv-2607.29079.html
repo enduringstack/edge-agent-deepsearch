@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Faster but Different: Diagnosing and Controlling Content Drift in Accelerated Multimodal Diffusion Language Models</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-31 · Yaoxuan Dou; Yang Shu / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">免训练加速让扩散多模态大模型（dMLLM）更易部署，但可能悄悄改变生成内容。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-31 · Yaoxuan Dou; Yang Shu / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">扩散式多模态大模型用免训练加速后会悄悄改变生成内容。这篇在 300 张真实图片上对比加速前后输出，找出内容漂移的来源并给出可控的修复办法。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">缩短 KV cache 刷新间隔可得到单调的速度与一致性折中，在实测 1.3 倍加速下输出几乎与未加速一致；50 对低一致样本中一半存在真实内容替换；盲评下加速前后事实错误率差值为 0.00。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">通过状态刷新消融和换图干预，定位到过时的视觉状态和已生成文本状态是漂移主因，再用固定间隔刷新 KV cache 来控制一致性。</span></div>
+<div class="score-reason">评分依据：讨论推理加速与输出一致性的取舍，KV cache 刷新策略可迁移到资源受限部署，但实验在服务端且属诊断性工作。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29079" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

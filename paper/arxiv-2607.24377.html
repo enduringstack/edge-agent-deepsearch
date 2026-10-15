@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MXAttention: Data-Free Optimal Scaling and Pre-Normalization Quantization for MXFP4 Attention</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-27 · Jianlin Yu; Jing Lin; Linghui Kong; Aiyue Chen; Weiyi Sun; Chenyu Zeng; Wangli Lan; Jinxi Li / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">注意力的二次开销是扩散视频生成模型的主要瓶颈，作者针对此展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-27 · Jianlin Yu; Jing Lin; Linghui Kong; Aiyue Chen; Weiyi Sun; Chenyu Zeng; Wangli Lan; Jinxi Li / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:量化</span><span class="tag">方向:高效注意力</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">华为提出的视频扩散模型注意力 4 比特量化方法 MXAttention：不需要校准数据，就能把注意力算到 MXFP4 精度而几乎不掉画质。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Wan2.2 和 HunyuanVideo 上补回了 OCP MXFP4 与 FP16 之间至少 95% 的 VBench 成像质量差距，所有 VBench 指标绝对下降小于 0.01，并与 NVFP4 强基线相当、融合开销可忽略。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用 2 的幂缩放的周期结构推导出与分布无关的最优缩放边界 Qmax=7.25（免校准）；同时在 softmax 行求和之前就量化未归一化的指数，保证注意力权重严格归一。</span></div>
+<div class="score-reason">评分依据：低比特注意力量化是可迁移的推理优化技术，但面向数据中心视频生成推理，相关度 4；闭式最优缩放和预归一化量化设计简洁有效，贡献 6。代码已并入 MindIE-SD 开源。公司归属依据 arXiv PDF 首页署名 Huawei。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页全部作者署名 Huawei Technologies Co., Ltd.）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.24377" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

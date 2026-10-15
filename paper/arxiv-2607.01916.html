@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ContextSniper: AntTrail's Token-Efficient Code Memory for Repository-Level Program Repair</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-02 · Chiwang Luk, Matin Mohammad Najafi, Zhifeng Jia et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">ContextSniper 是仓库级程序修复的省 token 代码记忆层,用混合检索排序和意图感知上下文门过滤长输出,返回紧凑证据包。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 SWE-bench Lite 上 OpenClaw 总 token 降 51.5%、成本降 36.4%;Claude Code token 降 38.9%、成本降 27.3%,解决率略降。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：省 token 的 agent 记忆层,属云端编码 agent,非端侧。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-02 · Chiwang Luk, Matin Mohammad Najafi, Zhifeng Jia et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:记忆</span><span class="tag">应用:代码</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">代码修复智能体常把上下文浪费在整文件读取和冗长终端输出上。ContextSniper 是 AntTrail 记忆引擎里的代码修复模块，只把精准相关的证据喂给智能体。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 SWE-bench Lite 上让 OpenClaw 总 token 减少 51.5%、成本减少 36.4%；在 SWE-bench Pro 上让 OpenCode 总 token 减少 40.0%、交互轮数减少 28.1%；每组 50 个任务中解决数只差 1 个。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对代码与行动记忆建三级抽象索引，用混合排序召回候选，再按意图过滤长工具输出，返回紧凑证据包，需要时仍可取回完整源码。</span></div>
+<div class="score-reason">评分依据：智能体记忆与上下文压缩的运行时组件，节省 token 对资源受限部署有借鉴，但宿主智能体跑在云端（相关度 4）；多级索引加意图过滤是工程整合（贡献 5）。作者 1-7 署名华为。 作者机构依据：arXiv PDF 首页署名 Huawei（arXiv HTML/PDF 首页作者 1-7（Chiwang Luk 等）署名 Huawei，另有港科大（广州）与南洋理工作者）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01916" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

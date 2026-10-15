@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LocalNav: Distilling Frontier VLMs and Embodied RL for On-Device Object Goal Navigation</h1>
-<div class="meta"><span class="score">17</span> <span class="tier school">学校预印本</span>  2026-06-26 · Nicolas Baumann, Liam Boyle, Pu Deng et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span><span class="tag">硬件:Jetson</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LocalNav 把前沿 VLM 与具身 RL 的空间语义推理蒸馏到 4B 本地 VLM,在 Jetson Orin 上端侧执行 ObjectNav,并用 E-RLVR+Token Generation 正则压缩输出长度。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">HM3D OVON 上前沿 Claude 管线 SR 39.7%,500 条蒸馏微调 Qwen3.5-4B 达 SR 34.5%;TG 开销降 72.1%、延迟降 71.8%,联合量化累计推理延迟降 82.8%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确 on-device Jetson Orin 边缘执行;蒸馏+E-RLVR+量化联合压缩,创新高。</div>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-06-26 · Nicolas Baumann, Liam Boyle, Pu Deng et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:蒸馏</span><span class="tag">方向:量化</span><span class="tag">方向:规划推理</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span><span class="tag">硬件:Jetson</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">LocalNav 让四足机器人在不联网的情况下完成“找到某个物体”的开放词汇导航：把云端前沿大模型的场景推理能力蒸馏进一个 4B 参数的本地视觉语言模型，直接跑在机载 Jetson Orin 上。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">用 Claude Sonnet 4.6 搭的场景图方案在 HM3D OVON 基准上成功率 39.7%；只用 500 条推理轨迹微调的 Qwen3.5-4B 达到 34.5%；强化学习压缩输出后生成开销降 72.1%、时延降 71.8%，再加量化累计把推理时延降低 82.8%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">机器人边走边构建场景图，视觉语言模型以较低频率读取场景图和历史，决定下一步去哪个节点并在到达后视觉确认目标；先用前沿模型的推理轨迹做监督微调，再用带输出长度惩罚的强化学习缩短回答，最后用 llama.cpp 量化部署到 Jetson Orin AGX。</span></div>
+<div class="score-reason">评分依据：智能体的规划决策闭环完全在机器人机载的 Jetson Orin 上运行，并在 Unitree A2-W 四足机器人上做了真实环境演示，端侧相关度很高；“蒸馏加压缩输出长度”让 4B 模型在嵌入式显卡上可用，方法有新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.27871" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

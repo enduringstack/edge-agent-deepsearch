@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Six Agent Harness Capabilities for Higher Model Performance</h1>
-<div class="meta"><span class="score">13</span> <span class="tier">官方动态</span>  2026-07-27 · NVIDIA / NVIDIA</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">NVIDIA 总结提升模型表现的六种 agent harness 能力，与 agent 框架工程直接相关。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：NVIDIA 官方动态（命中官方域名白名单）</div>
+<div class="meta"><span class="score">9</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-07-27 · NVIDIA / NVIDIA</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">NVIDIA Labs 开源研究预览 NOOA，把智能体写成一个 Python 类，并总结出六种能明显提升模型表现的智能体外壳（harness）设计。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">用 GPT-5.5 在 SWE-bench Verified 上达到 82.2%，token 和模型调用次数约为对比框架的一半；ARC-AGI-3 上单个智能体用 GPT-5.5 平均 RHAE 为 50.2%、用 GPT-5.6-sol 达 85.1%，每局成本低于 20 美元；CyberGym L1 在无网络条件下解决 86.8% 的任务。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">方法就是能力、字段就是状态、文档字符串就是提示词、类型注解是强制约束；工具结果按引用传递而不是塞进上下文，因此不需要上下文压缩；另有让模型通过工具自己整理长期记忆的子系统，记忆存成可读的 SQLite 文件跨会话保留。</span></div>
+<div class="score-reason">评分依据：智能体依赖云端大模型，没有端侧部署，相关度 3；按引用传递工具结果、模型自管理长期记忆等设计能明显省 token，对资源受限的智能体运行时有迁移价值，贡献 6。</div>
 <div class="source"><a href="https://developer.nvidia.com/blog/six-agent-harness-capabilities-for-higher-model-performance/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

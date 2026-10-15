@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SeKV: Resolution-Adaptive KV Cache with Hierarchical Semantic Memory for Long-Context LLM Inference</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-30 · Amirhossein Abaskohi, Giuseppe Carenini, Peter West et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出SeKV分辨率自适应语义KV缓存，用熵引导语义段跨GPU-CPU分层存储，GPU上存轻量摘要做粗路由、CPU上存低秩SVD基按需重建token级细节，训练zoom-in机制选择性展开。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">四个基准上比最强语义压缩基线平均提升5.9%，128K上下文下GPU内存比全KV缓存减少53.3%，可训参数少于0.05%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：KV缓存分层压缩面向长上下文LLM，可惠及端侧GPU内存受限场景；SVD基重建创新高。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-06-30 · Amirhossein Abaskohi, Giuseppe Carenini, Peter West et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:KV cache</span><span class="tag">应用:长上下文推理</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长上下文推理时 KV 缓存会把显存吃满。SeKV 把上下文切成语义片段，分层存放在 GPU 和 CPU 内存里，需要时再按需还原细节，而不是直接丢弃信息。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">四个基准上平均比最强的语义压缩基线高 5.9%，在 128K 上下文下比完整 KV 缓存节省 53.3% 的 GPU 显存；新增可训练参数不到 0.05%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按熵把上下文分成语义片段，每段在 GPU 上只留一个摘要向量用于粗路由，在 CPU 上存低秩 SVD 基用于逐 token 重建；解码时用训练好的“放大”机制只展开与当前查询相关的片段，基座模型保持冻结。</span></div>
+<div class="score-reason">评分依据：KV 缓存压缩与 GPU-CPU 分层存放对内存受限设备有直接迁移价值，但实验面向服务器 GPU；分辨率自适应的还原机制有新意。PDF 首页作者署名英属哥伦比亚大学与 Microsoft Research，一作部分工作在微软研究院温哥华实验室实习期间完成。 作者机构依据：arXiv PDF 首页署名 Microsoft（PDF 首页作者机构列有 Microsoft Research，并注明一作部分工作在微软研究院温哥华实验室实习期间完成；其余署名为英属哥伦比亚大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.31145" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

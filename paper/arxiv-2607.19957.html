@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>HijackKV: New Threat in Position-Independent KV Cache Reuse</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-22 · Yichi Zhang; Zhiqi Wang; Huan Zhang; Yuchen Yang / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Key-Value (KV) cache reduces inference latency in large language models (LLMs).</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校顶会</span>  2026-07-22 · Yichi Zhang; Zhiqi Wang; Huan Zhang; Yuchen Yang / USENIX Security 2026</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">很多推理系统为了提速，会让相同文本片段的 KV 缓存跨请求、跨位置复用；这篇论文指出这种“位置无关”的复用会被攻击者利用，悄悄劫持模型输出。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">攻击单次尝试平均成功率 94%；在缓存命中率只有 10%、重算比例达 50% 的现实条件下依然有效，能跨多轮对话持续生效，并能在黑盒条件下迁移到其他模型。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">攻击者先优化一段自己控制的前缀，让紧随其后的一段常见无害文本在计算 KV 时“记住”攻击意图；之后受害者的请求只要命中这段文本的缓存，就会被污染的 KV 带偏，而输入里看不到任何攻击文字。</span></div>
+<div class="score-reason">评分依据：KV 缓存复用是端侧和云端推理共用的提速手段，本文属于推理技术栈的安全问题，未做端侧实测（相关度 6）。首次系统揭示位置无关 KV 复用的劫持风险并给出安全设计建议，已被 USENIX Security 2026 接收（贡献 7）。作者来自宾夕法尼亚州立大学与 UIUC。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.19957" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

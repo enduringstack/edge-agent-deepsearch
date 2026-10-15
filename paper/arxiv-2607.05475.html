@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Is Your NPU Ready for LLMs? Dissecting the Hidden Efficiency Bottlenecks in Mobile LLM Inference</h1>
-<div class="meta"><span class="score">17</span> <span class="tier school">学校预印本</span>  2026-07-06 · Guanyu Cai, Ruiming Tian, Lang Yang, Zhouhong Ren, Jinliang Yuan, Lingkun Li, Jiliang Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:推理框架</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:NPU</span><span class="tag">硬件:手机</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">首个跨层测量移动端 LLM 推理的研究，覆盖 5 大框架和 CPU/GPU/NPU 三种后端，开发 PowerBench 做后端级能耗归因。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">NPU 上框架间性能差达 10 倍；发现 NPU 擅长计算密集 prefill、CPU 更擅长内存密集 decode；调度不当导致 40% 能耗浪费，最佳配置可降 NPU 能耗 54.8%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">PowerBench 细粒度剖析工具做后端级能耗归因，发现框架 offload/量化策略差异、NPU 小核动态解码短板、线程/NPU 睡眠/CPU 轮询调度头部空间。</span></div>
-<div class="score-reason">评分依据：移动端 NPU LLM 推理实测，明确端侧（relevance 10）。首个跨框架跨后端移动 LLM 能耗归因+PowerBench 工具有创新（contribution 7）。作者学校项目。</div>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-07-06 · Guanyu Cai, Ruiming Tian, Lang Yang, Zhouhong Ren, Jinliang Yuan, Lingkun Li, Jiliang Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">硬件:NPU</span><span class="tag">硬件:手机</span><span class="tag">硬件:Snapdragon</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">首个跨层的手机大模型推理实测研究：在多款骁龙手机上对比 llama.cpp、MNN、GENIE、MLLM、MLC-LLM 五个框架和 CPU、GPU、NPU 三种后端，找出效率瓶颈到底在哪。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">NPU 上不同框架的性能差距被放大到最高 10 倍；NPU 擅长预填充（OnePlus 15 上 GENIE 预填充达 1463.7 token/s），但解码阶段 CPU 反而更快（Qwen2.5-1.5B 解码 llama.cpp CPU 55.7 token/s，GENIE NPU 23.0 token/s）；线程配置、NPU 休眠延迟和 CPU 轮询不当造成最高 40% 能耗浪费，按建议配置估计 NPU 后端最多可省 54.8% 能耗。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">自研细粒度能耗分析工具 PowerBench，首次把能耗拆到具体后端，在 OnePlus 15、小米 15、小米 14 等手机上系统测量，并据此给出面向能耗的最佳配置。</span></div>
+<div class="score-reason">评分依据：在多款真实手机上系统测量 NPU/CPU/GPU 跑大模型的性能与能耗，结论直接指导端侧部署选型，端侧相关度很高；后端级能耗归因工具和“预填充用 NPU、解码用 CPU”的发现有实用价值。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.05475" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

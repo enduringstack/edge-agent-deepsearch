@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>VaLiDRec: Variable-Length LLM-Aligned Semantic IDs for Generative Recommendation</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-28 · Shutong Qiao; Wei Yuan; Tong Chen; Hao Wang; Quoc Viet Hung Nguyen; Hongzhi Yin / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">生成式推荐常用通过聚类和量化构造的定长语义标识符（SID）来表示物品，作者针对此展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-07-28 · Shutong Qiao; Wei Yuan; Tong Chen; Hao Wang; Quoc Viet Hung Nguyen; Hongzhi Yin / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:云端serving</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一种生成式推荐框架，直接用大模型词表里的原生 token 给商品编变长“语义 ID”，免去自回归逐字生成和束搜索。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 4 个真实数据集上全面超过序列推荐和生成式推荐基线，冷启动零样本表现更好，推理速度比 LC-Rec 快 87.49 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">通过 token 重要性估计、语义质量感知剪枝和防冲突修正，从大模型词表中挑出能代表商品的 token 组成变长 ID；再把推荐改写为 token 集合预测并逐 token 打分。</span></div>
+<div class="score-reason">评分依据：属于推荐系统模型设计，推理加速主要来自去掉自回归解码，对端侧仅有间接参考，相关度低。作者来自昆士兰大学等高校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.25209" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

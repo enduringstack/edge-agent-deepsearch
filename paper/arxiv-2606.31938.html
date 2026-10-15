@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FlexViT: A Flexible FPGA-based Accelerator for Edge Vision Transformers</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-30 · Hubert Dymarkowski, Xingjian Fu, Rappy Saha et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">FlexViT 是面向边缘 ViT 的可重构 FPGA 加速器,用统一 INT8 GEMM 引擎映射全连接与卷积层,运行时 im2col,双模数据流动态切换输入/权重复用,深度优先 tiling 单遍累加。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">PYNQ-Z2 上加速层最高 2.74x 加速,端到端最高 1.40x 相比 CPU-only。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确 edge FPGA ViT 加速器;双模数据流+深度优先 tiling 创新较高。</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-30 · Hubert Dymarkowski, Xingjian Fu, Rappy Saha et al. / FPL 2026</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">硬件:FPGA</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在低成本 FPGA 上加速混合结构视觉 Transformer 推理的可重构加速器，面向资源受限的边缘设备。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 PYNQ-Z2 FPGA 上，加速器执行的层最高加速 2.74 倍，端到端比纯 CPU 执行最高快 1.40 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">基于 SECDA-TFLite 做软硬件协同设计：用运行时 im2col 把全连接层和卷积层统一映射到 INT8 矩阵乘引擎；计算阵列可在输入复用和权重复用两种数据流间动态切换，并用深度优先分块一次完成累加，省掉片外部分和搬运。</span></div>
+<div class="score-reason">评分依据：在真实的边缘 FPGA 板卡上完成视觉 Transformer 推理部署，端侧相关度高；双模式数据流和深度优先分块是扎实的工程改进。作者来自格拉斯哥大学，已被 FPL 2026 接收，代码开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.31938" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

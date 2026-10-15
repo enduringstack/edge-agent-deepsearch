@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>From Data to Device: ELMOD An Efficient German-First 2.7B Language Model for Mobile Inference</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-27 · Darina Gold; Alexander Schwirjow; Viktor Haag; Viktor Hangya; Joel Schlotthauer; Fabian Küch; Luzian Hahn / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">作者提出 ELMOD——面向端侧部署的高效语言模型，一个为资源受限设备设计的 2.7B 紧凑德语模型。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-27 · Darina Gold; Alexander Schwirjow; Viktor Haag; Viktor Hangya; Joel Schlotthauer; Fabian Küch; Luzian Hahn / KONVENS 2026</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:编译部署</span><span class="tag">硬件:手机</span><span class="tag">硬件:Snapdragon</span><span class="tag">硬件:Jetson</span><span class="tag">硬件:Apple-Silicon</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">德国弗劳恩霍夫 IIS 推出的端侧德语小模型 ELMOD：2.7B 参数，只用公开数据训练，目标是在手机和边缘设备本地运行。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在同尺寸（3B 以下）模型中德语表现最强，可比肩 7B 模型；实测骁龙 8 Elite 手机 CPU 20.97 token/s、骁龙 8 Gen 5 17.92 token/s、Jetson Orin Nano 22.7 token/s、MacBook Pro M2 16.13 token/s；训练仅用 5.5 万 H100 小时。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">针对德语形态变化和复合词设计专门的数据预处理，加入质量过滤与改写步骤提高数据教学质量，并比较 66 种分词器配置以减少每词 token 数；最后通过 ExecuTorch 做成 Android 演示应用。</span></div>
+<div class="score-reason">评分依据：明确为端侧部署设计，并在多款手机、Jetson 和 Mac 上给出实测速度，相关度 8；方法以数据工程与常规小模型训练为主，贡献 4。权重已在 Hugging Face 开放；弗劳恩霍夫为研究机构，不计公司项目。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.24585" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

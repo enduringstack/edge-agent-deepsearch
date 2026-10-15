@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A Flexible Sparsity-Aware FPGA Accelerator with Column-Wise Compression for Efficient CNN Inference</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-21 · Amirhossein Zarei; Shervin Vakili / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Efficient acceleration of convolutional neural networks (CNNs) on resource-constrained platforms remains challenging due to the irregularity of sparsity pattern…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-21 · Amirhossein Zarei; Shervin Vakili / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:高效推理</span><span class="tag">硬件:FPGA</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一款面向资源受限平台的稀疏 CNN 加速器（FPGA 实现），兼顾非结构化稀疏的精度和结构化稀疏的硬件效率。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在低成本 AMD Kintex UltraScale+ FPGA 上，结构化稀疏模式下 VGG16 超过 2.5 TOPS、210 GOP/s/W，ResNet18 超过 1.1 TOPS、72 GOP/s/W，精度损失较小。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以可扩展二维乘加阵列为核心，按列压缩卷积核来处理不规则稀疏；再配合排序优化和面向该微架构的多阶段结构化剪枝与恢复算法做软硬协同。</span></div>
+<div class="score-reason">评分依据：面向资源受限平台的 FPGA 推理加速器，属于边缘推理硬件技术栈，相关度给 6；列压缩与剪枝协同是对前作的增量改进，贡献给 5。作者均来自加拿大 INRS，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.19248" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

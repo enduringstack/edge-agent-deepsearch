@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PerfAgent: Profiler-Guided Iterative Refinement for Repository-Level Code Optimization</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-22 · Ryan Deng; Yuanzhe Liu; Bastian Lipka; Yao Ma; Xuhao Chen; Tim Kaler; Jatin Ganhotra / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">模型:GPT</span><span class="tag">应用:代码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Large language model (LLM) agents now perform well on correctness-oriented repository-level tasks, including SWE-Bench issue resolution and feature implementati…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span>  2026-07-22 · Ryan Deng; Yuanzhe Liu; Bastian Lipka; Yao Ma; Xuhao Chen; Tim Kaler; Jatin Ganhotra / arXiv</div>
+<div class="tags"><span class="vendor-tag">IBM</span><span class="tag">应用:代码</span><span class="tag">方向:工具调用</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">PerfAgent 让现成的编程智能体能做仓库级性能优化：在循环里接入性能剖析器和行为校验器，帮它找到真正的热点并持续改进。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 GSO 上把达到专家级加速的补丁比例从 19.6% 提到 39.2%，在 SWE-fficiency-Lite 上从 26% 提到 74%（对比使用 GPT-5.1 的 OpenHands），并以更低成本超过“五选一”的预言机基线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每轮让智能体依据剖析器证据而非单纯计时决定优化对象，再由校验器检查补丁是否保持原有行为，未达专家水平就继续迭代。</span></div>
+<div class="score-reason">评分依据：是云端编程智能体的工作流改进，与端侧部署无关，相关度给 2；把剖析器反馈引入智能体闭环、成效明显，贡献给 5。PDF 首页署名含 IBM 的两位作者，第一作者来自 MIT。 作者机构依据：arXiv PDF 首页署名 IBM（PDF 首页作者 Bastian Lipka 署名 IBM Ehningen、Jatin Ganhotra 署名 IBM T. J. Watson Research Center；第一作者来自 MIT）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.19653" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

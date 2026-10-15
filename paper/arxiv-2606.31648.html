@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Think in English, Answer in Korean: Efficient Adaptation of Multilingual Tool-Using Agents</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-30 · Utsav Garg, Sungjin Hong, Jason Jung et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">硬件:GPU</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LuckyStar 111B 基于 Command A 后训练,用多语言 SFT、可验证奖励 RL、语言一致性奖励与 4-bit 量化,高效适配韩英企业工具 agent,支持单 GPU 部署。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">提升数学推理、函数调用、NL2SQL 性能,保留韩英指令遵循质量;4-bit 量化支持单 GPU 服务。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：4-bit 单 GPU 服务有端侧部署意味;111B 仍偏服务侧,创新为适配配方。</div>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span>  2026-06-30 · Utsav Garg, Sungjin Hong, Jason Jung et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">Cohere</span><span class="tag">方向:工具调用</span><span class="tag">方向:量化</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Cohere 为韩语和英语企业智能体打造的 1110 亿参数混合推理模型 LuckyStar 111B，重点是在显存和服务资源受限下高效适配工具调用能力。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">原文称适配后模型在数学推理、函数调用和智能体式自然语言转 SQL 上均有提升，同时保持韩英通用指令遵循质量，并可经 4 比特量化单 GPU 部署；摘要未给出具体分数。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从已完成后训练的 Command A 继续训练而非重新预训练；用多语言监督微调、可验证奖励强化学习训练多步工具调用、加入韩语回复一致性奖励，并用前置提示切换简洁回答与长推理模式。</span></div>
+<div class="score-reason">评分依据：是面向企业服务器的大模型适配经验，4 比特单卡部署与端侧仅有弱关联；属工程配方总结。PDF 首页全部作者署名 Cohere，摘要说明项目与 LG CNS 合作完成。 作者机构依据：arXiv PDF 首页署名 Cohere（PDF 首页 9 位作者均署名 Cohere，通讯邮箱为 cohere.com；LG CNS 为合作方，但未出现在作者署名中）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.31648" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

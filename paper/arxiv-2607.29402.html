@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Bridging the Question-Answer Gap in Retrieval-Augmented Generation: Hypothetical Prompt Embeddings</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-31 · Domen Vake; Jernej Vičič; Aleksandar Tošić / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">RAG 把检索机制和生成式语言模型结合起来，提升回答的准确性和相关性。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-31 · Domen Vake; Jernej Vičič; Aleksandar Tošić / IEEE Access</div>
+<div class="tags"><span class="tag">应用:RAG</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">RAG 检索时用户问题和文档的表述风格对不上。HyPE 把“生成假想内容”从查询时挪到建索引时：预先为每个文档块生成可能的问题，查询时直接做问题对问题匹配。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 6 个常用数据集上，检索上下文精确率最多提升 42 个百分点，论断召回率最多提升 45 个百分点，且查询时不增加延迟。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">建索引阶段为每个数据块预生成多个假想提问并用其嵌入代替块本身，查询时无需像 HyDE 那样实时生成假想答案，可与重排序、多向量检索等方法叠加。</span></div>
+<div class="score-reason">评分依据：把生成开销从查询时移到离线索引，查询端零额外延迟，对端侧 RAG 有直接迁移价值（相关度 4）；思路简洁实用（贡献 5）。论文已发表于 IEEE Access。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29402" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

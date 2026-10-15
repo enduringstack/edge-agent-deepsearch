@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TallyTrain: Communication-Efficient Federated Distillation</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-30 · Radhakrishna Achanta, Will Reed / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span><span class="tag">方向:联邦学习</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">TallyTrain 是联邦蒸馏协议,只传每个 peer 的 argmax 类索引把通信压到 ceil(log2 C) 比特,稀疏参数合并得带宽桥变体。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在标准基准上以最多三个数量级更少通信匹配或超过软标签蒸馏;带宽桥变体帕累托占优 FedAvg/FedProx/FedDF。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：联邦学习通信压缩,端侧联邦场景相关。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-06-30 · Radhakrishna Achanta, Will Reed / arXiv</div>
+<div class="tags"><span class="vendor-tag">Cisco</span><span class="tag">方向:联邦学习</span><span class="tag">方向:蒸馏</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">联邦学习的通信量随模型大小和类别数增长。TallyTrain 让每个节点只发送“投票选出的类别编号”，把每个探针样本的通信压到几个比特。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在标准基准上以最多少三个数量级的通信量达到或超过软标签蒸馏；结合稀疏参数合并的变体在所有测试工作点上帕累托优于 FedAvg、FedProx 和 FedDF。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">只传每个节点预测的最大类别编号（约 log2 C 比特），用多数投票过滤未训练好节点的错误；再与稀疏参数合并组合，同时降低模型大小带来的通信压力。</span></div>
+<div class="score-reason">评分依据：联邦蒸馏的通信压缩，与端侧设备协同训练相关但不涉及推理部署；硬标签投票的思路简单有效。PDF 首页两位作者均署名思科（cisco.com 邮箱）。 作者机构依据：arXiv PDF 首页署名 Cisco（PDF 首页两位作者均署名 Cisco Systems Inc.，使用 cisco.com 邮箱）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.00173" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

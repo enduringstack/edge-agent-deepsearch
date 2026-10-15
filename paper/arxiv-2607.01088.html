@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ROSA: A Robotics Foundation Model Serving System for Robot Factories</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-01 · Wenqi Jiang, Jason Clemons, Rowland O'Flaherty et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出ROSA机器人工厂基础模型服务系统，用共享GPU池让机器人集群通过网络访问服务器级GPU，并提供机器人感知编程抽象与工厂目标驱动调度。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在真实机器人和大规模合成负载上，工厂生产力比传统专用服务最多提升12.06x。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：机器人云端GPU池服务，端云协同但核心在云端；多模型流水线与目标调度有创新。</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-01 · Wenqi Jiang, Jason Clemons, Rowland O'Flaherty et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:端云协同</span><span class="tag">方向:调度服务</span><span class="tag">应用:机器人</span><span class="tag">硬件:GPU</span><span class="tag">硬件:Jetson</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ROSA 是面向机器人工厂的基础模型推理服务系统：不再让每台机器人用自带或旁置 GPU 单独推理，而是让整支机器人队伍通过网络共享服务器 GPU 池。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在真实机器人和大规模合成负载上评测，工厂生产率最高比传统专用推理部署提升 12.06 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">采用共享 GPU 池服务，提供面向机器人的编程抽象支持多模型流水线、按任务的性能要求和故障处理，并按工厂整体产出而非单次请求时延来调度。</span></div>
+<div class="score-reason">评分依据：讨论机器人推理放在机身还是放到网络侧 GPU 池，对端侧与边缘部署决策有直接参考，但方案本身是把推理移出机器人；系统设计完整、收益显著。PDF 首页 8 位作者均署名 NVIDIA Research。 作者机构依据：arXiv PDF 首页署名 NVIDIA（PDF 首页全部 8 位作者署名 NVIDIA Research，其中两位同时署名斯坦福大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01088" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

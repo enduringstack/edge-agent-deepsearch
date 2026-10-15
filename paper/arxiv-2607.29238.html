@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Small Is Enough: Per-User Style Rewriting of AI-Edited Text via LoRA Adapters</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-31 · Antorweep Chakravorty / arXiv</div>
-<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">InMyStyle 是个隐私优先的单用户系统，用小语言模型把 AI 改过的文字重写成你本人的写作风格。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-31 · Antorweep Chakravorty / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:安全隐私</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">InMyStyle 是一个注重隐私的单用户系统：用本地小语言模型把 AI 改过的文字改回你本人的写作风格，训练数据和模型都不离开本机。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen2.5 0.5B 到 7B 上综合评分基本持平（0.689-0.695），说明小模型已够用；五个大模型裁判打出的“AI 味”比输入文本低 20% 以上；但作者归属概率仍在 0.51-0.53 附近，个人风格恢复有限。全部训练在一块笔记本 GPU 上完成。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用本地运行的 Qwen2.5-3B、Llama-3.2-3B、Phi-3-mini 把用户原文改写成“AI 腔”版本组成训练对，再在 4 位量化的基座上训练 rank-8 的 LoRA 适配器。</span></div>
+<div class="score-reason">评分依据：小模型在个人笔记本上本地训练和推理、数据不出设备，对端侧个性化有参考价值；但只是单用户案例研究，方法上是现成 LoRA 流程的整合。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29238" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

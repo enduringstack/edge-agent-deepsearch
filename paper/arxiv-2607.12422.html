@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Accepted Prefixes Are Not All You Need: A Negative Result on PEFT-Based Block-Diffusion Drafting</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-14 · Abdurrahman Javat; Allan Kazakov / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:投机解码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Speculative decoding accelerates autoregressive language model inference by using a cheap drafter to propose multiple future tokens and a target model to verify…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-07-14 · Abdurrahman Javat; Allan Kazakov / arXiv</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一篇负面结果：用同一个模型加一个 LoRA 式适配器当“扩散式草稿器”做投机解码，看起来参数省、无需额外草稿模型，实际却跑不快。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen3-0.6B 上没有获得实际加速；虽然能接受较长的草稿前缀，但每一步都要先开适配器跑一遍完整主干出草稿，再关适配器跑一遍完整主干做验证。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">通过逐步性能剖析拆分草稿和验证的计算开销，总结出投机解码成立的前提：草稿器的执行成本必须明显低于验证模型。</span></div>
+<div class="score-reason">评分依据：投机解码是端侧加速的常用技术，这条负面结论对小模型上的方案选型有提醒作用；工作规模较小，创新有限。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.12422" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

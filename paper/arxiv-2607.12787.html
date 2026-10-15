@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Do We Really Need Multimodal Emotion Language Models Larger Than 1B Parameters?</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-14 · Kaiwen Zheng; Junchen Fu; Wenhao Deng; Hu Han; Joemon M. Jose; Xuri Ge / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:机器人</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Recent advances in multimodal large language models (MLLMs) have significantly improved the performance of multimodal emotion recognition (MER) and enabled inte…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-14 · Kaiwen Zheng; Junchen Fu; Wenhao Deng; Hu Han; Joemon M. Jose; Xuri Ge / ACM MM 2026</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">探讨多模态情绪识别是否真的需要 7B 以上大模型：把 8B 教师模型的能力蒸馏到 0.6B 的小模型上，便于部署到机器人和手机等设备。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以 Qwen3-0.6B 为语言解码器的学生模型在 9 个基准上达到最优水平；相比 Qwen3-8B 教师，总参数从 9.00B 降到约 0.85B，峰值显存从 20.04 GB 降到 2.54 GB（压缩 11 倍），描述式推理每样本耗时从 6.14 秒降到 3.11 秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用切片 Wasserstein 距离加隐状态对齐的最优传输损失做知识蒸馏，再用基于 GRPO 的多奖励优化在识别效果和推理效率之间做平衡。</span></div>
+<div class="score-reason">评分依据：目标是把多模态情绪模型压到 1B 以下以便端侧部署，但没有在真实设备上测试；蒸馏加 GRPO 多奖励的组合属于中等创新。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.12787" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

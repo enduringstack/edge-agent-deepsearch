@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Gleam: Adaptive Network-Efficient CUDA API Remoting for Cross-Device GPU Sharing over LANs</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-25 · Zhihao Xu; Hao Zhong; Zeting Zhou; Yuhang Xu; Haoyu Tong; Wei Wang; Jinshan Chen; Keqiang He / arXiv</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:端云协同</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">本文旨在实现局域网内设备间算力与通信高效的 GPU 共享，推动泛在 AI 推理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 NVIDIA（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-25 · Zhihao Xu; Hao Zhong; Zeting Zhou; Yuhang Xu; Haoyu Tong; Wei Wang; Jinshan Chen; Keqiang He / arXiv</div>
+<div class="tags"><span class="vendor-tag">Lenovo</span><span class="tag">方向:端云协同</span><span class="tag">方向:调度服务</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">家里或办公室的笔记本等个人设备常常显卡不够用，Gleam 让它们通过局域网借用别的机器上的 GPU 跑 AI 推理，并专门解决网络带宽成为瓶颈的问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多种 NVIDIA 显卡（如 RTX 4090、4070、4060）和多类 AI 负载上，API 远程调用效率提升 1.4 到 24.2 倍，系统吞吐最高提升 1.79 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">通过 CUDA API 远程调用把任务卸载到局域网内其他设备：自动缓存模型权重减少传输、异步执行掩盖频繁调用的延迟，运行时调度器同时考虑网络状况和 GPU 争用来分配远端，并保证跨设备的 CUDA 上下文一致。</span></div>
+<div class="score-reason">评分依据：面向个人设备间就近共享 GPU 做本地推理，属于端侧与近端协同的部署技术（相关度 6）。把权重缓存、异步执行和网络感知调度组合进 API 远程调用，有一定系统新意（贡献 6）。机构依据：arXiv PDF 首页部分作者署名联想（Lenovo Information Products (Shenzhen) Ltd、Lenovo (Beijing) Ltd）、lenovo.com 邮箱，主体作者来自上海交通大学。 作者机构依据：arXiv PDF 首页署名 Lenovo（PDF 首页 3 位作者署名 Lenovo Information Products (Shenzhen) Ltd / Lenovo (Beijing) Ltd，邮箱为 lenovo.com；其余作者来自上海交通大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.23115" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

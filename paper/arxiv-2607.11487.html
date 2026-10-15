@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LightMem-Ego: Your AI Memory for Everyday Life</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-14 · Yijun Chen, Boyi Xiao, Yixian Zhao, Haoting Xia, Buqiang Xu, Jizhan Fang, Yanya Li, Yaqi Zheng, Xuehai Wang, Zirui Xue, Liuxin Zhang, Hui Li, Ningyu Zhang / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">硬件:手机</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LightMem-Ego: Bringing lifelong memory to AI assistants on smartphones and AI glasses, enabling them to see, remember, and help with your daily life.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=40)；affiliation 待核实</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-14 · Yijun Chen, Boyi Xiao, Yixian Zhao, Haoting Xia, Buqiang Xu, Jizhan Fang, Yanya Li, Yaqi Zheng, Xuehai Wang, Zirui Xue, Liuxin Zhang, Hui Li, Ningyu Zhang / arXiv</div>
+<div class="tags"><span class="vendor-tag">Lenovo</span><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:端云协同</span><span class="tag">应用:RAG</span><span class="tag">硬件:手机</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">浙江大学与联想等做的 LightMem-Ego：给手机和 AI 眼镜用的“生活记忆助手”，持续记录第一人称画面和声音，整理成分层记忆，之后可以问“我钥匙放哪了”“刚才谁说了什么”。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">演示场景下检索 R@3 为 74.1、MRR 0.627；问答准确率 LLM 评判 51.9%、人工评判 55.6%；短期记忆问答的端到端 P50 时延手机端 5.86 秒、眼镜端 7.01 秒，长期记忆问答分别为 14.87 秒和 19.96 秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">手机或眼镜端只负责采样、压缩、打时间戳并上传低帧率画面和音频片段，后端把流切成事件并组织成当前、短期、长期三级记忆；提问时由路由器选最便宜且足够的记忆层检索后生成答案。</span></div>
+<div class="score-reason">评分依据：目标终端是手机和 AI 眼镜，记忆分层与查询路由对端侧个人助手有参考价值，但设计上明确把视觉、语言模型推理和记忆构建都放在后端，终端只做采集上传，属于云端智能体。系统以演示为主、评测规模小。PDF 首页作者 Liuxin Zhang、Hui Li 署名 Lenovo Group Limited，主导为浙江大学。 作者机构依据：arXiv PDF 首页署名 Lenovo（PDF 首页作者 Liuxin Zhang、Hui Li 署名 Lenovo Group Limited；通讯作者及多数作者来自浙江大学）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.11487" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

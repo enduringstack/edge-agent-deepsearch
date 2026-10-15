@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FlashDecoder: Real-Time Latent-to-Pixel Streaming Decoder with Transformers</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-16 · Minguk Kang; Suha Kwak / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Real-time video generation demands fast decoding as much as fast denoising, yet current latent video diffusion models rely on 3D convolutional decoders that are…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校顶会</span>  2026-07-16 · Minguk Kang; Suha Kwak / CVPR 2026</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">应用:视频</span><span class="tag">硬件:H100</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">FlashDecoder 是一个纯 Transformer 的视频解码器，把隐空间逐帧流式还原成像素，替代又慢又吃显存的三维卷积解码器。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Wan2.1/Wan2.2 隐空间上重建质量与卷积解码器相当（1080p 下 PSNR 41.55 对 41.49 dB），单张 H100 上解码快 3.6~4.7 倍、显存最多省 11 倍，结合架构优化后加速达 12 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每一帧只关注固定窗口内的历史帧，用滚动 KV 缓存保持延迟和内存恒定，逐帧处理天然满足时间因果。</span></div>
+<div class="score-reason">评分依据：面向实时视频生成的解码效率优化，滚动 KV 缓存思路可迁移，但评测在 H100 上、与端侧距离较远。PDF 首页署名 Pika Labs 与 POSTECH。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.14898" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Learning Agile Navigation in Crowded Environments for Quadruped Robots</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-16 · Shuyu Wu; Zeyu Liu; Tianbao Zhang; Fanxing Li; Fangyu Sun; Mingkang Xiong; Wei Xi; Wenxian Yu / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Navigating dynamic and crowded environments presents significant challenges for quadruped robots due to severe sensor occlusion and unpredictable human motion.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-07-16 · Shuyu Wu; Zeyu Liu; Tianbao Zhang; Fanxing Li; Fangyu Sun; Mingkang Xiong; Wei Xi; Wenxian Yu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Midea</span><span class="tag">应用:机器人</span><span class="tag">硬件:Jetson</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让四足机器人在人群密集、视线被遮挡的环境里灵活穿行的导航系统 VOP-Nav，只靠机身上的激光雷达就能避开快速移动的行人。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Isaac Gym 训练环境中成功率 78.35%，在训练环境和 4 个未见过的测试环境里成功率都高于 ORCA、NavRL、ABS 等基线；策略零样本部署到 Unitree Go2 真机，在室内外动态场景中稳定运行。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用一个网络读取多帧激光雷达数据，直接预测按速度障碍物理论算出的安全速度区间，再把它既当作导航策略的输入、又当作训练时的奖励，省掉显式的行人检测与跟踪。真机上该网络跑在 Jetson Orin Nano，导航策略在 Intel N100 小主机上以 50Hz 运行。</span></div>
+<div class="score-reason">评分依据：模型完全在机器人机载算力（Jetson Orin Nano + N100）上实时运行，属于端侧部署的机器人感知控制，但它是强化学习导航策略，不涉及推理优化或智能体闭环，端侧相关度给 5；把速度障碍几何约束与端到端学习结合有一定新意，贡献 6。PDF 首页署名显示两位作者来自美的集团高端重载机器人全国重点实验室，其余作者来自上海交通大学。 作者机构依据：arXiv PDF 首页署名 Midea（PDF 首页脚注：作者 Mingkang Xiong、Wei Xi 来自美的集团高端重载机器人全国重点实验室（Midea Group），其余作者为上海交通大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.15036" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

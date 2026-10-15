@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DRIFT: Drift and Aggregation for Motion Planning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-16 · Yining Xing; Zhiyuan Liu; Zehong Ke; Wenhao Yu; Jianqiang Wang / arXiv</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">End-to-end trajectory planners need to represent multiple plausible driving behaviors while producing a single executable trajectory under real-time constraints…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 NVIDIA（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-16 · Yining Xing; Zhiyuan Liu; Zehong Ke; Wenhao Yu; Jianqiang Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">应用:机器人</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">DRIFT 是一个端到端自动驾驶轨迹规划器，一次生成多条候选轨迹再直接聚合成最终轨迹，满足实时要求。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 NAVSIM navtest 上达到 89.6 PDMS 和 90.4 EPDMS；候选生成与聚合模块在 RTX 4090 上耗时 10.82 毫秒，含视觉主干的完整推理 66.43 毫秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在紧凑的轨迹隐空间中一步“漂移”生成 48 个候选特征，再用轻量聚合头结合场景、导航和自车状态直接预测最终轨迹，不需要轨迹级质量标签。</span></div>
+<div class="score-reason">评分依据：车载规划模型的实时推理设计，对车端部署有一定参考，但评测在桌面 GPU 上、属于驾驶策略而非端侧推理系统。PDF 首页作者均署名清华大学，未出现 NVIDIA 等公司。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.14507" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

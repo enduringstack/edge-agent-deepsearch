@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>NVIDIA Nemotron 3 Ultra × LangChain Deep Agents:10x 低成本推理</h1>
-<div class="meta"><span class="score">14</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-07-08 · NVIDIA / LangChain / NVIDIA Blog</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:端侧agent</span><span class="tag">方向:工具调用</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LangChain 把 Deep Agents 框架适配 NVIDIA Nemotron 3 Ultra,开放模型里准确率领先,单次推理成本比领先闭源模型低 10 倍。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">开放模型中准确率领先;单次推理成本比领先闭源模型低 10 倍</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">完全靠工程化 agent 环境(调整 prompt、工具描述、中间件),不做模型再训练</span></div>
-<div class="score-reason">评分依据：NVIDIA 官方博客,agent 推理成本优化(relevance 8);属 agent 环境工程整合非模型创新(contribution 6)</div>
+<div class="meta"><span class="score">8</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-07-08 · NVIDIA / LangChain / NVIDIA Blog</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:工具调用</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">英伟达官方博客介绍：LangChain 针对 Nemotron 3 Ultra 专门调优了 Deep Agents 智能体框架，并推出 NemoClaw for LangChain Deep Agents 开源参考蓝图，让企业用开放模型搭自己的专用智能体。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LangChain 的 Deep Agents 基准上，Nemotron 3 Ultra 取得开放模型中最高准确率，商业任务与最高分闭源模型持平，单次运行推理成本比领先闭源模型低 10 倍；全部提升不需要重新训练模型。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">LangChain 分析智能体执行轨迹找出丢分环节，只调整系统提示词、工具描述和中间件这些模型外围的部分；再把调好的框架、Nemotron 3 Ultra 和 OpenShell 安全运行时打包成开放蓝图，模型通过 Baseten、Together AI 等云平台托管调用。</span></div>
+<div class="score-reason">评分依据：讲的是企业云端智能体的框架调优和成本，模型跑在云托管平台上，与端侧部署只有宽泛关联；“调外围框架而非重训模型”的做法对智能体运行时有参考意义，但属于工程整合。</div>
 <div class="source"><a href="https://blogs.nvidia.com/blog/nemotron-langchain-agents-open-stack/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

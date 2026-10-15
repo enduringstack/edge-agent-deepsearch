@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Shieldstral</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-29 · Antonia Calvi, Avinash Sooriyarachchi, Giada Pistilli, Guillaume Lample, Maarten Buyl, Maximilian Augustin, Maximilian Müller, Pierre Stock, Tom Bewley, Wassim Bouaziz, Yimu Pan / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">作者提出 Shieldstral，一个 3B 参数的策略自适应多模态安全分类器，在文本安全上匹配或超过近 7 倍体积的模型。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=12)；affiliation 待核实</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-29 · Antonia Calvi, Avinash Sooriyarachchi, Giada Pistilli, Guillaume Lample, Maarten Buyl, Maximilian Augustin, Maximilian Müller, Pierre Stock, Tom Bewley, Wassim Bouaziz, Yimu Pan / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">模型:Mistral</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Shieldstral 是一个只有 3B 参数的多模态内容安全分类器，可以按用户自定义的审核策略判断文字和图片是否违规，适合给大模型应用做轻量护栏。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在文本安全基准上追平或超过体量约 7 倍的模型，并在多模态安全分类上取得新的最好成绩；训练数据约 5410 万条。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把各种审核任务统一改写成“是否属于某类违规”的是非问答，从而把分类体系不同的安全数据集合并训练；再用大模型把安全文本改写成指定类别的违规样本，强化细粒度区分。</span></div>
+<div class="score-reason">评分依据：小模型做安全护栏，对端侧部署有一定迁移价值，但论文未做设备端评测（相关度 4）；统一的是非问答训练配方有工程价值但方法不算新（贡献 5）。PDF 首页未标注作者机构，故不填公司归属。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.25857" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

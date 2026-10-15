@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Zero-Shot Quantization for Object Detectors using Off-the-Shelf Generative Models</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-06-30 · Hyunho Lee, Kyomin Hwang, Hyeonjin Kim et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">GoodQ 用现成生成模型为边缘端目标检测器构造零样本量化训练集,通过信息密集提示、分布感知选择和教师引导降噪,在无原始训练数据时低比特量化。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 W4A4 低比特零样本量化达 SOTA,并扩展到 W3A3 极端位宽。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确边缘端目标检测器量化,端侧技术栈;生成模型+三挑战应对有创新。</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-06-30 · Hyunho Lee, Kyomin Hwang, Hyeonjin Kim et al. / ECCV 2026</div>
+<div class="tags"><span class="vendor-tag">LG</span><span class="tag">方向:量化</span><span class="tag">方向:编译部署</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">越来越多的目标检测模型要部署到边缘设备，但拿不到原始训练数据时很难做低比特量化。GoodQ 用现成的图像生成模型造训练集来做零样本量化。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在低比特 W4A4 零样本量化上达到当前最好水平，并把量化推进到 W3A3；例如在 COCO 上换用 SD2.1 生成器时，W3A3 mAP 为 8.7（对比 TSOD 的 5.0），W4A4 为 20.5（对比 18.4）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用“信息密集”提示词生成多目标图像，按预训练模型的类别分布挑选生成图，再用教师模型引导的自适应降噪减轻伪标签噪声对量化感知训练的干扰。</span></div>
+<div class="score-reason">评分依据：面向边缘部署的检测器低比特量化，与端侧推理栈直接相关；用生成模型合成量化数据的思路有新意但属量化细分方向。作者主要来自首尔国立大学，其中一位作者同时署名 LG Electronics。 作者机构依据：arXiv PDF 首页署名 LG（PDF 首页作者 Sunghyun Wee 同时署名首尔国立大学与 LG Electronics（首尔），其余作者为首尔国立大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.31456" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

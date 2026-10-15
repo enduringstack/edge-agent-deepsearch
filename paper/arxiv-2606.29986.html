@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>HBM Is Not All You Need: Efficient Disaggregated LLM Serving across Memory-heterogeneous Accelerators</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-29 · Zhixiang Wei, Yun Wang, James Yen et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">HMA-Serve 在内存异构加速器间做分离 LLM 服务:GDDR 加速器跑 prefill、HBM GPU 跑 decode,通过分相位量化、计算-传输流水线与延迟反量化降本提效。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在四个 Qwen3 模型与三条生产 trace 上,goodput 最高 3.2 倍、每美元 goodput 4.8 倍于内存同质方法,生成质量无可测损失。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：数据中心跨厂商分离服务,云端;跨厂商 KV 格式与三技巧有创新。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-29 · Zhixiang Wei, Yun Wang, James Yen et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:KV cache</span><span class="tag">方向:量化</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">HMA-Serve 是数据中心的大模型分离式推理系统：预填充放在便宜的 GDDR 加速卡上、解码放在 HBM GPU 上，并解决跨厂商芯片之间 KV 格式和软件栈不通的问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 4B~32B 四个 Qwen3 模型和三条生产流量上，有效吞吐最高是同构内存方案的 3.2 倍，单位成本有效吞吐 4.8 倍，生成质量无可测损失。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">预填充阶段用各厂商原生低精度、解码保持 BF16；逐层流水重叠 KV 传输与后续层预填充以降低首 token 时延；直接传输量化后的原始字节，到解码 GPU 再惰性反量化，节省带宽和显存。</span></div>
+<div class="score-reason">评分依据：是数据中心云端推理方案，与端侧部署关系较远，仅分阶段量化思路可借鉴；跨厂商异构内存分离部署的问题定义和三项技术有新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.29986" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

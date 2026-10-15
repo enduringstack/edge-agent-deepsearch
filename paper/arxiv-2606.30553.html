@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>COSM: A Cooperative Scheduling Framework for Concurrent PIM and CPU Execution on Mobile Devices</h1>
-<div class="meta"><span class="score">17</span> <span class="tier school">学校预印本</span>  2026-06-29 · Yilong Zhao, Fangxin Liu, Onur Mutlu et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:安全隐私</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">COSM 是移动端 PIM 与 CPU 并行协同调度框架,用低干扰 PIM 控制接口和空闲感知调度,让 PIM 命令嵌入 CPU 访问序列的空闲窗口。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 LLM 与移动负载并发下,PIM 吞吐最高提升 2.8 倍,CPU 性能损失小于 2.0%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：移动端端侧 LLM+PIM 调度,明确端侧;协同调度创新度高且有实测收益。</div>
+<div class="meta"><span class="score">15</span> <span class="tier company">公司项目</span>  2026-06-29 · Yilong Zhao, Fangxin Liu, Onur Mutlu et al. / ISCA 2026</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:高效推理</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:CIM</span><span class="tag">硬件:手机</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">COSM 解决手机上 CPU 与存内计算（PIM）共享内存时互相干扰的问题，让端侧大模型能在 PIM 上跑、同时不拖慢手机上的其他应用。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在大模型与手机应用、计算密集内核并发执行的实验中，PIM 吞吐比基线调度最高提升 2.8 倍，CPU 性能损失不到 2.0%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">设计低干扰的 PIM 控制接口，在不打断 CPU 访存的前提下尽量多发 PIM 命令；再预测 CPU 访存序列中的空闲窗口，把 PIM 命令插进这些空档，同时让 PIM 执行与数据传输重叠。</span></div>
+<div class="score-reason">评分依据：直接面向手机 LPDDR 内存上的端侧大模型推理，属于端侧硬件与系统层的关键问题；CPU 与 PIM 协同调度设计新颖，并被 ISCA 2026 接收。 作者机构依据：arXiv PDF 首页署名 Huawei（arXiv 首页通讯作者 Li Jiang 的署名之一为 Huawei Technologies Co., Ltd，其余署名为上海交通大学、上海期智研究院、ETH Zurich、清华大学、北京航空航天大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.30553" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>InduceKV: Fixed-Footprint Continual Adaptation of Multimodal LLMs via Inducing KV Memories</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-07-02 · Qianyu Chen, Ziteng Feng, Canran Xiao et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:MoE</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">InduceKV 是基于检索的固定内存占用持续适应方法,把每个训练前缀存为可直接拼到 self-attention 缓存的 KV 记忆,在固定预算下持续学习多模态 LLM。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">任务增量指令调优、持续 VQA、域增量、终身多模态指令调优上,匹配内存预算下一致优于 PEFT/MoE/replay/prompt-retrieval。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：KV cache/固定部署 footprint,端侧技术栈非显式端侧;诱导集双层选择新机制。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-02 · Qianyu Chen, Ziteng Feng, Canran Xiao et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让多模态大模型在固定的内存预算内持续适应新任务：主干不动，把新知识存成可直接插进注意力缓存的 KV 记忆条目。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在任务增量指令微调、持续视觉问答、领域增量和终身多模态指令微调上，同等内存预算下均优于 PEFT、MoE、回放和提示检索等基线；摘要页未给出具体数值。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把挑选出的训练前缀存成“检索键 + 每层紧凑 KV”条目，推理时检索并拼进自注意力缓存；用双层优化在预算内挑选最有用、覆盖面最好的条目。</span></div>
+<div class="score-reason">评分依据：固定占用的持续适应与 KV 记忆，对端侧个性化有迁移价值，但未做设备评测（相关度 4）；用 KV 记忆替代参数更新的思路有新意（贡献 6）。作者机构为南洋理工、中科大、中山大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.02010" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

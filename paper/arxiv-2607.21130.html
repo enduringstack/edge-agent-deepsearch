@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Hardware-Software Co-Design for Float16 On-Device Training on RISC-V Single-Core</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-23 · Benjamin Hubinet; Pierre-Alain Moellic; Olivier Savry; Olivier Potin; Jean-Baptiste Rigaud / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">By leveraging standard RISC-V extensions, namely Zfh (scalar float16) and Zvfh (vector float16), this work proposes an open-source framework to enable complete …</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-23 · Benjamin Hubinet; Pierre-Alain Moellic; Olivier Savry; Olivier Potin; Jean-Baptiste Rigaud / IEEE PRIME 2026</div>
+<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:编译部署</span><span class="tag">硬件:CPU</span><span class="tag">硬件:FPGA</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一个开源框架，让单核 RISC-V 嵌入式处理器能直接用 float16 在设备上完整训练和微调神经网络，从而把内存占用减半。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">与 float32 相比，模型参数内存减少约 50%，精度几乎不变；在 FPGA 软核上加入标量 float16 扩展只增加 1.15% 的 LUT 和 0.05% 的触发器，主频保持 175MHz 不降。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">基于嵌入式深度学习框架 AIfES，利用 RISC-V 标准扩展 Zfh（标量半精度）和 Zvfh（向量半精度）编写训练内核，加入冻结层支持迁移学习，并讨论在同一核内实现向量单元的硬件设计。</span></div>
+<div class="score-reason">评分依据：直接面向资源受限的嵌入式 RISC-V 处理器做设备端训练，软硬件协同（相关度 8）。但实验在模拟器和 FPGA 上以 MNIST 级小模型为主（贡献 5）。作者来自法国原子能委员会 CEA-Leti 与圣艾蒂安矿业学院，为公共科研机构，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.21130" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

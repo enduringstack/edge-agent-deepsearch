@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>$\text{Log}_\text{b}$Quant: Quantizing Language Models in Logarithmic Space</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-07-01 · Jeremias Bohn, Tizian Dippold, Mahdi Koubaa et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出Log_bQuant对数空间量化方法，用可调基对数编码适配常见参数分布，在4bit精度下相比非对称线性量化取得更优表现。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">4bit下多个基准优于张量级非对称线性量化，并实现中等加速与高内存节省，适合消费级GPU私有部署。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：面向消费级GPU/边缘设备的LLM量化，端侧属性强；对数码本有创新但属常见量化路线。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-01 · Jeremias Bohn, Tizian Dippold, Mahdi Koubaa et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">提出可调底数的对数量化方法，用来压缩语言模型权重，目标是让大模型能在消费级显卡和边缘设备上运行。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">4 比特精度下多项基准优于按张量粒度的非对称线性量化；14B 参数模型量化后可在 12 GB 显存内推理，性能损失较小，并带来一定加速。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">根据权重分布特点改用对数码本代替均匀码本，并让对数底数可调，以更好表示少量幅值很大的权重；只量化权重、不量化激活。</span></div>
+<div class="score-reason">评分依据：明确面向消费级和边缘设备的内存受限推理，但只在消费级 GPU 上验证；对数量化思路并不新，贡献偏常规。作者来自慕尼黑工业大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01127" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

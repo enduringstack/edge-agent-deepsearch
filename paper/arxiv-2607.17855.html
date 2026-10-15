@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A Hardware-oriented Approach for Efficient Bayesian Inference Computation and Deployment</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-20 · Nikola Pižurica; Matteo Risso; Nikola Milović; Alessio Burrello; Igor Jovančević; Conor Heins; Miguel de Prado / arXiv</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span><span class="tag">硬件:Jetson</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Bayesian inference provides a principled foundation for reasoning under uncertainty, but its computational cost hinders deployment on resource-constrained edge …</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 NVIDIA（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-20 · Nikola Pižurica; Matteo Risso; Nikola Milović; Alessio Burrello; Igor Jovančević; Conor Heins; Miguel de Prado / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:编译部署</span><span class="tag">硬件:Jetson</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">离散贝叶斯推理（常用于 POMDP 决策）计算量大，难以在边缘设备上跑。论文给出一套面向嵌入式 GPU 的加速方法，把隐马尔可夫模型的三类消息传递算法改写成更适合 GPU 的形态。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 NVIDIA Jetson Orin AGX 上，对 770 个随机采样的真实 POMDP 配置测试，最高提速 5 倍、典型提速 2–2.5 倍，输出与基线完全一致。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">发现这类算法的延迟主要耗在张量收缩上，于是用两种合并策略重排内存布局，生成规整的小算子；再加可选稀疏表示和张量聚类压缩内存，并用一个机器学习自动调优器为具体模型挑最快的算法变体。</span></div>
+<div class="score-reason">评分依据：在 Jetson Orin AGX 真机上加速概率推理，端侧部署证据明确；但对象是贝叶斯消息传递而非神经网络大模型，属于相邻方向，方法以内存布局优化和自动调优的工程组合为主。作者来自黑山大学、都灵理工及小型企业，未见规范列表中的公司。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.17855" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Jetson-PI: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-14 · Zebin Yang; Qi Wang; Yunhe Wang; Xiurui Guo; Bo Yu; Shaoshan Liu; Jiafeng Xu; Hao Dong / arXiv</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:多模态</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span><span class="tag">硬件:Jetson</span><span class="tag">模型:Llama</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Vision-Language-Action (VLA) models have achieved impressive performance on diverse embodied tasks.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 NVIDIA（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-14 · Zebin Yang; Qi Wang; Yunhe Wang; Xiurui Guo; Bo Yu; Shaoshan Liu; Jiafeng Xu; Hao Dong / CoRL 2026</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:推理框架</span><span class="tag">方向:多模态</span><span class="tag">硬件:Jetson</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让机器人视觉-语言-动作（VLA）模型在 Jetson Orin 这类低功耗机载芯片上实时控制：异步推理掩盖延迟的同时，解决“看到的画面已过时”和反应慢两个问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Jetson Orin 上，控制频率比原生 PyTorch 提高 9.85 倍、比 vla.cpp 提高 6.19 倍；在 LIBERO 基准上成功率比 VLASH 高 14.8%。作者还测得用 RTX 4090 会让机器人续航比 Jetson Orin 缩短 6 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">训练一个轻量的未来修正模块预测动作执行时刻的环境表示，让动作专家按“未来”出动作；再用基于置信度的调度在 VLM 和动作专家之间分配调用；配套基于 llama.cpp 的机载推理引擎，做了 CUDA graph 复用、中间结果常驻显存等优化。</span></div>
+<div class="score-reason">评分依据：在 Jetson Orin 机载设备上真机部署 VLA 并给出控制频率与续航数据，端侧相关度高；异步对齐修正加调度、再加专用推理引擎，算法和系统都有贡献，已被 CoRL 2026 接收为 Spotlight。VLA 属于动作模型，不算端侧 Agent。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.12659" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

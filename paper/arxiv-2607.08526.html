@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A Quantized Native Runtime for On-Device Semantic Audio Generation</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-10 · Matteo Spanio, Antonio Rodà / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">We release aria, a native inference engine for audio diffusion models, written from scratch in C with no third-party dependencies.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=4)；affiliation 待核实</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-10 · Matteo Spanio, Antonio Rodà / arXiv</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:量化</span><span class="tag">应用:语音</span><span class="tag">硬件:CPU</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">aria 是一个不依赖 Python 和深度学习框架的原生运行时，能把 Stable Audio 3 文生音乐模型完整跑在普通显卡、纯 CPU 机器甚至树莓派 5 上。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">8 比特量化在三项质量指标上都没有可测损失，且是 GPU 上最快模式；树莓派 5 上小模型生成 10 秒立体声的峰值内存从 1.9GB 降到 0.84GB，4 比特可让 1.2B 参数模型在 8GB 树莓派上运行；冷启动比官方实现快约 7 倍，流式解码在树莓派上每块快 3.1 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 C/CUDA 重写文本编码、Transformer 去噪和自编码器全流程，运行时自己管理所有张量，低精度权重直接替换原权重以省内存，并用窗口化与流式解码控制长音频的内存上限；同时在计算图内提供激活引导接口控制生成风格。</span></div>
+<div class="score-reason">评分依据：在树莓派 5 这类嵌入式设备上实测运行文生音频模型，端侧相关度高，代码已开源；量化方法本身较常规，主要贡献在完整的原生运行时和系统化质量评估。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.08526" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

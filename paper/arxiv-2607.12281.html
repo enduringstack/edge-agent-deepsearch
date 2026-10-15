@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SlimPer: Make Personalization Model Slim and Smart</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-14 · Siqi Wang; Xianjie Chen; Shaofeng Deng; Albert Chen; Romil Shah; Jiawei Huang; Zhaoqin Wang; Zhang Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Transformer-style architectures are increasingly adopted for industrial recommendation systems, yet they inherit a design premise misaligned with the task: gene…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span>  2026-07-14 · Siqi Wang; Xianjie Chen; Shaofeng Deng; Albert Chen; Romil Shah; Jiawei Huang; Zhaoqin Wang; Zhang Zhang / arXiv</div>
+<div class="tags"><span class="vendor-tag">Meta</span><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span><span class="tag">方向:云端serving</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Meta 提出的推荐排序模型结构，把每对“用户-物品”的相关性建模为对一个固定大小知识库的逐层精修，不再像生成式模型那样保留随序列长度增长的大中间张量。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">已在 Instagram Reels 和 Feed 上线，带来可测的用户参与度提升，并能建模 1 万条以上的细粒度用户历史行为；摘要未给出具体提升百分比。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每层只按需查询原始的用户侧多模态 token、计算显式相关性分数并更新固定大小的表示，每层计算量与序列长度线性相关；同一请求的多个候选物品共享一份用户侧 token 以节省内存。</span></div>
+<div class="score-reason">评分依据：属于云端推荐系统的模型结构优化，降低计算和内存的思路与推理效率相关，但与端侧部署关系较远。 作者机构依据：arXiv PDF 首页署名 Meta（PDF 首页全部作者署名 Meta Platforms, Inc.）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.12281" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

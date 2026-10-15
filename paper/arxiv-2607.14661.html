@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SmartRAG: Native Graph-Based RAG for Mobile Device</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-16 · Zhihan Jiang; Meng Li; Shenghao Liu; Keran Li; Ruiben Zhou; Xianjun Deng; Shuai Wang; Haipeng Dai / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:蒸馏</span><span class="tag">方向:记忆</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:手机</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Deploying large language models (LLMs) as personal assistants on mobile devices demands privacy, low latency, and offline availability, yet the computational co…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-07-16 · Zhihan Jiang; Meng Li; Shenghao Liu; Keran Li; Ruiben Zhou; Xianjun Deng; Shuai Wang; Haipeng Dai / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span><span class="tag">应用:RAG</span><span class="tag">硬件:手机</span><span class="tag">硬件:Snapdragon</span><span class="tag">模型:Qwen</span><span class="tag">模型:Mistral</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">SmartRAG 是一个完全跑在手机上的个人助手框架，在本地为用户数据建立结构化知识图谱记忆，并用小模型完成检索规划和回答。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 OnePlus 13/15（骁龙 8 Elite 系列）上全流程本地运行，量化 Qwen3-1.7B 的多跳问答表现可比肩大 18 倍的模型；问题拆解首 token 中位 1.32 秒，问答首 token 中位 36.9 秒，内存约 4~5.5 GB；去掉图谱记忆后 Token-F1 从 0.548 降到 0.415。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把助手拆成感知、记忆、聚焦、思考四个模块：可持续扩充实体类型的轻量命名实体识别抽取三元组，存入保留出处的三层知识图谱，查询时混合图遍历、词法和向量检索，只在打标签、规划多跳检索和生成答案时调用本地大模型。</span></div>
+<div class="score-reason">评分依据：完整的端侧个人助手系统在两款真实手机上实测内存和延迟，记忆构建、检索规划和回答全部本地完成；用系统分工替代大模型建图，思路有新意。作者来自南京大学、华中科技大学和东南大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.14661" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

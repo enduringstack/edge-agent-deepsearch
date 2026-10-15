@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Silent Failures in Quantized LLM Reasoning: A Taxonomy-Based Analysis of Hollow Convergence and Failure Mode Shifts</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-10 · Renuka Oladri; Mohan Vamsi Varadaraju Priya; Jerry Wu / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span><span class="tag">模型:Llama</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">We show that post-training quantization can silently alter how large language models reason even when task accuracy is preserved.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究训练后量化会不会在准确率不变的情况下悄悄改变大模型的推理过程，并提出一套失败模式分类来发现这种“隐形退化”。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">对 5 个 3B–14B 模型在 FP32、FP16、NF4 三种精度和 4 个推理基准上的 3 万条思维链做人工分类（标注一致性 κ=0.906）：准确率最多只降 3.1 个百分点，但 NF4 下最小两个模型的“空心收敛”比例明显变化，12B 以上不受影响；LLaMA 3.2-3B 错误答案中“走捷径崩溃”从 44% 升到 78%；仅凭表面文本特征检测空心收敛最佳 F1 只有 0.53。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">定义六类推理失败模式并由两名标注者独立验证，系统比较不同量化精度、模型规模和基准下各类失败的比例变化。</span></div>
+<div class="score-reason">评分依据：直接关系到端侧常用的低比特量化部署：小模型量化后准确率看似不变、推理质量却可能变差（相关度 5）。提出的失败分类和“空心收敛”现象有一定新意，但属于评测分析（贡献 5）。作者来自马里兰大学，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.09999" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

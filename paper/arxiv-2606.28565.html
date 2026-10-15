@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>KernelSight-LM: A Kernel-Level LLM Inference Simulator</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-26 · Xiteng Yao, Taeho Kim, Hengzhi Pei et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">KernelSight-LM 是细粒度 LLM 推理模拟器,把每个服务步骤分解为 roofline kernel 模型+学习效率项+通信模型+主机开销,经离散事件调度器组合,产出 kernel 级延迟分解。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">跨代预测 kernel 延迟误差 12.1%(roofline 22.0% 的 1.8x 改进);目标实测 3.8%(7.3x 改进);端到端 p50 误差 TTFT/TPOT/吞吐 跨代 15.4%/12.8%/3.0%、目标 14.3%/6.2%/2.7%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：推理模拟器面向云端 serving;kernel 级分解+两级预测,创新较高。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-06-26 · Xiteng Yao, Taeho Kim, Hengzhi Pei et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">Amazon</span><span class="tag">方向:云端serving</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">KernelSight-LM 是一个细到 GPU 内核级别的大模型推理模拟器，帮助工程师在不实际部署的情况下，预测不同显卡、模型和服务参数下的推理速度并找出瓶颈。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">不用目标显卡任何测量数据时，对新一代显卡的单内核时延预测误差 12.1%，比屋顶线模型好 1.8 倍；在目标卡上补跑一次通用微基准后误差降到 3.8%；端到端首 token 时延、每 token 时延和吞吐的中位误差最低分别为 14.3%、6.2% 和 2.7%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把每个推理步骤拆成带学习效率项的屋顶线内核模型、通信模型和主机开销模型，再用离散事件调度器组合起来，并模拟前缀缓存和连续批处理等服务机制。</span></div>
+<div class="score-reason">评分依据：主要服务数据中心显卡上的容量规划，与端侧设备关系弱；内核级建模加少量数据迁移到新硬件的思路有一定价值。公司归属依据 arXiv PDF 首页：除第一作者（AWS 实习生，同时署名波士顿大学）和末位作者外，作者均署名 Amazon Web Services。 作者机构依据：arXiv PDF 首页署名 Amazon（PDF 首页 Taeho Kim、Hengzhi Pei、Leonard Lausen 等多位作者署名 Amazon Web Services，邮箱为 amazon.com，第一作者注明工作完成于 AWS 实习期间）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.28565" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Sparse Inter-Layer Dependencies of Transformer FFN Neurons</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-13 · Johannes Knittel; Hanspeter Pfister / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Feedforward network (FFN) blocks account for a large fraction of the parameters and computation in Transformer architectures, yet their internal structure remai…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-13 · Johannes Knittel; Hanspeter Pfister / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究 Transformer 前馈层里每个神经元的激活到底依赖前面多少个神经元，发现只靠一小部分上游神经元和注意力输出就能解释。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多个模型和层上，只保留少量上游激活、其余替换为均值，就能高保真地保留目标神经元激活；在所有层同时施加这种掩码、偏差逐层传播时，中等稀疏度下困惑度基本不变（摘要未给具体稀疏率）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">提出一种免训练的归因方法，估计每个上游神经元和注意力输出对目标神经元的影响，再按影响大小生成神经元级稀疏掩码。</span></div>
+<div class="score-reason">评分依据：主要是可解释性研究，作者提到稀疏通路对高效推理有潜在意义，但没有做推理加速实验，与端侧部署的关系较间接。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.11990" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

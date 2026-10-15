@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DPNeXt: A Lightweight Multi-Scale Feature Fusion Framework for Efficient ViT-Based Multi-Task Dense Prediction</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-17 · Jehun Kang; Jungha Wang; Youngjun Hwang; David Hyunchul Shim / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Multi-Task Learning (MTL) in robotics perception systems supports comprehensive 3D spatial scene understanding by integrating semantic segmentation and depth es…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-17 · Jehun Kang; Jungha Wang; Youngjun Hwang; David Hyunchul Shim / IROS 2026</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span><span class="tag">应用:机器人</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">DPNeXt 是一个轻量的多任务解码器，让机器人用一个冻结的视觉基础模型同时做语义分割和深度估计，并在笔记本 GPU 上跑得更快。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">相比标准 DPT，DPNeXt-S 可训练参数减少 78.6%；在 RTX 2080 笔记本 GPU 上 DPNeXt-S 达到 51.02 FPS、DPNeXt-B 达到 36.49 FPS，是对比模型中最快的；在 Cityscapes 和 NYUv2 上取得对比方法中的最好结果。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用双路深度可分离倒残差块做多尺度特征融合，各任务模块独立；训练时额外加边界监督促使分割和深度几何一致，推理时去掉该分支，不增加延迟。</span></div>
+<div class="score-reason">评分依据：明确以资源受限的笔记本 GPU 作为部署代理测速，属于端侧视觉感知的高效推理，相关度 5；解码器结构改进属常见路线，贡献 5。已被 IROS 2026 接收（不在顶会清单内）。PDF 首页作者均来自 KAIST。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.16012" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

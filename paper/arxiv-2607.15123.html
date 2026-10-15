@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>NIFA: Nonlinear IMC enhanced FPGA for efficient ML inference</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-16 · Jiajun Hu; Ruthwik Reddy Sunketa; Lei Zhao; Archit Gajjar; Luca Buonanno; Aman Arora / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Recent FPGAs have improved deep learning (DL) inference efficiency through dedicated tensor blocks and in-BRAM computation.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-07-16 · Jiajun Hu; Ruthwik Reddy Sunketa; Lei Zhao; Archit Gajjar; Luca Buonanno; Aman Arora / arXiv</div>
+<div class="tags"><span class="vendor-tag">Hewlett Packard Enterprise</span><span class="tag">方向:高效推理</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:FPGA</span><span class="tag">硬件:CIM</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一种把模拟存内计算块嵌进 FPGA 的新架构 NIFA，让 FPGA 跑 Transformer 这类含大量非线性运算和动态矩阵乘的模型时也能吃到存内计算的能效红利。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 CNN 和 Transformer 基准上，能效分别最高提升 40 倍和 1.9 倍，面积效率分别提升 4.1 倍和 2.5 倍；长输入序列下 Transformer 负载仍保持稳定收益。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用模拟内容可寻址存储器（ACAM）取代存内计算块里占面积和功耗 70% 以上的 ADC，让非线性运算直接在块内完成；再做面向 FPGA 的交叉阵列尺寸设计空间搜索，并用 ACAM 完成动态矩阵乘，使注意力计算也能映射到存内计算块上。</span></div>
+<div class="score-reason">评分依据：面向深度学习推理的 FPGA 存内计算硬件，属于能效敏感部署的硬件栈，可迁移到边缘加速器，但论文本身未针对具体端侧设备，相关度 5；用 ACAM 替代 ADC 并扩展到注意力计算有新意，贡献 6。PDF 首页署名显示 3 位作者来自 Hewlett Packard Enterprise Labs，第一作者与通讯作者来自亚利桑那州立大学。 作者机构依据：arXiv PDF 首页署名 Hewlett Packard Enterprise（PDF 首页作者 Lei Zhao、Archit Gajjar、Luca Buonanno 署名 Hewlett Packard Enterprise Labs（hpe.com 邮箱），其余作者为亚利桑那州立大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.15123" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

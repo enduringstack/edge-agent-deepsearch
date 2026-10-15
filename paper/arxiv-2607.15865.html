@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>An MLIR-Based Compilation Method for Large Language Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-17 · Pengchao Hu; Zhibin Xin; Yifan Chen; Yangyang Zhou; Liang Wang / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">模型:Llama</span><span class="tag">模型:Qwen</span><span class="tag">模型:MiniCPM</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Large Language Models (LLMs) have become the dominant workload on modern AI accelerators, yet deploying them on specialized hardware still faces two core challe…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">14</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-17 · Pengchao Hu; Zhibin Xin; Yifan Chen; Yangyang Zhou; Liang Wang / arXiv</div>
+<div class="tags"><span class="vendor-tag">Sophgo</span><span class="tag">方向:编译部署</span><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">硬件:NPU</span><span class="tag">模型:Qwen</span><span class="tag">模型:MiniCPM</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这篇论文介绍算能 TPU-MLIR 编译器如何把大语言模型编译部署到专用 AI 芯片上，并在边缘 SoC 上实测。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在单颗算能 BM1684X 边缘 SoC（16 TFLOPS FP16、64 GB/s 内存带宽）上，Qwen3.5 2B 模型解码约 30 token/s，9B 模型约 9.84 token/s，解码阶段达到峰值内存带宽的 78–83%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用与框架和芯片无关的高层算子方言表达模型，再逐层下沉到携带量化、分组和内存布局决策的芯片方言；把每层按预填充、带历史 KV 的预填充、解码三阶段分别静态编译，避免动态形状带来的填充和重编译开销。</span></div>
+<div class="score-reason">评分依据：明确面向边缘 AI 芯片的大模型部署，有真机解码速度和带宽利用率数据，并支持 GPTQ、AWQ、AutoRound 等量化格式，相关度 8；三阶段静态编译是务实的工程方案，贡献 6。PDF 首页全部作者署名 Sophgo Inc.（sophgo.com 邮箱），原输入中的阿里归属不成立。 作者机构依据：arXiv PDF 首页署名 Sophgo（PDF 首页全部 6 位作者署名 Sophgo Inc.，邮箱均为 sophgo.com 域名）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.15865" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

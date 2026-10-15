@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FVAttn: Adaptive Sparse Attention with Runtime Load Balancing for Video Generation</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-23 · Hao Liu, Chenghuan Huang, Ye Huang, Zhiying Wen, Hao Liu, Mohan Zhang, Chen Li, Ziyang Ma, Jing Lyu, Jiangsu Du / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:稀疏注意力</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Video Diffusion Transformers process long spatio-temporal sequences, making self-attention the main bottleneck in high-resolution video generation.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=8)；affiliation 待核实</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-07-23 · Hao Liu, Chenghuan Huang, Ye Huang, Zhiying Wen, Hao Liu, Mohan Zhang, Chen Li, Ziyang Ma, Jing Lyu, Jiangsu Du / arXiv</div>
+<div class="tags"><span class="vendor-tag">Tencent</span><span class="tag">方向:稀疏注意力</span><span class="tag">方向:云端serving</span><span class="tag">应用:视频</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">视频生成模型在多卡并行跑稀疏注意力时，各注意力头的计算量不均，导致某些显卡拖慢整体速度。FVAttn 是一套无需训练的稀疏注意力系统，专门解决多 GPU 序列并行下的负载不均问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在步数蒸馏后的 Wan2.2 图生视频模型上，平均负载不均衡度从 1.34 降到 1.08，注意力计算比 FlashAttention 快 4.41 倍，整个 DiT 推理提速 2.02–2.11 倍，视频质量相当。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用 Top-p 路由加 Top-k 保底选出要算的注意力块，再在运行时把少量重负载的注意力头通过点对点通信迁到空闲显卡上，并用空闲时间补算高价值块，调度开销被计算重叠掩盖。</span></div>
+<div class="score-reason">评分依据：属于多卡数据中心的视频生成推理加速，与端侧设备只有稀疏注意力思路上的间接关联，相关度较低；运行时负载均衡的设计有一定新意。PDF 首页显示多名作者来自腾讯微信 HPC 与微信视觉团队。 作者机构依据：arXiv PDF 首页署名 Tencent（PDF 首页作者署名 WeChat HPC, Tencent Inc. 与 WeChat Vision, Tencent Inc.，并使用 tencent.com 邮箱）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.16190" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

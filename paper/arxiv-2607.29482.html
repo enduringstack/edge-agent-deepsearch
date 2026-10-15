@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Temporal Policy: History-Initialized Action Generation for Robotic Learning from Demonstration</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-31 · Dylan Miller; Martin Jagersand / arXiv</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">标准扩散和流匹配用独立高斯先验，被迫学复杂昂贵的向量场。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 NVIDIA（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-31 · Dylan Miller; Martin Jagersand / IROS 2026</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">应用:机器人</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">扩散/流匹配机器人策略从纯噪声出发生成动作，推理成本高。Temporal Policy 改为从机器人最近的历史状态出发生成未来动作，让生成路径更短更直。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">运输代价比从噪声初始化的基线降低近一个数量级，单张 NVIDIA RTX 4080 上推理时延 19.1ms，成功率与现有最好方法持平；在仿真基准和实体 Barrett WAM 双 7 自由度遥操作平台上验证。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">基于随机插值把动作生成表述为与时间耦合的传输问题，把生成流的起点设为近期历史，从而学到更直的向量场、减少采样步数。</span></div>
+<div class="score-reason">评分依据：降低机器人生成式策略的推理开销、支持高频闭环控制，与端侧机器人部署相关，但属纯动作策略、无规划或记忆闭环（相关度 5）；历史初始化的传输思路有新意（贡献 6）。作者来自阿尔伯塔大学，此前按显卡型号推测的 NVIDIA 归属不成立；论文已被 IROS 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29482" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

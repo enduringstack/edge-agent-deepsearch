@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>When Words Predict Workload</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-06 · Anubhab Banerjee / arXiv</div>
-<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:KV cache</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一个 CPU 侧语言资源预测网关，提前预测请求是否会撑爆消费级边缘 GPU 显存并安全路由。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">6000 请求实测中误路由比例降至 0.087-0.095（token 计数基线为 0.849），峰值边缘 VRAM 稳定在 4.82GB（8GB 上限内），AUROC 0.84。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">提取 16 维文本结构向量，用 XGBoost 预测陷阱带归属，得到升级概率与动态闭式路由阈值比较，在分配边缘显存前决定路由到本地 Qwen2.5-7B 边缘 worker 或远端 H100 集群。</span></div>
-<div class="score-reason">评分依据：明确消费级边缘 GPU VRAM 与 KV cache 调度（relevance 7）。CPU 侧语言预测网关有工程创新（contribution 5）。vendors 空。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-07-06 · Anubhab Banerjee / arXiv</div>
+<div class="tags"><span class="vendor-tag">Nokia</span><span class="tag">方向:端云协同</span><span class="tag">方向:调度服务</span><span class="tag">硬件:GPU</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">边缘 GPU 上跑大模型时，某些难分辨的请求会临时触发多模型集成，导致显存暴涨直接崩溃；论文提出在 CPU 侧先预测请求负载，再决定留在本地还是转发到云端。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">6000 个请求的实测中，误路由比例降到 0.087-0.095，比按 token 数路由的基线（0.849）低一个数量级；边缘显存峰值稳定在 4.82 GiB（8 GiB 上限内），预测器 AUROC 为 0.84，动态阈值比静态阈值再少 8.2% 误路由。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从文本中抽取 16 维结构特征，用 XGBoost 预测请求是否会升级为重负载，再结合实时延迟遥测算出动态路由阈值，把请求分给本地 Qwen2.5-7B 或云端 7B+32B 集成。</span></div>
+<div class="score-reason">评分依据：针对消费级边缘 GPU 显存受限下的端云路由，有真实部署实验；但场景较专（专利文本鉴别），方法是常规特征加梯度提升树。公司归属依据：PDF 首页唯一作者署名 Nokia Germany，邮箱为 nokia.com。 作者机构依据：arXiv PDF 首页署名 Nokia（PDF 首页唯一作者署名 Nokia Germany，邮箱 nokia.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.04951" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

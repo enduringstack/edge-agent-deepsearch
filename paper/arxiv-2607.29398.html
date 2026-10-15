@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>OnlineCache: Learning Dynamic Caching Policies with Error Correction for Efficient Diffusion Inference</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-31 · Zhikang Xie; Xichen Ye; Yifan Wu; Haoshen Yu; Li chenan; Peizhu Gong; Weizhong Zhang; Cheng Jin / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">扩散模型颠覆了生成任务，但迭代去噪带来高延迟。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-31 · Zhikang Xie; Xichen Ye; Yifan Wu; Haoshen Yu; Li chenan; Peizhu Gong; Weizhong Zhang; Cheng Jin / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">扩散模型缓存加速大多用固定的缓存时间表，不管提示难易和各步误差。OnlineCache 学一个按样本、按时间步动态决定何时复用缓存的策略，并自带误差修正。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 FLUX.1-dev 上加速接近 3 倍且保持生成质量；在 DiT 和 CogVideoX 上同样取得有竞争力的加速，并在所有场景下优于现有缓存加速方法。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用策略梯度训练一个轻量网络决定每一步是否缓存，同时训练可学习的修正器弥补缓存带来的误差，两者在双层优化框架下联合训练。</span></div>
+<div class="score-reason">评分依据：扩散模型推理加速，属可迁移到端侧生成的推理技术栈，但实验在服务器 GPU 上（相关度 4）；动态缓存策略加误差修正比静态时间表更进一步（贡献 6）。作者均来自复旦大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29398" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

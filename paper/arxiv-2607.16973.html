@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TurboVec: A Case Study in Cost-Efficient Private Retrieval for Enterprise RAG via Codebook-Oblivious Quantization</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-18 · Navnit Shukla; Kamal Pandey; Omsankar Tiwari / arXiv</div>
-<div class="tags"><span class="vendor-tag">OpenAI</span><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Retrieval-Augmented Generation (RAG) systems increasingly power enterprise LLM applications, yet the vector retrieval layer introduces two underexplored challen…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 OpenAI（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-18 · Navnit Shukla; Kamal Pandey; Omsankar Tiwari / arXiv</div>
+<div class="tags"><span class="vendor-tag">Snowflake; Google</span><span class="tag">方向:量化</span><span class="tag">应用:RAG</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">企业 RAG 系统的向量检索层存在两个问题：训练出的量化码本可能泄露语料统计信息，多租户过滤又会拉低召回。TurboVec 是一个基于无需训练的标量量化器的开源向量索引。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 DBpedia OpenAI 向量集上，4 比特量化在同等内存下 Recall@5 比 FAISS 乘积量化高 8.5–8.9 个百分点，内存比 HNSW 少 4–8 倍；部署后 10 万向量中位查询时延 11 毫秒（暴力扫描 707 毫秒）；多租户过滤下 Recall@10 保持 0.86–0.93，成员推断准确率降到接近随机的 50%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用不依赖语料训练的标量量化器压缩向量，避免码本泄露数据分布；在检索内核内部直接做租户白名单过滤，而不是检索后再过滤。</span></div>
+<div class="score-reason">评分依据：面向云端企业检索服务，与端侧设备关联较弱；免训练向量量化对内存受限的本地检索有一定迁移价值，工程案例性质为主。PDF 首页作者分别署名 Snowflake、Rivian 与 Google DeepMind。 作者机构依据：arXiv PDF 首页署名 Snowflake, Google（PDF 首页第一作者署名 Snowflake Inc.，第二作者署名 Rivian Automotive Inc.，第三作者署名 Google DeepMind）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.16973" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

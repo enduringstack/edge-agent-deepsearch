@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CAGE: Certified Authorization under Typed-Return Uncertainty for Tool-Using Agents</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-31 · Blaise Delattre; Cong Wang; Yang Cao / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用工具的 LLM agent 会处理带类型的工具返回，把来源、类别字段和数值配对起来用。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-31 · Blaise Delattre; Cong Wang; Yang Cao / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">会调用工具的智能体在拿到工具返回结果后才决定能否执行动作，但返回值可能绑错来源或数值略有偏差。CAGE 证明在这类小误差范围内动作依然被允许，才予以放行。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在合成、策略即代码、监管规则和真实交易等场景中，CAGE 消除了逐点检查会放过的预算内误放行，同时保留一部分可自主决策；相比之下更强的 36B MoE 裁判仍会放行约 61% 的危险样例。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把“类别字段绑错一个”和“数值有界漂移”合在一起作为邻域，离散分支逐一精确枚举，连续扰动在每个分支内做认证；论文还证明两类通道分开认证再组合是不安全的。</span></div>
+<div class="score-reason">评分依据：属于 Agent 工具调用运行时的授权安全，与端侧部署无直接关系；对联合扰动给出可证明保证，方法上有新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29190" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Tracing Agentic Failure from the Flow of Success</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-14 · Samuel Yeh; Yiwen Zhu; Shaleen Deep; Sharon Li / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Failure attribution for LLM-based agentic systems, i.e., identifying which steps in a failure trajectory caused the task to fail, is critical for debugging and …</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-07-14 · Samuel Yeh; Yiwen Zhu; Shaleen Deep; Sharon Li / NeurIPS 2026</div>
+<div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:评测基准</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">给 LLM 智能体做失败归因：只用成功轨迹训练一个轻量模型，就能在失败轨迹里找出是哪几步出了错，不需要逐步标注。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">只用 100 条成功轨迹训练，速度比基于提示的方法快 200 到 5000 倍，同时在同分布和分布外数据上 F1 分别高 20% 和 7%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把问题看成单类学习，用神经受控微分方程学习成功轨迹在隐空间里的动态规律，推理时按每一步偏离该规律的程度打异常分，挑出出错步骤。</span></div>
+<div class="score-reason">评分依据：是智能体调试工具，轻量化思路对资源受限的智能体系统有参考价值，但不涉及端侧部署；无监督失败归因的设定有新意，已被 NeurIPS 2026 接收。 作者机构依据：arXiv PDF 首页署名 Microsoft（PDF 首页 4 位作者中第 2、3 位署名 Microsoft Research，第一和通讯作者来自威斯康星大学麦迪逊分校）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.12747" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

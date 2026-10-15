@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Smarter and Cheaper at Once: Byte-Exact KV-Cache Grafting Turns a Frozen Small Model into a Verified-Knowledge Flywheel</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-15 · Sietse Schelpe / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:GPU</span><span class="tag">模型:Gemma</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">We report a way to make a frozen small language model both more capable and dramatically cheaper at once, without changing any weights.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-15 · Sietse Schelpe / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">提出把已验证的知识以逐字节一致的 KV 状态保存下来，之后直接“嫁接”回冻结的小模型推理上下文，让小模型既更聪明又更省算力。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">冻结的 Gemma-4-12B 在 AIME 2025 上从 80.0% 提升到 93.3%；重复题目用 61 个解码 token 作答，比原先 40 万 token 预算少 6574 倍，能耗约低 8700 倍；可用上下文从 32768 扩到 2854766 token 且不增加加速器显存。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在固定的确定性配置下把验证过的解答计算成 KV 状态存档，推理时按原位置恢复，恢复后的 logits 与重新计算逐字节一致，从而复用缓存而不改权重。</span></div>
+<div class="score-reason">评分依据：KV 缓存持久化与复用可显著降低小模型推理成本，对资源受限部署有借鉴意义；但实验在服务器 GPU 上进行，引擎闭源，只能凭作者公布的哈希核对结果。PDF 首页署名 Corbenic AI。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.14431" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

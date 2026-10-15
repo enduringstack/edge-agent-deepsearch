@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Penelope: Localized Latent Recurrence for Efficient Structured Reasoning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-28 · Yutong Chen; Shouqian Shi; Xinran Liu; Haochen Wang; Jiaying Wang; Tianxing Xu; Yuanxi Wang; Zirui Ding / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">复杂结构化推理任务常需额外计算，但当前语言模型主要靠增大参数规模或串行展开来获得，作者针对此改进。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-28 · Yutong Chen; Shouqian Shi; Xinran Liu; Haochen Wang; Jiaying Wang; Tianxing Xu; Yuanxi Wang; Zirui Ding / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span><span class="tag">模型:Llama</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Penelope 让小语言模型在内部隐空间里“多想几轮”，而不是输出长长的思维链，从而在结构化推理任务上少花推理时间。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Llama-3.2-1B 上，与 Coconut 相比，Deep ListOps 平均延迟降低 46.9%、PrOntoQA 降低 42.2%，准确率基本持平；在 Qwen 骨干上延迟降低 55.8%（RTX PRO 6000 实测）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">只在解码器中间选定的一段层里做循环计算：下层只算一次生成问题记忆，再用带时间调制的 GRU 反复细化，最后输出答案；训练时用课程学习把可见思维链逐步迁移到隐式循环里。</span></div>
+<div class="score-reason">评分依据：隐式推理减少解码次数和延迟，对算力受限设备上跑小模型推理有迁移价值，但实验在桌面 GPU 上（相关度 4）；把隐式循环局部化到少数层的思路有一定新意（贡献 5）。PDF 首页未列作者机构。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.25915" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

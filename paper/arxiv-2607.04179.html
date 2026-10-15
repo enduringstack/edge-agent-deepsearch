@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CritiqueDriveVLM: From Verifier-Guided Reinforcement Learning to Latent Thought Distillation for Autonomous Driving</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-05 · Zhaohong Liu; Hao Ye; Xianlin Zhang; Mengshi Qi / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把推理内化进 VLM 的三阶段框架，用潜思想蒸馏解决自动驾驶实时部署的延迟问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">Teacher 把 MCQ 从 55.54% 提到 76.54%；蒸馏 Student 平均只生 28 token，推理延迟从 3482ms 降到 416ms（降 88%）。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先做多维验证器引导的多轮 RL 培养 System-2 Teacher；再用 Latent Thought Distillation 对齐 Student 潜表示与 Teacher 收敛推理态，把深度逻辑压进无 CoT 的 System-1 Student。</span></div>
-<div class="score-reason">评分依据：面向实时自动驾驶 VLM 部署的延迟优化（relevance 6）。潜思想蒸馏内化推理有创新（contribution 6）。vendors 空。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-07-05 · Zhaohong Liu; Hao Ye; Xianlin Zhang; Mengshi Qi / ECCV 2026</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span><span class="tag">方向:规划推理</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">CritiqueDriveVLM 让自动驾驶视觉语言模型既会推理又足够快：先用强化学习训出会“深思熟虑”的老师模型，再把推理能力蒸馏进不输出思维链的快速学生模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">老师模型在 DriveLMM-o1 基准上把选择题质量从 55.54% 提到 76.54%；蒸馏后的学生模型平均只生成 28 个 token，推理延迟从 3482 毫秒降到 416 毫秒，降低 88%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">第一阶段用多维度验证器提供细粒度反馈、做多轮强化学习；第二阶段做潜在思维蒸馏，让学生的内部表征对齐老师收敛后的推理状态，从而省掉显式思维链。</span></div>
+<div class="score-reason">评分依据：针对车载场景的低延迟推理，把延迟降低 88% 对上车部署有意义，但没有在车载硬件上实测；强化学习加潜在推理蒸馏的组合有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.04179" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

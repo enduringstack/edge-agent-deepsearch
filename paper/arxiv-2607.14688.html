@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MIND-CAVs: Multi-Intelligence Negotiation and Decision System for CAVs based on Intent-Driven Autonomy</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-16 · Mainak Mondal; Yihang Feng; Yangchao Luo; Han Song / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Modern autonomous vehicles largely operate as isolated agents: they rely on on-board perception and decision modules and broadcast Basic Safety Messages (BSMs) …</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-16 · Mainak Mondal; Yihang Feng; Yangchao Luo; Han Song / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:端云协同</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">MIND-CAVs 让联网自动驾驶车辆交换“我打算变道/出匝道”这类意图，由路侧边缘服务器上的智能体统一协调，避免各车孤立决策。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 CARLA 多车道高速场景中，完成时间 29.10 秒，比孤立决策、先到先服务和多智能体强化学习基线快约 24%~29%，同时减少间距违规和不必要刹车。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">车辆把传感器观测抽象成结构化意图，通过 V2X 发给路侧边缘服务器；边缘智能体结合学习式和规则式仲裁协调冲突，云端记录决策用于审计和再训练。</span></div>
+<div class="score-reason">评分依据：车-边-云分层的多智能体协同决策，边缘服务器承担仲裁闭环，与端侧 Agent 相关；但只在 CARLA 仿真中评测，按标准不算端侧 Agent。作者来自康涅狄格大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.14688" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

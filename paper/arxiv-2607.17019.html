@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Regularize or Localize: When Training-Time KV-Cache Geometry Pays Under Quantization</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-19 · Libo Sun; Po-Wei Harn; Zewei Zhang; Peixiong He; Xiao Qin / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">We study whether \sigreg -- LeJEPA's anti-collapse objective -- can reshape representations during standard autoregressive language-model pretraining, and when …</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-19 · Libo Sun; Po-Wei Harn; Zewei Zhang; Peixiong He; Xiao Qin / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:量化</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究在语言模型预训练时加一个几何正则项，能不能让 KV cache 更好量化，从而为低比特缓存压缩铺路。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 1.1 亿参数模型上，直接对 K/V 做正则可把缓存各向异性降低 94%；3 比特逐通道量化下，基线模型的损失增量是正则模型的 4.3–7.9 倍，但换成完整 KIVI 式量化配置后各模型基本持平。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把 LeJEPA 的防塌缩目标 SIGReg 直接加在 K 和 V 上继续训练，让缓存数值分布更均匀，再和事后 KV 量化方案对比。</span></div>
+<div class="score-reason">评分依据：KV cache 低比特量化直接关系到端侧长上下文推理的内存，但实验只在 1.1 亿参数模型和模拟量化上进行，相关度中等。结论是正则只在粗粒度量化下有用，属于有价值的负面结果，贡献中等偏低。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.17019" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Seeing Once is Enough? Online Geometry-Aware Token Pruning for 3D Question Answering</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-05 · Ruei-Chi Lai; Bolivar Solarte; Chin-Hsuan Wu; Yi-Hsuan Tsai; Min Sun / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">首个在线 token 剪枝方法，用于 3D 问答，无需额外训练且内存更低。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">减少最多 50% token 用量；在 Qwen2.5-VL-7B/Qwen3-VL-8B 上于 ScanQA/SQA3D/OpenEQA-HM3D 提升性能。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把每帧投到共享 voxel 空间，用深度与相机位姿识别跨帧空间重叠区域，在进入语言模型前剪除冗余图像 token。</span></div>
-<div class="score-reason">评分依据：3D 问答 token 剪枝属端侧技术栈但非显式端侧（relevance 6）。首个在线 voxel 投影剪枝有创新（contribution 5）。vendors 空。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-05 · Ruei-Chi Lai; Bolivar Solarte; Chin-Hsuan Wu; Yi-Hsuan Tsai; Min Sun / ICLR 2026 Workshop on Efficient Spatial Reasoning</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span><span class="tag">应用:机器人</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多模态大模型做 3D 场景问答要看很多帧画面，计算量大；这篇提出第一个在线的几何感知 token 剪枝方法，边看边去掉重复画面区域。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">最多减少 50% 的 token 用量，在 Qwen2.5-VL-7B 和 Qwen3-VL-8B 上的 ScanQA、SQA3D、OpenEQA-HM3D 基准表现反而有提升。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用深度和相机位姿把每帧投影到共享体素空间，找出与之前帧空间重叠的区域，在进入语言模型前剪掉冗余图像 token，无需训练。</span></div>
+<div class="score-reason">评分依据：在线减少视觉 token 适合机器人等资源受限场景，但未做设备端实测；方法实用但规模较小。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.04079" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

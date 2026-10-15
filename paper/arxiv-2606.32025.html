@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Generative Skill Composition for LLM Agents</h1>
-<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-30 · Xinyu Zhao, Zhen Tan, Vaishnav Tadiparthi et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">模型:GPT</span><span class="tag">应用:代码</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">SkillComposer 把技能组合形式化为任务条件技能序列预测,用约束自回归解码器一次性联合决定技能子集、数量和顺序。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 SkillsBench 上 GPT-5.2-Codex 和 Gemini-3-Pro 分别比无技能基线高 +23.1、+18.2pp,匹配金标准技能检索上界且 prompt 更省。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：云端 agent 技能组合,与端侧无关。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-06-30 · Xinyu Zhao, Zhen Tan, Vaishnav Tadiparthi et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">Honda</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体的技能库越来越大，选哪些技能、选几个、按什么顺序执行成了瓶颈。SkillComposer 把这三件事放在一次解码里联合预测。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 SkillsBench 上配合 GPT-5.2-Codex 和 Gemini-3-Pro-Preview 两个编码智能体，通过率比不用技能分别提升 23.1 和 18.2 个百分点，超过 Top-3 检索，并以更少提示词开销追平“给出标准技能”的上限。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用基于真实人工整理技能库构建的“任务-技能组合”数据训练一个受约束的自回归解码器，直接在技能编号上生成序列，子集、数量和顺序一次得出，并自然捕捉技能间依赖。</span></div>
+<div class="score-reason">评分依据：面向云端编码智能体的技能编排，对端侧智能体的工具与技能调度有间接参考；把技能选择形式化为结构化序列预测有新意。PDF 首页作者 3 至 7 署名本田美国研究院（Honda Research Institute USA），其余为北卡罗来纳大学和亚利桑那州立大学。 作者机构依据：arXiv PDF 首页署名 Honda（PDF 首页作者 Vaishnav Tadiparthi、Nakul Agarwal、Kwonjoon Lee、Ehsan Moradi Pari、Hossein Nourkhiz Mahjoub 署名 Honda Research Institute USA）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.32025" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

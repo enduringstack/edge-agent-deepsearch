@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>F-ACVAE: A Federated Adaptive Conditional Variational Auto-Encoder for Privacy-Preserving Intrusion Detection in IoT Networks</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-06 · Mohammad Ansarimehr; Somayeh Changiz; Ehsan Baghishani; Ali Mousavi / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">应用:IoT命令</span><span class="tag">方向:安全隐私</span><span class="tag">硬件:MCU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">面向 IoT 入侵检测的联邦自适应条件变分自编码器，在异质边缘设备上保护隐私地协同训练。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">N-BaIoT 上平均准确率与宏 F1 达 99%，超基线；选择性聚合把通信开销降约 62%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">本地编码器私有、全局共享组件同步以保留判别潜结构；提出受约束动量高斯聚合（CMGA）结合更新钳制与动量平滑抑制客户端漂移。</span></div>
-<div class="score-reason">评分依据：联邦 IoT 入侵检测，明确边缘设备（relevance 7）。CMGA 抑制极端 non-IID 漂移有工程创新（contribution 5）。vendors 空。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-07-06 · Mohammad Ansarimehr; Somayeh Changiz; Ehsan Baghishani; Ali Mousavi / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span><span class="tag">应用:安全</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">物联网设备上的入侵检测既要保护各设备的原始流量隐私，又要应对数据极不均衡、各设备分布差异大的问题；论文提出联邦条件变分自编码器 F-ACVAE。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 N-BaIoT 数据集上平均准确率和宏 F1 都达到 99%，优于现有基线；选择性聚合让通信开销降低约 62%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">本地编码器只留在设备上，只同步全局共享部分；再用带截断和动量平滑的高斯聚合策略抑制各客户端漂移。</span></div>
+<div class="score-reason">评分依据：面向资源受限物联网设备的联邦训练，降低了通信量，但没有在真实设备上部署，与端侧推理关系较弱；方法属于常见的联邦学习改进。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.04698" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

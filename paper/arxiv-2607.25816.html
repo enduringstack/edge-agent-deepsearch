@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Speculate While You Reason: Teaching Agents to Predict Their Next Tool Call via Joint Agent-Speculator RL</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-28 · Jiabao Ji; Yujian Liu; Li An; Rohit Jain; Gungor Polatkan; Siyu Zhu; Shiyu Chang / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:KV cache</span><span class="tag">方向:工具调用</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM agent 常花费大量墙钟时间等待工具调用结果，作者针对该等待开销展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-28 · Jiabao Ji; Yujian Liu; Li An; Rohit Jain; Gungor Polatkan; Siyu Zhu; Shiyu Chang / arXiv</div>
+<div class="tags"><span class="vendor-tag">LinkedIn</span><span class="tag">方向:工具调用</span><span class="tag">方向:投机解码</span><span class="tag">方向:KV cache</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让智能体在推理时顺便预测自己下一次要调用的工具并提前执行，用来掩盖等待工具返回的时间；预测者和智能体是同一个模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">下一次工具调用的首位命中率，Qwen3-4B 从 44.1 提升到 61.2，Qwen3.5-4B 从 48.9 提升到 66.3，同时智能体任务成功率基本不变。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">同一个模型有“执行任务”和“预测下一次调用”两种模式，预测模式完全复用已有前缀的 KV cache；训练时从智能体自身的轨迹中取预测目标，交替更新两种模式的强化学习。</span></div>
+<div class="score-reason">评分依据：工具调用等待是智能体时延的大头，本文用 4B 小模型、免额外草稿模型、复用 KV cache 的方式隐藏这段时延，可直接迁移到算力和内存紧张的端侧智能体，但实验未在端侧设备进行，相关度中等。自投机的思路和联合强化学习训练新意明显。作者机构依据 arXiv PDF 首页：Rohit Jain、Gungor Polatkan、Siyu Zhu 署名 LinkedIn Inc，其余作者来自加州大学圣塔芭芭拉分校。 作者机构依据：arXiv PDF 首页署名 LinkedIn（PDF 首页作者 Rohit Jain、Gungor Polatkan、Siyu Zhu 署名 LinkedIn Inc，前三位作者注明工作完成于 LinkedIn 实习期间）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.25816" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

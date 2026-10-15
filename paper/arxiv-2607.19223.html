@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AdaFlash: Adaptive Speculative Decoding via On-Policy Distilled Diffusion Drafters</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-21 · Yu-Yang Qian; Hao-Cong Wu; Chen Chen; Jiacheng Sun; Zhenhua Dong; Peng Zhao; Zhi-Hua Zhou / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:蒸馏</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Speculative decoding, in which a lightweight draft model first generates a draft sequence that is then verified in parallel by the target model, has become a pr…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-21 · Yu-Yang Qian; Hao-Cong Wu; Chen Chen; Jiacheng Sun; Zhenhua Dong; Peng Zhao; Zhi-Hua Zhou / COLM 2026 Workshop</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:投机解码</span><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">针对扩散式草稿模型的投机解码加速方法：发现这类草稿模型在不同领域和不同位置上接受率波动很大，于是让它边部署边适配，并动态决定每次草稿长度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">部署场景下持续提升加速比，高并发时平均吞吐比此前最好的方法最多高 66%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">一是用反向 KL 的在线策略蒸馏让草稿模型稳定收敛并贴合实际部署分布；二是加一个自适应长度头，实时调节候选长度，降低目标模型的验证开销。</span></div>
+<div class="score-reason">评分依据：投机解码属于推理加速技术栈，可迁移到资源受限设备，但实验侧重高并发服务场景，相关度给 5；针对扩散草稿模型的方差问题提出在线蒸馏加自适应长度，贡献给 6。PDF 首页署名含 Huawei Foundation Model Dept（部分作者），主导单位为南京大学。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页作者机构含 Huawei Foundation Model Dept（部分作者），其余为南京大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.19223" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

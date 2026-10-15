@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Beyond Success Rate: Cost-Aware Evaluation of Offensive and Defensive Security Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-16 · Paul Kassianik; Blaine Nelson; Yaron Singer / arXiv</div>
-<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Security-agent evaluations commonly measure peak offensive capability under generous inference budgets, emphasizing vulnerability discovery, exploit development…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-07-16 · Paul Kassianik; Blaine Nelson; Yaron Singer / arXiv</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:工具调用</span><span class="tag">应用:安全</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一套按花费衡量安全智能体的评测方法：不只看攻防任务能不能做成，而是在固定预算下比较各模型的成功率，并拆开推理花费和外部工具花费。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Cybench 进攻题上，GPT-5.5 以每题 2.10 美元上限拿到 94.0% 成功率最高，DeepSeek v4 Flash 预算从 0.80 美元放宽到 2.10 美元时成功率从 76.1% 升到 86.4%；在 Splunk BOTS v1 防守调查上，Claude Opus 4.8 拿到 10300 分中的 9666.7 分（93.9%），每千分成本 2.98 美元为最优，且所用 token 比 DeepSeek 运行少约一个数量级。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在统一的智能体评测框架里给每道题设成本上限，把模型 token 费用和威胁情报、搜索等付费工具调用费用一起计入，画出成功率随预算变化的曲线，对比红队与蓝队任务的不同扩展规律。</span></div>
+<div class="score-reason">评分依据：评测对象是调用云端大模型的安全智能体，与端侧部署只在“智能体推理与工具调用成本”这一点上宽泛相关，相关度 2；把成本纳入安全智能体评测、区分攻防扩展规律有参考价值，贡献 5。论文首页只给出个人邮箱，未标注作者机构，不填公司归属。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.15263" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

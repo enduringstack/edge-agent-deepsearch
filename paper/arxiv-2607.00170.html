@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Scaling Up Thermodynamic AI Models</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-06-30 · Andrew G. Moore / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把高温Gibbs采样Ising系统的时均行为可训练化，提出纯反向传播算法训练深度卷积网络用于Ising机硬件的热力学推理，并建立推理成本-精度-自相关时间理论。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在CIFAR-10/100上分别达94.9%/76.0%精度，实验验证推理成本与精度可控折损，给出最优推理调度算法。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：热力学AI面向低功耗边缘推理硬件，端侧属性强；可训练算法与成本理论创新高。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-30 · Andrew G. Moore / arXiv</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">基于伊辛模型的热力学计算硬件有望做极低功耗的 AI 推理，但缺少训练大模型的方法。这篇工作给出可扩展的训练算法和推理代价理论。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在二值吉布斯采样下，图像分类模型在 CIFAR-10 上准确率 94.9%，CIFAR-100 上 76.0%；并实验验证了推理代价与准确率关系的理论。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用高温吉布斯采样伊辛系统的时间平均可以实现前馈神经网络推理这一对应关系，设计纯反向传播的算法训练深度卷积网络，再推导推理代价与性能的权衡并给出最优推理调度。</span></div>
+<div class="score-reason">评分依据：面向低功耗、边缘推理的新型计算硬件，方向相邻但离实际部署较远；把伊辛机推理扩展到深度卷积网络有一定新意。论文未标注作者机构。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.00170" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

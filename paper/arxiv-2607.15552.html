@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>From Feasibility to Desirability: Plan, Learn, Adapt (PLA) Framework for Personalized On-Device Itinerary Generation</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-17 · Himel Dev; Tanmoy Sen; Madhusudan Basak; Bashima Islam / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">模型:GPT</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Generating personalized trip itineraries is a complex planning task and involves a tension between hard combinatorial feasibility and soft latent desirability.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-07-17 · Himel Dev; Tanmoy Sen; Madhusudan Basak; Bashima Islam / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:高效推理</span><span class="tag">硬件:手机</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">PLA 是一个完全在手机上离线生成个性化旅行行程的框架，既保证行程满足开放时间、交通时间等硬约束，又尽量贴合用户的主观偏好。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 100 多个美国城市的 2519 组人工对比中，奖励模型挑选的结果胜率 67.8%，比最好的单一规划器高 11.2 个百分点且 100% 可行；GPT-5、Claude Opus 4.5、Gemini 3 Pro 在同样约束下可行率为 0；在 iOS 应用 FlyEnJoy 上线后行程完成率提升 91%，端上平均延迟 109.9 毫秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用贪心、动态规划、束搜索、A*、模拟退火五种轻量规划器生成多样的可行候选；再用从成对偏好学到的小型 Bradley-Terry 奖励模型挑选；最后按设备 CPU、内存和低电量状态设定时间预算，在端上做始终可行的局部修改。</span></div>
+<div class="score-reason">评分依据：真实上线的 iOS 离线应用，规划、打分和优化全部在手机端运行并给出端上延迟，相关度 8；轻量规划器集成加偏好奖励模型的组合很务实，贡献 6。它是组合优化规划系统而非由模型驱动的智能体，因此不归为端侧智能体。PDF 首页第一作者单位为 529 Tech LLC。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.15552" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

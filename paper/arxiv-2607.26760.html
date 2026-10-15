@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Metis: Memory Foundation Model</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-29 · Zeyu Zhang; Ziliang Guo; Yihang Sun; Xichong Zhang; Xixuan Hao; Zehao Lin; Yang Zhang; Xiaoyan Zhao / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:端侧agent</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">近期 AI agent 进展把原生能力内化进底层基础模型，催生多模态基础模型新范式，作者针对此展开。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-29 · Zeyu Zhang; Ziliang Guo; Yihang Sun; Xichong Zhang; Xixuan Hao; Zehao Lin; Yang Zhang; Xiaoyan Zhao / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:模型架构</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Metis 想让大模型自己“长出”记忆：不再靠外挂向量库或把历史对话塞回上下文，而是把历史信息压缩进模型内部一块可动态更新的记忆状态里，供智能体在多轮交互中记住、更新和遗忘信息。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在不给历史上下文的设置下，Metis-4B 在作者构建的记忆操作测试集上平均 56.72 分，而同尺寸 Qwen3.5-4B 只有 16.96 分、Temp-LoRA-4B 为 19.34 分；Metis-27B 在该测试集上达到 73.77 分，在 MemOps 上为 24.76 分（Qwen3.5-27B 仅 1.69 分）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 Qwen3.5 主干里加入记忆注意力和超记忆模块，记忆更新只需一次前向计算、不算梯度，推理时主干权重全部冻结；通过大规模合成的记忆数据做中期训练，让模型学会何时存、何时改、何时用。</span></div>
+<div class="score-reason">评分依据：属于智能体记忆运行时方向，记忆更新免梯度、不用回放长上下文，对算力受限的设备有迁移价值，但实验在 H100 上训练评测，未涉及端侧部署；把记忆内化进模型主干是较新的思路。PDF 首页多位作者（含通讯作者李志宇）署名记忆张量（上海）科技有限公司，按公司项目标注。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.26760" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Message Passing Enables Efficient Reasoning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-01 · Xuecheng Liu, Daman Arora, Gokul Swamy et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">MPLM 让多线程 LLM 推理通过轻量 send/receive 原语直接通信,避免冗余上下文共享并支持提前终止,以消息传递替代顺序 CoT。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">数独上渐近上下文远小于串行 CoT 与 fork-join;微调单模型解 25x25 数独;3-SAT 上提前终止提升效率。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：并行推理扩展,云端多线程;消息传递范式与可抢占性有创新。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-01 · Xuecheng Liu, Daman Arora, Gokul Swamy et al. / COLM 2026</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:高效推理</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">提出让多个大模型推理线程像并行程序一样直接收发消息的推理框架 MPLM，用来替代动辄很长的单链思维链，降低推理计算开销。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在数独上所需上下文渐近小于串行思维链和分叉合并并行方法，微调后的单个模型能解 25×25 数独；在 3-SAT 上可提前终止无望分支，提高效率；在长上下文问答上与常用分叉合并方法结果相当。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">给每个推理线程加入轻量的发送和接收原语，避免重复共享整段上下文，并允许线程根据同伴传来的部分信息提前结束。</span></div>
+<div class="score-reason">评分依据：属于推理时计算效率方法，对资源受限设备只有间接价值，没有设备侧评测；线程间通信的推理范式有一定新意。作者来自卡内基梅隆大学，论文为 COLM 2026 口头报告。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01077" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

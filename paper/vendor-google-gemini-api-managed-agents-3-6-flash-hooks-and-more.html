@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Gemini API Managed Agents: 3.6 Flash, hooks, and more</h1>
-<div class="meta"><span class="score">13</span> <span class="tier">官方动态</span>  2026-07-28 · Google / Google</div>
-<div class="tags"><span class="vendor-tag">Google</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Google 为 Gemini API Managed Agents 增加 3.6 Flash 与 hooks 等能力，属 agent 平台能力更新。</span></div>
+<div class="meta"><span class="score">5</span> <span class="tier">官方动态</span>  2026-07-28 · Google / Google</div>
+<div class="tags"><span class="vendor-tag">Google</span><span class="tag">方向:工具调用</span><span class="tag">方向:云端serving</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Gemini API 的托管智能体（在谷歌云端隔离沙箱里执行代码、装包、读写文件和联网检索）默认模型换成 Gemini 3.6 Flash，并新增工具调用钩子、预算控制、定时触发和免费额度。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：Google 官方动态（命中官方域名白名单）</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">开发者在沙箱环境里放一个 .agents/hooks.json，运行时会在每次工具调用前后执行自定义脚本，可直接拒绝某次调用并把理由回传给模型；也可以通过 agent_config.model 改用 3.5 Flash-Lite 等更便宜的模型。</span></div>
+<div class="score-reason">评分依据：智能体完全运行在云端沙箱，与端侧部署没有直接关系，相关度 2；工具调用前后的钩子对智能体运行时的安全管控有参考价值，但属于平台功能更新，贡献 3。</div>
 <div class="source"><a href="https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

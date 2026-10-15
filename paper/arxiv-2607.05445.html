@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>BitFair: A 12nm Bit-Serial CNN Accelerator with Learnable Early Termination and Adaptive Bit Ordering for Ultra-Low-Power XR Vision</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-07-04 · Ang Li, Chang Gao / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span><span class="tag">硬件:MCU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">给 XR 可穿戴设备做超低功耗位串行 CNN 加速器，学到的阈值在部分和可靠预测 ReLU 输出为零时提前终止。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">12nm 实现 0.34mm² 核/104KB 片上内存/0.55-0.70V，亚毫秒延迟，117.0 BTOPS/W，比先前 XR 加速器能效高 4-22.1 倍。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">可学比特级提前终止+自适应位序优先信息位；位串行计算利用 ReLU 动态稀疏，最大早终止不损精度。</span></div>
-<div class="score-reason">评分依据：XR 可穿戴超低功耗 CNN 加速器，明确端侧（relevance 9）。可学比特级早终止+自适应位序有架构创新（contribution 6）。作者学校项目。</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-07-04 · Ang Li, Chang Gao / IEEE JETCAS</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:剪枝稀疏</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">XR 头显和眼镜需要常开视觉感知，功耗只有几瓦、推理只能用几毫秒；BitFair 是一颗为此设计的 12nm 位串行卷积网络加速芯片。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">GlobalFoundries 12nm 实现，核心面积 0.34 mm²，延迟低于 1 毫秒，能效最高 117.0 BTOPS/W；在 DVS128 Gesture 和 N-MNIST 上准确率为 96.5% 和 97.7%，有效能效比此前流片的 XR 视觉加速器高 4.0-22.1 倍，准确率最多高 9.2%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">逐位计算时，若部分和已能预测 ReLU 输出为零就提前停止；同时为每层学习阈值和最优比特顺序，先算信息量大的比特，让提前终止触发得更多。</span></div>
+<div class="score-reason">评分依据：面向可穿戴 XR 设备的超低功耗视觉推理芯片，有流片级结果，端侧相关度高；可学习的位级提前终止与比特排序是软硬协同的新意。已被 IEEE JETCAS 期刊接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.05445" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

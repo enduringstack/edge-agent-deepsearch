@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PARTREP: Learning What to Repeat for Decoder-only LLMs</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-02 · Andikawati P Widjaja, Yongjun Kim, Hyounghun Kim et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">PartRep 只选择信息量最大的 prompt token 重复一次,而非整段重复,以小幅代价缓解因果注意力信息不对称、提升解码器 LLM 推理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 8 个基准、3 个模型族上保留大部分全重复增益,仅用 59.4% KV 缓存和 79.0% prefill FLOPs。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：KV 缓存与 prefill 成本优化,可服务于资源受限部署;选择性重复方法较新颖。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-02 · Andikawati P Widjaja, Yongjun Kim, Hyounghun Kim et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span><span class="tag">模型:Llama</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">“把提示词重复一遍”能提升大模型推理效果，但会让 KV cache 翻倍。PartRep 只重复最有信息量的那部分 token，用更少开销拿到大部分收益。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 MMLU、GSM8K、RULER 等 8 个基准和 Qwen2.5、Llama3.2、Gemma4 三个模型族上，保留了完整重复的大部分收益，而 KV cache 只用完整重复的 59.4%，预填充计算量为 79.0%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用逐 token 负对数似然衡量“难预测”的 token 并优先重复；为避免额外完整前向，训练一个读取浅层隐状态的轻量门控，在预填充中途提前退出完成挑选。</span></div>
+<div class="score-reason">评分依据：直接压缩 KV cache 与预填充开销，可迁移到端侧长上下文推理（相关度 4）；对提示重复做选择性改进，思路简洁但属渐进式（贡献 5）。作者来自万隆理工学院和浦项科技大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01792" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

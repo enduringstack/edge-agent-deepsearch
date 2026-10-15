@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>OpenGlass: A Sensing-Computing Split Architecture for Local MLLM-Driven Real-Time Visual Assistance</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-03 · Mengzhang Li; Yuan Yao / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:多模态</span><span class="tag">方向:端云协同</span><span class="tag">硬件:MCU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">开源、隐私优先、local-first 的低延迟多模态视觉辅助系统，用感算分离架构在本地跑 MLLM。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">真实 ESP32 Wi-Fi 下中位 user-to-audio 延迟 993ms（resize 负载）/1625ms（原始 1280x720）；97.5%/93.3% 试验低于 2s。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">ESP32 眼镜端采集视觉上下文，附近消费级设备做本地 MLLM 推理与本地语音输出，默认把原始第一视角视觉留在用户设备。</span></div>
-<div class="score-reason">评分依据：明确 local MLLM + ESP32 感算分离（relevance 9）。开源感算分离架构有创新（contribution 6）。vendors 空。</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-03 · Mengzhang Li; Yuan Yao / ACL 2026 System Demonstrations</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:端云协同</span><span class="tag">方向:安全隐私</span><span class="tag">硬件:MCU</span><span class="tag">硬件:GPU</span><span class="tag">模型:MiniCPM</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">OpenGlass 是面向盲人和低视力用户的开源视觉助手：眼镜上的 ESP32 摄像头负责拍画面，旁边的笔记本电脑在本地跑多模态大模型并语音回答，画面默认不上传云端。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在真实 ESP32 Wi-Fi 采集下，压缩图像时从提问到听到语音的中位延迟 993 毫秒，原始 1280×720 图像为 1625 毫秒；分别有 97.5% 和 93.3% 的请求在 2 秒内完成。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">采用“感知与计算分离”：眼镜端只做低功耗采集与传输，帧率随 Wi-Fi 吞吐自适应；附近的 Windows 笔记本用 llama.cpp 运行 MiniCPM-V 4.5 推理并本地合成语音，同时加入安全弃答和可审计日志。</span></div>
+<div class="score-reason">评分依据：真实 ESP32 眼镜加本地笔记本推理的完整可穿戴系统并给出端到端延迟，端侧相关度高；系统整合为主，但开源了代码、硬件说明和评测数据。它是用户提问后单轮作答的助手，没有规划或工具调用闭环，不算端侧智能体。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.03213" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

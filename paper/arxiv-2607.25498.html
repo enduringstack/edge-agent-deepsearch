@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Beyond Prefill-Decode Disaggregation: Dissecting LLM Inference for Heterogeneous Platforms via Dynamic Operator Scheduling</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-28 · Jiaqi Yang; Jiayi Li; Yihan Fu; Hongxiao Zhao; Zhan Chen; Qiuping Wu; Yuchao Yang; Bonan Yan / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Prefill-解码分离（PD）和基于 roofline 的算子放置是跨异构资源切分 LLM 推理的常见策略，作者针对此展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-07-28 · Jiaqi Yang; Jiayi Li; Yihan Fu; Hongxiao Zhao; Zhan Chen; Qiuping Wu; Yuchao Yang; Bonan Yan / MICRO 2026</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:编译部署</span><span class="tag">硬件:NPU</span><span class="tag">硬件:CIM</span><span class="tag">硬件:Ascend</span><span class="tag">模型:Llama</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">北京大学提出的 DOPS：在 NPU 加存内计算（PIM）的异构平台上，按算子动态决定每一步交给哪个设备算、权重以什么布局存放，突破“预填充/解码分离”的粗粒度划分。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多种 NPU+PIM 异构配置上，Bifocal 调度器相对预填充/解码分离基线取得 1.20–2.23 倍几何平均加速，权重布局仲裁器再带来 1.28–1.33 倍加速；仿真与实测加速比的偏差在 -4% 到 +6% 之间。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把推理负载建成分阶段的有向无环图，Bifocal 调度器结合当前算子成本与短窗口前瞻模拟做算子到设备的动态分配，权重布局仲裁器在严格内存预算下为每块权重挑选对 NPU 或 PIM 更友好的存储格式。</span></div>
+<div class="score-reason">评分依据：论文明确面向功耗和面积受限的边缘大模型推理，NPU+PIM 是端侧芯片的重要方向，但实验平台是昇腾 910B 加 SK hynix AiM 的组合，不是真正的端侧设备，相关度 7。把算子调度与权重布局联合优化并开源框架，已被 MICRO 2026 接收，贡献较高。作者均来自北京大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.25498" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

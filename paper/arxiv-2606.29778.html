@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Mandol: An Agglomerative Agent Memory System for Long-Term Conversations</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-29 · Yuhan Zhang, Zhiyuan Guo, Ziheng Zeng et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Mandol 把碎片化记忆统一为记忆原生架构:层次语义图+SemanticMap/Graph 融合 KV/向量/图,检索时无需 LLM 介入,带查询自适应路由与 token 预算控制。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 LoCoMo 与 LongMemEval 上总体精度最佳;10 QPS 下检索 5.4 倍、插入 4.8 倍加速,消费级硬件低延迟。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：agent 记忆系统,消费级硬件可跑;统一架构与免 LLM 检索有创新。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-06-29 · Yuhan Zhang, Zhiyuan Guo, Ziheng Zeng et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:记忆</span><span class="tag">应用:RAG</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Mandol 是给长期对话智能体用的记忆系统：把原本分散在向量库、图数据库里的记忆统一到一套存储结构中，检索时不调用大模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LoCoMo 和 LongMemEval 上综合准确率在代表性记忆系统中最好；10 QPS 并发下检索快 5.4 倍、写入快 4.8 倍，在配 RTX 5090 笔记本 GPU 的笔记本上仍保持低时延。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">记忆分为原始层和抽象聚合层，统一表示成语义图；底层数据结构同时融合键值、向量和图三种形式，提供统一混合检索算子，并按查询自适应路由、去噪和按 token 预算生成上下文。</span></div>
+<div class="score-reason">评分依据：智能体记忆运行时是端侧 Agent 的关键组件，论文在笔记本上验证了本地运行时延，但主实验在云端 H800 服务器、整体闭环未在设备端评测；统一存储与免大模型检索的设计有新意。 作者机构依据：arXiv PDF 首页署名 Microsoft（arXiv 首页作者 Wentao Wu 署名 Microsoft Research，其余作者为中国科学院软件研究所）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.29778" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Visual Place Recognition Using Rate-Encoded Spiking Neural Networks with Discrete STDP Learning</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-15 · Altzi Tsanko; Oikonomou Katerina Maria; Antonios Gasteratos / arXiv</div>
-<div class="tags"><span class="tag">方向:高效注意力</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">方向:SNN</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Spiking Neural Networks (SNNs) trained through unsupervised Spike-Timing-Dependent Plasticity (STDP) have been explored as solutions to visual loop closure prob…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-15 · Altzi Tsanko; Oikonomou Katerina Maria; Antonios Gasteratos / arXiv</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">硬件:神经形态</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用 STDP 无监督学习训练的脉冲神经网络做视觉地点识别（机器人回环检测），重点提升“零误报前提下的召回率”。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 100 个地点的 Nordland 数据集上，用 15 个独立训练的网络评测；对连续 5 帧做速度补偿的滑窗聚合后，零误报召回率达到 100%，只增加 0.20 ms 时延。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 PyTorch 和 snnTorch 实现离散、张量化的 STDP 流程，用闭式确定性方法给神经元分配地点标签，每次查询后重置神经元状态，并对连续多帧做滑窗聚合。</span></div>
+<div class="score-reason">评分依据：脉冲神经网络面向神经形态芯片上的低功耗端侧推理，与端侧相关但本文未在神经形态硬件上实测；主要是对推理阶段设计选择的分析，作者也承认各因素贡献尚未完全拆清。作者来自希腊色雷斯德谟克利特大学，代码已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.13584" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

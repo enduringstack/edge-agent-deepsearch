@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Real-Time Detection of Charge Jumps in Superconducting Qubits with a Convolutional Neural Network</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-15 · Daniel Gaytan-Villarreal; Peter Meiring; Daniel Baxter; Daniel Bowring; Grace Bratrud; Matteo Cremonesi; Giuseppe Di Guglielmo; Grace Wagner / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Ionizing radiation from cosmic rays and gammas can induce discontinuous jumps in the environmental charge of superconducting qubits (charge jumps), causing corr…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:编译部署</span><span class="tag">硬件:FPGA</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用一个小型因果卷积网络在 FPGA 上实时检测超导量子比特的电荷跳变，把原本离线的诊断变成可以放进控制回路的在线检测。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">经 hls4ml 以 16 位定点量化部署到 Zynq UltraScale+ RFSoC ZCU216 上，单次推理 32.0 微秒；检测效率 0.843，与离线卡方算法的 0.868 相当，且不需要逐个比特调参。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用合成的 Ramsey 扫描数据训练空洞因果卷积网络，再通过 hls4ml 把网络量化并转成 FPGA 固件，嵌入 QICK 量子控制平台。</span></div>
+<div class="score-reason">评分依据：神经网络在嵌入式 FPGA 上做微秒级实时推理，量化与编译部署流程完整，属于资源受限设备推理的可迁移案例；应用领域较专门，方法本身是成熟工具链的组合。作者来自卡内基梅隆大学、费米实验室和西北大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.14293" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

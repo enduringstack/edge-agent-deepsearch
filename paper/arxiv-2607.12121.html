@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FlashDiff: Efficient Regional Execution and Scheduling for Diffusion Model Serving</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-13 · Yaqi Qiao; Ping He; Songrun Xie; Ayush Barik; Chensong Zhang; Zhengzhong Tu; Fan Lai / arXiv</div>
-<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Diffusion models have become the central backbone for modern image, video, and audio generation, but their efficient service remains a challenge.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-07-13 · Yaqi Qiao; Ping He; Songrun Xie; Ayush Barik; Chensong Zhang; Zhengzhong Tu; Fan Lai / arXiv</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">面向扩散模型（图像、视频、音频生成）的在线服务系统，只对还没“收敛”的画面区域继续去噪，把省下来的算力分给其他并发请求。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在真实的图像、视频和音频生成负载上，端到端服务延迟降低 30% 到 97%，吞吐提升 1.2 到 2.2 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用早期注意力信号把潜变量切成语义连贯的区域，由轻量控制器判断哪些区域可以跳过更新，再用亲和感知的调度器在多张 GPU 间平衡剩余负载。</span></div>
+<div class="score-reason">评分依据：这是多 GPU 的云端扩散模型服务系统，与端侧部署关系较远；“按区域跳过计算”的思路有一定新意，也可能迁移到端侧生成。 作者机构依据：arXiv PDF 首页署名 NVIDIA（PDF 首页 7 位作者中第 5 位署名 NVIDIA，主要作者来自伊利诺伊大学香槟分校）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.12121" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

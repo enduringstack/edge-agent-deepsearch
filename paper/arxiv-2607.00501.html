@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>BaseRT: Best-in-Class LLM Inference on Apple Silicon via Native Metal</h1>
-<div class="meta"><span class="score">18</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-01 · Prabod Rathnayaka, Fabian Waschkowski, Lukas Wesemann / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">模型:Llama</span><span class="tag">模型:Gemma</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">BaseRT 是苹果芯片上原生 Metal 的 LLM 推理运行时,用芯片特定核融合、统一内存优化和自定义调度,支持多种模型和 8 种量化格式。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 M3/M4 Pro 上解码吞吐比 llama.cpp 高 1.56x、比 MLX 高 1.35x,MoE 预fill优势更大,亚 1B 到 30B 均领先。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确端侧苹果芯片原生推理运行时,性能突破明确。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-01 · Prabod Rathnayaka, Fabian Waschkowski, Lukas Wesemann / arXiv</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:高效推理</span><span class="tag">方向:量化</span><span class="tag">硬件:Apple-Silicon</span><span class="tag">硬件:GPU</span><span class="tag">模型:Qwen</span><span class="tag">模型:Llama</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">BaseRT 是一个直接基于 Apple Metal 编写的大模型推理运行时，目标是在 Mac 等 Apple Silicon 设备上跑出比 llama.cpp 和 MLX 更高的本地推理速度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 M4 Pro 上，解码吞吐最高比 llama.cpp 快 1.56 倍、比 MLX 快 1.35 倍；MoE 模型的短提示预填充优势更大，Qwen3-30B-A3B 比 llama.cpp 快 1.81 倍、比 MLX 快 1.78 倍，覆盖 0.6B 到 30B 模型和 M3、M4 Pro 两代芯片。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">绕开通用框架抽象，针对具体芯片做算子融合、利用统一内存特性减少拷贝，并用零分配的解码循环和自定义调度降低每个 token 的固定开销；支持 Q2 到 FP16 共八种量化格式。</span></div>
+<div class="score-reason">评分依据：在 Apple Silicon 真机上做本地大模型推理并与主流端侧引擎正面对比，端侧相关度很高；属于扎实的工程优化，方法本身不算全新。PDF 首页三位作者均署名 Base Compute（墨尔本），代码已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.00501" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

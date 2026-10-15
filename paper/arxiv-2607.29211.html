@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Knowing When to Quit: Diagnosing and Training LLMs to Abort Futile Reasoning</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-31 · Xinyan Guan; Jiali Zeng; Chunlei Xin; Yaojie Lu; Hongyu Lin; Xianpei Han; Le Sun; Fandong Meng / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM 在超能力任务上会生成算力很贵但语义空洞的推理，造成「看似合理却无用」的风险。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-31 · Xinyan Guan; Jiali Zeng; Chunlei Xin; Yaojie Lu; Hongyu Lin; Xianpei Han; Le Sun; Fandong Meng / arXiv</div>
+<div class="tags"><span class="vendor-tag">Tencent</span><span class="tag">方向:规划推理</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型遇到能力之外的题目时，常会生成又长又贵、看似合理实则错误的推理。这篇先系统分析这种“徒劳推理”，再训练模型学会在做不出来时及时放弃。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen3-8B 和 Qwen3-14B 上，徒劳推理比例分别从 65.5% 降到 7.0%、从 78.6% 降到 1.0%，同时在分布内外任务上保持原有性能。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用分层奖励让“主动拒答”优于“硬编错误答案”，并把失败的推理轨迹改写成拒答样本加入训练，让模型对齐自身能力边界。</span></div>
+<div class="score-reason">评分依据：减少无效长推理能省下推理算力，对资源受限部署有间接价值，但本质是训练对齐方法。公司归属依据：arXiv PDF 首页作者 2、8 署名 Weixin AI, Tencent Inc（tencent.com 邮箱）。 作者机构依据：arXiv PDF 首页署名 Tencent（PDF 首页作者 2 Jiali Zeng、作者 8 Fandong Meng 署名 Weixin AI, Tencent Inc，邮箱为 tencent.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29211" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A New Role for Relevance: Guiding Corpus Interaction in Agentic Search</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-29 · Jiangnan Li, Yuqing Li, Mo Yu, Jinchao Zhang, Jie Zhou / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">相关性是对一份文档或片段是否含有用证据的、依赖查询的估计，作者针对此展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=84)；affiliation 待核实</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-29 · Jiangnan Li, Yuqing Li, Mo Yu, Jinchao Zhang, Jie Zhou / arXiv</div>
+<div class="tags"><span class="vendor-tag">Tencent</span><span class="tag">方向:工具调用</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">腾讯提出的检索型智能体 RARG：让智能体用 ripgrep 直接在语料库里搜证据时，先按相关性排好搜索顺序，更快找到关键线索。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 BrowseComp-Plus 等高难度浏览问答与推理型检索任务上，同时改善准确率与成本的前沿，优于基于检索和直接语料交互的两类智能体（摘要未给出单一汇总数字）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把文档相关性当作执行先验：按相关性排序文档供 ripgrep 顺序遍历，用与问题相关的段落初始化入口，并对 grep 命中结果重排，让模型先看到信息量大的片段。</span></div>
+<div class="score-reason">评分依据：属于智能体工具调用与检索运行时优化，实验在云端 GPU 和闭源大模型上进行，与端侧部署关系较远，相关度 3；把相关性用作 grep 执行先验的思路较实用，贡献 5。公司归属依据 arXiv PDF 首页：通讯作者等署名 Tencent。 作者机构依据：arXiv PDF 首页署名 Tencent（PDF 首页作者 Jiangnan Li、Mo Yu、Jinchao Zhang、Jie Zhou 署名 Tencent（tencent.com 邮箱））。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.24223" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

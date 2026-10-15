@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Constrained Decoding for Diffusion Language Models via Efficient Inference over Finite Automata</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-07-08 · Meihua Dang, Stefano Ermon / arXiv</div>
-<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">给扩散语言模型的约束解码做精确高效算法，任意有限自动机表达的约束都能在均值场后验下采样。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">Dream-7B/LLaDA-8B 上函数调用/规划/SQL/数学大幅提升（BFCL 63.9→71.5%），墙钟开销&lt;5%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把有限自动机当图模型获约束分布的可处理表示，深度约简从线性降到对数级，兼容并行/块解码。</span></div>
-<div class="score-reason">评分依据：扩散 LLM 约束解码效率，可迁移端侧工具调用（relevance 6）。有限自动机均值场后验+对数深度约简有创新（contribution 8）。作者含 Stefano Ermon (Stanford)，学校项目。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-08 · Meihua Dang, Stefano Ermon / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">扩散语言模型一次同时生成多个位置的词，传统“从左到右屏蔽非法词”的约束解码用不上。这篇论文给出精确又高效的算法，保证输出严格符合 JSON 函数调用、SQL 等可用有限自动机描述的格式。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Dream-7B 和 LLaDA-8B 上，函数调用、规划、文本转 SQL 和数学推理都有明显提升；例如 BFCL-Live 上 Dream-7B 贪心解码准确率从 63.9% 升到 71.5%，随机采样从 22.3% 升到 69.0%，实际耗时开销不到 5%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把有限自动机看成概率图模型，在扩散模型每步的均值场分布上做精确的条件采样；再借用算术电路的深度压缩技巧，把采样深度从随序列长度线性降到对数级，兼容并行和分块解码。</span></div>
+<div class="score-reason">评分依据：约束解码直接关系到智能体工具调用输出的可靠性，可迁移到小模型函数调用，但论文面向通用推理服务、未涉及端侧；扩散模型上的精确约束采样是新问题的完整解法。作者来自斯坦福大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.07026" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MoA-Structured Decode Attention DNF Derivation, KV-Cache Accumulation, GQA/MQA, and OpenACC Kernel</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-21 · Lenore Mulin; Gaetan Hains / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">We derive four memory-optimal inference artifacts for transformer attention using the Mathematics of Arrays (MoA), each following directly from the forward-pass…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-07-21 · Lenore Mulin; Gaetan Hains / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效注意力</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用“数组数学”形式化推导出解码阶段注意力的内存最优实现，包括单查询解码、KV 缓存追加以及 GQA/MQA 的访存节省。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">单查询解码的数值误差不超过 2×10^-7，OpenACC GPU 内核与 PyTorch 实现结果完全一致；GQA/MQA 推导给出按查询头与 KV 头之比缩减 KV 访存的证明。未报告实际速度。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从注意力前向的规范形式出发，固定当前解码步的查询行，用代数变换消掉 K 转置缓冲区，并推导出带合并访存的 C/OpenACC 内核和每步常数开销的 KV 缓存拼接。</span></div>
+<div class="score-reason">评分依据：解码注意力与 KV 缓存访存优化属于推理技术栈，可迁移到端侧，但只有形式化推导和正确性验证、没有性能评测，相关度给 4、贡献给 3。作者来自纽约州立大学奥尔巴尼分校与巴黎东大，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.19456" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

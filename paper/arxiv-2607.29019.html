@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>GoldenRetriever: Non-Interactive Homomorphic Encrypted Retrieval for Privacy-Preserving RAG</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-31 · Yang Gao; Gang Quan; Scott Piersall; Qian Lou; Dongdong Wang; Liqiang Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">RAG 给 LLM 接外部知识增强，但现有管道基本只在明文数据上跑。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-31 · Yang Gao; Gang Quan; Scott Piersall; Qian Lou; Dongdong Wang; Liqiang Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">检索增强生成通常在明文数据上运行，存在隐私风险。GoldenRetriever 用同态加密实现无需交互的加密检索，查询内容、相似度和选中文档都不暴露。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在标准检索基准上保持有竞争力的检索效果，延迟显著低于基于排序的加密检索方法；摘要未给出具体数值。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用阈值筛选代替加密状态下代价高昂的 top-k 排序，把复杂度从语料规模的平方降到线性；基于 CKKS 同态计算完成相似度评估，并用掩码极化方法保证近似计算后能准确还原选中文档。</span></div>
+<div class="score-reason">评分依据：关注 RAG 检索环节的隐私与延迟，与端侧个人数据检索场景有间接关联（相关度 3）；用阈值筛选替代加密排序是实用的工程改进（贡献 5）。作者来自中佛罗里达大学、佛罗里达国际大学和佛罗里达大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29019" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

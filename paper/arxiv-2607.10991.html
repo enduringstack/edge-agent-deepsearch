@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Think When It Matters: Conditional VLM Reasoning for Social Navigation with RL Policies</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-13 · Ali Ahmadi; Hamed Rahimi; Adrien Jacquet Cretides; Marie Samson; Mahdi Khoramshahi; Mohamed Chetouani / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:机器人</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">As mobile robots become more integrated into everyday human environments, social robot navigation is becoming essential for ensuring human comfort, safety, and …</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-13 · Ali Ahmadi; Hamed Rahimi; Adrien Jacquet Cretides; Marie Samson; Mahdi Khoramshahi; Mohamed Chetouani / arXiv</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">应用:机器人</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">索邦大学提出 HUMA：社交场景下的机器人导航，平时用快速的强化学习策略走路，遇到行人进入近身区域等敏感情况时才调用视觉语言模型做语义推理来指导动作。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Social-MP3D 和 Social-HM3D 上任务成功率分别提升 20% 和 3%，同时明显减少侵犯个人空间和与人碰撞；并在 Enchanted Tools 的 Mirokaï 移动机器人上完成真机部署演示。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以 Falcon 预训练强化学习导航策略为底座，按需调用经过微调的 Qwen3-VL-2B 输出高层语义判断并作为策略条件，只在关键时刻付出大模型推理开销。</span></div>
+<div class="score-reason">评分依据：“只在需要时才调大模型”的条件推理思路直接针对机器人算力有限的问题，并有真机部署，但核心仍是导航控制策略，训练与评测在 NVIDIA Thor GPU 上进行，未给出机载推理开销数据。混合强化学习与视觉语言模型的设计实用，创新中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.10991" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

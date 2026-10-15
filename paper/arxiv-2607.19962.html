@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>EvoThink: Evolving Thinking in Large Reasoning Models via Self-Pruning and Aha-Moment Preference Optimization</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-22 · Xinbang Dai; Zheyu Xin; Huikang Hu; Lin Ren; Rihui Jin; Guohui Xiao; Guilin Qi; Kuicai Dong / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Large Reasoning Models (LRMs) often suffer from overthinking due to redundant verification steps.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-07-22 · Xinbang Dai; Zheyu Xin; Huikang Hu; Lin Ren; Rihui Jin; Guohui Xiao; Guilin Qi; Kuicai Dong / IJCAI 2026</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大推理模型常在已经做对的地方反复验算，白白多花大量 token；EvoThink 想在压缩思考长度的同时不损失、甚至提升推理能力。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 DeepScaleR-1.5B 上，MATH-500 的 Pass@1 达到 76.3%（原模型 75.4%，同为压缩方法的 ThinkPrune-2k 降到 72.1%），输出长度缩减幅度与压缩基线相当；在 TACO 上仅用自剪枝阶段即取得 6.4% 并超过所有基线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用无监督的“自剪枝训练”反复删掉推理轨迹里多余的验算步骤并在精简轨迹上自训练；再挑出有价值的失败尝试，合成“从错到对”的顿悟样本做偏好优化，让模型学会主动换思路。</span></div>
+<div class="score-reason">评分依据：减少推理 token 能直接降低小模型在资源受限设备上的时延与能耗，但论文在 8 张 H100 上训练评测、无端侧实验（相关度 4）。剪枝加偏好优化的组合有一定新意，属于推理压缩方向的常见思路延伸（贡献 5）。PDF 首页显示部分作者来自华为诺亚方舟实验室，论文已被 IJCAI 2026 接收。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页作者 8–10（Kuicai Dong、Zhaocheng Du、Yuyang Zhang）署名 Noah's Ark Lab（华为诺亚方舟实验室），其余作者来自东南大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.19962" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

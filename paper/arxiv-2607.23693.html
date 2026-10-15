@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Compute Globally, Materialize Locally: The Memory Contract of Sparse Event-KV</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-26 · Zefeng Cai; Zerui Cai / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:KV cache</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:云端serving</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">长时序 agent 越来越多地复用其 KV 缓存作为记忆：服务系统保留部分缓存条目丢弃其余，作者针对此展开。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-26 · Zefeng Cai; Zerui Cai / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">应用:长上下文推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长时运行的智能体越来越把 KV 缓存当记忆用，只保留一部分条目、丢掉其余。这篇检验一个很少被直接验证的前提：生成某事件的原始观察被丢掉后，保留下来的事件缓存还能不能带出原信息。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">被丢弃观察的取值大多仍能从后续事件的缓存中“读出”；刻意措辞但不写出答案的事件，可把 Qwen3-8B 上的信息找回率从 6% 提到 51%，而从长期对话里被动收集的自然提及没有显示优势；紧凑状态能保留，较大的内容则逐渐退化到随机水平。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在其他条件相同的智能体历史中只省略一条早期观察，对比回答结果，以此测量下游事件缓存行承载的信息，并据此总结稀疏事件 KV 服务中“写什么、写在哪、源头丢掉后什么还能留下”的记忆约定。</span></div>
+<div class="score-reason">评分依据：研究智能体把 KV 缓存当记忆时的淘汰与保留规律，可直接迁移到内存受限设备上的缓存裁剪策略（相关度 5）。提出“语义物化”现象并给出可操作的记忆写入建议，视角新颖（贡献 6）。作者为独立研究者，代码开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.23693" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AirPASS: Over-the-Air Federated Learning via Pinching Antenna Systems</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-07 · Seyed Mohammad Azimi-Abarghouyi; Christopher G. Brinton / arXiv</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-07 · Seyed Mohammad Azimi-Abarghouyi; Christopher G. Brinton / arXiv</div>
 <div class="tags"><span class="tag">方向:联邦学习</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">研究在配备 pinch antenna 系统的无线系统中进行 over-the-air 联邦学习的优化框架。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">AirPASS 一致优于共址 MIMO 基线，接近理想 FedAvg，并在性能-复杂度上优于 SDR-DC 与匹配追踪方案。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">提出交替优化框架：固定 PASS 配置下用同伦-Riemannian 方法做设备选择与波束成形，固定设备下用同伦辅助几何优化更新 pinch 天线位置。</span></div>
-<div class="score-reason">评分依据：OTA 联邦学习属于端侧技术栈但偏通信侧（relevance 6）。pinching antenna 优化框架有工程新意（contribution 5）。vendors 空。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究无线联邦学习里的“空中聚合”：基站装了一种可移动馈点的新型天线（pinching antenna），如何同时决定选哪些终端参与、怎么做接收波束、天线放在哪，才能让尽可能多的设备参与训练而聚合误差不超标。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">实验中 AirPASS 稳定优于传统共址 MIMO 方案，效果接近理想的 FedAvg，并且在效果与计算复杂度的折中上优于 SDR-DC 和匹配追踪调度方案；原文摘要未给出具体百分比。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把非凸联合优化拆成两步交替求解：固定天线位置时用同伦加黎曼流形的方法选设备、定波束；固定设备和波束时用同伦辅助的几何优化挪动天线位置。</span></div>
+<div class="score-reason">评分依据：属于无线通信侧的联邦学习优化，和端侧设备参与训练有关，但不涉及端侧模型推理或部署，相关度低；联合优化框架在通信领域有一定新意。作者来自查尔姆斯理工大学和普渡大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.06768" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

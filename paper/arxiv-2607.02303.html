@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A Hippocampus for Linear Attention: An Exact Memory for What the Recurrent State Forgets</h1>
 <div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-02 · Wanyun Cui / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效注意力</span><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">给线性注意力模型加了个海马体式的精确 KV 缓存,补上循环状态会遗忘早期事实的毛病,属于半参数化测试时记忆。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">340M 参数下 Wikitext 困惑度从 27.32 降到 22.92(-16.1%),低于全注意力 Transformer++ 的 26.88;RULER 32k 针中草堆检索更鲁棒。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：高效注意力记忆机制,但面向通用语言模型训练,非端侧部署。</div>
+<div class="tags"><span class="tag">方向:高效注意力</span><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">线性注意力把全部上下文压进固定大小的状态，记的东西多了旧事实会被覆盖。HOLA 给它配一个“海马体”：一个有上限的精确 KV 缓存。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">3.4 亿参数、150 亿 token 训练下，Wikitext 困惑度从 27.32 降到 22.92（-16.1%），低于全注意力 Transformer++ 的 26.88；RULER 大海捞针在 32k（训练长度 16 倍）上明显比 GDN 稳健。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">保留 delta 规则的压缩状态，同时把“写进状态时残差最大”的 token 存进精确缓存，不需要学习型淘汰模块；读取时用解耦的 RMSNorm 实现尖锐检索。</span></div>
+<div class="score-reason">评分依据：固定显存的长上下文模型架构，对端侧长上下文推理有潜在价值（相关度 4）；用压缩状态加小精确缓存的互补记忆设计新颖（贡献 7）。作者机构为上海财经大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.02303" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

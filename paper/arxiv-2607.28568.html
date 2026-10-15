@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Frontis-MA1: Training an AI4AI Model towards Recursive Self-Improvement in Machine Learning Engineering</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-31 · Junlin Yang, Che Jiang, Yu Fu, Tianwei Luo, Can Ren, Weizhi Wang, Kaikai Zhao, Hongyi Liu, Yuxin Zuo, Yuru Wang, Yuchen Fan, Kai Tian, Zhenzhao Yuan, Xiaojian Lin, Li Sheng, Rushi Qiang, Guoli Jia, Xingtai Lv, Ermo Hua, Dianqiao Lei, Youbang Sun, Ning Ding, Bowen Zhou, Kaiyan Zhang / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">递归自我改进（RSI）需要能改进「造 AI 这件事」本身的 AI 系统。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=168)；affiliation 待核实</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-31 · Junlin Yang, Che Jiang, Yu Fu, Tianwei Luo, Can Ren, Weizhi Wang, Kaikai Zhao, Hongyi Liu, Yuxin Zuo, Yuru Wang, Yuchen Fan, Kai Tian, Zhenzhao Yuan, Xiaojian Lin, Li Sheng, Rushi Qiang, Guoli Jia, Xingtai Lv, Ermo Hua, Dianqiao Lei, Youbang Sun, Ning Ding, Bowen Zhou, Kaiyan Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:工具调用</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">开源面向机器学习工程的自我改进全栈系统 OpenMLE，并在其上后训练 35B 的 Frontis-MA1，让模型通过起草、改进、调试、交叉四种操作迭代优化机器学习代码。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在每题 12 小时、单张限 12GB 显存的 RTX 4090 沙箱预算下，MLE-Bench Lite 奖牌平均率从基座的 39.39% 升到 60.61%，加强版搜索达到 71.21%，超过 GPT-5.5 + Codex；在 NatureBench Lite 上换用该模型使达到最优水平的比例从 50% 升到 70%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用带执行反馈的任务环境做监督微调和强化学习训练四种程序演化操作，再把它们组合成长程搜索，让训练与演化在同一循环里耦合。</span></div>
+<div class="score-reason">评分依据：RTX 4090 只是被优化代码的运行沙箱，35B 智能体本身不在端侧运行，端侧相关度低；开源完整系统和权重，对 AI 自动化研发有一定贡献。机构依据：PDF 首页署名 Frontis.AI 旗下 Horizon Research 与清华大学。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.28568" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

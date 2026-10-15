@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TraceLab: Characterizing Coding Agent Workloads for LLM Serving</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-29 · Kan Zhu, Mathew Jacob, Chenxi Ma et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:工具调用</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:代码</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">采集并发布约4300个编码agent会话、35万LLM步骤和43万工具调用的trace，分析编码agent工作负载特征：长自主循环、长上下文短输出、重尾工具调用、高但不完美的前缀缓存命中率。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">指出降低工具调用开销、append长度感知prefill、语义感知工具延迟预测和KV缓存管理等优化机会，并发布数据集与流水线。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：LLM服务负载分析，非端侧；首批真实编码agent trace数据集有创新。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-29 · Kan Zhu, Mathew Jacob, Chenxi Ma et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:工具调用</span><span class="tag">方向:KV cache</span><span class="tag">方向:评测基准</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">TraceLab 收集并公开了约 4300 个真实编码智能体会话的运行轨迹，用来分析这类负载对大模型推理服务的要求。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">数据集含约 35 万次大模型调用和 43 万次工具调用（来自 Claude Code 与 Codex 的日常使用）；分析发现编码智能体负载具有长自主循环、长上下文短输出、工具调用重尾分布、前缀缓存命中率高但不完美等特点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">采集真实使用轨迹，统计循环长度、上下文与输出长度、工具调用分布和缓存命中，并据此提出低开销工具调用、按追加长度预填充、工具时延预测和改进 KV cache 管理等优化方向。</span></div>
+<div class="score-reason">评分依据：面向云端推理服务的智能体负载刻画，与端侧部署关系较远，但对智能体运行时设计有参考；首批公开的真实编码智能体轨迹数据有价值。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.30560" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

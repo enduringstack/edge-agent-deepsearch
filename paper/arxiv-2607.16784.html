@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Roomie: Interference-Aware Colocation for Efficient Model Serving</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-18 · Youssouph Faye; Francescomaria Faticanti; Shubham Jain; Francesco Bronzino / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">As demand for DNN inference grows, GPU capacity is increasingly oversubscribed, forcing operators to colocate multiple models on the same device in both cloud a…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-18 · Youssouph Faye; Francescomaria Faticanti; Shubham Jain; Francesco Bronzino / arXiv</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">硬件:GPU</span><span class="tag">硬件:Jetson</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多个模型挤在同一块 GPU 上跑时会互相干扰，导致推理变慢、违反时延要求。Roomie 是一个模型服务编排系统，能预测并避开这种内核级干扰，同时适用于云和边缘设备。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 12 块 A100 的云集群和 12 台 Jetson AGX Xavier 的边缘集群上测试，时延要求违约最多减少 3 倍，有效吞吐与现有方法相当甚至更好。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">离线只采集每个 GPU 内核的资源配置，在线用基于占用率的解析模型预测干扰，再用两两贪心近似多模型干扰，把新来的模型放到预测减速最小的 GPU 上。</span></div>
+<div class="score-reason">评分依据：在 Jetson 边缘设备集群上实测了多模型共置推理，与边缘部署相关度中等；内核级干扰预测有一定新意，属工程整合。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.16784" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

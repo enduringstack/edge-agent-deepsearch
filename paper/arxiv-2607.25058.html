@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Mitigating the Impact of Retention Loss on Inference Accuracy in 65 nm Single-Poly Floating-Gate Analog In-Memory Computing</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-27 · Mirko Brazzini; Giulio Filippeschi; Alessandro Catania; Sebastiano Strangio; Giuseppe Iannaccone / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">作者通过实验和系统级仿真表明，可以成功缓解保持损失对推理精度退化的影响。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-27 · Mirko Brazzini; Giulio Filippeschi; Alessandro Catania; Sebastiano Strangio; Giuseppe Iannaccone / arXiv</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">硬件:CIM</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">针对 65 纳米单层多晶硅浮栅模拟存内计算芯片，研究存储电荷随时间流失导致神经网络推理精度下降的问题，并给出补救办法。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">编程后 60 天，结合电路补偿和批归一化重标定，可把 VGG-10/CIFAR-10 和 WideResNet-28-10/CIFAR-100 的推理精度恢复到基线的 2%–4% 以内。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在标准 65 纳米 CMOS 流片的浮栅阵列上实测保持损失，建立统计模型做系统级仿真，再在电路层做补偿、在算法层重新校准批归一化参数。</span></div>
+<div class="score-reason">评分依据：存内计算是低功耗端侧推理的重要硬件方向，论文有流片实测数据，相关度中等；方法是电路补偿与批归一化重标定的组合，属常规改进。作者来自比萨大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.25058" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

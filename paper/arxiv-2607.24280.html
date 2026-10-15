@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>From Proprietary to Open-Source: Bridging the Distribution Gap via Multi-Agent Protocol Distillation in Agentic Search</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-28 · Junlin Liu, Jiangwang Chen, Zixin Song, Shuaiyu Zhou, Chunji Lv, Hank Wu, Kailin Jiang, Jinyang Wu, Bohan Yu, Chenxi Zhou / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span><span class="tag">方向:端侧agent</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">agentic 搜索让大模型通过多步推理与检索交织来求解知识密集任务，作者针对其优化展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=75)；affiliation 待核实</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-28 · Junlin Liu, Jiangwang Chen, Zixin Song, Shuaiyu Zhou, Chunji Lv, Hank Wu, Kailin Jiang, Jinyang Wu, Bohan Yu, Chenxi Zhou / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:工具调用</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把闭源大模型做智能体搜索的能力蒸馏给 Qwen3-1.7B/4B 这类小模型的方法：先把老师的探索过程整理成结构化“协议”，再用它给学生提供密集监督。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 7 个问答基准上持续优于其他蒸馏和强化学习方法，Qwen3-1.7B 平均成功率 39.4%，Qwen3-4B 为 44.4%，并能在不同闭源老师之间泛化。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">离线多智能体系统负责拆解问题、检索证据、修复失败搜索，并把轨迹转成包含任务类型、推理计划和事实依据的 JSON 协议；训练时只让学生的特权分支看到协议，用其 token 分布做蒸馏信号，配合强化学习。</span></div>
+<div class="score-reason">评分依据：让小模型具备智能体搜索能力，对端侧小模型 Agent 有间接参考，但本身是训练方法、未涉及部署，相关度 3；用结构化协议解决异构蒸馏的思路有一定新意，贡献 5。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.24280" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

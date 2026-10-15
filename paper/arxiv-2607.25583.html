@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>How Small Can You Go? A Controlled Study of LoRA Rank, Target Modules, and Quantization Trade-offs for Text-to-SQL on a 60M-Parameter Model</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-28 · Mahendra Singh Rathor; Anagheem Azzam / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">参数高效微调（PEFT）和低位量化已是紧算力预算下适配语言模型的标准工具，但二者交互作用不清，作者针对此。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-28 · Mahendra Singh Rathor; Anagheem Azzam / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一项受控实验：在仅 6000 万参数的 T5-small 上做文本转 SQL，逐一测量 LoRA 秩、适配模块和量化精度各自要付出多少准确率代价。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">LoRA 秩取 16 时精确匹配率 59.6%，比全量微调的 71.2% 低 11.6 个百分点，但只训练不到 1% 参数、峰值显存降 31%，秩再增大无收益；INT8 与 NF4 的 QLoRA 准确率为 52.8% 和 53.2%，显存仅 0.60 GB。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">固定模型和数据集，每次只改变一个变量（LoRA 秩、适配的模块、数值精度），同时记录准确率、可训练参数、峰值显存、推理延迟和吞吐。</span></div>
+<div class="score-reason">评分依据：超小模型加量化的取舍对内存受限部署有参考意义，但只是常规方法的对照实验，贡献低。作者为独立研究者。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.25583" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

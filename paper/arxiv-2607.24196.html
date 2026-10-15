@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PIMID: A Full-System Simulator with Intricacy and Diversity for Processing-in-Memory</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-27 · Yuan He; Masaaki Kondo; Galen M. Shipman; Jered B. Dominguez-Trujillo; Shigeki Tomishima; Kazi Asifuzzaman / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:端云协同</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">存内计算通过把计算与存储并置来解决内存墙问题，但因真实 PIM 硬件稀缺，模拟是主要手段，作者针对此改进。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-27 · Yuan He; Masaaki Kondo; Galen M. Shipman; Jered B. Dominguez-Trujillo; Shigeki Tomishima; Kazi Asifuzzaman / arXiv</div>
+<div class="tags"><span class="tag">硬件:CIM</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">RIKEN、庆应大学和美国国家实验室开发的存内计算（PIM）全系统模拟器 PIMID，可以在一个工具里比较多种内存技术和处理单元摆放方式。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">支持 11 种内存技术（7 种 DRAM 标准、SRAM、3 种非易失内存）；实验显示仅换内存技术就能让执行时间相差一个数量级以上，且只有 HBM3 等带宽型内存上的卸载才在能耗上划算。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">执行驱动加轨迹驱动的全系统仿真，同时支持共享内存（OpenMP）和消息传递（MPI）两种执行模型，处理单元可放在子阵列到逻辑层任意层级，并对主机—设备边界的时间和能耗单独计价。</span></div>
+<div class="score-reason">评分依据：存内计算是缓解端侧大模型内存墙的硬件方向之一，但本文是通用 PIM 模拟器，没有针对 AI 推理负载，相关度 3；全系统、多内存技术统一建模的工具贡献 5。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.24196" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Hierarchical Sparse Attention Done Right: Toward Infinite Context Modeling</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-07-03 · Xiang Hu, Xinyu Wei, Hao Gu, Minshen Zhang, Tian Liang, Huayang Li, Lei Zhu, Yan Wang, Sirui Han, Yushi Bai, Kewei Tu, Haitao Mi, Leo Liang / arXiv</div>
-<div class="tags"><span class="tag">方向:稀疏注意力</span><span class="tag">方向:高效注意力</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出 HiLS 分层稀疏注意力，让 chunk 选择在 LM 损失下端到端学习，性能追平全注意力且能外推到训练上下文 64 倍以上。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">域内上下文长度上性能可比甚至优于全注意力；外推超训练长度 64 倍时检索准确率 90%；全注意力模型可轻量继续预训练转换。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">每个 query 独立与每个检索到的 chunk 做注意力提取 chunk 信息，再按检索分数融合输出，把检索分数纳入前向计算使其在 LM 损失下端到端优化。</span></div>
-<div class="score-reason">评分依据：稀疏注意力+长上下文外推属端侧推理技术栈（relevance 7）。端到端学习 chunk 选择+原生稀疏训练有创新（contribution 8）。作者含 Yushi Bai/Kewei Tu (SUSTech)，学校项目。</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-03 · Xiang Hu, Xinyu Wei, Hao Gu, Minshen Zhang, Tian Liang, Huayang Li, Lei Zhu, Yan Wang, Sirui Han, Yushi Bai, Kewei Tu, Haitao Mi, Leo Liang / arXiv</div>
+<div class="tags"><span class="vendor-tag">Tencent</span><span class="tag">方向:稀疏注意力</span><span class="tag">方向:KV cache</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">腾讯混元团队提出分层地标稀疏注意力 HiLS，让模型自己学会该看长文本里的哪些块，目标是在省算力的同时把上下文长度外推得更远。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在训练长度内效果与全注意力相当甚至更好；可外推到训练长度 64 倍以上并保持 90% 检索准确率；8K 训练的模型续训 50B token 后，相比全注意力预填充最多快 13.5 倍、解码最多快 15.7 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每个查询分别与检索到的文本块做注意力，再按块的检索分数加权融合；因为检索分数直接参与前向计算，可以用语言建模损失端到端训练选块；已有全注意力模型经轻量续训即可转换。</span></div>
+<div class="score-reason">评分依据：稀疏注意力与稀疏 KV 访问是端侧长上下文推理可直接借鉴的技术，但实验在服务器上完成；端到端学习选块并同时提升效率和外推能力，贡献较强。 作者机构依据：arXiv PDF 首页署名 Tencent（PDF 首页作者 1、5、6、7、8、10、12、13 署名 Tencent HY Team（腾讯混元），代码在 Tencent-Hunyuan 组织下开源）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.02980" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

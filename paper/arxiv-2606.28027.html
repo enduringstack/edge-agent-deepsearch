@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MLVC: Multi-platform Learned Video Codec for Real-World Deployment</h1>
-<div class="meta"><span class="score">17</span> <span class="tier school">学校预印本</span>  2026-06-26 · Tanel Pärnamaa, Martin Lumiste, Ardi Loot et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出MLVC跨平台稳健神经视频编解码器，通过超先验显式传尺度参数保证跨设备熵编码一致，配门控记忆、ReGLU、长期参考恢复和感知训练，在消费NPU上实时运行。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">VCD视频会议基准上比硬件HEVC BD-rate(MOS)提升超70%，主观质量匹敌DCVC-RT，Apple/Intel/Qualcomm NPU上编解码均100FPS。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确消费NPU跨平台实时部署，端侧属性强；首个压缩+实时+跨平台稳健结合创新高。</div>
+<div class="meta"><span class="score">14</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-06-26 · Tanel Pärnamaa, Martin Lumiste, Ardi Loot et al. / ECCV 2026</div>
+<div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:编译部署</span><span class="tag">方向:量化</span><span class="tag">应用:视频</span><span class="tag">硬件:NPU</span><span class="tag">硬件:Apple-Silicon</span><span class="tag">硬件:Snapdragon</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">MLVC 是一个能在不同品牌硬件上稳定运行的神经网络视频编解码器，解决神经编解码器因各家芯片计算结果不一致而解码崩溃、难以真正部署的问题，主要面向视频会议。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 VCD 视频会议基准上，相比硬件 HEVC 的码率节省（按主观评分算）超过 70%，主观画质与无法跨平台的 DCVC-RT 相当；编码器和解码器在苹果、英特尔、高通的消费级 NPU 上平均都能跑到每秒 100 帧。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">通过超先验显式传输量化尺度参数，保证不同设备熵编码结果一致而无需逐比特相同的运算；再用门控记忆、ReGLU 激活、长期参考帧恢复和面向会议场景的感知训练，把额外码率开销补回来。</span></div>
+<div class="score-reason">评分依据：在多家手机和电脑 NPU 上实时运行，是神经网络模型跨端侧硬件部署的扎实案例，但不涉及大模型或智能体；跨平台确定性方案有新意，已被 ECCV 2026 接收并开源。公司归属依据 arXiv PDF 首页：全部作者署名 Microsoft Corporation。 作者机构依据：arXiv PDF 首页署名 Microsoft（PDF 首页全部六位作者署名 Microsoft Corporation，邮箱为 microsoft.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.28027" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

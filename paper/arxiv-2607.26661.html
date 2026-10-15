@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AgenticCANN: Automated Ascend C Operator Generation via Knowledge-Augmented Agentic Evolution</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-29 · Junhao Qiu; Zidong Wang; Yansong Sun; Zhitong Ma; Ping Guo; Qingfu Zhang / arXiv</div>
-<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:NPU</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">昇腾 C 算子优化对 NPU 推理性能至关重要但需要深厚硬件专业知识，作者探索用大模型辅助该优化。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Huawei（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-29 · Junhao Qiu; Zidong Wang; Yansong Sun; Zhitong Ma; Ping Guo; Qingfu Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:高效推理</span><span class="tag">硬件:NPU</span><span class="tag">硬件:Ascend</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让大模型智能体自动给华为昇腾 NPU 写 Ascend C 算子。昇腾的编程模型和 CUDA 差别很大、公开代码又少，大模型直接生成的算子经常编译不过或结果不对，这项工作专门补这个短板。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Ascend 910B 上，逐元素和归一化类算子的可用率达到 90%~100%，融合类算子 56%；生成的算子在 1B 盘古模型推理形状上比 PyTorch 原生算子快 6.19~6.65 倍；注入领域知识后逐元素算子可用率从 57% 提到 86%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先把昇腾编程的多层次领域知识按开发阶段喂给大模型，解决“写得出来”的问题；再按生成和调优阶段切换探索型与收敛型智能体，迭代编译、校验和测速来搜索更快的实现。</span></div>
+<div class="score-reason">评分依据：面向 NPU 推理算子的自动生成，属于推理部署技术栈，但实验平台是数据中心级的 Ascend 910B，不是端侧设备，相关度中等；把知识注入和分阶段智能体演化用在低语料硬件上有一定新意。PDF 首页作者均署名香港城市大学（一位作者兼署香港裕运科技），没有华为署名，不标公司归属。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.26661" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

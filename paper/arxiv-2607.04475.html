@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A Reconfigurable and Representation-Adaptive ISA-Based Architecture for Efficient DNN Acceleration</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-07-05 · Vasilis Sakellariou, Vassilis Paliouras, Ioannis Kouretas, Hani Saleh, Thanos Stouraitis / arXiv</div>
-<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出面向 ML 的指令集架构+可重构硬件平台，兼顾高效与灵活，支持 3-8 位动态精度。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">22nm 实现 5.12-10.47 TOPS/W，比定点方案能效高 1.2 倍，精度不损；超越 SOTA 和混合精度加速器。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">ISA 细粒度控制数据移动/动态精度/解耦执行；轻量可编程核+SIMD 维持高 PE 利用率低控制开销；用残数系统（RNS）实例化支持 3-8 位动态精度。</span></div>
-<div class="score-reason">评分依据：可重构 DNN 加速器 ISA，明确端侧硬件（relevance 8）。ML 导向 ISA+RNS 动态精度有架构创新（contribution 6）。作者 Kuwait Univ，学校项目。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-05 · Vasilis Sakellariou, Vassilis Paliouras, Ioannis Kouretas, Hani Saleh, Thanos Stouraitis / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:编译部署</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:NPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">提出一种面向机器学习的可重构指令集和硬件平台，想同时拿到专用加速器的高能效和通用处理器的可编程性。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以剩余数系统实现、支持 3~8 比特动态精度，22 纳米工艺下典型负载能效 5.12~10.47 TOPS/W，比同架构定点版本能效最高高 1.2 倍且精度不变，核心面积 2.25 平方毫米、主频 800 MHz。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">指令集可精细控制数据搬运、动态精度，以及取数、张量计算和后处理三个域的解耦执行；硬件用轻量可编程核和 SIMD 单元保持高利用率，并与底层数值表示无关。</span></div>
+<div class="score-reason">评分依据：小面积、高能效、可变精度的 DNN 加速器设计适合端侧推理芯片，但未给出具体端侧设备与大模型负载；兼顾效率与可编程性的设计有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.04475" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

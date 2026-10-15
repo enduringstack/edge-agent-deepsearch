@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Token-Wise Latent Streaming from Slow Reasoners to Fast Planners for Dynamic Vision Language Navigation</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-18 · Tianshuai Hu; Yangyi Zhong; Zeying Gong; Lingdong Kong; Xiaodong Mei; Guoyang Zhao; Xiaolu Liu; Song Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Vision-Language Navigation in dynamic, human-centric environments exposes a fundamental tension: linguistic reasoning is slow and deliberative, whereas safe, so…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-18 · Tianshuai Hu; Yangyi Zhong; Zeying Gong; Lingdong Kong; Xiaodong Mei; Guoyang Zhao; Xiaolu Liu; Song Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">机器人在人多的动态环境中按语言指令导航时，大模型推理慢，等它想完行人已经移动，决策可能已不安全。SPARK-VLN 让慢速的视觉语言模型边生成边把中间想法传给快速规划器。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">有效单次更新时延从 0.788 秒降到 0.185 秒，推理期间行人平均位移从 0.213 米降到 0.050 米；在新建的动态社交导航基准上导航成功率和社交合规度均提升。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在视觉语言模型逐 token 生成时提取中间隐藏状态，压缩成固定数量的潜在槽位，持续注入到基于流匹配的快速规划器中，形成“慢思考、快执行”的双系统。</span></div>
+<div class="score-reason">评分依据：针对具身智能体推理时延与执行脱节的问题，思路对机载部署有参考价值；但实验只在仿真基准中完成，未在真实设备上运行，因此不算端侧智能体。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.16806" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

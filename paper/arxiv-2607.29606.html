@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>QASP: Query-Adaptive Robust Vector Search Policy</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-31 · Hakan Ferhatosmanoglu; Kushal Kumar; Tal Wagner; Andy Warfield / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">向量检索的根本难题是怎么在最低算力下稳定拿到高召回。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-31 · Hakan Ferhatosmanoglu; Kushal Kumar; Tal Wagner; Andy Warfield / arXiv</div>
+<div class="tags"><span class="vendor-tag">Amazon</span><span class="tag">应用:RAG</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">向量检索如果所有查询都用同一套搜索参数，有的查询召回很高、有的却明显不够。QASP 为每条查询单独预测要搜多深，才能稳定达到设定的召回目标。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在达到 99% 召回的前提下，数据访问量比固定参数减少 80%；各查询之间的召回波动和偏离目标的程度都明显更低，换到更大数据集和分层索引时无需重新训练。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">搜索开始前用一次回归模型预测这条查询的完整“召回随搜索深度增长”曲线，再按目标召回推出搜索策略；搜索过程中再比较预测与实际进度，轻量地调整搜索深度。</span></div>
+<div class="score-reason">评分依据：向量检索是 RAG 和智能体记忆的底层组件，但本文面向通用检索服务，没有涉及端侧设备，相关度给 3；逐查询预测召回曲线并给出理论保证，有一定新意，贡献给 5。PDF 首页四位作者均署名 Amazon，据此标注公司归属。 作者机构依据：arXiv PDF 首页署名 Amazon（PDF 首页四位作者均署名 Amazon（amazon.com 邮箱），其中一位兼任特拉维夫大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29606" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

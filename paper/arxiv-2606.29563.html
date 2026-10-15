@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Coverage-Driven KV Cache Eviction for Efficient and Improved Inference of LLM</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-06-28 · Shuvendu Roy, Mengyao Zhai, Hossein Hajimirsadeghi et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">K-VEC 是覆盖感知的 KV cache 驱逐策略,优先保留 token 覆盖率,引入跨头与跨层覆盖模块,理论证明覆盖率影响互信息从而影响预测精度。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">16 个 LongBench 子集上同驱逐率与内存约束下最高 +10.35 点。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：KV cache 技术栈非显式端侧;覆盖率感知+跨头跨层,创新较高。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-28 · Shuvendu Roy, Mengyao Zhai, Hossein Hajimirsadeghi et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">提出一种新的 KV cache 淘汰策略 K-VEC：在压缩显存的同时尽量保住长文本推理效果。作者发现现有淘汰方法掉点的根源是保留下来的不同 token 覆盖面变窄。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 16 个 LongBench 子任务上，相同淘汰率和显存预算下比现有方法最多高 10.35 分。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">淘汰时优先保证 token 覆盖度，并加入跨注意力头、跨层两个覆盖模块，让不同头和层保留的 token 互相补位；论文还从互信息角度证明覆盖下降会限制预测精度。</span></div>
+<div class="score-reason">评分依据：KV cache 压缩是资源受限推理的核心技术，可直接迁移到端侧长上下文场景，但实验未在设备上进行；以覆盖度为准则的淘汰思路有理论支撑，属有新意的改进。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.29563" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

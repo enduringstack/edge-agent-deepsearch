@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>QuantiBias: Benchmarking Quantization-Induced Bias in LLMs</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-23 · Emilio Ferrara / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Almost every large language model that reaches a broad audience is quantized: trained in full precision, then compressed for efficiency.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-23 · Emilio Ferrara / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span><span class="tag">方向:安全隐私</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">QuantiBias：专门测“量化之后模型是否变得更有偏见”的基准。发现量化模型在常规安全检查里表现正常，但在开放式回答中会更多地主动说出刻板印象。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 8 种语言上，量化模型约每四个开放式回答就有一个带刻板印象（不同压缩档位约 24%～27%），而拒答和选择题等常规安全检查全部通过；先推理再回答能让部分模型家族的效应减半，对另一些则无效。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把生成式多语言刻板印象探针与拒答、选择题对照组配对，隔离出开放式生成带来的偏差，并对比有无推理的版本、给生成内容评定严重程度；覆盖 Qwen、Gemma 等模型和五个量化家族。</span></div>
+<div class="score-reason">评分依据：量化是端侧部署的标配，这项工作揭示了量化模型被常规评测漏掉的安全副作用，对端侧上线前的评测流程有直接意义（相关度 5）。评测视角新颖（贡献 6）。作者来自南加州大学，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.21063" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

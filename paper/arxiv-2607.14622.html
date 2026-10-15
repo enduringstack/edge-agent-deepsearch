@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ExaGEMM: Exploration Framework for CPU-Driven ML Inference via Associative In-Register Computing for Low-Bit GEMM</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-16 · Hyunwoo Oh; Suyeon Jang; Hanning Chen; Sanggeon Yun; Ryozo Masukawa; Mohsen Imani / arXiv</div>
-<div class="tags"><span class="vendor-tag">OPPO</span><span class="tag">方向:量化</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Low-bit GEMM is increasingly central to efficient ML inference, yet very-low-bit execution remains a poor fit for conventional CPUs.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 OPPO（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校顶会</span>  2026-07-16 · Hyunwoo Oh; Suyeon Jang; Hanning Chen; Sanggeon Yun; Ryozo Masukawa; Mohsen Imani / ICCAD 2026</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:编译部署</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ExaGEMM 是一个软硬件协同探索框架，研究如何只给 CPU 增加很少的指令支持，就能高效执行 1/2/4 比特等超低比特矩阵乘。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在代表性模型和 CPU 目标上，相比纯软件基线延迟改善 13.29 倍；解析模型在仿真前剪掉 99.2% 的候选设计。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用 CPU 现有 SIMD 通路完成查表生成和累加，只新增寄存器内选择与送数机制；用解析模型联合搜索内核参数和轻量指令扩展，再自动生成指令规格、gem5 补丁和 GEMM 内核做验证。</span></div>
+<div class="score-reason">评分依据：低比特 GEMM 是端侧 CPU 推理的核心算子，工作直接服务于 CPU 推理加速；但结果来自 gem5 仿真和新增指令设计，尚未落到现成芯片。PDF 首页作者均署名加州大学尔湾分校，未出现 OPPO。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.14622" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

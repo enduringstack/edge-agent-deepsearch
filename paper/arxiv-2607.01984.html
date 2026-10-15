@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Do Newer Lightweight CNNs Perform Better Under Resource Constraints? A Controlled Multigenerational Study of Architecture, Initialization, Training Budget, and Efficiency</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-02 · Tasnim Shahriar / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在统一协议下对比九个轻量 CNN 在 CIFAR/Tiny-ImageNet 上的精度、参数量、GMACs、CPU/L4 延迟与显存,研究新旧架构在资源约束下的真实表现。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">EfficientNetV2-S 精度最高;EfficientNet-B0 在三个数据集上均位于 Pareto 前沿;MobileNetV3-Small GMAC 最低且 CPU 最快;新架构收益是选择性而非普遍的。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：轻量 CNN 资源约束研究,端侧技术栈;属受控对比研究,创新有限。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-02 · Tasnim Shahriar / arXiv</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:模型架构</span><span class="tag">硬件:CPU</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在同一套训练和评测流程下，对比了九个轻量卷积网络，回答“新一代轻量 CNN 在资源受限时是否真的更好”。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">EfficientNet-B0 比最佳模型只低 0.22–1.79 个百分点，却少约 79% 参数和 86% 计算量；MobileNetV3-Small 计算量最低、CPU 上最快，且三个数据集上准确率都高于 MobileNetV4-Conv-S；在 NVIDIA L4 与 AMD Ryzen 5 5500U 上的延迟排名差异很大。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 CIFAR-10/100 和 Tiny ImageNet 上统一训练，记录准确率、参数、计算量、batch=1 的 GPU/CPU 延迟和显存，并画出帕累托前沿。</span></div>
+<div class="score-reason">评分依据：给出了笔记本 CPU 上的 batch=1 实测延迟，对端侧选型有参考（相关度 6）；属对照评测，没有新方法（贡献 3）。作者为独立研究者。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01984" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

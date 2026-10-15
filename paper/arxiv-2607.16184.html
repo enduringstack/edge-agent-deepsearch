@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PagedWeight: Efficient MoE LLM Serving with Dynamic Quality-Aware Weight Quantization</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-17 · Yuchen Yang; Yifan Zhao; Anisha Dasgupta; Sasa Misailovic / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:MoE</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Mixture-of-Experts (MoE) is a popular class of large language models (LLMs), offering high efficiency and accuracy.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">方向:MoE</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">PagedWeight 是一种 MoE 大模型服务方法，在显存被 KV 缓存挤占时动态降低专家权重精度，在精度、显存和吞吐之间做实时权衡。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以 FP16 同等精度最多节省 72.0% 显存、吞吐提升 1.94 倍；在相近显存预算下比现有量化方法质量最高提升 39.3%，吞吐损失不超过 4.1%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把专家权重像分页一样管理，运行时按“每释放一字节带来的预计精度损失”贪心选择哪些专家降低位宽，把腾出的显存让给 KV 缓存。</span></div>
+<div class="score-reason">评分依据：面向 GPU 服务端的 MoE 推理，但运行时动态权重量化与 KV 缓存争抢显存的问题在内存受限设备上同样存在，相关度 4；质量感知的动态权重分页有新意，贡献 6。PDF 首页作者均来自伊利诺伊大学厄巴纳-香槟分校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.16184" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

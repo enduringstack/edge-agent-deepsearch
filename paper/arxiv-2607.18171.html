@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FlashRT: Agent Harness for Guiding Agents to Deploy Real-Time Multimodal Applications</h1>
 <div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-20 · Krish Agarwal; Zhuoming Chen; Yanyuan Qin; Zhenyu Gu; Atri Rudra; Beidi Chen / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span><span class="tag">应用:代码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Real-time multimodal applications, including voice agents and interactive video generation, compose heterogeneous models into pipelines whose efficient deployme…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="tags"><span class="vendor-tag">AMD</span><span class="tag">方向:云端serving</span><span class="tag">方向:编译部署</span><span class="tag">方向:多模态</span><span class="tag">硬件:GPU</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">语音智能体、交互式视频生成这类实时多模态应用由多个模型串成流水线，想部署得快通常要专家手写优化。FlashRT 是一套“引导框架”，让通用编程智能体把开发者写的简单参考实现自动改造成多 GPU 高效部署。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在视频世界模型和多模态大模型等应用上，NVIDIA B200 上延迟最多降低约 70 倍、吞吐提升 2.8 倍；AMD MI355X 上达到同等延迟降幅、吞吐提升 3.6 倍；Qwen3-Omni 文本转语音在 MI355X 上响应延迟比专家写的 vLLM-Omni 实现低 65%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用“程序链”方式分多轮引导：先把参考实现转成能表达数据依赖和状态作用域的中间表示，用顺序解释器校验，再做静态分析找候选变换；随后智能体逐个实现、验证、跑基准，只保留实测有收益的改动。</span></div>
+<div class="score-reason">评分依据：目标是数据中心多 GPU 的实时多模态部署，与端侧设备关联较弱；用编程智能体自动做部署优化并在两家 GPU 上验证，思路新颖。PDF 首页作者 Yanyuan Qin、Zhenyu Gu 署名 AMD。 作者机构依据：arXiv PDF 首页署名 AMD（PDF 首页作者 3、4（Yanyuan Qin、Zhenyu Gu）署名 AMD（amd.com 邮箱），其余作者来自卡内基梅隆大学与布法罗大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.18171" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

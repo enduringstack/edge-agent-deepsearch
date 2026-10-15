@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AREX: Towards a Recursively Self-Improving Agent for Deep Research</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-24 · Shuqi Lu, Chaofan Li, Kun Luo, Zhang Zhang, Hui Wang, Hongwang Xiao, Zheng Liu, Lei Xiong, Jiahao Wang, Sen Wang, Xiyan Jiang, Wanli Li, Yuyang Hu, Hongjin Qian, Bingyu Yan, Ziyi Xia, Yingxia Shao, Kang Liu, Zhicheng Dou, Di He, Chaozhuo Li, Qiwei Ye, Zhongyuan Wang, Zheng Liu / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Deep research requires agents to find answers that jointly satisfy multiple constraints.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=118)；affiliation 待核实</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-24 · Shuqi Lu, Chaofan Li, Kun Luo, Zhang Zhang, Hui Wang, Hongwang Xiao, Zheng Liu, Lei Xiong, Jiahao Wang, Sen Wang, Xiyan Jiang, Wanli Li, Yuyang Hu, Hongjin Qian, Bingyu Yan, Ziyi Xia, Yingxia Shao, Kang Liu, Zhicheng Dou, Di He, Chaozhuo Li, Qiwei Ye, Zhongyuan Wang, Zheng Liu / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">AREX：能“自我递归改进”的深度研究智能体，先搜集证据给出暂定答案，再逐条核验约束、找出未解决的部分并发起针对性补充研究。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 BrowseComp、WideSearch、DeepSearchQA、HLE 等基准上明显优于同规模基线；4B 的 AREX-Turbo 在六个基准中的五个上超过 Qwen3.5-35B，122B-A10B 版本在 WideSearch-en 上取得报告中的最佳成绩。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">内层循环负责检索和作答，外层循环按约束审计答案；模型学会一个自主的上下文更新工具，把不断增长的交互历史压缩成只保留已验证证据和待解约束的紧凑状态；通过智能体中期训练和长程强化学习训练。</span></div>
+<div class="score-reason">评分依据：属于云端深度研究智能体，与端侧部署关系弱（相关度 3）；其上下文压缩工具对受限内存下的长程 Agent 记忆有参考价值，且提供 4B 小模型。递归自改进框架有一定新意（贡献 6）。署名为北京智源人工智能研究院（非营利研究机构），不计入公司项目。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.21461" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

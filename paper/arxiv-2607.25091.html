@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Towards Robust Reinforcement Learning for Small-Scale Language Model Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-27 · Md Rezwanul Haque; Md. Milon Islam; Fakhri Karray / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用强化学习对齐 7000 万-5 亿参数量级的小语言模型（SLM）常被认为不稳定，作者针对其底层原因展开。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-27 · Md Rezwanul Haque; Md. Milon Islam; Fakhri Karray / IEEE SMC 2026</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">模型:SmolLM</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">系统排查 7000 万到 5 亿参数的小语言模型用强化学习（PPO）对齐时为何总是不稳定，并给出一套能稳定训练的修复方案。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">15 组模型与语料配置全部稳定收敛；在监督模型足够流畅、奖励信号有区分度的配置下，偏好胜率超过监督微调基线，并以更少训练数据超过指令微调基线（摘要未给具体百分比）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">定位出三类失效：LoRA 参数被悄悄冻结、bfloat16 下重要性比率溢出、奖励模型出错导致策略崩溃；分别用合并后重新初始化适配器、PPO 更新用 float32、奖励白化加比率保护加权重回滚来解决。</span></div>
+<div class="score-reason">评分依据：对象是端侧可部署规模的小模型，但内容是训练阶段的稳定性问题，与推理部署关系弱。三类失效模式的排查有实用价值，方法属工程修补。作者来自滑铁卢大学等高校，发表于 IEEE SMC 2026。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.25091" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

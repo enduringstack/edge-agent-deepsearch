@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>At-the-Roofline Sparse Tensor Contractions on Vector Processors for Transformer Inference</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-28 · Bowen Wang; Chi Zhang; Diyou Shen; Renzo Andri; Navaneeth Kunhi Purayil; Luca Benini / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:云端serving</span><span class="tag">模型:Llama</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">细粒度权重剪枝和激活稀疏化已成为降低 Transformer 推理算力与内存成本的有效手段，作者针对此展开。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-28 · Bowen Wang; Chi Zhang; Diyou Shen; Renzo Andri; Navaneeth Kunhi Purayil; Luca Benini / VLSI-SoC 2026</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span><span class="tag">硬件:CPU</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">为 RISC-V 向量处理器设计的稀疏执行单元 Ventaglio，让剪枝后的 Transformer 稀疏矩阵运算接近硬件理论峰值。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">12 纳米实现下，稀疏张量收缩内核比优化过的 RVV 基线快 6.9–7.4 倍，面积开销仅 3.1%；在 40%–60% 双稀疏的 LLaMA-3-8B 上，预填充和解码分别比稠密基线快 2.40–5.25 倍和 2.06–3.16 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">增加可运行时配置的稀疏执行单元和 RVV 指令扩展，原生支持“按索引收集-累加-分散”，替代软件解码索引和经 L1 的索引访存；再用 RTL 校准的指令级模型评估 4×4 多簇系统的扩展性能。</span></div>
+<div class="score-reason">评分依据：面向低功耗向量处理器上的稀疏 Transformer 推理，属于端侧可用的硬件加速方向，但结果来自 RTL 与性能模型而非整机部署，相关度中等。作者机构依据 arXiv PDF 首页：Renzo Andri 署名华为瑞士计算系统实验室，其余作者来自苏黎世联邦理工学院与博洛尼亚大学，致谢中也注明华为苏黎世研究中心资助。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页第 4 位作者 Renzo Andri 署名 Computing Systems Lab, Huawei, Switzerland，邮箱 huawei.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.25504" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

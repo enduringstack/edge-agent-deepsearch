@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ThRIve: Thermally Robust CNN Inference via Low-Rank Adaptation in Heterogeneous PIM Architectures</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-19 · Vibhanshu Sharma; Pratyush Dhingra; Janardhan Rao Doppa; Partha Pratim Pande / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Processing-In-Memory (PIM) has emerged as a promising technology for accelerating machine learning (ML) workloads.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-19 · Vibhanshu Sharma; Pratyush Dhingra; Janardhan Rao Doppa; Partha Pratim Pande / ACM TODAES</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">硬件:CIM</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">非易失存内计算芯片会因温度噪声改变存储的权重、拉低 CNN 推理精度，这项工作让此类芯片在全工作温度范围内保持精度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">平均精度与无噪声理想值相差不超过 2%，全温度范围内波动不超过 2%；在精度与 SRAM 存内计算相当的同时，推理能量延迟积最多降低 5.4 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用噪声感知训练得到低秩（LoRA）补偿参数，并把这部分参数放在不易受热噪声影响的存储硬件上，形成异构存内计算。</span></div>
+<div class="score-reason">评分依据：面向低功耗存内计算推理硬件的可靠性问题，对边缘端 CNN 加速有迁移价值，但不涉及大模型或具体设备部署。LoRA 与异构存储结合抗热噪声的思路较新，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.17091" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Bifocal Diffusion Language Models: Asymmetric Bidirectional Context for Parallel Generation</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-26 · Yuhang Chen, Xianfeng Wu, Jinhao Duan et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Bifocal dLLM 用非对称双向上下文解决扩散语言模型的困境:因果注意力保左上下文和 KV 缓存,轻量反向 Mamba 侧车供压缩右上下文。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">Qwen3-1.7B 续训 60B token 后,比双向 dLLM 吞吐高 2.4-12.9x、比 AR 基线快 1.9-2.9x,多数基准超因果基线,平均超双向 dLLM。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：高效并行解码带 KV 缓存,端侧可迁移但属通用语言模型研究。</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-06-26 · Yuhang Chen, Xianfeng Wu, Jinhao Duan et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">Meta</span><span class="tag">方向:模型架构</span><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Bifocal 扩散语言模型 R2LM 想解决扩散语言模型的一个两难：双向注意力质量好但无法用 KV 缓存，因果注意力能缓存却看不到右侧上下文。它在因果注意力旁加一个反向 Mamba 小模块来补右侧信息。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen3-1.7B 上用 600 亿 token 继续预训练后，批量服务吞吐比双向扩散模型高 2.4 到 12.9 倍，比自回归基线快 1.9 到 2.9 倍，多数基准超过因果基线、平均超过双向扩散模型。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">主干保持标准因果注意力以兼容 KV 缓存，另加一个从右往左运行的轻量 Mamba 状态空间模块，把右侧上下文压缩后提供给每个位置，从而并行解码时仍能复用缓存。</span></div>
+<div class="score-reason">评分依据：提升小规模扩散语言模型推理效率，可迁移到资源受限场景，但实验在 H100 上做批量服务，端侧相关度中等；“左侧注意力加右侧状态空间”的组合有新意。公司归属依据 arXiv PDF 首页：除第一、三位和末位作者外，其余作者署名 Meta AI。 作者机构依据：arXiv PDF 首页署名 Meta（PDF 首页 Xianfeng Wu 等十位作者署名 Meta AI，第一作者注明工作完成于 Meta 实习期间）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.27732" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

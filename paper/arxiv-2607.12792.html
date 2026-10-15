@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Silent Alarm: A J-Space Protocol for Comparing Danger Recognition Across Models and Quantization Levels</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-14 · Roman Prosvirnin; Victor Minchenkov; Alexey Soldatov; Vladimir Bashun / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span><span class="tag">模型:Gemma</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Jailbreak-robustness research typically evaluates safety through generated responses using an LLM-as-judge approach.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-14 · Roman Prosvirnin; Victor Minchenkov; Alexey Soldatov; Vladimir Bashun / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">提出一种不依赖外部评判模型的安全评估协议，在模型输出第一个 token 之前读取其内部表示，判断它能否识别危险请求，并比较不同模型和不同量化精度的差异。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen3-1.7B/4B/8B、两个安全调优或去审查的 Qwen3-4B 变体和 Gemma 2 9B 上，覆盖 BF16、INT8、INT4 三种权重精度；提出的 SafetyAUC 指标能以统计显著性区分内部安全机制强弱的模型，并捕捉到不同量化精度带来的实质差异（摘要未给具体数值）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对每个提示和每一层记录 J 空间（可用词语表达的概念空间）里排名靠前的 token，归入六类行为场景，比较危险样本与安全对照样本的差异，计算全部在本地完成。</span></div>
+<div class="score-reason">评分依据：关注量化对小模型内部安全机制的影响，对端侧部署量化模型的安全评估有参考价值；协议设计有新意，但仍偏评测方法。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.12792" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

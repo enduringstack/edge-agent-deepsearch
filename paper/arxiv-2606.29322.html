@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SP-CACW: Convergence-Aware Client Weighting for Selfish Personalized Learning</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-28 · Yaron Kiselman, Kfir Y. Levy / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">SP-CACW 是收敛感知的客户端加权框架,为目标客户端最小化收敛误差上界,在偏置与方差间权衡并可对有害 peer 赋零权重。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">MNIST/CIFAR-100/LEAF Shakespeare 上与个性化/聚类基线相当或更优;未报告具体数字。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：联邦/个性化学习非显式端侧;收敛感知加权,中等创新。</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-06-28 · Yaron Kiselman, Kfir Y. Levy / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">SP-CACW 研究“自私”的个性化协同学习：某个目标客户端如何利用其他客户端的梯度来优化自己的模型，同时避免被分布差异大的同伴拖累。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 MNIST、CIFAR-100 和 LEAF Shakespeare 上，与强个性化和聚类基线相当或更好（摘要未给出具体数字），并给出收敛保证。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">通过最小化目标客户端收敛误差的上界来选择聚合权重，在同伴带来的偏差和随机方差之间权衡，必要时把有害同伴的权重设为零。</span></div>
+<div class="score-reason">评分依据：属于联邦个性化训练理论，与端侧推理部署关系较弱；收敛感知的加权规则有理论贡献。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.29322" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

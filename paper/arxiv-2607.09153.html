@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>KV-PRM: Efficient Process Reward Modeling via KV-Cache Transfer for Multi-Agent Test-Time Scaling</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-10 · Peng Kuang; Haibo Jin; Xiaoyu Han; Yanli Wang; Xiaopeng Yuan; Ye Yu; Kaidi Xu; Haohan Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:语音</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Process Reward Models (PRMs) have been proven to be highly effective in guiding test-time scaling (TTS) methods, which significantly boost the capabilities of L…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-10 · Peng Kuang; Haibo Jin; Xiaoyu Han; Yanli Wang; Xiaopeng Yuan; Ye Yu; Kaidi Xu; Haohan Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:规划推理</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多智能体推理时常用过程奖励模型给每一步打分，但它要把整条轨迹文本重新编码一遍，越长越贵。KV-PRM 直接读取生成时已有的 KV cache 来打分。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 MATH、GSM8K、AIME 上配合 Beam Search、MCTS、加权投票等测试时扩展方法，效果持平或优于文本式奖励模型，打分计算量最多减少 5000 倍，延迟降低 37 倍，单序列内存降低 34 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">让奖励模型只处理一个“验证 token”，对着生成阶段已经算好的 KV cache 做注意力，把打分复杂度从序列长度的平方降到线性；并从理论上说明 KV cache 携带的信息不少于文本。</span></div>
+<div class="score-reason">评分依据：复用 KV cache 降低多智能体测试时扩展的打分开销，属于推理效率与 Agent 运行时相邻技术，可迁移到资源受限场景，但未做端侧实验（相关度 5）。思路新颖、加速幅度大（贡献 6）。作者为伊利诺伊大学香槟分校、帝国理工、香港城市大学，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.09153" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

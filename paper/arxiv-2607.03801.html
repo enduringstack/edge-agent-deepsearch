@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Punching Above Their Weight: Classification-Head Fine-Tuning of Tiny Language Models (TLMs) for Verifiable Multiple-Choice Tasks</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-07-04 · Bhavesh Sood; Jaromir Savelka / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span><span class="tag">硬件:手机</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">研究 &lt;3B 的微型语言模型（TLMs）在消费设备上做可验证多选题任务的微调范式。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">判别式分类头微调在 0.6B/1.7B 上比标签生成高 2-3%；Qwen3-0.6B/1.7B 微调后在 HellaSwag/WinoGrande/PIQA 上达 SOTA，可与 GPT-3/PaLM/GPT-4 竞争。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">比较标签生成、gold-only、判别式分类头三种 LoRA 微调范式，在 Qwen3 0.6B-8B 与五个基准上统一评测。</span></div>
-<div class="score-reason">评分依据：明确微型语言模型在消费设备上部署（relevance 8）。判别式分类头微调属工程研究（contribution 5）。vendors 空。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-04 · Bhavesh Sood; Jaromir Savelka / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:评测基准</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究 3B 参数以下、能在普通消费设备上跑的“微型语言模型”如何做选择题类任务，比较了三种 LoRA 微调方式，提出加一个判别式分类头。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen3 0.6B 到 8B 和五个基准上，分类头微调在 0.6B 和 1.7B 规模上比生成标签的方式高 2~3%；微调后的小模型可与零样本或少样本的 GPT-3、PaLM、GPT-4 相当，Qwen3-0.6B 和 1.7B 在 HellaSwag、WinoGrande、PIQA 上达到最佳成绩。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 LoRA 微调的小模型上接一个判别式分类头，直接对候选答案打分，而不是让模型生成答案标签。</span></div>
+<div class="score-reason">评分依据：关注可在消费设备上运行的小模型任务适配，与端侧小模型相关，但没有设备端实测；方法较常规。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.03801" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

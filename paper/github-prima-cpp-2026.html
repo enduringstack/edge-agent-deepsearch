@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>prima.cpp：家用异构设备上 30-70B LLM 快速推理</h1>
-<div class="meta"><span class="score">14</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-06-30 · OpenCPIL / GitHub</div>
-<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">prima.cpp（ICLR2026 official）在家用异构/日常设备上做 30-70B LLM 分布式推理，面向 on-device-llm 与 distributed-inference。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">异构设备分布式推理 + 跨设备协同，把大模型塞进家用硬件。</span></div>
-<div class="score-reason">评分依据：ICLR2026 official 端侧大模型推理引擎（GitHub trending/search 发现，URL 200）</div>
+<div class="meta"><span class="score">16</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-06-30 · OpenCPIL / GitHub</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span><span class="tag">方向:高效推理</span><span class="tag">硬件:手机</span><span class="tag">硬件:CPU</span><span class="tag">硬件:GPU</span><span class="tag">模型:Llama</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">prima.cpp 是基于 llama.cpp 的分布式推理实现，把家里的笔记本、台式机、手机等异构设备连成一个小集群，合力跑 30B 到 70B 级别的大模型，对应论文发表于 ICLR 2026，本周以官方组织仓库重新发布。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Mac M1、两台 Linux 电脑和一部 Mate40Pro 手机组成的家用集群上，Llama 3-70B 每个 token 延迟 674 毫秒，单机 llama.cpp 为 10120 毫秒，exo 和 dllama 直接内存不足；QwQ-32B 约每秒 11 个 token，各设备内存压力保持在 10% 以下。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用带预取的环形流水线并行，提前加载后续层的权重来掩盖磁盘读取延迟；再按各设备的算力、内存、磁盘速度自动选择参与设备并分配层数。</span></div>
+<div class="score-reason">评分依据：直接面向手机和个人电脑等日常设备的大模型推理，有真机集群实测，端侧相关度高；环形流水线并行加异构设备调度有新意并已被 ICLR 2026 接收。</div>
 <div class="source"><a href="https://github.com/OpenCPIL/prima.cpp" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

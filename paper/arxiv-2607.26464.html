@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PUDA: An AI-Native Hardware Harness for Self-Driving Laboratories</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-29 · Zekun Ren; Hongzhao Tan; Jiaen Yee; Kedar Hippalgaonkar / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">PUDA 是面向自动驾驶实验室（SDL）的 AI 原生硬件 harness 框架。</span></div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-29 · Zekun Ren; Hongzhao Tan; Jiaen Yee; Kedar Hippalgaonkar / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">PUDA 是一个给“自动驾驶实验室”用的硬件运行层：把实验仪器包装成命令行接口，让 AI 智能体可以下发实验指令，而硬件执行保持确定、原子和可审计。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">仪器以可发现的命令行工具形式暴露，JSON 协议经分布式消息系统路由；协议、样品、测量和命令日志按运行编号和时间戳组织成结构化数据，智能体只负责选实验，执行和溯源由 PUDA 完成。</span></div>
+<div class="score-reason">评分依据：让智能体通过命令行操作物理设备，属于 Agent 工具调用运行时的相邻工作，但论文未说明模型在本地运行，判为非端侧 Agent（相关度 4）；面向智能体的硬件抽象有实用价值，但缺少量化评测（贡献 5）。作者来自新加坡 BEARS 和南洋理工大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.26464" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

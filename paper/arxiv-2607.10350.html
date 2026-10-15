@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-14 · Jiayi Tian, Shiao Liu, Yuting Xu, Jia Lu, Zihao Guan, Honglin Han, Di Yang, Minqi Gu, Yifei Qian, Tianlin Zhang, Yanqing Zhu, Zeqian Ye, Menglin Yang, Fei Wang, Xu Hu, Xiuxian Li, Wei Zhang, Shihui Su, Yiyan Ji, Jingbo Wang, Ziteng Feng, Jiaheng Liu, Zhaoxiang Zhang, Xiaolong Wu, Zixiao Tang, Zhining Gu, Yang Cai, Linbo Zheng, Jingjing Ma, Mingyang Yin, Zedong Chu, Ziqiao Li, Mu Xu / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:端云协同</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">We present ABot-AgentOS, a general robotic Agent Operating System that sits above low-level controllers and provides a deliberative agent layer for scene-condit…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=77)；affiliation 待核实</div>
+<div class="meta"><span class="score">14</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-14 · Jiayi Tian, Shiao Liu, Yuting Xu, Jia Lu, Zihao Guan, Honglin Han, Di Yang, Minqi Gu, Yifei Qian, Tianlin Zhang, Yanqing Zhu, Zeqian Ye, Menglin Yang, Fei Wang, Xu Hu, Xiuxian Li, Wei Zhang, Shihui Su, Yiyan Ji, Jingbo Wang, Ziteng Feng, Jiaheng Liu, Zhaoxiang Zhang, Xiaolong Wu, Zixiao Tang, Zhining Gu, Yang Cai, Linbo Zheng, Jingjing Ma, Mingyang Yin, Zedong Chu, Ziqiao Li, Mu Xu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span><span class="tag">方向:端云协同</span><span class="tag">方向:评测基准</span><span class="tag">方向:安全隐私</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">高德 AMAP CV Lab 提出的通用机器人智能体操作系统，架在底层运动控制器之上，统一负责任务规划、技能执行、多级校验、多模态长期记忆和端云协同，可适配人形、四足、机械臂等不同机器人。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 EmbodiedWorldBench 初始子集上任务成功率和目标完成率均超过单控制器基线；记忆评测中 LoCoMo 87.5、OpenEQA EM-EQA 59.9、Mem-Gallery 88.6、NExT-QA Acc@All 76.5，加上自进化后 LoCoMo 升到 88.7、OpenEQA 60.4、Mem-Gallery 89.0；判断记忆能否上传云端的隐私分类准确率超过 99%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">主大模型按场景做规划并把流程性子任务交给隔离上下文的技能执行器，再经多阶段校验纠错；记忆把对话、画面、空间与时间关系存成带来源的图结构；端侧小模型先处理常规请求、复杂任务再上云，涉及人脸和私人物品的记忆默认只留在机器人本地。</span></div>
+<div class="score-reason">评分依据：提出了端云协同路由和“私有记忆留在机器人本地”的设计，与端侧机器人智能体直接相关，但实验在 Unreal Engine 5 仿真场景和离线记忆基准上完成，尚无真机端侧运行数据，故相关度 7。把规划、技能、校验、记忆和自进化整合成一层通用 Agent OS 并配套可执行基准，贡献较完整。公司归属依据 arXiv PDF 首页署名 AMAP CV Lab（高德）及通讯作者 alibaba-inc.com 邮箱。 作者机构依据：arXiv PDF 首页署名 Alibaba（PDF 首页署名 AMAP CV Lab（阿里巴巴旗下高德），通讯作者使用 alibaba-inc.com 邮箱）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.10350" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

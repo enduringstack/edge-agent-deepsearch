@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Self-organizing Architecture of Receptron Units: a Hardware-Aware Framework for Edge Intelligence</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-22 · Stefano Radice; Ludovico Casaccia; Riccaro Emanuele Beccalli; Bruno Paroli; Paolo Milani / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:MCU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">The growing demand for intelligent processing at the edge of IoT networks is constrained by the severe computational and memory limitations of microcontroller u…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-22 · Stefano Radice; Ludovico Casaccia; Riccaro Emanuele Beccalli; Bruno Paroli; Paolo Milani / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:MCU</span><span class="tag">硬件:神经形态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">微控制器算力和内存都很紧，传统深度网络难以塞进去；本文提出一种受神经形态启发、单个单元就能画出非线性决策边界的 Receptron 分类器，可直接部署在中端 MCU 上并支持在设备上持续自适应。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">Iris 数据集准确率 90.0%（SVM 94.7%、随机森林 89.4%），乳腺癌数据集 93.5%（SVM 94.4%、随机森林 97.9%）；Iris 配置每次推理只需 48 次乘加和 12 次比较，论文估算在带浮点单元的 MCU 上时延为数十微秒量级。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用自组织方式为每个类别分配若干原型中心，每个中心带一个感受野半径，推理时按样本落入哪些中心的范围做加权投票；在线更新只需简单的向量平移，因此能在 MCU 内存里持续学习。</span></div>
+<div class="score-reason">评分依据：明确面向 MCU 级别的边缘智能与设备端自适应，但只在小型公开数据集上做离线评测，计算开销为理论估算、没有真机测量（相关度 6）。单单元非线性分类器思路有特色，但实验规模很小（贡献 4）。作者来自米兰大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.20162" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>BrownoutMoE: Structure-Aware Expert Grouping for Efficient and Accurate LLM Web-based Services</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-07-05 · Yi Ding, Minxian Xu, Zhengxin Fang, Kejiang Ye, Chengzhong Xu / arXiv</div>
-<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:云端serving</span><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把 MoE 专家重组成组提升利用率，用 RL 发现最小精度下降的分组策略，再蒸馏产出可部署模型。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">精度下降最多减 71.4%，吞吐最多升 2.24 倍。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">层内专家分组学习问题用 RL 求解；分组一致蒸馏产出兼容标准推理管线的可部署模型。</span></div>
-<div class="score-reason">评分依据：MoE 服务效率，云端 serving 为主（relevance 5）。结构感知专家分组+RL+分组一致蒸馏有创新（contribution 8）。作者澳门大学，学校项目。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-05 · Yi Ding, Minxian Xu, Zhengxin Fang, Kejiang Ye, Chengzhong Xu / arXiv</div>
+<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:云端serving</span><span class="tag">方向:蒸馏</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">BrownoutMoE 针对网页服务中的 MoE 大模型推理：少数热门专家处理大部分 token、冷门专家闲置，导致 GPU 利用率低，于是把专家重新分组来提效。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">相比基线，精度损失最多减少 71.4%，吞吐最多提升 2.24 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">借鉴服务计算中的“降级”思路，用强化学习逐层搜索专家分组方案以最小化精度损失，再通过分组一致的蒸馏得到可直接用标准推理流程部署的模型。</span></div>
+<div class="score-reason">评分依据：面向云端网页服务的 MoE 推理优化，与端侧关联较弱；专家结构重组思路对端侧 MoE 也有一定启发。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.04164" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

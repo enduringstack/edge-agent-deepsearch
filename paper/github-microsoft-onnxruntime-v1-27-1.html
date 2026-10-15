@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ONNX Runtime v1.27.1:QMoE batch-1 decode GEMV 快路径+bugfix</h1>
-<div class="meta"><span class="score">14</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-07-11 · microsoft / GitHub</div>
-<div class="tags"><span class="tag">方向:MoE</span><span class="tag">硬件:GPU</span><span class="tag">方向:推理框架</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">onnxruntime v1.27.1 patch on top of v1.27.0,新增 CUDA QMoE batch-1 decode GEMV 快路径(量化 MoE 端侧/边缘推理 decode 优化)+若干 bugfix。工业标准边缘推理引擎。</span></div>
+<div class="meta"><span class="score">7</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-07-11 · microsoft / GitHub</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:MoE</span><span class="tag">方向:量化</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ONNX Runtime 发布 1.27.1 补丁版，主要修复若干回归问题，并给 NVIDIA CUDA 后端加了一条量化 MoE 单条请求解码的快速路径。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：onnxruntime v1.27.1 patch on top of v1.27.0,新增 CUDA QMoE batch-1 decode GEMV 快路径(量化 MoE 端侧/边缘推理 decode 优化)+若干 bugfix。工业标</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 CUDA 执行后端为 batch=1 解码场景新增 QMoE 矩阵向量乘快路径；同时修复 KleidiAI（Arm）路径的整数矩阵乘回归、QMoE 在 CPU 上的嵌套并行死锁等问题。</span></div>
+<div class="score-reason">评分依据：ONNX Runtime 是常用的端侧与边缘推理引擎，这次补丁里的 Arm KleidiAI 修复和量化 MoE 解码优化对部署有参考价值；但本版以缺陷修复为主，新增能力有限，贡献分较低。</div>
 <div class="source"><a href="https://github.com/microsoft/onnxruntime/releases/tag/v1.27.1" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

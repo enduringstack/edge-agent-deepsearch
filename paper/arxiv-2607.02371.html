@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>VisionAId: An Offline-First Multimodal Android Assistant for People with Visual Impairment, Featuring Personalized Object Retrieval</h1>
-<div class="meta"><span class="score">17</span> <span class="tier school">学校预印本</span>  2026-07-02 · Cristian-Gabriel Florea, Stelian Spînu / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:多模态</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:手机</span><span class="tag">应用:语音</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一款离线优先的安卓视觉辅助 App,集成六个端侧深度学习模型,帮助视障人士避障、找物、识脸和辨钞。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">INT8 量化把深度估计延迟从约 1200ms 降到约 491ms;钞票检测 mAP@50 达 0.986;3 米内深度误差小于 1cm。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确端侧安卓 App,六模型全程 ONNX Runtime 本地推理;贡献为完整端侧系统与少样本个人物品检索。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-02 · Cristian-Gabriel Florea, Stelian Spînu / arXiv</div>
+<div class="tags"><span class="tag">硬件:手机</span><span class="tag">方向:多模态</span><span class="tag">方向:量化</span><span class="tag">方向:编译部署</span><span class="tag">应用:语音</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">VisionAId 是一款面向视障人士的安卓应用，把普通手机变成离线优先的实时视觉助手：测距避障、找自己的私人物品、认人、数钞票。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在三星 Galaxy S21 Ultra 上，INT8 量化把深度估计延迟从约 1200 毫秒降到约 491 毫秒；自研钞票检测 mAP@50 达 0.986；3 米内度量深度误差低于 1 厘米。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">通过 ONNX Runtime 在手机本地运行深度估计、实例分割、视觉与人脸嵌入等六个模型；用户多角度拍几张就能登记私人物品，之后用 AR 标记、空间音频和振动引导用户找到它；云端 Gemini 只用于可选的场景描述。</span></div>
+<div class="score-reason">评分依据：六个模型全部在手机本地运行并有真机延迟数据（相关度 9）；少样本私人物品检索加多模态引导的整合有实用新意，但主体是工程集成（贡献 6）。没有规划或工具调用闭环，不算端侧智能体。作者机构为罗马尼亚军事技术学院。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.02371" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

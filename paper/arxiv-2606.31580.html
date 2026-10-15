@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LASER: Load-Aware Serving with Early-Exit for Reasoning LLMs at the Edge</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-06-30 · Zhiqing Tang, Size Li, Hanshuai Cui et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">模型:DeepSeek</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LASER 给边缘部署的推理大模型做负载感知早退服务,按实时负载自适应调整置信阈值,并按难度和负载预分配推理预算。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在两个推理模型四个基准上平均延迟降 17-38%、SLO 满足率高 3-6%,准确率代价仅约 1%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确面向边缘的推理大模型 serving,负载感知早退有实用新意。</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-06-30 · Zhiqing Tang, Size Li, Hanshuai Cui et al. / WASA 2026</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span><span class="tag">硬件:GPU</span><span class="tag">模型:DeepSeek</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">推理大模型思维链很长，放到边缘设备上服务多个并发请求时，固定的提前退出阈值会顾此失彼。LASER 让提前退出和推理预算随系统负载动态调整。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在两个推理模型（DeepSeek-R1-Distill-Qwen-7B、Qwen3-4B）、四个基准和多种负载下，平均时延降低 17%–38%，服务等级目标满足率提升 3%–6%，平均准确率只损失约 1%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">两个部件配合：一是按实时负载调整置信度退出阈值（在经验验证的稳健区间内）；二是按请求难度和系统容量预先分配推理预算，给思维链长度设上限，把推理质量和服务时延联合优化。</span></div>
+<div class="score-reason">评分依据：明确面向边缘单 GPU 服务推理模型的场景，与端侧部署直接相关；但实验是在 RTX 4090 上做离散事件仿真，而非真实边缘设备。负载感知的提前退出思路实用。作者来自北京师范大学和澳门大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.31580" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

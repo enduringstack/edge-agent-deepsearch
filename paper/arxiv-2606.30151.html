@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AERIS: Aerial-Edge Role-Driven Intelligence at Runtime via Orchestrated Language-Model Swarm</h1>
-<div class="meta"><span class="score">18</span> <span class="tier school">学校预印本</span>  2026-06-29 · Jiabin Lou, Haopeng Wang, Xinyu Liu et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出AERIS空中边缘部署框架，把专用小语言模型与轻量感知控制模块组成可在运行时实例化的角色，并按资源动态重绑到不同执行器，用注意力-子目标对齐做长程指令分解。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在高保真UAV视觉语言导航基准上以心跳定时执行维持低频规划+高频控制实时闭环，两项真实实验验证可部署性。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确UAV边缘部署SLM+实时闭环，端侧属性满分；角色动态重绑与心跳调度创新高。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-06-29 · Jiabin Lou, Haopeng Wang, Xinyu Liu et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:规划推理</span><span class="tag">应用:机器人</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span><span class="tag">模型:Phi</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">AERIS 是给无人机用的边缘智能体框架：把多个小语言模型和轻量感知、控制模块组织成可在运行时实例化的“角色”，在本地边缘执行器上完成长程指令拆解与导航。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 AerialVLN 无人机视觉语言导航基准的未见场景划分上，成功率等指标全面超过各基线；另做了多机编队和快速响应两项真机实验，验证心跳定时下的实时闭环。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">规划由 0.5B~3B 的小模型担任，通过“注意力-子目标对齐”标注当前执行到哪一步指令；编排引擎按负载和时延在异构边缘执行器之间动态重绑角色，低频规划器与机载高频控制器在心跳机制下稳定配合。</span></div>
+<div class="score-reason">评分依据：明确把小模型智能体部署在无人机边缘侧，规划与行动闭环在现场执行器和机载控制器上运行，并有真机实验；角色动态重绑与心跳调度对边缘 Agent 运行时有新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.30151" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Robostral Navigate</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-24 · Arjun Majumdar, Avinash Sooriyarachchi, Benjamin Tibi, Chris Bamford, Elliot Chane-Sane, Guillaume Lample, Khyathi Raghavi Chandu, Ludovic Ho Fuh, Mathieu Poiree, Olivier Duchenne, Rosalie Millner, Srijan Mishra, Theo Cachet, Thomas Chabal / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Deploying navigation systems at scale requires a recipe that minimizes sensor assumptions, generalizes across robot embodiments, and trains efficiently.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=8)；affiliation 待核实</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-24 · Arjun Majumdar, Avinash Sooriyarachchi, Benjamin Tibi, Chris Bamford, Elliot Chane-Sane, Guillaume Lample, Khyathi Raghavi Chandu, Ludovic Ho Fuh, Mathieu Poiree, Olivier Duchenne, Rosalie Millner, Srijan Mishra, Theo Cachet, Thomas Chabal / arXiv</div>
+<div class="tags"><span class="vendor-tag">Mistral</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span><span class="tag">模型:Mistral</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Mistral 推出的 8B 视觉语言导航模型 Robostral Navigate：只用单个普通 RGB 摄像头，就能按语言指令在室内导航，并可直接迁移到轮式、足式和空中等不同机器人。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 R2R-CE 上成功率 77.4%，比最好的单目方法高 10.5 个百分点，比最强的深度或多相机系统高 5.3 个百分点；RxR-CE 上成功率 75.1%，超过所有单目基线。训练时把整段轨迹打包成单条序列，训练 token 减少 22 倍，训练时间从数月缩短到数天。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">模型在当前画面里“指”出下一个要去的位置（看不见时改为输出相对位移），再由约 1.21 亿参数的轻量扩散策略转成 10 Hz 轨迹、由各机器人的控制器转成 100 Hz 电机指令；训练用 35 万个仿真场景的 240 万条轨迹，配合树状注意力掩码和强化学习。</span></div>
+<div class="score-reason">评分依据：在 Galaxea R1 和 Hiwonder JetAuto 两种真实机器人上用同一套权重部署，但论文未说明 8B 模型是否在机器人本体上运行，按视觉语言导航策略归类（相关度 5）。单目、纯图像空间的导航表述和高效训练方案带来明显的性能提升（贡献 7）。PDF 首页给出 mistral.ai 官方发布页，贡献者为 Mistral 团队。 作者机构依据：arXiv PDF 首页署名 Mistral（PDF 首页标注官方页面 mistral.ai/news/robostral-navigate，文末贡献者名单为 Mistral 团队成员（含 Guillaume Lample 等））。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.20785" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Adaptive Inference Batching using Policy Gradients</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-07-06 · Ruslan Sharifullin / arXiv</div>
-<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用 RL 学推理服务的自适应批处理和路由策略，在多 GPU 异构路由中发现工作负载隔离策略消除队头阻塞。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">多 GPU 异构路由下比 Round-Robin 提升 3.5 倍（348%），比最强启发式高 48%，吞吐高 60% 延迟低 25%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">REINFORCE/PPO agent 在离散事件仿真器上训练，MDP 建模队列状态/请求类型/GPU 可用性；attention 增强策略网络收敛快 20%。</span></div>
-<div class="score-reason">评分依据：推理服务批处理调度，云端为主（relevance 5）。RL 多 GPU 路由+工作负载隔离发现有创新（contribution 8）。作者单人，学校项目。</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-07-06 · Ruslan Sharifullin / arXiv</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">推理服务通常用手调的静态批处理策略；论文研究强化学习能否学出更好的自适应批处理和路由策略，并找出它真正有用的边界。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">单 GPU 下调好的静态策略已接近最优，强化学习只多 0.1%-1.0%；多 GPU 异构路由下学到“快慢请求分流”策略，比轮询好 3.5 倍、比最强启发式（最短队列）好 48%，吞吐高 60%、延迟低 25%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把队列状态、请求类型和 GPU 可用性建模成马尔可夫决策过程，在经排队论和生产轨迹校验的离散事件模拟器里训练 REINFORCE 和 PPO 策略。</span></div>
+<div class="score-reason">评分依据：研究云端推理服务的批处理与路由，与端侧关系较远；结论清楚但只在模拟器中验证。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.05272" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

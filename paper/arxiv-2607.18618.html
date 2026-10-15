@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LatentMT: Machine Translation with Latent Reasoning</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-21 · Wei-Rui Chen; Samar M. Magdy; Chiyu Zhang; Wenhui Zhu; Zhipeng Wang; Muhammad Abdul-Mageed / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Latent-reasoning looped language models (LoopLMs) offer a different scaling path for machine translation (MT): instead of increasing parameter count or emitting…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">LatentMT 首次系统研究用“循环潜在推理”的小语言模型做机器翻译：不加参数、不输出思维链，而是在隐藏状态里多算几轮。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">26 亿参数模型在 32 个翻译方向上达到 3 到 5 倍大模型的水平，中、低资源语言达到当前最佳；循环步数增加时质量先升后很快饱和，训练和推理计算量都低于同等水平的大模型。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以小型循环语言模型为骨干做轻量训练，让同一组层在隐藏状态上重复计算若干步，用计算深度代替参数规模。</span></div>
+<div class="score-reason">评分依据：小模型用循环计算替代参数规模，对端侧部署紧凑翻译模型有直接参考，相关度中等；系统分析了循环步数的收益与饱和，贡献中等。作者来自不列颠哥伦比亚大学等高校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.18618" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

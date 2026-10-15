@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Self-Play Meets Skill Evolution: Self-Evolving Search Agents that Pose, Solve, and Remember</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-31 · Zenghuang Fu; Zhaoyang Li; Qiuyuan Ai; Haoyu Wu; Minghui Wu; Chenxu Zhao; Ante Wang; Guannan He / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:蒸馏</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">自博弈 agent 能自创训练题不靠目标基准，但课程缺持久状态：失败只影响梯度而不被记住。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-31 · Zenghuang Fu; Zhaoyang Li; Qiuyuan Ai; Haoyu Wu; Minghui Wu; Chenxu Zhao; Ante Wang; Guannan He / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">搜索 Agent 的自博弈训练缺少“长期记忆”：失败只影响梯度，不会沉淀为经验。SESA 让出题方和解题方自博弈的同时，把有价值的失败提炼成技能写回记忆库，两者共同演化。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 7 个开放域与多跳问答基准上，比 SSP 平均准确率高 1.2~3.2 分，比 SkillRL 高 0.9 分；在 Qwen3 上不带记忆库部署仍保留 1.8~2.2 分提升，再加技能库额外提升 0.5~1.0 分。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">出题方出题、解题方检索技能作答，失败被蒸馏成可复用技能写回技能库，技能库变化又改变出题方奖励和后续题目分布；技能效果既进入模型参数，也可在推理时选择性检索。</span></div>
+<div class="score-reason">评分依据：关于 Agent 技能记忆的训练方法，部署时可不带记忆库，对端侧有一定启发但非部署工作（相关度 3）；自博弈与技能记忆双向演化有新意（贡献 5）。机构依据：arXiv 论文首页作者 Minghui Wu、Chenxu Zhao 署名明略科技（Mininglamp Technology），其余作者来自中国科学院、北京大学、清华大学等；此前标注的 Alibaba 无依据。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29468" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

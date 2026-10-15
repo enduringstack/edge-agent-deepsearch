@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>WorldDiT: A Unified Diffusion Architecture for World and Action Modeling</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-28 · Sen Wang, R. Gnana Praveen, Bidhan Roy, Marcos Villagra / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">近期许多机器人策略通过用大型预训练 VLM 作动作骨干来追求更强控制，作者针对此展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=4)；affiliation 待核实</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-28 · Sen Wang, R. Gnana Praveen, Bidhan Roy, Marcos Villagra / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一个不依赖大型预训练视觉语言模型的机器人动作模型：用单个扩散 Transformer 同时生成动作和预测未来画面，总参数不到 4 亿。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">LIBERO 四个仿真套件平均成功率 94.9%（Spatial 98.0%、Object 97.0%、Goal 92.8%、Long 91.8%），在 24 个方法的“参数量—成功率”帕累托前沿上，总参数 399M。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">训练时让同一个扩散 Transformer 既输出连续动作片段，又预测未来相机帧的归一化图像块，用世界建模任务给动作学习提供监督，从而省掉大型 VLM 骨干。</span></div>
+<div class="score-reason">评分依据：小参数量机器人策略对资源受限的机器人部署有参考价值，但只在仿真中评测、未涉及端侧推理优化，相关度 3；架构整合较简洁，贡献 4。作者均署名 Bagel Labs（arXiv PDF 首页）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.23909" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

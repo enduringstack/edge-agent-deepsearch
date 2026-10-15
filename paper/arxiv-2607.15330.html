@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-20 · Xiaomi Robotics Team, Jun Guo, Piaopiao Jin, Jason Li, Peiyan Li, Yingyan Li, Futeng Liu, Wanli Peng, Optimus Qin, Yifei Su, Nan Sun, Qiao Sun, Runze Suo, Heyun Wang, Yunhong Wang, Rujie Wu, Caoyu Xia, Lina Zhang, Jack Zhao, Guoliang Chen, Wenlong Chen, Xinze He, Bin Li, Qing Li, Zhuorong Li, Heng Qu, Wenxuan Song, Diyun Xiang, Yifan Xie, Peiran Xu, Hangjun Ye, Wen Ye, Han Zhao, Quanyun Zhou / HuggingFace Daily</div>
-<div class="tags"><span class="vendor-tag">Xiaomi</span><span class="tag">方向:多模态</span><span class="tag">方向:端侧agent</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">We present Xiaomi-Robotics-1, a foundational vision-language-action (VLA) model capable of (1) following diverse language instructions to perform a wide range o…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=67)；affiliation 命中 Xiaomi</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-07-20 · Xiaomi Robotics Team, Jun Guo, Piaopiao Jin, Jason Li, Peiyan Li, Yingyan Li, Futeng Liu, Wanli Peng, Optimus Qin, Yifei Su, Nan Sun, Qiao Sun, Runze Suo, Heyun Wang, Yunhong Wang, Rujie Wu, Caoyu Xia, Lina Zhang, Jack Zhao, Guoliang Chen, Wenlong Chen, Xinze He, Bin Li, Qing Li, Zhuorong Li, Heng Qu, Wenxuan Song, Diyun Xiang, Yifan Xie, Peiran Xu, Hangjun Ye, Wen Ye, Han Zhao, Quanyun Zhou / arXiv</div>
+<div class="tags"><span class="vendor-tag">Xiaomi</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Xiaomi-Robotics-1 是小米发布的机器人视觉-语言-动作基础模型，用超过 10 万小时真实操作轨迹预训练，能直接听语言指令在陌生环境里做移动操作。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 RoboCasa365 上成功率 57.4%，超过此前最好的 46.6%；在 RoboDojo 上平均得分 20.07，明显高于此前最好的 13.07；预训练数据量和模型规模增大时效果持续提升。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">两阶段训练：先用 UMI 采集设备收集的大规模真实轨迹预训练，并用自动标注流水线给片段配上描述场景变化的语言；再在约 1 万小时跨本体机器人数据上后训练，对齐具体机器人和人类常用指令。</span></div>
+<div class="score-reason">评分依据：机器人基础动作模型，和端侧的关系主要是最终要跑在机器人本体上，论文重点在数据与训练规模化，相关度 3；大规模真实数据加自动标注的配方有工程价值，贡献 6。属于动作策略模型，不算端侧智能体。PDF 首页署名为 Xiaomi Robotics。 作者机构依据：arXiv PDF 首页署名 Xiaomi（PDF 首页作者署名为 Xiaomi Robotics（小米机器人团队））。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.15330" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

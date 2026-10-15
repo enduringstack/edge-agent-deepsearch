@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Cost-Governed RAG: Unified Per-Tenant Cost Attribution Across Retrieval and Generation in Multi-Tenant LLM Systems</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-13 · Navnit Shukla / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Enterprise Retrieval-Augmented Generation (RAG) deployments face a critical governance gap: while LLM generation cost is metered per token, the retrieval layer …</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">5</span> <span class="tier company">公司项目</span>  2026-07-13 · Navnit Shukla / arXiv</div>
+<div class="tags"><span class="vendor-tag">Snowflake</span><span class="tag">方向:云端serving</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">解决企业多租户 RAG 系统中检索层成本算不清的问题：把向量检索、嵌入和生成的成本统一按租户记账。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 100 个模拟租户、1000 万向量的规模下，端到端成本归因准确率 99.96%，遥测开销低于查询延迟的 0.04%；在文中定价假设下，检索基础设施成本比托管向量数据库低 3.1 到 9.0 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">采用内存占用有确定公式的免码本向量索引 TurboVec，再接入多租户 LLM 治理网关，按公式精确计算每个租户的检索成本。</span></div>
+<div class="score-reason">评分依据：这是云数据平台上的多租户 RAG 成本治理架构，只与云端 LLM 服务宽泛相关；主要是工程整合。 作者机构依据：arXiv PDF 首页署名 Snowflake（PDF 首页唯一作者署名 Snowflake Inc. AI Platform Engineering）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.12188" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

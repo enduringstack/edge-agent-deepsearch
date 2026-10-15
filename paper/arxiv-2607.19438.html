@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>BaseRT: Advancing Best-in-Class LLM Inference with Apple M5 Neural Accelerators</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-21 · Fabian Waschkowski; Prabod Rathnayaka; Lukas Wesemann / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:记忆</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span><span class="tag">模型:Llama</span><span class="tag">模型:Gemma</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Apple's M5 generation introduces a redesigned GPU architecture in which every core carries a dedicated Neural Accelerator: on-die matrix units exposed through t…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-21 · Fabian Waschkowski; Prabod Rathnayaka; Lukas Wesemann / arXiv</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span><span class="tag">方向:MoE</span><span class="tag">硬件:Apple-Silicon</span><span class="tag">硬件:GPU</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">BaseRT 是一个不依赖框架、原生 Metal 写成的苹果芯片大模型推理运行时；这篇工作让它用上 M5 每个 GPU 核心里新增的神经加速器（矩阵单元），大幅提升本地推理速度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Apple M5 Pro 上覆盖 Qwen3、Qwen3.5/3.6、Llama 3.2、Gemma 4 共 15 种配置（1B 以下到 35B），提示处理吞吐最高比 llama.cpp 快 6.4 倍、比 MLX 快 3.9 倍，MoE 模型优势最大；解码最高比 llama.cpp 快 1.75 倍、比 MLX 快 1.33 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">手写一组 Metal 4 张量核内核（稠密与 MoE 矩阵乘、flash-attention 预填充），把计算密集的矩阵乘交给 M5 神经加速器，而受内存带宽限制的解码路径继续用原有专用内核。</span></div>
+<div class="score-reason">评分依据：在苹果个人电脑芯片上本地运行大模型并与 llama.cpp、MLX 正面实测对比，属于明确端侧部署，相关度给 9；率先系统利用 M5 新增张量单元并开源，工程贡献扎实，贡献给 7。公司归属依据 arXiv PDF 首页署名 Base Compute（澳大利亚墨尔本）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.19438" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

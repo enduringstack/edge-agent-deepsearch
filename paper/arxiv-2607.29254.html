@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Tool Specifications Matter: Uncovering and Mitigating Safety Risks in AI Agents</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-31 · Minghui Pan; Jiayuxuan Yang; Yuanyuan Yuan; Yu Jiang; Zhenpeng Chen / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">AI agent 给 LLM 接上外部工具，让它能完成复杂任务并把输出落到真实世界。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-31 · Minghui Pan; Jiayuxuan Yang; Yuanyuan Yuan; Yu Jiang; Zhenpeng Chen / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型一接上工具就变得不那么安全。这篇工作发现罪魁祸首之一是 JSON schema 格式的工具描述：它会削弱模型内部的拒答信号，并提出推理期防护方法 SafeKeep。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 2 个基准、4 个模型（含白盒和黑盒）上，SafeKeep 把有害请求的平均拒答率从 23.8% 提到 70.6%，把观察层提示注入的平均攻击成功率从 25.6% 降到 2.5%，且不影响正常任务能力。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把安全判断和工具执行拆开：判断请求是否有害时，用压平成普通文本的工具描述喂给模型；真正执行时仍用原始 schema 格式的工具描述。</span></div>
+<div class="score-reason">评分依据：属于 Agent 工具调用运行时的安全防护，与端侧 Agent 的工具执行环节可直接迁移，但未涉及设备部署（相关度 4）；指出工具描述格式本身是安全退化来源，方法简单有效（贡献 6）。作者来自北京邮电大学、北京航空航天大学和清华大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29254" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

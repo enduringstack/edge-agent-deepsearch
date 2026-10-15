@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>EdgeCompress: Coupling Multidimensional Model Compression and Dynamic Inference for EdgeAI</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-08 · Hao Kong, Di Liu, Shuo Huai, Xiangzhong Luo, Ravi Subramaniam, Christian Makaya, Qian Lin, Weichen Liu / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:编译部署</span><span class="tag">方向:高效推理</span><span class="tag">硬件:Jetson</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">给边缘 CNN 做多维压缩：动态裁前景+协同缩深度宽度分辨率+级联多复杂度模型按难度动态选路。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">ImageNet-1K 上 ResNet-50 计算量降 48.8% 同时 top-1 准确率高 0.8%；同等计算下比 HRank 准确率高 4.1%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">轻量前景预测器裁 informative 区域避冗余；复合缩放按对准确率/计算贡献协同压三维；动态推理级联多复杂度模型按输入难度选路。</span></div>
-<div class="score-reason">评分依据：明确边缘部署 CNN 压缩，Jetson 等嵌入式（relevance 8）。多维压缩+动态推理是工程整合但 CNN 路线创新度中等（contribution 5）。作者 NTU，开源，学校项目。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-08 · Hao Kong, Di Liu, Shuo Huai, Xiangzhong Luo, Ravi Subramaniam, Christian Makaya, Qian Lin, Weichen Liu / IEEE TCAD</div>
+<div class="tags"><span class="vendor-tag">HP</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span><span class="tag">硬件:Jetson</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">EdgeCompress 是 Smart Scissor 的期刊扩展版：在裁前景、压缩网络三维度的基础上，再把多个不同大小的压缩模型串成级联，简单图片用小模型、难图片才用大模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">ImageNet-1K 上把 ResNet-50 计算量降低 48.8%，Top-1 准确率提高 0.8%；同等计算量下比 HRank 准确率高 4.1%。延迟在 Jetson Nano 与 Jetson Xavier 上实测。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">轻量前景预测器裁出最有信息量的区域；复合收缩按各维度对准确率和计算的贡献协同缩小深度、宽度和分辨率；动态推理按输入难度在级联模型间选择。</span></div>
+<div class="score-reason">评分依据：在 Jetson 嵌入式平台实测的 CNN 压缩，端侧部署目标明确，但仍是传统图像分类路线，且与同组 Smart Scissor 高度重叠，新增部分主要是动态级联推理。作者来自南洋理工大学、挪威科技大学和 HP Inc.，期刊版发表于 IEEE TCAD。 作者机构依据：arXiv PDF 首页署名 HP（PDF 首页脚注写明 Ravi Subramaniam、Christian Makaya、Qian Lin 任职 HP Inc., Palo Alto）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.06982" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

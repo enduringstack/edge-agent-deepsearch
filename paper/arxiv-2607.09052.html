@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>COBS: Cumulant Order Block Sparse Attention</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-10 · Alexander Tian; Aditya Ghai; Sanjit Neelam; Zaal Vasania; Akshay Mishra / arXiv</div>
-<div class="tags"><span class="vendor-tag">DeepSeek</span><span class="tag">方向:KV cache</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:稀疏注意力</span><span class="tag">方向:评测基准</span><span class="tag">模型:DeepSeek</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Block sparse attention is a hardware friendly way to alleviate the key-value (KV) cache read bottleneck in large language models (LLMs).</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 DeepSeek（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-10 · Alexander Tian; Aditya Ghai; Sanjit Neelam; Zaal Vasania; Akshay Mishra / arXiv</div>
+<div class="tags"><span class="tag">方向:稀疏注意力</span><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长上下文推理时，每步解码都要把整段 KV cache 读一遍。这篇工作改进 DeepSeek 原生稀疏注意力（NSA）的块选择器，让块稀疏注意力在只读少量 KV 的情况下接近稠密注意力的效果。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 32k 长度的 RULER 检索测试上，平均分从 NSA 基线的 0.2999 提升到 0.8195（稠密注意力为 0.9040），补上约 86% 的差距；KV cache 读取流量只有 NSA 的 1.21 倍、比稠密注意力少 15.15 倍，短上下文能力保持不变。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把块选择归结为按“注意力质量”给块排序，并用累积量展开说明现有方法只做了一阶近似；COBS 为每个块额外存一份压缩的二阶统计量，用它更准地估计哪些块该读。</span></div>
+<div class="score-reason">评分依据：属于降低解码时 KV cache 读带宽的稀疏注意力方法，对显存带宽受限的端侧长上下文推理可直接迁移，但实验未在端侧设备上做（相关度 5）。二阶统计量选块有理论分析支撑，效果提升明显（贡献 6）。PDF 首页署名全部为 MatX（matx.com 邮箱）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.09052" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

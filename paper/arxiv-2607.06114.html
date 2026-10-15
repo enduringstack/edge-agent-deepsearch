@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>x-Prediction Is All You Need: Training-Free Accelerated Generation via Endpoint Decodability</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-07-07 · Xin Peng, Ang Gao / arXiv</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-07 · Xin Peng, Ang Gao / arXiv</div>
 <div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">发现扩散/流匹配采样中途的中间状态和路径速度可直接估计干净样本，据此提前截断 ODE 返回解码的 x_0。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">SDXL/SD3.5M/Z-Image-Turbo 上 NFE 降 20-70%，质量近持平；免重训/蒸馏/改架构。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">形式化为端点可解码性，证明解码器是 L2 目标下最小 MSE 估计；截断跳跃采样（TJS）在早退时间停止 ODE 返回解码 x_0。</span></div>
-<div class="score-reason">评分依据：免训练扩散加速，端侧可迁移效率（relevance 6）。端点可解码性理论+TJS 免训加速有创新（contribution 8）。作者学校项目。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">扩散和流匹配图像生成通常要几十到上百步采样；论文发现采样中途就能直接“解码”出最终图像，提出无需重新训练的提前截断采样。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 SDXL、SD3.5M、Z-Image-Turbo 和三个类别条件基准上，采样步数减少 20%-70%，质量基本持平。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用中间状态和路径速度即可估计干净样本的性质（端点可解码性），在某个提前时刻停止 ODE 求解并直接输出解码结果，不改架构、不蒸馏。</span></div>
+<div class="score-reason">评分依据：免训练的生成模型推理加速，可用于算力受限设备，但论文没有端侧实验；理论上解释了端点预测为何有效。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.06114" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

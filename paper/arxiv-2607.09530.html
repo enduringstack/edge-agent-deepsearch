@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FreyaTTS Technical Report</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-10 · Ahmet Erdem Pamuk; Ömer Yentür; Ahmet Tunga Bayrak; Yavuz Alp Sencer Öztürk; Mustafa Yavuz / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:手机</span><span class="tag">应用:语音</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">We introduce Freya-TTS, a compact, tokenizer-free, Turkish-first text-to-speech model designed for highly reliable and efficient conversational synthesis.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-10 · Ahmet Erdem Pamuk; Ömer Yentür; Ahmet Tunga Bayrak; Yavuz Alp Sencer Öztürk; Mustafa Yavuz / arXiv</div>
+<div class="tags"><span class="tag">应用:语音</span><span class="tag">方向:模型架构</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一个只有 1.83 亿参数、以土耳其语为主的轻量文本转语音模型，不需要音素转换器和离散语音分词器，主打可靠、可在资源受限设备上实时合成。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Freya-TR-Eval 上词错率 8.0%、字错率 3.0%，低于参数量更大的 XTTS-v2 和 F5-TTS（参数量只有它们的 40%–55%），自然度在紧凑模型中最高；在 RTX 4090 上实时率 0.11，在笔记本 CPU 上可实时合成。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在冻结的 AudioVAE2 连续潜空间里，用非自回归的流匹配扩散 Transformer 直接从字符映射到语音潜变量并行去噪；再通过“单说话人锁定”和短句覆盖两阶段后训练提升稳定性。</span></div>
+<div class="score-reason">评分依据：模型小、能在笔记本 CPU 上实时运行，适合端侧语音合成，但未在手机等更受限设备上实测（相关度 5）。主要是已有框架的工程化组合与语种适配（贡献 4）。模型权重和代码以 Apache-2.0 开源；署名为 Freya Team，无可核实的公司机构信息。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.09530" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

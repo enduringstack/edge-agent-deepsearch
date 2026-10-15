@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Entropy-Regularized Probabilistic Gates for Sparse Model Discovery in Scarce-Data Federated Learning</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-30 · Krishna Harsha Kovelakuntla Huthasana, Alireza Olama, Andreas Lundell / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:联邦学习</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在联邦学习中用熵正则化概率门控维持稀疏优化的不确定性,防止过早收敛到稀疏支撑,提升小样本高维场景的泛化与稀疏恢复。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">合成与真实基准上一致优于 Fed-IHT 和 FedAvg 剪枝;未报告具体数字。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：联邦学习稀疏,非显式端侧;熵正则化门控,中等创新。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-30 · Krishna Harsha Kovelakuntla Huthasana, Alireza Olama, Andreas Lundell / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:剪枝稀疏</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">数据少、维度高时，联邦学习里学稀疏模型很容易过早锁定错误的参数子集。这篇工作用熵正则保持门控分布的不确定性。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">原文称在合成和真实数据上，测试性能和稀疏结构恢复准确率均稳定优于联邦迭代硬阈值（Fed-IHT）和先稠密训练再剪枝的 FedAvg；摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用带 L0 约束的概率门控在训练中采样不同稀疏结构，并对门控分布加熵正则，防止过早收敛到某个稀疏支撑集。</span></div>
+<div class="score-reason">评分依据：联邦学习中的稀疏建模，对端侧通信与计算节省有一定关联，但属训练方法；方法属常见组合。作者来自奥博学术大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.00275" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

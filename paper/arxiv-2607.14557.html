@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Seeing the End at Step Zero: Accelerating Diffusion MLLMs via MLP Sparsity-Aware Truncation</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-16 · Qicheng Zhao; Qi Sun; Zheyu Yan / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Diffusion Multimodal Large Language Models (DMLLMs) are highly effective for multimodal reasoning, yet their inference efficiency is significantly hindered by f…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-16 · Qicheng Zhao; Qi Sun; Zheyu Yan / ACM MM 2026</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Seer 针对扩散式多模态大模型必须按固定最大长度生成、浪费大量算力在填充符上的问题，提出在第一步就判断有效输出长度并截断。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">吞吐最高提升约 31 倍；9 个基准上整体性能保持，DocVQA 从 63.52 小幅升到 63.66。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">作者发现模型在第一次去噪时 MLP 激活稀疏度会在有效语义边界处突变，用信噪比判据检测该边界，之后的计算一次性截掉冗余后缀，并用混合执行策略兼容批处理。</span></div>
+<div class="score-reason">评分依据：无需训练的推理加速，主要面向服务端批量推理，对端侧扩散语言模型也有迁移价值；利用激活稀疏度预判长度的观察较新颖。作者来自浙江大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.14557" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

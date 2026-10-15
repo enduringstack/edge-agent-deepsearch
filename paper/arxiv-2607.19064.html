@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Mage-Flow: An Efficient Native-Resolution Foundation Model for Image Generation and Editing</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-21 · Xinjie Zhang; Peng Zhang; Shicheng Zheng; Jinghao Guo; Zhaoyang Jia; Yifei Shen; Xun Guo; Yuxuan Luo / arXiv</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:蒸馏</span><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Large-scale visual generators are increasingly capable but costly to train, fine-tune, and deploy.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 NVIDIA（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-21 · Xinjie Zhang; Peng Zhang; Shicheng Zheng; Jinghao Guo; Zhaoyang Jia; Yifei Shen; Xun Guo; Yuxuan Luo / arXiv</div>
+<div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Mage-Flow 是一套 40 亿参数的紧凑图像生成与编辑模型，目标是在保证效果的同时让高分辨率生成和编辑足够快、足够省显存。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在单张 A100 上生成 1024×1024 图像，4 步 Turbo 版耗时 0.59 秒、编辑版 1.02 秒；轻量 VAE 把编码成本降低一个数量级以上，端到端训练吞吐提升约 2.5 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">自研一步编解码的轻量 VAE，配合原生分辨率打包的多模态扩散 Transformer 和 CUDA 内核融合；再用对抗感知引导的少步蒸馏得到 4 步 Turbo 模型。</span></div>
+<div class="score-reason">评分依据：模型规模较小并做了少步蒸馏，但评测和目标平台都是数据中心 GPU，端侧相关度偏低；轻量 VAE 与系统协同设计完整，贡献中等。PDF 首页署名 Microsoft Mage Team，项目负责人邮箱为 microsoft.com；输入中的 NVIDIA 归属有误。 作者机构依据：arXiv PDF 首页署名 Microsoft（PDF 首页署名 Microsoft Mage Team，项目负责人邮箱 xinjiezhang@microsoft.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.19064" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

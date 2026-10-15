@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PIVOT: Efficient Query-Group Indexing for Token-Level Sparse Attention</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-27 · Hong Liu; Yuan Cheng; Lin Niu; Yi Su; Yufei Xue; Anmin Liu; Guanghua Yu; Jianchen Zhu / arXiv</div>
-<div class="tags"><span class="vendor-tag">DeepSeek</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:稀疏注意力</span><span class="tag">模型:DeepSeek</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">DeepSeek 稀疏注意力（DSA）等 token 级稀疏注意力让下游注意力高效，却把瓶颈转移到上游，作者针对此展开。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 DeepSeek（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-07-27 · Hong Liu; Yuan Cheng; Lin Niu; Yi Su; Yufei Xue; Anmin Liu; Guanghua Yu; Jianchen Zhu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Tencent</span><span class="tag">方向:稀疏注意力</span><span class="tag">方向:云端serving</span><span class="tag">应用:长上下文推理</span><span class="tag">模型:DeepSeek</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">腾讯提出的稀疏注意力索引加速方法 PIVOT：DeepSeek 稀疏注意力省下了注意力计算，但挑 token 的索引器本身仍要扫全部前文，PIVOT 让相邻查询共享这次扫描。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 DeepSeek-V3.2 和 GLM-5.1 上、LongBench 与 RULER 测试中，与稠密 DSA 索引器精度持平，索引器最多提速 4 倍，长上下文端到端延迟最多降低 1.6 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把一组相邻查询聚合成一个代理查询，只做一次完整前缀扫描得到候选集，再从候选集中为每个查询选 top-k；预填充阶段按固定大小分组，解码阶段按多 token 预测一步的查询分组，免训练即插即用。</span></div>
+<div class="score-reason">评分依据：面向云端超大模型长上下文推理的稀疏注意力优化，对端侧只有间接迁移价值，相关度 3；指出索引器成为新瓶颈并用查询分组共享扫描解决，贡献 6。公司归属依据 arXiv PDF 首页署名 Tencent。 作者机构依据：arXiv PDF 首页署名 Tencent（PDF 首页全部作者署名 Tencent（tencent.com 邮箱））。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.24593" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

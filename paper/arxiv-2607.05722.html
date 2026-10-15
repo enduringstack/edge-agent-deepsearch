@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Nemotron-Labs-Diffusion: A Tri-Mode Language Model Unifying Autoregressive, Diffusion, and Self-Speculation Decoding</h1>
-<div class="meta"><span class="score">17</span> <span class="tier company">公司项目</span>  2026-07-07 · Yonggan Fu, Lexington Whalen, Abhinav Garg, Chengyue Wu, Maksim Khadkevich, Nicolai Oswald, Enze Xie, Daniel Egert, Sharath Turuvekere Sreenivas, Shizhe Diao, Chenhan Yu, Ye Yu, Weijia Chen, Sajad Norouzi, Jingyu Liu, Shiyi Lan, Ligeng Zhu, Jin Wang, Jindong Jiang, Morteza Mardani, Mehran Maghoumi, Song Han, Ante Jukić, Nima Tajbakhsh, Jan Kautz, Pavlo Molchanov / arXiv</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span><span class="tag">方向:云端serving</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">NVIDIA 的三模式语言模型，一个架构同时支持自回归、扩散和自投机解码，按部署并发切换模式维持高吞吐。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">8B 模型每 forward 解码 token 数是 Qwen3-8B 的 6 倍，SPEED-Bench 上 GB200 + SGLang 吞吐高 4 倍；自投机模式接受率超 MTP。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">联合 AR-扩散训练目标，扩散改善前瞻规划、AR 提供左到右语言先验；自投机模式下扩散起草、AR 验证；扩散最优采样器潜力达每 forward 多 76.5% token。</span></div>
-<div class="score-reason">评分依据：三模式统一解码属推理加速技术栈，可迁移（relevance 7）。AR+扩散互补+自投机统一是范式级创新（contribution 10）。作者含 Song Han (MIT)、Pavlo Molchanov/Jan Kautz (NVIDIA)，NVIDIA 主导，证据：Nemotron 品牌+作者 NVIDIA 署名。</div>
+<div class="meta"><span class="score">14</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-07 · Yonggan Fu, Lexington Whalen, Abhinav Garg, Chengyue Wu, Maksim Khadkevich, Nicolai Oswald, Enze Xie, Daniel Egert, Sharath Turuvekere Sreenivas, Shizhe Diao, Chenhan Yu, Ye Yu, Weijia Chen, Sajad Norouzi, Jingyu Liu, Shiyi Lan, Ligeng Zhu, Jin Wang, Jindong Jiang, Morteza Mardani, Mehran Maghoumi, Song Han, Ante Jukić, Nima Tajbakhsh, Jan Kautz, Pavlo Molchanov / arXiv</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:投机解码</span><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span><span class="tag">硬件:GPU</span><span class="tag">硬件:DGX</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">英伟达推出 Nemotron-Labs-Diffusion 系列语言模型：同一个模型可在自回归、扩散并行解码和“自己给自己投机解码”三种模式间切换，按并发量选择最快的方式。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">8B 模型每次前向解码的 token 数是 Qwen3-8B 的 6 倍、精度相当，在 GB200 上用 SGLang 吞吐高 4 倍；批大小为 1 时自投机模式在 GB200/RTX Pro 6000/DGX Spark 上分别加速 2.4/2.3/1.8 倍；自投机的接受率和真机效率都优于多 token 预测（MTP）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用自回归与扩散联合目标训练：扩散负责一次起草多个 token，自回归负责从左到右验证；覆盖 3B、8B、14B 的基础、指令和视觉语言模型，并在 Hugging Face 开放。</span></div>
+<div class="score-reason">评分依据：自投机模式专门针对低并发的个人 AI 推理，并在 DGX Spark、RTX Pro 6000 等桌面级设备实测，可迁移到本地部署；一个模型三种解码模式的统一架构有明显新意。公司归属依据：PDF 首页注明版权属 NVIDIA，部分高校作者注明在 NVIDIA 实习期间完成。 作者机构依据：arXiv PDF 首页署名 NVIDIA（PDF 首页注明“© 2026 NVIDIA”，另列高校单位的作者注明在 NVIDIA 实习期间完成，其余作者未列其他单位）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.05722" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

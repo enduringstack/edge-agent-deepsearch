@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Lightweight Image Classification of Raptor Species for Edge Devices: Rare-Species Dataset Expansion via Video Frame Extraction, Knowledge Distillation, and TensorRT Deployment</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-28 · Takeshi Nishikawa / arXiv</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:投机解码</span><span class="tag">方向:蒸馏</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:Jetson</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">作者研究用于风机碰撞缓解中实时端侧部署的轻量级猛禽物种分类方法。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 NVIDIA（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-28 · Takeshi Nishikawa / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:编译部署</span><span class="tag">硬件:Jetson</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这项工作为风电场防鸟撞场景做了一个能在边缘设备上实时运行的猛禽种类识别模型，重点解决相似物种容易认错和稀有物种样本少的问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">三个学生模型集成的宏召回率为 0.935，保留了教师模型 97.5% 的宏召回率而参数量约为八分之一；白尾海雕召回率最多提升 38.6 个百分点；EfficientNet-B0 在 Jetson Orin Nano 上用 TensorRT FP16 部署，单张 3.19 毫秒（每秒 313 张），与 FP32 结果一致率 99.95%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 DINOv2-L 作教师蒸馏出 MobileNetV4、ViT-Small、EfficientNet-B0 三个轻量学生；从视频中抽帧把虎头海雕图片从 463 张扩到 2050 张；最后用 TensorRT FP16 部署到 Jetson。</span></div>
+<div class="score-reason">评分依据：在 Jetson Orin Nano 上真机部署并给出实测延迟，端侧相关度高（相关度 8）；但蒸馏加 TensorRT 是常规流程，作者也承认主要收益来自数据扩充（贡献 3）。作者来自日本计算科学振兴财团，PDF 中没有 NVIDIA 署名，不属于公司项目。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.26238" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

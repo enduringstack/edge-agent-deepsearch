@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Less Experts, Faster Decoding: Cost-Aware Speculative Decoding for Mixture-of-Experts</h1>
 <div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-14 · Jincheng Xie; Runheng Liu; Heyan Huang; Yawen Ling; Hanbin Dai; Yu Zheng; Wen Hu / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:投机解码</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:MoE</span><span class="tag">方向:评测基准</span><span class="tag">模型:DeepSeek</span><span class="tag">模型:GPT</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Sparse Mixture-of-Experts (MoE) models have become an important approach for scaling Large Language Models (LLMs), but their inference efficiency depends strong…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="tags"><span class="vendor-tag">JD</span><span class="tag">方向:投机解码</span><span class="tag">方向:MoE</span><span class="tag">模型:DeepSeek</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">发现大规模 MoE 模型做投机解码时，置信度最高的草稿 token 可能路由到彼此不同的专家，反而增加专家权重读取；于是在选草稿时把专家激活成本也算进去。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 DeepSeek-V3.1（671B）、Qwen3-235B-A22B 和 GPT-OSS-120B 上，持续减少被激活的专家数量，端到端解码最高加速 1.62 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用轻量的专家预测器估计每条草稿路径会额外激活多少专家，配合动态专家缓冲，优先选择既有较高接受率、又能复用已覆盖专家的草稿路径，不改变目标模型的验证规则。</span></div>
+<div class="score-reason">评分依据：针对的是云端大规模 MoE 推理，但“草稿选择要考虑专家权重读取成本”的思路对内存带宽受限的端侧 MoE 有迁移价值；问题刻画有新意。 作者机构依据：arXiv PDF 首页署名 JD（PDF 首页 7 位作者中第 4、5、7 位署名 JDT AI Infra，通讯作者 Wen Hu 使用 jd.com 邮箱）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.12696" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

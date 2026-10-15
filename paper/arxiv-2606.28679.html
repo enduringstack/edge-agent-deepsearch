@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Capability Gates Are Not Authorization: Confused-Deputy Failures in LLM Agent Frameworks</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-27 · David Mellafe Zuvic / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">模型:GPT</span><span class="tag">应用:语音</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">审计LangChain/LangGraph、LlamaIndex和Stripe Agent Toolkit是否对每次模型发出的工具调用按具体参数值重新授权，发现三者默认只做能力门控无确定性fail-closed逐调用授权。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">提出ScopeGate五阶段PDP/PEP，0/48静态绕过、0/29未授权尝试、0/10良性误拒，Latam-GPT支付agent 10/10遏制。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：LLM agent框架安全，端侧相关性弱；逐调用授权审计与ScopeGate有创新。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-27 · David Mellafe Zuvic / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:工具调用</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这篇论文指出，LangChain、LlamaIndex、Stripe Agent Toolkit 等智能体框架默认只控制“能不能用某个工具”，却不检查每次调用的具体参数是否被授权，并提出逐次授权网关 ScopeGate。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">同一个未授权付款调用在 LangChain 默认流程下会被执行，而 ScopeGate 能拦下；测试中静态绕过 0/48、自适应攻击 0/29 成功，正常请求误拒 0/10，付款智能体场景 10/10 被约束。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">ScopeGate 在每次工具调用执行前依次检查五步：权限范围、具体授权、金额上限、幂等性和默认拒绝，任一步不通过即拒绝执行。</span></div>
+<div class="score-reason">评分依据：关注智能体运行时的工具调用安全，与端侧部署无直接关系；对执行有副作用工具的智能体有实际参考价值，原型规模较小。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.28679" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

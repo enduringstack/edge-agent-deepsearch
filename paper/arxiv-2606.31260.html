@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Plan Right, Then Plan Tight: Symbolic RL for Efficient Embodied Reasoning</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-06-30 · Xiangli Shi, Xiaomeng Zhu, Ye Tian et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">应用:机器人</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用 BDDL 规格作为数据构造、计划验证与奖励设计的共享接口,配以轻量符号引擎给具身规划器提供毫秒级密集反馈,并提出 GroupAdapt 难度感知长度调度。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">8B 规划器在 BEHAVIOR-1000 Strict-Pass 达 97.3,比 Qwen3-8B 提升 25.9%,超最强大模型基线 3.5%,响应长度压缩 79%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：8B 具身规划器+符号验证,可端侧部署;BDDL 接口与 GroupAdapt 创新。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-06-30 · Xiangli Shi, Xiaomeng Zhu, Ye Tian et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">Tencent</span><span class="tag">方向:规划推理</span><span class="tag">应用:机器人</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让具身任务规划器既规划得对、又输出得短：用一份符号化任务描述同时负责造数据、校验计划和设计强化学习奖励。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">8B 规划器在 BEHAVIOR-1000 上 Strict-Pass 得分 97.3，比 Qwen3-8B 基线相对提升 25.9%，比最强大模型基线高 3.5%，同时输出长度压缩 79%，平均只有 207 个 token。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用视频到 BDDL 的解析器、大模型校验器和轻量符号引擎在毫秒级给出密集反馈；再用 GroupAdapt 按批内通过率动态放宽或收紧难题的长度限制。</span></div>
+<div class="score-reason">评分依据：小模型规划器和大幅缩短输出对资源受限机器人有参考价值，但评测在仿真基准上完成，属训练方法；符号校验加长度调度的组合有一定新意。PDF 首页作者 3、4、8 署名腾讯，其余为清华大学、港科大和伦敦大学。 作者机构依据：arXiv PDF 首页署名 Tencent（PDF 首页作者 Ye Tian、Yuchun Guo 与通讯作者 Yufei Huang 署名 Tencent，其余作者来自清华大学、香港科技大学和伦敦大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.31260" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

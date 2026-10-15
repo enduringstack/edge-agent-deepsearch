@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Lossless but Not Free: An Empirical Anatomy of Speculative Decoding on Consumer Hardware</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-19 · Param Chordiya / arXiv</div>
-<div class="tags"><span class="vendor-tag">Apple</span><span class="tag">方向:量化</span><span class="tag">方向:投机解码</span><span class="tag">方向:记忆</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Single-stream autoregressive decoding of large language models is bound by memory bandwidth: each generated token requires one full forward pass through the tar…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Apple（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-19 · Param Chordiya / arXiv</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">硬件:Apple-Silicon</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">从零实现并实测投机解码在苹果芯片笔记本上到底能快多少，以及为什么很多配置反而变慢。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">最佳配置在 K=6 时实测提速 1.61 倍，接受率从 K=1 的 69.7% 降到最优点的 37.8%；五种草稿/目标模型后端组合里有三种反而减速，原因是草稿模型不够快，或量化 Metal 后端把“并行”验证串行执行了。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">自写支持 CUDA/MPS/CPU 的投机解码实现，在约 9200 个真实生成 token 上用统计检验验证输出分布与原模型一致，再逐一拆解各后端的加速与失速来源。</span></div>
+<div class="score-reason">评分依据：在消费级 Apple Silicon 笔记本上实测投机解码，端侧相关度高。方法本身不新，价值在于把失败原因（验证没有真正批并行、草稿与目标模型速度差不够）量化清楚；作者为加州大学圣地亚哥分校，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.17283" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

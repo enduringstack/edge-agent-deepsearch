@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PalmClaw: A Native On-Device Agent Framework for Mobile Phones</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-14 · Hongru Cai; Yongqi Li; Ran Wei; Wenjie Li / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:手机</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Large Language Model (LLM) agents have moved beyond generating responses to executing multi-step tasks by calling tools, observing the results, and iteratively …</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-14 · Hongru Cai; Yongqi Li; Ran Wei; Wenjie Li / EMNLP 2026 System Demonstration</div>
+<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:工具调用</span><span class="tag">方向:记忆</span><span class="tag">硬件:手机</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">PalmClaw 是一个直接装在安卓手机上的开源智能体框架：会话、记忆、技能、工具和智能体主循环都在手机里跑，不再像主流手机 Agent 那样靠点屏幕、滑动来操作界面。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在小米 Redmi 手机（Android 13）上测试，相比最强基线任务成功率相对提升 11.5%，平均完成时间缩短 94.9%，动作数和 token 也更少；部署只需 2 步、约 2 分钟，不需要另一台电脑、命令行或桥接服务。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把日历、联系人、文件、蓝牙等手机能力封装成参数明确、返回结构化结果的“设备工具”，并给每次调用划定执行边界（如权限缺失时先申请、文件路径越界时拦截），大模型只负责决定调用哪个工具。</span></div>
+<div class="score-reason">评分依据：智能体运行时、记忆和工具执行闭环完整运行在真实手机上，端侧 Agent 相关度很高；用设备工具替代 GUI 操作的系统设计有明显新意，并已开源。大模型推理调用 DeepSeek-V4-Flash 接口，作者主要来自香港理工大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.13027" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

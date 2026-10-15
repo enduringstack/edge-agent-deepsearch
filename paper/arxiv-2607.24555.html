@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LOCKS: Page-Local Compact Key Summaries for Efficient Long-Context Decoding</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-27 · Junsung Hwang / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">长上下文下服务大模型受 KV 缓存瓶颈制约，每步解码都要完整读取它，作者针对此改进。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:稀疏注意力</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长上下文解码的 KV 缓存页选择方法 LOCKS：给每一页 Key 存一个很小的低秩摘要，不读原始 KV 就能判断该读哪些页。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">2048 token 预算下在 10 万以上上下文与完整 KV 质量持平，只关注约 2% 的 token；摘要只占完整 KV 的 4%–10%；GH200 上 512K 上下文解码单步时间缩短 1.8 倍，KV 卸载到 Grace 内存时吞吐达到更快稠密后端的 3.82–4.22 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">观察到注意力 Key 在页内近似低秩，于是为每页拟合一个秩 r 的谱摘要，重建页内 logits 后按 log-sum-exp 质量选页，候选页的 Key 和 Value 都不用读。</span></div>
+<div class="score-reason">评分依据：KV 缓存稀疏读取是可迁移到端侧长上下文的推理技术，但实验在 GH200 数据中心平台上，相关度 4；按页拟合低秩基来做选页的思路清楚有效，贡献 6。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.24555" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Campaign Diagrams: Visualizing the March Through the Phases of a Workload</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-16 · Toluwanimi O. Odemuyiwa; John D. Owens; Michael Pellauer; Joel S. Emer / arXiv</div>
-<div class="tags"><span class="vendor-tag">OPPO</span><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">We present campaign diagrams, a visualization technique for phase-level analysis of resource utilization and bottlenecks in modern workloads.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 OPPO（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-07-16 · Toluwanimi O. Odemuyiwa; John D. Owens; Michael Pellauer; Joel S. Emer / arXiv</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:高效推理</span><span class="tag">方向:编译部署</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一种叫“战役图”的性能可视化方法，把一个计算任务按阶段画出算力和内存带宽的占用、数据量与耗时，帮工程师看清每个阶段到底卡在哪里。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">论文用两个案例说明：在低秩 GEMM 中发现降低运算强度反而能提升端到端性能这一反直觉现象；在 Mamba 中找出跨阶段算子融合与流水化的机会。未报告统一的加速倍数。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在一张图里同时画出各阶段的计算吞吐利用率、内存带宽利用率、计算与访存总量和时延，数据既可来自解析模型、模拟器，也可来自实测 profiling，因此能同时对比理论上限和实际达成的性能，弥补 roofline 丢失时间维度、profiler 看不出瓶颈的缺点。</span></div>
+<div class="score-reason">评分依据：面向模型算子（GEMM、Mamba）的性能分析与优化工具，对端侧推理内核调优有直接借鉴价值，但不针对具体设备，相关度 4；是可视化分析方法而非新的加速技术，贡献 5。PDF 首页署名显示作者 Michael Pellauer、Joel S. Emer 来自 NVIDIA，另两位作者来自加州大学戴维斯分校（Emer 同时署名 MIT）。 作者机构依据：arXiv PDF 首页署名 NVIDIA（PDF 首页作者 Michael Pellauer、Joel S. Emer 署名 NVIDIA；第一作者 Odemuyiwa 与 Owens 署名加州大学戴维斯分校）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.15225" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

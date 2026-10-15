@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Brain-Aligned Multi-Stream Video Transformers with Sparse Self-Selection</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-20 · Amir Hosein Fadaei; Mahyar Maleki; Mohammad-Reza A. Dehaqani / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Modern video transformers typically ignore principles from primate vision and are rarely evaluated against neural data, limiting their biological interpretabili…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-07-20 · Amir Hosein Fadaei; Mahyar Maleki; Mohammad-Reza A. Dehaqani / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效注意力</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">借鉴灵长类视觉系统设计的视频 Transformer，用稀疏的“胜者全拿”令牌选择替代稠密自注意力，兼顾效率与脑一致性。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Kinetics-400 和 Something-Something V2 上，最佳变体在同规模模型中处于精度-推理时间的帕累托前沿；与脑电记录的峰值相关为 0.18，约为噪声上限的 78%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把视频拆成高分辨率低帧率的“是什么”通路和低分辨率高帧率的“在哪里”通路分别处理后融合，并在每层只保留少数被选中的令牌参与计算。</span></div>
+<div class="score-reason">评分依据：稀疏令牌选择能降低视频模型推理开销，与高效推理有间接关系，但主要目标是脑对齐解释性，未涉及设备部署。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.17625" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

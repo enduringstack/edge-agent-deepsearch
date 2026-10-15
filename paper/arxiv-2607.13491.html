@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DeepLoop: Depth Scaling for Looped Transformers</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-17 · Shuzhen Li, Yifan Zhang, Jiacheng Guo, Quanquan Gu, Mengdi Wang / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Looped Transformers scale sequential computation by applying a compact stack of physical blocks for multiple rounds, increasing unrolled depth without increasin…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=16)；affiliation 待核实</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-17 · Shuzhen Li, Yifan Zhang, Jiacheng Guo, Quanquan Gu, Mengdi Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究「循环 Transformer」（同一组层反复执行多轮，加深计算但不增加参数）该如何设置残差缩放，让循环加深时训练依然稳定。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 GPT-2 small 和 medium 规模的循环语言模型上，不重复访问层时效果持平，一旦启用循环深度，验证损失和下游准确率都有提升；论文没有给出延迟或内存数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">推导出参数被多次访问时的扰动上界，据此把 DeepNorm 的缩放系数改为随展开深度 N 设定（α=(2N)^1/2、β=(8N)^-1/2）。</span></div>
+<div class="score-reason">评分依据：循环 Transformer 用更少的存储参数换更深的计算，对内存受限设备上的小模型设计有间接参考价值；本文是训练稳定性的理论与实验分析，没有端侧评测。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.13491" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Magnetic Tunnel Junctions for Timekeeping in Intermittent Computing Systems</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-25 · Nikola Vuk Maruszewski; Jordan Athas; Allison Fleming; Christian Duffee; Eren Yildiz; Saad Ahmed; Yaman Sangar; Pedram Khalili / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">无电池间歇系统可无人运行多年，但停电会抹去计时状态，破坏感知、调度和协调，作者针对此展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">硬件:MCU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">无电池的间歇供电设备一断电就丢失时间，导致感知、调度和协同出错。FLINT 用一组刻意做成“会按规律失忆”的磁隧道结存储单元，靠它们的状态丢失比例来估算断电了多久。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 21 个实际制造的磁隧道结上验证模型；基于真实设备轨迹的仿真中，能在 10% 误差内追踪超过 15 分钟的断电时间，每次读取仅耗 1.03 微焦、面积小于 0.1 平方毫米，量程是此前方案的 9.2 倍、能耗低 11 倍；一年部署中调度错误比会老化的电容计时少 16 到 52 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">磁隧道结的状态衰减时间由器件几何决定，读取能耗与测量区间无关、也不会随使用年限漂移，因此不必像电容方案那样为最长区间放大电容。</span></div>
+<div class="score-reason">评分依据：面向无电池物联网终端的基础计时器件，属于极低功耗端侧设备，但本身不涉及 AI 推理或部署（相关度 3）。用新型自旋电子器件替代电容计时，量程和能耗都有数量级改进（贡献 7）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.23000" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

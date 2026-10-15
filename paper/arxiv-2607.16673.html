@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SpecLA: Efficient Speculative Decoding for Linear-Attention Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-18 · Zhibin Wang; Xuying Han; Zhaohua Yang; Fuliang Liu; Xue Li; Rong Gu; Sheng Zhong; Chen Tian / arXiv</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:KV cache</span><span class="tag">方向:投机解码</span><span class="tag">方向:剪枝稀疏</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Linear-attention models replace the growing KV cache with recurrent states, but autoregressive decoding still reads, updates, and writes these states one token …</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 NVIDIA（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-07-18 · Zhibin Wang; Xuying Han; Zhaohua Yang; Fuliang Liu; Xue Li; Rong Gu; Sheng Zhong; Chen Tian / arXiv</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:投机解码</span><span class="tag">方向:高效注意力</span><span class="tag">方向:推理框架</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">线性注意力模型用循环状态代替不断增长的 KV 缓存，但现有投机解码系统都是为 Transformer 设计的。SpecLA 是专门给线性注意力模型用的投机解码运行时。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 NVIDIA H100 上以公开的 GDN-1.3B 为目标模型，端到端解码比逐 token 自回归最高快 1.70 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用感知拓扑结构的内核一次验证链式和树状草稿，保存验证过程中产生的紧凑因子以便只恢复被接受路径的状态，并用置信度剪枝加对齐目标模型的 EAGLE 式草稿器减少无效验证。</span></div>
+<div class="score-reason">评分依据：线性注意力与投机解码都是端侧大模型推理的重要方向，可直接迁移，相关度中等；首次系统解决有状态模型的投机验证问题，但实验在数据中心 GPU 上完成。PDF 首页显示作者 Xue Li 署名 Alibaba Group，其余作者来自南京大学。 作者机构依据：arXiv PDF 首页署名 Alibaba（PDF 首页第五作者 Xue Li 署名 Alibaba Group, Hangzhou）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.16673" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Real2Sim2Real for Vision-Language-Action Manipulation: An AMD ROCm-Based Pipeline</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-25 · Qing Yang; Xun Wang; Ziguan Wang; Zhenjiang Li; Hongqiang Wang; Dongdong Weng / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">物理 AI——把大型视觉-语言-动作模型与具身 agent 结合作用于真实世界——已成下一前沿，作者针对此展开。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-25 · Qing Yang; Xun Wang; Ziguan Wang; Zhenjiang Li; Hongqiang Wang; Dongdong Weng / arXiv</div>
+<div class="tags"><span class="vendor-tag">AMD</span><span class="tag">方向:编译部署</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">AMD 展示一条全部跑在自家硬件和 ROCm 软件栈上的具身操作流程：从数据中心训练视觉-语言-动作模型、在 Radeon 工作站做仿真渲染，到在锐龙 AI 边缘平台和真实机械臂上部署，证明不必依赖 CUDA 生态。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">完成四个演示：用 SmolVLA 训练并部署到真实 Franka 机械臂、语言指定“三选一”抓取、真实场景 3D 高斯重建接入物理引擎生成合成数据、四足与人形机器人大规模强化学习；其中集成显卡的锐龙 AI MAX 395 在部分强化学习任务上吞吐不输独立显卡配置。论文未给出机械臂端推理时延。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以 ROCm + PyTorch 打通 Radeon AI PRO R9700、Radeon PRO W7900 和锐龙 AI 统一内存平台，把仿真到真机、真机到仿真两条数据流串成完整工具链，并在多种硬件上对比吞吐。</span></div>
+<div class="score-reason">评分依据：覆盖机器人端的动作模型部署和锐龙 AI 边缘平台，但重点是整条训练到部署的工具链展示，缺少端侧推理细节（相关度 5）。属于厂商工程整合与演示，方法创新有限（贡献 4）。机构依据：arXiv PDF 首页前五位作者署名 AMD AIG Team。 作者机构依据：arXiv PDF 首页署名 AMD（PDF 首页 6 位作者中 5 位署名 AMD AIG Team，另一位为北京理工大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.22997" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

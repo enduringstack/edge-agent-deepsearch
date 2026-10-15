@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Automated Numerical Stability Analysis of Deep Learning Operators</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-28 · Xinye Chen / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">有限精度算术不可避免地引入数值近似误差，作者针对其影响展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-07-28 · Xinye Chen / arXiv</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:量化</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一个自动检查深度学习算子数值稳定性的工具：在一次计算中验证精度，并能定位训练和推理中哪个算子引入了数值不稳定。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在注入数值不稳定的多种任务上能检测出被污染的算子（摘要未给量化指标）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对支持的运算采用 CESTAC 随机数值验证，对类矩阵乘内核用算子级数据扰动近似，从而在训练和推理过程中持续监控数值稳定性。</span></div>
+<div class="score-reason">评分依据：低精度推理内核开发需要这类数值稳定性检查，但工具本身面向通用算子，没有针对端侧硬件，相关度低。作者来自索邦大学 LIP6。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.25494" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

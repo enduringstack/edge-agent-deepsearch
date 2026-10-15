@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>C$^2$KV: Compressed and Composable KV Cache Reuse for Efficient LLM Inference</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-20 · Chuheng Du; Junyi Chen; Hanlin Tang; Kan Liu; Tao Lan; Lin Qu; Chaoyue Niu; Shengzhong Liu / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:评测基准</span><span class="tag">应用:RAG</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Long-context inference is central to modern large language model (LLM) applications such as retrieval-augmented generation and multi-document reasoning.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-07-20 · Chuheng Du; Junyi Chen; Hanlin Tang; Kan Liu; Tao Lan; Lin Qu; Chaoyue Niu; Shengzhong Liu / KDD 2026</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">应用:长上下文推理</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长上下文和 RAG 场景里，复用已算好的 KV 缓存能省掉重复预填充，但缓存本身又大又难存取。C2KV 让不在开头位置的文档片段也能以压缩形态被反复拼接复用。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多个长上下文基准和模型系列上，大幅降低 KV 缓存的存储与传输开销，长上下文下推理最高提速 17 倍，生成质量基本不变。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">给冻结的基础模型外挂一个轻量“提取器”，用可学习的压缩 token 把每段文本压成与位置无关、可自由拼接的 KV 表示，并把压缩和拼接放在一起联合训练，保证复用时不掉点。</span></div>
+<div class="score-reason">评分依据：KV 缓存压缩与非前缀复用属于推理技术栈，对内存紧张的设备可迁移，但实验面向长上下文服务场景，端侧相关度中等；把压缩和可组合复用统一建模有一定新意。PDF 首页作者 3–6 署名 Alibaba Group，作为合作公司列出。 作者机构依据：arXiv PDF 首页署名 Alibaba（PDF 首页作者 3–6（Hanlin Tang、Kan Liu、Tao Lan、Lin Qu）署名 Alibaba Group，邮箱为 alibaba-inc.com / taobao.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.17715" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

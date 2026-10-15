@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SWE-Router: Routing in Multi-turn Agentic Software Engineering Tasks</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-30 · Seongho Son, Sangwoong Yoon, Jiahua Tang et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">应用:代码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">SWE-Router 是基于价值的时序路由方法,让廉价模型先跑几步探索再读部分轨迹决定是否升级到昂贵模型,并给出贝叶斯最优性定理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">多组弱强 LLM 对上大幅提升 SWE 任务成本效率,保留强模型大部分性能;未报告具体数字。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：云端 agent 路由,与端侧无关;轨迹条件路由+贝叶斯最优定理,中等创新。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-30 · Seongho Son, Sangwoong Yoon, Jiahua Tang et al. / ICML 2026 Workshop (DL4C)</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:端云协同</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">编程智能体把所有任务都交给最强模型太浪费。SWE-Router 先让便宜模型试跑几轮，再看部分执行轨迹决定继续用便宜模型还是升级到贵模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">原文称在多组强弱模型搭配上显著提升编程任务的成本效率，同时保留强模型的大部分性能，并给出“看部分轨迹再路由不会更差”的贝叶斯最优性定理；摘要未给出具体节省比例。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把路由建模为基于价值的时序决策：先观察便宜模型的探索轨迹，再估计继续与升级的价值，从而区分只是改个错字还是要跨模块重构的任务。</span></div>
+<div class="score-reason">评分依据：属于云端编码智能体的强弱模型路由，可迁移到“本地小模型先试、必要时上云”的端云协同场景，但原文不涉及端侧；思路清晰有理论支撑。作者来自伦敦大学学院等高校，发表于 ICML 2026 研讨会。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.00053" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

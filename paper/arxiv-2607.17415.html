@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Transition-Aware Backend Dispatch for Edge LLM Inference</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-19 · Alaaddin Goktug Ayar; Martin Margala / arXiv</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span><span class="tag">硬件:Jetson</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Efficient large language model (LLM) inference on edge platforms is limited not only by model size, but also by shape-dependent performance differences across e…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 NVIDIA（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-07-19 · Alaaddin Goktug Ayar; Martin Margala / arXiv</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:Jetson</span><span class="tag">硬件:GPU</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在 Jetson 这类边缘设备上跑大模型时，不同算子在 CPU、CUDA、ONNX Runtime 等后端上的快慢随张量形状变化，这项工作按算子动态选择后端，同时避免频繁切换带来的开销。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Jetson 平台 7 个 Transformer 模型、9584 个算子实例的回放评测中，相比最佳静态分配平均降低延迟 17.4%、能耗 14.4%、能量延迟积 28.5%；留一模型评测中 7 个模型里 6 个三项指标都改善。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把当前算子特征和上一个算子选用的后端一起作为决策输入，用真实测得的算子开销与后端切换开销做回放评估，在保留有利选择的同时减少无谓切换。</span></div>
+<div class="score-reason">评分依据：直接在 NVIDIA Jetson 上做大模型推理后端调度并实测延迟和能耗，端侧相关度高。“考虑切换代价”的思路简单实用，但评估基于测量回放而非在线运行，贡献中等；作者来自路易斯安那大学拉斐特分校，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.17415" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

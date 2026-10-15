@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Human-Robot Interaction in GenAI Architectures via the Agent-Client Protocol</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-16 · Jesus Moncada-Ramirez; Jose-Raul Ruiz-Sarmiento; Javier Gonzalez-Jimenez / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:代码</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Recent advances in Generative Artificial Intelligence (GenAI), particularly Large Language Models (LLMs), are driving robotic architectures toward agent-based h…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-16 · Jesus Moncada-Ramirez; Jose-Raul Ruiz-Sarmiento; Javier Gonzalez-Jimenez / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">提出用原本为编程智能体设计的 Agent-Client 协议，统一机器人智能体与各种人机交互界面的通信，配合 MCP 连接机器人执行层，构成三层解耦架构。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在实体移动机器人 Sancho 上让命令行、平板和网页三种界面无改动接入；一次交互平均 36.9 秒，其中 ACP 只增加 1.0 毫秒、MCP 增加 170.6 毫秒，合计不到 0.5%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">机器人上的 ReAct 编排器作为 ACP 服务端面向用户界面，同时作为 MCP 客户端调用封装了 ROS 导航、相机和语音的工具；支持实时查看推理过程、敏感动作需人工授权和随时打断。</span></div>
+<div class="score-reason">评分依据：在真实移动机器人上运行带工具调用、人工授权和中断的智能体编排闭环，属于端侧 Agent 运行时架构；大模型推理调用云端 Gemini，创新主要在协议选型与架构解耦。作者来自马拉加大学，代码开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.14919" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

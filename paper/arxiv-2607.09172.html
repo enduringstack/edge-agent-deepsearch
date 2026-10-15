@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Attention to Detail: Evaluating Energy, Performance, and Accuracy Trade-offs Across vLLM Configurations</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-10 · Nada Zine; Tristan Coignion; Vincenzo Stoico; Clément Quinton; Romain Rouvoy; Patricia Lago / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Large Language Models are reshaping how software is developed and maintained.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-07-10 · Nada Zine; Tristan Coignion; Vincenzo Stoico; Clément Quinton; Romain Rouvoy; Patricia Lago / arXiv</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一项大规模对照实验，测量 vLLM 推理引擎里注意力内核、前缀缓存、分块预填充三个配置开关对能耗、性能和输出准确率的影响。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 5 个开源大模型、5 类任务上共跑 9000 次、采集 93600 个测量值：注意力内核类型和前缀缓存对能耗与性能影响显著，分块预填充在默认配置下作用有限；没有通用最优配置，模型选择对整体权衡的影响大于配置调优，而且某些推理选项还会改变模型准确率。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对三个配置项做全组合实验，分析主效应和配置与任务之间的交互效应，并画出能耗、延迟、准确率的帕累托前沿。</span></div>
+<div class="score-reason">评分依据：研究对象是服务器端 vLLM 推理引擎的能耗与配置调优，属于云端 serving，对端侧只有间接参考（相关度 3）。属于实证测量研究，结论实用但方法常规（贡献 4）。作者均来自里尔大学、波尔多大学、阿姆斯特丹自由大学等高校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.09172" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Empowering On-Device Model Adaptation with an Edge AI Inference Accelerator</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-20 · Mateusz Piechocki; Alessandro Capotondi; Marek Kraft / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">On-device model adaptation is essential to enable lifelong personalization on resource-constrained hardware, but compute, power, and memory limitations of such …</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-20 · Mateusz Piechocki; Alessandro Capotondi; Marek Kraft / ECML-PKDD 2026 ITEM Workshop</div>
+<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:量化</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:NPU</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">端侧设备想在现场持续个性化模型，但完整反向传播太吃算力和电。这项工作把原本只用来做推理的 Hailo-8L 加速器拿来辅助“端上训练”。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多种网络结构和数据集上，训练耗时最多比树莓派 5 纯 CPU 快 15.4 倍，单样本能耗持续下降；训练后量化的精度恢复步骤对保持特征质量、减少量化敏感模型的精度损失至关重要。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把计算图拆开：冻结的预训练主干量化成 INT8 放到 Hailo-8L 上提特征，只在主机 CPU 上用 FP32 微调一个轻量分类头；配套基于 ONNX 的工具链把 Hailo 算子嵌入训练流程。</span></div>
+<div class="score-reason">评分依据：在树莓派 5 加 Hailo-8L 的真实边缘硬件上完成端上适配并测了时间和能耗，端侧证据扎实；“用推理加速器帮训练”的异构划分思路实用，方法本身较简洁。作者来自波兹南工业大学和摩德纳大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.18101" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

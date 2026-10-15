@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>BlockPilot: Instance-Adaptive Policy Learning for Diffusion-based Speculative Decoding</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-06-30 · Hao Zhang, Yiming Hu, Yong Wang et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">BlockPilot 针对扩散式投机解码,发现最优块大小随样本变化且集中在训练块大小附近,提出用轻量策略从 prefill 表示一次预测最优块大小。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">Qwen3-4B T=1 下接受长度 5.92,4.20x 加速。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：投机解码技术栈非显式端侧;实例自适应块大小策略,创新较高。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-06-30 · Hao Zhang, Yiming Hu, Yong Wang et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">扩散式投机解码一次生成一整块候选 token，但现有方法对所有输入都用固定块大小。BlockPilot 为每条输入预测最合适的块大小。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen3-4B、温度 T=1 下平均接受长度 5.92，加速 4.20 倍；方法即插即用，额外开销很小。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">发现最优块大小因样本而异但集中在训练块大小附近，于是把选择块大小变成一个轻量策略学习问题，在预填充结束后根据其表示只预测一次。</span></div>
+<div class="score-reason">评分依据：投机解码是端侧推理加速的常用手段，可直接迁移到小模型；样本自适应选块的思路实用但改动范围较小。PDF 首页全部作者署名阿里巴巴集团高德（AMAP）。 作者机构依据：arXiv PDF 首页署名 Alibaba（PDF 首页全部作者署名 AMAP, Alibaba Group（阿里巴巴集团高德），代码发布在 AMAP-ML 组织下）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.31315" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

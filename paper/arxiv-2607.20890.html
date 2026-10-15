@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Information-Theoretically Secure Aggregation for Lightweight Federated Learning: Resilient to Dropouts and Adversaries</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-23 · Hyeong-Gun Joo; Songnam Hong; Dong-Joon Shin / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:手机</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">On-device federated learning (FL) enables privacy-preserving and personalized model training on resource-constrained devices such as smartphones and IoT nodes.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-23 · Hyeong-Gun Joo; Songnam Hong; Dong-Joon Shin / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span><span class="tag">硬件:手机</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">针对手机和物联网设备上的联邦学习，提出一种轻量的安全聚合方案：设备只上传 1 比特梯度符号，服务器也只能看到最终的多数投票结果。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">与传统做法相比，在线通信最多减少 99.5%、时延最多降低 85.7%；在有设备掉线和存在恶意设备时，准确率分别最多提升 20.65% 和 10.74%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用单轮安全乘法计算多数投票多项式，并通过“逆形式指数约减”把多项式次数减半；借助 MDS 码解码天然容忍掉线和恶意节点，在诚实多数假设下达到信息论安全。</span></div>
+<div class="score-reason">评分依据：服务于端侧联邦训练的隐私与通信开销，属于端侧相邻技术栈，但不涉及推理部署（相关度 4）。在符号梯度联邦学习的安全聚合上有一定新意（贡献 5）。作者来自韩国汉阳大学，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.20890" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

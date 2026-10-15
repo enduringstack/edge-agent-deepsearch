@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Seeing is Free, Speaking is Not: Uncovering the True Energy Bottleneck in Edge VLM Inference</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-10 · Junfei Zhan; Haoxun Shen; Mingang Guo; Zixuan Huang; Tengjiao He / arXiv</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span><span class="tag">硬件:Jetson</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Vision-Language Models (VLMs) are the perceptual backbone of embodied AI, but their energy footprint on edge hardware remains poorly understood.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 NVIDIA（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">16</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-10 · Junfei Zhan; Haoxun Shen; Mingang Guo; Zixuan Huang; Tengjiao He / ACM MM 2026</div>
+<div class="tags"><span class="vendor-tag">Xiaohongshu</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">硬件:Jetson</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">首个系统测量端侧视觉语言模型推理能耗的研究，发现真正耗电的不是“看图”，而是模型“说了多少话”。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 RTX 3070 和 Jetson Orin NX 上测试 5 个模型：平均推理功率几乎是模型固有常数（各条件下波动小于 5%）；每个输出 token 的耗时是输入 token 的 11–39 倍；同分辨率下图像复杂度可造成最多 4.1 倍能耗差异，原因是输出变长；即使删掉全部视觉 token 最多只省 10% 能耗，而控制输出长度最多可省 97%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">覆盖三类架构、四种输入分辨率和两种硬件平台做系统性能耗剖析，把能耗拆分为功率与时长，再把时长归因到预填充和解码阶段的计算与访存不对称。</span></div>
+<div class="score-reason">评分依据：直接在 Jetson Orin NX 等端侧硬件上测量视觉语言模型能耗（相关度 9）。结论推翻了“视觉 token 剪枝是节能关键”的常见假设，对端侧多模态优化方向有实际指导意义（贡献 7）。被 ACM MM 2026 接收，代码开源。PDF 首页有一位作者署名小红书（Xiaohongshu Inc），其余来自帝国理工、宾夕法尼亚大学、暨南大学。 作者机构依据：arXiv PDF 首页署名 Xiaohongshu（PDF 首页第四作者 Zixuan Huang 署名 Xiaohongshu Inc（上海），邮箱为 xiaohongshu.com 域名；其余作者来自高校；输入中的 NVIDIA 只是被测硬件平台）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.09520" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

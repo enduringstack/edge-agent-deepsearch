@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Elastic Gang: Per-Token Membership Change for a Hard-Barriered LLM Inference Gang Co-Scheduled with OS Processes</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-06 · Daeyeon Son / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:推理框架</span><span class="tag">方向:调度服务</span><span class="tag">硬件:CPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">端侧 LLM 解码是硬屏障 CPU-SIMD 计算要占满所有核，OS 其他进程也要这些核；提出弹性 gang 让核成员在每 token 间动态变化。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">AMD Zen 5 上 135M 和 7B 模型推理输出位级精确；比静态核划分 Pareto 优：中等推理占空比下通用吞吐 1.28-1.75 倍，推理空闲时恢复全部 8 核。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">ACK 锁定 epoch 协议不等待具名核：seqlock 式 generation-tagged 锁+RCU/epoch 式成员同意，每 token 参与集为请求核与 ack 核的交集；借核 0.22us，不抢占运行租户。</span></div>
-<div class="score-reason">评分依据：明确端侧 LLM 解码 OS 调度，真机验证（relevance 9）。弹性 gang+epoch 协议是 OS-级系统创新（contribution 7）。作者 Anima OS 单人，学校项目。</div>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-07-06 · Daeyeon Son / arXiv</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:调度服务</span><span class="tag">方向:高效推理</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在本机 CPU 上跑大模型解码时，推理要独占所有核心，系统里的其他进程又要持续用这些核心。作者在自研的裸机内核 Anima OS 里，让推理任务占用的核心数可以在任意两个 token 之间动态伸缩。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 AMD Zen 5（8 核 16 线程）真机上，135M 和 7B 模型在逐 token 调整核心时输出逐位一致；推理占空比 25%/50%/75% 时，普通进程吞吐分别是静态 8 核切分的 1.75/1.52/1.28 倍，推理吞吐不降；归还借出的核心只需 0.22 微秒（p50）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用一种基于确认的纪元协议：每个 token 的参与核心是“推理组请求的核心”与“已确认当前纪元的核心”的交集，未确认的核心最多晚一个 token 加入，因此既不会卡死同步屏障，也不会算错 logits。</span></div>
+<div class="score-reason">评分依据：直接面向单机本地大模型解码与操作系统调度的冲突，并在真实 x86 机器上验证，端侧相关度高；把推理任务作为可逐 token 伸缩的一等调度实体，是少见的系统设计。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.04668" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

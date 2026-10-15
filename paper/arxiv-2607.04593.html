@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TORINO: Token Reduction via Interpretable Concept Overlap in Vision-Language Models</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-06 · Riccardo Renzulli; Gabriele Spadaro; Shruthi Gowda; Alaa Eddine Mazouz; Van-Tam Nguyen / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用稀疏自编码器把 VLM 视觉 token 投到可解释潜空间，按概念重叠做自适应 token 缩减。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在多个视觉语言基准上以最小性能损失减少视觉 token 数量，实现良好的效率-精度折衷。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">TORINO 用 SAE 把视觉 token 投到可解释潜空间，定义概念重叠为活跃 SAE 潜变量的一致度，按共享语义内容分组，组内做剪枝或合并；按输入复杂度动态调整缩减率。</span></div>
-<div class="score-reason">评分依据：VLM token 缩减属端侧技术栈但非显式端侧（relevance 6）。SAE 概念重叠分组有创新（contribution 5）。vendors 空。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-06 · Riccardo Renzulli; Gabriele Spadaro; Shruthi Gowda; Alaa Eddine Mazouz; Van-Tam Nguyen / arXiv</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">TORINO 是一个即插即用的视觉 token 精简方法：先用稀疏自编码器给每个视觉 token 找出可解释的“概念”，再把概念重叠的 token 合并或剪掉。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">原文称在多个视觉语言基准上以很小的性能损失减少了视觉 token 数，摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用稀疏自编码器把视觉 token 投影到可解释的潜空间，按激活概念的重叠程度分组，组内剪枝或合并；精简比例随图像复杂度自适应，不需要微调原模型。</span></div>
+<div class="score-reason">评分依据：视觉 token 精简可直接降低端侧多模态推理成本，但未做设备端实测；用可解释概念做 token 分组有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.04593" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

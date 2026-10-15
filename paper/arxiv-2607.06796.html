@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Enhancing deep learning models for time series classification via knowledge distillation</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-07 · Javidan Abdullayev; Maxime Devanne; Jonathan Weber; Germain Forestier / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">研究知识蒸馏在时间序列分类上的有效性，面向资源受限环境部署。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">蒸馏 FCN 学生参数减少 38 倍，蒸馏 Inception 学生用 42% 更少参数接近教师，ConvTran 2 头学生蒸馏提升最显著。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在 UCR Archive 上跨 FCN/Inception/ConvTran 三种架构，调整卷积滤波器、Inception 模块与注意力头，系统比较蒸馏对学生复杂度的影响。</span></div>
-<div class="score-reason">评分依据：知识蒸馏面向资源受限部署（relevance 6）。属于常见方法系统研究无明显突破（contribution 4）。vendors 空。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-07 · Javidan Abdullayev; Maxime Devanne; Jonathan Weber; Germain Forestier / Knowledge and Information Systems 2026</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">系统评估知识蒸馏能否把时间序列分类的大模型压成小模型，方便在资源受限的环境里部署，覆盖卷积网络 FCN、Inception 和 Transformer 结构的 ConvTran 三类模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 UCR 时间序列基准上，中等复杂度的学生模型最受益：蒸馏后的 FCN 学生参数量减少 38 倍；Inception 学生少用 42% 参数仍几乎追平教师；只有 2 个注意力头的 ConvTran 学生从蒸馏中提升最明显。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">逐步缩减卷积滤波器数量、Inception 模块数和注意力头数构造不同大小的学生模型，用大模型做教师进行蒸馏，再与不蒸馏的同尺寸模型对比。</span></div>
+<div class="score-reason">评分依据：蒸馏是模型小型化的常规手段，论文以资源受限部署为动机但没有真机测试，属于端侧技术栈的间接可迁移工作；主要是对已有方法的系统实验，创新有限。作者来自法国上阿尔萨斯大学，期刊版发表于 Knowledge and Information Systems。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.06796" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

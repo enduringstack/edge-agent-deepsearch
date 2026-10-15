@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>How Query Visibility Changes KV-Cache Compression Rankings: A Matched-Budget Audit</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-11 · Daming Luo; Christy Liang; Junyu Xuan / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">KV-cache compression methods are predominantly evaluated with the query appended to the context before compression -- a query-aware protocol.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">指出 KV cache 压缩方法通常在“问题已知”的条件下评测，而真实复用场景要先压缩文档再回答未知问题；作者在同等预算下重新审计了六种压缩方法。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在三个 7-9B 开源模型上做了 14.43 万次 RULER-8192 和 4.08 万次 LongBench 配对评测：问题不可见时，只有 KeyDiff 在 36 组设置中的 31 组稳定胜过最佳的平凡基线；最常用的 SnapKV 平均反而比“保留开头加最近窗口”低 0.066，两种协议间的掉分从 SnapKV 的 0.198 到 KeyDiff 的 0.011 不等。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">固定模型、压缩比、样本和解码方式，只改变打分时是否能看到问题，再用配对自助法检验排名变化，并从各方法源码解释掉分与问题可见程度的对应关系。</span></div>
+<div class="score-reason">评分依据：KV cache 压缩是端侧长上下文推理的关键技术，这篇评测揭示了“先压缩后复用”场景下方法排名会反转，对选型有直接参考价值；属于评测审计，不提出新方法。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.11942" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CBD: API-Only LLM Black-Box Unlearning through Controlled Behavioral Divergence</h1>
-<div class="meta"><span class="score">17</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-26 · Zhiqiang Xie, Yijing Lin, Zhipeng Gao et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">面向端侧通过API调用LLM的场景，提出CBD黑盒遗忘框架，用两个辅助模型制造保留输入与遗忘输入间的受控行为分歧，梯度统计判别基把遗忘信号导向目标特定信息而非共享提示结构。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">比11个白盒/灰盒基线更好的遗忘-效用折损；TOFU forget10上模型效用74.90高出次优约15%，WMDP上危险知识准确率降到25.68接近随机、MMLU保持52.67。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确端侧API调用LLM的黑盒遗忘，端侧属性强；受控行为分歧+梯度判别基创新高。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-26 · Zhiqiang Xie, Yijing Lin, Zhipeng Gao et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">CBD 是一种只靠 API 调用、不碰模型参数的大模型“遗忘”方法：当边缘设备通过 API 使用云端大模型时，把需要遗忘的数据对模型行为的影响去掉，同时尽量保留其他能力。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 TOFU forget10 上接近重新训练的参考效果，模型效用达到 74.90，比第二名高约 15%；在 WMDP 上把危险知识准确率降到 25.68，接近随机猜测，同时 MMLU 保持 52.67。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用两个辅助模型制造“保留数据”和“遗忘目标”之间的行为差异并转换成相关度分数，把与遗忘目标相关的提问绕开目标模型；再用费舍尔信息构造判别方向，避免误伤句式相似的正常问题。</span></div>
+<div class="score-reason">评分依据：边缘设备只是调用云端大模型的背景，方法本身作用在云端 API 层，端侧相关度低；黑盒遗忘的设计有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.27683" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

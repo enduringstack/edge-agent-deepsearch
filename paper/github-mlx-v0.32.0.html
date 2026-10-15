@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MLX v0.32.0 — Apple Silicon 端侧推理框架大版本</h1>
-<div class="meta"><span class="score">15</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-07-07 · ml-explore / GitHub</div>
+<div class="meta"><span class="score">12</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-07-07 · ml-explore / GitHub</div>
 <div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:量化</span><span class="tag">方向:编译部署</span><span class="tag">硬件:Apple-Silicon</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Apple MLX 框架新大版本，覆盖 CUDA 量化矩阵乘、多线程独立计算、JACCL 分布式独立库、Windows CUDA 构建与 iOS Metal 默认后端。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告具体性能数字；扩展了量化 matmul 覆盖面、多线程安全、FFT、GatherQMM 等大量能力。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">量化 matmul 多比特覆盖（3/5/6-bit）、ThreadLocalStream 多线程、JACCL 独立、CUDA JIT 编译缓存、Metal DLPack 零拷贝共享。</span></div>
-<div class="score-reason">评分依据：Apple Silicon 端侧推理框架重大版本，明确端侧（relevance 9）。大版本含大量量化/多线程/JIT 能力扩展，工程整合为主（contribution 6）。白名单大项目 ml-explore/mlx，开源大项目。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">苹果开源机器学习框架 MLX 发布 v0.32.0，这是一次以修复和补齐能力为主的版本更新，覆盖 Apple 芯片上的 Metal 后端，也继续扩展 CUDA 和 Windows 支持。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">这一版重点包括：iOS 上默认启用 Metal 后端、Windows 平台支持 JIT 编译并修复 CUDA 构建、CPU 侧改用线程局部状态提升多线程安全、修复多处量化矩阵乘与 GGUF Q4_1 加载问题、改进 DLPack 数组导入，并给 JACCL 分布式通信加入屏障。</span></div>
+<div class="score-reason">评分依据：MLX 是 Apple 芯片上本地跑大模型的主力框架之一，iOS 默认启用 Metal 等改动直接影响端侧部署，所以相关度高；本版以缺陷修复和平台补齐为主，没有新的推理技术，贡献分偏低。</div>
 <div class="source"><a href="https://github.com/ml-explore/mlx/releases/tag/v0.32.0" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Three-Pronged Spectral Control for Federated Parameter Efficient Fine Tuning</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-23 · Shiva Raj Pokhrel; Dipsan Bhattarai; Anwar Walid / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Federated parameter-efficient fine-tuning (PEFT) enables communication-efficient adaptation of large pretrained models on decentralized edge data, but it remain…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-23 · Shiva Raj Pokhrel; Dipsan Bhattarai; Anwar Walid / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:端侧训练</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">TRISHUL：让各个边缘设备在不共享原始数据的前提下联合微调大模型的 LoRA 方法，重点解决各端数据分布差异大导致聚合不稳的问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 CIFAR-100、SVHN、20 Newsgroups、MRQA 以及基于 LLaMA3.2-1B 的 GLUE 等任务上，收敛速度、稳定性和最终效果都优于联邦 LoRA 基线，数据差异越大优势越明显；摘要未给出统一的单一提升数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">共享冻结的多头低秩基，只聚合小核心矩阵以实现精确聚合；上传前用核范数收缩压掉客户端特有的高秩成分；再按各层容量用“注水”规则分配适配头，几乎不增加计算和通信。</span></div>
+<div class="score-reason">评分依据：面向边缘数据的联邦参数高效微调，属端侧训练相邻方向，不涉及推理部署（相关度 4）。三管齐下的谱控制设计有一定新意（贡献 5）。作者来自迪肯大学和哥伦比亚大学，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.20914" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>W4A4 Quantization for Inference on Wan2.2-I2V-A14B</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-06-28 · Yidong Chen, Chengyu Shi, Jiahao Liu / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:剪枝稀疏</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">ICME 2026低比特量化挑战赛提交，对Wan2.2-I2V-A14B做W4A4推理，结合MixQ式混合精度处理稀疏激活异常、SmoothQuant式通道平滑和块级HiF4打包，双分支GEMM保留异常列高精度。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">官方VBench I2V指标多数质量轴与FP16差距2-3.5%，运动平滑度提升，优于原生HiFloat4基线（约5%退化）。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：视频生成大模型W4A4量化，可降端侧部署门槛；混合量化策略有创新但属赛事工程整合。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-28 · Yidong Chen, Chengyu Shi, Jiahao Liu / ICME 2026 低比特量化挑战赛</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:多模态</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这是一份 ICME 2026 低比特量化挑战赛的参赛方案：把 140 亿参数的图生视频模型 Wan2.2-I2V-A14B 压到权重、激活都只有 4 比特（HiF4/MXFP4 格式）来推理。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在官方 VBench 图生视频指标上，多数质量维度与 FP16 相差 2%~3.5%，运动平滑度反而提升；原生 HiFloat4 基线在所有指标上约退化 5%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用代表性数据校准找出长尾激活通道，借 SmoothQuant 思路做逐通道平滑，再用 MixQ 式混合精度让少数异常列走高精度分支、其余通道严格 W4A4，前馈层按块打包成 HiF4。</span></div>
+<div class="score-reason">评分依据：属于大模型低比特量化技术栈，对资源受限部署有借鉴，但对象是 140 亿参数视频生成模型、面向加速卡，并非端侧场景；方法是现有技术的赛事工程组合，创新有限。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.29337" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

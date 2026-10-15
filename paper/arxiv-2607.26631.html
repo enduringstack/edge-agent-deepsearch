@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>RAG-HAR+: Towards Cost-Efficient LLM-Based Human Activity Recognition for Edge Deployment</h1>
 <div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-29 · Hansi Karunarathna; Nirhoshan Sivaroopan; Chamara Madarasingha; Anura Jayasumana; Kanchana Thilakarathna / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">基于可穿戴传感器的人体活动识别（HAR）支撑医疗、康复、健身追踪和智能环境等应用，作者展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="tags"><span class="tag">应用:RAG</span><span class="tag">方向:端云协同</span><span class="tag">硬件:手机</span><span class="tag">硬件:Snapdragon</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">RAG-HAR+ 是一个基于检索的人体活动识别方案，能在手机上实时识别用户动作，只把少数拿不准的样本交给云端大模型判断，大幅降低成本和延迟。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">6 个公开数据集上在线大模型 token 用量减少 97.7%，单样本延迟最多降低 44.5 倍；在三星 Galaxy S23 Ultra 上的原型中，宏 F1 从 91.0% 提升到 91.7%，单样本延迟从 5400 毫秒降到 360 毫秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">离线用一个设计智能体为每个数据集挑选运动特征组合并建立检索库；在线先在手机上检索相似样本并多数投票，只有票数打平时才调用远端大模型做裁决。</span></div>
+<div class="score-reason">评分依据：在骁龙 8 Gen 2 手机上实测了检索优先的识别流程，端侧相关度高；但设计智能体在笔记本上离线运行、裁决智能体在云端，手机只做检索投票，判为非端侧 Agent（相关度 7）；检索优先、按需调用大模型的思路实用（贡献 5）。作者来自悉尼大学等高校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.26631" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

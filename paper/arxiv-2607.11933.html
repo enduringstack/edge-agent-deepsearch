@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Transforming LLMs into Efficient Cross-Encoders via Knowledge Distillation for RAG Reranking</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-11 · Shreeya Dasa Lakshminath; Shubhan S / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:蒸馏</span><span class="tag">方向:评测基准</span><span class="tag">模型:Llama</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Cross-encoders achieve high reranking accuracy in Retrieval-Augmented Generation (RAG) pipelines but impose quadratic inference costs that limit real-time deplo…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-07-11 · Shreeya Dasa Lakshminath; Shubhan S / arXiv</div>
+<div class="tags"><span class="tag">应用:RAG</span><span class="tag">方向:量化</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把 Llama 3 8B 微调成 RAG 检索管线里的重排序模型，替代传统交叉编码器，并用 4 比特量化降低推理开销。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在一个领域问答基准上（RAGAS 评测），相比交叉编码器基线，答案相关性提升 14%、上下文精确度提升 16%、答案相似度提升 19%、答案正确率提升 21%；推理开销降低的幅度未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用 LoRA 在自建的查询-文档相关性数据上做监督微调，再做 4 比特量化，接到 BM25 加向量检索的双路召回后面做重排。</span></div>
+<div class="score-reason">评分依据：属于 RAG 重排的模型适配，4 比特量化只是常规手段，与端侧部署关系较远；方法是 LoRA 微调加量化的工程组合，创新有限。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.11933" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

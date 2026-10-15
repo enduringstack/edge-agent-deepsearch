@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Index SLM Technical Report</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-10 · Lusheng Zhang; Shien He; Tianxing Yan; Mengran Yu; Ziang Cui; Kai Zhao; Xiaojing Liu; Tianjiao Li / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:RAG</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">We present Index-1.9B, a series of open small language models developed at Bilibili.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-10 · Lusheng Zhang; Shien He; Tianxing Yan; Mengran Yu; Ziang Cui; Kai Zhao; Xiaojing Liu; Tianjiao Li / arXiv</div>
+<div class="tags"><span class="vendor-tag">Bilibili</span><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">哔哩哔哩开源的 19 亿参数小语言模型系列 Index-1.9B 的技术报告，包含基座、纯净对照、对话和角色扮演四个版本。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">Index-1.9B-Base 在考试、推理、数学、代码等基准上平均得分 64.92，与体量数倍于它的开源模型相当或更好；报告还记录了恒定学习率阶段中途出现的一次原因不明的基准分数跃升。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">预训练采用“预热-稳定-衰减”学习率，在衰减阶段大幅提高精选数据比例，并用 Norm-Head 输出层稳定大学习率训练；对话版经监督微调和偏好优化，角色版再加检索增强。</span></div>
+<div class="score-reason">评分依据：2B 以下的小模型适合端侧部署，但报告重点是预训练配方，没有设备端推理实验（相关度 4）。训练经验和对照实验有参考价值，方法本身较常规（贡献 4）。PDF 首页署名 Bilibili Index LLM Team，作者邮箱均为 bilibili.com。 作者机构依据：arXiv PDF 首页署名 Bilibili（PDF 首页署名 Bilibili Index LLM Team，全部作者邮箱为 bilibili.com 域名）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.09885" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

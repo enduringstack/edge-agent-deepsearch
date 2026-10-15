@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Task-Oriented Communication with Hybrid-Precision Models</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-18 · Songjie Xie; Wei Guo; Shenghui Song; Jun Zhang; Ying-Jun Angela Zhang; Khaled B. Letaief / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Edge inference has emerged as a promising solution for the proliferation of artificial intelligence (AI) services by deploying models at the network edge to cir…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-18 · Songjie Xie; Wei Guo; Shenghui Song; Jun Zhang; Ying-Jun Angela Zhang; Khaled B. Letaief / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:量化</span><span class="tag">方向:蒸馏</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">边缘推理时，终端算力有限、无线带宽也有限，两者往往被分开优化。这篇工作让终端只跑二值化的前半段网络并发送二值特征，服务器用全精度后半段完成推理，统筹通信、终端计算和精度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ImageNet 上与多种边缘推理方案对比，原文报告在通信效率、终端计算量和精度之间取得更优折中；摘要未给出统一的具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">为切分推理定制终端侧二值化方法，通过 OFDM 子载波传输二值特征并做信道感知校准，再用知识蒸馏和专门的梯度估计端到端训练整个系统。</span></div>
+<div class="score-reason">评分依据：直接面向终端算力受限的切分推理，属端云协同技术栈，相关度中等偏上；二值化与信道联合设计有一定新意，但评测基于仿真。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.16766" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

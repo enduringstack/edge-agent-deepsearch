@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Selective KV Cache Protection for Noise-Resilient LLM Inference on Analog Compute-In-Memory Systems</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-07-31 · Yuannuo Feng; Wenyong Zhou; Yuang Ma; Yizhe Chen; Wenshuai Yao; Yuxin Xie; Ngai Wong; Wang Kang / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">模拟存内计算（CIM）阵列是低功耗 LLM 推理的有前景基底，尤其适合权重驻留计算。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">九个 LLM 上，平均困惑度从噪声下的 33.91 降到 11.95，接近无噪声基线 11.06；动态 KV 编程行利用率从 23.1% 提升到 91.2%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用 sink token 加滑动近期窗口做分层保护，再由协同调度器安排模拟写入、所有权切换和批量矩阵乘，限制数字路径额外开销。</span></div>
-<div class="score-reason">评分依据：面向低功耗模拟存内计算的真实硬件噪声问题，数字—模拟协同保护策略把困惑度拉回接近无噪声基线，系统贡献明确。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-07-31 · Yuannuo Feng; Wenyong Zhou; Yuang Ma; Yizhe Chen; Wenshuai Yao; Yuxin Xie; Ngai Wong; Wang Kang / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:CIM</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">模拟存内计算芯片很适合低功耗跑大模型，但 KV cache 要反复写入，噪声会把注意力计算搞坏。这篇首次系统研究了这个问题，并只对最怕噪声的少量 token 做数字化保护。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在九个大模型上，模拟噪声下的平均困惑度从 33.91 降到 11.95，接近无噪声的 11.06；动态 KV 的编程行利用率从 23.1% 提升到 91.2%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">发现开头的 sink token 和最近的 token 对噪声最敏感，就把它们放在高精度数字通路，其余大部分 KV 留在模拟阵列上；再用协同调度器安排模拟写入、所有权切换和批量矩阵乘，压住数字通路开销。</span></div>
+<div class="score-reason">评分依据：面向低功耗模拟存内计算的大模型推理，是端侧硬件路线的直接问题，但结果基于噪声建模评测而非流片实测；按 token 分级保护加软硬协同调度的思路新颖、收益明显。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29076" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>EdgeCoInfer: Hierarchical Collaborative Inference for On-Device Multimodal Large Models</h1>
 <div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-19 · Lin Tan; David K. Y. Yau; Songtao Guo / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Modern mobile applications predominantly execute concurrent Multimodal Large Language Models (MLLMs) to provide ubiquitous intelligence.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:多模态</span><span class="tag">方向:调度服务</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">手机等端侧设备同时跑多个多模态大模型任务时容易内存爆掉，这个框架通过模块共享和分层切分，把模型分散到设备与服务器上协同推理。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在仿真的边缘环境中，相比现有方法内存需求降低 53.53%，系统成本降低 59.86%，高并发下避免了内存溢出导致的任务失败。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">粗粒度上把多模态大模型拆成功能模块供多任务共享，细粒度上按层切分到不同设备；切分和共享用遗传算法搜索，资源分配用强化学习细调。</span></div>
+<div class="score-reason">评分依据：直接面向端侧多模态大模型的并发推理与端云协同，相关度较高；但评测基于实测参数驱动的仿真而非真机，故未给更高分。遗传算法与强化学习混合优化属于常见组合，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.17143" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

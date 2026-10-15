@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>3DLS: A 3D Logic-Stacked Architecture for Disaggregated LLM Serving</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-02 · Jaehun Lee, In-Jun Jung, Joo-Young Kim / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">3DLS 是逻辑-逻辑 3D 堆叠芯片架构,把 KV 缓存传输走垂直互连、解码侧张量并行集合走横向互连,分离流量类避免争用。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">相比平面基线吞吐达 1.49x、端到端延迟降 60.2%;相比优先级管理基线吞吐 1.17x、延迟降 31.4%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：云端芯片级 LLM serving 硬件架构,与端侧无关。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-02 · Jaehun Lee, In-Jun Jung, Joo-Young Kim / IEEE CAL 2026</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:KV cache</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">3DLS 是面向预填充与解码分离式大模型服务的 3D 堆叠芯粒架构，把 KV cache 传输和张量并行通信分到不同互连上，避免互相争抢。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">相比共享互连的平面基线，吞吐最高提升 1.49 倍、端到端时延降低 60.2%；相比带优先级管理的平面基线，吞吐仍高 1.17 倍、时延低 31.4%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">采用逻辑叠逻辑的 3D 堆叠芯粒，让预填充到解码的 KV cache 传输走垂直互连，解码侧张量并行通信保留在横向芯粒互连上，实现流量物理隔离。</span></div>
+<div class="score-reason">评分依据：面向数据中心大模型服务的芯片架构，与端侧关联较弱；物理隔离流量的思路清晰但属于短篇架构快报。作者来自韩国科学技术院，已被 IEEE Computer Architecture Letters 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01617" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

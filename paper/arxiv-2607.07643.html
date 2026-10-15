@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ATLAS: Automated HLS for DL-Optimized FPGAs</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-07-08 · Ruthwik Reddy Sunketa, Aman Arora / arXiv</div>
-<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">从高层 DL 模型描述到带定制硬块 FPGA 的全自动流程，无需手写 RTL，用 GEMM 作通用抽象层。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">11 个 DL 设计验证（FC/卷积/注意力层+完整 CNN/MLP/Transformer），覆盖 Catapult HLS+VTR 实现。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">hls4ml-GEMM 编译前端把 DL 层转架构无关 GEMM 调用的 HLS C；GEMM IP 生成器后端产带 tiling/控制 FSM/调度元数据的硬块 RTL wrapper。</span></div>
-<div class="score-reason">评分依据：FPGA DL 自动化编译流程含 Transformer，端侧硬件可迁移（relevance 7）。高层模型到硬块 RTL 全自动流程有工具链创新（contribution 6）。作者 Sunketa/Arora，学校项目。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-08 · Ruthwik Reddy Sunketa, Aman Arora / arXiv</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">硬件:FPGA</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ATLAS 是一条从 PyTorch/Keras 级别的深度学习模型描述，直接生成带专用矩阵乘硬核的 FPGA 硬件实现的全自动流程，用户不用手写 RTL 代码。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 11 个深度学习设计（单独的全连接、卷积、注意力层以及完整 CNN、MLP、Transformer）上验证；完整模型的几何平均效率约为手写 RTL 基线的 63%，比只用通用逻辑的 hls4ml 基线高约 42%，设计时间从数天缩短到数小时。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以矩阵乘（GEMM）作为通用抽象层：前端 hls4ml-GEMM 把各层转成调用与架构无关 GEMM 函数的 HLS C 代码，后端 GEMM IP 生成器针对具体硬核生成带分块逻辑、控制状态机和调度信息的 RTL 封装。</span></div>
+<div class="score-reason">评分依据：FPGA 是边缘推理的常见硬件，自动化编译流程降低了部署门槛，但评测针对研究型 FPGA 架构、效率仍低于手写 RTL；高层模型到硬核 RTL 的全自动流程有工具链价值。作者来自亚利桑那州立大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.07643" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

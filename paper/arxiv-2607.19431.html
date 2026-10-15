@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>BRIM: Workload-Balanced Dual-Sided Bit-Serial Sparse Inference Accelerator</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-20 · Varun Manjunath; Ruokai Yin; Donghyun Lee; Arkapravo Ghosh; Priyadarshini Panda / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Bit-serial accelerators exploit bit-level sparsity to reduce DNN inference cost, but existing designs exploit sparsity on only one operand, bounding the speedup…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-20 · Varun Manjunath; Ruokai Yin; Donghyun Lee; Arkapravo Ghosh; Priyadarshini Panda / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一种双侧位串行稀疏推理加速器 BRIM：同时利用权重和激活的位级稀疏，并解决由此带来的计算负载不均衡问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在同等面积约束下，覆盖 CNN、ViT 和大模型，处理单元利用率超过 90%（现有双侧设计仅 56%-64%），比此前双侧设计最高快 2.37 倍、能效最高提升 1.63 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">离线用循环平衡剪枝按激活统计重塑权重，让同时计算的数对负载接近；运行时再用轻量的成对槽位捐赠机制吸收残余不均衡。</span></div>
+<div class="score-reason">评分依据：位级稀疏推理加速器属于低功耗推理硬件技术栈，可服务边缘设备，但未针对具体终端评测，相关度给 5；指出并解决双侧稀疏的负载失衡瓶颈，贡献给 6。作者来自南加州大学和耶鲁大学，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.19431" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

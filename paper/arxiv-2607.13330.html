@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Efficient Text-to-Audio Generation via Pruning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-14 · Arshdeep Singh; Yi Yuan; Yun Chen; Wenwu Wang; Mark D. Plumbley / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Diffusion-based text-to-audio generative models such as AudioLDM achieve high perceptual quality and strong semantic consistency; however, their practical deplo…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-14 · Arshdeep Singh; Yi Yuan; Yun Chen; Wenwu Wang; Mark D. Plumbley / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">应用:语音</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">对文本生成音频的扩散模型 AudioLDM 做滤波器剪枝，降低去噪主干网络的计算量，让它更容易部署。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">U-Net 参数最多减少 83%、乘加运算减少 39%，生成质量与未剪枝模型持平，部分指标更好；剪枝会削弱枪声、警笛、爆炸等声音的生成，轻量微调后大多能恢复。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">逐块分析 U-Net 卷积层的参数冗余，按范数挑出不重要的滤波器剪掉，再做轻量微调补回性能。</span></div>
+<div class="score-reason">评分依据：模型剪枝属于端侧部署常用的压缩技术，但论文没有在设备上实测，相关度中等；方法为常规范数剪枝，贡献在于对音频生成模型的系统分析。作者来自伦敦国王学院和萨里大学，代码已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.13330" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

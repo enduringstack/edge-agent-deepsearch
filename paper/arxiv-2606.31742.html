@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FedXDS: Leveraging Model Attribution Methods to counteract Data Heterogeneity in Federated Learning</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-30 · Maximilian Andreas Hoefler, Karsten Mueller, Wojciech Samek / arXiv</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-30 · Maximilian Andreas Hoefler, Karsten Mueller, Wojciech Samek / arXiv</div>
 <div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">FedXDS 用可解释 AI 的特征归因识别哪些数据元素该在联邦客户端间选择性共享以缓解异质性,并加度量隐私保护。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在不同客户端数和异质性设置下准确率和收敛速度持续优于现有方法,对成员推理和特征反转攻击鲁棒。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：联邦学习数据共享,端侧联邦相关但非纯端侧。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">联邦学习中各客户端数据分布差异大会拖累效果。FedXDS 用可解释 AI 的特征归因挑出真正有用的数据片段，在隐私保护下有选择地在客户端之间共享。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">原文称在不同客户端数量和异构程度下准确率更高、收敛更快，并对成员推断和特征反演攻击表现出鲁棒性；摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用基于反向传播的归因方法一次反向传播找出与任务相关的特征，只共享这部分数据；再加入度量隐私机制提供形式化隐私保证。</span></div>
+<div class="score-reason">评分依据：联邦学习训练方法，与端侧设备协同训练有一定关联，但不涉及推理部署；把可解释 AI 用于数据共享的角度较新。作者来自弗劳恩霍夫海因里希·赫兹研究所和柏林工业大学，非公司项目。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.31742" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

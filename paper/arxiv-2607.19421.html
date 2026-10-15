@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Opto-ViT-v2: Noise-Resilient On-Chip Fine-Tuning for Photonic Near-Sensor Vision Transformer Accelerators</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-20 · Xuming Chen; Deniz Najafi; Mehrdad Morsali; Chengwei Zhou; Zahra Ghanaatianjobzari; Mahdi Nikdast; Shaahin Angizi; Gourav Datta / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Silicon-photonic (SiPh) accelerators have emerged as a promising platform for Vision Transformer (ViT) inference by performing matrix multiplications on microri…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校顶会</span>  2026-07-20 · Xuming Chen; Deniz Najafi; Mehrdad Morsali; Chengwei Zhou; Zahra Ghanaatianjobzari; Mahdi Nikdast; Shaahin Angizi; Gourav Datta / ICCAD 2026</div>
+<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">面向近传感器硅光 ViT 加速器的片上微调框架：让光子芯片上的视觉模型能在现场低成本适配新任务，并扛住器件噪声。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 VTAB-1K（19 个任务）和 FGVC 少样本基准上，实测光子噪声下精度与干净软件精度只差 0.3%-0.8%，能效超过 100 KFPS/W；分类器训练开销降低约 40%，ViT-Base 可训练参数少至 8K。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用张量化低秩分解把预训练光学权重和少量可训练的电子因子分开，只更新后者；再用梯度累积的稀疏分类器冻结不重要权重，并基于 200 多个实测微环器件建立噪声模型指导训练。</span></div>
+<div class="score-reason">评分依据：面向边缘视觉的近传感器加速器片上训练，属于端侧训练与新型硬件方向，相关度给 6；首个光子 ViT 加速器上的参数高效微调框架，贡献给 6。作者来自 Case Western Reserve、NJIT、Colorado State 等高校，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.19421" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

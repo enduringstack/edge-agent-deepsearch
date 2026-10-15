@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>D-NOVA: In-Storage Retrieval Accelerator via Dual-Bound 3D NAND-Optimized Similarity Search with Vector Adaptation</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-20 · Chang Eun Song; Sumukh Pinge; Tianqi Zhang; Sung Eun Kim; Tajana S. Rosing; Mingu Kang / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:端侧agent</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Retrieval-Augmented Generation (RAG) enhances the factual grounding of large language model (LLM) inference by retrieving relevant information from external kno…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校顶会</span>  2026-07-20 · Chang Eun Song; Sumukh Pinge; Tianqi Zhang; Sung Eun Kim; Tajana S. Rosing; Mingu Kang / MICRO 2026</div>
+<div class="tags"><span class="tag">应用:RAG</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:CIM</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">RAG 的向量检索又慢又耗电，D-NOVA 把检索直接做进 3D NAND 闪存阵列内部，减少数据搬运。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">比 CPU 基线最高快 41.7 倍、能效高 71 倍；比现有最佳存内 RAG 加速器吞吐高 12.13 倍、能效最高高 1.26 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 NAND 串内用新的双边界相似度感知度量执行分层倒排检索，并用一个轻量对比学习适配器把嵌入向量映射到适合该度量的空间，恢复接近软件的召回率。</span></div>
+<div class="score-reason">评分依据：面向 RAG 检索的存储内加速，属于大模型推理链路的硬件层，可迁移到本地知识库场景，但未针对具体端侧设备。存储阵列内完成相似度搜索的软硬协同设计新颖，已被 MICRO 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.17538" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

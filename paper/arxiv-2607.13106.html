@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>No Attention, No Problem: DPU-Aware Attention Approximation in Modern YOLO on FPGA</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-14 · Suraj Karki; Qazi Arbab Ahmed; Thorsten Jungeblut / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Edge-based Artificial Intelligence (AI) acceleration has recently improved progress in real-time object detection.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-07-14 · Suraj Karki; Qazi Arbab Ahmed; Thorsten Jungeblut / arXiv</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:量化</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">硬件:FPGA</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把带注意力模块的新版 YOLO 目标检测模型改造成能在 AMD FPGA 专用深度学习处理单元上跑的版本，兼顾精度、速度和功耗。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Xilinx ZCU104 上，YOLOv26n 和 YOLOv26n-OBB 端到端吞吐分别达到 34.05 和 29.55 FPS；量化带来平均约 5 个百分点的精度下降，功耗比现有最好方案低约 3 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把处理单元不支持的激活函数替换掉，用 1×1 卷积代替切分操作，并用处理单元可执行的方式近似空间注意力；随后在六个数据集、八种处理单元配置上系统测试精度、帧率、时延、功耗和资源占用。</span></div>
+<div class="score-reason">评分依据：在真实 FPGA 边缘板卡上完成检测模型部署与全面测试，端侧部署相关度高；方法以算子替换和近似为主，属常见工程适配。作者来自德国比勒费尔德应用科学大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.13106" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

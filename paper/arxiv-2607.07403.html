@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Multi-Agent Robotic Control with Onboard Vision-Language Models</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-08 · Kajetan Rachwał, Maciej Majek, Bartłomiej Boczek, Jakub Matejczyk, Dominik Matejkowski, Adam Dąbrowski, Tim Seyde, Alexander Amini, Maria Ganzha / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:多模态</span><span class="tag">方向:编译部署</span><span class="tag">硬件:手机</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在机载硬件上部署多个专用 VLM agent 协同控制自主移动机械臂，彻底摆脱云端依赖。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 AMD Ryzen AI mini PC 上硬件在环仿真验证全机载多 agent 架构可行，成本低于云依赖方案，具备真实迁移潜力。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">多 agent 系统把 3-20B 紧凑 VLM 部署在机载，配 Megamind 编排 agent 缓解小模型长程规划上下文丢失，微调提升检测精度。</span></div>
-<div class="score-reason">评分依据：明确机载 VLM 多 agent 端侧部署，AMD Ryzen AI mini PC 真机验证（relevance 9）。机载多 agent 编排缓解小模型记忆是工程创新（contribution 7）。作者来自 Warsaw U of Tech / MIT，学校项目，开源仿真环境。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-08 · Kajetan Rachwał, Maciej Majek, Bartłomiej Boczek, Jakub Matejczyk, Dominik Matejkowski, Adam Dąbrowski, Tim Seyde, Alexander Amini, Maria Ganzha / PAAMS 2026</div>
+<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:多模态</span><span class="tag">方向:规划推理</span><span class="tag">方向:工具调用</span><span class="tag">应用:机器人</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一套完全跑在机器人自带算力上的多智能体系统：几个专职的小型视觉语言模型智能体分工负责巡检、安全合规、找物、包裹质检和响应人类指令，控制仓库里的自主移动机械臂，不依赖云端。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">微调后的 3B 视觉语言模型把包裹状态识别准确率从 76.7% 提高到 91.5%（F1 从 0.755 到 0.915），误报率从 46% 降到 4.5%；整套智能体在 AMD Ryzen AI 迷你主机（128GB 统一内存）上本地运行，硬件在环仿真中五类任务均完成。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 RAI 框架搭建多智能体：总控智能体“Megamind”在规划与复盘两种状态间循环，分派任务、检查结果并插入纠正步骤，弥补小模型长程规划易丢上下文的问题；巡检和安全智能体共用 LFM2-VL-3B，安全智能体再检索 OSHA 法规向量库做判断；导航和机械臂动作通过 ROS 2 的 Nav2、MoveIt 工具执行。</span></div>
+<div class="score-reason">评分依据：规划、任务分派、检索与工具调用组成的完整智能体闭环都在机器人机载的 AMD Ryzen AI 迷你主机上本地运行，属于真正的端侧智能体；但机器人与仓库是仿真环境、篇幅为演示论文，以工程整合为主。作者来自 Robotec.AI、华沙理工大学和 Liquid AI，依据 arXiv PDF 首页署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.07403" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

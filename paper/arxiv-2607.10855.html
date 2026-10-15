@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Reliability Scaling Laws for Quantized Large Language Models</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-12 · Sirine Ayadi; Sándor Daróczi; Stephan Günnemann; Bertrand Charpentier / arXiv</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-12 · Sirine Ayadi; Sándor Daróczi; Stephan Günnemann; Bertrand Charpentier / TMLR 2026</div>
 <div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Quantization is a powerful strategy to build capable and resource-efficient large language models (LLMs) by reducing the bitwidth of the parameters.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="field"><span class="label">这是什么</span><span class="text">慕尼黑工业大学与 Pruna AI 系统研究量化后的大模型在“可靠性”上的表现：不仅看准确率，还看不确定性估计、校准程度和对输入扰动的鲁棒性。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">对 2/3/4/8 bit、六种量化方法评测发现：性能随总比特数单调提升，但可靠性随比特数呈非线性变化，4 bit 量化模型出现可靠性峰值；量化还让模型对自然输入扰动更鲁棒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在多种模型规模和位宽上，分别用不确定性指标、校准指标和字符级/词级语义保持扰动来测量量化模型，再按“模型总比特数”拟合可靠性的缩放规律。</span></div>
+<div class="score-reason">评分依据：端侧部署几乎都要做低比特量化，本文给出“4 bit 可靠性最优”的选型依据，对端侧模型压缩决策直接有用。属于系统性评测而非新方法，贡献中等。PDF 首页作者 Bertrand Charpentier 署名 Pruna AI，Stephan Günnemann 同时署名 Pruna AI，主导为慕尼黑工业大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.10855" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

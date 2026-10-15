@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>HeteroMosaic: Exposing and Exploiting Heterogeneous Execution Opportunities for Energy-Efficient Edge LLM Inference</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-14 · Gregory Hyegang Jun; Wesley Pang; Eddie Richter; Mehdi Saeedi; Aporva Amarnath; Pallavi Ferrao; Deming Chen / arXiv</div>
-<div class="tags"><span class="vendor-tag">OPPO</span><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:NPU</span><span class="tag">模型:Llama</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Modern edge system-on-chips (SoCs) combine CPUs, integrated GPUs (iGPUs), and neural processing units (NPUs), yet existing LLM runtimes typically make coarse de…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 OPPO（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">17</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-14 · Gregory Hyegang Jun; Wesley Pang; Eddie Richter; Mehdi Saeedi; Aporva Amarnath; Pallavi Ferrao; Deming Chen / MICRO 2026</div>
+<div class="tags"><span class="vendor-tag">AMD</span><span class="tag">方向:调度服务</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:推理框架</span><span class="tag">硬件:NPU</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在同时有 CPU、集成 GPU 和 NPU 的边缘芯片上跑大模型时，现有运行时只做粗粒度的设备选择；这套调度框架让集成 GPU 和 NPU 真正协同干活，同时省电。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在三款 AMD Ryzen AI 处理器上评测，均衡型平台上比只用集成 GPU 快 1.73 倍、比只用 NPU 快 1.78 倍、比 llama.cpp 等框架快 2.05 倍，能耗最多降低 45.3%；比已有的异构边缘方案最高快 2.35 倍、平均快 1.25 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用异构屋顶线模型判断什么时候值得让集成 GPU 和 NPU 协同，再把推理拆成保持依赖关系的微批次让两个加速器重叠执行，并根据实测轨迹联合优化调度和设备分配，考虑内存争用、动态调频和 NPU 运行时开销等实际因素。</span></div>
+<div class="score-reason">评分依据：在三款 AMD Ryzen AI 真机上评测端侧大模型推理，覆盖 Llama、Qwen、Phi 等模型，端侧相关度高；系统地把集成 GPU 与 NPU 的细粒度协同做成调度框架，已被 MICRO 2026 接收并开源。 作者机构依据：arXiv PDF 首页署名 AMD（PDF 首页 7 位作者中 4 位（Eddie Richter、Mehdi Saeedi、Aporva Amarnath、Pallavi Ferrao）署名 Advanced Micro Devices, Inc.，邮箱为 amd.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.12839" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

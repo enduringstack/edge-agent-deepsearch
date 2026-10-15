@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Air-Plan: Query-Optimized Topology Selection for Over-the-Air Decentralized Federated Learning</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-05 · Kaushal Attaluri; Rebeca P. Diaz-Redondo; Manuel Fernandez Veiga / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">为 over-the-air 去中心化联邦学习做查询优化的拓扑选择框架。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 91.4% 工作负载上匹配 oracle 最优拓扑，开销低于 1.8%；并证明连通拓扑更能容忍激进稀疏化。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">AIRPLAN 建立 OTA-DFL 与分布式查询处理的形式等价，把拓扑选择建模为代价查询优化；用隐私 Count-Min Sketch 统计估计负载，按图感知代价模型选最小训练代价且满足精度 SLA 的通信图。</span></div>
-<div class="score-reason">评分依据：OTA 去中心化联邦学习属端侧技术栈偏通信（relevance 6）。DFL-查询优化形式等价有创新（contribution 6）。vendors 空。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-05 · Kaushal Attaluri; Rebeca P. Diaz-Redondo; Manuel Fernandez Veiga / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:端侧训练</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">AirPlan 研究空中计算去中心化联邦学习该选什么样的设备通信拓扑，把拓扑选择当成数据库式的查询优化问题来解。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在五类图结构、三个视觉基准、四种客户端规模和多种信噪比下，91.4% 的情况下选中与最优一致的拓扑，额外开销低于 1.8%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">建立去中心化空中联邦学习与分布式查询处理的等价关系，用保护隐私的 Count-Min Sketch 统计估计负载特征，再用图感知代价模型挑出满足精度要求、训练代价最低的拓扑。</span></div>
+<div class="score-reason">评分依据：关注设备间无线协同训练，与端侧推理部署关联有限；把拓扑选择转化为查询优化的视角有新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.04254" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

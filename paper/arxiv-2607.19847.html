@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Auto-Fill: Learning to Predict Missing Values Accurately with Specialist Language Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-22 · Yurong Liu; Yeye He; Haoyu Dong; Junjie Xing; Shi Han; Dongmei Zhang; Surajit Chaudhuri / arXiv</div>
-<div class="tags"><span class="vendor-tag">DeepSeek</span><span class="tag">方向:评测基准</span><span class="tag">模型:DeepSeek</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Predicting missing cell values in tabular data is a fundamental problem in data cleaning.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 DeepSeek（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-22 · Yurong Liu; Yeye He; Haoyu Dong; Junjie Xing; Shi Han; Dongmei Zhang; Surajit Chaudhuri / VLDB 2026</div>
+<div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">微软研究院的表格缺失值补全方法 Auto-Fill：不用昂贵的大推理模型，而是训练三个各有专长的小语言模型，再按置信度选择或放弃作答。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 11 个基准、2200 张真实表格上，准确率超过 o3-pro、Gemini 3 Pro、DeepSeek R1 等推理模型，成本不到这些前沿模型的 1%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">分别后训练擅长世界知识、文本推理、代码推理的三个专家小模型，用校准过的集成机制动态挑选最有把握的一个，或在都不确定时拒答。</span></div>
+<div class="score-reason">评分依据：用多个专家小模型替代大推理模型、成本降两个数量级，思路可迁移到资源受限部署，但场景是数据清洗服务，相关度给 4；专家分工加校准拒答组合有效，贡献给 5。公司归属依据 PDF 首页作者署名 Microsoft Research 与 microsoft.com 邮箱。 作者机构依据：arXiv PDF 首页署名 Microsoft（PDF 首页除第一作者（纽约大学，部分工作在微软完成）外，其余 6 位作者署名 Microsoft Research、使用 microsoft.com 邮箱）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.19847" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

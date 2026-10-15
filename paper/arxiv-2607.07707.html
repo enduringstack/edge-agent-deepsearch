@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Co-LMLM: Continuous-Query Limited Memory Language Models</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-07-08 · Yair Feldman, Linxi Zhao, Nathan Godey, Dongyoung Go, Yilun Hua, Kilian Q. Weinberger, Jennifer J. Sun, Yoav Artzi / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">让小模型不把事实知识塞进权重，而是外置到一个连续向量知识库，生成时按需查询，360M 参数即可逼近大模型事实精度。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">360M 规模下困惑度低于预训练数据多 40 倍的模型；SimpleQA 验证事实精度与 gpt-4o-mini 相当、高于 Claude Sonnet 4.5。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">知识库用连续键配文本值，模型生成时产出廉价向量查询检索人类可读知识并归因，配合标注管线标注自由文本事实 span。</span></div>
-<div class="score-reason">评分依据：360M 小模型+外置记忆逼近大模型事实能力，端侧可迁移（relevance 8）。连续查询 LMLM 范式新，打破权重记忆范式（contribution 8）。作者含 Yoav Artzi (NYU)、Kilian Weinberger (Cornell)，学校项目。</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-08 · Yair Feldman, Linxi Zhao, Nathan Godey, Dongyoung Go, Yilun Hua, Kilian Q. Weinberger, Jennifer J. Sun, Yoav Artzi / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:模型架构</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Co-LMLM 让语言模型不再把事实知识硬记在参数里，而是在生成过程中随时发出向量查询，从外部知识库取回可读的知识片段照抄，使小模型也能答准事实。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多个规模上困惑度和事实准确率都优于同类外置知识方法和普通模型；3.6 亿参数规模下，困惑度低于用 40 倍数据预训练的模型，SimpleQA-verified 事实问答表现与 gpt-4o-mini 相当、高于 Claude Sonnet 4.5。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">预训练时联合训练会外置知识的语言模型、自动构建知识库并学习连续向量检索机制，模型在下一个词预测中穿插检索查询，学会复制知识库返回的内容；知识库可编辑、可审计，也支持直接删除知识。</span></div>
+<div class="score-reason">评分依据：小参数模型靠外置知识库达到大模型级事实准确率，对端侧小模型很有借鉴意义，但论文未讨论设备端部署和检索开销；在预训练阶段学会“查而不记”是有分量的范式创新。作者来自康奈尔大学，代码、数据和模型已公开。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.07707" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

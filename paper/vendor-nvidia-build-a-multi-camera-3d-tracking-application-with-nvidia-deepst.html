@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Build a Multi-Camera 3D Tracking Application with NVIDIA DeepStream 9.1 Skills</h1>
-<div class="meta"><span class="score">13</span> <span class="tier">官方动态</span>  2026-07-15 · NVIDIA / NVIDIA</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">NVIDIA 用 DeepStream 9.1 Skills 构建多摄像头 3D 追踪应用，覆盖视频分析 pipeline。</span></div>
+<div class="meta"><span class="score">10</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-07-15 · NVIDIA / NVIDIA</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:编译部署</span><span class="tag">方向:多模态</span><span class="tag">应用:视频</span><span class="tag">硬件:Jetson</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">NVIDIA 发布 DeepStream 9.1，新增多摄像头 3D 目标跟踪和自动相机标定，并提供 13 个供编程智能体调用的部署技能，可在 Jetson Orin/Thor 边缘设备上运行视频分析流水线。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：NVIDIA 官方动态（命中官方域名白名单）</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每路摄像头独立检测跟踪后投影到统一世界坐标，通过 MQTT 共享轨迹片段完成跨视角关联；自动标定根据目标运动轨迹估计相机内外参。部署技能让 Claude Code、Codex 等编程智能体按自然语言完成环境检查、拉取容器和下载模型。</span></div>
+<div class="score-reason">评分依据：支持 JetPack 7.2，可在 Jetson 边缘平台运行的视觉分析框架，与边缘部署直接相关；智能体技能只是辅助开发部署的工具，设备端并不运行智能体闭环，且文中没有给出性能数字。</div>
 <div class="source"><a href="https://developer.nvidia.com/blog/build-a-multi-camera-3d-tracking-application-with-nvidia-deepstream-9-1-skills/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

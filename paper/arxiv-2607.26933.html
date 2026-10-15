@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Defending Against Backdoor Attacks via Alignment Checking in Model-Contrastive Federated Learning</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-29 · Hongliang Zhang; Zhongyuan Yu; Guijuan Wang; Tianqing He; Wenshuo Ma; Xiaosong Zhang; Jiguo Yu / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">联邦学习因其在边缘计算场景中的分布式特性而容易遭受后门攻击，作者针对此展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-07-29 · Hongliang Zhang; Zhongyuan Yu; Guijuan Wang; Tianqing He; Wenshuo Ma; Xiaosong Zhang; Jiguo Yu / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">边缘计算场景下的联邦学习容易被恶意客户端植入后门，FedDAB 提出一种两阶段防御方法，在数据分布不均的情况下也能把恶意更新挑出来。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 CIFAR10（ResNet9）上面对四种后门攻击，FedDAB 平均攻击成功率 3.20%、平均鲁棒准确率 78.71%（不设防的 FedAvg 攻击成功率 97.34%），比次优方法攻击成功率再降 1.23 个百分点、鲁棒准确率提高 1.38 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">客户端本地训练时加入模型对比正则，让正常更新的方向和幅度更一致；服务器聚合前从整体方向和逐参数两个层面检查每个更新与历史信息是否对齐，剔除异常更新。</span></div>
+<div class="score-reason">评分依据：针对边缘联邦学习训练的安全防御，与端侧推理部署关系较远；对比正则加对齐检查属于联邦后门防御的常见组合，在异构数据下有改进。作者来自高校，未见公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.26933" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

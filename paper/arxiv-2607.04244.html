@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Quantize the Target, Quantize the Drafter: Efficient Inference with Qwen3.5-4B</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-05 · Jaeyeon Kim; Jewon Lee; Bo-Kyeong Kim / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:投机解码</span><span class="tag">模型:Qwen</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在受限 NVIDIA A10G GPU 上为 Qwen3.5-4B 做量化+投机解码的低延迟 serving。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">相对基线平均加速 6.978 倍并满足质量阈值，在 Efficient Qwen 竞赛排名第 3。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">目标模型量化+量化感知蒸馏恢复精度；训练 block-diffusion drafter（先学高精度目标再适配低精度目标）并对其量化+滑窗注意力降开销。</span></div>
-<div class="score-reason">评分依据：明确受限 GPU 上的量化+投机解码部署（relevance 7）。竞赛工程整合，方法为常见组合（contribution 5）。vendors 空。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-05 · Jaeyeon Kim; Jewon Lee; Bo-Kyeong Kim / ICML 2026 Workshop on AdaptFM</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:投机解码</span><span class="tag">方向:蒸馏</span><span class="tag">硬件:GPU</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Nota AI 团队参加 Efficient Qwen 竞赛的技术报告：在资源有限的 NVIDIA A10G 显卡上让 Qwen3.5-4B 低延迟推理，方法是同时量化主模型和投机解码的草稿模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在满足质量门槛的前提下，平均比基线快 6.978 倍，竞赛总排名第三。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">主模型做量化感知蒸馏以恢复精度；草稿模型采用块扩散结构，先向高精度主模型学习、再适配量化后的主模型；草稿模型本身也量化并改用滑动窗口注意力，降低长上下文解码开销。</span></div>
+<div class="score-reason">评分依据：量化加投机解码的组合可直接迁移到端侧小模型推理，测试平台是单张入门级数据中心显卡；属于成熟技术的组合优化，代码开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.04244" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

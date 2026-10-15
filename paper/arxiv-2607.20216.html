@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Small, Free, and Effective: Orchestrating Open-Weight Small Language Models to Outperform Single LLM for Malware Analysis</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-22 · Adel ElZemity; Shujun Li; Budi Arief / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Malware analysis demands rapid interpretation of complex detonation reports spanning filesystem, network, and process behaviours.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-22 · Adel ElZemity; Shujun Li; Budi Arief / RAID 2026</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:量化</span><span class="tag">方向:安全隐私</span><span class="tag">应用:安全</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究能否用几个可本地部署的开源小模型协同分析恶意软件运行报告，替代昂贵的闭源大模型 API。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">混合架构（Qwen3-4B 搭配 Foundation-Sec-8B）总体准确率 35.30%，高于最强安全专用模型基线的 22.54% 和最强无证据前沿大模型基线的 34.77%；给同样证据流程的 Gemini 仍最高，为 38.22%。整套混合系统在单张 RTX 4090 上用 4 比特量化约占 6 GB 显存。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">设计并比较四种编排方式：分步收集证据再推理的多智能体流水线、两个智能体互相质疑的辩论、通用小模型向安全专家模型咨询的分层结构，以及把证据流水线与辩论结合的混合架构。</span></div>
+<div class="score-reason">评分依据：展示了单卡、低显存的小模型多智能体编排在专业任务上追平大模型，对本地化部署有参考价值，但运行在 GPU 工作站上、任务是问答而非设备端行动闭环（相关度 5）。编排方式本身是常见组合，评测较系统（贡献 5）。作者来自英国肯特大学，论文将发表于 RAID 2026。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.20216" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

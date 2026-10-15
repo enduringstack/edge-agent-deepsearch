@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ROMS-IMLE: A Minimalist Approach to Competitive Single-Step Generative Modelling</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-21 · Chirag Vashist; Ke Li / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Generative models have undergone many generations of evolution, from VAEs/GANs to diffusion/flow matching.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-21 · Chirag Vashist; Ke Li / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一个极简的单步图像生成模型：不用扩散的多步去噪，只用隐式最大似然训练一个中等规模卷积网络，一步就能出高质量图。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">ImageNet 256 上 FID 2.56，同时保持较好的精度和召回，且是单步、参数高效的生成。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">训练目标选隐式最大似然估计（IMLE），模型选卷积网络而非 Transformer，只逐步加入真正必要的组件，不做迭代去噪。</span></div>
+<div class="score-reason">评分依据：单步生成天然省推理算力，对资源受限设备上的图像生成有间接参考，但论文未做部署评测，相关度给 3；挑战“必须多步去噪”的共识并给出有竞争力结果，贡献给 6。作者来自 Simon Fraser University，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.19332" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

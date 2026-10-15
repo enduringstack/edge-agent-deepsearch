@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AnchorPrune: Relevance-Anchored Contextual Expansion for Visual Token Pruning</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-08 · Kyuan Oh; Bumsoo Kim / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一种免训练的视觉 token 剪枝框架，在 VLM 推理中按查询相关性保留关键 token 再扩展补充上下文。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 LLaVA-NeXT-7B 上仅用 2880 个视觉 token 中的 160 个即可保留 97.6% 全 token 性能。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先构造受保护的相关锚点，按新颖度剖面自适应确定锚点大小，剩余预算用重要性加权新颖度扩展非冗余上下文，避免关键查询证据被覆盖。</span></div>
-<div class="score-reason">评分依据：视觉 token 剪枝用于 VLM 高效推理，训练-free 即插即用（relevance 8）。相关锚点+上下文扩展有新意（contribution 6）。作者机构未明确，vendors 空。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-07-08 · Kyuan Oh; Bumsoo Kim / ECCV 2026</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">AnchorPrune 是免训练的视觉 token 剪枝方法：高分辨率图片会产生上千个视觉 token，它先保住与问题最相关的一小批“锚点”，再用剩余预算补充互不重复的上下文，从而大幅削减多模态大模型的推理开销。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LLaVA-NeXT-7B 上，只保留 2880 个视觉 token 中的 160 个，仍能保持完整 token 时 97.6% 的性能；在图像和视频多模态模型上，高压缩比下均优于其他免训练剪枝方法。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按与问题的相关度给 token 排序，根据新颖度曲线自适应决定锚点大小并加以保护；剩余名额按“重要性加权的新颖度”挑选与锚点互补的区域，避免补充上下文挤掉关键证据。</span></div>
+<div class="score-reason">评分依据：视觉 token 剪枝能直接降低端侧多模态模型的计算和显存，免训练、即插即用，迁移性好，但论文未做端侧实测；先锚后扩的顺序设计有新意。作者来自韩国中央大学，已被 ECCV 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.07033" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

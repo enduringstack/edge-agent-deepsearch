@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ExTernD: Expanded-Rank Ternary Decomposition Ternary LLM PTQ with Accuracy Approaching Any Quantization Level</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-15 · Chethan Reddy G. P / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:量化</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">模型:BitNet</span><span class="tag">模型:Gemma</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">We introduce ExTernD (Expanded-rank Ternary Decomposition), a post-training factorization of each LLM weight matrix $A \in \mathbb{R}^{m \times n}$ into $A \app…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-07-15 · Chethan Reddy G. P / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">模型:Gemma</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ExTernD 是一种大模型训练后三值量化方法：把每个权重矩阵拆成两个只含 -1、0、+1 的矩阵加一组缩放系数，并且可以通过加大分解秩把精度逼近任意水平。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Gemma-4-E2B 和 Qwen3.5-4B 上，约 5.2 到 5.5 有效比特即可达到 llama.cpp Q4_K 的单矩阵精度；整个 Qwen3.5-4B 在分解秩倍数为 3 时 wikitext-2 困惑度为 10.10，bf16 为 9.78，相当于约 5.7 有效比特落在 Q4_K 到 Q5_K 的精度区间。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">有意让分解秩超过满秩，多出来的分量专门修正前面分量的量化误差，并证明误差随秩单调下降；再用稀疏阈值连续调节内存与计算量，可直接用 llama.cpp 的重要性矩阵做加权。</span></div>
+<div class="score-reason">评分依据：三值权重天然适合端侧加法化推理，且直接对标 llama.cpp 的 k-quants，可迁移性强；理论上能连续逼近任意精度有新意，但仍是早期预印本，没有设备端速度实测。作者以个人身份发表，未标注公司归属。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.13511" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Lynx: Progressive Speculative Quantization for accelerating KV Transfer in Long-Context Inference</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-02 · Wenchen Han, Gingfung Matthew Yeung, Marco Barletta et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">应用:RAG</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Lynx 把 KV 缓存按高位/低位拆成两路流,先传高位锚点流即可开始解码,剩余精度流并发传输再验证,降低长上下文推理首 token 延迟。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">TTFT 与 4-bit 量化相当但精度匹配 BF16;比 8-bit 量化 TTFT 提升最高 1.43 倍,精度比 SOTA 提升最高 5.1%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：数据中心长上下文推理服务,非端侧;渐进式 KV 传输思路创新。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-07-02 · Wenchen Han, Gingfung Matthew Yeung, Marco Barletta et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:KV cache</span><span class="tag">方向:量化</span><span class="tag">方向:云端serving</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在预填充与解码分离的大模型服务里，长上下文的 KV cache 要先跨网络传完才能开始解码。Lynx 让解码先用“粗精度”KV 开跑，边跑边补全精度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">多种模型和服务负载下，首 token 延迟与激进的 4 比特 KV 量化相当，精度却与 BF16 一致；相比标准 8 比特 KV 量化首 token 延迟最多改善 1.43 倍，精度比现有最优方法最多高 5.1%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把 KV cache 按比特拆成高位“锚点流”和低位“残差流”，收到高位即开始投机解码，同时传低位，最后校验保证结果与高精度解码等价。</span></div>
+<div class="score-reason">评分依据：面向数据中心分离式服务的 KV 传输，属云端 serving（相关度 3）；按比特渐进传输加投机校验的思路较新（贡献 6）。作者 2-6 署名华为。 作者机构依据：arXiv PDF 首页署名 Huawei（arXiv HTML 作者署名：Wenchen Han 为伦敦大学学院，其余 5 位作者均署名 Huawei）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01831" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

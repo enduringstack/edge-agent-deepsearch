@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MXSens: Sensitivity-Aware Mixed-Precision Quantization for Efficient LLM Inference</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-20 · Simla Burcu Harma; Danila Mishin; Zhengyuan Su; Ayan Chakraborty; Elizaveta Kostenok; Dongho Ha; Babak Falsafi; Martin Jaggi / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">模型:Llama</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">4-bit quantization enables efficient LLM inference, but suffers from significant accuracy degradation due to outliers.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-20 · Simla Burcu Harma; Danila Mishin; Zhengyuan Su; Ayan Chakraborty; Elizaveta Kostenok; Dongho Ha; Babak Falsafi; Martin Jaggi / arXiv</div>
+<div class="tags"><span class="vendor-tag">Google</span><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">4 比特量化能让大模型推理省很多资源，但离群值会拖垮精度。MXSens 针对硬件原生支持的 MXINT 微缩放格式，按敏感度给不同层、不同列分配 4/6/8 位尾数。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 W4A4KV4（权重、激活、KV 缓存都 4 比特）设置下，LLaMA-2-70B 和 LLaMA-3-8B 在 WikiText-2 上困惑度分别为 3.77 和 7.63，明显优于现有基线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先分析出离群值严重程度和量化敏感度在层与列之间分布不均，再在不训练的前提下按列、按层敏感度挑选尾数位宽，天然契合 MXINT 的分块结构，省去软件缩放和频繁反量化。</span></div>
+<div class="score-reason">评分依据：面向硬件友好格式的低比特混合精度量化，属于端侧推理可直接借鉴的技术栈，但未在终端设备上实测；方法是常见混合精度思路在 MX 格式上的细化。PDF 首页末位作者署名 Google DeepMind，作者 6 署名 MangoBoost Inc.。 作者机构依据：arXiv PDF 首页署名 Google（PDF 首页末位作者 Amir Yazdanbakhsh 署名 Google DeepMind（google.com 邮箱），其余主要作者来自 EPFL、清华、高丽大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.17733" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

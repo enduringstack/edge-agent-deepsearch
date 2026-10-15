@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AdaHome: An Adaptive Smart Home Assistant using Local Small Language Models</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-20 · Eu Jin Lim; Zhaoxing Li; Sebastian Stein / arXiv</div>
-<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">应用:IoT命令</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Smart home assistants interpret a wide range of user commands, from explicit device control to underspecified and preference dependent requests.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-07-20 · Eu Jin Lim; Zhaoxing Li; Sebastian Stein / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:规划推理</span><span class="tag">方向:记忆</span><span class="tag">应用:IoT命令</span><span class="tag">硬件:CPU</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一个跑在本地小模型上的智能家居助手：能理解“开卧室灯”这类明确指令，也能处理“我想放松一下”这类含糊请求，并在长期使用中学会用户偏好。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">统一使用 Llama 3.2-3B 时，直接指令准确率 86.7%，延迟最多降低 3 倍；含糊指令上保持有竞争力的效果且计算更省；多轮场景中偏好一致性 88%，提示词增强基线只有 52.5%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先识别意图，明确指令走简单提示直接生成设备动作，含糊指令才启用精简的 Chain-of-Draft 推理；另设偏好记忆，检索相似的历史交互并结合用户反馈估计设备开启概率，不靠加长提示词也不重新训练模型。</span></div>
+<div class="score-reason">评分依据：Llama 3.2-3B 通过 Ollama 在一台约 200–300 英镑的 AMD Ryzen 5 小主机 CPU 上本地运行，完成意图规划、偏好记忆和设备动作生成的完整闭环，端侧证据明确；分级推理加无训练偏好记忆的组合实用，但设备环境为固定的 12 设备模式描述。作者来自南安普顿大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.18034" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

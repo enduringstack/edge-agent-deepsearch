@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Class-Grouped Normalized Momentum and Faster Hyperparameter Exploration to Tackle Class Imbalance in Federated Learning</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-01 · Haemin Park, Diego Klabjan, Martin W. Braun et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">FedCGNM 在联邦学习客户端按类分组维护归一化动量,均衡多数/少数类梯度,并用 X 臂老虎机 FedHOO 高效优化重采样率,应对类不平衡。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在四个公开长尾基准和芯片缺陷数据集上稳定优于基线,FedHOO 在小规模联邦中进一步增益。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：联邦学习可服务端侧分布式;分组归一化动量+bandit 调参有创新。</div>
+<div class="meta"><span class="score">6</span> <span class="tier company">公司项目</span>  2026-07-01 · Haemin Park, Diego Klabjan, Martin W. Braun et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">Intel</span><span class="tag">方向:联邦学习</span><span class="tag">方向:端侧训练</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">针对联邦学习中少数类别表现差的问题，提出客户端优化器 FedCGNM，并配套一个高效搜索重采样率的超参方法。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在四个公开长尾基准和一个芯片缺陷私有数据集上稳定优于基线，小规模联邦中配合超参搜索方法还有额外提升；摘要未给出具体数值。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把类别分成少数几组，每组单独维护动量并归一化后求和作为更新方向，平衡多数类和少数类的梯度；再用多臂老虎机算法利用联邦并行一次评估多种重采样率组合。</span></div>
+<div class="score-reason">评分依据：联邦学习与设备侧隐私训练相关，但工作重点是训练优化算法，不涉及推理部署；方法属于常规改进。PDF 首页三位作者署名 Intel，另两位来自西北大学。 作者机构依据：arXiv PDF 首页署名 Intel（PDF 首页作者 Martin W. Braun、Xiuqi Li、Balakrishnan Ananthanarayanan 署名 Intel Corporation, Chandler, AZ）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01474" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

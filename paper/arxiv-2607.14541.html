@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Are LLM-Generated GPU Kernels Production-Ready? A Trace-Driven Benchmark and Optimization Agent</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-16 · Lingyun Yang; Yuxiao Wang; Shenghao Liang; Linfeng Yang; Daocheng Ying; Chunbo You; Rui Zhang; Luping Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span><span class="tag">应用:代码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Existing GPU kernel generation benchmarks draw problems from synthetic or curated sources that diverge from deployed workloads.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-16 · Lingyun Yang; Yuxiao Wang; Shenghao Liang; Linfeng Yang; Daocheng Ying; Chunbo You; Rui Zhang; Luping Wang / arXiv</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:云端serving</span><span class="tag">方向:编译部署</span><span class="tag">方向:评测基准</span><span class="tag">应用:代码</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Atrex-Bench 用真实线上推理集群的算子轨迹评测大模型写 GPU 内核的能力，并配套发布一个内核优化智能体。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">六个前沿编程智能体在该基准上最好也只达到硬件屋顶线的约 10%，表面通过率很多来自回退到 PyTorch；配套智能体在案例中把回退算子全部变成真内核，性能追平或超过人工调优的线上基线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从生产推理轨迹中抽取 30 个算子、440 种形状并按 GPU 耗时加权；优化智能体结合迭代测量修改、优化随机丢弃和包含 298 个参考内核与 244 篇优化文档的知识库。</span></div>
+<div class="score-reason">评分依据：面向云端推理集群的 GPU 内核生成与评测，与端侧关系较远，但内核自动优化对推理部署栈有参考价值；基准和智能体均开源。PDF 首页署名阿里巴巴集团 ATREX 团队。 作者机构依据：arXiv PDF 首页署名 Alibaba（PDF 首页署名 ATREX Team, Alibaba Group，脚注说明 ATREX 为阿里巴巴张量研究与工程团队）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.14541" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

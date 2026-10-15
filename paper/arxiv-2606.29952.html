@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Exploiting Local Flatness for Efficient Out-of-Distribution Detection</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-29 · Seonghwan Park, Hyunji Jung, Dongyeop Lee et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Fold 是轻量 OOD 检测器,利用特征 Hessian 与部分特征归一化提升 ID-OOD 可分性,AutoFold 用自监督伪 OOD 调参,无需外部数据。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">OOD 基准上平均 AUROC +1.63%、FPR95 -2.30%,计算成本与一次前向相当。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：高效推理相关非显式端侧;特征 Hessian 轻量 OOD,中等创新。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校顶会</span>  2026-06-29 · Seonghwan Park, Hyunji Jung, Dongyeop Lee et al. / ECCV 2026</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">提出轻量的分布外样本检测方法 Fold：利用“分布外输入在特征空间的曲率更大”这一观察，在不重新训练的情况下识别异常输入。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在分布外检测基准上平均 AUROC 提升 1.63%、FPR95 降低 2.30%，计算开销与一次普通前向传播相当。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用特征层 Hessian 衡量局部平坦度并做部分特征归一化，避免昂贵的参数空间曲率近似；AutoFold 通过遮蔽 logit 合成伪异常样本，自动校准归一化强度。</span></div>
+<div class="score-reason">评分依据：属于模型部署时的可靠性检测，计算开销低，但与端侧推理技术栈关系较远；首次系统分析分布内外的曲率差异，有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.29952" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

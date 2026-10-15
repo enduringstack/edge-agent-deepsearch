@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LEMUR 2: Unlocking Neural Network Diversity for AI</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-07 · Tolgay Atinc Uzun, Waleed Khalid, et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:编译部署</span><span class="tag">方向:模型架构</span><span class="tag">硬件:手机</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">大规模 NAS 基准，14000+ 架构/75 万训练记录，含 NN-Lite 在移动和 VR 平台自动部署和延迟基准。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">覆盖多模态/文生图/语言建模；NN-VR/NN-Lite 管线在异构移动和 VR 平台提供真机性能元数据，支撑跨域架构迁移分析。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">AST 代码变异+遗传/RL 进化+分形架构生成+LLM 引导合成（NN-RAG 从 900+ PyTorch 模块检索架构 motif）；NN-VR/NN-Lite 自动部署基准。</span></div>
-<div class="score-reason">评分依据：NAS 基准含移动/VR 真机部署延迟，端侧可迁移（relevance 7）。14000 架构+LLM 驱动 AutoML+跨平台部署基准有数据集创新（contribution 6）。作者含 Radu Timofte (Würzburg)，学校项目。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-07 · Tolgay Atinc Uzun, Waleed Khalid, et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:模型架构</span><span class="tag">方向:编译部署</span><span class="tag">硬件:手机</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">LEMUR 2 是一个大规模神经网络结构数据集与框架，收集了 1.4 万多种网络结构和 75 万多条训练记录，并附带在安卓手机和 VR 平台上的真机延迟数据，供研究跨任务、跨硬件的结构设计和大模型自动生成网络。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">数据集包含 14000 多种不同结构、75 万多条训练记录；其中 NN-Lite 管线已在安卓平台转换、部署并测速了 7500 多个模型，提供真机推理延迟数据。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用代码语法树变异、遗传与强化学习进化、分形结构生成以及大模型引导合成（NN-RAG 从 900 多个公开 PyTorch 模块中提取结构片段）批量产生网络；再用 NN-Lite 和 NN-VR 管线自动部署到安卓与 Unity VR 平台测延迟。</span></div>
+<div class="score-reason">评分依据：带有安卓真机延迟数据的结构数据集，对端侧模型选型和硬件感知结构搜索有参考价值，但主体是数据集与生成框架；规模大、链接了部署数据，属于工程整合型贡献。作者来自德国维尔茨堡大学计算机视觉组。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.06839" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

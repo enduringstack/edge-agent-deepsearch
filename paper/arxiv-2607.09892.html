@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Next-Dense-Stride Prediction for Multimodal Autoregressive Visual Modeling</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-10 · Chicago Y. Park; Jialin Mao; Xiaojian Xu; Taha Kass-Hout; Ulugbek S. Kamilov; Cao Xiao / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">We introduce DenseAR, a new generative paradigm that reformulates autoregressive image generation as coarse-to-fine next-dense-stride prediction using a compact…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-10 · Chicago Y. Park; Jialin Mao; Xiaojian Xu; Taha Kass-Hout; Ulugbek S. Kamilov; Cao Xiao / arXiv</div>
+<div class="tags"><span class="vendor-tag">GE HealthCare</span><span class="tag">方向:多模态</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一种新的自回归图像生成方式：在单一尺度的潜空间网格上按从稀到密的步长逐层预测，一次并行生成多个 token，兼顾速度与由粗到细的生成质量。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ImageNet 类别条件生成上，FID 和 IS 均优于不带步长顺序的单网格基线和多尺度分词器基线；在多对比度脑部 MRI 上，单个模型同时完成跨模态转换、条件生成和肿瘤分割，表现接近专用方法。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用紧凑的单尺度分词器，把光栅顺序的逐 token 预测改成“下一组更密步长”的并行预测，避免多尺度方法所需的长 token 序列，并把多种模态和任务统一到一个骨干网络里。</span></div>
+<div class="score-reason">评分依据：并行预测可以减少自回归图像生成的推理步数，但工作重点是生成范式与医学影像统一建模，与端侧部署关系很弱（相关度 2）。生成范式有一定新意（贡献 5）。PDF 首页署名威斯康星大学麦迪逊分校与 GE HealthCare。 作者机构依据：arXiv PDF 首页署名 GE HealthCare（PDF 首页 6 位作者中 4 位署名 GE HealthCare，邮箱为 gehealthcare.com 域名，另 2 位为 University of Wisconsin-Madison）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.09892" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

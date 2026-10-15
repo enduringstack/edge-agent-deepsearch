@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>O-VAD: Industrial Video Anomaly Detection through Object-Centric Tracking and Reasoning</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-27 · Mei Yuan, Qi Long, Qifeng Wu, Zhenyang Li, Yizhou Zhao, Lei Wang, Yang Liu, Min Xu / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">工业视频异常检测（IVAD）旨在识别工业过程中的异常物体和事件，对现代制造业至关重要，作者针对此展开。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=9)；affiliation 待核实</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-07-27 · Mei Yuan, Qi Long, Qifeng Wu, Zhenyang Li, Yizhou Zhao, Lei Wang, Yang Liu, Min Xu / ECCV 2026</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:规划推理</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">工业视频异常检测要看懂物体在加工过程中的状态变化。O-VAD 是一个免训练的智能体框架，像人工质检员一样跟踪每个物体的状态演变并推理出异常。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Phys-AD、LiquidAD、IPAD 三个工业视频异常数据集上，视频级和帧级指标均达到最佳，超过 Qwen3-VL-32B、GPT-5 等前沿模型、两种智能体框架以及微调过的传统方法。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先检测并跟踪视频中的物体，记录每个物体随时间的空间状态和变化，再基于逐物体的状态轨迹做链式推理，定位异常物体和帧段，最后用分级视觉核验压低误报并输出可解释报告。</span></div>
+<div class="score-reason">评分依据：系统在单块 H200 上运行，没有端侧部署，只是借用了智能体式的推理流程，相关度 1；以物体为中心的状态追踪推理思路有一定新意，贡献 5。作者为卡内基梅隆大学等高校，论文被 ECCV 2026 接收。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.18142" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

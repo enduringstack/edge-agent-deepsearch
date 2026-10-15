@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DSSMs: State Space Models with Explicit Memory via Delay Differential Equations</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-11 · Yixiao Qian; Song Chen; Jiaxu Liu; Shengze Cai; Chao Xu / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">State Space Models (SSMs) have emerged as a powerful paradigm for efficient long-sequence modeling, offering parallel training and fast linear-time recurrent in…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-11 · Yixiao Qian; Song Chen; Jiaxu Liu; Shengze Cai; Chao Xu / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">状态空间模型推理快但要把全部历史压进固定大小的状态里，长距离精确检索能力弱。DSSM 借鉴时滞微分方程，给它加上显式的“延迟记忆”反馈。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在定向的延迟检索任务上显著提升，在多数标准序列任务指标上优于 S4D，其余指标接近。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在对角状态空间模型的递推中加入对过去某个时刻状态的显式反馈，配合与延迟无关的稳定性参数化和频域核计算（用核围道平移抑制混叠），使其可以用 FFT 高效训练。</span></div>
+<div class="score-reason">评分依据：状态空间模型本身是线性时间推理的高效架构，对端侧长序列有潜在价值，但论文聚焦建模能力，没有推理效率或部署实验（相关度 3）。时滞反馈思路有新意（贡献 5）。作者来自浙江大学和新加坡国立大学，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.10244" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

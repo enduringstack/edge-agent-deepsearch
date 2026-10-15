@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Vidu S1: A Real-Time Interactive Video Generation Model</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-10 · Jintao Zhang, Kai Jiang, Jintao Chen, Xu Wang, Yang Luo, Yuji Wang, Dechuang Chen, Jungang Li, Chengyang Ye, Marco Chen, Hongzhou Zhu, Min Zhao, Yuxuan Jiang, Zhengkun Huang, Chendong Xiang, Kaiwen Zheng, Haoxu Wang, Xiaohang Wang, Qi Jia, Xin Chen, Yimin Chen, Youhe Jiang, Fangcheng Fu, Zhijie Deng, Fan Bao, Jianfei Chen, Jun Zhu / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Vidu S1 is a real-time interactive video generation model that supports voice-controlled digital character animation with infinite-length output and high frame …</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=138)；affiliation 待核实</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-10 · Jintao Zhang, Kai Jiang, Jintao Chen, Xu Wang, Yang Luo, Yuji Wang, Dechuang Chen, Jungang Li, Chengyang Ye, Marco Chen, Hongzhou Zhu, Min Zhao, Yuxuan Jiang, Zhengkun Huang, Chendong Xiang, Kaiwen Zheng, Haoxu Wang, Xiaohang Wang, Qi Jia, Xin Chen, Yimin Chen, Youhe Jiang, Fangcheng Fu, Zhijie Deng, Fan Bao, Jianfei Chen, Jun Zhu / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">应用:视频</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">生数科技与清华推出 Vidu S1，一个可用语音实时控制数字人画面的交互式视频生成模型，支持无限时长生成且在消费级显卡上跑到实时。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 RTX 5090 上以 3 步采样生成 540p 视频，平均 42 FPS，超过 30 FPS 实时播放门槛；论文称在自建 Vidu-StreamBench（500 个样本）各项指标上最优。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 TurboDiffusion 少步扩散加速和 TurboServe 推理服务框架做流式生成，配合语音驱动的未来帧控制，避免长时间生成出现模糊和漂移。</span></div>
+<div class="score-reason">评分依据：在单张消费级 GPU 上实现实时视频生成，对本地部署生成模型有参考价值，但不是手机或嵌入式设备；少步扩散加流式服务属于有效的工程整合。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.03118" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

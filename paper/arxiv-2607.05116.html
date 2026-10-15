@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Communication-Aware Placement and Pruning for Efficient Mixture-of-Experts Inference</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-07-06 · Xiao Shi, Yingying Sun, Jiangsu Du, Zhiguang Chen, Yutong Lu / arXiv</div>
-<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:云端serving</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">MoE 推理的专家放置和剪枝应同时考虑计算、通信和精度，CAP 框架把三者联合优化。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">单节点和多节点实验中比 DeepSeek EPLB 和 vLLM 顺序放置吞吐提升 1.23-1.86 倍，同等目标加速下精度更好。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">共激活驱动专家放置减少跨设备/节点通信；计算-通信权衡调整生成不同放置；通信感知专家剪枝选择移除路由目标降通信。</span></div>
-<div class="score-reason">评分依据：MoE 分布式推理效率，云端为主但技术可参考（relevance 6）。通信-计算-精度联合优化放置+剪枝有创新（contribution 8）。作者中山大学，学校项目。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-07-06 · Xiao Shi, Yingying Sun, Jiangsu Du, Zhiguang Chen, Yutong Lu / arXiv</div>
+<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:云端serving</span><span class="tag">方向:剪枝稀疏</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">专家数很多的 MoE 模型做多卡、多机分布式推理时，专家放在哪、裁掉哪些路由，直接决定通信量；论文提出 CAP 统一优化这些决策。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">单机和多机实验中，吞吐比 DeepSeek EPLB 和 vLLM 顺序放置提升 1.23-1.86 倍，在同样加速目标下精度损失更小。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把经常一起被激活的专家放在同一设备，生成不同计算/通信权衡的放置方案，并有选择地裁掉跨设备的路由目标。</span></div>
+<div class="score-reason">评分依据：面向数据中心多 GPU 的 MoE 推理，属于云端 serving，与端侧关系较远；放置与剪枝联合优化属于工程整合。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.05116" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents</h1>
-<div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span>  2026-06-26 · Shijing Hu, Liang Liu, Zhu Meng et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">ToolPrivacyBench 审计工具用 LLM agent 是否把任务私有原子只路由到授权工具和下游 sink,2150 个案含合成隐私敏感业务工作流。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">评测九个常用 agent,发现任务成功不等于隐私披露恰当,agent 会在中间工具调用中传不必要隐私信息。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：云端 agent 隐私基准,与端侧 AI 无关。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-26 · Shijing Hu, Liang Liu, Zhu Meng et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:工具调用</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ToolPrivacyBench 是一个评测会调用工具的大模型智能体会不会“多嘴”的基准：检查智能体在多步调用工具时，是否把任务里的隐私信息只发给有权知道的工具。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">共 2150 个案例（1150 个合成隐私敏感业务流程加 1000 个改编自现有工具调用基准），评测了 9 个常用智能体，发现任务完成并不代表隐私得当，智能体常在中间调用中泄露不必要的信息。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">为每个案例写一份策略知识库，智能体在模拟业务后台执行任务后，把记录下的工具参数和后台审计日志与知识库比对，按“按需知情”边界判定是否越界披露。</span></div>
+<div class="score-reason">评分依据：针对智能体工具调用的隐私评测，与端侧部署无直接关系，但对在个人设备上处理隐私数据的智能体有参考意义；轨迹级隐私审计的评测视角较新。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.28061" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

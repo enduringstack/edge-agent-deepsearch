@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TIGER: Text-Conditioned Visual Gated Routing with Acceptance Alignment for Multimodal Speculative Decoding</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-13 · Quynh Vo; Cong-Duy Nguyen; Ponhvoan Srey; Luu Anh Tuan; Thong Nguyen / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Speculative decoding accelerates autoregressive generation by letting a lightweight drafter propose multiple tokens that are verified by a larger target model.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-13 · Quynh Vo; Cong-Duy Nguyen; Ponhvoan Srey; Luu Anh Tuan; Thong Nguyen / arXiv</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">新加坡国立大学等提出 TIGER：面向视觉语言模型的投机解码方法，让草稿模型根据当前文本状态只挑与上下文相关的少量视觉 token，并直接以“被接受的草稿长度”为目标训练。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LLaVA-v1.6 与 Qwen3-VL 系列上提升了被接受前缀长度和加速比；消融显示在 LLaVA-v1.6-7B 上去掉接受对齐后降至 2.07 的平均接受长度和 2.03 倍加速，在 Qwen3-VL-4B 上去掉蒸馏预热后加速仅 1.03 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按草稿模型的文本状态动态门控选择稀疏视觉 token，再用基于验证器奖励（被接受前缀长度）的组策略训练优化草稿模型，以蒸馏加 KL 约束做预热。</span></div>
+<div class="score-reason">评分依据：多模态投机解码与视觉 token 精简都是端侧视觉语言模型加速的可迁移技术，但实验在 A40 服务器 GPU 上进行。把训练目标直接对齐到接受长度有新意，作者自述仍为进行中的工作。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.11131" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

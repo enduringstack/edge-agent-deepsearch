@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DSpark: Confidence-Scheduled Speculative Decoding with Semi-Autoregressive Generation</h1>
-<div class="meta"><span class="score">17</span> <span class="tier company">公司项目</span>  2026-07-06 · Xin Cheng, Xingkai Yu, Chenze Shao, Jiashi Li, Yunfan Xiong, Yi Qian, Jiaqi Zhu, Shirong Ma, Xiaokang Zhang, Jiasheng Ye, Qinyu Chen, Chengqi Deng, Jiping Yu, Damai Dai, Zhengyan Zhang, Yixuan Wei, Yixuan Tan, Wenkai Yang, Runxin Xu, Yu Wu, Zhean Xu, Xuanyu Wang, Muyang Chen, Rui Tian, Xiao Bi, Zhewen Hao, Shaoyuan Chen, Huanqi Cao, Wentao Zhang, Anyi Xu, Huishuai Zhang, Dongyan Zhao, Wenfeng Liang / arXiv</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-06 · Xin Cheng, Xingkai Yu, Chenze Shao, Jiashi Li, Yunfan Xiong, Yi Qian, Jiaqi Zhu, Shirong Ma, Xiaokang Zhang, Jiasheng Ye, Qinyu Chen, Chengqi Deng, Jiping Yu, Damai Dai, Zhengyan Zhang, Yixuan Wei, Yixuan Tan, Wenkai Yang, Runxin Xu, Yu Wu, Zhean Xu, Xuanyu Wang, Muyang Chen, Rui Tian, Xiao Bi, Zhewen Hao, Shaoyuan Chen, Huanqi Cao, Wentao Zhang, Anyi Xu, Huishuai Zhang, Dongyan Zhao, Wenfeng Liang / arXiv</div>
 <div class="tags"><span class="vendor-tag">DeepSeek</span><span class="tag">方向:投机解码</span><span class="tag">方向:云端serving</span><span class="tag">方向:高效推理</span><span class="tag">模型:DeepSeek</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">DeepSeek 的投机解码框架，用半自回归架构给并行草稿加块内依赖，再按置信度自适应裁剪验证长度，高并发下不浪费批容量。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">DeepSeek-V4 服务系统真实流量下，相比 MTP-1 基线每用户生成速度提升 60-85%，在严格交互约束下打开此前不可达的性能档。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">半自回归架构（并行骨干+轻量序列模块）建模块内依赖缓解后缀衰减；置信度调度验证按前缀存活概率和引擎吞吐画像动态裁剪验证长度。</span></div>
-<div class="score-reason">评分依据：投机解码属推理加速技术栈，云端 serving 验证但技术可迁移端侧（relevance 7）。DeepSeek 生产级创新，半自回归+置信度调度显著推进 SOTA（contribution 10）。论文明确署 DeepSeek-V4 服务系统、作者为 DeepSeek 团队（Wenfeng Liang, Damai Dai 等），证据：arXiv 论文机构署名与 DeepSeek-V4 引用。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">DeepSeek 提出的投机解码框架 DSpark：既让并行草稿模型一次出长串 token，又按负载自适应决定验证多长，避免高并发服务时浪费批处理容量。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">离线基准上接受长度显著超过现有自回归和并行草稿方法；在 DeepSeek-V4 线上服务的真实流量中，相比生产基线 MTP-1，同等吞吐下每用户生成速度提升 60%-85%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">草稿端用“并行主干 + 轻量顺序模块”的半自回归结构补上块内依赖，缓解后缀接受率衰减；验证端按每个请求前缀的存活概率和引擎吞吐画像动态裁剪验证长度。</span></div>
+<div class="score-reason">评分依据：投机解码属于可迁移到端侧的推理加速技术，但本文的负载感知验证针对高并发云端服务；在生产系统真实流量中验证，贡献扎实。公司归属依据：PDF 首页多数作者署名 DeepSeek-AI，邮箱为 deepseek.com。 作者机构依据：arXiv PDF 首页署名 DeepSeek（PDF 首页绝大多数作者署名 2 DeepSeek-AI，邮箱 deepseek.com；另有北京大学合作作者）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.05147" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

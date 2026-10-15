@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TransMem: Transforming Hidden States into Memory for Large Language Models</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-31 · Haodong Lei; Junming Liu; Yirong Chen; Pinlong Cai; Botian Shi; Ding Wang; Hongsong Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span><span class="tag">方向:记忆</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM agent 要在长交互历史里干活，有效推理得能识别和利用任务相关信息。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-31 · Haodong Lei; Junming Liu; Yirong Chen; Pinlong Cai; Botian Shi; Ding Wang; Hongsong Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:高效推理</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体在长交互历史里常常用不好前面已经算出的信息。TransMem 把历史中少量隐藏状态转成可复用的记忆，在推理时注入当前计算，而不用重新编码整段上下文。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LoCoMo 上 F1 提升 11.58~29.25，在 HotpotQA 上提升 10.20~13.03，MemoryAgentBench 平均准确率从 29.54% 提升到 40.00%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">冻结主干模型，挑选稀疏的历史隐藏状态，经轻量门控网络动态干预当前隐藏状态；用证据条件自蒸馏训练，让带记忆的学生模型逼近只看证据的教师模型。</span></div>
+<div class="score-reason">评分依据：推理时轻量参数化记忆模块，避免重复编码长上下文，对资源受限设备上的智能体记忆有迁移价值（相关度 5）；复用隐藏状态作为记忆载体的思路较新（贡献 6）。作者来自东南大学和上海人工智能实验室，未出现公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29032" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

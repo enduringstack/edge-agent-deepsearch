@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Continual Learning for Sequential Personalization of Small Language Models: A Stability Monitoring Analysis</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-06-26 · Thomas S. Paula, Lucas S. Kupssinskü, Rodrigo C. Barros / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">研究小语言模型在边缘笔记本上做 LoRA 序列化个性化时的持续学习稳定性,通过 checkpoint 级协议监控任务性能、遗忘与参考集漂移。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告具体数字;轻量参考集分布诊断可揭示任务指标掩盖的有害适应。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确 edge 笔记本部署 SLM;稳定性监控分析为主,创新中等。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-26 · Thomas S. Paula, Lucas S. Kupssinskü, Rodrigo C. Barros / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究在笔记本等端侧设备上不断用 LoRA 个性化小语言模型时，会不会逐渐忘掉旧能力，并提出一套按阶段保存检查点、监测稳定性的评测方法。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">实验发现，用固定参考集上的分布指标（KL 散度、熵、置信间隔）能暴露不同模型各自的不稳定模式，有些情况下单看任务准确率会掩盖有害的适配。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每完成一轮个性化微调就保存一个检查点，同时在当前任务、旧任务和固定参考集上测试，追踪任务表现、遗忘程度和输出分布的漂移。</span></div>
+<div class="score-reason">评分依据：面向端侧小模型的持续个性化，问题有端侧背景，但工作以分析评测为主、不涉及部署实测，相关度和贡献都中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.27634" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

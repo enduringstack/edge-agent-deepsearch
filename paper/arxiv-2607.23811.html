@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Memory Efficient Audio Synthesis with Decoupled Temporal Depth Diffusion Transformers</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-26 · Dongseong Hwang; Prasanth Yadla; Kaan Elgin; Shifas Padinjaru Veettil; Sivanand Achanta; Dipjyoti Paul; Ramya Rasipuram; Tyler Johnson / arXiv</div>
-<div class="tags"><span class="vendor-tag">Apple</span><span class="tag">方向:量化</span><span class="tag">方向:高效注意力</span><span class="tag">方向:记忆</span><span class="tag">方向:端侧agent</span><span class="tag">应用:语音</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Siri Expressive Voices 完全在端侧实时合成丰富可配置语音，由苹果最强端侧模型 AFM 3 Core Advanced 驱动。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Apple（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">18</span> <span class="tier company">公司项目</span>  2026-07-26 · Dongseong Hwang; Prasanth Yadla; Kaan Elgin; Shifas Padinjaru Veettil; Sivanand Achanta; Dipjyoti Paul; Ramya Rasipuram; Tyler Johnson / ICASSP</div>
+<div class="tags"><span class="vendor-tag">Apple</span><span class="tag">方向:模型架构</span><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">应用:语音</span><span class="tag">硬件:Apple-Silicon</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">苹果公开 Siri 新“富表现力语音”背后的声音合成模块：它把端侧基础模型输出的语义音频词元实时转成高保真语音，全程在设备上运行，而且内存占用固定、不随语音长度增长。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">部署在 Apple Matrix 协处理器（AMX）上，每步生成约 10 毫秒、约为实时的 16 倍，峰值运行内存仅 21 MB、端侧资源 329 MB，可连续流式合成 20 到 320 秒音频；与上一代端侧语音合成相比，整体平均意见分从 3.87 升到 4.15，对话语音从 3.82 升到 4.24。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把语义词元转成残差向量量化表示，拆成流式编码器、时间解码器和深度解码器三部分；用一个带阶段条件的可复用深度解码器逐级生成所有量化层，取代每层一个解码器，并用因果滑动窗口注意力加固定窗口 KV 缓存让内存恒定。</span></div>
+<div class="score-reason">评分依据：苹果已量产上线的端侧语音合成架构，给出 AMX 协处理器上的真机时延与内存（相关度 10）。时间与深度解耦加单一可复用解码器，把内存从随长度增长变为恒定，工程与方法都扎实（贡献 8）。机构依据：arXiv PDF 首页作者署名 Apple，通讯邮箱为 apple.com。 作者机构依据：arXiv PDF 首页署名 Apple（PDF 首页作者署名 Apple，通讯作者邮箱为 apple.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.23811" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

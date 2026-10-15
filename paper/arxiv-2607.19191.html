@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ABot-World-0: Infinite Interactive World Rollout on a Single Desktop GPU</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-21 · Fan Jiang; Zhaoxu Sun; Mengchao Wang; Ziyu Zhu; Chiyu Wang; Yunpeng Zhang; Wenlin Liu; Yun Wang / arXiv</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:量化</span><span class="tag">方向:蒸馏</span><span class="tag">方向:高效注意力</span><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">We present ABot-World-0, an action-conditioned video world model for real-time, long-horizon closed-loop interaction, supported by a multi-source data infrastru…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 NVIDIA（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">13</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-21 · Fan Jiang; Zhaoxu Sun; Mengchao Wang; Ziyu Zhu; Chiyu Wang; Yunpeng Zhang; Wenlin Liu; Yun Wang / arXiv</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:高效推理</span><span class="tag">方向:量化</span><span class="tag">方向:蒸馏</span><span class="tag">方向:高效注意力</span><span class="tag">方向:多模态</span><span class="tag">应用:视频</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">高德视觉团队做的可交互视频世界模型：用户用键盘控制，模型实时生成无限延续的 720P 游戏式画面，并把整套推理压到一张桌面显卡上跑。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在单张 NVIDIA RTX 5090 桌面显卡上以低比特配置流式生成 720P 视频，最高 16 FPS，从按键到首帧 1.2 秒，峰值显存约 19GiB；在 WorldRoamBench 上可控性有竞争力。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先把双向教师模型逐步蒸馏成因果学生模型，再用 LongForcing 对齐长时自回归生成，减少漂移；部署侧配合轻量 VAE 解码器、高效注意力、显存感知调度和低比特 DiT 推理。</span></div>
+<div class="score-reason">评分依据：把大型视频世界模型压到单张消费级桌面显卡实时运行，属于个人电脑本地部署的大模型推理工作，但它是世界模拟器而非智能体闭环，相关度给 6；蒸馏、长时对齐与低比特推理栈整体完成度高，贡献给 7。公司归属依据 arXiv PDF 首页页眉“AMAP CV Lab | Alibaba Group”。 作者机构依据：arXiv PDF 首页署名 Alibaba（PDF 首页页眉署名 AMAP CV Lab | Alibaba Group（ABot-World Team））。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.19191" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

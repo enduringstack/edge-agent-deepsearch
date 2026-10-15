@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ReGen: Hierarchical Multi-Prompt Representation Generation for Efficient Waveform Diffusion Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-10 · Sang-Hoon Lee; Ha-Yeong Choi / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">应用:语音</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Representation alignment (REPA) has been investigated to accelerate diffusion training, but we observe that regularizing intermediate representations in diffusi…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校顶会</span>  2026-07-10 · Sang-Hoon Lee; Ha-Yeong Choi / ICML 2026</div>
+<div class="tags"><span class="tag">应用:语音</span><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一种让波形扩散模型能在极度压缩的音频潜空间里依然生成高质量语音的训练框架，并据此做了一个轻量的文本转语音模型 ReGenVoice。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 12.5 Hz 的高压缩潜表示上显著提升波形生成质量；ReGenVoice 把潜扩散模型跑在 6.25 Hz，只需 4 张 GPU 训练 1 天，推理实时率 0.08，并用小数据集取得较好的可懂度和说话人相似度。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在同一个扩散 Transformer 里同时预测表征和数据的多个向量场，避免中间层对齐正则把潜变量缠在一起；再用广义流匹配提升条件流匹配的泛化能力。</span></div>
+<div class="score-reason">评分依据：核心贡献在语音生成模型的训练与表示，低帧率潜空间带来的推理加速只是附带收益，与端侧部署关系较弱（相关度 3）。方法有一定新意且被 ICML 2026 接收（贡献 5）。PDF 首页显示第二作者来自 KT Corp.。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.09134" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>HyMCache: A KV Cache Framework for Multi-Turn LLM Serving with CXL-Hybrid Memory</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-20 · Hakbeom Jang; Inho Song; Sam H. Noh; Jongryool Kim / arXiv</div>
-<div class="tags"><span class="vendor-tag">OPPO</span><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Long-context, multi-turn, and agentic LLM workloads increasingly reuse previously processed context, making KV-cache reuse essential for reducing redundant comp…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 OPPO（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-07-20 · Hakbeom Jang; Inho Song; Sam H. Noh; Jongryool Kim / arXiv</div>
+<div class="tags"><span class="vendor-tag">SK hynix</span><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多轮对话和智能体负载会反复复用历史上下文的 KV 缓存，存这些缓存的内存层成了瓶颈。HyMCache 用 CXL 接口的“小 DRAM + 大 SSD”混合内存搭了一个机柜级 KV 缓存池。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在真实 CXL 混合内存原型上，同等 DRAM 预算下比本地 LMCache 单节点快 3.0 倍、预填充/解码分离部署下快 1.45 倍；与 1TB 分布式 DRAM 的 Mooncake 相比性能低约 30%，但 DRAM 用量少 16 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用多轮 KV 缓存读多写少、可预测、只追加的特点，重新设计设备内 DRAM 的管理：按请求预取前缀、机会式缓冲写入，把时延敏感的读放进 DRAM，让 SSD 成本获得接近 DRAM 的效率。</span></div>
+<div class="score-reason">评分依据：面向数据中心集群的 KV 缓存存储层，属于云端服务，与端侧部署关联较弱；在真实 CXL 硬件上验证的软硬件协同设计有新意。PDF 首页作者 1、3、5 署名 SK hynix America。 作者机构依据：arXiv PDF 首页署名 SK hynix（PDF 首页作者 Hakbeom Jang、Hoshik Kim、Jongryool Kim 署名 SK hynix America，Inho Song 同时署名 SK hynix America 与 Virginia Tech）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.18141" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

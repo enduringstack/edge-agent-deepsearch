@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FlashAccel: Leveraging High-Bandwidth Flash for High-Throughput LLM Inference</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-11 · Xinyu Wang; Yalong Xue; Xiaotian Sun; Xiaoyu Zhang; Chunmeng Dou; Xueqi Li; Xiaoming Chen / arXiv</div>
-<div class="tags"><span class="vendor-tag">Xiaomi</span><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Large language model (LLM) inference is increasingly limited by the capacity of High-Bandwidth Memory (HBM) in GPUs, as model weights and KV cache grow rapidly.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Xiaomi（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-11 · Xinyu Wang; Yalong Xue; Xiaotian Sun; Xiaoyu Zhang; Chunmeng Dou; Xueqi Li; Xiaoming Chen / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">数据中心 GPU 的高带宽显存容量跟不上大模型权重和 KV cache 的增长。FlashAccel 尝试把高带宽闪存集成进 GPU，作为大容量推理存储。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 100 毫秒延迟约束下，GPU 集成 6 个高带宽闪存堆栈后，单卡吞吐平均提升 2.49 倍，能效平均提升 1.93 倍（对比只用显存的 GPU）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在硬件上为闪存的高访问延迟提供架构支持，并为模型权重和 KV cache 设计专门的数据布局提高带宽利用率；软件上提供感知闪存的存储管理层和编程模型（含 SRAM 预取接口），统一协调异构存储资源。</span></div>
+<div class="score-reason">评分依据：面向数据中心 GPU 的存储体系结构，属于云端推理硬件，对端侧只有“用闪存扩容”思路上的参考（相关度 3）。软硬件协同设计较完整（贡献 6）。PDF 首页脚注显示作者均来自中国科学院计算技术研究所、微电子研究所和中国科学院大学，输入中的小米归属无依据。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.10186" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

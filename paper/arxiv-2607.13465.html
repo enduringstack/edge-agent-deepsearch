@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DevicesWorld: Benchmarking Cross-Device Agents in Heterogeneous Environments</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-15 · Huatao Li; Xinwei Geng; Yuheng Wang; Yutong Li; Runde Yang; Hantao Chen; Shu Yao; Jingru Fan / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:手机</span><span class="tag">应用:IoT命令</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM-based agents have rapidly improved at operating individual digital environments such as mobile applications, desktop systems, and smart homes.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">14</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-15 · Huatao Li; Xinwei Geng; Yuheng Wang; Yutong Li; Runde Yang; Hantao Chen; Shu Yao; Jingru Fan / arXiv</div>
+<div class="tags"><span class="vendor-tag">Honor</span><span class="tag">方向:评测基准</span><span class="tag">硬件:手机</span><span class="tag">应用:IoT命令</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">DevicesWorld 是一个跨设备智能体评测基准，任务需要智能体在手机、电脑和智能家居之间取信息、处理并把结果放到另一台设备上，共 6140 个任务。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">测评 GPT-5.5、Qwen3.7-Plus、Gemini-3.1-Pro-Preview、Claude Opus 4.8 和 UFO3 五个方案，最好的 UFO3 成功率也只有 12.5%；失败任务中约 28.7% 已满足部分条件却没能完成全部要求；同时涉及手机、Linux 和智能家居的任务没有一个方案成功。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用统一的跨设备环境控制器管理基于 AndroidWorld 的安卓环境、Linux 桌面和智能家居，每个任务定义目标、参与设备、初始状态、可执行动作、规则校验器和清理流程，结果直接从设备状态和生成文件自动判定。</span></div>
+<div class="score-reason">评分依据：直接面向手机、电脑与智能家居间的多设备 Agent 协作，对端侧 Agent 研发有很强参考价值；但被测智能体均调用云端大模型、环境为模拟器，不算真正端侧 Agent。PDF 首页作者 2、9、10、11 署名荣耀终端有限公司，其余来自上海交通大学，基准已开源。 作者机构依据：arXiv PDF 首页署名 Honor（PDF 首页作者 Xinwei Geng、Xuhui Ren、Yuanyuan Zhao、Fei Huang 署名 Honor Device Co., Ltd，邮箱为 honor.com；其余作者来自上海交通大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.13465" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

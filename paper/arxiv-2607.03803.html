@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CineMobile: On-Device Image-to-Video Diffusion for Cinematic Camera Motion Generation</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-07-04 · Xuyao Huang; Zelai Deng; Xu Wang; Xizhong Xiao; Zhijie Deng / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:蒸馏</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:量化</span><span class="tag">方向:多模态</span><span class="tag">硬件:手机</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在手机上做图像到视频扩散生成的框架，通过蒸馏引导剪枝+扩散蒸馏+混合量化把模型压到 1GB 内。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">相对 Wan 2.1 教师模型加速 40 倍；在 MediaTek Dimensity 8400 上 49 帧 480p 视频每步去噪 20s，峰值内存 1.8GB。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">三步：蒸馏引导剪枝得紧凑模型；扩散蒸馏+RL 优化成 4 步生成器；混合后训练量化把模型压到 1GB 内。</span></div>
-<div class="score-reason">评分依据：明确手机端图像到视频扩散部署（relevance 9）。剪枝+蒸馏+量化三合一移动端管线有高创新（contribution 7）。vendors 空。</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-07-04 · Xuyao Huang; Zelai Deng; Xu Wang; Xizhong Xiao; Zhijie Deng / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span><span class="tag">方向:量化</span><span class="tag">方向:多模态</span><span class="tag">应用:视频</span><span class="tag">硬件:手机</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">CineMobile 把图生视频扩散模型压缩到能在手机上跑，专门生成子弹时间、希区柯克变焦、慢动作等电影级运镜效果。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">相比 Wan 2.1 架构的教师模型，生成速度快 40 倍且画质相当；生成 49 帧 480p 视频，每步去噪在 NVIDIA H200 上 0.6 秒、在联发科天玑 8400 Ultimate 手机平台上 20 秒，峰值内存 1.8GB，模型体积压到 1GB 以下。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">三步压缩：先用蒸馏引导剪枝得到紧凑模型，再结合扩散蒸馏和强化学习把生成压到 4 步，最后用混合后训练量化把模型体积降到 1GB 以内。</span></div>
+<div class="score-reason">评分依据：在天玑 8400 手机平台上实测视频生成延迟和内存，端侧证据明确；剪枝、步数蒸馏和量化组合属于成熟手段的系统整合。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.03803" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

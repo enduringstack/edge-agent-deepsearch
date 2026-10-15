@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>OpenForgeRL: Train Harness-native Agents in Any Environment</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-24 · Xiao Yu, Baolin Peng, Ruize Xu, Hao Zou, Qianhui Wu, Hao Cheng, Wenlin Yao, Nikhil Singh, Zhou Yu, Jianfeng Gao / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Modern AI agents rely on elaborate inference harnesses such as Claude Code, Codex, and OpenClaw to drive multi-turn reasoning, tool use, and access to external …</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=5)；affiliation 待核实</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-24 · Xiao Yu, Baolin Peng, Ruize Xu, Hao Zou, Qianhui Wu, Hao Cheng, Wenlin Yao, Nikhil Singh, Zhou Yu, Jianfeng Gao / arXiv</div>
+<div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:工具调用</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">OpenForgeRL：一个开源框架，能直接在 Claude Code、Codex、OpenClaw 等真实智能体外壳和环境里，端到端地用强化学习训练智能体。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">只用数百到数千个任务，OpenForgeClaw 在 ClawEval 上取得 31.7 pass^3、55.9 pass@3，在 QwenClawBench 上 33.7；OpenForgeGUI 在 OSWorld-Verified 上 37.7、Online-Mind2Web 上 63.0、WebVoyager 上 72.3，均优于同规模开源基线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用一个轻量代理接管外壳发出的模型调用并记录为训练数据，交给 veRL 等标准强化学习代码训练；再用 Kubernetes 编排器把每次采样放到独立远程容器中运行，实现训练与推理解耦。</span></div>
+<div class="score-reason">评分依据：属于云端智能体训练基础设施，与端侧部署无关（相关度 2）；但研究了不同智能体外壳对行为的影响，对 Agent 运行时设计有参考（贡献 6）。PDF 首页作者 Baolin Peng、Qianhui Wu、Hao Cheng、Wenlin Yao、Jianfeng Gao 署名 Microsoft Research。 作者机构依据：arXiv PDF 首页署名 Microsoft（PDF 首页作者 Baolin Peng、Qianhui Wu、Hao Cheng、Wenlin Yao、Jianfeng Gao 署名 Microsoft Research，其余作者来自哥伦比亚大学和达特茅斯学院）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.21557" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

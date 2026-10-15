@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Learn to Pool: Lightweight Fine-Tuning for Flexible Multi-Vector Compression</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-07-07 · Stefan Josef / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">应用:RAG</span><span class="tag">方向:量化</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">给多向量检索模型做轻量微调，k-means 池化感知训练在压缩率 83% 时不损检索精度甚至反超。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">BEIR SciFact 上 pool 因子 1-6 全超未池化基线，向量压缩 83% 无精度损失。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">轻量池化感知微调+k-means；多因子训练产单一模型适用多压缩级；跨池化方法和数据集有迁移证据。</span></div>
-<div class="score-reason">评分依据：多向量检索压缩，端侧 RAG 可迁移（relevance 6）。轻量池化感知微调+多因子训练有创新（contribution 7）。作者学校项目。</div>
+<div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span>  2026-07-07 · Stefan Josef / ECIR 2026 Workshop (LIR)</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">晚交互检索模型每篇文档要存大量 token 向量，存储和内存开销大；论文提出只做少量“感知池化”的微调，让模型在不同压缩率下都好用。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">最强模型在 BEIR SciFact 上池化因子 1-6 时都优于不池化的基线，相当于向量数压缩 83% 而检索精度不降。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在微调中加入基于 k-means 的 token 池化，并用多种池化因子联合训练，得到一个适配多档压缩率的单一模型。</span></div>
+<div class="score-reason">评分依据：属于检索索引的存储压缩，与端侧推理部署关系较弱；方法是轻量微调的工程改进，发表于 ECIR 2026 研讨会。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.06036" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

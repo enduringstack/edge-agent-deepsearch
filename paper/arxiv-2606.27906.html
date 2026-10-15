@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Phase Matters: Characterizing Heterogeneous Vision-Language Inference on a Mobile SoC</h1>
-<div class="meta"><span class="score">17</span> <span class="tier school">学校预印本</span>  2026-06-26 · Aryama V Murthy, Yashas N Kotre, Prathmesh Sharma et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:NPU</span><span class="tag">硬件:手机</span><span class="tag">模型:Phi</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在骁龙 8 Elite(SM8750)上对端侧 VLM 推理做硬件在环刻画:相位吞吐、缓存效应、100 次热稳定、能耗、CPU/NPU 异构配置与视觉 token 预算敏感性。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">NPU prefill 1.64 倍、decode 仅 1.18 倍加速;视觉编码器 20-45 倍;稳态温度低 10.47°C、能耗 2.52 倍;四步图重写让 Phi-3.5-V 跑 QNN 22 倍加速。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：移动 SoC 端侧 VLM/NPU 实测,明确端侧;相位级刻画与移植配方创新度高。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-06-26 · Aryama V Murthy, Yashas N Kotre, Prathmesh Sharma et al. / MobiSys 2026 Workshop</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:编译部署</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">硬件:NPU</span><span class="tag">硬件:Snapdragon</span><span class="tag">硬件:手机</span><span class="tag">模型:Phi</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这是一份在骁龙 8 Elite 手机芯片上实测视觉语言模型推理的分析报告，按“视觉编码、预填充、解码”三个阶段分别比较 CPU、GPU 和 NPU 的表现，给出移动端部署建议。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以 FastVLM-0.5B 为例，NPU 让预填充加速 1.64 倍、解码只加速 1.18 倍，视觉编码器比 CPU 快 20 到 45 倍；稳态温度低 10.47°C、能耗低 2.52 倍；W4A8 混合方案达到每秒 97.5 个 token；四步计算图改写让 Phi-3.5-V 的编码器能跑上 NPU，最高提速 22 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在真机上做硬件在环测量，覆盖各阶段吞吐、缓存状态、100 次连续运行的发热、能耗、五种 CPU/NPU 混合流水线和视觉 token 数量的影响，并总结出把不支持的编码器移植到高通 QNN 的改写流程。</span></div>
+<div class="score-reason">评分依据：全部数据来自骁龙 8 Elite 手机芯片真机测量，端侧相关度很高；属于测量分析和移植经验，方法创新有限但对实际部署很有用。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.27906" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

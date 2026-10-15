@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Predict, Reuse, and Repair: Accelerating Dynamic Sparse Attention for Long-Context LLM Decoding</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-29 · Tianyu Wang, Gourav Rattihalli, Aditya Dhakal et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效注意力</span><span class="tag">方向:稀疏注意力</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">PRR 是动态稀疏注意力的 speculate-reuse-repair 运行时,用 EMA 预测器在选块进行时投机计算注意力,再用 FlashAttention 修复内核补齐漏块。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">长上下文基准上每 token 解码延迟最高降 40%,下游任务精度保持。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：高效推理/KV 注意力技术栈非显式端侧;投机-复用-修复运行时,创新较高。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-06-29 · Tianyu Wang, Gourav Rattihalli, Aditya Dhakal et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">Hewlett Packard Enterprise</span><span class="tag">方向:稀疏注意力</span><span class="tag">方向:高效注意力</span><span class="tag">方向:投机解码</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">PRR 针对长文本解码中的动态稀疏注意力：先选块再算注意力的串行依赖成了新的时延瓶颈，于是用“预测-复用-修补”把两步重叠起来。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多个长上下文基准和代表性动态稀疏注意力方法上，每 token 解码时延最多降低 40%，下游任务精度不变。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用相邻步选块的时间局部性，用指数滑动平均预测可能被选中的 KV 块并提前算注意力，等真实选块结果出来后，用基于 FlashAttention 的修补内核把漏掉的块增量并入。</span></div>
+<div class="score-reason">评分依据：长上下文稀疏注意力加速属于推理技术栈，可迁移到端侧长文本场景，但实验在 GPU 上；投机式选块与增量修补的运行时设计有新意。 作者机构依据：arXiv PDF 首页署名 Hewlett Packard Enterprise（arXiv 首页作者 Gourav Rattihalli、Aditya Dhakal、Dejan Milojicic 署名 HPE Labs，其余为匹兹堡大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.30389" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

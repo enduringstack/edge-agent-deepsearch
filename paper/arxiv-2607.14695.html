@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Reflex: Real-Time VLA Control through Streaming Inference</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-16 · Yuanchun Guo; Bingyan Liu / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Flow matching Vision-Language-Action (VLA) models promise precise continuous control, but their iterative denoising nature introduces fundamental incompatibilit…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-07-16 · Yuanchun Guo; Bingyan Liu / ICML 2026</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Reflex 让基于流匹配的视觉-语言-动作模型可以流式连续推理，解决机器人实时控制时推理跟不上控制频率的问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LIBERO 和 Kinetix 上推理加速 2.58 倍，实现稳定 50Hz 流式控制，反应延迟最多降低 54%，任务性能不下降；执行停顿率从 100% 降到 0%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用感知编码与去噪循环无关的特性，把注意力上下文分成静态、滑动、动态三段，实现常数时间的增量 KV 缓存更新；新增自适应归一化防止 BF16 数值崩溃，并用异步流水线和算子融合提升吞吐。</span></div>
+<div class="score-reason">评分依据：机器人端 VLA 模型实时推理的系统优化，KV 缓存和流水线设计对端侧具身推理很有借鉴价值；实验在 RTX 4090 上进行。属于动作模型，按标准不算端侧 Agent。作者来自北京邮电大学，代码开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.14695" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

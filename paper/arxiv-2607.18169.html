@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>RRAM-DP: Device-Calibrated Differential Privacy for In-Memory Edge Learning</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-20 · Kwunhang Wong; Jichang Yang; Karl M. H. Lai; Hegan Chen; Songqi Wang; Wei Xuan; Ning Lin; Han Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:安全隐私</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Edge Artificial Intelligence of Things (AIoT) systems often collect sensitive data in situ, raising serious privacy concerns.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校顶会</span>  2026-07-20 · Kwunhang Wong; Jichang Yang; Karl M. H. Lai; Hegan Chen; Songqi Wang; Wei Xuan; Ning Lin; Han Wang / ICCAD 2026</div>
+<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:安全隐私</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:CIM</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">边缘物联网设备在现场采集敏感数据，训练时需要差分隐私保护。RRAM-DP 把阻变存储器写入时天然的随机性，变成可证明的差分隐私噪声源，用于存内计算训练。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 CIFAR-10/100、STS-B、SST-2 上，ε=2 的差分隐私下精度最好只比非隐私 SGD 低 3.8%；同等隐私水平下，相比 A100 和 DiVa-GEMM 分别节能最高 57 倍和 3.2 倍、提速 2.7 倍和 1.8 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">放松 RRAM 的写入-校验流程，按器件实测统计把写入误差校准成符合 (ε, δ) 差分隐私的噪声，并给出形式化分析；配合预训练技巧，在存内计算上完成高效用的隐私训练。</span></div>
+<div class="score-reason">评分依据：面向边缘存内计算硬件的隐私训练，属于端侧训练与新型硬件方向；把器件噪声“变废为宝”做成可证明的差分隐私机制，软硬件协同思路新颖。作者来自香港大学、南方科技大学等，未见公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.18169" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

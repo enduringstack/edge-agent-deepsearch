@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SPORK: Self-Speculative Forking to Accelerate Agentic LLM Inference</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-03 · Huajun Bai, Weiwei Lv, Huichuan Zheng, Youyou Lu, Jiwu Shu / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:工具调用</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM agent 的思考-行动-观察循环中 GPU 等工具返回常占 16-37% 墙钟时间；SPORK 让模型当自己的预测器，提前 fork 出工具名预测并行执行。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">Qwen3-32B 上工具名预测准确率 74.6-99.6%；GAIA P95 降 18%（131.9→108.1s）；覆盖 4B-32B dense 和 MoE 模型；准确率 1pp 内。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">生成起始 fork 探针预测工具名，prefix-cache fork 降成本，置信度门控过滤误测，部分 token 接受把拒测变投机解码草稿；拒绝则回退串行无正确性损失。</span></div>
-<div class="score-reason">评分依据：agent 推理加速，工具调用并行隐藏等待，可迁移端侧 agent（relevance 8）。模型自预测+prefix-cache fork+部分 token 接受免训练创新（contribution 8）。作者清华，开源，学校项目。</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-03 · Huajun Bai, Weiwei Lv, Huichuan Zheng, Youyou Lu, Jiwu Shu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Meituan</span><span class="tag">方向:工具调用</span><span class="tag">方向:投机解码</span><span class="tag">方向:调度服务</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">SPORK 解决智能体“想好要调工具→等工具返回”期间 GPU 空转的问题：让模型在推理刚开始时就预测出要调用哪个工具并提前执行，把等待藏到思考过程里。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">生成初期分叉出的探针预测 Qwen3-32B 下一个工具名的准确率为 74.6%~99.6%；在真实工具基准上把 GAIA 的 P95 延迟降低 18%（131.9 秒到 108.1 秒），4B 到 32B 的稠密和 MoE 模型都有效，任务准确率与基线相差在 1 个百分点内或更好。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用前缀缓存低成本分叉一个预测分支，经置信度门控后提前派发工具调用；猜中就直接用结果，猜错退回串行执行，被拒的探针还可作为投机解码草稿；整体只是标准补全接口之上的一层薄控制器，无需训练。</span></div>
+<div class="score-reason">评分依据：针对智能体运行时“推理—工具调用”串行等待的通用优化，可迁移到本地智能体，但实验在服务器 GPU 上进行；用模型自身做预测器、无需训练即可部署，思路新颖。 作者机构依据：arXiv PDF 首页署名 Meituan（PDF 首页作者 2（Weiwei Lv）署名 Meituan，其余作者来自清华大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.03333" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

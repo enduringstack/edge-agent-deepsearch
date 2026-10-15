@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Edge-Aware Thermal Infrared UAV Swarm Tracking</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-29 · Yu-Hsi Chen / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">热红外（TIR）成像对无人机集群在视觉退化环境中的行动至关重要，作者针对此展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=0)；affiliation 待核实</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-29 · Yu-Hsi Chen / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">针对热红外画面中的无人机集群追踪，作者设计了一条兼顾准确率和计算开销、适合边缘设备实时运行的在线多目标追踪流程。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 i7-12650H 加 RTX 4050 笔记本 GPU 上，完整流程在 BSB 基准上 HOTA 约 0.826、MOTA 约 0.636，速度约 126 到 132 帧每秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">核心是自适应运动学卡尔曼滤波：在线性卡尔曼滤波上加入随状态变化的运动学建模，应对无人机急机动和热成像抖动，同时保持计算量小；再配合短暂误检抑制和按运动学预测补位，让目标被遮挡时轨迹不断。</span></div>
+<div class="score-reason">评分依据：明确以边缘实时部署为约束，但只在笔记本 GPU 上评测、没有真正的嵌入式设备，相关度 5；方法是对卡尔曼滤波的工程改进，贡献 3。作者为墨尔本大学。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.12544" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

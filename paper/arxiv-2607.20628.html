@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>RealVDeblur: One-Step Diffusion for Generalizable Real-World Video Deblurring</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-22 · Renbiao Jin; Mingxin Yang; Yutian Chen; Junhao Zhuang; Xin Cai; Mulin Yu; Linning Xu; Wenxian Yu / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Real-world video deblurring remains challenging due to diverse motion patterns, complex degradations, and the scarcity of realistic training data, yet robust re…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-22 · Renbiao Jin; Mingxin Yang; Yutian Chen; Junhao Zhuang; Xin Cai; Mulin Yu; Linning Xu; Wenxian Yu / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">真实拍摄的视频常因手抖和物体运动而模糊，RealVDeblur 用视频扩散先验做去模糊，并把多步采样蒸馏成一步，面向手机影像和三维重建等下游场景。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">论文在多个真实场景基准上报告了更好的感知质量、语义保真和时序一致性，并改善了严重运动模糊下的三维重建效果；摘要与首页未给出具体提速倍数。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用三维高斯泼溅场景和高帧率视频合成符合物理的模糊训练数据；关掉 VAE 的时间压缩改为逐帧编码，把多步扩散蒸馏成单步生成器，再用免训练的时间窗口掩码让长视频推理保持恒定显存。</span></div>
+<div class="score-reason">评分依据：一步蒸馏和恒定显存推理对部署有帮助，手机影像只是应用背景，未做端侧实验（相关度 3）。数据合成管线与一步扩散去模糊的组合工程扎实（贡献 5）。作者来自上海交通大学、上海人工智能实验室、香港中文大学等，项目页提供代码。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.20628" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

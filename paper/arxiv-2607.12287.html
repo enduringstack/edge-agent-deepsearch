@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Reducing Temporal Redundancy for Efficient Vision-Language-Action Inference</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-14 · Yuzhou Wu; Yuxin Zheng; Muchun Niu; Yishan Yang; Tianhao Liu; hanwen kang; Jiajian Jing; Linfeng Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Vision-Language-Action (VLA) models exhibit strong generalization for robotic manipulation, yet their high inference latency limits real time deployment.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-14 · Yuzhou Wu; Yuxin Zheng; Muchun Niu; Yishan Yang; Tianhao Liu; hanwen kang; Jiajian Jing; Linfeng Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">针对机器人视觉-语言-动作（VLA）模型推理太慢的问题，从感知和动作生成两端去掉连续帧之间的重复计算。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LIBERO、RobotWin 和真实双臂机器人上整体加速 2 倍以上，通用操作任务成功率最高 98%；以 π0.5 为例，采样步数从 10 步压到 2 步，延迟从 286.9 ms 降到 121.2 ms，控制频率从 3.5 提高到 8.2 帧每秒，平均成功率 93.8%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">感知侧只增量更新画面中动态区域对应的视觉 token，不再整帧重新编码；动作侧通过面向效率的训练把扩散采样压缩为 2 步。</span></div>
+<div class="score-reason">评分依据：机器人实时控制是端侧推理的重要场景，方法在真实机器人上验证了加速效果，但论文没有说明是否在机载低功耗芯片上运行；增量编码和少步采样是已有思路的组合。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.12287" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

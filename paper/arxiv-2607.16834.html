@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Robust PnP on a Neuromorphic Processor for Object Pose Estimation</h1>
 <div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-18 · Tam Ngoc-Bang Nguyen; Mohsi Jawaid; Tat-Jun Chin / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:SNN</span><span class="tag">硬件:神经形态</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Neuromorphic computing is gaining attention in robotic perception due to its higher energy efficiency.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">硬件:神经形态</span><span class="tag">方向:能耗功耗</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">神经形态芯片省电，但物体位姿估计中的几何求解步骤很难在上面运行。这篇工作把鲁棒 PnP 求解改写成能在神经形态处理器上执行的形式，并配套脉冲神经网络预测关键点。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Intel Loihi 2 神经形态硬件上运行，原文报告其能效高于常规实现、精度具有竞争力；摘要未给出具体能耗数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">设计一种分布式的刚体位姿鲁棒最小二乘算法，用神经形态处理器的指令集表达；前端用按脉冲神经元原理设计的网络从事件相机数据中预测 2D 关键点，从感知到几何优化全流程上芯片。</span></div>
+<div class="score-reason">评分依据：在真实神经形态芯片上完成机器人感知流水线的主要环节，属低功耗端侧硬件方向，相关度中等偏上；把非学习类几何求解搬上神经形态芯片是少见尝试。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.16834" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

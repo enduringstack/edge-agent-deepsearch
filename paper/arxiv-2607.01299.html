@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>HYPIC: Accelerating Hybrid-Attention LLM Serving with Position-Independent Caching</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-01 · Yifei Liu, Juntong Wu, Yang Liu et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效注意力</span><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span><span class="tag">应用:RAG</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出Hypic，首个支持位置无关缓存的混合注意力LLM服务系统，用段累积转移算子缓存线性注意力段状态、用边界接缝窗口重算恢复跨段回看，并并行化缓存未命中prefill。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在四个混合注意力模型五个负载上平均TTFT降2.45x，峰值吞吐最多提升2.0x，精度与全重算差距在3.3点内。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：云端LLM服务系统，非端侧；首个PIC+混合注意力结合，代数原语创新高。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-07-01 · Yifei Liu, Juntong Wu, Yang Liu et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">Xiaohongshu</span><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span><span class="tag">方向:高效注意力</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">HYPIC 让混合注意力大模型（多数层是线性注意力）也能复用不连续文本片段的缓存，加速 RAG 和智能体场景的长提示预填充。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在四个混合注意力模型和五类负载上，首 token 时延平均比前缀缓存降低 3.25 倍、每秒请求数提升 1.66 倍，与完全重算相比任务质量只差 1.71 分。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对线性注意力层缓存每个片段的累积转移算子和零起点末状态，实现片段近乎精确的常数时间拼接；对全注意力层只在片段开头的小窗口重算以修复跨片段注意力，并把缓存未命中的预填充按片段并行到多个实例。</span></div>
+<div class="score-reason">评分依据：线性和混合注意力是端侧友好的架构，片段缓存复用对智能体推理有迁移价值，但系统面向云端多实例服务；首次让位置无关缓存适配混合注意力，创新较高。PDF 首页四位作者署名小红书。 作者机构依据：arXiv PDF 首页署名 Xiaohongshu（PDF 首页作者 Yifei Liu、Minghao Li、Xiaoxu Chen、Weihang Chen 署名 Xiaohongshu Inc.（xiaohongshu.com 邮箱），另有北京大学、上海交通大学作者）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01299" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

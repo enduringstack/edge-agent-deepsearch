@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>How to Self-Host a Validated AI Coding Assistant with NVIDIA NeMo Guardrails</h1>
-<div class="meta"><span class="score">13</span> <span class="tier">官方动态</span>  2026-07-29 · NVIDIA / NVIDIA</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">NVIDIA 技术博客讲解用 NeMo Guardrails 自建可验证的 AI 编程助手，属开发者教程。</span></div>
+<div class="meta"><span class="score">5</span> <span class="tier">官方动态</span>  2026-07-29 · NVIDIA / NVIDIA</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:云端serving</span><span class="tag">方向:安全隐私</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">NVIDIA 教程演示如何在企业自有 GPU 上自建 AI 编程助手：源码不出内网，用护栏拦截涉及敏感代码的请求，并在 CI 中查出模型编造的依赖包。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：NVIDIA 官方动态（命中官方域名白名单）</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 StarCoder2-7B NIM 在至少 24GB 显存的自有 GPU（如 A10、L4）上提供代码补全，前面加一层 NeMo Guardrails 策略，拒绝涉及认证、支付、加密等只允许人工修改的路径；提交进入 CI 后跑单测、静态扫描、密钥扫描、虚构依赖检测和许可证检查，再用 Prometheus/Grafana 统计缺陷逃逸率反过来收紧策略。</span></div>
+<div class="score-reason">评分依据：方案在数据中心级 GPU 上做私有化部署，属于服务端部署，相关度 2；由现成组件工程整合而成，贡献 3。</div>
 <div class="source"><a href="https://developer.nvidia.com/blog/how-to-self-host-a-validated-ai-coding-assistant-with-nvidia-nemo-guardrails/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

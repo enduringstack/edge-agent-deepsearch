@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>OrthKD: Extracting Generalized Clinical Knowledge from Heterogeneous Teachers for Lightweight Deployment</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-28 · Yi Xu; Cheng Chen; Mufan Cao / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在初级保健中部署糖尿病视网膜病变（DR）筛查模型需要兼顾高效且在分布偏移下保持准确安全的端侧系统，作者针对此。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-28 · Yi Xu; Cheng Chen; Mufan Cao / IJCAI-ECAI 2026 Special Track on AI and Health</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:测试时自适应</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">为基层医疗的糖尿病视网膜病变筛查设计的蒸馏方法 OrthKD，把强弱不同的两个教师模型的知识有选择地压进一个 540 万参数的轻量学生网络。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 13.2 万张视网膜图像上，MobileNetV3 学生在 EyePACS 上二次加权 Kappa 达 0.885，超过两个教师（0.876、0.830）；在未见过的 Messidor-2 上从 0.507 提升到 0.728。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对强的 CNN 教师做完整监督蒸馏，对较弱的 Swin Transformer 教师只蒸馏特征，并约束学生里两条教师专属投影相互正交，让两者提供互补而非重复的信息。</span></div>
+<div class="score-reason">评分依据：明确面向资源受限设备的医学筛查部署，学生网络足够轻量，但未做真机测速，相关度中等；选择性信任的多教师蒸馏有一定新意。作者来自同济大学，论文被 IJCAI-ECAI 2026 的 AI 与健康专题收录。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.25545" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

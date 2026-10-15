@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FlowBlock: Wavefront-Parallel Decoding for Self-Correcting Diffusion Language Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-20 · Bing Tian; Haikun Liu; Xiaocheng Zhong; Zhuohui Duan; Zhaokai Luo; Huayi Jin; Zhiyong Wang; Xiaofei Liao / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Block-wise diffusion large language models (dLLMs) decode sequentially at the block level, enabling effective KV-cache reuse across blocks but making inter-bloc…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-07-20 · Bing Tian; Haikun Liu; Xiaocheng Zhong; Zhuohui Duan; Zhaokai Luo; Huayi Jin; Zhiyong Wang; Xiaofei Liao / arXiv</div>
+<div class="tags"><span class="vendor-tag">Xiaohongshu</span><span class="tag">方向:高效推理</span><span class="tag">方向:KV cache</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">分块扩散语言模型只能一块接一块串行解码，FlowBlock 利用模型自我纠错能力，让后面的块不必等前面的块完全定稿就开始并行生成，且无需重新训练。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">相比串行分块的 LLaDA-2.1 和 LLaDA-2.0，每秒生成 token 数最高提升 2.95 倍和 4.01 倍，延迟最高降低 53.6% 和 77.1%，平均准确率提升 1.3 分；相比需训练的 D2F，批量服务吞吐最高高 16 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用“就绪门控”决定哪些块可进入并行波前，借助逐 token 编辑修正基于稍旧上文写出的草稿，并按顺序提交以精确复用已冻结前缀的 KV cache；多请求的异步窗口被打包成形状稳定的批量前向。</span></div>
+<div class="score-reason">评分依据：扩散语言模型的免训练并行解码，属于推理加速技术栈，可迁移但尚未面向端侧。“块定稿从硬依赖变成调度资源”的思路新颖。PDF 首页作者 3、5、6、7 署名小红书（Xiaohongshu Inc.），其余为华中科技大学。 作者机构依据：arXiv PDF 首页署名 Xiaohongshu（PDF 首页作者 Xiaocheng Zhong、Zhaokai Luo、Huayi Jin、Zhiyong Wang 署名 Xiaohongshu Inc., China，与华中科技大学合作）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.17652" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

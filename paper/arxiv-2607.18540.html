@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Recti-Q: Feature-Space Rectification for Out-of-Distribution-Robust Quantized Perception in Edge Robotics</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-20 · Hamidreza Yaghoubi Araghi; Parastoo Pilevar; Ming C. Lin / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Robotic perception pipelines increasingly rely on large vision backbones deployed on SWaP-constrained edge platforms, making post-training quantization (PTQ) at…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-07-20 · Hamidreza Yaghoubi Araghi; Parastoo Pilevar; Ming C. Lin / IROS 2026</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:测试时自适应</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">机器人在边缘设备上跑 4 比特量化视觉模型时，干净数据上精度几乎不掉，但遇到噪声、恶劣天气等分布偏移会明显变差。Recti-Q 用一个极小的适配器把这部分鲁棒性补回来。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 PACS 和 ImageNet-C 上，W4 量化模型的分布外精度最多比 FP32 低 5.62 个百分点，Recti-Q 在该最差项上补回 2.68 个百分点，部分场景超过 FP32；适配器参数不到 1%，最小仅 6 KB，保留 99% 以上的量化内存节省。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">冻结量化后的主干网络，只在分类头上训练一个小型 LoRA 适配器，用源域数据在特征空间做校正，可不依赖全精度教师模型，适配器还能通过低带宽空中升级下发给已部署的机器人。</span></div>
+<div class="score-reason">评分依据：直接面向资源受限边缘平台上的量化感知模型，属端侧量化部署的鲁棒性问题，相关度较高；指出量化导致的鲁棒性缺口并给出极轻量的修复办法，贡献中上。作者均为马里兰大学，IROS 2026 接收（不在顶会名单内）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.18540" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

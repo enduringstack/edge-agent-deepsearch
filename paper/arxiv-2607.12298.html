@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Emulated Integrity Replica: Enabling Self-Healing on FPGA SoCs via Hierarchical Twins</h1>
 <div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-14 · Arsalan Ali Malik; Ali Suvizi; Guru Venkataramani; Aydin Aysu / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Convolutional neural networks (CNNs) are increasingly being deployed on system-on-chip (SoC) platforms, where hardware-accelerated inference enables low-latency…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">硬件:FPGA</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">为部署在 FPGA SoC 上的 CNN 加速器提供自动的故障检测与恢复，不用像双模/三模冗余那样复制硬件。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 AMD/Xilinx Zynq-7000 上，对最重要的前 30% 神经元达到 95% 以上的故障检测率；EIR 不增加可编程逻辑面积，而双模冗余要多用约 2.0 到 2.25 倍逻辑资源、功耗从 2.98 W 升到 5.79 W；状态写回恢复只需 5.7 ms。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用加速器运行时处理器核的空闲周期运行两个“数字孪生”：粗粒度行为模型快速发现故障，细粒度门级模型从检查点精确重建状态并写回。</span></div>
+<div class="score-reason">评分依据：面向边缘 AI 加速器的可靠性，在真实 FPGA SoC 上评测，对安全关键的端侧部署有直接价值；用处理器空闲周期做分层孪生的思路有新意，但只覆盖 CNN 加速器。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.12298" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

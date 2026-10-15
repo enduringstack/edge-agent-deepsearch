@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PolySim: Deterministic Polynomial Surrogates for Cross-Modal Retrieval on CiM</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-22 · Xinzhao Li; Charles Power; Pengyu Ren; Jongun Won; Likai Pei; Yuting Hu; Jinjun Xiong; Alptekin Vardar / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Cross-modal retrieval on edge devices benefits from probabilistic embeddings that capture semantic uncertainty, but deploying them on compute-in-memory (CiM) ha…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校顶会</span>  2026-07-22 · Xinzhao Li; Charles Power; Pengyu Ren; Jongun Won; Likai Pei; Yuting Hu; Jinjun Xiong; Alptekin Vardar / ICCAD 2026</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:多模态</span><span class="tag">应用:RAG</span><span class="tag">硬件:CIM</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">边缘设备上的跨模态检索若想用能表达不确定性的概率嵌入，就要做蒙特卡洛采样，而存内计算（CiM）交叉阵列只能做一次确定性的矩阵向量乘。PolySim 把概率检索改写成完全确定的流程，让它能跑在 CiM 硬件上。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在视频、图像、音频共六个检索基准上，R@1 比确定性基线最高提升 10.3%，与需要采样的 PCME 持平或更好；推理只需一次交叉阵列矩阵向量乘，在 CrossSim 器件非理想仿真下表现稳健。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用低阶多项式基近似每个高斯嵌入维度，再用一个可学习的双线性核计算相似度，去掉随机采样和非线性距离计算，同时保留分布信息，最终把检索压缩成一次可在交叉阵列上执行的矩阵向量乘。</span></div>
+<div class="score-reason">评分依据：直接面向边缘设备上的存内计算硬件部署，但硬件结果来自 CrossSim 器件仿真而非流片实测（相关度 7）。论文称是首个能在 CiM 上运行概率跨模态检索的方法，已被 ICCAD 2026 接收（贡献 7）。作者来自维拉诺瓦大学、圣母大学、布法罗大学和弗劳恩霍夫 IPMS。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.20358" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Parallelized Autoregressive Decoding for Omni-Modal Dense Video Captioning</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-03 · Wenzheng Zeng, Siyi Jiao, Chen Gao, Hwee Tou Ng, Mike Zheng Shou / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">方向:云端serving</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">给全模态密集视频字幕生成做并行自回归解码，利用时间上不同事件间的弱依赖让 token 跨事件并行生成。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">多基准上事件定位与字幕的效率与性能双优，无损并行生成。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">潜在全局规划学事件结构产紧凑 token 编码跨事件因果；事件因子化并行解码让弱依赖 token 并行、紧耦合 token 保序。</span></div>
-<div class="score-reason">评分依据：并行解码提效，视频生成非显式端侧但技术可参考（relevance 5）。弱依赖跨事件并行解码无损加速有创新（contribution 7）。作者 NUS，开源，学校项目。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-07-03 · Wenzheng Zeng, Siyi Jiao, Chen Gao, Hwee Tou Ng, Mike Zheng Shou / ECCV 2026</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">针对视频密集描述（给一段视频里的多个事件分别生成带时间定位的说明）逐 token 生成太慢的问题，提出并行自回归解码框架，让不同事件的描述可以同时生成。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">原文称在多个基准上同时提升了全模态事件定位与描述的效率和效果，摘要未给出具体加速倍数。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用不同事件之间依赖弱的特点重构因果依赖：先用潜在全局规划生成少量编码事件结构的 token，再按事件分块并行解码，同一事件内部仍按顺序生成以保证连贯。</span></div>
+<div class="score-reason">评分依据：属于视频大模型的推理效率优化，未涉及端侧设备，相关度偏低；按事件拆分并行解码的思路有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.02963" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SWE-Pruner Pro: The Coder LLM Already Knows What to Prune</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-20 · Yuhang Wang; Yuling Shi; Shaoqiu Zhang; Jialiang Liang; Shilin He; Siyu Ye; Yuting Chen; Kai Cai / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:代码</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Pruning long context for coding agents has been a vital technology for efficient context management.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-20 · Yuhang Wang; Yuling Shi; Shaoqiu Zhang; Jialiang Liang; Shilin He; Siyu Ye; Yuting Chen; Kai Cai / arXiv</div>
+<div class="tags"><span class="vendor-tag">ByteDance</span><span class="tag">方向:工具调用</span><span class="tag">方向:剪枝稀疏</span><span class="tag">应用:代码</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">编程智能体读工具输出时会塞进大量无关代码，浪费上下文。SWE-Pruner Pro 不再外挂单独的分类器，而是让智能体模型自己判断哪些代码行该保留。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在两个开源权重模型和四个多轮基准上，最多节省 39% 的提示和生成 token，任务质量不降、额外推理开销有限；在 MiMo-V2-Flash 上还让 SWE-Bench Verified 解决率提升 3.8%、长上下文 Oolong 准确率提升 2.2 个点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在模型内部接一个小分类头，读取模型读工具输出时的内部表示，为每一行给出保留或裁剪的标签，并加入与输出行数相关的长度感知嵌入。</span></div>
+<div class="score-reason">评分依据：上下文裁剪能降低智能体运行时的 token 和内存开销，对资源受限场景有迁移价值，但实验面向云端编程智能体；复用智能体自身表示做裁剪的思路简洁有效。PDF 首页作者 5、6、8 署名 Douyin Group（字节跳动旗下）。 作者机构依据：arXiv PDF 首页署名 ByteDance（PDF 首页作者 Shilin He、Siyu Ye、Kai Cai 署名 Douyin Group（抖音集团，即字节跳动）；其余作者来自上海交通大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.18213" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

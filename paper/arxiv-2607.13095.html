@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Full-Pipeline Inference Optimization for MiMo-V2.5 Series: Pushing Hybrid SWA Efficiency to the Limit</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-14 · Xiaomi MiMo Team; Anqi Liu; Aoxin Ma; Bo Chen; Bo Yang; Chen Wang; Chen Zhang; Chengda Tang / arXiv</div>
-<div class="tags"><span class="vendor-tag">Xiaomi</span><span class="tag">方向:KV cache</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效注意力</span><span class="tag">方向:多模态</span><span class="tag">方向:MoE</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">We present a full-pipeline inference optimization for the MiMo-V2.5 model family, which combines Hybrid Sliding Window Attention (Hybrid SWA), sparse Mixture-of…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Xiaomi（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-07-14 · Xiaomi MiMo Team; Anqi Liu; Aoxin Ma; Bo Chen; Bo Yang; Chen Wang; Chen Zhang; Chengda Tang / arXiv</div>
+<div class="tags"><span class="vendor-tag">Xiaomi</span><span class="tag">方向:云端serving</span><span class="tag">方向:KV cache</span><span class="tag">方向:高效注意力</span><span class="tag">方向:MoE</span><span class="tag">方向:多模态</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">小米 MiMo 团队介绍 MiMo-V2.5 系列模型在线上服务中的全链路推理优化，这类模型同时用了混合滑动窗口注意力、稀疏 MoE 和多模态编码器。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">长会话场景下服务端 KV cache 平均命中率达 93%；亲和性路由上线后二级缓存命中率提升约 25%、单节点输入吞吐提升约 30%；多模态编码缓存共享让命中率提升 30%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对 KV cache 做逐层预取、面向滑窗的前缀缓存树和专门的放置策略，使滑窗部分存储严格不随上下文增长；再配上基于 RDMA 的分布式缓存 GCache、按缓存亲和度分流的路由器，以及 GPU 图像预处理和并行视频解码。</span></div>
+<div class="score-reason">评分依据：面向数据中心的大规模在线服务优化，与端侧只有技术栈层面的宽泛联系；把混合滑窗、MoE 和多模态放进同一生产系统的工程经验较扎实。PDF 首页署名为 MiMo Team, Xiaomi。 作者机构依据：arXiv PDF 首页署名 Xiaomi（PDF 首页署名为“MiMo Team, Xiaomi”）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.13095" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>STEEL: Sparsity-Aware Fused Attention for Energy-Efficient Long-Sequence Inference on AMD's XDNA NPU</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-10 · Victor J. B. Jung; Gagandeep Singh; Joseph Melber; Kristof Denolf; Francesco Conti; Luca Benini / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效注意力</span><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:端云协同</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">硬件:NPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">The growing adoption of large language model-based agents within operating system workflows has increased the importance of energy-efficient inference on laptop…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">16</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-10 · Victor J. B. Jung; Gagandeep Singh; Joseph Melber; Kristof Denolf; Francesco Conti; Luca Benini / IEEE COINS 2026</div>
+<div class="tags"><span class="vendor-tag">AMD</span><span class="tag">方向:高效注意力</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:编译部署</span><span class="tag">硬件:NPU</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">笔记本电脑上的大模型智能体需要省电的本地推理，但注意力算子很难高效映射到 NPU 上。STEEL 是首个面向 AMD XDNA 类 NPU 的开源 FlashAttention 实现。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 AMD Ryzen AI 9 HX 370 上，能耗平均比 CPU 实现低 9.17 倍、比 GPU 实现低 1.75 倍；在 XDNA 1 上延迟比此前最佳方案平均降低 9.6 倍，在 XDNA 2 上比逐层实现的注意力平均快 22.8 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把预填充阶段的注意力改写成数据流形式，充分利用 NPU 阵列的空间并行和片上存储；针对因果掩码带来的负载不均，按稀疏性重新安排流水线在 NPU 阵列上的放置，减少同步开销、提高利用率。</span></div>
+<div class="score-reason">评分依据：直接在笔记本 SoC 的 NPU 上实测长序列推理的注意力算子，属于明确的端侧部署工作（相关度 9）。首个开源的 XDNA 类 NPU FlashAttention，数据流映射和稀疏感知放置有新意（贡献 7）。PDF 首页署名 AMD Research and Advanced Development 与苏黎世联邦理工、博洛尼亚大学。它是算子优化而非智能体闭环，因此不算端侧 Agent。 作者机构依据：arXiv PDF 首页署名 AMD（PDF 首页署名包含 AMD Research and Advanced Development (RAD)，与 ETH Zürich、University of Bologna 合作）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.09385" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

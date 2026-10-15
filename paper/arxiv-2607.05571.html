@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CSTutorBench: Benchmarking Small Language Models as Tutors for Block-Based Programming</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-06 · H. Chad Lane; Bryson Kageler / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一个评测小语言模型作为积木式编程课程导师的基准，面向 K-12 隐私与成本场景。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">11 个模型（4B-120B）在表层 criteria 表现好但在避免答案泄露、参与学生调试历史等深层教学行为上挣扎；指令调优比参数量更能预测质量。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">构建 17 个场景题，按教学 rubric 评分，配 human-in-the-loop LLM-as-judge 评估管线；并用教育提示工程做针对性 prompt 修订。</span></div>
-<div class="score-reason">评分依据：SLM 评测基准面向隐私/成本端侧部署（relevance 6）。基准构建属常见方法无明显突破（contribution 4）。vendors 空。</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-07-06 · H. Chad Lane; Bryson Kageler / arXiv</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">出于隐私和成本考虑，中小学课堂希望用可本地运行的小语言模型当编程辅导老师；CSTutorBench 是评估模型在积木式机器人编程环境里辅导能力的基准。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">对 11 个 4B-120B 模型的初步评测显示，模型在用词和语气上表现好，但难以避免直接泄露答案、也不善于结合学生的调试历史；一次有针对性的提示词修改让 11 个模型中的 10 个得分提升。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">设计 17 个情境问题，按教学评分细则打分，用人工参与的大模型评审流程评估各模型。</span></div>
+<div class="score-reason">评分依据：讨论的是小模型在教育场景的本地部署选型，与端侧推理只有间接关系；属于规模较小的应用评测。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.05571" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

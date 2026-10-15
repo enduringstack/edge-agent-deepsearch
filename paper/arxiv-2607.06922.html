@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Latency-Constrained DNN Architecture Learning for Edge Systems using Zerorized Batch Normalization</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-08 · Shuo Huai, Di Liu, Hao Kong, Weichen Liu, Ravi Subramaniam, Christian Makaya, Qian Lin / arXiv</div>
-<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:高效推理</span><span class="tag">方向:量化</span><span class="tag">硬件:Jetson</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">让神经网络在设计时就满足硬延迟约束，一次训练过程就学到符合边缘设备时延上限的模型。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">Jetson Nano 上 GoogLeNet 从 40.32ms 降到 34ms 仅掉 0.14%；TX2 上 VGG-19 从 119.98ms 压到 34ms 还高 0.5% 准确率。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">提出零化 BN 的延迟导向学习方法，配通用硬件定制延迟预测器，一次 shot 训练就学到满足时延约束的模型，配量化可进一步提升。</span></div>
-<div class="score-reason">评分依据：Jetson Nano/TX2 硬延迟约束 DNN 设计，明确端侧（relevance 8）。硬件定制延迟预测器+一次训练有工程价值但创新度中等（contribution 5）。作者 NTU，开源 ZeroBN，学校项目。</div>
+<div class="meta"><span class="score">13</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-08 · Shuo Huai, Di Liu, Hao Kong, Weichen Liu, Ravi Subramaniam, Christian Makaya, Qian Lin / Future Generation Computer Systems</div>
+<div class="tags"><span class="vendor-tag">HP</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:编译部署</span><span class="tag">方向:高效推理</span><span class="tag">硬件:Jetson</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在设计神经网络时直接把“延迟不超过多少毫秒”当成硬约束，一次训练就得到在指定边缘设备上满足时延要求、准确率尽量高的模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">ImageNet-100 上设定 34 毫秒约束：Jetson Nano 上 GoogLeNet 从 40.32 毫秒降到 34 毫秒，准确率只降 0.14%（叠加量化后只降 0.04%）；Jetson TX2 上 VGG-19 从 119.98 毫秒压到 34 毫秒，准确率还提高 0.5%；GoogLeNet 在 TX2 上反向扩到 34 毫秒，准确率提高 0.78%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把批归一化层的缩放系数“置零”来决定裁掉哪些神经元，训练时以延迟为目标调整各层宽度；再配一个可按硬件定制的通用延迟预测器，只需一次训练即可落到延迟预算内。</span></div>
+<div class="score-reason">评分依据：在 Jetson Nano/TX2 真机上按硬延迟约束设计网络，端侧部署目标明确；方法是对剪枝加延迟预测器的工程改进，创新中等。作者来自南洋理工大学、挪威科技大学和 HP Inc.，期刊版发表于 Future Generation Computer Systems。 作者机构依据：arXiv PDF 首页署名 HP（PDF 首页作者 Ravi Subramaniam、Christian Makaya、Qian Lin 署名 HP Inc., Palo Alto）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.06922" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

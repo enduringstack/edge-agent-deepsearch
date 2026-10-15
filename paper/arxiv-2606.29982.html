@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Beyond Uniform Experts: Cost-Aware Expert Execution for Efficient Multi-Device MoE Inference</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-06-29 · Hui Zang, Pengfei Xia, Hong Liu et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:MoE</span><span class="tag">方向:端云协同</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">模型:DeepSeek</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">CAEE 是硬件引导的运行时框架,用轻量校准成本模型估计硬件开销,选择剪掉低重要高成本专家并用低开销补偿重分配,避免额外数据移动。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 671B DeepSeek-R1 上端到端推理延迟降 8-18%,覆盖专家卸载和多设备端上执行,精度下降小于 1%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：多设备 MoE 推理含端上执行,成本感知剪枝有新意。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-06-29 · Hui Zang, Pengfei Xia, Hong Liu et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:MoE</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span><span class="tag">模型:DeepSeek</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">CAEE 针对多卡部署 MoE 大模型时“数据搬运成瓶颈、最慢设备拖后腿”的问题，按专家的重要性和实际硬件开销选择性跳过部分专家。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 671B 的 DeepSeek-R1 上，专家卸载和多设备直接执行两种部署方式下端到端推理时延降低 8%~18%，精度损失小于 1%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先离线标定轻量的硬件代价模型，估算每个专家的数据搬运成本并按最慢设备聚合；再在重要性损失受限的条件下做最小代价剪枝，被跳过专家的贡献用低开销补偿机制弥补。</span></div>
+<div class="score-reason">评分依据：面向多加速卡服务器上的 MoE 推理，其中专家卸载与按代价剪枝的思路可迁移到内存受限设备，但本身不是端侧场景；把硬件代价纳入专家选择有新意。 作者机构依据：arXiv PDF 首页署名 Huawei（arXiv 首页全部 8 位作者署名 Huawei Technologies Ltd）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.29982" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

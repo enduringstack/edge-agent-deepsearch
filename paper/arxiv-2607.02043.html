@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Towards Load-Aware Prefill Deflection for Disaggregated LLM Serving</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-02 · Shrikara Arun, Anjaly Parayil, Srikant Bharadwaj et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span><span class="tag">模型:DeepSeek</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">针对分离式LLM服务中prefill节点饱和、decode节点闲置的问题，提出主动prefill偏转调度器，让decode节点以分块prefill方式承接溢出请求以消除跨节点KV传输。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在vLLM上基于DeepSeek-V2-Lite实测，P95 TTFT最多降低81%，SLO达成率最多提升79%，路由开销亚毫秒级。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：云端A100集群LLM服务调度，非端侧；调度算法有创新。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-07-02 · Shrikara Arun, Anjaly Parayil, Srikant Bharadwaj et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">方向:KV cache</span><span class="tag">硬件:GPU</span><span class="tag">模型:DeepSeek</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">预填充与解码分离部署时，预填充节点常被突发流量挤爆，而解码节点算力闲着。这项工作让解码节点主动“接走”部分预填充请求。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 A100 集群（2 预填充 + 2 解码）上用 DeepSeek-V2-Lite 和生产风格流量测试，P95 首 token 延迟最多降低 81%，SLO 达成率最多提升 79%，每个请求路由开销不到 1 毫秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对每个排队请求估算在预填充节点和各解码节点上的首 token 延迟，在不违反解码 token 间隔 SLO 的前提下，把预填充分块插进解码批次就地执行，省掉跨节点 KV 传输。</span></div>
+<div class="score-reason">评分依据：纯数据中心 GPU 集群调度，与端侧关系较远（相关度 2）；负载感知的预填充转移有实用价值（贡献 6）。全部作者署名微软。 作者机构依据：arXiv PDF 首页署名 Microsoft（arXiv HTML/PDF 首页 5 位作者均署名 Microsoft，邮箱为 microsoft.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.02043" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

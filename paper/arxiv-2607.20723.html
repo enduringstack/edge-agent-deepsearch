@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Leaky Language Models: Stealing Architecture and Inference Optimizations via Per-Token Timing</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-22 · Sadegh Majidi; Niloofar Mireshghallah; Kazem Taram / arXiv</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:投机解码</span><span class="tag">模型:Llama</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">This work presents LeakyLMs, a set of attacks that leak proprietary model, architecture, and deployment information from production language models.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 NVIDIA（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-22 · Sadegh Majidi; Niloofar Mireshghallah; Kazem Taram / arXiv</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:安全隐私</span><span class="tag">方向:云端serving</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">LeakyLMs 证明，只看大模型逐个 token 吐字的时间，就能从外部推断出服务商用了什么推理优化和模型结构，即便只能通过远程 API 访问。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">实测推断出 Google Gemini Flash 2.5 使用了投机解码，草稿模型上下文窗口约 128K token；在 Llama 模型上，接近正确的结构配置有超过 90% 的概率出现在前 10 个猜测中。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">一类攻击通过时延模式识别是否启用投机解码及草稿模型上下文长度；另一类先在 NVIDIA GPU 上建立“生成时延随层数、隐藏维度、注意力头数变化”的精细模型，再据此在结构空间里搜索最匹配的配置。</span></div>
+<div class="score-reason">评分依据：研究对象是云端推理服务的时序侧信道，与端侧部署只有间接联系（相关度 3）。首次用逐 token 时延同时泄露推理优化和模型结构，结论对投机解码等优化的安全性有警示意义（贡献 6）。PDF 首页作者来自普渡大学和卡内基梅隆大学，未见公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.20723" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>HyphaeDB: A Living Knowledge Topology for Agent-First Memory</h1>
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-27 · Krishna Halaharvi / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:端侧agent</span><span class="tag">应用:代码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">HyphaeDB 把 HNSW 图拓扑重解释为多 agent 通信结构,agent 是向量空间节点,知识通过邻居结构 gossip 传播并能量衰减,涌现矛盾检测和共识形成。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">提供 PostgreSQL+pgvector 参考实现并在多 agent 软件工程方法中部署;性能基准数据未报告。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：agent 记忆基础设施,与端侧 AI 无关。</div>
+<div class="tags"><span class="tag">方向:记忆</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">HyphaeDB 是一个面向多智能体的记忆系统，把向量数据库里的 HNSW 近邻图当成智能体之间传递知识的网络，而不只是被动查询的存储。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每个智能体是向量空间中的固定节点，知识沿图的邻居结构以“闲聊协议”传播并随距离衰减，从局部交互中涌现矛盾检测、模式沉淀和共识；参考实现基于 PostgreSQL 和 pgvector。</span></div>
+<div class="score-reason">评分依据：属于智能体记忆基础设施，没有端侧部署内容，相关度低；思路新颖但以架构设计和理论分析为主，缺少量化实验。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.28781" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

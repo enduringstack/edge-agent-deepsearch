@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Enhancing Small Language Models Reasoning through Knowledge Graph Grounding</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-14 · Dimitrios Kelesis; Konstantinos Bougiatiotis; Georgios Paliouras / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">模型:Llama</span><span class="tag">模型:Gemma</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Although large language models (LLMs) have set benchmarks for zero-shot reasoning, their deployment remains cost-prohibitive and environmentally taxing.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-07-14 · Dimitrios Kelesis; Konstantinos Bougiatiotis; Georgios Paliouras / ESWC 2026 Causal NeSy Workshop</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">模型:Gemma</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究如何让 1B~4B 的小语言模型通过调用知识图谱工具，补上多跳关系推理的短板。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 CLUTRR 亲属关系推理基准上，图神经网络给出的提示比只读故事的基线提升 1.5~2 倍；但小模型自己抽取事实时错误会沿推理链累积，部分模型还会被噪声事实干扰。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把 Gemma 3（1B、4B）和 Llama 3.2（3B）包装成只有两个工具的极简智能体：一个抽取三元组，一个调用关系图卷积网络获得推理提示。</span></div>
+<div class="score-reason">评分依据：小模型加工具调用的智能体推理，对低资源 Agent 有参考价值，但没有在设备上部署评测；方法是工具增强推理的常规组合，主要贡献在问题刻画。作者来自希腊 Demokritos 国家研究中心。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.14149" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

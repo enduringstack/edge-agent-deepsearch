@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DualDecoder: Accelerate Long Context LLM Inference by Predictive Prefetch</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-29 · Zuning Liang; Zhiyi Yao; Qi Chen; Yuedong Xu; Hao Dai; Zhiqiang Ding; Tongkai Yang; Jinlong Hou / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:端云协同</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">长上下文推理正成为现代 LLM 服务的基础能力，尤其受新兴 agent 应用驱动，作者针对该问题展开。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-29 · Zuning Liang; Zhiyi Yao; Qi Chen; Yuedong Xu; Hao Dai; Zhiqiang Ding; Tongkai Yang; Jinlong Hou / arXiv</div>
+<div class="tags"><span class="vendor-tag">Ant Group</span><span class="tag">方向:KV cache</span><span class="tag">方向:稀疏注意力</span><span class="tag">方向:云端serving</span><span class="tag">应用:长上下文推理</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">DualDecoder 是一个长上下文大模型推理系统，把大部分 KV cache 放在主机内存里，并提前预测下一步要用哪些 KV 再预取回 GPU，省下 GPU 显存。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">解码吞吐量比现有最好系统最高提升 2.62 倍，同时保持解码延迟和模型质量。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用“前一个推测 token 就能准确预测下一步需要的关键 KV”这一观察，设计双 token 解码流水线识别关键 KV，并按层调度传输让预取与计算重叠，再用分层显存管理器缩小运行时缓冲。</span></div>
+<div class="score-reason">评分依据：稀疏 KV cache 卸载与预取，主要面向云端高并发服务，但对内存受限设备的长上下文推理有迁移价值（相关度 4）；用推测 token 预测关键 KV 的思路有新意（贡献 6）。PDF 首页署名含蚂蚁集团（3 位作者），与复旦大学合作。 作者机构依据：arXiv PDF 首页署名 Ant Group（PDF 首页作者 Hao Dai、Zhiqiang Ding、Tongkai Yang 署名 Ant Group 并使用 antgroup.com 邮箱，与复旦大学合作）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.26475" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

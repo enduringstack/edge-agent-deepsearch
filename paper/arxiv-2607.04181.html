@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CoCoScale: Leveraging Layer-wise Scaling to Unlock the Potential of Online LLM Serving</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-05 · Jingfeng Wu; Yiyuan He; Minxian Xu; Xitong Gao; Chong Ma; Le Chen; Min Shen; Lin Qu / arXiv</div>
-<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在线 LLM serving 的层粒度动态扩缩容机制，在热点层做细粒度并行扩展。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">冷启动延迟相对传统 scale-up 降 97.9%-99.3%，生产 trace 上平均延迟降 20.7%-28.1%，SLO 达成率 100%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">CoCoScale 选择性把热点层并行度扩展到从欠载设备回收的空闲资源，实现不改模型架构、不加硬件的弹性数据并行。</span></div>
-<div class="score-reason">评分依据：云端在线 LLM serving 扩缩容（relevance 4，云端serving）。层粒度弹性扩展有系统创新（contribution 6）。vendors 空。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-07-05 · Jingfeng Wu; Yiyuan He; Minxian Xu; Xitong Gao; Chong Ma; Le Chen; Min Shen; Lin Qu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">CoCoScale 解决在线大模型服务流量严重倾斜时扩缩容太慢的问题：不再整份复制模型，而是只把热点层的并行度扩展到其他闲置设备上。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">相比传统扩容，冷启动延迟降低 97.9%~99.3%；在生产流量轨迹下平均延迟降低 20.7%~28.1%，并完全达成服务目标。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按层做动态扩缩，把热点层的数据并行扩展到从低负载设备回收的闲置资源上，不改模型结构也不增加硬件。</span></div>
+<div class="score-reason">评分依据：属于云端集群的服务扩缩容优化，与端侧部署关系很弱；层级细粒度扩缩容的思路有新意。 作者机构依据：arXiv PDF 首页署名 Alibaba（PDF 首页作者 5~8（Chong Ma、Le Chen、Min Shen、Lin Qu）署名 Alibaba Group Inc）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.04181" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

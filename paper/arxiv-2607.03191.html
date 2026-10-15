@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AIGOR: A Modular, Event-Driven Neuromorphic Architecture for Configurable SNN Inference</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-07-03 · Pierpaolo Perticaroli, Roberto Ammendola, Andrea Biagioni, et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span><span class="tag">硬件:MCU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">模块化事件驱动神经形态架构，用参数化 IP 块组装 SNN 推理核，神经元模型/精度/折叠/核划分可配置。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">AMD Versal VPK180 上前馈图像分类器复现 snnTorch 精度，循环网络跨双 FPGA 多核匹配 NEST 脉冲级精度；千核 3D torus 仿真验证。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">时间步同步处理核间用包交换通信层交换脉冲；单一声明式规格生成核/神经元内核/突触内存镜像。</span></div>
-<div class="score-reason">评分依据：神经形态 SNN 推理架构，端侧硬件（relevance 8）。模块化可配置 IP 块+多核包交换有架构创新（contribution 6）。作者 INFN，学校项目。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-03 · Pierpaolo Perticaroli, Roberto Ammendola, Andrea Biagioni, et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">硬件:FPGA</span><span class="tag">硬件:神经形态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">AIGOR 是一个模块化、事件驱动的脉冲神经网络推理硬件架构，可以按需配置神经元模型、数值精度和多核划分，避免每换一个网络就重新设计芯片。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 AMD Versal VPK180 FPGA 上验证：前馈图像分类器复现 snnTorch 参考精度，循环网络在跨两块 FPGA 的多核上与 NEST 参考达到脉冲级一致；多节点同步方案在仿真中扩展到一千个核。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把神经元组织成按时间步同步的处理核，核间以数据包交换脉冲；由一份声明式配置自动生成处理核、神经元内核和突触存储映像。</span></div>
+<div class="score-reason">评分依据：属于低功耗神经形态推理硬件方向，与端侧低功耗推理相邻，但原型面向 FPGA 大板验证；可配置的模块化设计有工程价值。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.03191" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

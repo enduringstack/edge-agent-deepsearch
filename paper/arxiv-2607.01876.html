@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SAB-LVLM: Significance-Aware Binarization for Large Vision-Language Models</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-02 · Qi Lyu, Jiahua Dong, Baichen Liu et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">SAB-LVLM 针对大型视觉语言模型做显著性感知二值化,用空间显著性图区分单模态与跨模态激活权重,在约 1-bit 压缩下优于已有二值化 PTQ 方法。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">约 1-bit 压缩约束下优于现有 binary PTQ 方法;未报告具体精度数字。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：二值化(量化)面向资源受限设备;跨层跨模态显著性图+交替更新,创新较高。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-02 · Qi Lyu, Jiahua Dong, Baichen Liu et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:多模态</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把大型视觉语言模型压缩到约 1 比特（二值化）时，不同层、不同模态的权重重要性不一样。SAB-LVLM 按重要性区别对待，减少二值化带来的掉点。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen2.5-VL（7B/32B/72B）和 InternVL3.5（8B/14B/38B）上、约 1 比特压缩约束下，多个多模态基准成绩优于现有二值后训练量化方法。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">分别用文本和图像校准数据构造 Hessian，得到区分单模态与跨模态激活权重的重要性图，再把它作为误差重加权项，交替更新完成二值化拟合。</span></div>
+<div class="score-reason">评分依据：约 1 比特的视觉语言模型后训练量化，直接服务资源受限设备部署（相关度 6）；跨模态重要性加权的二值化有一定新意（贡献 6）。作者机构为中科院沈阳自动化所、MBZUAI、上海交大，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01876" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

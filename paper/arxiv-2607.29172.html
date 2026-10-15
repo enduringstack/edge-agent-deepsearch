@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning</h1>
-<div class="meta"><span class="score">17</span> <span class="tier school">学校预印本</span>  2026-07-31 · Yuxin Chen; Hari Srikanth; Nathan Jew; Menglin Wu; Pengcheng Wang; Junli Ren; Masayoshi Tomizuka; Peng Xu / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">机器人基础模型越来越强，但最强的都是闭源、用私有数据训练的，限制了后续发展。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">直接监督微调已明显优于同数据训练的开源 VLA；加入 CLIFT 后，两轮闭环迭代就把敏捷、接触密集任务推到接近满成功率。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">每轮在真实机器人上执行策略，收集奖励和失败状态，再把这些反馈整理成 API 可接收的监督样本继续微调，形成部署—反馈—再训练的闭环。</span></div>
-<div class="score-reason">评分依据：使用 Gemini Robotics On-Device 并在真实人形机器人上做闭环迭代，两轮达到接近满成功率；端侧机器人相关性和实证强度都高。</div>
+<div class="meta"><span class="score">16</span> <span class="tier company">公司项目</span>  2026-07-31 · Yuxin Chen; Hari Srikanth; Nathan Jew; Menglin Wu; Pengcheng Wang; Junli Ren; Masayoshi Tomizuka; Peng Xu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Google; NVIDIA</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Gemini Robotics On-Device 这类闭源机器人模型只开放“交数据、拿微调结果”的接口，没法做强化学习式的闭环改进。CLIFT 研究在真实人形机器人上如何只靠这个接口把模型调到接近满分。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Unitree G1 人形机器人三项接触密集任务上，两轮闭环后成功率分别从 93% 到 100%、70% 到 98%、53% 到 96%；同样流程用于开源 π0.5 也有提升（如 5% 到 30%），但上限明显更低。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每轮把当前策略部署到真机上采集 100 次执行，用偏好校准的奖励模型给每段动作打分，并把优劣编码成特殊的优势标记写进普通微调数据，提交给托管微调接口；部署时以正向优势标记作为条件生成动作。</span></div>
+<div class="score-reason">评分依据：在真实人形机器人上运行端侧机器人基础模型并做部署-反馈-再训练闭环，实机证据扎实、思路新颖；它是动作策略模型，不含规划、记忆或工具调用，因此不算端侧智能体。公司归属依据：arXiv PDF 首页作者 8、9 署名 Google DeepMind，作者 10 署名 NVIDIA Research。 作者机构依据：arXiv PDF 首页署名 Google, NVIDIA（PDF 首页作者 8 Peng Xu、作者 9 Jinyu Xie 署名 Google DeepMind，作者 10 Ran Tian 同时署名 NVIDIA Research；其余作者为 UC Berkeley）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29172" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

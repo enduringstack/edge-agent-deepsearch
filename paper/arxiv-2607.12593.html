@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Improving Autonomous Nano-drones Performance via Automated End-to-End Optimization and Deployment of DNNs</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-14 · Vlad Niculescu; Lorenzo Lamberti; Francesco Conti; Luca Benini; Daniele Palossi / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">The evolution of energy-efficient ultra-low-power (ULP) parallel processors and the diffusion of convolutional neural networks (CNNs) are fueling the advent of …</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-14 · Vlad Niculescu; Lorenzo Lamberti; Francesco Conti; Luca Benini; Daniele Palossi / IEEE JETCAS</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:量化</span><span class="tag">硬件:MCU</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把纳米无人机的视觉导航 CNN 从训练到部署全流程自动化，部署到 Crazyflie 2.1 无人机上的 GAP8 超低功耗多核芯片上做闭环飞行。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">相比手工设计的原版网络，内存占用减半、推理快 1.6 倍且精度不变；实飞中避障制动速度最高 1.65 m/s，熟悉环境中自由飞行可达 1.96 m/s（基线 0.5 m/s），并能完成带 90 度转弯的循迹，计算只占无人机功耗预算的不到 1.6%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 NEMO/DORY 等工具链自动完成 8 比特量化、数据分块和面向 GAP8 的代码生成，替代容易出错的手工迭代部署流程，并全部开源。</span></div>
+<div class="score-reason">评分依据：在超低功耗 MCU 级芯片上真机闭环飞行验证，是典型的端侧部署工作；不过这是 2021 年已发表于 IEEE JETCAS 的论文，工具链本身也已有，新意有限。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.12593" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

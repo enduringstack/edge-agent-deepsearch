@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>The Wiola Architecture for Efficient Small Language Models</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-07-01 · Aryuemaan Kumar Chowdhury, Afreen Shaik, Yaparla Bhargavi et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">模型:Llama</span><span class="tag">模型:Mistral</span><span class="tag">模型:GPT</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出从零原创的Wiola小语言模型架构，含螺旋旋转位置编码、门控跨层注意力、自适应token合并、双流前馈和带偏置RMSNorm五个新组件，发布120M到1.5B四档。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">提供完整数学推导、复杂度分析与对比，四档模型全部兼容HuggingFace，22个架构单元测试通过。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：原创SLM架构、最大1.5B适配端侧；五组件新颖但缺端侧实测效果对比。</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-07-01 · Aryuemaan Kumar Chowdhury, Afreen Shaik, Yaparla Bhargavi et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:高效注意力</span><span class="tag">方向:KV cache</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Wiola 是一个从零设计的小语言模型架构，提出五个新组件，定义了 1.2 亿到 15 亿参数四个规模。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未完成预训练评测；文中报告 360M 版本在 2048 token 下 KV cache 仅 67 MB，比同规模多头注意力模型小 4 到 6 倍，动态 token 合并减少 5% 到 9% 训练计算量。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">引入螺旋旋转位置编码、跨层门控注意力、自适应 token 合并、双流前馈层和带偏移的归一化，并接入 HuggingFace 生态。</span></div>
+<div class="score-reason">评分依据：小模型架构与端侧部署相关，但论文只给出设计和单元测试，尚未训练评测，结论支撑不足。PDF 首页作者均署名 Oscowl AI 研发部门。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01394" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

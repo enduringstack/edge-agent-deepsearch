@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Recovering Input Text from Hidden States: Study of Gradient-Based Inversion of Decoder-Only Language Models</h1>
 <div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-01 · Mikołaj Słowikowski, Maciej Witold Majewski / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">模型:GPT</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">研究从解码器 LLM 末层隐藏态反演原始输入 token 序列,采用连续嵌入空间优化+末端一次性提交 token 的方法,并分析失败 token 特征。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">10-token C4 prompt 精确匹配从 66.9% 升到 97.5%(平均相似度 0.994);功能词易失败、内容词近乎完美恢复。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：隐藏态反演安全研究,云端模型;连续优化框架与失败分析有贡献。</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:端云协同</span><span class="tag">模型:GPT</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究能否从仅解码器语言模型最后一层的隐藏状态反推出原始输入文本，用来检验拆分推理等场景里传隐藏状态是否真的保护隐私。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 GPT-2 上恢复 10 个 token 的 C4 提示，扩大候选窗口后精确匹配率从 66.9% 提升到 97.5%，平均相似度 0.994；失败主要集中在高频虚词上。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在连续嵌入空间里用梯度优化一个软输入，使其隐藏状态逼近泄露的目标，搜索过程中不做离散投影，只在最后一次性提交 token，并用提交时的离散损失判断恢复是否正确。</span></div>
+<div class="score-reason">评分依据：结论直接关系到端云拆分推理时上传隐藏状态的隐私风险，但实验只在 GPT-2 上做、未涉及设备部署；分析细致，方法贡献中等。作者来自克拉科夫 AGH 科技大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.00852" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

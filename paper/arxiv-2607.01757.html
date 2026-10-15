@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DL-VINS-Factory: A Modular Framework for Learned Visual Front-Ends in Visual-Inertial SLAM</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-02 · Shoon Kit Lim, Melissa Jia Ying Chong, Ting Yang Ling / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:Jetson</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">DL-VINS-Factory 是模块化框架,把学习特征提取器(ALIKED/RaCo/SuperPoint/XFeat)与光流或 LightGlue 匹配集成进视觉惯性 SLAM,在嵌入式平台实时运行。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">EuRoC ATE 单目降 5%、双目闭环降 7%;NTU-VIRAL 闭环 ATE 降 12%;Botanic Garden SuperPoint+LK 降 29%、RaCo+LK 降 38%;Jetson AGX Orin 上单目 29-47 FPS、双目 18-33 FPS;AnyLoc 比 BRIEF+DBoW2 多 2-7 倍有效闭环。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确 Jetson AGX Orin 嵌入式实时 VI-SLAM;模块化基准,实测充分但方法组合为主。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-02 · Shoon Kit Lim, Melissa Jia Ying Chong, Ting Yang Ling / arXiv</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:编译部署</span><span class="tag">硬件:Jetson</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">系统比较了 ALIKED、SuperPoint、XFeat 等深度学习特征在视觉惯性 SLAM 前端中到底好不好用，并做成一个可替换前端的开源框架。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">Jetson AGX Orin 上用 TensorRT 加速后，单目 29–47 FPS、双目 18–33 FPS 实时运行；EuRoC 上 ALIKED+LightGlue 比传统 GFTT+光流基线定位误差降 5%（单目）和 7%（双目带回环），NTU-VIRAL 双目回环误差降 12%；AnyLoc 回环检测有效回环数是 BRIEF+DBoW2 的 2–7 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把多种学习型特征提取器分别接到光流跟踪或 LightGlue 匹配上，共用同一套滑窗 Ceres 后端和位姿图优化，在四个室内外、剧烈运动和弱光数据集上统一评测。</span></div>
+<div class="score-reason">评分依据：在 Jetson AGX Orin 上实测学习型视觉前端的实时性，属于嵌入式部署评测（相关度 6）；主要是系统集成与对比评测，方法新意有限（贡献 4）。作者机构为南安普顿大学（含马来西亚校区），无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01757" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

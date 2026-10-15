@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FBFM: A Training-Free Asynchronous Feedback Mechanism for Flow-Matching in World-Action Models Execution</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-31 · Peize Li; Ruimeng Zhang; Ru Zhang; Cong Huang; Kai Chen; Shanghang Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">世界-动作模型（WAM）靠行动前预测视觉演化来增强长时段机器人控制，但长程可靠要反复 rollout。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-31 · Peize Li; Ruimeng Zhang; Ru Zhang; Cong Huang; Kai Chen; Shanghang Zhang / arXiv</div>
+<div class="tags"><span class="tag">应用:机器人</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">世界-动作模型在执行长任务时要不断用真实观测纠偏，但现有做法只在动作块之间刷新，粒度太粗。FBFM 是一种免训练的推理机制，把纠偏推进到正在生成的动作块内部。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 42 个 RoboTwin2.0 任务上平均成功率提高 3.0 个百分点；在四个 LIBERO 任务集上合计提高 0.6 个百分点，其中 LIBERO-Goal 和 LIBERO-10 各提高 2.5 个百分点；用真实机器人记录做预测时状态跟踪更好。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在流匹配生成过程中对条件速度场做掩码伪逆校正：用上一动作块指导下一动作块，用执行后拍到的画面指导下一帧预测，形成不必等块边界的异步反馈。</span></div>
+<div class="score-reason">评分依据：免训练的推理期机制，可直接用于机器人上的世界-动作模型执行，但评测主要在仿真，没有设备端部署数据。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29235" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

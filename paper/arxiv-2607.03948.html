@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Online Linear Programming for Multi-Objective Routing in LLM Serving</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-04 · Zixi Chen; Yinyu Ye; Zijie Zhou / arXiv</div>
-<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">方向:KV cache</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把 LLM serving 的请求路由建模为在线线性规划的多目标优化框架。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 Vidur 仿真器上跨多种 SLO 体制在端到端延迟、TTFT、吞吐与尾延迟上显著优于标准基线。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用基于在线 LP 的 bid-price 控制策略，当请求 SLO 加权收益超过影子价时接纳；用热启动投影一阶更新在线跟踪对偶影子价以满足毫秒级决策。</span></div>
-<div class="score-reason">评分依据：云端 LLM serving 路由（relevance 4，云端serving）。在线 LP+bid-price 控制有创新（contribution 6）。vendors 空。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-04 · Zixi Chen; Yinyu Ye; Zijie Zhou / arXiv</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把大模型服务中“新请求派给哪个解码节点”的路由问题建模成在线线性规划，用明确的服务目标替代经验规则。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">集成进 Vidur 模拟器后，在多种服务目标下的端到端延迟、首 token 时间、吞吐和尾延迟上明显优于常用基线，摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">采用基于在线线性规划的出价控制策略，只有当请求按服务目标加权的收益超过其影子价格时才接纳；用热启动的投影一阶更新在毫秒内跟踪影子价格。</span></div>
+<div class="score-reason">评分依据：属于云端大模型服务集群的调度优化，与端侧部署关系很弱；用运筹方法替代启发式路由有一定理论价值。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.03948" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

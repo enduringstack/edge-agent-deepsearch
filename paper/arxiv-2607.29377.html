@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Zero-Mem: Zero-Token Memory Operations for LLM Agents</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-31 · Yilin Xiao; Zhehan Zhu; Yujing Zhang; Jin Chen; Zijin Hong; Luyao Zhuang; Qinggang Zhang; Shengyuan Chen / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM agent 需要记忆才能在长交互里保持一致，但很多系统靠额外 LLM 调用来维持记忆。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-07-31 · Yilin Xiao; Zhehan Zhu; Yujing Zhang; Jin Chen; Zijin Hong; Luyao Zhuang; Qinggang Zhang; Shengyuan Chen / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:高效推理</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">很多 Agent 记忆系统每次存取记忆都要额外调用大模型去总结、检索，既费 token 又费时间。Zero-Mem 让记忆的写入和检索完全不调用大模型，只有最后回答问题时才用一次。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在长记忆和长上下文问答基准上效果有竞争力，同时记忆操作的大模型调用和 token 消耗降为零；在相同回答模型和上下文预算下，记忆操作耗时比最快的对比方法再降 57.6%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">原样保留交互记录，同时组织成两种结构：跨对话的实体-上下文图，以及保留会话局部性的时间层级；查询时按问题权衡两种视角检索，再用确定性规则剔除冲突证据，最后交给回答模型。</span></div>
+<div class="score-reason">评分依据：Agent 记忆是端侧 Agent 运行时的核心部件，省掉记忆操作中的大模型调用对算力和电量有限的设备尤其有价值，但论文未做设备部署（相关度 6）；“零 token 记忆操作”思路新颖、收益明确（贡献 7）。作者来自香港理工大学、西南财经大学和吉林大学；代码承诺评审后公开。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29377" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

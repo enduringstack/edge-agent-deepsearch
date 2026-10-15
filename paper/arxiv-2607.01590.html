@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Hawk: Harnessing Hardware-Aware Knowledge for High-Performance NPU Kernel Generation</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-07-02 · Junyi Wen, Ruiyan Zhuang, Yongjia Xu et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">硬件:NPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Hawk 是免训练框架,用硬件感知知识合成、瓶颈感知检索与效果驱动蒸馏,让 LLM 为 NPU 自动生成可高性能执行的内核。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在真实 NPU 工作负载上生成准确率从 49.4% 提升到 80.0%,执行速度最高 2.2 倍于 SOTA。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：面向 NPU 内核生成,端侧硬件栈;免训练框架与三模块设计创新度高。</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-07-02 · Junyi Wen, Ruiyan Zhuang, Yongjia Xu et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">硬件:NPU</span><span class="tag">硬件:Ascend</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Hawk 帮大模型代码智能体为 NPU 写高性能算子：把硬件约束知识整理成可检索、可执行的知识库，避免直接照搬相似代码导致运行崩溃或变慢。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在真实昇腾 NPU 算子任务上，生成正确率从 49.4% 提升到 80.0%，执行速度比现有最优方法最高快 2.2 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">作为华为 CANNBot 的扩展技能实现：把报错上下文与可执行语义绑定成三段式知识，按语法和硬件语义两个维度检索，再根据实际执行反馈不断剔除错误、合并冗余知识，无需微调模型。</span></div>
+<div class="score-reason">评分依据：NPU 算子开发是端侧与边缘部署的核心瓶颈之一，但实验平台是昇腾服务器 NPU；用硬件感知知识驱动算子生成的思路新颖、提升明显。作者来自中山大学、粤港澳大湾区国家技术创新中心和鹏城实验室。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01590" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

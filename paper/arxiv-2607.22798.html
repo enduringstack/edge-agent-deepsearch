@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>StateAct: Program State, before Pixels, for Long-Horizon Computer-Use Agents</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-28 · Yan Yang, Xiangru Jian, Ziyang Luo, Zirui Zhao, Yutong Dai, Ziji Shi, Hanshu Yan, Jun Hao Liew, Silvio Savarese, Junnan Li / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">计算机使用 agent 通常通过强化感知来改进：更好的截图读取与点击选择模型，作者针对此展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=56)；affiliation 待核实</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-07-28 · Yan Yang, Xiangru Jian, Ziyang Luo, Zirui Zhao, Yutong Dai, Ziji Shi, Hanshu Yan, Jun Hao Liew, Silvio Savarese, Junnan Li / arXiv</div>
+<div class="tags"><span class="vendor-tag">Salesforce</span><span class="tag">方向:工具调用</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让电脑操作智能体少看截图、多直接读写程序状态：主智能体用代码操作文件、应用后端和网页结构，只有少数必须点界面的子目标才交给专门的截图点击子智能体。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 OSWorld 2.0 上，把 Claude Opus 4.8 的完全成功率从 20.6% 提到 26.9%、部分成功率从 54.8% 提到 61.6%，单任务成本约为纯截图方式的九分之一；108 个任务中只有 28 个用到界面子智能体，占主智能体步骤的 1.1%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">主智能体以代码为第一手段操作程序状态，并由独立的完成检查器核对结果是否已保存到正确位置；长任务中把子目标交给新开的子智能体，保持主智能体上下文精简。</span></div>
+<div class="score-reason">评分依据：是桌面电脑操作智能体，但模型和推理都在云端，属于智能体运行时设计，与设备端部署关系较弱（相关度 3）。核心创新不在界面识别，而在“先程序状态、后像素”的代码优先架构与结果校验，成本下降明显（贡献 6）。机构依据：arXiv PDF 首页署名 Salesforce AI Research。 作者机构依据：arXiv PDF 首页署名 Salesforce（PDF 首页作者署名 Salesforce AI Research）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.22798" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

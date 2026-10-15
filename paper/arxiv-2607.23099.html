@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Decoding the Skew: Distribution-Aware MoE Inference with Adaptive Kernel Dispatch</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-25 · En-Ming Huang; An-Cheng Chang; Bai-Cheng Jeng; Shih-Hao Hung; H. T. Kung / arXiv</div>
-<div class="tags"><span class="vendor-tag">DeepSeek</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:MoE</span><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span><span class="tag">模型:DeepSeek</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">MoE 推理由稀疏专家 GEMM 组成，其形状随运行时路由分布而变，作者针对此展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 DeepSeek（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-25 · En-Ming Huang; An-Cheng Chang; Bai-Cheng Jeng; Shih-Hao Hung; H. T. Kung / arXiv</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:MoE</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span><span class="tag">模型:DeepSeek</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">混合专家模型推理时，每个专家分到的词元数随路由分布剧烈变化，而现有系统只按总词元数选算子，导致补零浪费或重复读权重。DA-MoE 根据实时路由分布挑选最合适的融合 MoE 算子。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 HumanEval-X 服务流量上，融合 MoE 算子的几何平均延迟在 DeepSeek-V3 上改善 1.16 倍、Kimi K2 上改善 1.29 倍，峰值分别达 1.40 倍和 1.56 倍；实现已合入 FlashInfer 主分支。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用“有效专家数”指标和基于狄利克雷分布的反向建模生成可控路由分布做离线调优，运行时在 GPU 上直接把实时路由直方图匹配到离线结果，选出近似最优算子，无需 CPU 与 GPU 同步。</span></div>
+<div class="score-reason">评分依据：针对数据中心 GPU 上的 MoE 服务算子调度，属于云端推理优化，对端侧 MoE 只有间接借鉴（相关度 3）。把路由偏斜纳入算子选择是实用的工程改进（贡献 5）。机构依据：arXiv PDF 首页作者 1、2、3 署名 NVIDIA Corporation（台北），并注明工作在 NVIDIA 实习期间完成。 作者机构依据：arXiv PDF 首页署名 NVIDIA（PDF 首页作者 1、2、3 署名 NVIDIA Corporation, Taipei，脚注说明工作在 NVIDIA 实习期间完成）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.23099" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

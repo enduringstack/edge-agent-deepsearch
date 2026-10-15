@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-07-02 · Yi Pan, Miao Pan, Qi Lu et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">VLA-Corrector 给动作分块的 VLA 策略加了个轻量潜空间视觉监视器,检测到视觉偏差就截断旧动作并在线梯度引导重规划,实现自适应动作时长。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">无需改骨干权重即可接入不同 VLA,缓解长时接触密集任务中的误差累积;具体成功率数值未报告。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：轻量化的端侧机器人闭环纠正框架,但创新属组合式。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-02 · Yi Pan, Miao Pan, Qi Lu et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">机器人视觉-语言-动作模型通常一次预测一串动作再“闭眼”执行，遇到扰动容易越错越多。VLA-Corrector 在执行中实时发现偏差并及时纠正。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">摘要称在长时程、接触密集的操作任务上显著提升鲁棒性，同时保留了动作分块带来的大部分效率收益；摘要页未给出具体数值。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">加一个轻量的潜空间视觉监视器，持续比较预测与实际的视觉特征变化；偏差持续时截断剩余动作，用在线梯度引导重新规划，不需要重训原 VLA 模型。</span></div>
+<div class="score-reason">评分依据：推理阶段的轻量纠错，可降低机器人端调用频率，但未报告设备端部署（相关度 4）；事件触发的自适应动作长度有新意（贡献 6）。主体为浙江大学，作者 6、7 署名阿里巴巴达摩院。 作者机构依据：arXiv PDF 首页署名 Alibaba（arXiv HTML/PDF 首页作者 Siteng Huang、Xin Li 署名 Alibaba DAMO Academy，其余作者为浙江大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01804" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

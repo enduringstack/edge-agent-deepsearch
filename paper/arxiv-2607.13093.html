@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Efficient and Privacy Aware Edge Cloud Collaborative Inference for Large Language Models</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-14 · Yi Li; Chen Li; Jiexiong Liu / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">方向:投机解码</span><span class="tag">方向:端云协同</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">On-device LLM inference faces a trilemma of response latency, limited hardware resources and user privacy.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-07-14 · Yi Li; Chen Li; Jiexiong Liu / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:安全隐私</span><span class="tag">方向:投机解码</span><span class="tag">方向:KV cache</span><span class="tag">方向:量化</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一套兼顾时延和隐私的端云协同大模型推理框架：终端只做轻量部分并持有关键模块，云端承担主要解码，用户提示不必明文上传。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以 7B 级模型为目标，在 20 ms 往返时延的受控网络下，相比朴素切分推理，CPU 终端、GPU 终端和 8GB 嵌入式 ARM 终端的单 token 时延分别降低 29.4%、46.1% 和 26.8%；下行数据量最多减少 67.4%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">终端负责输入预处理、嵌入计算、KV cache 认证、投机解码草稿和低维输出头，云端做经认证的解码与 token 校验；传输张量与截断 logits 先 8 bit 量化再 AES-GCM 加密，并按语言裁剪词表。不同终端分别用分块流式、模型切片或 ONNX Runtime 8 bit 执行。</span></div>
+<div class="score-reason">评分依据：在纯 CPU 电脑、消费级显卡和嵌入式 ARM 设备上实测端云协同推理，端侧部署相关度高；把投机解码、KV cache 认证和加密传输组合进切分推理，属于有一定新意的工程整合。署名单位为 KunlunMeta，无法确认其公司属性，未标注公司归属。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.13093" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

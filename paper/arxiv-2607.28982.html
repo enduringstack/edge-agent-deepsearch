@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PARALLEL: A Prefrontal-Aligned Reinforcement inspired Approach for Language-Model Learning under Explicit Limits</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-31 · Namkyung Yoon; Sanghong Kim; Hwangnam Kim / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">硬件:GPU</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">近期语言模型多任务表现强，但常规微调对所有样本一刀切式更新，没考虑样本差异。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-31 · Namkyung Yoon; Sanghong Kim; Hwangnam Kim / arXiv</div>
+<div class="tags"><span class="tag">方向:测试时自适应</span><span class="tag">方向:能耗功耗</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">模型上线后按数据流持续微调时，对每条样本都做同样力度的更新既费时又费电。PARALLEL 学习对每条样本决定要不要更新、更新多大。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">保留全量微调 94.1%~99.2% 的效果；在 XSum 和 CNN/DailyMail 上保留 96.9%~98.6% 的 ROUGE-1/ROUGE-2 和 98.8%~98.9% 的 ROUGE-L；在相同累计更新时间或 GPU 能耗下 ARC 准确率高于全量微调。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把目标相关信号与不确定性信号分别作为控制输入，结合当前模型表示，由强化学习控制器按即时收益与代价为每条样本分配适配器更新强度。</span></div>
+<div class="score-reason">评分依据：面向部署后的流式适配，关注更新的时间与能耗，与端侧持续学习有一定关联但未在设备上验证（相关度 3）；按样本分配更新强度的控制思路有一定新意（贡献 5）。作者均来自高丽大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.28982" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

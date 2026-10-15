@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Translation with Thought: Difficulty-Adaptive Reasoning via Reinforcement Learning for Multi-Domain Machine Translation</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-31 · Yongshi Ye; Biao Fu; Chongxuan Huang; Yidong Chen; Xiaodong Shi / arXiv</div>
-<div class="tags"><span class="vendor-tag">DeepSeek</span><span class="tag">方向:蒸馏</span><span class="tag">方向:评测基准</span><span class="tag">模型:DeepSeek</span><span class="tag">模型:GPT</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">多领域机器翻译（MDMT）的难点在于不同领域语言复杂度差异大。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 DeepSeek（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校顶会</span>  2026-07-31 · Yongshi Ye; Biao Fu; Chongxuan Huang; Yidong Chen; Xiaodong Shi / ACL 2026</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:高效推理</span><span class="tag">方向:蒸馏</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多领域机器翻译里，简单句子不值得长篇思考。TwT 让翻译模型学会按难度决定“想多少”：容易的直接译，难的再展开推理。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 15 个基准、3 种见过和 59 种没见过的语言上，TwT-7B 和 TwT-14B 的翻译质量超过更大的推理模型，同时推理 token 用量减少 32%~60%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用从 DeepSeek-R1 蒸馏、再按人类“省力思考”改写的难度感知长思维链做监督微调，再用兼顾翻译质量和推理长度的混合奖励做强化学习。</span></div>
+<div class="score-reason">评分依据：减少推理 token 对推理成本有帮助，但工作核心是翻译质量与推理长度的训练策略，与端侧部署关系较远（相关度 2）；难度自适应推理思路有一定新意（贡献 5）。作者均来自厦门大学，此前按模型名推测的 DeepSeek 归属不成立。论文已被 ACL 2026 主会接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29287" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

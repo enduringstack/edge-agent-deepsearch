@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MODUS: Decoder-Only Any-to-Any Modeling of Diverse Modalities</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-29 · Mingqiao Ye, Zhaochong An, Zhitong Gao, Xian Liu, François Fleuret, Chuan Li, Amir Zadeh, Serge Belongie, Afshin Dehghan, Jesse Allardice, David Mizrahi, Oğuzhan Fatih Kar, Roman Bachmann, Amir Zamir / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:多模态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">any-to-any 模型在单一网络中从任意其他模态组合预测任意模态，该范式用于多模态视觉和视觉-语言模型，作者针对此展开。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=8)；affiliation 待核实</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-29 · Mingqiao Ye, Zhaochong An, Zhitong Gao, Xian Liu, François Fleuret, Chuan Li, Amir Zadeh, Serge Belongie, Afshin Dehghan, Jesse Allardice, David Mizrahi, Oğuzhan Fatih Kar, Roman Bachmann, Amir Zamir / ICML 2026</div>
+<div class="tags"><span class="vendor-tag">Apple</span><span class="tag">方向:多模态</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">MODUS 是一个纯解码器结构的“任意模态到任意模态”模型，用一个网络就能在图像、深度、法线、文字等多种模态之间互相生成和预测。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">单个模型在多项基准上与专用模型和多任务基线表现相当，论文未给出统一的单一数值。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把所有模态都转成同一条自回归 token 序列，输入输出对称处理，不需要任何模态专用的输出头或损失，因此能直接利用预训练好的解码器大模型作先验。</span></div>
+<div class="score-reason">评分依据：通用多模态建模，与端侧部署关联较弱（相关度 3）；用纯解码器统一任意模态的做法有一定新意，已被 ICML 2026 接收（贡献 6）。PDF 首页作者署名含 Apple（多位作者标注机构 2 为 Apple），与 EPFL 等高校合作。 作者机构依据：arXiv PDF 首页署名 Apple（PDF 首页作者 Afshin Dehghan、Jesse Allardice、David Mizrahi 等标注机构为 Apple，与 EPFL 合作）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.25948" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

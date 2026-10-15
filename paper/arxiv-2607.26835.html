@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A Low-Power Sparse Convolution Accelerator with Idle-First-Task-Assignment for Edge Vision</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-29 · Jingyue Zhuge; Johannes Partzsch; Christian Mayr / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">智慧畜牧等端侧视觉监测系统同时面临输入分辨率、算力、带宽等多重约束，作者提出兼顾方案。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-07-29 · Jingyue Zhuge; Johannes Partzsch; Christian Mayr / AICAS 2026</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一颗面向物联网边缘视觉节点（如智慧养殖监控）的低功耗稀疏卷积加速芯片，已用 16nm 工艺流片验证，目标是在极紧的功耗和带宽限制下仍能跑卷积网络。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">芯片核心面积仅 0.5 平方毫米，功耗 12~16 毫瓦；在 ImageNet 上跑稀疏 VGG16 和 MobileNetV2，比传统稠密加速器分别快 6.5 倍和 2.8 倍，比稀疏加速器 SparTen 快约 1.5 倍和 1.7 倍，计算单元利用率平均超过 90%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用位图格式同时压缩传输和计算中的稀疏数据；提出“空闲优先任务分配”动态调度，让空闲的计算单元优先领任务，缓解稀疏计算负载不均；另为深度可分离卷积设计专用数据流。</span></div>
+<div class="score-reason">评分依据：流片实测的边缘视觉推理芯片，功耗只有十几毫瓦，端侧相关度高；位图稀疏与动态任务分配属于稀疏加速器的成熟思路，贡献主要在工程整合与低功耗实现。作者均来自德累斯顿工业大学，会议 AICAS 2026。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.26835" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

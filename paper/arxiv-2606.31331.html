@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Expected Gain-based Escalation in Vertical Federated Learning</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-30 · Mohamad Mestoukirdi, Vincent Corlay / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">研究垂直联邦学习中选择性升级机制，两轮推理协议中第一轮低代价预测、仅当期望增益值得时才升级到嵌入融合，用校准池化后验与类可靠性估计做可解释路由。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在多视图分类基准与受控视图退化场景下，比置信度、学习增益和延迟基线改善通信-精度折损。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：联邦学习通信优化，端侧分布式相关；期望增益路由有创新但效果偏常规。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-06-30 · Mohamad Mestoukirdi, Vincent Corlay / arXiv</div>
+<div class="tags"><span class="vendor-tag">Mitsubishi Electric</span><span class="tag">方向:联邦学习</span><span class="tag">方向:端云协同</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">纵向联邦学习做协同推理时，不是每个样本都需要多方交换中间特征。这篇工作只在“预计能改对答案”时才升级到第二轮融合，以省通信。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多视角分类基准和测试时视角退化设置下，所提路由在通信量与准确率的权衡上优于基于置信度、学习增益和延迟决策的基线；例如无噪声时第一轮本地预测约 67%，全部升级时约 79%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">第一轮只用各客户端的后验做低成本预测；用校准后的合并后验和各类别可靠性估计计算“升级的期望收益”，超过阈值才发起第二轮嵌入融合，无需单独训练路由网络。</span></div>
+<div class="score-reason">评分依据：属于分布式协同推理的通信节省，对端侧多设备协同有间接参考价值；方法简洁可解释但创新有限。PDF 首页两位作者均署名三菱电机欧洲研发中心（雷恩）。 作者机构依据：arXiv PDF 首页署名 Mitsubishi Electric（PDF 首页两位作者均署名 Mitsubishi Electric R&amp;D Centre（法国雷恩））。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.31331" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

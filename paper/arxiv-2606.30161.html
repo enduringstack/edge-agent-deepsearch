@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Federated Learning with Energy-Based Structured Probabilistic Inference</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-29 · Dario Fenoglio, Daniil Kirilenko, Martin Gjoreski et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:联邦学习</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用条件随机场细化联邦学习的客户端聚合权重,定义单客户端单势和客户端对 pairwise 势,建模客户端可靠性和交互。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在非 IID 异质性下一致优于成熟联邦学习基线;具体数值未报告。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：联邦聚合权重方法,创新幅度一般。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-29 · Dario Fenoglio, Daniil Kirilenko, Martin Gjoreski et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">FedCRF 把联邦学习服务器端的聚合问题当作条件随机场上的概率推断：联合推断各客户端是否可靠、彼此是否相似，再据此加权聚合。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">只用一套超参数，在 CIFAR-10、FEMNIST 和 Fed-ISIC2019 上面对多种异构与不可靠客户端时，效果与各类专用方法相当或更好。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把客户端当作图节点，一元势刻画单个客户端属性、二元势刻画客户端间相似度，联合推断出的可靠度和亲和度同时服务于全局聚合、拜占庭鲁棒、聚类联邦和个性化联邦。</span></div>
+<div class="score-reason">评分依据：联邦学习属于端侧训练相关方向，但工作集中在服务器聚合算法，与端侧推理部署关系较远；用统一概率推断覆盖多个联邦难题有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.30161" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

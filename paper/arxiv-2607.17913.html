@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AutoEncoder-Compressed Parallel Split Learning for Pre-trained Model Fine-Tuning</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-20 · Bas Meuwissen; Vasileios Tsouvalas; Nirvana Meratnia / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:端云协同</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Distributed Fine-Tuning (DFT) of large-scale Foundation Models (FMs) on resource-constrained edge devices is limited by local compute constraints and communicat…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-20 · Bas Meuwissen; Vasileios Tsouvalas; Nirvana Meratnia / ECML-PKDD 2026 WAFL Workshop</div>
+<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:联邦学习</span><span class="tag">方向:端云协同</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在边缘设备上分布式微调大模型时，拆分学习能把大部分计算交给服务器，但每一步都要来回传中间激活和梯度。AE-PSL 用一个轻量自编码器压缩这些传输数据。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在四个视觉数据集上，通信量压缩 10.2 倍时下游精度基本不降；在相同通信预算下，最强的启发式压缩基线比它低 5.2 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在切分层放一个自编码器，客户端编码、服务器解码；为了能直接插进现成的预训练模型，先用公开数据让自编码器适配模型的特征分布，再针对各客户端数据做第二阶段对齐，然后才开始微调。</span></div>
+<div class="score-reason">评分依据：面向资源受限边缘设备的分布式微调，属于端侧训练与端云协同技术栈，但实验以 ViT 图像分类为主、没有真机测量；两阶段对齐让可学习压缩器能直接用于现成模型，有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.17913" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

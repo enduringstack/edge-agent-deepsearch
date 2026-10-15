@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MemDelta: Controlled Baselines and Hidden Confounds in Agent Memory Evaluation</h1>
-<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-29 · Kuan Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">模型:GPT</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">MemDelta 是受控评估协议,在 LongMemEval-S 上一次只变一个组件,拆解 agent 记忆方法增益中混杂的模型/嵌入/检索因素。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">verbatim RAG 与 GPT-4o-mini 全上下文持平;换嵌入可使准确率波动 6.2pp;agent 自记忆(42%)低于基础检索(47%)。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：agent 记忆评估,云端;受控协议有方法学价值但属评估。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-29 · Kuan Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:RAG</span><span class="tag">模型:GPT</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">MemDelta 指出智能体记忆系统的评测常常混入了模型、嵌入模型、检索管线的变化，提出每次只改一个变量的受控评测协议。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LongMemEval-S 上：原文 RAG 与全上下文 GPT-4o-mini 相当（47.2% 对 49.8%）；只换嵌入模型就带来 6.2 个百分点差异；智能体自记忆（42%）不如基础检索（47%）；Mem0 在部分题型上追平云端 RAG，但成本高 50 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 500 题、三大模型家族上逐一替换记忆方法、语言模型、嵌入模型和检索组件，量化每个变量对结论的影响。</span></div>
+<div class="score-reason">评分依据：讨论的是智能体记忆的评测方法，实验全在云端模型上进行，对端侧记忆方案选型有参考；受控评测协议有方法学价值，但不提出新系统。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.29914" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

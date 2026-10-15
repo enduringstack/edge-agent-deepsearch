@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MemDecay: Region-Aware KV Cache Eviction for Efficient LLM Agent Inference</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-12 · Venkatesha Matam; Keon Kim / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Large language model (LLM) agents accumulate heterogeneous context, including system instructions, plans, user turns, retrieved documents, tool outputs, and int…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-12 · Venkatesha Matam; Keon Kim / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">MemDecay：专为大模型智能体设计的 KV 缓存淘汰策略。智能体上下文里系统指令、计划、工具输出、草稿推理等“区域”寿命差别很大，它按区域分别设定保留优先级和衰减速度，在固定缓存预算下决定丢哪些。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen2.5-1.5B 和 3B、约 450 与 1,700 token 上下文下测得：系统指令 token 的注意力半衰期为 148–189 个解码步，草稿区仅 14–16 步；钉住关键区域后系统区事实在所有设置下保持满缓存准确率，而基线最多只保住 24 条中的 13 条；对未钉住的内容，累计注意力策略反而更好。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">无需训练：给每个 token 按所属区域分配基础优先级和衰减率，被注意到时刷新分数，按页淘汰分数最低者，关键区域可直接钉住；衰减率可根据实测的注意力寿命标定。</span></div>
+<div class="score-reason">评分依据：智能体长上下文的 KV 缓存显存瓶颈在端侧小模型上同样突出，实验用的就是 1.5B/3B 小模型，可直接迁移到端侧推理栈。利用智能体编排器已知的提示结构做淘汰是个清晰的新信号，但实验规模较小、论文也承认分数归一化方式有局限。两位作者均为纽约独立研究者，没有公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.10582" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>EvoPlan: Evolutionary Neuro-Symbolic Robot Planning with Spatio-Temporal Guarantees</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-07-07 · Bhavya Sai Nukapotula; Samin Moosavi; Haoze Wang; Luke Duncan; Diya Shakkottai; Varun Murali; Srinivas Shakkottai / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">应用:机器人</span><span class="tag">方向:规划推理</span><span class="tag">方向:安全隐私</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">神经符号机器人规划框架，全部 LLM 调用用本地开源模型，可在机器人上无云部署并给出时空安全保证。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 ALFWorld Text 上击败强基线，在 Bench2Drive 与 HA-VLN-CE 上用挖掘出的 STL 约束屏蔽策略。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">三部分：从演示数据挖掘全局 Signal Temporal Logic 约束（反事实扰动+进化搜索）；进化 PDDL 规划器（LLM 提议+修复+验证器筛选）；约束执行循环（航点编译+约束检查+违规重规划）。</span></div>
-<div class="score-reason">评分依据：明确 on-robot 本地模型无云依赖（relevance 9）。神经符号+STL 挖掘+进化 PDDL 有创新（contribution 6）。vendors 空。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-07 · Bhavya Sai Nukapotula; Samin Moosavi; Haoze Wang; Luke Duncan; Diya Shakkottai; Varun Murali; Srinivas Shakkottai / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:安全隐私</span><span class="tag">应用:机器人</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型做机器人规划很流畅但不能保证可执行和安全；EvoPlan 结合神经网络与符号规划，所有大模型调用都用本地开源模型，设计上可在机器人上离线部署。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">开放世界 ALFWorld 文本基准上超过强基线，用词不匹配时仍稳健；封闭世界 Blocksworld 上用 Qwen3-32B 达到 99.7%（普通版）和 74.0%（Mystery 版）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从示范数据中挖掘时空逻辑约束来保护驾驶和导航策略；大模型提出并修补 PDDL 计划，由程序化验证器筛选；执行时把计划编成路点逐一检查约束，违规就重规划。</span></div>
+<div class="score-reason">评分依据：规划闭环设计为本地开源模型运行、可无云部署，对机器人端智能体有参考价值；但完整流程只在 Gazebo 仿真中演示，且使用 32B 模型，暂无真机执行证据。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.06724" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

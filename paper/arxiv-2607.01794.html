@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Lightweight Safe Reinforcement Learning for End-to-End UAV Navigation</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-07-02 · Shenghui Zhang, YuXuan Gao, Songwei Zhao et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">面向 UAV 导航的安全约束感知控制一体化框架,用轻量网络(非对称+深度可分离卷积)编码稀疏观测,在层级控制下用拉格朗日 safe PPO 求解。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">不同障碍密度和飞行速度下成功率、安全性、效率均优于已有 RL 基线;未报告具体数字。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确 lightweight onboard 部署;轻量网络+安全约束层级控制,常见方法组合。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-02 · Shenghui Zhang, YuXuan Gao, Songwei Zhao et al. / arXiv</div>
+<div class="tags"><span class="tag">应用:机器人</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">给无人机端到端避障导航设计了一个带安全约束的轻量强化学习框架，目标是在稀疏激光雷达观测下高速飞行也不撞。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">仿真中 300 个障碍物场景成功率 0.945、200 个障碍物 0.953，而普通 PPO 分别只有 0.609 和 0.695；无真机或机载算力数据。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用非对称卷积加深度可分离卷积的轻量网络把稀疏雷达观测编码成碰撞风险特征，把任务写成约束马尔可夫决策过程，用拉格朗日安全 PPO 求解，并配合课程学习稳定训练。</span></div>
+<div class="score-reason">评分依据：目标是轻量机载部署，但只在仿真中验证，未报告机载硬件延迟（相关度 4）；安全 PPO 加轻量编码器属常见组合（贡献 4）。论文首页未标注作者机构。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01794" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

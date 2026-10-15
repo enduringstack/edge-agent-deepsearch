@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Stop Thinking, Start Looking: Efficient Post-Training for Multimodal Document Question Answering via Reasoning-Free Alignment</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-16 · Harikrishnan P M; Goutham Vignesh; Ganesh Parab; Saisubramaniam Gopalakrishnan; Vishal Vaddina; Varun V; Rohit Agrawal / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Efficient multimodal document question answering with explicit visual grounding, locating the precise document region that supports each answer remains an open …</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-16 · Harikrishnan P M; Goutham Vignesh; Ganesh Parab; Saisubramaniam Gopalakrishnan; Vishal Vaddina; Varun V; Rohit Agrawal / ICML 2026 Workshop (EMM-QA)</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">应用:OCR</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究多模态文档问答的后训练：与其让模型写长推理过程，不如直接训练它看准答案所在的文档区域。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 4B 规模上，带推理的模型训练中会自发收缩推理过程，单次查询推理 token 减少 60% 以上，且带推理的强化学习表现不如只做感知对齐；更早从监督微调切换到强化学习可少用 65% 训练数据达到相近精度。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对 Qwen3-VL-4B 使用 GRPO 强化学习，跳过中间推理 token，直接把视觉特征对齐到结构化定位输出。</span></div>
+<div class="score-reason">评分依据：减少推理 token 能降低小型多模态模型的推理成本，但工作本身是训练方法研究，与端侧部署关系有限。PDF 首页作者署名 Quantiphi 公司的 Phi Labs，未出现阿里巴巴。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.14682" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LLM-Guided Planning for Multi-hop Reasoning over Multimodal Nuclear Regulatory Documents</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-28 · Mingyu Jeon, Bokyeong Kim, Suwan Cho et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把核监管文档多跳推理建成规划问题,LLM agent 在无向量文档树上用浏览/读/搜工具,维护动态知识图谱作状态。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">200 题基准上 81.5% 准确率、RAGAS 忠实度 0.93,超 LightRAG/HippoRAG/GraphRAG 并匹配 RAPTOR;端侧推理增 2.8x 成本无准确率提升。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：云端文档推理 agent,明确说端侧推理无收益。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-28 · Mingyu Jeon, Bokyeong Kim, Suwan Cho et al. / ICML 2026 Workshop（Agents in the Wild）</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:工具调用</span><span class="tag">应用:RAG</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">面向核电监管文件审查的大模型智能体：在上万页安全分析报告里多跳找证据，把“下一步读哪一段”当成规划问题来做。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 NuScale 安全分析报告的 200 题基准上准确率 81.5%（RAGAS 忠实度 0.93），比同样文档树但不做状态规划的 PageIndex 高 38 个百分点，也超过 LightRAG（73.0%）、HippoRAG（70.5%）和 GraphRAG（49.5%）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">智能体在无向量的文档树上用浏览、阅读、搜索三种工具逐步取证，并维护动态知识图谱作为状态，证据足够时自行停止。</span></div>
+<div class="score-reason">评分依据：是云端文档推理智能体，与端侧部署无关，只在智能体规划与工具调用方法上有参考价值；把多跳检索建模为状态规划带来明显提升，属领域应用创新。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.29399" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

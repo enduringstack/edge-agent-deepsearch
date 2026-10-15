@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Impute On-Demand: Adaptive Correlated Time Series Imputation for Changing Environments</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-26 · Zhichen Lai; Huan Li; Dalin Zhang; Dong Gong; Lina Yao; Christian S. Jensen / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">物联网应用产生海量相关时间序列（CTS）数据，常含缺失值需要补全，作者针对此展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-26 · Zhichen Lai; Huan Li; Dalin Zhang; Dong Gong; Lina Yao; Christian S. Jensen / IEEE TKDE</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:测试时自适应</span><span class="tag">硬件:MCU</span><span class="tag">应用:fault-detection</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">物联网传感器数据常有缺失，而现场环境会变：传感器坏掉、只需补部分传感器、可用算力时多时少。AdaCTSi 是一个能随环境自适应的多传感器时序补全模型，小到可以放进单片机。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在交通、空气质量和轨迹五个数据集上与 12 种方法对比，平均绝对误差比各数据集最强基线平均降低 33.1%；单个模型即可支持不同传感器子集和不同资源预算，分组设置下内存需求低于 2 MB，可部署到 STM32H7 等单片机。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用一次性时序卷积网络加可学习的“时间-传感器索引表”把时空特征拆成逐传感器的嵌入，再用稀疏空间注意力提取动态相关性，并按相关性挑选信息量大的传感器作为上下文，从而按需补全、按资源伸缩。</span></div>
+<div class="score-reason">评分依据：面向物联网终端的资源自适应推理，并给出单片机可部署的内存量级，但未报告真机运行时延（相关度 6）。把传感器子集适配和资源弹性放进同一个模型，设计较完整（贡献 6）。已被 IEEE TKDE 接收，代码开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.23503" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

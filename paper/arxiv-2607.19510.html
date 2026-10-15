@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Total Variation Distance Estimation in Autoregressive Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-21 · Eric Price; Kevin Tian; Zhiyang Xun; Yusong Zhu / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Modern LLM deployments use a number of implementation choices and inference optimizations (e.g., batching, custom kernels, and quantization) on top of fixed wei…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-21 · Eric Price; Kevin Tian; Zhiyang Xun; Yusong Zhu / arXiv</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究如何估算两个“同一模型”的推理引擎输出分布到底差多少：批处理、定制内核、量化等优化会让分布悄悄变化，这篇给出了高效估算总变差距离的算法。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">只拿采样时需要约 O(n²K/ε²) 次查询，优于前作的 O(n³m/ε⁵)；能拿到 logit 时只需 O(n/ε²) 次且为最优；实验中测量了 SGLang 与 vLLM 加载相同权重时的分布差异。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按三种访问方式分别设计估计器（仅采样、精确 logit、带噪 logit），在带噪情形下在两者之间平滑过渡，并说明 KL 散度无穷时总变差仍可估。</span></div>
+<div class="score-reason">评分依据：面向推理引擎与量化等优化带来的输出偏差，可用于验证端侧量化部署是否“等价”，但实验对象是云端 serving 框架，相关度给 3；理论界有明确改进并开源，贡献给 6。作者来自德州大学奥斯汀分校，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.19510" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

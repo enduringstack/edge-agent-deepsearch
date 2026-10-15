@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Light-Omni: Reflex over Reasoning in Agentic Video Understanding with Long-Term Memory</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-07-06 · Chang Nie, Jiaju Wei, Junlan Feng, Chaoyou Fu, Caifeng Shan / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把视频 agent 的迭代式侦探推理换成单次前向的反射式响应，用全局多模态脚本和参数化隐状态直接驱动动作与检索。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">比 M3-Agent 平均准确率高 2.4%，速度快 12.1 倍，GPU 显存效率提升 2.6 倍；可作记忆系统增强现有 MLLM。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">双上下文状态：全局状态为有限多模态脚本持续合并情节记忆保近略远；条件生成参数化隐状态直接驱动动作产出检索嵌入，避免迭代推理。</span></div>
-<div class="score-reason">评分依据：高效视频 agent，12.1 倍加速+显存优化可迁移端侧（relevance 7）。反射式替代迭代推理+双上下文状态有创新（contribution 8）。作者机构未明确标注，vendors 空，标学校预印本。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-06 · Chang Nie, Jiaju Wei, Junlan Feng, Chaoyou Fu, Caifeng Shan / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">视频智能体通常靠反复“推理-搜索”来回答长视频问题，又慢又贵；Light-Omni 用长期记忆加一次前向就给出动作和检索，做到“条件反射式”的视频理解。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多个视频基准上比 M3-Agent 平均准确率高 2.4%，速度快 12.1 倍，GPU 显存效率高 2.6 倍；还能作为记忆模块提升现有多模态大模型的性能与效率。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">维护一个由情景记忆不断合并而成的有限长度多模态“剧本”作为全局上下文，再基于它生成一个潜在状态，直接驱动自主动作并产出检索向量，省去迭代推理。</span></div>
+<div class="score-reason">评分依据：带长期记忆的视频智能体，显著降低时延和显存，对资源受限的智能体运行时有迁移价值；但实验在 GPU 服务器上，没有设备端执行证据。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.05511" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

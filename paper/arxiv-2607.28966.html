@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>BLADE: Boundary-Expanded and Layer-Adaptive Dynamic Exit for Efficient LLM Reasoning</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-31 · Keshu Fu; Keqin Peng; Jun Bai; Shuhan Qin; Chen Li; Junzhu Liang; Yefei Chen; Jiaqi Li / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM 靠长推理链提升表现，但很多算力常浪费在冗余验证上。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-31 · Keshu Fu; Keqin Peng; Jun Bai; Shuhan Qin; Chen Li; Junzhu Liang; Yefei Chen; Jiaqi Li / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">推理模型常在已经能答对后还继续反复验证，浪费大量生成。BLADE 在推理过程中实时判断当前思路是否已足够，及时停止生成。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 5 个基准、两个 Qwen3 推理模型上基本保持原有准确率，同时把生成令牌数在 Qwen3-8B 上减少 24.8%、在 Qwen3-4B 上减少 15.8%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在句子、自我怀疑词和段落边界设置检查点，用轻量探针读取自动挑选出的少数隐藏层判断前缀是否足以作答，再配合各检查点的确认规则决定是否提前退出。</span></div>
+<div class="score-reason">评分依据：减少推理模型的生成长度可直接降低小模型推理成本，属可迁移到端侧的高效推理技术（相关度 5）；扩展检查点与自动选层是对已有早停探针的改进（贡献 5）。PDF 首页作者来自北航、北京通用人工智能研究院、北大和华东师大，未出现公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.28966" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

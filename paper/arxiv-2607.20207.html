@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SeededGrasp: Language-Guided Grasping in Complex Scenes with Multiple Embodiments</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-23 · Yang Xu, Gurpreet Singh Mukker, Raymond Wang, Jasper Gerigk, Maria Attarian, Igor Gilitschenski / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Practical robotic grasping in complex scenes requires both 3D spatial reasoning and alignment with task-specific requirements.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=3)；affiliation 待核实</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-23 · Yang Xu, Gurpreet Singh Mukker, Raymond Wang, Jasper Gerigk, Maria Attarian, Igor Gilitschenski / arXiv</div>
+<div class="tags"><span class="vendor-tag">Google</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让机器人按语言指令在杂乱桌面上抓取指定物体：先让视觉语言模型指出一个“种子点”，再交给轻量抓取生成模型算出具体抓法，从而支持多种机械手。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">仿真抓取成功率 72%，真实环境抓取成功率 78%，均优于现有基线；同时开源了包含 250 万次抓取的多机械手桌面抓取数据集。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把高层语义理解（视觉语言模型只负责指出抓哪里）和低层几何执行（轻量抓取模型以种子点为条件生成抓取位姿）拆开，不用端到端联合训练大模型，降低数据和算力需求。</span></div>
+<div class="score-reason">评分依据：面向真实机器人的语言引导抓取，轻量抓取模型适合在机器人侧运行，但论文未讨论设备端部署与时延（相关度 4）。语义与几何解耦的设计和大规模多机械手数据集有价值（贡献 6）。PDF 首页显示作者 Maria Attarian 同时署名 Google DeepMind，主体作者来自多伦多大学与 Vector Institute。 作者机构依据：arXiv PDF 首页署名 Google（PDF 首页作者 Maria Attarian 署名多伦多大学、Vector Institute 与 Google Deepmind（合作作者），其余作者来自多伦多大学、Vector Institute 和不列颠哥伦比亚大学）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.20207" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

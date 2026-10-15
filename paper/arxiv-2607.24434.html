@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DraftExpert: Expansion-Aware Self-Speculative Decoding for End-Device MoE Inference</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-27 · Dengke Han / arXiv</div>
-<div class="tags"><span class="vendor-tag">DeepSeek</span><span class="tag">方向:投机解码</span><span class="tag">方向:蒸馏</span><span class="tag">方向:记忆</span><span class="tag">方向:MoE</span><span class="tag">方向:端云协同</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:NPU</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">大型 MoE 语言模型适合端侧部署，因为每 token 只有小子集专家激活，但其路由与部署仍存问题，作者针对此。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 DeepSeek（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-07-27 · Dengke Han / arXiv</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:MoE</span><span class="tag">硬件:NPU</span><span class="tag">硬件:Snapdragon</span><span class="tag">硬件:手机</span><span class="tag">模型:DeepSeek</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让手机也能跑超出内存的大 MoE 模型时更快出字的自投机解码方法 DraftExpert：专家权重放在闪存里按需加载，用常驻 NPU 的小草稿专家先猜、再由原模型校验。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 DeepSeek-V2-Lite 和 Moonlight-16B-A3B 上平均解码吞吐提升 1.45 倍，草稿接受率 84%–87%，预取命中率 86%–88%；在小米 MIX Flip 2（骁龙 8 Elite，Hexagon NPU）上 DeepSeek-V2-Lite 从 10.18 提升到 15.47 token/s。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从冻结的目标 MoE 自蒸馏，为每层训练一个常驻加速器的轻量草稿专家；推理时用固定占用的“共享+top-1+草稿专家”起草，按置信度与专家扩张量截断草稿并预取目标专家，最终 token 仍由原模型精确校验。</span></div>
+<div class="score-reason">评分依据：明确面向端侧 MoE 推理，并在骁龙 8 Elite 手机 NPU（llama.cpp Q4_0）和 RTX 4090 两类设备真机实测，相关度 9；指出专家卸载场景下投机解码的瓶颈从 token 数转向专家加载量，并据此设计草稿策略，贡献 7。单作者无机构署名，输入中的公司归属不成立。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.24434" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DuoMem: Towards Capable On-Device Memory Agents via Dual-Space Distillation</h1>
-<div class="meta"><span class="score">19</span> <span class="tier school">学校预印本</span>  2026-06-29 · Peyman Hosseini, Ondrej Bohdal, Ahmed Alajrami et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:机器人</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出DuoMem双空间蒸馏框架，把大模型的过程问题求解能力迁移到紧凑学生：上下文空间用教师生成的过程记忆替换学生记忆前置输入，参数空间用LoRA在教师成功轨迹上微调。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在ALFWorld上把4B模型成功率从4.3%提到77.9%，逼近72B教师的87.1%，可训参数少于10M、预存记忆几MB，4B完成任务比72B教师快3x以上。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确面向资源受限端侧的agent能力蒸馏，端侧属性满分；双空间蒸馏效果显著创新高。</div>
+<div class="meta"><span class="score">14</span> <span class="tier company">公司项目</span>  2026-06-29 · Peyman Hosseini, Ondrej Bohdal, Ahmed Alajrami et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">Samsung</span><span class="tag">方向:蒸馏</span><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">DuoMem 想让小模型也能当好“带记忆的智能体”：把 72B 大模型的程序性解题能力蒸馏给 4B 级小模型，目标是在资源受限设备上部署。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ALFWorld 具身决策基准上，把 4B 模型的任务成功率从 4.3% 提到 77.9%，接近 72B 教师的 87.1%；新增可训练参数不到 1000 万、教师记忆只需几 MB，完成任务的实际耗时比 72B 教师快 3 倍以上。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">双空间蒸馏：上下文空间里用教师生成的高质量程序性记忆替换学生自己的记忆；参数空间里用教师成功轨迹微调轻量 LoRA 适配器，两者互补。</span></div>
+<div class="score-reason">评分依据：明确面向端侧小模型智能体，是让 4B 模型具备可用多轮规划和记忆能力的直接方案；但实验在 ALFWorld 仿真环境中完成、没有设备端实测，因此不算端侧 Agent。双空间蒸馏效果显著，创新较高。 作者机构依据：arXiv PDF 首页署名 Samsung（arXiv 首页作者 Ondrej Bohdal、Mete Ozay 等 7 人署名 Samsung R&amp;D Institute UK，另有伦敦玛丽女王大学作者）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.29961" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

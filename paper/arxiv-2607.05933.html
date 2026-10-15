@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Energy-Efficient GPU DVFS for Fine-Tuning of SLMs on Resource-constrained Embedded Devices</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-07-07 · Jurn-Gyu Park, Sanzhar Zholdybayev, Aidar Amangeldi, Ademi Zhanuzakova / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:Jetson</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">针对资源受限嵌入式 GPU 上的小语言模型微调，用动态电压频率调度省电，让本地个性化训练更节能。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">NVIDIA Jetson AGX Orin 上平均节能 13.11%（最高 26.73%），对 BERT/Pythia 等 SLM 在 GLUE 上表征了微调行为。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先刻画 encoder-only 与 decoder-only SLM 的微调能耗行为，再用简单 ML 模型按工况选择能耗最优的 GPU DVFS 设置。</span></div>
-<div class="score-reason">评分依据：Jetson AGX Orin 上 SLM 微调能耗优化，明确端侧训练（relevance 9）。DVFS 调度用于 SLM 微调是工程创新但方法较朴素（contribution 6）。作者学校项目。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-07 · Jurn-Gyu Park, Sanzhar Zholdybayev, Aidar Amangeldi, Ademi Zhanuzakova / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:Jetson</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">出于隐私和个性化需要，小语言模型越来越多在嵌入式设备本地微调；论文研究如何在嵌入式 GPU 上自动选择最省电的电压频率设置。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 NVIDIA Jetson AGX Orin 上，相比无功耗上限的 MAXN 模式平均节能 13.11%，最高节能 26.73%，GLUE 验证精度不变。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先刻画 BERT 系列和 Pythia 系列小模型的微调行为，再用机器学习模型预测并选出能耗最优的 GPU 频率档位。</span></div>
+<div class="score-reason">评分依据：在真实 Jetson 设备上做小模型本地微调的节能，属于端侧训练方向，相关度较高；方法是常规的画像加预测模型。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.05933" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

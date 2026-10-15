@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Lightweight Neural Networks for Affordance Segmentation: Enhancement of the Decoder Module</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-31 · Simone Lugani; Edoardo Ragusa; Rodolfo Zunino; Paolo Gastaldo / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">可穿戴机器人上用 DNN 做视觉可达性分割很关键，但有几处相互冲突的考量。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-31 · Simone Lugani; Edoardo Ragusa; Rodolfo Zunino; Paolo Gastaldo / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">可穿戴机器人上的视觉可供性分割需要高层理解，但设备算力撑不起大模型。这篇工作专门分析轻量网络中分割头（解码器）的设计如何影响精度与算力的平衡。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多个真实数据集上，所得轻量模型在满足低算力约束的同时优于现有基线；部分解码头改动在减少约 180 万参数时精度基本持平。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以 MobileNetV3 骨干和固定 FLOPs 预算为约束，比较深度可分离卷积等多种解码基本块和多任务分层建模方式，选出精度与计算量平衡最好的分割头。</span></div>
+<div class="score-reason">评分依据：面向可穿戴机器人等嵌入式设备、以 FLOPs 为硬约束设计轻量网络，端侧属性明确但没有真机时延数据（相关度 6）；属结构消融与工程优化（贡献 4）。作者来自意大利热那亚大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29473" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LEDGERMIND: Provenance-Constrained Multimodal Agentic Reasoning with a Structured Evidence Ledger</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-31 · Enjun Du, Hange Zhou, Chenxu Du, Siyi Liu, Zirong Chen, Ziyu Zheng, Yongqi Zhang / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">多模态 VQA agent 越来越多以感知-检索-推理交错的多步轨迹运行，但评测还跟不上。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=10)；affiliation 待核实</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-31 · Enjun Du, Hange Zhou, Chenxu Du, Siyi Liu, Zirong Chen, Ziyu Zheng, Yongqi Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:工具调用</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让多模态问答智能体的每一步推理只能引用工具产出的证据账本条目，从而检查答案是否真有依据，并减少编造引用和简单问题过度推理。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多个多模态推理基准和多种骨干模型上，答案准确率和轨迹可信度同时提升；原文摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把工具输出规整成结构化证据账本作为轨迹状态，推理只能引用有效条目，并在实体和数值层面核验；另有按问题难度选择推理深度的双路径调度器，以及事件触发的验证修复机制。</span></div>
+<div class="score-reason">评分依据：属于云端多模态智能体的可审计运行时设计，与端侧无直接关系（相关度 3）；按难度分配推理深度可降低开销，有一定迁移价值。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.28374" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

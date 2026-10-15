@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CODA: Algorithm-Hardware Co-design for Edge Video Diffusion via NMP-Enabled Compute-Cache Operator Disaggregation</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-16 · Yuanpeng Zhang; YuXuan Wu; Yitong Xiao; Chenhao Xue; Yi Ren; Cong Li; Yihan Yin; Dimin Niu / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:端云协同</span><span class="tag">方向:安全隐私</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Deploying Video Diffusion Models (VDMs) on edge devices is appealing for localized and privacy-preserving generation, but their iterative Transformer-based deno…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">14</span> <span class="tier company">公司项目</span>  2026-07-16 · Yuanpeng Zhang; YuXuan Wu; Yitong Xiao; Chenhao Xue; Yi Ren; Cong Li; Yihan Yin; Dimin Niu / MICRO 2026</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:KV cache</span><span class="tag">方向:能耗功耗</span><span class="tag">应用:视频</span><span class="tag">硬件:CIM</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">CODA 解决在边缘 GPU 上本地跑视频扩散模型时，跨步缓存太大装不进显存、来回搬运反而拖慢的问题，提出软硬件协同的近存计算方案。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">相比最先进的缓存算法，端到端最高加速 1.80 倍、能效提升 1.74 倍，生成质量保持相当。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把计算密集的主路径留在 GPU，把访存密集的缓存算子拆到内存条侧的轻量近存引擎上执行，并把零碎的缓存访问合并成连续段，再利用无分类器引导两条分支互相独立，让 GPU 计算与缓存侧执行重叠。</span></div>
+<div class="score-reason">评分依据：明确面向显存受限的边缘 GPU 本地视频生成，以 24GB 的 RTX 4090 级设备为目标，软硬件协同设计完整；近存硬件为仿真评估。PDF 首页作者 8 署名阿里巴巴集团，其余来自北京大学。 作者机构依据：arXiv PDF 首页署名 Alibaba（PDF 首页作者 8（Dimin Niu）署名 Alibaba Group Inc.，邮箱为 alibaba-inc.com，其余作者来自北京大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.14908" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

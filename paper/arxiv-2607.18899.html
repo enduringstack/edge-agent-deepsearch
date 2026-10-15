@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Black-Mamba: Biologically-Inspired Leaky Accumulation for Conceptual Knowledge under Distribution Drift</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-21 · Giuseppe Soriano; Nicola Tonellotto; Alberto Gotta / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Forecasting under real-world conditions is inherently non-stationary, as the conditional distribution of future observations evolves over time.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-07-21 · Giuseppe Soriano; Nicola Tonellotto; Alberto Gotta / arXiv</div>
+<div class="tags"><span class="tag">方向:测试时自适应</span><span class="tag">方向:记忆</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">时间序列预测会遇到数据分布随时间漂移的问题。Black-Mamba 让模型只在“确实发生了持续变化”时才更新内部记忆，而不是每步都适应。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多个非平稳预测基准上，预测效果与现有测试时自适应方法持平或更好，同时推理过程中的记忆更新次数显著减少；摘要未给出具体倍数。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在基础预测器上加一个动态记忆，累计“意外程度”超过阈值、足以证明出现新状态时才触发更新，把连续适应变成事件驱动的选择性适应。</span></div>
+<div class="score-reason">评分依据：属测试时自适应方法，减少推理期更新次数对低功耗设备有一定启发，但未涉及端侧部署，相关度低；事件驱动的记忆更新机制有一定新意。作者来自比萨大学和意大利国家研究委员会。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.18899" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

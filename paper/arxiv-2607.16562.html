@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AirMoE: Statistic-Augmented Over-the-Air MoE for Collaborative Intelligence</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-18 · Wei-Bin Kou; Jingreng Lei; Guangxu Zhu; Yujiu Yang / arXiv</div>
-<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:端云协同</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Mixture of Experts (MoE) are increasingly deployed over wireless cloud-edge networks, as a single edge device lacks sufficient resources to host large-scale mod…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-18 · Wei-Bin Kou; Jingreng Lei; Guangxu Zhu; Yujiu Yang / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:MoE</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">单个边缘设备放不下大模型时，可以让云端跑共享骨干、多个无线终端各跑一个专家，组成分布式混合专家模型。AirMoE 解决这种架构下上行带宽不够和无线聚合噪声大的问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以语义分割任务为例，原文报告 AirMoE 优于各类混合专家基线和单模型方法，并通过消融验证各模块有效，摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">路由时终端只上报从本地特征库检索出的紧凑统计量，云端用 JS 散度挑选最相关终端；聚合时被选中的专家同时发送，利用无线信号叠加直接在空中完成加权求和。</span></div>
+<div class="score-reason">评分依据：属于端云协同推理架构，终端承担专家计算，与端侧部署有直接关联；空中计算聚合专家输出的思路较新，但仍以仿真为主。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.16562" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

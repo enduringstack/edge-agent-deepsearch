@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DSpark：DeepSeek 投机解码 draft 模型（DeepSpec 框架）</h1>
-<div class="meta"><span class="score">15</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-06-27 · DeepSeek AI / GitHub</div>
-<div class="tags"><span class="vendor-tag">DeepSeek</span><span class="tag">方向:投机解码</span><span class="tag">方向:推理框架</span><span class="tag">模型:DeepSeek</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">DeepSeek 开源 DSpark 投机解码 draft 模型算法，发布在 DeepSpec 全栈训练/评测框架中，配套 Qwen3-4B/8B/14B 与 Gemma4-12B 的 block7 draft checkpoint；据新闻称让 DeepSeek-V4 推理快最高 85%。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">新闻称 DeepSeek-V4 推理速度提升最高 85%；README 给出 gsm8k/math500/aime25 等基准的投机解码 acceptance 评测。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">训练 draft model 做投机解码；DeepSpec 提供数据准备/训练/评测全栈，DSpark 为 block7 draft 架构（与 DFlash/Eagle3 并列）。</span></div>
-<div class="score-reason">评分依据：DeepSeek 官方开源投机解码框架（DeepSpec 仓，无 arXiv 无 release tag，社区已涌现 vLLM/MLX/GB10 移植版=爆火；URL 200）</div>
+<div class="meta"><span class="score">13</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-06-27 · DeepSeek AI / GitHub</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:推理框架</span><span class="tag">模型:DeepSeek</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">DeepSeek 开源的投机解码训练与评测代码库 DeepSpec，内含其新算法 DSpark 以及 DFlash、Eagle3 两种对照草稿模型，并放出基于 Qwen3-4B/8B/14B 与 Gemma-4-12B 训练好的草稿模型权重。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">配套论文报告：在 DeepSeek-V4 线上服务中，与原有 MTP-1 基线相比，DSpark 在相同吞吐下让单用户生成速度提升 60% 到 85%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">DSpark 用并行骨干加轻量顺序模块的半自回归结构生成草稿，减轻长草稿后段接受率下滑；再根据每条请求前缀的存活概率和引擎吞吐曲线动态决定验证长度，避免把算力浪费在大概率被拒的词上。</span></div>
+<div class="score-reason">评分依据：投机解码是端侧推理可直接借鉴的加速技术，且发布了 4B 级小模型的草稿权重，但论文实验面向数据中心服务，端侧相关度中等；半自回归草稿加负载感知验证有明显新意。公司归属依据配套论文 arXiv 2607.05147 首页署名：多数作者属 DeepSeek-AI，邮箱为 deepseek.com。</div>
 <div class="source"><a href="https://github.com/deepseek-ai/DeepSpec" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

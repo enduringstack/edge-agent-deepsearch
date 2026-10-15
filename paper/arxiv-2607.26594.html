@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A Physics-Informed Framework for PID Tuning of Chemical Processes Using Large Language Model Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-29 · Zhoupeng Shou; Xiaodong Hong; Congjing Ren; Jingdai Wang; Yongrong Yang; Zuwei Liao / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:端侧agent</span><span class="tag">模型:DeepSeek</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">化工过程 PID 调参通常依赖辨识的过程模型，而现场工程师常靠观察响应迭代重调，作者针对此问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-29 · Zhoupeng Shou; Xiaodong Hong; Congjing Ren; Jingdai Wang; Yongrong Yang; Zuwei Liao / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:工具调用</span><span class="tag">模型:Qwen</span><span class="tag">模型:DeepSeek</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这项工作让大模型像化工厂工程师一样反复“观察响应、诊断问题、调参、验证”来整定 PID 控制器，并把这套能力微调进可本地部署的 0.6B 小模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 100 个一阶和 100 个二阶带纯滞后测试案例上，云端大模型 DeepSeek-V4-Flash 和 Qwen3.7-Plus 最终成功率为 75%–89% 和 77%–79%；Qwen3-0.6B 经监督微调后首次推荐成功率达 86.5%，再经物理约束强化学习提升到 94.0%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">给模型提供闭环响应特征、控制工程诊断和基于内模控制的示例，让它迭代修正增益；小模型先用仿真验证过的目标做监督微调，再用带不可补偿稳定性约束奖励的 GRPO 强化学习。</span></div>
+<div class="score-reason">评分依据：0.6B 小模型可在单张 GPU 本地运行完成迭代调参，对工业边缘部署有参考价值，但未在真实控制设备上运行，判为非端侧 Agent（相关度 5）；物理约束奖励的强化学习属领域适配（贡献 5）。作者均来自浙江大学，PDF 中没有阿里巴巴署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.26594" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

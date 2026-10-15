@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AVQ-Attention: Adaptive Vector-Quantized Attention</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-14 · Winfried van den dool; Patrick Forré; Amir Habibian; Yuki M. Asano; Max Welling / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">The $\mathcal{O}(N^2)$ complexity of attention over $N$ tokens remains a computational bottleneck in transformer models.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-14 · Winfried van den dool; Patrick Forré; Amir Habibian; Yuki M. Asano; Max Welling / ECCV 2026</div>
+<div class="tags"><span class="vendor-tag">Qualcomm</span><span class="tag">方向:高效注意力</span><span class="tag">方向:量化</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">改进向量量化注意力：把码本容量自适应地分给注意力最集中的区域，重要的键用更细的码字表示，不重要的保持粗粒度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在保持 O(MN) 复杂度的同时，精度-效率权衡优于固定码本的向量量化注意力；摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用少量码字粗量化，在前向计算中找出最重要的码字，再用预先学好的子码字细化，整个过程用自定义 Triton 内核嵌进 Flash Attention 的分块计算中，额外开销很小。</span></div>
+<div class="score-reason">评分依据：高效注意力可迁移到端侧长序列推理，但论文没有端侧评测；自适应码本分配是对向量量化注意力的有新意改进，已被 ECCV 2026 接收。 作者机构依据：arXiv PDF 首页署名 Qualcomm（PDF 首页 5 位作者中第 3 位 Amir Habibian 署名 Qualcomm AI Research，第一作者来自阿姆斯特丹大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.12789" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

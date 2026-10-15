@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Machine Learning-Based Reconstruction for Resistive Silicon Sensors</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-13 · Alexander Aoki; Gaetano Barone; Leena Diehl; Gabriele Giacomini; Vagelis Gkougkousis; Hanshal Goyal; Rohan Kher; Daniel Li / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Low-Gain Avalanche Diodes (LGADs) and AC-coupled Low-Gain Avalanche Diodes (AC-LGADs) are promising technologies for precision timing and four-dimensional track…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-07-13 · Alexander Aoki; Gaetano Barone; Leena Diehl; Gabriele Giacomini; Vagelis Gkougkousis; Hanshal Goyal; Rohan Kher; Daniel Li / arXiv</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">硬件:FPGA</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">布朗大学等研究用机器学习重建电阻式硅探测器（AC-LGAD）的读出信号，并让模型能部署到 FPGA 上做实时前端处理和数据压缩。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">模型在 500 μm × 500 μm 像素间距的传感器上保持约 10 μm 的位置分辨率；LSTM 模型已用 hls4ml 完成 FPGA 部署测试。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用基于 LSTM 的循环网络利用多个相关读出板的完整波形做重建，再研究波形栅格化和窗口选择以降低带宽，并扩展到以读出板坐标为输入、可适配任意板数和几何的 Transformer 结构。</span></div>
+<div class="score-reason">评分依据：核心是粒子探测器的信号重建，与端侧 AI 的交集只在于模型需要部署到 FPGA 前端做低时延推理，相关度较低。属于常规网络结构在物理实验中的应用。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.11585" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

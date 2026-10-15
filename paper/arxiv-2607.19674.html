@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FedLSG: LLM-Enhanced Semantic Calibration for Federated Graph Backdoor Defense</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-22 · Chenyu Zhou; Yabin Peng; Wei Huang; Kunlin Li; Shuaishuai Zhang; Xinyuan Miao / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Federated Graph Neural Networks (FedGNNs) are highly vulnerable to backdoor poisoning, yet existing defenses typically rely on rule-based approaches that lack s…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-22 · Chenyu Zhou; Yabin Peng; Wei Huang; Kunlin Li; Shuaishuai Zhang; Xinyuan Miao / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">FedLSG 把大模型引入联邦图神经网络的后门防御：把图结构和客户端更新行为翻译成自然语言，让模型从语义上识别恶意参与者和触发边。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">原文称在不破坏图完整性的前提下显著提升了抗后门能力，摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">服务器端用完整大模型当教师，在聚合时评估客户端更新；客户端各自维护一个 LoRA 小模型做语义推理，抑制与后门触发相关的边。</span></div>
+<div class="score-reason">评分依据：联邦场景下客户端运行轻量 LoRA 学生模型，与资源受限终端有一定关联，但重点在安全防御，相关度给 3；首次把大模型语义理解用于联邦图后门防御，贡献给 5。作者来自东南大学、紫金山实验室和中科院，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.19674" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

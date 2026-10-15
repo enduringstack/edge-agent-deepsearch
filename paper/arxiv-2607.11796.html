@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>An Exact Instrument for State Usage in Selective State-Space Models, and the Input-Driven Migration It Reveals</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-13 · Raktim Bhattacharya / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Selective state-space models such as Mamba route information through a bank of first-order modes whose input coupling is set by a learned selection mechanism.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-13 · Raktim Bhattacharya / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">德州农工大学给 Mamba 这类选择性状态空间模型提供了一个“精确测量工具”，能准确算出去掉任意一组状态模式会带来多大输出误差，并据此发现模型使用哪些模式会随输入变化。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Mamba-1 上与参考实现的相对误差仅 2.3×10⁻⁷，预测部署剪枝误差的中位相对偏差 5×10⁻⁷（4,464 种配置）；按输入调度的模式剪枝在 130M 到 7B Falcon-Mamba 各规模上都优于静态等排序方法，状态预算减半时与未剪枝模型持平。作者明确表示未声称实际算力或内存节省。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用状态矩阵是对角阵这一点，把每个通道输出精确分解成各模式的贡献，再用按层、通道、窗口的 Gram 张量离线算出任意子集被丢弃后的精确误差。</span></div>
+<div class="score-reason">评分依据：状态空间模型的状态剪枝与端侧高效推理相关，但目前只是分析工具和潜力展示，没有实际部署收益。精确误差分解与“输入驱动迁移”的发现有理论新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.11796" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

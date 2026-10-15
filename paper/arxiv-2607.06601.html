@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TriRoute: Unified Learned Routing for Joint Adaptive Attention, Experts, and KV-Cache Allocation</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-07-07 · Andrii Balashov, Olena Ponomarova / arXiv</div>
-<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">方向:稀疏注意力</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一个轻量控制器同时决定每个 token 每层的注意力模式（跳/局部/全）、MoE 专家选择和 KV 缓存位宽，联合优化。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">160M-1.3B 模型上 Pareto 优于独立 MoD+MoE+KV 量化组合，同等推理 FLOPs 和内存下更好保尾例鲁棒性；控制器给句首/罕见子词/命名实体分配全注意力和高精度缓存。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">单一控制器端到端训练，异构松弛（Gumbel-Softmax+STE 做分类决策，负载均衡 top-k 门控做专家），拉格朗日预算约束把平均计算和内存变可调旋钮；识别路由塌陷级联并用逐轴归一化+耦合感知平衡损失解决。</span></div>
-<div class="score-reason">评分依据：联合注意力+MoE+KV 缓存路由属推理效率技术栈（relevance 7）。三轴联合路由+塌陷级联分析有创新（contribution 8）。作者学校项目。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-07 · Andrii Balashov, Olena Ponomarova / arXiv</div>
+<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:KV cache</span><span class="tag">方向:量化</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">条件计算通常只在一个维度上省算力（MoE 稀疏 FFN、MoD 跳层、KV 量化）；TriRoute 用一个轻量控制器为每个 token 同时决定注意力模式、专家选择和 KV 缓存位宽。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 1.6 亿到 13 亿参数的解码器模型上，相同推理 FLOPs 和内存下全面优于最好的 MoD+MoE+KV 量化独立组合，并更好保住罕见实体、代码和算术上的表现。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">端到端训练共享控制器，用 Gumbel-Softmax 等松弛处理离散决策，在拉格朗日预算约束下把平均计算和内存成本变成可调旋钮，并用跨维度均衡损失防止路由塌缩。</span></div>
+<div class="score-reason">评分依据：联合调度注意力、专家和缓存精度，对端侧省算力、省内存有迁移价值；但只在小模型上验证，没有端侧实测。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.06601" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

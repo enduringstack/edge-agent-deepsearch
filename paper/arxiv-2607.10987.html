@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>[AAFLOW+] Stateful Operator Abstraction with Zero-Copy Distributed KV Cache Orchestration for Multi-Agent Workflows</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-13 · Arup Kumar Sarker; Alexander James Halpern; Mills Staylor; Aymen Alsaadi; Gregor von Laszewski; Yue Cheng; Shantenu Jha; Geoffrey Fox / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Multi-agent LLM systems increasingly integrate retrieval, planning, and reasoning, but remain fundamentally text-centric, requiring agents to repeatedly recompu…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-13 · Arup Kumar Sarker; Alexander James Halpern; Mills Staylor; Aymen Alsaadi; Gregor von Laszewski; Yue Cheng; Shantenu Jha; Geoffrey Fox / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">弗吉尼亚大学提出 AAFLOW+：把 KV 缓存当作分布式系统里的一等对象，让多智能体工作流中的各个智能体直接共享和传递 KV 状态，而不是反复传文本再重新预填充。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">基于用硬件微基准参数化的解析成本模型：首 token 时延最多降 50.2 倍，16 个智能体规模下计算成本最多降 7.63 倍，KV 显存降 1.72–6.10 倍，吞吐提升超过 7.74 倍；结论是带宽中等以上时传 KV 比重新计算更划算。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">为智能体工作流算子增加 KV 的物化、传输、分叉、组合和淘汰操作，运行时支持零拷贝、感知传输代价的执行，让多个智能体复用长上下文。</span></div>
+<div class="score-reason">评分依据：多智能体共享 KV 状态的思路对智能体运行时有参考价值，但场景是分布式云端集群，且结果来自解析模型而非端到端实测，相关度与可信度都打折扣。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.10987" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

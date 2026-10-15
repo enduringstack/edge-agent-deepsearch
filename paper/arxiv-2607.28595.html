@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Beacon: Knowing When and How to Perform Agentic Visual Reasoning</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-31 · Qixun Wang, Yang Shi, Letian Cheng, Zhuoran Zhang, Yan He, Yuqi Tang, Qi Zhang, Xinlei Yu, Ruizhe Chen, Tianrun Xu, Yuanxing Zhang, Pengfei Wan, Haotian Wang, Xianghua Ying / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:多模态</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Agentic 视觉推理的根本目标是提升多模态大模型（MLLM）在复杂任务上的成功率，而不只是给出回答。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=48)；affiliation 待核实</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-31 · Qixun Wang, Yang Shi, Letian Cheng, Zhuoran Zhang, Yan He, Yuqi Tang, Qi Zhang, Xinlei Yu, Ruizhe Chen, Tianrun Xu, Yuanxing Zhang, Pengfei Wan, Haotian Wang, Xianghua Ying / arXiv</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究多模态模型什么时候该调用视觉工具：现有模型常常在简单题上乱用工具反而出错，Beacon 训练模型只在必要时用工具。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 13 个基准上取得所评测开源模型中最高的平均分，并在其中 11 个排第一；在 5 个诊断基准上，可用工具时的平均准确率比不用工具高 1.96 分，工具增益减工具损害为 +3.14 分，为所有模型最高。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先监督微调再强化学习：不用工具能做对时给更高奖励，只有不用工具失败时才全额奖励成功的工具调用；对全部做错的样本组，用经过验证、不含答案的专家提示恢复学习信号。</span></div>
+<div class="score-reason">评分依据：按需调用工具能减少不必要的计算开销，对推理预算紧张的设备端多模态智能体有参考价值（相关度 3）；奖励设计有新意。作者署名 Kling Team，但首页未写明所属公司，归属不填。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.28595" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

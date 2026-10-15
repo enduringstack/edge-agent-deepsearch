@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Repo launch: MiniCPM-Robot (On-Device AI Brain for Robots)</h1>
-<div class="meta"><span class="score">14</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-18 · OpenBMB / GitHub</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:端侧agent</span><span class="tag">模型:Qwen</span><span class="tag">模型:MiniCPM</span><span class="tag">应用:机器人</span><span class="tag">方向:推理框架</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">OpenBMB（MiniCPM 端侧模型系列团队）新建仓，定位为面向机器人的更快更聪明的端侧(on-device) AI 大脑。首发两款模型：MiniCPM-RobotManip（1.5B 通用 VLA，单组权重跨任务，LIBERO/RoboTwin2 上超 π0.5(3B)/Qwen-VLA(5B+) 等更大模型）与…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：OpenBMB（MiniCPM 端侧模型系列团队）新建仓，定位为面向机器人的更快更聪明的端侧(on-device) AI 大脑。首发两款模型：MiniCPM-RobotManip（1.5B 通用 VLA，单组权重跨任务，LIBERO/Rob</div>
+<div class="meta"><span class="score">14</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-07-18 · OpenBMB / GitHub</div>
+<div class="tags"><span class="tag">应用:机器人</span><span class="tag">方向:多模态</span><span class="tag">模型:MiniCPM</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">面壁 OpenBMB 开源机器人模型家族 MiniCPM-Robot，首发 1.5B 通用操作模型 MiniCPM-RobotManip 和 0.9B 端侧目标跟随模型 MiniCPM-RobotTrack。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">RobotManip 以 1.5B 参数在 RoboTwin2 上拿到 91.3/91.6，超过 3B 的 π0.5（82.7/76.8）；60 帧历史下流式推理每步只需 3.3 TFLOPs（重算需 125 TFLOPs）。RobotTrack 在宇树 Go2 EDU 机载算力上完全本地运行，5 帧/秒以上、端到端约 180 毫秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">操作模型沿用 MiniCPM-V 4.6 的视觉 token 压缩（每帧 256 压到 64），并用流式上下文复用历史帧；跟随模型基于 MiniCPM4-0.5B，从图像采集到下发控制指令整条链路针对 Go2 联合优化。</span></div>
+<div class="score-reason">评分依据：跟随模型在四足机器人机载算力上真机本地运行，端侧相关度高；两款都是视觉-语言-动作策略，没有规划或工具闭环，属于端侧具身模型而非端侧 Agent。GitHub 仓库不能作为机构证据，未标公司归属。</div>
 <div class="source"><a href="https://github.com/OpenBMB/MiniCPM-Robot" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

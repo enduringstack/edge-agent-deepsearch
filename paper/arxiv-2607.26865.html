@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Think Short, Defer Smart, Act, and Repeat: Calibrated Reasoning and Uncertainty-Aware Deferral for Edge LLM Agents</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-29 · Amirmohammad Farzaneh; Osvaldo Simeone / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:机器人</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">基于 ReAct 范式的 LLM agent 可完成多跳问答、代码生成、控制等复杂多步任务，作者针对其相关挑战展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-29 · Amirmohammad Farzaneh; Osvaldo Simeone / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:规划推理</span><span class="tag">方向:高效推理</span><span class="tag">模型:DeepSeek</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">端侧大模型智能体在边想边做（ReAct）时，既要省推理算力，又要在没把握时把决策交给云端大模型。TSDS 给“何时停止思考”和“何时求助云端”这两个开关一起做了带统计保证的校准。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 HotpotQA、MBPP 和家庭机器人规划任务上，比只做云端求助校准的基线每轮减少 43%~65% 的思考计算量，同时满足预设的任务回报和云端调用率保证；例如家庭机器人任务思考 token 从 1206 降到 422。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用一个轻量探针监测本地模型的隐状态，意图动作稳定后就提前结束思考；用困惑度判断当前动作是否不确定，超过阈值就交给云端模型；两个阈值在完整任务轨迹上用多目标 Learn-Then-Test 方法联合校准，给出有限样本保证。</span></div>
+<div class="score-reason">评分依据：直接针对边缘部署的大模型智能体做推理预算与端云分工，方法可迁移到真实端侧智能体，但实验用 DeepSeek-R1-Distill-Qwen-7B 模拟“边缘模型”、机器人任务也是文本仿真，没有真机部署，相关度给 7；把思考截断与云端求助联合校准并给统计保证有新意。作者均来自伦敦东北大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.26865" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

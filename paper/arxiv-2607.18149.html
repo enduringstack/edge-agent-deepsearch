@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Differentiable Logic Gate Networks for Low-Latency EEG Classification on Edge Devices</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-20 · Shyamal Y. Dharia; Stephen D. Smith; Camilo E. Valderrama / arXiv</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:记忆</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:Jetson</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Real-time EEG classification on edge devices is bottlenecked by the floating-point arithmetic of conventional neural networks.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 NVIDIA（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-20 · Shyamal Y. Dharia; Stephen D. Smith; Camilo E. Valderrama / Canadian AI 2026</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span><span class="tag">硬件:Jetson</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">实时脑电（EEG）分类要在便携设备上跑，浮点神经网络太慢。论文评估了可微逻辑门网络：训练后直接编译成纯布尔电路，用 CPU 位运算推理。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">痴呆筛查任务宏 F1 达 80.2%，比同参数量 MLP 高 6.8%；情绪识别上 MLP 精度略好，但在 7W 功耗的 Jetson Orin Nano 单核 CPU 上延迟高 2.3 倍、模型大 14 倍；模型规模扩大 10 倍时逻辑门网络推理时间几乎不变，最大规模下比 MLP 快 2.9 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把网络的每个神经元换成可学习的二输入逻辑门，训练时用可微松弛，部署时固化成布尔电路；在四个 EEG 数据集、四档参数规模上与 MLP 和二值网络做同参数量对比。</span></div>
+<div class="score-reason">评分依据：在 Jetson Orin Nano 低功耗 CPU 上实测延迟和模型大小，端侧部署证据明确；逻辑门网络本身不是新方法，贡献在于对脑机接口场景的系统对比。作者来自温尼伯大学等高校，未见公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.18149" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

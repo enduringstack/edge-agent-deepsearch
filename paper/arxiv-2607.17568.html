@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CoCurve: Cross-Module Co-Pruning Curvature for Training-Free Structured LLM Pruning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-20 · Zhiren Gong; Zihao Zeng; Zijie Wang; Tiantong Wang; Chau Yuen; Wei Yang Bryan Lim / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Structured pruning compresses large language models (LLMs) by removing whole computational units, such as attention heads and feed-forward (FFN) channel groups.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-20 · Zhiren Gong; Zihao Zeng; Zijie Wang; Tiantong Wang; Chau Yuen; Wei Yang Bryan Lim / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">结构化剪枝能让大模型在内存和算力受限的环境中部署，CoCurve 考虑“同时剪掉多个部件”时的相互影响，更准确地决定剪什么。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 6 个 3B–70B 大模型和 3 个视觉语言模型上，60 组困惑度对比中 53 组排名第一；50% 剪枝并轻量恢复后 8B 模型平均分回升 10.8 分；物理裁剪后预填充吞吐提升 1.58 倍、峰值内存降低 41%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对注意力头和前馈分组逐个做前向消融，构建一张“协同剪枝图”，节点表示单独剪掉的风险，边表示一起剪时的增强或抵消，每一步决策都以已剪部件为条件。</span></div>
+<div class="score-reason">评分依据：结构化剪枝直接服务资源受限部署，可迁移到端侧大模型压缩；实验在服务器 GPU 上。把剪枝间相互作用建模为图的做法有新意，覆盖模型多，代码开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.17568" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

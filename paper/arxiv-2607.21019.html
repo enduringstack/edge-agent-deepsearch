@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>HiMe: Real-Time Self-Hosted Personal Agent Platform for Health Insights with Wearable Devices</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-23 · Wei Liu; Siya Qi; Linhai Zhang; Lorainne Tudor Car; Yulan He / arXiv</div>
-<div class="tags"><span class="vendor-tag">OPPO</span><span class="tag">方向:安全隐私</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Traditional approaches to wearable health signal analysis, such as smartwatches, are constrained by rigid analytical frameworks and limited personalisation.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 OPPO（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-23 · Wei Liu; Siya Qi; Linhai Zhang; Lorainne Tudor Car; Yulan He / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">方向:安全隐私</span><span class="tag">硬件:手机</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">HiMe：可自托管的个人健康智能体平台。手表采集心率、血氧、睡眠等数据，经手机同步到用户自己机器上的智能体服务器，由本地开源模型实时分析、记忆用户情况并主动提醒，数据不离开用户硬件。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 5 个公开可穿戴数据集、22 个模型上评测：最强的本地模型 Qwen3.6-27B 和 Qwen3.5-35B-A3B 分析得分 0.91，超过 DeepSeek-V4-flash（0.85）和 GPT-5-mini（0.76）；1.5B 小模型基本失败（幻觉率 0.47）；由智能体自己编写的触发条件比定时轮询发现更多异常，并在大模型上把 token 用量降一个数量级。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把数据库作为一等公民，智能体通过读写统一数据库和代码执行工具完成分析、记忆更新、计划生成；交互智能体可调用分析、管理、计划等子智能体；用廉价的统计触发器常驻监测数据流，只在触发时唤醒大模型；推荐用 vLLM 在本地运行开源模型。</span></div>
+<div class="score-reason">评分依据：智能体的记忆、工具调用和主动监测闭环都设计为在用户自己的机器上运行本地模型，手机和手表负责采集与推送，是明确的本地化个人 Agent（相关度 8）；但时延测试在 H200 上完成，未在消费级设备上实测。平台与评测设计扎实（贡献 6）。作者来自伦敦国王学院和艾伦·图灵研究所，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.21019" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

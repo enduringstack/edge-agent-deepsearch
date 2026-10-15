@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Compiler-Grounded Hierarchical Diagnosis for LLM-Based Triton Kernel Optimization</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-25 · Dongjie Chen; Ping Zhao; Bohua Zhan; Yulong Wang; Shushu Chen; Liangjun Feng; Hao Zhou; Min Shen / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">近期大模型进展已实现自动 kernel 生成与优化，但现有方法多依赖表面信号，作者针对此改进。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-07-25 · Dongjie Chen; Ping Zhao; Bohua Zhan; Yulong Wang; Shushu Chen; Liangjun Feng; Hao Zhou; Min Shen / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:编译部署</span><span class="tag">方向:推理框架</span><span class="tag">硬件:NPU</span><span class="tag">硬件:Ascend</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让大模型自动优化昇腾 NPU 上的 Triton 算子时，光看编译报错和性能数据只知道“慢”，不知道编译器为什么没做该做的优化。这套系统把运行症状一路追到中间表示和编译器行为，再给出有依据的源码改写。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在由 NPUKernelBench 改造的昇腾 950 基准中成功转换的 37 个算子上，从初始到优化后的 Triton 算子几何平均加速 4.35 倍、中位数 2.73 倍，22 个超过 2 倍、13 个超过 5 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">分层诊断：先做轻量的模式排查和性能剖析，只有需要时才升级到中间表示归因和编译器层分析，最后由大模型依据这些证据改写算子源码。</span></div>
+<div class="score-reason">评分依据：面向 NPU 的算子自动优化，属于 AI 加速器编译部署栈，不过目标是昇腾数据中心芯片而非终端设备（相关度 5）。把编译器内部证据引入大模型调优流程，比只看性能数据的做法更进一步（贡献 6）。机构依据：arXiv PDF 首页作者署名 Huawei Technologies Co., Ltd.。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页作者署名 Huawei Technologies Co., Ltd.）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.23089" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

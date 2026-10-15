@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Mach-Mind-4-Flash Technical Report</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-10 · Foundation Model Team / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:MoE</span><span class="tag">方向:端侧agent</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">We present Mach-Mind-4-Flash, a 35B-parameter Mixture-of-Experts (MoE) agentic model with 3B activated parameters.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-10 · Foundation Model Team / arXiv</div>
+<div class="tags"><span class="vendor-tag">Li Auto</span><span class="tag">方向:MoE</span><span class="tag">方向:工具调用</span><span class="tag">方向:蒸馏</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">理想汽车发布的 350 亿参数、每次只激活 30 亿参数的混合专家智能体模型，主要靠后训练（强化学习与蒸馏）把能力推到百亿级模型水平。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">AIME'26 得分 92.70、IFBench 82.82、BFCL-v4 工具调用 75.80、BrowseComp-zh 72.31、ClawBench 84.20，与激活参数大 10–30 倍的模型持平或更好；训练框架端到端提速 17%，推理链压缩 19%–46% 而准确率损失不超过 0.7 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用统一的强化学习与在线蒸馏训练框架分别训练推理、通用、智能体三类领域专家，再用多教师在线蒸馏融合成一个通用模型；最后用一种单阶段的长度优化方法压缩思维链，降低推理开销。</span></div>
+<div class="score-reason">评分依据：小激活量 MoE 和思维链压缩都能降低推理成本，对资源受限部署有参考价值，但报告没有车端或设备端部署实验（相关度 4）。多教师在线蒸馏与长度压缩有一定新意，属于工程体系较完整的技术报告（贡献 6）。PDF 首页署名为 Li Auto Inc. 基础模型团队。 作者机构依据：arXiv PDF 首页署名 Li Auto（PDF 首页署名为“Foundation Model, Li Auto Inc.”（理想汽车基础模型团队））。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.09375" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

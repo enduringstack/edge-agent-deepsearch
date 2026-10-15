@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MultiUAV-Plat: An LLM-Oriented Platform, Benchmark and Framework for Multi-UAV Collaborative Task Planning</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-06-30 · Sheng Zhang, Qinglin Li, Yuechao Zang et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">MultiUAV-Plat 是面向 LLM agent 的多无人机协同任务规划仿真平台和基准,含 75 任务会话、1500 自然语言任务,并提 Agent4Drone 框架。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">Agent4Drone 任务通过率 57.9%、平均检查通过率 74.6%、全局通过率 72.0%,失败率从 32.4% 降到 12.9%,远超 ReAct。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：多无人机 LLM 规划,端侧机器人协同场景相关。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-30 · Sheng Zhang, Qinglin Li, Yuechao Zang et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:工具调用</span><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">面向多无人机协同任务规划的大模型智能体仿真平台和评测基准，并配套一个专用智能体框架 Agent4Drone。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">基准含 75 个任务会话、1500 条自然语言任务、9396 个校验点；Agent4Drone 任务通过率 57.9%，明显高于 ReAct 基线的 30.6%，失败任务率从 32.4% 降到 12.9%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">平台用 RESTful 接口给智能体提供观测和按角色划分的信息访问，要求智能体通过真实的工具交互完成任务；Agent4Drone 把无人机行为拆成记忆、观测、任务理解、规划、执行和校验几个环节。</span></div>
+<div class="score-reason">评分依据：无人机是端侧设备语境，智能体闭环也完整，但全部在仿真平台中评测，规划由大模型完成且未说明在机载端运行，不算端侧智能体；基准设计有一定价值。作者来自国防科技大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.31073" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

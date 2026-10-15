@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Budget-Adaptive Routing: Skipping the Weak When the Strong Answers Anyway</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-29 · Wei Geng, Nitinder Mohan, Jörg Ott / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出预算自适应路由,在端云协作里按卸载预算在弱跳过估计器和弱条件放置间选择,弱跳过估计器从原始像素提路由信号比弱检测器轻 29 倍。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">PASCAL VOC 上追踪两种固定放置的精度上包络,每帧延迟最多降 19.1ms(约 30%),部分操作点比强模型还高 1.7pp mAP。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：端云协作路由,明确边缘检测场景,弱跳过估计器有新意。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-29 · Wei Geng, Nitinder Mohan, Jörg Ott / SIGCOMM 2026 Workshop (NAIC)</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:高效推理</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">端云协同目标检测里，每帧要决定在端侧小模型上算还是上传给云端大模型。这篇工作指出“先跑一遍端侧小模型再决定是否上传”在上传预算变化时并不总是最优。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">新的跳过式路由估计器只需 0.153 GFLOPs，约为端侧检测器（4.49 GFLOPs）的 1/29；在 PASCAL VOC 上按预算自适应选择后，每帧时延最多降低 19.1 ms（上传比例 0.9 时约低 30%），部分工作点的 mAP 比云端大模型峰值还高 1.7 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">直接从原始像素提取路由信号，让需要上传的帧不必先跑端侧检测器；再用两个离线调好的阈值，按当前上传预算在“跳过端侧模型”和“先跑端侧模型”两种放置方式之间切换。</span></div>
+<div class="score-reason">评分依据：直接针对端云协同推理中的端侧计算浪费，与端侧部署高度相关；方法简单实用但创新幅度中等。作者来自慕尼黑工业大学和代尔夫特理工大学，发表于 SIGCOMM 2026 研讨会。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.30919" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

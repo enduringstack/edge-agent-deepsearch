@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>INTACT: Isomorphic Intent-to-Action Learning for Search-Free World Models</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-31 · Junhan Sun, Hao Zhao, Guofeng Zhang / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">前向潜变量世界模型能预测动作如何改变场景，但要为期望变化反推动作得靠昂贵的测试时搜索。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=13)；affiliation 待核实</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-31 · Junhan Sun, Hao Zhao, Guofeng Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">面向机器人控制的世界模型：直接从期望的状态变化推出动作，省掉传统做法里昂贵的测试时搜索。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LeWM 的四个官方任务上，零搜索模型成功率分别为 85.78%、100%、97.67%、97.89%；可选的局部 CEM 校验只用 384 条候选序列（原来 9000 条，采样减少 23.44 倍）就达到 96.86% 宏平均成功率；直接推理耗时 2.9 到 5.5 毫秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 JEPA 潜空间里把相邻帧的变化当作物理意图、把目标与当前状态之差当作部署意图，两者共用同一套网络结构和参数，学出意图到动作的映射，推理时直接取条件均值作为策略。</span></div>
+<div class="score-reason">评分依据：属于机器人动作控制模型，没有规划记忆或工具闭环，只在仿真任务中评测；把测试时搜索换成毫秒级直接推理，对算力受限的机器人有迁移价值。机构依据：PDF 首页通讯作者 Guofeng Zhang 同时署名浙江大学和 InSpatio。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.26056" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

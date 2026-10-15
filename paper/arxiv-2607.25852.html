@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AngelSpec: Towards Real-World High Performance Inference with Speculative Decoding</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-28 · Hong Liu; Rui Cen; Junhan Shi; Guangshuo Qin; Jiebin Zhang; Tianyu Liu; Runzhi Fan; Guoliang Zhao / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">投机解码在不改变目标分布的前提下加速 LLM 推理，但没有单一 draft 结构在所有场景下都最优，作者针对此。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-28 · Hong Liu; Rui Cen; Junhan Shi; Guangshuo Qin; Jiebin Zhang; Tianyu Liu; Runzhi Fan; Guoliang Zhao / arXiv</div>
+<div class="tags"><span class="vendor-tag">Tencent</span><span class="tag">方向:投机解码</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">腾讯混元团队开源的投机解码训练框架 AngelSpec，同时支持多 token 预测和块并行扩散两种草稿结构，面向真实线上负载提速。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Hy3-A21B 上平均接受长度提升约 30%，在 4 到 64 的各档并发下吞吐均最高，比自回归解码快 1.98–2.40 倍，比 DFlash 吞吐高 10.5%–11.8%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按负载类型分工训练草稿模型：对话数据训练多 token 预测草稿，代码和数学数据训练块扩散草稿；提出 DFly 块扩散结构，并把验证当作批级共享资源，按置信度和成本模型在线调整验证深度。</span></div>
+<div class="score-reason">评分依据：投机解码属于推理加速技术栈，但本文针对的是云端高并发服务，对端侧只有间接迁移价值。多结构联合训练与批级验证调度工程扎实，框架开源。作者机构依据 arXiv PDF 首页全部作者署名 Tencent Inc. 作者机构依据：arXiv PDF 首页署名 Tencent（PDF 首页全部作者署名 Tencent Inc.）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.25852" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

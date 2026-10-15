@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>How Far Can You Get Without a GPU? A Systematic Benchmark of Lightweight Hallucination Detection Across Question Answering, Dialogue, and Summarisation</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-29 · Kriti Faujdar, Smit Kadvani / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">系统基准五种轻量 CPU 可行的幻觉检测方法(ROUGE-L、语义相似度、BERTScore、NLI、集成)在 HaluEval 问答/对话/摘要上的表现。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">QA 上集成最佳 F1=0.792、AUC-ROC=0.873;对话 NLI 领先 AUC-ROC=0.713;摘要五方法退化到 0.469-0.574 近随机。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确 CPU 笔记本可行;基准评测为主,创新中等。</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-29 · Kriti Faujdar, Smit Kadvani / EMNLP 2026 Workshop（GroundLM）Findings</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:安全隐私</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究只用 CPU、只用公开小模型，大模型幻觉检测能做到什么程度，在问答、对话、摘要三类任务上做了系统对比。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">相似度与 NLI 集成最稳定：问答 F1 0.792、AUC 0.873，对话 F1 0.694、AUC 0.749；摘要任务各方法接近随机（AUC 0.469~0.574），把前提长度从 800 加到 1600 字符后升到 0.629，改为逐句分块聚合后达到 0.683。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 HaluEval 上比较 ROUGE-L、语义相似度、BERTScore 和基于 DeBERTa 的 NLI 检测器及其集成，统一在验证集上校准阈值并给出自助法置信区间。</span></div>
+<div class="score-reason">评分依据：证明幻觉检测可以只靠 CPU 完成，对资源受限部署有一定参考；属基准评测，方法本身是现成组件。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.29809" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

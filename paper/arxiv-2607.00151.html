@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SmoothAgent: Efficient Long-Horizon LLM-Based Agent Serving with Lookahead Context Engineering</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-30 · Zaifeng Pan, Qianxu Wang, Zhengding Hu et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:端云协同</span><span class="tag">方向:云端serving</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">SmoothAgent 发现 agent 上下文变换是段可分解的,提出 lookahead 编程模型让框架异步预执行变换并预生成 KV 缓存,服务端调度器控制干扰。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">消除变换开销,TTFT 最高降低 11.9x。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：KV cache/LLM serving 技术栈非显式端侧;段分解+lookahead 预取,创新较高。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-30 · Zaifeng Pan, Qianxu Wang, Zhengding Hu et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:KV cache</span><span class="tag">方向:调度服务</span><span class="tag">方向:记忆</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体长时间运行时要不断压缩、卸载上下文，每次改写都会让 KV 缓存失效并重新预填充。SmoothAgent 提前在后台把改写做好，避免卡顿。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多种上下文工程策略下基本消除了上下文改写带来的额外开销，首 token 时延最多降低 11.9 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">发现上下文改写可以按片段拆分、前缀的改写与之后的 token 无关，因此能提前执行；提供前瞻式编程模型让智能体框架把改写写成异步操作，并在推理服务端加入前瞻感知调度器，控制对时延敏感请求的干扰。</span></div>
+<div class="score-reason">评分依据：面向云端推理服务的智能体运行时优化，与端侧智能体的上下文管理有迁移价值；把上下文改写变成可提前执行的异步操作有明显新意。作者来自加州大学圣地亚哥分校，代码开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.00151" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

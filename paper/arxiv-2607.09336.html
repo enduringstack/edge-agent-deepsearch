@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Shortcut Trajectory Planning for Efficient Offline Reinforcement Learning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-10 · Guanquan Wang; Yoshimasa Tsuruoka / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Diffusion-based trajectory planners have shown strong performance in offline reinforcement learning, but their iterative denoising process often incurs high inf…</span></div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-07-10 · Guanquan Wang; Yoshimasa Tsuruoka / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">扩散式轨迹规划器在离线强化学习里效果好但推理要多步去噪，太慢。这篇用“捷径模型”做轨迹生成，只需一步或几步就能出规划。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">单阶段训练一个以步长为条件的捷径轨迹模型，推理时可选一步或几步生成，再用加了可行性校正的价值网络从候选轨迹里挑最优计划，省去传统一致性模型的师生蒸馏两阶段流程。</span></div>
+<div class="score-reason">评分依据：减少生成式规划器推理步数的思路与实时控制相关，但只在 D4RL 仿真基准上验证，未涉及设备部署（相关度 2）。方法是对已有捷径模型的迁移和组合（贡献 4）。作者来自东京大学，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.09336" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

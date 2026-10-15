@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>GigaWorld-Policy-0.5: A Faster and Stronger WAM Empowered by AutoResearch</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-15 · GigaWorld Team; Angen Ye; Angyuan Ma; Boyuan Wang; Chaojun Ni; Fangzheng Ye; Guan Huang; Guo Li / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">World Action Models (WAMs) improve robot policy learning by jointly modeling actions and future visual observations, using future scene evolution as dense super…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-15 · GigaWorld Team; Angen Ye; Angyuan Ma; Boyuan Wang; Chaojun Ni; Fangzheng Ye; Guan Huang; Guo Li / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:MoE</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">GigaWorld-Policy-0.5 是一个面向机器人控制的世界动作模型：训练时借助未来画面学动作，推理时只输出动作，目标是让这类模型能实时闭环运行。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在本地 RTX 4090 上单次推理延迟 85 毫秒；原文称在保留未来视觉动态带来的训练收益的同时提升了推理效率。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">预训练混合动作条件世界建模与世界动作模型目标；推理侧用 Mixture-of-Transformers 把视觉动态和动作生成拆成不同专家，只做动作解码时激活计算更少；另用智能体自动搜索训练超参数。</span></div>
+<div class="score-reason">评分依据：机器人策略模型的实时推理优化，本地 GPU 上 85 毫秒，属于具身推理效率的可迁移工作；但实质是动作策略模型，不含规划、记忆或工具闭环。PDF 首页署名 GigaAI 与清华大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.13960" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

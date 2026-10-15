@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>The Joint Effect of Quantization and Sampling Temperature on LLM Safety Alignment: A Factorial Analysis</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-06-28 · Hari Prasad, Ritam Pal / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span><span class="tag">应用:语音</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用因子实验研究量化与采样温度对LLM安全对齐的联合影响，覆盖9个指令模型、3精度322k响应由六模型安全集成判定。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">标准INT4/INT8量化对7/9模型安全中性，温度升高使脆弱模型决策不稳（DFR达53.0%），二者不构成双倍惩罚；提出部署应报告多样本稳定性。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：量化部署安全面向端侧低比特部署，端侧属性强；首个量化-温度因子安全分析有创新。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-28 · Hari Prasad, Ritam Pal / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">模型:SmolLM</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">系统检验“量化 + 调高采样温度”这两种常见部署设置会不会一起削弱大模型的安全对齐。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">覆盖 8 个模型、3 种精度、6 个温度共 144 种配置、约 200 万条回复：7/8 个模型 AWQ INT4 的攻击成功率与 FP16 相差约 1.6 个百分点以内或更低，只有 SmolLM3-3B 从 34.5% 升到 44.1%；温度 1.0 时决策翻转率达 41.9%；两者叠加并不放大风险。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">做全因子实验：在 7 个有害性基准上用六个评审模型集成打分，并定义复合退化指数衡量量化与温度的交互效应。</span></div>
+<div class="score-reason">评分依据：低比特量化是端侧部署的常态，这项研究告诉部署者 INT4/INT8 本身大体不伤安全、真正的风险在采样温度和单一基准评测；属评测分析类工作，方法本身不新。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.29581" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

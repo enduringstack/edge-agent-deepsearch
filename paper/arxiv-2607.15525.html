@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Kolmogorov--Arnold Networks for Small Language Models</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-17 · Felippe Alves; Renato Vicente / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Kolmogorov--Arnold Networks (KANs) replace fixed node activations with learned one-dimensional edge functions, offering an explicit interface for interpretation…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-17 · Felippe Alves; Renato Vicente / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这篇论文系统检验了 KAN 网络能否替代小语言模型里的前馈层，结论是它适合做可解释性分析，但不能带来质量或速度优势。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">1000 万参数的 KAN 小模型中，87.8% 的边函数是非线性的、仅 0.4% 不活跃，剪掉活跃度最低的 20–25% 损失几乎不变；BLiMP 上各结构准确率只在 62.4–63.1% 之间；最好的 Chebyshev 变体单次生成延迟约 550 毫秒，明显慢于 MLP 的 309–321 毫秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把前馈层换成 B 样条、Chebyshev、有理函数等 KAN 变体，与 GELU MLP、SwiGLU 在 BabyLM 等标准基准上多随机种子对比，并对全部边函数做重建和活跃度审计。</span></div>
+<div class="score-reason">评分依据：小语言模型结构和前馈层剪枝属于端侧小模型技术栈，可迁移，相关度 4；主要贡献是严格的负面结论和可解释性审计，方法本身不新，贡献 4。作者署名为圣保罗大学及其与 TELUS Digital 合办的研究中心，未明确为公司项目，公司归属留空。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.15525" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Agentic-V2X: Small Language Model Agents for Deadline-Aware V2X Scheduling in 5G/6G Networks</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-07-05 · Gerasimos Papanikolaou-Ntais; Alexandros Kaloxylos; Athanasios Kanavos / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用本地部署的小语言模型生成 V2X 调度策略、轻量控制器执行的 5G/6G 网络架构。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">126 次运行显示自适应 LLM-rApp/xApp 能生成可执行策略，在高密度下关键可靠性均值优于 PF，但整体未超最强静态策略。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">小模型根据场景摘要生成含服务优先级/权重界/安全约束的结构化策略，验证器检查修复后控制器在 ns-3 中改调度权重执行。</span></div>
-<div class="score-reason">评分依据：明确本地部署小模型做策略生成（relevance 8）。架构整合+安全可执行策略生成（contribution 5）。vendors 空。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-05 · Gerasimos Papanikolaou-Ntais; Alexandros Kaloxylos; Athanasios Kanavos / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:工具调用</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Agentic-V2X 让一个本地部署的小语言模型充当车联网调度的“策略制定者”，定期生成调度策略，再由轻量控制器校验后执行，避免大模型直接做实时调度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 126 次完整仿真中，自适应方案生成的策略都有效可执行，在最高车辆密度下关键业务可靠性均值优于比例公平调度；但统计上它并非整体最优，仍低于最强的静态策略。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">小模型（Ollama 运行的 qwen2.5:7b）根据场景摘要、业务目标和遥测数据每 10 秒生成结构化策略，校验器检查并修复后，由控制器在 ns-3 仿真中调整调度权重执行。</span></div>
+<div class="score-reason">评分依据：小模型本地生成网络策略与端侧智能体思路相近，但只在 ns-3 仿真中评测，没有真实设备执行；原文如实报告了方法并非最优。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.04290" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

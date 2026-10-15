@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Physical Self-Supervised Learning: IMU Sensing without Manual Labels</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-20 · Yuyang Leng; Renyuan Liu; Shaohan Hu; Peijun Zhao; Chun-Fu Chen; Songqing Chen; Shuochao Yao / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Deep neural networks have become a promising approach for IMU-based sensing, but their scalability is fundamentally limited by costly labeled data and poor robu…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-20 · Yuyang Leng; Renyuan Liu; Shaohan Hu; Peijun Zhao; Chun-Fu Chen; Songqing Chen; Shuochao Yao / MobiSys 2026</div>
+<div class="tags"><span class="vendor-tag">JPMorgan Chase</span><span class="tag">方向:端侧训练</span><span class="tag">方向:测试时自适应</span><span class="tag">硬件:手机</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用 IMU（惯性传感器）做运动追踪和动作捕捉通常要大量人工标注，换设备、换佩戴位置就失灵。这篇提出“物理自监督学习”，完全不用标签就能训练 IMU 感知模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在公开数据集和真实部署中，跨场景泛化时惯性追踪误差最多降低 5 倍、全身动作捕捉误差最多降低 4 倍，并优于有监督和自监督基线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把自编码器里的神经网络解码器换成可学习的运动学方程（物理解码器），再加频域-空间约束区分传感器与物体运动、多视角运动学树和不确定性建模，用物理规律代替标签做监督。</span></div>
+<div class="score-reason">评分依据：面向手机、手表等可穿戴设备上的 IMU 感知，属于端侧感知模型的训练范式创新，但不涉及推理部署优化，相关度中等；免标签并显著提升泛化，贡献较高。PDF 首页作者 3-5 署名 JPMorgan Chase 全球技术应用研究部，其余为 George Mason University。 作者机构依据：arXiv PDF 首页署名 JPMorgan Chase（PDF 首页作者 Shaohan Hu、Peijun Zhao、Chun-Fu Chen 署名 JPMorgan Chase 全球技术应用研究部，邮箱为 jpmchase.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.18361" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

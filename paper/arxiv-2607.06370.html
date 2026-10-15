@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Training-Free Acceleration for Vision-Language-Action Models with Action Caching and Refinement</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-07-07 · Ryuji Oi, Hikari Otsuka, Kosuke Matsushima, Yuki Ichikawa, Masato Motomura, Tatsuya Kaneko, Daichi Fujiki / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">方向:推理框架</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">给 VLA 模型的迭代去噪动作头加一个即插即用外部缓存，复用过去中间动作热启动生成，大幅降推理延迟。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">π_0.5 加速 11.75 倍、GR00T-N1.6 加速 34.43 倍，仿真和真机均保高成功率。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">ActionCache 用紧凑多模态键存中间动作，跨 episode/任务检索相似过去上下文热启动生成。</span></div>
-<div class="score-reason">评分依据：VLA 实时部署加速，可迁移端侧机器人（relevance 7）。动作缓存跨 episode 检索热启动免训练创新（contribution 8）。作者东京大学，学校项目。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-07 · Ryuji Oi, Hikari Otsuka, Kosuke Matsushima, Yuki Ichikawa, Masato Motomura, Tatsuya Kaneko, Daichi Fujiki / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">机器人用的视觉-语言-动作（VLA）模型在动作头上要反复去噪，实时性差；ActionCache 是即插即用的外部缓存，复用过去生成过的中间动作来加速。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">仿真和真实机器人环境中保持高任务成功率，动作头推理分别对 π0.5 和 GR00T-N1.6 最高加速 10.44 倍和 40.17 倍（RTX 5090 上测得）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用紧凑的多模态键存储过往中间动作，遇到相似情境（甚至跨任务）就取出来作为去噪起点，再少量细化得到目标动作。</span></div>
+<div class="score-reason">评分依据：降低机器人 VLA 实时推理延迟，对机器人端部署有直接价值；但只是动作模型加速，没有规划、记忆或工具闭环，且延迟在桌面 GPU 上测得。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.06370" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

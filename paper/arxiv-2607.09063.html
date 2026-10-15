@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>EvoLP: Self-Evolving Latency Predictor for Model Compression in Real-Time Edge Systems</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-10 · Shuo Huai; Hao Kong; Shiqing Li; Xiangzhong Luo; Ravi Subramaniam; Christian Makaya; Qian Lin; Weichen Liu / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Edge devices are increasingly utilized for deploying deep learning applications on embedded systems.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-10 · Shuo Huai; Hao Kong; Shiqing Li; Xiangzhong Luo; Ravi Subramaniam; Christian Makaya; Qian Lin; Weichen Liu / IEEE Embedded Systems Letters</div>
+<div class="tags"><span class="vendor-tag">HP</span><span class="tag">方向:编译部署</span><span class="tag">方向:剪枝稀疏</span><span class="tag">硬件:CPU</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">给模型压缩做“延迟约束”时，每次都上真机测延迟太慢。EvoLP 是一个能在压缩过程中边用边自我修正的端侧推理延迟预测器。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 VGG、ResNet、Inception、MobileNet 四类模型和三台边缘设备（ARMv8 CPU、NVIDIA Pascal 与 Maxwell 架构边缘 GPU）上，±5% 误差内的预测比例在多数设备和模型上高于 nn-Meter、TALM 等基线；接入压缩流程后能在满足严格延迟约束的同时得到更高精度的模型。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">只针对正在压缩的那个模型采样少量层结构上真机测量，用小型 MLP 预测各层延迟；再用一个可训练的“演化矩阵”拿压缩过程中陆续测回的真实延迟不断校正整体预测，学习数据搬运、并行分支等运行时特性。</span></div>
+<div class="score-reason">评分依据：直接面向边缘设备实时推理的延迟约束压缩，在 ARM CPU 与 NVIDIA 边缘 GPU 真机上评测（相关度 7）。方法属于延迟预测器的工程改进，增益扎实但创新幅度中等（贡献 5）。PDF 首页脚注写明 3 位作者来自 HP Inc.，其余来自南洋理工大学（HP-NTU 联合实验室）。 作者机构依据：arXiv PDF 首页署名 HP（PDF 首页脚注：R. Subramaniam、C. Makaya、Q. Lin 三位作者就职于 HP Inc.（美国 Palo Alto），其余作者为南洋理工大学，工作由 HP-NTU 数字制造联合实验室支持）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.09063" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

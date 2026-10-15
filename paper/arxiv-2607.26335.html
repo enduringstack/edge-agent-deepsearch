@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>The Fabric Is the Cluster Driver: Cross-Layer eBPF Policies for GPU-CXL Fabrics</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-28 · Yiwei Yang; Andi Quinn / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:云端serving</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">作者提出 fabric_ext，一个用于在 GPU-CXL fabric 上实现可扩展 OS 策略的 eBPF 中间件编译器与运行时。</span></div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-07-28 · Yiwei Yang; Andi Quinn / arXiv</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">fabric_ext 是一个面向 GPU 与 CXL 互联集群的 eBPF 策略编译器和运行时，让一套数据搬运策略能同时作用在 GPU、网卡/DPU 和 CXL 交换机上。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用“语义搬运图”描述每次数据移动的大小、复用距离、读写比和变换（如量化、压缩），再编译成各设备上的 eBPF 程序和一致性分级的映射表；以大模型 prefill 为典型负载。</span></div>
+<div class="score-reason">评分依据：面向数据中心 GPU 集群的系统软件，属于云端大模型推理基础设施（相关度 2）；跨层 eBPF 策略的抽象有一定新意，但缺少量化评测（贡献 5）。作者来自加州大学圣克鲁兹分校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.26335" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

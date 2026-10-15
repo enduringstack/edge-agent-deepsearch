@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>OmniFocus: Query-Guided Modality-Balanced Token Compression for Omni-Modal Large Language Models</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-03 · Shijie Cao; Qingyu Zhang; Boxi Yu; Yuzhong Zhang; Boxi Cao; Yaojie Lu; Hongyu Lin; Xianpei Han / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">面向 Omni-LLM 的免训练、查询引导的音视频 token 压缩方法，按模态对称压缩。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen2.5-Omni 上 25% token 保留时保持强性能；DailyOmni 上 59.40 准确率且 prefill 提速最多 1.38 倍。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">对视频与音频各自独立估计重要性，做模态对称压缩，保留模态特定显著证据并维持音视频对齐，缓解单模态引导压缩的模态偏置。</span></div>
-<div class="score-reason">评分依据：Omni-LLM token 压缩属端侧技术栈但非显式端侧（relevance 6）。模态对称独立重要性估计有创新（contribution 5）。vendors 空。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-03 · Shijie Cao; Qingyu Zhang; Boxi Yu; Yuzhong Zhang; Boxi Cao; Yaojie Lu; Hongyu Lin; Xianpei Han / arXiv</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">应用:视频</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">全模态大模型同时处理音频和视频时 token 数量巨大，OmniFocus 是一种无需训练、由用户问题引导的音视频 token 压缩方法，减少推理开销。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen2.5-Omni 系列和四个音视频基准上，25% token 保留率下多项指标优于现有方法；Qwen2.5-Omni-7B 在 DailyOmni 上保持 59.40 准确率，预填充最多快 1.38 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">分别为视频和音频独立估计每个 token 与问题的相关度，两种模态对称压缩，既保留各自关键证据又维持音画对齐，避免只用单一模态指导造成偏差。</span></div>
+<div class="score-reason">评分依据：token 压缩可直接迁移到资源受限设备上的多模态推理，但实验在服务器 GPU 上完成；属于常见 token 剪枝思路的音视频改进。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.03050" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

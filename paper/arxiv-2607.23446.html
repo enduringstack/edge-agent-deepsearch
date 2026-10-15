@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Do Small Models Use the Law You Give Them? Context-Injected Fine-Tuning for Legal QA in Bangladesh</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-26 · Moniruzzaman Mahadi; Abrar Mohammed Tanzim Alam; Sayma Siddika Monalisa; Mir Mohammad Asif Abdullah; Swakkhar Shatabda; Md Adnan Arefeen / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">小语言模型即便拿到相关法定条款仍可能答错，作者针对此展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-26 · Moniruzzaman Mahadi; Abrar Mohammed Tanzim Alam; Sayma Siddika Monalisa; Mir Mohammad Asif Abdullah; Swakkhar Shatabda; Md Adnan Arefeen / arXiv</div>
+<div class="tags"><span class="tag">应用:RAG</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">小模型即使拿到了相关法条也可能答错。这篇在孟加拉国法律问答上测试：用“带法条的示例”微调小模型，能否让它更会利用检索到的法律条文。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">整理 2165 条双语问答，对 0.8B、2B、4B 的 Qwen3.5 微调；0.8B 模型在 2022 年英文卷配合向量检索时得分从 2 分升到 34 分（满分 100），0.8B 和 2B 的提升经配对检验显著，4B 无净提升；答题语种跑偏比例从 44.0%–53.2% 降到 0.2%–0.7%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在训练样本中注入相关法条原文进行微调，再在无检索、BM25 和向量检索三种设置下用律师资格考试题评测，并对三次随机种子运行取严格一致性计分。</span></div>
+<div class="score-reason">评分依据：研究 1B 以下小模型配合检索的使用效果，对端侧小模型做本地知识问答有一定参考，但没有部署实验（相关度 3）。属于特定领域的微调与评测（贡献 4）。数据集已公开。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.23446" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Towards Efficient Convolutional Neural Network for Embedded Hardware via Multi-Dimensional Pruning</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-13 · Hao Kong; Di Liu; Xiangzhong Luo; Shuo Huai; Ravi Subramaniam; Christian Makaya; Qian Lin; Weichen Liu / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">In this paper, we propose TECO, a multi-dimensional pruning framework to collaboratively prune the three dimensions (depth, width, and resolution) of convolutio…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-13 · Hao Kong; Di Liu; Xiangzhong Luo; Shuo Huai; Ravi Subramaniam; Christian Makaya; Qian Lin; Weichen Liu / DAC 2023</div>
+<div class="tags"><span class="vendor-tag">HP</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:编译部署</span><span class="tag">硬件:Jetson</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">南洋理工大学与 HP 提出 TECO：同时裁剪卷积网络的深度、宽度和输入分辨率三个维度，让模型在嵌入式硬件上跑得更快。这是 DAC 2023 已发表论文的作者版本。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ImageNet 上比 HRank 在相近计算量下 top-1 准确率高 3.97%；在端侧加速上比 GAL 快 1.91 倍且准确率高 1.12%；在 Jetson Nano、Jetson TX2 和 AGX Xavier 上实测推理时延。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用两阶段重要性评估同时衡量每个剪枝单元在本维度内和跨维度的重要性，再用启发式算法逐步裁剪三个维度，并用按维度的时延模型估计时延收益，避免剪枝时反复上板测量。</span></div>
+<div class="score-reason">评分依据：面向嵌入式设备的模型剪枝，并在多款 Jetson 上实测时延，端侧相关度高；但对象是 CNN，且是 2023 年已发表工作，方法属于结构化剪枝的系统化改进。PDF 首页作者 Ravi Subramaniam、Christian Makaya、Qian Lin 署名 HP Inc.，主导为南洋理工大学。 作者机构依据：arXiv PDF 首页署名 HP（PDF 首页作者 Ravi Subramaniam、Christian Makaya、Qian Lin 署名 HP Inc., Palo Alto；其余作者来自南洋理工大学（含 HP-NTU 联合实验室）和挪威科技大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.11473" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

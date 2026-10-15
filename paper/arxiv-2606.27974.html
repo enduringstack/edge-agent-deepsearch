@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ProMSA:Progressive Multimodal Search Agents for Knowledge-Based Visual Question Answering</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-26 · ZhengXian Wu, Hangrui Xu, Kai Shi et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:多模态</span><span class="tag">方向:端侧agent</span><span class="tag">应用:RAG</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">ProMSA 是渐进式多模态搜索 agent,迭代选择图像/文本搜索或停止,受工具调用预算与去重约束,用拒绝采样 SFT+TN-GSPO 序列级 RL 训练。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">E-VQA 与 InfoSeek 上一致优于强 RAG 与 agent 基线,检索与端到端精度提升;未报告具体数字。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：KB-VQA agent,与端侧无关;渐进式搜索+TN-GSPO,中等创新。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-06-26 · ZhengXian Wu, Hangrui Xu, Kai Shi et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">OPPO</span><span class="tag">方向:工具调用</span><span class="tag">方向:多模态</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ProMSA 是一个面向知识型视觉问答的多模态搜索智能体：看到图片和问题后，自己一步步决定搜图、搜文字还是停止，而不是按固定流程检索一次就作答。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 E-VQA 和 InfoSeek 两个基准上，相比强检索增强和智能体基线，检索效果和最终答题准确率都稳定提升（摘要未给出具体数字）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">设定明确的工具调用预算并去重避免重复检索；先用拒绝采样的监督微调学会正确的工具调用格式，再用同时按生成长度和工具交互深度归一化的序列级强化学习目标 TN-GSPO 优化。</span></div>
+<div class="score-reason">评分依据：属于云端多模态搜索智能体，没有端侧部署内容，相关度低；预算受控的渐进式检索和训练目标有一定新意。公司归属依据 arXiv PDF 首页：第一、三位作者及 Jun Yang、Zhenyu Yang、Haonan Lu 署名 OPPO AI Center。 作者机构依据：arXiv PDF 首页署名 OPPO（PDF 首页 ZhengXian Wu、Kai Shi、Jun Yang、Zhenyu Yang、Haonan Lu 署名 OPPO AI Center, OPPO Inc.）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.27974" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

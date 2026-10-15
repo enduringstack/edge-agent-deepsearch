@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots</h1>
-<div class="meta"><span class="score">17</span> <span class="tier school">学校预印本</span>  2026-07-02 · Ling Xu, Chuyu Han, Borui Li et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">做了一个可移植的 C++ 推理运行时 Embodied.cpp,专门给具身 AI 模型(VLA 和世界-动作模型)在异构边缘设备上跑闭环控制用,分五层模块化组织。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 HY-VLA 和 pi0.5 两个 VLA 模型上闭环任务成功率分别 100% 和 91%;WAM 基准将 block 内存从 312.2 MiB 降到 88.1 MiB。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确面向异构边缘设备的具身模型运行时,五层架构+多速率执行有新意。</div>
+<div class="meta"><span class="score">15</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-02 · Ling Xu, Chuyu Han, Borui Li et al. / arXiv</div>
+<div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span><span class="tag">方向:量化</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Embodied.cpp 是一个可移植的 C++ 推理运行时，专门为机器人上的视觉-语言-动作模型和世界-动作模型设计，解决“每个模型一套 Python 栈”的部署碎片化问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 pi0.5、GR00T N1.7、HY-VLA 三个 VLA 和 Cosmos3、LingBot-VA 两个世界-动作模型上，相比 Python 基线推理提速 1.05–2.70 倍、显存降低 7%–77%，多数配置成功率接近基线；如 LingBot-VA 显存从 24.75 GB 降到 16.44 GB，成功率 98% 对 100%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把具身模型的共同执行路径拆成输入适配、序列构建、主干执行、头部插件、部署适配五层，支持多速率执行、batch=1 低延迟融合推理和 8/6/4 比特量化，用统一后端抽象覆盖 CPU、GPU、NPU 等异构设备。</span></div>
+<div class="score-reason">评分依据：专为机器人端侧部署设计的推理运行时，面向 Jetson、RK 板等异构边缘硬件（相关度 8）；首个同时覆盖 VLA 与世界-动作模型的统一运行时，开源（贡献 7）。属动作模型推理运行时，无规划/记忆/工具闭环，不算端侧智能体。东南大学为主，作者 7 署名微软研究院。 作者机构依据：arXiv PDF 首页署名 Microsoft（arXiv PDF 首页作者 7 Shiqi Jiang 署名 Microsoft Research，项目主导为东南大学，另有南京大学和清华 AIR 作者）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.02501" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

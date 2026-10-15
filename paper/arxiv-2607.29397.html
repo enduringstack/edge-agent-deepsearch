@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Studying quantization trade-offs for efficient inference deployment in machine translation</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-31 · Jim Zhao; Sohir Maskey; Koen Oostermeijer; Douglas Orr; Teryn Jones / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在真实服务器环境部署 LLM 既要高质量回答又要低延迟。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-07-31 · Jim Zhao; Sohir Maskey; Koen Oostermeijer; Douglas Orr; Teryn Jones / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:云端serving</span><span class="tag">硬件:H100</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究机器翻译大模型在服务器上部署时，量化格式和文档分块策略怎样共同影响延迟、吞吐和翻译质量。对象是 1.7B~22B 三种规模的 EuroLLM，跑在单张 A100 或 H100 上。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">W4A8 或 W8A8 量化配合文档分块，在多种负载下改善了延迟-吞吐帕累托曲线；文档级评测显示，常规句子级评测可能低估量化对长文档翻译的影响，影响程度取决于量化格式、翻译方向和模型。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在编排层面的受控负载下系统比较不同量化格式与分块策略，并基于 DocHPLT 新增文档级翻译质量评测。</span></div>
+<div class="score-reason">评分依据：属于云端 GPU 上的量化部署实证研究，对端侧有一定参考但不涉及资源受限设备（相关度 3）；以系统性评测为主（贡献 3）。机构依据：arXiv 论文首页作者署名 Aleph Alpha Research（第一作者为实习）和 Graphcore。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29397" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

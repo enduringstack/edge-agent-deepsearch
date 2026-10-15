@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Cardiologent: Multi-Agent Clinical Decision Support for Patient-Level Arrhythmia Assessment, Urgency, and Management</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-28 · Sukju Oh; Moo-Yong Rhee; Jae-Sik Jang; Sukkyu Sun / arXiv</div>
-<div class="tags"><span class="vendor-tag">OPPO</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">同一段房颤在健康成人中是小发现、在伴高血压老年患者中却是抗凝指征：相同表现的临床意义因人而异，作者针对该问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 OPPO（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-28 · Sukju Oh; Moo-Yong Rhee; Jae-Sik Jang; Sukkyu Sun / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:工具调用</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一个面向心律失常的多智能体临床决策系统：从单导联心电和可穿戴设备的脉搏波读起，一直推到诊断、紧急程度和治疗建议。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在综合诊断、临床意义、紧急程度与处置三个维度上均得分最高，心内科医生和大模型评审都把它排第一；大模型评审与医生的一致性（ICC 0.74、0.66）与医生之间的一致性（0.67）相当。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每种信号配一个智能体，基于测量到的波形特征而非单纯标签给出判读；再汇总成患者的心律画像，结合患者资料和按病例检索到的临床指南推理，并由批评智能体逐条核对结论与所引指南是否一致。</span></div>
+<div class="score-reason">评分依据：使用了可穿戴设备采集的信号，但智能体推理并不在设备端运行，属于医疗场景的多智能体应用，端侧相关度低。把检测到决策串成可审计链条有一定新意。作者来自韩国东国大学及其附属医院，PDF 首页未见企业署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.25340" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

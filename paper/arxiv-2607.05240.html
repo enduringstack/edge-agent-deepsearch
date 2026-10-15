@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Optimizing ML Workload Partitioning between CPUs and CIM Accelerators for Heterogeneous Computing</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-07-06 · Joel Klein, Rebecca Pelke, Roberto Laudani, Jan Moritz Joseph, Rainer Leupers / arXiv</div>
-<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:高效推理</span><span class="tag">硬件:CPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在 CPU 和存内计算（CIM）加速器间用 ILP 做工作负载划分，考虑 RRAM 约束和并行性，最小化端到端推理延迟。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">异构 CPU-CIM 执行比仅 CPU（边缘 CPU）快 30.9 倍，比高性能 CPU 快 7.3 倍。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">ILP 划分框架最小化推理延迟，纳入 RRAM 有限内存/高写延迟/有限寿命约束，结合经验剖析与解析模型，捕捉并行性和低层架构效应。</span></div>
-<div class="score-reason">评分依据：边缘 CPU+CIM 异构加速，明确端侧硬件（relevance 8）。ILP 划分纳入 RRAM 约束有工程创新（contribution 6）。作者 RWTH Aachen，学校项目。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-06 · Joel Klein, Rebecca Pelke, Roberto Laudani, Jan Moritz Joseph, Rainer Leupers / VLSI-SoC 2026</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:调度服务</span><span class="tag">硬件:CIM</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">存内计算（CIM）加速器擅长做矩阵向量乘，但阻变存储容量小、写入慢、寿命有限；论文给出在 CPU 与 CIM 之间切分机器学习负载的优化框架。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">异构 CPU-CIM 执行相比纯 CPU 执行，在边缘 CPU 上最高加速 30.9 倍，在高性能 CPU 上最高加速 7.3 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用整数线性规划在阻变存储约束下最小化端到端推理延迟，考虑并行性，并结合实测画像与解析模型；再做设计空间探索，给出未来 CIM 设计建议。</span></div>
+<div class="score-reason">评分依据：面向边缘 CPU 加 CIM 加速器的异构推理切分，与端侧硬件部署直接相关；方法是 ILP 建模的工程整合，已被 VLSI-SoC 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.05240" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Sangam: Efficiently Serving Diffusion LLMs with the AR Stack</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-05 · Nitin Kedia; Saurabh Agarwal; Myungjin Lee; Aditya Akella / arXiv</div>
-<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">方向:KV cache</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">为扩散语言模型（dLLM）设计的缓存推理 serving 系统，把 AR serving 机制适配到 dLLM。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">decode-heavy 负载下 colocated 比 hybrid 在 LLaDA-8B ShareGPT 上平均延迟降 9-20%；prefill-heavy 负载下 hybrid 比 colocated 在 Dream-7B arXiv 上降 8-20%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">引入亏空 token 预算调度器（先放入在飞 decode、只在预算允许时放入不可分 prefill、结转余额）；hybrid 策略把 prefill 溢出到 decode worker 并用同调度器保护其 decode。</span></div>
-<div class="score-reason">评分依据：云端 dLLM serving 系统（relevance 4，云端serving）。亏空预算调度+hybrid 溢出有系统创新（contribution 7）。vendors 空。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-05 · Nitin Kedia; Saurabh Agarwal; Myungjin Lee; Aditya Akella / arXiv</div>
+<div class="tags"><span class="vendor-tag">Cisco</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">方向:KV cache</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Sangam 是给扩散语言模型（一次可以同时确定多个位置的文本生成模型）设计的推理服务系统，把自回归模型成熟的服务技术改造后用到它身上。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">解码密集负载下，共置部署比混合部署在 LLaDA-8B 上平均延迟降低 9%~20%；预填充密集负载下，混合部署比共置部署在 Dream-7B 上降低 8%~20%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">设计“亏空 token 预算”调度器：优先接纳进行中的解码，只有预算累积够时才接纳不可拆分的预填充，未用完的预算顺延；并允许预填充溢出到解码节点以缓解资源划分问题。</span></div>
+<div class="score-reason">评分依据：面向云端的扩散语言模型推理服务，与端侧关联很弱；对新型生成模型的服务调度做了系统分析。 作者机构依据：arXiv PDF 首页署名 Cisco（PDF 首页作者 3（Myungjin Lee）署名 Cisco Research）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.04206" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

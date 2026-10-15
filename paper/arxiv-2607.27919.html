@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Memory Decoder at Scale: A Pretrained, Parametric Long-Term Memory</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-31 · Rubin Wei, Jiaqi Cao, Jiarui Wang, Junming Zhang, Qipeng Guo, Bowen Zhou, Zhouhan Lin / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Decoder-only 语言模型把长期记忆和推理挤在同一组参数里，记忆容量很难单独扩。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=49)；affiliation 待核实</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-31 · Rubin Wei, Jiaqi Cao, Jiarui Wang, Junming Zhang, Qipeng Guo, Bowen Zhou, Zhouhan Lin / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:模型架构</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把可插拔的参数化长期记忆模块（Memory Decoder）扩展到 69 亿参数、3000 亿 token 预训练，验证“单独扩大记忆”比扩大主模型更省参数。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">6.9B 通用记忆搭配 Pythia-410M，在 17 个基准上平均分从 29.86 升到 37.34，超过 Pythia-12B（37.24）且总参数少 39%；对 0.6B 到 14B 的 Qwen3 Base，1.7B 领域记忆在三个领域平均提升超过 9 分。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">预训练一个独立的记忆模型去拟合 kNN 检索分布，推理时与基座模型输出融合；为此搭建分布式 Faiss 建索引与检索流程，并稀疏、分批加载 kNN 分布。</span></div>
+<div class="score-reason">评分依据：小基座加独立记忆模块即可逼近大模型，这一结论对端侧选择“小模型 + 可插拔知识”路线有参考价值（相关度 4）；工作重在规模化验证。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.27919" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

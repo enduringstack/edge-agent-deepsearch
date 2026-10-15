@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Token Time Continuous Diffusion for Language Modeling</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-17 · Parikshit Bansal, Sujay Sanghavi / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">In this paper we introduce token time continuous diffusion (TTCD), a new diffusion language model which (a) operates in continuous space, deterministically mapp…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=9)；affiliation 待核实</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-17 · Parikshit Bansal, Sujay Sanghavi / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一种新的扩散语言模型：在连续空间里生成文本，并让每个 token 拥有自己的「时间」，有把握的 token 先定下来，用于在少步数快速生成时保持质量。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">训练 160M 参数模型并自蒸馏后，在高加速比下无条件生成质量与同规模、同数据的现有模型相当，条件生成更好；数独求解上也有类似提升。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在连续嵌入空间中从高斯噪声确定性地映射到最终文本，避免离散扩散一次并行采样多个 token 带来的误差；不同 token 以不同速度去噪。</span></div>
+<div class="score-reason">评分依据：扩散语言模型的少步生成属于推理加速方向，对低延迟生成有间接参考价值，但只在 160M 小模型上验证，没有部署评测。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.14106" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

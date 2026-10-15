@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PyroDash: Cost-Efficient Token-Level Small-Large Language Model Collaborative Inference</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-22 · Niqi Lyu; Pengtao Shi; Wei Qiu; Jianlin Zhong; Sicong Xia; Jianyao Ma; Yicheng Ding / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Large language models (LLMs) provide strong reasoning capabilities but are expensive to serve at scale, whereas small language models (SLMs) are cheaper but les…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-22 · Niqi Lyu; Pengtao Shi; Wei Qiu; Jianlin Zhong; Sicong Xia; Jianyao Ma; Yicheng Ding / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">小模型便宜但遇到难题容易出错，大模型强但贵；PyroDash 让小模型在生成过程中自己判断何时把剩余推理交给大模型，以较低成本拿到接近甚至超过大模型的效果。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在五个数学推理基准上，取 λ=0.05 时平均准确率 64.04%，比只用大模型高 6.36 个百分点，同时成本降低 20.4%；取 λ=0.6 时准确率 54.55%，大模型 token 占比仅 1.90%，每题平均调用大模型 0.012 次，总成本从 49.36 美元降到 1.78 美元。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">给小模型加一个控制 token，生成中一旦输出它就把问题和已有推理过程一次性交给冻结的大模型续写；小模型分三步训练：学控制 token 嵌入、做面向卸载的监督微调、再用兼顾准确率与成本的 GRPO 强化学习对齐。</span></div>
+<div class="score-reason">评分依据：小模型自主决定何时求助大模型，可直接迁移到端侧小模型配合云端大模型的端云协同推理，但论文按服务成本评估、未做设备端实验（相关度 6）。把路由策略内化进小模型、无需额外路由器和大模型 logits，有一定新意（贡献 6）。PDF 首页署名 Pyromind Dynamics 公司。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.20327" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

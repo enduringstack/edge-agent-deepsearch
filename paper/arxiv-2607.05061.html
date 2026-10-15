@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>KVpop -- Key-Value Cache Compression with Predictive Online Pruning</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-07-06 · Lukas Hauzenberger, Niklas Schmidinger, Anamaria-Roberta Hartl, David Stap, Thomas Schmied, Sebastian Böck, Günter Klambauer, Sepp Hochreiter / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">学会一个 KV 缓存淘汰策略，直接用未来注意力信号监督保留/丢弃决策，大幅压缩 KV 缓存且不掉精度。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">Qwen3-4B 在 75% 压缩下保留 98% 全注意力性能，88% 压缩下 97%；Qwen3-8B 接近满分教师性能。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">训练一个打分器，用高效计算的未实体化注意力目标直接监督 keep-or-drop，并引入延迟记忆打分利用近未来上下文。</span></div>
-<div class="score-reason">评分依据：KV 缓存压缩属端侧推理技术栈，可迁移（relevance 7）。未来注意力监督+延迟记忆打分有创新（contribution 8）。作者含 Sepp Hochreiter (JKU Linz)，学校项目。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-06 · Lukas Hauzenberger, Niklas Schmidinger, Anamaria-Roberta Hartl, David Stap, Thomas Schmied, Sebastian Böck, Günter Klambauer, Sepp Hochreiter / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">应用:长上下文推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长上下文解码时 KV 缓存会随长度线性增长；KVpop 训练一个小打分器，在固定预算下学会该保留还是丢弃哪些 KV。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 AIME 和 HMMT 数学推理上，Qwen3-4B 压缩 75% KV 缓存时保留全注意力 98% 的性能，压缩 88% 时保留 97%，稳定优于现有淘汰基线；Qwen3-8B 接近完整教师性能。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用“未来注意力”作为监督目标直接训练保留/丢弃决策，且无需显式算出稠密注意力图；还引入延迟打分，等几步看到近期上下文后再决定。</span></div>
+<div class="score-reason">评分依据：KV 缓存压缩可直接迁移到内存受限的端侧推理，但实验在服务器 GPU 上；学习式淘汰加延迟打分有一定新意，并公开了模型权重。公司归属依据：PDF 首页作者单位 1 为 NXAI，通讯邮箱为 nx-ai.com。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.05061" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

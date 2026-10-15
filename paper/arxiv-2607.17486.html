@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SALT: Salience-Aware Lexical Trie for Long-Context Compression</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-20 · Oteo Mamo; Hyunjin Yi; Joydhriti Choudhury; Shangqian Gao; Weikuan Yu / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">As large language models (LLMs) process increasingly longer prompts, computation and KV-cache memory costs have emerged as major bottlenecks in inference system…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-20 · Oteo Mamo; Hyunjin Yi; Joydhriti Choudhury; Shangqian Gao; Weikuan Yu / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">应用:长上下文推理</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长提示词让预填充计算和 KV cache 内存暴涨，SALT 在送进模型前先按主题压缩文档，避免压缩时只留下最主要的主题、丢掉其他相关内容。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LongBench、Llama-3.1-8B-Instruct、20% 保留预算下，SALT 在同类输入压缩方法中平均得分最高；在 GovReport 和 QMSum 上 20% 保留率即可覆盖超过 90% 的主题关键词质量。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把每句话的关键词按出现频率组织成一棵字典树作为文档主题结构，按分支分配压缩预算并用查询关键词检索，树在多轮对话中可复用而无需重新编码。</span></div>
+<div class="score-reason">评分依据：输入端压缩能直接降低长上下文推理的预填充开销和缓存占用，对资源受限设备有迁移价值，但实验在服务器 GPU 上。字典树组织主题的做法轻量、与模型无关，代码开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.17486" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

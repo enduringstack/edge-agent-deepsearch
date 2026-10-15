@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Error Certificates for KV-Cache Eviction via Randomized Design</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-23 · Peng Xie / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Deterministic KV-cache eviction keeps the top-$k$ tokens under an importance score and deletes the rest.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-07-23 · Peng Xie / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">KV 缓存淘汰后，系统无从知道丢掉的内容对当前问题造成了多大误差。这篇工作把确定性的 top-k 淘汰改成已知概率的随机抽样，从而能为每一步给出误差“证书”。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在缓存只保留 10% 的 30 轮对话助手中，按证书触发重算的系统回忆题答对率 0.97，而 top-k 只有 0.09；对 26～30 轮之前的事实，召回率 97% 对 2%；证书在 96.9%～97.7% 的回放场景中覆盖真实注意力误差，区分“淘汰导致的失败”的 AUC 为 0.65～0.75。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对重要性排名以外的尾部令牌做泊松抽样并记录入选概率，用抽样调查中的方差估计器在保留集合上估计注意力输出误差，每个保留令牌只多存一个标量；误差超阈值时再触发重算。</span></div>
+<div class="score-reason">评分依据：KV 缓存压缩是端侧长上下文推理的关键技术，这项工作可直接迁移到内存受限设备，但实验未在端侧设备上进行（相关度 5）。首次让淘汰误差可估计并给出理论不可能性证明，创新度高（贡献 8）。作者来自慕尼黑工业大学，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.21475" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

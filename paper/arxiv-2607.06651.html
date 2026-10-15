@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Entropy-Guided Tensor Compression for Multimodal Federated Learning on Edge Devices</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-07-07 · Quoc Bao Phan, Tuy Tan Nguyen / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">硬件:MCU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在多模态联邦学习里按每层更新的谱熵自适应分配压缩秩，让算力各异的边缘设备也能高效参与训练。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">15 节点 Raspberry Pi 4/5 异构集群上压缩比达 56.8 倍，准确率还比未压缩 FedAvg 高 2.01%，收敛总传输量降到 1/66。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">MESH-FL 用截断 SVD 估计每层更新的谱熵，证明高熵需高重构秩，据此在模态/层/设备间按 payload 预算自适应分配矩阵乘积态压缩秩。</span></div>
-<div class="score-reason">评分依据：Raspberry Pi 集群多模态联邦学习，明确端侧（relevance 9）。熵引导张量压缩+收敛证明有理论与系统创新（contribution 7）。作者学校项目。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-07 · Quoc Bao Phan, Tuy Tan Nguyen / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:端侧训练</span><span class="tag">方向:多模态</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">手机和边缘设备上的多模态联邦学习中，各设备传感器和算力都不同；MESH-FL 按每层更新的信息量自适应分配压缩率，减少上传数据。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 15 台树莓派 4/5 组成的异构集群上，最高压缩 56.8 倍，最终精度比不压缩的 FedAvg 还高最多 2.01%，达到收敛所需总传输量最多减少 66 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用截断 SVD 估计每层更新的谱熵，熵高的层分配更高的矩阵乘积态（张量链）秩，在每个客户端的传输预算下做凸优化分配，并给出收敛保证。</span></div>
+<div class="score-reason">评分依据：在真实树莓派集群上做端侧联邦训练的通信压缩，与边缘设备相关；熵引导的秩分配有理论支撑。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.06651" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

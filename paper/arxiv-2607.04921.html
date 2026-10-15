@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Efficient Perception in Automotive Detection and Tracking Using Neuromorphic Computing</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-07-06 · Manish Kolachalam; Rani Malhotra / arXiv</div>
-<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">首次系统评估脉冲神经网络用于真实汽车多目标检测与跟踪，面向端侧能效。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">KITTI 检测 mAP 0.937、BDD100K MOT2020 0.771；跟踪 HOTA 0.701（KITTI）/0.445（BDD100K），与常规深度学习方法相当。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用 SpikeYOLO 架构做迁移学习，在 KITTI 与 BDD100K MOT2020 上评估检测与跟踪，证明 SNN 在能效上具竞争力。</span></div>
-<div class="score-reason">评分依据：神经形态 SNN 用于汽车感知，明确端侧能效（relevance 8）。首次 SNN 汽车检测跟踪综合评估（contribution 5）。vendors 空。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-06 · Manish Kolachalam; Rani Malhotra / arXiv</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:能耗功耗</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">评估脉冲神经网络（SNN）能否胜任真实车载场景的多目标检测与跟踪，作为比传统深度网络更省电的边缘感知方案。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">基于 SpikeYOLO 迁移学习，检测 mAP 在 KITTI 上为 0.937、BDD100K MOT2020 上为 0.771；跟踪 HOTA 分别为 0.701 和 0.445，与常规深度学习方法相当。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把 SpikeYOLO 脉冲检测网络迁移到车载数据集，再接多目标跟踪流程，系统比较精度。</span></div>
+<div class="score-reason">评分依据：SNN 是端侧低功耗推理的相邻方向，本文在车载感知真实数据上给出完整评估；但没有在神经形态芯片上实测功耗，方法以迁移已有架构为主。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.04921" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

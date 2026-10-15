@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Stable Autoregressive Speech Generation with Low-Frame-Rate High-Dimensional Continuous Tokens</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-31 · Yi Luo; Rongzhi Gu; Jixun Yao / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">应用:语音</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">自回归语音/音频生成的核心难题是平衡序列长度、表征能力和长时段稳定性。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span>  2026-07-31 · Yi Luo; Rongzhi Gu; Jixun Yao / arXiv</div>
+<div class="tags"><span class="vendor-tag">ByteDance</span><span class="tag">应用:语音</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">语音生成模型面临两难：token 越密细节越多，但流式生成越容易漂移。这篇工作设计了 8Hz、768 维的低帧率高维连续语音 token，配套一个抗误差累积的自回归生成框架。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">用 8Hz、768 维 token 时，重建质量保持住，单 token 可预测性提升，WER 有竞争力，长文本合成保持稳定，且不依赖外部自监督/ASR 模型、预训练文本模型或后训练；摘要未给出具体数值。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">编解码器 Locodec 对表示空间做约束，让高维 token 既好插值又好辨识；生成端 MP-ELD 用单 token 流匹配加多路信息路由和残差无分类器引导，抑制误差累积。</span></div>
+<div class="score-reason">评分依据：低帧率 token 缩短了序列长度，对语音生成推理开销有间接帮助，但工作重心是生成质量与稳定性，与端侧部署关系较远（相关度 2）；编解码与生成器协同设计有一定新意（贡献 5）。机构依据：arXiv 论文首页署名 ByteDance Seed，第一作者注明为在 ByteDance Seed 实习期间完成。 作者机构依据：arXiv PDF 首页署名 ByteDance（arXiv 论文首页作者单位为 ByteDance Seed，第一作者 Yi Luo 注明工作完成于 ByteDance Seed 实习期间）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29363" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

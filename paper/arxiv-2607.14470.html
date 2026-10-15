@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>G$^2$SR: Geometric Methods for Fast and Memory-Efficient Gaussian-based Surface Reconstruction</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-16 · Dasong Gao; Vivienne Sze; Sertac Karaman / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Few-view surface reconstruction recovers the visible surfaces of a scene from a few posed RGB images, providing the 3D models that robots need to explore and in…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-16 · Dasong Gao; Vivienne Sze; Sertac Karaman / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">应用:机器人</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">G2SR 是一个面向机器人和移动平台的少视角三维表面重建方法，追求又快又省内存，适合机载在线建图。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ScanNet、Replica、DTU 上几何精度达到或超过端到端大模型方法，384×512 分辨率下每秒 69~89 次重建，GPU 内存仅 203 MB，比对比方法少 5~107 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用轻量神经网络在图像平面检测并跟踪二维高斯点，再用多视角几何解析地三角化出三维高斯，避开大型 Transformer 回归。</span></div>
+<div class="score-reason">评分依据：明确面向无人机、可穿戴等算力和电池受限平台，内存占用很低，属于端侧视觉的可迁移工作；但实验在 RTX 4090 上测量，未在嵌入式设备实测。作者来自麻省理工学院。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.14470" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

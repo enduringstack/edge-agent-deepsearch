@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>D-cut: Adaptive Verification Depth Pruning for Batched Speculative Decoding</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-16 · Tianyu Liu; Yuhao Shen; Rui Cen; Junhan Shi; Jiebin Zhang; Guangshuo Qin; Hong Liu; Song Liu / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:MoE</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Speculative decoding accelerates large language model (LLM) inference without compromising output quality.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-16 · Tianyu Liu; Yuhao Shen; Rui Cen; Junhan Shi; Jiebin Zhang; Guangshuo Qin; Hong Liu; Song Liu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Tencent</span><span class="tag">方向:投机解码</span><span class="tag">方向:云端serving</span><span class="tag">方向:MoE</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">D-cut 解决高并发服务时投机解码反而变慢的问题：在整个批次里统一挑选最可能被接受的草稿 token 去验证。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">高并发下平均加速比从 1.26 倍提升到 1.65 倍，让原本比自回归还慢的稠密模型配置重新获得加速，在 MoE 模型上最高比自回归快 3.0 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按草稿置信度在不同请求之间分配验证预算，并用运行时代价模型根据 GPU 架构和并行策略自适应调整剪枝深度；实现已提交到 vLLM。</span></div>
+<div class="score-reason">评分依据：面向云端批量服务的投机解码优化，与端侧关系较弱；跨请求剪枝和代价模型是实用的工程改进，实现已提交到 vLLM 开源仓。PDF 首页署名腾讯混元。 作者机构依据：arXiv PDF 首页署名 Tencent（PDF 首页署名 Tencent Hunyuan，作者机构 1 为 Tencent，通讯邮箱为 tencent.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.14647" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

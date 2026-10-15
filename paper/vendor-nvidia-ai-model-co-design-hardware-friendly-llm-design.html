@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AI Model Co-Design: Hardware-Friendly LLM Design</h1>
-<div class="meta"><span class="score">13</span> <span class="tier">官方动态</span>  2026-07-10 · NVIDIA / NVIDIA</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">NVIDIA 介绍 AI 模型与硬件协同设计方法，打造对硬件友好的大语言模型架构。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：NVIDIA 官方动态（命中官方域名白名单）</div>
+<div class="meta"><span class="score">8</span> <span class="tier">官方动态</span>  2026-07-10 · NVIDIA / NVIDIA</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:模型架构</span><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">NVIDIA 发布“软硬协同设计”系列第一篇，教模型开发者如何在设计大模型结构时就贴合 GPU 硬件，让推理更快、更省。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">文中给出：NVFP4 量化下 DeepSeek-R1 在多数基准上与 FP8 基线相差约 1 个点以内；GB300 上 NVFP4 矩阵乘要达到 80% 持续吞吐，归约维度需大于 3072。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">建议权重矩阵接近方阵、维度对齐 128 的倍数（最好 256 或 512），在同样参数量下用更宽更浅的结构提高算术强度，并配合 NVFP4 量化、专家并行和流水并行等部署手段。</span></div>
+<div class="score-reason">评分依据：内容面向数据中心 GPU 推理，但“按硬件选模型尺寸、低比特量化”的原则同样适用于端侧模型设计，属于可迁移经验；以经验法则总结为主，原创性一般。</div>
 <div class="source"><a href="https://developer.nvidia.com/blog/ai-model-co-design-hardware-friendly-llm-design/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

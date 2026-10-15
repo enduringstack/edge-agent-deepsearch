@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Nemotron-Labs-3-Puzzle-75B-A9B: Compressing Hybrid MoE LLMs</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-05 · Akhiad Bercovich; Talor Abramovich; Daniel Afrimi; Shay Aharon; Nir Ailon; Vladimir Anisimov; Omer Ullman Argov; Maor Ashkenazi / arXiv</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:云端serving</span><span class="tag">方向:量化</span><span class="tag">方向:MoE</span><span class="tag">方向:蒸馏</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把 Nemotron-3-Super 混合 MoE 大模型压缩成 Puzzle-75B-A9B，优化交互式部署吞吐。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">单 8xB200 节点上交互式吞吐约为原模型 2 倍（同等用户吞吐约束）；单 H100 上 1M-token 并发从 1 提到 8；模型已在 Hugging Face 开源。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">多阶段管线结合 Iterative Puzzle 压缩、知识蒸馏、强化学习、量化与多 token 预测头，联合优化异质 MoE 剪枝、活跃参数预算与 Mamba 剪枝。</span></div>
-<div class="score-reason">评分依据：云端交互式 serving 压缩部署（relevance 4，云端serving）。多阶段混合 MoE 压缩管线有创新（contribution 6）。Nemotron 为 NVIDIA 模型族、模型开源在 HF，证据：摘要明确 Nemotron-Labs 系列与 Hugging Face 发布，标 公司项目/NVIDIA。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-05 · Akhiad Bercovich; Talor Abramovich; Daniel Afrimi; Shay Aharon; Nir Ailon; Vladimir Anisimov; Omer Ullman Argov; Maor Ashkenazi / arXiv</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:MoE</span><span class="tag">方向:蒸馏</span><span class="tag">方向:云端serving</span><span class="tag">硬件:H100</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">英伟达把 Nemotron-3-Super 压缩成 Puzzle-75B-A9B（总参数 750 亿、每次激活约 90 亿），专门为交互式部署提高服务吞吐。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在单台 8 卡 B200 节点上，相同单用户速度约束下服务吞吐约为原模型的 2 倍；在单张 H100 上处理百万 token 上下文时，并发请求数从 1 个提升到 8 个；推理、代码、多语言、长上下文和智能体基准上基本保持原模型能力。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 Iterative Puzzle 压缩框架联合优化异构 MoE 剪枝、激活参数预算和 Mamba 层剪枝，再结合知识蒸馏、强化学习、量化和多 token 预测头。</span></div>
+<div class="score-reason">评分依据：面向数据中心 GPU 的大模型压缩部署，与端侧距离较远；混合 MoE 与 Mamba 的联合剪枝方法对模型压缩有参考价值，模型已公开。 作者机构依据：arXiv PDF 首页署名 NVIDIA（PDF 首页抬头为 NVIDIA 标识，模型以 NVIDIA-Nemotron 名义在 Hugging Face 发布）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.04371" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

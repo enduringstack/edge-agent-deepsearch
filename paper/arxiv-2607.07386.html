@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Sparse Delta Memory: Scaling the State of Linear RNNs through Sparsity</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-07-08 · Loïc Cabannes, Pierre-Emmanuel Mazaré, Gergely Szilvasy, Matthijs Douze, Maria Lomeli, Ilze Amanda Auzina, Justin Carpentier, Gabriel Synnaeve, Hervé Jégou / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:稀疏注意力</span><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用稀疏寻址方案把门控线性 RNN 的隐状态扩展到高容量，稀疏读写大显式记忆，提升长上下文召回。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">isoFLOP 约束下同等参数量，更高状态容量显著提升上下文学习和长上下文检索；学初始状态做参数记忆进一步提升常识/推理。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">扩展 Gated DeltaNet，把密集 KV 外积换成对大显式记忆的稀疏读写；学初始状态做参数记忆。</span></div>
-<div class="score-reason">评分依据：线性 RNN 稀疏记忆扩展属高效推理技术栈（relevance 7）。稀疏寻址扩状态+参数化初始记忆有架构创新（contribution 8）。作者含 Gabriel Synnaeve/Hervé Jégou (Meta FAIR)，但标学校预印本（Meta arxiv 论文非官方博客）。</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-08 · Loïc Cabannes, Pierre-Emmanuel Mazaré, Gergely Szilvasy, Matthijs Douze, Maria Lomeli, Ilze Amanda Auzina, Justin Carpentier, Gabriel Synnaeve, Hervé Jégou / arXiv</div>
+<div class="tags"><span class="vendor-tag">Meta</span><span class="tag">方向:模型架构</span><span class="tag">方向:记忆</span><span class="tag">方向:高效注意力</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">线性注意力模型的状态大小固定、推理开销恒定，但记忆容量小、长上下文回忆差。Sparse Delta Memory 用稀疏寻址把隐状态扩大几个数量级，而计算量基本不变。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在等计算量、等参数量条件下，更大的状态容量显著提升上下文学习和长上下文检索表现；把记忆初始状态当作可学习的参数记忆后，在常识和推理任务上进一步提升；原文摘要未给出具体分数。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 Gated DeltaNet 基础上，把稠密的 key-value 外积更新换成对一大块显式记忆的稀疏读写，并学习记忆的初始状态作为参数化知识。</span></div>
+<div class="score-reason">评分依据：恒定状态的线性 RNN 对端侧长上下文推理有吸引力，这项工作提升了其记忆容量，但实验未涉及设备部署；稀疏寻址扩容状态是有分量的架构创新。作者主要来自 Meta FAIR，依据 arXiv PDF 首页署名。 作者机构依据：arXiv PDF 首页署名 Meta（PDF 首页作者 Loïc Cabannes、Gabriel Synnaeve、Hervé Jégou 等署名 Meta FAIR）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.07386" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Energy-Aware Scheduling for Serverless LLM Serving on Shared GPUs</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-29 · Tianyu Wang, Gourav Rattihalli, Aditya Dhakal et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出Festina Profiling导向功率感知控制平面，联合协调请求放置、SM分区和GPU工作点，全局调度用离线profile查表做SLO安全能耗感知放置，本地调度按相态自适应批与算力。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">对比四个SOTA LLM服务系统和一个DVFS增强系统，能耗最多降低56%，SLO达成率差距在2%以内。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：云端共享GPU能耗调度，非端侧；能耗优先联合调度有创新。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-06-29 · Tianyu Wang, Gourav Rattihalli, Aditya Dhakal et al. / SIGOPS ATC 2026</div>
+<div class="tags"><span class="vendor-tag">Hewlett Packard Enterprise</span><span class="tag">方向:云端serving</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:调度服务</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Festina 是无服务器大模型推理平台的节能控制面：多个模型共享 GPU 时，联合决定请求放置、算力切分和 GPU 工作频点，优先省电。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">与四个主流大模型推理系统和一个带调频的系统对比，能耗最多降低 56%，服务等级达成率差距在 2% 以内。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">全局调度器依据离线性能画像做常数时间的节能放置，每张 GPU 上的局部调度器按推理阶段动态调整批处理和 SM 分配，并通过迁移合并负载以减少 GPU 静态功耗。</span></div>
+<div class="score-reason">评分依据：面向云端共享 GPU 的推理能耗优化，与端侧关系较远；以能耗为首要目标的联合调度有新意。 作者机构依据：arXiv PDF 首页署名 Hewlett Packard Enterprise（arXiv 首页作者 Gourav Rattihalli、Aditya Dhakal、Dejan Milojicic 署名 HPE Labs，其余为匹兹堡大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.30391" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

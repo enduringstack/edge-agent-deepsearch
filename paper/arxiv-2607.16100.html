@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Every Microsecond Matters: Achieving Near Speed-of-Light Latency in GPU Collectives</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-17 · Siyuan Shen; Anton Korzh; John Bachan; Tiancheng Chen; Arnav Goel; Ludwig Schneider; Pouya Kousha; Zhenhao He / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">GPU collective communication is typically optimized for bandwidth, yet many emerging workloads are increasingly limited by latency.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-07-17 · Siyuan Shen; Anton Korzh; John Bachan; Tiancheng Chen; Arnav Goel; Ludwig Schneider; Pouya Kousha; Zhenhao He / arXiv</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这篇论文研究如何把多 GPU 间小消息集合通信的延迟压到接近硬件极限，主要服务于长上下文、解码密集的大模型推理。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">小到中等消息的通信开销降到距硬件理论下限 7% 以内；集成到实际应用后，提升了大模型推理的逐 token 延迟和吞吐，并加速了 cuSOLVERMp。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">基于 NCCL 设备端接口提供低延迟编程接口，采用免屏障同步、对称内存和多播实现新的对称集合通信内核。</span></div>
+<div class="score-reason">评分依据：属于数据中心多 GPU 推理通信优化，只与云端 serving 相关，相关度 2；逼近硬件下限的设计原则扎实，贡献 6。PDF 首页多数作者署名 NVIDIA Corporation，第一作者注明工作主要在 NVIDIA 实习期间完成。 作者机构依据：arXiv PDF 首页署名 NVIDIA（PDF 首页 13 位作者中 10 位署名 NVIDIA Corporation（nvidia.com 邮箱），其余来自 ETH Zürich）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.16100" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

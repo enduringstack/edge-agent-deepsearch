@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CommitLLM: A Fine-Tuned Pipeline for Git Commit Message Generation</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-20 · Md Rafid Haque; Poojan Narendrabhai Patel; Meetkumar Vijaybhai Raychura / arXiv</div>
-<div class="tags"><span class="vendor-tag">Mistral</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span><span class="tag">模型:Mistral</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Developers frequently write uninformative git commit messages such as &quot;fix&quot; or &quot;update stuff&quot;, degrading the value of version-control history for code review, d…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Mistral（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span>  2026-07-20 · Md Rafid Haque; Poojan Narendrabhai Patel; Meetkumar Vijaybhai Raychura / arXiv</div>
+<div class="tags"><span class="tag">应用:代码</span><span class="tag">模型:Mistral</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用一个微调过的小语言模型自动从代码改动生成规范的 git 提交信息，整个系统可在一块消费级 GPU 上运行。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 50 个样本上格式合规率 98%（原版 Mistral 为 22%），平均输出长度从 154.8 字符降到 37.9 字符，LLM 评审分从 1.97 提升到 3.68（满分 5）；后处理带来的提升大于微调本身。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 QLoRA 在 CommitPackFT 数据集上微调 Mistral-7B，再加约束解码限制长度和确定性后处理规整格式。</span></div>
+<div class="score-reason">评分依据：本地单卡运行的小模型应用，与端侧部署有一定联系，但重点是任务效果而非推理优化，评测规模也很小。方法是常规微调加后处理，贡献较低。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.17532" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

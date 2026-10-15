@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SpikingMOT: A Spike-Driven Multi-Object Tracker</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-22 · Yiding Sun; Xiangyang Yang; Dongxu Zhang; Qirui Wang; Zijie Xu; Wenxuan Liu; Shuiwang Li; Jihua Zhu / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:SNN</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Multi-object tracking (MOT) plays a fundamental role in visual perception, where accurate trajectory prediction is essential for reliable target association und…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-22 · Yiding Sun; Xiangyang Yang; Dongxu Zhang; Qirui Wang; Zijie Xu; Wenxuan Liu; Shuiwang Li; Jihua Zhu / arXiv</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:能耗功耗</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">SpikingMOT 首次用脉冲神经网络做多目标跟踪的轨迹预测，利用稀疏激活降低计算和能耗。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 SportsMOT 上 HOTA 74.9、DanceTrack 上 56.5，达到当时最好水平，同时参数量减少 72%、能耗降低 86.7%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">理论上说明稀疏门控不劣于同激活率的随机失活；方法上把轨迹状态分解为伪轨迹基，并用当前预测误差校准下一帧的后验预测。</span></div>
+<div class="score-reason">评分依据：脉冲网络带来的低能耗跟踪对边缘视觉设备有直接迁移价值，但未在真实低功耗硬件上测试，相关度给 5；把 SNN 引入多目标跟踪并给出理论解释，贡献给 6。作者来自西安交通大学、北京大学等高校，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.19875" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

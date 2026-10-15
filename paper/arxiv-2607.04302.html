@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>HiFA4: Training-Free 4-bit FlashAttention on Ascend HIF4 NPUs for LLM Inference</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-07-05 · Hui Dong, Yanzhao Li, Jie Gao, Chunlu Li, Zhiyuan Zhang, Yupeng Sun, Zhenyuan Chen, Zhiqiang Zou / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效注意力</span><span class="tag">方向:KV cache</span><span class="tag">硬件:NPU</span><span class="tag">硬件:Ascend</span><span class="tag">模型:Qwen</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在华为昇腾 HIF4 NPU 上把 FlashAttention 的 QK^T 和 PV 都跑成 4 位 Cube GEMM，softmax 状态保 FP16，免训练。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">Qwen3-8B 上恢复 37.5% 直接量化精度损失，MMLU 准确率损失从 1.12pp 降到 0.70pp，不一致预测从 16.3% 降到 8.2%；预计关键路径延迟降 35.4%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">Smooth-QK 做 RoPE 后等价重标定把量化难度从 K 转 Q；P-Reordering 让 softmax 归一化与 PV GEMM 共用量化权重，融合进 Cube GEMM。</span></div>
-<div class="score-reason">评分依据：昇腾 NPU 4 位注意力算子级设计，明确端侧硬件（relevance 9）。Smooth-QK+P-Reordering 算子级创新（contribution 7）。作者含华为相关，但 arXiv 元数据未明确机构，标学校预印本。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-07-05 · Hui Dong, Yanzhao Li, Jie Gao, Chunlu Li, Zhiyuan Zhang, Yupeng Sun, Zhenyuan Chen, Zhiqiang Zou / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:量化</span><span class="tag">方向:高效注意力</span><span class="tag">硬件:NPU</span><span class="tag">硬件:Ascend</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">华为提出 HiFA4：在昇腾 NPU 上把 FlashAttention 中的两次矩阵乘都用 4 比特 HIF4 格式计算，同时尽量减少量化带来的答案漂移。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">Qwen3-8B 上恢复了直接 HIF4 量化造成的 37.5% 精度差距，平均精度损失从 1.12 个百分点降到 0.70，MMLU 回退题数减少 57%（1071 到 465）；Gemma2-9B 与 BF16 相差 0.7 个百分点以内；指令调度分析预计关键路径延迟可降 35.4%，尚未上硬件实测。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">Smooth-QK 在位置编码后对 Q、K 做标定好的逐通道等价缩放，把量化难度从 K 转到 Q；P-Reordering 让 softmax 归一化项与量化后的注意力权重保持一致，并可融合进矩阵乘。</span></div>
+<div class="score-reason">评分依据：4 比特注意力计算可迁移到端侧 NPU，但目标是昇腾服务器级 NPU 且延迟收益仅为分析推算；对量化不一致误差的分析较扎实。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页全部作者署名 Huawei Technologies，邮箱为 huawei.com 域名）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.04302" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

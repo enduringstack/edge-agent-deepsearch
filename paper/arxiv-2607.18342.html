@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PRISM: Sensitivity-Aware PolynoMial PRuning for EffIcient Neural Network Encryption</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-20 · Sahaj Majavdia; Mahdi Taheri / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Structured pruning is essential for making neural network inference feasible under homomorphic encryption (HE), yet its impact on model reliability has remained…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-07-20 · Sahaj Majavdia; Mahdi Taheri / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">同态加密下的神经网络推理代价极高，常靠结构化剪枝减负，但剪枝后模型在比特错误下是否可靠一直没人系统研究。论文做了这项可靠性评估，并提出兼顾可靠性的剪枝方法 PSAP。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 40 组全模型和 108 组逐层实验中，PSAP 剪枝后精度暴跌超过 10 个百分点的脆弱层最多 2 个，幅值剪枝基线有 5–14 个，最坏情况脆弱性最多降低 29 倍；ResNet-32 上旋转操作减少最多 45.2%，乘法深度从 66 降到 56，可免自举推理。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按权重幅值、多项式激活敏感度和旋转开销三项共同给卷积核打分，把剪枝集中在容错性高的区域；另配自适应混合多项式阶数分配来降低乘法深度。</span></div>
+<div class="score-reason">评分依据：隐私保护的加密推理与端侧部署关系间接，属于安全推理方向；把可靠性纳入剪枝打分的思路有一定价值。作者来自德国与爱沙尼亚高校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.18342" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

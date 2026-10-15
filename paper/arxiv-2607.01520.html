@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>The risk of KV cache compression</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-07-01 · Lukas Haverbeck, Carmen Amo Alonso, Andres Felipe Posada-Moreno et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">从理论角度刻画KV缓存压缩的minimax风险，用缓存的内在可压缩性来判定何时可精确压缩，并据此给出因果掩码下的设计原则与实用算法。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在LongBench定向实验上取得有前景表现，提供了有理论保证的KV缓存压缩途径。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：KV缓存压缩服务长上下文推理，可惠及端侧；minimax理论刻画创新高。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-01 · Lukas Haverbeck, Carmen Amo Alonso, Andres Felipe Posada-Moreno et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">从理论上回答 KV cache 什么时候能被准确压缩：用缓存本身的可压缩程度刻画压缩的最小最大风险，并据此给出设计原则。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LongBench 的针对性实验中取得有前景的结果；摘要未给出具体数值。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">推导因果掩码下 KV cache 压缩的最小最大风险界，得到可同时用于预填充和自回归解码的压缩原则，并实现成实际算法。</span></div>
+<div class="score-reason">评分依据：KV cache 压缩是端侧长上下文推理的关键技术，本文提供理论指导但实验有限；理论贡献较新。作者来自亚琛工业大学与斯坦福大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01520" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

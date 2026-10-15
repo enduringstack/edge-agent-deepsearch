@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Windowed-MTP: Removing the Full-Context Draft-KV Tax at Million-Token Context</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-23 · Alagappan Valliappan / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:KV cache</span><span class="tag">方向:投机解码</span><span class="tag">方向:高效注意力</span><span class="tag">方向:MoE</span><span class="tag">硬件:GPU</span><span class="tag">模型:Qwen</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Speculative decoding accelerates autoregressive generation by having a cheap draft propose tokens that a target verifies in parallel.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-23 · Alagappan Valliappan / arXiv</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:投机解码</span><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span><span class="tag">应用:长上下文推理</span><span class="tag">模型:Qwen</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">投机解码里模型自带的多令牌预测草稿头，在百万令牌上下文时每步都要读完整 KV 缓存，反而成了瓶颈。Windowed-MTP 只让草稿头看一个滑动窗口，免训练、即插即用且不改变输出。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在单 GPU 的 SGLang 上，以 Qwen GDN-MoE 35B/122B 和 Mamba2 混合 120B 模型、100 万上下文测试，每步解码开销比原生 MTP 草稿降低 28%～44%；草稿头可少读约 99% 的 KV，未读的草稿 KV（占总量 7.7%～11%）可用环形缓冲回收。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">只对草稿头的注意力套用 StreamingLLM 式的滑动窗口加注意力汇聚令牌，目标模型仍用全注意力验证，所以接受哪些令牌不受影响、结果无损。</span></div>
+<div class="score-reason">评分依据：投机解码和 KV 读取优化属于可迁移的推理技术栈，但场景是数据中心 GPU 上的百万令牌上下文（相关度 4）。简单有效、无损且免训练（贡献 6）。PDF 首页作者署名 NVIDIA，邮箱为 nvidia.com。 作者机构依据：arXiv PDF 首页署名 NVIDIA（PDF 首页唯一作者 Alagappan Valliappan 署名 NVIDIA，邮箱 avalliappan@nvidia.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.21535" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

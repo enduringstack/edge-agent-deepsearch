@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Bounding Boxes to Improve Small Language Model Performance on Vision-Based Grading Tasks</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-21 · Lachlan McGinness / arXiv</div>
-<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">The deployment of Small Language Models (SLMs) in educational settings offers significant advantages in terms of privacy, cost, and scalability.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-07-21 · Lachlan McGinness / AIED 2026 SLM4ED Workshop</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">应用:OCR</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用小模型批改手写试卷时，整页图片又贵又容易分心。作者测试先用边界框裁出答题区域，能否同时提高批改准确率和降低计算量。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 2025 澳大利亚物理奥赛 126 份手写答卷上，4B 到 72B 多个模型使用边界框裁剪后批改准确率普遍提升、推理计算量（FLOPs）下降；具体幅度因模型差异较大。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在把图片送入视觉语言模型前，只截取与题目相关的区域，减少视觉 token 数量，并对比有无思维链提示的组合效果。</span></div>
+<div class="score-reason">评分依据：讨论小模型在隐私和成本受限场景的部署，通过裁剪输入减少推理计算，属简单的推理前处理技巧，相关度和贡献都偏低。作者为单一作者，PDF 未见公司署名；发表于 AIED 2026 小语言模型教育研讨会。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.18767" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Boosting FPGA Performance with Direct BRAM-DSP Paths</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-07-07 · Jiajun Hu, Ruthwik Reddy Sunketa, Andrew Boutros, Aman Arora / arXiv</div>
-<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在 FPGA 架构中加 BRAM 到 DSP 的专用直连通道，数据不经全局互连，降线长和关键路径延迟。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">Agilex-10-like FPGA 上 DL 层设计 Fmax +25%、线长 -49%，面积/延迟开销可忽略，非 DL 基准无影响。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">轻量架构增强引入 BRAM-DSP 直连；增强布局算法识别 BRAM-DSP 宏块；与基线架构 CAD 兼容。</span></div>
-<div class="score-reason">评分依据：FPGA DL 加速器架构增强，明确端侧硬件（relevance 8）。BRAM-DSP 直连+宏块布局有架构创新（contribution 6）。作者 Notre Dame，学校项目。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-07 · Jiajun Hu, Ruthwik Reddy Sunketa, Andrew Boutros, Aman Arora / arXiv</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">硬件:FPGA</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">FPGA 上跑深度学习时，片上存储 BRAM 到 DSP 计算单元的数据要绕全局布线，拖慢频率；论文提出在两者之间加一条专用直连通路。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在类 Agilex-10 的 FPGA 上，常见深度学习层设计最高 Fmax 提升 25%、布线长度减少 49%，面积和延迟开销可忽略，不影响非深度学习基准。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 FPGA 架构中增加 BRAM 到 DSP 的直连，并改进布局算法识别这种宏块，同时保持与原架构兼容。</span></div>
+<div class="score-reason">评分依据：FPGA 是边缘推理的常见载体，该架构改进可提升深度学习层效率；但属于 FPGA 架构层面的通用改进，离具体端侧部署较远。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.05756" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

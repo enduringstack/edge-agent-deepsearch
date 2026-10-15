@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Robust Federated Learning Under Real-World Client Churn</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-08 · Dhruv Garg; Neha Lakhani; Debopam Sanyal; Myungjin Lee; Alexey Tumanov; Ada Gavrilovska / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">面向真实客户端流失场景的联邦学习编排框架，让 on-device 数据训练能快速跟上分布变化。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 CIFAR-10/Google Speech 与低可用性 trace 上，到达目标准确率的墙钟时间最多缩短 2.37 倍，通信带宽减少 1.30 倍。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">FeLiX 引入流式感知可用性分层、新鲜效用选择、信息感知且延迟鲁棒的聚合三个原语，在真实客户端可用性下逼近先知级表现。</span></div>
-<div class="score-reason">评分依据：联邦学习 on-device 数据训练，明确端侧场景（relevance 6）。流式可用性分层+延迟鲁棒聚合有系统创新（contribution 6）。作者机构 arXiv 元数据未明确标注，vendors 空。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-07-08 · Dhruv Garg; Neha Lakhani; Debopam Sanyal; Myungjin Lee; Alexey Tumanov; Ada Gavrilovska / arXiv</div>
+<div class="tags"><span class="vendor-tag">Cisco</span><span class="tag">方向:联邦学习</span><span class="tag">方向:调度服务</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">FeLiX 是一个联邦学习调度框架，面向信息流排序、广告和推荐这类需要模型快速跟上用户新行为的场景，解决终端时有时无、数据分布快速变化、结果反馈滞后的问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 CIFAR-10、Google Speech 和真实低在线率轨迹上，相比最好的同步和异步联邦学习方案，达到目标准确率的实际耗时最多缩短 2.37 倍，通信带宽降低 1.30 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用轻量遥测把终端按可用性分层，优先挑能按时交回更新且统计价值高的设备；聚合时把迟到但带有真实反馈的高价值更新按信息量加权并入，避免模型被旧分布带偏。实现基于 Cisco 开源的 Flame 框架。</span></div>
+<div class="score-reason">评分依据：面向终端本地数据训练的联邦学习系统，和端侧设备参与训练直接相关，但优化重点是服务端编排；三项调度与聚合机制有系统层面的新意。作者来自佐治亚理工学院与 Cisco Research，依据 arXiv PDF 首页署名。 作者机构依据：arXiv PDF 首页署名 Cisco（PDF 首页作者 Myungjin Lee 署名 Cisco Research，邮箱为 cisco.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.06979" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

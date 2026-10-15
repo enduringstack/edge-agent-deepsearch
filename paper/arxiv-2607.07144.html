@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Fractal KV-Cache Archives: Lossless Symbolic Storage with In-Place Retrieval for Long-Context LLM Inference</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-08 · Vladimir Gusev / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把量化后的 KV 缓存符号流用收缩迭代映射码序列化成低维实向量，既无损存储又自带检索索引。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">GPT-2 1024 上下文下，残差向量量化让归档缓存压缩 36-54 倍，困惑度代价 11-15%；存储层可直接做近似子串查询，O(1) 随机访问与摊还追加。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">重新审视收缩迭代映射码作为量化 KV 缓存归档格式，线性时间序列化，配合每头残差向量量化与 key/value 不对称位分配。</span></div>
-<div class="score-reason">评分依据：KV 缓存压缩+存储层创新，端侧长上下文可迁移（relevance 7）。分形归档格式兼具无损存储与检索索引是新视角（contribution 7）。单作者学校项目，笔记本 CPU 可复现。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-08 · Vladimir Gusev / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:量化</span><span class="tag">应用:长上下文推理</span><span class="tag">模型:GPT</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究量化后的 KV 缓存该怎么存：把码本索引序列编码成一串低维实数向量，既能无损存储、随机访问和追加，又能直接在存储上做文本片段检索。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 GPT-2、1024 token 上下文上，保留 4 个注意力汇聚 token 和最近 32 个 token 精确存储、其余归档时，按头残差向量量化把归档缓存压到 fp16 的 1/36 到 1/54，困惑度代价 11% 到 15%；量化 key 的损伤约为量化 value 的 4 倍。全部结果可在笔记本 CPU 上复现。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">借用收缩迭代映射编码，把符号序列线性时间地序列化为低维向量，支持 O(1) 随机访问和摊还 O(1) 追加；配合按头残差向量量化和 key/value 不对称比特分配。</span></div>
+<div class="score-reason">评分依据：KV 缓存压缩与存储格式和端侧长上下文推理的内存瓶颈相关，但实验只在 GPT-2 小规模设置上做，困惑度代价也不小；把存储层同时做成检索索引的视角新颖。作者为独立研究者。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.07144" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

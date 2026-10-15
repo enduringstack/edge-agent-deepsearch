@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ScAle: Attention Head Scaling as a Minimal Adapter for Spatial Reasoning in Vision Language Models</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-06-28 · Rahul Chowdhury, Timothy A Rupprecht, Xuan Shen et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">ScAle 在冻结骨干上仅学约 1K 标量系数调制末 token 的注意力与 MLP 激活,作为空间推理任务的超轻量适配器,替代 LoRA 等大参数 PEFT。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 SpatialEval 上相对精度最高提升 134.1%,仅用 1K 可训练参数,保留非空间 VQA 精度。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：1K 参数超轻量适配器,适合端侧微调;激活重加权思路简洁新颖。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校顶会</span>  2026-06-28 · Rahul Chowdhury, Timothy A Rupprecht, Xuan Shen et al. / ECCV 2026</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ScAle 是一种极轻量的视觉语言模型适配方法：只学约 1000 个缩放系数来提升空间推理能力，主干权重完全冻结。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">仅用 1K 可训练参数，空间推理准确率相对提升最高 134.1%，能追回 LoRA 等标准参数高效微调的大部分效果，同时保住非空间类问答的准确率。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在选定层上对最后一个 token 的注意力头和 MLP 激活乘以可学习的有界标量，靠重新加权激活而非改权重来调整模型行为。</span></div>
+<div class="score-reason">评分依据：参数量极小的适配方式对端侧个性化或多任务切换有借鉴价值，但论文未涉及设备部署；激活缩放作为最小适配器的思路简洁新颖。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.29579" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

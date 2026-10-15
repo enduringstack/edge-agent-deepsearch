@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LMEdge: QoS-Aware LLM Inference Orchestration on Edge Clusters</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-19 · Reza Farahani; Zoha Azimi; Mario Colosi; Schahram Dustdar / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Large language model (LLM) services increasingly operate on edge infrastructure, enabling low-latency and privacy-preserving AI services.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-19 · Reza Farahani; Zoha Azimi; Mario Colosi; Schahram Dustdar / Euro-Par</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:量化</span><span class="tag">硬件:Jetson</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在由树莓派、Jetson Nano 和服务器组成的边缘集群上，为每个大模型请求自动选择模型家族、大小、量化等级和运行设备，在满足质量要求的同时降低响应时间。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在含 57 个实例（其中 37 台树莓派、6 台 Jetson Nano）的 Kubernetes 边缘测试床上，相比两个基线降低了延迟、保持了准确率、提高了资源利用率和请求服务率。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把调度建模为整数线性规划，用五个轻量机器学习模型预测每种“模型-量化-设备”组合的延迟、准确率和资源占用，再用启发式算法近似求解以支持在线调度。</span></div>
+<div class="score-reason">评分依据：在真实边缘设备集群上做大模型推理编排，并把量化等级纳入决策，端侧相关度较高；但面向边缘集群服务而非单台设备。收集了 5.9 万条基准数据，方法属工程整合，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.17175" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Route, Communicate, and Reason: Gated Routing and Adaptive Depth for Efficient Multi-Agent Reasoning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-12 · Sudipto Ghosh; Tanmoy Chakraborty / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:端侧agent</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Multi-agent ensembling multiplies active parameters and inference cost without answering three basic questions: which agents to consult, how deeply a query shou…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-12 · Sudipto Ghosh; Tanmoy Chakraborty / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span><span class="tag">方向:调度服务</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">印度理工学院德里分校提出 GRADE：一个分层多智能体推理系统，用四个轻量学习门控决定该问哪些智能体、走多深、何时互相通信、哪些分支剪掉，以降低多智能体集成的推理开销。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">平均约 17B 激活参数下，在 GSM8K、MMLU-Pro、GPQA 上超过所有基线，MMLU-Pro 上比最强基线高 4.8 分且只用一半激活计算量；AIME-2025 上与现有框架持平。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 CoGRPO（把 GRPO 扩展到多智能体层级、无需评论家网络）联合训练门控和智能体；专家智能体可热插拔，配合逐智能体校准映射，推理时替换专家无需重训。</span></div>
+<div class="score-reason">评分依据：目标是降低多智能体推理的计算成本，但部署形态是服务器上的十几 B 级模型组合，与端侧只算宽泛相关。门控路由加多智能体强化学习训练有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.10836" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

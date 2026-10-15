@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DynaCalKV: Key-Value Cache Compression via Head Grouping and Adaptive Rank Allocation</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-27 · Tan T. Nguyen; Quan V. Dang / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM 推理需处理长上下文窗口，KV 缓存初看能解决该挑战，但其开销随之增长，作者针对此展开。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-27 · Tan T. Nguyen; Quan V. Dang / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一种更精细的 KV 缓存低秩压缩方法 DynaCalKV：对 Key 和 Value 分开处理，按注意力头相似度动态分组并自适应分配秩。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在三个指令微调模型上，减少了 Key 缓存参数量的同时保持有竞争力的精度；对多头注意力（MHA）模型效果明显，对分组查询注意力（GQA）模型尤其长上下文场景需要更保守。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">Key 缓存按 CKA 相似度把注意力头动态分组，并在参数预算内为各组分配不同的秩；Value 缓存沿用 ReCalKV 的离线校准低秩分解来提升重建质量。</span></div>
+<div class="score-reason">评分依据：KV 缓存压缩直接减少推理内存，对端侧长上下文有迁移价值，相关度 5；在既有低秩方法上改进分组与秩分配，属增量工作，贡献 3。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.24331" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

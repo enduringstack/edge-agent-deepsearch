@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>NEUROSYMLAND: Neuro-Symbolic Landing-Site Assessment for Robust and Edge-Deployable UAV Autonomy</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-07-02 · Weixian Qian, Tianyi Yang, Sebastian Schroder et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">无人机着陆点评估系统,把轻量感知与符号安全推理结合,从机载视觉构建概率语义场景图并按地形平坦度/障碍/空间一致性评估候选着陆区。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">72 个仿真场景中 61 次成功评估,优于 4 个基线(37-57);100 次硬件在环试验,符号推理仅占端到端延迟小部分。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确 edge-deployable/edge-constrained UAV 硬件;神经符号着陆评估,有硬件在环实测。</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-02 · Weixian Qian, Tianyi Yang, Sebastian Schroder et al. / IROS 2026</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:量化</span><span class="tag">硬件:Jetson</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">无人机自主降落前要判断“哪里能安全落地”。NEUROSYMLAND 用轻量视觉感知建场景图，再用显式符号规则做可解释的安全推理，并能跑在机载边缘硬件上。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">72 个仿真降落场景成功评估 61 个，优于四个基线（37–57 个）；在 Jetson Orin Nano 上 100 次硬件在环测试，端到端约 1043 毫秒/帧，其中符号推理只占 20 毫秒（1.9%），功耗 12.3 W、内存 5.6 GB。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">INT8 量化的分割模型从单目图像提取区域，构建概率语义场景图；运行时只执行离线写好、经专家验证的 SCALLOP 规则，不调用大模型。</span></div>
+<div class="score-reason">评分依据：在 Jetson Orin Nano 上做了硬件在环的延迟、功耗实测（相关度 7）；神经符号结合的可解释降落评估有新意，但只做评估不含完整决策闭环（贡献 6）。作者机构为麦考瑞大学和加州大学圣巴巴拉分校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.02277" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

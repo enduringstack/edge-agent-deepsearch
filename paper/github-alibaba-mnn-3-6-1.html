@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MNN 3.6.1</h1>
-<div class="meta"><span class="score">14</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-07-23 · alibaba / GitHub</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">硬件:NPU</span><span class="tag">硬件:GPU</span><span class="tag">方向:推理框架</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">新增高通 Hexagon NPU 直接编程后端（Qwen3-0.6B W4 量化在骁龙 8 Elite 上 prefill 2667 tok/s，为 CPU 的 7.9×），并在 CPU/Metal/OpenCL/CUDA 全后端启用 Transformer C4 Fused LLM 算子（RoPE/Attention…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：新增高通 Hexagon NPU 直接编程后端（Qwen3-0.6B W4 量化在骁龙 8 Elite 上 prefill 2667 tok/s，为 CPU 的 7.9×），并在 CPU/Metal/OpenCL/CUDA 全后端启用 Tr</div>
+<div class="meta"><span class="score">15</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-07-23 · alibaba / GitHub</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">硬件:NPU</span><span class="tag">硬件:Snapdragon</span><span class="tag">硬件:GPU</span><span class="tag">硬件:Apple-Silicon</span><span class="tag">方向:量化</span><span class="tag">模型:Qwen</span><span class="tag">硬件:手机</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">阿里开源端侧推理引擎 MNN 发布 3.6.1 版，新增可直接调用高通 Hexagon NPU 的后端，并把融合的大模型算子铺到 CPU、Metal、OpenCL、CUDA 全部后端。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">Qwen3-0.6B（4 比特量化）在骁龙 8 Elite 的 Hexagon NPU 上 prefill 达 2667 tok/s，是 CPU 的 7.9 倍、OpenCL GPU 的 1.8 倍；对比 3.6.0，Qwen3-4B 在安卓 OpenCL 上 prefill 提升 101.7%、CPU 解码提升 72.2%，Mac mini M4 上 Qwen3-0.6B 的 Metal prefill 提升 50.1%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">自研 Hexagon NPU 直接编程后端和 DSP 算子承担注意力等大模型关键计算；同时把 RoPE、注意力、LayerNorm 等融合成 C4 布局算子，Metal 上加入反量化与矩阵乘融合内核。</span></div>
+<div class="score-reason">评分依据：这是手机和 Mac 上真机跑大模型的推理引擎更新，给出骁龙 8 Elite 与 M4 的实测数字，端侧相关度很高；NPU 直接编程后端有工程新意，但整体属引擎迭代。</div>
 <div class="source"><a href="https://github.com/alibaba/MNN/releases/tag/3.6.1" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

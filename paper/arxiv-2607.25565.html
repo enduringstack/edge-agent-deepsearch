@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ReDesign: Recovering Editable Design Structures from Images via Agentic Decomposition</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-29 · Jooyeol Yun, Jintae Park, Hyesu Lim, Junha Hyung, Hyungjin Chung, Jaegul Choo / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">从光栅图像恢复可编辑设计文件是现代设计工作流中常见且昂贵的瓶颈，因可编辑性要求而仍具挑战，作者针对此展开。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=57)；affiliation 待核实</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校顶会</span>  2026-07-29 · Jooyeol Yun, Jintae Park, Hyesu Lim, Junha Hyung, Hyungjin Chung, Jaegul Choo / ECCV 2026</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">从一张设计图片中还原出可编辑设计文件（图层、文字、矢量形状、颜色）的智能体框架 ReDesign。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在自建的 Figma 编辑回放基准（909 个 Figma 文件、14796 条编辑指令）上，ReDesign 保持高视觉还原度，并在布局、颜色、文字编辑上取得最高可编辑性，超过分层分解和串行调用工具的基线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">智能体逐步扩展图层层级，按需挑选并组合跨模态的专用工具，每一步都做“接受/剪枝/重试”的局部校验，避免误差累积和大规模重跑。</span></div>
+<div class="score-reason">评分依据：属于云端多模态智能体的工具编排应用，与端侧部署无关，只有逐步校验的工具调用策略可参考。作者来自韩国科学技术院等，论文被 ECCV 2026 接收。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.25565" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

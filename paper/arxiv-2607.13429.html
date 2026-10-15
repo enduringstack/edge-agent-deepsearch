@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Generalizable VLA Finetuning via Representation Anchoring and Language-Action Alignment</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-23 · Dwip Dalal, Shivansh Patel, Chahit Jain, Jeonghwan Kim, Utkarsh Mishra, Alex Baratian, Hyeonjeong Ha, Heng Ji, Svetlana Lazebnik, Unnat Jain / HuggingFace Daily</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-23 · Dwip Dalal, Shivansh Patel, Chahit Jain, Jeonghwan Kim, Utkarsh Mishra, Alex Baratian, Hyeonjeong Ha, Heng Ji, Svetlana Lazebnik, Unnat Jain / arXiv</div>
 <div class="tags"><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Finetuning a pretrained vision-language model (VLM) on robot demonstrations via behavior cloning (BC) has become the standard recipe for vision-language-action …</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=13)；affiliation 待核实</div>
+<div class="field"><span class="label">这是什么</span><span class="text">改进机器人视觉-语言-动作模型的微调方法，避免在机器人示范数据上微调时把预训练的视觉语言能力冲掉，并让语言和动作对齐。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在单臂 xArm7 和双臂 YAM 机器人的 8 种真实操作设置上，对新目标、新布局和需要协同的双臂任务都稳定优于普通行为克隆；在 LIBERO-PRO、LIBERO-Plus、CALVIN 仿真上分别在分布外扰动、感知鲁棒性和长程控制上有一致提升。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">微调时增加两个目标：从冻结的视觉语言模型副本逐层蒸馏表示，防止表示漂移；把动作目标转成离散的运动方向标签，在同一张机器人观测上联合训练语言和动作预测。</span></div>
+<div class="score-reason">评分依据：机器人动作策略的训练方法，虽有真机实验，但不涉及设备端推理部署或 Agent 闭环，相关度低；属于常规训练改进。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.13429" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

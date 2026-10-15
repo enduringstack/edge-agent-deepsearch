@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Spec-AUF: Accept-Until-Fail Training under Train-Inference Misalignment for Masked Block Drafters</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-07-02 · Tianjian Yang, Meng Li / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">针对推测解码中块级drafter训练全块损失与推理只保留接受前缀的失配问题，提出AUF方法，把交叉熵监督只保留到drafter首次预测失败处，无需辅助目标或改推理流程。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在Qwen3-8B上把DFlash平均发出长度从2.40提到2.61，Domino双分支头从2.56提到2.68，六个基准全面提升。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：推测解码加速LLM推理，可服务端侧推理加速；目标函数失配分析有创新。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-02 · Tianjian Yang, Meng Li / arXiv</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">投机解码里并行起草一整块 token 的草稿模型，训练时却要求每个位置都对，和推理时“第一个错就丢弃后面”不一致。Spec-AUF 只在第一个预测出错之前计算损失。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen3-8B 上，DFlash 草稿器六个基准平均每轮接受长度从 2.40 提升到 2.61，每个基准都有提升；迁移到 Domino 双分支头从 2.56 提升到 2.68。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">训练时把交叉熵的监督范围截断到草稿器自己预测的第一个失败位置，不加辅助目标、不改推理流程，也不破坏投机解码的精确性。</span></div>
+<div class="score-reason">评分依据：改进投机解码草稿器训练，可迁移到端侧解码加速（相关度 4）；改动简单有效但属训练目标微调（贡献 5）。作者机构为北京大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01893" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

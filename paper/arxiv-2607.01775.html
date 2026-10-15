@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Set Diffusion: Interpolating Token Orderings Between Autoregression and Diffusion for Fast and Flexible Decoding</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-02 · Marianne Arriola, Volodymyr Kuleshov / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出 set diffusion 语言模型,用集合因果扩散架构支持每步推理后更新 KV 缓存,token 可任意顺序集合解码,比块扩散更灵活更快。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在数学推理、摘要、无条件生成上比已有扩散语言模型速度-质量更优,填充能力强于块扩散。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：高效解码新范式,但属通用语言模型研究,端侧关联弱。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-07-02 · Marianne Arriola, Volodymyr Kuleshov / ICML 2026</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">提出“集合扩散”语言模型：介于自回归和扩散之间，可以按任意顺序、任意长度一次解码一组 token，同时还能用 KV cache。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在数学推理、摘要和无条件生成上，速度-质量权衡优于以往扩散语言模型，填空（infilling）能力强于块扩散；摘要页未给出具体加速倍数。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把似然按“位置和长度都可变的 token 集合”分解，并设计集合因果的扩散架构，使每一步推理后都能更新 KV cache，支持滑动窗口式并行解码。</span></div>
+<div class="score-reason">评分依据：属于解码加速与模型架构方向，可迁移到资源受限推理（相关度 4）；在扩散与自回归之间提出新的分解方式并被 ICML 2026 接收（贡献 7）。作者机构为康奈尔大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01775" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

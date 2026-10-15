@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Efficient RGB-T Object Detection via Sparse Cross-Modality Fusion</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-29 · Chao Tian, Zikun Zhou, Chao Yang et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:能耗功耗</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出稀疏跨模态融合的两阶段 RGB-T 检测框架:先用轻量单模态阶段产生高召回 RoIs,再对稀疏候选做融合精细,把算力集中到前景。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">参数更少成本更低,性能具竞争力,对高分辨率图像可扩展;未报告具体数字。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：高效检测非显式端侧;稀疏融合两阶段,中等创新。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校顶会</span>  2026-06-29 · Chao Tian, Zikun Zhou, Chao Yang et al. / ECCV 2026</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一种高效的可见光-热红外（RGB-T）双模态目标检测方法：大部分背景区域用轻量单模态模型处理，只对少数候选区域做跨模态融合。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">论文称在参数量和计算成本明显更低的情况下取得有竞争力的检测精度，并能扩展到高分辨率图像；摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">两阶段框架：先用轻量单模态检测器快速扫图生成高召回候选框，再只对这些稀疏候选做融合驱动的复查与边框精修，把算力集中在可能的前景上。</span></div>
+<div class="score-reason">评分依据：稀疏融合降低检测算力，对边缘视觉部署有参考，但论文未做设备端评测；先扫后精查的稀疏融合机制属有效改进。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.30215" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

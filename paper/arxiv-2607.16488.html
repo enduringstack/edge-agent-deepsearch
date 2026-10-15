@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Auto-Scaling Heterogeneous Neural Processing Units for Energy and Cost-Efficient LLM Serving</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-17 · Yuqi Xue; Jichuan Chang; Jian Huang / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">硬件:NPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">To meet the ever-increasing computing demands of large language model (LLM) services, modern cloud platforms have widely deployed neural processing units (NPUs)…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-07-17 · Yuqi Xue; Jichuan Chang; Jian Huang / MICRO 2026</div>
+<div class="tags"><span class="vendor-tag">Google</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">硬件:NPU</span><span class="tag">方向:能耗功耗</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">云上会同时存在多代不同型号的 NPU 芯片。NeuScale 是一个自动扩缩容框架，帮云平台把大模型推理请求分配到最合适的 NPU 上，以降低成本和能耗。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">原文通过对多代真实 NPU 芯片的测量和生产级模拟器评测，报告成本效率和服务时延达标率显著提升，摘要未给出统一的具体倍数。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 vPod 抽象屏蔽不同 NPU 版本的硬件差异，基于 roofline 分析为每类推理请求挑选最合适的 vPod，并支持动态调整单个 vPod 规格和 vPod 数量。</span></div>
+<div class="score-reason">评分依据：纯云端异构 NPU 调度，与端侧设备关联较弱；系统设计扎实，已被 MICRO 2026 接收。PDF 首页显示作者 Jichuan Chang 署名 Google。 作者机构依据：arXiv PDF 首页署名 Google（PDF 首页第二作者 Jichuan Chang 署名 Google，邮箱为 google.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.16488" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

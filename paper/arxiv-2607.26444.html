@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>StrataCL: Fabric-Native Communication Library for Production Supernodes</h1>
-<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-29 · Tiancheng Hu; Jin Qin; Yuzheng Wang; Ke Liu; TangShengsheng Li; Sheng Wang; Zhongzhe Hu; Tianlun Hu / arXiv</div>
-<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:MoE</span><span class="tag">方向:端云协同</span><span class="tag">硬件:NPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">现代分布式 AI 负载跨数百个加速器运行，使通信成为主要瓶颈，作者针对该通信瓶颈展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Huawei（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span>  2026-07-29 · Tiancheng Hu; Jin Qin; Yuzheng Wang; Ke Liu; TangShengsheng Li; Sheng Wang; Zhongzhe Hu; Tianlun Hu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:云端serving</span><span class="tag">方向:MoE</span><span class="tag">硬件:NPU</span><span class="tag">硬件:Ascend</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">StrataCL 是华为为超节点集群做的通信库，减少分布式训练和推理时的多余数据拷贝，提高大模型推理和训练效率。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在华为 CloudMatrix384 上，集合通信总线带宽最多提升 1.6 倍，MoE 分发/合并带宽最多提升 1.4 倍；三个生产负载中，大模型推理吞吐提升 1.9 倍、P99 首 token 延迟降低 2.2 倍，大模型和推荐模型训练迭代时间分别缩短 1.4 倍和 1.3 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在内存分配时就完成注册，让用户缓冲区直接参与通信；通信算子按 NPU 核做负载均衡划分，并由 NPU 驱动 SDMA 卸载数据搬运。</span></div>
+<div class="score-reason">评分依据：数据中心超节点通信优化，属于云端大模型服务基础设施（相关度 2）；生产级系统工程扎实，但方法以工程整合为主（贡献 5）。PDF 首页署名含华为技术有限公司（机构 4），与北京大学、中科院计算所等合作。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页作者 TangShengsheng Li、Sheng Wang 等 8 位标注机构 4 为 Huawei Technologies Company Ltd.，与北京大学、中科院计算所合作）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.26444" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Athena-Brain Technical Report: An Efficient Robot Brain for General Intelligence and Embodied Interactio</h1>
 <div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-21 · Jialian Li; Junhong Liu; Yuchen Cao; Weiran Guo; Jiaming Song; Xutao Wang; Yi Zhao; Jiangpin Liu / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span><span class="tag">应用:机器人</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Large language models (LLMs) have demonstrated remarkable capabilities in language understanding, reasoning, and world knowledge.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="tags"><span class="vendor-tag">XPeng</span><span class="tag">方向:规划推理</span><span class="tag">方向:工具调用</span><span class="tag">应用:机器人</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Athena-Brain-8B 是一个 80 亿参数的机器人“大脑”模型，目标是作为设备端模型，在保留通用推理能力的同时具备具身交互和任务规划能力，并且回答更短更省时。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">与对应的 Qwen3-8B 思考模型相比，通用语言和推理基准上表现相当但生成回答明显更短；在域内具身交互基准上优于同规模模型，并超过若干更大的前沿模型；论文以生成长度代替实际设备时延，未报告真机速度。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">多阶段后训练：通用监督微调、通用强化学习、在博物馆和超市等交互环境中训练具身专家，最后做模型合并，并在奖励中惩罚冗长输出和工具调用错误。</span></div>
+<div class="score-reason">评分依据：明确以设备端机器人大脑为目标并优化生成长度，端侧相关度中上；但评测在文本交互环境中进行，没有真机部署证据，不算真正端侧 Agent。PDF 首页通讯作者邮箱为 xiaopeng.com（小鹏）；输入中的 Alibaba 归属无依据。 作者机构依据：arXiv PDF 首页署名 XPeng（PDF 首页脚注通讯作者 Jie Chen 邮箱为 chenj81@xiaopeng.com（小鹏））。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.18985" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

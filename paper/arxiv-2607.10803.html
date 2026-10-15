@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Weight-Adjusted Gradients Reveal Parameter Importance and Failure Modes in LLMs</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-12 · Shrestha Datta; Hongfu Liu; Anshuman Chhabra / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:安全隐私</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Understanding which parameters are influential in Large Language Models (LLMs) is central to improving their efficiency, reliability, and interpretability.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-12 · Shrestha Datta; Hongfu Liu; Anshuman Chhabra / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:MoE</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">提出“权重调整梯度”（WAG），用权重与一阶梯度的交互来估计大模型里哪些参数最关键，并发现极少数参数一改就会让模型崩溃。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">WAG 找出的关键参数不到模型规模的百万分之 0.5（0.00005%），修改它们会导致性能急剧下降；方法还被用于 MoE 专家分配、定向遗忘、混合精度量化和知识编辑层选择。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把权重大小和梯度信号结合成一个重要性分数，而不是只看其中之一，从而定位对模型行为影响不成比例的参数子集。</span></div>
+<div class="score-reason">评分依据：参数重要性可直接用于混合精度量化中“哪些参数保留高精度”的决策，对端侧量化压缩有参考价值，但主要是可解释性分析。发现极小关键参数子集有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.10803" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

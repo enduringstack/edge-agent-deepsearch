@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Scaling Laws for Grid-Based Approximate Nearest Neighbor Search in High Dimensions</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-01 · Matthew J Liu, Wei Hang Zheng, Vidhan Purohit et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">系统刻画多探针网格 ANN 搜索随数据量 N 和维度 d 的扩展规律,发现网格法在维度上具有恒定扩展指数。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 GloVe 上网格法维度扩展恒定而其他方法退化;查询近似 N 线性、索引成本低;并提供代码。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：ANN 检索可服务端侧检索;扩展规律刻画有价值但创新中等。</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-01 · Matthew J Liu, Wei Hang Zheng, Vidhan Purohit et al. / arXiv</div>
+<div class="tags"><span class="tag">应用:RAG</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">系统测量基于网格的近似最近邻检索在数据规模和维度增长时的性能变化，为向量检索选型提供参考。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 GloVe 嵌入上发现，多探针网格检索的维度扩展指数大致恒定，而图、树和分区类方法吞吐会随维度下降；查询时间随数据量近线性增长，建索引成本更低。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">实现一个多探针网格检索算法，在不同数据量和维度下与主流近似最近邻方法对比扩展规律，并讨论其对把注意力视为近邻检索的高效模型的启示。</span></div>
+<div class="score-reason">评分依据：向量检索与 RAG 和高效注意力有关联，但论文不涉及模型推理部署或设备；以测量分析为主，方法贡献有限。作者多为伯克利学生，代码已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.01283" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

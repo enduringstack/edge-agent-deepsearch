@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Keep It InMind: Benchmarking the Implicit-Association Blind Spot in Agent Memory</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-29 · Ruizhe Li, Mingxuan Du, Benfeng Xu, Zhendong Mao / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">长期记忆系统把用户说的话存入外部存储，在相关查询到来时检索出来，作者针对此展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=25)；affiliation 待核实</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-29 · Ruizhe Li, Mingxuan Du, Benfeng Xu, Zhendong Mao / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">中科大提出的智能体长期记忆评测 InMind：专门测“需要常识联想才能想起来的记忆”，例如用户坚果过敏却在问马卡龙。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">把关键记忆直接放进上下文时模型能答对 84.0% 的间接问题，而 6 个向量、图和智能体记忆系统检索后最多只有 14.4%，尽管它们按需回忆同一事实可达 100%；把嵌入维度提高 8 倍也基本补不上差距。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">构建 125 个专家核验任务（覆盖 10 个生活领域），用成对对照区分“没存”“模型不懂关联”“存了但没被检索出来”三种失败原因，并用一个查询前保持记忆可见的探针定位问题出在检索接口。</span></div>
+<div class="score-reason">评分依据：评测智能体记忆系统的设计缺陷，对端侧个人助理的记忆模块有参考价值，但不涉及设备部署，相关度 3；“隐式联想盲区”这一失败模式的定义和诊断设计清晰，贡献 6。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.24368" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

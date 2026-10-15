@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Multi-Turn On-Policy Distillation with Prefix Replay</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-24 · Baohao Liao, Hanze Dong, Christof Monz, Xinxing Xu, Li Dong, Furu Wei / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">We study on-policy distillation (OPD) for agentic tasks, where an LLM agent interacts with an environment over multiple turns and a student imitates a teacher o…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=8)；affiliation 待核实</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-24 · Baohao Liao, Hanze Dong, Christof Monz, Xinxing Xu, Li Dong, Furu Wei / arXiv</div>
+<div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:蒸馏</span><span class="tag">方向:工具调用</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究如何把大模型智能体的多轮工具使用能力在线蒸馏给小模型，提出 ReOPD，用预先采集好的教师轨迹替代昂贵的实时环境交互。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在带 Python 的数学推理和搜索环境上，准确率持平或超过在线蒸馏，学生训练期间工具调用次数为零，每次采样至少快 4 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">复用教师轨迹作为前缀，只在部分步骤让学生自己行动、教师逐步打分；用随步数衰减的采样重点使用偏差较小的早期前缀，避开教师不可靠的状态。</span></div>
+<div class="score-reason">评分依据：把多轮智能体能力压进小模型是端侧智能体的上游环节，属于可迁移的蒸馏方法，但不涉及设备部署。PDF 首页显示第 1、2、4、5、6 位作者来自 Microsoft Research，据此标注微软。 作者机构依据：arXiv PDF 首页署名 Microsoft（PDF 首页署名：作者 1、2、4、5、6 署 Microsoft Research，作者 1、3 另署阿姆斯特丹大学）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.04763" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

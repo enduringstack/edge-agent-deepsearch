@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Decentralised Federated Learning over Temporal Networks: The Role of Heterogeneities</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-03 · Arash Badie-Modiri; Chiara Boldrini; Lorenzo Valerio; János Kertész; Márton Karsai / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">研究去中心化联邦网络中结构与时间异质性对训练的影响。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">证明现有常用实验场景因忽略通信网络的时间-结构异质性而收敛过快；真实时序网络上异质性通常大幅拖慢扩散与收敛。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把去中心化 FL 的局部平均聚合映射为时序网络上的惰性随机游走扩散过程，据此分析早期与稳态极限的收敛动力学。</span></div>
-<div class="score-reason">评分依据：去中心化 on-device FL 属端侧技术栈（relevance 6）。时序网络扩散映射分析有创新（contribution 5）。vendors 空。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-03 · Arash Badie-Modiri; Chiara Boldrini; Lorenzo Valerio; János Kertész; Márton Karsai / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:端侧训练</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究去中心化联邦学习（设备之间点对点交换模型参数）在真实通信网络里收敛有多快，发现常用实验设定严重高估了收敛速度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">原文证明该过程在早期和稳态都等价于时序网络上的惰性随机游走扩散；分析真实时序网络后发现结构和时间上的不均匀大多会显著拖慢收敛，摘要未给出具体倍数。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把本地参数平均的聚合过程映射为时序网络上的扩散过程，再用三类真实部署场景的通信网络数据分析结构与时间异质性的影响。</span></div>
+<div class="score-reason">评分依据：关注设备端协同训练的理论收敛，与端侧推理和部署距离较远；把联邦学习映射为网络扩散的分析视角有一定价值。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.03171" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

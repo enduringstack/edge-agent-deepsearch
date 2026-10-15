@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Revisiting Lossy Verification in Speculative Decoding: Mechanisms, Trade-offs, and Failure Modes</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-29 · Tianyu Wang; Yuxuan Zhou; Wenbin Wang; Heng Li; Zikai Xiao; Junyuan Shang / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">投机解码（SD）通过让轻量级 draft 模型提议 token 再由大模型并行验证来加速 LLM 推理，作者针对其改进。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-29 · Tianyu Wang; Yuxuan Zhou; Wenbin Wang; Heng Li; Zikai Xiao; Junyuan Shang / arXiv</div>
+<div class="tags"><span class="vendor-tag">Baidu</span><span class="tag">方向:投机解码</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这篇论文系统梳理投机解码里“有损验证”的各种做法，说明放宽验证虽然更快，却可能悄悄改变输出分布、拖垮生成质量。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">把众多有损验证方法归为“截断式”和“协作式”两类；发现截断式方法相比真正的截断采样基线会因分布扭曲明显掉点，而协作式方法里抑制过冲和监督质量远比草稿与目标的线性插值重要。论文未给出统一的单一数值。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从理论上推导各方法诱导的采样分布，再在精选基准上构建诊断评测框架逐类对比。</span></div>
+<div class="score-reason">评分依据：投机解码是端侧推理加速常用技术，这项分析对选择验证策略有直接参考（相关度 5）；属于分析与评测型工作（贡献 5）。PDF 首页署名含百度（作者 2、6、7），另有独立研究者和高校作者。 作者机构依据：arXiv PDF 首页署名 Baidu（PDF 首页作者 Yuxuan Zhou、Chunrui Zheng、Junyuan Shang 标注机构 2 为 Baidu Inc.）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.26627" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

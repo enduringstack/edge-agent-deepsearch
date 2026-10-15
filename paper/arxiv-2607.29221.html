@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MOSAIC: Masked Outsourcing of Secure AI Computations</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-31 · James Hsin-yu Chiang; Sheila Zingg; Kari Kostiainen; Srdjan Capkun / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:云端serving</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">研究如何把 AI 计算从算力弱但可信的客户端安全、高效地外包给算力强但不可信的服务器。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-31 · James Hsin-yu Chiang; Sheila Zingg; Kari Kostiainen; Srdjan Capkun / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:云端serving</span><span class="tag">方向:端云协同</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">当可信但算力弱的一方同时持有输入和模型、又想借用不可信的强大服务器跑大模型时，MOSAIC 提供一种矩阵乘法掩码协议，让服务器既看不到数据也看不到模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 70B 大模型上困惑度与常见量化方法相当，HumanEval 上与全精度 BF16 持平；70B 模型自回归解码每步低于 1 秒，相比非保密推理约慢 3 倍（解码）到 5-11 倍（预填充），比此前最快方案快几个数量级。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对矩阵乘结果加入少量噪声以放宽正确性，安全性归约到 LWE 和 LPN 假设；用随机 Hadamard 旋转控制多层 Transformer 中的误差累积，逐层把大部分计算外包给不可信加速器。</span></div>
+<div class="score-reason">评分依据：属于保密 AI 推理外包，弱客户端加强服务器的思路可迁移到端云协同，但实验场景是数据中心；协议在大矩阵下首次做到实用级速度，贡献明确。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29221" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

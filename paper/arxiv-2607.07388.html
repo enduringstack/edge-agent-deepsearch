@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TF-Engram: A Train-Free Engram with SSD-Backed Memory for Large Language Models</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-07-08 · Yutang Ma, Kecheng Huang, Xikun Jiang, Zili Shao / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:高效推理</span><span class="tag">方向:编译部署</span><span class="tag">模型:Qwen</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">给小模型外挂一个免训练的短语级语义记忆，存在 GPU-DRAM-SSD 三级存储里，让 0.6B 模型也能用到大规模外部知识。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">Qwen3-0.6B 下游平均分从 57.6 升到 59.4，超过参数量匹配的 LoRA 基线；SSD 存储大幅降低 GPU 显存占用，预测预取找回大部分吞吐。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">离线从语料构造短语级语义记忆表，跨 GPU-DRAM-SSD 层级存储，用 Early-Exit 引导的预测预取在自回归解码时隐藏外部访存延迟。</span></div>
-<div class="score-reason">评分依据：Qwen3-0.6B 小模型+SSD 三级记忆，端侧小模型可迁移（relevance 8）。免训练 engram+预测预取系统设计有创新（contribution 7）。作者 Zili Shao (CUHK-Shenzhen)，学校项目。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-08 · Yutang Ma, Kecheng Huang, Xikun Jiang, Zili Shao / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:高效推理</span><span class="tag">硬件:GPU</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">TF-Engram 给小语言模型外挂一个无需训练的短语级记忆库，记忆表分布在显存、内存和固态硬盘三级存储中，让 0.6B 级小模型低成本地获得额外知识。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen3-0.6B 上，下游任务平均分从 57.6 提高到 59.4，超过冻结原模型和参数量相当的 LoRA 基线；固态硬盘存储大幅降低显存需求，预测式预取找回了外部访存造成的大部分吞吐损失。测试平台为 i9-14900K 加 RTX 5090 的台式机。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">离线从外部语料构建短语专属的语义记忆表，避免哈希压缩导致的无关短语冲突；解码时利用中间层提前退出的预测结果，提前从固态硬盘或内存预取下一步可能用到的记忆条目，掩盖访存延迟。</span></div>
+<div class="score-reason">评分依据：把大记忆表下放到固态硬盘、给小模型扩知识的思路对内存受限的端侧设备有直接借鉴，实验在单机消费级显卡上完成；免训练记忆加提前退出引导的预取是有新意的系统设计。作者来自香港中文大学和北京理工大学珠海学院。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.07388" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

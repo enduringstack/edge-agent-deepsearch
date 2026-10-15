@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Taming the Security-Energy Paradox: A Green AI Approach to Optimized Android Malware Detection</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-22 · Shrinidhi Sridhar; Vikas K. Malviya / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:手机</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">An increase in advanced Android malware requires the use of deep learning models, which can run on Android devices.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-22 · Shrinidhi Sridhar; Vikas K. Malviya / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:安全隐私</span><span class="tag">硬件:手机</span><span class="tag">应用:安全</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">手机上的恶意软件检测模型越强越费电；这篇工作比较不同深度的全精度与 INT8 量化小网络，找出既准又省电的配置。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">INT8 量化让模型体积缩小约 3.5 倍，单次推理能耗降到 0.0189 mJ，检测准确率仍保持在 99.2% 以上；3 层和 4 层的浅层量化网络最省电。能耗基于 Android 模拟器上的测量与估算，而非真机电池仪表。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 TUANDROMD 和 DREBIN 两个数据集上训练多层感知机，用 TFLite 做训练后 INT8 量化，把模型推到 Android 模拟器上测吞吐和计算时间，再折算成每次推理的能耗进行对比。</span></div>
+<div class="score-reason">评分依据：面向手机端安全检测模型的量化与能耗权衡，属于明确的端侧推理场景，但只在模拟器上估算能耗（相关度 6）。方法是常规的训练后 INT8 量化与架构对比，创新有限（贡献 3）。作者来自卡塔尔的 MIE-SPPU 高等教育学院。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.20003" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

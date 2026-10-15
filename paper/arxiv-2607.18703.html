@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Generative World Renderer at the Speed of Play</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-22 · Guixu Lin, Zheng-Hui Huang, Siqi Yang, Ming-Hsuan Yang, Kaipeng Zhang, Zhixiang Wang / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Generative world renderer AlayaRenderer receives structured world states exported from physics engines and synthesizes RGB frames.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=72)；affiliation 待核实</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-07-22 · Guixu Lin, Zheng-Hui Huang, Siqi Yang, Ming-Hsuan Yang, Kaipeng Zhang, Zhixiang Wang / arXiv</div>
+<div class="tags"><span class="vendor-tag">Shanda</span><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">AlayaRenderer 能把物理引擎导出的场景结构渲染成画面，但原版太慢。这篇的 Flash 版本把它加速到可实时游玩的速度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">渲染速度从每秒 0.56 帧提升到 31.54 帧；与物理引擎结合后搭出了以 30 帧每秒运行的可玩生成式世界。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把原渲染器改造成少步数的自回归流式模型，并用蒸馏得到的轻量编解码器做潜空间编码和帧重建，同时保留原有 G-buffer 和文本提示接口。</span></div>
+<div class="score-reason">评分依据：属生成模型的推理加速（少步蒸馏、轻量编解码），但目标平台是服务器级 GPU，端侧相关度偏低；约 56 倍提速有工程价值。PDF 首页通讯作者邮箱为 shanda.com，署名 Alaya Lab 与加州大学默塞德分校。 作者机构依据：arXiv PDF 首页署名 Shanda（PDF 首页署名 Alaya Lab，通讯作者邮箱 zhixiang.wang@shanda.com）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.18703" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

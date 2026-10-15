@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MiLSD: A Micro Line-Segment Detector for Resource-Constrained Devices</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-07-07 · Parsa Hassani Shariat Panahi, Amir Hossein Jalilvand, M. Hassan Najafi / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">硬件:MCU</span><span class="tag">应用:OCR</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">给 MCU 级资源约束做亚兆字节线段检测器，系统比较三种输出表示，找到最优的 F-Clip 中心+长度+角度表示。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">1MB 激活预算下 sAP10 从 10.6（25k 参数/0.25MB）提升到 24.1；8 位量化保全精度性能，4 位显著退化。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">紧凑全卷积骨干+F-Clip 表示；8/4 位量化分析；亚像素解码/测试时增强/轻量验证器后处理。</span></div>
-<div class="score-reason">评分依据：MCU 级亚兆字节视觉检测器，明确端侧（relevance 9）。MCU 预算下表示/位宽/容量系统权衡有工程价值（contribution 5）。作者 Sharif UT，学校项目。</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-07 · Parsa Hassani Shariat Panahi, Amir Hossein Jalilvand, M. Hassan Najafi / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:编译部署</span><span class="tag">硬件:MCU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">线段检测是视觉 SLAM 和工业检测的基础模块，但现有深度模型动辄几 MB，塞不进低成本单片机；MiLSD 研究在 1MB 以内能做到多准。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 STM32F746 上 2.5 万参数（0.25 MB）的模型 sAP10 为 10.6，在 STM32H7 的 1MB 激活预算内提升到 24.1；8 比特量化几乎无损，4 比特明显掉点，量化感知训练只能挽回一部分。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在紧凑全卷积主干上比较三种输出表示，选用“中心点+长度+角度”形式，并加入亚像素解码、测试时增强和轻量校验器，经 X-CUBE-AI / CMSIS-NN 部署到 STM32。</span></div>
+<div class="score-reason">评分依据：在真实 STM32 单片机上部署视觉模型并系统给出精度与内存的权衡，端侧相关度高，代码和模型开源；方法以已有表示的比较和工程优化为主。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.06600" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

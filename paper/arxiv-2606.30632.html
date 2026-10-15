@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>GROW$^2$: Grounding Which and Where for Robot Tool Use</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-29 · Yuhong Deng, Yuyao Liu, David Hsu / arXiv</div>
-<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">GROW2 用物体部件作为抽象,把开放世界工具使用的 grounding 分成语义(VLM 选物选件)与几何(基础模型定位 3D 区域)两层,避免端到端重训练。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 affordance 基准上超 SOTA;实现开类别零样本泛化,仿真与真实工具使用均优于基线。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：机器人工具使用,可端侧;层次 grounding 思路新颖但方法组合常见。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-29 · Yuhong Deng, Yuyao Liu, David Hsu / arXiv</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:规划推理</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">GROW² 让机器人在没有合适工具时“就地取材”：比如没有刀时用盘子切蛋糕，要自己判断该用哪个物体、用它的哪个部位。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在可供性预测基准上超过现有最佳方法，对开放类别物体零样本泛化，并在仿真和真实机器人工具使用实验中优于基线；摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以物体部件为抽象分两级落地：语义层用视觉语言模型的常识推理解析指令、选出工具和相关部件；几何层再用视觉基础模型从单张 RGB-D 图中把部件定位成精确的三维区域。</span></div>
+<div class="score-reason">评分依据：是机器人工具使用的感知与规划方法，未说明视觉语言模型在设备本地运行，与端侧部署关系有限；按部件分层落地、免大规模端到端训练的思路有新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.30632" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

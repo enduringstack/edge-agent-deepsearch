@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>NVIDIA-labs OO Agents: Native Python Object-Oriented Agents</h1>
-<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-07-24 · Paul Furgale, Severin Klingler, James Nolan, Matt Staats, Gaia Di Lorenzo, Elisa Martinez Abad, Christian Schüller, Razvan Dinu, Alessio Devoto, Pascal Berard, Gal Kaplun, Elad Sarafian, Riccardo Roveri, Leon Derczynski, Ricardo Silveira Cabral / HuggingFace Daily</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Traditional agent development is split across prompt templates, tool schemas, callback code, and workflow graphs.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=19)；affiliation 命中 NVIDIA</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-24 · Paul Furgale, Severin Klingler, James Nolan, Matt Staats, Gaia Di Lorenzo, Elisa Martinez Abad, Christian Schüller, Razvan Dinu, Alessio Devoto, Pascal Berard, Gal Kaplun, Elad Sarafian, Riccardo Roveri, Leon Derczynski, Ricardo Silveira Cabral / arXiv</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:工具调用</span><span class="tag">方向:记忆</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">NVIDIA 提出的智能体开发框架 NOOA：把一个智能体直接写成 Python 对象，方法就是它能做的动作、字段是状态、文档字符串是提示词，函数体写成省略号的方法由大模型在运行时补全。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">十个模型在框架能力测试中共通过 4400 条中的 4309 条（97.9%），小型高效模型通过 96.0%、大型前沿模型 99.2%，每个模型都超过 91%；论文还在 SWE-bench Verified、Terminal-Bench 2.0 和 ARC-AGI-3 上做了演示。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">沿用 Python 已有的抽象：类即智能体、方法即能力、类型注解即约束、异步用 asyncio，把上下文、事件、状态呈现、长期记忆和带校验的大模型循环做成简单的 Python 接口，让开发者和模型共用同一套编程模型。</span></div>
+<div class="score-reason">评分依据：属于智能体运行时与编程框架，与模型部署位置无关，论文未涉及端侧设备（相关度 4）。把智能体完全对象化、统一开发者与模型接口的设计清晰，并开源了代码（贡献 6）。PDF 首页为 NVIDIA 技术报告，页脚标注 NVIDIA 版权，代码仓库位于 nvidia-nemo 组织下。 作者机构依据：arXiv PDF 首页署名 NVIDIA（PDF 首页标题即 NVIDIA-labs OO Agents，页脚标注“© 2026 NVIDIA. All rights reserved.”，代码仓库为 nvidia-nemo/labs-OO-Agents）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.20709" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

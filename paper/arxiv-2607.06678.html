@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>NativeMEM: Native Memory Compression for Long-Horizon Robotic Manipulation</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-07 · Ziye Wang; Modi Shi; Chaojun Ni; Jiazhi Yang; Mengdi Li; Zhizhong Su; Tianwei Lin; Hongyang Li / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">为 VLA 模型设计的高效长程记忆压缩方案，让每帧历史压缩成单 token 并保留实时更新。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">仿真成功率从 32.4% 升到 84.0%，真机达 98.7%，且用 20% 训练数据即达竞争结果，推理延迟与 GPU 内存低。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">Native Memory Compression 复用 VLA 自身视觉编码器把每相机每帧历史压成单 token，拼到输入序列；先在冻结 VLA 监督下训练记忆 tokenizer，再解冻 VLA 做任务微调。</span></div>
-<div class="score-reason">评分依据：VLA 记忆压缩属端侧技术栈但偏机器人（relevance 6）。复用视觉编码器做单 token 记忆有创新（contribution 6）。vendors 空。</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-07-07 · Ziye Wang; Modi Shi; Chaojun Ni; Jiazhi Yang; Mengdi Li; Zhizhong Su; Tianwei Lin; Hongyang Li / arXiv</div>
+<div class="tags"><span class="vendor-tag">Horizon Robotics</span><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">机器人 VLA 策略需要记住很长的视觉历史，又不能拖慢实时控制；NativeMEM 把每一帧历史压成一个 token 直接喂给模型自己。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">仿真中成功率从 32.4% 提升到 84.0%，真实机器人上最高 98.7%，推理延迟和显存占用保持较低；只用 20% 训练数据即可达到与此前方法相当的效果。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">复用 VLA 自带的视觉编码器把每个相机视角的历史帧压缩成单个记忆 token，拼进输入序列；先在冻结 VLA 监督下训练通用记忆分词器，再解冻做任务微调。</span></div>
+<div class="score-reason">评分依据：为机器人动作模型加入低开销长期记忆，并在真实机器人上验证；但属于动作策略模型，没有独立的规划或工具闭环，也未说明在机载芯片上运行。公司归属依据：PDF 首页作者单位 5 为 Horizon Robotics。 作者机构依据：arXiv PDF 首页署名 Horizon Robotics（PDF 首页作者单位 5 为 Horizon Robotics（地平线），3 名作者署名该单位）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.06678" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

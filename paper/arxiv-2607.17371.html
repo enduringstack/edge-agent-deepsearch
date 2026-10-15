@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ADEPT: Architecture-Driven Energy-Efficient CNN Fine-Tuning on PIM Accelerators</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-19 · Pratyush Dhingra; Vibhanshu Sharma; Janardhan Rao Doppa; Partha Pratim Pande / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Processing-in-memory-based (PIM) architectures have emerged as a promising solution for accelerating Convolutional Neural Network (CNN) workloads at the edge.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-19 · Pratyush Dhingra; Vibhanshu Sharma; Janardhan Rao Doppa; Partha Pratim Pande / ESWEEK 2026</div>
+<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:CIM</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">边缘端存内计算加速器上微调 CNN 很耗能，ADEPT 根据硬件能耗和层敏感度决定哪些层要训、训多少，让部署后的微调更省电。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在同一存内计算硬件上，相比全参数微调能量延迟积最多降低 8.1 倍，精度基本相当；新增控制逻辑占单元面积和功耗不到 0.5%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">提出一个同时衡量模块梯度敏感度与硬件能量延迟积的指标，据此生成与平台相关的微调配置，并把 LoRA 作用在卷积的通道维度上以减少可训练参数和片外访存。</span></div>
+<div class="score-reason">评分依据：面向边缘端存内计算加速器上的部署后微调，属于端侧训练技术栈，相关度中上。硬件感知的分层微调指标有新意，但仍在仿真硬件上评估，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.17371" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

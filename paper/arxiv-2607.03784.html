@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Rethinking Depth Pruning for Vision Transformers: A Heterogeneity-Aware Perspective</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-04 · Zhenfeng Su; Kang Zhao; Han Bao; Tao Yuan; Zhongzhe Hu; Xianzhi Yu; Wenxuan Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">从层间异质性视角重思 Vision Transformer 的深度剪枝，避免维度失配。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">DeiT-B 1.58 倍加速保精度，DeiT-S 1.39 倍加速近无损；与宽度剪枝结合把极端 ViT 剪枝加速比从 4.24x 提到 5.19x。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">揭示既有深度剪枝失败源于忽视层间异质性；HetDPT 做异质感知深度剪枝避免维度失配，与宽度剪枝联合。</span></div>
-<div class="score-reason">评分依据：ViT 深度剪枝属端侧技术栈（relevance 7）。异质感知深度剪枝有创新（contribution 6）。vendors 空。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-04 · Zhenfeng Su; Kang Zhao; Han Bao; Tao Yuan; Zhongzhe Hu; Xianzhi Yu; Wenxuan Wang / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">视觉 Transformer 直接删掉整层（深度剪枝）往往精度难以恢复，HetDPT 指出原因在于忽视了不同层之间的差异，提出考虑层间异质性的深度剪枝方法。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">DeiT-B 加速 1.58 倍且精度不降，DeiT-S 加速 1.39 倍且几乎无损；与宽度剪枝结合的 HetDPT+ 在 Isomorphic-Pruning-2.6G 配置下把加速比从 4.24 倍提升到 5.19 倍，精度接近无损。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按层的异质性决定剪除哪些层并处理维度不匹配问题，再与宽度剪枝联合使用，在 ImageNet-1K、CIFAR-100、COCO 和 ADE20K 上验证。</span></div>
+<div class="score-reason">评分依据：视觉模型剪枝可直接用于端侧部署提速，但未在设备上实测；属于剪枝方法的改进，贡献中等。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页作者 1、3、4、5、6 署名 Huawei Technologies Co., Ltd.（深圳））。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.03784" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

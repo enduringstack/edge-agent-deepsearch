@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Speech2Grasp: Data-Efficient Transfer of Text-Conditioned Grasp Detection to Speech in Humanoid Robots</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-29 · Hung Nguyen; Kim Nhat Minh Nguyen; Van Duc Vu; Van-Danh Le; Hoang Huy Le; Dinh Tuan Nguyen; Pham Tuyen Le; Van-Truong Nguyen / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">应用:语音</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">人形机器人越来越需要多模态理解以与人类自然交互，作者针对此展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-29 · Hung Nguyen; Kim Nhat Minh Nguyen; Van Duc Vu; Van-Danh Le; Hoang Huy Le; Dinh Tuan Nguyen; Pham Tuyen Le; Van-Truong Nguyen / arXiv</div>
+<div class="tags"><span class="tag">应用:语音</span><span class="tag">应用:机器人</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Speech2Grasp 让人形机器人直接听语音指令去抓取目标物体，不需要先把语音转成文字，从而减少识别错误和延迟。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">相比“先语音识别再抓取”的级联方案，抓取检测效果持平或更好，延迟降低约 3 倍；适配只需约 1.5 万条语音样本；在 Unitree 人形机器人上完成了真机抓取实验。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以图文模型 ALBEF 为基础，把 Whisper 语音编码经池化后通过一个轻量 MLP 投影器映射成 ALBEF 期望的文字表示，用教师-学生方式少量数据对齐；图像侧用小波子带输入降低噪声。</span></div>
+<div class="score-reason">评分依据：在真实人形机器人上部署语音驱动抓取并降低延迟，属于机器人端侧感知，但只是抓取检测，没有智能体闭环（相关度 5）；轻量投影器实现模态迁移的做法实用但不算新（贡献 5）。PDF 首页署名含 VinMotion（多数作者），与加州大学圣地亚哥分校等合作。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.26567" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

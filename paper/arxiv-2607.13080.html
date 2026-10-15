@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Inference Economics of Enterprise Coding Agents: A Case Study of Cloud vs. On-Premise LLMs</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-13 · Sheng-Wei Peng; Yi-Hsun Lin; Yi-Pei Lee / arXiv</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:量化</span><span class="tag">硬件:GPU</span><span class="tag">应用:代码</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Autonomous coding agents force engineering organizations to choose between API-based frontier models -- strong reasoning at high token cost -- and on-premise qu…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 NVIDIA（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-13 · Sheng-Wei Peng; Yi-Hsun Lin; Yi-Pei Lee / arXiv</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:量化</span><span class="tag">应用:代码</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一份企业内部的长期案例研究：对比用云端 API 前沿模型和公司内网自建量化开源模型来跑编程智能体，哪种更划算、代码质量差多少。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">提示缓存命中率 99.3%，让 API 实际成本降低 88.6%，折合每百万 token 0.57 美元，低于内网共享 GPU 的 2.83 美元；本地配置的修复类提交占比 74.9%，远高于云端的 45.9%；按台湾市场参数，共享 GPU 方案总拥有成本节省 40.1%，独占预留则比带缓存的 API 贵 43.8%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">两个连续 28 天周期分别使用 Claude Code 搭配 Claude Opus 和 Opencode 搭配 NVFP4 量化的 GLM-5.1/5.2（NVIDIA Blackwell 内网部署），结合大模型调用遥测与 Git 历史统计成本与返工率。</span></div>
+<div class="score-reason">评分依据：讨论的是企业机房的私有化部署，不是端侧设备，只与本地部署选型宽泛相关；真实生产数据的成本与质量分析有参考价值，但属案例研究。PDF 首页三位作者均署名和硕联合科技（Pegatron Corporation）PEGAVERSE。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.13080" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

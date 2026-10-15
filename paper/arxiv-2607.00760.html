@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MosaicKV: Serving Long-Context LLM with Dynamic Two-D KV Cache Compression</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-01 · Sheng Qiang, Ruiwei Chen, Yinpeng Wu et al. / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">MosaicKV 是长上下文 LLM 的动态二维 KV 缓存压缩系统,按段选择压缩策略,并用闲置 GPU/CPU 资源管理压缩缓存加速注意力。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">H800 上注意力最多快 16x、解码延迟降 4.8x、吞吐高 7.3x,内存省 3x,LongBench/RULER 平均准确率仅降 1.76%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：KV 缓存压缩技术可迁移端侧,但评测在云端 GPU。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-01 · Sheng Qiang, Ruiwei Chen, Yinpeng Wu et al. / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span><span class="tag">应用:长上下文推理</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">面向数十万到上百万 token 的长上下文服务，提出同时在序列和通道两个维度压缩 KV cache 的系统 MosaicKV，以缓解显存占用。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 H800 GPU 上，相比不压缩基线注意力计算最高快 16 倍、解码时延降 4.8 倍、吞吐提升 7.3 倍，显存减少 3 倍，在 LongBench 和 RULER 上平均精度只损失 1.76%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">为每个 KV 向量找出重要元素，按片段动态选择压缩方式，而不是全局用同一种压缩；再借助空闲的 GPU 与 CPU 资源维护压缩后的缓存并加速注意力计算。</span></div>
+<div class="score-reason">评分依据：KV cache 压缩技术可迁移到内存受限的端侧，但本文在数据中心 GPU 上评测、面向云端长上下文服务；二维动态压缩有一定新意。作者均来自上海交通大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.00760" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

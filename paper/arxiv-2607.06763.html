@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Trees from Marginals: Autoregressive drafting with factorized priors</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-07 · Yuma Oda; Ryan Mathieu; Roman Knyazhitskiy; Artur Chakhvadze / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">为分解式 drafter 构造提议树的轻量自回归适配器，恢复条件依赖以提升投机解码接受率。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">相对自回归解码加速 4.37 倍，优于高度优化的 DFlash 基线 24.7%。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">Weaver 从分解 drafter 的 top-K 边际构造提议树，恢复 token 间条件依赖而避免全词表投影；为 Gated Delta Net 层推导无回滚树验证算法并在 SGLang 实现 CUDA kernel。</span></div>
-<div class="score-reason">评分依据：投机解码属端侧技术栈但非显式端侧（relevance 6）。提议树+无回滚验证有创新（contribution 6）。vendors 空。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-07 · Yuma Oda; Ryan Mathieu; Roman Knyazhitskiy; Artur Chakhvadze / arXiv</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">投机解码里“并行一次猜多个词”的草稿模型速度快，但猜得越长越容易错。Weaver 给这类草稿模型加了一个很轻的自回归小模块，把各位置的候选词连成一棵提议树，让猜测前后衔接起来。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在单张 NVIDIA B200 上用 SGLang 跑 Qwen3.6-27B（批大小 1），相比普通逐词解码提速 4.37 倍，比高度优化的 DFlash 基线再快 24.7%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从并行草稿模型给出的每个位置前 K 个候选出发，用轻量自回归适配器恢复词与词之间的依赖并构造提议树，避免全词表投影；同时为含 Gated Delta Net 层的模型推导了无需回滚的树验证算法，并写了 SGLang 的 CUDA 内核。</span></div>
+<div class="score-reason">评分依据：投机解码属于推理加速技术栈，但实验全部在数据中心 GPU（B200）上做，对端侧只是间接可迁移；提议树加无回滚树验证同时改进了模型和系统两层，创新度较高。公司归属依据 arXiv PDF 首页通讯作者邮箱 getmirai.co。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.06763" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

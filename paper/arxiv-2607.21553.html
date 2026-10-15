@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SANA-Video 2.0: Hybrid Linear Attention with Attention Residuals for Efficient Video Generation</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-24 · Junsong Chen, Jincheng Yu, Yitong Li, Shuchen Xue, Haozhe Liu, Jingyu Xin, Yuyang Zhao, Tian Ye, Zhangjie Wu, Zian Wang, Daquan Zhou, Ping Luo, Song Han, Enze Xie / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:高效注意力</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">We introduce SANA-Video 2.0, a hybrid video diffusion transformer instantiated at 5B and 14B scales under a unified architecture.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：HF Daily Papers 精选(votes=16)；affiliation 待核实</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-24 · Junsong Chen, Jincheng Yu, Yitong Li, Shuchen Xue, Haozhe Liu, Jingyu Xin, Yuyang Zhao, Tian Ye, Zhangjie Wu, Zian Wang, Daquan Zhou, Ping Luo, Song Han, Enze Xie / arXiv</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:高效注意力</span><span class="tag">方向:模型架构</span><span class="tag">应用:视频</span><span class="tag">硬件:H100</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">SANA-Video 2.0：英伟达的高效视频生成模型（5B 和 14B），用线性注意力为主、少量 softmax 注意力为锚的混合结构，在单张 GPU 上生成最高 720p 视频。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">40 步采样下 VBench 得分 84.30，在单张 H100 上生成 480p 视频耗时 13.2 秒；720p/60 秒时 DiT 前向比同规模全 softmax 基线快 3.2 倍；再加整栈引擎优化又提速 3.58 倍，5B 模型 720p/5 秒视频 13.06 秒，比 Wan 2.2-A14B 快 120 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">门控线性注意力与门控 softmax 注意力按 3:1 交替，用块注意力残差把前面块的摘要传给后续线性层，并从头训练完整混合结构；推理端再做内核融合、缓存和稀疏注意力优化。</span></div>
+<div class="score-reason">评分依据：高效注意力设计对端侧有一定借鉴意义，但目标场景是 H100 上的视频生成（相关度 3）。混合注意力与注意力残差的设计有新意（贡献 6）。PDF 首页署名 NVIDIA。 作者机构依据：arXiv PDF 首页署名 NVIDIA（PDF 首页全部作者统一署名 NVIDIA）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.21553" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Do All Visual Tokens Matter Equally? Object-Evidence Preserving Token Merging for Vision-Language Retrieval</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-07-06 · Suhyeong Park, Junha Jung, Jungwoo Park, Jaewoo Kang / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">方向:稀疏注意力</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把多向量视觉检索的图像侧 token 压成 K 个代表质心，同时保留物体级证据供未来查询选中。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">K=64 时去掉 93% 以上图像 token，ColPali 存储降 16.09 倍，Flickr30K/MSCOCO R@1 反升；短语级定位更强。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">训练时用物体标注做合并先验阻止跨实例混合，推理无需检测器；仅调共享投影层，视觉/语言骨干冻结。</span></div>
-<div class="score-reason">评分依据：视觉 token 压缩+存储降低可迁移端侧 VLM 检索（relevance 7）。物体感知合并非剪枝/特征池化有创新（contribution 7）。作者学校项目。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-06 · Suhyeong Park, Junha Jung, Jungwoo Park, Jaewoo Kang / arXiv</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多向量图文检索要为每张图存上千个视觉 token，存储和打分都很贵；这项工作提出 SaMer，按物体把图像 token 合并成少量代表向量，压缩的同时不丢查询需要的物体证据。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">取 K=64 时去掉 93% 以上的图像侧 token，ColPali 存储缩小 16.09 倍，同时 Flickr30K 和 MSCOCO 上的 R@1 反而提升，优于其他压缩基线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">训练时用物体标注作为合并先验，避免不同物体的 token 混在一起；推理时不需要检测器，只微调共享投影层，视觉和语言主干保持冻结。</span></div>
+<div class="score-reason">评分依据：属于检索场景的视觉 token 压缩，能降低索引存储和打分开销，但与端侧部署关系较远；方法在物体感知合并上有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.04605" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

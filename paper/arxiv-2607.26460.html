@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>RLMM-Flow: A Flow-based Mobile Manipulation Framework with Latent-Space Reinforcement Learning</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-29 · Shuhang Wang; Ziming Li; Hui Cheng / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">移动操作需要生成全身动作块，同时满足目标到达、避障、底盘运动学约束等，作者针对此展开研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-07-29 · Shuhang Wang; Ziming Li; Hui Cheng / arXiv</div>
+<div class="tags"><span class="tag">应用:机器人</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">RLMM-Flow 是一个移动操作机器人的整身动作生成框架：先模仿专家示范学出动作先验，再用强化学习在隐空间里微调，让动作更安全更平滑。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在移动操作运动规划基准上，任务成功率、避障能力和轨迹质量明显优于纯模仿的流策略和已有强化学习后训练方法，同时保持流模型的快速推理；摘要未给出具体数值。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">冻结预训练好的流策略，只训练一个“隐空间引导网络”去调整初始噪声，引导生成更高价值的动作块；先预热动作空间评价器，再由粗到细逐步放开隐变量控制维度。</span></div>
+<div class="score-reason">评分依据：机器人动作生成策略，没有规划、记忆或工具调用的智能体闭环，且只在基准上评测，判为非端侧 Agent（相关度 3）；隐空间强化学习后训练方案有一定新意（贡献 5）。PDF 首页未列作者机构。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.26460" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Systems Engineering Playbook: Optimizing Qwen 3.5-397B MoE on Ironwood (TPU7x)</h1>
-<div class="meta"><span class="score">13</span> <span class="tier">官方动态</span>  2026-07-14 · Google / Google</div>
-<div class="tags"><span class="vendor-tag">Google</span><span class="tag">方向:MoE</span><span class="tag">模型:Qwen</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Google 发布系统工程手册，讲解在 Ironwood (TPU7x) 上优化 Qwen 3.5-397B MoE 大模型的方法，Decode/Prefill 吞吐分别提升 3.1x/4.7x。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：Google 官方动态（命中官方域名白名单）</div>
+<div class="meta"><span class="score">8</span> <span class="tier">官方动态</span>  2026-07-14 · Google / Google</div>
+<div class="tags"><span class="vendor-tag">Google</span><span class="tag">方向:云端serving</span><span class="tag">方向:MoE</span><span class="tag">方向:高效注意力</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Google 性能团队公开在 Ironwood（TPU7x）上优化 Qwen3.5-397B MoE 大模型推理服务的工程手册，讲清如何用可复用的算子模块快速适配新模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">2026 年 4 月到 6 月间，在 512 并发档位下，解码密集负载推理性能提升约 3.1 倍，预填充密集负载提升约 4.7 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把模型拆成批量注意力、分组矩阵乘、SparseCore 专家重排等独立模块并配硬件成本模型，只针对 Qwen3.5 新增的 Gated DeltaNet 线性注意力和注意力数据并行写新内核，再集成进 vLLM 和 SGLang。</span></div>
+<div class="score-reason">评分依据：数据中心 TPU 上的大模型 MoE 推理优化，与端侧设备没有直接关系；模块化优化方法和线性注意力内核经验对推理栈有参考价值，并给出了明确的性能提升数字。</div>
 <div class="source"><a href="https://developers.googleblog.com/systems-engineering-playbook-optimizing-qwen-35-397b-moe-on-ironwood-tpu7x/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>STELLA: Efficient Sensor-to-LLM Translation for On-Device Human Activity Recognition</h1>
 <div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-07-03 · Nirhoshan Sivaroopan; Albert Zomaya; Kanchana Thilakarathna / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:高效推理</span><span class="tag">应用:IoT命令</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">面向 on-device HAR 的 sensor-to-LLM 高效翻译框架，把传感器窗口压成紧凑潜 token 喂给冻结 LLM。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">七个 HAR 数据集八种设置上达新 SOTA，F1 最多提升 11.83；on-device 个性化再提升最多 21.91% F1，并在移动/边缘预算下实时推理。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">轻量层级 tokenizer 把多通道惯性窗口压成固定潜 token，投影到冻结预训练 LLM 嵌入空间配自然语言 prompt 评分；支持只微调 tokenizer 的端侧个性化与本地检索。</span></div>
-<div class="score-reason">评分依据：明确 on-device HAR + LLM（relevance 9）。sensor tokenizer 把负担从 LLM 适配转到传感器 token 化有创新（contribution 6）。vendors 空。</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:端侧训练</span><span class="tag">方向:安全隐私</span><span class="tag">硬件:手机</span><span class="tag">硬件:Jetson</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">STELLA 让手机、手表等设备上的大模型直接读懂加速度计、陀螺仪信号来识别人的动作，而且整个流程（模型、用户数据、检索）都留在设备上。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 7 个公开数据集、8 种设置上刷新最佳成绩，F1 最多提升 11.83%；部署后随用户数据积累，本地个性化最多再提升 21.91% F1；Samsung S23 Ultra 上 NNAPI GPU 路径单次推理 41.7 毫秒、CPU 路径 377.8 毫秒，Jetson Xavier NX 上 35.2 毫秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用轻量分层分词器把一整段多通道惯性信号压缩成固定数量的紧凑传感器 token，投影进冻结的预训练大模型的嵌入空间再配合文字提示打分；个性化时只微调这个小分词器，并加入本地检索上下文。</span></div>
+<div class="score-reason">评分依据：在 Samsung S23 Ultra 和 Jetson Xavier NX 上实测了实时推理，并支持数据不出设备的个性化，端侧证据扎实；把适配负担从大模型转移到传感器分词器的思路有新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.03089" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

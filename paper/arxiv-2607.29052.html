@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Outcome-Guided Distillation: A Teacher-Student Framework to Advance VLM Reasoning in Autonomous Driving</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-31 · Zeyu Dong; Yimin Zhu; Yu Wu; Yu Sun / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">端到端自动驾驶想学从视觉观测直接到控制动作的映射。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-31 · Zeyu Dong; Yimin Zhu; Yu Wu; Yu Sun / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让自动驾驶里的视觉语言模型先写出推理再出轨迹：大模型老师在真实驾驶动作监督下反思修正推理，再把这种推理能力蒸馏给更小的学生模型，省掉人工标注推理文本。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Waymo 基准上，零样本推理、路径点精度和推理效率都超过已有基于推理的基线；加入推理文本后，比同结构但不推理的模型性能提升约 24%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">老师模型生成解释后对照真实动作反思改写，学生模型通过监督微调学会这种推理，再用单独的路径点解码器把文字推理转成连续轨迹。</span></div>
+<div class="score-reason">评分依据：车载驾驶模型的蒸馏和推理效率与端侧部署有直接关系，但论文没有给出车端硬件实测；师生蒸馏加推理引导的组合属于较常见思路。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.29052" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>
