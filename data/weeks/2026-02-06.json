@@ -6217,7 +6217,7 @@
     "overview": "本周端侧 AI 动态（02-06~02-12）：端侧编译与运行时基础件集中放出，PC 本地智能体开始以完整工作流的形态出现。高通开源 Hexagon-MLIR 编译栈，自定义 Triton 内核和 PyTorch 模型可直接编译到骁龙 Hexagon NPU，已在 v73/v75/v79 三代上跑通；阿里 MNN 3.4.0 让安卓 Vulkan 能跑大模型，Metal 后端加入 Flash Attention 与 Eagle3 投机解码，高通 NPU 支持 Qwen3 与视觉语言模型；三星介绍 Exynos 2600 在每个 CPU 簇共享一个 SME2 矩阵单元，目标检测等端侧任务最多快 70%；联发科 Genio 360 以 6 TOPS NPU 在物联网设备上本地运行最多 20 亿参数的生成模型。PC 本地智能体方面，微软给出用 Foundry Local 在本机 CPU 上跑 qwen2.5-1.5b、串起规划与工具调用的深度研究智能体教程；英伟达展示高校在 DGX Spark 上本地运行完整智能体工作流（gpt-oss-120b 约 80 token/s）；高通韩国黑客松作品在骁龙 PC 上用本地 Qwen2.5-7B 管理邮件和日程。云端侧，智谱发布 GLM-5（744B、激活 40B），Kimi 推出最多 100 个并行子智能体的 Agent Swarm。研究侧，三星 NanoFLUX 把 17B 的 FLUX 压到 2.4B，在 Galaxy S25 Ultra NPU 上约 2.5 秒出图；三星 NanoQuant 首次实现亚 1 比特训练后量化，70B 模型压到 5.75GB；人形机器人上的 SeM² 把交互闭环放在机载 Jetson Orin，首次响应比云端快约 52%。社区方面，腾讯 2 比特模型 HY-1.8B-2Bit 可在带 SME2 的 Arm 手机 CPU 上运行，单台 512GB M3 Ultra 用 mlx-lm 跑 GLM-5 Q4 约 15 token/s。",
     "highlights": [
       {
-        "url": "https://www.qualcomm.com/developer/blog/2026/02/build-faster-on-hexagon-npu-tritor-pytorch-with-hexagon-mlir",
+        "url": "https://www.qualcomm.com/developer/blog/2026/02/build-faster-on-hexagon-npu-tritor-pytorch-with-hexagon-mlir-open-source",
         "topic": "高通开源 Hexagon-MLIR：Triton/PyTorch 直接编译到骁龙 NPU",
         "why": "基于 MLIR 的开源编译栈，把自定义 Triton 内核和 PyTorch 模型端到端编译到 Hexagon NPU，已在 v73、v75、v79 三代上跑通，降低了在手机 NPU 上部署自定义算子与模型的门槛。"
       },
