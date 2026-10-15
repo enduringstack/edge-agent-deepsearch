@@ -7628,7 +7628,7 @@
     "overview": "本周端侧 AI 动态（01-30~02-05）：小参数、少激活的开源模型密集发布，成为本地部署的新底座。阿里开源 Qwen3-Coder-Next（80B 总参、每次只激活 3B），在 SWE-Bench Pro 上追平激活量大 10–20 倍的模型，定位本地编程智能体；阶跃发布 Step 3.5 Flash（196B 总参、约 11B 激活、256K 上下文），官方点名可在 DGX Spark、M3/M4 Max 与 AMD AI Max+ 395 工作站上本地运行；Mistral 开放 4B 实时语音转写模型 Voxtral Realtime（Apache 2.0），480 毫秒延迟下词错率只比离线模型高 1–2 个点，可直接作端侧语音智能体的前端；Qwen3-ASR 开源，0.6B 版首 token 最快 92 毫秒；小米 HySparse 让 80B MoE 只在 5 层用全注意力，KV 缓存缩小近 10 倍。桌面智能体方面，苹果 Xcode 26.3 内置 Claude Agent 与 Codex 并通过 MCP 开放构建和预览工具，OpenAI 推出 Codex 的 macOS 应用——两者模型都在云端，不计为端侧智能体。研究侧，三星 MeKi 把额外知识存进手机只读存储、推理时查表，1.7B 模型逼近 4B、骁龙 8 Elite 上解码快 2.26 倍；DALI 在 RTX 3090 上做 MoE 的 CPU/GPU 分工，解码比 llama.cpp 平均快 3.97 倍；USS-Nav 让无人机的场景图记忆、探索规划和飞行闭环全部跑在机载 Jetson Orin NX 上。社区方面，Qwen3-Coder-Next 是本地部署讨论主线（单台 DGX Spark 约 43 token/s），iPhone 16 Pro Max 上 MLX 输出乱码引发对手机端数值一致性的关注。",
     "highlights": [
       {
-        "url": "https://www.alibabacloud.com/blog/qwen3-coder-next-pushing-small-hybrid-models-on-agentic-coding_602862",
+        "url": "https://www.alibabacloud.com/blog/qwen3-coder-next-pushing-small-hybrid-models-on-agentic-coding_602864",
         "topic": "Qwen3-Coder-Next：3B 激活的本地编程智能体模型",
         "why": "80B 总参、每次只激活 3B，在 SWE-Bench Pro 上追平激活量大 10–20 倍的模型，阿里明确定位本地开发；社区当周在 Strix Halo 和 DGX Spark 上实测，单台 DGX Spark 约 43 token/s。"
       },
