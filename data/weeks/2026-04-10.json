@@ -6559,8 +6559,468 @@
     ]
   },
   "hardware": {
-    "window": {},
-    "overview": "",
-    "items": []
+    "window": {
+      "start": "2026-04-10",
+      "end": "2026-04-16"
+    },
+    "items": [
+      {
+        "date": "2026-04-15",
+        "vendor": "Qualcomm",
+        "category": "移动SoC",
+        "title": "Even more details about the Snapdragon 8 Elite Gen 6 leak",
+        "title_zh": "爆料：骁龙8至尊版Gen 6标准版规格",
+        "url": "https://www.gsmarena.com/even_more_details_about_the_snapdragon_8_elite_gen_6_leak-news-72380.php",
+        "source_type": "媒体",
+        "summary_zh": "爆料者数码闲聊站（Digital Chat Station）在微博披露骁龙8至尊版Gen 6标准版（SM8950）细节，GSMArena转述。标准版将采用台积电2nm、2+3+3新Oryon CPU、16MB L2，Adreno 845 GPU，支持LPDDR5X与UFS 5.0。此前3月25日的爆料称Pro版（SM8975）可选四通道24bit LPDDR6。均为爆料，高通未确认。",
+        "whats_new_zh": [
+          "爆料：SM8950（8至尊版Gen 6）台积电2nm，CPU为2个Prime+3个高性能+3个性能核，共享16MB L2",
+          "爆料：Adreno 845 GPU（6 slice）、12MB图形专用缓存、6MB系统级缓存；支持LPDDR5X与UFS 5.0",
+          "爆料：与Pro版相比削减了“部分缓存和外设规格”，主攻中国厂商的次旗舰机型",
+          "背景爆料（03-25，窗口前）：Pro版SM8975配Adreno 850、18MB GMEM、8MB LLC，内存可选四通道24bit LPDDR6或四通道16bit LPDDR5X",
+          "NPU规格：爆料未涉及"
+        ],
+        "key_specs": {
+          "process": "台积电2nm（爆料）",
+          "cpu": "新Oryon 2+3+3，16MB L2（爆料）",
+          "gpu": "Adreno 845，6 slice，12MB GMEM（爆料）",
+          "npu": "未披露",
+          "memory": "标准版LPDDR5X（爆料）；Pro版可选4×24bit LPDDR6（03-25爆料）；6MB SLC",
+          "other": "UFS 5.0（爆料）"
+        },
+        "edge_ai_impact_zh": "如果Pro版确实首发LPDDR6，2026年下半年旗舰安卓机的端侧大模型生成速度将第一次由内存代际而非NPU拉开档位；标准版延续LPDDR5X，意味着同代旗舰内部会出现明显的端侧AI分层。",
+        "evidence_urls": [
+          "https://www.gsmarena.com/snapdragon_8_elite_gen_6_8_elite_gen_6_pro_specifications_leak-news-72097.php"
+        ],
+        "confidence": "low",
+        "deep_dive_zh": [
+          {
+            "heading": "爆料内容",
+            "points": [
+              "来源为微博数码闲聊站，GSMArena转述，属于爆料口径",
+              "标准版与Pro版共用2nm和2+3+3新Oryon架构，差异在缓存、GPU规模和内存接口"
+            ]
+          },
+          {
+            "heading": "内存与带宽：端侧AI的关键差异",
+            "points": [
+              "Pro版LPDDR6（96bit）对比标准版LPDDR5X（64bit）是本代爆料里与端侧大模型关系最大的一项",
+              "decode速度近似与带宽成正比，若属实，同一模型在Pro版上生成速度可高约1.5倍（推算）"
+            ]
+          },
+          {
+            "heading": "待验证",
+            "points": [
+              "Hexagon NPU代际、TOPS、是否新增低精度格式均无爆料",
+              "LPDDR6实际速率、终端是否普遍选LPDDR6都未知；最终以9月骁龙峰会为准"
+            ]
+          }
+        ],
+        "model_capacity_zh": "推算（基于爆料，速率为假设）：Pro版若用4×24bit=96bit LPDDR6，按10.7Gbps计峰值约128GB/s；标准版64bit LPDDR5X按10.7Gbps约85GB/s。以8B INT4（约4.5GB权重）计，decode理论上限分别约28 tok/s与19 tok/s；位宽带来约1.5倍带宽差，是Pro版端侧大模型生成速度的主要优势来源。"
+      },
+      {
+        "date": "2026-04-14",
+        "vendor": "MediaTek",
+        "category": "NPU/AI加速器",
+        "title": "Genio Pro 5100: Extreme Compute & Multimedia Platform Unleashes the Full Potential of IoT AI",
+        "title_zh": "联发科Genio Pro 5100：3nm IoT平台",
+        "url": "https://www.mediatek.com/tek-talk-blogs/genio-pro-5100-extreme-compute-multimedia-platform-unleashes-the-full-potential-of-iot-ai",
+        "source_type": "官方",
+        "summary_zh": "联发科 IoT 事业部博客介绍 Genio Pro 5100：3nm，AI 处理单元算力超过 50 TOPS，可在端侧运行最多 7B 参数的 LLM，面向机器人、无人机、工业视觉和零售终端，支持 ROS2 与 Yocto/Ubuntu/Debian。",
+        "whats_new_zh": [
+          "3nm 工艺，AI 算力超过 50 TOPS",
+          "官方称端侧 LLM 最高 7B 参数",
+          "最多 16 路摄像头同时输入，8K 视频，多屏输出，工业级温度认证",
+          "支持 ROS2 及 Yocto、Ubuntu、Debian"
+        ],
+        "key_specs": {
+          "process": "3nm",
+          "npu": "超过 50 TOPS",
+          "other": "16 路摄像头、8K 视频、ROS2"
+        },
+        "edge_ai_impact_zh": "7B 级本地模型进入机器人和工业终端，联发科用手机同代工艺切 IoT，是端侧智能体从手机外溢到机器人的信号。",
+        "evidence_urls": [],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "定位",
+            "points": [
+              "把手机级 3nm 工艺带进 IoT/机器人平台，50+ TOPS 与 Copilot+ PC 的 NPU 门槛同档",
+              "16 路摄像头 + ROS2 面向自主移动机器人与多相机视觉"
+            ]
+          },
+          {
+            "heading": "空白",
+            "points": [
+              "CPU、GPU、内存类型与带宽在博客中均未披露，产品页与信息图未核对"
+            ]
+          },
+          {
+            "heading": "软件与部署",
+            "points": [
+              "支持 ROS2 与 Yocto/Ubuntu/Debian，面向机器人开发者的现成 Linux 栈",
+              "官方强调本地推理以避免云端延迟，用于导航与决策"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方口径：最高 7B LLM；未给出精度、内存规格与 tok/s。若按 INT4（约 3.5GB 权重）、LPDDR5X 量级带宽估算，decode 上限约在每秒数十 token（推算，带宽未披露）。"
+      },
+      {
+        "date": "2026-04-10",
+        "vendor": "Qualcomm / Snap (Specs Inc.)",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Qualcomm and Snap Expand Strategic Collaboration to Advance Intelligent Computing Experiences on Specs",
+        "title_zh": "高通与Snap签多年协议，骁龙XR驱动未来多代Specs",
+        "url": "https://www.qualcomm.com/news/releases/2026/04/qualcomm-and-snap-expand-strategic-collaboration-to-advance-inte",
+        "source_type": "官方",
+        "summary_zh": "高通与Snap子公司Specs Inc.签署多年战略协议，未来多代Specs独立式透视AR眼镜都将采用骁龙SoC。消费版Specs计划2026年内上市，是Specs Inc.的首个旗舰合作。新闻稿强调端侧AI、图形和多人体验，但没有给出芯片型号、NPU算力或功耗。",
+        "whats_new_zh": [
+          "多年期协议覆盖“未来多代Specs”，并做长期路线图对齐，目标是可预期的产品节奏",
+          "Specs为独立式、透视（see-through）眼镜，运行Snap OS，消费版2026年内上市",
+          "高通此前已为多代Spectacles供芯，此次是从单代合作升级为多代绑定",
+          "芯片型号、TOPS、内存与功耗：未披露（新闻稿只写Snapdragon XR platforms）"
+        ],
+        "key_specs": {
+          "npu": "未披露",
+          "power": "未披露（仅称low-power compute、power-efficient）",
+          "other": "Snapdragon XR平台；独立式透视AR眼镜；Snap OS"
+        },
+        "edge_ai_impact_zh": "眼镜是端侧Agent最受功耗约束的入口之一；高通把Snap的独立AR眼镜锁定为多代客户，说明“眼镜端本地感知+手机/云端协同”的XR路线将继续以骁龙为主，但眼镜端到底能跑多大模型仍是空白。",
+        "evidence_urls": [],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "合作结构",
+            "points": [
+              "签约方是Snap全资子公司Specs Inc.，这是其首个旗舰级合作",
+              "协议为多年期、多代产品，包含路线图对齐和技术协作，而不是单次采购"
+            ]
+          },
+          {
+            "heading": "产品形态与端侧AI",
+            "points": [
+              "Specs是独立运行、无需手机的透视AR眼镜，数字物体放置在三维空间中，用手势和语音交互",
+              "高通CEO表态未来Specs将是“能提供agentic体验的高能效交互式AR设备”"
+            ]
+          },
+          {
+            "heading": "信息缺口",
+            "points": [
+              "未公布具体芯片（XR2系列哪一代）、NPU算力、内存、续航",
+              "同期高通在可穿戴侧的唯一硬指标仍是3月MWC发布的Wear Elite（最高约2B参数端侧模型）"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露。新闻稿只称端侧AI与“agentic experiences”，未给模型规模、精度或速度。"
+      },
+      {
+        "date": "2026-04-10",
+        "vendor": "Qualcomm / Bosch",
+        "category": "车载/机器人",
+        "title": "Bosch and Qualcomm Expand Collaboration to Strategic ADAS Solutions",
+        "title_zh": "博世与高通合作扩展到ADAS，座舱计算机破千万台",
+        "url": "https://www.qualcomm.com/news/releases/2026/04/bosch-and-qualcomm-expand-collaboration-to-strategic-adas-soluti",
+        "source_type": "官方",
+        "summary_zh": "博世与高通把座舱计算机合作扩展到ADAS：新ADAS量产项目基于Snapdragon Ride，并开发座舱+ADAS单芯片（Ride Flex）的混合关键度平台。博世累计交付基于骁龙座舱平台的车载计算机超过1000万台。新项目已在东亚市场拿到多个定点，首批车型预计2028年上路。",
+        "whats_new_zh": [
+          "博世基于骁龙座舱平台的车载计算机累计交付超过1000万台，覆盖入门到高端各级别车型",
+          "合作范围从座舱扩展到ADAS：新的ADAS量产项目采用博世成本优化的车载计算机架构 + Snapdragon Ride",
+          "座舱与ADAS融合：基于Snapdragon Ride Flex在单颗SoC上运行混合关键度应用，安全等级最高ASIL-D",
+          "已在东亚市场获得多个全球客户定点，首批量产车预计2028年上路",
+          "芯片算力、功耗未在新闻稿披露"
+        ],
+        "key_specs": {
+          "npu": "未披露",
+          "other": "Snapdragon Ride / Ride Flex；最高ASIL-D；座舱计算机累计交付超1000万台"
+        },
+        "edge_ai_impact_zh": "车载是高通端侧AI里增长最快的板块；座舱+ADAS单芯片意味着语音助手、多模态座舱Agent与驾驶感知会在同一颗SoC上抢算力和内存，混合关键度调度将成为车端大模型落地的关键约束。",
+        "evidence_urls": [],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "规模：1000万台座舱计算机",
+            "points": [
+              "这是博世基于骁龙座舱平台交付的累计数量，说明高通座舱芯片已是一级供应商的大规模标准件",
+              "同月财报中高通QCT汽车收入13.26亿美元、同比增长38%，创季度新高"
+            ]
+          },
+          {
+            "heading": "ADAS与中央计算",
+            "points": [
+              "新项目从入门级（定速巡航、车道保持）到高级自动驾驶均可配置",
+              "Ride Flex把座舱和ADAS合并到一颗可做功能安全认证的SoC，降低系统复杂度、功耗和成本",
+              "路线指向“少量高性能中央计算机”取代大量分散ECU"
+            ]
+          },
+          {
+            "heading": "节奏与市场",
+            "points": [
+              "定点集中在东亚市场，首批车型2028年上路，属于中长期订单",
+              "新闻稿未给出Ride平台算力、制程或端侧大模型能力"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-04-10",
+        "vendor": "复旦大学 / 昆山杜克大学",
+        "category": "软件栈/工具链",
+        "title": "EdgeFlow: Fast Cold Starts for LLMs on Mobile Devices",
+        "title_zh": "EdgeFlow：手机大模型冷启动提速",
+        "url": "https://arxiv.org/abs/2604.09083",
+        "source_type": "论文",
+        "summary_zh": "复旦团队发现，手机端大模型冷启动（模型不在内存中）的主要瓶颈是闪存带宽浪费在不重要的权重上。EdgeFlow 用 NPU 约束下的细粒度自适应量化、SIMD 友好的打包格式和 CPU-NPU 细粒度流水线来缩短冷启动。在小米 15 Pro（骁龙 8 至尊版）上，冷启动延迟较 llama.cpp、MNN、llm.npu 最多降 4.07 倍。",
+        "whats_new_zh": [
+          "实测基线：llm.npu 跑 Llama3 8B（128 token 输入）冷启动最长 51.2s；物化计算图后降到 10.5s，再加加载与计算重叠降到 9.1s，其中仍有 7.4s 流水线气泡",
+          "权重打包：INT4/INT8 混合格式加载 2.90s（全 INT8 填充 3.03s）；K-Quant 加载 1.60s，但解包要 5.53s，成为新瓶颈",
+          "EdgeFlow 的 SIMD 解包额外开销 <0.65s，同精度下冷启动 TTFT 最多降 4.07 倍",
+          "解码不退化：与 llm.npu 相比 Qwen1.5 1.8B 解码 1.13 倍、Mistral 7B 1.00 倍，并省去 llm.npu 切换到 CPU 解码图的 2.9s"
+        ],
+        "key_specs": {
+          "npu": "高通 Hexagon NPU（骁龙 8 至尊版）",
+          "memory": "16GB RAM，512GB 闪存",
+          "other": "测试机小米 15 Pro；模型 Llama3 8B、Mistral 7B、Phi3 3.8B、Qwen1.5 1.8B"
+        },
+        "edge_ai_impact_zh": "端侧智能体常被系统回收内存，模型要反复冷启动；把 8B 模型的冷启动从 9~50 秒压到秒级，是“随叫随到”体验的前提。它也说明手机 LLM 的瓶颈正从 NPU 算力转向闪存与内存带宽。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2604.09083"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "Fudan University; Duke Kunshan University",
+        "authors": "Yongsheng Yan; Jiacheng Shen; Xuchuan Luo",
+        "deep_dive_zh": [
+          {
+            "heading": "问题拆解",
+            "points": [
+              "冷启动 = 计算图准备 + 权重从闪存加载 + 计算；物化图和重叠之后，权重加载成为主瓶颈",
+              "若靠预取，要常驻约 4GB 内存才能达到可接受冷启动，EdgeFlow 选择不预留内存"
+            ]
+          },
+          {
+            "heading": "NPU 感知的自适应量化",
+            "points": [
+              "按通道重要性分配位宽，平均位宽受“闪存带宽预算”约束",
+              "位宽必须落在 NPU 原生数据类型上，避免填充带来的读放大"
+            ]
+          },
+          {
+            "heading": "打包与流水线",
+            "points": [
+              "SIMD 友好格式把多种位宽快速转换成定长 NPU 原生类型",
+              "CPU 解包与 NPU 计算按层细粒度动态协同，填补流水线气泡"
+            ]
+          }
+        ],
+        "model_capacity_zh": "论文实测口径：7B~8B 模型（Llama3 8B、Mistral 7B）可在 16GB 手机上由 NPU 做 prefill；冷启动从“分钟级/十秒级”压到数秒级。decode 沿用 llm.npu 的 CPU 解码设置，论文未给出绝对 token/s。"
+      },
+      {
+        "date": "2026-04-16",
+        "vendor": "TSMC",
+        "category": "产业动态",
+        "title": "TSMC Reports First Quarter EPS of NT$22.08 (Form 6-K)",
+        "title_zh": "台积电Q1：3nm占晶圆营收25%",
+        "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000199/a1q26e_withguidancexfinal.htm",
+        "source_type": "官方",
+        "summary_zh": "台积电 2026 年一季度营收约 359 亿美元，同比 +40.6%，毛利率 66.2%。3nm 占晶圆营收 25%、5nm 占 36%，7nm 及以下合计 74%；二季度营收指引 390~402 亿美元。",
+        "whats_new_zh": [
+          "营收 NT$11,341 亿（约 US$359 亿），美元口径同比 +40.6%、环比 +6.4%",
+          "毛利率 66.2%，营业利润率 58.1%，净利 NT$5,725 亿（同比 +58.3%）",
+          "制程结构：3nm 25%、5nm 36%、7nm 13%",
+          "Q2 指引：营收 US$390~402 亿，毛利率 65.5%~67.5%",
+          "媒体（DIGITIMES）报道：法说会称 2nm 已进入量产，2026 年资本开支 US$520~560 亿，全年增长指引上调至 30% 以上"
+        ],
+        "key_specs": {
+          "process": "3nm 占晶圆营收 25%，5nm 36%，7nm 13%",
+          "other": "Q2 营收指引 US$390~402 亿"
+        },
+        "edge_ai_impact_zh": "数据中心 AI 把先进制程利用率推到高位，手机和 PC 芯片在 3nm/2nm 上要和 AI 加速器抢产能，端侧芯片成本难降。",
+        "evidence_urls": [
+          "https://apps.digitimes.com/topic/tsmc_1q26_earnings_call/a001711.html"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "对手机与 PC 芯片的含义",
+            "points": [
+              "5nm 家族（含 4nm）仍是营收第一大节点，3nm 占比 25%，手机旗舰 SoC 与 AI 加速器在 3nm 争产能",
+              "TrendForce 04-30 判断 3nm 产能到 2026 年底将超过 5/4nm，并出现阶段性单一供应商局面"
+            ]
+          },
+          {
+            "heading": "口径",
+            "points": [
+              "财务数字来自台积电向 SEC 提交的 6-K 新闻稿；2nm 量产与资本开支来自 DIGITIMES 法说会报道标题与摘要（全文付费，未读到）"
+            ]
+          },
+          {
+            "heading": "利润率与价格",
+            "points": [
+              "毛利率 66.2% 为历史新高，Q2 指引 65.5%~67.5%，先进制程议价力强",
+              "6-K 未披露按平台（手机/HPC）营收占比，手机业务的季度变化无法从本文件确认"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-04-14",
+        "vendor": "ETH Zurich / University of Bologna",
+        "category": "学术研究",
+        "title": "BioTrain: Sub-MB, Sub-50mW On-Device Fine-Tuning for Edge-AI on Biosignals",
+        "title_zh": "BioTrain：50mW以下在MCU上全网络微调",
+        "url": "https://arxiv.org/abs/2604.13359",
+        "source_type": "论文",
+        "summary_zh": "ETH与博洛尼亚大学的BioTrain在GAP9 MCU上实现生物信号模型的全网络反向传播微调，功耗低于50mW，内存从5.4MB降到0.67MB。新用户校准时准确率比不适配提升最多35%，比只更新最后一层高约7%。",
+        "whats_new_zh": [
+          "GAP9上训练吞吐：EEG 17样本/秒、EOG 85样本/秒，功耗低于50mW（实测）",
+          "全片上反向传播内存占用降8.1倍：5.4MB→0.67MB（batch 8）",
+          "新用户校准准确率最多提升35%，比只训最后一层高约7%"
+        ],
+        "key_specs": {
+          "cpu": "GreenWaves GAP9（RISC-V多核MCU）",
+          "power": "<50mW训练",
+          "memory": "峰值0.67MB"
+        },
+        "edge_ai_impact_zh": "“端侧训练”在毫瓦级可穿戴MCU上可行，个性化可以完全留在设备内。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2604.13359v1",
+          "https://arxiv.org/html/2604.13359"
+        ],
+        "confidence": "high",
+        "venue": "IJCNN 2026",
+        "affiliation": "ETH Zurich Integrated Systems Laboratory; University of Bologna",
+        "authors": "Run Wang; Victor J.B. Jung; Philip Wiese",
+        "deep_dive_zh": [
+          {
+            "heading": "低功耗/常驻AI",
+            "points": [
+              "可穿戴设备上的跨人、跨时段漂移靠端侧适配解决，数据不出设备",
+              "此前MCU平台只能做浅层或稀疏更新"
+            ]
+          },
+          {
+            "heading": "口径",
+            "points": [
+              "v1提交2026-04-14，录用于IJCNN 2026（WCCI）；数字为GAP9实测"
+            ]
+          },
+          {
+            "heading": "内存优化",
+            "points": [
+              "高效内存分配器与网络拓扑优化使大batch训练可行，同时降低峰值内存",
+              "对比基线是带BatchNorm、batch 8的常规全网络微调"
+            ]
+          },
+          {
+            "heading": "关键手段",
+            "points": [
+              "高效内存分配器和网络拓扑优化，让 MCU 上也能用较大 batch，降低峰值内存",
+              "覆盖新受试者第 1 天校准和长期信号漂移两种场景"
+            ]
+          },
+          {
+            "heading": "场景",
+            "points": [
+              "覆盖新受试者第 1 天校准，以及长期信号漂移下的持续适配",
+              "数据集为 EEG 与 EOG"
+            ]
+          },
+          {
+            "heading": "功耗与吞吐",
+            "points": [
+              "GAP9 上功耗低于 50mW",
+              "训练吞吐：EEG 17 样本/s，EOG 85 样本/s"
+            ]
+          }
+        ],
+        "model_capacity_zh": "EEG/EOG生物信号小模型，全网络微调；非语言模型。"
+      },
+      {
+        "date": "2026-04-13",
+        "vendor": "KAUST / UC Irvine / Rain Neuromorphics",
+        "category": "学术研究",
+        "title": "EdgeCIM: A Hardware-Software Co-Design for CIM-Based Acceleration of Small Language Models",
+        "title_zh": "EdgeCIM：SRAM存算加速4B以下小模型",
+        "url": "https://arxiv.org/abs/2604.11512",
+        "source_type": "论文",
+        "summary_zh": "EdgeCIM用65nm数字SRAM存算宏加分块映射，做端到端decoder-only小模型推理的软硬件协同设计。INT4下在0.5B–4B共11个模型上平均336.42 tok/s、173.02 tok/J；LLaMA3.2-1B吞吐为Orin Nano的7.3倍、能效49.59倍。",
+        "whats_new_zh": [
+          "65nm位串行数字CIM宏，支持INT4/INT8",
+          "INT4平均336.42 tokens/s、173.02 tokens/J（11个SLM平均，仿真）",
+          "LLaMA3.2-1B：吞吐为Jetson Orin Nano的7.3倍、能效49.59倍；LLaMA3.2-3B：吞吐为高通SA8255P的9.95倍",
+          "归一化效率7.03 TOPS/W/mm²，高于TranCIM（3.06）和iMTransformer（1.64）"
+        ],
+        "key_specs": {
+          "process": "65nm（CIM宏，HSPICE表征）",
+          "memory": "片外按16通道LPDDR5X建模",
+          "npu": "数字SRAM-CIM，7.03 TOPS/W/mm²"
+        },
+        "edge_ai_impact_zh": "CIM开始以端到端SLM decode为目标给出tok/s和tok/J，但优势很大程度依赖宽内存接口，落到手机上需要重新评估。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2604.11512v1",
+          "https://arxiv.org/html/2604.11512"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "King Abdullah University of Science and Technology; University of California Irvine; Rain Neuromorphics Inc.",
+        "authors": "Jinane Bazzi; Mariam Rakka; Fadi Kurdahi",
+        "deep_dive_zh": [
+          {
+            "heading": "数据流",
+            "points": [
+              "decode阶段以GEMV为主、受内存限制，论文用分块流水把DRAM带宽和CIM阵列吞吐对齐",
+              "用遗传算法在延迟-能耗间找帕累托配置"
+            ]
+          },
+          {
+            "heading": "口径",
+            "points": [
+              "性能来自模拟器，片外内存为16通道LPDDR5X模型——带宽远高于手机常见的4通道，对比GPU时需注意"
+            ]
+          },
+          {
+            "heading": "与商用平台对比",
+            "points": [
+              "对比对象包括Jetson Orin Nano和高通车规SA8255P",
+              "支持模型覆盖Qwen3 0.6B/1.7B/4B等新近SLM"
+            ]
+          },
+          {
+            "heading": "定位",
+            "points": [
+              "GPU 擅长 prefill，但解码由内存受限的 GEMV 主导，利用率低、能耗高",
+              "CIM 在存储阵列内并行做 GEMV，减少数据搬运"
+            ]
+          },
+          {
+            "heading": "口径提醒",
+            "points": [
+              "对比的 Orin Nano、SA8255P 是实测/公开数据，而 EdgeCIM 是基于 65nm 宏参数的仿真，两者不是同口径"
+            ]
+          },
+          {
+            "heading": "评测覆盖",
+            "points": [
+              "12 个 0.5B~4B 模型（TinyLLaMA、LLaMA3.2、Phi-3.5-mini、Qwen2.5、SmolLM2/3、Qwen3）",
+              "INT4 下平均 336.42 token/s、173.02 token/J"
+            ]
+          },
+          {
+            "heading": "设计空间探索",
+            "points": [
+              "自研仿真器 + 遗传算法搜索延迟与能耗的帕累托最优配置",
+              "目标函数中可调参数用于在延迟与能耗之间取舍"
+            ]
+          }
+        ],
+        "model_capacity_zh": "0.5B–4B（TinyLLaMA、LLaMA3.2 1B/3B、Phi-3.5-mini、Qwen2.5/Qwen3、SmolLM），INT4；为仿真结果。"
+      }
+    ],
+    "overview": "冷启动与客户绑定周（04-10~04-16），本周 8 条。复旦 EdgeFlow 在小米 15 Pro（骁龙 8 至尊版、16GB）上拆解 8B 模型冷启动：llm.npu 跑 Llama3 8B 优化后仍要 9.1s，其中 7.4s 在等闪存；EdgeFlow 把冷启动 TTFT 最多降 4.07 倍（论文实测）。高通与 Snap 签多年协议，未来多代 Specs AR 眼镜都用骁龙 XR（型号与算力未披露）；博世基于骁龙座舱的车载计算机累计超 1000 万台，合作扩展到 ADAS。联发科 Genio Pro 5100 为 3nm、50+ TOPS，官方称可跑最高 7B LLM（未给精度和 tok/s）。台积电 Q1 营收约 359 亿美元，3nm 占晶圆营收 25%。爆料称骁龙 8 至尊版 Gen 6 标准版用台积电 2nm、只支持 LPDDR5X。研究侧，EdgeCIM 仿真称 0.5B–4B 模型 INT4 平均 336 tok/s，BioTrain 在 GAP9 上以 <50mW 完成全网络微调。",
+    "takeaways_zh": [
+      "手机 LLM 的体验瓶颈不只在 decode：智能体进程常被系统回收，8B 模型冷启动要 9 秒以上，闪存带宽和权重打包格式成了新的优化对象。",
+      "高通本周两条官方新闻都是绑定客户而不是新芯片，眼镜和车端能跑多大模型仍是空白，增长叙事转向汽车和 XR。",
+      "如果爆料属实，8 至尊版 Gen 6 标准版停在 LPDDR5X、Pro 版可选 LPDDR6，按推算 8B INT4 的 decode 上限约 19 对 28 tok/s，同代旗舰会按内存代际分档。"
+    ]
   }
 }

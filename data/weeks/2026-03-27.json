@@ -6347,8 +6347,653 @@
     ]
   },
   "hardware": {
-    "window": {},
-    "overview": "",
-    "items": []
+    "window": {
+      "start": "2026-03-27",
+      "end": "2026-04-02"
+    },
+    "items": [
+      {
+        "date": "2026-03-30",
+        "vendor": "Alif Semiconductor / Everysight",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Edge AI Meets Wearables: Inside Everysight Maverick Smart Glasses Powered by Alif Ensemble E7",
+        "title_zh": "Everysight眼镜用Alif E7做端侧AI",
+        "url": "https://alifsemi.com/edge-ai-meets-wearables-inside-everysight-maverick-smart-glasses-powered-by-alif-ensemble-e7/",
+        "source_type": "官方",
+        "summary_zh": "Alif官方博客披露Everysight Maverick AR+AI眼镜使用Ensemble E7 MCU：双Cortex-M55、双Ethos-U55 NPU和双Cortex-A32，用于导航、翻译、转写、物体识别等功能，显示开启续航8小时以上。",
+        "whats_new_zh": [
+          "主控Alif Ensemble E7：2×Cortex-M55 + 2×Ethos-U55 NPU + 2×Cortex-A32",
+          "显示开启续航8小时以上；全彩镜内OLED，视场角28°",
+          "光机每侧增加重量不到50g",
+          "Maverick AI Pro增加GazeIntent眼动追踪；产品曾在CES 2026展出"
+        ],
+        "key_specs": {
+          "cpu": "2×Cortex-M55 + 2×Cortex-A32",
+          "npu": "2×Arm Ethos-U55（GOPS未披露）",
+          "power": "显示开启续航8小时以上（官方口径，未给电池容量与功耗）"
+        },
+        "edge_ai_impact_zh": "带显示的AI眼镜也能用MCU+小NPU方案撑到8小时，这条路线和高通AR1/手机级方案形成两极。",
+        "evidence_urls": [
+          "https://alifsemi.com/feed/"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "眼镜架构",
+            "points": [
+              "用MCU级芯片而非手机级SoC做眼镜主控，靠Ethos-U55做轻量视觉/语音推理",
+              "页面没有说明哪些功能在眼镜端、哪些在手机端完成，翻译和转写很可能依赖手机或云（推断）"
+            ]
+          },
+          {
+            "heading": "口径",
+            "points": [
+              "博客页无日期，取RSS发布时间2026-03-30；产品本身不是新品，增量在于官方披露芯片配置"
+            ]
+          },
+          {
+            "heading": "显示与光学",
+            "points": [
+              "全彩镜内OLED，视场角28°，BEAM光学系统投影到镜片",
+              "提供Maverick和带眼动追踪的Maverick AI Pro两个型号"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-03-30",
+        "vendor": "炬芯科技（Actions Technology）",
+        "category": "存内计算/PIM",
+        "title": "炬芯科技股份有限公司2025年年度报告",
+        "title_zh": "炬芯年报：存算芯片放量，二代IP瞄准Transformer",
+        "url": "http://static.cninfo.com.cn/finalpage/2026-03-30/1225049465.PDF",
+        "source_type": "官方",
+        "summary_zh": "炬芯科技2025年年报显示营收9.22亿元、同比增长41.50%，归母净利润同比增长91.95%。基于SRAM存内计算的端侧AI音频芯片ATS323X、ATS362X出货持续攀升，NPU单核100GOPS、基础能效6.4TOPS/W@INT8；第二代存内计算IP在研，目标单核算力倍增并支持Transformer。",
+        "whats_new_zh": [
+          "2025年营收922,378,714元（+41.50%），归母净利润204,586,028元（+91.95%），研发投入2.41亿元（+12.04%）",
+          "存内计算芯片ATS323X、ATS362X出货量持续攀升；ATS323X已用于猛玛旗舰无线麦克风和国内头部品牌电竞耳机，ATS362X进入多家专业音频品牌Party音箱",
+          "NPU单核算力100GOPS，基础能效6.4TOPS/W@INT8，稀疏优化后能效“提升数倍”（公司口径）",
+          "第二代存内计算IP研发中：目标下一代芯片单核NPU算力倍数提升，并支持Transformer模型",
+          "2026年一季报（4月29日）：营收2.38亿元，同比+23.74%；为应对原材料涨价和产能风险主动备货，经营现金流转负"
+        ],
+        "key_specs": {
+          "npu": "CPU+DSP+NPU三核异构；NPU单核100GOPS，6.4TOPS/W@INT8（公司口径）",
+          "other": "应用：蓝牙音箱、无线麦克风、电竞耳机、手表手环、AI眼镜"
+        },
+        "edge_ai_impact_zh": "存算一体在国产音频SoC上已进入可量化的放量阶段，下一代瞄准Transformer；它代表的是毫瓦级常开AI，而不是端侧大模型。",
+        "evidence_urls": [
+          "http://static.cninfo.com.cn/finalpage/2026-04-29/1225234095.PDF"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "存内计算量产",
+            "points": [
+              "炬芯是国内少数把SRAM-CIM做进量产消费芯片并有财报数据可追踪的厂商",
+              "年报称存内计算技术已赋能多条产品线，CIM从单一型号扩展到私有协议音频（ATS323X）和端侧AI处理器（ATS362X）"
+            ]
+          },
+          {
+            "heading": "下一代路线",
+            "points": [
+              "二代CIM IP瞄准Transformer，这是从卷积类音频模型走向注意力模型的关键一步",
+              "同时布局UWB、WiFi、星闪，加入星闪联盟"
+            ]
+          },
+          {
+            "heading": "供应链信号",
+            "points": [
+              "一季报称“部分关键原材料价格预期上行和产能风险”，经营现金流-1,579万元，与同期内存涨价背景一致"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方称可在毫瓦级功耗下运行端侧AI模型（降噪、人声分离等中小模型）；未给参数量。"
+      },
+      {
+        "date": "2026-03-31",
+        "vendor": "TrendForce",
+        "category": "存储与内存",
+        "title": "AI Server Demand to Drive Memory Contract Price Increases in 2Q26 as CSPs Secure Supply via Long-Term Agreements",
+        "title_zh": "TrendForce：2Q26 DRAM合约价再涨近六成",
+        "url": "https://www.trendforce.com/presscenter/news/20260331-12995.html",
+        "source_type": "媒体",
+        "summary_zh": "TrendForce预测2026年二季度常规DRAM合约价环比上涨58–63%，NAND Flash上涨70–75%。原厂把产能转向HBM和服务器，手机内存与UFS/eMMC持续上涨，其中UFS/eMMC因与企业级SSD抢产能但利润更低，缺口最大。4月7日另一份报告称3月消费级DRAM 4Gb以下颗粒月涨超20%。",
+        "whats_new_zh": [
+          "2Q26常规DRAM合约价预测+58–63% QoQ；NAND Flash +70–75% QoQ（研究机构预测）",
+          "手机DRAM继续上涨；品牌商成本压力加大，可能从2Q26开始调整生产计划",
+          "UFS/eMMC与企业级SSD共享产能、利润更低，供需缺口在所有品类中最紧",
+          "4月7日：3月4Gb以下（DDR4 4Gb）均价月涨超20%，DDR3/DDR2涨20–40%；2Q26消费级DRAM合约价预测+45–50%"
+        ],
+        "key_specs": {
+          "memory": "LPDDR4X/LPDDR5X、UFS/eMMC、DDR3/DDR4消费级颗粒全线上涨"
+        },
+        "edge_ai_impact_zh": "2026年上半年，限制端侧AI硬件放量的已不是NPU算力，而是内存价格与供给；小容量旧制程内存的退出对低端IoT和边缘模组冲击更直接。",
+        "evidence_urls": [
+          "https://www.trendforce.com/presscenter/news/20260407-13001.html",
+          "https://www.trendforce.com/price/dram/lpddr_spot",
+          "https://www.trendforce.com/presscenter/news/20260514-13044.html"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "对手机端侧AI",
+            "points": [
+              "端侧LLM需要的恰恰是更大的LPDDR和更快的UFS，内存涨价直接抬高“AI手机”的门槛",
+              "5月TrendForce进一步预测2Q26 LPDDR5X上涨78–83%（见5月月报，本条仅作衔接）"
+            ]
+          },
+          {
+            "heading": "对MCU/IoT",
+            "points": [
+              "4Gb以下小容量DDR、DDR3/DDR2是机顶盒、IoT、边缘模组的常用件，这部分涨幅更大、原厂在退出",
+              "NVIDIA因LPDDR4供给与价格问题加速旧款Jetson停产，是同一趋势的下游表现"
+            ]
+          },
+          {
+            "heading": "口径提醒",
+            "points": [
+              "合约价涨幅是研究机构预测值，不是成交价",
+              "3月31日稿未给手机DRAM的具体百分比，只说“持续上涨”"
+            ]
+          },
+          {
+            "heading": "与 5 月数据的衔接",
+            "points": [
+              "TrendForce 05-14 进一步给出 2Q26 LPDDR4X +70~75%、LPDDR5X +78~83% 的细分预测（已收入 5 月硬件雷达）",
+              "本条是该轮涨价预期的起点，3 月底即已明确手机将减产"
+            ]
+          },
+          {
+            "heading": "端侧存储",
+            "points": [
+              "UFS 缺口最紧，意味着手机上存放多个本地模型（数 GB 级）的存储成本同步上升"
+            ]
+          },
+          {
+            "heading": "PC 侧",
+            "points": [
+              "PC DRAM 需求被下修，部分 PC OEM 分配满足率下降且须付更高价格"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-04-02",
+        "vendor": "Google",
+        "category": "软件栈/工具链",
+        "title": "Gemma 4: Byte for byte, the most capable open models",
+        "title_zh": "Gemma 4 发布：端侧 E2B/E4B 原生多模态",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
+        "source_type": "官方",
+        "summary_zh": "Google DeepMind 发布 Gemma 4 开放模型家族，共四个尺寸：端侧用的 E2B、E4B，以及 26B MoE 和 31B 稠密。端侧两款原生支持文本、图像和音频输入，上下文 128K，官方称可在手机、树莓派和 Jetson Orin Nano 上离线运行。许可证从 Gemma 自有条款改为 Apache 2.0。",
+        "whats_new_zh": [
+          "四个尺寸：E2B（有效 2.3B，含嵌入 5.1B）、E4B（有效 4.5B，含嵌入 8B）、26B A4B MoE（总 25.2B，激活 3.8B，128 选 8 专家 + 1 共享）、31B 稠密（30.7B）——模型卡口径",
+          "端侧 E2B/E4B 上下文 128K、滑窗 512；26B/31B 上下文 256K；词表 262K；只有 E2B/E4B 带约 300M 的音频编码器",
+          "Arena AI 文本榜开放模型中 31B 排第 3、26B 排第 6（官方口径）",
+          "E4B / E2B 指令版：MMLU Pro 69.4% / 60.0%，LiveCodeBench v6 52.0% / 44.0%，AIME 2026（无工具）42.5% / 37.5%，Tau2 42.2% / 24.5%（模型卡）",
+          "许可证改为 Apache 2.0；Gemma 累计下载超过 4 亿次，衍生变体超过 10 万个",
+          "端侧合作方点名 Pixel 团队、高通、联发科；首日工具支持含 MLX、Ollama、LiteRT-LM 等"
+        ],
+        "key_specs": {
+          "memory": "官方博客未给内存数字；26B/31B 的 bf16 权重可放进单张 80GB H100；端侧量化后占用见同日 LiteRT-LM 条目",
+          "other": "E2B 35 层 / E4B 42 层；视觉编码器约 150M（端侧版）/ 约 550M（大模型）；Apache 2.0"
+        },
+        "edge_ai_impact_zh": "Gemma 4 是目前端侧最完整的开放基座：2B/4B 档原生多模态 + 128K 上下文 + Apache 2.0，同时是 Gemini Nano 4 的底座，意味着 Android 系统模型和开发者自带模型第一次共用同一套权重和工具链。",
+        "evidence_urls": [
+          "https://ai.google.dev/gemma/docs/core/model_card_4",
+          "https://ai.google.dev/gemma/docs/releases",
+          "https://9to5google.com/2026/04/02/google-gemma-4/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "端侧架构要点",
+            "points": [
+              "“有效参数”不计逐层嵌入：E2B 有效 2.3B、含嵌入 5.1B；LiteRT-LM 把逐层嵌入做成内存映射，不必全部常驻内存",
+              "局部注意力滑窗为 512 token（大模型 1024），长上下文时局部层的 KV Cache 不随长度增长",
+              "E2B/E4B 自带约 300M 音频编码器与约 150M 视觉编码器，端侧一次加载即可做语音、图像理解"
+            ]
+          },
+          {
+            "heading": "MoE 档位与带宽",
+            "points": [
+              "26B A4B 每 token 激活 3.8B，按 4bit 估算每 token 读取约 2GB 权重（推算），在 Mac 统一内存上可以达到较高 decode 速度",
+              "Android Studio 官方把 26B MoE 列为本地 Agent 编码推荐档，总内存需求 24GB（见单独条目）"
+            ]
+          },
+          {
+            "heading": "能力数字（模型卡）",
+            "points": [
+              "E4B：MMLU Pro 69.4%、GPQA Diamond 58.6%、MMMU Pro 52.6%、Codeforces ELO 940",
+              "E2B：MMLU Pro 60.0%、GPQA Diamond 43.4%、MMMU Pro 44.2%、Codeforces ELO 633",
+              "Tau2 智能体基准 E4B 42.2%、E2B 24.5%，2B 级模型做多步工具调用仍偏弱"
+            ]
+          },
+          {
+            "heading": "口径与存疑",
+            "points": [
+              "Gemma 官方发布记录写的是 2026-03-31 上线，博客与各开发者博客为 04-02，本条按公开发布的博客日期记",
+              "官方博客只说 E2B/E4B“近零延迟”“节省内存和电量”，没有给出设备上的 tok/s、内存或功耗；实测数字来自同日 LiteRT-LM 条目"
+            ]
+          }
+        ],
+        "model_capacity_zh": "端侧档位是 E2B（有效 2.3B）和 E4B（有效 4.5B），128K 上下文，原生多模态含音频；26B A4B 每 token 只激活 3.8B，属于“内存装得下、带宽读得起”的 PC/工作站档位。“有效参数”不含逐层嵌入（PLE），E2B 含嵌入为 5.1B，嵌入表可内存映射，不必全部常驻。"
+      },
+      {
+        "date": "2026-04-02",
+        "vendor": "Google",
+        "category": "软件栈/工具链",
+        "title": "Announcing Gemma 4 in the AICore Developer Preview",
+        "title_zh": "Gemini Nano 4 预览：底座换成 Gemma 4",
+        "url": "https://android-developers.googleblog.com/2026/04/AI-Core-Developer-Preview.html",
+        "source_type": "官方",
+        "summary_zh": "Android 开发者博客宣布 Gemma 4 进入 AICore 开发者预览，作为下一代系统级端侧模型 Gemini Nano 4 的基础。开发者可通过 ML Kit Prompt API 选择 E2B（快）或 E4B（强）。Gemini Nano 4 将在今年晚些时候随新旗舰 Android 机型推出。",
+        "whats_new_zh": [
+          "官方口径：新模型比上一代“最高快 4 倍、最多省电 60%”",
+          "E2B 比 E4B 快 3 倍；9to5Google 披露预览中两档名为 Gemini Nano 4 Fast（E2B）和 Gemini Nano 4 Full（E4B），均标注“Preview, TPU”",
+          "预览模型可跑在搭载 Google、联发科、高通加速器的 AICore 设备上；其他设备回落 CPU，官方说明“不代表最终性能”",
+          "预览期内将陆续为 Prompt API 加入工具调用、结构化输出、系统提示词和思考模式",
+          "同日官方博客称 Gemini Nano 已覆盖超过 1.4 亿台设备；上一代 nano-v3 搭载于 Pixel 10 与 Galaxy S26（9to5Google）"
+        ],
+        "key_specs": {
+          "npu": "Google（Tensor TPU）、联发科、高通的 NPU/加速器；具体芯片型号未披露",
+          "memory": "未披露内存门槛",
+          "other": "相对上一代最高 4 倍速度、最多省电 60%（官方，未注明对比机型与任务）"
+        },
+        "edge_ai_impact_zh": "Android 系统级端侧模型从 2B 级以下的专用模型升级到 Gemma 4 E2B/E4B，并计划开放工具调用和思考模式，这是手机端智能体能在本地完成多步任务的前提。",
+        "evidence_urls": [
+          "https://android-developers.googleblog.com/2026/04/gemma-4-new-standard-for-local-agentic-intelligence.html",
+          "https://9to5google.com/2026/04/02/gemini-nano-4-android/",
+          "https://developers.google.com/ml-kit/genai/aicore-dev-preview"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "系统模型与开放模型合流",
+            "points": [
+              "官方写明“今天为 Gemma 4 写的代码，会自动在 Gemini Nano 4 设备上运行”，系统模型第一次与开放权重同源",
+              "开发者可在 Pixel 等 AICore 设备上直接测 NPU 版本，在非 AICore 设备上用 AI Edge Gallery 跑同一模型"
+            ]
+          },
+          {
+            "heading": "加速器覆盖",
+            "points": [
+              "官方点名 Google、联发科、高通三家加速器，没有三星 Exynos",
+              "“Preview, TPU”标注说明 Pixel 上走 Tensor 内的 TPU（即 NPU）路径"
+            ]
+          },
+          {
+            "heading": "能力增量",
+            "points": [
+              "重点改进推理、数学、时间理解（日历、提醒、闹钟）和 OCR 类图像理解（图表、手写）",
+              "工具调用和思考模式尚在路线图上，说明端侧智能体闭环要等正式版"
+            ]
+          },
+          {
+            "heading": "口径与存疑",
+            "points": [
+              "“4 倍、省电 60%”没有说明对比的是 nano-v3 还是更早版本，也没有给出测试设备",
+              "Nano 4 的内存门槛没写；5 月 Google 为 Gemini Intelligence 设定的 12GB 门槛是否同样适用，本月未知"
+            ]
+          }
+        ],
+        "model_capacity_zh": "Gemini Nano 4 Fast = Gemma 4 E2B（有效 2.3B），Full = Gemma 4 E4B（有效 4.5B）；当前只支持单轮文本/单图输入。设备端精度、tok/s 未披露。"
+      },
+      {
+        "date": "2026-04-02",
+        "vendor": "Google",
+        "category": "软件栈/工具链",
+        "title": "Bring state-of-the-art agentic skills to the edge with Gemma 4",
+        "title_zh": "Gemma 4 端侧实测：手机到高通 NPU",
+        "url": "https://developers.googleblog.com/bring-state-of-the-art-agentic-skills-to-the-edge-with-gemma-4/",
+        "source_type": "官方",
+        "summary_zh": "Google AI Edge 团队介绍 Gemma 4 E2B/E4B 的端侧部署：AI Edge Gallery（Android/iOS）新增“Agent Skills”多步智能体流程，LiteRT-LM 提供约束解码、动态上下文和低内存运行，并推出 litert-lm CLI 与 Python 包。博客给出树莓派 5 和高通 Dragonwing IQ8 NPU 的实测速度。",
+        "whats_new_zh": [
+          "树莓派 5（CPU）：prefill 133 tok/s、decode 7.6 tok/s（官方）",
+          "高通 Dragonwing IQ8（NPU）：prefill 约 3,700 tok/s、decode 31 tok/s；模型卡精确值 3,747 / 31.7，4096 上下文（官方）",
+          "借助 2bit/4bit 权重和内存映射的逐层嵌入，E2B 在部分设备上内存占用低于 1.5GB",
+          "GPU 上 2 个技能共 4,000 输入 token 处理用时不到 3 秒（设备未注明）",
+          "平台覆盖：Android/iOS（CPU/GPU）、Windows/Linux/macOS（Metal）、浏览器 WebGPU、树莓派 5、Dragonwing IQ8 与 Arduino VENTUNO Q",
+          "次日 LiteRT-LM v0.10.1（04-03）发布 Gemma 4 支持、Hugging Face 模型导入、LiteRT KV Cache 与投机解码"
+        ],
+        "key_specs": {
+          "npu": "高通 Dragonwing IQ8（IQ-8275）NPU 路径：prefill 3,747 tok/s、decode 31.7 tok/s",
+          "gpu": "模型卡（当前版本）：Galaxy S26 Ultra GPU decode 约 52 tok/s、iPhone 17 Pro GPU 约 57 tok/s、M4 Max GPU 约 160 tok/s",
+          "cpu": "树莓派 5 CPU：prefill 133、decode 7.6 tok/s；S26 Ultra CPU decode 约 47 tok/s（模型卡）",
+          "memory": "E2B 部分设备 <1.5GB；纯文本权重最低约 0.8GB，约 1.12GB 嵌入参数内存映射；磁盘约 2.6GB（NPU 版约 2.97GB）",
+          "other": "测试设置：1024 prefill + 256 decode、2048 上下文、CPU 4 线程 XNNPACK"
+        },
+        "edge_ai_impact_zh": "这是 4 月最完整的一组端侧实测：2B 级多模态模型在手机 GPU 上 50+ tok/s、在高通 IoT NPU 上 30 tok/s、在树莓派 CPU 上约 8 tok/s，且内存可压到 1.5GB 以内，覆盖了从手机到机器人板卡的端侧 Agent 部署档位。",
+        "evidence_urls": [
+          "https://github.com/google-ai-edge/LiteRT-LM/releases/tag/v0.10.1",
+          "https://huggingface.co/litert-community/gemma-4-E2B-it-litert-lm",
+          "https://www.raspberrypi.com/news/mastering-edge-ai-on-raspberry-pi-with-litert-and-gemma/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "内存与量化",
+            "points": [
+              "2bit/4bit/8bit 混合权重，纯文本权重最低约 0.8GB",
+              "约 1.12GB 的逐层嵌入参数走内存映射，不计入常驻；视觉、音频模块按需加载",
+              "实测 CPU 内存约 600MB 到 3.7GB，取决于设备与后端（模型卡）"
+            ]
+          },
+          {
+            "heading": "智能体能力",
+            "points": [
+              "AI Edge Gallery 的 Agent Skills 支持端侧多步流程；CLI 支持工具调用",
+              "“2 个技能 4,000 token 3 秒内完成”对应 prefill 超过 1,300 tok/s，是端侧 Agent 读长工具说明的关键指标"
+            ]
+          },
+          {
+            "heading": "口径与存疑",
+            "points": [
+              "手机端 GPU 数字来自 Hugging Face 模型卡当前版本（已含 5 月后的投机解码表），4 月初版本是否相同无法确认",
+              "树莓派基金会另有一篇实测给出 Pi 5 8GB 版 prefill 99、decode 9 tok/s、峰值内存 1432MB（QAT 模型），与官方 133/7.6 设置不同"
+            ]
+          }
+        ],
+        "model_capacity_zh": "Gemma 4 E2B（有效 2.3B）混合 2/4/8bit 量化。推算：纯文本每 token 读取约 0.8GB 权重，旗舰手机 LPDDR5X 带宽按 60–85GB/s 估，decode 上限约 75–105 tok/s；实测 GPU 52–57 tok/s，带宽利用率约五到七成（推算口径）。"
+      },
+      {
+        "date": "2026-04-02",
+        "vendor": "Google",
+        "category": "软件栈/工具链",
+        "title": "Android Studio supports Gemma 4: our most capable local model for agentic coding",
+        "title_zh": "Android Studio 本地 Gemma 4 编码",
+        "url": "https://android-developers.googleblog.com/2026/04/android-studio-supports-gemma-4-local.html",
+        "source_type": "官方",
+        "summary_zh": "Android Studio 支持把 Gemma 4 作为本地模型驱动 Agent Mode，模型和推理都留在开发者电脑上，通过 LM Studio 或 Ollama 接入。官方给出各尺寸的总内存和存储需求，并推荐最低配置机器用 26B MoE。",
+        "whats_new_zh": [
+          "总内存需求（含 Android Studio 本身）：E2B 8GB / 存储 2GB，E4B 12GB / 4GB，26B MoE 24GB / 17GB（官方表格）",
+          "官方推荐：满足最低硬件要求的机器使用 26B MoE",
+          "官方称 Gemma 4 针对 Android 开发训练，专为 Agent Mode 设计，可做重构、新功能开发和迭代修复",
+          "同日 Android 博客称 Android Bench 将在后续版本加入 Gemma 4 等开放模型的评测"
+        ],
+        "key_specs": {
+          "memory": "E2B 8GB、E4B 12GB、26B MoE 24GB（总内存，含 IDE）",
+          "gpu": "官方只写“利用本地 GPU 和内存”，未给 GPU/显存要求",
+          "other": "接入方式：LM Studio 或 Ollama，作为 Model Provider"
+        },
+        "edge_ai_impact_zh": "Google 把本地 26B MoE 定为 IDE 内 Agent 编码的推荐档，24GB 成为 PC 端“本地编码智能体”的实际入门内存线。",
+        "evidence_urls": [
+          "https://android-developers.googleblog.com/2026/04/gemma-4-new-standard-for-local-agentic-intelligence.html"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "为什么推荐 MoE",
+            "points": [
+              "26B MoE 每 token 只读 3.8B 激活参数，按 4bit 约 2GB/token（推算），在 100GB/s 级统一内存上 decode 上限约 50 tok/s（推算），能满足交互式编码",
+              "31B 稠密每 token 要读全部约 30.7B 参数，同样带宽下慢约 8 倍，因此不在推荐表里"
+            ]
+          },
+          {
+            "heading": "PC 端 Agent 的内存门槛",
+            "points": [
+              "24GB 总内存意味着 16GB 机器基本只能跑 E4B 或 E2B",
+              "这与 4 月 Mac mini、Mac Studio 因“AI 与智能体工具”需求缺货的现象相互印证（见 Apple 财报条目）"
+            ]
+          },
+          {
+            "heading": "口径与存疑",
+            "points": [
+              "表格是总内存需求而不是显存需求，在独显 PC 上权重放在显存还是内存，官方没有区分",
+              "官方未给出任何本地 tok/s 或编码基准数字"
+            ]
+          }
+        ],
+        "model_capacity_zh": "推荐档 26B A4B MoE：总 25.2B、每 token 激活 3.8B，17GB 存储对应约 5bit 量化（推算：25.2B×5.4bit≈17GB）；24GB 总内存是“装得下”的门槛，decode 速度官方未披露。"
+      },
+      {
+        "date": "2026-03-30",
+        "vendor": "Ollama / Apple（MLX）",
+        "category": "软件栈/工具链",
+        "title": "Ollama is now powered by MLX on Apple Silicon in preview",
+        "title_zh": "Ollama 改用 MLX，Mac decode 近翻倍",
+        "url": "https://ollama.com/blog/mlx",
+        "source_type": "官方",
+        "summary_zh": "Ollama 发布 0.19 预览版，在 Apple Silicon 上改用 Apple 开源的 MLX 框架做推理后端，并支持 NVIDIA 的 NVFP4 量化格式和跨会话缓存复用。官方在 Qwen3.5-35B-A3B 上测得 prefill 提升约 57%、decode 提升约 93%。",
+        "whats_new_zh": [
+          "Qwen3.5-35B-A3B：prefill 1154 → 1810 tok/s，decode 58 → 112 tok/s（0.18 用 Q4_K_M，0.19 用 NVFP4；官方 2026-03-29 测试）",
+          "官方称换 int4 后可达 prefill 1851、decode 134 tok/s",
+          "M5、M5 Pro、M5 Max 可用 GPU 内的神经加速器加速首 token 和生成",
+          "要求 Mac 统一内存大于 32GB",
+          "缓存跨会话复用、在提示词关键位置存快照、共享前缀保留更久，以减少重复 prefill",
+          "提供 ollama launch claude / openclaw 等命令，直接把本地模型接到编码智能体"
+        ],
+        "key_specs": {
+          "gpu": "Apple Silicon GPU；M5 系列 GPU 神经加速器（官方未写测试用的具体芯片）",
+          "memory": "要求统一内存 >32GB",
+          "other": "NVFP4 量化；Ollama 0.19 预览"
+        },
+        "edge_ai_impact_zh": "最流行的本地推理工具在 Mac 上切换到 Apple 自家 MLX，等于把 MLX 变成 Mac 本地大模型的默认后端；本地 30B 级 MoE 跑到 100+ tok/s，已能支撑编码智能体交互。",
+        "evidence_urls": [
+          "https://9to5mac.com/2026/03/31/ollama-adopts-mlx-for-faster-ai-performance-on-apple-silicon-macs/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "提速来源",
+            "points": [
+              "decode 提升 93% 大于 prefill 提升 57%，主要来自 NVFP4 更省带宽与 MLX 的 Metal 内核",
+              "MoE 激活参数小，decode 受带宽限制，量化格式改变直接体现在 tok/s 上"
+            ]
+          },
+          {
+            "heading": "对比口径",
+            "points": [
+              "前后两版量化格式不同（Q4_K_M vs NVFP4），93% 不是纯后端对比",
+              "测试芯片未写明；只说明“所有 Apple Silicon 设备”都受益"
+            ]
+          },
+          {
+            "heading": "智能体场景",
+            "points": [
+              "跨会话缓存与快照针对智能体的长系统提示词，减少每轮重复 prefill",
+              "32GB 以上内存门槛与 Android Studio 推荐 24GB 跑 26B MoE 相近，本地编码智能体集中在 32–64GB 的 Mac"
+            ]
+          }
+        ],
+        "model_capacity_zh": "Qwen3.5-35B-A3B（MoE，总 35B、激活约 3B），NVFP4。推算：每 token 读约 3B×0.56 字节≈1.7–2GB，112 tok/s 对应约 190–220GB/s 的有效带宽，高于基础款 M5 的 153GB/s，因此测试机很可能是 M5 Pro/Max（推算，官方未写）。"
+      },
+      {
+        "date": "2026-04-01",
+        "vendor": "TrendForce",
+        "category": "产业动态",
+        "title": "AI Compute Demand Drives 44% YoY Growth for Top 10 Global Fabless IC Firms in 2025, Says TrendForce",
+        "title_zh": "TrendForce：2025全球前十大IC设计排名",
+        "url": "https://www.trendforce.com/presscenter/news/20260401-12996.html",
+        "source_type": "官方",
+        "summary_zh": "TrendForce 统计 2025 年全球前十大 IC 设计公司营收合计超过 3,594 亿美元，同比 +44%，NVIDIA 一家占约 57%。高通以约 389 亿美元（+12%）被博通超越、降到第三，联发科 191 亿美元（+16%）居第五，天玑 9500 出货带动全年营收创新高。",
+        "whats_new_zh": [
+          "NVIDIA 2,057 亿美元（+65%），博通 397 亿美元（+30%），高通约 389 亿美元（+12%），AMD 346 亿美元（+34%），联发科 191 亿美元（+16%）",
+          "高通因过度依赖手机，被博通超越降至第三",
+          "联发科全年营收创新高，主要由天玑 9500 出货带动",
+          "TrendForce 判断手机芯片厂商“高端引领、成本受限”，整体增长温和"
+        ],
+        "key_specs": {
+          "other": "前十大合计超过 3,594 亿美元，+44%"
+        },
+        "edge_ai_impact_zh": "手机 SoC 厂商的资源正在向数据中心倾斜，端侧 AI 芯片的投入节奏会受这种营收结构影响。",
+        "evidence_urls": [],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "端侧芯片厂商的位置",
+            "points": [
+              "两家手机 SoC 龙头增速（+12%、+16%）都远低于 AI 数据中心芯片厂商",
+              "联发科随后在 Q1 法说会把增长重心放到 AI ASIC（四季度约 20 亿美元）"
+            ]
+          },
+          {
+            "heading": "集中度",
+            "points": [
+              "前十合计超过 3,594 亿美元，NVIDIA 约占 57%，第四季度数据中心营收占其总营收高达 90%"
+            ]
+          },
+          {
+            "heading": "影像与车载",
+            "points": [
+              "联咏扩展 AI 影像与机器视觉 SoC，豪威受益于中国 ADAS 摄像头渗透"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-03-30",
+        "vendor": "TrendForce",
+        "category": "产业动态",
+        "title": "Weakening Demand and Rising Supply Pressures Prompt Downward Revision of Global Notebook Shipments in 2026 to -14.8% YoY, Says TrendForce",
+        "title_zh": "TrendForce：2026笔记本出货下修至-14.8%",
+        "url": "https://www.trendforce.com/presscenter/news/20260330-12992.html",
+        "source_type": "官方",
+        "summary_zh": "TrendForce 把 2026 年全球笔记本出货预测从 -9.2% 下修到 -14.8%，原因是内存涨价推高整机成本、CPU 调价与供货波动，以及先进制程和封装产能优先给 AI 计算。Apple 预计逆势增长 7.7%。",
+        "whats_new_zh": [
+          "2026 年笔记本出货预测：-9.2% → -14.8%",
+          "Apple 笔记本出货预计 +7.7%，受益于低价 MacBook Neo、自研芯片与集中内存配置",
+          "先进制程与封装产能优先给 AI 计算，挤压主流与入门处理器供给"
+        ],
+        "key_specs": {
+          "other": "2026 全球笔记本出货 -14.8%（TrendForce 预测）"
+        },
+        "edge_ai_impact_zh": "AI PC 普及的最大阻力从软件变成了物料成本，大内存本地模型 PC 在 2026 年会更集中在高端和 Apple。",
+        "evidence_urls": [
+          "https://www.trendforce.com/presscenter/news/20260310-12959.html"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "AI PC 的反向压力",
+            "points": [
+              "内存和 CPU 同时涨价，正好打在“AI PC 需要更大内存”的诉求上",
+              "TrendForce 03-10 曾估算主流笔记本零售价可能上涨近 40%"
+            ]
+          },
+          {
+            "heading": "品牌分化",
+            "points": [
+              "统一规格、自研芯片的 Apple 抗压，小品牌议价力弱、缺料风险高"
+            ]
+          },
+          {
+            "heading": "处理器供给",
+            "points": [
+              "先进制程与封装产能优先给 AI 计算，主流与入门 CPU 供给受挤压，这与英特尔客户端仅 +1% 相互印证"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-03-27",
+        "vendor": "那不勒斯费德里科二世大学 / 阿姆斯特丹自由大学",
+        "category": "学术研究",
+        "title": "Sustainability Is Not Linear: Quantifying Performance, Energy, and Privacy Trade-offs in On-Device Intelligence",
+        "title_zh": "Galaxy S25 Ultra 上8个大模型能耗实测",
+        "url": "https://arxiv.org/abs/2603.26603",
+        "source_type": "论文",
+        "summary_zh": "作者搭了一套无需 root 的可复现测量流水线，在 Galaxy S25 Ultra（Android 16）上用 llama.cpp 跑 0.5B~9B 的 8 个模型，比较 Q4_K_M 与 IQ4_XS 两种 4bit 量化下的速度、能耗与质量。结论是：重要性感知量化省内存但不省电；MoE 模型 OLMoE-1B-7B 的能耗接近 1B~2B 稠密模型。",
+        "whats_new_zh": [
+          "8 个模型：Qwen2-0.5B、Qwen2.5-1.5B、Phi-2、Qwen2.5-3B、OLMoE-1B-7B、Qwen2.5-7B、Llama3.1-8B、Gemma2-9B，每组 30 次重复，电池日志 100ms 采样并扣除 2 小时空闲基线",
+          "单次推理总能耗：Gemma-2-9B 常超过 300J，Qwen2-0.5B 约 50J",
+          "IQ4_XS 稳定降低峰值内存，但速度和能耗不占优；Q4_K_M 在所有动态指标上胜出（Wilcoxon 检验）",
+          "OLMoE-1B-7B 总参数近 7B，生成速度和能耗均排第二，与 1B~2B 稠密模型同档；作者推荐 Qwen2.5-3B 作为质量与能耗的平衡点"
+        ],
+        "key_specs": {
+          "other": "Samsung Galaxy S25 Ultra，Android 16，llama.cpp（CPU），Q4_K_M / IQ4_XS；中低端机因内存与散热不足无法稳定运行这些模型"
+        },
+        "edge_ai_impact_zh": "对端侧智能体，选模型比调量化格式更影响续航；MoE 是在手机上“容量换能耗”的现实路径。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2603.26603",
+          "https://github.com/eziyoo/LLMs-on-Devices"
+        ],
+        "confidence": "high",
+        "venue": "arXiv（投稿 EMSE 审稿中）",
+        "affiliation": "University of Naples Federico II; Vrije Universiteit Amsterdam",
+        "authors": "Eziyo Ehsani; Luca Giamattei; Ivano Malavolta",
+        "deep_dive_zh": [
+          {
+            "heading": "测量方法",
+            "points": [
+              "主机为 MacBook Air M4，用 Experiment-Runner 编排；手机屏幕常亮最低亮度，避免 Android 降频",
+              "只用系统原生 API 估算负载能耗，不需要 root，便于他人复现"
+            ]
+          },
+          {
+            "heading": "量化能耗悖论",
+            "points": [
+              "IQ4_XS 的码本重建开销抵消了带宽节省，所以它只能帮你“装下”更大的模型，不能延长续航",
+              "结论：对续航起决定作用的是模型架构，而不是量化格式"
+            ]
+          },
+          {
+            "heading": "MoE 的位置",
+            "points": [
+              "稀疏激活让 7B 总参数的 OLMoE 拥有 1B~2B 级的能耗",
+              "这为手机上用 MoE 换容量提供了实测依据"
+            ]
+          }
+        ],
+        "model_capacity_zh": "论文实测口径：旗舰机可跑到 9B（4bit GGUF），但 8B~9B 的首 token 延迟和每 token 能耗明显偏高；中低端机型无法稳定运行该参数段。"
+      },
+      {
+        "date": "2026-03-27",
+        "vendor": "华北理工大学",
+        "category": "学术研究",
+        "title": "ANVIL: Accelerator-Native Video Interpolation via Codec Motion Vector Priors",
+        "title_zh": "ANVIL：骁龙NPU上的实时视频插帧",
+        "url": "https://arxiv.org/abs/2603.26835",
+        "source_type": "论文",
+        "summary_zh": "作者分析了主流光流插帧模型在手机 NPU 上的三个结构性障碍：采样算子超出帧预算或不受支持、迭代光流在 INT8 量化下崩溃、内存受限算子占主导。ANVIL 复用 H.264 解码器的运动矢量做预对齐，把剩余网络改成几乎全是计算密集的卷积。在骁龙 8 Gen 3 上 1080p INT8 推理 12.8ms。",
+        "whats_new_zh": [
+          "1080p 下单个 grid_sample 就超过 33.3ms 的帧预算；RIFE 中卷积只占推理周期的 5%，其余 95% 是内存受限算子",
+          "骁龙 8 Gen 3 上 1080p INT8 推理 12.8ms；开源 Android 播放器 30 分钟连续播放端到端中位延迟 28.4ms",
+          "逐算子因果分析指出：迭代方法的 INT8 失效主要来自循环光流状态上的量化累积"
+        ],
+        "key_specs": {
+          "npu": "骁龙 8 Gen 3 NPU，INT8 PTQ",
+          "other": "目前仅支持 H.264/AVC 解码器暴露的运动矢量"
+        },
+        "edge_ai_impact_zh": "这是“围绕 NPU 能力重新设计模型”的典型案例：与其把云端模型硬塞进手机，不如复用 SoC 里已有的硬件（视频解码器）产出的中间结果。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2603.26835"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv（投稿 IEEE TCSVT）",
+        "affiliation": "North China University of Science and Technology",
+        "authors": "Shibo Liu",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 不友好算子",
+            "points": [
+              "双线性采样需要不规则访存，与面向规则张量的 NPU 冲突",
+              "作者在两家厂商的手机 NPU 上，对 9 种插帧方法的算子做了基准测试"
+            ]
+          },
+          {
+            "heading": "编解码先验",
+            "points": [
+              "直接复用视频解码器已算好的运动矢量，去掉学习光流、空间采样和迭代累积",
+              "剩下的残差网络是 4 级 U-Net，基本都是计算密集算子，适合 INT8"
+            ]
+          },
+          {
+            "heading": "实测与局限",
+            "points": [
+              "骁龙 8 Gen 3 上 1080p INT8 单帧 12.8ms，满足 30→60fps 每帧 33.3ms 的预算",
+              "开源 Android 播放器连续播放 30 分钟，端到端中位延迟 28.4ms",
+              "目前只支持 H.264/AVC 解码器暴露的运动矢量"
+            ]
+          }
+        ]
+      }
+    ],
+    "overview": "Gemma 4 与内存涨价周（03-27~04-02）。Google 在 04-02 一天交齐端侧整套：Gemma 4 端侧档 E2B/E4B（有效 2.3B/4.5B，128K 上下文，原生多模态，Apache 2.0），Gemini Nano 4 以其为底座进入 AICore 预览（官方称最高快 4 倍、省电 60%，未注明对比条件）；LiteRT-LM 实测 E2B 在 Dragonwing IQ8 NPU 上 prefill 3,747、decode 31.7 tok/s，部分设备内存低于 1.5GB；Android Studio 把本地 26B MoE 定为 Agent 编码推荐档，总内存 24GB。Ollama 0.19 在 Mac 上改用 MLX，Qwen3.5-35B-A3B decode 从 58 提到 112 tok/s（官方，前后量化格式不同）。TrendForce 预测 2Q26 常规 DRAM 合约价环比再涨 58–63%、NAND 涨 70–75%，2026 年笔记本出货下修到 -14.8%。",
+    "takeaways_zh": [
+      "系统模型与开放模型第一次同源：Gemini Nano 4 直接基于 Gemma 4 E2B/E4B，为 Gemma 4 做的适配可以迁到 Android 系统模型；但 E2B 在智能体基准 Tau2 上只有 24.5%（模型卡），多步工具调用仍要靠 E4B 或更大的模型。",
+      "NPU 的收益集中在 prefill：IQ8 NPU 的 prefill 约为树莓派 5 CPU 的 28 倍，decode 只有约 4 倍（按官方数字推算），手机和板卡的出字速度仍由内存带宽决定。",
+      "端侧模型在扩容，内存却在涨价：PC 上本地编码智能体的入门线被定在 24GB，同一周 DRAM 预计季涨近六成，大内存本地 AI 设备会更集中在高端机型和 Apple。"
+    ]
   }
 }

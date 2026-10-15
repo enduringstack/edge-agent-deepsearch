@@ -7354,8 +7354,340 @@
     ]
   },
   "hardware": {
-    "window": {},
-    "overview": "",
-    "items": []
+    "window": {
+      "start": "2026-04-03",
+      "end": "2026-04-09"
+    },
+    "items": [
+      {
+        "date": "2026-04-07",
+        "vendor": "Qualcomm",
+        "category": "移动SoC",
+        "title": "Boosting Llama models performance on mobile CPUs with Qualcomm Matrix Extension",
+        "title_zh": "骁龙8至尊版Gen5 CPU矩阵扩展QMX实测",
+        "url": "https://www.qualcomm.com/developer/blog/2026/04/llama-models-acceleration-on-cpu-qmx",
+        "source_type": "官方",
+        "summary_zh": "高通开发者博客首次公开骁龙8至尊版Gen 5的CPU矩阵扩展Qualcomm MX（QMX，兼容Arm SME指令集）在llama.cpp上的实测。同一颗芯片上对比QMX与纯NEON，覆盖Gemma 270M到Llama 8B共6个GGUF量化模型。结论是QMX主要加速prefill（首token时延），decode基本受内存带宽限制、提升有限。",
+        "whats_new_zh": [
+          "官方口径：Q8模型单线程TTFT最高提速2.9倍、4线程约2.0倍；decode单线程最高约1.5倍、4线程仅1.05倍",
+          "官方口径：Q4模型表格给出TTFT最高2.07倍（单线程）/1.77倍（4线程），decode约1.25倍/1.21倍；但同文小结写的是1.52倍/约1.34倍、结论段又写1.5倍，三处数字不一致",
+          "测试条件：llama.cpp + KleidiAI，开关GGML_KLEIDIAI_SME=1/0切换QMX与NEON；prompt 128 token、生成128 token；CPU锁频小核3953MHz、大核4394MHz",
+          "模型：Gemma 270M、Gemma 1B、Llama 1B、Gemma 4B、Llama 3B、Llama 8B，均为GGUF量化（Q4/Q8）",
+          "QMX支持INT8与BF16等低精度类型，采用tile方式执行GEMM/GEMV"
+        ],
+        "key_specs": {
+          "cpu": "骁龙8至尊版Gen 5 Oryon CPU，集成Qualcomm MX矩阵扩展（兼容Arm SME）；测试锁频大核4394MHz、小核3953MHz",
+          "npu": "本文不涉及Hexagon NPU，仅CPU路径",
+          "memory": "未披露（本文未给内存配置和带宽）",
+          "other": "llama.cpp + KleidiAI；Q8 TTFT最高2.9倍、Q4 TTFT最高2.07倍（表格口径）"
+        },
+        "edge_ai_impact_zh": "QMX让llama.cpp这类开源栈在骁龙CPU上就能拿到2–3倍的首token提速，降低了“必须适配NPU”的门槛；但decode仍被内存带宽卡住，端侧大模型的生成速度最终取决于LPDDR带宽和量化，而不是CPU算力。",
+        "evidence_urls": [],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "QMX是什么",
+            "points": [
+              "高通在最新CPU架构中集成的硬件矩阵乘加速单元，指令集兼容Arm SME，按tile执行GEMM/GEMV",
+              "支持INT8、BF16等低精度类型，面向attention和FFN中的矩阵乘",
+              "软件入口是llama.cpp里的KleidiAI SME内核，无需专有SDK，30分钟内可复现"
+            ]
+          },
+          {
+            "heading": "prefill与decode：算力和带宽的分界",
+            "points": [
+              "prefill是GEMM、算力受限，QMX在这里收益最大：Q8单线程TTFT 2.9倍",
+              "decode是GEMV、带宽受限：Q8 4线程decode只快1.05倍，Q4 decode基本不变",
+              "Q4比Q8收益更小：算术强度更低，瓶颈更早落到权重读取和数据打包上",
+              "多线程会摊薄QMX的相对优势：4线程时NEON基线本身也更快"
+            ]
+          },
+          {
+            "heading": "口径与可信度",
+            "points": [
+              "全部为高通自测，同一颗SoC对比，锁频后取多次平均，可比性较好",
+              "Q4数字在表格、小结、结论三处不一致（2.07/1.52/1.5倍），引用时以表格为准并注明",
+              "未给功耗、能效和绝对tok/s，无法判断QMX相对Hexagon NPU的每瓦效率"
+            ]
+          },
+          {
+            "heading": "对端侧部署的含义",
+            "points": [
+              "高通自己给出的未来方向是decode侧的内存优化：权重打包、预取、cache友好布局",
+              "CPU矩阵扩展让没有NPU适配的开源模型也能缩短首token等待，适合短对话、Agent工具调用这类prefill占比高的负载"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方实测范围：0.27B–8B的GGUF Q4/Q8模型均可在手机CPU上运行；文中只给加速倍数，tok/s绝对值在图表中、正文未写。推算：Llama 8B Q4权重约4.5–5GB，decode每token需读完整权重，若手机LPDDR5X实际可用带宽按50–70GB/s计，上限约10–15 tok/s（推算，带宽为假设值，非本文数据）；这也解释了为什么QMX对decode几乎无效。"
+      },
+      {
+        "date": "2026-04-08",
+        "vendor": "SiMa.ai / Micron",
+        "category": "NPU/AI加速器",
+        "title": "SiMa.ai Secures Strategic Investment from Micron to Scale High-Performance, Power-Efficient Physical AI",
+        "title_zh": "美光战略投资SiMa.ai，Modalix集成LPDDR5X",
+        "url": "https://sima.ai/press-release/sima-ai-strategic-investment-from-micron-to-scale-physical-ai/",
+        "source_type": "官方",
+        "summary_zh": "美光对边缘AI芯片公司SiMa.ai进行战略投资（金额未披露）。双方将做更紧密的计算-内存协同架构，美光LPDDR5X已集成到SiMa.ai的Modalix MLSoC平台，客户可直接采购带美光内存的SoM。",
+        "whats_new_zh": [
+          "美光风投部门投资SiMa.ai，金额未披露",
+          "Modalix MLSoC集成美光LPDDR5X，面向机器人、自主系统、汽车和工业自动化",
+          "官方称Modalix的内存层次支持在边缘运行LLM与VLM，但未给模型规模和跑分",
+          "4月20日Modalix SoM获2026 Edge AI and Vision年度产品奖（边缘AI计算机/板卡类）"
+        ],
+        "key_specs": {
+          "memory": "美光LPDDR5X（容量与速率未披露）",
+          "npu": "Modalix MLSoC（本稿未给TOPS/功耗）"
+        },
+        "edge_ai_impact_zh": "边缘生成式AI的瓶颈正在从TOPS转向内存带宽和供给，内存原厂开始直接投资下游边缘芯片公司。",
+        "evidence_urls": [
+          "https://www.edgeir.com/micron-backs-sima-ai-to-tighten-compute-memory-integration-for-power-constrained-edge-ai-systems-20260422",
+          "https://sima.ai/press-release/sima-ai-wins-edge-ai-vision-alliance-2026-product-of-the-year-for-modalix-som/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "内存与带宽",
+            "points": [
+              "SiMa.ai CEO原话“Physical AI places extraordinary demands on memory”，投资的核心是内存而不是算力",
+              "在内存涨价、供给偏紧的2026年，边缘芯片公司拉内存原厂入股，有锁定供给的意味（推断）"
+            ]
+          },
+          {
+            "heading": "生态",
+            "points": [
+              "新闻稿列出的技术伙伴包括Arm、Cerence AI、L&T、Synopsys、台积电、Wind River"
+            ]
+          },
+          {
+            "heading": "能效与实测",
+            "points": [
+              "新闻稿只称“extreme power efficiency”，没有TOPS/W或tok/s数字",
+              "获奖页同样未给功耗；跑分需等第三方测试"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方只称支持LLM/VLM，未给参数量或tok/s；未披露。"
+      },
+      {
+        "date": "2026-04-06",
+        "vendor": "BrainChip / Asahi Kasei",
+        "category": "NPU/AI加速器",
+        "title": "BrainChip Unveils Radar Reference Platform to Bridge the ‘Identification Gap’ in Edge AI",
+        "title_zh": "BrainChip雷达参考平台：AKD1500做微多普勒识别",
+        "url": "https://www.edge-ai-vision.com/2026/04/brainchip-unveils-radar-reference-platform-to-bridge-the-identification-gap-in-edge-ai/",
+        "source_type": "官方",
+        "summary_zh": "BrainChip发布雷达参考平台，把AKD1500神经形态协处理器与旭化成FMCW雷达模块、预集成的微多普勒分类模型和实时看板打包，用于在设备端区分鸟和无人机等雷达回波相近的目标。推理全部在本地完成，面向无网络环境。",
+        "whats_new_zh": [
+          "硬件：AKD1500协处理器 + 旭化成（Asahi Kasei）FMCW雷达模块",
+          "软件：预集成的Micro-Doppler分类模型 + Range-Doppler/Micro-Doppler实时看板",
+          "目标市场：国防与敌我识别、反无人机、非接触跌倒检测与手势、船舶与自主平台、机器人与自动驾驶",
+          "4月20日举办技术网络研讨会；新闻稿未给功耗、延迟、价格和出货时间"
+        ],
+        "key_specs": {
+          "npu": "AKD1500神经形态协处理器（新闻稿未给TOPS/功耗/工艺）",
+          "other": "旭化成FMCW雷达模块；Micro-Doppler分类模型"
+        },
+        "edge_ai_impact_zh": "神经形态芯片正在从关键词唤醒扩展到雷达等非视觉传感器的常开识别；但缺少功耗与准确率数字，暂时只能看作应用方向信号。",
+        "evidence_urls": [
+          "https://secure.businesswire.com/news/home/20260408987605/en/BrainChip-Unveils-Radar-Reference-Platform-to-Bridge-the-Identification-Gap-in-Edge-AI",
+          "https://announcements.asx.com.au/asxpdf/20260424/pdf/06ytg6cfvrv13j.pdf"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "低功耗/常驻AI",
+            "points": [
+              "传统雷达能给出位置和速度，但难以判断“是什么”，平台用微多普勒特征补上识别这一层",
+              "推理在设备端完成，不依赖云，适合通信受限场景（厂商口径）"
+            ]
+          },
+          {
+            "heading": "量产节奏",
+            "points": [
+              "BrainChip 4月24日季报称AKD1500首批约7万颗，2026年7月开始交付，Q3量产可供货",
+              "因此这个参考平台是AKD1500量产前的应用打样"
+            ]
+          },
+          {
+            "heading": "口径提醒",
+            "points": [
+              "新闻稿和转载页都没有给出功耗、延迟、识别准确率；“低功耗”只是定性描述",
+              "Edge AI and Vision转载页的电头为4月6日，Business Wire链接编号显示4月8日，取电头日期"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-04-07",
+        "vendor": "Intel",
+        "category": "软件栈/工具链",
+        "title": "OpenVINO 2026.1.0",
+        "title_zh": "OpenVINO 2026.1：llama.cpp上NPU",
+        "url": "https://github.com/openvinotoolkit/openvino/releases/tag/2026.1.0",
+        "source_type": "官方",
+        "summary_zh": "英特尔 OpenVINO 2026.1 预览了 llama.cpp 的 OpenVINO 后端，让 GGUF 模型可在英特尔 CPU、GPU 与 NPU 上推理，并新增酷睿 Series 3（Wildcat Lake）与 Arc Pro B70 支持。",
+        "whats_new_zh": [
+          "预览：llama.cpp 的 OpenVINO 后端，覆盖 CPU / GPU / NPU；已验证 Llama-3.2-1B、Phi-3-mini、Qwen2.5-1.5B、Mistral-7B 的 GGUF",
+          "NPU：新增 release-weights API，降低 NPU 编译时的峰值内存（预览）",
+          "新增支持酷睿 Series 3（原 Wildcat Lake）与 Arc Pro B70（32GB 显存，单卡可跑 20~30B LLM）",
+          "Qwen3-VL 支持动态 LoRA；GPT-OSS 120B 可在 CPU 上运行；最低 CPU 要求提升到 AVX2"
+        ],
+        "key_specs": {
+          "npu": "llama.cpp 后端可调度英特尔 NPU（预览）",
+          "memory": "Arc Pro B70 32GB 显存",
+          "other": "已验证 1B~7B GGUF 模型"
+        },
+        "edge_ai_impact_zh": "PC NPU 的瓶颈一直是软件入口；llama.cpp 接入后，英特尔 NPU 第一次能被大量本地智能体工具直接使用。",
+        "evidence_urls": [],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 进入主流本地推理工具",
+            "points": [
+              "llama.cpp 是本地 LLM 事实标准，此前英特尔 NPU 只能通过 OpenVINO GenAI 自有接口使用；接入后 GGUF 生态可直接调度 NPU",
+              "目前为预览，验证模型只到 7B"
+            ]
+          },
+          {
+            "heading": "编译内存",
+            "points": [
+              "release-weights API 针对的是 NPU 编译阶段峰值内存高的问题，这在 16GB 笔记本上会直接限制可加载模型"
+            ]
+          },
+          {
+            "heading": "多模态与大模型",
+            "points": [
+              "Qwen3-VL 支持运行时切换 LoRA，无需重载基座；视觉语言管线支持 Prompt Lookup Decoding",
+              "GPT-OSS 120B 可在 CPU 上运行，Arc Pro B70 官方称单卡可跑 20~30B"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方验证的 llama.cpp 路径为 1B~7B GGUF 模型；Arc Pro B70 官方称 32GB 可单卡跑 20~30B 参数 LLM。NPU 路径未给 tok/s。"
+      },
+      {
+        "date": "2026-04-08",
+        "vendor": "新加坡国立大学",
+        "category": "学术研究",
+        "title": "SHIELD: A Segmented Hierarchical Memory Architecture for Energy-Efficient LLM Inference on Edge NPUs",
+        "title_zh": "SHIELD：按位分段刷新，边缘NPU eDRAM省电35%",
+        "url": "https://arxiv.org/abs/2604.07396",
+        "source_type": "论文",
+        "summary_zh": "NUS提出SHIELD：边缘NPU片上用eDRAM存LLM激活，但eDRAM刷新耗电。SHIELD把BF16的符号/指数与尾数分开存，短暂存在的Q/O激活尾数直接不刷新，长期驻留的KV尾数放宽刷新，刷新能耗降低35%且精度不变。",
+        "whats_new_zh": [
+          "eDRAM刷新能耗相对标准刷新降低35%",
+          "在WikiText-2、PIQA、ARC-Easy上保持精度",
+          "区分短暂的Q/O激活与持久的KV缓存，按生命周期和比特敏感度分段管理"
+        ],
+        "key_specs": {
+          "memory": "片上eDRAM分段存储BF16激活（符号/指数与尾数分离）"
+        },
+        "edge_ai_impact_zh": "端侧NPU的片上内存不只是容量问题，刷新与保持功耗同样可以按LLM数据特性优化。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2604.07396v1",
+          "https://arxiv.org/html/2604.07396"
+        ],
+        "confidence": "high",
+        "venue": "AICAS 2026",
+        "affiliation": "National University of Singapore",
+        "authors": "Jintao Zhang; Xuanyao Fong",
+        "deep_dive_zh": [
+          {
+            "heading": "内存与功耗",
+            "points": [
+              "eDRAM密度高于SRAM，适合放更大激活工作区，但刷新功耗是主要代价",
+              "Q/O激活生命周期短、对尾数误差不敏感，因此可跳过刷新"
+            ]
+          },
+          {
+            "heading": "口径",
+            "points": [
+              "v1提交2026-04-08，录用于AICAS 2026；为架构级评估"
+            ]
+          },
+          {
+            "heading": "对端侧NPU的含义",
+            "points": [
+              "手机NPU片上SRAM有限，若改用eDRAM扩大工作区，刷新功耗可按数据生命周期压低",
+              "方法与量化正交，可叠加"
+            ]
+          },
+          {
+            "heading": "思路",
+            "points": [
+              "以往工作只优化片外流量或常驻 KV 的刷新，忽略了暂态、对误差不敏感的 Q/O 激活",
+              "符号与指数位必须可靠，尾数可以容忍衰减"
+            ]
+          },
+          {
+            "heading": "分段存储",
+            "points": [
+              "把 BF16 的符号、指数位与尾数分开存放",
+              "暂态 Q/O 尾数关闭刷新，常驻 KV 尾数放宽刷新"
+            ]
+          },
+          {
+            "heading": "效果与口径",
+            "points": [
+              "eDRAM 刷新能耗较标准刷新降 35%",
+              "WikiText-2、PIQA、ARC-Easy 精度保持；为架构级评估，非流片"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-04-09",
+        "vendor": "鲁汶大学 / 斯坦福大学",
+        "category": "学术研究",
+        "title": "The Hyperscale Lottery: How State-Space Models Have Sacrificed Edge Efficiency",
+        "title_zh": "超大规模彩票：Mamba-3牺牲了边缘效率",
+        "url": "https://arxiv.org/abs/2604.07935",
+        "source_type": "论文",
+        "summary_zh": "作者提出“超大规模彩票”现象：模型架构为了榨干云端 GPU 吞吐而牺牲了算法效率。以 Mamba 系列为例，Mamba-3 为饱和超大规模 GPU 引入的改动，在单用户实时边缘场景下带来明显的延迟惩罚。",
+        "whats_new_zh": [
+          "Mamba-3 相对前代在 880M 参数下延迟增加 28%，在 15M 参数下增加 48%",
+          "主张把云端饱和策略与核心架构设计解耦"
+        ],
+        "key_specs": {
+          "other": "立场论文 + 延迟测量；具体测量平台见原文"
+        },
+        "edge_ai_impact_zh": "端侧芯片设计者不能假设新一代模型一定更省；需要在 batch=1 的实时场景下重新评估架构。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2604.07935"
+        ],
+        "confidence": "medium",
+        "venue": "ECML-PKDD 2026 ITEM Workshop（arXiv 2604.07935）",
+        "affiliation": "MICAS, KU Leuven; Stanford University",
+        "authors": "Robin Geens; Jonas De Schouwer; Marian Verhelst",
+        "deep_dive_zh": [
+          {
+            "heading": "论点",
+            "points": [
+              "SSM 的线性复杂度原本适合边缘，但演进方向被云端吞吐优化牵引",
+              "模型越小，边缘惩罚越大"
+            ]
+          },
+          {
+            "heading": "数字",
+            "points": [
+              "Mamba-3 的改动在 880M 参数下带来 28% 延迟增加",
+              "在 15M 参数下增至 48%"
+            ]
+          },
+          {
+            "heading": "建议",
+            "points": [
+              "把云端饱和策略与核心架构设计解耦，以保留单用户实时边缘推理的可行性"
+            ]
+          }
+        ]
+      }
+    ],
+    "overview": "CPU 矩阵扩展周（04-03~04-09），本周条目较少，仅 6 条。高通首次公开骁龙 8 至尊版 Gen 5 CPU 矩阵扩展 QMX（兼容 Arm SME）在 llama.cpp 上的实测：Q8 模型单线程首 token 最高提速 2.9 倍，4 线程 decode 只快 1.05 倍；Q4 数字在文中三处不一致，以表格为准（TTFT 最高 2.07 倍）。英特尔 OpenVINO 2026.1 预览 llama.cpp 后端，GGUF 模型可调度 CPU、GPU 和 NPU，已验证 1B~7B，NPU 未给 tok/s。美光战略投资 SiMa.ai（金额未披露），Modalix 集成美光 LPDDR5X。BrainChip 发布 AKD1500 + 旭化成雷达参考平台，未给功耗。论文方面，NUS 的 SHIELD 让边缘 NPU 的 eDRAM 刷新能耗降 35%；鲁汶与斯坦福测得 Mamba-3 在 880M / 15M 规模下边缘延迟比前代高 28% / 48%。",
+    "takeaways_zh": [
+      "QMX 清楚划出了算力和带宽的分界：prefill 受算力限制，decode 受带宽限制。按 50–70GB/s 可用带宽推算，Llama 8B Q4 在手机 CPU 上 decode 上限只有约 10–15 tok/s。",
+      "矩阵单元和 NPU 的入口正在转向开源栈：高通通过 KleidiAI 把 QMX 接进 llama.cpp，英特尔用 OpenVINO 后端把 NPU 接进 llama.cpp，部署门槛从专有 SDK 降到通用工具（NPU 路径仍是预览）。",
+      "内存原厂直接入股下游边缘芯片公司，说明边缘生成式 AI 的竞争点正在从 TOPS 转向内存供给（推断）。"
+    ]
   }
 }
