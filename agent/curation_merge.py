@@ -34,7 +34,7 @@ COMPANIES = {
     "Toshiba", "HP", "Panasonic", "iFLYTEK", "China Unicom", "China Mobile", "Nokia",
     "Changan Automobile", "ZTE", "Volkswagen", "Honda", "Cohere", "Scania", "PwC",
     "Lenovo", "LG", "Red Hat", "Hewlett Packard Enterprise", "AT&T", "Zoom", "Li Auto",
-    "Rockwell Automation", "Qihoo 360", "Hitachi", "China Telecom", "Ping An", "Toyota", "Cisco", "Houmo AI", "Infineon", "NTT", "Snowflake", "Siemens", "Airbus", "Preferred Networks", "PayPal", "NIO", "BMW", "Fujitsu", "GlobalFoundries", "Sony", "Naver", "EcoFlow", "Dell", "Thales", "Yahoo", "NXP", "SoftBank", "Horizon Robotics", "SenseTime", "ServiceNow", "STMicroelectronics", "Palo Alto Networks", "Snap", "Orange",
+    "Rockwell Automation", "Qihoo 360", "Hitachi", "China Telecom", "Ping An", "Toyota", "Cisco", "Houmo AI", "Infineon", "NTT", "Snowflake", "Siemens", "Airbus", "Preferred Networks", "PayPal", "NIO", "BMW", "Fujitsu", "GlobalFoundries", "Sony", "Naver", "EcoFlow", "Dell", "Thales", "Yahoo", "NXP", "SoftBank", "Horizon Robotics", "SenseTime", "ServiceNow", "STMicroelectronics", "Palo Alto Networks", "Snap", "Orange", "Mitsubishi Electric", "Tata Consultancy Services",
 }
 EDGE_SCOPES = ("手机", "PC", "其他端侧")
 EDITABLE = ("abstract", "effects", "mechanism", "score_reason", "tags", "edge_agent_scope", "edge_agent_evidence")

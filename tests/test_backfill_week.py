@@ -84,5 +84,28 @@ class SetCommunityWindowTest(unittest.TestCase):
             self.run_set("2026-07-04")
 
 
+class SetWeeklyTest(unittest.TestCase):
+    """A replaced summary may only feature the week's own entries."""
+
+    def run_set(self, urls):
+        archive = {"range": {"start": "2026-06-26", "end": "2026-07-03"},
+                   "papers": [arxiv("2606.27871", "2026-06-26")]}
+        weekly = {"overview": "本周（06-26~07-03）", "highlights": [{"url": u} for u in urls]}
+        written = {}
+        with mock.patch.object(backfill_week.weeks_mod, "read_archive", lambda label: archive), \
+             mock.patch.object(backfill_week, "_load", lambda path: weekly), \
+             mock.patch.object(backfill_week, "MIN_HIGHLIGHTS", 1), \
+             mock.patch.object(backfill_week, "_update", lambda label, key, block: written.update({key: block})):
+            backfill_week.cmd_set_weekly(mock.Mock(label="2026-06-26", weekly="w.json"))
+        return written
+
+    def test_entry_highlights_are_written(self):
+        self.assertIn("weekly", self.run_set(["https://arxiv.org/abs/2606.27871"]))
+
+    def test_outside_link_is_refused(self):
+        with self.assertRaises(SystemExit):
+            self.run_set(["https://arxiv.org/abs/2606.27871", "https://news.google.com/rss/articles/x"])
+
+
 if __name__ == "__main__":
     unittest.main()

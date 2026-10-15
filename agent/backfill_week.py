@@ -11,6 +11,7 @@ written straight to the archive, with its paper detail pages rendered into site/
       --community community.json [--hardware hardware.json]
   python agent/backfill_week.py set-hardware --label 2026-05-08 --hardware hw.json
   python agent/backfill_week.py set-community --label 2026-06-26 --community c.json
+  python agent/backfill_week.py set-weekly --label 2026-06-26 --weekly weekly.json
 
 Papers already published in another archived week are dropped (never two weeks).
 """
@@ -188,6 +189,21 @@ def cmd_set_community(args) -> int:
     return 0
 
 
+def cmd_set_weekly(args) -> int:
+    rec = weeks_mod.read_archive(args.label)
+    start, end = date.fromisoformat(rec["range"]["start"]), date.fromisoformat(rec["range"]["end"])
+    weekly = _load(args.weekly)
+    check_weekly(weekly, start, end)
+    listed = {p["paper_url"] for p in rec["papers"]}
+    stray = [h["url"] for h in weekly.get("highlights") or []
+             if str(h.get("url", "")).startswith("http") and h["url"] not in listed]
+    if stray:
+        raise SystemExit(f"highlight URLs are not entries of {args.label}: {stray}")
+    _update(args.label, "weekly", weekly)
+    print(f"[BACKFILL] {args.label}: weekly replaced, {len(weekly['highlights'])} highlights")
+    return 0
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -209,6 +225,10 @@ def main(argv=None) -> int:
     c.add_argument("--label", required=True)
     c.add_argument("--community", required=True)
     c.set_defaults(func=cmd_set_community)
+    s = sub.add_parser("set-weekly")
+    s.add_argument("--label", required=True)
+    s.add_argument("--weekly", required=True)
+    s.set_defaults(func=cmd_set_weekly)
     args = ap.parse_args(argv)
     return args.func(args)
 
