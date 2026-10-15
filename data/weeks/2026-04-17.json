@@ -7510,40 +7510,6 @@
       "recommendation_reason": "",
       "arxiv_date_basis": "submitted",
       "arxiv_revision_note": ""
-    },
-    {
-      "id": "arxiv-2602.15143",
-      "title": "Protecting Language Models Against Unauthorized Distillation through Trace Rewriting",
-      "title_zh": "",
-      "abstract": "研究如何防止别人未经授权、用前沿大模型的推理过程去蒸馏自己的小模型：在不影响答案正确性的前提下改写教师模型输出的推理过程。",
-      "effects": "原文称简单的指令式改写就能明显削弱蒸馏效果，同时保持甚至提升教师模型表现；嵌入的水印可被可靠检测，几乎没有误报。摘要未给出具体数值。",
-      "mechanism": "对教师模型的推理轨迹做动态改写，一类方法让大模型按指令重写，另一类用梯度方法优化，目标是降低轨迹的训练价值，或在学生模型里埋入可验证的 API 水印。",
-      "paper_url": "https://huggingface.co/papers/2602.15143",
-      "date": "2026-04-21",
-      "score": 9,
-      "score_relevance": 3,
-      "score_contribution": 6,
-      "score_reason": "关注模型知识产权保护，与端侧部署关系较远，只与“把大模型能力蒸馏到小模型”这一端侧常用路径间接相关；反蒸馏与水印结合的思路有新意。代码已公开。",
-      "source_tier": "学校预印本",
-      "open_source": true,
-      "tags": [
-        "方向:蒸馏",
-        "方向:安全隐私"
-      ],
-      "edge_agent_scope": "非端侧Agent",
-      "edge_agent_evidence": "",
-      "insight_person": "",
-      "wiki_url": "",
-      "authors": "Xinhang Ma, William Yeoh, Ning Zhang, Yevgeniy Vorobeychik",
-      "vendors": "",
-      "affiliation_evidence_url": "",
-      "candidate_source": "huggingface",
-      "candidate_ref": "a47e3f884f15dfe7bb3a75130a8843a19e1ecd9c9e45ff249d0ed1eb234e4084",
-      "venue": "arXiv",
-      "recommendation": "纳入",
-      "recommendation_reason": "",
-      "arxiv_date_basis": "submitted",
-      "arxiv_revision_note": ""
     }
   ],
   "weekly": {
