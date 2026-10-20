@@ -6857,8 +6857,1186 @@
     ]
   },
   "hardware": {
-    "window": {},
-    "overview": "",
-    "items": []
+    "window": {
+      "start": "2026-02-27",
+      "end": "2026-03-05"
+    },
+    "items": [
+      {
+        "date": "2026-03-02",
+        "vendor": "Apple",
+        "category": "移动SoC",
+        "title": "Apple introduces iPhone 17e",
+        "title_zh": "iPhone 17e：A19 下放入门机",
+        "url": "https://www.apple.com/newsroom/2026/03/apple-introduces-iphone-17e/",
+        "source_type": "官方",
+        "summary_zh": "599 美元的 iPhone 17e 换用 A19（3nm，6 核 CPU、4 核 GPU 带 Neural Accelerators、16 核 Neural Engine），起始存储翻倍到 256GB，并用上第二代自研基带 C1X。官方称 Neural Engine「为大型生成式模型优化」，与 GPU 内的 Neural Accelerator 一起让 Apple Intelligence 跑得比上代快。",
+        "whats_new_zh": [
+          "芯片：A19（与 iPhone 17 同款），6 核 CPU、4 核 GPU（带 Neural Accelerators）、16 核 Neural Engine",
+          "存储：256GB 起 599 美元，比 iPhone 16e 同价翻倍",
+          "基带：C1X，官方称速度是 C1 的 2 倍，能耗比 iPhone 16 Pro 的基带低 30%",
+          "第三方跑分（9to5Mac 汇总 Geekbench 早期结果）：单核均值约 3320、多核约 8373、Metal 约 31163（iPhone 16e 为 23895）",
+          "3 月 4 日预订、3 月 11 日发售"
+        ],
+        "key_specs": {
+          "process": "3nm",
+          "cpu": "6 核",
+          "gpu": "4 核，带 Neural Accelerators",
+          "npu": "16 核 Neural Engine，TOPS 未披露",
+          "memory": "内存容量与带宽未披露",
+          "other": "C1X 基带；256GB 起"
+        },
+        "edge_ai_impact_zh": "Apple 最便宜的 iPhone 也具备 GPU 矩阵单元和 256GB 起步存储，Apple Intelligence 端侧模型的覆盖面进一步下沉；但内存容量不公开，开发者只能按保守档位部署本地模型。",
+        "evidence_urls": [
+          "https://9to5mac.com/2026/03/06/early-geekbench-results-hint-at-the-performance-of-the-a19-powered-iphone-17e/",
+          "https://9to5mac.com/2026/03/02/apple-officially-announces-iphone-17e-with-magsafe-256gb-storage-more/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "入门机也有 GPU 矩阵单元",
+            "points": [
+              "iPhone 17e 的 A19 与 iPhone 17 相同，GPU 带 Neural Accelerators，这让 Apple 全线 2026 年新机都具备 GPU 端的矩阵加速",
+              "官方特意写 Neural Engine「optimized for large generative models」"
+            ]
+          },
+          {
+            "heading": "存储底线",
+            "points": [
+              "TrendForce 3 月 23 日指出，iPhone 17e 取代 16e 时同样取消 128GB，原因之一是端侧 AI 需要 40–60GB 系统存储",
+              "C1X 能耗下降对常驻 AI 的意义在于给整机功耗预算让出空间（官方未量化）"
+            ]
+          },
+          {
+            "heading": "能跑多大模型：信息不足",
+            "points": [
+              "Apple 不公布 iPhone 内存容量与带宽，新闻稿也没有 Neural Engine TOPS，无法按带宽推算 decode 上限",
+              "第三方 Geekbench 早期结果仅覆盖 CPU 与 Metal：单核均值约 3320、多核约 8373，单核与 iPhone 16（3319）持平"
+            ]
+          }
+        ],
+        "model_capacity_zh": "Apple 未披露内存容量，无法推算可跑模型上限；官方只说 Apple Intelligence 与其他 AI 模型比上一代快。"
+      },
+      {
+        "date": "2026-03-02",
+        "vendor": "Apple",
+        "category": "移动SoC",
+        "title": "Apple introduces the new iPad Air, powered by M4",
+        "title_zh": "iPad Air 换 M4：内存 12GB",
+        "url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-ipad-air-powered-by-m4/",
+        "source_type": "官方",
+        "summary_zh": "iPad Air 从 M3 升到 M4，统一内存从 8GB 提高 50% 到 12GB，带宽 120GB/s，同时首次用上自研 N1 无线芯片和 C1X 基带，起价不变。官方把更多内存和带宽直接与「更快地跑 AI 模型」挂钩。",
+        "whats_new_zh": [
+          "芯片：M4，8 核 CPU、9 核 GPU；官方称比 M3 版快最高 30%",
+          "内存：12GB（上代 8GB，+50%），带宽 120GB/s",
+          "Neural Engine：16 核，官方称比 M1 快 3 倍",
+          "连接：N1（Wi-Fi 7 / 蓝牙 6 / Thread）；蜂窝版 C1X，官方称蜂窝数据最快 +50%、基带能耗最多 -30%（对比 M3 版）",
+          "起价与上代相同"
+        ],
+        "key_specs": {
+          "cpu": "8 核",
+          "gpu": "9 核",
+          "npu": "16 核 Neural Engine（官方：比 M1 快 3 倍）",
+          "memory": "12GB 统一内存，120GB/s",
+          "other": "N1 无线芯片、C1X 基带"
+        },
+        "edge_ai_impact_zh": "中端平板的内存底线升到 12GB，让 7B–8B 级本地模型在 iPad 上从「勉强」变成「可用」。",
+        "evidence_urls": [
+          "https://9to5mac.com/2026/03/02/apple-unveils-new-ipad-air-with-m4-chip-plus-c1x-and-n1/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "内存比芯片升级更关键",
+            "points": [
+              "M4 本身是 2024 年的芯片，本次真正的变化是内存从 8GB 到 12GB",
+              "官方原文把「50 percent more unified system memory」与「a powerful device for AI」放在同一句"
+            ]
+          },
+          {
+            "heading": "自研连接芯片铺开",
+            "points": [
+              "同一周 iPhone 17e、iPad Air、MacBook Air 都用上了 N1 或 C1X，Apple 的自研芯片从 SoC 扩展到无线与基带"
+            ]
+          },
+          {
+            "heading": "能效与续航",
+            "points": [
+              "官方称蜂窝版 C1X 对活跃蜂窝用户可省最多 30% 基带能耗（对比 M3 版 iPad Air），整机续航数字新闻稿未给",
+              "M4 是上一代 iPad Pro 所用芯片（背景），本次 iPad Air 的增量在内存和连接芯片，而不是新制程"
+            ]
+          }
+        ],
+        "model_capacity_zh": "推算：12GB 内存可装下 8B 级 4bit 模型（约 4.5GB）并留出系统空间，decode 上限约 26 tok/s；14B 4bit（约 8GB）能装下但余量小，上限约 15 tok/s。"
+      },
+      {
+        "date": "2026-03-01",
+        "vendor": "MediaTek",
+        "category": "移动SoC",
+        "title": "MediaTek Exemplifies AI and Connectivity Leadership at MWC 2026",
+        "title_zh": "联发科 MWC 2026：天玑 9500 端侧全模态眼镜",
+        "url": "https://www.mediatek.com/press-room/mediatek-exemplifies-ai-and-connectivity-leadership-at-mwc-2026",
+        "source_type": "官方",
+        "summary_zh": "联发科在 MWC 2026（3 月 2–5 日）以“AI for Life: From Edge to Cloud”为主题，没有发布新的手机 SoC，而是用天玑 9500 的 NPU 展示端侧全模态（Omni）大模型驱动的 AI 眼镜，眼镜本身不做重计算、算力全部放在手机上。同一份新闻稿还发布了 3nm 车规级天玑 Auto 智能座舱平台、带调制解调器级 AI 的 5G-Advanced 车载通信芯片，以及在台积电 2nm/3nm 上完成硅验证的 UCIe-Advanced die-to-die IP。",
+        "whats_new_zh": [
+          "AI 眼镜：天玑 9500 NPU 跑全模态大模型，支持文本、图像、语音、视频交互，官方称是“端到端、端侧”的手机-眼镜协同（官方口径，模型参数量未披露）",
+          "OPPO 与联发科联合预览 Omni 端侧全模态模型，并称基于天玑 9500 的端侧 AI 翻译平均准确率比传统方案提升 15%（OPPO 官方口径）",
+          "新天玑 Auto 智能座舱平台：3nm 车规级工艺、Arm v9.2 多核 CPU、支持光追的 GPU、面向生成式 AI 语音助手的 NPU（官方，具体 TOPS 未披露）",
+          "UCIe-Advanced IP：在台积电 2nm 与 3nm 上完成硅验证（官方称业界首个），带宽密度最高 10 Tbps/mm 芯片边长",
+          "CPO 共封装光学：路线目标每根光纤 400 Gbps",
+          "5G-Advanced CPE（T930 + Filogic 8000 Wi-Fi 8）：8 根接收天线频谱效率提升 40% 以上，AI L4S/QoS 引擎宣称时延最多降低 10 倍",
+          "提出“personal device cloud”：AI Agent 在家庭/个人设备之间通过 Wi-Fi 或 6G 协同"
+        ],
+        "key_specs": {
+          "process": "天玑 Auto 新座舱平台：3nm 车规级；UCIe-Advanced IP：台积电 2nm/3nm 硅验证",
+          "cpu": "天玑 Auto 座舱：Arm v9.2 多核（核心数未披露）",
+          "npu": "天玑 9500 NPU 承担眼镜全模态模型推理；座舱 NPU 面向生成式语音助手（TOPS 均未在新闻稿中披露）",
+          "other": "UCIe-Advanced 带宽密度最高 10 Tbps/mm；CPO 400 Gbps/fiber；MWC 展台同时展示联发科参与设计的 NVIDIA GB10（DGX Spark）"
+        },
+        "edge_ai_impact_zh": "联发科把“手机当 AI 眼镜的算力盒”做成了可演示的方案，说明 2026 年上半年可穿戴端侧 Agent 的主流形态可能是手机侧推理 + 眼镜侧感知，而不是眼镜自带大模型。",
+        "evidence_urls": [
+          "https://www.mediatek.com/mediatek-mwc-2026",
+          "https://www.oppo.com/en/newsroom/press/oppo-and-mediatek-mwc2026/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "手机做算力、眼镜做终端",
+            "points": [
+              "官方 MWC 展台说明写明“Smartphone handles all compute enabling ultra-light weight glasses”，即眼镜不带大 NPU，靠手机侧天玑 9500 运行模型",
+              "相对云端 AI 眼镜，联发科强调低时延和隐私：AI 处理只在个人设备之间流转",
+              "这与高通把 AR1+/可穿戴芯片做强的路线不同：联发科把可穿戴 AI 的成本和功耗留在手机 SoC 上"
+            ]
+          },
+          {
+            "heading": "OPPO 合作的端侧能力",
+            "points": [
+              "OPPO 3 月 4 日在联发科主题演讲上宣布：基于天玑 9500 的端侧 AI 翻译与 AI Portrait Glow 即将通过 ColorOS 16 推送到 Find X9 系列",
+              "端侧翻译平均准确率比常规方案高 15%，弱网/无网可用（OPPO 官方口径）",
+              "Omni 被 OPPO 称为业界首个端侧全模态模型的技术预览，支持语音、视频、文本输入做实时场景理解与问答"
+            ]
+          },
+          {
+            "heading": "车与数据中心",
+            "points": [
+              "新座舱平台延续此前与 NVIDIA 合作的 3nm 路线，本次新闻稿强调 NPU 用于本地生成式语音助手、保护数据隐私",
+              "UCIe-Advanced IP 与 CPO 是联发科 ASIC 业务的基础件，官方把指标从“TOPS”改为机架级“tokens per watt / tokens per dollar”"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露：联发科与 OPPO 均未给出 Omni 全模态模型的参数量、精度或 tok/s。只能确定是“完全在手机端运行”的全模态模型（官方口径），眼镜端只做采集与显示。"
+      },
+      {
+        "date": "2026-03-04",
+        "vendor": "Xiaomi",
+        "category": "移动SoC",
+        "title": "Xiaomi wants to release new versions of its Google Tensor-like chip every year, globally",
+        "title_zh": "小米：玄戒芯片将“很可能”每年一代并出海",
+        "url": "https://9to5google.com/2026/03/04/xiaomi-xring-chip-yearly-update/",
+        "source_type": "媒体",
+        "summary_zh": "小米总裁卢伟冰在 MWC 2026 接受 CNBC 采访时表示，玄戒（XRING）手机芯片“很可能”每年更新一代，并计划用到海外市场机型上，而非只在中国销售。玄戒 O1 去年首发于小米 15S Pro 与小米平板 7 Ultra，基于台积电 3nm。下一代芯片规格未披露。",
+        "whats_new_zh": [
+          "相比 2 月的“年内芯片、OS、大模型合一”表态，本次新增：芯片节奏为“很可能每年一代”，并明确会进入海外市场（媒体转述 CNBC 采访）",
+          "小爱同学将随小米汽车出海扩展到中国以外市场，海外版由 Gemini 模型支持（媒体转述）",
+          "玄戒 O1：台积电 3nm，首发小米 15S Pro / 小米平板 7 Ultra（背景）"
+        ],
+        "key_specs": {
+          "process": "玄戒 O1 为台积电 3nm；下一代未披露",
+          "other": "下一代芯片规格、NPU、发布时间均未披露"
+        },
+        "edge_ai_impact_zh": "若玄戒按年迭代并出海，国产自研 SoC + 自研 OS + 自研助手的端侧 Agent 闭环会成为三星、谷歌之外第三种垂直整合样本。",
+        "evidence_urls": [],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "表态口径",
+            "points": [
+              "原话来自 CNBC 采访，9to5Google 转述为“likely”每年一代，属于计划表态而非产品发布",
+              "小米 17 系列海外版仍全部使用骁龙，玄戒出海意味着要在海外承担基带与认证成本"
+            ]
+          },
+          {
+            "heading": "对内存危机的意义",
+            "points": [
+              "9to5Google 指出自研芯片是谷歌 Tensor 在 RAM 危机中更有议价空间的原因之一，小米走类似路线",
+              "自研 SoC 让小米能自己决定 NPU 与内存子系统的配比，而不是被公版方案锁定"
+            ]
+          },
+          {
+            "heading": "与 2 月表态的增量",
+            "points": [
+              "2 月 TrendForce 转述的是“年内芯片、OS、大模型合一”；3 月 MWC 新增的是“很可能每年一代”和“进入海外市场”两点",
+              "下一代芯片的命名（O2 或其他）、工艺与 NPU 规格均无官方信息，只能视为路线表态"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-03-04",
+        "vendor": "Apple",
+        "category": "PC芯片",
+        "title": "Say hello to MacBook Neo",
+        "title_zh": "MacBook Neo：A18 Pro 进 Mac",
+        "url": "https://www.apple.com/newsroom/2026/03/say-hello-to-macbook-neo/",
+        "source_type": "官方",
+        "summary_zh": "Apple 推出 599 美元（教育价 499 美元）的 13 寸 MacBook Neo，首次在 Mac 上使用手机芯片 A18 Pro：6 核 CPU、5 核 GPU、16 核 Neural Engine，内存固定 8GB、带宽 60GB/s。官方称端侧 AI 负载比畅销的 Intel Core Ultra 5 笔记本快最高 3 倍。",
+        "whats_new_zh": [
+          "芯片：A18 Pro（2 性能核 + 4 能效核、5 核 GPU、16 核 Neural Engine），官网规格页标 60GB/s 内存带宽",
+          "内存：仅 8GB 一档，不可选配；存储 256GB/512GB",
+          "官方口径：日常任务快最高 50%，端侧 AI 负载（Photoshop 超分、景深模糊、风格迁移等滤镜）快最高 3 倍，对比对象为 8GB 内存的 Intel Core Ultra 5 畅销机",
+          "续航：视频最长 16 小时、无线上网 11 小时，36.5Wh 电池",
+          "TrendForce（3 月 5 日，媒体转述）：预计 2026 年 MacBook Neo 出货 400–500 万台"
+        ],
+        "key_specs": {
+          "process": "A18 Pro（3nm，2024 年 iPhone 16 Pro 芯片）",
+          "cpu": "6 核（2P+4E）",
+          "gpu": "5 核，硬件光追",
+          "npu": "16 核 Neural Engine，TOPS 未披露",
+          "memory": "8GB 统一内存，60GB/s",
+          "power": "36.5Wh 电池，20W 适配器",
+          "other": "一个 USB 3（10Gb/s）+ 一个 USB 2；Wi-Fi 6E；599 美元起"
+        },
+        "edge_ai_impact_zh": "Neo 把 Apple Intelligence 端侧功能带到 599 美元价位，但 8GB/60GB/s 决定它只能跑小模型；端侧智能体在 Mac 上的「最低公分母」仍是 8GB 设备，模型和框架需要按这个档位做适配。",
+        "evidence_urls": [
+          "https://www.apple.com/macbook-neo/specs/",
+          "https://9to5mac.com/2026/03/04/the-599-macbook-neo-fine-print-ram-limits-usb-c-trade-offs-and-touch-id-tiers/",
+          "https://9to5mac.com/2026/03/05/apple-could-sell-4-5m-macbook-neo-machines-this-year-says-trendforce/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "手机芯片进 Mac",
+            "points": [
+              "A18 Pro 此前只用于 iPhone/iPad；Geekbench 早期泄露成绩单核 3461、多核 8668，与 iPhone 16 Pro 基本一致（9to5Mac）",
+              "Mac 的芯片阶梯变成 A18 Pro → M5 → M5 Pro → M5 Max，带宽从 60GB/s 到 614GB/s，相差 10 倍"
+            ]
+          },
+          {
+            "heading": "8GB 是端侧 AI 的天花板",
+            "points": [
+              "Apple 在 2024 年把 Mac 起步内存提到 16GB，Neo 又回到 8GB（9to5Mac）",
+              "TrendForce 也提到 8GB 限制对销量的影响有疑问；对本地大模型来说，8GB 只够 Apple Intelligence 和小模型"
+            ]
+          },
+          {
+            "heading": "内存涨价下的反向操作",
+            "points": [
+              "TrendForce 预计 2026 年全球笔记本出货下降 9.2%，多数品牌在内存和 CPU 短缺下收缩低端机型，Apple 反而推出入门款",
+              "TrendForce 预计 Apple 笔记本 2026 年出货增长 7.7%，macOS 份额升至 13.2%"
+            ]
+          }
+        ],
+        "model_capacity_zh": "推算：8GB 内存扣除系统占用后，适合 3B 级 4bit 模型（约 2GB，decode 上限约 30 tok/s）；8B 4bit（约 4.5GB）能装下但很紧，上限约 13 tok/s。Apple Intelligence 端侧功能官方确认可用。"
+      },
+      {
+        "date": "2026-03-03",
+        "vendor": "Apple",
+        "category": "PC芯片",
+        "title": "Apple debuts M5 Pro and M5 Max to supercharge the most demanding pro workflows",
+        "title_zh": "M5 Pro/M5 Max：双芯粒融合架构",
+        "url": "https://www.apple.com/newsroom/2026/03/apple-debuts-m5-pro-and-m5-max-to-supercharge-the-most-demanding-pro-workflows/",
+        "source_type": "官方",
+        "summary_zh": "Apple 发布 M5 Pro 与 M5 Max，首次采用自研 Fusion Architecture，用先进封装把两颗第三代 3nm 裸片连成一颗 SoC。GPU 每个核心都带 Neural Accelerator，统一内存带宽分别升到 307GB/s 和 614GB/s，官方称 GPU 峰值 AI 算力是上一代的 4 倍以上。同日发布的 MacBook Pro 新闻稿把「在本机跑大模型」作为主要卖点。",
+        "whats_new_zh": [
+          "封装：两颗第三代 3nm 裸片经先进封装组成单一 SoC（官方称高带宽、低延迟），CPU、GPU、媒体引擎、内存控制器、Neural Engine、Thunderbolt 5 分布在两颗裸片上",
+          "CPU：18 核 = 6 个「super core」（原性能核改名）+ 12 个全新性能核；官方称专业负载多线程最高 +30%（对比 M4 Pro），对比 M1 Pro/Max 最高 2.5 倍",
+          "GPU：M5 Pro 最高 20 核、M5 Max 最高 40 核，每核一个 Neural Accelerator；官方称 GPU 峰值 AI 算力比 M4 Pro/M4 Max 高 4 倍以上、比 M1 代高 6 倍以上",
+          "内存：M5 Pro 最高 64GB、307GB/s；M5 Max 最高 128GB、614GB/s",
+          "Neural Engine：16 核，官方称更快，且与内存之间的连接带宽更高（未给数字）",
+          "MacBook Pro 新闻稿（官方口径）：LLM 提示词处理（prefill）最高比 M4 Pro/M4 Max 快 4 倍，AI 出图比 M1 Pro/Max 快 8 倍；SSD 最高快 2 倍；3 月 4 日预订、3 月 11 日发售"
+        ],
+        "key_specs": {
+          "process": "第三代 3nm，两颗裸片（Fusion Architecture）",
+          "cpu": "18 核：6 super core + 12 性能核（M5 Pro 也有 15 核配置，见评测）",
+          "gpu": "M5 Pro 最高 20 核 / M5 Max 最高 40 核，每核带 Neural Accelerator",
+          "npu": "16 核 Neural Engine，TOPS 未披露",
+          "memory": "M5 Pro 最高 64GB / 307GB/s；M5 Max 最高 128GB / 614GB/s",
+          "other": "Thunderbolt 5 每口独立控制器；Memory Integrity Enforcement；14 寸 M5 Pro 起价 2199 美元（媒体）"
+        },
+        "edge_ai_impact_zh": "M5 Max 把 128GB 统一内存和 614GB/s 带宽放进笔记本，70B 级稠密模型和百亿级 MoE 都能在本机装下；GPU 矩阵单元把 prefill 提速约 4 倍，对长上下文本地智能体（读代码库、读文档）的首 token 延迟改善最大。",
+        "evidence_urls": [
+          "https://www.apple.com/newsroom/2026/03/apple-introduces-macbook-pro-with-all-new-m5-pro-and-m5-max/",
+          "https://www.tomshardware.com/laptops/macbooks/apple-macbook-pro-14-inch-m5-max-2026-review",
+          "https://9to5mac.com/2026/03/05/heres-how-the-new-m5-max-chip-did-on-early-geekbench-tests/",
+          "https://9to5mac.com/2026/03/20/apple-explains-why-m5-chips-have-three-different-core-types-in-new-interview/",
+          "https://9to5mac.com/2026/03/03/apple-macbook-price-increase-ram-same/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "Fusion Architecture：Apple 首次在笔记本芯片上用双裸片",
+            "points": [
+              "此前 Ultra 系列靠 UltraFusion 把两颗 Max 拼起来；这次是 Pro/Max 本身就由两颗裸片组成，官方称为「Apple 设计的 Fusion Architecture」",
+              "两颗裸片都是第三代 3nm，官方未说明各自包含哪些模块、互联带宽是多少",
+              "意义：把 GPU 规模（最高 40 核）和内存控制器数量与单颗裸片面积解耦，为后续扩大 GPU/内存带宽留出空间"
+            ]
+          },
+          {
+            "heading": "GPU 里的 Neural Accelerator 是本代 AI 提升主力",
+            "points": [
+              "AI 算力提升主要来自 GPU 每核的 Neural Accelerator（矩阵单元），而不是 Neural Engine；官方「4 倍以上」指的是 GPU 峰值 AI 算力",
+              "LLM 的 prefill 是算力瓶颈，所以官方用「prompt processing 快 4 倍」宣传；decode 受带宽限制，614GB/s 只比 M4 Max 的 546GB/s 高约 12%（M4 Max 带宽为往期公开规格，属背景）",
+              "MLX 0.31.1（3 月 12 日）合入「Add initial tuning for M5 pro and max」，软件栈当周即跟进"
+            ]
+          },
+          {
+            "heading": "三种 CPU 核：super / 性能 / 能效",
+            "points": [
+              "M5 基础版是 super core + 能效核；M5 Pro/Max 是 super core + 新性能核，没有能效核",
+              "Apple 的 Anand Shimpi 接受 Mac & i 采访时说新性能核是「完全定制的微架构」，与 super core 和能效核都明显不同（9to5Mac 3 月 20 日转述）",
+              "Geekbench 6 第三方数据：Tom's Hardware 实测单核 4338、多核 29430；更早泄露的跑分为单核 4268、多核 29233"
+            ]
+          },
+          {
+            "heading": "续航与内存定价",
+            "points": [
+              "官方称 MacBook Pro 最长 24 小时续航；Tom's Hardware 14 寸 M5 Max（128GB）在 150 nits 网页/视频/OpenGL 混合测试中跑了 17 小时 58 分钟",
+              "9to5Mac：整机起价上调（14 寸 M5 Pro 由 1999 美元升至 2199 美元，但起始存储翻倍到 1TB），内存加价表与 M4 代相同（如 48GB 到 64GB 加 200 美元、升 128GB 加 1000 美元）"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方只给 prefill 倍数，没有 tok/s。推算（带宽 ÷ 每 token 读取字节，理论上限，实际更低）：M5 Max 614GB/s 下，27B 稠密模型 4bit（约 16GB 权重）decode 上限约 38 tok/s；70B 稠密 4bit（约 35–40GB）约 15–17 tok/s；MoE 模型只读激活参数，如激活约 5B、4bit 的 120B 级 MoE，带宽上限可到百 tok/s 量级，但 128GB 内存才是能否装下的硬门槛。M5 Pro 307GB/s、64GB：32B 稠密 4bit 约 17 tok/s 上限。第三方实测：Tom's Hardware 用 LM Studio 跑 Gemma 3 27B 称「出 token 极快」，但未给数字。"
+      },
+      {
+        "date": "2026-03-03",
+        "vendor": "Apple",
+        "category": "PC芯片",
+        "title": "Apple introduces the new MacBook Air with M5",
+        "title_zh": "MacBook Air 换 M5：AI 任务快 4 倍",
+        "url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+        "source_type": "官方",
+        "summary_zh": "MacBook Air 升级到 2025 年 10 月首发的 M5：10 核 CPU、最高 10 核 GPU 且每核带 Neural Accelerator，统一内存带宽 153GB/s。官方称 AI 任务比 M4 版快最高 4 倍，并明确把「企业在本机跑 LLM」写进卖点。起始存储翻倍到 512GB，起价升到 1099 美元。",
+        "whats_new_zh": [
+          "AI 性能（官方口径）：AI 任务比 MacBook Air M4 快最高 4 倍、比 M1 快 9.5 倍；Topaz Video AI 视频增强比 M4 快 1.9 倍",
+          "内存带宽 153GB/s，官方称比 M4 高 28%",
+          "存储：起步 512GB（上代 256GB），首次可选 4TB，SSD 读写快 2 倍",
+          "连接：Apple 自研 N1 无线芯片，支持 Wi-Fi 7 / 蓝牙 6",
+          "价格：13 寸 1099 美元起、15 寸 1299 美元起（上代 13 寸 999 美元）；续航最长 18 小时"
+        ],
+        "key_specs": {
+          "process": "第三代 3nm（M5，2025 年 10 月首发）",
+          "cpu": "10 核，含 super core",
+          "gpu": "最高 10 核，每核带 Neural Accelerator",
+          "npu": "16 核 Neural Engine（M5），TOPS 未披露",
+          "memory": "153GB/s；最大容量新闻稿未写",
+          "other": "N1 无线芯片；Wi-Fi 7"
+        },
+        "edge_ai_impact_zh": "最畅销的 Mac 全面带上 GPU 矩阵单元，意味着 Mac 端本地模型应用（MLX、LM Studio、Msty 等）的基础硬件门槛一年内整体抬升到 M5 级别。",
+        "evidence_urls": [
+          "https://9to5mac.com/2026/03/03/apple-announces-m5-macbook-air-with-2x-storage-n1-wireless-chip-1099-starting-price/",
+          "https://9to5mac.com/2026/03/10/m5-macbook-air-reviews-performance-takes-another-leap/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "M5 下放到轻薄本",
+            "points": [
+              "芯片与 2025 年 10 月的 14 寸 MacBook Pro M5 相同，本次增量是装进无风扇的 Air，并把起始存储和无线芯片一起升级",
+              "GPU Neural Accelerator 是「AI 快 4 倍」的来源；与 M5 Pro/Max 同一 GPU 架构"
+            ]
+          },
+          {
+            "heading": "官方第一次在 Air 上写「在本机跑 LLM」",
+            "points": [
+              "原文：「running LLMs on device in an enterprise」，新闻稿配图展示 Msty Studio（本地 LLM 客户端）",
+              "说明 Apple 把消费级轻薄本也定位为本地模型终端，而不只依赖 Apple Intelligence"
+            ]
+          },
+          {
+            "heading": "存储涨价背景",
+            "points": [
+              "9to5Mac：起价升 100 美元，但起始存储翻倍，按同配置比价持平；内存升级价格未涨",
+              "与同月 TrendForce「AI 推高手机存储容量」的判断一致：Apple 正在把 256GB/512GB 作为新底线"
+            ]
+          }
+        ],
+        "model_capacity_zh": "推算：153GB/s 下，8B 稠密 4bit（约 4.5GB）decode 上限约 34 tok/s，14B 4bit（约 8GB）约 19 tok/s；可容纳的模型大小取决于所选内存（新闻稿对比机为 32GB 的 M4 版，M5 版最大内存以官网配置为准）。"
+      },
+      {
+        "date": "2026-03-02",
+        "vendor": "AMD",
+        "category": "PC芯片",
+        "title": "AMD Gives Consumers and Businesses More AI PC Options with Expanded Ryzen AI 400 Series Portfolio",
+        "title_zh": "锐龙 AI 400 台式机：首款 Copilot+ 桌面 U",
+        "url": "https://www.amd.com/en/newsroom/press-releases/2026-3-2-amd-gives-consumers-and-businesses-more-ai-pc-opti.html",
+        "source_type": "官方",
+        "summary_zh": "AMD 在 MWC 2026 发布锐龙 AI 400 与锐龙 AI PRO 400 台式机处理器（AM5 插槽），官方称是首个支持 Copilot+ PC 体验的台式机处理器家族，NPU 最高 50 TOPS。同时把锐龙 AI PRO 400 移动版扩展到移动工作站。台式机系统预计 2026 年第二季度由惠普、联想等上市。",
+        "whats_new_zh": [
+          "台式机 12 个型号（含 PRO）：最高 8 核 16 线程、Boost 5.1 GHz，TDP 65W（G）或 35W（GE）",
+          "全系 XDNA 2 NPU 最高 50 TOPS；核显 Radeon 860M（8 CU）或 840M（4 CU）",
+          "移动版锐龙 AI PRO 400 NPU 最高 60 TOPS；锐龙 AI 9 HX PRO 470 多线程比 Intel Core Ultra X7 358 快最多 30%（AMD 官方口径）",
+          "AM5 台式机预计 2026 年 Q2 由 HP、Lenovo 等 OEM 出货"
+        ],
+        "key_specs": {
+          "cpu": "Zen 5，最高 8C/16T，Boost 最高 5.1 GHz，基础 2.0 GHz；缓存 14–24MB",
+          "gpu": "RDNA 3.5，Radeon 860M（8 CU）/ 840M（4 CU）",
+          "npu": "XDNA 2，台式机最高 50 TOPS；移动 PRO 400 最高 60 TOPS",
+          "power": "台式机 65W（G 系列）/ 35W（GE 系列）",
+          "memory": "新闻稿未披露内存规格与带宽"
+        },
+        "edge_ai_impact_zh": "Copilot+ 级 NPU 进入台式机后，Windows 端侧 Agent 不再只是笔记本功能；但 50 TOPS NPU 配双通道 DDR5，能常驻的仍是 3–8B 级模型。",
+        "evidence_urls": [
+          "https://newsroom.amd.com/news/amd-gives-consumers-and-businesses-more-ai-pc-opti/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "为何是台式机",
+            "points": [
+              "此前 Copilot+ PC 只覆盖笔记本，AMD 把 40+ TOPS NPU 首次带到 AM5 台式机，面向企业办公与开发者",
+              "35W GE 版本适合迷你主机/一体机，常驻本地 AI 助手的功耗门槛更低"
+            ]
+          },
+          {
+            "heading": "NPU 规格分层",
+            "points": [
+              "台式机 NPU 标为“最高 50 TOPS”，低于 CES 发布的移动版 60 TOPS，说明台式机用的是降频或不同配置的 XDNA 2（官方未解释差异）",
+              "所有台式机 SKU NPU 一律 50 TOPS，差异主要在 CPU 核数与核显 CU 数"
+            ]
+          },
+          {
+            "heading": "竞争口径",
+            "points": [
+              "AMD 拿锐龙 AI 9 HX PRO 470 对比 Intel Core Ultra X7 358 宣称多线程 +30%，属于厂商口径",
+              "TrendForce 3 月 10 日报告提到 Intel 入门笔记本 CPU 缺货与涨价，笔记本品牌转向多平台，AMD 份额上升（第三方口径）"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方只说可在本地运行 LLM，未给模型规模。推算：台式机 AM5 平台内存带宽未披露；若按双通道 DDR5-5600 理论约 89.6 GB/s（假设值）计算，8B 模型 INT4（约 4.5GB/token）decode 上限约 20 tok/s，14B INT4 约 11 tok/s；50 TOPS NPU 主要决定 prefill 与小模型常驻能力，decode 仍受内存带宽限制。"
+      },
+      {
+        "date": "2026-03-05",
+        "vendor": "ETH Zurich / University of Bologna",
+        "category": "NPU/AI加速器",
+        "title": "VMXDOTP: A RISC-V Vector ISA Extension for Efficient Microscaling (MX) Format Acceleration",
+        "title_zh": "支持 MXFP4/MXFP8 的 RISC-V 向量扩展",
+        "url": "https://arxiv.org/abs/2603.04979",
+        "source_type": "论文",
+        "summary_zh": "ETH 与博洛尼亚大学提出 VMXDOTP：一条 RISC-V 向量（RVV 1.0）扩展指令，原生执行 MX 微缩放格式的点积，支持 MXFP8、MXFP4 输入和可变块大小。12nm 实现的向量集群在 MX 矩阵乘上利用率达 97%，面积开销仅 7.2%。",
+        "whats_new_zh": [
+          "12nm FinFET、1 GHz、0.8 V：MXFP8 125 GFLOPS、MXFP4 250 GFLOPS；能效 843 / 1,632 GFLOPS/W（论文实测/后仿口径）",
+          "MX 矩阵乘利用率最高 97%，面积开销 7.2%",
+          "相对软件模拟 MXFP8 矩阵乘，最高 7.0 倍加速、4.9 倍能效",
+          "相对已有 MX 引擎，面积效率最高高 1.4 倍，且支持软件定义块大小"
+        ],
+        "key_specs": {
+          "process": "12nm FinFET",
+          "npu": "共享 L1 的向量处理单元（VPE）集群 + VMXDOTP 扩展",
+          "power": "843 GFLOPS/W（MXFP8）/ 1,632 GFLOPS/W（MXFP4）@1 GHz, 0.8 V"
+        },
+        "edge_ai_impact_zh": "4-bit 浮点正成为端侧 LLM 的主流部署精度，RISC-V 生态通过 ISA 扩展跟进 MX 格式，为开放架构的端侧 AI 处理器提供了参考设计。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2603.04979v1"
+        ],
+        "confidence": "high",
+        "venue": "arXiv（DATE 2026 录用）",
+        "affiliation": "IIS, ETH Zurich; DEI, University of Bologna",
+        "authors": "Max Wipfli; Gamze İslamoğlu; Navaneeth Kunhi Purayil",
+        "deep_dive_zh": [
+          {
+            "heading": "为什么需要专门指令",
+            "points": [
+              "MX 格式按块共享缩放因子，混合精度多步运算会打断向量流水线的规整性，导致计算单元闲置"
+            ]
+          },
+          {
+            "heading": "与产业的关系",
+            "points": [
+              "MXFP4/MXFP8 已是 OCP 标准格式，端侧 NPU 若原生支持，可直接部署服务器侧训练出的 4-bit 模型",
+              "项目部分由华为苏黎世研究中心资助（论文致谢）"
+            ]
+          },
+          {
+            "heading": "能效与实测",
+            "points": [
+              "MXFP4 吞吐是 MXFP8 的两倍（250 vs 125 GFLOPS），能效约 1.9 倍",
+              "数据来自 12nm 实现，频率 1 GHz、0.8 V；累加支持 FP32 与 BF16"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-03-05",
+        "vendor": "Ambiq Micro",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Ambiq Reveals 12nm SPOT Platform Enabling Operation Down to 300mV for Atomiq",
+        "title_zh": "Ambiq Atomiq：12nm亚阈值平台，最低300mV",
+        "url": "https://ambiq.com/news/ambiq-reveals-12nm-spot-platform-enabling-operation-down-to-300mv-for-atomiq/",
+        "source_type": "官方",
+        "summary_zh": "Ambiq公布下一代Atomiq SoC的技术细节：亚阈值SPOT平台首次移植到FinFET（台积电N12e），新增可低至300mV的超低功耗模式，是公司历史上最低工作电压。芯片集成Arm Ethos-U85 NPU，官方称在100MHz的ULP模式下也有每秒数百亿次运算。12nm SPOT平台已在实验室硅片验证，Atomiq110样片在推进，2027年量产。",
+        "whats_new_zh": [
+          "SPOT首次用于FinFET节点：台积电N12e，ULP模式最低约300mV",
+          "Ethos-U85 NPU：ULP模式下时钟低至100MHz仍可达“数百亿次运算/秒”（官方口径，未给精确TOPS）",
+          "片上电源管理改为多通道SIMO降压转换器，6路独立电压轨，负载范围纳安到毫安",
+          "12nm SPOT平台已完成硅验证；Atomiq110样片推进中，2027年量产",
+          "同日财报：2025年营收7,250万美元，Q4营收2,070万美元，Q1指引2,100万~2,200万美元；累计出货设备超2.9亿台",
+          "3月11日：Ambiq的AOT编译器heliaAOT获Embedded World 2026工具类奖，官方称内存占用比基于运行时的部署少10倍"
+        ],
+        "key_specs": {
+          "process": "台积电N12e（12nm FinFET）",
+          "npu": "Arm Ethos-U85；ULP模式100MHz下“数百亿次运算/秒”（官方口径）",
+          "power": "ULP模式最低约300mV；6路电压轨SIMO电源，nA~mA负载",
+          "other": "ULP/LP/HP三种模式；Atomiq110样片推进，2027年量产"
+        },
+        "edge_ai_impact_zh": "可穿戴常开AI的上限由“每次推理多少μJ”决定；Ambiq把亚阈值设计搬到12nm并配Ethos-U85，是给手表、戒指、耳机常驻更大模型做准备，但要到2027年才量产。",
+        "evidence_urls": [
+          "https://ambiq.com/news/ambiq-reports-fourth-quarter-and-full-year-2025-financial-results/",
+          "https://ambiq.com/news/ambiq-showcases-ultra-low-power-edge-ai-socs-and-npu-innovation-at-embedded-world-2026/",
+          "https://ambiq.com/news/ambiq-wins-embedded-world-2026-award-for-heliaaot/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "低功耗/常驻AI",
+            "points": [
+              "亚阈值/近阈值设计在平面CMOS上很难跑高频，FinFET漏电更小、驱动更强，使300mV下仍有可用性能",
+              "NPU靠并行MAC而不是主频取胜，因此最适合在低电压、低频下运行"
+            ]
+          },
+          {
+            "heading": "电源架构",
+            "points": [
+              "重新设计的PMU：单电感多输出（SIMO）降压，6路独立电压轨，按工艺、温度、负载动态调整",
+              "为超低电压重新开发了定制基础IP（标准单元、存储器等）"
+            ]
+          },
+          {
+            "heading": "软件与工具",
+            "points": [
+              "heliaAOT把TFLite模型直接编译成C代码，逐层把权重分配到Apollo的存储层级，去掉运行时开销",
+              "官方称heliaAOT内存占用降10倍，并把目标写成“agentic、always-on intelligence”"
+            ]
+          },
+          {
+            "heading": "商业进展",
+            "points": [
+              "2025年营收7,250万美元，Q4毛利率GAAP 42.7%，IPO与增发合计净募资约1.8亿美元（财报口径）",
+              "Atomiq要到2027年量产，本月发布的是技术细节而非产品上市"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方定位为常开音频、视觉和“推理（reasoning）”AI，未披露片上SRAM和可运行模型规模；按Ethos-U85的典型配置，适合数百KB到数MB的KWS、视觉、传感模型，LLM能力未披露。"
+      },
+      {
+        "date": "2026-03-03",
+        "vendor": "STMicroelectronics",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "HSP: the new hardware accelerator that transforms an ultra-low-power STM32U3 into an AI machine",
+        "title_zh": "ST STM32U3B5/C5引入硬件信号处理器HSP",
+        "url": "https://blog.st.com/hardware-signal-processing-hsp/",
+        "source_type": "官方",
+        "summary_zh": "意法半导体发布STM32U3B5/U3C5超低功耗MCU，首次引入名为HSP（hardware signal processor）的新硬件单元，用来卸载FFT/FIR等DSP运算，也能加速部分神经网络。ST称HSP会陆续出现在更多STM32上。按ST内部基准，DSP最高比Cortex-M33快12~13倍，关键词识别、图像分类、视觉唤醒等AI模型提速6~9倍。",
+        "whats_new_zh": [
+          "STM32U3B5/U3C5：Cortex-M33，最高2MB双bank闪存、640KB RAM，48~144引脚封装",
+          "DSP：最高比Cortex-M33快12倍（产品介绍）/13倍（ST博客，256点复数/实数FFT），约为竞品Cortex-M55（带Helium）的3倍",
+          "能效：比STM32U5快9倍、比无HSP的STM32U3快3倍；部分边缘AI应用能效翻倍（ST内部测试）",
+          "AI：KWS、图像分类、视觉唤醒等模型在HSP上比M33+TFLite Micro快6~9倍；NanoEdge AI模型快4~6倍；STM32Cube AI Studio优化的CNN快3~5倍",
+          "沿用CMSIS-DSP API，配套NUCLEO-U3C5ZI-Q开发板；安全目标PSA Certified L3、SESIP3"
+        ],
+        "key_specs": {
+          "cpu": "Arm Cortex-M33",
+          "npu": "无独立NPU；HSP硬件信号处理器（DSP+部分NN算子加速）",
+          "memory": "最高2MB双bank闪存，640KB RAM",
+          "power": "未披露绝对值；官方称加速带来的整体能耗节省超过功耗增加，部分AI应用能效翻倍",
+          "other": "PSA Certified L3/SESIP3目标；NUCLEO-U3C5ZI-Q评估板"
+        },
+        "edge_ai_impact_zh": "常开传感不一定需要NPU：ST用轻量DSP加速器在超低功耗MCU上把KWS、视觉唤醒提速6~9倍，给纽扣电池设备留出常驻小模型的空间。",
+        "evidence_urls": [
+          "https://www.edge-ai-vision.com/2026/03/stm32u3b5-u3c5-bringing-high-performance-dsp-edge-ai-to-ultralow-power-designs/",
+          "https://www.st.com/en/microcontrollers-microprocessors/stm32u3b5-3c5.html"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "加速器设计",
+            "points": [
+              "HSP不是通用NPU，而是可通过HAL几行API调用的内置DSP单元，免配置、无需外挂DSP",
+              "ST工程师先为FFT/FIR设计，后来发现对部分神经网络同样有效，所以官方把它定位为“DSP+AI”"
+            ]
+          },
+          {
+            "heading": "能效与实测",
+            "points": [
+              "全部为ST内部基准：256点FFT比M33快13倍、比M55快3倍；对比STM32U5约9倍",
+              "HSP工作时绝对功耗略升，但运算更快，单次任务总能耗下降"
+            ]
+          },
+          {
+            "heading": "低功耗/常驻AI",
+            "points": [
+              "STM32U3本身是ST最省电的近阈值系列，加HSP后可以不加外部DSP做振动、音频、心率等连续分析",
+              "与STM32N6（带Neural-ART NPU）形成高低搭配：N6做视觉，U3+HSP做电池供电的常开传感"
+            ]
+          }
+        ],
+        "model_capacity_zh": "面向几十到几百KB的KWS、视觉唤醒、振动分析模型；640KB RAM决定了只适合TinyML级网络，不适用于LLM。"
+      },
+      {
+        "date": "2026-03-02",
+        "vendor": "Qualcomm",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Qualcomm Powers the Rise of Personal AI with New Snapdragon Wear Elite Platform",
+        "title_zh": "骁龙Wear Elite：首款带NPU的可穿戴平台",
+        "url": "https://www.qualcomm.com/news/releases/2026/03/qualcomm-powers-the-rise-of-personal-ai-with-new-snapdragon-wear",
+        "source_type": "官方",
+        "summary_zh": "高通在 MWC 2026 发布 Snapdragon Wear Elite，这是骁龙可穿戴产品线第一次集成 Hexagon NPU，定位“个人 AI”平台，覆盖手表、胸针、吊坠等形态，支持 Wear OS、Android 和 Linux。官方产品页给出 12 TOPS、可跑 20 亿参数模型、3nm 工艺；Google、Motorola、三星站台，三星确认下一代 Galaxy Watch 采用，首批商用设备预计“未来几个月”上市。",
+        "whats_new_zh": [
+          "官方产品页：Hexagon NPU 最高 12 TOPS，支持 20 亿（2B）参数模型；新闻稿措辞为“up to billion-parameter models”，OnQ 博客写“up to two billion parameter models”",
+          "对比上代 W5+ Gen 2（官方口径）：单核 CPU 最高 5 倍、GPU 最高 7 倍，续航/日使用时间延长 30%，约 10 分钟充到 50%",
+          "工艺 3nm（官方产品页与 OnQ 博客）；媒体（GSMArena）称 CPU 为 1 个 2.1GHz 主核 + 4 个 1.9GHz 性能核，外加专用协处理器",
+          "媒体（CNX Software）列出内存为 16-bit LPDDR5-6400、32GB eMMC，2 路 4-lane CSI 摄像头接口",
+          "首次集成六种连接：5G RedCap、Micro-Power Wi-Fi、蓝牙 6.0、UWB、GNSS、NB-NTN（与 Skylo 合作卫星双向消息）"
+        ],
+        "key_specs": {
+          "process": "3nm（官方）",
+          "cpu": "1×2.1GHz 主核 + 4×1.9GHz 性能核 + 协处理器（媒体口径，官方只说单核提升 5 倍）",
+          "gpu": "Adreno 3D GPU（OpenGL ES 3.2 / Vulkan 1.2 / OpenCL 2.0）+ 最高 500MHz 的 2.5D GPU 协处理器（媒体口径）；官方称 GPU 最高快 7 倍",
+          "npu": "Hexagon NPU，最高 12 TOPS（官方），支持 2B 参数模型",
+          "memory": "16-bit LPDDR5-6400（媒体口径），推算峰值带宽约 12.8 GB/s",
+          "power": "相比 W5+ Gen 2 日使用时间 +30%；约 10 分钟充至 50%（官方）",
+          "other": "5G RedCap、Micro-Power Wi-Fi、BT 6.0、UWB、双频 GNSS、NB-NTN；支持 Wear OS / Android / Linux / FreeRTOS"
+        },
+        "edge_ai_impact_zh": "可穿戴第一次有了能跑 1–2B 模型的专用 NPU，常驻语音、生活记录和轻量智能体可以留在手表或吊坠上本地完成。但 12.8 GB/s 级带宽决定了它更适合小模型常驻感知，与手机协同才是主流形态。",
+        "evidence_urls": [
+          "https://www.qualcomm.com/wearables/products/snapdragon-wear-elite-platform",
+          "https://www.qualcomm.com/news/onq/2026/03/snapdragon-wear-elite-platform",
+          "https://www.cnx-software.com/2026/03/03/qualcomm-snapdragon-wear-elite-wearable-platform-offers-5g-redcap-wifi-6-bluetooth-6-0-built-in-ai-accelerator/",
+          "https://m.gsmarena.com/snapdragon_wear_elite_arrives_with_ondevice_ai_capabilities_performance_and_battery_gains-news-71793.php"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "NPU 与模型规模",
+            "points": [
+              "这是骁龙 Wear 系列第一颗带 Hexagon NPU 的芯片，上代 W5+ Gen 2 只有低功耗 ML 协处理器",
+              "12 TOPS 与 2B 参数是官方产品页数字；新闻稿只写“billion-parameter”，口径略有出入，以产品页为准",
+              "官方列出的场景：上下文感知推荐、自然语音交互、生活记录（life logging）、代用户执行任务的 AI 智能体"
+            ]
+          },
+          {
+            "heading": "内存与带宽（推算）",
+            "points": [
+              "媒体给出的 16-bit LPDDR5-6400 意味着峰值带宽只有约 12.8 GB/s（推算：6400 MT/s × 2 字节）",
+              "因此 2B 模型在表上属于“装得下、能跑”，实际生成速度受带宽限制，INT4 理论上限约 12 tok/s（推算，未计 KV cache 读取）",
+              "更现实的用法是 0.5B–1B 级模型做常驻意图识别，复杂任务交给手机或云端"
+            ]
+          },
+          {
+            "heading": "低功耗与常驻",
+            "points": [
+              "官方提到 3nm、低功耗岛（low-power islands）和系统级电源管理，换来 30% 更长日使用时间",
+              "Micro-Power Wi-Fi 面向“持续 AI 上下文同步”这类常驻场景；检索摘要提到另有 eNPU 低功耗岛，官方新闻稿未提，存疑"
+            ]
+          },
+          {
+            "heading": "生态与时间表",
+            "points": [
+              "Google Wear OS 负责人、Motorola（Project Maxwell 概念设备）、三星 MX 均在新闻稿中表态",
+              "三星称下一代 Galaxy Watch 将采用；首批商用设备预计“未来几个月”推出",
+              "3 月底 OnQ 博客把它放进“Ecosystem of You”叙事：可穿戴提供连续上下文，手机/PC 执行重任务"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方口径：可跑最多 20 亿参数模型。推算：按媒体给出的 16-bit LPDDR5-6400（约 12.8 GB/s），2B 模型 INT4 权重约 1GB，decode 上限约 12 tok/s；INT8（约 2GB）上限约 6 tok/s。检索摘要中出现过“约 10 tok/s”的说法，未找到官方出处。"
+      },
+      {
+        "date": "2026-03-02",
+        "vendor": "Nordic Semiconductor",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "Nordic accelerates cellular IoT leadership with major new product releases at MWC 2026",
+        "title_zh": "Nordic nRF92：蜂窝物联网芯片内置Axon NPU",
+        "url": "https://www.nordicsemi.com/Nordic-news/2026/03/Nordic-accelerates-cellular-IoT-leadership-with-major-new-product-releases-at-MWC-2026",
+        "source_type": "官方",
+        "summary_zh": "Nordic在MWC 2026发布nRF92系列LTE-M/NB-IoT及卫星NTN芯片，集成高性能应用MCU、超低功耗Axon NPU、多星座GNSS、Wi-Fi定位与传感协处理。目标是智能表计、追踪器、工业传感和可穿戴，主打多年电池寿命。领先客户已在送样，2027年初全面供货。",
+        "whats_new_zh": [
+          "nRF92：LTE-M/NB-IoT + 卫星NTN，集成应用MCU、Axon NPU、GNSS、Wi-Fi定位、传感协处理",
+          "领先客户送样中，2027年初全面供货",
+          "同期发布nRF93系列（LTE Cat 1 bis，下行10Mbps/上行5Mbps），2026年中供货",
+          "Axon NPU的算力、功耗本次均未公布（官方未披露）"
+        ],
+        "key_specs": {
+          "npu": "Nordic Axon NPU（超低功耗），算力未披露",
+          "cpu": "高性能应用MCU，型号未披露",
+          "power": "官方称“最省电的蜂窝方案”、多年电池寿命，未给数字",
+          "other": "LTE-M/NB-IoT/卫星NTN、多星座GNSS；2027年初GA"
+        },
+        "edge_ai_impact_zh": "Axon NPU从Nordic的BLE芯片扩到蜂窝/卫星芯片，追踪器、表计这类“几年不换电池”的设备也开始带本地推理。",
+        "evidence_urls": [
+          "https://www.nordicsemi.com/Nordic-news/2026/03/Nordic-accelerates-cellular-IoT-leadership-with-major-new-product-releases-at-MWC-2026?lang=zh-CN"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "低功耗/常驻AI",
+            "points": [
+              "把NPU放进蜂窝IoT芯片，目的是在本地做事件判断，减少上传次数——对蜂窝设备来说，少发一次包往往比NPU本身更省电",
+              "传感协处理+NPU意味着主MCU和调制解调器可以长时间休眠"
+            ]
+          },
+          {
+            "heading": "信息缺口",
+            "points": [
+              "本次只有定性描述，没有TOPS、内存、功耗；按规范把AI能力全部记为未披露"
+            ]
+          },
+          {
+            "heading": "产品线定位",
+            "points": [
+              "nRF92面向LTE-M/NB-IoT+卫星NTN的电池设备，nRF93（Cat 1 bis，10/5Mbps）面向网关、车队管理等更高吞吐场景",
+              "nRF9151同期加入符合3GPP的GEO/LEO NTN支持；nRF92的GA（2027年初）比nRF93（2026年中）晚约半年"
+            ]
+          }
+        ],
+        "model_capacity_zh": "未披露；按Axon NPU定位，属于传感分类、异常检测级的TinyML。"
+      },
+      {
+        "date": "2026-03-01",
+        "vendor": "Georgia Tech / EPFL / UCSD",
+        "category": "存储与内存",
+        "title": "HAVEN: High-Bandwidth Flash Augmented Vector Engine for Large-Scale Approximate Nearest-Neighbor Search Acceleration",
+        "title_zh": "用高带宽闪存（HBF）加速 RAG 检索",
+        "url": "https://arxiv.org/abs/2603.01175",
+        "source_type": "论文",
+        "summary_zh": "HAVEN 设想在 GPU 封装内与 HBM 并列放置高带宽闪存（HBF，堆叠式 3D NAND）和近存搜索单元，让十亿级全精度向量库完全留在封装内，重排时不再经过 PCIe 和 DDR。基于 3D NAND 子阵列、功耗受限的 HBF 带宽建模，重排吞吐最高提升 20 倍、延迟最多降低 40 倍。",
+        "whats_new_zh": [
+          "相对 GPU+DRAM 与 GPU+SSD 方案，重排吞吐最高 20 倍、延迟最高 40 倍改善（建模结果）",
+          "HBF 假设：每堆栈容量是 HBM 的 8–16 倍，按 HBM2E 接口取每堆栈 460 GB/s 带宽",
+          "对照系统：A100 40GB + 512 GB DDR4-3200 + 8 TB PCIe 4.0 SSD"
+        ],
+        "key_specs": {
+          "memory": "HBF（3D NAND 堆叠，TB 级容量、数百 GB/s 读带宽）+ HBM",
+          "other": "论文为建模与仿真，非流片"
+        },
+        "edge_ai_impact_zh": "HBF 若量产，可能先进入数据中心，再下沉到需要大容量只读权重或向量库的边缘设备；它是端侧“内存墙”之外的另一条容量路线。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2603.01175v1"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv",
+        "affiliation": "Georgia Institute of Technology; EPFL; University of California, San Diego",
+        "authors": "Po-Kai Hsu; Weihong Xu; Qunyou Liu",
+        "deep_dive_zh": [
+          {
+            "heading": "HBF 是什么",
+            "points": [
+              "论文引用闪迪的公开材料：HBF 用 TSV 堆叠 NAND，接口与 HBM 兼容，用容量换取接近 HBM 的读带宽"
+            ]
+          },
+          {
+            "heading": "对端侧的参考",
+            "points": [
+              "当前面向数据中心；但“只读大容量数据放闪存、靠高带宽直读”的思路与端侧大模型权重放 UFS 的问题相通"
+            ]
+          },
+          {
+            "heading": "口径与局限",
+            "points": [
+              "论文模板中会议信息仍为占位符，发表状态未知",
+              "HBF 的容量与带宽是基于公开资料的假设，量产参数尚未确定"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-03-01",
+        "vendor": "Google / Purdue",
+        "category": "车载/机器人",
+        "title": "Characterizing VLA Models: Identifying the Action Generation Bottleneck for Edge AI Architectures",
+        "title_zh": "Jetson Orin/Thor 上 VLA 模型的瓶颈",
+        "url": "https://arxiv.org/abs/2603.02271",
+        "source_type": "论文",
+        "summary_zh": "Google 与普渡大学的作者在 Jetson AGX Orin（64 GB）和 Jetson Thor（128 GB）上剖析 MolmoAct-7B 视觉-语言-动作模型：受内存带宽限制的动作生成阶段占端到端延迟最多 75%。Thor 的算力是 Orin 的 5 倍，延迟却只改善 1.4 倍。作者再用内部模拟器推演到 100B 模型，比较 LPDDR5X、GDDR7 与 PIM 的效果。",
+        "whats_new_zh": [
+          "动作生成（自回归解码）最多占端到端延迟 75%，两平台都达不到 10 Hz 实时控制",
+          "Thor 算力为 Orin 的 5 倍，端到端延迟只改善 1.4 倍",
+          "硬件参数（论文表格）：Orin LPDDR5 203 GB/s、BF16 100 TFLOPS；Thor LPDDR5X 273 GB/s、BF16 500 TFLOPS；假设方案 Orin+GDDR7 为 1,000 GB/s",
+          "推演到 10–100B 参数：仅靠提升内存带宽不足以达到交互速率"
+        ],
+        "key_specs": {
+          "gpu": "Jetson AGX Orin / Jetson Thor",
+          "memory": "Orin LPDDR5 203 GB/s；Thor LPDDR5X 273 GB/s；对比 GDDR7 1,000 GB/s 与 PIM 假设方案",
+          "other": "内部 XPU 模拟器，论文称精度 70–90%"
+        },
+        "edge_ai_impact_zh": "机器人端的 VLA 模型与手机端 LLM 面临同一堵墙：算力增长远快于带宽增长。下一代端侧芯片的竞争点会从 TOPS 转向带宽和存内计算。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2603.02271v1"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "Google; Purdue University",
+        "authors": "Manoj Vishwanathan; Suvinay Subramanian; Anand Raghunathan",
+        "deep_dive_zh": [
+          {
+            "heading": "带宽决定一切",
+            "points": [
+              "Thor 与 Orin 的带宽比为 273/203≈1.34，与实测 1.4 倍延迟改善接近，说明解码阶段几乎完全受带宽限制（推算对照）",
+              "MolmoAct-7B BF16 约 14 GB，按带宽估算 Orin 解码上限约 14.5 tok/s、Thor 约 19.5 tok/s（推算）"
+            ]
+          },
+          {
+            "heading": "面向未来的硬件方向",
+            "points": [
+              "GDDR7 和 PIM 都能提高控制频率，但对长时域动作生成和大模型，仍需算法与系统协同设计"
+            ]
+          },
+          {
+            "heading": "口径",
+            "points": [
+              "3 页 workshop 论文，部分具体延迟数值仅在图中给出"
+            ]
+          }
+        ],
+        "model_capacity_zh": "MolmoAct-7B 实测；10–100B 为模拟推演。"
+      },
+      {
+        "date": "2026-03-03",
+        "vendor": "Clark Atlanta University / Siemens",
+        "category": "车载/机器人",
+        "title": "LiteVLA-Edge: Quantized On-Device Multimodal Control for Embedded Robotics",
+        "title_zh": "Jetson Orin 上 150ms 本地 VLA 控制",
+        "url": "https://arxiv.org/abs/2603.03380",
+        "source_type": "论文",
+        "summary_zh": "作者把基于 SmolVLM-256M 的小型 VLA 模型做 4-bit GGUF 量化，用 llama.cpp 在 Jetson AGX Orin 上完全离线运行，并接入 ROS 2 的感知—推理—动作闭环。端到端平均延迟 150.5 ms（约 6.6 Hz）。",
+        "whats_new_zh": [
+          "Jetson AGX Orin 上端到端平均延迟 150.5 ms，约 6.6 Hz，完全离线（论文实测）",
+          "论文称比此前基线提升 220%",
+          "流程：FP32 监督微调 → 4-bit GGUF 后训练量化 → llama.cpp GPU 推理"
+        ],
+        "key_specs": {
+          "gpu": "NVIDIA Jetson AGX Orin",
+          "other": "llama.cpp 运行时，ROS 2 集成"
+        },
+        "edge_ai_impact_zh": "通用的 llama.cpp 运行时已能支撑机器人端的小型多模态闭环控制，降低了端侧具身智能体的部署门槛。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2603.03380v1"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv",
+        "affiliation": "Clark Atlanta University; Siemens Corporation",
+        "authors": "Justin Williams; Kishor Datta Gupta; Roy George",
+        "deep_dive_zh": [
+          {
+            "heading": "定位",
+            "points": [
+              "作者明确说这不是新的策略算法，而是可复现的端侧部署路径，为后续任务级评测提供时延基线"
+            ]
+          },
+          {
+            "heading": "意义",
+            "points": [
+              "与 Google/Purdue 的 7B VLA 剖析对照：把模型压到 256M 级才能在 Orin 上接近实时；6.6 Hz 仍低于常用的 10 Hz 目标"
+            ]
+          },
+          {
+            "heading": "口径与局限",
+            "points": [
+              "论文只报告时延可行性，未做任务成功率评测",
+              "未给出功耗；Jetson AGX Orin 具体功耗模式未说明"
+            ]
+          }
+        ],
+        "model_capacity_zh": "SmolVLM-256M 蒸馏骨干，4-bit GGUF；端到端 150.5 ms。论文实测。"
+      },
+      {
+        "date": "2026-03-02",
+        "vendor": "Qualcomm",
+        "category": "数据中心(对端侧有参考)",
+        "title": "Building AI inference that scales: Inside the Qualcomm AI200 Rack, Card and AI Infrastructure Management Suite",
+        "title_zh": "AI200机架43TB内存，单卡跑350B",
+        "url": "https://www.qualcomm.com/news/onq/2026/03/ai-inference-that-scales-qualcomm-ai200-infrastructure-management-suite",
+        "source_type": "官方",
+        "summary_zh": "高通在 MWC 2026 展示 AI200 推理机架、加速卡和 AI 基础设施管理套件：整机架内存容量 43TB，现场演示单张 AI200 卡运行 3500 亿参数生成式模型，官方称单卡设计上可支持到 1 万亿参数模型，机架今年开始部署。",
+        "whats_new_zh": [
+          "AI200 机架内存容量 43TB（官方）",
+          "演示：单张 AI200 卡运行 350B 参数生成式 AI 模型；单卡设计支持最高 1T 参数模型",
+          "推出 AI Infrastructure Management Suite 管理机架级部署；AI200 机架“今年开始部署”",
+          "同月 Dragonwing 博客补充：Cloud AI 100 Ultra 单卡以 150W 运行 GPT-OSS 120B"
+        ],
+        "key_specs": {
+          "memory": "机架 43TB；单卡可容纳 350B 模型（演示）",
+          "power": "参考：Cloud AI 100 Ultra 单卡 150W 跑 GPT-OSS 120B（官方博客）",
+          "other": "未披露 AI200 卡的算力、内存类型与带宽"
+        },
+        "edge_ai_impact_zh": "对端侧的参考价值在于架构同源：高通在数据中心验证的大容量低功耗内存方案，可能反哺 PC/边缘一体机上的大模型部署。",
+        "evidence_urls": [
+          "https://www.qualcomm.com/news/onq/2026/03/how-qualcomm-dragonwing-powers-industrial-edge-ai"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "与端侧的关系",
+            "points": [
+              "高通把 Hexagon NPU 架构延伸到数据中心，AI200 走“大容量 LPDDR 换带宽”的路线，与端侧 NPU 同源",
+              "Cloud AI 100 Ultra 150W 跑 120B 的案例被高通用来推销“本地机房/边缘一体机”，介于设备端与云之间"
+            ]
+          },
+          {
+            "heading": "口径注意",
+            "points": [
+              "“可跑 350B/1T”是容量口径；未披露带宽，按硬规则不能据此推断生成速度",
+              "AI200 发布于 2025 年 10 月，本条增量是 MWC 的机架形态、管理软件与 43TB 数字"
+            ]
+          },
+          {
+            "heading": "部署时间",
+            "points": [
+              "官方称 AI200 机架今年开始部署",
+              "AI Infrastructure Management Suite 用于机架级运维与部署管理"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方口径：单卡演示 350B，设计上限 1T 参数（容量口径，不代表速度）；未披露 tok/s 与带宽，无法推算解码速度。"
+      },
+      {
+        "date": "2026-03-02",
+        "vendor": "Apple",
+        "category": "数据中心(对端侧有参考)",
+        "title": "Some Apple AI servers are reportedly sitting unused on warehouse shelves, due to low Apple Intelligence usage",
+        "title_zh": "报道：PCC 利用率仅约 10%",
+        "url": "https://9to5mac.com/2026/03/02/some-apple-ai-servers-are-reportedly-sitting-unused-on-warehouse-shelves-due-to-low-apple-intelligence-usage/",
+        "source_type": "媒体",
+        "summary_zh": "The Information 报道（9to5Mac 转述），Apple 的 Private Cloud Compute 平均只用了约 10% 容量，部分已生产的服务器闲置在仓库；同时 PCC 所用芯片（据信为改造的 M2 Ultra）不足以运行 Gemini 级前沿模型，因此 Google 将在自家数据中心为新 Siri 运行服务器，并遵守 Apple 的隐私标准。",
+        "whats_new_zh": [
+          "报道：PCC 平均利用率约 10%",
+          "报道：部分已制造的 Apple 服务器闲置在仓库",
+          "报道：PCC 芯片据信为改造的 M2 Ultra，算力不足以跑新 Siri 所用的 Gemini 模型",
+          "报道：Google 负责在其数据中心运行 Siri 服务器（此前彭博也有类似报道）"
+        ],
+        "key_specs": {
+          "other": "PCC 芯片：据信为改造 M2 Ultra（报道口径，未经 Apple 确认）"
+        },
+        "edge_ai_impact_zh": "Apple 自建私有云跑不动前沿模型，意味着 Apple 平台上的智能体将长期是端侧模型做本地理解与执行、Google 云端模型做重推理的混合形态。",
+        "evidence_urls": [
+          "https://9to5mac.com/2026/03/20/apples-gemini-powered-siri-upgrade-could-still-arrive-this-month/"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "口径",
+            "points": [
+              "媒体报道（The Information），付费原文未直接打开，以 9to5Mac 转述为准；Apple 未回应",
+              "与上月 Apple 官方宣布休斯敦 AI 服务器提前出货（2 月 24 日，见上月雷达）形成反差：服务器在扩产，但利用率低"
+            ]
+          },
+          {
+            "heading": "端云分工的含义",
+            "points": [
+              "Apple Intelligence 的架构是端侧模型 + PCC；如果新 Siri 的重活交给 Google 服务器，PCC 的角色会被削弱",
+              "端侧仍承担隐私敏感与低延迟任务，云端前沿模型由合作方提供，这是「端侧小模型 + 第三方云大模型」的混合路线"
+            ]
+          },
+          {
+            "heading": "时间线",
+            "points": [
+              "1 月 12 日 Apple 与 Google 联合宣布基于 Gemini 的 Siri / Apple Intelligence 合作（9to5Mac 3 月 20 日回顾）",
+              "3 月 24 日 iOS 26.4 发布，仍未包含 Gemini 版 Siri；报道普遍指向 iOS 26.5"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-03-04",
+        "vendor": "Qualcomm / Nexa AI / Docker",
+        "category": "软件栈/工具链",
+        "title": "Qualcomm teams up with Nexa AI and Docker to bring AI to IoT and Robotics with NexaSDK for Linux",
+        "title_zh": "NexaSDK Linux版：Docker一键用上NPU",
+        "url": "https://www.qualcomm.com/developer/blog/2026/03/qualcomm-nexa-ai-docker-bring-ai-to-iot-robotics-with-nexasdk-linux",
+        "source_type": "官方",
+        "summary_zh": "高通联合 Nexa AI 与 Docker 推出 NexaSDK for Linux，以 Docker 镜像形式提供直通 Hexagon NPU/GPU/CPU 的统一推理运行时，首批面向 Dragonwing IQ9 与 RB3 Gen 2。开发者一条 docker run 即可在 IoT 设备上跑 LLM、VLM、ASR、嵌入/重排和视觉模型，免去手动搭建 NPU 驱动栈。",
+        "whats_new_zh": [
+          "支持平台：Dragonwing IQ9（8 核 Kryo Gen 6 最高 2.36GHz、Adreno 663、NPU 50–100 dense TOPS）与 RB3 Gen 2（NPU 最高 12 dense TOPS）",
+          "IQ9 上已支持的 NPU 模型：AutoNeural（1.5B VLM）、LFM2/LFM2.5-1.2B、Granite-4.0-h-350M、EmbeddingGemma-300M、Jina-v2 重排、Parakeet-TDT-0.6B-v3、YOLOv12、RF-DETR 分割等",
+          "RB3 Gen 2 目前只支持 ConvNeXt-Tiny 一个视觉模型",
+          "支持交互式 CLI 和 REST 服务两种模式；演示在 IQ9 上用 1.5B VLM 对视频关键帧逐帧理解"
+        ],
+        "key_specs": {
+          "cpu": "IQ9：8 核 Kryo Gen 6，最高 2.36GHz",
+          "gpu": "IQ9：Adreno 663，最高 800MHz",
+          "npu": "IQ9：50–100 dense TOPS；RB3 Gen 2：最高 12 dense TOPS",
+          "other": "Linux ARM64 Docker 镜像，统一 NPU/GPU/CPU 接口"
+        },
+        "edge_ai_impact_zh": "Docker 化的 NPU 运行时降低了工业/机器人设备部署本地多模态智能体的工程门槛，但模型目前以 1B 级为主，适合语音交互、视频摘要等轻量任务。",
+        "evidence_urls": [],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "解决的问题",
+            "points": [
+              "Linux IoT 的发行版、内核和厂商驱动碎片化，使 NPU 推理部署难以复现；容器化把 NPU 栈与宿主 OS 隔离",
+              "升级 SDK 只需拉新镜像，适合批量部署的工业设备"
+            ]
+          },
+          {
+            "heading": "模型覆盖与局限",
+            "points": [
+              "覆盖 LLM、VLM、嵌入、重排、ASR、检测/分割，已能拼出本地 RAG + 语音 + 视觉的完整智能体管线",
+              "模型规模集中在 1.5B 以下，RB3 Gen 2 只有一个视觉模型，入门级平台的生成式 AI 支持仍很有限"
+            ]
+          },
+          {
+            "heading": "与 PC 版的关系",
+            "points": [
+              "同月 3 月 19 日博客介绍 Nexa SDK 在骁龙 X PC 上的 NPU 支持，Linux 版把同一套运行时带到 Dragonwing IoT",
+              "Linux 版模型以 1B 级为主，PC 版约 4B 级，反映两类平台 NPU 与内存差距"
+            ]
+          }
+        ],
+        "model_capacity_zh": "官方列出的 IQ9 NPU 模型最大为 1.5B VLM（AutoNeural）和 1.2B LLM（LFM2.5），均未给 tok/s。"
+      },
+      {
+        "date": "2026-03-03",
+        "vendor": "Google",
+        "category": "软件栈/工具链",
+        "title": "March Pixel Drop: New personalization and AI tools",
+        "title_zh": "3 月 Pixel Drop：多步任务上线",
+        "url": "https://blog.google/products-and-platforms/devices/pixel/march-2026-pixel-drop/",
+        "source_type": "官方",
+        "summary_zh": "Google 3 月 Pixel Drop 把 2 月 25 日公布的 Gemini 多步任务（beta）带到 Pixel：Gemini 可在后台操作 App 完成订菜、叫车等任务，Pixel 10 系列另有查看/终止任务的控制界面。Magic Cue 可在聊天中调出 Gemini 推荐餐厅，诈骗检测扩展到法、意、西、墨、德、日六国。",
+        "whats_new_zh": [
+          "Gemini 多步任务 beta：后台与 App 协作完成订菜、叫车，仅限部分 App、18 岁以上；官方提示「Supervise closely」",
+          "任务查看/终止控件：仅 Pixel 10、10 Pro、10 Pro XL",
+          "Magic Cue + Gemini 餐厅推荐：Pixel 10 系列（含 10 Pro Fold，不含 10a）",
+          "通话诈骗检测：新增法国、意大利、西班牙、墨西哥、德国、日本，Pixel 9 及以上（不含 A 系列）",
+          "Call Notes 进入印度（Pixel 10 系列）；Pixel Watch 3 获得单手手势"
+        ],
+        "key_specs": {
+          "other": "功能按 Pixel 10 / Pixel 9 分档；页面未说明哪些功能在端侧运行"
+        },
+        "edge_ai_impact_zh": "Google 把「后台代用户操作 App」的手机智能体推到自家机型，但仍是云端规划为主；功能按 Pixel 9/10 分档，说明端侧能力受 Tensor 代际和内存限制。",
+        "evidence_urls": [
+          "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-march-2026/",
+          "https://9to5google.com/2026/03/03/pixel-watch-march-2026-feature-drop/"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "相对上月的增量",
+            "points": [
+              "多步任务在 2 月 25 日以 Galaxy S26 和部分 Pixel 10 为首发公布（见上月雷达），本次是作为 Pixel 系统更新正式下发",
+              "新增的是 Pixel 10 专属的任务管理界面，以及诈骗检测的地区扩展"
+            ]
+          },
+          {
+            "heading": "端侧与云端",
+            "points": [
+              "页面没有提到 Gemini Nano、Tensor 或端侧处理；Circle to Search 新功能注明需要联网",
+              "诈骗检测限 Pixel 9 及以上、任务管理限 Pixel 10，页面没有说明分档原因，也没有说明执行位置"
+            ]
+          },
+          {
+            "heading": "可穿戴侧",
+            "points": [
+              "Pixel Watch 3 获得此前仅 Pixel Watch 4 有的单手手势（双捏、转腕）",
+              "Pixel Watch 2 及以上支持转腕贴卡的 Express Pay；Pixel Watch 4 卫星 SOS 扩展到加拿大、欧洲等地"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-03-02",
+        "vendor": "北京大学",
+        "category": "软件栈/工具链",
+        "title": "HeRo: Adaptive Orchestration of Agentic RAG on Heterogeneous Mobile SoC",
+        "title_zh": "手机 SoC 上调度智能体 RAG 的 HeRo",
+        "url": "https://arxiv.org/abs/2603.01661",
+        "source_type": "论文",
+        "summary_zh": "北大团队针对手机上的智能体 RAG（多阶段、多个模型、动态流程）提出调度框架 HeRo。它为每个子阶段和每种“模型—处理器”组合建立性能模型，考虑负载形状和共享内存带宽争用，再在线决定子阶段拆分、加速器映射和并发度。在两台骁龙手机上，端到端延迟最多降低 10.94 倍。",
+        "whats_new_zh": [
+          "相对现有部署策略，端到端延迟最多降低 10.94 倍（论文实测）",
+          "测试设备：Redmi K80（骁龙 8 Gen 3，Hexagon v75 INT8 34 TOPS，Adreno 750 FP16 2.8 TFLOPS，12 GB LPDDR5X 76.8 GB/s）与 OnePlus 13（骁龙 8 Elite，Hexagon v79 INT8 50 TOPS，Adreno 830 FP16 3.4 TFLOPS，24 GB LPDDR5X 84.8 GB/s）",
+          "调度器包含三部分：按形状拆分子阶段、按关键路径映射加速器、按带宽控制并发"
+        ],
+        "key_specs": {
+          "npu": "Hexagon v75（34 TOPS INT8）/ v79（50 TOPS INT8），论文表格口径",
+          "gpu": "Adreno 750（FP16 2.8 TFLOPS）/ Adreno 830（FP16 3.4 TFLOPS）",
+          "memory": "LPDDR5X，76.8 GB/s（12 GB）与 84.8 GB/s（24 GB）",
+          "cpu": "Kryo 8 核最高 3.4 GHz / Oryon 8 核最高 4.5 GHz"
+        },
+        "edge_ai_impact_zh": "手机端智能体的工作负载是“多模型流水线”而非单一 LLM。HeRo 说明在同一颗 SoC 上合理分配 CPU/GPU/NPU 并控制带宽争用，可以带来数倍到十倍级的延迟差距。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2603.01661v1"
+        ],
+        "confidence": "high",
+        "venue": "arXiv（DAC 2026 录用）",
+        "affiliation": "Peking University; Northwestern Polytechnical University",
+        "authors": "Maoliang Li; Jiayu Chen; Zihao Zheng",
+        "deep_dive_zh": [
+          {
+            "heading": "手机 SoC 的三个特性",
+            "points": [
+              "加速器亲和性强：嵌入、重排、生成等不同模型在 CPU/GPU/NPU 上的效率差异大",
+              "对张量形状敏感：NPU 适合固定形状，动态长度会退化",
+              "CPU、GPU、NPU 共享 LPDDR 带宽，并发运行时会互相拖慢"
+            ]
+          },
+          {
+            "heading": "调度方法",
+            "points": [
+              "离线 profiling 得到各子阶段在各处理器上的延迟与争用降速模型",
+              "在线调度器按依赖关系动态安排，带宽敏感的阶段限制并发"
+            ]
+          },
+          {
+            "heading": "意义与局限",
+            "points": [
+              "这是 DAC 2026 论文，按 arXiv v1 日期收录；论文只在高通平台上做实验，未覆盖联发科与苹果"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-03-01",
+        "vendor": "Apple",
+        "category": "软件栈/工具链",
+        "title": "Apple replacing Core ML with modernized Core AI framework for iOS 27 at WWDC",
+        "title_zh": "爆料：iOS 27 用 Core AI 取代 Core ML",
+        "url": "https://9to5mac.com/2026/03/01/apple-replacing-core-ml-with-modernized-core-ai-framework-for-ios-27-at-wwdc/",
+        "source_type": "媒体",
+        "summary_zh": "彭博 Mark Gurman 在 Power On 通讯中爆料，Apple 计划在 WWDC 发布名为 Core AI 的新框架，取代已有多年的 Core ML，帮助开发者把外部 AI 模型集成进 App。这是 Apple 端侧推理框架的一次重命名甚至重构，细节要到 6 月才会公布。",
+        "whats_new_zh": [
+          "爆料：新框架名为 Core AI，定位是取代 Core ML",
+          "爆料：用途仍是帮助开发者在 App 中集成外部 AI 模型",
+          "同一报道称 Gemini 驱动的新 Siri 最早随 iOS 26.5 推出",
+          "3 月 23 日 Apple 官方宣布 WWDC26 于 6 月 8–12 日举行，新闻稿明确写「AI advancements」"
+        ],
+        "key_specs": {
+          "other": "爆料，无技术细节"
+        },
+        "edge_ai_impact_zh": "如果属实，2026 年下半年 Apple 平台的端侧模型部署接口会换代，第三方端侧模型和智能体应用需要准备迁移。",
+        "evidence_urls": [
+          "https://www.apple.com/newsroom/2026/03/apples-worldwide-developers-conference-returns-the-week-of-june-8/"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "口径",
+            "points": [
+              "爆料（Bloomberg / Mark Gurman），9to5Mac 转述；Apple 未确认",
+              "报道没有涉及 API、模型格式或是否新增对 GPU Neural Accelerator / Neural Engine 的调度能力"
+            ]
+          },
+          {
+            "heading": "为什么值得关注",
+            "points": [
+              "Core ML 是 iOS/macOS 上调用 Neural Engine 的主要官方途径；框架换代可能改变第三方模型部署到 ANE 的方式",
+              "M5 系列把 AI 算力重心放到 GPU 矩阵单元，框架层若重构，可能统一 ANE 与 GPU 的调度（推断，待 WWDC 验证）"
+            ]
+          },
+          {
+            "heading": "时间线",
+            "points": [
+              "3 月 1 日爆料，3 月 23 日 Apple 官方确认 WWDC26 为 6 月 8–12 日，并预告「AI advancements and exciting new software and developer tools」",
+              "官方预告与爆料方向一致，但没有提到 Core AI 名称"
+            ]
+          }
+        ]
+      }
+    ],
+    "overview": "MWC 与 Apple 新品周（02-27~03-05），本周 22 条。Apple 三天发五款带 AI 卖点的设备：M5 Pro/Max 首次用两颗 3nm 裸片拼成一颗 SoC，M5 Max 最高 128GB、614GB/s，官方称 LLM prefill 最高比 M4 Pro/Max 快 4 倍；MacBook Neo 用 A18 Pro、固定 8GB，599 美元起；iPad Air 换 M4、内存升到 12GB。MWC 上高通发布 Wear Elite，3nm、NPU 12 TOPS、官方称可跑 2B 模型，媒体给出的内存只有 16-bit LPDDR5-6400。联发科让天玑 9500 在手机端跑全模态模型，眼镜只做采集和显示，参数量未披露。论文侧，Jetson Thor 算力是 Orin 的 5 倍，VLA 端到端延迟只快 1.4 倍。爆料：iOS 27 用 Core AI 取代 Core ML；报道称 PCC 平均利用率仅约 10%。",
+    "takeaways_zh": [
+      "Apple 的“AI 快 4 倍”说的是 prefill：M5 Max 带宽 614GB/s 只比 M4 Max 的 546GB/s 高约 12%，27B 稠密 4bit 模型 decode 上限约 38 tok/s（推算），长输出速度没有跟着算力翻倍。",
+      "端侧 AI 在向手表、眼镜扩散，但重计算留在手机：Wear Elite 跑 2B INT4 的 decode 上限约 12 tok/s（推算），联发科眼镜方案干脆把全部算力放回天玑 9500。",
+      "带宽墙在机器人平台上表现得最直接：Thor 对 Orin 的 1.4 倍延迟改善，与两者 273/203GB/s 的带宽比几乎一致（论文实测 + 推算）。"
+    ]
   }
 }
