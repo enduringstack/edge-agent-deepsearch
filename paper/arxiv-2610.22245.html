@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Disagreement-Guided Weak-to-Strong Routing</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Disagreement-Guided Weak-to-Strong Routing</h1>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-10-15 · Sima Noorani; Shayan Kiyani; George Pappas; Hamed Hassani / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:调度服务</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">边缘设备上的小模型能力有限，需要时可以把问题转给更强的大模型，但判断“何时转交”通常要依赖正确性标注。这篇论文提出只看模型之间分歧程度的路由方法，不需要标注。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在智能体任务和单轮任务上，该方法在不用标注的情况下有效平衡了路由成本与准确率；即便有正确性标注可用于训练，基于分歧的路由也能超过直接预测正确性的方法。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先刻画允许小模型本地多次采样时的最优弱到强路由策略，再推导出用强弱模型回答分歧来近似它的方法；强模型越接近真实分布，近似越准。</span></div>
+<div class="score-reason">评分依据：直接面向边缘小模型与云端大模型的协同路由，属于端云协同技术栈，但没有真实设备实验；免标注的分歧路由有理论刻画。作者来自宾夕法尼亚大学。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.22245" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

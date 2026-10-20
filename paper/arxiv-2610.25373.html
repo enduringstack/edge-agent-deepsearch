@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MemDerive: A Diagnostic Benchmark for Agent Memory over Evolving Data</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>MemDerive: A Diagnostic Benchmark for Agent Memory over Evolving Data</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-10-18 · Sen Gao; Yongan Li; Han Chen; Bingsheng He; Ming Wu; Jason Zeng; Michael Heinrich; Shixuan Sun / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一个诊断型基准，专门检查智能体记忆在数据不断变化时能否正确推出“派生状态”（比如哪些事已完成、哪些条件仍成立），并能定位错在哪一步。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">10 个场景共 4692 个事件、1503 个查询；被测的 4 个记忆系统在派生状态上全部不如简单 BM25 检索，而同一答题模型拿到支撑事件时准确率可达 96.01%；多数失败是该取的中间状态没被检索出来。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用符号化方式定义场景，借 Datalog 推出标准答案并记录推导 DAG，再渲染成带干扰项的自然语言历史，逐节点探测记忆系统漏掉了什么。</span></div>
+<div class="score-reason">评分依据：面向长期运行智能体的记忆评测，没有端侧部署，相关度低；可追溯到推导节点的诊断设计有新意。PDF 首页显示部分作者来自 Zero Gravity Labs（0g.ai 邮箱），主体为新加坡国立大学与上海交大。代码与数据已开源。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.25373" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

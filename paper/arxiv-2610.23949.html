@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DS-Net: A Dynamic Split Network for Edge-Cloud Collaborative Inference</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>DS-Net: A Dynamic Split Network for Edge-Cloud Collaborative Inference</h1>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-10-09 · Xinyun Zhang; Li Wang; Lei Jin; Lianming Xu; Zhu Han / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:高效推理</span><span class="tag">硬件:Jetson</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">端云协同推理要把网络切成端上一段、云上一段，但网络或设备一变就得换切分点，以往要为每个切分点单独加载模型；DS-Net 让一个模型内就能在多个切分点间快速切换。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">内存开销降低 74.6%，切换延迟达到毫秒级；在 Jetson Nano 上、10 Mbps 带宽下，COCO 精度比最好的协同方法高 1.2%，延迟降低 42.5%，吞吐提升 1.8 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在单一模型中设置多个可选切分点，并用分层补偿弥补切分和高倍压缩造成的特征偏移：各切分点做局部分布校准，再做面向任务的全局补偿；按样本难度和实时资源选择切分点与补偿方式。</span></div>
+<div class="score-reason">评分依据：在 Jetson TX2/Nano 加 RTX 4090 云端的真实端云环境中验证，端侧相关度高；单模型多切分点加分层补偿是扎实的工程创新，但属于普通端侧推理，不是智能体。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.23949" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

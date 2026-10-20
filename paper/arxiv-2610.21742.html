@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sparse Federated Echo State Networks for Time-Series Classification via Smooth-L1 Regularization</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Sparse Federated Echo State Networks for Time-Series Classification via Smooth-L1 Regularization</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-10-15 · Gengcheng Lyu; Manuel Röder; Frank-Michael Schleif / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:联邦学习</span><span class="tag">应用:IoT命令</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">回声状态网络（一种很轻的储备池计算模型）适合在资源受限设备上处理时序数据，但它的读出层是稠密的。这篇论文用平滑 L1 正则让读出层变稀疏，并支持联邦训练。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 7 个时序分类基准上，集中式训练读出层稀疏度 77%–95%，联邦训练 75%–95%；其中 5 个基准的精度与最强稠密基线相差在 0.7 个点（集中式）和 1.6 个点（联邦）以内，联邦二阶更新只需几轮即收敛。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把 L1 正则换成二阶可导的平滑近似，从而能用牛顿法训练，并据此设计牛顿步式的联邦聚合；同一个收缩阈值适用于所有数据集。</span></div>
+<div class="score-reason">评分依据：目标是 IoT 和边缘设备上的轻量时序模型，稀疏后同步压缩存储、推理计算和下发通信，但没有真机测试；方法属于常规正则化加联邦聚合的组合。作者来自德国维尔茨堡-施魏因富特应用技术大学，代码已开源。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.21742" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Toward Collective Model Intelligence: Characterizing and Coordinating Models</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Toward Collective Model Intelligence: Characterizing and Coordinating Models</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-10-17 · SinapisAI Team; Jian-Dong Liu; Qun Dai; Zhendong Du; Guannan Lai; Hao-Yu Liu; Yi-Fan Ma; Zi-Yu Mao / arXiv</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:云端serving</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">模型越来越多，但如何用有限评测摸清每个模型的能力、按任务挑选和组合模型、再高效地调度执行，这套系统给出从评估、编排到服务的整体方案。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在有限评测下能力估计误差更低；在 9 个公开基准上，Mio 1.0 Lite 平均得分最高、平均成本最低，单次请求成本比得分最好的其他方案低 73.7% 到 97.5%；预热的共享缓存让模型文件获取最多快 23.3 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">Model Eval 结合查询级性能预测与跨领域预测构建能力画像；Mio 按任务和成本选择、组合互补模型；Mos 把模型选择与执行分离，负责端点调度和共享部署分发。</span></div>
+<div class="score-reason">评分依据：主要是云端多模型路由与服务系统，与端侧只有宽泛关联（相关度 3）。整体系统工程整合为主（贡献 5）。PDF 首页署名 SinapisAI Team，并给出 sinapis.ai 官网。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.24739" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

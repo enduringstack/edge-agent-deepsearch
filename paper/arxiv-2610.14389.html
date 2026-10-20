@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Measuring the Inference Energy Efficiency of Open-Weight LLMs across Benchmarks, Reasoning Modes, and Hardware</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Measuring the Inference Energy Efficiency of Open-Weight LLMs across Benchmarks, Reasoning Modes, and Hardware</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-10-09 · Zeyu Yang; Wes Armour / arXiv</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">方向:量化</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">系统测量开源大模型“拿到同样分数要花多少电”：覆盖 86 个模型检查点、7 个基准、6 种从消费级显卡到 8 卡服务器的硬件。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">多数配置不在分数-能耗帕累托前沿上，中位能耗是同等或更高分配置的 2.6 到 4.8 倍，最多相差 27 倍；开启思考模式平均能耗增加约 3.7 倍；用生成 token 数估算能耗会把 18% 到 24% 的模型对排错；FP8 约省四分之一能耗且分数基本不变；换硬件主要是整体缩放能耗，不改变模型排名。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在统一的服务设置和输出预算下，直接测量每个模型在各基准、推理模式和硬件上的实际能耗，与分数一起画出帕累托前沿进行比较。</span></div>
+<div class="score-reason">评分依据：推理能耗测量对端侧选型有参考价值，但硬件以 GPU 和服务器为主，不含手机或嵌入式设备（相关度 4）；规模大、结论实用，但属测量研究（贡献 5）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.14389" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

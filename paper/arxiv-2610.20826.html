@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task-Phase-Conditioned Expert Routing Is Not a Reliable Proxy for Quantization Sensitivity in MoE FFN Tensors</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Task-Phase-Conditioned Expert Routing Is Not a Reliable Proxy for Quantization Sensitivity in MoE FFN Tensors</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-10-14 · Yifan Liu / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:MoE</span><span class="tag">方向:推理框架</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">混合专家模型做混合精度量化时，有人想用专家路由统计来判断哪些层更怕量化。这篇论文用实验检验这个想法，结论是它并不可靠。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在约 4.0 bpw 的平缓预算下，按路由统计重新分配比特与均匀分配统计上无差别；在约 2.7 bpw 的激进预算下，按路由分配与随机分配相差不到 1 个标准误，并出现超过 4 个标准误的显著损失，且在三组独立权重上复现。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 ik_llama.cpp 中为 Qwen-3.6-35B-A3B 搭建路由采集与分析流程，用路由熵、变异系数等合成敏感度分数，在固定平均比特预算下用坐标下降分配各层精度，并设随机分配作对照。</span></div>
+<div class="score-reason">评分依据：基于 llama.cpp 系推理引擎的 MoE 本地量化，属于端侧推理技术栈；负结果研究有警示价值，但贡献主要是否定一个启发式。作者为 UIUC 学生。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.20826" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

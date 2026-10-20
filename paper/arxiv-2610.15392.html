@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stateless Stochastic Computing for Generative AI on Superconducting Logic: A Model-Hardware Co-Design</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Stateless Stochastic Computing for Generative AI on Superconducting Logic: A Model-Hardware Co-Design</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-10-11 · Mehdi Kamal; Massoud Pedram / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:能耗功耗</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">超导单磁通量子逻辑速度极快、开关能耗极低，但很难存状态。本文把一个小型图像生成模型和超导电路协同设计，让整条数据通路完全不保存状态，用随机比特流计算来跑生成式 AI。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">采用 SFQ 设计流程综合后，随机比特流可以容忍放宽的路径平衡，使一级硬连线电路的约瑟夫森结数量减少 40% 到 47%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">生成模型用四步欧拉的类条件流匹配，每层是只由多路选择器构成的蝶形分解线性映射；ReLU 用无状态的与非门实现，并直接在硬件比特流表示上训练模型。</span></div>
+<div class="score-reason">评分依据：属于新型计算硬件上的 AI 加速探索，与端侧设备没有直接关系；模型与超导电路的无状态协同设计有新意。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.15392" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

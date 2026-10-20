@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Optimizing a 200,000-line Python codebase overnight with Gemini 4 Argon</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Optimizing a 200,000-line Python codebase overnight with Gemini 4 Argon</h1>
+<div class="meta"><span class="score">8</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-10-13 · Google / Google</div>
+<div class="tags"><span class="vendor-tag">Google</span><span class="tag">应用:代码</span><span class="tag">方向:工具调用</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">谷歌分享让 Gemini 4 Argon 无人值守跑一整晚，优化 20 万行的 ADK Python 代码库性能的完整过程，包括提示词、技能规则文件和人工评审取舍。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">11 小时的夜间运行让 ADK 长会话的内存会话准备时间缩短约 40%，冷启动导入快 21%；最终合入两项优化、否决四项，第二轮跑完全部 16892 个单元测试。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在仓库 .agents/skills 目录放入维护者规范，配合 Antigravity 的 /goal 模式在上下文压缩后保留目标，让智能体自行写基准、读代码、改代码并提交带前后数据的合并请求。</span></div>
+<div class="score-reason">评分依据：被优化的是智能体框架 ADK 的运行时开销，对智能体运行效率有参考价值，但整个过程跑在云端模型上、与设备无关；属于实践案例分享。</div>
+<div class="source"><a href="https://developers.googleblog.com/optimizing-a-200000-line-python-codebase-overnight-with-gemini-4-argon/" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

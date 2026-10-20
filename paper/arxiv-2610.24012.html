@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ChairNav: Cross-Embodiment Pre-training and Personalization for Long-Horizon Wheelchair Navigation</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>ChairNav: Cross-Embodiment Pre-training and Personalization for Long-Horizon Wheelchair Navigation</h1>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-10-15 · Junhua Huang; Zhizheng Liu; Honglin He; Xiang Zhang; Bolei Zhou / arXiv</div>
+<div class="tags"><span class="tag">应用:机器人</span><span class="tag">方向:多模态</span><span class="tag">硬件:Jetson</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">电动轮椅要在户外人行道上长距离自主行驶，以往要么只做室内建图导航，要么依赖昂贵传感器；ChairNav 把通用视觉导航基础模型改造成个性化的轮椅导航系统。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">预训练使横向平均位移误差降低 18%，后训练让两次用户接管之间的平均距离从 29.2 米提高到 57.4 米；在公里级城市人行道路线上 93.4% 的行驶时间为自主驾驶。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">三层数据金字塔：先用转换到轮椅视角的大规模跨机体导航数据预训练，再用少量轮椅示范中训练，最后用用户接管数据做后训练实现个性化；部署在带 RGB-D 相机和机载 NVIDIA Jetson 的商用电动轮椅上。</span></div>
+<div class="score-reason">评分依据：模型在轮椅机载 Jetson 上实时运行并完成公里级真实道路测试，端侧相关度高；但它是视觉导航控制策略，没有规划、记忆或工具调用闭环，不算端侧智能体。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.24012" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

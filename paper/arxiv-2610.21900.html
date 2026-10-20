@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TEM: Temporal State Tracking Memory for Large Language Model Agents</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>TEM: Temporal State Tracking Memory for Large Language Model Agents</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-10-15 · Pengfeng Song; Yunkai Zhuang; Liye Shi / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:RAG</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体的对话记忆里，同一个事实会随时间被更新，但旧值对后续问题仍可能有用。TEM 是一个无需训练、专门追踪事实版本变化的记忆框架。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 60 个人设、600 段对话构造的 420 个问题上，四个开源模型的关键实体命中率为 75.71%–97.62%；给历史记录打标签使命中率提升 17.14–55.95 个百分点；每个回答只用 94–118 个 token 证据，比会话级 RAG 少 48.75%–56.73%；LoCoMo 上比会话级 RAG 高 7.92 和 10.58 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把事实存成带来源的版本化记录，检索时按来源顺序排列相关版本并标出哪些已是历史值，再配合事件记忆和原始对话补细节。</span></div>
+<div class="score-reason">评分依据：属于智能体记忆运行时设计，证据更紧凑对资源受限部署有间接价值，但没有端侧实验；版本化记忆思路清晰但属增量改进。作者来自浙江万里学院。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.21900" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

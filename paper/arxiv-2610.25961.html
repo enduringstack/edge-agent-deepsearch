@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PaceVLA: Adaptive Temporal Action Quantization in Vision-Language-Action Models</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>PaceVLA: Adaptive Temporal Action Quantization in Vision-Language-Action Models</h1>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-10-19 · Hojin Jeon; Jimin Lee; Taekwan Kim; Nayoung Oh; Taeyoung Kim; Myungkyu Koo; Jinmo Koo; Joonwoo Ahn / arXiv</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让视觉-语言-动作模型执行得更快：动作可以粗放时就把多个细小动作合成一步，需要精细控制时再切回细粒度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 3 个多任务仿真基准和 6 个真实机器人任务上，执行效率提升且任务成功率保持不变，覆盖长程和灵巧操作等多种机器人形态。摘要未给出具体倍数。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">共享动作专家上挂多个不同时间粒度和预测长度的解码器，再用基于可量化程度的模式选择和上下文路由器在每一步决定用哪种执行模式。</span></div>
+<div class="score-reason">评分依据：减少执行步数对机器人上部署 VLA 有效率价值，但这里的“量化”指时间上的动作合并而非模型压缩，相关度中等偏低；属于纯动作策略，不算智能体闭环。作者部分署名创业公司 RLWRLD。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.25961" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

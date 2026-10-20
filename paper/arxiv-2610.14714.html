@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>&quot;Is Low Power Enough?&quot; Rethinking Energy Efficiency in High-Fidelity Sensing</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>&quot;Is Low Power Enough?&quot; Rethinking Energy Efficiency in High-Fidelity Sensing</h1>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-10-10 · Chae Young Lee; Lan Mei; Jesse Fonseca; Zerina Kapetanovic / arXiv</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">硬件:MCU</span><span class="tag">硬件:NPU</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">野外传感节点要拍照、录音并在本地跑 AI 时，“用最省电的芯片”反而更费电；作者论证应改用带神经网络加速器的高性能 MCU，干完活就深度休眠。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">STM32N6 功耗是低功耗 Apollo4 Plus 的 1.9 倍，但完成一次拍摄、存储、本地检测和 LoRa 发送快 9.9 倍，总能耗低 5.2 倍；同一模型推理能耗低 3.2 到 11.4 倍，还能放下准确率高 23 个点以上的模型。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">重新验证传感网的“快干完快睡”和“少发数据”两条原则：在本地完成检测后只发送小裁剪图而不是整张图，并对两款 MCU 做全流程实测对比。</span></div>
+<div class="score-reason">评分依据：在 STM32N6 与 Apollo4 Plus 两款真实 MCU 上做本地 AI 检测与全流程能耗实测，属明确的端侧部署（相关度 8）；结论对低功耗硬件选型有实际指导，方法以系统测量为主（贡献 6）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.14714" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>
