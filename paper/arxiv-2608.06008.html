@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Adaptive-WAM: Quality-Guided Early-Exit Planning from Intermediate Video-Diffusion Features</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-06 · Sining Ang; Yuguang Yang; Yan Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">大型视频扩散模型为自动驾驶提供丰富的时空先验，但现有世界-动作模型往往继承了迭代预测…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于高效推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-06 · Sining Ang; Yuguang Yang; Yan Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">自动驾驶的视频扩散“世界模型”规划器通常要完整生成未来视频，代价很高。Adaptive-WAM 发现中间层特征就足以解出好轨迹，于是让规划在质量够好时提前退出。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">NAVSIM 上自适应单轨迹规划 90.8 PDMS，固定出口 64 候选版本 92.6 PDMS，NAVSIM v2 上 89.9 EPDMS；在 A100 上平均端到端规划时延 170 毫秒，比固定第 15 块出口快约 10%，比完整深度快 47%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 Wan2.2-5B 扩散 Transformer 的若干块上挂轨迹扩散头，用轻量评分器判断当前轨迹质量，达标即停，否则从缓存的隐藏状态继续算到更深出口，省去视频去噪循环和 VAE 解码。</span></div>
+<div class="score-reason">评分依据：早退与按需分配计算深度能直接降低车载规划时延，属于可迁移到车端的高效推理技术，但时延在 A100 上测得（相关度 5）。质量感知多出口设计有新意（贡献 6）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.06008" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

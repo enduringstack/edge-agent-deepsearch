@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SparseDitto: Customizing GPU Kernels for Different Sparsity Patterns with LLM-Based Agentic System</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Shiyang Li; Guangyan Sun; Jinwei Tang; Yanzhi Wang; Mingyi Hong; Caiwen Ding / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">稀疏矩阵内核是科学计算、图分析和机器学习的基础。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、GPU等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-05 · Shiyang Li; Guangyan Sun; Jinwei Tang; Yanzhi Wang; Mingyi Hong; Caiwen Ding / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:编译部署</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">稀疏矩阵运算在 GPU 上的快慢取决于存储格式、执行调度和硬件是否匹配，SparseDitto 用大模型智能体自动为不同稀疏模式和 GPU 合成定制内核。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 SuiteSparse 矩阵上，几何平均比 cuSPARSE 快 2.68 倍（RTX PRO 6000）和 2.79 倍（H200），最高 146.61 倍；生成的 SpMM 内核让全批量 GCN 训练最多快 3.39 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先做稀疏结构分析并用学到的模板排序先验挑选表示与调度方案，再由大模型把方案生成 CUDA 代码，最后在目标 GPU 上实测性能迭代改进。</span></div>
+<div class="score-reason">评分依据：面向数据中心 GPU 的稀疏算子编译，与端侧推理只间接相关；用智能体联合搜索表示、调度和硬件映射的编译框架有一定新意，可借鉴到稀疏模型推理内核生成。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05033" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

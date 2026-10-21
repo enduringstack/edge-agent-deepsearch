@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Design-Time Optimization of Deep Neural Networks for Intermittent Learning on Microcontrollers</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-04 · Jakob Schubert; Maximilian Kasper; Maximilian Linke; Benedict Herzog; Mark Deutel; Axel Plinge; Dominik Seuss; Christopher Mutschler / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:MCU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作为能源不连续的微控制器设计端侧学习方案，让设备在随时可能断电的情况下选择可完成的神经网络与训练计划。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在记忆、能耗功耗、MCU。</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-04 · Jakob Schubert; Maximilian Kasper; Maximilian Linke; Benedict Herzog; Mark Deutel; Axel Plinge; Dominik Seuss; Christopher Mutschler / ITEM Workshop @ ECML PKDD 2026</div>
+<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:MCU</span><span class="tag">应用:fault-detection</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这项工作为靠能量采集供电、随时可能断电的微控制器设计端侧学习用的神经网络，在设计阶段就选出能在断续供电下完成训练的网络结构。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Cortex-M4 微控制器上用自编码器做异常检测验证，能耗预测器的加权绝对百分比误差为 16.6%，足以可靠地在断续约束下选择网络结构。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">构建硬件感知的能耗预测模型，按实现相关的计算和内存特征估算每层推理、训练及断电检查点的能耗，再结合多目标优化离线搜索网络结构，无需反复上板测试。</span></div>
+<div class="score-reason">评分依据：直接面向 MCU 上的断续供电端侧训练，并在 Cortex-M4 上验证，端侧相关度高；方法是能耗预测加多目标搜索的组合。论文被 ECML PKDD 2026 下属 ITEM 研讨会接收，作者来自弗劳恩霍夫集成电路研究所及多所德国高校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03589" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

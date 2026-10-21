@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CallScreenBench: Benchmarking On-Device Models as Phone Secretaries</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-02 · Simiao Ren / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span><span class="tag">硬件:手机</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">CallScreenBench 用手机秘书场景评测可在本地运行的低比特语言模型，重点考察它们替用户处理来电和自动执行任务的能力。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在量化、评测基准、手机。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-02 · Simiao Ren / arXiv</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:安全隐私</span><span class="tag">方向:量化</span><span class="tag">应用:语音</span><span class="tag">硬件:手机</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">CallScreenBench 是评测小语言模型充当“电话秘书”的基准：模型替机主接听陌生来电，来电者可能是骗子，要看机主是否认可它的处理方式。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在三个模型家族各一对 4 比特量化检查点（0.6B-4B）上，较大模型在服务、信息记录和合理性等指标上得分更高，但来电分诊的区分能力排序不同；只看诈骗识别率会奖励“一律怀疑”，脚本化的“挂断并复述”策略实体召回率竟达 1.000。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">只评测文本层的对话决策，设计五组自动化的通话与记录指标，每组尽量配上反向指标和不确定度估计，不合成总分排行榜，并用三个谨慎度诊断找出无工具代理的风险案例。</span></div>
+<div class="score-reason">评分依据：关注能放进手机的 4 比特小模型代人接电话这一端侧任务，但论文明确把语音识别、端到端时延和手机实机执行排除在范围外，被测代理也不调用工具，因此不算端侧 Agent。PDF 首页全部作者署名 Scam.ai，因此标注该公司。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01033" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

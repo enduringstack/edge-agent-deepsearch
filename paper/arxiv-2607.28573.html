@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Rethinking Inference-Time Scaling in Local Computer-Use Agents: Failure Modes and Compute Tradeoffs</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-07-30 · Woongkyu Lee; Jungwook Choi / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">方向:安全隐私</span><span class="tag">硬件:GPU</span><span class="tag">模型:Qwen</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项研究系统测试在个人电脑本地运行的电脑操作智能体，比较增加上下文、执行步数、规划结构和并行采样究竟能否提高任务成功率。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在 OSWorld 上，额外计算普遍很快出现收益递减；更长历史能提升轨迹稳定性，但无法持续提高任务成功率。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用 Qwen3-VL、UI-TARS 和 OpenCUA 等本地模型，分别扩展上下文、时间步、两阶段规划和并行采样，并分析失败类型如何变化。</span></div>
-<div class="score-reason">评分依据：PC 本地运行完整电脑操作智能体，直接回答端侧 Agent 的算力该花在哪里。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-07-30 · Woongkyu Lee; Jungwook Choi / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:评测基准</span><span class="tag">方向:多模态</span><span class="tag">方向:MoE</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这项研究系统测试本地可部署的小型电脑操作智能体，比较多给历史上下文、多走几步、拆成规划加执行两阶段、并行多次采样这几种追加算力的方式，究竟能不能提高任务成功率。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 OSWorld 上评测 Qwen3-VL-8B/30B-A3B、UI-TARS-1.5-7B 和 OpenCUA-7B：追加算力普遍收益递减；增加历史能提升轨迹稳定性和成功率但很快饱和，失败转为提前误报成功；增加步数减少了卡步但成功率没有明显提升；两阶段拆分带来规划和格式开销；并行采样能部分缓解失败但计算代价很大。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把推理时扩展拆成上下文、时间、结构、并行四个维度分别实验，并对失败轨迹分类统计，观察每种追加算力的方式如何改变失败模式。</span></div>
+<div class="score-reason">评分依据：研究对象是面向个人电脑本地部署的小模型电脑操作智能体，对端侧 Agent 如何分配有限算力很有参考价值；但全部实验在 A100 服务器上用 vLLM 运行，没有真机证据。作者来自汉阳大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.28573" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

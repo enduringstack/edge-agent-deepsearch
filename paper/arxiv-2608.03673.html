@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CausalOPD: First-Wrong-Step Supervision for Distilling Causal Chain Reasoning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Jian Zhang; Bingyi Wang; Yizhi Liu / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">临床诊断、法律判决、工业故障诊断等关键推理任务需要步骤依赖的因果链，早期…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于蒸馏、安全隐私、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-04 · Jian Zhang; Bingyi Wang; Yizhi Liu / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">临床诊断、法律判决、工业故障诊断这类任务要求推理链每一步都对，出于隐私和时延考虑希望蒸馏成可本地部署的小模型。CausalOPD 让教师只纠正学生推理中第一个出错的步骤。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在三个领域上，推理路径正确率比序列级在线过程蒸馏平均高 23.4 个百分点，“答案对但推理错”的比例从 15.7% 降到 4.4%；8B 领域学生模型的路径正确率在所有领域都超过参与对比的两个商用闭源模型。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">知识增强的教师先给出遵循领域因果规则的推理轨迹；学生自行生成推理，教师定位第一个违反约束的步骤，从正确前缀开始用短程强化学习修复，并按证据、机制、结论三个阶段循序推进。</span></div>
+<div class="score-reason">评分依据：目标是得到可本地部署的 8B 领域推理模型，属于端侧小模型的上游训练环节，相关度中等；“首个错误步骤”监督加分阶段课程有一定新意。作者来自浙江大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03673" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

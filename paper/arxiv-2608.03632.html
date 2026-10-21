@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>When Teachers Mislead: Spurious-Signal-Aware On-Policy Distillation</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Yinuo Jiang; Yongjie Ye; Zhou Tao; Xiang Zhuang; Qiang Zhang; Huajun Chen; Tiankai Li / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在策略蒸馏（OPD）通过用密集 token 级教师信号监督学生采样轨迹，迁移教师能力。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于蒸馏、多模态、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-08-04 · Yinuo Jiang; Yongjie Ye; Zhou Tao; Xiang Zhuang; Qiang Zhang; Huajun Chen; Tiankai Li / arXiv</div>
+<div class="tags"><span class="vendor-tag">ByteDance</span><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在线蒸馏用教师模型逐词监督学生自己生成的答案，但有些逐词信号其实来自语言先验或格式套路，和输入无关，却会产生很大梯度。SA-OPD 专门把这类“误导信号”找出来过滤掉。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在大语言模型和视觉语言模型两类设置下都稳定优于普通在线蒸馏和其他选择性蒸馏方法；摘要未给出具体数值。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用一个轻量代理估计每个词的蒸馏信号是否真正依赖输入，只过滤那些既与输入关系弱、又蒸馏差异极大的词，避免高影响的伪更新。</span></div>
+<div class="score-reason">评分依据：蒸馏是把能力迁移到小模型的常用手段，与端侧小模型训练间接相关，相关度偏低；对蒸馏信号做输入依赖性筛选有一定新意。arXiv PDF 首页署名显示作者 2、3、7（含通讯作者）来自字节跳动，第一作者在字节实习。 作者机构依据：arXiv PDF 首页署名 ByteDance（PDF 首页作者 Yongjie Ye、Zhou Tao、Tiankai Li 署名 ByteDance，通讯作者使用 bytedance.com 邮箱，第一作者注明在字节跳动实习期间完成）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03632" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

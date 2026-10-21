@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Agentic self-driving microscopy benchmarks support qualification but do not necessarily generalize to unseen tasks</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Nathan S Johnson; Ian Abshire / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM agent 正被越来越多地开发用于控制显微镜、同步辐射光源等大量科学表征工具…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准、RAG等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">6</span> <span class="tier company">公司项目</span>  2026-08-05 · Nathan S Johnson; Ian Abshire / arXiv</div>
+<div class="tags"><span class="vendor-tag">Carl Zeiss</span><span class="tag">方向:评测基准</span><span class="tag">方向:工具调用</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究用大模型智能体控制电子显微镜做科学实验时，如何选择智能体架构，以及基准测试能否预测它在新任务上的表现。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">评测了 105 种智能体配置、1949 次测试运行和 49109 次检索，不同配置在时延、token、成本和失败模式上差异明显；但基于架构和测试结果训练的预测模型无法可靠预测新任务表现。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">搭建显微镜任务基准和调用轨迹记录框架，系统比较单/双/三智能体拓扑、五种大模型、检索与上下文参数及操作约束，共 53 个测试项。</span></div>
+<div class="score-reason">评分依据：智能体控制实体科研仪器，有工具调用和环境交互，但模型运行在云端或工作站，与端侧部署关联很弱；贡献是经验性评测。 作者机构依据：arXiv PDF 首页署名 Carl Zeiss（PDF 首页两位作者均署名 Carl Zeiss Research Microscopy Solutions）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05266" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

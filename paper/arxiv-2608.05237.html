@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>In-Context Forcing: Uncovering Context Effects in Autoregressive Video Diffusion</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Lingxiao Yang; Liu Liu; Moran Li; Han Feng; Wenjian Cao; Jiangning Zhang; Ye Shi / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">当前少步自回归视频扩散模型依赖之前完全去噪的干净帧作为当前帧所有去噪步骤的上下文。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于高效推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span>  2026-08-05 · Lingxiao Yang; Liu Liu; Moran Li; Han Feng; Wenjian Cao; Jiangning Zhang; Ye Shi / arXiv</div>
+<div class="tags"><span class="vendor-tag">Tencent</span><span class="tag">方向:高效推理</span><span class="tag">应用:视频</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">针对少步自回归视频扩散模型，作者发现把前面完全去噪的干净帧当上下文会让模型偷懒、动态变差，于是改用带噪声的上下文帧来生成视频。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 VBench 上视觉质量和推理速度都优于现有方法；摘要未给出具体加速倍数。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">距离越远的帧加的噪声越少、相邻帧噪声越多，形成逐级递减的噪声上下文；由于不再死等前一帧完全去噪，可以跨帧并行去噪来提速。</span></div>
+<div class="score-reason">评分依据：视频生成模型的推理加速工作，与端侧部署只有宽泛关联，相关度低；渐进噪声上下文和跨帧并行去噪是有一定新意的改进。 作者机构依据：arXiv PDF 首页署名 Tencent（PDF 首页脚注写明作者 M. Li、W. Cao、H. Feng 来自 Tencent Youtu Lab（W. Cao 为 tencent.com 邮箱），其余作者来自上海科技大学和浙江大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05237" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

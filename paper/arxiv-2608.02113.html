@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MemArbiter: Decision-Time Memory Arbitration for Long-Horizon LLM Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Jiajun Dong; Yutao Hu; Fengrui Fan; Shihan Dou; Yueming Wu; Deqing Zou / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM agent 必须保留并使用跨步信息，才能在长程任务中行动连贯。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-03 · Jiajun Dong; Yutao Hu; Fengrui Fan; Shihan Dou; Yueming Wu; Deqing Zou / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长任务智能体里，记忆能检索到并不等于能用上：信息组织和呈现不好，当前决策仍然用不到。MemArbiter 在每一步决策时重新安排记忆的优先级和呈现方式。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ALFWorld 上，每步记忆预算 500 和 750 令牌时成功率分别达到 82.8% 和 92.5%，比最强基线高 20.9 和 25.4 个百分点；失败后恢复更好，重复失败动作更少。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把交互历史拆成原子条目，按功能放入五个记忆库，结合记忆库层面的需求、条目相关度、焦点/背景两种表示和时间呈现门控，动态控制哪些记忆在当前步骤更突出。</span></div>
+<div class="score-reason">评分依据：在固定的每步令牌预算下管理智能体记忆，与端侧上下文受限的智能体直接可迁移，但未在设备上运行，相关度中等；把问题定位为“记忆到行动的落差”并按功能仲裁记忆，有一定新意。作者来自华中科技大学和复旦大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02113" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

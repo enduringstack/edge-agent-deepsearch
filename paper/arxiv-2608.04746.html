@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Caching for the Future: Scrub Jay Episodic Memory Principles for Agent Memory Systems</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Kartikey Singh Bhandari; Aarya Wadhwani; Dhruv Kumar; Pratik Narang / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">跨会话持续的 LLM agent 积累存储记忆，其有效性因内容类型差异巨大，但现有记忆架构一视同仁…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、评测基准、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-05 · Kartikey Singh Bhandari; Aarya Wadhwani; Dhruv Kumar; Pratik Narang / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">给跨会话长期运行的大模型智能体做记忆管理：不同类型的记忆过期速度不同，系统按类型给每条记忆设定“保鲜期”，避免检索时把过时事实混进上下文。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在新提出的时间泛化测试上是唯一显著为正的检索式方案（泛化差距 +0.108）；在 MemoryAgentBench EventQA-64k 上 F1 比 Mem0 高 2.66、比 Qwen3-Embedding-4B 高 3.09；去掉衰减后泛化差距缩小 5.7 倍。更强骨干模型下收益变小，在事实整合任务上反而变差。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">借鉴灌丛鸦的情景记忆，把每条记忆存成“什么-在哪-何时”三元组，并自动估计易腐程度和有用期限，检索时按查询自适应打分，更新时只需常数次大模型调用。</span></div>
+<div class="score-reason">评分依据：智能体记忆属于 Agent 运行时技术栈，轻量的记忆衰减策略可迁移到端侧助手，但论文未涉及设备部署；按类型衰减的记忆思路有新意，但适用范围作者自己也限定在易过期事实上。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04746" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

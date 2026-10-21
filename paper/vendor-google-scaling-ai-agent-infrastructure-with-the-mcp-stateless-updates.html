@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Scaling AI Agent Infrastructure with the MCP Stateless updates</h1>
-<div class="meta"><span class="score">10</span> <span class="tier">官方动态</span>  2026-08-05 · Google / Google</div>
-<div class="tags"><span class="vendor-tag">Google</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">谷歌介绍通过 MCP 无状态化更新扩展 AI 智能体基础设施，提升多智能体部署的可扩展性与稳定性。</span></div>
+<div class="meta"><span class="score">8</span> <span class="tier">官方动态</span>  2026-08-05 · Google / Google</div>
+<div class="tags"><span class="vendor-tag">Google</span><span class="tag">方向:工具调用</span><span class="tag">方向:云端serving</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Google 介绍其参与推动的 MCP 2026-07-28 规范候选版：去掉会话握手和会话 ID，让智能体调用工具的协议变成无状态，便于在普通负载均衡和 Serverless 上横向扩展。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：来自Google官方发布，内容直接涉及高效推理，因此作为本周官方动态收录。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每个请求自带协议版本和客户端能力信息；关键字段提升为 HTTP 头方便网关路由；新增 ttlMs 缓存提示、多轮往返请求和异步任务扩展，替代长连接。</span></div>
+<div class="score-reason">评分依据：MCP 是智能体工具调用的通用协议，这次改动主要解决云端服务器的扩展问题，对端侧智能体只有间接影响；协议层改动影响面大，但属于工程标准化。</div>
 <div class="source"><a href="https://developers.googleblog.com/en/scaling-ai-agent-infrastructure-with-the-mcp-stateless-updates/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

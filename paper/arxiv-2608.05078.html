@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SpikingNav: Robust Embodied Navigation with Spiking Neural Policies</h1>
 <div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-05 · Jiahong Zhang; Sijun Shen; Dehua Wu; Yifan Lin; Xuechen Xia; Xu Chu; Youhui Zhang;  GuoqiLi / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:SNN</span><span class="tag">硬件:神经形态</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">具身导航要求 agent 在物理环境中从自我中心视角观察做序列决策。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在评测基准、SNN、神经形态。</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:神经形态</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用脉冲神经网络做室内具身导航，目标是在资源受限平台上用更少计算得到更抗干扰的导航能力，并把感知模块搬上真实神经形态芯片验证。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">与同规模 ANN 导航相比，参数和单步计算更少（12.1M/0.97 GFLOPs 对 14.0M/4.21 GFLOPs），ObjectNav 成功率从 31.05% 升到 34.12%，视觉干扰下平均成功率从 8.45% 升到 13.71%；感知模块在 Thruster-V2 神经形态芯片上每样本约 2.13×10⁹ 个周期、动态能耗 3.92 焦。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">脉冲感知编码器提取与目标相关的视觉特征，脉冲策略网络通过膜电位积分、阈值和放电重置维持循环状态并输出动作；硬件验证只覆盖感知部分，完整导航闭环仍在仿真中。</span></div>
+<div class="score-reason">评分依据：面向资源受限机器人平台，并在流片的神经形态芯片上实测了感知模块，端侧相关度较高；但完整导航策略只在仿真运行，且属于控制策略而非带规划/工具的智能体，不算端侧 Agent。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05078" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

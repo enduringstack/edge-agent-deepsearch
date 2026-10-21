@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TARL: Transaction-Aware Reliable Ledgers for Executable Memory Management in Long-Term Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Han Xiao; Hongjun Xu; Xin Zhang; Yidong Chen; Xiaodong Shi / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">持久记忆帮助长期 agent 保留知识，但单个更新错误可反复扭曲未来检索与推理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、评测基准、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-04 · Han Xiao; Hongjun Xu; Xin Zhang; Yidong Chen; Xiaodong Shi / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长期运行的智能体靠持久记忆积累知识，但一次错误更新就会持续污染后续检索和推理。TARL 把记忆更新从“写/不写”二选一扩展成五种可执行动作。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在域内、跨来源、时间变化、反事实和连续更新等评测中，动作预测和记忆状态恢复都有提升，记忆污染和累积损坏减少；摘要未给出具体数值。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对每条新信息先定位受影响的记忆、确定时间范围、比较来源可信度，再选择新增、忽略、修订、拒绝或暂缓核实，分别写入已接受、待定和已拒绝三本账；训练时比较不同操作产生的记忆状态来选最优动作，并发布 TARL-Mem 评测集。</span></div>
+<div class="score-reason">评分依据：属于智能体记忆运行时的可靠性改进，可用于本地长期助理，但没有端侧语境，相关度偏低；五动作账本式更新有一定新意。作者来自厦门大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03699" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

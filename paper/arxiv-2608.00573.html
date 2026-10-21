@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TrimMoE A communication aware and adaptive depth framework for distributed edge inference</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-01 · Ning Li; Shuting Bai; Xin Yuan; Wenchao Xu; Athanasios V. Vasilakos; Song Guo; Haijun Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:MoE</span><span class="tag">模型:Qwen</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">TrimMoE 面向分布式边缘混合专家模型，减少专家在服务器之间传输造成的通信瓶颈，并按运行状态调整推理深度。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在MoE、Qwen。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-01 · Ning Li; Shuting Bai; Xin Yuan; Wenchao Xu; Athanasios V. Vasilakos; Song Guo; Haijun Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:高效推理</span><span class="tag">方向:调度服务</span><span class="tag">硬件:GPU</span><span class="tag">模型:Qwen</span><span class="tag">模型:Mistral</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">TrimMoE 面向把 MoE 大模型分布在多台边缘服务器上推理的场景，不再只想着更快访问远端专家，而是判断某些层要不要跳过、能不能提前退出，以减少跨服务器传输。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 10 台异构边缘服务器测试床上，用 Switch-Base-8E、Qwen-MoE-A2.7B、Mixtral-8x7B 测试，平均延迟最多降低 62.8%，跨服务器流量和远程执行比例下降，任务质量损失控制在 2% 以内；80 请求/秒负载下仍有 71% 的请求在 300ms 内完成，基线低于 50%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">离线冻结主干训练轻量的逐层退出头、校准层重要性阈值并按收益放置专家副本；在线根据 token 走向前瞻，把跳层和提前退出用在传输代价最高的位置，并用反馈规则自适应调整权重和退出阈值。</span></div>
+<div class="score-reason">评分依据：针对边缘服务器集群上的 MoE 推理，属于边缘侧推理系统，但不是手机或 PC 等终端；把层跳过、提前退出和专家选择统一在质量预算下优化，有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00573" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

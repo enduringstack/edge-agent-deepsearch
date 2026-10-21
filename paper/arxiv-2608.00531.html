@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CURE: Local Uncertainty Repair for Block-Parallel Speculative Decoding</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-01 · Aofan Liu; Jingxiang Meng; Fangxin Liu; Yongbiao Chen / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">CURE 面向块并行投机解码，在并行草稿局部不确定时进行修复，减少一次错误导致整块候选被丢弃的问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于投机解码、评测基准、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-01 · Aofan Liu; Jingxiang Meng; Fangxin Liu; Yongbiao Chen / arXiv</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">CURE 针对块并行投机解码中草稿越往后越不准的问题，只在不确定的关键 token 处做有限度的修补，提高被接受的草稿长度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 HumanEval、MBPP、LiveCodeBench-lite 和 GSM8K 上，平均接受长度比不修补的并行草稿基线提高 4.2-7.5%，端到端比仅用目标模型解码快 2.66-3.49 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用预测置信度差定位草稿块里可能出错的 token，只在这些脆弱节点展开有预算上限的修补路径，验证后再用重同步机制对齐草稿状态；可作为插件接入现有并行草稿框架。</span></div>
+<div class="score-reason">评分依据：投机解码是端侧加速生成的常用技术，这项工作可直接迁移，但实验在单张 GPU 上、没有端侧实测；局部修补思路有新意，整体属于投机解码的增量改进。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00531" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

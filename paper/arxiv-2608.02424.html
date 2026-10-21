@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>In-Network Market Prediction Using Machine Learning and Limit Order Books</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Xinpeng Hong; Changgang Zheng; Joshua Lilley; Stefan Zohren; Noa Zilberman / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">机器学习正显著改变算法交易，但对快速执行速度的要求依旧。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于端云协同、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-03 · Xinpeng Hong; Changgang Zheng; Joshua Lilley; Stefan Zohren; Noa Zilberman / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:端云协同</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">LOBIN 把高频交易里的订单簿构建和行情预测模型直接放进可编程交换机里跑，用网络设备做超低时延推理，交换机处理不了的再交给服务器。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">相比纳斯达克撮合服务器基准时延降低 10% 以上，达到微秒级；交换机加服务器混合部署时，约 45% 的流量和 38% 的潜在成交额可在交换机内处理完，预测错误率平均变化约 3%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把机器学习模型改写成交换机数据平面能执行的形式，在线构建订单簿特征并就地推理；对交换机内不够准的情况再回落到服务器模型。</span></div>
+<div class="score-reason">评分依据：属于把推理下沉到资源极受限的网络设备上的工作，思路可迁移到边缘推理，但场景是金融交易而非终端设备，相关度中等；交换机内推理加混合回落属于已有方向的工程整合。作者均来自牛津大学工程科学系。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02424" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>GUARD: Grounding Uncertainty and Ablation-Based Risk Detection for Diffusion-Based VLAs</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Suhas Hegde; Jitendra Yasaswi Bharadwaj Katta / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">基于扩散的 VLA 策略即使预测与视觉、语言…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于多模态、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-08-05 · Suhas Hegde; Jitendra Yasaswi Bharadwaj Katta / arXiv</div>
+<div class="tags"><span class="vendor-tag">Bosch</span><span class="tag">方向:安全隐私</span><span class="tag">方向:KV cache</span><span class="tag">应用:机器人</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">扩散式视觉-语言-动作（VLA）机器人策略即使没看准任务也可能输出看似合理的动作。GUARD 是一种运行时失败检测方法，在不改动策略模型的前提下判断它是否真正依据了视觉和语言信息。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Pi0、SmolVLA、Alpamayo-1.5 与 LIBERO、SimplerEnv、MetaWorld、PhysicalAI-AV 组成的五组设置中，未见任务上四组 ROC-AUC 第一、一组第二，平均比最强运行时监控方法高 5.73 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">估计视觉语言模型最终 KV cache 中各词元条目的影响力，消融关键条目构造反事实缓存，对比去噪输出的变化，得到敏感度、注意力熵、模态偏置等诊断信号，再交给轻量时序分类器在线判断。</span></div>
+<div class="score-reason">评分依据：面向机器人 VLA 的运行时安全监控，与端侧机器人部署相关，但未涉及端侧效率或真机部署，且 VLA 动作策略不属端侧智能体；借 KV cache 反事实消融做失败检测的思路较新。作者全部来自博世印度研究院。 作者机构依据：arXiv PDF 首页署名 Bosch（PDF 首页两位作者均署名 Bosch Research India）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04510" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

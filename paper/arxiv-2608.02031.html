@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Learning-Based Collaborative MEC for LLM Inference with Soft-Deadline Awareness via Transformer-Enhanced PPO</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-03 · Ngoc Hung Nguyen; Bjorn Landfeldt / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">本文研究了软期限约束下用于大型语言模型 (LLM) 推理的协作移动边缘计算 (MEC) 服务器。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在高效推理。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-03 · Ngoc Hung Nguyen; Bjorn Landfeldt / arXiv</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:端云协同</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多台移动边缘计算服务器协作承担大模型推理请求时，子任务之间有依赖，任何一个超时都可能拖垮整个请求。论文提出可有限次延长截止时间的机制，并用强化学习决定任务在服务器间如何迁移。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">仿真中，引入 Transformer 的 PPO 比普通 PPO 多完成 2% 的子任务，迁移任务的完成表现提升 9%，并优于启发式方法。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把截止时间设计成“软截止”，允许受限次数的延期；用带 Transformer 编码的近端策略优化（PPO）捕捉时间依赖和服务器之间的相互影响，学习任务迁移决策。</span></div>
+<div class="score-reason">评分依据：面向边缘服务器上的大模型推理调度，属于边缘推理系统，但只做仿真、未涉及终端设备，相关度中等；强化学习调度属常见思路，贡献一般。作者来自瑞典隆德大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02031" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

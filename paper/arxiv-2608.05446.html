@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>EvoHarness-RL: Learning Self-Evolving Runtime Harness for Long-Horizon LLM Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Xuying Ning; Dongqi Fu; Tianxin Wei; Hanqing Zeng; Yuanchen Bei; Bingxuan Li; Zihao Li; Qifan Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">长程 LLM agent 越来越依赖外部执行支撑来维护状态、跟踪进度、调用工具、验证结果并复用经验…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于高效推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-08-05 · Xuying Ning; Dongqi Fu; Tianxin Wei; Hanqing Zeng; Yuanchen Bei; Bingxuan Li; Zihao Li; Qifan Wang / LLA@COLM 2026 Workshop</div>
+<div class="tags"><span class="vendor-tag">Meta</span><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span><span class="tag">方向:工具调用</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">EvoHarness-RL 研究长周期大模型智能体如何与外部“执行辅助”配合：把状态追踪、进度记录和经验复用统一成一个工作区，并让智能体学会何时调用它。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">基础版让前沿模型平均成功率提升 10.0 个百分点；强化学习版比最强开源基线高 8.5 个百分点，且强化学习采样效率更高、对未见任务泛化更好。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把外部支持组织成信念、进度、经验三块工作区，只暴露四个精简动作供策略读写；先监督初始化，再用考虑调用成本的 GRPO 训练协同策略。</span></div>
+<div class="score-reason">评分依据：智能体记忆与执行辅助的统一接口，对端侧 Agent 运行时设计有参考，但实验以云端模型和训练为主，相关度低；接口抽象与成本感知训练有一定新意。 作者机构依据：arXiv PDF 首页署名 Meta（PDF 首页多位作者（含 Dongqi Fu、Hanqing Zeng、Xiang Shen、Yinglong Xia 等 11 人）机构为 Meta AI，其余来自伊利诺伊大学厄巴纳-香槟分校、罗格斯大学、卡内基梅隆大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05446" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

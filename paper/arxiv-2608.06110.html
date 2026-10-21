@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ECHO: A Locally-Deployable Agentic Health Assistant with Temporal Memory, Safety Guardrails, and Speech Assessment</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-06 · Abdulkadir Külçe; Alihan Esen; Cağla Fikir; Berke Kurt; Kuzey Arar; Gökhan Ercan; Faik Boray Tek / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">模型:Llama</span><span class="tag">模型:GPT</span><span class="tag">应用:语音</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">本文提出 ECHO（增强护理与健康观察器），一个可本地部署的对话式健康助手，用于长期慢病管理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、多模态、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-06 · Abdulkadir Külçe; Alihan Esen; Cağla Fikir; Berke Kurt; Kuzey Arar; Gökhan Ercan; Faik Boray Tek / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">方向:安全隐私</span><span class="tag">应用:语音</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ECHO 是一个可以完全装在用户自己电脑上运行的慢病管理健康助理：智能体会调用临床工具、记住跨会话的病情变化，并带安全拦截和语音情绪评估。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">59 个场景的工具执行测试中，GPT-5 Mini 通过率 94.9%，本地可跑的 Gemma 4 26B 为 89.8%；安全分类在 2537 条土耳其语健康查询上准确率 88.8%、不安全召回 90.6%，优于零样本的 Llama 3.3 70B；语音评估平均宏 F1 为 0.652。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 LangGraph 编排 ReAct 循环，配 17 个临床工具和时间知识图谱做长期记忆，工具直接读写本地数据库；模型经 LiteLLM 可接本地 Ollama 模型或云端接口；规则层加符号图神经网络做两级安全过滤，语音用本地 Whisper 加 BERT 融合。</span></div>
+<div class="score-reason">评分依据：智能体编排、工具执行、长期记忆、安全过滤和语音识别都设计在用户电脑本地运行，并测了可本地部署的 Gemma 4 26B，属于 PC 端智能体（相关度 8）。是多个模块的系统整合，论文仅 5 页（贡献 4）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.06110" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

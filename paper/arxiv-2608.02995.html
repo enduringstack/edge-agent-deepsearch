@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SparSEEty: Extracting Tokens from Sparsity-Exploiting LLM Serving Systems via Deterministic Side Channels</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Yongwan Jo; Jinyoung Park; Euihyun Lee; Dokyung Song / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">现代大语言模型（LLM）表现出激活稀疏性，其中对于给定的输入标记，仅激活其神经元的子集。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、评测基准、云端serving等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:剪枝稀疏</span><span class="tag">应用:安全</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">利用激活稀疏跳过权重读取的大模型推理系统（如 PowerInfer），其内存访问模式会随输入变化。SparSEEty 证明攻击者可通过侧信道从机密虚拟机中还原出提示词和回答。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">针对 Intel TDX 机密虚拟机中运行的 PowerInfer，重建提示和回复 token 的 BLEU 分数在多种模型和数据集上均高于 0.95，监控开销仅 3.7% 到 7.2%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先利用机密虚拟机暴露的多种侧信道构造神经元激活探测器，记录推理时哪些神经元权重被访问，再把不完整的二值激活轨迹反推回输入 token。</span></div>
+<div class="score-reason">评分依据：激活稀疏是端侧推理常用的加速手段，这项工作揭示了它的隐私代价，对端侧部署的安全设计有提醒意义，但攻击场景是云端机密计算。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02995" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

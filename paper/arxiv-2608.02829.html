@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Wiring Beats Blending: What Transfers Between Transformer Sizes -- and What Doesn't</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Ravi Satya Durga Prasad Yenugula / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">模型家族每个尺寸都从头训练。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · Ravi Satya Durga Prasad Yenugula / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究能否把一个预训练好的大模型直接改造成同系列的小模型来初始化，而不是从头训练小模型，以 Pythia 1.4B 转 410M 为例完整分析。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 3000 万 token 的小预算下，最小二乘补偿初始化在宽度缩减对上优于最强子克隆变体（84.0±1.8 对 89.7±3.7，3 个种子全胜），在深度缩减对上也更好（109.3 对 117.9）；预算增至 33 倍后两者持平（40.3）；转换初始化始终优于从头训练（小预算下最多 18 倍），也优于同预算的结构化剪枝加蒸馏。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">发现稠密权重投影会破坏旋转位置编码、多头、GELU 和 LayerNorm 结构；改为在没有归一化层隔开的路径上做最小二乘补偿，在有归一化的路径上做方差保持缩放。</span></div>
+<div class="score-reason">评分依据：讲的是如何低成本得到小模型，对端侧小模型生产有参考，但不涉及推理部署；分析细致，结论是小预算下的增量改进。作者为独立研究者，代码和检查点已公开。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02829" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

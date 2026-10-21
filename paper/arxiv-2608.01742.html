@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MemSIF: From Structured Interactions to Dual-Track Fact Memory for LLM Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · YuFei Luo; Xiucheng Xu; Zhen Yang / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">长期记忆对在长程交互中运作的 LLM agent 至关重要。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · YuFei Luo; Xiucheng Xu; Zhen Yang / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体长期记忆常犯两个错：时间上挨着的内容未必相关，写入时看着重要的信息未必以后有用。MemSIF 用结构化交互记忆加双轨事实记忆来缓解这两个问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LoCoMo 和 LongMemEval-S 上用五种底座模型测试，总准确率在所有设置下都最高，分别比最强基线高 2.29%–8.79% 和 2.87%–6.15%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把原始对话整理成话题片段和跨时间的事件轨迹；事实记忆分两轨，一轨在写入时按模式固化稳定信息，另一轨在查询时按需生成事实，并把被多次引用的事实提升为可复用记忆。</span></div>
+<div class="score-reason">评分依据：智能体长期记忆的组织方法，对本地助手记忆管理有参考价值，但未讨论端侧资源约束（相关度 4）。双轨事实记忆是对现有记忆框架的扎实改进（贡献 5）。作者来自北京邮电大学和中国科学院大学，代码已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01742" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

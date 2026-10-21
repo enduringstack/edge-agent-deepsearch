@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>NanoQuant: Efficient Sub-1-Bit Quantization of Large Language Models</h1>
 <div class="meta"><span class="score">14</span> <span class="tier">官方动态</span>  2026-08-03 · Samsung / Samsung</div>
-<div class="tags"><span class="vendor-tag">Samsung</span><span class="tag">方向:量化</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">三星研究发布 NanoQuant，面向大语言模型的高效亚 1 比特量化方法，降低端侧/边缘推理的内存与算力开销。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：来自Samsung官方发布，内容直接涉及量化，因此作为本周官方动态收录。</div>
+<div class="tags"><span class="vendor-tag">Samsung</span><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">硬件:GPU</span><span class="tag">模型:Llama</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">三星研究院提出 NanoQuant：一种训练后量化方法，不需要大规模重训，就能把大模型权重压到 1 比特甚至更低，让 70B 模型能在 8GB 显存的消费级显卡上推理。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">单张 H100 用 13 小时把 70B 模型压到 5.75 GB（缩小 24 倍）；1 比特及以下的 NanoQuant 优于 2 比特 GPTQ 和 2.88 比特 BiLLM；与 LittleBit、DBF 等量化感知训练方法相比困惑度更好，所需校准 token 少 160-1300 倍、GPU 时长少 11-59 倍；自研 CUDA 内核快于 Gemlite，在消费级 GPU 上优势更明显。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">采用低秩二值分解表示权重，用 Hessian 感知的预处理加 LB-ADMM 求一个接近最优的二值初始化，再逐块重建误差，最后只调缩放向量做全局对齐，仅需 128 条校准序列。</span></div>
+<div class="score-reason">评分依据：让大模型在 8GB 消费级显卡上运行，原文也指向端侧高效推理，但没有手机或 NPU 实测；把亚 1 比特压缩从“要大规模训练”变成“单卡几小时”，实用价值高。</div>
 <div class="source"><a href="https://research.samsung.com/blog/NanoQuant-Efficient-Sub-1-Bit-Quantization-of-Large-Language-Models" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

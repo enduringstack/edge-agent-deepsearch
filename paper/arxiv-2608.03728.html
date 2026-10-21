@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SAT-Edge-Agent: Hardware-in-the-Loop Edge-Agent Orchestration for Onboard Satellite Intelligence</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-04 · Longji He; Jeto Xu / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">硬件:NPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">SAT-Edge-Agent 是面向卫星在轨智能的端侧智能体编排框架，把任务意图转换为本地工具调用，并通过硬件在环环境验证整个执行闭环。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在能耗功耗、NPU。</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-04 · Longji He; Jeto Xu / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:工具调用</span><span class="tag">方向:多模态</span><span class="tag">硬件:NPU</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">SAT-Edge-Agent 是面向卫星在轨智能的端侧智能体系统，把任务意图转换成本地工具调用并返回结构化结果，在商用 ARM 异构边缘芯片上用硬件在环方式验证。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">两类固定任务各重复 20 次全部完成；完整智能体平均时延分别为 29.353 秒和 60.937 秒（P95 为 31.166 秒和 66.882 秒），其中目标检测仅占 2.93% 和 2.48%，平均 CPU 占用约 20.8% 和 20.5%，大部分时延来自检测之外的环节。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">浏览器工作台和 FastAPI 智能体在边缘芯片上协调本地 OpenAI 兼容语言服务与本地旋转目标检测服务，流式暴露执行状态，并公开脱敏的请求级记录和复现脚本。</span></div>
+<div class="score-reason">评分依据：智能体的任务理解、工具调用和结果整理在商用 ARM 边缘芯片上本地运行，并给出硬件在环实测，端侧 Agent 证据明确；作者也坦言未验证检测精度、能效和上天可用性，贡献偏工程验证。PDF 首页两位作者均署名 OgCloud Limited，第一作者同时署名宾夕法尼亚州立大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03728" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

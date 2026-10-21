@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SpecRoll: Fast-Slow Verifier-Feedback Adaptation for Speculative Reinforcement Learning Rollouts</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Nhat Minh Pham; Duy Tung Doan; Thi Duyen Ngo; Vinh Van Nguyen; Khac-Hoai Nam Bui / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:剪枝稀疏</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">强化学习后训练提升 LLM 推理能力，但自回归 rollout 生成仍是主要效率…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于投机解码、剪枝稀疏、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-05 · Nhat Minh Pham; Duy Tung Doan; Thi Duyen Ngo; Vinh Van Nguyen; Khac-Hoai Nam Bui / arXiv</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">强化学习训练推理模型时要大量生成长回答，常用投机解码加速；这篇工作发现草稿模型总在同一些 token 上猜错，于是让它在生成过程中根据验证反馈即时修正。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 21 组模型-数据设置上平均，生成加速比相对 EAGLE3 式和 DFlash 式基线分别再提升 32.7% 和 11.4%，GRPO 端到端训练加速分别提升 32.2% 和 8.5%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用目标模型对草稿 token 的接受/拒绝反馈，在同一回答内和同组回答之间在线调整草稿模型的预测，不改变原有草稿训练流程。</span></div>
+<div class="score-reason">评分依据：用在强化学习训练阶段的投机解码加速，端侧相关度低；但“用验证反馈在线修正草稿模型”的做法可迁移到推理侧投机解码。PDF 首页显示部分作者来自越南 Viettel 集团旗下 Viettel AI。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04962" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

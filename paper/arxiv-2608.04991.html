@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>RAC: Reference-Aware Activation Compression for Communication-Efficient Split LLM Inference</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Guotao Yang; Mingxi Zhao; Haopeng Li; Zhengchao Wang; Sheng Chen; Yitao Hu; Keqiu Li / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM agent 反复处理长且隐私敏感的上下文，而纯云部署让用户数据暴露在可信端点之外…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于量化、安全隐私、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-05 · Guotao Yang; Mingxi Zhao; Haopeng Li; Zhengchao Wang; Sheng Chen; Yitao Hu; Keqiu Li / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:量化</span><span class="tag">方向:安全隐私</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型智能体要反复处理长且隐私敏感的上下文，端云切分推理把模型首尾层和工具留在本地、中间层放云端，但每次调用都要来回传隐藏状态。RAC 是专门压缩这些中间激活的编解码器。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在三个模型（Qwen、GLM、Llama）、九组模型-链路组合上，平均首 token 时延比原始传输快 1.24–2.72 倍，每 token 时延快 1.01–2.79 倍；12 项任务分数变化在 -0.40 到 +2.50 分之间。部分高带宽设置下优势会消失。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用智能体多轮对话里系统提示、工具声明等重复片段，检索历史上同样 token 的激活作参考，只传对齐后的残差并做校准量化；解码阶段用轻量因果预测器生成参考，发送端同步重建以保持两端一致。</span></div>
+<div class="score-reason">评分依据：直接面向端云协同推理的通信瓶颈，本地端用两张 RTX 3090 模拟可信终端、云端用 A800，并用流量控制模拟广域网，端侧相关度较高；针对智能体重复上下文设计参考式压缩有新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04991" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

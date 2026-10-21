@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A Low-Cost Hybrid Reservoir Computing Model for Isolated Sign Language Video Recognition</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-04 · Nitin Kumar Singh; Arie Rachmad Syulistyo; Yuichiro Tanaka; Hakaru Tamukoh / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">手语识别（SLR）增进听人与听障人士之间的沟通。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在高效推理。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Nitin Kumar Singh; Arie Rachmad Syulistyo; Yuichiro Tanaka; Hakaru Tamukoh / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:神经形态</span><span class="tag">硬件:CPU</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">深度学习手语识别计算量大、难上边缘设备，这项工作用轻量的储备池计算模型做孤立词手语视频识别。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 WLASL100 数据集上 Top-1、Top-5、Top-10 准确率为 61.12%、86.05%、92.56%，与深度学习方法相当；在 CPU 上训练只需 14.61 秒，远快于 Bi-GRU 基线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用 MediaPipe 提取身体和手部关键点，再交给结合深层储备池与双向储备池的混合结构变换成高维动态表示，最后用岭回归输出类别，只有输出层需要训练。</span></div>
+<div class="score-reason">评分依据：明确以边缘设备部署为目标、计算量很低，但只报告了 CPU 训练时间，没有边缘设备上的推理实测；储备池组合属于已有方法的工程整合。作者来自九州工业大学神经形态 AI 硬件研究中心等高校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03444" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

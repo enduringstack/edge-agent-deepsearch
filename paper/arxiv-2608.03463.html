@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LeanMem: Simple and Efficient Long-Term Memory for LLM Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Yuxin Liao; Le Wu; Min Hou; Hao Liu; Han Wu; Zishu Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">模型:GPT</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">长期记忆对于基于 LLM 的代理维持交互并可靠地利用遥远的历史至关重要。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、GPT等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-04 · Yuxin Liao; Le Wu; Min Hou; Hao Liu; Han Wu; Zishu Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:高效推理</span><span class="tag">应用:长上下文推理</span><span class="tag">模型:Qwen</span><span class="tag">模型:GPT</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型智能体的长期记忆要么太费 token、要么压缩后丢细节。LeanMem 按内容的可压缩性和变化频率分别存储，做一个轻量的长期记忆框架。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LoCoMo 和 LongMemEval-S 上，用 GPT-4.1-mini 和 Qwen3-8B 时每个设置都超过最强记忆基线，最高提升 15.1 个百分点，同时构建成本、推理 token 和时延最低或接近最低。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先过滤低价值内容，再把有用信息分别存成紧凑的画像记忆、按时间组织的事件记忆和保留原文的记录记忆；维护时只更新会变化的事件记忆；回答时按问题需要动态选择记忆类型并分配检索预算。</span></div>
+<div class="score-reason">评分依据：省 token、低时延的智能体记忆直接适用于资源受限的端侧助手，且在 Qwen3-8B 这类可本地运行的模型上验证，但没有设备实测；按信息类型分治存储的思路简洁有效。作者均为合肥工业大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03463" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

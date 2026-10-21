@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Resume Means Resume: A Machine-Checked Conformance Contract for Checkpoint, Interrupt, and Resume Semantics in Workflow Persistence Layers</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Sajjad Khan / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">持久化执行状态以使运行可中断、可崩溃存活、可续跑的框架，必须决定恢复对已…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于高效推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:评测基准</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体工作流框架会把执行状态持久化，以便中断、崩溃后继续跑，但“恢复”时已经发生过的副作用该怎么处理，各框架说法不一也没有可检验的约定。论文给出一份可机器检验的“恢复契约”，并实测了主流框架。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">实测发现：LangGraph 1.2.9 在真实 SIGKILL 崩溃后会重复执行已持久记录的工作，中断时是恰好一次、崩溃时却是至少一次；CrewAI 1.15.2 会重复执行已完成的带副作用方法；pydantic-graph 1.x 在节点中途崩溃后无法恢复；多进程并发恢复同一个中断时，受保护的副作用会被触发 k 次，40 个测试格中有 36 个完全饱和。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">定义前缀续跑、副作用恰好一次、分叉确定性、检查点有效、只消费一次、恢复确定性六条性质，用 TLA+ 穷举检验参考语义并用 TLAPS 证明；再用不依赖大模型的确定性测试台在固定版本上逐项实测，并给出经 Verus 验证的参考实现 REMIT 修复部分问题。</span></div>
+<div class="score-reason">评分依据：针对智能体运行时的状态持久化与崩溃恢复可靠性，对本地长期运行的智能体同样适用，但没有端侧语境，相关度偏低；形式化契约加多框架实测并发现具体缺陷，贡献扎实。作者为伦敦独立研究者。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03836" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

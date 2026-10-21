@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Geometry-Guided Layerwise FFN Width Allocation in Transformers</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Timur Mudarisov; Mikhail Burtsev; Radu State / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">前馈网络（FFN）占 Transformer 参数很大一部分，但其隐藏宽度在深度上通常恒定。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于高效推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-03 · Timur Mudarisov; Mikhail Burtsev; Radu State / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Transformer 每层前馈网络宽度通常一样，这篇论文想用前向传播时测得的“表示几何变化量”来决定每层该分多少宽度，在总参数不变时把容量放到更需要的层。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 128M 和 256M 参数的配对训练中，多种基于归一化几何变化量的宽度分配方案验证损失低于均匀宽度和人工设计的余弦递减方案；在 440M 规模上最佳几何分配相对均匀宽度的改进明显大于余弦递减方案。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把每层前馈网络看作搬运一团令牌表示，用对应位移、Gromov-Wasserstein 失真和持续同调量化它带来的几何变化，再通过分层近似代理在固定参数预算下精确求解各层宽度。</span></div>
+<div class="score-reason">评分依据：在固定参数预算下优化各层容量分配，对设计小模型有一定参考，但属于预训练阶段的结构设计，与推理部署关系较远，相关度低；用几何量指导宽度分配有新意但规模较小，贡献中等。作者来自卢森堡大学和伦敦数学科学研究所。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02064" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

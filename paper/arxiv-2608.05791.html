@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A Two-Tier Perspective on Inference-Time Parallelism in Multi-Agent LLM Systems</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-06 · Zihan Xu; Haolin Tian; Hai Jiang / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM 驱动的多 agent 系统在推理时通常要多次调用模型并做复杂协调，其执行…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校顶会</span>  2026-08-06 · Zihan Xu; Haolin Tian; Hai Jiang / ICML 2026</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:规划推理</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多智能体系统推理时要多次调用模型，这篇工作把其中的并行分成两层：同时探索多条完整解题路径，以及在一条路径内拆任务并发执行，并给出统一的执行框架 TIPEX。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 GAIA 第 1 级任务上，Magentic-One 基线准确率 43.2%、耗时 230 秒，两层并行组合准确率最高到 56.7%，另一组合耗时降到 172.7 秒，但 token 消耗从 38.8k 增加到 54k 至 82k。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用统一的执行语义同时管理“副本并行”和“结构并行”，可以系统地组合不同并行策略和参数，再分析它们在不同难度任务上的互补关系。</span></div>
+<div class="score-reason">评分依据：讨论多智能体推理时的延迟、准确率和算力成本权衡，偏云端 Agent 运行时（相关度 3）。两层并行的统一建模清楚，已被 ICML 2026 接收（贡献 5）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05791" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

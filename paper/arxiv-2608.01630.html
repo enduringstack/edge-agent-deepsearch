@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>RING: Retrieval-Internalized Generation for Continual Large-Scale Knowledge Injection</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Shicheng Xu; Liang Pang; Liyi Chen; Zihao Wei; Jingcheng Deng; Yan Gao; Yi Wu; Yao Hu / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">检索增强生成（RAG）提升事实性，但在 serving 时增加延迟和工程开销。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、评测基准、RAG等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-08-03 · Shicheng Xu; Liang Pang; Liyi Chen; Zihao Wei; Jingcheng Deng; Yan Gao; Yi Wu; Yao Hu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Xiaohongshu</span><span class="tag">方向:记忆</span><span class="tag">方向:MoE</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">检索增强生成提升了事实性，但带来检索延迟和工程开销。RING 把大规模外部知识注入模型内部的“记忆专家”，并用强化学习学会在参数记忆里搜索，从而完全去掉外部检索器。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在作者构建的 News-2025（全部晚于基座模型预训练截止日期的新闻）等基准上，准确率和效率与基于检索的 RAG 及参数化注入基线持平或更好。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">三阶段训练：持续预训练通过双因果注意力把新语料写入知识专家；监督微调教会“先搜再答”；带分层奖励的强化学习优化在参数记忆上的路由与搜索策略。</span></div>
+<div class="score-reason">评分依据：去掉外部检索器能减少服务时的延迟和系统组件，对离线或本地知识问答有一定启发，但工作以训练为主、未涉及端侧（相关度 3）。可学习的参数化检索策略加防泄漏新基准，贡献中等偏上（贡献 6）。PDF 首页有多位作者署名小红书。 作者机构依据：arXiv PDF 首页署名 Xiaohongshu（PDF 首页作者 Liyi Chen、Yan Gao、Yi Wu、Yao Hu 署名 3 号机构 Xiaohongshu Inc.，其余作者来自中科院计算所与国科大）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01630" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

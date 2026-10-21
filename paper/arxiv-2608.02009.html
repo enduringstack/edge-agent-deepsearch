@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>HALT: Verification-Aware Stopping for Retrieval-Augmented Search Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Daeyoung Roh; Donghee Han / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">检索增强搜索 agent 通过反复发查询并累积证据来回答多跳问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准、RAG等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · Daeyoung Roh; Donghee Han / EMNLP 2026 Findings</div>
+<div class="tags"><span class="tag">应用:RAG</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">检索增强的搜索智能体做多跳问答时，证据其实已经找齐了还在继续搜，白白增加成本和干扰。HALT 是一个外挂的停止判断，只在每条必需的推理环节都有证据支撑时才让智能体停下。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在三个多跳问答基准上减少了冗余搜索轮数和实际耗时，同时基本保持精确匹配分数；用问题自动生成的判断依据时节省较小，用人工标注依据时节省更大。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先列出回答问题需要验证的各跳论断，每轮检索后检查累计证据是否覆盖全部论断，覆盖了才停止；不改动原有搜索智能体、检索器和生成器。</span></div>
+<div class="score-reason">评分依据：属于智能体运行时的检索控制，能减少调用次数和时延，对资源受限场景有一定迁移价值，但实验未涉及端侧，相关度偏低；用证据覆盖而非模型自信度来决定停止是有新意的小切口，贡献中等。作者为独立研究者与 KAIST，被 EMNLP 2026 Findings 接收，不算顶会正会。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02009" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

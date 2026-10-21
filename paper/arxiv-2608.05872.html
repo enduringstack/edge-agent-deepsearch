@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MACRO: Markov Chain Routing of Transformer Layers</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-06 · Paweł Batorski; Abtin Pourhadi; Akylgali Aitaza; Przemysław Spurek; Paul Swoboda / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">标准 LLM 是逐层顺序执行的。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-06 · Paweł Batorski; Abtin Pourhadi; Akylgali Aitaza; Przemysław Spurek; Paul Swoboda / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">MACRO 不改模型权重，为大模型学习按任务定制的“层执行路径”，可以跳过、重复某些层。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多个开源模型的推理和知识基准上平均准确率提升 5.0%，小模型收益最大；比最好的动态路由方法 Dr. LLM 高 7.2%，路由搜索时间从 14.8 小时降到 1.6 小时（9.4 倍）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把层路由建模成依赖上下文的马尔可夫策略，结合层号、算力预算阶段等条件，用训练数据反馈更新路径分布，再用 top-k Viterbi 解码出候选路径。</span></div>
+<div class="score-reason">评分依据：动态层路由与跳层属于推理期计算调度，作者称可兼容量化模型，对小模型尤其有效，可迁移到端侧（相关度 4）。方法有一定新意（贡献 5）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05872" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

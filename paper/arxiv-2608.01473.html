@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Slot2Text: Object-Centric Visual Tokenization for Efficient and Spatially Traceable Surgical MLLMs</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-02 · Guiqiu Liao; Matjaz Jogan; Daniel A. Hashimoto / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用于手术场景理解的 MLLM 通常把数百个密集视觉 token 注入语言模型，导致成本…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于多模态、评测基准、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">手术场景多模态大模型通常塞进上千个密集视觉 token，推理贵且答案难以追溯到图像位置。Slot2Text 用少量“区域槽位”替代密集视觉 token。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">Slot2Text-Fast 在多个手术视觉问答与定位基准上与最优基线相当，平均总 token 消耗减少 91.8%，视觉前缀从 1295 个降到 47 个（减少 96.4%）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把自监督视觉特征聚成少数几个区域槽位，作为带区域标签的视觉 token 交给语言模型；推理模式还能把回答关联到具体槽位、掩码或框。</span></div>
+<div class="score-reason">评分依据：视觉 token 大幅压缩是端侧多模态推理降本的常用方向，可直接迁移，但工作面向手术场景且未做端侧部署（相关度 4）。以对象槽位替代密集 patch 的思路较有新意（贡献 6）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01473" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

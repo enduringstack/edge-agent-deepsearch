@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>When Does Disaggregation Pay? Simulating Prefill--Decode--Attention--FFN Specialization for Agentic LLM Inference</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-04 · Przemyslaw Forys; Haoran Wu; Can Xiao; Jiayi Nie; Tony Liu; Rika Antonova; Timothy Jones; Robert Mullins / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:云端serving</span><span class="tag">硬件:NPU</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">代理推理现在在法学硕士推理领域占据主导地位，要求法学硕士积极参与具有工具调用功能的多轮交互。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在量化、记忆、云端serving。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-04 · Przemyslaw Forys; Haoran Wu; Can Xiao; Jiayi Nie; Tony Liu; Rika Antonova; Timothy Jones; Robert Mullins / arXiv</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">方向:量化</span><span class="tag">硬件:NPU</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体推理多轮、频繁调用工具，预填充和解码对算力与带宽的需求差别很大，业界开始走向 GPU 加专用芯片的异构拆分服务。HeteroPanacea 是用来回答“各环节该配什么硬件”的仿真框架。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">仿真显示，在现有 GPU 上做预填充与解码拆分可把服务吞吐最多提高 75%；在假设定制 NPU 的条件下，预填充、解码、注意力、前馈四路拆分在不同模型上最稳定地提升吞吐。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在一个跨层仿真框架里同时建模三件事：各环节分别采用的量化精度、设备内外并行策略的自动调度，以及按预填充/解码/注意力/前馈分工的 NPU 架构异构。</span></div>
+<div class="score-reason">评分依据：面向数据中心的智能体推理服务硬件选型，对 NPU 设计与拆分推理有参考价值，但不是端侧场景，相关度中等；跨量化、并行、架构三维的仿真框架有一定新意。作者来自帝国理工学院与剑桥大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03741" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

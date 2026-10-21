@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DP-MemView: A Memory Interface for Attribute-Level Transcript Privacy in Long-Term LLM Agents</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Jong Wook Kim; Byoungjae Min; Kennedy Edemacu; Yoonhyuk Choi; Sae-Hong Cho; Beakcheol Jang / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">DP-MemView 不把智能体原始长期记忆直接交给模型，而是通过差分隐私选择可公开的条件视图，并按敏感属性分别记录和限制隐私预算。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、安全隐私、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">有长期记忆的大模型智能体，即使从不直接说出用户隐私，多轮个性化回答累积起来也可能泄露敏感属性。DP-MemView 给智能体记忆加了一层差分隐私接口。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在受控相邻记忆库基准和公开语料迁移测试中，用三种回答模型评估，两种模式都把对话记录的可区分度压到接近随机，同时保留任务所需的个性化和整体回答质量。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">不把原始记忆直接交给回答模型，而是以差分隐私方式挑选公开的条件视图；每次挑选都按涉及的敏感属性记账，超出额度就返回固定的通用视图，并给出整段对话的严格隐私证明。</span></div>
+<div class="score-reason">评分依据：智能体长期记忆的隐私保护是个人助理类端侧 Agent 的关键问题，方法可直接迁移到本地记忆模块，但论文没有设备端实验。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03130" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

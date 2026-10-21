@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Attention-Only White-Box Transformer via LeJEPA-Based Self-Supervised Pretraining</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Yang Bai; Linyuan Wang; Haoyang Jiang; Nuolin Sun; Libin Hou; Bin Yan / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">现有白盒网络自监督学习研究通常把白盒网络通过优化算法的推导与…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、蒸馏等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-08-04 · Yang Bai; Linyuan Wang; Haoyang Jiang; Nuolin Sun; Libin Hou; Bin Yan / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:蒸馏</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">白盒 Transformer 用优化算法推导网络结构，以获得可解释性。这项工作结合 LeJEPA 自监督训练，推导出一个去掉 MLP 层、只保留注意力的白盒 Transformer，参数量更少。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">Base 规模下 CIFAR-10 准确率 88.88%、CIFAR-100 63.54%，与原版 CRATE 的 89.18%、63.56% 相当，参数减少约 31%；在标准 ViT 上用知识蒸馏把 MLP 块换成 ReLU 激活后，约 66% 参数被去掉而精度仍有竞争力。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">注意到 LeJEPA 假设的各向同性高斯嵌入分布等价于稀疏率约简目标中的扩张项，于是用自监督优化该项，其余项通过交替方向乘子法展开成纯注意力结构。</span></div>
+<div class="score-reason">评分依据：去掉 MLP 层带来明显的参数压缩，对端侧小模型设计有一点参考，但工作重心是可解释网络与自监督理论，实验也只在小规模图像分类上。贡献中等偏低。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04213" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

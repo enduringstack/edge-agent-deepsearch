@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ComFuse: Fusing Complex Memory-Intensive Subgraphs with Compute-Intensive Kernels For Modern GPU Architectures</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Di Mu; Tengyuan Jin; Zhenkun Wang; Jialin Yang; Yusen Li; Mian Huo; Shusong Guo; Gang Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">现代深度学习工作负载越来越多地由异构计算图组成，把算力密集算子与显存密集子图结合。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、GPU等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-08-04 · Di Mu; Tengyuan Jin; Zhenkun Wang; Jialin Yang; Yusen Li; Mian Huo; Shusong Guo; Gang Wang / arXiv</div>
+<div class="tags"><span class="vendor-tag">ByteDance</span><span class="tag">方向:编译部署</span><span class="tag">方向:高效推理</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">深度学习编译器通常把计算密集算子和访存密集子图分开优化，错过了跨算子融合。ComFuse 是一个能把两者自动融合成高性能 GPU 内核的编译系统。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">生成的融合内核在 post-norm 负载上全面优于 TorchInductor，最高加速 1.24 倍，三种模式平均加速 1.08、1.09、1.07 倍；在 Target-Attention 场景最高加速 1.97 倍，DLRM Bottom MLP 最高 1.23 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用访存密集的逐元素和归约子图可以与计算密集算子并发执行、被计算掩盖的机会，设计新的算子融合策略，并支持背靠背 GEMM 融合，把高层张量子程序自动下降为融合内核。</span></div>
+<div class="score-reason">评分依据：算子融合编译属于推理部署技术栈，思路可迁移到端侧 GPU/NPU 编译，但实验在服务器 GPU 上；自动融合计算与复杂访存子图有一定新意。PDF 首页作者 4、6、7 署名字节跳动，主导单位为南开大学。 作者机构依据：arXiv PDF 首页署名 ByteDance（PDF 首页作者 4、6、7 署名 ByteDance，邮箱为 bytedance.com；其余作者为南开大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03537" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

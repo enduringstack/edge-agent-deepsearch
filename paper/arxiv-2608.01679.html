@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>When Memory Becomes Authority: Benchmarking Authority Collapse at the Memory Consolidation Boundary</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Qiuyang Zhan; Rui Zhang; Sheng Guo; Lepeng Zhao; Zhuotao Liu / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">持久记忆让（自进化）LLM agent 通过把异构交互历史固化为可复用事实、偏好…来跨任务适配</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体把交互历史整合成长期记忆时，会把一条信息原本的来源权限抹掉，例如把别人随口说的话当成用户的指令。论文把这称为“权限塌缩”，并提出 AuthMem-Bench 基准来测量。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 7 个主流记忆整合器与 7 个大模型骨干的 49 种配置中，48 种出现权限塌缩；缺少权限元数据的塌缩记忆导致平均 50.3% 的越权行动率；自动预测并保存权限标签后，端到端越权行动率从 16.9% 降到 0.0%，正常任务成功率基本不变。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">固定核心事实和下游任务，只改变信息来源权限，分别评测写入时塌缩、下游授权错误和自动保留权限的效果，并为记忆附加可预测的权限标签。</span></div>
+<div class="score-reason">评分依据：智能体长期记忆的授权边界是 Agent 运行时安全的关键问题，可迁移到本地个人助手，但未涉及端侧部署（相关度 4）。提出新问题定义和系统基准，并给出有效缓解（贡献 6）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01679" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>RepoOMP: Repository-Aware Hotspot OpenMP Parallelization via Dependency-Aware Context Reduction</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-06 · Yongjie Qian; Ke Gao; Zhibin Zhang; Shaohui Peng; Ling Li / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">成熟仓库中热点代码的 OpenMP 并行化仍很困难，因为循环安全性和优化收益往往依赖非局部证据。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在评测基准。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-06 · Yongjie Qian; Ke Gao; Zhibin Zhang; Shaohui Peng; Ling Li / arXiv</div>
+<div class="tags"><span class="tag">应用:代码</span><span class="tag">方向:工具调用</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让大模型智能体帮成熟代码仓库里的热点循环加 OpenMP 并行，难点是并行是否安全往往取决于远处代码。RepoOMP 先把相关依赖证据找全，再交给模型改写。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 NPB、BOTS、FFmpeg、NCNN、GROMACS 共 951 个热点上，有 372 个通过编译、负载校验且确有加速；NPB 平均加速 8.23 倍、BOTS 8.96 倍；9 个真实内核上比 Claude Code 基线加速提高 18% 至 28%，智能体 token 成本降低 47% 至 68%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">构建多粒度性能属性图，把热点在确定性规则和大模型智能体之间分流，并生成只包含依赖事实的结构化上下文，避免把无关代码塞给模型。</span></div>
+<div class="score-reason">评分依据：是代码优化智能体，评测对象包含端侧推理框架 NCNN，但本身不涉及端侧推理部署（相关度 3）。依赖感知的上下文压缩有一定新意（贡献 5）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05855" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

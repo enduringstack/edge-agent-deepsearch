@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Viveka: Context-Aware Sensing for Energy Efficiency in Smart Wearables</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-06 · Nikhil Sreekumar; Abhishek Chandra / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">从体域传感网到工业监测，多传感器 IoT 系统的扩散越来越受限于…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在能耗功耗、评测基准。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-06 · Nikhil Sreekumar; Abhishek Chandra / arXiv</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:测试时自适应</span><span class="tag">硬件:MCU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Viveka 是一个面向智能手表等可穿戴设备的省电框架，根据当前活动场景决定开哪些传感器、用多高的采样率，同时保证活动识别准确率。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 MHEALTH 和 PAMAP2 数据集上，最佳配置下比标准基线最多省电 75%、减少 78% 数据量，分类准确率与基线相差 3%-5% 以内。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用一个常开的廉价控制器估计当前场景以及对该估计的把握，只有场景判断稳定且置信时才切换到激进的省电配置，否则安全回退；各场景配置由特征重要性和频谱能量分析得出。</span></div>
+<div class="score-reason">评分依据：面向可穿戴设备端侧感知与识别的能耗优化，场景明确属于端侧，但评测基于公开数据集而非真机功耗测量；置信门控的安全回退设计有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05572" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

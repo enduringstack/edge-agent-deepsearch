@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Noise-Aware Shrinkage for Differentially Private Zeroth-Order Fine-Tuning of Large Language Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Lele Zheng; Weifeng Kong; Xinyi Zhang; Ke Cheng; Tao Zhang; Yulong Shen / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">差分隐私零阶优化（DP-ZO）只用前向评估即可对大语言模型做省显存隐私微调。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、能耗功耗、安全隐私等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-04 · Lele Zheng; Weifeng Kong; Xinyi Zhang; Ke Cheng; Tao Zhang; Yulong Shen / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">差分隐私的零阶优化只用前向计算就能省显存地私密微调大模型，但固定尺度重建更新会让噪声主导的更新权重过大。SAGE 按信号质量自适应收缩这些更新。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 RoBERTa-large、OPT-1.3B、OPT-6.7B 上，相同隐私预算下多数设置优于现有基线，同时保持只用前向计算的低显存特性。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从观测到的二阶矩中减去已知高斯噪声方差估计真实信号能量，经时间平滑后与预热期参考值比较，得到有界收缩系数；这是纯后处理，不额外消耗隐私预算。</span></div>
+<div class="score-reason">评分依据：只前向、低显存的私密微调对设备端训练有间接参考价值，但论文没有讨论端侧场景；方法是轻量后处理改进。作者均为西安电子科技大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03277" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

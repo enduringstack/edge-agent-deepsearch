@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A Multi-Objective AutoML-based Efficient Intrusion Detection System for EV Charging Networks</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-03 · Li Yang / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">电动汽车充电系统（EVCS）越来越多地与 IoT 设备连接，提升充电智能化但也扩大…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在高效推理。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · Li Yang / IEEE GLOBECOM 2026</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">应用:安全</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">电动车充电桩接入物联网后更容易受网络攻击。论文用多目标自动机器学习，同时优化入侵检测的准确率、推理延迟和模型大小，做出适合实际部署的轻量检测系统。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 CICEVSE2024 上，相比基线 LightGBM，加权 F1 从 99.771% 升到 99.937%，P99 推理延迟从 0.0156 毫秒降到 0.0112 毫秒，模型从 6.07MB 缩到 2.52MB；在 CICIDS2017 上 P99 延迟从 0.0065 毫秒降到 0.0033 毫秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用 LightGBM 按累计特征重要性自动挑选紧凑特征子集，再用 NSGA-III 遗传算法同时调特征阈值和关键超参数，三个目标分别是加权 F1 最大、P99 延迟最小、模型体积最小。</span></div>
+<div class="score-reason">评分依据：面向物联网充电设施的轻量入侵检测，考虑了推理延迟与模型体积等部署约束，但模型是传统树模型、未在具体设备上实测，相关度偏低；多目标自动调参属常规组合，贡献一般。作者来自安大略理工大学和西安大略大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02274" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

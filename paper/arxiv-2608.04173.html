@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Understanding Fault Tolerance of Adversarially Robust Pruned Models</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-04 · Manali Dangarikar; Cory Merkel / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">部署在资源受限神经形态硬件上的 DNN 同时面临三大挑战：需通过剪枝…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在剪枝稀疏、评测基准。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-08-04 · Manali Dangarikar; Cory Merkel / NAECON 2026</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:安全隐私</span><span class="tag">硬件:神经形态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">部署在资源受限神经形态硬件上的网络要同时面对剪枝压缩、对抗扰动和硬件权重故障。这项工作实证研究了三者叠加时模型鲁棒性如何变化。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">对抗训练提升了对输入扰动的鲁棒性，却让模型对权重固定为 0 的硬件故障更敏感；剪枝并未明显增加故障敏感度，不同剪枝率在各故障率和攻击强度下影响都很小。原文实验基于 MNIST 上的三层 CNN。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在小型 CNN 上分别做自然训练与对抗训练，叠加不同剪枝率、注入权重固定为 0 的故障并施加对抗攻击，画出三者联合作用下的准确率曲面。</span></div>
+<div class="score-reason">评分依据：关注受限硬件上压缩模型的可靠性，与端侧部署相关，但只在 MNIST 小网络上验证，迁移到大模型有限。实证分析为主，贡献较低。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04173" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PGMem: Tightly Coupled Persona-Memory Graph for Lifelong Personalized Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · Wonjun Choi; Yerim Kim; Yukyung Lee; Susik Yoon / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">长期个性化对话代理必须随着用户角色的演变来跟踪用户偏好。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-08-03 · Wonjun Choi; Yerim Kim; Yukyung Lee; Susik Yoon / EMNLP 2026</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长期陪伴型对话助手要随用户喜好的变化持续记住“这个人是谁”。PGMem 把用户画像和支撑它的具体对话事件连成一张图，让每条画像结论都能追溯到证据。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ImplexConv、PrefEval、PersonaMem 三个长期个性化对话基准上，以 Qwen3-1.7B、Gemma-3-1B 等 1B–4B 级小模型为底座，全面超过摘要式、画像式、图结构和智能体式记忆基线，且在 PersonaMem 上上下文从 32k 增长到 128k 时准确率继续提升。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">构建事件节点与画像节点的异构图，用带类型的来源边和证据边连接；检索时从与问题相关的种子节点向外扩展，按证据有效性给画像信号排序。</span></div>
+<div class="score-reason">评分依据：记忆系统专门在 1B–4B 小模型上验证，直接适用于本地运行的个人助手记忆层，但论文没有做真机部署（相关度 6）。画像与事件证据耦合的图结构有新意，已被 EMNLP 2026 主会接收（贡献 6）。作者来自高丽大学和波士顿大学，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01708" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

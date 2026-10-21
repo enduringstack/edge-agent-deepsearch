@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ARCHead: Activation-Metric Residual Correction for Large Language Model Output Heads</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · Şuayp Talha Kocabay; Talha Rüzgar Akkuş; Kamer Ali Yuksel / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">仅权重量化大幅减少 LLM Transformer 块的存储，但实际后端常保留最终语言…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于量化等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ARCHead 专门压缩大模型最后的输出层（LM head）：常见的仅权重量化往往把这一层留成 BF16，它却占不少存储。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">LM head 持久存储减少 3.7–3.9 倍；在 Qwen3-8B-Base 上只用 BF16 头 25.6% 的存储，相对困惑度 1.007，而同等存储的朴素 INT4 为 1.14–1.16；替换 AWQ 或 bitsandbytes 留下的 BF16 头只增加 0.006–0.007 交叉熵，吞吐变化小于 2%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把输出层拆成量化后的低秩核心、分组 INT4 残差，以及一个在激活度量下拟合的低秩修正，打包存储且不保留稠密 BF16 头。</span></div>
+<div class="score-reason">评分依据：补上了现有量化方案普遍漏掉的输出层，对显存紧张的端侧部署可直接迁移，但没有设备实测；低秩加残差的组合属于常见压缩手法。PDF 首页作者 1、2 为独立研究者，作者 3 署名 aiXplain, Inc.，代码已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02703" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

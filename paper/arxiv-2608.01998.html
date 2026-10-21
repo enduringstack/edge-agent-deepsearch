@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TALSC: Timeliness-Aware Large-Small VLM Collaboration for Infrastructure-Assisted Autonomous Driving</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-03 · Mengmeng Zhu; Yuxuan Sun; Wei Chen; Bo Ai / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">TALSC 让车载小型 VLM 与路侧边缘服务器的大型 VLM 协作，并把网络延迟导致的信息过期纳入调度，在准确率和时效性之间动态取舍。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在多模态、长上下文推理。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-03 · Mengmeng Zhu; Yuxuan Sun; Wei Chen; Bo Ai / IEEE GLOBECOM 2026</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:调度服务</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">车载算力只够跑小视觉语言模型，路侧边缘服务器上的大模型更准但更慢，而路况信息很快过时。TALSC 在车上小模型和边缘大模型之间做在线调度，兼顾准确率和信息新鲜度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">仿真中在多种通信和计算条件下优于基线，Micro-F1 相对最佳基线最多提升 12.6%（归一化）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先对视觉语言模型推理建立信息年龄模型，刻画信息年龄、输出令牌长度与任务效果之间的关系，得到时效性指标；再用李雅普诺夫漂移加估计惩罚的在线算法决定每个任务交给车端小模型还是边缘大模型。</span></div>
+<div class="score-reason">评分依据：面向车载算力受限的大小模型端边协同调度，与端侧部署直接相关，但只在仿真中验证，相关度中上；时效性建模加在线调度属较成熟的通信系统方法组合，贡献中等。作者来自北京交通大学，会议为 IEEE GLOBECOM 2026。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01998" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

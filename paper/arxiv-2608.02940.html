@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>When Compression Scores Cannot Decide: Information Boundaries for Group-Robust LLM Pruning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Andrew Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">可重现的压缩统计数据仍然可能选择错误的候选者。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-03 · Andrew Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:MoE</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">剪枝大模型时常用一个压缩分数来挑方案，但分数稳定不代表选出的模型在最差人群上表现好。这篇论文从理论上分析压缩统计量到底能证明什么，并给出更稳健的剪枝分配方法。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在三个稠密大模型上，保留前层的分配方式让最差分组的困惑度膨胀降低 12.6% 到 20.9%；在 OLMoE 全部 16 个路由层上，汇总端点刷新让最差分组教师 KL 比最好的静态分数低 15.8%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把每种压缩统计量看作信息接口，分析它能确定哪些模型排序；在逐步压缩时额外跟踪每个分组风险与当前最大值的差距，用来决定下一步剪哪里。</span></div>
+<div class="score-reason">评分依据：大模型剪枝是端侧部署的常用技术栈，这篇偏理论分析最差分组鲁棒性，没有端侧实测，可迁移价值中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02940" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

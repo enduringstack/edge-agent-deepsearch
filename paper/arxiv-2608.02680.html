@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TraceCompiler: Skill-Guided Mining and Compilation of LLM Agent Traces into Mostly Deterministic Workflows</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Salma El Yadouni; Guanyi Li / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用工具的语言模型 agent 反复重新发现自己已执行过的流程，产出混杂可复用结构、重试、探索…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准、云端serving等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">TraceCompiler 把工具调用智能体反复执行留下的杂乱轨迹（含重试、探索、重复查询）挖掘出来，编译成大部分步骤确定执行的工作流，下次不必每步都让 LLM 重新决策。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 T1 数据上恢复工具间依赖的精确率 0.928、召回率 0.943，明显好于相邻顺序法（F1 0.711）；AppWorld 上一个 Venmo 收款意图从观察到的 34 次 API 调用压缩为 11 次运行时调用，留一验证 21 次中通过 15 次。作者明确未统计离线编译成本，不声称净效率收益。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">只有当后一个工具的参数中出现唯一可归因于前一个工具输出的值时才认定依赖关系，每条依赖带可审计证据；参数被分类为常量、用户输入、复制输出、变换或剩余 LLM 决策。</span></div>
+<div class="score-reason">评分依据：把智能体重复流程固化为确定性工作流能减少 LLM 调用，对算力受限的端侧智能体有迁移价值，但实验不涉及设备部署；依赖判定规则严谨可审计，有一定新意。PDF 首页作者分别来自洛桑联邦理工学院和伦敦的 Binome Technologies。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02680" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

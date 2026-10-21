@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>BridgeVLA++: A Data-Efficient, Generalizable, and Memory-Augmented Vision-Language-Action Framework for 3D Manipulation</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-05 · Peiyan Li; Yuze Zhu; Yixiang Chen; Qisen Ma; Yuan Xu; Jiabing Yang; He Guan; Yan Huang / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用预训练 VLM 构建 VLA 已成为 3D 机器人操作的有前景范式…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、多模态、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-08-05 · Peiyan Li; Yuze Zhu; Yixiang Chen; Qisen Ma; Yuan Xu; Jiabing Yang; He Guan; Yan Huang / arXiv</div>
+<div class="tags"><span class="vendor-tag">ByteDance</span><span class="tag">方向:多模态</span><span class="tag">方向:记忆</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">BridgeVLA++ 是一个用于机器人 3D 操作的视觉-语言-动作模型，在前作基础上加入时空记忆，让机器人能记住过去看到的场景和做过的动作。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在两个依赖记忆的操作基准上达到最优，同时保持前作的数据效率和泛化能力，并在双臂操作和另一台真实机器人平台上验证；摘要未给出具体成功率数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把点云投影成多视角图像交给预训练视觉语言模型，先预测热力图再还原 3D 动作；新增统一的时空记忆结构，分别保存持久的空间上下文和交互历史。</span></div>
+<div class="score-reason">评分依据：属于机器人动作模型，运行在真实机器人平台上，但没有讨论端侧算力约束或部署优化，且是动作策略而非带规划/工具的智能体闭环；记忆增强的设计是对前作的扩展。PDF 首页注明三位作者参与此工作时就职于 ByteDance Seed，主导单位为中科院自动化所。 作者机构依据：arXiv PDF 首页署名 ByteDance（PDF 首页脚注写明 Hongtao Wu、Xiao Ma、Tao Kong 参与本工作时就职于 ByteDance Seed；主导单位为中科院自动化所）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05042" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

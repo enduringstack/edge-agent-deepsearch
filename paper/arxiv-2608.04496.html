@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DIVE: Dynamic Iterative Visual Evidence Construction for Efficient Vision-Language Models</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-05 · Chen Zhong; Xiao An; Zijie Wang; Jiepan Li; Guangyi Yang; Wei He / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">VLM 中视觉输入常被编码成比文本长得多的 token 序列，使视觉 token 成为…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、多模态、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">视觉语言模型里图像词元远多于文字词元，是推理效率的主要瓶颈。DIVE 是一种免训练的视觉词元剪枝方法，逐步挑出互补且与问题相关的视觉证据。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 8 个图像理解基准上，去掉 88.9% 的视觉词元后仍保留未压缩模型 98.2% 的平均性能。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">不再一次性打分就剪，而是每次选出残差打分最高的词元，再更新视觉与提示的残差以扣除已被解释的信息，然后重新评估剩下的词元，循环构建保留集合。</span></div>
+<div class="score-reason">评分依据：视觉词元剪枝能直接降低多模态模型的推理开销，可迁移到端侧多模态部署，但未做端侧实测；迭代式残差选择属常见剪枝思路的改进。作者来自武汉大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04496" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

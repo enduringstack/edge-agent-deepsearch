@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Towards Improving Sequential Decision-Making in LLM Agents via Experience Memory</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Jakub Rada; Viliam Lisý / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM 在单次推理任务上长足进步，但其在序列决策上的表现还不够清楚。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、评测基准、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-08-04 · Jakub Rada; Viliam Lisý / IJCAI 2026 Workshop</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究大模型智能体在井字棋、四子棋等可精确判优的双人博弈里的连续决策能力，发现它们普遍下得不好，并尝试用经验记忆来改进。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">各档模型在井字棋和四子棋中都下出次优着法，并输给 MCTS 对手；改写棋局表面形式后表现基本不变；赛后反思和规则提取能在井字棋上带来可测提升，且不改模型权重。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">给智能体加一个面向连续决策的经验记忆：每局结束后反思并提取规则，下一局时调用这些经验来缓解功劳分配等问题。</span></div>
+<div class="score-reason">评分依据：智能体经验记忆与端侧智能体的记忆模块可迁移，但实验规模小、只在桌游上验证，也未涉及部署。论文为 IJCAI 2026 研讨会论文，作者为布拉格捷克理工大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03420" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

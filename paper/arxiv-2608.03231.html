@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Structure-Aware Robust Fine-Tuning: Defending Vision-Language-Action Robots Against Physical Attention Hijacking</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Jinquan Zhang; Dongfu Yin; Run Yang; Yufeng Yan; Zhen Tian; F. Richard Yu / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">视觉-语言-动作（VLA）策略承诺进行通用的机器人操作，但它们针对物理世界攻击的鲁棒性仍然脆弱。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于多模态、机器人等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Jinquan Zhang; Dongfu Yin; Run Yang; Yufeng Yan; Zhen Tian; F. Richard Yu / IROS 2026</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span><span class="tag">应用:安全</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究视觉-语言-动作（VLA）机器人模型在现实中被打印补丁攻击的问题：补丁会把动作相关的注意力「劫持」到自己身上导致任务失败，并给出不增加推理开销的防御微调方法。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">LIBERO 上 OpenVLA 在攻击下的失败率从 100% 降到 14.2%–56.8%（平均 28.6%），干净场景性能基本不变；在真实 PiPER 机械臂上，攻击下平均成功率从 23.0% 提到 65.0%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">攻击端用变换期望优化出可打印补丁，同时吸走动作到视觉的注意力并破坏视觉-语言对齐；防御端只微调视觉编码器，结合特征锚定、关键注意力纠正和限定在语义相关区域的几何一致性约束。</span></div>
+<div class="score-reason">评分依据：面向实体机器人 VLA 模型的物理安全，含真机实验，但不涉及端侧推理效率，模型本身也是纯动作策略；攻击机理分析与零推理开销防御有一定价值。论文已被 IROS 2026 接收，作者为深圳大学和广东省人工智能与数字经济实验室。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03231" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

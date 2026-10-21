@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MCHA: A Memory-Centric Hierarchical Architecture for Parallel-Sequential Computing</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-05 · Daijing Shi; Hongxiao Zhao; Yihan Fu; Zhan Chen; Jiayi Li; Yihang Zhu; Anjunyi Fan; Yaoyu Tao / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">新兴工作负载，如多 agent 强化学习（MARL）、大规模神经形态计算和概率图模型，天然耗尽…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在记忆、评测基准。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-08-05 · Daijing Shi; Hongxiao Zhao; Yihan Fu; Zhan Chen; Jiayi Li; Yihang Zhu; Anjunyi Fan; Yaoyu Tao / MICRO 2026</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:SNN</span><span class="tag">硬件:神经形态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多智能体强化学习、大规模神经形态计算等负载既要大量并行又有顺序依赖，传统架构被主存访问卡住。MCHA 是一种以存储为中心的分层可重构硬件架构，专门跑这类“并行-顺序”负载。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多智能体强化学习负载上比 NVIDIA A100 快 153 到 2457 倍；主存访问占比从 96% 降到 5.44%；28 纳米工艺综合后面积 2.92 平方毫米、200 MHz 下功耗 115.36 毫瓦。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用分层通信让数据在计算核之间就近路由，减轻全局内存带宽压力；配合事件驱动的条件触发编程模型，把数据传输延迟藏进执行流水线。</span></div>
+<div class="score-reason">评分依据：低功耗小面积的专用架构对端侧智能决策类负载有参考价值，但目标负载是强化学习与概率图模型而非大模型推理，结果来自周期精确仿真，相关度中等；架构与编程模型新颖，被 MICRO 2026 接收。作者来自北京大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04443" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

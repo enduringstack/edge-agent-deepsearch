@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DeGS: A Scalable 3DGS Architecture via Decoupled Workload Parsing and Reorganization</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Minnan Pei; Gang Li; Zeyu Zhu; Siting Wang; Junwen Si; Zhuoran Song; Yu Feng; Fangxin Liu / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">3D 高斯溅射（3DGS）已成为实时新视角合成的领先技术，但现有 3DGS 加速器架构…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于能耗功耗等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校顶会</span>  2026-08-03 · Minnan Pei; Gang Li; Zeyu Zhu; Siting Wang; Junwen Si; Zhuoran Song; Yu Feng; Fangxin Liu / MICRO 2026</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:能耗功耗</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">3D 高斯泼溅（3DGS）是实时新视角渲染的主流方法，但现有专用加速器堆更多计算单元也提速有限。DeGS 重新设计渲染数据流，让加速器随计算单元增加而持续变快。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">28nm 工艺实现，相比 GSCore、GBU、GCC 等加速器吞吐提升 2.36–7.25 倍，端到端加速 1.82–6.02 倍，能效提升 1.59–4.42 倍（720p 到 8K）；从 16 扩展到 1024 个计算单元，高分辨率下利用率仍保持在 80% 以上。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把标准渲染中边检查边混合的耦合流程拆成工作负载解析、重组和混合三个连续阶段，先把零碎、长度不一、有时间依赖的任务整理成紧凑无冲突的批次，再并行混合。</span></div>
+<div class="score-reason">评分依据：面向神经渲染推理的专用硬件，强调能效和可扩展性，对 AR/VR 等端侧渲染有直接价值，但不是语言模型或智能体，相关度中等；解耦数据流解决了加速器扩展瓶颈，提升幅度大，贡献较高。作者来自中国科学院自动化研究所、中国科学院大学和上海交通大学，被 MICRO 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02099" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SkillMemo: Expert-guided Skill Memory Framework for Compositional Embodied Manipulation</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-06 · Changyuan Wang; Chubin Zhang; Zhenyu Wu; Runhao Li; Angyuan Ma; Ke Chao; Yinan Liang; Xiuwei Xu / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:MoE</span><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">具身视觉运动模型，包括 Diffusion Policy（DP）和 VLA 模型，在机器人操作上表现不错…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、多模态、MoE等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-06 · Changyuan Wang; Chubin Zhang; Zhenyu Wu; Runhao Li; Angyuan Ma; Ke Chao; Yinan Liang; Xiuwei Xu / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:MoE</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">SkillMemo 给机器人操作策略加了一个“技能记忆库”：把长示范拆成可复用的原子技能存起来，执行新的组合任务时检索相关技能辅助动作预测。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在仿真基准和真实机器人操作任务上，持续提升扩散策略和 VLA 两类底座，取得最好成绩并超过 π0.5，对没见过的任务组合泛化更好；摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用混合专家结构把轨迹隐式切分成技能原语，把紧凑的技能表示以键值对存进情景记忆库，推理时检索并与当前门控分布融合。</span></div>
+<div class="score-reason">评分依据：机器人操作策略的记忆增强，属于具身动作模型，没有端侧部署与算力约束讨论（相关度 3）。技能级记忆设计有一定新意（贡献 5）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05970" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>When Replanning Becomes the Bottleneck: Budgeted Replanning for Embodied Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-02 · Shuaijun Liu; Feiyang You; Xingwei Chen; Ningxin Su / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">具身 agent 频繁重规划以从执行漂移、部分可观测和协调风险中恢复，但每次 LLM 重规划调用可能消耗…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、机器人等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校顶会</span>  2026-08-02 · Shuaijun Liu; Feiyang You; Xingwei Chen; Ningxin Su / ICML 2026</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:调度服务</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">具身智能体频繁调用大模型重新规划时，上下文越积越长，调用延迟出现长尾、错过实时期限。BRACE 把“要不要重规划、用多少 token、延迟目标多少”做成一个有预算的控制回路。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Meta Habitat、RoboFactory 和 AirSim 上，BRACE 配合 E-RECAP 剪枝把每次重规划的 token 数减少 62%–92%，SLO 违约率从 85.5%–100.0% 降到 4.7%–50.0%；在更难的 RoboFactory 设置中成功率达 80.0%、SLO 违约仅 4.6%，剪枝本身只增加约 35 毫秒开销。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">控制器在每次触发时决定是否重规划、选择规划模式并分配 token 预算与延迟目标；配套的 E-RECAP 在 Transformer 各层预测 token 价值、保留首尾关键 token，逐层剪掉无用上下文。</span></div>
+<div class="score-reason">评分依据：直接面向具身智能体的实时延迟与上下文开销问题，token 剪枝对算力受限的机器人平台可直接迁移，但实验在仿真环境和服务器 GPU 上完成（相关度 6）。把重规划当作带预算的控制问题并关注尾延迟，思路新颖，已被 ICML 2026 接收（贡献 7）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01428" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

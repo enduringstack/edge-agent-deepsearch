@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SkillJack: Persistent Skill Backdoors in Self-Evolving Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-05 · Zonghao Ying, Xiangfan Wu, Huiyu Wu, Xing Zheng, Huangsheng Cheng, Xiaorong Shi, Jing Guo / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">SkillJack 揭示自我演化智能体的持久技能后门风险：恶意交互可能被整理成可复用技能，并在后续不同任务中继续触发。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">攻击者污染智能体的交互历史，使恶意行为在技能提取阶段被写入长期技能库。</span></div>
-<div class="score-reason">评分依据：属于记忆、安全隐私、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-08-05 · Zonghao Ying, Xiangfan Wu, Huiyu Wu, Xing Zheng, Huangsheng Cheng, Xiaorong Shi, Jing Guo / arXiv</div>
+<div class="tags"><span class="vendor-tag">Tencent</span><span class="tag">方向:安全隐私</span><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">应用:安全</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">SkillJack 揭示了自我演化智能体的一种新风险：恶意交互经验会被智能体自己整理成可复用技能，从而变成长期存在、能跨任务触发的后门。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 SkillX 和 Anything2Skill 上用 150 条轨迹测试：SkillX 中安全检测率从带毒轨迹的 98.5% 降到提取后技能的 11.4%；植入技能的攻击成功率分别为 56.2% 和 89.2%；删除原始带毒记录后仍有 80.0% 的攻击持续有效。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">不直接篡改运行时上下文，而是劫持“经验转技能”的学习流程，利用技能提取时恶意意图被洗白、临时经验升级为持久能力、攻击与原始记录脱钩这三种特性植入恶意行为。</span></div>
+<div class="score-reason">评分依据：研究对象是智能体技能与记忆的安全，与端侧 Agent 运行时间接相关，不涉及设备部署；首次把技能演化当作攻击面，发现有新意。PDF 首页全部作者署名腾讯朱雀实验室，因此标注 Tencent。 作者机构依据：arXiv PDF 首页署名 Tencent（PDF 首页署名 Tencent Zhuque Lab，全部作者属该实验室）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2608.03509" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Agentic Reinforcement Learning with Self-Distilled Reward Shaping</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-04 · Ranxu Zhang; Guinan Chen;  Chenshaodong; Jinghao Lin; Xiaozhou Xu;  Sunzhe; Yanyong Zhang; Chao Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Agentic 强化学习让 LLM agent 通过交互学习，但稀疏轨迹级奖励只揭示成功，未指出哪些…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、蒸馏、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-08-04 · Ranxu Zhang; Guinan Chen;  Chenshaodong; Jinghao Lin; Xiaozhou Xu;  Sunzhe; Yanyong Zhang; Chao Wang / arXiv</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:规划推理</span><span class="tag">方向:蒸馏</span><span class="tag">方向:工具调用</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">针对多轮语言智能体的强化学习，只靠整条轨迹成败的稀疏奖励很难知道中间哪一步做对了，这项工作用同一模型自蒸馏出逐 token 的奖励信号来细化功劳分配。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ALFWorld、WebShop 和检索问答三个交互基准上，长程任务表现持续提升，且在换用不同强化学习骨干、减少数据、未见任务和延长训练时收益都保持。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">训练时让冻结的策略快照在带任务技能提示的条件下给原轨迹的每个 token 重新打分，在每步内归一化，再用「教师置信度与真实回报是否相关」的门控筛选后并入原生 GRPO/GiGPO 的优势计算；推理时不需要技能提示。</span></div>
+<div class="score-reason">评分依据：属于云端智能体训练方法，与端侧部署关系很弱；在信用分配上把特权技能打分和回报关联门控结合，有一定新意。PDF 首页显示 4 位作者署名 Alibaba Group，第一作者注明在阿里巴巴实习期间完成。 作者机构依据：arXiv PDF 首页署名 Alibaba（PDF 首页作者 3–6 署名 Alibaba Group（杭州），第一作者注明工作在阿里巴巴实习期间完成）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03223" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

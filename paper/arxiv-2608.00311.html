@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SeDeM: Selective Decompression of Hidden-State Memories for Long-Context Question Answering</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-31 · Maryam Haghifam; Jason Cong; Yizhou Sun / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">SeDeM 压缩长上下文问答中的隐藏状态记忆，只在需要时解压相关部分，以降低预填充注意力和键值缓存的计算与内存开销。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把历史隐藏状态压缩保存，并根据问题选择性解压与当前回答相关的记忆片段。</span></div>
-<div class="score-reason">评分依据：属于记忆、评测基准、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校顶会</span>  2026-07-31 · Maryam Haghifam; Jason Cong; Yizhou Sun / EMNLP 2026</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">SeDeM 把长文档压缩成紧凑的隐藏状态记忆块存起来，回答问题时只挑出相关的块解压给解码器，降低长上下文问答的计算和显存开销。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在四个长上下文问答基准上，1B 和 3B 同骨干设置下问答得分均高于主要压缩基线，3B 版本在三个数据集上超过全上下文微调；相比 ICAE，在线首令牌时间降低 1.74-2.46 倍，解码吞吐提高 1.08-1.10 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把“存储压缩记忆”和“给解码器提供条件”分开：上下文先编码成隐藏状态记忆块，按问题选出相关块，只对选中的块解压，避免处理全文或直接从高度压缩的槽位生成答案。</span></div>
+<div class="score-reason">评分依据：长上下文压缩与选择性解压能减少预填充和 KV cache 开销，可迁移到端侧小模型，但实验不涉及具体设备。论文已被 EMNLP 2026 主会接收，作者来自加州大学洛杉矶分校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00311" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>It's the Decoding Format, Not the Perturbation: Auditing Consistency-Based Selection for Vision-Language Test-Time Scaling</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-02 · Puzhuo Zheng; Hasan Kurban / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">模型:Qwen</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">测试时扩展通过采样多个候选解并从中选择来提升 LLM 推理，但同样方法迁移到视觉…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于多模态、评测基准、Qwen等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-02 · Puzhuo Zheng; Hasan Kurban / arXiv</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这是一篇“打假”式研究：检验给图片加扰动再看答案是否一致、以此挑选视觉语言模型候选答案的测试时扩展方法，结论是其收益主要来自解码格式而非扰动本身。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">扰动一致性选择在 TextVQA 上看似比多数投票高最多 31.8 分，但换成同样短格式、不带思维链的对照组后，在所有基准上都与其持平或更好，Qwen 各类别均无显著增益。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">设计格式匹配的对照实验：在原图上用同样数量的短答案采样做多数投票，从而把扰动带来的效果与解码格式的效果分离开。</span></div>
+<div class="score-reason">评分依据：测试时扩展属于推理阶段技术，但与端侧部署关联很弱；作为负面结果的方法学审计有一定价值。作者来自哈马德·本·哈利法大学，未涉及公司。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01207" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

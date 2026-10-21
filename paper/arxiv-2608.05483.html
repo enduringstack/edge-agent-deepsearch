@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PLoRA: An NDP-Enhanced Pooled-Memory System for Cost-Efficient Multi-LoRA Serving</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-06 · Zhongkai Yu; Ohm Rishabh Venkatachalam; Zheng Wang; Yikai Li; Yichen Lin; Zihao Yu; Yuke Wang; Liu Liu / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Multi-LoRA serving 让一个底座模型变成数千个专用变体，每个用户、任务或 agent 一个适配器，部署可容纳 1000+…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于KV cache、记忆、GPU等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-08-06 · Zhongkai Yu; Ohm Rishabh Venkatachalam; Zheng Wang; Yikai Li; Yichen Lin; Zihao Yu; Yuke Wang; Liu Liu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Samsung</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">方向:KV cache</span><span class="tag">硬件:H100</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">PLoRA 是一套多 LoRA 适配器服务系统：把成百上千个适配器和 KV 缓存放进带近数据计算的池化内存里，让 GPU 直接读写，降低云端定制模型服务成本。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">单张 H100 服务 1000 个适配器时，所有测试模型和负载下解码时延最低，平均比真机 S-LoRA 低 6.6 倍，额外设备面积不到 3.4%；短上下文下 32 GB/s 链路带宽即可饱和。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">适配器和 KV 缓存驻留在 CXL/NVLink 类池化内存中，在内存旁做近数据计算只回传压缩后的结果；GPU 侧按链路参数化的代价模型为每个适配器挑选执行策略并缓存最关键的数据。</span></div>
+<div class="score-reason">评分依据：典型的云端多适配器服务系统，与端侧只有宽泛关联，相关度低；近数据计算加池化内存服务 LoRA 的思路有一定新意。 作者机构依据：arXiv PDF 首页署名 Samsung（PDF 首页作者 Shuyi Pei、Yangwook Kang 署名 Samsung Semiconductor, Inc.（samsung.com 邮箱），其余作者来自加州大学圣地亚哥分校等高校）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05483" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

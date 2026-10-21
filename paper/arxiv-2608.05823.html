@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Decomposed Entailment for Factuality Checking and Hallucination Detection</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-06 · Achir Oukelmoun; Nasredine Semmar; Gaël De Chalendar / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM 的可靠性常被事实不一致损害，包括幻觉——生成内容与…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于量化、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-06 · Achir Oukelmoun; Nasredine Semmar; Gaël De Chalendar / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">应用:RAG</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">HallDetect 是一个轻量、不需要参考答案的幻觉检测框架，用来检查大模型生成内容有没有脱离原始资料。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在所有方法共用 4 比特量化底座和消费级硬件预算的设定下，四个基准中有三个优于同等资源的生成式和嵌入式基线，且能定位到出错的具体片段。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先把生成内容拆成原子论断，用一个小型编码器蕴含模型对照多尺度原文片段逐条核验，只要有一条被高置信度否定就判为有问题。</span></div>
+<div class="score-reason">评分依据：用小型编码器和 4 比特量化底座在消费级硬件上运行，适合资源受限场景的事实核查（相关度 4）。分解加核验的思路较常见（贡献 4）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05823" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

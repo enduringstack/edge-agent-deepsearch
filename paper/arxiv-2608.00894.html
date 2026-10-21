@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Rethinking Agentic Kernel Generation for Emerging Accelerators</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-01 · Ruijie Gao; Jirong Yang; Barry Lyu; Haoran Jin; Nathan Bleier / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作研究用智能体为新型加速器自动生成计算内核，缓解新硬件缺少成熟编译器后端和人工调优工具的问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让 AI 智能体为缺少成熟编译器的新型加速器自动生成计算内核时，不再每次重新理解硬件规则，而是先把硬件语义编译成可复用的接口。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 20 个 Gemmini 和 36 个 PLENA 工作负载上全部生成经过验证的正确内核；相比编译器默认方案，几何平均加速 3.34 倍（Gemmini）和 1.10 倍（PLENA）；相比 KernelCraft，每个验证内核消耗的 token 分别减少 26.3% 和 98.2%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把指令行为、合法性约束、同步规则和存储协议一次性编译成持久的符号化映射接口，神经网络智能体只在经过验证的映射空间里搜索与具体负载相关的决策，从而把内核生成变成可验证的设计空间探索。</span></div>
+<div class="score-reason">评分依据：Gemmini 这类可定制加速器的内核自动生成与端侧硬件部署相关，但评测在模拟器上完成；把硬件语义与智能体搜索解耦的思路有新意。作者来自密歇根大学和得克萨斯大学奥斯汀分校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00894" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

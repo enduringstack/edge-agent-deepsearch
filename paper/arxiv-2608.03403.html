@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Towards Robust Tool Use in Agents via Experience-Driven Adaptive Guidance</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Can Wang; Haoran Chen; Li Yu; Ding Hao; Bohai Zhao; Zhaoyang Liu; Zhiying Tu / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:工具调用</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Agent 的性能瓶颈正从模型能力转向执行过程的鲁棒性。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于蒸馏、工具调用等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-08-04 · Can Wang; Haoran Chen; Li Yu; Ding Hao; Bohai Zhao; Zhaoyang Liu; Zhiying Tu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:工具调用</span><span class="tag">方向:记忆</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体常在工具调用上出错，ExpG 从历史执行轨迹中总结每个工具的能力边界和最佳用法，形成指导规则，让智能体更稳地用工具。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在工具选择、工具调用和回复生成三类任务上都有稳定提升，配了 ExpG 的小模型智能体能超过不使用它的大模型，在含干扰工具的噪声环境中提升尤其明显。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">三步：从历史轨迹多角度归因评估每次调用质量，沉淀成可学习的经验；用等价类方法过滤和挑选代表性经验并总结成通用指导；在新任务中按需自适应调用这些指导，不需要改模型参数。</span></div>
+<div class="score-reason">评分依据：不改参数就让小模型更会用工具，对端侧小模型智能体有迁移价值，但实验没有涉及设备端；经验蒸馏为指导的做法属于已有记忆方向的改进。PDF 首页作者 1、2、3、6 署名阿里巴巴 Token Hub。 作者机构依据：arXiv PDF 首页署名 Alibaba（PDF 首页作者 1、2、3、6 署名 Alibaba Token Hub，另有山东省数字服务计算重点实验室和香港理工大学作者）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03403" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

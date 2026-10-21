@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Output-Aware Rotation for INT2 KV-Cache Quantization</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Vincent-Daniel Yun; Woosang Lim; Minsoo Cheong; Sunwoo Lee; Murali Annavaram; Sai Praneeth Karimireddy; Sungjoo Yoo / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项方法在量化前旋转 KV 表示，并根据输出误差调整 INT2 编码，减少超低比特 KV 缓存带来的质量损失。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于量化、KV cache、记忆等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-03 · Vincent-Daniel Yun; Woosang Lim; Minsoo Cheong; Sunwoo Lee; Murali Annavaram; Sai Praneeth Karimireddy; Sungjoo Yoo / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">应用:长上下文推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">OptR 是一种把 KV cache 压到 2 比特的量化方法：不再只看缓存本身的误差，而是直接以注意力输出经过输出投影后的误差为目标来学习旋转矩阵。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen3-8B 上，配合 QuaRot 把 AIME25 准确率从 17.33% 提到 66.67%，配合 OSCAR 从 54.67% 提到 66.00%（BF16 为 68.00%）；在三个模型、五个推理与编程基准上持续改进两种基线，推理开销可忽略。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把输出误差分解为键和值各自引起的部分，按头学习正交修正；再对键做一种不改变 softmax 分布的等价重参数化，压掉通道间的大偏移，且保持分页 KV cache 格式不变。</span></div>
+<div class="score-reason">评分依据：INT2 KV cache 量化直接缓解长上下文推理的内存与带宽瓶颈，对端侧可迁移，但实验在服务器级模型上、无设备实测；以输出端误差为目标学旋转是有意义的改进。作者来自南加州大学、首尔国立大学、仁荷大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02691" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

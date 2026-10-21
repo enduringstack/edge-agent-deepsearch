@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Trust-Aware Topology Learning for Dynamic Decentralized Federated Learning under Adversaries</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-04 · Shubham Vaishnav; Murtaza Rangwala; Ali Beikmohammadi; Sindri Magnússon; Rajkumar Buyya / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在动态移动去中心化联邦学习（DFL）中，对手既可毒化模型更新，也可毒化设备选择协作者用的拓扑信息…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在联邦学习、安全隐私。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-04 · Shubham Vaishnav; Murtaza Rangwala; Ali Beikmohammadi; Sindri Magnússon; Rajkumar Buyya / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span><span class="tag">方向:端侧训练</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在移动设备之间去中心化联邦学习时，攻击者不仅会投毒模型更新，还会伪造拓扑信息误导设备选择合作者。DMTT 让每台设备自己评估信任，只和可信邻居聚合。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 UCI HAR 和 PAMAP2 上各划分给 100 个移动客户端，攻击者比例从 10% 到 80% 时，诚实节点准确率始终高于 0.862 和 0.829；静态和动态 FedAvg 在所有比例下都退化到随机水平。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每台设备根据链路可靠性、签名拓扑声明、见证者佐证和信任模型维护自己的局部拓扑视图，用模型兼容性、拓扑信任和链路可靠性的综合分筛选合作者再聚合。</span></div>
+<div class="score-reason">评分依据：面向移动设备间的联邦学习安全，属于端侧训练方向，但实验运行在研究云的进程模拟上，与端侧推理部署关联有限。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03156" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Global Optimization and Inference-Time Region Grafting for Agentic Workflows</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Donghyeok Koh; Gyuwan Kim; Jinyeong Bak; Seung-Hoon Na; Tao Yang; Haneol Jang; Cheoneum Park / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Agentic 工作流优化的最新进展通过任务专用工作流搜索或输入条件架构选择自动化工作流设计。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-03 · Donghyeok Koh; Gyuwan Kim; Jinyeong Bak; Seung-Hoon Na; Tao Yang; Haneol Jang; Cheoneum Park / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:工具调用</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体工作流优化通常在执行前就定好整套流程，失败了也没法局部调整。GRAFT 保留全局优化好的工作流，执行时只把表现差的局部区域替换成更好的备选。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在相同优化器和执行器设置下，平均比此前最强的工作流优化方法 MaAS 高 3.85 分；只把执行器换成更强模型还能继续提升，无需重新优化全局工作流。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">不训练参数，执行时用无需标注的执行质量信号评估各区域的替代方案，只接受能提升局部质量且不破坏整体一致性的替换，实现逐输入的自适应。</span></div>
+<div class="score-reason">评分依据：属于云端智能体工作流的推理时优化，与端侧部署无直接关系，相关度低；局部嫁接避免整体重新优化，方法有一定新意。作者来自韩国 HBNU、SKKU、UNIST 与美国 UCSB。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02353" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

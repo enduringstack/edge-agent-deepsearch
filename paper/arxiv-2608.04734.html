@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A Systolic Array Architecture for Nonlinear Activation Functions and Softmax Computation using Chebyshev Polynomials</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Benedikt Schaible; Anirudh Suresh Bharadwaj; Ulf Schlichtmann; Jiang Hu / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">神经网络加速器近年来因比 CPU 平台更高效而流行。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于高效推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Benedikt Schaible; Anirudh Suresh Bharadwaj; Ulf Schlichtmann; Jiang Hu / IEEE COINS 2026</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">硬件:NPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">为神经网络加速器设计的一种脉动阵列激活单元，同一套硬件既能算 tanh 等常见激活函数，也能算 softmax，省去分别做两套电路。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">tanh 的平均绝对误差比 CORDIC 基线低最多 71%，面积少 4.6%、功耗低 5.1%；softmax 近似的 KL 散度比 CORDIC 低 44.6%、比分段线性近似低 79.0%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用切比雪夫多项式逼近各种非线性函数，让多项式系数在脉动阵列里流动计算，单变量激活和多变量 softmax 共享同一批处理单元。</span></div>
+<div class="score-reason">评分依据：面向神经网络加速器的非线性算子硬件，对端侧 NPU 的面积和功耗优化有直接参考价值，但未做具体端侧芯片部署；方法是已有多项式逼近在脉动阵列上的新组织方式，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04734" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

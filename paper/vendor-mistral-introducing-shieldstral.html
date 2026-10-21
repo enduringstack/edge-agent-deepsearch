@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Introducing Shieldstral</h1>
-<div class="meta"><span class="score">14</span> <span class="tier">官方动态</span>  2026-08-04 · Mistral / Mistral</div>
-<div class="tags"><span class="vendor-tag">Mistral</span><span class="tag">模型:Mistral</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Mistral 发布 Shieldstral，3B 开放权重策略自适应多模态安全分类器，将内容审核建模为二值问答、推理时输入策略即可，Apache 2.0 开源，适配端侧部署。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：来自Mistral官方发布，内容直接涉及Mistral，因此作为本周官方动态收录。</div>
+<div class="meta"><span class="score">10</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-08-04 · Mistral / Mistral</div>
+<div class="tags"><span class="vendor-tag">Mistral</span><span class="tag">方向:安全隐私</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Mistral 开源 3B 参数的多模态安全分类模型 Shieldstral：把内容审核写成自然语言的是非问题，推理时换策略不用重新训练，文本和图片都能判。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">官方称在文本安全、拒答检测、策略适配和多模态安全评测上追平或超过最大 7 倍于它的开源护栏模型，多模态审核达到新的最好水平；单张 16GB NVIDIA GPU 即可运行。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">输入由场景说明、一个是非问题和待判内容组成，模型只读出“是/否”两个词的概率作为连续安全分；训练时统一多源数据格式、构造易混淆策略的对比样本，并用 LoRA 微调后合并多个检查点。</span></div>
+<div class="score-reason">评分依据：3B 小模型单卡可跑，适合作为本地或边缘部署的安全护栏，但原文没有端侧设备评测；用问答方式实现推理时可换策略的审核有一定新意。</div>
 <div class="source"><a href="https://mistral.ai/news/shieldstral/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

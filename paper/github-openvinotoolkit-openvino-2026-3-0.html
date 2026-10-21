@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>2026.3.0</h1>
-<div class="meta"><span class="score">14</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-08-04 · openvinotoolkit / GitHub</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">硬件:NPU</span><span class="tag">硬件:GPU</span><span class="tag">模型:MiniCPM</span><span class="tag">方向:推理框架</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">OpenVINO 2026.3 扩展了 CPU、GPU、NPU 上的小语言模型、多模态、语音和向量模型支持，并加入 EAGLE-3 投机解码与 MoE 磁盘卸载。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：白名单开源项目的正式版本更新，重点涉及投机解码、NPU、GPU，可直接跟踪落地能力。</div>
+<div class="meta"><span class="score">13</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-08-04 · openvinotoolkit / GitHub</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:投机解码</span><span class="tag">方向:量化</span><span class="tag">方向:MoE</span><span class="tag">方向:多模态</span><span class="tag">硬件:NPU</span><span class="tag">硬件:CPU</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">英特尔 OpenVINO 发布 2026.3 正式版，扩充了可在 CPU、GPU、NPU 上本地运行的小语言模型、多模态、语音识别和向量模型，并补齐多项端侧推理加速能力。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">发布说明称：开启 MoE 磁盘卸载后，Qwen3-30B-A3B 这类 30B MoE 模型可在 16GB 内存的设备上以可接受的生成速度运行；其余改进未给出量化数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把 EAGLE-3 投机解码扩展到大语言模型和视觉语言模型并支持 CPU/GPU/NPU；IR 与 ONNX 模型按需延迟加载权重以降低初始化峰值内存；NNCF 新增 ONNX 模型 FP8 量化；GenAI 新增全模态、语音识别和多模态向量三类流水线。</span></div>
+<div class="score-reason">评分依据：OpenVINO 是 PC 和边缘设备上的主流本地推理引擎，本版直接面向 NPU 和小内存设备扩展模型与加速手段，端侧相关度高；内容以工程能力整合为主，方法本身不新。</div>
 <div class="source"><a href="https://github.com/openvinotoolkit/openvino/releases/tag/2026.3.0" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

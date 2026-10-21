@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SpecDrop: Parameter-Free Category-Conditioned Routing for Modular Specialization</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-04 · Boyao Wang; Zhihan Lei / arXiv</div>
-<div class="tags"><span class="tag">方向:MoE</span><span class="tag">模型:Llama</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">MoE 网络通过学习路由器、门控和负载平衡损失追求专业化，但在总参数预算相同时，学习到的…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于MoE、Llama等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-08-04 · Boyao Wang; Zhihan Lei / NeurIPS 2026</div>
+<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:模型架构</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">混合专家模型靠学习出来的路由器实现专家分工，但在同等参数下有时还不如不路由。SpecDrop 用一个固定、无参数的按类别路由方案，探究问题出在路由算法本身还是训练信号粒度与目标类别是否对齐。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 CIFAR-100（ResNet-110）上达到 79.23%，比稠密模型高 4.75 个点；在 ImageNet-1K（ViT-S/16）上达到 79.89%，比同参数无路由对照高 6.53 个点；分支与类别对齐率为 68%/100%。在语言建模和 Llama-3.2-1B LoRA 指令微调上与无路由对照持平。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每个分支对自己负责的类别取较大权重、对其他类别只留少量泄漏权重，用与类别无关的固定分母合并，不学习任何路由参数，也不加辅助损失；推理时需要类别标签。</span></div>
+<div class="score-reason">评分依据：研究 MoE 路由何时有效，与端侧推理效率关系较间接，实验以训练效果为主。结论“粒度对齐比算法选择更关键”对 MoE 设计有启发，贡献中等；论文已被 NeurIPS 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04084" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

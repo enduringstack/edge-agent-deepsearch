@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LaCache: Robust Semantic Caching for LLM Serving</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Jiacheng Liang; Yuhui Wang; Tanqiu Jiang; Ting Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LaCache 面向 LLM 语义缓存的碰撞投毒风险，同时检查查询和生成响应的语义约束，避免攻击者用相似问题污染后续正常请求的答案。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校顶会</span>  2026-08-03 · Jiacheng Liang; Yuhui Wang; Tanqiu Jiang; Ting Wang / NeurIPS 2026</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:安全隐私</span><span class="tag">方向:投机解码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">语义缓存能让大模型服务直接复用相似问题的答案，但攻击者可以注入恶意问题污染缓存。LaCache 给语义缓存加上可证明的防污染能力。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多种大模型和基准上，把缓存碰撞攻击的命中率降到接近 0，同时保留 90% 以上的正常缓存收益。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">除了比对问题是否相似，还用投机解码先生成回答的前 k 个词元，只有回答开头也命中缓存时才复用，把完整性检查从问题挪到回答。</span></div>
+<div class="score-reason">评分依据：面向云端大模型服务的语义缓存安全，与端侧只有间接关系（相关度 3）。把校验转移到回答侧并给出可证明防御是新思路，已被 NeurIPS 2026 接收（贡献 6）。作者来自石溪大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01718" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SKILL-KD: Contrastive Skill Distillation for LLM Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-06 · Qiming Shi, Yibo Dou, Jiawen Zhu, Yulong Tao, Linbo Jin, Zhaolu Kang, Yunfan Zhou, Di Weng / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">基于技能的提示已成为提升 LLM agent 的实用机制，但现有技能获取方法常把技能…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于蒸馏、记忆等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-08-06 · Qiming Shi, Yibo Dou, Jiawen Zhu, Yulong Tao, Linbo Jin, Zhaolu Kang, Yunfan Zhou, Di Weng / arXiv</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:蒸馏</span><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">SKILL-KD 让强“老师”智能体把经验变成可复用的文字技能补丁，交给能力较弱、参数冻结的“学生”智能体使用，不用重新训练学生模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">原文称在五个智能体基准（SearchQA、SpreadsheetBench、DocVQA、LiveMath、ALFWorld）和两种学生设置下，持续优于固定模型的适配基线；摘要未给出具体提升数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对比同一任务上学生失败轨迹与老师轨迹，提炼差异写成技能补丁，重跑学生验证后迭代修订；用带轨迹链接的编辑历史和防漂移合并策略决定补丁是新增、合并还是跳过。</span></div>
+<div class="score-reason">评分依据：以提示中的技能库提升小模型智能体，思路可迁移到端侧小模型智能体，但原文没有设备端实验；技能对比蒸馏有一定新意。作者 Yulong Tao 在 arXiv 论文首页署名 Alibaba Group，其余主要为浙江大学、北京大学。 作者机构依据：arXiv PDF 首页署名 Alibaba（PDF 首页作者 Yulong Tao 署名 Alibaba Group，通讯作者及多数作者来自浙江大学）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.28048" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

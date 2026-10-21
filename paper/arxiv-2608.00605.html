@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Escaping Confidence Trap: Evolutionary Decoding for Mathematical Reasoning in Diffusion LLMs</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-01 · Zhenhong Sun; Hanqing Zhao; Yatao Bian; Rongcheng Tu; Liuyue Xie; Xu Zhang; Jue Wang; Davide Modolo / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">扩散大语言模型（dLLM）作为自回归 LLM 的有前景替代兴起，通过分块渐进…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-08-01 · Zhenhong Sun; Hanqing Zhao; Yatao Bian; Rongcheng Tu; Liuyue Xie; Xu Zhang; Jue Wang; Davide Modolo / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究扩散式大语言模型（以 LLaDA 2.0 为例）做数学推理时的“置信度陷阱”：局部 token 置信度高不代表整体推理正确，并提出无需训练的进化式解码来跳出错误路径。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">原文称在多个基准上让 LLaDA 2.0 的数学推理比基于置信度的解码更可靠；摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把扩散解码看作候选推理状态的进化过程：逐步选择保留有用的数值和符号信号、抑制重复模式，按块做变异引入结构化的备选路径。</span></div>
+<div class="score-reason">评分依据：属于推理阶段的解码算法，但目标是提升推理正确率而非降低开销，与端侧部署关系弱；对扩散模型解码失败模式的分析有新意。部分作者署名 Amazon，但论文主体来自高校，未填公司归属。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00605" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

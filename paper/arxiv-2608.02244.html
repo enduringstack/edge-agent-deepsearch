@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Efficiency and Cost Alignment in Batched LLM Serving via Resource-Fair Scheduling</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Dayi Yao; Zijie Zhou / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项资源公平调度方法按请求的 KV 缓存占用和解码成本组织批次，避免短请求被长请求拖累，并在吞吐量与单请求资源公平之间做权衡。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于KV cache、GPU等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-03 · Dayi Yao; Zijie Zhou / arXiv</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">方向:KV cache</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型批量服务时，同一批里长请求的 KV 缓存决定了每步耗时，短请求被迫一起“陪跑”，付出不成比例的时延和算力。论文把这种不公平建模成调度问题，并给出兼顾吞吐和成本的批处理策略。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">理论上 ISJL 的全局竞争比下界为 3/4；实验中在小公平预算时利润与最长任务优先（LJF）相差 0.8% 以内、吞吐高 3.5%，在较大预算时吞吐比 LJF 高 20.31%，利润比先来先服务高 20.19%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">约束同一批内请求的解码进度（即 KV 缓存占用）差距，在此基础上设计“限量插入短任务”的混合批处理算法 ISJL，并分析按令牌计费下调度对推理成本和利润的影响。</span></div>
+<div class="score-reason">评分依据：属于云端大模型服务的批调度，与端侧部署关系较远，相关度低；把批内资源公平性与按令牌计费的成本对齐做了形式化并给出竞争比保证，贡献中等。作者来自华盛顿大学和香港科技大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02244" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

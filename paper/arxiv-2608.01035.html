@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>WAM-Diff2: Hierarchical AR-to-Diffusion Distillation for Highly Efficient Autonomous Driving VLA</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-02 · Zhihao Zhu; Hanlin Shang; Mingwang Xu; Feipeng Cai; Zhuolin He; Yaoyi Li; Jianhua Han; Hang Xu / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">WAM-Diff2 面向自动驾驶视觉语言动作模型的高效部署，把自回归世界动作模型的能力蒸馏到扩散模型中，以降低端到端驾驶推理开销。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于蒸馏、多模态、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-02 · Zhihao Zhu; Hanlin Shang; Mingwang Xu; Feipeng Cai; Zhuolin He; Yaoyi Li; Jianhua Han; Hang Xu / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">应用:机器人</span><span class="tag">硬件:GPU</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">WAM-Diff2 把自动驾驶里逐字生成的视觉-语言-动作大模型改造成可并行解码的扩散模型，在保持理解、感知和规划能力的同时大幅降低推理延迟。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">从自回归到扩散的转换带来 2.8 倍解码加速，再叠加 FlashInfer 和 CUDA Graph 后累计提速 15.1 倍（每 token 从 22.7 毫秒降到 1.5 毫秒），NAVSIM 规划分数从 88.14 仅降到 87.28。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">分三步蒸馏：先逐块把因果注意力改成双向注意力，再逐块蒸馏，最后做跨尺度的整模型蒸馏，让预训练好的自回归模型平滑迁移到离散扩散解码。</span></div>
+<div class="score-reason">评分依据：面向车载 VLA 的推理加速，对车端部署有直接参考，但实验在数据中心 GPU 上完成，相关度中等；分层蒸馏转换方案有一定新意。公司归属依据论文 PDF 首页：作者 Feipeng Cai、Yaoyi Li、Jianhua Han、Hang Xu 署名引望智能（Yinwang Intelligent Technology）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01035" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

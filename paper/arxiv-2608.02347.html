@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Mamba with Hierarchical Memory: Solving Representation Bottleneck in Long Sequence Modeling</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Qinwen Wang; Jieping Luo; Aoxiang Qin; Ruoyu Zhao; Jianxiong Tang; Wei Zhang; Zhichao Lu; Luziwei Leng / arXiv</div>
-<div class="tags"><span class="tag">方向:高效注意力</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Mamba 等循环线性注意力模型（RLA）提供高效线性时间序列建模作为 Transformer 替代，但其固定容量…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于高效注意力、记忆、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-03 · Qinwen Wang; Jieping Luo; Aoxiang Qin; Ruoyu Zhao; Jianxiong Tang; Wei Zhang; Zhichao Lu; Luziwei Leng / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:记忆</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Mamba 这类线性循环模型状态容量固定，序列一长就记不住。HMM 借鉴人类分层记忆，在预训练 Mamba 上加一个轻量工作记忆和长期记忆，提升长序列检索和推理。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Passkey Retrieval 和 LongBench-E 上，比强 Mamba 类模型检索成功率提升 34.3%–37.1%，推理准确率提升 1.6%–14.2%，只增加约 2% 参数，训练开销很小。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从骨干隐藏状态（快速感觉记忆）中提取段落级语义作为工作记忆，再压缩进持久的长期记忆，供后续按任务检索。</span></div>
+<div class="score-reason">评分依据：在线性复杂度模型上增强长上下文能力，对端侧长文本推理有一定迁移价值，但未涉及部署评测，相关度偏低；分层记忆设计参数增量小，贡献中等。作者主要来自港科大（广州）、牛津、港中大（深圳）、香港城市大学等高校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02347" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

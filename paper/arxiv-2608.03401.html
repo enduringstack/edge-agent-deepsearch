@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Shorter Reasoning, Earlier Answers? An Evaluation of Reasoning Interfaces</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Francesca Carlon; Vincent Ginis; Andres Algaba / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">模型:Qwen</span><span class="tag">模型:GPT</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM 常在回答前长篇推理，增加成本和延迟。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准、Qwen、GPT等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-08-04 · Francesca Carlon; Vincent Ginis; Andres Algaba / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:评测基准</span><span class="tag">方向:规划推理</span><span class="tag">模型:Qwen</span><span class="tag">模型:GPT</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型推理前往往要「想」很长，提示词或推理档位能把思考变短，但更短可能只是提前停下。这项研究在相同 token 截止下系统比较这些缩短方式的真实效果。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">Qwen3-14B 的简洁提示把推理长度缩短 12%–17%，同等 token 截止下准确率变化很小；「尽早作答」提示在 512 token 时让 MMLU-Pro 准确率提高 3.8 个百分点；gpt-oss 低、中档推理完成后的答案比同长度截断的高档推理准确 14.5–26.3 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 GPQA Diamond 198 题和 MMLU-Pro 500 题上做成对实验，在匹配的推理长度上比较完成率、截断时答案和正确选项概率，区分「真的更高效」和「只是停得早」。</span></div>
+<div class="score-reason">评分依据：推理长度和截止时间的权衡与资源受限设备上的推理成本相关，但研究本身是评测方法论，不涉及部署；结论对设定推理预算有参考。作者为布鲁塞尔自由大学和哈佛大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03401" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

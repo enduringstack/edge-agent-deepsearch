@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>BAP-SQL: Budget-Aware Observation Planning for Agentic Text-to-SQL</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Chong Peng; Pin Qian; Su Wang; Yihang Chen; Varun Sah / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用工具的 agent 不只是消费观察：其动作决定接下来到来什么。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于高效推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-08-03 · Chong Peng; Pin Qian; Su Wang; Yihang Chen; Varun Sah / arXiv</div>
+<div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">BAP-SQL 让文本转 SQL 的智能体在执行查询前先估算这条 SQL 会不会返回一大堆没用的结果，在上下文和数据库开销有限时提前改写查询。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 4B 通用模型、4B 专用 FINER-SQL 和 7B 模型上都提高了紧预算下的成功率；主要 BIRD 衍生设置中比同条件 SFT 高 3.4/3.6 个百分点，同时少用 4.5%/5.0% 的 token；预算最宽松时收益反转，且不减少数据库工作量。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把观察结果的形成当作预算控制环节：评估查询风险、必要时重写 SQL，并把硬性限制交给独立的运行时防护层执行。</span></div>
+<div class="score-reason">评分依据：面向小模型（4B/7B）智能体的上下文预算控制，对资源受限场景的工具调用有迁移价值，但不涉及端侧部署；作者如实报告了收益随预算放宽而消失，属增量工作。PDF 首页作者 1、5 署名 Microsoft，其余来自卡内基梅隆大学和佐治亚理工学院。 作者机构依据：arXiv PDF 首页署名 Microsoft（PDF 首页作者 1 Chong Peng、作者 5 Varun Sah 署名 Microsoft；作者 2、3 来自卡内基梅隆大学，作者 4 来自佐治亚理工学院）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02876" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

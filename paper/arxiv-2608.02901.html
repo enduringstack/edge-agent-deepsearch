@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AnchorKV: Anchor-Residual KV Cache Compression</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Malik Khalaf; Yara Shamshoum; Nitzan Hodos; Yuval Sieradzki; Assaf Schuster / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">键值 (KV) 缓存是长上下文 LLM 推理中的主要内存瓶颈。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于量化、KV cache、记忆等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-03 · Malik Khalaf; Yara Shamshoum; Nitzan Hodos; Yuval Sieradzki; Assaf Schuster / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">应用:长上下文推理</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长上下文推理时 KV 缓存是最大的显存负担。AnchorKV 不丢弃任何 token，而是用少量锚点加残差的方式把缓存压到原来的二十分之一。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">压缩 20 倍时，在 Llama-3.1-70B 上保留 RULER 原始得分的 99.3%，最强基线只有 86.8%；20 倍压缩下的得分高于所有驱逐类基线在 10 倍压缩下的得分。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每个注意力头精确保存少量锚点 token，其余 token 表示为最相似锚点的缩放副本，剩余字节预算用来给近似误差最大的 token 存量化残差；压缩在预填充结束时一次完成，注意力计算本身不变。</span></div>
+<div class="score-reason">评分依据：KV 缓存压缩是端侧长上下文推理的直接可迁移技术，但实验在服务器 GPU 和 8B 至 70B 模型上进行，没有端侧实测。保留全部 token 的锚点残差表示在思路上有新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02901" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

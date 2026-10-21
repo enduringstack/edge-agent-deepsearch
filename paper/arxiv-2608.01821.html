@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DAVET: Denoising-Aware Visual Evidence Trajectory Allocation for Diffusion Vision-Language Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Yongkang Zhou; Xiang Xia; Cheng Yan; Fan Xu; Wuyang Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">扩散视觉语言模型（dVLM）迭代去噪掩码响应，同时每步去噪以视觉证据为条件，使视觉条件…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、多模态、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-03 · Yongkang Zhou; Xiang Xia; Cheng Yan; Fan Xu; Wuyang Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">方向:剪枝稀疏</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">扩散视觉语言模型每步去噪都要重新参考图像信息，视觉条件成了反复支付的推理开销。DAVET 按去噪进度动态决定每一步需要多少视觉证据。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LLaDA-V 和 LaViDa 两个扩散视觉语言模型、多个视觉理解基准上，平均加速 1.55 倍，平均相对性能下降 1.86%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">无需训练：从阶段相关的证据轨迹出发，按任务需求设定证据预算，再依据每步的风险调整分配；所需的不同粒度视觉视图都从一次视觉编码中构造。</span></div>
+<div class="score-reason">评分依据：视觉令牌按需分配属于可迁移到端侧多模态模型的推理加速技术，但实验在 A100 上完成（相关度 5）。把视觉证据当作随去噪演化的资源来分配是新思路（贡献 6）。作者来自中国科学技术大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01821" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

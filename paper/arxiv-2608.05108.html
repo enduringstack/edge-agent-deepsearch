@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Agent Against Agent: An Agentic System for Automatic Prompt Injection Red Teaming</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-06 · Yanting Wang, Chenlong Yin, Runpeng Geng, Jinyuan Jia / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提示注入对 LLM agent 构成重大安全风险。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-06 · Yanting Wang, Chenlong Yin, Runpeng Geng, Jinyuan Jia / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">应用:安全</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">PIMiner 是一个自动做提示注入攻击红队测试的智能体系统，训练时积累攻击策略库，测试时可直接迁移到没见过的目标模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 IPIArena 上对 Gemini-2.5-Pro、GPT-5.1、Claude-Sonnet-4.5 的攻击成功率分别为 76.2%、61.9%、42.9%；在 AgentDojo 上分别为 86.7%、53.3%、40.0%；每个样本只需约 10 次查询。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在一系列“数据集-目标模型”组合上从零构建策略库，测试时检索并组合策略生成注入，而不是像强化学习方法那样训练一个固定攻击模型。</span></div>
+<div class="score-reason">评分依据：关注的是云端大模型智能体的提示注入安全，与端侧部署关系很弱；可迁移的策略库思路比强化学习攻击器泛化更好，对智能体安全评测有参考价值。</div>
 <div class="source"><a href="https://huggingface.co/papers/2608.05108" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

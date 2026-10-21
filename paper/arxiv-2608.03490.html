@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Lightweight 3D Object Detection via Mamba-Based Knowledge Distillation</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-04 · Quoc Cuong Ninh; Huy Xuan Pham; Anh Tung Nguyen; Dinh Hoan Trinh / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用 LiDAR 做 3D 目标检测需要在车载感知的精度和算力效率间平衡…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在蒸馏、机器人。</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-04 · Quoc Cuong Ninh; Huy Xuan Pham; Anh Tung Nguyen; Dinh Hoan Trinh / IEEE RA-L 2026</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:编译部署</span><span class="tag">硬件:Jetson</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">激光雷达 3D 目标检测模型太重，难在机器人和车载嵌入式平台上跑。这项工作用基于 Mamba 的知识蒸馏，把大教师模型的能力压进轻量学生模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Jetson Orin NX 上，学生模型时延 350 毫秒、mAP 69.21%，高于 CenterPoint（142 毫秒，53.76%）、DSVT（425 毫秒，57.42%）和 LION（928 毫秒，54.25%）；部署在腿式巡逻机器人上约 3Hz 运行，并接入运动规划实现遇行人停车；nuScenes 上学生模型参数量和推理时间约减半。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">设计多分支 Mamba 教师骨干，按实测时延剪枝得到学生模型，再只对真值框内的体素特征做空间对应对齐，用 Mamba 投影模块把学生特征映射到教师空间完成蒸馏。</span></div>
+<div class="score-reason">评分依据：在 Jetson Orin NX 上真机测时延并部署到腿式机器人，端侧证据明确；方法属于蒸馏加剪枝的常见组合，但面向 Mamba 体素特征的对齐有一定针对性。论文被 IEEE RA-L 2026 接收；PDF 首页作者 1、3、4 署名越南 Viettel 集团。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03490" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

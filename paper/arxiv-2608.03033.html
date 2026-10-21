@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Interpolation of Non-Linear Functions for LLMs using Partial Reconfiguration in FPGAs</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-04 · Roger Morales-Monge; Nazareth Jimenez-Chacon; Jose Gabriel Villalobos-Alvarado; Luis G. Leon-Vega; Jorge Castro-Godinez / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">指数函数和 S 型函数等非线性函数在 AI 和 LLM 加速中至关重要，尽管在 FPGA 上高效实现它们仍然成本高昂。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在评测基准。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-04 · Roger Morales-Monge; Nazareth Jimenez-Chacon; Jose Gabriel Villalobos-Alvarado; Luis G. Leon-Vega; Jorge Castro-Godinez / arXiv（投稿 ICECS 2026）</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">硬件:FPGA</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型加速时指数、Sigmoid 这类非线性函数在 FPGA 上实现成本高。这篇论文用分段线性插值加 FPGA 局部重配置，按需加载不同的函数模块来省面积。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">与同时放置两种运算的静态设计相比，可重配置实现最多节省 43% 的查找表、50% 的触发器、BRAM 和 DSP 资源，重配置延迟可预测；非均匀分段在高曲率区精度更高，均匀分段硬件开销更低。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把设计分成负责通信控制的静态区和可动态加载插值模块的重配置区，分别评估 FP16、FP32 下均匀与非均匀分段方案。</span></div>
+<div class="score-reason">评分依据：面向 FPGA 上大模型非线性算子的资源节省，对资源受限加速器有参考价值，但属于常见的电路级工程优化。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03033" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

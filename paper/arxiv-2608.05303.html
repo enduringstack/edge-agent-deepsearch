@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>EdgeXpert: An Edge Device for Memory-Efficient LLM Inference with Mixture-of-Experts and Speculative Decoding</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-05 · Sangwoo Ha; Hyunwoo Seo; Yurim Jo; Youngjin Moon; Hoi-Jun Yoo / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:MoE</span><span class="tag">方向:能耗功耗</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM 的端侧部署对个性化边缘应用已不可或缺。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在投机解码、剪枝稀疏、记忆。</div>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-08-05 · Sangwoo Ha; Hyunwoo Seo; Yurim Jo; Youngjin Moon; Hoi-Jun Yoo / MICRO 2026</div>
+<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">方向:能耗功耗</span><span class="tag">模型:Qwen</span><span class="tag">模型:DeepSeek</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">EdgeXpert 是一颗面向端侧大模型推理的软硬件协同加速器，专门解决混合专家模型（MoE）和投机解码一起用时外部内存访问暴涨的问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以三星 28nm 工艺综合、800 MHz 频率下，相比已有工作时延最多降低 56.3%、能耗最多降低 44.1%，精度接近基线；在 Granite-1B-A400M、OLMoE-1B-7B、DeepSeek-V2-Lite、Qwen3-30B-A3B 搭配 EAGLE-3 上评测。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">预填充阶段先用轻量编码器挑出重要 token，构建整段提示共享的专家集合，次要 token 用更少的专家；解码阶段把同一深度候选 token 的专家合并，只加载关键通道并做计算校准，避免额外读内存。</span></div>
+<div class="score-reason">评分依据：明确面向端侧单批次大模型推理的加速器设计，并已被 MICRO 2026 接收，端侧相关度高；首次正面处理 MoE 与投机解码叠加时的内存访问冲突，方法有新意。作者均来自 KAIST，28nm 仅为工艺。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05303" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

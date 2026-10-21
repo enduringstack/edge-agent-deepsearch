@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DBLAST: Dependent Block Drafting for Stochastic Speculative Decoding</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Amirmohammad Karimi; Chao Gao; Negar Hassanpour / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">投机解码用轻量 drafter 提议多个未来 token，再由目标模型验证，从而加速 LLM 推理…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于投机解码、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-08-05 · Amirmohammad Karimi; Chao Gao; Negar Hassanpour / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">DBLAST 改进投机解码里的“块草稿模型”，让它在随机采样（非贪心）解码下也能一次猜对更多 token。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen3-4B 和 Qwen3-8B 上，GSM8K、MT-Bench、HumanEval 和创意写作任务中，接受长度稳定超过独立块采样，采样熵越高优势越明显；摘要未给出具体倍数。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用跨位置的低秩隐变量混合建模草稿块内各 token 的依赖关系，并用直接面向“期望被验证长度”的训练目标训练草稿模型。</span></div>
+<div class="score-reason">评分依据：投机解码是端侧大模型提速的常用手段，方法可迁移到小模型，但未做设备实验；指出块草稿在高熵采样下退化并针对性解决，有一定新意。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页三位作者署名 Huawei Technologies Canada Co., Ltd.，邮箱为 huawei.com 与 h-partners.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05448" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Constrained Co-Design for Photonic Bayesian Neural Networks</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Hendrik Borras; Xiao Wang; Bernhard Klein; Robin Janssen; Frank Brückerhoff-Plückelmann; Wolfram Pernice; Holger Fröning / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">经典神经网络在模糊或分布外（OOD）数据上常给出过度自信的预测，这种隐患随 AI 系统…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于量化、记忆、能耗功耗等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-03 · Hendrik Borras; Xiao Wang; Bernhard Klein; Robin Janssen; Frank Brückerhoff-Plückelmann; Wolfram Pernice; Holger Fröning / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">光子概率计算能快速并行采样，适合跑贝叶斯神经网络做不确定性估计，但模拟硬件在量化、编程误差和数值范围上有诸多限制。论文系统研究哪些硬件限制能靠训练弥补，哪些必须改硬件。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在硬件感知训练下，只要所需的分布族仍可被硬件表示，预测性能和不确定性质量都能恢复；而把权重均值限制为正值会让分类准确率至少下降 30%、AUROC 下降超过 20%，激活空间中同类限制会导致模型完全失效。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把光子贝叶斯神经网络推理建模为带约束的随机变分推断，对随机性位置、随机性形式、量化、编程误差和均值/方差范围做系统消融，在 Dirty-MNIST、CIFAR-10、CINIC-10 上验证并总结软硬件协同设计准则。</span></div>
+<div class="score-reason">评分依据：面向新型低功耗光子硬件的神经网络推理约束分析，属于 AI 推理硬件协同设计，与端侧主流设备距离较远，相关度偏低；给出可操作的设计准则，贡献中等。作者来自德国海德堡大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02229" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

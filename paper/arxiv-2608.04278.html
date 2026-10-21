@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>EA-Graph: Artifact-Anchored Verification Memory for Coding Agents under Upstream Drift</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Hwai-Jung Hsu; Cheng-Jan Chi; Hanna Everett / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:代码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">编码 agent 越来越多地跨会话工作，但文字笔记可能保留了结论却丢了支撑它的程序状态。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、评测基准、代码等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-08-04 · Hwai-Jung Hsu; Cheng-Jan Chi; Hanna Everett / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">编程智能体跨会话工作时，文字笔记能留下结论却留不住支撑结论的代码状态，上游代码一改，旧的验证结论可能悄悄失效。EA-Graph 是一种把每条验证结论锚定到具体代码片段的记忆结构。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 7 个人工构造的代码仓、42 个会话上，用 Haiku 时锚定式记忆在全部 7 个场景中都优于文字笔记和无记忆（配对 Wilcoxon 检验 p=0.0156）；用 Sonnet 时锚定式记忆满分，但对照组也常接近满分，差异不显著；没有任何会话编造被隐藏的上游内容。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以子路径粒度表示代码工件，把别名解析到最终定义，并把每条结论绑定到当时依据的内容；证据强度和新鲜度分开记录，上游内容缺失时把结论标为“无法证明”而不是猜测。</span></div>
+<div class="score-reason">评分依据：属于 Agent 记忆运行时的设计，与端侧部署关系较远。锚定式验证记忆思路清晰，但仅在小规模构造场景验证，贡献中等偏低。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04278" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

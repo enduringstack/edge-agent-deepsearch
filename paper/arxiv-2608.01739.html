@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CoEvo-Mem: Co-Evolving Retrieval Policy and Memory Bank for LLM Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Bowen Ye; Yongchao Xu; Zhijian Li; Xiang Yin; Junkai Ma; Wenzhao Li / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">随着记忆跨任务跨会话累积，长期 LLM agent 的表现同时依赖按查询检索和持续记忆精炼…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-08-03 · Bowen Ye; Yongchao Xu; Zhijian Li; Xiang Yin; Junkai Ma; Wenzhao Li / arXiv</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长期运行的智能体记忆越积越多，检索策略和记忆库本身都需要不断进化。CoEvo-Mem 让二者在同一个闭环里一起更新。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在七个不同基准上取得最优成绩（原文摘要未给出具体提升幅度）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">冻结的大模型为每个问题生成多路查询改写和路由先验，再由轻量残差路由器在线纠正；任务结果用来给路由打分，轨迹反馈用来更新记忆价值和图关系，两者交替更新以保持稳定。</span></div>
+<div class="score-reason">评分依据：智能体长期记忆的检索与更新机制，可迁移到本地助手的记忆层，但没有端侧设备或资源约束实验（相关度 4）。把检索与记忆进化做成闭环是合理的整合（贡献 5）。PDF 首页显示作者 1、2、3、5、6 署名阿里巴巴集团（杭州），另有上海交通大学、中国科学技术大学。 作者机构依据：arXiv PDF 首页署名 Alibaba（PDF 首页作者 Bowen Ye、Yongchao Xu、Zhijian Li、Junkai Ma、Wenzhao Li 标注机构 1 为 Alibaba Group, Hangzhou）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01739" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Opt.Gear Technical Report</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-02 · Juneyoung Park; Youngwook Kwon / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">方向:蒸馏</span><span class="tag">方向:记忆</span><span class="tag">硬件:NPU</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">我们提出 OptGear，一个为高效端侧部署、实时推理和强任务能力设计的基础模型。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在量化、KV cache、蒸馏。</div>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-02 · Juneyoung Park; Youngwook Kwon / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:KV cache</span><span class="tag">方向:编译部署</span><span class="tag">硬件:NPU</span><span class="tag">硬件:Snapdragon</span><span class="tag">硬件:Apple-Silicon</span><span class="tag">硬件:MCU</span><span class="tag">硬件:手机</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">OptGear 是一组专为端侧部署设计的小型基础模型（1M、270M、1B 三档，支持 64K 上下文），同时提供 ONNX、高通 NPU 和苹果 ANE 的部署包，最小的 1M 版本甚至能跑在单片机上。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在骁龙 GEN5 NPU 上，OptGear-1B 预填充 7042 token/秒、解码 86 token/秒，高于 Llama 3.2-1B（4481/65）和 Gemma 3-1B（3226/61）；iPhone 17 Pro 的 NPU 上预填充 3085 token/秒；同规模对比最高快 4.9 倍。OptGear-1M 以 W4A32 量化在 STM32H747I-DISCO 的 Cortex-M7 上实测 20 token/秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用卷积式键值门控混合器加局部-全局注意力的混合结构，压低长上下文下 KV cache 的内存增长；训练只用从 2T 候选语料中精选的 0.5T token，不做知识蒸馏，并针对高通 QAIRT 做了 I/O、算子和图级优化。</span></div>
+<div class="score-reason">评分依据：论文在骁龙 GEN4/GEN5、iPhone 16/17 Pro 的 NPU 以及 STM32 单片机上实测，端侧相关度很高；新混合架构兼顾长上下文内存与 NPU 友好性并开放权重，贡献较突出。公司归属依据论文 PDF 首页署名“Opt.Gear Team”及作者 opt-ai.kr 邮箱。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01034" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

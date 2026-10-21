@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>NUNA: Characterizing and Mitigating Non-Uniform Network Access in Multi-Die GPU Scale-Up Systems</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-01 · Conor James Green; William Won; Tuan Ta; Bradford M. Beckmann / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">GPU 架构正变大以满足日益增长的算力和显存需求。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、GPU等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-08-01 · Conor James Green; William Won; Tuan Ta; Bradford M. Beckmann / arXiv</div>
+<div class="tags"><span class="vendor-tag">AMD</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究多芯粒大 GPU 内部“离 I/O 远近不同、通信延迟不同”的现象，并通过路由和数据放置优化降低推理中的集合通信延迟。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">仅优化线程块和数据放置，集合通信最多提速 1.5 倍；再加上感知位置的路由，最多提速 1.8 倍；带来大模型推理每个输出词元的时间平均缩短 7%、最多 28%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">提出非均匀网络访问这一优化维度：一方面在大规模互连拓扑中选择空间上更优的 GPU 间路径，另一方面把线程块和数据放到靠近 I/O 的位置，减少跨芯粒传输。</span></div>
+<div class="score-reason">评分依据：面向数据中心多 GPU 推理的集合通信优化，与端侧关系较远，按云端 serving 低相关度收录；提出新的优化维度并给出路由和放置两种手段，贡献中等。PDF 首页显示四位作者均署名 AMD Research and Advanced Development（第一作者同时属普渡大学）。 作者机构依据：arXiv PDF 首页署名 AMD（PDF 首页作者 1～4 均署名 AMD Research and Advanced Development，通信作者邮箱为 amd.com；第一作者另署普渡大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00867" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

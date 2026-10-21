@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Spend Bits Where Queries Look: KV Cache Vector Quantization with Attention-Preserving Transforms</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Samuel Fernández-Menduiña; Amir Ziashahabi; Eduardo Pavez; Antonio Ortega; Salman Avestimehr / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">方向:能耗功耗</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">长上下文 LLM 解码每一步都要读 KV cache。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于量化、KV cache、能耗功耗等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-04 · Samuel Fernández-Menduiña; Amir Ziashahabi; Eduardo Pavez; Antonio Ortega; Salman Avestimehr / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:量化</span><span class="tag">应用:长上下文推理</span><span class="tag">模型:Qwen</span><span class="tag">模型:Llama</span><span class="tag">模型:GPT</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长上下文解码每一步都要读完整个 KV cache，速度被内存带宽卡住。NOVA-KV 把 KV cache 压到每个元素约 2 bit，同时尽量保住注意力计算的结果。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 RULER 大海捞针测试中，Qwen3-8B 在约 2.2 bit 下各上下文长度准确率为 99.4%~75.4%，接近 BF16 的 99.9%~83.4%，而同码率的 QuaRot 在长上下文下跌到 0；在混合注意力 MoE 模型 GPT-OSS-20B 上，QuaRot 和 OSCAR 全部归零，NOVA-KV 仍有 89.6%~54.0%，吞吐与标量量化方法相当。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把 KV 量化当作变换编码问题，以注意力乘积误差为目标，从校准统计量推导出键和值的闭式最优变换（键的变换不要求正交），再在变换域用等体积分组的向量量化码本，保持固定位宽便于并行解码。</span></div>
+<div class="score-reason">评分依据：2 bit KV cache 直接缓解解码的内存带宽瓶颈，对内存紧张的端侧长上下文推理可直接迁移，但实验在 A100/H100 上完成。从注意力失真推导最优变换并配合定长向量量化，理论与效果都明显优于常见旋转方案，创新度较高。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04074" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

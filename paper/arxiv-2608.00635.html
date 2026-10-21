@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FlowPilot: Real-Time World-Action Modeling for Agile UAV Navigation</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-01 · Runqing Wang; Ding Yu; Pengyuan Min; Xinhong Zhang; Wei Xiao; Yu Hu; Jie Chen; Fu Zhang / arXiv</div>
-<div class="tags"><span class="tag">硬件:Jetson</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">FlowPilot 是用于无人机机载实时导航的紧凑世界动作模型，可直接根据深度观测预测环境变化并生成飞行动作。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在Jetson。</div>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-08-01 · Runqing Wang; Ding Yu; Pengyuan Min; Xinhong Zhang; Wei Xiao; Yu Hu; Jie Chen; Fu Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span><span class="tag">应用:机器人</span><span class="tag">硬件:Jetson</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">FlowPilot 是给无人机机载实时导航用的紧凑世界动作模型，直接根据深度图同时预测未来场景和可执行的飞行轨迹。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">闭环仿真中，在杂乱度和指令速度（最高 8 米/秒）提高时均优于学习类和优化类基线；实机四旋翼上，从感知到动作的完整流程在 Jetson Orin NX 上耗时不到 18 毫秒，仅靠机载传感和计算在杂乱室内与森林中飞到 5.5 米/秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用流匹配联合去噪未来深度观测和轨迹，双流混合 Transformer 让视频专家和动作专家共享注意力；部署时只输出轨迹，轨迹用 7 阶 Bernstein 多项式参数化以保证平滑可跟踪。</span></div>
+<div class="score-reason">评分依据：完整模型在 Jetson Orin NX 上机载实时运行并完成实机飞行，端侧部署证据很强；把世界模型压到 18 毫秒内用于敏捷飞行有新意。它是纯导航控制策略，没有规划、记忆或工具闭环，因此不算端侧 Agent。作者来自北京理工大学等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00635" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

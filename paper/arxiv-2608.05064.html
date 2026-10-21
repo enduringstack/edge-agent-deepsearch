@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Provable Limits and Certified Deferral for Verbalized Uncertainty in Small Language Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Jianru Shen / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">小型开权重语言模型越来越多地在私密、离线、成本敏感场景下运行，那里关键部署问题不只是模型…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-05 · Jianru Shen / MIWAI 2026</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:安全隐私</span><span class="tag">硬件:Apple-Silicon</span><span class="tag">模型:Qwen</span><span class="tag">模型:Llama</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">小模型越来越多在离线、私有环境里本地运行，关键问题是它什么时候该把决定交给人。这篇工作研究能否用模型自己说出的置信度来做有风险保证的“转交人工”。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">11 个 0.5B–14B 模型（Qwen2.5、Llama 3.2/3.1、Gemma 3）全部通过 Ollama 在一台 32GB 内存的 MacBook Air M4 上本地运行，共 25,168 次预测；Platt 缩放可把校准误差降到 0.02，但在 20% 风险预算下只有 3 组模型-任务获得自主作答资格，10% 预算下一组也没有；22 组中有 8 组落在温度缩放无法校准的理论下限附近。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先证明三条理论结论（单调校准不改变风险-覆盖边界、某些模型温度缩放无解、用 Clopper-Pearson 从 200 道题得到有限样本风险证书），再在本地模型上实测验证。</span></div>
+<div class="score-reason">评分依据：实验全部在消费级笔记本上本地运行量化小模型，直接回答端侧小模型何时可以自主决策的问题，端侧相关度较高；理论加实测的分析扎实，但属于校准与评估类工作，方法创新有限。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05064" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

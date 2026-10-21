@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SyncPlan: Long-Horizon LLM Coordination with Explicit Synchronization and Adaptive Correction</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Shen You; Xiaoming Zhu; Weining Weng; Hefei Mei; Weixuan Wang; Zhongshen Li; Zeji LI; Ye-Wen Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">基于 LLM 的多 agent 协调在动态环境中面临效率与自适应性的根本权衡。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-08-03 · Shen You; Xiaoming Zhu; Weining Weng; Hefei Mei; Weixuan Wang; Zhongshen Li; Zeji LI; Ye-Wen Wang / arXiv</div>
+<div class="tags"><span class="vendor-tag">Tencent</span><span class="tag">方向:规划推理</span><span class="tag">方向:调度服务</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">基于大模型的多智能体协作要么反复调用大模型导致延迟高，要么一次性规划容易过时。SyncPlan 采用“规划-执行-纠正”框架，只需一次规划调用，靠显式同步和按需重规划保持计划有效。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Overcooked 公开基准和复杂的王者荣耀环境中取得最高任务成功率，墙钟运行时间不到现有大模型协调器的 0.05%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">中心化大模型协调器一次生成每个智能体的动作链；执行中用显式等待原语和死锁检测保证智能体间与环境的依赖，轻量的计划过时检测器在环境变化时触发重规划；协调器再用监督微调和面向规划的强化学习优化。</span></div>
+<div class="score-reason">评分依据：大幅减少大模型调用次数和协调延迟，对算力受限场景下的多智能体系统有迁移价值，但未涉及端侧部署（相关度 4）。显式同步加过时检测的组合实用，效率提升显著（贡献 6）。PDF 首页有多位作者署名腾讯。 作者机构依据：arXiv PDF 首页署名 Tencent（PDF 首页共同第一作者 Xiaoming Zhu 及包括通讯作者 Liang Wang 在内的多位作者署名 2 号机构 Tencent）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01652" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

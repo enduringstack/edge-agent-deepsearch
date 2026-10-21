@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Energy-Efficient LLM Serving via Disaggregated Attention--FFN and Flexible Frequency Scaling</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Cunchen Hu; Liangliang Xu; Tian Liu; Min Lyu; Yongkun Li; Sa Wang; Shuo Quan; Yanan Yang / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项服务系统把注意力和前馈网络拆开调频，根据推理阶段、负载和 SLO 分别选择 GPU 频率，在满足时延要求的同时降低能耗。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于能耗功耗、评测基准、GPU等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-08-03 · Cunchen Hu; Liangliang Xu; Tian Liu; Min Lyu; Yongkun Li; Sa Wang; Shuo Quan; Yanan Yang / arXiv</div>
+<div class="tags"><span class="vendor-tag">China Telecom</span><span class="tag">方向:云端serving</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:GPU</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型服务为满足时延目标常让 GPU 满频运行，能耗很高。AFlex 发现注意力和前馈网络的最省电频率不同，于是把二者拆开分别调频调资源。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">基于 SGLang 实现，在 NVIDIA A800 上用 Qwen3-32B 和 Mixtral-8×7B 跑生产对话与代码请求轨迹，在满足首词与逐词时延目标的同时，每词元能耗比最先进的拆分式服务降低最多 49%，比调频系统降低 48%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">全局调度器决定注意力与前馈的资源和频率配置，本地算子级 DVFS 控制器实时调频；再用交错流水线、动态微批深度和自适应请求批处理减少流水线空泡。</span></div>
+<div class="score-reason">评分依据：数据中心大模型服务的能耗优化，与端侧只有间接关系，但算子级调频思路对端侧 SoC 功耗管理有启发（相关度 3）。注意力/前馈分离调频是较新的切入点（贡献 6）。PDF 首页显示第一作者等来自中国电信云计算研究院，另有西安电子科技大学、中国科学技术大学和中科院计算所。 作者机构依据：arXiv PDF 首页署名 China Telecom（PDF 首页机构列表第 1 项为 China Telecom Cloud Computing Research Institute，HTML 版标注第一作者 Cunchen Hu 等属于该机构）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01891" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

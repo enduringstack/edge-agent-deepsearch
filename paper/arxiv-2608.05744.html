@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Equipment-centric workpiece localization in near real-time using deep learning-based vision and event-driven finite state machines</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-06 · Dohyeon Kong; Jaebong Cho; Hyunbo Cho / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">连续工件定位对热锻的追溯和工序协同至关重要，但因极端温度直接追踪不可靠…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-08-06 · Dohyeon Kong; Jaebong Cho; Hyunbo Cho / International Journal of Advanced Manufacturing Technology</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">热锻车间里工件温度极高，难以直接追踪。这套系统改为用多路固定摄像头观察搬运设备的抓取和放下动作，推算工件在车间里的位置。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在实际运行的热锻工厂中，33 秒容差内事件检测准确率 100%，平均定位误差 317.8 毫米，系统平均时延 21 秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先估计搬运设备在车间平面上的三维坐标，用带关键点注意力的 3D 卷积网络识别抓取和放下动作，再用事件驱动的有限状态机校验并更新工件状态。</span></div>
+<div class="score-reason">评分依据：是一个已在工厂现场部署的视觉识别系统，属于 AI 落地应用，但未涉及端侧推理优化或设备算力约束（相关度 3）。把视觉识别与有限状态机结合是工程整合（贡献 4）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05744" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

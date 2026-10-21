@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ValueFormer: A Causal Transformer Value Function with Stage-Aware Labels for Semi-Autonomous Vision-Language-Action Policies</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Inkyu Sa; Konstantin Stulov; Rajat Bhageria / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">硬件:GPU</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">ValueFormer 为半自动 VLA 策略预测分阶段价值，帮助系统在动作真正失败前识别风险并决定是否接管。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、多模态、GPU等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-03 · Inkyu Sa; Konstantin Stulov; Rajat Bhageria / NeurIPS 2026 Workshop (WRL)</div>
+<div class="tags"><span class="tag">应用:机器人</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">通用视觉-语言-动作机器人策略失败时往往没有征兆。ValueFormer 是一个只有 350 万参数的价值评估模型，能逐帧判断任务进展、在线发现失误，并用于策略后训练。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">利用遥操作台已有的人工接管标记后，失误检测平均精度从 0.38 提升到 0.82，95% 的失误能在操作员反应前被发现；在真实双臂做三明治任务中，任务完成率从 70% 提高到 85%（20 次试验，作者说明增益仍在噪声范围内）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在冻结的 DINOv3 视觉骨干上训练一个因果 Transformer，用人工标注的出错阶段生成先升后衰的逐帧价值标签，一次前向同时输出平滑价值和二值失误信号。</span></div>
+<div class="score-reason">评分依据：模型很小，适合与机器人策略一起在线运行，但论文关注的是失误检测和后训练，没有讨论设备端推理部署；它也只是动作策略的评估器，不构成端侧智能体闭环。机构依据：arXiv 论文首页三位作者均署名 Chef Robotics。论文为 NeurIPS 2026 机器人学习研讨会海报，不属于正会。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02958" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

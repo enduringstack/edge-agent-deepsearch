@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>When and Where to Look: Adaptive Visual Evidence Scheduling for Efficient Long Video Understanding</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-04 · Ke Li; Jiayu Chen; Maoliang Li; Zihao Zheng; Hailong Zou; Hengyi Zhang; Xuanzhe Liu; Xiang Chen / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">有效的长视频理解需要视觉语言模型（VLM）对被选为稀疏视觉证据的少量帧进行推理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、多模态、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-04 · Ke Li; Jiayu Chen; Maoliang Li; Zihao Zheng; Hailong Zou; Hengyi Zhang; Xuanzhe Liu; Xiang Chen / arXiv</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">应用:视频</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长视频理解要从大量帧里挑少量关键帧给视觉语言模型看，固定帧数的一次性挑选不够灵活，智能体式的多轮搜索又太慢。EcoFrame 是一个免训练、低开销、按问题自适应挑帧的方案。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen2.5-VL 上平均准确率 64.4，高于 BOLT 的 63.5，并比 AKS 和 BOLT 快 1.85 倍；与智能体式方法 A.I.R. 相比精度相当，推理最多快 13.5 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用模型输出的不确定性（熵）决定何时停止或逐步加帧；把帧级注意力转成时间先验，在信息量大的区段密集搜索候选帧，注意力分散时则保持全局覆盖。</span></div>
+<div class="score-reason">评分依据：通过减少输入帧数降低视觉语言模型推理开销，属于可迁移到端侧视频理解的高效推理方法，但实验在 GPU 上，相关度中等；熵门控加注意力引导的组合有一定新意。作者来自北京大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03918" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

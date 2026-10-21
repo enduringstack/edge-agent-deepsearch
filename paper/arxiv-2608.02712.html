@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Don't Regenerate, Debug: A Domain-Specific Agent for Repairing Near-Miss Hardware Operators</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Yansong Sun; Shenxiu Wu; Siyuan Chen; Runlin Hou; Junhao Qiu; Junming Cao; Shudi Shao; Zhichao Lu / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">GPU、NPU 等硬件加速器的内核生成已成为 LLM 的试金石，SOTA 系统…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于蒸馏、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-08-03 · Yansong Sun; Shenxiu Wu; Siyuan Chen; Runlin Hou; Junhao Qiu; Junming Cao; Shudi Shao; Zhichao Lu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:编译部署</span><span class="tag">硬件:NPU</span><span class="tag">硬件:Ascend</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这是一个专门修复差一点就对的加速器算子的调试智能体：LLM 生成的 NPU 算子能编译能运行但数值不对时，不重新生成，而是定位并修好它。实验面向华为昇腾的 AscendC 算子。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">调试方式 Pass@1 达 66.7%，而重新生成平均 Pass@1 为 25.9%、三次重生成 Pass@3 为 40.7%；每个成功算子消耗的 token 比三次重生成少 92.8%；完整性检查拒掉了流程自身判为成功中的 12.5%–33.3%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用检索到的调试模式和诊断插桩弥补领域知识不足，用防作弊检测和全覆盖评测保证结果可信，再用收敛守卫和迭代上限控制成本。</span></div>
+<div class="score-reason">评分依据：面向 NPU 算子开发的编译部署工具链，能降低新硬件上算子的开发成本，与端侧部署间接相关；调试代替重生成的思路和完整性门控有实际价值。PDF 首页作者 6、7 署名华为技术有限公司应用软件工程实验室，其余作者来自香港城市大学。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页作者 6、7（Junming Cao、Shudi Shao）署名 Huawei Technologies Ltd. 应用软件工程实验室；作者 1–5、8、9 来自香港城市大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02712" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

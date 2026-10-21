@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Field Aware Agent Skill Retrieval</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Paimon Goulart; Liang Wu; Kelly Wan; Evangelos E. Papalexakis; Liangjie Hong / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">随着终身学习 agent 积累终身增长的技能库，检索正确技能成为越来越重要的瓶颈。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-08-03 · Paimon Goulart; Liang Wu; Kelly Wan; Evangelos E. Papalexakis; Liangjie Hong / arXiv</div>
+<div class="tags"><span class="vendor-tag">Nokia</span><span class="tag">方向:工具调用</span><span class="tag">方向:记忆</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长期学习的智能体会积累越来越多的技能文件，找对技能成了瓶颈。这项工作研究检索时保留技能的名称、描述、正文等字段结构，是否比把它们拼成一篇文档更好。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">字段感知的小型 MLP 在 SkillRet 上 Recall@10 达到 77.95，在 SRA-Bench 上达到 83.78，均超过拼接文档的学习型基线；技能库越大，优势越明显。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对每个字段分别计算稀疏和稠密相似度，再用均匀权重或一个小型 MLP 把各字段得分融合起来排序。</span></div>
+<div class="score-reason">评分依据：智能体技能检索属于 Agent 运行时组件，轻量的融合打分对资源受限设备也可迁移，但论文没有端侧实验。机构依据：arXiv 论文首页署名中 Liang Wu、Kelly Wan、Liangjie Hong 来自 Nokia。 作者机构依据：arXiv PDF 首页署名 Nokia（arXiv 论文首页作者 Liang Wu、Kelly Wan、Liangjie Hong 署名 Nokia，并使用 nokia.com 邮箱）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02880" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

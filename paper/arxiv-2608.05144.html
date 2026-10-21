@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Argus: A General-Purpose Agentic Runtime for Long-Horizon Reasoning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Boxiu Li; Zimo Wen; Yijia Fan; Junxiang Lei; Sufeng Guo; Jiaao Wu; Ruize Tang; Mukai Li / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span><span class="tag">模型:GPT</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">长程推理需要一种 agent 运行时：证据支持当前路线时坚持，测量暴露失败、隐藏…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准、GPU、GPT等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-05 · Boxiu Li; Zimo Wen; Yijia Fan; Junxiang Lei; Sufeng Guo; Jiaao Wu; Ruize Tang; Mukai Li / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span><span class="tag">方向:评测基准</span><span class="tag">模型:GPT</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Argus 是一个面向长周期研究和工程任务的智能体运行时：经理、规划、工程、评审四个角色在持久化的项目状态上分段执行任务，并在证据不支持时主动换路线。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在七个 GPT-5.5 基准场景中，SWE-Bench Pro 约 78%，直接用 Copilot 为 59%，总 token 消耗为后者的 1.41 倍；自我演化成熟后每个任务输入 token 少 21%、工作流时间少 15%；AARRI-Bench 达到 76.8%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">模型权重不动，把记忆、技能、流程、验证器和被否决的路线都存进持久状态，只有经过角色评审和任务自带验证的内容才被接纳复用，以此实现运行时层面的自我演化。</span></div>
+<div class="score-reason">评分依据：讨论的是云端大模型驱动的长程智能体运行时，记忆与技能沉淀机制对端侧 Agent 运行时有参考价值，但没有设备端部署，相关度较低；持久状态加验证门控的组织方式有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05144" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

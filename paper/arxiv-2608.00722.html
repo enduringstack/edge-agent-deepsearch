@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Experience-Calibrated Contrastive Decoding for Mitigating Hallucinations in LM-Based Text-to-Speech</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-01 · Chenlin Liu; Minghui Fang; Zhonghao Bi; Zekai Su; Rong Wang; Jiqing Han / arXiv</div>
-<div class="tags"><span class="tag">应用:语音</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">基于语言模型的文本转语音（LM-based TTS）仍易出现偏离目标文本的语音幻觉。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于语音等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-08-01 · Chenlin Liu; Minghui Fang; Zhonghao Bi; Zekai Su; Rong Wang; Jiqing Han / arXiv</div>
+<div class="tags"><span class="tag">应用:语音</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">针对基于语言模型的语音合成会“念错字、多念漏念”的幻觉问题，提出一种无需重新训练、只在解码阶段生效的校正方法。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在四个模型上，SeedTTS-Eval 全部设置的词/字错误率最多降低 55.6%，多语种 CV3-Eval 的 25 个设置中有 24 个改善；主观听测 CMOS 提升 0.644，说话人相似度基本保持。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用同一个语音模型分别在有文本条件和无文本条件下做预测，对比两者只增强与文本对齐的那部分信息，并按声学上下文的兼容程度自动调节增强强度，保留原始分布不被破坏。</span></div>
+<div class="score-reason">评分依据：属于语音合成的解码策略改进，目标是质量而非效率，与端侧部署只是宽泛相关；免训练、可直接套在现有模型上是优点。作者来自哈尔滨工业大学和浙江大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00722" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

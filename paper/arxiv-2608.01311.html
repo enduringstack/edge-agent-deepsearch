@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>RH-RAG: Trustworthy Long-Form Generation for Privacy-Constrained Settings</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-02 · Raj Shekhar Singh / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在严格隐私安全约束下，从大量内部报告生成长文内容仍很难，那里…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、安全隐私、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-02 · Raj Shekhar Singh / KDD 2026 SeT-LLM Workshop</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span><span class="tag">应用:RAG</span><span class="tag">方向:安全隐私</span><span class="tag">硬件:GPU</span><span class="tag">模型:Qwen</span><span class="tag">模型:Mistral</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">RH-RAG 是一个在本地开源模型上运行的多智能体长文生成框架，让对隐私敏感的机构不用云端大模型也能可靠地写长报告。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在文学、金融和法律领域，事实一致性、语义连贯性和文档对齐都优于标准与分层 RAG 基线；用 Qwen-2.5-7B 时 AlignScore 约 76.7 至 78.5，接近 Claude、Gemini Pro 的 77.2 至 79.3。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">由规划、写作、核查三个智能体分工：规划者从摘要生成全文大纲，写作者带有限连贯记忆逐节生成，核查者用自然语言推理验证事实并触发修订；配合双层检索索引。</span></div>
+<div class="score-reason">评分依据：智能体闭环完全跑在本地 7B-8B 开源模型上，但实验硬件是两张 NVIDIA T4 服务器显卡，属于私有化部署而非手机或个人电脑，因此判为非端侧 Agent；框架为常见组件整合。作者来自印度理工学院鲁尔基分校，未涉及公司；论文被 KDD 2026 研讨会接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01311" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

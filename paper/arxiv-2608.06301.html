@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>HarnessOpt-Bench: Evaluating LLMs at Harness Optimization</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-06 · Varun Ursekar; Apaar Shanker; Yash Maurya; Shehab Yasser; Vijay S. Kalmath; Veronica Chatrath; Yuan Xue / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">随着 LLM 越来越多地用在 agent 系统里，其能力不只取决于模型权重，还取决于 harness：提示、工具、c…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-08-06 · Varun Ursekar; Apaar Shanker; Yash Maurya; Shehab Yasser; Vijay S. Kalmath; Veronica Chatrath; Yuan Xue / arXiv</div>
+<div class="tags"><span class="vendor-tag">Scale AI</span><span class="tag">方向:评测基准</span><span class="tag">方向:工具调用</span><span class="tag">方向:记忆</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体的能力不只取决于模型，还取决于外围的提示、工具、记忆和编排代码（harness）。这篇提出一个基准，衡量大模型自动优化这套外围代码的能力。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">评测了 5 个前沿大模型、4 个下游任务共 111 次计分运行：不同优化模型之间的差距比所用编码框架之间更大，模型自带框架并不总是更好，收益随任务差异很大。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">给优化模型一个目标智能体的初始 harness、评测反馈和固定评测预算，让它修改并提交最终版本，用隐藏测试集上相对初始版本的提升打分；可信执行环境负责隔离评测边界和计量资源。</span></div>
+<div class="score-reason">评分依据：关注智能体运行时外围代码的自动优化，与端侧部署无直接关系，主要是评测基准贡献。作者均来自 Scale AI。 作者机构依据：arXiv PDF 首页署名 Scale AI（PDF 首页全部作者署名 Scale AI，邮箱为 scale.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.06301" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

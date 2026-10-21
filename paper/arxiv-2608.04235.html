@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Scale-CDA: A Scalable Prototype to Democratize AI-Assisted Cooperative Driving Automation (CDA) for Production Cars</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Hao Zhou; Shengming Yuan; Yuhang Wang; Haibin Wen / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:安全隐私</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">本研究提出 Scale-CDA，一个开源硬件/开源软件工具链，普及生成式 AI 辅助的协作驾驶…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于多模态、安全隐私等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-04 · Hao Zhou; Shengming Yuan; Yuhang Wang; Haibin Wen / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:端云协同</span><span class="tag">方向:多模态</span><span class="tag">硬件:Jetson</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">想让普通量产乘用车参与协同驾驶，需要一个便宜、好装的车载单元。Scale-CDA 基于 openpilot 做了一套不到 1000 美元的开源软硬件改装平台，还通过 MCP 接入生成式 AI，把摄像头、CAN 总线和通信消息整合起来生成驾驶提示与受限动作。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">移动车辆实测中，Wi-Fi 6 平均往返时延 5.25 毫秒，约 2% 的观测超过 50 毫秒；候选车载设备本地跑视觉语言模型的速度为 Jetson AGX Orin 约 28.6 token/s、Jetson Orin Nano 约 6–7 token/s、NucBox K6 约 12–14 token/s。由于本地速度不足以支撑上路场景，道路演示改用云端 Qwen3-VL，完成了施工区驾驶提示、消息生成和限速类动作通路验证。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">车载单元汇集摄像头画面、CAN 车辆状态和 MQTT 通信消息，经 MCP 暴露给大模型；模型只输出驾驶提示、消息意图和有限词表内的元动作，再由确定性适配器校验后映射到已有的 L2 辅助驾驶功能，不允许直接控制执行器。</span></div>
+<div class="score-reason">评分依据：在真车上搭建了车载边缘计算平台，并实测多款边缘设备本地运行视觉语言模型的速度，与车端部署高度相关；但上路演示的模型推理在云端，车上只负责执行校验后的动作，因此不算设备端智能体。低成本改装加 MCP 受限动作接口的组合实用，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04235" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

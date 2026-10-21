@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>OoO-Spec: Out-of-Order Semantic Speculation for Fast Tool Calling</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-01 · Zhiheng Zhang; Mujie Xu; Feiyu Sun; Zhixin Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span><span class="tag">模型:Llama</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM 逐 token 生成工具调用，尽管函数选择和参数值常可从请求和工具 schema 并行预测…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于工具调用、评测基准、GPU等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-01 · Zhiheng Zhang; Mujie Xu; Feiyu Sun; Zhixin Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:工具调用</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span><span class="tag">硬件:H100</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">加速大模型生成工具调用的投机解码方法：让一个 0.6B 的小模型并行预测要调用哪个函数和各个参数值，提前交给大模型验证。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 7 个目标模型、3 个基准的全部 21 个组合里都是最快的方法，相比逐词生成提速 2.46～5.34 倍（平均 3.89 倍，ToolSpec 为 2.95 倍）；在 Qwen3 4B 到 32B 目标上平均比 ToolSpec 再快 34.1%；每次请求只需传约 85 字节提示。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">请求一到就让 Qwen3-0.6B 辅助模型一次性并行填好函数名和所有参数槽，大模型同时照常解码并非阻塞地读取这些提示作为候选，最终仍由大模型验证提交，因此结果无损；辅助模型只训练一次即可跨 Qwen 和 Llama 复用。</span></div>
+<div class="score-reason">评分依据：工具调用延迟是智能体运行时的直接瓶颈，小辅助模型加极小通信量的设计也适合异构双 GPU 的边缘机器，但实验在 H100 服务器上完成；乱序并行预测参数槽的思路较新。作者来自东京大学、北京大学和南京大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00814" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

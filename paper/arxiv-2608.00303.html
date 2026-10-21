@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CrystalMem: Elastic Memory for Self-Evolving LLM Agents via Knowledge Crystallization</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-31 · Beining Wu; Jun Huang / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:端云协同</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">CrystalMem 为持续自我演化的大模型智能体提供弹性记忆，解决长期运行时记忆只增不减、存储预算不断膨胀的问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把反复使用的知识结晶为更紧凑的表示，并动态回收或重组低价值记忆。</span></div>
-<div class="score-reason">评分依据：属于记忆、能耗功耗、端云协同等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-07-31 · Beining Wu; Jun Huang / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:记忆</span><span class="tag">方向:端云协同</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:Jetson</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">CrystalMem 为持续自我演化的大模型智能体设计可伸缩的记忆层：存储配额被压缩后再恢复时，能把智能体能力重新找回来，而不是像删除或单向压缩那样永久损失。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">七个环境、六种骨干模型下恢复后的能力都最高；只用 50% 字节预算即可追平最强基线在满配额时的表现，同等预算下平均领先 4.6 个百分点。在 Jetson 真机上恢复到压缩前 2.0 个百分点以内（CURATOR 为 6.1、LRU 为 9.1），重结晶每批中位 586 毫秒，仅 2.9% 时间阻塞前台推理，同步数据量从 16-17MB 降到 3.4MB。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把每条记忆放在四个保真度等级之间升降：按“结晶能量”调度、按优势加权影响力和依赖关系决定先降级哪条；配额回升时在计算和字节上限内做经过验证的“重结晶”，把降级的记忆恢复出来。</span></div>
+<div class="score-reason">评分依据：论文在由一台 Jetson AGX Thor 和两台 Jetson AGX Orin 组成的真实端侧测试床上，让智能体的记忆管理在 Orin 本地运行并驱动机械臂，端侧证据充分；“记忆迟滞”问题和可逆的记忆降级/恢复设计有明显新意。作者来自南达科他州立大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00303" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

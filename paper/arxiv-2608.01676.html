@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Understanding Sparse Attention Selectivity in Long-Context Foundation Models via Counterfactual Evaluation</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Xingyu Ren; Youran Sun; Chugang Yi; Haizhao Yang / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:稀疏注意力</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">稀疏注意力在长上下文 serving 栈中广泛部署，但没有框架审计丢弃块如何改变特定内容对…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于KV cache、剪枝稀疏、稀疏注意力等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="tags"><span class="tag">方向:稀疏注意力</span><span class="tag">方向:KV cache</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">稀疏注意力已广泛用于长上下文推理服务，但丢弃部分块会如何改变特定内容对输出的影响，此前没有审计手段。论文提出反事实评测框架来量化这一点。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">块稀疏 FlashAttention 路由回放在 16 个组合中有 13 个改变了输出决策；隔离探针块会让其影响从 4.48 logits 降到 0；4 组模型-任务中有 3 组在更高压缩率下稀疏放大效应更强，其中 2 组出现符号反转。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用携带正确答案、错误目标和纯填充三类探针卡片，在六种位置布局对称下做稠密校准的反事实对比，分离出稀疏化本身带来的影响，并用路由回放、块 top-k 和 KV cache 驱逐三条路径交叉验证。</span></div>
+<div class="score-reason">评分依据：稀疏注意力和 KV cache 驱逐是端侧长上下文推理的常用压缩手段，本工作揭示其隐含的内容影响偏差，对端侧压缩方案的可靠性评估有参考（相关度 4）。提出可复用的测量框架（贡献 6）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01676" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

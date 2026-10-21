@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>HorizonServe: Coordinating Request Scheduling with GPU Sharing for Omni-Model Serving</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Yuning Zhang; Dong Yuan / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span><span class="tag">应用:语音</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Omni 模型将文本、语音、图像和多模态推理统一在单个服务后端中，但这种统一部署暴露了一个新的调度问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于多模态、云端serving、GPU等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-03 · Yuning Zhang; Dong Yuan / arXiv</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">方向:多模态</span><span class="tag">硬件:GPU</span><span class="tag">应用:语音</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">全模态模型在一个服务后端里同时出文本、语音和图像，不同输出类型的请求共享前段主干却有不同的首响应时延目标。HorizonServe 解决单张 GPU 上这类请求的调度问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在三种全模态负载和两种 GPU（RTX 6000 Ada、RTX PRO 6000）上，到达率扫描下 SLO 达成率最高提升 4.9 倍，下游重负载下提升 7.0 倍，各类请求首响应时延降低 38.4%–63.7%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按请求类别剖析首响应时延，优先保护余量不足的请求，在不同执行路径间轮转共享阶段的机会，并在下游阶段运行时限制共享阶段占用的 SM 数量。</span></div>
+<div class="score-reason">评分依据：单 GPU 全模态服务调度，偏服务器侧，对工作站级本地部署有一定参考（相关度 3）。时间与空间共享联合调度是合理的系统设计（贡献 5）。作者来自悉尼大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01785" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

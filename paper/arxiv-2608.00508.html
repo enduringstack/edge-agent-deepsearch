@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>RadYOLO: Computationally Efficient 3D Object Detection and Segmentation in CT and MRI</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-01 · Kai Geissler; Laurens Müller-Groh; Hans Meine / arXiv</div>
-<div class="tags"><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">三维医学图像中的目标检测和分割是非常活跃的研究领域。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在GPU。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-01 · Kai Geissler; Laurens Müller-Groh; Hans Meine / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">RadYOLO 把 YOLO11 扩展到三维 CT/MRI 影像的检测与分割，目标是在资源受限硬件上也能快速跑完。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在五个 CT/MRI 数据集上，检测效果四个超过 nnDetection、一个持平；GPU 上推理比 nnU-Net 快 8-46 倍；只用 CPU 也能在几秒内完成，仍快于 GPU 上的 nnU-Net。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">沿用 YOLO 单阶段检测的轻量结构并改成三维版本，针对医学影像中大小差异大的目标做适配，与 nnU-Net、nnDetection 在同一数据上对比。</span></div>
+<div class="score-reason">评分依据：原文明确把 CPU 秒级推理作为临床和边缘设备部署的优势，属于端侧视觉推理的可迁移工作；方法是成熟检测架构的三维扩展，创新一般。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00508" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

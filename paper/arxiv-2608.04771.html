@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Fewer Tokens, Smaller Cache: Reward-Coordinated Efficient Reasoning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Qiyuan Zhu; Dezhi Li; Pengyu Cheng; Tianle Chen; Jiacheng Wang; Ruijie Shen; Hao Gu; Sida Lin / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">大推理模型（LRM）靠长链思维（CoT）在复杂任务上很强，但中间步骤过长会导致严重过度思考…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于KV cache、评测基准、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-05 · Qiyuan Zhu; Dezhi Li; Pengyu Cheng; Tianle Chen; Jiacheng Wang; Ruijie Shen; Hao Gu; Sida Lin / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">推理大模型思考链太长、KV 缓存太大，这篇工作用一个“过程奖励”信号同时控制缓存压缩和生成长度，降低推理成本。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在三个推理模型、六个基准上，生成 token 减少 37%–65%，端到端时延比完整思维链快 2.08–2.35 倍，准确率基本保持。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用轻量过程奖励估计器给每个推理步骤打分：高分步骤更激进地压缩 KV 缓存，对反思类 token 按奖励区间加惩罚，推理可靠时提前停止。</span></div>
+<div class="score-reason">评分依据：KV 缓存压缩与推理长度控制都是端侧可直接迁移的推理技术，但实验在服务器 GPU 上，未做端侧部署；把缓存压缩和生成侧联动起来的思路比单纯删缓存更进一步。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04771" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

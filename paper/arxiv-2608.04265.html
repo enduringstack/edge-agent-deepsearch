@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Strategic Evaluation of Planning Strategies for LLM Agents in Cyber-Physical Systems</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · J. de Curtò; I. de Zarzà / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">对 LLM 规划 agent 的评测主要看任务是否成功或既定计划是否被遵循。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-08-04 · J. de Curtò; I. de Zarzà / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:评测基准</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在电网这类信息物理系统里，大模型智能体选定的规划方式不仅要看任务是否完成，还要看其他参与者响应和物理约束后的结果。这项工作搭了一个基准，比较四种规划执行方式在需求响应控制中的表现。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">用 Llama-3.3-70B 在 40 个产消者的配电线路上实验：5 个基线种子中强制搜索都是最优；被注入替换目标时模式一致率仍为 1.0，但累积电压不足增加 2.68 倍；预设的岭回归选择器平均遗憾 90.7，事后约束感知分析降到 29.0，而简单截止规则为 28.7。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">大模型只负责声明或建议类型化策略并转达消息，调度、产消者动力学、随机行为和潮流计算都由代码显式实现；通过强制模式反事实、精确提示缓存和独立随机流隔离比较。</span></div>
+<div class="score-reason">评分依据：研究 Agent 规划策略在物理系统中的后果，属于 Agent 评测，实验全部在仿真中进行且使用 70B 云端模型，端侧相关度低。评测设计严谨但结论偏描述性，贡献中等偏低。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04265" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

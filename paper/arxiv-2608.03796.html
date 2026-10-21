@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Efficient Knowledge Distillation for LLMs: Offline Top-K Logits and a Fused Chunked KL Loss</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-04 · Bakbergen Ryskulov; Iker García-Ferrero; David Montero; David Jansen; Ali Hashemi; Jezabel R. Garcia; Antonio Tiene; Román Orús / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项蒸馏方法把教师模型的 Top-K 输出离线保存，并用分块融合的 KL 损失训练小模型，降低蒸馏所需的显存和计算。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于蒸馏、记忆、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-04 · Bakbergen Ryskulov; Iker García-Ferrero; David Montero; David Jansen; Ali Hashemi; Jezabel R. Garcia; Antonio Tiene; Román Orús / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">硬件:GPU</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">小模型常常是低时延、低成本、本地部署的唯一选择，但压缩后的模型要靠知识蒸馏恢复质量，这一步很贵。论文从工程角度研究如何让蒸馏训练又快又省显存。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">离线蒸馏（一次性缓存教师的 top-K logits）与在线蒸馏训练损失几乎一致，每步快约 29%，单张 H200 上吞吐最多高 41%；融合分块 KL 损失让峰值显存随序列长度线性增长，可在单卡上用 4 倍上下文（32768 token）训练。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先把教师每个位置概率最高的 K 个 logits 缓存下来，训练时不再加载教师；再实现一个分块计算、从不展开整张词表 logits 的融合 KL 损失内核；实验以从 Llama 3.1 8B 压缩得到的 3.2B 学生模型为对象。</span></div>
+<div class="score-reason">评分依据：服务于压缩小模型的质量恢复，直接支撑本地部署小模型的生产流程，相关度中等；方法以工程整合为主。arXiv PDF 首页署名显示全部作者来自 Multiverse Computing。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03796" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

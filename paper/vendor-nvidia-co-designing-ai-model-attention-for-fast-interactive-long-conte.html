@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Co-Designing AI Model Attention for Fast, Interactive Long-Context Inference</h1>
-<div class="meta"><span class="score">13</span> <span class="tier">官方动态</span>  2026-07-31 · NVIDIA / NVIDIA</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:GPU</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">分析组大小、头维度和序列长度如何影响注意力机制在预填充（计算密集）和解码（内存密集）阶段的性能，提出四条模型设计准则：增大组数 G 提升解码效率、选用 128/256 头维度对齐 GPU 瓦片、压缩有效 KV 状态、按 KV 头数选并行策略，强调注意力设计方式正成为决定推理性能的关键。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：NVIDIA 官方动态（命中官方域名白名单）</div>
+<div class="meta"><span class="score">7</span> <span class="tier">官方动态</span>  2026-07-31 · NVIDIA / NVIDIA</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:高效注意力</span><span class="tag">方向:KV cache</span><span class="tag">方向:模型架构</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">英伟达技术博客分析注意力的设计参数如何决定长上下文推理速度，并给模型开发者总结出四条在 GPU 上提升吞吐和交互速度的设计准则。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以 DeepSeek-R1 为例，上下文从 4K 增至 128K 时注意力在预填充时间中的占比从 18% 升到 85%；组大小每翻一倍，解码耗时约减半，而预填充耗时变化不到 1%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从矩阵乘形状和算术强度出发，分别分析计算受限的预填充和带宽受限的解码：建议增大每个 KV 头共享的查询头数、头维度取 128 或 256 以对齐 GPU 分块、通过压缩或稀疏注意力减小有效 KV 状态、张量并行度不超过 KV 头数。</span></div>
+<div class="score-reason">评分依据：内容面向数据中心 GPU 上的长上下文推理，与端侧只有间接关联；但关于 KV 头数、头维度和 KV 状态的设计结论对小模型架构同样有参考价值，属于经验总结。</div>
 <div class="source"><a href="https://developer.nvidia.com/blog/co-designing-ai-model-attention-for-fast-interactive-long-context-inference/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

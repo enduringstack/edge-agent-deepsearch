@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Heterogeneity-Aware Microscaling for Efficient Low-Bit LLM Inference</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Junyi Luo; Xinting Jiang; Tai-Hao Wen; Ruichen Qi; Minxing Chu; Hongyi Wu; Gregory Kielian; Ben Laurie / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">模型:Gemma</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">AdaMX 针对大模型不同层、不同通道的权重与激活分布差异，自适应选择微缩放量化方式，降低低比特推理的精度损失。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于量化、记忆、多模态等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">13</span> <span class="tier company">公司项目</span>  2026-08-04 · Junyi Luo; Xinting Jiang; Tai-Hao Wen; Ruichen Qi; Minxing Chu; Hongyi Wu; Gregory Kielian; Ben Laurie / arXiv</div>
+<div class="tags"><span class="vendor-tag">Google</span><span class="tag">方向:量化</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:多模态</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">AdaMX 是一种兼顾数值格式与加速器硬件的低比特量化方案，针对大模型不同数据块、权重和激活分布的差异自适应选择编码方式，减少 4 比特推理的精度损失。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 3B 到 70B 的大模型上，消除了 MXFP4 在常识推理上 83%、在 MMLU 上 82% 的精度损失，以及 NVFP4 的 43% 和 27%；在 Gemma-4 12B 的四个视觉语言基准上均优于 MXFP4，最高保留 FP16 精度的 96%；22nm 原型芯片上相对 MXFP4 加速器仅增加约 1% 系统能耗。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按数据块选择精度恢复方案、按操作数（权重或激活）选择表示形式，等效位宽不增加；一套设计支持两种块大小，分别对应更高精度和更省存储的工作点；并在 22nm FD-SOI 工艺上实现了解码器、计算单元和量化逻辑。</span></div>
+<div class="score-reason">评分依据：低比特格式与配套加速器能直接降低端侧推理的存储和能耗，且做了 22nm 芯片原型，但没有针对具体终端设备评测。PDF 首页第 7、8 位作者署名 Google，因此标注 Google。 作者机构依据：arXiv PDF 首页署名 Google（PDF 首页第 7、8 位作者 Gregory Kielian、Ben Laurie 署名 Google，其余作者来自布朗大学和密歇根大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03867" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Stuck on &quot;A&quot;: Diagnosing and Repairing Interface Injury in Attention-to-KDA Linearization of a 0.6B Language Model</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Ronglong Bao / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">我们在单张消费级 GPU 预算下把 Qwen3-0.6B-Base 的 28 层全注意力中的 21 层转成 KDA（Kimi Delta Attention）线性注意力层，并…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于蒸馏、评测基准、GPU等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · Ronglong Bao / arXiv</div>
+<div class="tags"><span class="tag">方向:高效注意力</span><span class="tag">方向:蒸馏</span><span class="tag">模型:Qwen</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">作者在单张消费级 GPU 的预算下，把 Qwen3-0.6B 的 28 层全注意力中的 21 层换成 KDA 线性注意力，并排查转换后模型到底哪里坏了。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">蒸馏后困惑度接近教师，但 C-Eval 选择题准确率只有 25%–29%（教师 50.6%），81% 的情况都选 A；加 1000 步针对格式的 KL 修复后 C-Eval 提升 12.48 分，选项粘连约减半。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先做隐藏状态对齐和端到端 KL 蒸馏，再用轮换选项顺序的诊断发现接口损伤，然后只在答案部分做格式化 KL 修复，最后做人设微调和一轮 DPO。</span></div>
+<div class="score-reason">评分依据：把小模型的大部分注意力层换成线性注意力可降低长序列推理开销，对端侧小模型可迁移，但没有部署实测；诊断出标准蒸馏指标看不到的接口损伤是实用经验，方法本身属常规组合。作者署名独立项目 DT-Project，代码和权重已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02689" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Harness-R1: Learning to Edit Executable Runtime Harnesses from Agent Failure Trajectories</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Shuai Shao; Kangning Zhang; Qingyao Li; Shijian Wang; Hao Wang; Wenxiang Jiao; Yuan Lu; Yi Guo / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">围绕 LLM 构建的 agent 在部署中持续积累交互轨迹，但其行为通常保持不变。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于高效推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-08-03 · Shuai Shao; Kangning Zhang; Qingyao Li; Shijian Wang; Hao Wang; Wenxiang Jiao; Yuan Lu; Yi Guo / arXiv</div>
+<div class="tags"><span class="vendor-tag">Xiaohongshu</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体部署后会不断积累交互轨迹，但其外围“运行框架”（构造上下文、调度工具、校验动作、失败恢复的代码）通常一成不变。Harness-R1 训练一个专门的“框架工程师”模型，根据失败轨迹自动改写这套可执行框架。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 WebShop、ALFWorld、DBBench 上，把未微调的 Qwen3.5-9B 智能体平均成功率从 44.3% 提到 53.6%（+9.3 个百分点）；对已微调的目标智能体，再从 59.2% 提到 64.2%（+5.0 个百分点）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用一个 9B 的工程师模型把一批失败轨迹转成经过校验的可执行补丁，用冻结目标智能体的重跑成功率作奖励，先监督微调冷启动、再用组相对策略优化在线训练，只更新工程师模型。</span></div>
+<div class="score-reason">评分依据：改进的是智能体运行框架本身，对端侧智能体的工具编排和失败恢复也有借鉴，但实验未涉及设备端，相关度偏低；用强化学习学“改框架”而非改权重，是较新的方向。PDF 首页显示作者来自上海交通大学、小红书和东南大学，小红书作者占 4 位且含通讯作者。 作者机构依据：arXiv PDF 首页署名 Xiaohongshu（PDF 首页作者 5–8 署名 Xiaohongshu Inc.，其中两位为通讯作者）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02276" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

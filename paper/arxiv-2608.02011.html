@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Before Reasoning Can Fail: Pre-Evidence Procedural Failures in Agentic RAG</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Daeyoung Roh; Donghee Han / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:RAG</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项研究发现 Agentic RAG 常在推理前就失败：智能体搜到证据却没阅读便作答；Read-Gate 因而强制搜索后、回答前至少读取一次证据。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准、RAG、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · Daeyoung Roh; Donghee Han / arXiv</div>
+<div class="tags"><span class="tag">应用:RAG</span><span class="tag">方向:工具调用</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">检索增强智能体答错题，常常不是推理失败，而是搜到了片段却根本没读就直接作答。这篇论文专门分析这种“读证据之前就失败”的流程问题，并给出一个强制先读再答的运行时规则。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 HotpotQA、2WikiMultiHopQA、MuSiQue 共 12,000 条成对轨迹上，两类失败基本不重叠（同时出现比例 11.2%–13.1%）；强制阅读后，原本会跳过阅读的轨迹 LLM-Acc 提升 14.9–19.9 个百分点，最简推理设置整体提升 3.2–9.4 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用保存的工具调用轨迹、检索结果和阅读记录，把错误拆成证据阅读前的流程失败和读到正确证据后的推理失败两类；再加入 Read-Gate 规则：搜索之后、作答之前必须至少读一次检索结果。</span></div>
+<div class="score-reason">评分依据：关注智能体工具调用流程的正确性，属于智能体运行时问题，但与端侧部署无直接关系，相关度低；失败分解和轻量运行时约束有参考价值，贡献中等。作者为独立研究者与 KAIST。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02011" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Distill What the Student Can See: Fisher-Projected On-Policy Distillation for Vision-Language Models</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-02 · Leyan Xue; Feng Xiong; Mingjun Ma; Changqing Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作改进视觉语言模型的同策略蒸馏，让教师只传递学生表示空间中能够学习的知识，避免教师与学生能力差距过大时蒸馏失效。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于蒸馏、多模态、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">FP-OPD 改进了视觉语言模型的在线蒸馏：大模型老师的某些纠正小模型学生根本“看不出来”，于是只蒸馏学生能学到的那部分。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 8B 蒸馏到 2B 的设置中，七个多模态基准全部提升，平均分比预训练学生高 2.77 分，比标准在线蒸馏高 1.60 分。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用连续视觉扰动估计学生模型的局部视觉切空间，把师生对数概率差在学生 Fisher 度量下投影到该空间，得到与学生容量匹配的蒸馏目标。</span></div>
+<div class="score-reason">评分依据：把大视觉语言模型蒸馏成 2B 小模型，是端侧多模态模型的上游可迁移技术，但未涉及部署；容量感知的蒸馏目标有新意。作者来自天津大学，未涉及公司。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01263" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

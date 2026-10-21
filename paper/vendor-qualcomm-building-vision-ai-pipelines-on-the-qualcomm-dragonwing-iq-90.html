@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Building Vision AI Pipelines on the Qualcomm Dragonwing IQ-9075 with QIM SDK, Edge Impulse, and Qt Framework</h1>
-<div class="meta"><span class="score">13</span> <span class="tier">官方动态</span>  2026-07-31 · Qualcomm / Qualcomm</div>
-<div class="tags"><span class="vendor-tag">Qualcomm</span><span class="tag">方向:端侧agent</span><span class="tag">硬件:NPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在 Qualcomm Dragonwing IQ-9075 EVK 上结合 QIM SDK、Edge Impulse 和 Qt 框架构建工厂视觉 AI 管道，覆盖缺陷检测、工人安全防护检测和工厂数字孪生可视化三大场景，模型针对 Hexagon HTP 加速器优化，并新增 Qt AI 推理 API 概念验证。</span></div>
+<div class="meta"><span class="score">10</span> <span class="tier">官方动态</span>  2026-07-31 · Qualcomm / Qualcomm</div>
+<div class="tags"><span class="vendor-tag">Qualcomm</span><span class="tag">方向:编译部署</span><span class="tag">硬件:NPU</span><span class="tag">应用:fault-detection</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">高通开发者博客介绍如何在 Dragonwing IQ-9075 评估板上，结合高通 IM SDK、Edge Impulse 和 Qt 框架搭建工厂视觉 AI 应用，涵盖缺陷检测、工人安全防护检测和工厂数字孪生展示。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用 QIM SDK 和 Edge Impulse 准备、优化视觉模型，在 Hexagon HTP 上推理，再由 Qt Framework 组织设备端界面和工厂场景流程。</span></div>
-<div class="score-reason">评分依据：Qualcomm 官方动态（命中官方域名白名单）</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">三个视觉模型（Edge Impulse 训练的 YOLO Pro 缺陷检测模型和两个 TFLite 安全检测模型）都针对 Hexagon 张量处理器优化，分布在板上两个 HTP 核心上并发运行；视频流程基于 GStreamer，由 Qt 的声明式 QML 直接编排，并由此衍生出 Qt AI 推理 API 概念验证。</span></div>
+<div class="score-reason">评分依据：所有模型都在 IQ-9075 板载 NPU 上实时运行，属于明确的端侧部署案例，相关度较高；内容是现有工具链的集成示范，没有新方法，也没有给出性能数字。</div>
 <div class="source"><a href="https://www.qualcomm.com/developer/blog/2026/07/vision-ai-factorypulse-iq9075-qim-sdk" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

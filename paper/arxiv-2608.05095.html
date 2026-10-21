@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Hierarchical Graph Memory for LLM Agents with Path-level Localization and Rewrite</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Xiawei Yue; Boran Wang; Xiaoqing Zhang; Shuxin Zheng; Ziwei Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">长程推理 agent 需要能随时间高效有效更新的记忆，因为新事实和外部反馈持续到达…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、评测基准、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-05 · Xiawei Yue; Boran Wang; Xiaoqing Zhang; Shuxin Zheng; Ziwei Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">给长期运行的大模型智能体设计的分层图记忆 HiGram：把记忆从粗到细分层组织，更新时先定位受影响的证据路径再整体改写，减少检索噪声和重复改写。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在长期对话问答和冲突感知记忆基准上，回答质量和 token 效率都明显优于基线，并在动态、静态和条件冲突下提升答案准确率；摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">上层节点加记忆单元构成分层图；用由查询和更新触发的小子图定位支持路径；改写时同时修订单元内容和单元之间的依赖关系。</span></div>
+<div class="score-reason">评分依据：智能体长期记忆属于 Agent 运行时技术，节省 token 对端侧也有意义，但工作本身面向云端大模型，无设备部署；分层组织加路径级改写是对图记忆的合理改进。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05095" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

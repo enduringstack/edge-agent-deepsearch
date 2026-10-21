@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Adversarial Attacks in Multi-Agent LLM Pipelines: Unveiling Structural Vulnerabilities in Agentic AI Architectures</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-01 · Faisal Haque Bappy; Tahrim Hossain; Tarannum Shaila Zaman; Raiful Hasan; Kamrul Hasan; Tariqul Islam / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">模型:GPT</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">多 agent LLM 流水线把多个专用语言模型 agent 编排成结构化工作流，中间输出跨 agent 传递…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、安全隐私、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-01 · Faisal Haque Bappy; Tahrim Hossain; Tarannum Shaila Zaman; Raiful Hasan; Kamrul Hasan; Tariqul Islam / GLOBECOM 2026</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">模型:GPT</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究多智能体大模型流水线的安全问题：一个智能体一旦接受了恶意内容，就会被当成可信输入一路传给后续智能体，形成单智能体没有的攻击面。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">基于 GAIA 和 SWE-Bench 的真实运行轨迹，作者发现这类漏洞在正常部署中就会出现且多数逃过现有评测；在 GPT-5-mini、Claude Sonnet 4.5、Kimi K2.5 上的对照实验显示，攻击是否成功主要取决于流水线结构而非模型能力。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把漏洞归因为缺少“边界校验”，即数据跨智能体传递时对内容、身份、执行意图和状态完整性的显式验证，并据此归纳内容注入、冒充、计划偏离和记忆投毒四类攻击，在受控多智能体环境中逐一复现。</span></div>
+<div class="score-reason">评分依据：属于云端多智能体运行时的安全分析，与端侧部署无直接关系，相关度较低；把漏洞归因到流水线结构是有价值的视角，但以分析和复现为主，贡献中等偏低。作者均来自美国高校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00718" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

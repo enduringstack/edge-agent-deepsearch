@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Control Under Compression: Reliability Frontiers for Tool-Using Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-02 · Yinghan Hou; Zongyou Yang / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">模型:Qwen</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作研究工具调用智能体在系统指令被压缩后还能否可靠遵守工具、参数和策略约束，并刻画压缩率与控制可靠性之间的边界。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准、Qwen等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-02 · Yinghan Hou; Zongyou Yang / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:评测基准</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">CompressAgent 是一个评测基准，专门检验把工具型 Agent 的系统指令（工具说明、参数、策略、恢复流程）压缩之后，Agent 还能不能可靠地完成任务。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">共 15525 次运行：保留 75% 上下文时，通用改写和按章节压缩的成功率为 92.7% 和 92.4%，接近完整上下文的 93.8%；保留 35% 时三种方法分别跌到 47.0%、39.0% 和 19.9%；压缩到 25% 以下时可执行协议明显变脆弱。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">构造 9 套独立的 Agent 控制上下文、3 类任务和 6 档保留比例，用真实环境执行结果而非文本相似度来判断压缩后控制是否仍然可靠，并分析失败多出在工具执行和动作解析。</span></div>
+<div class="score-reason">评分依据：控制上下文压缩直接关系到端侧小上下文窗口下的 Agent 可靠性，属于可迁移的 Agent 运行时问题；实验用云端 Qwen API，贡献以评测为主。作者机构为帝国理工学院，未涉及公司。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01056" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

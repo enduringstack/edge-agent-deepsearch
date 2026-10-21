@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CAMTA: A Reconfigurable Multi-Region Activation Unit for Nonlinear Function Approximation</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-04 · Carlos Soto-Porras; Jose Fonseca-Cruz; Pablo Ramirez-Morera; Erick Obregon-Fonseca; Luis G. Leon-Vega; Jorge Castro-Godinez / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">非线性激活函数在机器学习工作负载中广泛使用，但其直接硬件实现常昂贵、函数专用或…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在高效推理。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Carlos Soto-Porras; Jose Fonseca-Cruz; Pablo Ramirez-Morera; Erick Obregon-Fonseca; Luis G. Leon-Vega; Jorge Castro-Godinez / arXiv（投稿 ICECS 2026）</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">硬件:FPGA</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">神经网络里的 Softmax、激活函数等非线性运算在硬件上实现成本高、难复用。CAMTA 是一个 16 位可重配置的多区间激活单元，同一套电路能近似多种非线性函数。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 AMD Alveo FPGA 上，CAMTA 辅助的 Softmax 均方根误差低至 3.60×10⁻⁶，比 CORDIC 基线好近一个数量级；FPGA 综合占用 3 个 DSP、802 个触发器、1756 个查找表，延迟 11 个周期；TSMC 65 纳米 250 MHz 下面积 6632.40 平方微米、功耗 1.3634 毫瓦，相比专用实现面积和功耗分别多 2.20 倍和 1.75 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把输入划成多个区间，每个区间独立设置阈值、多项式阶数、系数和执行模式（霍纳多项式、常数、零、恒等），共享一条霍纳计算通路，换函数不需要重新综合。</span></div>
+<div class="score-reason">评分依据：面向 FPGA 和 ASIC 加速器的非线性算子单元，属于端侧 AI 芯片的基础模块，给出了毫瓦级功耗数据，但属于电路级优化，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02988" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

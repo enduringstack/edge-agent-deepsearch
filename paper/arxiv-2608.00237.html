@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Latent-Centroid Steering: Single-Pass Classifier-Free Guidance for Command-Aligned Autonomous Driving</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-31 · Meibo Hu; Jiamian Wang; Pichao Wang; Zhiqiang Tao / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作用一次前向计算让自动驾驶视觉语言模型更贴合驾驶指令，避免传统无分类器引导需要重复推理的额外开销。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在潜表示空间中用类别中心引导生成方向，使车辆动作与高层指令对齐。</span></div>
-<div class="score-reason">评分依据：属于多模态、评测基准、云端serving等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-31 · Meibo Hu; Jiamian Wang; Pichao Wang; Zhiqiang Tao / IROS 2026</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这项工作让自动驾驶视觉语言模型只做一次前向计算就能更好地服从导航指令，省掉传统无分类器引导需要两次推理的额外延迟。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">推理延迟降低约 50%，同时在闭环 Bench2Drive 和开环 nuScenes 基准上指令服从度和驾驶表现都优于基线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把无分类器引导解释为均值漂移，预先为每类导航指令计算潜空间中心，推理时把条件表示朝对应中心平移，用类别级的潜空间偏移代替逐样本的两次推理差值。</span></div>
+<div class="score-reason">评分依据：把引导推理从两次前向压到一次，对车载实时推理有直接意义，但论文没有在车载芯片上实测。论文被 IROS 2026 接收；PDF 首页第 3 位作者署名 NVIDIA，因此标注 NVIDIA。 作者机构依据：arXiv PDF 首页署名 NVIDIA（PDF 首页第 3 位作者 Pichao Wang 署名 NVIDIA，其余作者来自罗切斯特理工学院）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00237" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

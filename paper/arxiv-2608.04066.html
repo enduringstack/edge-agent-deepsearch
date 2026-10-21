@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>The LLM Proposes, the Executive Disposes: A Self-Verifying Agent Instrument that Dissociates Commitment Drift from Binding Drift in Long-Horizon Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Mohsen Arjmandi / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">当一个长程 agent 的状态和自述恰恰是你不能信的，你如何验证它？</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于高效推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-08-04 · Mohsen Arjmandi / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长程智能体的自我汇报本身不可信，怎么验证它到底有没有偏离目标？这项工作搭了一个“大模型只提建议、确定性执行器说了算”的智能体实验装置，用来把“放弃目标”和“绑定出错”两类漂移分开测量。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">去掉承诺机制后，放弃目标的比例从 0.00 变成 1.00，而绑定错误始终为 0.00（每组 3 个随机种子）；作者同时声明在 ARC-AGI-3 上 52 次有效运行的任务完成数为 0。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">所有信念状态由确定性执行器掌握，大模型只能提交类型化提案；每个结论都要在行动前预先登记预测，再由代码与观测比对后才被采纳，任何一次运行触及误差底线就自动作废。</span></div>
+<div class="score-reason">评分依据：研究的是长程 Agent 的可验证运行架构，与端侧部署关系较远。验证方法设计细致，但任务效果为零、规模很小，属于方法学探索，贡献中等偏低。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04066" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

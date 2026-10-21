@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Bimanual Manipulation Within an 8 GB Budget: Zero-Copy Sensing and Quantized ACT on an Entry-Level Jetson</h1>
 <div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-04 · Ekansh Singh; Eva Samuel; Alessandra Reneau; Ryan Schmeelk; Yashvi Gandhi / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span><span class="tag">硬件:Jetson</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项系统把双臂模仿学习策略压进 8GB 入门级 Jetson，通过零拷贝感知和量化动作模型完成本地实时操控。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在量化、记忆、评测基准。</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:编译部署</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span><span class="tag">硬件:Jetson</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这项工作把双臂模仿学习操作系统完整跑在 8GB 的入门级 NVIDIA Jetson Orin Nano Super 上，并量化分析零拷贝相机采集和模型量化在嵌入式部署中的实际收益。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">零拷贝采集把单核峰值 CPU 占用从 98.0% 降到 77.0%，最坏时延从 117.31 毫秒降到 101.52 毫秒；ACT 策略 20 次成功 19 次，扩散策略未收敛；TensorRT FP16 把推理时延从 114.02 毫秒降到 17.93 毫秒（6.4 倍），INT8 降到 12.65 毫秒（9.0 倍），成功率保持在 19/20、18/20、19/20。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用基于 NVMM 缓冲区的 GStreamer 管线去掉三路相机采集中多余的主机与设备拷贝；在相同示教数据上对比训练 ACT 与扩散策略；再把 ACT 转为 TensorRT 的 FP16 和 INT8 引擎，并分析 INT8 校准为何没有量化任何 Transformer 层。</span></div>
+<div class="score-reason">评分依据：感知和动作策略全部在 8GB Jetson 上本地实时运行，端侧部署证据扎实；属于部署实测与经验总结，方法上没有新算法，且是纯动作策略而非智能体闭环。工作在佐治亚理工研究院完成。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03938" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

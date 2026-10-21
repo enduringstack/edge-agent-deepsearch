@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TQLite: Multi-LLM Jury Guided Distillation for Real-time MQM Translation Quality Evaluation</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Bhavin Jawade; Cameron R. Wolfe / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM 在基于 MQM 的翻译质量（TQ）评估上表现出色，大推理模型的最新进展…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于蒸馏、评测基准、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span>  2026-08-04 · Bhavin Jawade; Cameron R. Wolfe / arXiv</div>
+<div class="tags"><span class="vendor-tag">Netflix</span><span class="tag">方向:蒸馏</span><span class="tag">方向:评测基准</span><span class="tag">模型:Llama</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用大模型做翻译质量评估效果好但成本高，小模型又不够聪明。TQLite 用多个推理大模型组成评审团生成训练数据，把小模型蒸馏成接近顶级评估器的实时评估工具。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">论文报告经 TQLite 训练的小模型在 MQM 翻译质量评估上远超同规模现成小模型，接近最好的推理大模型评估器；摘要未给出单一汇总数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">让多个推理大模型分别给出 MQM 错误标注，经过数据筛选和多模型结果聚合形成高质量合成数据，再用它微调小模型。</span></div>
+<div class="score-reason">评分依据：把大模型能力蒸馏到小模型以降低部署成本，对资源受限场景有一定借鉴，但目标是云端规模化评估。机构依据：arXiv 论文首页两位作者署名 Netflix。 作者机构依据：arXiv PDF 首页署名 Netflix（arXiv 论文首页作者 Bhavin Jawade、Cameron R. Wolfe 署名 Netflix，使用 netflix.com 邮箱）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02975" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

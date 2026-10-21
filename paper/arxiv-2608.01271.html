@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Rethinking Video Token Compression with a Global Codebook: Learning Once, Compressing Everywhere</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-02 · Jiayang He; Tianling Xu; Diancheng Kang; Huaide Jiang; Junyan Bai; Shaoming Zheng; Xuan Song / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">ONCE 先离线学习一个全局视频特征码本，推理时只做查表与聚合来压缩视觉令牌，避免每段视频重复运行昂贵且模型专用的剪枝流程。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:剪枝稀疏</span><span class="tag">应用:视频</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ONCE 是一种即插即用的视频 token 压缩方法：离线学一次全局码本，之后对任何视频都只需查表合并，不必每次在线重新计算压缩。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多个视频理解基准上取得较好的精度-效率平衡，在所比较的方法中推理延迟最低；摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">离线在冻结的视觉特征空间里拟合按频率加权的全局码本；推理时保留当前视频最常用的码字，把所有原始 token 归到对应码字并做均值池化。</span></div>
+<div class="score-reason">评分依据：视频 token 压缩可直接迁移到端侧多模态推理，但论文未涉及端侧设备；把压缩搬到离线的思路有新意。作者来自南方科技大学等高校，未涉及公司。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01271" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

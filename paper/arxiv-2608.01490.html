@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>BiKAN: Restoring Collapsed Basis of Binary Kolmogorov--Arnold Networks</h1>
 <div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-02 · Kazi Ahmed Asif Fuad; Lizhong Chen / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把多项式 Kolmogorov-Arnold 网络（KAN）二值化不只改变参数精度，也改变每层可用函数空间。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在高效推理。</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:模型架构</span><span class="tag">硬件:FPGA</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把多项式 KAN 网络二值化时，激活只剩 ±1，高次多项式基会塌缩成常数和一次项，导致精度大跌。BiKAN 补上二阶奇偶特征，让全二值（W1A1）网络恢复表达能力。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">W1A1 下 BiKAN 在 MNIST、CIFAR-10、CIFAR-100 上分别达到 99.48%、84.38%、55.81%；同等约 1190 万参数下比常规加宽高 3.09 个点。Xilinx Zynq-7020 FPGA 上卷积版 DSP 用量从 164 降到 72、计算核延迟估计从 401 毫秒降到 54.8 毫秒，稠密版可做到零 DSP 推理、精度只损失 0.03 个点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用固定的通道循环移位生成两两奇偶（二阶 Walsh 特征），再用与其他二值路径相同的 XNOR-popcount 运算做学习投影，不引入乘法器或可学习路由。</span></div>
+<div class="score-reason">评分依据：全二值网络加 FPGA 布局布线实测，直接面向资源极度受限的嵌入式硬件（相关度 7）。找出二值 KAN 的基塌缩问题并用低成本奇偶特征修复，方法清晰但应用于小规模视觉任务（贡献 6）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01490" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>In-Context VLA: Endowing Vision-Language-Action Models with Language via In-Context Post-Training and Agentic Tool Use</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-06 · Jiarui Yang; Wen Huang; Jiale Zhang; Maowei Hu; Hang Guo / arXiv</div>
-<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">VLA 已成通用操作的主流方案，但几乎都靠行为克隆训练：…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于工具调用、多模态、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-06 · Jiarui Yang; Wen Huang; Jiale Zhang; Maowei Hu; Hang Guo / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让视觉-语言-动作（VLA）机器人模型“读懂”语言而不是自己生成长篇思维链：把感知证据作为结构化上下文喂进去，并允许策略主动调用检测、深度估计等工具。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 RoboCasa-GR1、SimplerEnv、LIBERO 三个仿真基准和 Agibot 人形机器人 8 个真机桌面任务上取得最好成绩；相比普通行为克隆成功率提升近 10%，单张 A100 上控制频率接近纯动作策略、明显快于生成思维链的基线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">后训练时只监督动作、把空间描述作为上下文输入；再配一个工具调用接口，让策略按需查询开放词表检测器、单目深度和视觉语言模型获取信息。</span></div>
+<div class="score-reason">评分依据：指出思维链会拖慢机器人闭环控制，并用“注入语言+工具调用”保持控制频率，对机器人端低时延推理有参考价值；但推理在 A100 上运行，没有机载部署证据（相关度 5）。方法设计有新意（贡献 6）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05738" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

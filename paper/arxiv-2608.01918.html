@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>HarnessCompass: Guiding Automatic Harness Evolution toward Generalizable and Effective Agent Harnesses</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Luan Zhang; Ruochen Zhou; Dandan Song; Zhengyu Chen; Yuhang Tian; Jun Yang; Huipeng Ma; Chenhao Li / arXiv</div>
-<div class="tags"><span class="tag">模型:GPT</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Harness 设计对 agent 性能至关重要，它塑造 LLM 在可执行环境中如何感知、推理和行动…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于GPT等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-03 · Luan Zhang; Ruochen Zhou; Dandan Song; Zhengyu Chen; Yuhang Tian; Jun Yang; Huipeng Ma; Chenhao Li / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:评测基准</span><span class="tag">应用:代码</span><span class="tag">模型:GPT</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体框架（harness，即模型如何感知、推理和操作环境的外围设计）对效果影响很大。HarnessCompass 自动迭代改进这套框架，并避免只对训练任务过拟合。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 SWE-bench Verified 上配合 GPT-5.4，只用 5 轮演化就把 Pass@1 从 54% 提升到 66%，效果和演化效率都超过 AHE，演化出的框架还能迁移到未见任务和其他模型。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">只允许与具体任务无关的框架修改，在轨迹信号之外加入智能体对框架使用情况的第一人称反馈，并对各组件分别优化后再合并，减少相互干扰。</span></div>
+<div class="score-reason">评分依据：智能体运行时外围框架的自动优化，评测基于云端大模型，与端侧关系较远（相关度 3）。约束演化加组件解耦优化有一定新意（贡献 6）。作者来自北京理工大学和香港城市大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01918" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

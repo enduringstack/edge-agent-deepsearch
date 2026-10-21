@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MoEGen: Mixture-of-Experts for Instance-Adaptive LoRA Generation</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Yiming Zeng; Lei Lu; Zexin Li; Zhuochun Li; Shuoqiu Li; Shuyi Liao; Xidong Wu; Zeyu Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">参数高效微调（PEFT）实现大语言模型高效适配，但现有基于 MoE 的 PEFT 方法通常通过…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于MoE、评测基准、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-04 · Yiming Zeng; Lei Lu; Zexin Li; Zhuochun Li; Shuoqiu Li; Shuyi Liao; Xidong Wu; Zeyu Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">现有混合专家式的 LoRA 微调要为每个专家存一整套 LoRA，存储随专家数线性增长。MoEGen 改为只存很小的专家向量，再按输入现场生成低秩更新。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在八个常识推理基准、三种骨干模型上稳定优于静态 LoRA 和混合专家式 LoRA 基线，并在医疗与法律领域联合适配中表现良好。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每个专家只表示为一个可学习的小向量，路由器按输入对这些向量加权组合，再驱动一个轻量超网络生成该输入专属的 LoRA 更新，把专家容量和适配器存储解耦。</span></div>
+<div class="score-reason">评分依据：属于参数高效微调，与端侧多适配器存储有一定迁移价值，但论文没有讨论部署；超网络生成 LoRA 的思路属于已有方向的改进。作者以美国高校为主，首页未列公司机构，Google、Amazon 只在文末机构列表中对应个别作者，不算公司主导项目。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03275" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

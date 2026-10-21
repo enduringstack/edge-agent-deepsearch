@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>When Do Prompt-Side Agent Playbooks Transfer? Accuracy, Cost, and Runtime Shift in Agent Deployment</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-06 · Weihong Lin; Lin Sun; Xiangzheng Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提示侧手册能免重训改进用工具的语言 agent，但能否迁移到源设定之外还不清楚。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于蒸馏、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-08-06 · Weihong Lin; Lin Sun; Xiangzheng Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">工具型智能体常用“提示词攻略”提升表现而不用重新训练。这篇研究这类攻略换任务、换运行环境后还能不能直接复用。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ALFWorld 上迁移有收益，蒸馏出的攻略在一组近似同预算对比中胜过 5 个固定示例；在 TAU2-Bench 上 135 个路线级效果经 Holm 校正后只有 1 个显著；在 XBench-DeepSearch 上运行环境变化后出现重复查询、迟迟不停止和成本明显上涨。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用统一的“蒸馏-验证-迁移”流程冻结攻略，再在三个基准上比较准确率、成本和运行时变化。</span></div>
+<div class="score-reason">评分依据：关注智能体部署时的运行时迁移与成本问题，与云端 Agent 部署相关，未涉及端侧设备（相关度 3）。结论有实用价值但属实证分析（贡献 4）。公司归属依据 arXiv PDF 首页署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05778" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

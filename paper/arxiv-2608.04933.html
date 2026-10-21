@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Mimir: A Neuro-Symbolic Memory System with Dynamic Grounding for Embodied Agents in Interactive Environments</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Haoming Xu; Zhenlin He; Hengyi Wang; Jiafeng Xu; Hao Dong / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">长程具身任务要求 agent 在部分可观测下行动，同时维护场景信念和执行进度。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、评测基准、机器人等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">给具身智能体设计的神经-符号记忆系统，把“世界里东西在哪、什么状态”和“任务做到哪一步”分开记，每次行动前再把两者对齐。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 EB-ALFRED 和 EB-Habitat 上最大提升 42.5%、平均提升 23.0%；与同骨干下最好的已有智能体和记忆系统相比，总体平均成功率高 8.5%；EB-Habitat 长程子集成功率 86.0%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">世界记忆维护物体位置、状态和感知证据，任务记忆维护有序目标清单、进度、手部状态和失败记录；一个接地模块把当前目标绑定到候选物体并补全缺失位置，再交给规划和执行。</span></div>
+<div class="score-reason">评分依据：具身智能体的记忆与规划属于机器人端 Agent 技术栈，但只在仿真环境评测，未在真机或端侧芯片上运行；世界/任务双记忆加动态接地的设计清晰，提升明显。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04933" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

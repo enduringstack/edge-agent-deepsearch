@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Bole: Efficient Tree Speculation for Hybrid-Attention Language Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Li Wang; Yi Su; Xiabao Wu; Chiran You; Yongchao Liu; Zhan Qiu; Juelu Zhang; Jiajun Zheng / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:投机解码</span><span class="tag">方向:高效注意力</span><span class="tag">方向:记忆</span><span class="tag">硬件:GPU</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Bole 针对混合注意力模型设计树状投机解码，让多个候选令牌并行验证，以降低长文本生成延迟。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于KV cache、投机解码、高效注意力等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-08-03 · Li Wang; Yi Su; Xiabao Wu; Chiran You; Yongchao Liu; Zhan Qiu; Juelu Zhang; Jiajun Zheng / arXiv</div>
+<div class="tags"><span class="vendor-tag">Ant Group</span><span class="tag">方向:投机解码</span><span class="tag">方向:高效注意力</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">线性注意力与全注意力混合的大模型解码仍受内存带宽限制，而现有树状投机解码系统按全注意力的 KV cache 设计，用在混合模型上验证慢、显存占用大。Bole 做了内核与运行时协同设计。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">线性注意力树验证加速 3.4–7.7 倍，投机状态的临时内存减少 82–99 倍；在 4 个模型、2 种 GPU 平台上，离线解码吞吐最高达自回归解码的 4.72 倍、最强树投机基线的 2.03 倍；在线智能体负载下首 token 延迟和每 token 延迟分别最多降低 67.6% 和 49.9%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把线性注意力递推改写成树结构闭式解并用高效 GPU 内核并行验证所有候选节点；把投机状态更新无损编码成 token 级因子，只重建采样后选中的状态；并集成进 SGLang。</span></div>
+<div class="score-reason">评分依据：树状投机解码与混合注意力都是端侧推理可迁移的技术，但本工作面向 SGLang 服务端批量推理（相关度 4）。系统解决混合注意力模型的树投机验证问题，内存节省显著（贡献 7）。PDF 首页有多位作者署名蚂蚁集团。 作者机构依据：arXiv PDF 首页署名 Ant Group（PDF 首页作者机构含 Ant Group，Xiabao Wu、Yongchao Liu、Zhan Qiu、Juelu Zhang 使用 antgroup.com 邮箱）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01651" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

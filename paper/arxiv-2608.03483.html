@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Continue or Replan? Bernoulli-Continuation Policy Learning for Adaptive Horizon Execution</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Weichen Xu; Zhenhua Liu; Lin Luo; Yaobo Liang; Chengtang Yao; Qingyu Mei; Jian Cao; Xixin Cao / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">现有分块 VLA 模型在重规划前执行固定数量的动作（即执行视野），把重规划变成…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于多模态、机器人等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-08-04 · Weichen Xu; Zhenhua Liu; Lin Luo; Yaobo Liang; Chengtang Yao; Qingyu Mei; Jian Cao; Xixin Cao / arXiv</div>
+<div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">分块执行的 VLA 机器人模型每次固定执行若干动作才重新规划，关键操作时可能还在用过时的动作块。BCP 让模型逐步决定「继续执行还是重新规划」。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以 LingBot-VLA 为基座，在 RoboTwin 2.0 的 13 个低成功率任务上平均成功率提升 11.08%，50 个任务整体从 89.88% 提到 93.94%；迁移到 π0.5 后 LIBERO 提升 1.7%、LIBERO-PRO 提升 6.8%；真机两个任务成功率分别从 74% 提到 92%、从 44% 提到 84%，总运行时间反而更短。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">冻结基座 VLA，只加一个轻量的继续头，把执行长度选择拆成一连串「继续或重规划」的伯努利决策，并用兼顾成功率和重规划效率的奖励做强化学习训练。</span></div>
+<div class="score-reason">评分依据：少调用大模型、减少重规划次数能降低机器人上的推理开销，但推理在 A100 上测量，且属于纯动作策略，不是端侧智能体；即插即用的自适应执行长度设计实用。PDF 首页作者 2–6、10、11 署名微软亚洲研究院。 作者机构依据：arXiv PDF 首页署名 Microsoft（PDF 首页作者 2–6、10、11 署名 Microsoft Research Asia，邮箱为 microsoft.com；另有北京大学作者）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03483" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>OmniScope: Modality-Decoupled Token Compression for Omnimodal Large Language Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-31 · Jinsen Su, Yongdong Luo, Yuexiao Ma, Yibo Hu, Meiguang Jin, Xiaowu Zheng / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">OmniScope 为全模态大模型分别压缩不同模态的令牌，避免只依据一种模态决定另一种模态保留内容而丢失关键信息。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">解耦各模态的保留决策，再协调压缩后的视觉、音频和文本表示。</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、记忆、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-07-31 · Jinsen Su, Yongdong Luo, Yuexiao Ma, Yibo Hu, Meiguang Jin, Xiaowu Zheng / arXiv</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">应用:视频</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">OmniScope 是一种无需训练的全模态大模型令牌压缩方法，针对音频和视频分别判断哪些内容与问题相关，避免只按一种模态取舍而丢掉另一模态的关键线索。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在四个音视频基准和两种规模的 Qwen2.5-Omni 上，各压缩设置下平均准确率均为最佳；整体只保留 25% 令牌时，预填充最高提速 3.53 倍，GPU 显存降低超过 15%，平均准确率只下降 0.35 分。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以用户问题作为共享语义锚点，分别估计音频和视频的相关度并按模态分配令牌预算；视觉令牌用兼顾全局与时序变化的锚点-差分策略裁剪，音频令牌在每秒内合并。</span></div>
+<div class="score-reason">评分依据：令牌压缩能直接降低多模态模型的计算和显存开销，可迁移到资源受限设备，但论文只在服务器 GPU 上评测。PDF 首页显示第 2、4、5 位作者署名阿里巴巴集团，因此标注 Alibaba。 作者机构依据：arXiv PDF 首页署名 Alibaba（PDF 首页作者 Yongdong Luo、Yibo Hu、Meiguang Jin 署名 Alibaba Group，其余作者来自厦门大学）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2607.23193" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

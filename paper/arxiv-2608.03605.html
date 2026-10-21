@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FraQ: Efficient Coordinate-Space Recompression for Federated Low-Rank Adaptation</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Shenghui Li; Thiemo Voigt / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:联邦学习</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">FraQ 面向联邦 LoRA 微调，在坐标空间中精确聚合并重新压缩各客户端更新，避免直接平均低秩因子造成误差，也省去稠密矩阵分解的高内存开销。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、能耗功耗、联邦学习等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-04 · Shenghui Li; Thiemo Voigt / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:端侧训练</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">联邦 LoRA 微调中，直接平均各客户端的两个低秩因子并不等于平均它们的真实更新；精确聚合后再重新压缩又很贵。FraQ 给出一种低开销的精确聚合与重压缩办法。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在文本分类和常识推理基准上精度接近不压缩的基线，同时显著减少下行通信量，服务器端重压缩开销低；摘要未给出具体倍数。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把各客户端因子堆叠成能精确表示聚合结果的形式，分解出正交基和小坐标矩阵，从小 Gram 矩阵恢复奇异谱，按能量阈值选最小秩，再映射回全局适配器。</span></div>
+<div class="score-reason">评分依据：联邦微调面向分散在终端上的私有数据，与端侧协同训练相关，但没有设备端实测，相关度中等；属于聚合算法的工程改进。作者来自乌普萨拉大学与瑞典研究院。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03605" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

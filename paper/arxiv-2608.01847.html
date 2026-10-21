@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FOCUS: FP4 Optimization via Coupled-Relaxation and Dual-Granularity Scaling</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · Xianglong Yan; Hong Liu; Chengzhu Bao; Tianao Zhang; Guanghua Yu; Jianchen Zhu; Yulun Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM 表现出色，但因体量巨大部署昂贵。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于量化、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-08-03 · Xianglong Yan; Hong Liu; Chengzhu Bao; Tianao Zhang; Guanghua Yu; Jianchen Zhu; Yulun Zhang / arXiv</div>
+<div class="tags"><span class="vendor-tag">Tencent</span><span class="tag">方向:量化</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">FP4 量化（MXFP4、NVFP4）有新一代加速器原生支持，但精度难保。FOCUS 是一个训练后量化框架，专门优化 FP4 的缩放因子。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多个大模型家族和基准上，MXFP4 与 NVFP4 两种格式下均达到当前最好的 FP4 精度，且不引入额外推理开销（以 Qwen3-4B 为例的恢复率对比见原文图 1）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把量化缩放和反量化缩放解耦，前者乘一个可学习的全精度系数而不破坏硬件格式要求；再在更细的子块粒度上调整量化缩放，适配局部权重分布，并端到端学习缩放参数。</span></div>
+<div class="score-reason">评分依据：低比特量化是端侧部署的核心技术，但 FP4 目前主要面向 Blackwell 等数据中心加速器（相关度 5）。指出量化缩放无需遵守存储格式约束、并据此解耦优化，思路清晰（贡献 6）。PDF 首页作者 2、5、6 署名腾讯，另有上海交通大学；代码计划在腾讯 AngelSlim 仓库发布。 作者机构依据：arXiv PDF 首页署名 Tencent（PDF 首页作者 Hong Liu、Guanghua Yu、Jianchen Zhu 标注机构 2 为 Tencent，第一作者注明在腾讯实习期间完成）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01847" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

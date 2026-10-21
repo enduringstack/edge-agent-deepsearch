@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Causal Episodic Memory for Feedback-Driven Agent Repair</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-06 · Khang Nhat Hoang Vo; Tam Minh Chu; Anh Trac Duc Dinh; Thuyen Vinh Ha Bui; Tho Quan / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">修复失败的 LLM agent 往往丢弃成功的修正，迫使后续轮次重新发现类似解。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-06 · Khang Nhat Hoang Vo; Tam Minh Chu; Anh Trac Duc Dinh; Thuyen Vinh Ha Bui; Tho Quan / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:RAG</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">MERIT 是一个不需要训练的修复型智能体：把以前成功的修正和失败的方向记下来，在后续 Text-to-SQL 任务里检索复用。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">用 Qwen2.5-7B-Instruct 时，Spider 执行准确率从无记忆迭代修复的 66.34% 提升到 69.79%，BIRD 从 47.35% 提升到 48.44%；在 BIRD 上 Reflexion 式记忆达到 51.24%，但推理成本明显更高。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">维护正负两类在线记忆，用确定性分类器标注失败类型，再用词法与稠密向量混合检索相关经验，冻结模型据此生成修订。</span></div>
+<div class="score-reason">评分依据：智能体经验记忆机制，7B 模型可在本地运行，但未涉及端侧部署（相关度 3）。增益有限，作者也坦言与普通动态检索区分不明显（贡献 4）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05906" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

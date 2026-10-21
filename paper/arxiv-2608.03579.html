@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Pin Once, Swap Light: Subspace-Aligned Centroid-Residual Training for Efficient Ultra-LoRA Serving</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Xiang Li; Pengcheng Wang; Huazheng Wang; Saurabh Bagchi / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span><span class="tag">模型:Llama</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">现代多租户低等级适配器 (LoRA) 服务系统同时托管数十到数百个 LoRA 适配器。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、云端serving、GPU等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-04 · Xiang Li; Pengcheng Wang; Huazheng Wang; Saurabh Bagchi / arXiv</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">硬件:GPU</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多租户 LoRA 服务要同时托管上百个适配器，高秩适配器效果好但占显存、换入换出慢。SALT 让同领域共享一个常驻显存的“中心”适配器，每个用户只训练秩不超过 2 的极小残差。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">用秩不超过 2 的残差恢复了高秩适配器的精度，比最先进的压缩基线绝对精度最多高 18.5%，单个适配器内存最多减少 16 倍；集成进 vLLM 后，Llama-3.2-3B 在 PCIe 带宽受限时吞吐提升最多 51%，显存受限时提升 28%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">服务方先用对齐正则在公开数据上训练领域中心适配器，把同领域任务子空间拉到统一基底；用户在冻结的中心上微调超低秩残差；推理时中心常驻 GPU，残差按需换入。</span></div>
+<div class="score-reason">评分依据：适配器压缩和换入开销优化对资源受限部署有借鉴价值，但实验场景是 GPU 多租户云端服务，相关度中等；训练与服务联合设计有一定新意。作者来自普渡大学与俄勒冈州立大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03579" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

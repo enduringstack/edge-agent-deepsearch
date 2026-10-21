@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Learning What to Remember: Test-Time Training via Context Distillation</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Zixuan Wang; Xingyu Dang; Rui-Jie Zhu; Zixin Wen; Hengyu Fu; Wenhao Chai; Jason D. Lee / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:记忆</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">有效的长上下文建模不只是保留更多过去，而是保留日后可能相关的信息。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于蒸馏、记忆、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="tags"><span class="tag">方向:测试时自适应</span><span class="tag">方向:模型架构</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长上下文建模不只是记住更多，而是记住以后有用的信息。TTCD 是一种测试时训练方法，在推理过程中在线更新部分参数，用自监督信号决定该记住什么。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">从头预训练时，IP-TTCD 在长上下文语言建模任务上持续优于 DeltaNet、Gated DeltaNet、滑动窗口注意力和 TTT；已预训练的 Transformer 也能通过轻量结构改动和持续预训练获得长上下文能力。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用长窗口教师监督短窗口学生的快速权重，以两者隐藏状态差异作为密集自监督信号；IP-TTCD 直接把已有 MLP 参数当作快速权重原地更新。</span></div>
+<div class="score-reason">评分依据：用固定大小的快速权重代替不断增长的 KV cache 处理长上下文，对内存受限设备有迁移价值，但未涉及端侧（相关度 4）。为测试时训练引入面向未来效用的蒸馏目标，有新意（贡献 6）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01672" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

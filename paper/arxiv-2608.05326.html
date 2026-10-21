@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>QEvict: Recoverable Quantized KV Eviction for Attention-Drift-Robust Long-Context Decoding</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Ayushman Garg; Akshita Gupta; Shaswata Bhattacharya; Abhishek Gupta; Sandeep Kumar; Manoj Kumar / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">自回归 LLM 推理越来越受 KV cache 的显存占用限制。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于量化、KV cache、记忆等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:量化</span><span class="tag">应用:长上下文推理</span><span class="tag">模型:Llama</span><span class="tag">模型:Qwen</span><span class="tag">模型:Mistral</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">QEvict 是一种长上下文推理时的 KV 缓存管理方法：不再把“不重要”的 token 直接删掉，而是先压成低比特存着，之后需要时还能恢复。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Llama-3.1-8B、Mistral-7B、Qwen2.5-7B 上，按 20% KV 缓存预算与 StreamingLLM、SnapKV 等驱逐方法以及 KVQuant 等量化方法对比，在 LongBench、RULER 32K 和 GSM8K 上整体更好；摘要未给出单一汇总数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把缓存窗口分成三档：高置信窗口保留全精度，中间窗口量化存储，只删最不重要的；解码中按累计注意力更新重要性，量化窗口重新变重要时反量化提升回全精度。</span></div>
+<div class="score-reason">评分依据：KV 缓存压缩是端侧长上下文推理的关键技术，方法可直接迁移，但实验在服务器 GPU 上完成；“可恢复驱逐”思路有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05326" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Robust and Efficient Motion Reasoning for Privacy-Aware Classroom Incident Recognition</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Paritosh Parmar; Landy Lan; Hong Yang; Chen Yi; Chiat Pin Tay / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">计算机视觉能否让教室更安全？</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于蒸馏、安全隐私、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-05 · Paritosh Parmar; Landy Lan; Hong Yang; Chen Yi; Chiat Pin Tay / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:安全隐私</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用监控画面里的人体姿态运动来识别教室安全事件（如打闹、摔倒），兼顾隐私和计算效率，并构建了合成视频加真实姿态的混合基准。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">模型以不到大模型基线十分之一的计算量取得更好效果，并在跨域运动推理和合成到真实的零样本迁移上更强；摘要未给出具体准确率。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先把人体动作表示成多阶运动学特征（方向、速度、加速度、强度），再把大教师模型的多阶推理蒸馏到只用一阶特征的小学生模型，实现逐人高效推理。</span></div>
+<div class="score-reason">评分依据：轻量化、只用姿态不看人脸的识别方案适合部署在边缘摄像头侧，但论文未做设备实测；蒸馏小模型属于常见压缩思路，贡献主要在场景和基准。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05115" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

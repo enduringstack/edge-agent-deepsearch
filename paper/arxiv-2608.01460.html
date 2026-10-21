@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Conformalized Large Language Models under Configuration Shift</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-02 · Yuqicheng Zhu; Jialin Yu; Lin Li; Gengyuan Zhang; Zhen Yang; Steffen Staab; Puneet Dokania; Philip Torr / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">共形预测（CP）是一个分布无关的不确定性量化框架，近期被适配到 LLM，提供…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于量化等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-08-02 · Yuqicheng Zhu; Jialin Yu; Lin Li; Gengyuan Zhang; Zhen Yang; Steffen Staab; Puneet Dokania; Philip Torr / EMNLP 2026</div>
+<div class="tags"><span class="vendor-tag">Bosch</span><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型的不确定性校准（保形预测）常默认推理配置不变，但实际部署中提示模板、解码温度、权重量化都会改。这篇系统研究这种“配置偏移”对保形预测有效性的影响。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 9 个大模型、4 个数据集、4 种非一致性分数上，配置偏移持续让实际覆盖率跌破目标，而预测集大小基本不变；基于界的重校准只需少量测试样本即可修复，脆弱性感知的校准集成在无测试数据时也能恢复大部分覆盖率。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">推导出把覆盖率损失归因于校准与测试分数分布差异的下界，并用其有限样本版本诊断偏移严重程度，进而给出重校准和集成两种缓解手段。</span></div>
+<div class="score-reason">评分依据：把权重量化等部署配置变化当作分布偏移来研究，对在端侧用量化模型同时又要可靠不确定性估计的场景有直接参考（相关度 4）。系统实证加理论下界，已被 EMNLP 2026 主会接收（贡献 6）。PDF 首页第一作者署名 Robert Bosch GmbH 并使用 bosch.com 邮箱。 作者机构依据：arXiv PDF 首页署名 Bosch（PDF 首页第一作者 Yuqicheng Zhu 与末位作者 Evgeny Kharlamov 署名 Robert Bosch GmbH，第一作者通讯邮箱为 bosch.com 域名）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01460" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

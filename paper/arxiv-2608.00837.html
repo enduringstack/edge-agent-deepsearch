@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Pruned BPE: Post-training Visibility Pruning and Token Reallocation for Byte Pair Encoding</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-01 · Kenny Shao / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">字节对编码（BPE）广泛用于子词分词，但标准 BPE 把每个学到的合并 token 都暴露给下游模型，包括…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-01 · Kenny Shao / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">改进最常用的 BPE 分词器：训练完后把很少真正出现的中间词元隐藏起来，把腾出的词表位置让给更常用的词元，从而用同样大小的词表把文本切得更短。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在英文、中文为主的两套语料及其合并语料上，相同词表规模下编码长度比标准 BPE 稳定缩短约 0.27%～0.36%；用统一的最少词元编码器比较时仍有约 0.23%～0.31% 的优势。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按最终曝光度评估每个词元，低曝光词元只保留为内部合并节点，编码时递归展开为可见词元，原有合并顺序不变；空出的可见槽位通过继续训练补充更常用的候选。</span></div>
+<div class="score-reason">评分依据：更短的编码长度对推理开销有间接帮助，但收益很小且与端侧部署关系较远；方法属于分词器的工程改进。作者来自佛罗里达国际大学，代码已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00837" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

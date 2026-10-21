@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>V-Mem: Modality-Routed Retrieval for Long-Term Multimodal Agentic Memory</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-02 · Dingyi Kang; Dongming Jiang; Yi Li; Guanpeng Li; Bingzhe Li / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用户与 LLM agent 的交互越来越多模态：对话中文字与图像交织，后续问题可能针对任一。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、多模态等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-02 · Dingyi Kang; Dongming Jiang; Yi Li; Guanpeng Li; Bingzhe Li / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用户与大模型智能体的对话越来越图文混排，但现有智能体记忆多为文本设计，回答与图片相关的问题时经常失败。V-Mem 是按模态路由检索的多模态智能体记忆系统。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Mem-Gallery 上 LLM 评审分 0.82，第二名为 0.56；带图片的问题上达 0.87，其他基线都不超过 0.47；在 LoCoMo 上得分 0.69，对比 0.58。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先从问题本身识别查询与目标证据的模态，按对话轮次返回同轮次中目标模态的内容，避免跨模态直接比较；再用大模型生成假想图注或补充关键词作为检索锚点，缩小相似度与相关性的落差。</span></div>
+<div class="score-reason">评分依据：智能体长期记忆检索是 Agent 运行时的关键组件，可迁移到个人设备上的助手，但未涉及端侧部署（相关度 5）。指出多模态记忆的两类检索落差并对症设计，效果提升明显（贡献 6）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01543" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

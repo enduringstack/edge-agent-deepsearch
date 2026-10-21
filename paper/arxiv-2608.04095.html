@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FinPerMA: A Theory-Informed, Event-Grounded Personalized-Memory Benchmark for LLM Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Ben Wang; Kang Zhou; Lifan Guo; Feng Chen; Chi Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM agent 越来越多地用作金融顾问等高风险领域的个性化助手，但是否…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-08-04 · Ben Wang; Kang Zhou; Lifan Guo; Feng Chen; Chi Zhang / arXiv</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">理财顾问这类个人助理智能体，需要长期记住并更新用户的偏好，尤其是在市场大事件之后。FinPerMA 是阿里云通义点金团队做的个性化记忆评测集，专门考察智能体能否把重大事件融进对用户的长期认识。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">276 个虚拟投资者、2994 道题上，7 个前沿大模型加最多 7 种记忆配置都远未饱和：任何全上下文配置的总体准确率都不超过约 0.47，选择题不超过约 39%；基于摘要的记忆常保住事实却丢掉偏好信号，简单检索反而胜过专门的记忆系统。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用行为金融理论推出的确定性规则生成投资者在真实历史事件后的偏好变化，再让大模型受控地写成对话并自动质检，冻结后设置“冲击后”检查点单独考察记忆更新。</span></div>
+<div class="score-reason">评分依据：评测 Agent 长期记忆这一运行时能力，对端侧个人助理的记忆设计有参考，但不涉及设备端部署。用理论规则约束偏好演化、提高标签可审计性是有价值的设计，贡献中等。PDF 首页五位作者均署名 Alibaba Cloud（通义点金团队），并使用 alibaba-inc.com 邮箱。 作者机构依据：arXiv PDF 首页署名 Alibaba（arXiv PDF 首页五位作者机构均为 Qwen DianJin Team, Alibaba Cloud Computing，其中四位使用 alibaba-inc.com 邮箱）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04095" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

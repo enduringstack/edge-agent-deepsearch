@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Why Formal Monitors Fail: Attack Distribution Entropy as a Coverage Bound for LTL-Based LLM Agent Safety</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-02 · Ruiyang Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">模型:DeepSeek</span><span class="tag">模型:GPT</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">基于线性时序逻辑（LTL）和有限自动机（FSA）的运行时安全监视器越来越多地部署用于拦截 LLM…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于云端serving、DeepSeek、GPT等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-08-02 · Ruiyang Zhang / IEEE IS 2026</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:工具调用</span><span class="tag">模型:GPT</span><span class="tag">模型:DeepSeek</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">解释为什么基于线性时序逻辑的 Agent 工具调用安全监控器在某些模型上很有效、在另一些模型上几乎失效：关键在于攻击模式分布的集中程度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 8 种前沿模型上验证：GPT 类和 DeepSeek 的攻击高度集中（熵约 0.24 比特），监控召回率 68%–75%；Gemini 变体攻击分散（熵约 2.81 比特），召回率仅 6%–13%；熵解释了 76% 的覆盖率方差（相关系数 -0.87）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">证明任意固定不变式的有限自动机监控器召回率上限由攻击分布的集中度决定，并提出部署前用少量攻击样本估算熵来预测监控覆盖率的检验方法。</span></div>
+<div class="score-reason">评分依据：属于 Agent 运行时安全监控理论，与端侧部署只有宽泛关联；给出了可操作的部署前检验。公司归属依据论文 PDF 首页作者署名 Ryonix Labs Inc. 与 Flock.io；论文被 IEEE IS 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01388" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

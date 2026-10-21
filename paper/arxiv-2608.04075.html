@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Spatiotemporal Graph Transformer for Traffic Intelligence in Edge Computing</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-04 · Laha Ale; Letian Lin; Na Cao; Zheng Ma; Peng Yu / arXiv</div>
-<div class="tags"><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">准确的流量预测对边缘计算的主动资源管理至关重要，那里服务需求在空间和时间上动态演化…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在长上下文推理。</div>
+<div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span>  2026-08-04 · Laha Ale; Letian Lin; Na Cao; Zheng Ma; Peng Yu / arXiv</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">边缘计算系统要提前按需分配资源，就得预测各服务区域未来的流量。这项工作用图神经网络加 Transformer 预测蜂窝网络的时空流量，为边缘资源预留提供依据。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在真实蜂窝网络数据集上，多个预测步长下均优于 GCN-RNN、GCN-LSTM、GCN-GRU 等循环图网络基线；原文摘要未给出具体误差数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用图神经网络刻画相邻服务区域之间的空间关联，再用 Transformer 自注意力学习长时间跨度的流量变化，把空间表示和时间推理解耦。</span></div>
+<div class="score-reason">评分依据：服务于边缘计算的资源管理，但模型本身不部署在端侧，也不涉及推理优化，相关度低。图网络加 Transformer 的组合较常见，贡献有限。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04075" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

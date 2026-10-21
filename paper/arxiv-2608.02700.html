@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>NANQ: Noise-Floor-Aware Mixed-Precision Non-Uniform Quantization for Analog Compute-in-Memory</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Yizhe Chen; Wenshuai Yao; Saiya Wang; Yuannuo Feng; Wenbo Qi; Kechao Tang; Ngai Wong; Wenyong Zhou / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">NANQ 根据模拟存内计算芯片实测的器件噪声分布分配混合精度：低噪声区域用更细量化，噪声主导区域不浪费额外位宽。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于量化、记忆、能耗功耗等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-08-03 · Yizhe Chen; Wenshuai Yao; Saiya Wang; Yuannuo Feng; Wenbo Qi; Kechao Tang; Ngai Wong; Wenyong Zhou / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:CIM</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">NANQ 是给模拟存内计算芯片用的低比特量化方法：根据芯片上实测的器件噪声来分配精度，噪声小的权重区间量化得更细，噪声大的地方不浪费比特。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 eFlash 存内计算 SoC 的片上实验中，2 比特权重量化下视觉模型准确率比 PowerQuant 平均高 8.05 个百分点，语言模型困惑度平均降低 54.7%；混合精度版本只用相当于 3.2–3.8 比特就拿到增加量化资源可获得的大部分收益，对比 PNMQ 把 Llama-3.2-3B 困惑度从 7.760 降到 7.361。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用反复片上读回测得的噪声随权重大小变化曲线生成自适应量化密度；再用统一阈值找每层在硬件噪声下的精度饱和点，逐层分配比特数。</span></div>
+<div class="score-reason">评分依据：在真实 eFlash 存内计算芯片上做了片上实验，并覆盖 ResNet、ViT、OPT、Llama-3.2-3B 等模型，是端侧低功耗硬件上的实测工作；把硬件噪声底直接纳入量化设计，方法有新意。作者来自北京航空航天大学、北京大学和香港大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02700" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

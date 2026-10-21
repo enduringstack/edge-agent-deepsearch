@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>S$^4$R: Selective Sampling, Subspaces, and Sparse Reconstruction for Compressed Long-Context KV Caching</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-01 · Jialong Han; You Wu; Kewei Tu / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">模型:Llama</span><span class="tag">模型:Qwen</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">S4R 压缩长上下文大模型的键值缓存，在降低显存占用的同时尽量保留对后续注意力计算最有用的信息。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于KV cache、剪枝稀疏、记忆等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-01 · Jialong Han; You Wu; Kewei Tu / AACL-IJCNLP 2026</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">应用:长上下文推理</span><span class="tag">模型:Llama</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">S4R 是一种长上下文 KV cache 低秩压缩方法：只用部分代表性 token 构建低秩子空间，解码时只稀疏重建有用的位置，兼顾压缩率和吞吐。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LongBench 和 RULER 上用 Llama、Qwen 系列测试，KV cache 最高压缩 5 倍，准确率接近完整缓存。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">预填充时从提示中选择性采样 token 初始化键/值基底，摆脱对外部校准数据的依赖；解码时不再每步完整重建缓存，只保留信息量大的位置做稀疏重建。</span></div>
+<div class="score-reason">评分依据：KV cache 压缩直接缓解端侧长上下文推理的内存压力，可迁移性强，但没有设备端实测；在离线与在线低秩方法之间做了折中，创新中等。已被 AACL-IJCNLP 2026 主会接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00528" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

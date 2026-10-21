@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SkillZip: Contract-Preserving Graph Compression for Scalable Agent Skill Libraries</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-06 · Xingyu Tan; Xiaoyang Wang; Qing Liu; Xiwei Xu; Xin Yuan; Liming Zhu; Wenjie Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM 越来越多地作为 agent 运行，过程知识被存成可复用技能包并在推理时加载。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准、机器人等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">SkillZip 解决智能体技能库越来越大、上下文装不下的问题：把技能拆成带约束契约的过程单元并压缩成可展开的宏，推理时只加载最小够用的上下文。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在技术类和具身智能体基准上比最强基线最多高 12.2 分，压缩率 3.46 倍，依赖保持率 99.2%，验证器可达率 98.7%；技能库从 200 扩到 10 万条时检索仍稳健。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把技能按章节建成执行图，找出重复出现且满足契约的片段改写成可逆宏，保留边界签名和依赖闭包；推理时按需展开宏，并用执行证据更新和修正库中的宏。</span></div>
+<div class="score-reason">评分依据：在有限上下文预算下压缩智能体技能，对上下文和内存受限的端侧 Agent 有直接迁移价值，但实验未涉及设备端；契约保持的图压缩思路较新。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05604" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

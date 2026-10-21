@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Faster-WAM: Do World Action Models Need Deep Action Modules?</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Liheng Ma; Rui Heng Yang; Zhanguang Zhang; Mateo Clemente; Ziwen Hu; Tongtong Cao; Yingxue Zhang / arXiv</div>
-<div class="tags"><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">世界动作模型（WAM）把机器人动作预测与视频世界模型耦合。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于机器人等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-08-03 · Liheng Ma; Rui Heng Yang; Zhanguang Zhang; Mateo Clemente; Ziwen Hu; Tongtong Cao; Yingxue Zhang / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">华为提出的 Faster-WAM：世界动作模型以预训练视频模型为骨干，但常配一个又深又重的动作预测模块，推理慢且容易过拟合。Faster-WAM 只用单层轻量动作专家，把算力集中在视频世界模型上。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LIBERO 和 RoboTwin 2.0 上控制性能有竞争力，推理速度约为 Fast-WAM 的 3.7 倍、π0.5 的 1.3 倍；同一 LIBERO 训练策略在 LIBERO-Plus 上成功率 78.3%，比 Fast-WAM 和 LingBot-VA 高 26.8 和 8.8 个百分点；真机实验成功率与 Fast-WAM 相当，推理延迟和任务完成时间明显更短。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用带 Lite KV-Fusion 的 Dock of Transformers 让浅层动作专家读取视频模型所有层的表示，动作专家只以世界模型为条件，并用收缩的一维旋转位置编码对齐视频键和动作查询。</span></div>
+<div class="score-reason">评分依据：大幅降低机器人动作模型的推理延迟并有真机验证，与机器人端侧实时控制直接相关；但它是动作生成模型，没有规划、记忆或工具闭环，按规则属非端侧智能体。“重骨干、轻动作头”的设计简单有效。PDF 首页作者主要来自华为诺亚方舟实验室（蒙特利尔）和华为 2012 实验室。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页多数作者署名华为诺亚方舟实验室（蒙特利尔）、Huawei Celia Team 与华为 2012 实验室，通讯邮箱为 huawei.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02365" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

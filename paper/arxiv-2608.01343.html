@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DeVIT: Low-Power Vision Transformer Acceleration Using Delta Computation</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-02 · Reyhaneh Hosseinzadeh; Parham Zilouchian Moghaddam; Mehdi Modarressi / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">DeVIT 利用低比特视觉 Transformer 中数值重复度高的特点，只计算相邻激活的变化量，以减少存储访问和乘加操作，面向低功耗设备加速。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在量化、记忆、能耗功耗。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-02 · Reyhaneh Hosseinzadeh; Parham Zilouchian Moghaddam; Mehdi Modarressi / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">DeVIT 是一种面向资源受限设备的低功耗视觉 Transformer 加速器设计，利用量化后权重取值重复多的特点，用移位和加法代替乘法。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在所评测配置下，归一化计算量降到未优化基线的 0.53；单次矩阵乘能耗 159.57 nJ，比对比中能耗最低的 ShiftAddLLM 配置低约 5.5%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把 8 比特权重排序后只存相邻差值，差值近似成 2 的幂，用移位加法完成乘累加；再对权重矩阵分块以减小缓冲区和功耗，并完成 RTL 设计与 15nm 工艺综合。</span></div>
+<div class="score-reason">评分依据：明确面向端侧低功耗视觉推理的硬件加速，相关度较高；差分计算思路源自作者此前的 CNN 工作，收益幅度中等。作者来自德黑兰大学，未涉及公司。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01343" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

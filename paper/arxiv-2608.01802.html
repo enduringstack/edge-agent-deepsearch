@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CoNav-UAV: Cooperative Dual-Altitude Aerial Navigation via Stackelberg Learning</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-03 · Junru Song; Wenhao Zhang; Yang Yang; Xuekai Qiu; Feifei Wang; Weien Zhou; Tingsong Jiang; Ying Wen / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">空中平台上目标导向的视觉语言导航（VLN）因灾难救援、基础设施巡检等任务而日益受关注…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在蒸馏、记忆、多模态。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · Junru Song; Wenhao Zhang; Yang Yang; Xuekai Qiu; Feifei Wang; Weien Zhou; Tingsong Jiang; Ying Wen / arXiv</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:记忆</span><span class="tag">方向:蒸馏</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">无人机按文字描述寻找目标时，既要大范围搜索又要近距离避障，单一智能体难以兼顾。CoNav-UAV 让高空和低空两架无人机分工合作完成视觉语言导航。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 AerialVLN 基准的三个高保真城市场景中全面超过单机和双机基线，训练场景成功率最高提升 30.8 个百分点，跨场景迁移提升 9.0 个百分点，且适配数据少约 3 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把任务建模为高空领航机与低空跟随机之间的 Stackelberg 博弈：领航机的视觉语言推理用基于记忆的上下文学习改进，跟随机的精细运动控制用 DAgger 式专家蒸馏更新，两者交替迭代。</span></div>
+<div class="score-reason">评分依据：面向无人机机载输入的导航智能体，与端侧具身场景相关，但只在 AirSim/Unreal 仿真中评测，未上真机（相关度 5，按规范判为非端侧 Agent）。双机博弈式协同学习有新意（贡献 6）。作者来自上海交通大学、中国人民大学等，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01802" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

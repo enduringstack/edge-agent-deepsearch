@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SafeCommit: Certifying When Memory-Grounded Agents May Safely Act</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Mayur Akewar; Ravi Ranjan / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">长程 agent 越来越多地使用持久记忆和工具，做出有外部副作用的行为。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-04 · Mayur Akewar; Ravi Ranjan / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">带持久记忆和工具的长程智能体，常在记忆可能过时、冲突或被篡改时就贸然执行有副作用的操作。SafeCommit 在推理和真正执行之间加了一层风险控制，只在证据足够时才放行。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">理论上，在世界假设集合校准覆盖的前提下，被认证却不安全的执行概率不超过设定的 α；原文只提供了一个可一键复现的模拟器展示安全与效用的取舍，未报告真实任务上的数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从记忆、观测、工具输出、来源和策略约束构造一组校准过的可能世界，用保形预测给动作发安全证书；证书不成立时，选一个副作用小的探测动作去排除阻碍认证的世界，或退回保守方案。</span></div>
+<div class="score-reason">评分依据：针对 Agent 执行有副作用动作前的安全把关，是运行时层面的问题，对端侧执行型助理同样适用，但论文未涉及设备端。用保形预测给动作发证书有新意，但只有模拟验证，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04289" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

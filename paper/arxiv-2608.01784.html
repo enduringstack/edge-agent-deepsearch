@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>REFLEX: Rethinking MoE Inference as Refinement-Aware Compute Allocation in Diffusion Language Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Xiang Xia; Cheng Yan; Yiming Zhang; Jiazheng Liu; Hongyu Zhang; Wuyang Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">专家混合（MoE）模型通过为每个代币仅激活一小部分专家来增加参数容量。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于MoE、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-03 · Xiang Xia; Cheng Yan; Yiming Zhang; Jiazheng Liu; Hongyu Zhang; Wuyang Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">扩散语言模型每一步去噪都会重新处理所有位置，但不同位置的“完成度”差别很大，固定的专家路由却给它们分同样的算力。REFLEX 按各位置的细化需求重新分配 MoE 专家计算。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LLaDA-MoE 和 LLaDA2.0-mini 两个 MoE 扩散语言模型上，平均减少 15% 的专家计算量，多数基准上生成质量持平甚至提升。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">无需训练、不改原路由器，按“粗到细”的层级给不同块和位置分配专家预算，并用前沿进度分数决定当前活跃块的优先级。</span></div>
+<div class="score-reason">评分依据：MoE 推理计算削减属于可迁移到资源受限设备的高效推理技术，但实验在 A100 上完成（相关度 5）。把 MoE 推理视为按细化状态分配算力是针对扩散模型的新视角（贡献 6）。作者来自中国科学技术大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01784" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

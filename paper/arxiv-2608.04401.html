@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Elbow-Based MoE Routing: A Training-Free Inference Time Plugin for Expert Selection</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Robin Pan; Raymond Liu; Daniel Fang; Adelina Andrei; Rosa Wu / arXiv</div>
-<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">MoE 模型通过每 token 只激活部分专家，实现模型扩容同时保持低推理算力。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于MoE、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-05 · Robin Pan; Raymond Liu; Daniel Fang; Adelina Andrei; Rosa Wu / arXiv</div>
+<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">给混合专家（MoE）模型的路由加一个推理期插件：不再固定每个词激活 k 个专家，而是按需动态决定激活几个，省掉多余计算。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在一个先进 MoE 模型上，六个基准平均延迟降低 5.3%，精度基本保持不变。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把路由概率从高到低排序，找到概率曲线的“拐点”，只激活拐点之前的高概率专家；无需重新训练，并从理论和实验上说明不破坏专家负载均衡。</span></div>
+<div class="score-reason">评分依据：免训练的 MoE 动态专家选择可直接迁移到资源受限设备上的 MoE 推理，但只在通用 GPU 上验证、加速幅度有限，相关度和贡献都中等偏下。作者来自哈佛大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04401" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

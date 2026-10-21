@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MoRAL: Sensor-Grounded BEV Reasoning for Compact VLMs toward Edge-Oriented Autonomous Driving</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-03 · Ambarish Govindarajulu Kaliamurthi; Kaikai Liu / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span><span class="tag">模型:Gemma</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">MoRAL 让 2B 级紧凑 VLM 直接读取编码距离、类别和速度的鸟瞰图，在不运行额外 3D 感知主干的情况下完成端侧驾驶空间推理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在量化、多模态、评测基准。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-03 · Ambarish Govindarajulu Kaliamurthi; Kaikai Liu / IEEE IMC 2026</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:蒸馏</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">MoRAL 教一个 2B 参数的小型视觉语言模型直接读取编码了激光雷达距离、物体类别和雷达速度的鸟瞰图，再据此做驾驶决策推理，省掉单独的 3D 感知网络，面向车载等资源受限平台。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 nuScenes 的 2,304 帧留出数据上，8 类问题中有 7 类胜过参数量 4 倍的零样本 8B 模型；紧急制动召回率从 10.8% 提到 47.8%，输出退化率从 94.1% 降到 20.8%；在 RTX 4070 笔记本 GPU 上不量化即可运行，峰值显存 4.61 GB、42 tok/s。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">第一阶段在 6 万条定位样本上微调视觉编码器，学会读这种物理编码的鸟瞰图；第二阶段用 8B 教师模型生成的 57,696 条思维链数据，只训练约 5200 万参数（占 2.4%）做推理微调。</span></div>
+<div class="score-reason">评分依据：明确面向车载端的紧凑 VLM，并在笔记本 GPU 上实测显存和速度，但没有在真正的车载芯片上验证，作者也承认离部署还远，故相关度 7；把感知结果画进输入图像再微调小模型，思路清晰但属于已有方法组合。作者来自圣何塞州立大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02449" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

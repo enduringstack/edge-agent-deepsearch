@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Hybrid-Adaptive Thread Tuning to Mitigate Simulation Execution Bottlenecks in High-Performance Reinforcement Learning Inference</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-06 · Jiming Su; Hantao Hua; Lujia Yin; Yiping Yao; Feng Zhu / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在仿真在环决策系统中，强化学习推理常被仿真端执行开销拖慢，其负载…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于高效推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-06 · Jiming Su; Hantao Hua; Lujia Yin; Yiping Yao; Feng Zhu / arXiv</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在“仿真器在环”的强化学习推理中，瓶颈常在仿真器一侧的多线程配置。AutoThread 自动预测并在线调整线程数。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">平均加速比静态线程策略高 18.4%，平均吞吐分别是 XGBoost 和 Reinforcer 方案的 1.7 倍和 1.8 倍，执行时间最多比现有最好方法减少 83.8%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用物理信息神经算子预测线程数，并用有限源 M/M/1 排队模型约束预测，运行中再按负载在线微调。</span></div>
+<div class="score-reason">评分依据：针对仿真加强化学习推理的 CPU 线程调优，与端侧 AI 推理关系较弱（相关度 2）。方法是建模与调参的组合（贡献 4）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.06025" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

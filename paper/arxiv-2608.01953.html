@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Look Ahead Before You Distill: Future Trajectory Validation of Teacher Guidance for Agentic On-Policy Distillation</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · Chishui Chen; Yaoyou Fan; Te Sun; Yi Yang; Chenghao Sun; Delin Mao; Hongbo Qiao; Zuowei Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在策略蒸馏（OPD）在学生访问的状态上提供教师监督，减小训练与推理的分布差距。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于蒸馏等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-08-03 · Chishui Chen; Yaoyou Fan; Te Sun; Yi Yang; Chenghao Sun; Delin Mao; Hongbo Qiao; Zuowei Zhang / arXiv</div>
+<div class="tags"><span class="vendor-tag">Meituan</span><span class="tag">方向:蒸馏</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把大模型智能体能力蒸馏给小模型时，学生在多轮任务中越走越偏，老师的指导可能已经不起作用。FutureBridge-OPD 先看指导之后学生的后续表现，再决定是否采用这段指导。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ALFWorld、WebShop 和 ScienceWorld 上，以 Qwen3-32B 为老师、Qwen3-1.7B 为学生，平均比普通同策略蒸馏高 16.6 分、比 TCOD 高 7.6 分，并在不同学生规模和老师设置下保持有效。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在师生分歧大的状态让老师短暂接管几步，再让学生继续执行，用这段后续轨迹判断老师指导是否增加了有效蒸馏信号。</span></div>
+<div class="score-reason">评分依据：把智能体能力蒸馏到 1.7B 级小模型，对端侧小模型智能体有直接价值，但属于训练阶段方法、无设备实验（相关度 4）。用未来轨迹验证老师指导是新颖的切入点（贡献 6）。PDF 首页多位作者署名美团 LongCat Interaction，另有复旦、北大、上交等高校。 作者机构依据：arXiv PDF 首页署名 Meituan（PDF/HTML 首页作者 Chishui Chen、Yaoyou Fan、Yi Yang、Chenxing Sun、Yangen Hu、Lu Pan 署名 Meituan LongCat Interaction）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01953" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

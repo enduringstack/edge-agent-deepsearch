@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Adaptive Two-Stage Visual Token Pruning for Efficient Inference in Video-Language Models</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-04 · Paribesh Regmi; Qingshuang Chen; Chi Zhang; Heba Aly; Yelin Kim; Hongda Mao / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项方法在视频语言模型推理前后分两步删减视觉令牌，减少长视频带来的计算和显存负担。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在剪枝稀疏、多模态、评测基准。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-08-04 · Paribesh Regmi; Qingshuang Chen; Chi Zhang; Heba Aly; Yelin Kim; Hongda Mao / arXiv</div>
+<div class="tags"><span class="vendor-tag">Amazon</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这项方法在视频语言模型推理时分两步删减视觉令牌：先去掉重复的帧，再按视频内容自适应地删减保留帧内的令牌，降低长视频的计算和显存负担。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">只保留 10% 令牌时，视频描述基准准确率反而提高 7%，计算量（TFLOPs）减少 95%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">第一步剔除冗余帧；第二步在保留帧内做令牌级剪枝，剪枝比例根据令牌嵌入的相关性结构估算冗余度后逐视频决定；整个方法是后处理，不需要额外训练或微调。</span></div>
+<div class="score-reason">评分依据：论文以边缘设备和实时监控部署为动机，令牌剪枝能直接降低视频模型推理开销，但未在端侧硬件上实测。PDF 首页全部作者署名 Amazon.com Services LLC，因此标注 Amazon。 作者机构依据：arXiv PDF 首页署名 Amazon（PDF 首页全部作者署名 Amazon.com Services LLC，通讯邮箱为 amazon.com 域名）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03112" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

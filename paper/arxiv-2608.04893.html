@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>When Does Latent Communication Pay? A Causal Audit of Relayed KV Caches in Multi-Agent LLMs</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Jiaming Cheng; Subhransu Das; Rajiv Ramnath / arXiv</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-05 · Jiaming Cheng; Subhransu Das; Rajiv Ramnath / arXiv</div>
 <div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">多 agent LLM 系统转交 KV cache 而非文本，并把收益归功于交换的“隐式思考”。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于KV cache、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">多智能体系统里有人用互传 KV 缓存代替互传文字，并声称收益来自“潜在思想”的传递；这篇工作用对照实验检验这种说法是否成立。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">接收方确实需要发送方私有信息时，正确缓存的效果达到上限（100% 对比无关缓存的 23%–25%）；不需要时，在 GSM8K、ARC-Challenge 等上与错配缓存的差距在 2.8 分以内；某一设置下清零缓存损失 14.7 分，换成错配缓存只损失 0.4 分。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把传递的缓存替换成错配样本、全零和同统计量随机缓存，在“需要私有信息”和“不需要”两种情形下做预注册多种子检验，审计 LatentMAS、KVComm、C2C 等已发布系统。</span></div>
+<div class="score-reason">评分依据：研究多智能体之间的 KV 缓存通信，与端侧推理的缓存复用有一定联系，但属于云端多智能体方法的评估；严谨的因果审计方法有参考价值，不提出新系统。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04893" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

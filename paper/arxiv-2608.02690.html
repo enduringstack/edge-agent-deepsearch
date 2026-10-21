@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>GLOBE: Trajectory-Aligned Gradient Matching with Structured SparseOptimization for Coreset Selection</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-03 · Hetian Liu; Jin Cui; Mengcheng Shi; Yanbin Hu; Xinyue Long; Boran Zhao; Pengju Pen / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">深度网络的端侧训练从根本上受限于大规模数据集的算力和显存成本。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在剪枝稀疏、记忆、评测基准。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-03 · Hetian Liu; Jin Cui; Mengcheng Shi; Yanbin Hu; Xinyue Long; Boran Zhao; Pengju Pen / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧训练</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">GLOBE 是一种训练数据精选方法：从大数据集中挑出少量最有代表性的样本来训练，目的是降低端侧训练的算力和内存开销。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">论文报告在 6 个基准、5 种评测网络上，下游测试准确率持续优于现有核心集选择方法，保留比例越低优势越明显；摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用多个训练检查点上的梯度轨迹表示每个样本，联合匹配梯度轨迹的一阶均值和二阶矩，并用 Group LASSO、弹性网和预算约束求稀疏权重，最后按类别均衡选取样本。</span></div>
+<div class="score-reason">评分依据：动机是端侧训练受限于算力内存，但实验并未在设备上进行，只是数据选择算法，相关度中等偏低；轨迹对齐加结构化稀疏的组合有改进但属增量。作者来自西安交通大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02690" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

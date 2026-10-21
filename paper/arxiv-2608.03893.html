@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Cross-Model KV Cache Transfer in LLM Families: A Closed-Form Linear Mapping for Prefill Reuse</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Taekyung Heo; Rasoul Shafipour; Ritchie Zhao; Maximilian Golub; Mohammad Mahdi Kamani; Ritika Borkar; Makesh Tarun Chandran; Pantea Zardoshti / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作用闭式线性映射在同系列不同规模模型间转移 KV 缓存，让会话切换模型时复用预填充结果。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于KV cache等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-08-04 · Taekyung Heo; Rasoul Shafipour; Ritchie Zhao; Maximilian Golub; Mohammad Mahdi Kamani; Ritika Borkar; Makesh Tarun Chandran; Pantea Zardoshti / arXiv</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span><span class="tag">模型:Llama</span><span class="tag">模型:Mistral</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">线上经常在同一家族不同大小的模型之间切换（如小模型先答、不行再交给大模型），每次切换接收方都得从头重新预填充。这项工作让接收模型直接复用来源模型的 KV 缓存，跳过预填充。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在六组模型对、三个模型家族上，线性映射在四组上保留了接收方自己预填充时 73%–98% 的精度，另两组明显下降，换用小型非线性网络后 HellaSwag 保留率最多回升 37 个百分点；映射比重新预填充快 2.7–25 倍，多轮切换中保持稳定。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">发现同家族模型之间的 KV 缓存存在很强的线性关系（Qwen3 14B→32B 单层即可解释目标键 56% 的方差），于是为每个注意力头用岭回归拟合闭式映射：挑选最相关的几层来源 KV、先去掉 RoPE 位置编码再映射，只需 500 条校准序列。</span></div>
+<div class="score-reason">评分依据：跨模型复用 KV 缓存可降低大小模型级联和切换的预填充开销，属于可迁移到端云级联的推理优化，相关度中等；免训练的闭式映射思路新颖。arXiv PDF 首页署名显示全部作者来自 NVIDIA。 作者机构依据：arXiv PDF 首页署名 NVIDIA（PDF 首页全部 9 位作者统一署名 NVIDIA）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03893" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

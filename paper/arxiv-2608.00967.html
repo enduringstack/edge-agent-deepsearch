@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TrajWiki: Source-Grounded Memory Trajectories for Long-Horizon Dialogue Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-02 · Jingyu Sun; Yuyang Xue; Mingyang Li; Zhengtao Yao; Jiachen Li; Yang Cui; Wenhao Cai; Haozhe Liu / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM agent 在生成连贯、贴合上下文响应上能力很强，但稳健的长程对话仍…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-02 · Jingyu Sun; Yuyang Xue; Mingyang Li; Zhengtao Yao; Jiachen Li; Yang Cui; Wenhao Cai; Haozhe Liu / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:RAG</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">面向长时间对话智能体的可追溯记忆框架：每条记忆都记录来源和演变过程，并自动整理成互相链接的“记忆百科”页面，方便查询和排错。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LoCoMo 和 MedMT-Bench 上，用 GPT 和 Qwen 两类骨干模型时都优于 Full Context、Naive RAG、LangMem、A-MEM 等多数基线，并超过最强记忆基线 Mem0，多跳问题提升最明显。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把每条记忆表示为由不可变快照和新增、修订、废弃等操作组成的演变轨迹，再增量编译成记录实体、事件、数量和冲突的百科页；查询时依次从百科页路由到轨迹、快照和原始消息，基于证据作答。</span></div>
+<div class="score-reason">评分依据：智能体长期记忆的组织方式可迁移到个人设备上的助手，但实验未涉及端侧部署；可追溯的轨迹式记忆设计有一定新意。作者来自曼彻斯特大学、爱丁堡大学、南加州大学等高校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00967" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Cooperative Coevolution for Resource-Constrained Agentic LLM Post-Training</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · Zhiyuan Wang; Shengcai Liu; Jiahao Wu; Ning Lu; Hui Ouyang; Shaofeng Zhang; Haoze Lv; Ke Tang / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用工具的 LLM agent 产出长多轮轨迹，使基于梯度的后训练显存密集。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在记忆、评测基准、GPU。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · Zhiyuan Wang; Shengcai Liu; Jiahao Wu; Ning Lu; Hui Ouyang; Shaofeng Zhang; Haoze Lv; Ke Tang / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">工具调用智能体的轨迹又长又多轮，梯度式后训练很吃显存；进化策略省显存但在少量 GPU 上太慢。CoPES 把参数空间拆成多个低维子空间协同搜索，在资源有限时更高效地后训练智能体。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在与全参数 GRPO 最佳检查点相同的 GPU 时预算下，CoPES 恢复了 GRPO 92% 的验证准确率增益（标准进化策略为 67%），理论显存需求不到全参数 GRPO 的八分之一，并在五个基准的各 pass@k 指标上优于标准进化策略和 LoRA-GRPO。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">采用协同进化思路，把全参数空间分解为若干低维子空间，分别用进化策略搜索并协作合成，无需反向传播，用 Qwen3.5-4B 工具调用智能体在数学任务上验证。</span></div>
+<div class="score-reason">评分依据：关注低显存条件下的智能体后训练，属训练侧工作，与端侧推理部署关系较远，相关度低；子空间协同进化提升了无梯度训练效率，有一定新意。作者来自南方科技大学、香港理工大学、港科大等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02391" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

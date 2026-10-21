@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Threshold-Based Early Stopping of Accumulations in Neural Networks with Binary Activation</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-06 · Quentin Luquet de Saint-Germain; Massil Ait Abdeslam; Jean Pierre David / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">二值神经网络在受限部署中很有吸引力，可实现小体积、低功耗推理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在能耗功耗、评测基准。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-06 · Quentin Luquet de Saint-Germain; Massil Ait Abdeslam; Jean Pierre David / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:量化</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">二值神经网络适合低功耗设备，但每个神经元仍要把所有输入累加完，而最终只用到正负号。这篇提出在符号已经确定时提前停止累加，省掉多余计算。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 CIFAR-10 上的 VGG11 中，最深卷积层省掉 86.6% 的累加项，准确率只降 0.37 个点；同时用于最深三层时全网计算量减少 25%，准确率降 1.36 个点（按理想权重顺序统计运算量）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先在训练集上统计部分和的变化规律，推理时一旦部分和偏离零足够远、最终符号可预测，就停止累加；不需要重新训练任何参数。</span></div>
+<div class="score-reason">评分依据：直接面向资源受限设备上的二值网络推理，省计算思路对低功耗芯片有迁移价值；但只统计了理想排序下的运算次数，没有真实硬件的时延或功耗测量，模型和数据集也偏小。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.06177" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

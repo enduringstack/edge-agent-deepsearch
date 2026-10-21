@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Formal Verification of Agentic Systems over Operational Data</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Alejandro J. Mercado; Alessio Lomuscio / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM 驱动的 agentic 系统越来越多地部署到真实工作流中，对持久运营数据采取行动。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于高效推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-04 · Alejandro J. Mercado; Alessio Lomuscio / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">由大模型加工具编排框架组成的智能体会直接改动业务数据库，上线前需要验证它是否满足业务规则。论文把这类系统形式化为“有状态工具型智能体部署”，并研究如何做系统级形式化验证。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">理论结果：一般情况下验证问题不可判定；满足特定对称条件并限制到有限域后为 PSPACE 完全；计算所需规范表示是图同构难的。另在一个案件管理工作流智能体上做了演示，未报告量化指标。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用一阶计算树逻辑描述业务规则，找出“重命名数据标识时工具调用也随之重命名”这一关键条件，并设计一个通用包装层，让任意底层智能体都满足该条件。</span></div>
+<div class="score-reason">评分依据：关注智能体运行时的工具调用正确性保障，但与端侧部署无直接关系，相关度低；形式化框架和可判定性结论有理论贡献。作者来自帝国理工学院。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03609" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

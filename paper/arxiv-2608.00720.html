@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CascadeLUT: Information-Ordered Streaming Inference for Bandwidth-Constrained FPGAs</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-01 · Oliver Cassidy; Marta Andronic; George A. Constantinides / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:能耗功耗</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">CascadeLUT 面向带宽受限的 FPGA，把基于查找表的神经网络按信息重要性顺序流式执行，以兼顾低延迟、低能耗和传输开销。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在量化、能耗功耗。</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-01 · Oliver Cassidy; Marta Andronic; George A. Constantinides / FPL 2026</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:编译部署</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:量化</span><span class="tag">硬件:FPGA</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">面向带宽受限 FPGA 的查找表神经网络推理框架：输入数据还没传完时就开始分批计算、逐步修正预测，解决数据搬运而非计算成为瓶颈的问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多个数据集上相比已有查找表模型基线，延迟降低 4.0～12.5 倍、吞吐提高 3.0～5.0 倍、每样本能耗最多降低 13.8 倍，代价是查找表资源为最小 DWN 基线的 1.2～4.4 倍；端到端 FPGA 实测中输入量化开销降低 5 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把输入特征按信息量排序切成若干子集，按到达顺序由不同层分级消费，级联结构在编译期静态确定，无需运行时分支；同时把特征调度和硬件数据流联合设计，并在设备上集成输入量化。</span></div>
+<div class="score-reason">评分依据：直接针对 FPGA 等资源受限硬件上的流式推理，并有端到端 FPGA 实测，端侧相关度高；“边到边算、逐步修正”的流式设计对带宽受限传感场景有新意。作者均来自帝国理工学院，已被 FPL 2026 接收（不在顶会名单内）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00720" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

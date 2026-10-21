@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Multi-View Unified Camera Fields: Geometry-Shaped Action-Facing Representations for RGB-Only Multi-Camera VLA Policies</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Jiarui Yang; Yehao Lu; Yuning Su; Yufeng Xie; Yu Zhong; Haiyu Lan; Tianjing Hao; Kaixiang Lu / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">MVUCF 在训练阶段把多相机画面投到统一的动作表示场，通过深度恢复和跨视角对应约束，让 RGB-only VLA 更好理解遮挡下的空间关系。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于多模态、机器人等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-08-03 · Jiarui Yang; Yehao Lu; Yuning Su; Yufeng Xie; Yu Zhong; Haiyu Lan; Tianjing Hao; Kaixiang Lu / arXiv</div>
+<div class="tags"><span class="vendor-tag">AgiBot</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多相机视觉-语言-动作模型通常只是把各视角的特征拼起来，动作表示里缺少深度信息、各视角也不一致。MVUCF 在训练时注入几何信息，部署时仍只用原始 RGB 网络。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在与 GR00T-N1.6 相同设置下，LIBERO 达到 98.9%，LIBERO-Plus 提升 22.4 个百分点，六个 RoboTwin 任务成功率提升 23.3 个百分点；部署不增加任何推理计算量，并在真实人形机器人上做了验证。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">训练时加入坐标查询深度目标和考虑预处理的跨视角对应目标，直接塑造动作模块读取的隐藏状态；训练完成后去掉深度、标定和辅助头，推理图与原模型一致。</span></div>
+<div class="score-reason">评分依据：机器人 VLA 策略的训练期增强，零额外推理开销对机载部署友好，但属于动作策略而非规划型智能体（相关度 4，非端侧 Agent）。几何注入后可完全拆除的设计较巧妙（贡献 6）。PDF 首页作者 4、6、8–11 署名智元机器人（Agibot），另有港科大（广州）、浙江大学等。 作者机构依据：arXiv PDF 首页署名 AgiBot（PDF 首页作者 Yufeng Xie、Yu Zhong、Haiyu Lan、Kaixiang Lu、Peiwen Lin、Chuang Wang、Enyu Li 标注机构 4 为 Agibot）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01826" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

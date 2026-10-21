@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Qwen-CUA: Native Computer Use for (almost) Everything</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Dunjie Lu; Shuai Bai; Tianyi Bai; Sicheng Fan; Chang Gao; Jian Guan; Feng Hu; Mianqiu Huang / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:工具调用</span><span class="tag">方向:评测基准</span><span class="tag">模型:Qwen</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">原生计算机使用为 agent 操作几乎所有人可用软件提供通用接口，但需要长程状态跟踪、大规模…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、工具调用、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · Dunjie Lu; Shuai Bai; Tianyi Bai; Sicheng Fan; Chang Gao; Jian Guan; Feng Hu; Mianqiu Huang / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:MoE</span><span class="tag">方向:安全隐私</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">通义千问团队发布的原生电脑操作智能体 Qwen-CUA：只看屏幕截图、只用键盘鼠标操作任意软件，背后是 397B 总参数（激活 17B）的混合专家模型和大规模云端交互训练。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">OSWorld-Verified 得分 86.2，OSWorld 2.0 完成率 18.5（二值）/48.4（部分）；扩展到万亿参数的 Qwen-CUA-Max 进一步达到 87.6 和 21.2/53.3；RedTeamCUA 攻击成功率从 Qwen3.7 的 36.6 降到 16.4。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">智能体最多保留 20 张近期截图，更早的历史按固定块折叠以复用提示前缀；训练用近 10 万 vCPU、数万并发环境和约 4 万个可验证任务，以可验证奖励和轨迹切片优化完整轨迹，并加入 Bash 混合工具使用。</span></div>
+<div class="score-reason">评分依据：纯云端大模型驱动的电脑操作智能体，设备只是被操作对象，属非端侧智能体，相关度低；但规模化可验证交互训练、混合工具使用和安全性评测有参考价值。PDF 首页署名 Qwen Team 与 Xlang Lab。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02352" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

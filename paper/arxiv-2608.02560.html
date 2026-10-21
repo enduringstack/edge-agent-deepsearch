@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Structured Memory for Edge Language Models: Persistent Context and Corpus Retrieval via O(1) SSM State Injection</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-03 · Anusha Madan Gopal; Aras Pirbadian; Kristofor D. Carlson; M Anthony Lewis; Jonathan Tapson / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:云端serving</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">PRECOG 预先把文档编码成状态空间模型的固定隐藏状态，查询时直接注入最匹配状态，把边缘语言模型的检索预填充从随文本长度增长降为每次查询近似 O(1)。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在KV cache、记忆、云端serving。</div>
+<div class="meta"><span class="score">17</span> <span class="tier company">公司项目</span>  2026-08-03 · Anusha Madan Gopal; Aras Pirbadian; Kristofor D. Carlson; M Anthony Lewis; Jonathan Tapson / arXiv</div>
+<div class="tags"><span class="vendor-tag">BrainChip</span><span class="tag">方向:记忆</span><span class="tag">应用:RAG</span><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span><span class="tag">硬件:神经形态</span><span class="tag">硬件:FPGA</span><span class="tag">方向:能耗功耗</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">PRECOG 面向端侧小语言模型的检索增强：利用状态空间模型（SSM）隐藏状态大小固定、与位置无关的特点，提前把文档编码成隐藏状态存起来，查询时直接把最匹配的状态注入模型，不再把检索到的长文本重新读一遍。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 1.2B 参数、隐藏状态仅 192 KB 的 TENNs-LLM 上，回答质量与把原文放进上下文的 RAG 相当；在端侧平台（19 tok/s、UFS 4.0 闪存）上，512 token 片段的预填充从约 27 秒降到 6 毫秒以内，约 4500 倍，首 token 时间降到 585 毫秒。该平台吞吐在 FPGA 原型上实测，约 1 W 的功耗为 12 nm 仿真估计。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">离线把语料编码成 SSM 隐藏状态并建索引，在线检索后把状态从闪存读入并写入模型递归状态；同一机制还用于分层持久记忆，把短期会话状态合并为长期语义记忆，会话初始化也只需常数时间。</span></div>
+<div class="score-reason">评分依据：直接针对端侧设备上 RAG 预填充太慢的问题，并给出神经形态边缘处理器 FPGA 原型上的实测吞吐，端侧相关度高；利用 SSM 状态可移植性做常数时间检索注入，是 Transformer KV cache 做不到的新思路。PDF 首页全部 5 位作者署名 BrainChip Inc.（brainchip.com 邮箱）。 作者机构依据：arXiv PDF 首页署名 BrainChip（PDF 首页 5 位作者均署名 BrainChip Inc.（加州 Laguna Hills），邮箱均为 brainchip.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02560" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

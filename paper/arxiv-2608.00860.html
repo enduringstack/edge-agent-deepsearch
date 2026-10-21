@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Kilobyte Models: Neural Networks as a Seed and a Quantized Latent</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-01 · Sahil Rajesh Dhayalkar / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作把神经网络压缩成一个生成种子和量化潜变量，使模型能以千字节级形式存储和传输，面向无线更新与端侧模型库等场景。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在量化、记忆。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-01 · Sahil Rajesh Dhayalkar / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:编译部署</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一种极端的模型压缩思路：部署时不传权重，只传一个随机种子加一小段量化后的潜向量，设备端据此重新生成整套权重，模型因此只有几 KB。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">4 比特的 CNN 在 MNIST 上仅用 2,060 字节就达到 98.60% 准确率，与把同一网络激进量化到每权重几比特的效果相当但占用字节少得多；最激进的比特宽度需要在量化回路中微调潜向量。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在映射网络的基础上，把权重表示为一个可训练潜向量经固定随机基的非线性映射，随机基和初始化中心都可由整数种子复现，因此只需存潜向量；并设计按块生成的种子基，使放不进内存的大网络也能使用。</span></div>
+<div class="score-reason">评分依据：直接面向空中升级和端侧模型库等带宽受限的分发场景，思路新颖，但实验只覆盖 MNIST、FashionMNIST 和小型 LSTM 等小任务。作者来自亚利桑那州立大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00860" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

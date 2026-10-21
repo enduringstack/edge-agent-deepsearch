@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Balancing Efficiency and Efficacy: Training-Free Attention-Guided Switching Between Explicit and Latent Thoughts for MLLMs</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-04 · Haoqian Kang; Liupeng Li; Kuofeng Gao; Jinpeng Wang; Zhenyu Lu; Bin Chen; Ke Chen; Yaowei Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">MLLM 的推理既需要细粒度视觉感知，也需要严密逻辑推演。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于多模态、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-04 · Haoqian Kang; Liupeng Li; Kuofeng Gao; Jinpeng Wang; Zhenyu Lu; Bin Chen; Ke Chen; Yaowei Wang / ACM MM 2026</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多模态大模型做推理时，写出完整文字思维链既慢又容易看错图，现有「隐式推理」又要额外训练。AGS 不用训练，按需在显式文字推理和隐式连续推理之间切换。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多个模型家族和多模态推理基准上提高了准确率、减少了视觉幻觉，同时明显减少自回归生成步数和推理时延。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用「视觉到文本注意力比」判断当前 token 是在看图还是在推理：偏感知的 token 留在连续隐空间里保留视觉细节，偏逻辑的 token 强制生成显式文字作为结构锚点。</span></div>
+<div class="score-reason">评分依据：减少多模态大模型的解码步数和时延，对端侧多模态推理有直接迁移价值，但没有设备实测；无需训练的感知与推理解耦切换有新意。论文被 ACM MM 2026 接收（不在顶会名单内），代码已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03450" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

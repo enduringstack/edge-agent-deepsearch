@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A Time-Multiplexed Spiking Neural Network Accelerator with Pipelined Readout for FPGA Inference</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-01 · Reza Ansari; Maciej Wielgosz / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">方向:SNN</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作设计用于 FPGA 推理的时间复用脉冲神经网络加速器，在有限硬件资源下提升神经形态计算的利用率。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在记忆、能耗功耗、评测基准。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-01 · Reza Ansari; Maciej Wielgosz / arXiv</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:FPGA</span><span class="tag">硬件:神经形态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在入门级 FPGA 上实现一个只做推理的脉冲神经网络加速器，用于 MNIST 手写数字识别，重点解决低成本器件上的布线和时序瓶颈。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 AMD Artix-7（XC7A200T）上用 784-64-10 网络，最高工作频率从 13.3 MHz 提到 167 MHz；单张图片延迟 82 微秒，片上功耗约 0.336 W，能效约每焦耳 36300 个样本。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用有限状态机控制的时分复用 1 比特脉冲输入、本地分布式存储权重、整数版漏电积分发放神经元，并把读出的 argmax 做成多周期流水线以消除组合逻辑关键路径。</span></div>
+<div class="score-reason">评分依据：在真实 FPGA 上给出功耗和延迟，属于边缘低功耗推理硬件，但网络规模和任务很小；时分复用与流水线读出是成熟的硬件优化手段，创新有限。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00595" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

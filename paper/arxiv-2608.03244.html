@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>UniNav: A Unified World-Action Diffusion Model for Visual Navigation</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Changqing Zhou; Yueru Luo; Zeyu Jiang; Changhao Chen / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">图像目标视觉导航是实体代理的一项基本能力。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准、机器人等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">做图像目标视觉导航的统一模型：用同一个扩散过程同时生成未来画面和连续航点轨迹，兼顾「能预见未来」和「推理快」。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 RECON、SaCSoN、GO Stanford、SCAND 上 ATE 均优于最强基线，分别降低 3.7%、24.7%、18.2%、6.8%；去掉未来图像 token 的快速版一步推理时延约 0.1 秒，精度无明显下降。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在一个 Transformer 内联合去噪视觉 token 和航点 token，引入几何感知的相机 token 增强空间定位，并同时用带轨迹标注的导航数据和纯视频数据训练；快速版在推理时丢掉未来画面分支。</span></div>
+<div class="score-reason">评分依据：面向机器人导航的模型设计，给出了一步推理的时延数据，但没有机载设备实测，属于轨迹生成模型而非智能体闭环；把世界模型和策略合并成单一扩散过程有新意。作者为港科大（广州）和港中大（深圳）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03244" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

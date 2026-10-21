@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ChainClaw: A Layered Agent Framework for Reliable On-Chain Execution</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-06 · Jiacheng Wei; Zhaoxin Fan; Xin Wen; Yuqin Lan; Dongrun Li; Wenjun Wu; Faguo Wu; Xiao Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">通用 LLM agent 在工具增强任务上表现很强，但其依赖的假设在区块链环境下会失效…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-08-06 · Jiacheng Wei; Zhaoxin Fan; Xin Wen; Yuqin Lan; Dongrun Li; Wenjun Wu; Faguo Wu; Xiao Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:安全隐私</span><span class="tag">方向:记忆</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">通用大模型智能体在区块链上执行交易时容易出事：链上状态多变、有对手、操作不可撤销。ChainClaw 在 OpenClaw 上搭了一个面向链上执行的分层智能体框架。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在自建的 7 个任务、4 类、5 个维度的基准上，安全性和任务完成率都持续优于代表性基线，摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">分三层：事件驱动的编排层、执行前做交易模拟和动作拦截的安全层、链上读取与交易监控的运行时层，并用一个跨层记忆子系统串起来。</span></div>
+<div class="score-reason">评分依据：属于云端智能体运行时与安全执行框架，与端侧设备无关（相关度 2）。分层安全设计是工程整合（贡献 4）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05790" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

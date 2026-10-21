@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Interpretable Fuzzy Inference for UAV Target Tracking Using Bounding-Box Geometry</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-04 · Reza Ahmari; Ahmad Mohammadi; Vahid Hemmati; Nicholas Edmond; Hossein Z. Saghazadeh; Olusola Odeyomi; Parham Kebria; Abdollah Homaifar / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">基于视觉把无人机（UAV）引导向无人车（UGV）支撑空地协同机器人，但可靠持续…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在评测基准、机器人。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-08-04 · Reza Ahmari; Ahmad Mohammadi; Vahid Hemmati; Nicholas Edmond; Hossein Z. Saghazadeh; Olusola Odeyomi; Parham Kebria; Abdollah Homaifar / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">无人机用机载视觉跟踪地面车辆时，算力有限又需要可解释的控制。这项工作只用 YOLO 检测框的中心、面积和长宽比，通过模糊推理直接算出连续的偏航指令。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 6169 个动捕标注样本、5 次随机划分上，Takagi–Sugeno 模型测试平均绝对误差 0.140°±0.003°，均方根误差 0.200°，误差在 ±1° 内的比例为 99.676%；单样本推理时间显著低于 SVR、随机森林和 Mamdani 模型。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用 Mamdani 模糊系统做可解释基线，再用一阶 Takagi–Sugeno 模型，每个输入设 3 个隶属函数、参数取自训练集分位数，得到仅 27 条规则的紧凑模型。</span></div>
+<div class="score-reason">评分依据：针对资源受限的无人机机载计算，强调轻量和实时，有一定端侧相关性，但属于控制估计而非神经网络推理优化。方法以经典模糊推理为主，贡献有限。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04121" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

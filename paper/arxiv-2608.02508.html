@@ -7,9 +7,9 @@
 <h1>RoMeRL: Balancing Feedback Coverage and the Memory-Reward Trap in Self-Evolving Agent Memory via Reduced-Order Utility States</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · Yi Yang; Zhennan Chen; Yihong Zhuang; Tiehan Fan; Yinan Chen; Jian Li; Jian Yang; Ying Tai / arXiv</div>
 <div class="tags"><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">面向自进化 LLM agent 的基于学习的记忆系统面临两个紧密耦合的挑战。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">RoMeRL 解决自进化 LLM 智能体经验记忆的两个毛病：记忆越存越多导致反馈被摊薄，以及无关记忆因一起被检索而蹭到奖励。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LifelongAgentBench、ALFWorld、AppWorld 上取得最高平均分；冷启动 Q 比例降低 80.0%，每个记忆坐标的反馈密度提高约 6 倍，需维护的记忆规模减少 84.4%，LLM 调用次数减少 21.1%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用固定维度的降阶记忆状态代替随轨迹增长的效用表，按结果正负和记忆动态分解，新经验只更新或替换有限的语义坐标，让反馈集中在有界空间里。</span></div>
+<div class="score-reason">评分依据：智能体记忆运行时的改进，记忆规模和 LLM 调用次数的下降对资源受限设备有迁移价值，但实验未涉及端侧部署；降阶效用状态并给出理论分析，有一定新意。作者来自南京大学、厦门大学、浙江大学，代码已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02508" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

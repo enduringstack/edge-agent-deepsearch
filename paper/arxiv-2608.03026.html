@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Pruning-Aware Multi-Cluster Co-Inference for Large AI Models in AI-RANs</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-04 · Xiaowen Cao; Zhonghao Lyu; Shicheng Chu; Zezhong Zhang; Dingzhu Wen; Guangxu Zhu; Kaibin Huang; Shuguang Cui / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这套 AI-RAN 协同推理框架让终端用轻量模型提取多视角特征，再由配备多 GPU 的边缘服务器聚合；同时根据剪枝率和集群资源分配计算任务。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在剪枝稀疏、能耗功耗、评测基准。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-04 · Xiaowen Cao; Zhonghao Lyu; Shicheng Chu; Zezhong Zhang; Dingzhu Wen; Guangxu Zhu; Kaibin Huang; Shuguang Cui / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:调度服务</span><span class="tag">方向:能耗功耗</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多台终端设备从不同视角采集数据，各自用剪枝后的轻量模型提特征，再交给带多块 GPU 的边缘服务器融合推理。这篇论文研究剪枝比例、任务调度和无线资源怎么一起优化。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">仿真实验（图像分类和视频转文字描述任务）显示，所提框架在推理精度和资源效率上均优于对比方案；论文未给出真机数据。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用率失真理论和部分信息分解刻画剪枝比例与各设备贡献对融合精度的影响，再在时延、能耗和服务器容量约束下联合优化剪枝比例、调度、带宽和发射功率。</span></div>
+<div class="score-reason">评分依据：明确面向终端加边缘服务器的协同推理和设备侧剪枝，端侧相关度较高，但只有仿真没有真机。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03026" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

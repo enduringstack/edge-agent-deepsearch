@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>When History Lies: Evaluating and Improving Tool Use under Misleading Multi-Turn Histories</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-06 · Xiaoqing Wu; Xingyu Fan; Feifei Li; Wenhui Que / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:工具调用</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">调用工具的 agent 从累积的对话和工具轨迹中推断任务状态。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于蒸馏、工具调用、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-08-06 · Xiaoqing Wu; Xingyu Fan; Feifei Li; Wenhui Que / arXiv</div>
+<div class="tags"><span class="vendor-tag">Tencent</span><span class="tag">方向:工具调用</span><span class="tag">方向:蒸馏</span><span class="tag">方向:记忆</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长期对话里，过时但看起来合理的历史工具调用记录会误导智能体做错决定。这篇做了配套评测基准，并提出把“看得到正确状态的老师”的策略迁移给只看到被污染历史的学生模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen3-1.7B 上，污染历史会让 32.1% 原本正确的决策出错；新方法达到 87.0% 平衡工具调用准确率，高于 Gold-SFT 的 66.3% 和离线 token 蒸馏的 85.0%；用 8B 老师时同一个 1.7B 学生提升到 91.9%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">构造原始、污染、理想状态三种对齐视图定位失败环节，再在学生自己生成的前缀上用老师的软标签监督，让小模型学会忽略不可信历史。</span></div>
+<div class="score-reason">评分依据：直接面向 1.7B 级小模型的工具调用可靠性，这类小模型正是端侧智能体的主力，结论可直接迁移（相关度 5）。把历史可靠性单独作为工具调用瓶颈并给出可扩展解法，有新意（贡献 6）。公司归属依据 arXiv PDF 首页署名。 作者机构依据：arXiv PDF 首页署名 Tencent（PDF 首页作者署名 WeChat, Tencent Inc.（北京），邮箱为 tencent.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.06057" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

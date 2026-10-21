@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Quantization Effects on Biomedical LLM Reliability</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Anton Rasmussen; Hong Qin / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span><span class="tag">模型:Mistral</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">解码器语言模型用作分类器时，预测类别概率依赖实现选择，包括提示模板、verbalizer…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于量化、评测基准、Mistral等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-04 · Anton Rasmussen; Hong Qin / AAAI 2026 Fall Symposium</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span><span class="tag">模型:Mistral</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">量化后的大模型可以在消费级硬件上本地处理敏感医疗数据，但它们给出的置信度是否可靠，很依赖提示模板、标签措辞和打分归一化方式。论文系统测试了这些实现细节对量化医学模型校准的影响。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">把求和对数似然换成按词平均后，哪个模型校准更好的结论会反转：BioMistral 的平均校准误差接近翻三倍，指令微调模型降低一半以上，而准确率变化不超过 1.4 个百分点；8 位量化对微调模型准确率影响不超过 1.1 个百分点，4 位量化影响有好有坏但不致命；不同提示模板使准确率相差 2.9–17.8 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在医学摘要五分类任务上，对三个 7B Mistral 变体分别做 FP16、INT8、INT4 推理，交叉比较两种主要提示模板和两种打分归一化，观察准确率、校准误差、负对数似然和 Brier 分数。</span></div>
+<div class="score-reason">评分依据：直接评估 INT8/INT4 量化模型在本地部署场景下的可靠性，属于端侧技术栈相关评测，相关度中等；以实验观察为主，方法贡献较低。作者来自 Old Dominion University。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03854" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

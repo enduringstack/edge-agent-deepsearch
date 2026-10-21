@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Unified Lookup-Table Inference with Signed-Digit K/V Caches for Ternary LLMs</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Ziang Duan; Jiajun Wu; Zetian Chen; Hao Song; Yanwen Deng; Zixuan Shen; Nuobei Xie; Simo Wu / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">模型:BitNet</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项方法把三元 LLM 的 K/V 缓存编码成带符号数字表示，使注意力和三元投影可以共用查找表推理硬件，减少额外的高精度计算单元。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于量化、BitNet等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-08-04 · Ziang Duan; Jiajun Wu; Zetian Chen; Hao Song; Yanwen Deng; Zixuan Shen; Nuobei Xie; Simo Wu / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:NPU</span><span class="tag">硬件:FPGA</span><span class="tag">模型:BitNet</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">三值（1.58 bit）大模型的线性层可以用查表方式高效计算，但注意力的 KV cache 仍要另一套高精度引擎处理。这项工作把 KV cache 也编码成有符号数字位平面，让注意力和线性层共用同一套查表硬件。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">TSMC 40nm 综合结果：相比吞吐匹配的异构基线，A8 配置在 Falcon-E-3B 上注意力每面积吞吐提升 2.52 倍、每功耗提升 2.30 倍；A16 配置在 OPT-350M 上分别提升 4.78 倍和 8.61 倍；KV 负载最低压到 BF16 的 21%；4K 上下文下 BitNet-2B 首 token 时延快 1.81 倍、每 token 时延快 1.92 倍，平均精度损失约 0.6–1.9 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">运行时把 K/V 状态按注意力的归约结构存成带缩放的多平面有符号数字，直接被由激活构造的查找表消费，不再展开成稠密 K/V；配合在线 K/V 生成、未满 value 块的有界处理和线性层与注意力共享的多流数据通路，并用约束引导搜索挑选精度与效率的折中点。</span></div>
+<div class="score-reason">评分依据：面向三值大模型的低功耗推理硬件，直接对应端侧和边缘加速器的设计问题，有 40nm 综合与周期级仿真数据但不是量产芯片实测；把注意力纳入查表执行、省掉独立注意力引擎是少见的思路。PDF 首页 8 位作者署名 LuxiTech Co. Ltd.（深圳），与华中科技大学、港科大合作。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03229" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

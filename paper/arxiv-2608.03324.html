@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AS-FedBridge: Pseudo-Spike Bridge Distillation for Heterogeneous ANN-SNN Federated Learning</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-04 · Shengyang Li; Yiting Dong; Liuyang Song; Ximing Wang; Luyuan Xie; Cong Li; Qingni Shen; Zhaofei Yu / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">方向:SNN</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">联邦学习可以跨分布式边缘设备进行协作模型训练，同时严格保护数据隐私。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在剪枝稀疏、蒸馏、能耗功耗。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-04 · Shengyang Li; Yiting Dong; Liuyang Song; Ximing Wang; Luyuan Xie; Cong Li; Qingni Shen; Zhaofei Yu / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:SNN</span><span class="tag">方向:蒸馏</span><span class="tag">方向:能耗功耗</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">联邦学习里有的边缘客户端跑普通神经网络、有的跑更省电的脉冲神经网络，两类模型表示差异大很难一起训练。AS-FedBridge 用一个轻量「桥」把两者对齐。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在四个数据集上精度领先多种异构联邦学习方法，可在模型性能和资源效率之间做可控折中，额外计算开销很小。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在客户端之间引入带「伪脉冲接口」的轻量桥接模块，把连续激活投影到与脉冲兼容的空间，再做桥接蒸馏实现 ANN 与 SNN 的知识对齐。</span></div>
+<div class="score-reason">评分依据：直接面向资源受限的边缘客户端，结合脉冲网络的低功耗特性，但没有真实设备部署实验；首次搭建混合 ANN-SNN 联邦框架和评测基准有一定新意。作者均为北京大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03324" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

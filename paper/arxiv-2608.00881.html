@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AOSpec: Action and Observation Co-Speculation for Low-Latency Agent Serving</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-01 · Hao Mark Chen; Jinnan Guo; Wayne Luk; Hongxiang Fan / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">AOSpec 同时预测智能体下一步动作和工具返回的观察结果，减少模型生成与环境执行每一步串行等待造成的延迟。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于高效推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-01 · Hao Mark Chen; Jinnan Guo; Wayne Luk; Hongxiang Fan / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:高效推理</span><span class="tag">方向:调度服务</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">降低大模型智能体端到端延迟的推测执行框架：同时提前猜测智能体下一步要做的动作和工具会返回的结果，让生成和工具执行重叠起来。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Terminal-Bench 的 4 种智能体框架、5 个模型、5 种解码速度设置下，平均端到端延迟降低 11.8%～32.5%，p99 延迟最多降低 42.8%；解码越快收益越大，观测预测模型无需重训即可迁移到 SWE-bench Verified。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按“能隐藏多少等待时间”而非命中率来决定猜哪些工具结果；只有真正执行才能知道结果的慢调用，就在隔离的分叉环境里提前执行，复用前同时校验动作和它所依赖的状态，保证与串行执行语义一致。</span></div>
+<div class="score-reason">评分依据：针对智能体运行时中工具执行串行等待的瓶颈，方法可迁移到本地智能体，但实验在服务器与云端工具环境中进行；动作与观测联合推测并做状态校验的设计较新。作者来自帝国理工学院。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00881" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

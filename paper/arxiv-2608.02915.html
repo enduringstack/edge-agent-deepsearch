@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LACE: Large Language Model Aided Multi-Agent Framework for Agile RISC-V Instruction Extension</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · Pingqing Zheng; Jiayin Qin; Fuqi Zhang; Zishen Wan; Shang Wu; Yu Cao; Caiwen Ding; Yang Katie Zhao / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">领域专用指令集架构扩展（ISAX）在 RISC-V 生态中广泛用于加速新兴工作负载，但实现和…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · Pingqing Zheng; Jiayin Qin; Fuqi Zhang; Zishen Wan; Shang Wu; Yu Cao; Caiwen Ding; Yang Katie Zhao / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">给 RISC-V 处理器加定制指令扩展时，每换一个核都要重新适配接口和测试。LACE 用大模型多智能体流程，把自然语言描述的指令需求自动改成可验证的 RTL 代码。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在四款嵌入式 RISC-V 核上，一次生成通过率从接近 0 提升到 72.8%，同时改善了代码定位并减少集成返工。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先把指令需求翻译成操作级和硬件任务级两层中间表示，再在大型代码库中检索定位、做局部 RTL 修改，最后用 riscv-formal 形式化检查闭环验证。</span></div>
+<div class="score-reason">评分依据：工作对象是嵌入式处理器的硬件设计流程，智能体本身运行在云端，与端侧 AI 推理关系较远。代码已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02915" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DART: Decoded Attention over Recurrent States for Efficient Long-Context Sequence Modeling</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Yixiao Qian; Song Chen; Pengkai Wang; Jiaxu Liu; Shengze Cai; Chao Xu / arXiv</div>
-<div class="tags"><span class="tag">方向:高效注意力</span><span class="tag">方向:记忆</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">现代语言模型主要由 Transformer、循环模型及其混合架构构建。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于高效注意力、记忆、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-03 · Yixiao Qian; Song Chen; Pengkai Wang; Jiaxu Liu; Shengze Cai; Chao Xu / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:KV cache</span><span class="tag">方向:高效注意力</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长上下文模型里，Transformer 的 KV 缓存随长度不断变大，而 Mamba 这类循环模型状态小但检索能力弱。DART 让 Mamba-2 的分块状态同时充当可检索的记忆，兼顾小缓存和召回能力。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在块大小 256、状态维度 128 时，与同规模注意力基线相比，随长度增长的推理缓存减少约 75%；相比 Mamba-2 明显提升关联召回和检索能力，通用语言建模质量基本不变。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">保留 Mamba-2 分块扫描产生的每块状态作为“块状态记忆”，从中解码出与令牌相关的键和值，再做类 FlashAttention 的状态记忆注意力，最后通过门控残差与 Mamba-2 原输出融合。</span></div>
+<div class="score-reason">评分依据：直接降低长上下文推理的缓存占用，对内存紧张的端侧设备有迁移价值，但未在端侧硬件评测，相关度中等；把 SSM 状态当作可解码的 KV 记忆、统一循环压缩和注意力检索，思路较新。作者来自浙江大学、新加坡国立大学、香港理工大学等高校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02032" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

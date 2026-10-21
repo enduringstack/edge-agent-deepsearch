@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>OpenART: Scaling Agent Red Teaming via Open-Ended Environment Evolution</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-01 · Yunhao Chen; Xin Wang; Yixu Wang; Yi Liu; Jie Li; Yan Teng; Xingjun Ma; Xia Hu / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:语音</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">AI agent 在持久环境中运作，早期状态变化可能影响很久之后的决策。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准、语音等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-01 · Yunhao Chen; Xin Wang; Yixu Wang; Yi Liu; Jie Li; Yan Teng; Xingjun Ma; Xia Hu / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">方向:工具调用</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">OpenART 是一个大规模智能体红队测试平台：在会长期保存和修改状态的环境里，通过让环境逐步演化来暴露智能体的安全漏洞。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">提供 50 个领域、超过 1 万个可验证的有状态场景，工具和技能池超过 50 万个，任务中位数需要 97 次工具调用，覆盖 75 种智能体与模型组合；提出的 EMHA 攻击合并攻击成功率 85.0%，在最复杂环境中比只改指令的方法高出 17% 以上。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">任务目标保持不变，只通过授权的状态转移改变环境；EMHA 是一种黑盒策略，根据反馈协调状态演化来寻找攻击路径，不需要更新模型参数。</span></div>
+<div class="score-reason">评分依据：关注智能体运行时的长期状态安全，结论指出运行时实现本身对安全影响很大，对端侧智能体也有参考价值，但实验与设备无关；评测规模大、攻击方法有新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00677" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

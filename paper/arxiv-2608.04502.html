@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AFD-Ledger: Deployment Provisioning for Attention--FFN Disaggregation</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Chengyu Qiu; Xiao Fu; Fengcun Li; Yulei Qian; Yuchen Xie; Xunliang Cai; Yingdi Shan; Yongwei Wu / arXiv</div>
-<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">注意力-FFN 分离（AFD）正成为 serving MoE 语言模型的有前景架构。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于MoE、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span>  2026-08-05 · Chengyu Qiu; Xiao Fu; Fengcun Li; Yulei Qian; Yuchen Xie; Xunliang Cai; Yingdi Shan; Yongwei Wu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Meituan</span><span class="tag">方向:云端serving</span><span class="tag">方向:MoE</span><span class="tag">方向:调度服务</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">注意力与前馈网络分离部署（AFD）是服务 MoE 大模型的新架构，但它到底在什么条件下比传统合并部署吞吐更高？AFD-Ledger 是一个离线解析式部署规划系统来回答这个问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在可穷举的部署空间里减少 68.8% 到 83.5% 的完整部署评估且仍找到全局最优；在三套 LongCat 2.0 实际部署上做出正确的架构判断，吞吐预测误差 6.6% 到 9.6%；结论是同构 AFD 只在少数场景下提升固定预算吞吐。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用解析执行模型估算性能，再在受评估次数约束的硬件搜索中，分别为 AFD 与合并部署联合优化硬件分配和部署组织方式。</span></div>
+<div class="score-reason">评分依据：针对数据中心 MoE 大模型服务的部署规划，属于云端 serving，与端侧关系很弱；解析建模加有界搜索属工程整合。美团主导、清华大学参与。 作者机构依据：arXiv PDF 首页署名 Meituan（PDF 首页作者 2 至 6 署名 Meituan，第一作者注明在美团实习期间完成；其余作者为清华大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04502" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

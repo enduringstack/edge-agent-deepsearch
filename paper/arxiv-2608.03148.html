@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Lightweight Chunk Selection for Mobile Retrieval-Augmented Generation</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-04 · Sicong Chang; Yidan Shen; Wen Yu; Jiefu Chen; Xin Fu; Renjie Hu / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:MoE</span><span class="tag">方向:评测基准</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作为手机和边缘设备设计轻量 RAG 证据选块器，在有限算力下更快找出真正需要送入大模型的内容。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在记忆、MoE、评测基准。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-04 · Sicong Chang; Yidan Shen; Wen Yu; Jiefu Chen; Xin Fu; Renjie Hu / arXiv</div>
+<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:高效推理</span><span class="tag">应用:RAG</span><span class="tag">硬件:手机</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这项工作为手机和边缘设备上的检索增强生成设计轻量的证据块选择器，只把最能支撑答案的一个检索块送进大模型，减少计算和内存开销。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 TriviaQA、PopQA、MS MARCO 上取得最好的首位证据块选择准确率，比可在手机上使用的基线平均提高 2.5%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把问题的隐藏状态、生成模型 MoE 路由信号和候选块嵌入三类特征输入一个小型多层感知机，预测证据原型，再用余弦相似度挑出最接近的块；预算更紧时可做任务感知的特征筛选以缩小输入维度。</span></div>
+<div class="score-reason">评分依据：明确面向手机端检索增强生成的资源约束，方法轻量可直接用于端侧，但没有报告真机时延或内存数据。作者来自休斯顿大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03148" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

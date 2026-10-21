@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TaskPress: Query-Agnostic KV Cache Compression via Task-Guided Pruning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Wonpyo Park; Seung-won Hwang / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">大型语言模型的长上下文推理受到键值缓存与序列长度的线性增长的限制。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于量化、KV cache、剪枝稀疏等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-08-04 · Wonpyo Park; Seung-won Hwang / EMNLP 2026</div>
+<div class="tags"><span class="vendor-tag">Google</span><span class="tag">方向:KV cache</span><span class="tag">方向:剪枝稀疏</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长上下文推理里 KV cache 随长度线性增长，现有剪枝方法按单个问题挑重要 token，换个问题就要重来。TaskPress 按任务说明一次性压出可被多个后续问题复用的紧凑缓存。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多个长上下文任务上取得最高总体平均分；在 75% 的激进压缩下，与 ThinK 通道剪枝各压 50% 组合时效果最好，而单独用通道剪枝会明显掉点；在 RULER 大海捞针子任务上也验证了检索能力。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">预填充阶段把高层任务说明当作「元查询」先过滤无关 token，同时把量化缩放因子当作零成本信号来识别有影响的离群表示，作为 token 重要性的代理。</span></div>
+<div class="score-reason">评分依据：KV cache 压缩是端侧长上下文推理可直接迁移的技术，查询无关、可复用的缓存对设备端多轮问答尤其有用，但没有设备实测。论文被 EMNLP 2026 主会接收；PDF 首页第一作者署名 Google。 作者机构依据：arXiv PDF 首页署名 Google（PDF 首页第一作者 Wonpyo Park 署名 Google，另一位作者为首尔大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03276" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

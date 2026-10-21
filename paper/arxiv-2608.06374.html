@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DyPES-VLA: Learning Shared Dynamics Priors and Embodiment-Specific Control for Cross-Embodiment Manipulation</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-06 · Junfeng Li; Junjie He; Zhide Zhong; Yangyang Zheng; Pingyue Sheng; Jiayu Dong; Ruixin Li; Haodong Yan / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:MoE</span><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">VLA 已成为机器人操作的主流范式，但为异构机器人本体训练单一通用策略…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于多模态、MoE、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:MoE</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一个通用机器人策略很难同时适配不同形态的机器人。DyPES-VLA 让视觉-语言-动作模型先学共享的物体运动规律，再用各机器人专属的专家输出动作。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LIBERO 上成功率 98.0%，RoboCasa-GR1 上 59.25%，RoboTwin 2.0 上 89.02%，均为最优水平，并做了真机评测。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用预测未来画面的目标训练视觉语言模型，学到跨机器人通用的动力学先验；再用混合专家动作头，共享注意力层、为每种机器人配专属前馈专家，直接输出各自原生的动作格式。</span></div>
+<div class="score-reason">评分依据：面向机器人操作的 VLA 模型，属于具身设备上的模型，但论文没有讨论端侧推理效率；属于纯动作策略模型，不算端侧智能体。PDF 首页部分作者署名上海 COCO Matrix 公司，主体为港科大（广州）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.06374" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

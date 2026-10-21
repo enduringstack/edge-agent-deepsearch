@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Grounding Agentic VLMs with Dedicated Segmentation for Fine-Grained Vehicle Damage Assessment</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Vishwajeet Shivaji Hogale; Anjali Pai; Nitya Ravi / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">模型:Qwen</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">VLM 越来越多地作为推理 agent 部署在真实视觉评估流水线，但其空间定位仍不可靠…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于多模态、评测基准、Qwen等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · Vishwajeet Shivaji Hogale; Anjali Pai; Nitya Ravi / arXiv</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:工具调用</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">TinyDamage 用于车辆定损：让专门的分割模型负责找出划痕、细裂纹等很小的损伤位置，VLM 只负责语义判断和写报告，避免 VLM 凭空看到不存在的损伤。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">Qwen-VL 损伤分类准确率 87.3% 但定位不可靠；接入分割结果后，100 份人工核验报告中的幻觉率从纯文本的 92%、仅图像的 78% 降到 31%；焦点损失会让微小损伤检测降为 0，监督对比损失则能改善。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把多任务分割模型接入一个 7 节点的 LangGraph 智能体流程，每一步 VLM 生成都以分割输出为依据，并提出针对类别不平衡的小目标检测指标。</span></div>
+<div class="score-reason">评分依据：是云端视觉智能体流水线的工程改进，没有涉及端侧部署，相关度低；分割与 VLM 分工属于常见做法，损失函数的发现有一定参考价值。作者来自美国东北大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02470" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

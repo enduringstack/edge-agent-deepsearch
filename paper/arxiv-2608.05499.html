@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>APQF: Agentic Profiling-Guided Structured Pruning and Mixed-Precision Quantization with Adaptive Fine-Tuning</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-06 · Sadegh Jafari; Mohiuddin Bilwal; Fan Zhou; Brian Gelder; Ali Jannesari / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">现代深度网络性能很强，但规模大带来高成本和高延迟，在资源受限的边缘设备上尤其明显。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在量化、剪枝稀疏、评测基准。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-06 · Sadegh Jafari; Mohiuddin Bilwal; Fan Zhou; Brian Gelder; Ali Jannesari / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:量化</span><span class="tag">方向:编译部署</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">APQF 是一个自动化模型压缩流程：用智能体先剖析模型各层的计算开销和敏感度，再由大模型规划每层的剪枝比例和量化位宽，最后自动做精度恢复训练。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">ImageNet 上把计算量压到原来的 5.6%-7.7%（减少 13-18 倍）且精度接近基线，在 20 万张图预算下 Top-1 比现有联合剪枝量化方法高约 17 个百分点；VGG7 只用 0.41% 位运算量达到 93.15%；六种大模型规划器在 Swin-Tiny 上均达 97.4%-97.9%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">剖析智能体测量各层成本分布和剪枝敏感度，大模型规划器据此提出逐层剪枝比例、位宽和恢复策略，执行前先校验，再走结构化剪枝加混合精度量化感知训练。</span></div>
+<div class="score-reason">评分依据：明确面向资源受限边缘设备的 CNN/ViT 压缩，属于端侧技术栈，但没有真机部署测试；用大模型规划压缩配置是工程整合式创新。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05499" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

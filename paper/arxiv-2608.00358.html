@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>HCCL: Collective Communication for Meta Training and Inference Accelerators</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-01 · Wesley Bland; Tiago Antunes; Lars Paul Huse; Chidambaram Muthu; Adel Abouchaev; Rabib Alam; Abdullah Alperen; Alexey Andronov / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:端云协同</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">HCCL 是与 Meta MTIA 300 训练和推理加速器协同设计的集合通信库，用于提高多芯片之间的数据交换效率。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、端云协同等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-08-01 · Wesley Bland; Tiago Antunes; Lars Paul Huse; Chidambaram Muthu; Adel Abouchaev; Rabib Alam; Abdullah Alperen; Alexey Andronov / SC 2026</div>
+<div class="tags"><span class="vendor-tag">Meta</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Meta 介绍为自研 MTIA 300 训练/推理加速器配套设计的集合通信库 HCCL，MTIA 300 是 Meta 第一款把后端网络直接集成到芯片封装里的芯片。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">训练场景下机架内集合通信带宽最高 940 GB/s，对同时进行的计算吞吐影响不到 0.5%；推理场景用单边通信原语绕过调度路径来压低集合通信延迟。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">芯片内专用消息引擎带近存计算，把集合通信完全从计算阵列卸载出去；主机预先生成每次集合通信的完整描述（含依赖），并按非对称的机架内/跨机架网络拓扑选择算法。</span></div>
+<div class="score-reason">评分依据：这是数据中心加速器的通信库，属于云端训练和推理基础设施，与端侧设备关系很远；软硬件协同设计和推理低延迟通信有工程价值。论文将发表于 SC 2026，作者均在 arXiv 论文首页署名 Meta Platforms。 作者机构依据：arXiv PDF 首页署名 Meta（PDF 首页作者机构为 Meta Platforms，通讯作者邮箱为 meta.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00358" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

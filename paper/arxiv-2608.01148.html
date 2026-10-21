@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Latency-Optimal Adaptive Split Inference for Privacy-Preserving Cloud-Edge-End Collaboration</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-02 · Yi Li; Peng Zhang; Man Ho Au / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:安全隐私</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作为隐私敏感的物联网批量推理选择云、边、端之间的最佳切分位置，在终端算力有限的情况下尽量降低整体延迟。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在端云协同、安全隐私。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-02 · Yi Li; Peng Zhang; Man Ho Au / ProvSec 2026</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:安全隐私</span><span class="tag">应用:IoT命令</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">给物联网终端做隐私保护的云-边-端协同推理：终端在明文下跑模型前几层，加密中间结果后交给边缘和云端在密文上继续算，并自动选出延迟最低的切分点。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 CIFAR-10 和 PathMNIST 上，卷积级切分方案比全云端同态加密推理平均快约 12.9 倍，比块级切分快 3.9 倍，精度与明文模型一致；计入通信后每样本摊销延迟约 1033 秒和 1023 秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把协同加密推理建模为“终端切分点 + 边缘终止点”的选择问题，联合估算明文前缀、加密、通信、边缘和云端全同态计算的开销，支持卷积级和块级两种粒度。</span></div>
+<div class="score-reason">评分依据：直接面向算力受限的物联网终端与端边云切分推理，相关度较高；规划器设计较扎实，但绝对延迟仍很高。作者来自深圳大学和香港理工大学，未涉及公司；论文被 ProvSec 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01148" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

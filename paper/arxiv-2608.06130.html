@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Hardware Keystores for AI Agent Signing Workflows: A Zero-Trust MCP Enforcement Architecture</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-06 · Leo Sambrook; Sampo Sovio / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">模型:DeepSeek</span><span class="tag">模型:GPT</span><span class="tag">应用:语音</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">执行加密操作（签 Git commit、API 鉴权、签发证书）的 AI agent 目前把私钥存在软件可访问…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在记忆、评测基准、DeepSeek。</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-08-06 · Leo Sambrook; Sampo Sovio / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:安全隐私</span><span class="tag">方向:工具调用</span><span class="tag">应用:安全</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">AI 智能体越来越多地替人签 Git 提交、签文档，私钥却常放在智能体能读到的文件或环境变量里。这篇把私钥放进 HSM/TPM 等硬件密钥库，并设计一套零信任防护栈，防止被注入的指令借智能体之手去调用硬件签名。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 AgentDojo 提示注入测试中（3 个模型、144 次），攻击成功率从基线 18.1% 降到 0%；对被攻陷 MCP 服务器的工具投毒（MCPTox）同样全部拦住；越权调用在 1 毫秒内被拒绝；方案已在嵌入式 TPM 2.0（Infineon SLB9670）上验证可直接替换。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把签名能力封装成 MCP 工具，外面套五层防护：工具清单白名单、预先承诺内容的哈希比对、语义过滤、会话约束，以及没有预先承诺时一律升级给人确认；保证安全性不依赖语义过滤判断正确。</span></div>
+<div class="score-reason">评分依据：智能体运行时的工具调用安全，私钥留在本机硬件里并在真实 TPM 芯片上测了时延，对在个人设备上跑的智能体有直接参考价值；创新点在于把硬件密钥库的“代理人混淆”问题讲清并给出分层解法。两位作者均署名华为赫尔辛基硬件系统安全实验室。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页两位作者均署名 Huawei Technologies, Hardware Systems Security Lab Helsinki）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.06130" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

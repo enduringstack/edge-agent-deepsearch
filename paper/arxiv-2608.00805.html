@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AgentSLABench: Evaluating and Benchmarking Agentic Systems Under Resource Constraints</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-01 · Meher Bhaskar Madiraju; Meher Sai Preetam Madiraju / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">我们提出 AgentSLABench，一个面向自主 AI agent 的资源感知评测框架，同时测量正确性、延迟、成本、算力、显存…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在记忆、评测基准。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-01 · Meher Bhaskar Madiraju; Meher Sai Preetam Madiraju / arXiv</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一个在资源预算下评测 AI 智能体的基准：不只看任务做没做对，还同时度量延迟、花费、算力、内存和网络用量。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">提供 16 个任务环境；专用智能体在 5 个核心任务中的 3 个上成功率 100%，零售替换和代码生成为 66.7%～83.3%，而 ReAct、Reflexion 等通用基线在 4 个领域任务上全部失败；并提出按资源消耗加权的效率调整成功率。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每个任务运行在隔离的 Docker 容器里，预先声明 CPU、内存、时间和网络预算，测试集用 SHA256 封存，再按统一协议像性能分析器一样逐任务记录资源消耗。</span></div>
+<div class="score-reason">评分依据：把资源预算纳入智能体评测，对在受限设备上部署智能体有参考价值，但实验在服务器容器中进行，并非端侧实测；方法以评测框架整合为主。作者来自佐治亚理工学院，代码和测试集已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00805" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

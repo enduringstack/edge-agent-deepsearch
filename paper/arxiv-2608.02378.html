@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Gecko: Fast Private Inference via Secure Public Encoder Offloading</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · Cheng'an Wei; Kai Chen; Yue Zhao; Congyi Li; Shenchen Zhu / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">私有推理在神经网络推理期间保护用户输入和服务器模型，但现有解决方案对于实际部署来说仍然太慢。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于端云协同、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · Cheng'an Wei; Kai Chen; Yue Zhao; Congyi Li; Shenchen Zhu / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">隐私推理要同时保护用户输入和服务端模型，但全程加密太慢。Gecko 把公开的预训练骨干放在保护边界外运行，只对小型私有预测头做加密计算，同时防止攻击者借公开骨干更容易地窃取私有模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在图像和音频任务上推理耗时 0.4–2.2 秒，通信量最多 10.8MB，准确率与迁移学习基线相当；在评测的攻击下，复用公开编码器并未给模型窃取者带来显著优势。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">冻结骨干提供多层特征，用固定的 Fastfood 随机投影压缩特征，再通过私有特征门控输入加密预测头，并以独立性和信息保持条件作为设计准则。</span></div>
+<div class="score-reason">评分依据：属于客户端与服务端之间的隐私保护推理，与端侧部署有一定关联但重点在密码学安全，相关度低；在提速的同时正视了公开编码器带来的窃取风险，贡献中等。作者来自中国科学院信息工程研究所。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02378" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DynamicManip: Enabling Dynamic Manipulation from a Single Static Demonstration</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-02 · Haoran Liao; Pengyue Wang; Shuoyu Chen; Kehan Cheng; Xuhang Chen; Yuhao Lin; Mu Lin; Zhizhao Liang / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">动态操作是机器人在复杂动态环境中运作的关键能力，那里机器人必须与…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准、机器人等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-02 · Haoran Liao; Pengyue Wang; Shuoyu Chen; Kehan Cheng; Xuhang Chen; Yuhao Lin; Mu Lin; Zhizhao Liang / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">应用:机器人</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让机器人只用一次静态示范就学会接抛物、传送带抓取等动态操作：先把静态示范自动扩增成大量动态示范，再训练一个能按任务快慢调整推理频率的策略。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">仿真和真机实验中，平均成功率比基线高 18.4 个百分点，策略查询延迟降低 32.9%；真机推理在单张 RTX 4070 上运行。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">静态到动态的数据扩增管线合成多样的动态轨迹；动态感知策略根据目标运动快慢自适应调整推理与执行步频，并用泰勒外推替代部分 U-Net 去噪计算来降低延迟。</span></div>
+<div class="score-reason">评分依据：关注机器人策略推理的实时性与延迟，自适应推理频率对端侧机器人有迁移价值，但属于纯动作策略、推理跑在桌面 GPU 上（相关度 4）。单次示范扩增加自适应频率策略是较完整的工程方案（贡献 6）。PDF 首页有一位作者署名江行智能（Jiangxing Intelligence），主体为中山大学团队。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01452" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Auditing Semantic Gains in Sequential Recommendation: A Lightweight Recovery Test</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-02 · Kong Wang; Zhongke He; Xiang Chen; Hongwei Zeng; Kai Deng; Long Wang; Kehua Yang / arXiv</div>
-<div class="tags"><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">近期语义和生成式检索推荐器相对仅 ID 的序列基线报告大幅改进，但这些增益是否…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-02 · Kong Wang; Zhongke He; Xiang Chen; Hongwei Zeng; Kai Deng; Long Wang; Kehua Yang / arXiv</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:工具调用</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究推荐系统是否真的需要在线调用语言模型：作者用不依赖在线大模型推理的方法，复现甚至超过了基于大模型的生成式和 Agent 式推荐效果。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">生成式推荐中 LIME-Rec 在三个 Amazon 数据集全部 12 项指标上取得最佳均值，Recall@10 比 GRAM 最多高 15.2%；Agent 式推荐中确定性融合比微调的大模型控制器 Recall@10 高 16.7%，固定专家选择在 18 组比较中有 17 组与大模型控制器持平。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">提出“恢复式机制审计”：在信息和评测条件相同的情况下，用顺序、协同和离线语义信息组合替代自回归解码，用确定性融合替代大模型工具控制，看能否达到同等精度。</span></div>
+<div class="score-reason">评分依据：说明部分在线大模型推理可以省掉，与推理成本相关但属于云端推荐场景，相关度低；审计视角有一定价值。作者来自同济大学、湖南大学等高校，未涉及公司。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01260" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

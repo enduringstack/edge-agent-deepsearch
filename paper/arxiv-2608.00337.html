@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Action Chunk Scheduling for Batched Robot Policy Serving</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-07-31 · Rohan Bansal; David He; Nadun Ranawaka Arachchige; Zhenyang Chen; Soobum Kim; Kexin Rong; Danfei Xu / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作为批量机器人策略服务调度动作片段，让多个机器人共享基础模型推理能力时减少排队与控制延迟。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">根据动作片段的时限、长度和批处理机会安排请求，协调模型吞吐与机器人实时控制。</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在多模态、云端serving、端侧agent。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-31 · Rohan Bansal; David He; Nadun Ranawaka Arachchige; Zhenyang Chen; Soobum Kim; Kexin Rong; Danfei Xu / arXiv</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:云端serving</span><span class="tag">方向:端云协同</span><span class="tag">应用:机器人</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这项工作研究用一块远端 GPU 同时为多台机器人提供策略推理服务，并为此设计了按动作片段调度的批处理系统 Armory。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在真实机器人实验中，考虑各机器人消耗动作片段速度差异的调度算法把整体吞吐最多提高 18%；当所有机器人相同时，简单调度启发式已表现良好。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把多机器人共享远端 GPU 推理建模为调度问题，按每台机器人消耗动作片段的速率安排批次，弥补传统批处理与机器人闭环执行需求之间的错配。</span></div>
+<div class="score-reason">评分依据：出发点是机器人本地算力受功耗和体积限制，但方案是把推理放到远端 GPU 集中服务，属于云端推理调度，端侧相关度中等偏低。作者来自佐治亚理工学院。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00337" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

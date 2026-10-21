@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LittleBit-2: Maximizing the Spectral Energy Gain in Sub-1-Bit LLMs via Latent Geometry Alignment</h1>
 <div class="meta"><span class="score">14</span> <span class="tier">官方动态</span>  2026-08-04 · Samsung / Samsung</div>
-<div class="tags"><span class="vendor-tag">Samsung</span><span class="tag">方向:能耗功耗</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">三星研究提出 LittleBit-2，通过潜空间几何对齐最大化亚 1 比特 LLM 的谱能量增益，进一步压缩大模型位宽以适配端侧部署。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：来自Samsung官方发布，内容直接涉及能耗功耗，因此作为本周官方动态收录。</div>
+<div class="tags"><span class="vendor-tag">Samsung</span><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">模型:Llama</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">三星研究院介绍 ICML 2026 论文 LittleBit-2：把大模型权重压到每参数不到 1 比特，同时修正前作 LittleBit 在 1 比特附近不如 OneBit 的问题，目标是让大模型装进内存受限的端侧设备。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">Llama-3 8B 在 1.0 bpp 下困惑度 11.53（LittleBit 为 16.30、OneBit 为 13.09），零样本平均准确率 57.33%（OneBit 52.23%）；0.55 bpp 时困惑度 14.01，0.1 bpp（8B 模型主体约 0.1 GB）仍为 23.74；推理沿用 LittleBit 的免乘法设计，0.1 bpp 的 Llama-2 7B 端到端解码从 82.6 提到 203.2 tokens/s。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把权重分解成低秩的二值因子，并在初始化时对潜在因子做内部旋转（Joint-ITQ），让原本“尖峰状”的分布对齐二值超立方体，减少符号翻转；旋转并入因子，推理时没有额外开销。</span></div>
+<div class="score-reason">评分依据：极低比特压缩直接决定大模型能否在手机等内存受限设备上运行，原文明确以端侧部署为目标，但测速在 GPU 上；从几何对齐角度解释并修复低秩二值量化的缺陷，方法有新意且已被 ICML 2026 接收。</div>
 <div class="source"><a href="https://research.samsung.com/blog/LittleBit-2-Maximizing-the-Spectral-Energy-Gain-in-Sub-1-Bit-LLMs-via-Latent-Geometry-Alignment" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

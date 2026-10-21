@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LAEF: A Lead-Agnostic ECG Foundation Model Towards Point-of-Care Diagnostics</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-04 · Edoardo Coppola; Stefano Fiorini; Pietro Liò; Mattia Savardi; Alberto Signoroni / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">智能手表、手持 ECG 记录仪等即时心脏设备通常只采集 1-2 导联，而现有 ECG 基础模型在架构上…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在高效推理。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-04 · Edoardo Coppola; Stefano Fiorini; Pietro Liò; Mattia Savardi; Alberto Signoroni / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能手表、手持心电仪通常只采 1–2 个导联，而现有心电基础模型只认 12 导联输入。LAEF 是一个只有 700 万参数、能直接处理任意导联组合的心电基础模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 18 个下游数据集上，全导联时与参数量大 12 倍以上的专用 12 导联模型持平；只用单个随机导联时在 18 个中的 17 个上优于补零方案，用 2 个导联时在 14 个上更优，AUROC 平均提升 3.2 个点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把心电信号表示成可变大小的时空图（按生理关系连接导联内外节点），用图注意力网络处理，在 920 万条 12 导联心电上做随机导联采样的掩码节点预训练。</span></div>
+<div class="score-reason">评分依据：面向手表等即时检测设备的小参数模型，与可穿戴端侧 AI 相关，但没有做设备端部署实测，相关度中等；导联无关的架构设计有实际价值。作者来自剑桥大学和布雷西亚大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03690" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

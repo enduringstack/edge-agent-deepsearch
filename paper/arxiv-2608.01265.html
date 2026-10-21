@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Hermite Curves as Trajectory Priors for Vision-Language-Action Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-02 · Qi Lv; Jianming Xing; Zhao Yang; Mingyuan Yao; Yinan Shi; Yawei Jueluo; Mike Zheng Shou; Xiang Deng / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作用厄米曲线为机器人视觉语言动作模型提供轨迹先验，让原本结构较弱的动作片段更符合连续运动轨迹。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于量化、多模态、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-02 · Qi Lv; Jianming Xing; Zhao Yang; Mingyuan Yao; Yinan Shi; Yawei Jueluo; Mike Zheng Shou; Xiang Deng / arXiv</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">给机器人视觉-语言-动作模型的动作块加上三次 Hermite 曲线先验，让机械臂动作更平滑、块与块之间不再跳变。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以 π0.5 为基线，LIBERO 成功率从 95.9% 提升到 98.7%，LIBERO-plus 从 85.7% 到 90.9%，四个真机任务从 63.4% 提升到 90.0%，且不增加推理开销。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把动作块参数化为由端点位置和速度决定的分段三次 Hermite 曲线，给出预测量化边界变量、骨架加残差和辅助正则三种用法，其中作为训练正则效果最好。</span></div>
+<div class="score-reason">评分依据：属于机器人动作策略改进，在真机上有效但与端侧推理部署关联有限；轨迹先验思路简洁有效。公司归属依据论文 PDF 首页：五位作者署名江苏赛特德姆智能科技（Jiangsu Cytoderm Intelligent Technology），另有哈工大（深圳）和新加坡国立大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01265" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

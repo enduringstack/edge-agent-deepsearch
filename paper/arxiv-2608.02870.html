@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Maglev: Sliding Recurrent Memory</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Bo Liu; Qiang Liu / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">我们提出 \ours{}，一种带固定大小记忆的循环 Transformer，推广了滑动窗口注意力，同时在训练时仍可并行…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-03 · Bo Liu; Qiang Liu / arXiv</div>
+<div class="tags"><span class="tag">方向:高效注意力</span><span class="tag">方向:模型架构</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Maglev 是一种带固定大小记忆的循环 Transformer，推理时只用滑动窗口注意力加循环注入的记忆，内存不随序列变长而增长，同时训练时仍可并行。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">论文报告验证损失和下游预训练基准均优于滑动窗口注意力和潜在循环 Transformer 基线，两个子模型共享参数时可减少参数内存并保留大部分收益；摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">训练时用能看到全部历史的预填充模型产生记忆目标，再用一致性损失让只用滑动窗口的解码模型学会产生同样的记忆，推理时只保留解码模型。</span></div>
+<div class="score-reason">评分依据：固定大小记忆让长序列推理的内存占用有上界，对端侧长上下文推理有直接迁移价值，但没有部署实测；用全注意力模型监督循环记忆的训练方式有新意。作者来自得克萨斯大学奥斯汀分校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02870" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

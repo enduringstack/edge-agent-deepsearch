@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DeepInvert: Semi-Supervised Embedding Inversion Against Obfuscated Language Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Zhicong Huang; Cheng Hong; Tao Wei / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">云端语言模型服务经常处理含敏感信息的提示。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-08-05 · Zhicong Huang; Cheng Hong; Tao Wei / arXiv</div>
+<div class="tags"><span class="vendor-tag">Ant Group</span><span class="tag">方向:安全隐私</span><span class="tag">方向:端云协同</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">很多方案在把提示词发往云端大模型前先做混淆来保护隐私。本文提出半监督嵌入反演攻击 DeepInvert，证明这些混淆防御远没有想象中安全。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 9 种防御、5 类任务、4 种模型架构上多数情况下优于已有攻击；对 ObfusLM 的单词级还原准确率达到 73.5%，此前最好方法只有 26.2%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把有标签影子数据上的监督训练，和对未标注目标嵌入的无监督一致性目标交替结合，利用混淆后嵌入里残留的语义结构把原始词元恢复出来，并针对不同混淆机制做适配。</span></div>
+<div class="score-reason">评分依据：轻量混淆常用于端侧把表示发往云端前的隐私保护，这项攻击研究对端云协同的隐私方案有警示价值，但本身不涉及端侧部署，相关度低。作者全部来自蚂蚁集团。 作者机构依据：arXiv PDF 首页署名 Ant Group（PDF 首页三位作者均署名 Ant Group）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04477" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

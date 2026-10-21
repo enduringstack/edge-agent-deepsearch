@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Rethinking Personalized Reward Modeling for LLMs under Preference Heterogeneity via Group-Debiased Federated Learning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Seongyoon Kim; Boryeong Cho; Jihwan Oh; Seokhyun Chung; Se-Young Yun / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:云端serving</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM 越来越多地通过奖励建模对齐人类偏好，但用户偏好数据敏感且常无法集中。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于联邦学习、云端serving等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-03 · Seongyoon Kim; Boryeong Cho; Jihwan Oh; Seokhyun Chung; Se-Young Yun / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用联邦学习训练大模型奖励模型时，用户偏好彼此冲突。论文发现不必按群体分别训练，一个共享初始模型经少量本地微调就能个性化，并提出 FedGD 处理群体不平衡。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">偏好群体均衡时，单个 FedAvg 模型初始准确率接近随机，但只需几步本地优化就超过按真实群体分别训练的奖励模型；FedGD 在群体不平衡下仍能学到易于个性化的初始化。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在联邦训练中自动发现潜在偏好群体，并用去偏的客户端采样抵消群体不平衡，让共享初始化停在易于快速适配的决策边界附近。</span></div>
+<div class="score-reason">评分依据：联邦学习让偏好数据留在本地，与端侧隐私和本地个性化相关，但核心是奖励模型训练，未涉及端侧推理部署（相关度 3）。“共享初始化足够”的发现有启发（贡献 5）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01556" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

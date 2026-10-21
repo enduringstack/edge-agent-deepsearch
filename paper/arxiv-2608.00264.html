@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Interpretability-Guided Soft Pruning of Attention Heads in Vision Transformers</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-07-31 · Kamil Książek; Piotr Suszyński; Michał Jan Włodarczyk; Jacek Tabor; Przemysław Biecek / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:云端serving</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作为视觉 Transformer 软剪枝注意力头，在减少基础视觉模型计算量的同时尽量保留有用表示。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">利用可解释性分析评估各注意力头的重要性，再以软门控方式逐步削弱低价值头。</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、记忆、云端serving等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-07-31 · Kamil Książek; Piotr Suszyński; Michał Jan Włodarczyk; Jacek Tabor; Przemysław Biecek / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这项工作为视觉 Transformer 软剪枝注意力头：先用可解释方法找出功能重复的注意力头，再在训练中可微地剪掉它们，降低基础视觉模型的计算量。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ImageNet-1K 上取得较好的精度与效率平衡，浮点计算量削减幅度优于 RAPTOR 基线，同时保持较强的分类性能；摘要未给出具体百分比。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对每个注意力头的注意力图做拉普拉斯特征向量谱分析和可视化，按语义聚类找出冗余头，再用基于 LapSum Soft Top-K 的端到端可微剪枝框架 SAPER 完成裁剪。</span></div>
+<div class="score-reason">评分依据：注意力头剪枝能直接降低视觉模型推理开销，可迁移到端侧视觉部署，但论文没有面向具体设备评测。作者来自华沙理工大学等高校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00264" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

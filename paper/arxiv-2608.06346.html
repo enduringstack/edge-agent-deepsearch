@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TRAJDEBUG: Tracing Error Lifecycle to Identify Critical Failures in Long-Horizon Agent Trajectories</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-06 · Yunjia Qi; Zehua Yin; Xintong Shi; Hao Peng; Songyuanyi Lu; Yixian Liu; Richeng Xuan; Yuhong Liu / arXiv</div>
-<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">基于 LLM 的 agent 系统在复杂领域表现出色，但会出现级联错误且难以调试。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于工具调用、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span>  2026-08-06 · Yunjia Qi; Zehua Yin; Xintong Shi; Hao Peng; Songyuanyi Lu; Yixian Liu; Richeng Xuan; Yuhong Liu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Tencent</span><span class="tag">方向:评测基准</span><span class="tag">方向:工具调用</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长流程智能体失败后很难定位到底是哪一步出错导致了最终失败。TrajDebug 追踪每个错误的产生、修复与影响，找出真正致命的那一步。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">构建了包含 486 条人工标注失败轨迹的 TrajErrBench（来自 tau²-Bench 和 SWE-Bench Pro），TrajDebug 在多个智能体基准上取得最好的整体表现；论文摘要未给出具体提升数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先对长轨迹做多粒度历史压缩、基于证据识别各个错误，再追踪每个错误后来是否被修复以及对最终结果的影响，据此归因关键错误。</span></div>
+<div class="score-reason">评分依据：面向云端智能体的调试与评测，与端侧部署关系较弱；贡献在错误生命周期追踪方法和新基准。PDF 首页第 5–9 位作者署名腾讯混元。 作者机构依据：arXiv PDF 首页署名 Tencent（PDF 首页作者 Songyuanyi Lu、Yixian Liu、Richeng Xuan、Yuhong Liu、Zhichao Hu（通讯作者）署名 Tencent Hunyuan）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.06346" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

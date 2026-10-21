@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>VeriTrace: Human-Like Temporal Exploration Completes Agentic Action Space</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Yu-Tung Liu; Cunxi Yu / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM 在自动 Verilog RTL 生成上展现潜力，但 SOTA 多 agent 系统在标准基准上卡在约 95%…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-08-03 · Yu-Tung Liu; Cunxi Yu / ICLAD 2026</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">应用:代码</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让大模型自动写 Verilog 电路代码时，现有多智能体系统卡在约 95% 准确率。VeriTrace 认为原因是调试智能体能看的信号和时间窗被限制，于是给它完整的波形调试能力。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 VerilogEval-V2 上 Pass@1 达到 100%，是首个在该基准上全部做对的系统；同样用 Claude Sonnet 4.0 做底座时，比最强的复现基线高 5.1 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">其中的检查智能体可以自主选择要看的信号、查询的时间区间和迭代深度，先提出故障假设、再查波形找证据、逐步修正，模仿验证工程师的排错过程。</span></div>
+<div class="score-reason">评分依据：这是云端大模型做芯片设计验证的智能体工作，与端侧部署关系很弱，只在智能体工具动作空间设计上有参考价值。论文已作为 ICLAD 2026 长口头报告发表。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02878" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

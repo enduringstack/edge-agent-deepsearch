@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TraceCAD: Trace-Guided Repair for Agentic CAD Generation</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Fengxiao Fan; Jingzhe Ni; Fan Sang; Xiaolong Yin; Yu Liu; Ruofeng Tong; Min Tang; Peng Du / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">基于 LLM 的 CAD agent 产出可执行参数化程序，但其修正循环可能丢失已满足需求、错误操作和…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-08-04 · Fengxiao Fan; Jingzhe Ni; Fan Sang; Xiaolong Yin; Yu Liu; Ruofeng Tong; Min Tang; Peng Du / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型生成 CAD 参数化程序时，出错后的修复循环经常丢掉已满足的需求和以往修复记录。TraceCAD 给 CAD 智能体加了一层可追溯的修复与技能记忆。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 DeepCAD 派生基准上几何质量具有竞争力；去掉持久状态后恢复得分几乎减半，去掉局部搜索后几何退化增加一倍多、代码智能体调用次数翻倍；预先初始化技能库还能减少重试次数、token 成本和延迟。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把需求特征、建模步骤、失败证据和候选结果连成持久状态，定位可能出错的操作，只在其依赖区域内搜索修改，并把成功和失败的修复经验存入可复用的技能记忆。</span></div>
+<div class="score-reason">评分依据：属于云端智能体的修复与记忆机制，持久状态和技能记忆设计对 Agent 运行时有参考价值，但与端侧部署无直接关系。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03062" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

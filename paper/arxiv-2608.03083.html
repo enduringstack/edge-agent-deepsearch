@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>GSTEP: Global Spatio-Temporal Density-Driven Visual Token Pruning for Efficient Video Large Language Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Mengjie Zhang; Qihui Zhu; Tao Zhang; Shuangwu Chen; Huihuang Qin; Yu Guo; Shenghao Ye; Zijian Wen / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">GSTEP 根据视频令牌的全局时空密度删掉重复信息，在尽量保留关键画面的同时降低视频大模型推理开销。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-04 · Mengjie Zhang; Qihui Zhu; Tao Zhang; Shuangwu Chen; Huihuang Qin; Yu Guo; Shenghao Ye; Zijian Wen / ACM MM 2026</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">应用:视频</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">视频大模型要处理大量冗余的视觉 token，推理很贵。GSTEP 是一个即插即用的视觉 token 剪枝方法，从全局时空密度出发挑选保留的 token。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LLaVA-OneVision-7B 上剪掉 75% 视觉 token，平均性能保持在原始的 100.2%，端到端提速 1.17 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用平滑的帧间变化信号估计时间密度，结合帧内空间密度得到每个 token 的时空密度，再在整段视频范围内兼顾信息密度和覆盖度进行采样，而不是在各片段内独立裁剪。</span></div>
+<div class="score-reason">评分依据：视觉 token 剪枝可直接降低端侧多模态模型的计算量，但实验在 A100 上完成，端到端加速有限。论文已被 ACM MM 2026 接收（不在顶会同级名单中），代码已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03083" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

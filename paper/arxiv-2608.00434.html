@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AdaMTP: An Adaptive Training Paradigm for Multi-Token Prediction</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-01 · Ziqiang Cui; Han Shi; Bowei He; Yu Pan; Peiyang Liu; Shengyin Sun; Yankai Chen; Haoli Bai / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">模型:Llama</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">多 token 预测（MTP）作为一种有效范式兴起，给共享 LLM 主干加辅助头，训练模型…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准、Llama、Qwen等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-08-01 · Ziqiang Cui; Han Shi; Bowei He; Yu Pan; Peiyang Liu; Shengyin Sun; Yankai Chen; Haoli Bai / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">模型:Llama</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">AdaMTP 改进大模型的多 token 预测（MTP）训练：按文本本身的可预测程度动态决定每个位置往后预测几步，避免辅助头跨过语义边界学到噪声，同时保留 MTP 的自投机加速。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Llama-3.1-8B、Qwen-2.5-7B、Gemma-3-12B 三个底座、八个基准上，任务表现和推理加速都持续优于固定长度的标准 MTP；摘要未给出具体倍数。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用底座模型的熵变化检测不确定性突增处作为语义边界，把序列切成变长片段，给每个 token 分配自适应预测深度，并屏蔽跨边界预测的损失。</span></div>
+<div class="score-reason">评分依据：MTP 头配合自投机解码是端侧加速生成的可迁移技术，但论文没有端侧实测；自适应预测深度的思路合理，属于对 MTP 的改进。作者 Han Shi、Yu Pan、Haoli Bai、Yichun Yin 在 arXiv 论文首页署名 Huawei Technologies。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页作者 Han Shi（通讯作者之一）、Yu Pan、Haoli Bai、Yichun Yin 署名 Huawei Technologies）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00434" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

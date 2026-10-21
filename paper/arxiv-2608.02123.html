@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>From Chains to Trees: Parent-Conditioned Drafting for Semi-Autoregressive Speculative Decoding</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Zixian Li; Tong Li; Chi Xie; Xiaohui Song; Haonan Lu / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">仅当起草的延续通过目标模型验证时，推测解码才能加速 LLM 推理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于投机解码、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-08-03 · Zixian Li; Tong Li; Chi Xie; Xiaohui Song; Haonan Lu / arXiv</div>
+<div class="tags"><span class="vendor-tag">OPPO</span><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">OPPO 提出的 PCTree：半自回归投机解码器 DSpark 一次前向能起草一整块令牌，但只排成一条链，前面一个字被拒后面全浪费。PCTree 不重新训练，把这条链改造成多分支的草稿树。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen3-4B/8B/14B 和九个基准上，块长 7 时相对 DSpark 的端到端加速再提高 3.1%–29.5%；Qwen3-4B 在 GSM8K、块长 16 时平均接受长度从 9.41 增至 11.16，相对自回归解码的加速比从 6.14 倍升到 6.60 倍（单张 NVIDIA H20 测得）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">复用 DSpark 已训练好的马尔可夫头，针对每个具体的父令牌分别给候选子令牌打分，在固定验证预算内只保留概率最高的若干路径，骨干网络仍只需一次并行前向。</span></div>
+<div class="score-reason">评分依据：投机解码是端侧大模型加速的关键技术，且方法只改推理过程、无需重训，便于移植到手机等设备，但实验在服务器 GPU 上完成，相关度中上；把链式草稿免训练地扩成树，收益明确。PDF 首页全部作者署名 OPPO AI Center。 作者机构依据：arXiv PDF 首页署名 OPPO（PDF 首页 5 位作者均署名 OPPO AI Center，邮箱为 oppo.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02123" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

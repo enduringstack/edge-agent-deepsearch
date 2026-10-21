@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Heterogeneous LLM Serving with General-Purpose Processing-Near-Memory for Retrieval-Based Sparse Attention</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Hyungkyu Ham; Junhyeong Bae; Seungheon Lee; Myeongjae Jeon; Gwangsun Kim / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:稀疏注意力</span><span class="tag">方向:记忆</span><span class="tag">方向:MoE</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这套异构 LLM 服务系统把模型权重和 MoE 计算留在 GPU，把 KV 缓存、索引及稀疏注意力读取放到近存计算节点，缓解百万令牌上下文的显存与带宽压力。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于KV cache、剪枝稀疏、稀疏注意力等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:稀疏注意力</span><span class="tag">方向:云端serving</span><span class="tag">方向:MoE</span><span class="tag">应用:长上下文推理</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">百万令牌长上下文的大模型用检索式稀疏注意力时，KV 缓存把 GPU 显存和带宽挤爆。这套异构服务系统把 KV 缓存和检索索引搬到近存计算节点上，GPU 只负责权重和 MoE 计算。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在三个前沿模型和真实智能体调用轨迹上，满足服务时延目标时单位功耗吞吐比纯 GPU 方案提升 2.09–6.13 倍；运行免训练稀疏注意力方法时提升 1.36–3.21 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">提出通用近存加速器 KARAT，用大容量 LPDDR 加通用算力承载 KV 缓存及所有读取它的算子；再用细粒度微批调度把专家 all-to-all 通信藏在另一微批的矩阵乘后面，并按上下文长度重新平衡两个微批。</span></div>
+<div class="score-reason">评分依据：KV 缓存外置与稀疏注意力属于可迁移的推理技术栈，但目标是数据中心长上下文服务，相关度中等；提出通用近存节点设计与配套调度，系统贡献较完整。作者机构为浦项科技大学（POSTECH）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03555" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

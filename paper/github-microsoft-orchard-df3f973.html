@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>microsoft/Orchard: Orchard: an open foundation for agentic modeling research</h1>
-<div class="meta"><span class="score">15</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-07-30 · microsoft / GitHub</div>
-<div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:推理框架</span><span class="tag">方向:工具调用</span><span class="tag">方向:蒸馏</span><span class="tag">方向:评测基准</span><span class="tag">应用:代码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Orchard 是微软开源的智能体建模框架，统一提供 Kubernetes 沙箱环境、软件工程智能体、GUI 操作智能体和个人助手的训练与评测方案。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">Orchard-SWE 在 SWE-bench Verified 达到 73.0%；4B GUI 智能体在三项网页操作基准平均成功率 68.4%；本周一次性公开 80 个文件、约 1.6 万行代码。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">Orchard Env 负责可复用沙箱生命周期，上层组合监督微调、强化学习、过程奖励和历史经验蒸馏，服务不同智能体训练流程。</span></div>
-<div class="score-reason">评分依据：智能体训练和环境基础设施价值高，但没有在手机或 PC 本地执行 Agent 闭环。</div>
+<div class="meta"><span class="score">6</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-07-30 · microsoft / GitHub</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:工具调用</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">微软开源的智能体建模研究平台 Orchard 首次公开发布，提供在 Kubernetes 上批量管理沙箱容器的环境服务和 Python SDK，用于智能体的强化学习训练与评测。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 FastAPI 编排器统一管理 Kubernetes 沙箱 Pod，并通过初始化容器向每个 Pod 注入自带解释器的轻量代理，命令执行和文件读写直接走 Pod IP，不经过 Kubernetes API 服务器；仓库同时预留强化学习训练栈目录，并附论文与数据集链接。</span></div>
+<div class="score-reason">评分依据：这是在云端集群上训练和评测智能体的基础设施，智能体闭环不在手机或电脑本地运行，端侧相关度低；价值在于把大规模沙箱环境做成可复用的开源服务，属于工程整合。</div>
 <div class="source"><a href="https://github.com/microsoft/Orchard/commit/df3f97344ea5cf813da07ada2fcf06e04d9ae3f6" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

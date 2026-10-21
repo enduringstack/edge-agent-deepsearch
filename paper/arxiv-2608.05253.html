@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Beyond Rotations: AuroOFT for Expressive Quantized Orthogonal Fine-Tuning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Yue Han; Dianlin Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">量化正交微调（qoft）通过在冻结前学习结构化激活旋转，实现低比特语言模型的参数高效适配…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于量化等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-05 · Yue Han; Dianlin Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:端侧训练</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">AuroOFT 是一种给低比特量化语言模型做参数高效微调的方法，在原有的量化正交微调分支旁加一个非线性小残差，让适配更灵活。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen2.5 1.5B/3B 上，Macro-6 指标比同条件的量化正交微调高 1.30-2.70 分，比 QLoRA 高 6.52-10.62 分，可训练参数比 QLoRA 少 32.3%-44.7%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">保留量化友好的正交旋转分支，在每个适配层再挂一个从零初始化、带门控的低秩非线性残差，初始时与原方法完全等价，训练中逐步学习输入相关的修正。</span></div>
+<div class="score-reason">评分依据：面向低比特小模型的微调，与端侧量化模型的个性化适配直接相关，但属于训练侧方法且没有设备实验；在 QOFT 基础上的增量改进。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05253" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

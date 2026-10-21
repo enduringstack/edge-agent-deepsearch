@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>BALANCE: Hybrid Autoregressive-Speculative LLM Inference in Wireless Edge Networks</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-06 · Guanqiao Qu; Shuo Chen; Qian Chen; Kin K. Leung; Xianhao Chen / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">边缘推理是面向下一代移动网络的 LLM 推理服务新范式。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在投机解码、记忆。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-06 · Guanqiao Qu; Shuo Chen; Qian Chen; Kin K. Leung; Xianhao Chen / arXiv</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:调度服务</span><span class="tag">方向:端云协同</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在移动网络的边缘服务器上同时提供普通自回归解码和投机解码两种大模型推理模式，按用户的时延要求和显存限制分配，让同一台边缘服务器服务更多用户。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在用户数和时延要求变化的实验中，平均吞吐比只用自回归解码高 37.9%（或 31.5%），比只用投机解码高 33.4%（或 27.3%）；不同显存、接受率和草稿长度下也提升 17.4% 至 41.3%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">边缘服务器同时部署小模型和大模型，把“接纳哪些用户、分到哪种模式、怎么分配算力”建成吞吐最大化问题，用多项式时间、带常数近似比的算法求解。</span></div>
+<div class="score-reason">评分依据：面向边缘服务器的大模型推理调度，结合投机解码与显存约束，属于端侧和边缘推理技术栈（相关度 6）。混合模式调度有一定新意但偏优化建模（贡献 5）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05926" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

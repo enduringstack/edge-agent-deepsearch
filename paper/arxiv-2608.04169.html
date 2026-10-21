@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>On Design Principles for Efficient Heterogeneous DRAM-PIM-GPU Systems</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Corey Lammie; Hadjer Benmeziane; William Andrew Simon; Irem Boybat / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">异构基于 DRAM 的存内计算（PIM）-GPU 系统有望为解码阶段 LLM 推理带来显著效率提升，部分…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、能耗功耗、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-08-04 · Corey Lammie; Hadjer Benmeziane; William Andrew Simon; Irem Boybat / IEEE SOCC 2026</div>
+<div class="tags"><span class="vendor-tag">IBM</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:CIM</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">DRAM 存内计算加 GPU 的异构系统被寄予厚望，用来提升大模型解码阶段的能效。IBM 研究院系统评测了多种架构和负载，总结出这类系统的三条设计原则。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">只计动态功耗会把每瓦每秒 token 数高估最多 3.85 倍（Mamba2-2.7B、批大小 1、输入 128 / 输出 2048 token）；解码性能随通道数单调不降；负载映射策略最多只带来 14.0% 内核时延、17.4% 内核能耗降低和 5.6% 端到端收益。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 OPT-7B/70B、Mamba2-2.7B/70B 等模型上扫描通道数、存储层级配置和映射策略，并把 DRAM 漏电、刷新和 GPU 空闲等静态功耗纳入能效模型。</span></div>
+<div class="score-reason">评分依据：批大小为 1 的长输出解码正是端侧大模型的典型负载，静态功耗主导能效的结论对端侧存内计算芯片设计有参考价值，但评测的是 GPU 级系统。系统性设计空间分析扎实，贡献中等；论文已被 IEEE SOCC 2026 接收。PDF 首页四位作者均署名 IBM Research。 作者机构依据：arXiv PDF 首页署名 IBM（arXiv 首页四位作者均标注机构 IBM Research（瑞士吕施利孔），通讯邮箱为 ibm.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04169" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

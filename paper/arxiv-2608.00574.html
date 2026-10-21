@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Relax Within, Balance Across: Geometry-Guided Load Balancing for Vision-Language Mixture-of-Experts</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-01 · Ziang Wu; Peng Jin; Qishen Yin; Munan Ning; Hao Li; Peizhen Zhang; Li Yuan / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:MoE</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">视觉语言 MoE 的批次含不同数量的图像和文本 token。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于多模态、MoE、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-08-01 · Ziang Wu; Peng Jin; Qishen Yin; Munan Ning; Hao Li; Peizhen Zhang; Li Yuan / arXiv</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:MoE</span><span class="tag">方向:多模态</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ReBA 研究视觉语言 MoE 模型的负载均衡：图片和文字 token 比例随分辨率、图片数量变化时，常规辅助损失会让专家负载严重失衡，ReBA 分别在模态内和每张图片内做均衡。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">同一个训练好的路由器在不同图片分辨率下负载失衡程度相差五倍以上；在四个拆分骨干上，ReBA 在所有报告的基准输入上都降低了负载失衡，任务平均准确率与常规方法相当，在分辨率和切块变化下的最差负载也更低。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">推导固定图文负载分布下随 token 比例变化的负载曲线，发现图文负载差决定敏感度；据此把辅助损失拆成图片项和文字项，并让每张图片作为一个等权的路由实例。</span></div>
+<div class="score-reason">评分依据：负载均衡影响 MoE 推理时的专家利用率和吞吐，与资源受限部署有间接关系，但主要是训练目标改进；对多模态 MoE 负载失衡的分析扎实。作者 Peng Jin、Hao Li 在 arXiv 论文首页署名 Qwen Team。 作者机构依据：arXiv PDF 首页署名 Alibaba（PDF 首页作者 Peng Jin、Hao Li 署名 Qwen Team（阿里巴巴通义千问团队），主体作者来自北京大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00574" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

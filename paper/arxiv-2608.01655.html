@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PrefixPlace: Provable Prefix Key-Value Placement for Large Language Model Serving under Heterogeneous Compute and Transfer Costs</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Zhiyu Wang; Rajkumar Buyya / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">前缀键值 (KV) 重用可避免大型语言模型 (LLM) 推理中的重复预填充，但本地未命中需要重新计算或副本获取。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、RAG等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-03 · Zhiyu Wang; Rajkumar Buyya / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">前缀 KV 复用能避免重复预填充，但未命中时是重算还是跨机拉取副本，代价随硬件、前缀深度和副本位置而变。PrefixPlace 是按综合代价而非命中率来放置前缀 KV 的规划器。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 432 个已知最优解的实例上平均达到最优的 99.84%，最差 98.02%；在 RAG 回放中材料化代价节省比 vLLM 自动前缀缓存高 40.3%、比最佳离线基线高 6.3%；5 万节点、16 个 worker 的放置在单处理器上 12.3 秒解完。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把放置目标分解为本地副本价值加首个副本覆盖，形成单调的设施选址问题；每个 worker 的更新是可在 O(nk) 时间精确求解的有根树问题，整体有 1/2 近似保证。</span></div>
+<div class="score-reason">评分依据：属于多 GPU 集群的大模型服务缓存放置，与端侧关系较远，KV 复用思路可借鉴（相关度 3）。有可证明的近似保证且实测接近最优（贡献 6）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01655" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

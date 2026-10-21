@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LowRank-SSM: Hardware-Software Co-Design for Rank-Reduced Mamba Acceleration on FPGA</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-03 · Haocheng Xu; Bhardwaj Bhat; Yu-an Chou; Zhiheng Chen; Leyao Han; Yifan Zhang; Ye Qiao; Saptarshi Mitra / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LowRank-SSM 把 Mamba 投影层的秩作为软硬件联合优化变量，在控制精度损失的同时减少 FPGA 的权重存储、片外带宽和单令牌延迟。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在量化、剪枝稀疏、记忆。</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-08-03 · Haocheng Xu; Bhardwaj Bhat; Yu-an Chou; Zhiheng Chen; Leyao Han; Yifan Zhang; Ye Qiao; Saptarshi Mitra / arXiv</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:模型架构</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:FPGA</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Mamba 这类状态空间模型推理是线性时间，但每生成一个 token 仍要从片外内存读完整的投影权重。LowRank-SSM 在 FPGA 上把低秩分解真正变成延迟收益，加速 Mamba2 生成。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 AMD Versal VC1902 上以 230 MHz 解码 Mamba2-2.7B，达到每秒 16.79 个 token、每 token 0.41 焦耳，吞吐是 LightMamba 的 4.65 倍、能效是其 1.68 倍；低秩省下的投影访存有 93% 转化成了 token 延迟下降，代价是平均零样本准确率降 1.6 个点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先按困惑度上限逐个投影搜索该分配多少秩，再设计可配置秩的投影数据通路，让两段低秩乘法复用已有 GEMV 引擎并把中间向量留在片上，最后用片上网络和 AXI 内存子系统均衡、预取权重流，维持 42 GB/s 带宽。</span></div>
+<div class="score-reason">评分依据：在 FPGA 硬件上实测 Mamba2 解码速度和每 token 能耗，属于资源受限推理的软硬协同设计，对边缘加速器有直接参考价值；把低秩压缩落到真实访存节省的做法比单纯量化更进一步。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02954" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

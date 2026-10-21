@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>EnvACE: Internalizing Environment Dynamics via World Rehearsal for Agentic Reinforcement Learning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-06 · Zishan Xu; Zhiyuan Yao; Yuxin Chen; Yifu Guo; Zhengxi Lu; Yuquan Lu; Jinyang Huang; Yan Xu / arXiv</div>
-<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">训练长程工具使用的 LLM agent 通常依赖与真实或合成的可执行环境交互，而这些环境的构建…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于工具调用、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-08-06 · Zishan Xu; Zhiyuan Yao; Yuxin Chen; Yifu Guo; Zhengxi Lu; Yuquan Lu; Jinyang Huang; Yan Xu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Tencent</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">训练会调用工具的大模型智能体通常要搭建昂贵的可执行环境。EnvACE 让模型自己“预演”环境的反馈，用这种方式替代训练时与外部环境的交互。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 BFCL-v4、tau²-Bench、VitaBench 和 FinMCP-Bench 上整体优于扩充环境的基线；测试时先在内部预演再执行，在适度预演预算下还能进一步提升。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">策略模型交替扮演两种角色：先生成工具调用，再自己扮演环境生成该调用的返回结果，并以此继续决策；两种角色用任务成功奖励端到端联合优化，让模型把“动作—环境反应”的关系学进参数里。</span></div>
+<div class="score-reason">评分依据：主要是云端智能体的强化学习训练方法，与端侧部署关系较远，但测试时内部预演可减少真实工具调用，对资源受限的智能体有一定参考。PDF 首页第 1、8 位作者及通讯作者 Yasheng Wang 署名腾讯。 作者机构依据：arXiv PDF 首页署名 Tencent（PDF 首页作者 Zishan Xu、Yan Xu、Yasheng Wang（通讯作者，tencent.com 邮箱）署名 Tencent Inc.）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.06197" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

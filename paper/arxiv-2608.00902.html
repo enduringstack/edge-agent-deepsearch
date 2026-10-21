@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Practical Online KV Cache Compaction for LLM Agents: An Empirical Study</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-02 · Yujian Liu; Jiabao Ji; Li An; Rohit Jain; Gungor Polatkan; Siyu Zhu; Shiyu Chang / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项实证研究分析大模型智能体在长推理、工具调用和环境反馈不断累积时，如何在线压缩键值缓存以缓解显存和推理瓶颈。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于KV cache、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-08-02 · Yujian Liu; Jiabao Ji; Li An; Rohit Jain; Gungor Polatkan; Siyu Zhu; Shiyu Chang / arXiv</div>
+<div class="tags"><span class="vendor-tag">LinkedIn</span><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">系统研究智能体在长任务中如何“边跑边压缩” KV cache：智能体的上下文不断变长，但压缩时并不知道后续会问什么。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 BrowseComp-Plus 和 WideSearch 上，立刻压缩往往伤害效果，而延迟到拿到智能体后续查询再压缩能找回大部分差距；按词元淘汰的方法在 KV cache 减少 80% 时仍保留大部分准确率，在 Qwen3.5-27B 和 Gemma-4-31B 上服务吞吐最多提升 4.2 倍和 1.7 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把词元淘汰和注意力匹配两类压缩方法改造成按智能体轮次在线压缩，并比较边界查询、重复预填充和延迟的未来生成查询等廉价代理查询来源。</span></div>
+<div class="score-reason">评分依据：KV cache 是本地运行智能体时最紧的内存瓶颈，实验也覆盖了 Qwen3.5-4B 和 Gemma-4-E4B 等小模型，可直接迁移到端侧；属于实证研究，方法创新有限。PDF 首页显示作者分属加州大学圣塔芭芭拉分校与 LinkedIn，前三位作者为 LinkedIn 实习期间完成。 作者机构依据：arXiv PDF 首页署名 LinkedIn（PDF 首页作者机构为 UC Santa Barbara 与 LinkedIn，脚注注明前三位作者在 LinkedIn 实习期间完成；Rohit Jain、Gungor Polatkan、Siyu Zhu 署名 LinkedIn）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00902" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Energy- and Memory-Efficient PEFT Methods for Personalized On-Device SLMs on Consumer GPUs</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-05 · Kuanysh Akhmetzhanov; Jurn-Gyu Park / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:记忆</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">尽管 LLM 进展迅速，但因高显存、…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在量化、记忆、能耗功耗。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-05 · Kuanysh Akhmetzhanov; Jurn-Gyu Park / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span><span class="tag">模型:Qwen</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">比较五种微调方式（全量微调、LoRA、LoRA+、QLoRA、BitFit）在四个小模型上的能耗与显存开销，回答“在消费级显卡上做个性化端侧小模型，哪种微调最省”。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在单张 RTX 4090 上测试 TinyLlama-1.1B、Qwen3-1.7B、Mamba-1.4B、Mamba-2-1.3B：LoRA+ 在 24 组配置中 19 组能耗综合分最高、18 组被选为最佳；QLoRA 微调峰值显存比 LoRA 最多低 3.9 倍；BitFit 和全量微调几乎从不占优。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用兼顾精度、能耗的 NetScore-E 和兼顾精度、显存的 NetScore-M 两个指标，在 GLUE 通用任务和 LaMP 个性化任务上按“能耗优先”规则挑选方法。</span></div>
+<div class="score-reason">评分依据：面向个人设备上的小模型个性化微调，给出了能耗与显存的实测对比，有端侧训练参考价值，但实验平台是桌面消费级显卡而非手机，属于常见方法的对比评测。作者来自哈萨克斯坦纳扎尔巴耶夫大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04488" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

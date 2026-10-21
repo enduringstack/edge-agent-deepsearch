@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>RAG-Stack: Co-Optimizing RAG Serving Performance and Quality</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Haiqiang Zhang; Yuanqing Lei; Wanting Li; Tao Zhang; Wenqi Jiang / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">检索增强生成（RAG）用数据库检索信息来增强 LLM 生成，已成为广泛使用的…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准、云端serving、RAG等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-04 · Haiqiang Zhang; Yuanqing Lei; Wanting Li; Tao Zhang; Wenqi Jiang / arXiv</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">RAG 系统有检索索引、模型选择、调用方式等大量配置，每种配置在答案质量和服务性能上的取舍不同。RAG-Stack 帮助快速找到质量与性能的最优折中集合。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在相同优化轮数下，RAG-Stack 找到的帕累托前沿比最先进的配置搜索方法多覆盖 52.5%–153.2% 的归一化质量-性能空间。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">由三部分组成：迭代式设计空间探索算法决定下一个要评测的配置；统一的 RAG 负载抽象描述各种算法；性能模型预测给定硬件上的最优部署和服务性能，因此不用把每个候选都真跑一遍，还能把已有前沿迁移到新的服务系统。</span></div>
+<div class="score-reason">评分依据：面向 RAG 服务的算法与系统联合调优，主要是云端服务场景，对端侧 RAG 配置选择有间接参考；用性能模型避免逐一部署的思路有价值。作者为苏黎世联邦理工、哥伦比亚大学和新加坡国立大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03487" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

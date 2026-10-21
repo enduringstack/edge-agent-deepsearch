@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>$S^3$: Improving Agent Safety through Multi-Stage Defense</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Zibo Xiao; Haoyu Wang; Jun Sun / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LLM agent 依赖记忆、规划、工具执行等多阶段 agentic 工作流来完成复杂任务。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-03 · Zibo Xiao; Haoyu Wang; Jun Sun / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:工具调用</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">S³ 给 LLM 智能体的记忆、规划、工具执行等各个阶段都加上安全防护：由一个守卫智能体调度各阶段专用的安全技能来发现和处置风险。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">论文报告在自建的多阶段风险基准 MSRB 上，安全效果和保留可用性两方面都持续优于代表性基线；摘要未给出具体数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把已有的各种安全设计统一抽象为带阶段语义、可复用可组合的安全技能，并用自动转换流程把现有方法转成技能库，再由守卫智能体按阶段编排。</span></div>
+<div class="score-reason">评分依据：属于智能体运行时的安全防护框架，与端侧部署无直接关系，相关度低；把安全方法组件化并按阶段编排有一定工程价值。作者来自新加坡管理大学，代码与技能库已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02683" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

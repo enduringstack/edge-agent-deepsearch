@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Uncovering and Mitigating Positional Blind Spots in Vision-Language-Action Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Dongdong An; Pengjie Zhao; Yihao Huang; Wenbing Tang; Ziming He; Jiayi Zhu; Jifeng Ning; Qin Zhao / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作分析 VLA 模型对目标位置变化不敏感的盲区，并提出诊断和缓解方法，减少机器人因空间偏差执行错误动作。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于多模态、评测基准、机器人等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-08-03 · Dongdong An; Pengjie Zhao; Yihao Huang; Wenbing Tang; Ziming He; Jiayi Zhu; Jifeng Ning; Qin Zhao / arXiv</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">视觉-语言-动作（VLA）机器人策略的成功率通常按固定物体摆放统计，但仅仅移动一个无关干扰物，就可能在某些区域让失败率骤升。论文把这类区域称为“位置盲区”，并给出发现与修复方法。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在两个基准上的 5 个主流 VLA 策略中都普遍存在位置盲区，失败率最高 0.58；搜索策略平均 F1 达 0.678，比随机搜索和自适应采样高 0.268 和 0.178；针对性微调使整体失败率下降 40.00%–85.19%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把工作空间划成网格，用单侧对数似然比检验定位风险显著升高的格子，再在这些区域采集示范、用 LoRA 微调策略。</span></div>
+<div class="score-reason">评分依据：研究 VLA 机器人策略的鲁棒性评测与修复，与端侧推理部署关系较远（相关度 2）。黑盒发现加定向微调的框架实用（贡献 5）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.01573" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

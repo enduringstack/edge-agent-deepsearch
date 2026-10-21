@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Architectural Implications of Agentic AI Workflows</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Jirong Yang; Peizhe Liu; Chaojie Zhang; Jovan Stojkovic / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Agentic AI 正在数据中心兴起，但其架构影响尚未被探索。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、云端serving、GPU等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-08-05 · Jirong Yang; Peizhe Liu; Chaojie Zhang; Jovan Stojkovic / arXiv</div>
+<div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:调度服务</span><span class="tag">方向:云端serving</span><span class="tag">方向:工具调用</span><span class="tag">硬件:CPU</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">首次从计算机体系结构角度刻画数据中心里的智能体 AI 工作负载：基于微软 Azure 生产环境研究和开源框架对照实验，并据此做出原型服务器调度系统 Agora。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">研究发现智能体执行碎片化且异构，编排与工具调用跑在 CPU 上、CPU 处于关键路径，负载平时低而突发尖峰。原文称 Agora 提升了 CPU 和 GPU 利用率与单机吞吐，同时保住智能体尾延迟。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">Agora 在 CPU 空闲时把核借给同机的吞吐型任务，并防护工具调用尖峰；在每块 GPU 上超额放置更多智能体、预取下一个智能体状态来隐藏换入延迟；按角色划分 CPU 核并做亲和性调度以恢复局部性。</span></div>
+<div class="score-reason">评分依据：研究对象是数据中心服务器上的智能体工作流，不涉及端侧设备，相关度低；但关于智能体运行时中 CPU 在关键路径、工具调用造成算力空转的结论，对设计端侧智能体运行时有借鉴，且有生产数据支撑。德州大学奥斯汀分校主导，微软 Azure 参与。 作者机构依据：arXiv PDF 首页署名 Microsoft（PDF 首页作者 3（Chaojie Zhang）署名 Microsoft Azure；其余作者为德州大学奥斯汀分校）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04458" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

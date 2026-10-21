@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PACE: Adaptive Budget Allocation for Time-Efficient Embodied Planning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-04 · Yuchen Huang; Xijiang Ying; Zhenhua Ma; Xiaxiang Yuan; Zhijie Gao; Jiayi Huang; Ruichi Mao; Jiazheng Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">PACE 为具身规划动态分配推理预算：简单步骤少算，困难步骤再增加思考，从而减少机器人规划的等待时间。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于评测基准、机器人、长上下文推理等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-08-04 · Yuchen Huang; Xijiang Ying; Zhenhua Ma; Xiaxiang Yuan; Zhijie Gao; Jiayi Huang; Ruichi Mao; Jiazheng Zhang / arXiv</div>
+<div class="tags"><span class="vendor-tag">ZTE</span><span class="tag">方向:规划推理</span><span class="tag">应用:机器人</span><span class="tag">方向:量化</span><span class="tag">模型:Qwen</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">带思考能力的大模型做具身规划时，每次规划常要等很久才能开始动作。PACE 让模型边想边做，并按动作执行所需时间动态分配思考 token 预算。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Robotouille 基准上用 Qwen3-8B-AWQ，成功率 10%，比 ReAct+Think 基线提升 67%；思考时间比不限预算快 6.9 倍，66.8% 的思考时间被藏进动作执行窗口。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">交错式思考-行动架构把推理和动作执行流水化；动态预算分配器根据当前动作预计耗时（如导航 3 秒）和模型实测生成速度，决定下一步最多能想多少 token。</span></div>
+<div class="score-reason">评分依据：直接针对具身智能体规划的时延瓶颈，用 4 比特量化的 8B 模型在单张 RTX 3090 上运行，思路可迁移到机器人端侧部署；但评测只在仿真环境中进行，因此不算端侧智能体。机构依据：arXiv 论文首页全部作者署名 ZTE Corporation。 作者机构依据：arXiv PDF 首页署名 ZTE（arXiv 论文首页全部作者署名 ZTE Corporation（上海），通讯作者使用 zte.com.cn 邮箱）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.03034" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

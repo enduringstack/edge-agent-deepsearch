@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Latency-Tolerant Cloud-Edge Collaborative Vision-Language-Action Models via Emergent Representational Specialization</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-01 · Daojie Peng; Fulong Ma; Bingtao Wang; Sheng Wang; Jun Ma / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:端云协同</span><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这项工作解决十亿参数视觉语言动作模型在移动机器人上的部署冲突：复杂语义推理适合云端 GPU，而实时动作必须靠近机器人执行。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：明确涉及端侧或资源受限设备，相关性较高；主要贡献集中在多模态、端云协同、评测基准。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-01 · Daojie Peng; Fulong Ma; Bingtao Wang; Sheng Wang; Jun Ma / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">CloudEdgeVLA 让大参数视觉语言动作模型在移动机器人上端云协同运行：云端负责较慢的语义理解，机器人端的轻量模块结合最新画面实时出动作，不必等待网络。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在四组 LIBERO 任务、40 步均匀随机延迟窗口下仍保持 63.8%-78.0% 的成功率，而 VLASH 最高只有 6.4%，单路径基线最高 3.0%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">训练时把当前帧和随机延迟帧配对到同一个当前动作目标，促使云端表示只保留变化缓慢的任务信息，端侧头负责根据当前画面做状态修正，从而在控制回路中去掉阻塞式同步。</span></div>
+<div class="score-reason">评分依据：端侧承担实时控制、云端提供语义特征，是典型的端云协同部署设计，抗网络延迟效果突出；但它是视觉语言动作策略而非智能体闭环，且只在仿真中评测。作者来自香港科技大学（广州）等高校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.00569" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

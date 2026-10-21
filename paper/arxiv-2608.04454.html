@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Beyond Global Routing Aggregation: Phase-Aware Expert Merging for MoE Vision-Language Models</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Hongyu Zhang; Cheng Yan; Xiang Xia; Wuyang Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:MoE</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">MoE 视觉语言模型（MoE-VLM）以稀疏专家激活提升容量，但部署需存储完整专家池…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、多模态、MoE等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-05 · Hongyu Zhang; Cheng Yan; Xiang Xia; Wuyang Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:多模态</span><span class="tag">方向:剪枝稀疏</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">混合专家视觉语言模型（MoE-VLM）部署时要存下整个专家池，很占内存。RoleMerge 用免训练的方式把功能相近的专家合并，减少要存的专家数量。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在三个模型和多个基准上，同等专家保留比例下比其他专家合并方法保留更多原模型性能，六任务宏平均相对提升最高 9.6%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按推理阶段（图像上下文、问题、回答三类词元）分别归一化统计路由信息，给每个专家画一张“阶段角色画像”，只合并画像相容的专家及对应路由条目，并保留回答阶段专家的区分度。</span></div>
+<div class="score-reason">评分依据：免训练压缩 MoE 多模态模型的专家存储，对内存受限设备部署 MoE-VLM 有直接迁移价值，但未做端侧实测；按推理阶段区分专家角色的视角有新意。作者来自中国科学技术大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.04454" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

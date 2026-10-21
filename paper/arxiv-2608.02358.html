@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ScrambleToolBench: Agents Search Exhaustively Even When Their Own Map Points to the Next Step</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-03 · Vernon Toh; Navonil Majumder; Zhengyuan Liu; Nancy F. Chen; Soujanya Poria / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">要在开放世界环境中稳健运作，自主 agent 应能仅通过交互推断陌生系统的行为，即使在…</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于记忆、工具调用、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-03 · Vernon Toh; Navonil Majumder; Zhengyuan Liu; Nancy F. Chen; Soujanya Poria / arXiv</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:工具调用</span><span class="tag">方向:记忆</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">现有工具调用评测会把工具的语义说明直接给智能体，智能体可以靠先验知识作答。ScrambleToolBench 是一个打乱了工具语义的交互式终端基准，要求智能体只靠试错摸清工具行为，并应对映射漂移等动态变化。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在映射漂移、随机动作失败和执行时间窗口等挑战叠加后，主流模型的总体完成率从 93% 跌到 3%；增加推理时思考只会放大暴力穷举，加入持久记忆能减少累积错误但仍无法高效推断结构变化。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">去掉工具名称等语义线索，设置连续任务课程，并引入映射漂移、随机失败和时间窗口三类动态挑战，考察智能体能否修正自己的假设。</span></div>
+<div class="score-reason">评分依据：评测智能体在陌生工具上的探索和适应能力，与智能体运行时相关但不涉及端侧，相关度低；基准设计揭示了“信念惯性”这一短板，贡献中等。作者来自新加坡南洋理工大学和 A*STAR。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.02358" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>
