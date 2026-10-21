@@ -1,11 +1,12 @@
 """Re-curate an already-published old-schema week with the current curation spec.
 
-  python old_week.py export LABEL [--all]   -> research_runs/backfill/old-LABEL/{run.json,batches/input_N.json}
+  python old_week.py export LABEL [--all | --unreported]   -> research_runs/backfill/old-LABEL/{run.json,batches/input_N.json}
   python old_week.py apply LABEL            -> rewrites data/weeks/LABEL.json from batches/out_*.json
 
 Old weeks (06-26 ~ 07-31) predate edge-agent scope and recommendation copy, and some
 were auto-converted with English stub abstracts and keyword-guessed companies. Only
-items without an edge_agent_scope are exported (``--all`` exports every item). Sources
+items without an edge_agent_scope are exported (``--all`` exports every item;
+``--unreported`` exports the items whose effects were left as 未报告). Sources
 and dates were verified when the week was published and are kept as-is; a curated drop
 removes the item unless the week's summary features it.
 """
@@ -29,10 +30,13 @@ def run_dir(label):
     return Path(__file__).resolve().parent / f"old-{label}"
 
 
-def export(label, everything):
+def export(label, mode):
     rec = weeks_mod.read_archive(label)
+    pick = {"all": lambda p: True,
+            "unreported": lambda p: p.get("effects") == "未报告",
+            "unscoped": lambda p: "edge_agent_scope" not in p}[mode]
     papers = [{**p, "candidate_source": SOURCES.get(p["id"].split("-")[0], "arxiv")}
-              for p in rec["papers"] if everything or "edge_agent_scope" not in p]
+              for p in rec["papers"] if pick(p)]
     d = run_dir(label)
     d.mkdir(exist_ok=True)
     (d / "run.json").write_text(json.dumps({"papers": papers}, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -78,4 +82,5 @@ def apply(label):
 
 if __name__ == "__main__":
     cmd, label = sys.argv[1], sys.argv[2]
-    export(label, "--all" in sys.argv) if cmd == "export" else apply(label)
+    mode = "all" if "--all" in sys.argv else "unreported" if "--unreported" in sys.argv else "unscoped"
+    export(label, mode) if cmd == "export" else apply(label)
