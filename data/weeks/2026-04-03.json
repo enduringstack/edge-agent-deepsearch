@@ -6583,6 +6583,42 @@
       "recommendation_reason": "",
       "arxiv_date_basis": "submitted",
       "arxiv_revision_note": ""
+    },
+    {
+      "id": "github-openbmb-voxcpm-2.0.0",
+      "title": "OpenBMB/VoxCPM: VoxCPM 2 Released",
+      "title_zh": "",
+      "abstract": "面壁智能 OpenBMB 开源语音合成模型 VoxCPM2：2B 参数，支持 30 种语言、用一句话描述生成新音色和可控声音克隆，直接输出 48kHz 音频，权重与代码按 Apache-2.0 可商用。",
+      "effects": "Seed-TTS-eval 上英文 WER 1.84%、中文 CER 0.97%，说话人相似度 75.3%/79.5%；RTX 4090 上实时率约 0.30，用 Nano-vLLM 加速约 0.13，显存约 8GB。",
+      "mechanism": "不做离散语音分词，以 MiniCPM-4 为主干，用扩散自回归结构直接在 AudioVAE V2 的连续隐空间生成语音，语言模型侧 token 率降到 6.25Hz，并在解码端内置超分直出 48kHz。",
+      "paper_url": "https://github.com/OpenBMB/VoxCPM/releases/tag/2.0.0",
+      "date": "2026-04-06",
+      "score": 11,
+      "score_relevance": 5,
+      "score_contribution": 6,
+      "score_reason": "2B 规模、约 8GB 显存即可本地运行，社区已有 GGUF/ONNX 和 Apple 神经引擎移植，对端侧语音合成有直接迁移价值；官方实测仍以 RTX 4090 为主，没有手机或 NPU 数据。多语种、音色设计与 48kHz 直出在开源 TTS 中有明显进步。",
+      "source_tier": "开源大项目",
+      "open_source": true,
+      "tags": [
+        "应用:语音",
+        "方向:模型架构",
+        "方向:多模态",
+        "模型:MiniCPM"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "OpenBMB",
+      "vendors": "",
+      "affiliation_evidence_url": "",
+      "candidate_source": "",
+      "candidate_ref": "",
+      "venue": "GitHub",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": ""
     }
   ],
   "weekly": {

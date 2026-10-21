@@ -5740,10 +5740,45 @@
       "recommendation_reason": "",
       "arxiv_date_basis": "submitted",
       "arxiv_revision_note": ""
+    },
+    {
+      "id": "arxiv-2602.19000",
+      "title": "MagicAgent: Towards Generalized Agent Planning",
+      "title_zh": "",
+      "abstract": "荣耀联合复旦大学发布面向通用智能体规划的 MagicAgent 系列基础模型：用合成数据覆盖任务分解、工具调用规划、多约束排程等多类规划任务，再分两阶段训练缓解多任务冲突。",
+      "effects": "MagicAgent-32B 与 MagicAgent-30B-A3B 在 Worfbench 上达 75.1%、BFCL-v3 上达 86.9%，在多个开源基准和自建 MagicEval 上明显优于其他 100B 以下模型。",
+      "mechanism": "轻量可扩展的合成轨迹框架生成分层任务分解、工具增强规划、多约束排程、流程编排和长程工具执行数据；训练先做监督微调，再在静态数据与动态环境上做多目标强化学习。",
+      "paper_url": "https://arxiv.org/abs/2602.19000",
+      "date": "2026-02-22",
+      "score": 11,
+      "score_relevance": 5,
+      "score_contribution": 6,
+      "score_reason": "手机厂商自研的智能体规划基础模型，是荣耀 YOYO 等系统级智能体的模型侧基础，但论文只给服务器端评测、未说明端侧部署，端侧相关度中等。作者机构依据：arXiv PDF 首页署名 Honor（第 1 机构为 Honor Device Co., Ltd，第 2 机构为复旦大学）。",
+      "source_tier": "公司项目",
+      "open_source": false,
+      "tags": [
+        "方向:规划推理",
+        "方向:工具调用",
+        "模型:MagicAgent"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Xuhui Ren; Shaokang Dong; Chen Yang; Qing Gao; Yunbin Zhao; Yongsheng Liu; Xinwei Geng; Xiang Li",
+      "vendors": "Honor",
+      "affiliation_evidence_url": "https://arxiv.org/pdf/2602.19000",
+      "candidate_source": "",
+      "candidate_ref": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": ""
     }
   ],
   "weekly": {
-    "overview": "本周端侧 AI 动态（02-20~02-26）：手机端智能体接口与旗舰机同时落地。三星发布 Galaxy S26，把“智能体”作为旗舰机核心卖点，定制骁龙 8 Elite Gen 5 的 NPU 性能提升 39%，Gemini 与新版 Bixby 可跨 App 执行多步任务（原文未说明模型在本地运行）；谷歌同期推出 AppFunctions，让应用把功能暴露成系统级智能体工具并在手机本地执行，S26 首发；AI Edge Gallery 加入端侧函数调用，2.7 亿参数的 FunctionGemma 在手机上完全离线完成工具调用，Pixel 7 Pro CPU 上解码 142 token/s，应用同时上架 iOS；设备端 Gemini 反诈检测扩展到更多机型。推理栈方面，OpenVINO 2026.0 让 NPU 支持投机解码与本机编译，新增 Qwen2.5-1.5B、MiniCPM-o 等小模型的 NPU 支持；高通开源 Hexagon NPU 的 MLIR 编译栈，Triton 内核可直接编到 NPU。研究侧，Mobile-O 用 0.5B 模型同时做图像理解与生成，在 iPhone 17 Pro 上约 3 秒出一张 512 图；WildOS 让 Spot 机器人在野外凭一句话描述远距离找目标，记忆与规划全在机载 Jetson 上；树莓派 Zero 2W 上的分布式提示缓存把首 token 时延平均降 93%；三星电视端多语种字幕识别已商用，七种语言准确率超 97%、平均 150 毫秒。社区方面，llama.cpp 背后的 ggml.ai 团队加入 Hugging Face（llama.cpp 保持 MIT 开源），Qwen3.5 中型系列（含 35B-A3B）发布后成为本地部署讨论主线。",
+    "overview": "本周端侧 AI 动态（02-20~02-26）：手机端智能体接口与旗舰机同时落地。三星发布 Galaxy S26，把“智能体”作为旗舰机核心卖点，定制骁龙 8 Elite Gen 5 的 NPU 性能提升 39%，Gemini 与新版 Bixby 可跨 App 执行多步任务（原文未说明模型在本地运行）；谷歌同期推出 AppFunctions，让应用把功能暴露成系统级智能体工具并在手机本地执行，S26 首发；AI Edge Gallery 加入端侧函数调用，2.7 亿参数的 FunctionGemma 在手机上完全离线完成工具调用，Pixel 7 Pro CPU 上解码 142 token/s，应用同时上架 iOS；设备端 Gemini 反诈检测扩展到更多机型。推理栈方面，OpenVINO 2026.0 让 NPU 支持投机解码与本机编译，新增 Qwen2.5-1.5B、MiniCPM-o 等小模型的 NPU 支持；高通开源 Hexagon NPU 的 MLIR 编译栈，Triton 内核可直接编到 NPU。研究侧，Mobile-O 用 0.5B 模型同时做图像理解与生成，在 iPhone 17 Pro 上约 3 秒出一张 512 图；WildOS 让 Spot 机器人在野外凭一句话描述远距离找目标，记忆与规划全在机载 Jetson 上；树莓派 Zero 2W 上的分布式提示缓存把首 token 时延平均降 93%；三星电视端多语种字幕识别已商用，七种语言准确率超 97%、平均 150 毫秒。社区方面，llama.cpp 背后的 ggml.ai 团队加入 Hugging Face（llama.cpp 保持 MIT 开源），Qwen3.5 中型系列（含 35B-A3B）发布后成为本地部署讨论主线。 另据媒体报道（尚无合规一手来源，仅供参考）：微软在美国启动“AI PC 元年”营销，把 Recall 等端侧 AI 功能作为 Windows 11 AI+ PC 卖点；开发者项目 ntransformer 用 NVMe 直连 GPU，在单张 RTX 3090 上跑 Llama 3.1 70B。",
     "highlights": [
       {
         "url": "https://android-developers.googleblog.com/2026/02/the-intelligent-os-making-ai-agents.html",

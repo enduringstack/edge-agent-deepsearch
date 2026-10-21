@@ -5702,10 +5702,45 @@
       "recommendation_reason": "",
       "arxiv_date_basis": "submitted",
       "arxiv_revision_note": ""
+    },
+    {
+      "id": "vendor-microsoft-announcing-windows-11-insider-preview-build-26300-8142-dev-c",
+      "title": "Announcing Windows 11 Insider Preview Build 26300.8142 (Dev Channel)",
+      "title_zh": "",
+      "abstract": "微软在 Windows 11 开发版 26300.8142 里给任务管理器加上 NPU 监测，第一次能在系统自带工具里看到每个进程占用了多少 NPU，方便排查 Copilot+ PC 上端侧 AI 负载。",
+      "effects": "未报告",
+      "mechanism": "进程、用户、详细信息页新增可选的 NPU 和 NPU 引擎列，详细信息页另加 NPU 专用内存与共享内存列；集成在 GPU 里的神经引擎也会显示在性能页。",
+      "paper_url": "https://blogs.windows.com/windows-insider/2026/03/30/announcing-windows-11-insider-preview-build-26300-8142-dev-channel/",
+      "date": "2026-03-30",
+      "score": 7,
+      "score_relevance": 5,
+      "score_contribution": 2,
+      "score_reason": "这是 PC 端侧推理的系统级可观测性补齐，开发者和用户能直接看到 NPU 占用与内存，属于端侧 AI 基础设施；但只是监测功能更新，没有新的推理能力或性能数据，贡献较低。",
+      "source_tier": "官方动态",
+      "open_source": false,
+      "tags": [
+        "方向:编译部署",
+        "方向:能耗功耗",
+        "硬件:NPU"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Windows Insider Program Team",
+      "vendors": "Microsoft",
+      "affiliation_evidence_url": "",
+      "candidate_source": "",
+      "candidate_ref": "",
+      "venue": "Windows Insider Blog",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": ""
     }
   ],
   "weekly": {
-    "overview": "本周端侧 AI 动态（03-27~04-02）：主线是 04-02 发布的 Gemma 4，这是一次把端侧模型和端侧智能体一起推出的发布。Gemma 4 家族含 E2B、E4B、26B MoE（激活 3.8B）和 31B 稠密四个尺寸，Apache 2.0 开源，E2B/E4B 面向手机与 Jetson 离线运行、原生支持函数调用与音频输入；同日谷歌在 AI Edge Gallery 推出 Agent Skills，多步智能体流程完全在手机本地运行，E2B 在部分设备上内存低于 1.5GB，高通 Dragonwing IQ8 NPU 上解码 31 token/s；Gemma 4 还成为 Gemini Nano 4 的底座，AICore 预览版比上一代快至 4 倍、最多省电 60%；Android Studio 的 Agent Mode 可经 Ollama/LM Studio 在开发机本地跑 Gemma 4（E2B 需 8GB 内存）；英伟达同步给出 Jetson 与 RTX 部署指南。端侧框架方面，ExecuTorch 1.2 把 Cortex-M 列为一等目标并加入高通 CDSP 直连。研究侧手机端生成模型密集：字节 DreamLite 在小米 14 上 1 秒内生成或编辑 1024 图；三星 QUAD 在 Galaxy S25 NPU 上用共享底座加运行时切换 LoRA，内存最多降 6 倍；三星 EdgeDiT 把扩散 Transformer 端侧时延最多降 1.65 倍；Galaxy S25 Ultra 上的能耗实测发现更省内存的量化格式几乎不省电。社区方面，Gemma 4 发布帖在 HN 获 1812 分，PrismML 的 1 比特 Bonsai 8B（1.15GB）在 iPhone 17 Pro Max 上约 44 token/s，TurboQuant 类 KV 缓存量化被 llama.cpp 与 MNN 跟进。",
+    "overview": "本周端侧 AI 动态（03-27~04-02）：主线是 04-02 发布的 Gemma 4，这是一次把端侧模型和端侧智能体一起推出的发布。Gemma 4 家族含 E2B、E4B、26B MoE（激活 3.8B）和 31B 稠密四个尺寸，Apache 2.0 开源，E2B/E4B 面向手机与 Jetson 离线运行、原生支持函数调用与音频输入；同日谷歌在 AI Edge Gallery 推出 Agent Skills，多步智能体流程完全在手机本地运行，E2B 在部分设备上内存低于 1.5GB，高通 Dragonwing IQ8 NPU 上解码 31 token/s；Gemma 4 还成为 Gemini Nano 4 的底座，AICore 预览版比上一代快至 4 倍、最多省电 60%；Android Studio 的 Agent Mode 可经 Ollama/LM Studio 在开发机本地跑 Gemma 4（E2B 需 8GB 内存）；英伟达同步给出 Jetson 与 RTX 部署指南。端侧框架方面，ExecuTorch 1.2 把 Cortex-M 列为一等目标并加入高通 CDSP 直连。研究侧手机端生成模型密集：字节 DreamLite 在小米 14 上 1 秒内生成或编辑 1024 图；三星 QUAD 在 Galaxy S25 NPU 上用共享底座加运行时切换 LoRA，内存最多降 6 倍；三星 EdgeDiT 把扩散 Transformer 端侧时延最多降 1.65 倍；Galaxy S25 Ultra 上的能耗实测发现更省内存的量化格式几乎不省电。社区方面，Gemma 4 发布帖在 HN 获 1812 分，PrismML 的 1 比特 Bonsai 8B（1.15GB）在 iPhone 17 Pro Max 上约 44 token/s，TurboQuant 类 KV 缓存量化被 llama.cpp 与 MNN 跟进。 另据媒体报道（尚无合规一手来源，仅供参考）：Apple Intelligence 03-31 意外在国行 iPhone 上线后被撤回，已下载的约 9.5GB 本地模型被删除，苹果称仍在推进国内落地；华为小艺 Claw 03-31 起在鸿蒙手机开启众测（至 04-07），系统级智能体可主动推送健康报告、制定计划，体验包按 AI 点数计费。",
     "highlights": [
       {
         "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",

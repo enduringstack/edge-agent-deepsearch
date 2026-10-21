@@ -5536,10 +5536,45 @@
       "recommendation_reason": "",
       "arxiv_date_basis": "submitted",
       "arxiv_revision_note": ""
+    },
+    {
+      "id": "arxiv-2602.14974",
+      "title": "DM0: An Embodied-Native Vision-Language-Action Model towards Physical AI",
+      "title_zh": "",
+      "abstract": "原力灵机（Dexmal）与阶跃星辰联合推出约 2B 参数的具身视觉-语言-动作模型 DM0，从预训练阶段就混入网页、自动驾驶和机器人交互数据，同时支持操作和导航。",
+      "effects": "RoboChallenge Table30 的 30 项真机任务上，专用版平均成功率 62.0%，比此前最好的 GigaBrain-0.1 高 10 个百分点以上；通用版平均 37.3%，大幅领先 π0.5 通用版；参数约 2B，优于 3B–5B 的开源基线。",
+      "mechanism": "以 Qwen3-1.7B 为语言底座加感知编码器构成视觉语言模型，上面接流匹配动作专家；具身数据的动作梯度不回传给视觉语言模型以保留通用能力，并用“具身空间脚手架”生成空间思维链来约束动作空间。",
+      "paper_url": "https://arxiv.org/abs/2602.14974",
+      "date": "2026-02-16",
+      "score": 11,
+      "score_relevance": 5,
+      "score_contribution": 6,
+      "score_reason": "约 2B 参数的小尺寸 VLA，在多种真实机械臂上评测，对机器人端侧部署有参考价值；但属于动作模型，没有规划、记忆或工具闭环，也未报告机载推理设备和时延。作者机构依据：arXiv PDF 首页署名“DM0 Team, Dexmal & StepFun”，两家公司均直接出现在署名中。",
+      "source_tier": "公司项目",
+      "open_source": true,
+      "tags": [
+        "方向:多模态",
+        "应用:机器人",
+        "模型:Qwen"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "DM0 Team; Tiancai Wang",
+      "vendors": "Dexmal; StepFun",
+      "affiliation_evidence_url": "https://arxiv.org/pdf/2602.14974",
+      "candidate_source": "",
+      "candidate_ref": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": ""
     }
   ],
   "weekly": {
-    "overview": "本周端侧 AI 动态（02-13~02-19）：春节周，国内厂商几乎没有发布，信号主要来自研究侧和开源社区。阿里在 02-17 开源原生视觉语言模型 Qwen3.5（397B 总参、17B 激活，线性注意力与稀疏 MoE 混合），微软发布自托管智能体 OpenClaw 的安全部署指南，建议只在隔离虚拟机中、用低权限凭据运行，直接关系到 PC 上的本地智能体。研究侧的端侧智能体与端侧推理工作集中：Apple M4 Pro 笔记本上，把每个智能体的 KV 缓存以 4 比特持久化到硬盘，智能体切换的首字时延最多降 136 倍；高通展示手表传感驱动的离线主动助手，任务编排与 Qwen2.5 小模型决策都在 Dragonwing 边缘盒子的 NPU 上运行；RUVA 在 Pixel 8 Pro 上本地构建可精确删除的个人记忆图谱，单跳检索 38 毫秒；视障导盲杖 PISHYAR 在树莓派 5 上完成路径规划、避障与工具调度。推理基础件方面，FlashMem 在 OnePlus 12 上按需流式加载权重，内存降 2–8.4 倍、比主流端侧框架快 1.7–75 倍；MeSP 在 iPhone 17 Pro 上做 LoRA 微调平均省内存 49%；三星 TriGen 端侧 NPU 架构跑大模型提速 2.73 倍。社区方面，同一个 INT8 模型在 5 款骁龙芯片上准确率从 91.8% 跌到 71.2% 的实测引发讨论，OpenClaw 作者加入 OpenAI，GPT-OSS 20B 在浏览器 WebGPU 上本地运行约 60 token/s。",
+    "overview": "本周端侧 AI 动态（02-13~02-19）：春节周，国内厂商几乎没有发布，信号主要来自研究侧和开源社区。阿里在 02-17 开源原生视觉语言模型 Qwen3.5（397B 总参、17B 激活，线性注意力与稀疏 MoE 混合），微软发布自托管智能体 OpenClaw 的安全部署指南，建议只在隔离虚拟机中、用低权限凭据运行，直接关系到 PC 上的本地智能体。研究侧的端侧智能体与端侧推理工作集中：Apple M4 Pro 笔记本上，把每个智能体的 KV 缓存以 4 比特持久化到硬盘，智能体切换的首字时延最多降 136 倍；高通展示手表传感驱动的离线主动助手，任务编排与 Qwen2.5 小模型决策都在 Dragonwing 边缘盒子的 NPU 上运行；RUVA 在 Pixel 8 Pro 上本地构建可精确删除的个人记忆图谱，单跳检索 38 毫秒；视障导盲杖 PISHYAR 在树莓派 5 上完成路径规划、避障与工具调度。推理基础件方面，FlashMem 在 OnePlus 12 上按需流式加载权重，内存降 2–8.4 倍、比主流端侧框架快 1.7–75 倍；MeSP 在 iPhone 17 Pro 上做 LoRA 微调平均省内存 49%；三星 TriGen 端侧 NPU 架构跑大模型提速 2.73 倍。社区方面，同一个 INT8 模型在 5 款骁龙芯片上准确率从 91.8% 跌到 71.2% 的实测引发讨论，OpenClaw 作者加入 OpenAI，GPT-OSS 20B 在浏览器 WebGPU 上本地运行约 60 token/s。 另据媒体报道（尚无合规一手来源，仅供参考）：阿里云通义推出可本地或云端部署的个人助理 CoPaw（基于 AgentScope），对标 OpenClaw；龙芯 3B6000M 小盒子完成 OpenClaw 本地化部署，数据处理全在设备端；苹果随 iOS/macOS 26.4 beta（02-16）换上新版端侧基础模型，改进指令遵循与工具调用，并新增 token 计数与上下文长度 API，开发者需重测提示词；ESET 发现安卓恶意软件 PromptSpy 运行时调用 Gemini 解析屏幕以实现持久化，手机上的 AI 屏幕理解开始被恶意利用。",
     "highlights": [
       {
         "url": "https://arxiv.org/abs/2603.04428",

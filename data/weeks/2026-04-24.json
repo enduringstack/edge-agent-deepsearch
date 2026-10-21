@@ -6866,10 +6866,46 @@
       "recommendation_reason": "",
       "arxiv_date_basis": "submitted",
       "arxiv_revision_note": ""
+    },
+    {
+      "id": "vendor-qwen-bmw-group-china-and-alibaba-redefine-the-ai-voice-interactio",
+      "title": "BMW Group China and Alibaba Redefine the AI Voice Interaction in Intelligent Cockpit with Debut of Qwen-Powered AI Agents in China",
+      "title_zh": "",
+      "abstract": "宝马在北京车展首发基于通义千问的座舱智能个人助理，带出行伴侣、用车专家、通用知识三个智能体，新世代 iX3 长轴距版首搭、新 7 系随后跟进。",
+      "effects": "未报告（官方仅称用车专家智能体接入超过 20 万条宝马服务知识条目，复杂场景可做到毫秒级响应）。",
+      "mechanism": "三层架构：阿里云提供基础设施，千问模型经百炼平台调用，再由斑马元神 AI 把能力接进车机硬件，出行伴侣智能体负责多条件规划并执行。",
+      "paper_url": "https://www.alibabacloud.com/blog/603067",
+      "date": "2026-04-24",
+      "score": 6,
+      "score_relevance": 3,
+      "score_contribution": 3,
+      "score_reason": "车端座舱智能体的量产落地，但官方说明模型经阿里云百炼平台调用，没有车端本地推理的证据，端侧相关度低；属于产品集成，没有新方法。",
+      "source_tier": "官方动态",
+      "open_source": false,
+      "tags": [
+        "方向:规划推理",
+        "方向:端云协同",
+        "应用:语音",
+        "模型:Qwen"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Claire Mo",
+      "vendors": "Qwen",
+      "affiliation_evidence_url": "",
+      "candidate_source": "",
+      "candidate_ref": "",
+      "venue": "Alibaba Cloud Blog",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": ""
     }
   ],
   "weekly": {
-    "overview": "本周端侧 AI 动态（04-24~04-30）：大模型侧是开源权重的大周，DeepSeek-V4 预览版开源（V4-Flash 总参 284B、激活 13B，默认百万上下文），阿里云发布 Qwen3.6-27B 稠密模型、编码成绩追平上一代 397B MoE，英伟达开放 30B 总参、3B 激活的全模态模型 Nemotron 3 Nano Omni 并给出 Jetson Thor 部署路径——这些都是端侧和本地部署的上游。真正落到设备上的有两条：联发科发布主动式智能座舱方案，3nm 座舱平台 C-X1 提供 400 TOPS，多个大模型同时在车端运行，由车上的编排器决定哪些任务上云，官方称大模型解码带宽需求降到原来的 10%；高通给出在 Arduino UNO Q、Rubik Pi 3 和骁龙 PC 上常驻运行 OpenClaw/Hermes 智能体的官方教程，把 4GB 内存的开发板当作隔离数据的硬件沙箱。研究侧以真机实测见长：机器人 VLA 模型首次在 Jetson Orin/Thor、昇腾 310 系列和 Intel Arc 上横向实测，指出骨干受算力限制、动作头受访存限制，据此在边缘 NPU 上最高提速 6 倍；四种单板机（树莓派 5、加 Hailo-10H、Jetson Orin Nano、AX630C）跑大模型的吞吐、功耗、体积对比给出加速器最高 40 倍能效；免小模型的提示压缩 CORE 在华为 Nova 12 手机上比 LLMLingua-2 节能 95.74%；EdgeSpike 在 64 个 Cortex-M 节点上做了 7 个月野外部署。社区方面，郭明錤称 OpenAI 正与联发科、高通合作开发 AI 代理手机芯片（未获官方确认），PC 端“断网用本地模型写代码”成为讨论主线。",
+    "overview": "本周端侧 AI 动态（04-24~04-30）：大模型侧是开源权重的大周，DeepSeek-V4 预览版开源（V4-Flash 总参 284B、激活 13B，默认百万上下文），阿里云发布 Qwen3.6-27B 稠密模型、编码成绩追平上一代 397B MoE，英伟达开放 30B 总参、3B 激活的全模态模型 Nemotron 3 Nano Omni 并给出 Jetson Thor 部署路径——这些都是端侧和本地部署的上游。真正落到设备上的有两条：联发科发布主动式智能座舱方案，3nm 座舱平台 C-X1 提供 400 TOPS，多个大模型同时在车端运行，由车上的编排器决定哪些任务上云，官方称大模型解码带宽需求降到原来的 10%；高通给出在 Arduino UNO Q、Rubik Pi 3 和骁龙 PC 上常驻运行 OpenClaw/Hermes 智能体的官方教程，把 4GB 内存的开发板当作隔离数据的硬件沙箱。研究侧以真机实测见长：机器人 VLA 模型首次在 Jetson Orin/Thor、昇腾 310 系列和 Intel Arc 上横向实测，指出骨干受算力限制、动作头受访存限制，据此在边缘 NPU 上最高提速 6 倍；四种单板机（树莓派 5、加 Hailo-10H、Jetson Orin Nano、AX630C）跑大模型的吞吐、功耗、体积对比给出加速器最高 40 倍能效；免小模型的提示压缩 CORE 在华为 Nova 12 手机上比 LLMLingua-2 节能 95.74%；EdgeSpike 在 64 个 Cortex-M 节点上做了 7 个月野外部署。社区方面，郭明錤称 OpenAI 正与联发科、高通合作开发 AI 代理手机芯片（未获官方确认），PC 端“断网用本地模型写代码”成为讨论主线。 另据媒体报道（尚无合规一手来源，仅供参考）：紫光展锐与华阳通用在北京车展发布基于 A8880 的新一代 AI 座舱平台；面壁智能北京车展升级 SuperMate 端侧座舱方案，主打端侧 Agent 与全模态交互，适配高通、联发科、英特尔、瑞芯微、英伟达、AMD 多芯片平台，预计年底 30 万辆车搭载其端侧模型；芯擎科技北京车展发布 5nm 车规座舱芯片龍鹰二号，称原生支持 7B 以上多模态大模型；OPPO 公布 ColorOS 系统级智能体“小布 Claw”在内测，敏感能力须用户授权，小布记忆可同步；小艺 Claw 04-29 上线“自进化”长期记忆并接入 DeepSeek V4，手机系统级智能体开始学习用户长期偏好；腾讯混元开源 1.25bit 手机离线翻译模型 Hy-MT1.5-1.8B-1.25bit，1.8B 压到约 440MB，可在骁龙 865 手机上离线翻译 33 种语言。",
     "highlights": [
       {
         "url": "https://www.mediatek.com/press-room/mediatek-showcases-its-active-intelligent-cockpit-solution-ushering-the-industry-into-new-era-of-ai-defined-vehicles",

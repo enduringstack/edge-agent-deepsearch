@@ -7482,10 +7482,44 @@
       "recommendation_reason": "这一版同时补上苹果设备的 Metal 推理委托、32 位 armv7 支持和 LiteRT NPU 示例，做手机和嵌入式端模型部署的团队可以直接据此评估新后端。",
       "arxiv_date_basis": "submitted",
       "arxiv_revision_note": ""
+    },
+    {
+      "id": "vendor-zhipu-glm-ocr-",
+      "title": "GLM-OCR 图文解析模型上线",
+      "title_zh": "",
+      "abstract": "智谱上线 0.9B 参数的轻量文档识别模型 GLM-OCR，专门做图片和 PDF 的文字、表格、公式解析，并开源了模型权重，小到可以在本地部署。",
+      "effects": "官方更新日志未给出数字；同站模型介绍页称发布时在 OmniDocBench V1.5 上得 94.62 分，处理 PDF 的吞吐为 1.86 页/秒、图片 0.67 张/秒。",
+      "mechanism": "采用自研 CogViT 视觉编码器加 GLM-0.5B 语言解码器的编码器-解码器结构，视觉侧先用数十亿图文对做 CLIP 预训练，再针对手写体、表格、印章、竖排等复杂版式优化。",
+      "paper_url": "https://docs.bigmodel.cn/cn/update/new-releases#2026-02-03",
+      "date": "2026-02-03",
+      "score": 9,
+      "score_relevance": 5,
+      "score_contribution": 4,
+      "score_reason": "1B 以下的专用多模态小模型，体量适合本地和端侧文档解析，属于端侧可迁移的小模型工作；官方稿未给端侧实测，方法上是常规编码器-解码器整合，贡献中等偏低。",
+      "source_tier": "官方动态",
+      "open_source": true,
+      "tags": [
+        "方向:多模态",
+        "应用:OCR"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Zhipu",
+      "vendors": "Zhipu",
+      "affiliation_evidence_url": "",
+      "candidate_source": "",
+      "candidate_ref": "",
+      "venue": "Zhipu",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": ""
     }
   ],
   "weekly": {
-    "overview": "本周端侧 AI 动态（01-30~02-05）：小参数、少激活的开源模型密集发布，成为本地部署的新底座。阿里开源 Qwen3-Coder-Next（80B 总参、每次只激活 3B），在 SWE-Bench Pro 上追平激活量大 10–20 倍的模型，定位本地编程智能体；阶跃发布 Step 3.5 Flash（196B 总参、约 11B 激活、256K 上下文），官方点名可在 DGX Spark、M3/M4 Max 与 AMD AI Max+ 395 工作站上本地运行；Mistral 开放 4B 实时语音转写模型 Voxtral Realtime（Apache 2.0），480 毫秒延迟下词错率只比离线模型高 1–2 个点，可直接作端侧语音智能体的前端；Qwen3-ASR 开源，0.6B 版首 token 最快 92 毫秒；小米 HySparse 让 80B MoE 只在 5 层用全注意力，KV 缓存缩小近 10 倍。桌面智能体方面，苹果 Xcode 26.3 内置 Claude Agent 与 Codex 并通过 MCP 开放构建和预览工具，OpenAI 推出 Codex 的 macOS 应用——两者模型都在云端，不计为端侧智能体。研究侧，三星 MeKi 把额外知识存进手机只读存储、推理时查表，1.7B 模型逼近 4B、骁龙 8 Elite 上解码快 2.26 倍；DALI 在 RTX 3090 上做 MoE 的 CPU/GPU 分工，解码比 llama.cpp 平均快 3.97 倍；USS-Nav 让无人机的场景图记忆、探索规划和飞行闭环全部跑在机载 Jetson Orin NX 上。社区方面，Qwen3-Coder-Next 是本地部署讨论主线（单台 DGX Spark 约 43 token/s），iPhone 16 Pro Max 上 MLX 输出乱码引发对手机端数值一致性的关注。",
+    "overview": "本周端侧 AI 动态（01-30~02-05）：小参数、少激活的开源模型密集发布，成为本地部署的新底座。阿里开源 Qwen3-Coder-Next（80B 总参、每次只激活 3B），在 SWE-Bench Pro 上追平激活量大 10–20 倍的模型，定位本地编程智能体；阶跃发布 Step 3.5 Flash（196B 总参、约 11B 激活、256K 上下文），官方点名可在 DGX Spark、M3/M4 Max 与 AMD AI Max+ 395 工作站上本地运行；Mistral 开放 4B 实时语音转写模型 Voxtral Realtime（Apache 2.0），480 毫秒延迟下词错率只比离线模型高 1–2 个点，可直接作端侧语音智能体的前端；Qwen3-ASR 开源，0.6B 版首 token 最快 92 毫秒；小米 HySparse 让 80B MoE 只在 5 层用全注意力，KV 缓存缩小近 10 倍。桌面智能体方面，苹果 Xcode 26.3 内置 Claude Agent 与 Codex 并通过 MCP 开放构建和预览工具，OpenAI 推出 Codex 的 macOS 应用——两者模型都在云端，不计为端侧智能体。研究侧，三星 MeKi 把额外知识存进手机只读存储、推理时查表，1.7B 模型逼近 4B、骁龙 8 Elite 上解码快 2.26 倍；DALI 在 RTX 3090 上做 MoE 的 CPU/GPU 分工，解码比 llama.cpp 平均快 3.97 倍；USS-Nav 让无人机的场景图记忆、探索规划和飞行闭环全部跑在机载 Jetson Orin NX 上。社区方面，Qwen3-Coder-Next 是本地部署讨论主线（单台 DGX Spark 约 43 token/s），iPhone 16 Pro Max 上 MLX 输出乱码引发对手机端数值一致性的关注。 另据媒体报道（尚无合规一手来源，仅供参考）：OpenClaw（原 Clawdbot/Moltbot）定名并走红，本地优先的个人智能体在 Mac mini 与开发板上掀起本地部署热潮；1Password 披露攻击者利用 OpenClaw 的 Skills 文件向 macOS 用户投放恶意软件，本地智能体首次出现大规模供应链攻击；瑞莎 199 元 Cubie A7S 开发板（全志 A733，3 TOPS NPU）面向 OpenClaw 等本地 AI 应用；面壁智能官宣首款 AI 硬件“松果派”：基于 NVIDIA Jetson 的端侧开发板，MiniCPM-V/o 开箱即用。",
     "highlights": [
       {
         "url": "https://www.alibabacloud.com/blog/qwen3-coder-next-pushing-small-hybrid-models-on-agentic-coding_602864",

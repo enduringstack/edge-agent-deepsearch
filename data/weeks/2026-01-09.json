@@ -5943,10 +5943,45 @@
       "recommendation_reason": "把扩散 Transformer 真正搬上手机：0.4B 模型在 iPhone 16 Pro Max 上约 1.8 秒出一张 1024×1024 图，还给了 iPhone 和三星多机型实测时延，做端侧生成式视觉的团队可直接对标。",
       "arxiv_date_basis": "submitted",
       "arxiv_revision_note": ""
+    },
+    {
+      "id": "arxiv-2601.09668",
+      "title": "STEP3-VL-10B Technical Report",
+      "title_zh": "",
+      "abstract": "阶跃星辰开源的 10B 级多模态基础模型，想证明小尺寸模型也能拿到接近前沿大模型的看图理解和推理能力。",
+      "effects": "MMBench 92.2%、MMMU 80.11%、AIME2025 94.43%、MathVision 75.95%；作者称可比肩或超过体量大 10~20 倍的 GLM-4.6V-106B、Qwen3-VL-235B 等模型。端侧设备上的速度与内存未报告。",
+      "mechanism": "把语言对齐的感知编码器与 Qwen3-8B 解码器在 1.2T 多模态数据上全参数联合预训练，再做 1000 多轮强化学习后训练，并用并行协同推理（PaCoRe）在测试时并行提出多个视觉假设再汇总。",
+      "paper_url": "https://arxiv.org/abs/2601.09668",
+      "date": "2026-01-14",
+      "score": 12,
+      "score_relevance": 5,
+      "score_contribution": 7,
+      "score_reason": "10B 级紧凑多模态模型对高端 PC 和边缘设备本地部署有直接参考价值，但论文没有做端侧真机评测（相关度 5）；全参数联合预训练加大规模强化学习，把小模型多模态推理推到很高水平（贡献 7）。作者机构依据：arXiv PDF 首页署名 Multimodal Intelligence Team, StepFun。",
+      "source_tier": "公司项目",
+      "open_source": true,
+      "tags": [
+        "方向:多模态",
+        "方向:规划推理",
+        "模型:Qwen"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Ailin Huang; Chengyuan Yao; Chunrui Han; Fanqi Wan; Hangyu Guo; Haoran Lv; Hongyu Zhou; Jia Wang 等",
+      "vendors": "StepFun",
+      "affiliation_evidence_url": "https://arxiv.org/pdf/2601.09668",
+      "candidate_source": "arxiv",
+      "candidate_ref": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": ""
     }
   ],
   "weekly": {
-    "overview": "本周端侧 AI 动态（01-09~01-15）：最大的行业事件是谷歌与苹果发布联合声明——下一代 Apple 基础模型将基于 Gemini，Apple Intelligence 仍在苹果设备本机与 Private Cloud Compute 上运行。谷歌同周开源 TranslateGemma（4B/12B/27B），官方称 4B 面向手机与边缘推理、12B 可在消费级笔记本运行；Android Studio 的 Agent Mode 可直接在连接的手机上安装应用、看屏幕读日志验证改动，并支持通过 Ollama、LM Studio 接入本地模型；OPPO 联合 Google Cloud 公布新一代 AIOS 路线：系统级记忆层留在手机本地，云端走机密计算的私有计算云。端侧生成侧，高通 ReHyAt 在骁龙 8 Gen4 上把 121 帧视频扩散的单块时延从 4.8 秒降到 0.3 秒，原模型 141 帧以上直接内存溢出；Snap 的 SnapGen++ 让 0.4B 模型在 iPhone 16 Pro Max 上约 1.8 秒生成 1024×1024 图片。模型与内存方面，苹果分层记忆预训练让 160M 模型按需取 18M 记忆参数即可匹敌两倍大小的模型；腾讯 Sherry 把三值模型压到 1.25 比特；ncnn 新版支持 KV cache、RoPE 与 SDPA 转换，可直接在手机上跑 LLM。端侧智能体方面，一套 Jetson Orin Nano 上完全离线的陪伴记忆系统用 int4 Qwen2.5-7B 达到接近 GPT-3.5 的表现。社区方面，树莓派 AI HAT+ 2（Hailo-10H、8GB）发布，但评测发现多数大模型反而在树莓派 5 自身 CPU 上更快。",
+    "overview": "本周端侧 AI 动态（01-09~01-15）：最大的行业事件是谷歌与苹果发布联合声明——下一代 Apple 基础模型将基于 Gemini，Apple Intelligence 仍在苹果设备本机与 Private Cloud Compute 上运行。谷歌同周开源 TranslateGemma（4B/12B/27B），官方称 4B 面向手机与边缘推理、12B 可在消费级笔记本运行；Android Studio 的 Agent Mode 可直接在连接的手机上安装应用、看屏幕读日志验证改动，并支持通过 Ollama、LM Studio 接入本地模型；OPPO 联合 Google Cloud 公布新一代 AIOS 路线：系统级记忆层留在手机本地，云端走机密计算的私有计算云。端侧生成侧，高通 ReHyAt 在骁龙 8 Gen4 上把 121 帧视频扩散的单块时延从 4.8 秒降到 0.3 秒，原模型 141 帧以上直接内存溢出；Snap 的 SnapGen++ 让 0.4B 模型在 iPhone 16 Pro Max 上约 1.8 秒生成 1024×1024 图片。模型与内存方面，苹果分层记忆预训练让 160M 模型按需取 18M 记忆参数即可匹敌两倍大小的模型；腾讯 Sherry 把三值模型压到 1.25 比特；ncnn 新版支持 KV cache、RoPE 与 SDPA 转换，可直接在手机上跑 LLM。端侧智能体方面，一套 Jetson Orin Nano 上完全离线的陪伴记忆系统用 int4 Qwen2.5-7B 达到接近 GPT-3.5 的表现。社区方面，树莓派 AI HAT+ 2（Hailo-10H、8GB）发布，但评测发现多数大模型反而在树莓派 5 自身 CPU 上更快。 另据媒体报道（尚无合规一手来源，仅供参考）：Anthropic 1 月 12 日推出 Cowork 研究预览：Claude 桌面应用在用户授权的本地文件夹内读写、整理文件并执行多步任务，模型在云端、执行闭环在用户电脑上，是 PC 端 Agent 产品化的标志事件。",
     "highlights": [
       {
         "url": "https://blog.google/company-news/inside-google/company-announcements/joint-statement-google-apple/",
