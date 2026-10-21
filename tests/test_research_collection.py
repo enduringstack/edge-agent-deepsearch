@@ -557,6 +557,12 @@ class GitHubReleaseCollectionTests(unittest.TestCase):
         self.assertIn("YINGLINGH/limioryn", module.REQUIRED_GITHUB_PROJECTS)
         self.assertTrue(module.is_required_github_project("https://github.com/YINGLINGH/limioryn"))
 
+    def test_openbmb_edge_model_repos_are_whitelisted_but_small_repos_are_not(self):
+        module = importlib.import_module("research_collection")
+        for repo in ("OpenBMB/MiniCPM", "OpenBMB/MiniCPM-V", "OpenBMB/VoxCPM"):
+            self.assertTrue(module.is_required_github_project(f"https://github.com/{repo}"))
+        self.assertFalse(module.is_required_github_project("https://github.com/OpenBMB/AgentCPM"))
+
     def test_limioryn_chinese_release_summary_is_kept_as_direct_edge_agent(self):
         paper = build_run_week.convert_github({
             "repo": "YINGLINGH/limioryn",

@@ -7,7 +7,7 @@
 > - release notes 必须从官方 release 页取，不许用二手解读。
 > - github MCP 配置见 `docs/references/mcp-setup.md`（项目级 `.mcp.json`，需 `GITHUB_PERSONAL_ACCESS_TOKEN`）。
 
-## 端侧/边缘推理引擎（13）
+## 端侧/边缘推理引擎与端侧模型（16）
 - llama.cpp — `github.com/ggml-org/llama.cpp`（GGUF 标准，CPU/Metal/CUDA/Vulkan）
 - ExecuTorch (Meta) — `github.com/pytorch/executorch`（PyTorch 边缘部署）
 - MLC-LLM — `github.com/mlc-ai/mlc-llm`（TVM 编译，跨平台含 WebGPU）
@@ -21,6 +21,11 @@
 - OpenVINO (Intel) — `github.com/openvinotoolkit/openvino`（边缘推理）
 - PowerInfer (SJTU) — `github.com/Tiiny-AI/PowerInfer`（CPU+GPU 混合端侧大模型。原 `PowerInfer/PowerInfer` 组织路径已 404，项目迁至 Tiiny-AI）
 - RKLLM (Rockchip) — `github.com/airockchip/rknn-llm`（瑞芯微 RK3588/RK3576 NPU 端侧 LLM 运行时）
+- MiniCPM (面壁/OpenBMB) — `github.com/OpenBMB/MiniCPM`（端侧大模型；约 1.2 万星）
+- MiniCPM-V (面壁/OpenBMB) — `github.com/OpenBMB/MiniCPM-V`（端侧多模态大模型；约 2.7 万星）
+- VoxCPM (面壁/OpenBMB) — `github.com/OpenBMB/VoxCPM`（端侧语音合成；约 4 万星）
+
+> 2026-10-21 加入 OpenBMB 三仓：面壁是 24 家规范厂商之一，但官网新闻只链到微信公众号（不在白名单），端侧模型实际只在 GitHub/HF 发布，按旧规则永远进不了正式周报（1–5 月月度对账发现 VoxCPM 2、MiniCPM-V 4.6 等全部漏收）。AgentCPM（约 800 星）未达大项目标准，不加。
 
 ## Agent 应用
 - nanobot (HKUDS) — `github.com/HKUDS/nanobot`（轻量开源 AI agent，工具/聊天/工作流；港大 HKUDS 实验室）

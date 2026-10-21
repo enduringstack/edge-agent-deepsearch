@@ -68,6 +68,9 @@ REQUIRED_GITHUB_PROJECTS = frozenset({
     "HKUDS/nanobot",
     "microsoft/Orchard",
     "YINGLINGH/limioryn",
+    "OpenBMB/MiniCPM",
+    "OpenBMB/MiniCPM-V",
+    "OpenBMB/VoxCPM",
 })
 
 REQUIRED_VENDOR_SOURCES = frozenset({
