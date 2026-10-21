@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Distill on a Diet: Efficient Knowledge Distillation via Learnable Data Pruning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-24 · Yifan Wu; Yiqi Wang; Xichen Ye; Wenjing Yan; Xiaoqiang Li; Cheng Jin; Xiangyu Yue; Weizhong Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在知识蒸馏时先把训练数据裁掉一部分，用更少的数据和算力蒸出更好的小模型。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先论证影响函数在只有预训练教师可用的蒸馏场景里，是估计样本价值的有效且高效的手段；再把采样策略参数化成一个 Beta 分布，用它灵活的两参数族去学该保留哪些样本，从而避开重训练取训练动态的高开销，也避开启发式选择规则抓不住蒸馏真实需求的问题。</span></div>
-<div class="score-reason">评分依据：知识蒸馏是获得资源受限环境下紧凑模型的主流路径，数据裁剪能直接降低获取端侧小模型的成本，有明确迁移价值；影响函数配可学习采样策略属已有工具的合理组合。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-06-24 · Yifan Wu; Yiqi Wang; Xichen Ye; Wenjing Yan; Xiaoqiang Li; Cheng Jin; Xiangyu Yue; Weizhong Zhang / ECCV 2026</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:端侧训练</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">知识蒸馏能得到适合资源受限环境的小模型，但蒸馏过程本身很费算力。IF-Beta 用数据剪枝只挑一部分样本来蒸馏，用更少数据和算力反而得到更好的学生模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">CIFAR-10 上只用 70% 数据达到 95.69% 准确率，高于全量蒸馏的 95.50%；ImageNet 上只用 50% 数据达到 74.02%，高于全量的 73.54%，且在各剪枝比例下均优于其他数据剪枝基线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用影响函数估计每个样本对蒸馏的贡献，再用 Beta 分布参数化的可学习采样策略决定保留哪些样本；采样策略通过双层优化学习，内层在教师特征空间快速代理训练，外层更新策略参数以最大化蒸馏效果。</span></div>
+<div class="score-reason">评分依据：降低的是训练端获取小模型的成本，对端侧推理只有间接价值，相关度较低；影响函数配可学习采样的方案较新颖。论文被 ECCV 2026 接收，代码已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.25488" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

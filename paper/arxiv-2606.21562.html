@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Compressing History into Memory: Distilling Transformers into Recurrent Transformers</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-19 · Philippe Weinzaepfel; Christian Wolf; Mert Bülent Sariyildiz; Guillaume Bono; Gianluca Monaci / arXiv</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-19 · Philippe Weinzaepfel; Christian Wolf; Mert Bülent Sariyildiz; Guillaume Bono; Gianluca Monaci / arXiv</div>
 <div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:记忆</span><span class="tag">方向:模型架构</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把能看完整历史的 Transformer 的压缩本领，蒸馏给只有固定大小记忆的循环模型。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者认为循环 Transformer 落后于完整历史 Transformer 并非架构所限，而是因为没有历史可看时，循环模型必须在每一步显式决定留什么进记忆，这是个难得多的学习问题。于是设计一个会把观测历史显式压进固定大小瓶颈表示的教师模型，再用这个瓶颈表示直接监督学生的记忆，从而把压缩策略迁移过去。</span></div>
-<div class="score-reason">评分依据：明确瞄准长时域流式视觉与机器人应用，而这类场景存不下也维持不住观测历史，固定大小记忆正是设备端的硬约束，相关度中上；把差距归因到学习问题而非架构限制并据此设计监督信号，论证角度有新意。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">长时域流式视觉和机器人任务存不下完整的观测历史，固定大小记忆的循环 Transformer 又明显不如能看全历史的 Transformer。本文（Chimera）认为差距来自“学会压缩”太难，于是用蒸馏把压缩策略教给循环模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Mem-RPE 任务、序列长度 200 时，学生模型在 2 米/90° 阈值下准确率 65%，接近全历史教师的 72%，高于 Kinaema 的 63%；在流式视频问答上，OVO-Bench 从 34.3% 提升到 36.8%，StreamingBench Real 从 48.1% 提升到 49.8%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">设计一个先把观测历史压进固定大小瓶颈表示的全历史教师（类似 Perceiver Resampler），再直接用这个瓶颈表示监督学生的记忆状态，使两者的压缩机制对齐；学生推理时保持线性时间和固定记忆预算。</span></div>
+<div class="score-reason">评分依据：固定大小记忆、线性时间推理正是设备端长时运行的硬约束，并以机器人记忆为主要场景，相关度中上，但没有真机或端侧硬件测量；把记忆学习转成有监督压缩任务的思路有新意。PDF 首页全部作者署名 NAVER LABS Europe。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.21562" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

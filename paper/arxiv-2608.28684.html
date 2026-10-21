@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Distributed Semantic Segmentation With Improved Rate-Distortion Trade-Off</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-26 · Danish Nazir; Timo Bartels; Thorsten Bagdonat; Tim Fingscheidt / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">分布式语义分割把编码器放边缘设备、解码器放云端，中间受传输码率限制；这篇改进低码率下的率失真表现。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">现有做法通常绑定某一种信源编解码器、也很少探索替代网络结构，导致低码率区间率失真不够好；作者提出两种新的信源编解码器，在实现极低码率的同时提升率失真性能。</span></div>
-<div class="score-reason">评分依据：编码器跑在边缘设备、解码器在云端，是典型的切分推理形态，传输码率就是端侧的核心约束，端侧契合度较高。新编解码器带来低码率改进，属于中等贡献。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-08-26 · Danish Nazir; Timo Bartels; Thorsten Bagdonat; Tim Fingscheidt / BMVC 2026</div>
+<div class="tags"><span class="vendor-tag">Volkswagen</span><span class="tag">方向:端云协同</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">语义分割可拆成两段：编码器跑在车载等边缘设备上，解码器跑在云端，中间受传输码率限制。这篇提出两种新的特征压缩编解码器，在极低码率下也能保住分割精度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">ADE20K 上低于 0.2 bpp、Cityscapes 上低于 0.03 bpp 时取得最优 mIoU；相对现有超先验基线，在同等精度下码率最多节省 72.8%（ADE20K）和 62.3%（Cityscapes）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">放弃现有超先验编解码器的零均值假设，改为同时建模潜在特征的均值和尺度，并加入自回归上下文，使码率估计更准。</span></div>
+<div class="score-reason">评分依据：端云分离的视觉推理直接面向边缘设备上行带宽受限的场景，并报告了边缘端计算量与时延；编解码器改进扎实，BMVC 2026 口头报告。 作者机构依据：arXiv PDF 首页署名 Volkswagen（PDF 首页作者 1、3 署名 Volkswagen AG Group Innovation（volkswagen.de 邮箱），其余作者来自 TU Braunschweig）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.28684" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

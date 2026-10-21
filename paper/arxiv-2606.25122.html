@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AeroCast: Probabilistic 3D Trajectory Prediction for Non-Cooperative Aerial Obstacles via Transformer-MDN Architecture</h1>
-<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-23 · Syed Izzat Ullah; Jose Baca / arXiv</div>
-<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:模型架构</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">预测鸟类、失控无人机这类不配合的空中障碍物未来会飞到哪，好让飞行器提前避让。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用 Transformer 编码器配混合密度网络输出头，对未来每个时刻的三维位移预测一个高斯混合分布，而不是只给一个点估计；另用平移不变的连续位移编码解决输入设计问题，并用面向标定的训练目标缓解模态退化。</span></div>
-<div class="score-reason">评分依据：面向自主飞行器的在线避障预测，运行平台通常算力受限，但原文没有涉及模型压缩、延迟或机载部署，与端侧只有宽泛关联；Transformer 加混合密度网络是该任务上的常规组合。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-23 · Syed Izzat Ullah; Jose Baca / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">自主飞行器要预测鸟、失控无人机等不合作障碍物的未来位置才能提前避让，而这类目标的运动是多模态的。AeroCast 用 Transformer 加混合密度网络输出未来三维位移的概率分布。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在包含九类运动的真实加合成四旋翼数据上，5 秒预测范围内平均位移误差和最终位移误差比基线降低约 50%，负对数似然和连续分级概率评分均为最低；单样本推理 0.1 ms，满足 100 Hz 机载实时运行。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用平移不变的连续位移编码作为输入，Transformer 编码器捕捉长程运动前兆，混合密度网络输出每个时间步的高斯混合分布，并用面向校准的训练目标避免模式退化。</span></div>
+<div class="score-reason">评分依据：面向机载实时避障，给出了 0.1 ms 推理时延，与端侧部署有一定关联，但没有在嵌入式硬件上实测；Transformer 加混合密度网络属该任务上的常规组合。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.25122" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Pruning Binarized Neural Networks: A Dedicated Framework and Globally Weighted Algorithms</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-26 · Roan Rubiales; Jean Pierre David / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:量化</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:FPGA</span><span class="tag">硬件:MCU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">二值化能把网络压到极致，适合 FPGA 和单片机，但现有剪枝方法对二值表示不适用、也换不来真实的硬件收益。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者提供一个基于 PyTorch 的研究框架，内置冻结和剪枝机制来设计和优化二值网络，支持快速可复现地评估现有方法和原型化新方法，并在此之上提出全局加权的剪枝算法。</span></div>
-<div class="score-reason">评分依据：目标硬件明确是 FPGA 和单片机这类受限边缘硬件，且强调剪枝要换来真实硬件节省，端侧契合度高。贡献以框架和算法组合为主，属于扎实的工程研究。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-26 · Roan Rubiales; Jean Pierre David / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:量化</span><span class="tag">硬件:FPGA</span><span class="tag">硬件:MCU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把神经网络压到全二值化后，可以部署到 FPGA 和单片机这类受限硬件，但现有剪枝方法不适配二值网络。这篇提供一个二值网络剪枝研究框架，并提出跨层全局加权的新剪枝方法。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">VGG11 二值网络在准确率不变的情况下剪掉 70% 参数，而此前最好方法在二值设置下只能剪到 41%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">基于 PyTorch 实现冻结与剪枝机制，便于复现和比较各种方法；新方法按参数在不同抽象层级上的相对重要性做全局加权来决定剪哪些。</span></div>
+<div class="score-reason">评分依据：二值化加剪枝直接面向 FPGA、MCU 等极端受限设备，端侧相关度较高；剪枝率提升明显，但实验规模较小，没有给出实际硬件上的收益。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.26233" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

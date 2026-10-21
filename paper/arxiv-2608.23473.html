@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MetaCaster: Meta-Harness-Optimized Agent for End-to-End Few-Shot Learning of Lightweight Time Series Forecasters</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-24 · ChengAo Shen; Wenchao Yu; Fangyu Wu; Dongjin Song; Hanghang Tong; Dongsheng Luo; Wei Cheng; Haifeng Chen / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:蒸馏</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">时序预测场景里用基础模型太贵，轻量预测器又需要大量训练数据，这篇让智能体去帮轻量模型准备数据。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">多智能体框架通过生成式数据构造，从少量样本和文字上下文自动训练出专用的轻量预测器；智能体本身不做预测，而是充当准备高效模型的中间工程师。</span></div>
-<div class="score-reason">评分依据：为资源受限场景自动产出轻量专用模型，与端侧部署诉求契合；让智能体当「模型工程师」而非预测器的范式转换有新意。</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-08-24 · ChengAo Shen; Wenchao Yu; Fangyu Wu; Dongjin Song; Hanghang Tong; Dongsheng Luo; Wei Cheng; Haifeng Chen / EMNLP 2026</div>
+<div class="tags"><span class="vendor-tag">NEC</span><span class="tag">方向:高效推理</span><span class="tag">方向:蒸馏</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">资源受限场景更适合用小而专的时间序列预测模型，但它们需要大量训练数据。MetaCaster 让多个智能体充当「模型工程师」，只用几条样例和文字描述就生成训练数据、训练出轻量预测器。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 18 个数据集、23 种轻量预测器、14 个基线上评测，多数情况下优于数据生成/增强基线，样例数达到 30 时接近甚至超过用全量真实数据训练的效果；在 Solar 数据集上性能相当时，比时间序列基础模型时延低最多 1000 倍、参数少最多 1 万倍（运行时选中的 MixLinear 只有 243 个参数）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">由数据生成、预测器训练、策略提议三个智能体协作，通过「元外壳」优化迭代改进数据生成技能；部署后只保留选出的轻量预测器，不再有智能体开销。</span></div>
+<div class="score-reason">评分依据：为资源受限场景自动产出极小的专用模型，与端侧部署诉求契合，但智能体本身在云端运行；让智能体当工程师而非预测器的范式有新意，已被 EMNLP 2026 主会接收。公司归属依据 arXiv PDF 首页：多位作者署名 NEC Labs（nec-labs.com 邮箱）。 作者机构依据：arXiv PDF 首页署名 NEC（PDF 首页作者 Wenchao Yu、Wei Cheng、Haifeng Chen 署名 NEC Labs，邮箱为 nec-labs.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.23473" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

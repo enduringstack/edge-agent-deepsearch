@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ShuntServe: Cost-Efficient LLM Serving on Heterogeneous Spot GPU Clusters</h1>
 <div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-06-17 · Seungwoo Jeong; Moohyun Song; Juhyun Park; Kyungyong Lee / arXiv</div>
-<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span><span class="tag">模型:Llama</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用便宜但随时会被回收的竞价 GPU 实例跑大模型服务，混用多种型号来对冲断供风险，并解决型号不同带来的负载不均。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">针对异构竞价 GPU 集群重新设计调度与负载分配，利用不同型号竞价池的可用性互补来降低相关性故障，同时缓解现有同构假设带来的负载失衡。</span></div>
-<div class="score-reason">评分依据：纯云端成本优化，和端侧部署没有直接关系，相关度低；属于推理服务技术栈，按相邻工作保留并低分。异构竞价池的调度属于常规系统工程，贡献一般。</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">硬件:GPU</span><span class="tag">模型:Llama</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">云上便宜的 GPU 抢占式实例最多能省九成费用，但随时会被回收；这篇把多种 GPU 型号混合起来做大模型服务，扛住频繁中断。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 AWS 的 L4、A10G、L40S 混合集群上服务 Llama-3.1-70B 和 Qwen3-32B，吞吐比现有最好方案高 1.42 倍和 1.35 倍；相比按需实例，离线和在线服务的成本效率分别提升 31.9% 和 31.2%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">跨多种 GPU 型号做模型放置，用一次性硬件标定的性能估计器（平均误差 6.63%）挑并行配置，并配合容错机制在实例被回收时迁移或重算请求。</span></div>
+<div class="score-reason">评分依据：纯云端 GPU 集群的成本优化，与端侧部署无关，相关度很低，按推理服务相邻工作保留。异构抢占式集群上的放置与容错设计完整，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.18600" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

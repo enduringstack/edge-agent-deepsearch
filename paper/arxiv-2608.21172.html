@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Thermo-FL: Thermal-Aware Robust Federated Fine-Tuning of Large Language Models for Edge AI</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-08-21 · Shiva Shrestha; Kazi Shaharair Sharif; Zongxing Xie; Jiajing Huang; Anhao Xiang; Honghui Xu / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:端侧训练</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:安全隐私</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">边缘设备联邦微调大模型时既会因为发热降频拖慢进度，又可能被恶意客户端污染，这篇把设备温度当成主动控制信号一起处理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">客户端根据设备温度升降调整激活的 LoRA 层比例和上传更新的稠密度，热了就减负载；服务器侧用一套针对动态稀疏 LoRA 更新的鲁棒聚合流程，结合范数过滤、掩码感知的方向校验和自适应处理来抵抗恶意更新。</span></div>
-<div class="score-reason">评分依据：把边缘设备的热降频这一真实工程约束纳入训练控制，端侧相关性高；温度驱动的稀疏度调节加鲁棒聚合的组合较有针对性。</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-21 · Shiva Shrestha; Kazi Shaharair Sharif; Zongxing Xie; Jiajing Huang; Anhao Xiang; Honghui Xu / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:端侧训练</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:安全隐私</span><span class="tag">硬件:Jetson</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Thermo-FL 是在边缘设备上联邦微调大模型的框架，把设备温度当作控制信号：发热时少训练几层、少传数据，同时在服务器端防御恶意或被篡改的更新。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">两台 Jetson Orin Nano 实测（8 比特 Qwen2.5-0.5B）：GPU 温度稳定在约 49-51°C，而 FedAvg-LoRA 早期冲到约 60°C；位图稀疏编码把上传量从约 1.11MB 降到 0.42MB；GSM8K 准确率干净环境 24.64%，在符号翻转和中间人攻击下仍有 21.40% 和 18.65%，FedAvg-LoRA 则降为 0。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">客户端根据温度调整参与训练的 LoRA 层比例和上传更新的稀疏度；服务器端用范数过滤、掩码感知方向校验、自适应裁剪和掩码感知聚合组成稳健聚合流程。</span></div>
+<div class="score-reason">评分依据：在 Jetson 真机上做大模型联邦微调并实测温度、通信和抗攻击，端侧相关度较高；把温度纳入训练控制回路有新意，但真机规模只有两台设备。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.21172" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FOCUS &amp; RePAIR: Mitigating Text Degeneration via Token-Level Guidance for Pruned Large Language Models</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-27 · Junyoung Lee; Sehyeon Park; Shinhyoung Jang; Seonha Ryu; Hojeong Kim; Hyunsei Lee; Il Hong Suh; Yeseong Kim / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">剪枝后的模型困惑度和任务准确率看着没变，却更容易陷进重复循环；这篇把解码看成动力学过程来分析这个毛病。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者把退化拆成进入循环的风险和留在循环里的持续性两部分，指出持续性由采样集合内其他合理候选分到的逃逸质量决定；据此提出两个剪枝后微调的 token 级引导目标：FOCUS 把蒸馏权重压向教师高置信区域以抑制泄漏，RePAIR 负责修复。</span></div>
-<div class="score-reason">评分依据：剪枝是端侧压缩的常规手段，指出常用指标掩盖了重复退化对落地有实际价值，但论文没有设备端实验，端侧契合度中等。把退化拆成进入与持续两部分并给出对应目标，分析比较细。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校顶会</span>  2026-08-27 · Junyoung Lee; Sehyeon Park; Shinhyoung Jang; Seonha Ryu; Hojeong Kim; Hyunsei Lee; Il Hong Suh; Yeseong Kim / ICML 2026</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型剪枝后困惑度和任务准确率看着还行，生成的文字却更容易陷入重复循环。这篇从逐 token 的解码动态分析这一问题，并提出两种剪枝后微调目标来缓解。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">宽度剪枝后贪心解码的重复句比例从未剪枝的 26.6% 升到 63.1%；FOCUS 在续写任务上取得最高 MAUVE 0.68、最低重复率 2.23%，指令生成任务上 RePAIR 把重复率降到 0.63%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把退化拆成“进入循环的风险”和“困在循环里的持续性”：FOCUS 把蒸馏权重偏向老师高置信区域以减少概率外漏；RePAIR 在重复起点构造正负续写对，用间隔损失提升合理替代词的概率。</span></div>
+<div class="score-reason">评分依据：剪枝是端侧部署大模型的常用压缩手段，这篇指出并修复了剪枝后生成质量退化这一容易被忽视的问题，可直接用于端侧小模型；已被 ICML 2026 接收为 Spotlight。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.26676" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

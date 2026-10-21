@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Invalidation Contracts for Cross-Episode Agent Memory</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-31 · Michael Wu; Arquimedes Canedo / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">智能体把从接口报错里学到的修复建议缓存下来能省 token，但服务端数据一变，这些缓存就会变成悄无声息的错误。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">提出失效契约这一协议层：给每条修复建议附上版本戳和可缓存性提示，客户端据此直接淘汰过期条目、保留其余的，而不必靠反复试错，也不必每轮重新推导。</span></div>
-<div class="score-reason">评分依据：缓存复用能省下的模型调用对算力受限设备价值更大，思路可迁移，但论文面向通用智能体与服务端接口，端侧相关性较弱。用协议层的版本戳解决缓存失效是简洁有效的设计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-08-31 · Michael Wu; Arquimedes Canedo / arXiv</div>
+<div class="tags"><span class="vendor-tag">Siemens</span><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体会把 API 报错后的修复方案缓存起来下次直接用，但服务端数据一变，旧修复就会悄悄失效。这篇工作提出“失效契约”，让客户端能精确淘汰过期的缓存修复。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在七个模型、三种服务路径、两个领域、约 9400 个回合上评测：行级失效让首轮采纳率提升 0 到 66.7 个百分点，并在七个模型中的四个上收回 29% 到 33% 的基线 token 成本；契约只让响应载荷增加约 15%；表级失效则让五个模型在数据漂移后的首轮成功率降到 0%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">服务端在每条修复建议上附加版本戳和可缓存提示，客户端据此淘汰过期条目、保留其余；节省量被拆成“缓存仍然正确的比例”和“规划模型首轮就采纳的比例”两个独立因素分析。</span></div>
+<div class="score-reason">评分依据：关注智能体跨回合记忆在客户端的正确性和 token 开销，属于可迁移的智能体运行时机制，但未涉及设备端运行。把缓存失效做成协议层并量化不同模型的采纳差异，很实用。作者机构依据 arXiv PDF 首页署名：第二作者来自 Siemens Digital Industries Software。 作者机构依据：arXiv PDF 首页署名 Siemens（PDF 首页第二作者 Arquimedes Canedo 署名 Siemens Digital Industries Software（siemens.com 邮箱），第一作者来自南达科他州立大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.00243" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

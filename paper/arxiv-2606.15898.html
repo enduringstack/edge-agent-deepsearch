@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>VL2Spike: Spike-driven Distillation from VLMs for Low-Power Visual Perception in Embodied AI</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-14 · Zinan Liu; Eric Zheng; Soumyaratna Debnath; Hao Shi; Ling Xiao; Lin Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span><span class="tag">方向:能耗功耗</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">脉冲网络省电但能力受限，视觉语言模型知识丰富但太重；这篇把视觉语言模型的多模态知识蒸馏进紧凑的脉冲 Transformer。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">基于脉冲的知识蒸馏框架，把视觉语言模型里的多模态表示迁移到紧凑的脉冲 Transformer 上，绕开脉冲网络无法直接用标准梯度下降训练的难题。</span></div>
-<div class="score-reason">评分依据：面向具身智能体在资源受限条件下的低功耗视觉感知，脉冲网络路线的端侧动机明确，但论文没有给出硬件部署数据。跨模态蒸馏到脉冲模型是合理的组合创新，贡献中等。</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-06-14 · Zinan Liu; Eric Zheng; Soumyaratna Debnath; Hao Shi; Ling Xiao; Lin Wang / arXiv</div>
+<div class="tags"><span class="vendor-tag">AMD</span><span class="tag">方向:SNN</span><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span><span class="tag">方向:能耗功耗</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">脉冲神经网络很省电，适合机器人等具身设备做视觉感知，但训练难、精度受限。VL2Spike 把视觉语言大模型的多模态知识蒸馏进小型脉冲 Transformer。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在三个静态图像数据集上平均提升 6.81%，能耗只有对应模型的 15.7%；在机器人视觉地点识别任务上提升 6.63%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">一是时空视觉脉冲蒸馏：把视觉语言模型的图像特征和脉冲 token 对齐到共享流形，并在膜电位和放电率上做带预热的时间一致性约束；二是脉冲原型引导的语言蒸馏：让脉冲模型的类别原型和输出对齐可提示的文本嵌入。</span></div>
+<div class="score-reason">评分依据：目标是低功耗具身感知，能耗按脉冲模型估算，训练和评测都在 RTX 5090 上完成，没有神经形态芯片实测；把视觉语言模型知识蒸馏进脉冲 Transformer 是较新的组合。PDF 首页脚注作者 2 Eric Zheng 同时署名多伦多大学和 Advanced Micro Devices（AMD），主体为南洋理工大学。 作者机构依据：arXiv PDF 首页署名 AMD（PDF 首页脚注作者 2 Eric Zheng 署名 University of Toronto 和 Advanced Micro Devices, Inc.（amd.com 邮箱）；通讯作者及多数作者来自南洋理工大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.15898" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

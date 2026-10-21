@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FALCON: Fault-Tolerant Magnetic Tunnel Junction-Based In-Memory Stochastic Architecture for Reliability-Critical Edge AI Applications</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-09-01 · Farzad Razi; Mehran Moghadam; Sercan Aygun; M. Hassan Najafi; Marc Riedel / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:高效推理</span><span class="tag">硬件:CIM</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">存内计算能省电，但工艺偏差、工作裕度和热噪声让它不够可靠；FALCON 用随机计算给磁隧道结存内运算加上容错。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把数值编码成均匀比特流，随机计算天然能吸收局部软错误，并且能用非常紧凑的逻辑原语在存储阵列内部直接完成一整套基本算术运算。</span></div>
-<div class="score-reason">评分依据：面向神经推理和传感边缘分析的存内计算可靠性，端侧契合度较高。把随机计算与磁隧道结结合换容错是合理设计，属于中等贡献。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-09-01 · Farzad Razi; Mehran Moghadam; Sercan Aygun; M. Hassan Najafi; Marc Riedel / arXiv</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">硬件:CIM</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">FALCON 是一种基于磁隧道结的存内计算架构，用随机计算编码数值，让边缘 AI 硬件在工艺偏差和噪声下仍能算对。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">14nm FinFET 电路级评估中，在最高 30% 的噪声注入下仍能正确工作；电压降到 0.8V、0.7V 时功耗分别节省约 27% 和 51%；在阵列内完成一次 256×256 形态学闭运算仅耗 7.63 μJ，估计比滑窗执行省能约 10 倍，结果 IoU 为 0.89。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把数值编码成均匀比特流，局部软错误被自然吸收；配合确定性比特映射和可重构存内逻辑，直接在存储阵列里完成算术运算，不需要外部处理器和随机数发生器。</span></div>
+<div class="score-reason">评分依据：面向边缘设备的可靠低功耗存内计算硬件，但验证案例是图像形态学处理，并未运行神经网络推理。随机计算与磁隧道结结合提升容错是其主要贡献。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.00701" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

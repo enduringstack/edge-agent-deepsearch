@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CoreMem: Riemannian Retrieval and Fisher-Guided Distillation for Long-Term Memory in Dialogue Agents</h1>
 <div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-06-16 · Jiaqi Chen; Yongqin Zeng; Shaoshen Chen; Yijian Zhang; Hai-Tao Zheng; Chunxia Ma; XiuTeng Zhou / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:端侧agent</span><span class="tag">方向:端云协同</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">个性化对话助手要跨多轮长期记住用户，但放到只有 8GB 显存的消费级设备上，检索和压缩都吃不消；这篇用信息几何重做这两步。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">检索端把常用的余弦相似度换成局部自适应的 Fisher-Rao 度量，用马氏距离压制「枢纽记忆」问题，并用 Woodbury 公式加速以满足实时检索；压缩端用 Fisher 信息引导，避免摘要把句子切碎。整体是一套端云协同的记忆架构。</span></div>
-<div class="score-reason">评分依据：论文明确把 8GB 显存的消费级边缘设备当部署目标，记忆检索与压缩的闭环就在这类设备上运行，端侧语境确凿。用信息几何统一检索与压缩、并给出实时可行的加速方案，思路较新，贡献中等偏上。</div>
+<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:记忆</span><span class="tag">方向:端云协同</span><span class="tag">硬件:GPU</span><span class="tag">模型:SmolLM</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">个性化对话助手要跨多轮长期记住用户，但放到只有 8GB 显存的消费级设备上，记忆检索和上下文压缩都吃不消；这篇用信息几何重做这两步。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LOCOMO 和 LongMemEval-S 上，开放域推理提升 4.51 个百分点、时序推理提升 4.17 个百分点；本地编码器加压缩模型峰值显存仅 3.2GB，压缩测试中 SmolLM2 版压缩率 67.4% 且准确率最高（0.9756），整体约省 20% 云端 API 费用。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">本地设备负责记忆的检索与压缩：检索把余弦相似度换成局部自适应的 Fisher-Rao 度量以压制枢纽记忆，并用 Woodbury 公式加速；压缩由 Fisher 信息引导，避免摘要把句子切碎；只把压缩后的上下文发给云端大模型。</span></div>
+<div class="score-reason">评分依据：论文把 8GB 显存的消费级设备作为部署目标，在笔记本 GPU 上实测，智能体的长期记忆闭环就在本地运行，端侧语境确凿。用信息几何统一检索与压缩、并给出实时可行的加速方案，思路较新，贡献中等偏上。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.18406" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

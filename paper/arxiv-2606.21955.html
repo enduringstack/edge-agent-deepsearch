@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>From RAN Control to Agentic Intelligence: Architecture and Vision for Energy Efficient AI-RAN</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-20 · Sabrine Aroua; Alexis I. Aravanis; Ilias Chatzistefanidis; Hamza Abbar; Anh-Khoa Dang; Anastasios Giovanidis; Salah-Eddine El Ayoubi; Stephane Senecal / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">设想把智能体式的 AI 放进 6G 无线接入网，用来统筹性能、时延和能耗。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">针对现有 Open RAN 控制框架仍以策略驱动为主、难以跨多应用做自适应能耗协调的问题，提出一种智能体式的 AI 原生无线接入网架构，把 Open RAN 的结构化控制与 AI-RAN 的统一愿景衔接起来，并借助语义化的意图抽象和大模型驱动的协调来实现自适应编排。</span></div>
-<div class="score-reason">评分依据：面向高度分布式的无线接入网基础设施，其部署密度和持续 AI 处理带来的能耗问题与边缘算力场景相关，相关度中等；属架构愿景类文章，尚无实现与实测。</div>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span>  2026-06-20 · Sabrine Aroua; Alexis I. Aravanis; Ilias Chatzistefanidis; Hamza Abbar; Anh-Khoa Dang; Anastasios Giovanidis; Salah-Eddine El Ayoubi; Stephane Senecal / arXiv</div>
+<div class="tags"><span class="vendor-tag">Ericsson; Orange</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:端云协同</span><span class="tag">方向:调度服务</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">6G 无线接入网会同时承载通信和 AI 负载，能耗随之上升。本文提出 E-ARC 架构，用大模型驱动的多个智能体理解运营商意图，统一协调接入网的性能、时延和能耗。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 AI-for-RAN 示例中，按意图部署的扇区调度应用达到 15% 节能目标并保持 95% 吞吐满意度，其中一组阈值配置相比不做扇区调度节能 19.61%、吞吐满意度 95.82%；文中对比显示云端 GPT-4.1 类模型动作准确率 85%–95%，本地 8B 模型约 40%–55%、3B 模型约 25%–40%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 O-RAN 的服务管理编排层加入语义协调、数字孪生、配置部署监控三个智能体：语义协调智能体把运营商意图翻成约束，数字孪生离线评估方案，再由部署智能体下发并监控 rApp。</span></div>
+<div class="score-reason">评分依据：协调智能体运行在网络管理层（云端），设备侧只是被调度的基础设施，与端侧 AI 只有宽泛关联；属架构愿景文章，附带本地小模型与云端模型准确率的对比，贡献中等偏低。PDF 首页作者分别署名爱立信研究院、Orange Innovation 和 BubbleRAN。 作者机构依据：arXiv PDF 首页署名 Ericsson, Orange（PDF 首页作者署名 Ericsson Research（法国，含第一作者）、Orange Innovation 和 BubbleRAN，另有巴黎萨克雷大学作者）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.21955" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Opti-Q: A Constraint-Based Optimization Framework for Multi-LLM Question Planning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-17 · Aamir Hamid; Bharg Barot; Satvik Racharla; Tim Finin; Primal Pappachan; Roberto Yus / arXiv</div>
-<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:端云协同</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">问答任务要调多个大模型时，先把「执行计划」算好再跑：在用户给的成本、时延和能耗预算下挑出质量最好的调用方案。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">借数据库查询优化器的思路，把每次模型调用当成执行图里的物理算子，可串行传递中间答案也可并行融合；再用一个从基准和执行轨迹里积累的统计目录来估算每个候选计划的质量和资源开销，从而不必真跑就能搜索。</span></div>
-<div class="score-reason">评分依据：把能耗和时延当成一等约束来做模型编排，对端云协同和设备侧预算调度有迁移价值，但本身是多模型服务编排，相关度中等偏低。借用数据库代价优化器做大模型编排的类比比较新颖，贡献中等偏上。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-17 · Aamir Hamid; Bharg Barot; Satvik Racharla; Tim Finin; Primal Pappachan; Roberto Yus / arXiv</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:规划推理</span><span class="tag">方向:能耗功耗</span><span class="tag">模型:Gemma</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在预算有限时用多个大模型做问答，成本、时延和能耗差异大且输出不确定；这篇借鉴数据库查询优化器，先规划再执行多模型调用方案。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在给定预算下，最高预算档答案质量约 0.65，而其他规划器停在 0.55–0.58、基线约 0.46；在 SimpleQA 上答案质量从 0.25 提到 0.48，同时能耗从 62.1 焦降到 22.1 焦、时延从 74.4 秒降到 18.1 秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把每次大模型调用当作执行图里的物理算子，针对每个问题搜索在答案质量、费用、时延和能耗之间权衡最优的计划，可包含并行、级联和集成等组合，并满足用户设定的资源约束。</span></div>
+<div class="score-reason">评分依据：多模型编排在本地服务器 GPU 上评测，能耗被显式纳入优化，但与设备端部署关系较弱，相关度较低。把数据库式代价优化引入多模型问答规划，思路清晰，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.22621" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

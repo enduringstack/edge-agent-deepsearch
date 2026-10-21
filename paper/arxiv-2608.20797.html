@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Automated Trajectory Evaluation for Mobile Agents via Step-Level Consequence Reasoning and Aggregation</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-21 · Pengshuai Yang; Zijing Gao; Xue Yu; Benhui Zhuang; Bo Yuan; Junlan Feng / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">硬件:手机</span><span class="tag">方向:多模态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">评估语言指令驱动的手机智能体时，整条轨迹一次性丢给模型会上下文过载，而且只看任务完成、不看操作安全。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">两阶段的视觉语言模型评审框架：先在每一步独立抽取任务相关视觉线索并推断该动作导致的状态变化，再把这些逐步文本证据在轨迹级汇总，开源和闭源模型都能用。</span></div>
-<div class="score-reason">评分依据：面向手机智能体的自动化评估，与端侧助理评测相关；逐步后果推理加汇总的框架合理，属于评测方法改进。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-08-21 · Pengshuai Yang; Zijing Gao; Xue Yu; Benhui Zhuang; Bo Yuan; Junlan Feng / arXiv</div>
+<div class="tags"><span class="vendor-tag">China Mobile</span><span class="tag">方向:评测基准</span><span class="tag">方向:多模态</span><span class="tag">硬件:手机</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">CRATE 是给手机操作智能体自动打分的评估框架：不再一次性把整条操作轨迹塞给大模型评判，而是逐步分析每一步动作带来的界面变化，再汇总判断任务是否完成、操作是否安全。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">用 Qwen2.5-VL-72B-Instruct 驱动时，CRATE 在 AndroidWorld 上 F1 为 0.833，比 SPA-Bench 高 20%；安全评估版 CRATE-S 在 MobileRisk 上 F1 为 0.697。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">两阶段视觉大模型评判：先逐步提取与任务相关的视觉线索并推断动作引起的状态变化，再把这些文字证据在轨迹层面汇总给出结论。</span></div>
+<div class="score-reason">评分依据：评测对象是手机 GUI 智能体，但评判本身在云端大模型上离线运行，端侧相关度较低；逐步推理后聚合的评判方式有一定新意。PDF 首页作者均署名 China Mobile 九天研究院。 作者机构依据：arXiv PDF 首页署名 China Mobile（PDF 首页全部作者署名 Jiutian Research, China Mobile，通讯邮箱为 chinamobile.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.20797" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

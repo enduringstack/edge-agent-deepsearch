@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AEGIS: Preventing Cross-Domain Resource Abuse in MCP</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-20 · Shriti Priya; Teryl Taylor; Frederico Araujo / arXiv</div>
-<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:安全隐私</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">MCP 工具协议让模型能调外部系统，但恶意智能体可以故意要一个超大搜索半径或超长视频把后端拖垮，这篇做跨域的资源滥用防护。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">针对文本、图像、视频和位置等不同模态各自不同的资源滥用向量，设计统一的请求模式与参数约束机制，防止跨域工具被用来消耗后端资源。</span></div>
-<div class="score-reason">评分依据：MCP 工具滥用防护对本地部署的智能体运行时同样重要，迁移价值明确；跨模态统一约束的设计有针对性。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-08-20 · Shriti Priya; Teryl Taylor; Frederico Araujo / DSN 2026（补充卷 DSN-S）</div>
+<div class="tags"><span class="vendor-tag">IBM</span><span class="tag">方向:工具调用</span><span class="tag">方向:安全隐私</span><span class="tag">应用:安全</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">AEGIS 是给 MCP 工具调用加的“资源防滥用”策略组件：防止恶意或失控的智能体请求超大搜索半径、超长视频等参数，把后端服务拖垮。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">用 Claude 4 Sonnet 做工具调用的归类与参数归一化，各项本体识别任务准确率都在 84% 以上，其中模态分类准确率约 98.7%，单次推理约 0.52 秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">让大模型把各种 MCP 工具的调用分析、分类并归一化成统一的、便于写策略的表示，再接入 Open Policy Agent 和 ContextForge AI 网关执行细粒度限制。</span></div>
+<div class="score-reason">评分依据：属于智能体工具调用运行时的安全治理，与端侧部署关系较弱；用大模型把异构工具参数归一化后再套策略是实用的工程方案。PDF 首页三位作者均署名 IBM Research。 作者机构依据：arXiv PDF 首页署名 IBM（PDF 首页三位作者均署名 IBM Research, USA，并使用 ibm.com 邮箱）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.20481" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

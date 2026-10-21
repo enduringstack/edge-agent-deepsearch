@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CONCORD: Asynchronous Sparse Aggregation for Device-Cloud RAG under Document Isolation</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-06-13 · Xuedong Hu; Zhiqing Tang; Zhi Yao; Tian Wang; Weijia Jia / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:安全隐私</span><span class="tag">方向:剪枝稀疏</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">私人文档留在设备上、公共知识在云端，两边都不许交换原文，这种情况下怎么做检索增强生成。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">不把云端当成要时刻同步的协同生成方，而是当成异步到达的证据源：设备侧先行生成，云端证据到了再稀疏地聚合进来，从而避免频繁远程同步和稠密证据传输带来的吞吐瓶颈。</span></div>
-<div class="score-reason">评分依据：设定是小模型部署在端侧、私有文档不出设备，受真实时延与带宽条件约束，端侧语境明确。把云端从同步协同者改成异步证据源，是对端云协同检索的结构性调整，贡献中等偏上。</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-06-13 · Xuedong Hu; Zhiqing Tang; Zhi Yao; Tian Wang; Weijia Jia / IEEE ICWS 2026</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:安全隐私</span><span class="tag">方向:高效推理</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">设备上跑小模型、云上放公共知识时，私有文档不能出设备，两端只能各自检索再合并结果，而频繁同步又拖慢生成。CONCORD 让设备端把云端当成“异步到达的证据”，只在必要时等云端。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Natural Questions 和 WikiText-2 上，端到端吞吐分别比基线提高 1.66 倍和 2.15 倍，每 token 通信量降低两个数量级以上，答案质量和困惑度与稠密双端聚合相当；还在一台 i9-10900K + RTX 2070 SUPER 设备机和一台云端机的真实双机部署中验证了趋势。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每个解码步用“等待负债”控制决定是否继续等云端返回；再用基于证书的最小补充机制，只向云端要能确定当前贪心选择所需的那部分证据。需要问云端的步骤保证与稠密聚合选出同一个 token，其余步骤直接在本地提交。</span></div>
+<div class="score-reason">评分依据：直接面向“私有文档留在设备、设备跑小模型”的端云协同检索增强生成，并做了双机部署验证，相关度较高；异步稀疏聚合和保证贪心一致性的补充机制有新意。论文将发表于 IEEE ICWS 2026，不属于顶会名单。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.15179" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Performance Drift Detection in Machine Learning as a Service (MLaaS) for IoT Environments</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-19 · Deepak Kanneganti; Sajib Mistry; Sheik Mohammad Mostakim Fattah; Erik Elmroth; Aneesh Krishna; Monowar Bhuyan / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:评测基准</span><span class="tag">应用:fault-detection</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">物联网场景里买的是云上的机器学习服务，客户端看不到模型内部，这篇让黑盒用户也能发现服务性能漂移。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先用一个抽取模型从输入输出对里学出该云服务的行为并找出影响预测的特征，再据此判断数据分布变化或服务更新有没有导致性能下降。</span></div>
-<div class="score-reason">评分依据：面向物联网端云协同场景的服务质量监控，与端侧部署运维相关但推理仍在云上，相关度按中等计；黑盒漂移检测的设定有实用性。</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-08-19 · Deepak Kanneganti; Sajib Mistry; Sheik Mohammad Mostakim Fattah; Erik Elmroth; Aneesh Krishna; Monowar Bhuyan / arXiv</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">应用:IoT命令</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">物联网应用常调用云端机器学习服务，但服务方更新模型或数据分布变化时，调用方看不到内部，很难发现效果变差。这篇论文给黑盒调用方做性能漂移检测。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在真实数据集上，漂移检测模型 MPDD 比基线方法准确率高 22%-25%；自适应监测机制 APDDM 比固定间隔监测平均准确率高约 4%，漏检率降低约 9%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用输入输出对训练一个模仿云端服务行为的抽取模型，找出影响预测的特征，再联合监测输入数据和服务行为的变化，并根据变化幅度动态调整监测频率。</span></div>
+<div class="score-reason">评分依据：关注云端 ML 服务在物联网场景的监测，不涉及端侧推理本身，相关度低；方法是常规漂移检测组合。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.18555" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

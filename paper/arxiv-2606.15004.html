@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CREST: Deployment-Realistic Hardware-in-the-Loop NAS for Embedded Sensing Systems</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-06-12 · Joseph Q. Zales; Pragya Sharma; Mani Srivastava / arXiv</div>
-<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span><span class="tag">硬件:MCU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">给微控制器选模型时，用浮点运算量当代价、拿一款芯片代表全体、按连续推理测功耗，这三个简化都会把排名搞错。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">一套硬件在环的结构搜索框架：固定优化器、硬件测量边界、日志和回放流程，把负载、模型族、目标后端、采样调度、量化方式和打分策略都做成可配置的轴，从而能把各种部署效应单独隔离出来研究。</span></div>
-<div class="score-reason">评分依据：直接在真实微控制器上做硬件在环测量，并指出按实际采样调度而非连续推理评估能耗这一关键差别，端侧语境确凿。把部署效应做成可独立变更的实验轴，方法学价值明确，贡献中等偏上。</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-12 · Joseph Q. Zales; Pragya Sharma; Mani Srivastava / arXiv</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:量化</span><span class="tag">硬件:MCU</span><span class="tag">应用:语音</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">给低功耗单片机选神经网络结构时，常用 FLOPs、参数量或单块板子的连续推理测试来估成本，容易排错名次、选出放不下的模型。CREST 是一套在真实板子上测量的硬件在环架构搜索工具。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在三款 Arm Cortex-M 板上评测：惯性里程计任务中，按实测能耗搜索比按 FLOPs 选型的单次推理中位能耗低 41.7%、比按访存量选型低 40.8%，误差相近；按 FLOPs 选型还会在内存受限的板子上选出无法部署的模型；在 STM32 N657 上，连续推理和占空比调度两种方式搜出的帕累托前沿不同。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把优化器、硬件在环测量边界、日志和回放流程固定下来，把任务、模型族、目标后端、调度方式、量化和打分策略做成可配置轴，在真实单片机上测时延和能耗，让不同部署因素的影响能单独比较。</span></div>
+<div class="score-reason">评分依据：直接在 Cortex-M 单片机上按真实调度测量能耗做模型搜索，是典型的端侧部署工作，相关度高；结论（静态代理指标会排错名次）对 TinyML 选型很实用，方法以工程框架为主。作者均来自 UCLA。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.15004" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

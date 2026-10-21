@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Learning to Act While Waiting: RL Finetuning of Generalist Robot Policies Under Inference Latency</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-08-24 · Brian Zhu; Momen Khalil; E Harrison; Emanuele Poggi; Philipp Schmitt; Bernd Kast; Philine Meister; Pranav Atreya / arXiv</div>
-<div class="tags"><span class="tag">应用:机器人</span><span class="tag">方向:高效推理</span><span class="tag">方向:端侧训练</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">通用机器人策略模型太大，推理延迟会让动作出现停顿或抖动，还会破坏强化学习依赖的马尔可夫假设，让常规算法彻底失效。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">提出延迟感知的异步强化学习框架 ARLI：在异步推理把动作生成和执行交错以掩盖延迟的基础上，显式建模延迟带来的中间信息，修正强化学习与异步执行不兼容的问题。</span></div>
-<div class="score-reason">评分依据：把推理时延当成会改变环境动力学的一等问题来处理，正是端侧大模型策略部署的核心痛点，相关性高；延迟感知的异步强化学习设计有实质创新。</div>
+<div class="meta"><span class="score">13</span> <span class="tier company">公司项目</span>  2026-08-24 · Brian Zhu; Momen Khalil; E Harrison; Emanuele Poggi; Philipp Schmitt; Bernd Kast; Philine Meister; Pranav Atreya / arXiv</div>
+<div class="tags"><span class="vendor-tag">Siemens; Microsoft</span><span class="tag">应用:机器人</span><span class="tag">方向:高效推理</span><span class="tag">方向:端侧训练</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大型机器人策略（如 VLA）推理慢，会让机器人停顿或抖动，还会破坏强化学习依赖的马尔可夫假设，导致在线微调完全学不动。ARLI 让这类策略在有推理延迟的情况下也能用强化学习持续改进。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在双臂 UR5e 真机的装配、鞋入袋、搬包三项任务上，基础策略成功率约 40%，ARLI 训练 100 到 125 个回合后接近 100%；对比方法在同样时间内装配和搬包任务难以达到 80%，鞋入袋任务要多花近一倍时间。π0.5 在 RTX 5090 上每次推理延迟约 10 个控制步。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">基于异步推理（边生成边执行动作来掩盖延迟），给小型强化学习策略补充已确定的动作和推理中途的最新观测，恢复近似马尔可夫的状态，再用它去调节大策略的去噪噪声。</span></div>
+<div class="score-reason">评分依据：直面大模型策略在机器人上的推理延迟问题，对端侧机器人部署有参考，但推理跑在 RTX 5090 工作站上，且属于纯动作策略微调而非智能体闭环；延迟感知的异步强化学习设计有实质创新。公司归属依据 arXiv PDF 首页：多数作者署名 Siemens，Oier Mees 署名 Microsoft。 作者机构依据：arXiv PDF 首页署名 Siemens, Microsoft（PDF 首页作者上标显示 Brian Zhu 等 14 位作者署名 1 Siemens；Oier Mees 署名 3 Microsoft（同时属 ETH Zurich、UC Berkeley））。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.23831" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

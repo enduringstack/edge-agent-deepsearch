@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AQ4SViT: An Automated Quantization Framework with Search Gating Policy for Compressing Spiking Vision Transformers</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-06-14 · Rachmad Vidya Wicaksana Putra; Saad Iftikhar; Muhammad Shafique / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:SNN</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:编译部署</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">脉冲版视觉 Transformer 本来就是冲着低功耗去的，但模型太大塞不进嵌入式系统；手工调量化配置又慢又费电。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">自动量化框架用一套在精度约束下评估候选配置的搜索策略，再加一个搜索门控策略快速筛掉没前途的候选，从而在精度与内存之间快速找到合适的量化设置。</span></div>
-<div class="score-reason">评分依据：明确面向资源受限的嵌入式 AI 系统部署脉冲视觉 Transformer，内存是核心约束，端侧语境明确。自动量化搜索加门控是成熟范式在新模型族上的迁移，贡献中等。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-14 · Rachmad Vidya Wicaksana Putra; Saad Iftikhar; Muhammad Shafique / arXiv</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:量化</span><span class="tag">方向:编译部署</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">脉冲视觉 Transformer 本身省电，但模型太大放不进嵌入式设备，而人工挑量化设置又慢又费电。AQ4SViT 自动为这类模型搜索量化配置。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">贪心版本相比现有方法搜索快最多 6.6 倍、内存节省最多 82.5%；束搜索版本内存最多可省 90%，但搜索时间长 4.5 倍；两者在 ImageNet 上的精度都保持在原始未量化模型 1.5% 以内。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在满足精度约束的前提下逐层评估候选量化设置，并用膜电位漂移作为性能代理快速筛掉不靠谱的候选；提供快但可能陷入局部最优的贪心搜索和慢但更接近全局最优的束搜索两种选择。</span></div>
+<div class="score-reason">评分依据：面向嵌入式部署的脉冲网络压缩，属于端侧技术栈，但只报告模型内存和精度，没有真机时延或能耗；用膜电位漂移做搜索代理是小而实用的创新。作者来自纽约大学阿布扎比分校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.15523" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

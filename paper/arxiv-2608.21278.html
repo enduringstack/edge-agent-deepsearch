@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CLEAR: Continuous Latent Adapter Routing for Utility-Preserving LLM Safety Alignment</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-21 · Chengxiao Wang; Enyi Jiang; Xiaojing Liao; Sanmi Koyejo / arXiv</div>
-<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:模型架构</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在保持模型可用性的前提下做安全对齐，用连续的潜空间适配器路由代替一刀切的拒绝策略。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把安全对齐做成连续潜在适配器的路由选择，按输入在适配器之间连续插值，从而在拒绝有害请求的同时尽量少牺牲正常任务能力。</span></div>
-<div class="score-reason">评分依据：适配器路由属于轻量微调技术栈，对端侧个性化有迁移价值；安全与可用性的权衡设计中规中矩。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-08-21 · Chengxiao Wang; Enyi Jiang; Xiaojing Liao; Sanmi Koyejo / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">CLEAR 是一种大模型安全对齐方法：用一个轻量门控按输入连续调节安全 LoRA 适配器的强度，只对有害请求明显生效，尽量不影响正常问题的回答质量。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Llama-3-8B-Instruct 上，把 HarmBench 攻击成功率从 32.3% 降到 0.5%，同时 GSM8K 准确率比全局 SFT 或 LoRA 安全微调最多高 7.1 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">冻结主干模型，从隐藏状态读出一个连续门控值来控制安全低秩适配器的激活强度，而不是对所有输入一律施加安全微调。</span></div>
+<div class="score-reason">评分依据：属于大模型安全对齐，与端侧部署无直接关系；条件化门控的适配器设计有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.21278" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

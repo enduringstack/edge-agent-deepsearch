@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>HERALD: High-Throughput Block Diffusion LLM Serving via CPU-GPU Cooperative KV Cache Retrieval</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-19 · Omin Kwon; Doyeon Kim; Jongseok Park; Seung Yul Lee; Ion Stoica; Jae W. Lee / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:端云协同</span><span class="tag">方向:高效推理</span><span class="tag">硬件:CPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">利用块扩散大模型特有的缓存访问规律，让 CPU 和 GPU 分工取 KV 缓存。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">自回归解码每出一个 token 关键 KV 子集就会变，于是选择和搬运每步都要重来，吞吐被 PCIe 带宽卡住。块扩散大模型则是对一个 B 个 token 的块做 T 步去噪，稀疏推理因此天然分成两段：选择阶段每块只扫一遍完整 KV 缓存，去噪阶段则把选出的小子集复用 T 次。这种不对称正好对上 CPU 与 GPU 在算力和内存上的不对称，从而让卸载变得划算。</span></div>
-<div class="score-reason">评分依据：KV 缓存卸载到 CPU 内存是显存受限设备的通用手段，CPU-GPU 协作取缓存的思路对本地部署有迁移价值，但原文面向的是长上下文服务场景，相关度按可迁移工作计；抓住块扩散模型访问模式与 CPU-GPU 硬件不对称之间的匹配关系，洞察有分量。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-19 · Omin Kwon; Doyeon Kim; Jongseok Park; Seung Yul Lee; Ion Stoica; Jae W. Lee / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span><span class="tag">方向:稀疏注意力</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长上下文服务中 KV 缓存挤占 GPU 显存，卸载到 CPU 内存又受 PCIe 带宽限制。HERALD 是首个面向块扩散大模型的 KV 卸载系统，利用这类模型“每块选一次、去噪复用多次”的访问特点，让 KV 只需每块过一次 PCIe。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在两个生产级块扩散大模型上，只保留 5% KV 预算时精度几乎无损，解码吞吐最高达到纯 GPU 服务的 2.28 倍，且上下文越长优势越大。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 CPU 上做关键 KV 的选择、在 GPU 上做多步去噪；用草稿块让两阶段重叠，用单个 [MASK] 查询降低 CPU 端选择成本，并以双缓冲稀疏 KV 池组成双流流水线。</span></div>
+<div class="score-reason">评分依据：CPU-GPU 协同管理 KV 缓存对显存受限的本地设备有一定借鉴意义，但原文面向数据中心长上下文服务，相关度按宽泛关联计；针对块扩散模型访问模式重新设计卸载是新的切入点。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.21633" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

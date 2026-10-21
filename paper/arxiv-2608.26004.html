@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AsymSpec: Context-Asymmetric Speculative Decoding for Agentic LLMs</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-26 · Sheng Liang; Yongyue Zhang; Nathanael Brian; Hang Lv; Hao Wang; Chen Zhang; Yong Liu / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">方向:工具调用</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">智能体流水线的上下文越积越长，压上下文能降时延但会掉准确率；AsymSpec 让草稿模型看全量、验证模型看压缩版。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">打破投机解码要求草稿与验证共享同一上下文的前提：轻量草稿模型读完整输入，大验证模型只看压缩视图，草稿通过对比式的 logits 融合来引导验证模型，并用一个感知分歧的接受门维持验证稳定性和较高的草稿接受率。</span></div>
-<div class="score-reason">评分依据：投机解码加上下文压缩都是压低端侧智能体时延的常用手段，非对称设计可迁移，但论文没有设备端实测，端侧契合度中等。打破草稿与验证上下文必须一致这一前提，是对投机解码框架的实质扩展。</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-08-26 · Sheng Liang; Yongyue Zhang; Nathanael Brian; Hang Lv; Hao Wang; Chen Zhang; Yong Liu / EMNLP 2026</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">方向:工具调用</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体任务里上下文越滚越长，压缩输入能省算力却会掉准确率。AsymSpec 让小草稿模型读完整上下文、大验证模型只读压缩版，用投机解码兼顾速度和准确率。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在四类智能体能力和两个端到端智能体基准上，平均达到完整上下文准确率的约 90%；在独立文本能力任务上吞吐提升 1.3–1.7 倍，计算成本只有 0.2–0.3 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以 Qwen3-4B 为草稿模型、Qwen3-32B 为验证模型，草稿模型通过对比式 logits 融合引导读压缩上下文的验证模型，并用感知分布差异的接受门控维持验证稳定和高接受率。</span></div>
+<div class="score-reason">评分依据：智能体长上下文推理成本是端侧跑智能体的核心瓶颈，“小模型看全、大模型看压缩”的非对称投机解码可直接迁移到端云协同；打破草稿与验证共享上下文的假设有新意，已被 EMNLP 2026 主会接收。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页 7 位作者中 5 位署名 Huawei Technologies Co., Ltd.，另 2 位来自中国科学技术大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.26004" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

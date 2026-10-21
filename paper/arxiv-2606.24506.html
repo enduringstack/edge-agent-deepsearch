@@ -7,9 +7,9 @@
 <h1>CrossPool: Efficient Multi-LLM Serving for Cold MoE Models through KV-Cache and Weight Disaggregation</h1>
 <div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-23 · Zhuoren Ye; Tianyu Wo; Dinghao Xue; Mingming Zhang; Yuchen Teng; Chunming Hu; Renyu Yang / arXiv</div>
 <div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">针对大量请求稀少的冷门 MoE 模型，把权重和 KV 缓存拆成两个显存池来托管。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">观察到权重是稳定且由模型决定的，而 KV 缓存是瞬态且由需求决定，冷门模型又很少同时达到 KV 峰值，于是把前馈网络权重合并进一个跨模型共享的权重池，KV 缓存另设一个按活跃请求动态供给的池，并让注意力计算保持在 KV 缓存本地，避免静态权重和动态 KV 在同一个显存池里互相挤占。</span></div>
-<div class="score-reason">评分依据：面向云端多模型托管的显存池设计，与端侧部署只有宽泛关联；把权重与 KV 按生命周期特性拆池的洞察清晰，系统贡献较实在。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">云服务商同时托管大量 MoE 模型，但多数模型请求稀疏处于“冷”状态，按峰值为每个模型预留 KV 缓存很浪费显存。CrossPool 把 FFN 权重和 KV 缓存分成两个显存池分别管理。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在突发的长上下文请求下优于当前最好的基于 kvcached 的多模型服务系统，P99 每 token 时延最多降低 10.4 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">权重池合并多个冷模型的 FFN 权重，KV 池按活跃请求动态分配并让注意力就近计算；配合 KV 规划与虚拟化、逐层流水调度隐藏隐藏态传输，以及持久内核减少 CPU-GPU 控制开销。</span></div>
+<div class="score-reason">评分依据：面向云端多模型托管的显存管理，与端侧部署只有宽泛关联；按生命周期把权重与 KV 分池的洞察清晰，系统贡献较实在。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.24506" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

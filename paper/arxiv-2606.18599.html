@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MIDS: Detecting Stealthy Masquerade and Tampering Attacks on CAN Bus via Bidirectional Mamba</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-17 · Qiqi Liu; Runhan Song; Lei Cui; Heng Zhang; Yuyan Sun; Limin Sun / arXiv</div>
-<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:模型架构</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">车内 CAN 总线被内部攻击者「原位替换」合法报文时，传统靠收发间隔统计的检测方法会失效；这篇用双向 Mamba 做检测。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">双流框架分别处理 CAN 报文的标识符和载荷，再用双向选择性状态空间模型重建两者的联合时序语义，从而捕捉不改变周期性的伪装篡改。</span></div>
-<div class="score-reason">评分依据：车载 ECU 是典型的资源受限嵌入式场景，状态空间模型也比 Transformer 更适合这类设备，但论文没有讨论车端部署开销，相关度较低。针对伪装攻击的双流状态空间建模在车载入侵检测里有新意，贡献中等。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-17 · Qiqi Liu; Runhan Song; Lei Cui; Heng Zhang; Yuyan Sun; Limin Sun / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:模型架构</span><span class="tag">应用:安全</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">车内 CAN 总线被内部攻击者原位替换合法报文时，报文时序不变，传统靠收发间隔统计的入侵检测就失效了；这篇用双向 Mamba 来抓这类隐蔽篡改。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在采自真实 Tesla Model 3 的 1 亿多帧数据上 F1 达 96.94%，比最强可复现基线高 8 个百分点以上；在多个数据集上 F1 为 93.70%–99.61%，单窗口推理 1.147 毫秒、峰值显存 27MB。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">双流结构分别处理报文标识符和载荷，再用双向选择性状态空间模型重建两者的联合时序语义，从而发现不改变时序、只改内容的篡改。</span></div>
+<div class="score-reason">评分依据：面向车载网关的实时入侵检测，作者论证了时延和内存满足车载部署需求，但实测在 GPU 上，相关度中等。把双向 Mamba 用于报文内容级篡改检测有一定新意，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.18599" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

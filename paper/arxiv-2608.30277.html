@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SimCRAFT: Distilling Remote Sensing Agents via Synthetic Trajectories and Contextual Retrieval-Augmented Fine-Tuning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-31 · Haoran Wang; Jing Yao; Xu Yang; Zeqing Wang; Yang Zhang; Pedram Ghamisi; Zhengchao Chen / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">遥感智能体现在严重依赖大型通用模型，既缺领域知识又吃基础设施；SimCRAFT 把编排能力蒸馏进一个 7B 规模的紧凑模型。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">模型无关的框架，用合成轨迹加上下文检索增强把复杂的遥感任务编排能力蒸馏进 7B 级模型。</span></div>
-<div class="score-reason">评分依据：把智能体编排压到 7B 规模是降低部署门槛的方向，对受限环境有迁移价值，但论文强调的是基础设施成本而非设备端运行，端侧契合度中等。合成轨迹加检索增强的蒸馏组合属于常规做法。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-08-31 · Haoran Wang; Jing Yao; Xu Yang; Zeqing Wang; Yang Zhang; Pedram Ghamisi; Zhengchao Chen / EMNLP 2026</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">应用:RAG</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">遥感智能体通常依赖超大通用模型来编排工具流程，部署成本高；SimCRAFT 把这种多步工具编排能力蒸馏进 7B 级小模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">SimCRAFT-7B 规划成功率（PSR）达到 83.2%，超过 671B 的 DeepSeek-R1，幻觉率降到 0.5%；Qwen2.5-7B 底座版本 PSR 79.4%，比同底座的推理时检索增强基线高 29.2%，在超过 8 步的长任务上 PSR 仍保持在 74.6% 以上。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用多智能体合成引擎加模拟执行器生成并校验 1.4 万条遥感工作流轨迹（SimRS-14k），再用“检索相似标准流程、类比改写”的检索增强微调训练小模型，避免死记硬背。</span></div>
+<div class="score-reason">评分依据：目标是让遥感智能体能在卫星、无人机或无高端 GPU 的工作站上运行，但论文没有给出设备端实测，属于可迁移的小模型智能体工作。合成数据加检索增强微调的组合较完整，已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.30277" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

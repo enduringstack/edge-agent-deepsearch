@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>When Personality Meets Quantization: A Layer-wise MBTI Analysis of Quantized LLMs</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-26 · Yao Fu; Lijia Huang; Xiaomin Li; Runchao Li; Yu Yin; Kenneth A. Loparo / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">大家都在部署量化后的大模型，但很少有人检查量化会不会改变模型的性格；这篇做了逐层的 MBTI 分析。</span></div>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span>  2026-08-26 · Yao Fu; Lijia Huang; Xiaomin Li; Runchao Li; Yu Yin; Kenneth A. Loparo / arXiv</div>
+<div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型被量化后部署到资源有限的设备上，它表现出的“性格”会不会变？这篇用 MBTI 测评系统分析了 4 比特和 2 比特量化模型的性格稳定性，并逐层观察性格是怎么形成的。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">对多个开源模型在不同量化设置下做系统的 MBTI 人格测评，并且不只看最终输出，还逐层分析人格特质的变化。</span></div>
-<div class="score-reason">评分依据：量化模型是端侧部署的默认形态，指出压缩可能改变交互体验而不只是准确率，角度有价值，但与端侧硬件约束关系间接，端侧契合度中等。属于测评性研究，方法创新有限。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对多个开源模型的 GPTQ、AWQ（4 比特）和 AQLM（2 比特）版本做 MBTI 测评，结合逐层选项熵和置信差分析，并提出一种放大不确定性的逐层解码方法研究解码引起的性格漂移。</span></div>
+<div class="score-reason">评分依据：研究对象是部署量化模型时的行为可靠性，与端侧量化部署相关；结论以定性发现为主（4 比特基本保持性格、2 比特破坏一致性），贡献偏分析。 作者机构依据：arXiv PDF 首页署名 Microsoft（PDF 首页第 6 位作者 Xiaomin Li 署名 Microsoft Research（Redmond）；其余作者来自 Case Western Reserve University 和 Northeastern University，属公司作者参与）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.25977" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

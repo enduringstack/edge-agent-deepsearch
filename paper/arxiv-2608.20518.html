@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FL-MAESTRO: Multi-Agent LLM Orchestration for Resource-Constrained Federated Learning</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-20 · Jiajun Wu; Zirui Wang; Jiayu Zhou; Qiang Ye; Steve Drew / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:端云协同</span><span class="tag">方向:规划推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">联邦学习每一轮都要同时决定通信拓扑、各客户端资源分配和聚合规则，这篇让三个大模型智能体各管一个决定。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">三个专职大模型智能体分别分析拓扑、资源和聚合，协调者把三份分析合成一个决定，再由一个非大模型的可行性检查确认后才执行该轮；编排器还会读服务器的预测失败名单，提前剔除那些更新注定聚合不上的客户端。</span></div>
-<div class="score-reason">评分依据：面向资源受限联邦学习的运行时决策，与端侧协同训练直接相关，但大模型编排跑在服务器侧；多智能体分工加可行性校验的设计合理，属于常见范式组合。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-20 · Jiajun Wu; Zirui Wang; Jiayu Zhou; Qiang Ye; Steve Drew / IEEE GLOBECOM 2026</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:调度服务</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">FL-MAESTRO 用三个大模型智能体在服务器端为联邦学习的每一轮联合决定通信拓扑、客户端资源分配和聚合规则，避免让电量快耗尽的边缘设备白白参与训练。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">非 IID CIFAR-10 上（GPT-4.1-mini 驱动），FedAvg 浪费 33.5%（困难设定）和 42.6%（极端设定）的轮次能耗，FL-MAESTRO 联合版降到 3.9% 和 0.2%，准确率 0.657 和 0.615 也高于 FedAvg 的 0.639 和 0.581；换用开源 Qwen3.5-35B 也能达到相近效果。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">三个专职智能体分别分析拓扑、资源和聚合，协调者合成一个决策，再由非大模型的可行性校验器确认；读取服务器预测的掉线名单，提前排除注定无法被聚合的客户端。</span></div>
+<div class="score-reason">评分依据：目标是降低边缘设备在联邦学习中的能耗浪费，但智能体运行在服务器端，属端侧相关的编排工作；把大模型智能体用于每轮运行时决策有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.20518" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

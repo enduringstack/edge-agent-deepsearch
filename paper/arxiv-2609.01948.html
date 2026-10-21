@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>An Emerging NVM-Based On-Chip Training Architecture with Non-Ideality Mitigation Through Bipolar Weight Distributions</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-09-01 · Peng Dang; Youna Huang; Yintao He; Huawei Li / arXiv</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-09-01 · Peng Dang; Youna Huang; Yintao He; Huawei Li / IEEE TVLSI</div>
 <div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:CIM</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用新型非易失存储器做存内计算来加速片上训练很省电，但器件本身的非理想特性会让权重更新偏离目标值；NOVA 想把这个偏差治住。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者先做出二维铁电场效应晶体管并用实测数据标定电导调制行为模型，再基于该器件模型首次提出面向此类存储器的非理想性规避训练算法，配合双极性权重更新方案降低非理想性带来的损伤。</span></div>
-<div class="score-reason">评分依据：存内计算片上训练是端侧自适应和低功耗学习的硬件基础，端侧契合度较高。器件实测加算法协同设计，比纯仿真的存内计算工作更有说服力。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">基于新型非易失存储的存内计算适合低功耗片上训练，但器件电导更新不准会拖累精度；NOVA 架构配合新的训练算法缓解这一问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在器件严重不对称的情况下，非理想规避训练算法在多个基准任务上平均比基线方法提高 15.1% 准确率；NOVA 的平均能效约为 GPU 峰值能效的 33.58 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先制备二维铁电场效应晶体管并用实验数据校准电导调制模型，再设计训练算法，引导权重收敛到器件电导最稳定的区间。</span></div>
+<div class="score-reason">评分依据：面向低功耗片上训练的存内计算硬件，与端侧训练相邻，但停留在器件与架构仿真层面。从真实器件建模出发设计训练算法，有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.01948" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

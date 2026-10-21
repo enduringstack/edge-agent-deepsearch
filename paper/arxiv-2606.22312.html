@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SHACR: A Graph-Augmented Semi-Autonomous Framework for Multi-Class Conflict Resolution in Smart Home IoT Automation</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-21 · Leena Marghalani; Walid Aljoby; Suayb S. Arslan / arXiv</div>
-<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:安全隐私</span><span class="tag">应用:IoT命令</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用知识图谱给大模型打底，检测并修复智能家居自动化规则之间互相打架的问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">针对用户自定义规则单看都没问题、同时执行却会通过共享设备、环境变量和物理拓扑产生隐蔽的跨规则交互这一问题，把设备、能力、物理状态和触发-条件-动作规则编码成有类型、可遍历的实体，构成一张形式化的有向知识图谱，并把物理因果关系提升为图里的一等边，从而把冲突检测从脆弱的文本推断变成确定性的图上推理，同时用图谱约束住大模型推理的不可预测性。</span></div>
-<div class="score-reason">评分依据：面向智能家居物联网设备编排，属端侧场景的上层应用，但推理本身没有设备端执行证据、也不涉及算力约束，相关度中等；把物理因果提升为图结构来约束大模型输出的设计较有章法。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-21 · Leena Marghalani; Walid Aljoby; Suayb S. Arslan / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:工具调用</span><span class="tag">应用:IoT命令</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能家居里用户自定义的联动规则单独看都没问题，同时执行却可能因共享设备和物理环境产生冲突。SHACR 用知识图谱约束大模型，自动发现、解释并修复这些冲突。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在一栋智能楼宇 70 套公寓、203 条规则的测试床上，同一大模型加入知识图谱后分类错误减少 36.7%，F1 从 0.59 提升到 0.79，再做少样本校准后 F1 达 0.95，而不带图谱的大模型做同样校准几乎没有提升。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把设备、能力、物理状态和“触发-条件-动作”规则编码成有类型的有向知识图谱，把物理因果关系做成图边，冲突检测变成确定性的多跳图遍历；在“扫描-解释-修复-验证”闭环中用图来限定大模型的动作空间，推理编排用的是云端 Claude Sonnet 4。</span></div>
+<div class="score-reason">评分依据：面向物联网设备编排的智能体闭环，但推理由云端大模型完成，设备只是被管理对象，判为非端侧 Agent，相关度中等偏低；以图结构约束大模型的设计较有章法，并已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.22312" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

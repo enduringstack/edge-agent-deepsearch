@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SkillForge: Self-Distilling Agents for Project-Specific Issue Resolution</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-19 · Silin Chen; Han Li; Xiaodong Gu; Yuling Shi; Haibing Guan / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">应用:代码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">让智能体从自己解决具体项目缺陷的过程中蒸馏出可复用技能，下次遇到同类问题直接用。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把智能体在项目内解决 issue 的成功轨迹自蒸馏成技能，逐步积累成项目专属的技能库。</span></div>
-<div class="score-reason">评分依据：自蒸馏技能可降低智能体每次推理的开销，对算力受限部署有间接价值；属于智能体自改进的常见范式。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-19 · Silin Chen; Han Li; Xiaodong Gu; Yuling Shi; Haibing Guan / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">SkillForge 让写代码修 Bug 的智能体在接手某个仓库前先“自学”：自己造出该项目的练习题并解决，把经验沉淀成和代码实体绑定的技能，之后修真实问题时调用。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">基于 Mini-SWE-Agent，在 SWE-bench Verified 上用 DeepSeek-V3.2 和 GPT-5-mini 分别达到 72.2% 和 60.6% Pass@1，比原始智能体提高 5.8 和 5.6 个百分点；在 SWE-bench Pro 上提高 5.8 和 4.1 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">挑出被测试覆盖的核心功能，删掉后让智能体重写，形成项目专属的合成问题；解决过程中提炼可复用技能，按访问到的仓库实体即时注入。</span></div>
+<div class="score-reason">评分依据：属于云端代码智能体的技能积累，与端侧无直接关系；主动合成练习题获取项目知识的做法有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.18933" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

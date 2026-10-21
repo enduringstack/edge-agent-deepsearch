@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>WEQA: Wearable hEalth Question Answering with Query-Adaptive Agentic Reasoning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-16 · Yuwei Zhang; Tong Xia; Bianca Emmerich; Yu Yvonne Wu; Dimitris Spathis; Xin Liu; Daniel McDuff; Cecilia Mascolo / arXiv</div>
-<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">方向:多模态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">可穿戴设备产生的是连续的高维长周期传感数据，直接丢给大模型答不好；这篇让模型按问题类型去调用合适的分析工具。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">一个大模型控制器负责生成执行计划，把每个问题动态路由到合适的传感器分析方法和预训练模型组合，再结合外部知识对生成的回答做有据可依的审核。</span></div>
-<div class="score-reason">评分依据：处理的是可穿戴设备的传感数据问答，属于端侧传感场景的上层应用，但推理和工具调用都不限定在设备上，相关度中等。按查询自适应路由到专用工具的设计比单一基础模型更务实，贡献中等。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-06-16 · Yuwei Zhang; Tong Xia; Bianca Emmerich; Yu Yvonne Wu; Dimitris Spathis; Xin Liu; Daniel McDuff; Cecilia Mascolo / arXiv</div>
+<div class="tags"><span class="vendor-tag">Google</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能手表等可穿戴设备产生的是连续、高维、长周期的传感数据，直接丢给大模型答不好健康问题；这篇让大模型按问题类型去调用合适的传感器分析工具。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在可穿戴健康问答任务上比纯大模型和已有智能体基线至少准 24%；12 位医学专家和 8 位用户的盲评中，WEQA 相对 ReAct 和多智能体方案的胜率分别为 72.5% 和 78.3%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">大模型控制器先为每个问题生成执行计划，把它动态路由到合适的传感器分析方法和预训练模型组合，再结合外部知识对回答做有据审核；默认骨干是云端的 Gemini-3.0-Flash。</span></div>
+<div class="score-reason">评分依据：处理的是可穿戴设备的传感数据，但智能体推理和工具调用都在云端大模型上完成，相关度中等。按查询自适应路由到专用传感器模型的设计比单一基础模型更务实，贡献中等。PDF 首页作者 Dimitris Spathis、Xin Liu、Daniel McDuff 署名 Google Research。 作者机构依据：arXiv PDF 首页署名 Google（PDF 首页作者 Dimitris Spathis、Xin Liu、Daniel McDuff 署名 Google Research）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.18147" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

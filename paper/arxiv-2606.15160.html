@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DLWM: Diverse Latent World Models for Efficient Multimodal Reasoning</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-13 · David Huang; Lianlei Shan / arXiv</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-13 · David Huang; Lianlei Shan / arXiv</div>
 <div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:规划推理</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">多模态推理时画面可能被遮挡、模糊或有歧义，一条固定的思考路径既探索不够，内存和推演开销还高。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先构造一组多样的潜空间世界模型来覆盖多种可能的解释，再用强化学习在潜空间里做推理，避免对每个输入都按统一预算走单一路径。</span></div>
-<div class="score-reason">评分依据：论文把内存占用和推演成本作为动机之一，对算力受限设备上的多模态推理有迁移价值，但没有端侧实验，相关度中等偏低。多样潜空间世界模型加强化学习的组合有一定新意，贡献中等。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">多模态大模型推理时，画面遮挡、模糊或有歧义会有多种合理解读，按单一路径、固定算力推理既想不全又费内存。DLWM 让模型在隐空间里同时展开多个假设并按需分配算力。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多个多模态推理基准上，准确率比现有方法高 2 到 5 个点，同时内存占用降低 24%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先在连续隐空间里构造多个不同的“世界假设”，分别做隐式推理，并用正交性正则防止假设塌缩成一个；再用一个考虑资源的强化学习策略决定每条推理路径是扩展、终止还是合并。</span></div>
+<div class="score-reason">评分依据：主要贡献在多模态推理能力，节省内存只是附带收益，没有端侧部署实验，相关度低；多假设隐空间推理加资源感知调度的组合有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.15160" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

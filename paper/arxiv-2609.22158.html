@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>StepKV: Step-Aware KV Cache Compression for LLM Agents</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-26 · Boyu Feng; Jiahong Liu; Yifan Li; Wenhao Yu; Zexuan Qiu; Yuliang Sun; Ming Shen; Xiang Li / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:高效推理</span><span class="tag">方向:工具调用</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">多步智能体的 KV cache 涨得特别快，现有压缩方法把缓存当成一条扁平 token 流来排序，和智能体实际的推理单元对不上。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">StepKV 按步感知来压缩：一次查询会展开成推理、工具交互和检索观察组成的轨迹，有用信息是按推理步组织的，所以压缩粒度也应当对齐到步，而不是按时近性或注意力显著度剪单个 token。</span></div>
-<div class="score-reason">评分依据：KV cache 是端侧运行智能体最先撑爆的资源，按步压缩的思路可直接迁移，但论文没有设备端实测，端侧契合度中等。把压缩单元和推理单元对齐是有道理的观察，方法仍属 KV 剪枝路线。</div>
+<div class="meta"><span class="score">13</span> <span class="tier company">公司项目</span>  2026-08-26 · Boyu Feng; Jiahong Liu; Yifan Li; Wenhao Yu; Zexuan Qiu; Yuliang Sun; Ming Shen; Xiang Li / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:KV cache</span><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">模型:Qwen</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多步工具调用的智能体上下文越来越长，KV cache 压缩若只按单个 token 取舍，会把后面还要用的早期推理步骤删掉；StepKV 把“推理步骤”作为保留单位来压缩缓存。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">Qwen2.5-7B 在只保留 20% KV 时，HotpotQA EM 为 18.07，而 H2O、TOVA 只有 1.53 和 0.73（全量 KV 为 26.40）；保留 50% 时 EM 为 23.23，接近全量；Llama-3.1-8B 上结论一致。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把每个缓存条目关联到生成它的推理步骤，根据后续轨迹对该步信息的复用来更新步骤价值，再与 token 级显著性结合，在预算内全局挑选保留条目。</span></div>
+<div class="score-reason">评分依据：智能体的长轨迹 KV cache 是端侧运行智能体时最紧的内存瓶颈之一，这种压缩方法可直接迁移。以推理步骤为单位压缩、解决低预算下推理连续性断裂，是有新意的贡献。作者机构依据 arXiv PDF 首页署名：作者 8、9 来自 Huawei Technologies。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页作者 8、9（Xiang Li、Quanyu Dai）署名 Huawei Technologies Co., Ltd，其余作者来自香港中文大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.22158" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

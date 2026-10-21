@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Binary Tracking for Spatial QA and Navigation with Open Vision-Language Models</h1>
 <div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-15 · Dongbin Na; Chanwoo Kim; Soonbin Rho; Giyun Choi; Gangbok Lee; Dooyoung Hong / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">服务机器人要回答「回家路上哪里能找到干洗店」这类问题并给出坐标，以往方案依赖调用闭源大模型，网络一抖就不可用。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">完全开源的空间定位智能体，利用机器人轨迹本身的时间顺序，在走过的路径上做二分查找来定位目标，而不是靠反复调用闭源模型做路径探索。</span></div>
-<div class="score-reason">评分依据：论文明确指出机器人受网络不稳定、通信时延和部署成本限制，不能依赖在线闭源模型，因而需要可在机器人本体上跑的开源方案，动机就是端侧，但摘要没有给出机载实测证据。利用轨迹时序做二分查找的思路简洁有效，贡献中等。</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:规划推理</span><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">服务机器人沿长路线行走后，用户问“回家路上哪里有干洗店”，系统要给出可导航的坐标。以往方法依赖 GPT-4o 等闭源模型，机器人上难以稳定使用。BinTrack 是完全开源、面向机载运行的空间定位智能体。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">比其他开源实现总体准确率最高提升 22.8%，在 SpaceLocQA 最难的全局类别上追平已报道的闭源模型结果，推理比以往方法快 1.5 倍以上；同时发布了用四足机器人在公共街道多次往返采集的 GangnamLoop 基准。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先从问题里识别出两个锚点地标，再利用机器人轨迹的时间顺序，在两个锚点之间的轨迹片段上做二分查找，逐步缩小目标位置。</span></div>
+<div class="score-reason">评分依据：目标是让开源模型在机器人上替代闭源云端模型，方向对题，但实验在双 RTX 6000 Ada 工作站上运行，没有机载部署结果；二分查找式的轨迹搜索简单有效，并附真机采集数据集。PDF 首页作者均署名机器人公司 RGA Inc.。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.16902" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

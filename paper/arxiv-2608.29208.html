@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AdaVLA: Adaptive Step Flow Matching for Training-free Acceleration of Vision-Language-Action Models</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-08-29 · Sunghwan Han; Youngtae Han; Youngmin Yi / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">方向:测试时自适应</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">视觉语言动作模型算得太重，装不进机器人本体；AdaVLA 不用重新训练就能把流匹配式模型的推理步数自适应压下来。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">现有加速方法多半盯着视觉语言模型本身的推理成本，忽略了流匹配推理里反复解常微分方程这一段；AdaVLA 在线计算一个新指标来判断当前样本需要多少积分步，动态跳过冗余步骤，全程不需要训练数据。</span></div>
-<div class="score-reason">评分依据：明确指向视觉语言动作模型的端侧部署瓶颈，且不依赖训练数据这一点对拿不到私有数据集的落地方尤其重要，端侧契合度高。把加速目标从视觉语言模型转到流匹配的积分过程，是被忽视的角度。</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-08-29 · Sunghwan Han; Youngtae Han; Youngmin Yi / IROS 2026</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:剪枝稀疏</span><span class="tag">硬件:Jetson</span><span class="tag">应用:机器人</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">视觉-语言-动作（VLA）机器人模型计算量大，难以在设备上实时响应。AdaVLA 是一种无需训练、在线自适应的加速方法，专门针对流匹配类 VLA 反复求解 ODE 的瓶颈。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Jetson AGX Orin 上跑 LIBERO 基准，π0.5 和 X-VLA 分别提速 1.87 倍和 2.24 倍，成功率几乎不变；SO-ARM101 真机上用 SmolVLA，平均时延从 806.73 ms 降到 488.49 ms，成功率从 87.5% 升到 90.0%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">根据流匹配轨迹的曲率估计当前动作生成的置信度，置信高时动态减少推理步数，并用高效的重要性评估自适应调整 MLP 剪枝比例，全程不需要训练数据。</span></div>
+<div class="score-reason">评分依据：在 Jetson AGX Orin 和真实机械臂上实测，端侧相关度高；但它加速的是动作生成模型本身，没有规划、记忆或工具调用闭环，不算端侧智能体。无需训练数据的自适应步数加剪枝方案实用，已被 IROS 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.29208" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>KATANA: A Fast, Low-Power Mapping of Kalman Filters onto Edge NPUs for Real-Time Tracking</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-06-12 · Bodhisatwa Kundu; Anish Rooj; Sumit Saha; Abhradeep Sarkar; Arghadip Das; Arnab Raha; Mrinal K. Naskar / arXiv</div>
-<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:NPU</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">雷达、反无人机、自动驾驶里的目标跟踪都靠卡尔曼滤波，但它现在几乎只跑在 CPU 上，多目标更新被串行化；这篇把它搬上边缘 NPU。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把线性与扩展卡尔曼滤波映射到 AI PC 芯片里集成的低功耗数据并行神经处理单元上，利用其并行能力并行化多目标跟踪的更新，避开 CPU 串行和定制加速器设计周期长这两个问题。</span></div>
-<div class="score-reason">评分依据：目标平台是车载、无人机和手持设备上的边缘芯片，每瓦功耗直接换算成续航与作用距离，端侧语境确凿。把非神经网络的经典滤波算法映射到 NPU 上，是对端侧算力的创造性复用，贡献中等偏上。</div>
+<div class="meta"><span class="score">14</span> <span class="tier company">公司项目</span>  2026-06-12 · Bodhisatwa Kundu; Anish Rooj; Sumit Saha; Abhradeep Sarkar; Arghadip Das; Arnab Raha; Mrinal K. Naskar / arXiv</div>
+<div class="tags"><span class="vendor-tag">Intel</span><span class="tag">方向:编译部署</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:高效推理</span><span class="tag">硬件:NPU</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">雷达跟踪、反无人机、自动驾驶等实时跟踪系统的核心是卡尔曼滤波，以往只能跑在 CPU 或定制加速器上。KATANA 首次把线性和扩展卡尔曼滤波完整搬到商用 AI PC 的 NPU 上执行。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Intel Core Ultra Series 2 上，批处理扩展卡尔曼滤波达到 223.35 帧/秒、功耗 13.43 W，线性卡尔曼滤波达到 408.73 帧/秒、功耗 14.05 W；与 CPU 实现相比动态能耗最多降低 97.9%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">做了三种代数图改写：用预先算好的负投影矩阵把减法改成加法、把张量形状固定后融合、把多目标更新拼成块对角矩阵批量并行，从而让 100% 的算子都落在 NPU 的矩阵引擎上，不再回落到 CPU。</span></div>
+<div class="score-reason">评分依据：在量产 AI PC 芯片的 NPU 上做了端到端真机测量，给出帧率和功耗，端侧相关度高；把非神经网络的经典估计算法改写成 NPU 友好的图，思路可迁移到其他小算子负载。PDF 首页作者 6 Arnab Raha 署名 Intel Corporation。 作者机构依据：arXiv PDF 首页署名 Intel（PDF 首页作者 6 Arnab Raha 署名 Intel Corporation, CA, USA；其余作者来自 Jadavpur University 和 Purdue University）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.14992" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

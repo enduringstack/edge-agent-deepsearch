@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>InjecMEM: Memory Injection Attack on LLM Agent Memory Systems</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-24 · Hanling Tian; Gengyu Zhang; Zeyang Sha; Jingying Wang; Yuhang Liu; Zhehao Huang; Kun Yang; Xiaolin Huang / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:安全隐私</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">记忆正在成为部署型智能体的标配子系统，这篇问它会不会带来新漏洞，答案是只需要一次交互就能长期操纵后续回答。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">攻击不需要对记忆库的读写权限：构造一条包含高召回主题线索的「锚」让检索稳定把这条记录关联到目标话题，再配一段经过优化、在不确定融合条件下仍然有效的对抗指令。</span></div>
-<div class="score-reason">评分依据：记忆注入攻击对保存个人数据的端侧助理威胁更直接，迁移价值明确；单次交互即可生效的攻击设定有警示意义。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-08-24 · Hanling Tian; Gengyu Zhang; Zeyang Sha; Jingying Wang; Yuhang Liu; Zhehao Huang; Kun Yang; Xiaolin Huang / COLM 2026</div>
+<div class="tags"><span class="vendor-tag">Ant Group</span><span class="tag">方向:记忆</span><span class="tag">方向:安全隐私</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体越来越多地带上长期记忆，InjecMEM 证明攻击者只需一次正常对话，就能往记忆里埋入内容，让之后相关话题的回答被操控。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 MemoryOS 上检索命中率最高 35.4%、攻击成功率最高 76.6%；其中 Multi-GCG 达到 76.6% 的 ASR-c 和 35.6% 的 ASR-j，而 DPI、BadChain 和原版 GCG 在该设置下成功率全部为 0；对无关查询没有影响，记忆漂移下仍有效。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">注入内容由两部分组成：带高召回主题线索、对检索器通用的锚点，保证以后能被检索到；以及用梯度坐标搜索优化的短指令，在不同提示模板和插入位置下都能稳定操控输出。</span></div>
+<div class="score-reason">评分依据：保存个人数据的端侧助理同样依赖记忆检索，这类攻击对其威胁直接，迁移价值明确；单次交互即可生效的设定有警示意义，已被 COLM 2026 接收。公司归属依据 arXiv PDF 首页：作者 Zeyang Sha、Kun Yang 署名蚂蚁集团。 作者机构依据：arXiv PDF 首页署名 Ant Group（PDF 首页作者 Zeyang Sha、Kun Yang 署名 Ant Group，其余作者为上海交通大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.23471" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

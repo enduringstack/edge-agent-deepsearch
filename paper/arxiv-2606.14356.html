@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PLAIground: SLO-Driven Runtime Model Selection for Compound AI Systems in the Edge-Cloud-Space Continuum</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-12 · Milos Gravara; Cynthia Marcelino; Andrija Stanisic; Stefan Nastic / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:调度服务</span><span class="tag">方向:编译部署</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一个应用里要串起目标检测、时序分析、自然语言处理好几个 AI 任务，还要在边缘、云和卫星之间满足精度、时延和成本目标。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">提出一种可组合的 AI 模型抽象，用任务契约和数据契约把任务语义与具体模型实现解耦，于是换模型不用改工作流；再配一个按服务水平目标驱动的运行时选择器在执行中动态切换模型。</span></div>
-<div class="score-reason">评分依据：面向边缘、云、天基三层连续体的运行时模型选择，时延与成本约束贴近端侧部署，但论文偏框架抽象，没有设备侧实测。任务契约解耦加运行时切换的设计清晰，贡献中等。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-12 · Milos Gravara; Cynthia Marcelino; Andrija Stanisic; Stefan Nastic / arXiv</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:端云协同</span><span class="tag">方向:编译部署</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一个应用要串起目标检测、时序分析、自然语言处理等多个 AI 任务，还要在边缘、云和卫星之间同时满足精度、时延和成本目标。PLAIground 让这类组合式 AI 系统在运行时按需换模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在两个真实的组合式 AI 工作流上，Pixie 在满足服务目标的前提下精度最高达 91.3%；而固定模型策略要么超出成本和时延预算最多 21 倍，要么精度比目标低 4%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用“可组合 AI 模型”抽象把任务语义和具体模型实现分开，通过任务契约和数据契约约束输入输出，换模型不用改工作流；再由按服务目标驱动的选择算法 Pixie 在执行时为每个任务挑最合适的模型。</span></div>
+<div class="score-reason">评分依据：面向边缘-云-卫星连续体的运行时模型选择，属于部署编排层的可迁移工作，但没有针对端侧设备做推理优化；方法是契约抽象加启发式选择，工程整合为主。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.14356" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ReMP: Low-Downtime Runtime Model-Parallelism Reconfiguration for LLM Serving</h1>
-<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-17 · Haipeng Yuan; Kaining Zheng; Yongshu Bai; Yuchen Zhang; Yunquan Zhang; Baodong Wu; Xiang Gao; Daning Cheng / arXiv</div>
-<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:云端serving</span><span class="tag">方向:KV cache</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">大模型服务的张量并行和流水并行切分方式一旦定下就改不了，想换只能重启，服务要中断好几分钟；这篇让它在线改。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">三招降低停机：把并行拓扑与运行时状态解耦，避免全量重建；配合增量式的状态迁移和重用，使切换过程不丢键值缓存也不必从头重算。</span></div>
-<div class="score-reason">评分依据：面向超大规模集群的在线重配置，设备端语境不成立，相关度低；但属于推理服务技术栈，按相邻工作保留。运行时改并行拓扑在工程上确实少见，贡献中等。</div>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span>  2026-06-17 · Haipeng Yuan; Kaining Zheng; Yongshu Bai; Yuchen Zhang; Yunquan Zhang; Baodong Wu; Xiang Gao; Daning Cheng / arXiv</div>
+<div class="tags"><span class="vendor-tag">Infinigence AI</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">方向:KV cache</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型推理系统的张量并行和流水并行配置通常是写死的，想按负载调整只能重启服务；这篇做到运行中低停机地切换并行方式。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">168 种并行切换每次只需 1.0–7.4 秒，比重启快 2.5–25.8 倍；在每秒 16 个请求时，平均首字时延比全流水并行降低 6.2–19.8 倍，输出吞吐比全张量并行高 7.0%–23.4%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">运行时调整并行拓扑，同时迁移已有的键值缓存而不是丢弃重算，并把模型权重重载与键值缓存处理重叠执行，使切换路径缩短 14%–32%。</span></div>
+<div class="score-reason">评分依据：面向多卡云端服务的并行重配置，与端侧部署关系很弱，相关度低。在线切换并行拓扑且保留键值缓存的设计实用，贡献中等。PDF 首页作者 Baodong Wu 署名 Infinigence AI（北京）。 作者机构依据：arXiv PDF 首页署名 Infinigence AI（PDF 首页作者 Baodong Wu 署名 Infinigence AI, Beijing；其余作者来自中科院计算所和之江实验室）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.18741" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

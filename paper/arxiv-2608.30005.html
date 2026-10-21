@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Small Language Models as Judges for Rubric-Based Reinforcement Learning</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-09-03 · Fengyu Xie, Yilun Zhao, Bingsen Chen, Arman Cohan, Chen Zhao / HuggingFace Daily</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-08-30 · Fengyu Xie; Yilun Zhao; Bingsen Chen; Arman Cohan; Chen Zhao / EMNLP 2026 Findings</div>
 <div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:评测基准</span><span class="tag">模型:Qwen</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">按评分表打分的强化学习要反复调用评判模型，用商用 API 或 7B 以上的本地模型都很贵；这篇问小模型能不能胜任。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">论文报告：作者构建了两个逐项标注的评分表评测数据集；在两者上，Qwen3-1.7B 的探针式评判在准则级一致性上都优于生成式和对数几率式；用它当 GRPO 的奖励模型，能把策略在 RaR-Science 评分上从 0.232 训到 0.643，而 8B 生成式评判基线是 0.594。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">比较三种从小模型里取出准则级判断的方式：直接生成判定、看 Yes/No 的对数几率差、以及在隐藏表示上训一个探针分类器；结果是探针式最好。</span></div>
-<div class="score-reason">评分依据：「小模型能不能替代大模型当评判」这个结论对算力受限的端侧自评场景有迁移价值；探针式评判优于生成式的发现有实用意义且数字清楚。</div>
-<div class="source"><a href="https://huggingface.co/papers/2608.30005" target="_blank" rel="noopener">查看原文 →</a></div>
+<div class="field"><span class="label">这是什么</span><span class="text">按评分细则做强化学习时，每一步都要请大模型当裁判打分，成本很高；这篇研究检验 1.7B 级别的小模型能否当可靠、便宜的细则裁判。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">Qwen3-1.7B 探针式裁判作为 GRPO 奖励模型，把策略在 RaR-Science 细则评分上从 0.232 训练到 0.643，高于 8B 生成式裁判基线的 0.594，而后者的裁判耗时是它的 10.7 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">构建两个带逐条满足标签的细则评测集，比较小模型的三种判分方式：直接生成结论、比较是/否的对数概率、在隐藏层上训练线性探针，探针方式一致性最好。</span></div>
+<div class="score-reason">评分依据：小模型在这里只是训练流程中的奖励裁判，与设备端推理或部署关系很远，相关度低。用探针替代生成式判分、显著节省奖励计算，是有实用价值的工程发现。</div>
+<div class="source"><a href="https://arxiv.org/abs/2608.30005" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>RISE: Relay Inference and Online Scheduling for Efficient Edge-Device Collaborative Diffusion Model Services</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-06-16 · Zilan Huang; Zhiqing Tang; Hanshuai Cui; Tian Wang; Yuan Wu; Weijia Jia; Wei Zhao / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:高效推理</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">文生图扩散模型放边缘服务器上慢、放用户设备上糊；这篇让两边接力：边缘大模型先画出语义骨架，设备小模型接着画完。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者发现同一模型家族共享潜空间，模型切换后潜变量强度几乎不变，于是用免训练的接力机制：边缘的大模型跑前期塑造语义结构的去噪步骤，把中间结果交给设备侧小模型继续，并配一套在线调度决定怎么切分。</span></div>
-<div class="score-reason">评分依据：明确把去噪工作量在边缘服务器和用户设备之间拆分，设备侧承担后半程计算，端云协同语境明确。利用同族模型潜空间一致性做免训练接力的切入点比较巧，贡献中等偏上。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-16 · Zilan Huang; Zhiqing Tang; Hanshuai Cui; Tian Wang; Yuan Wu; Weijia Jia; Wei Zhao / IEEE ICWS 2026</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:调度服务</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">文生图扩散模型部署在网络边缘时，大模型画得好但慢，设备上的小模型快但语义不连贯，现有方案很少把去噪过程拆到边缘服务器和用户设备上分工。RISE 让大小模型接力完成一次生成。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在两个基准上，接力机制最多加速 2.1 倍且保持完整大模型的画质；上下文感知调度器在混合负载下能平衡质量和时延。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">发现同一模型家族换模型后隐变量强度偏差很小，于是边缘端大模型先做决定语义结构的前几步去噪，再把中间隐变量交给设备端小模型细化细节，无需训练；再用上下文老虎机调度器根据提示复杂度、用户偏好、网络质量和节点负载选择接力配置。</span></div>
+<div class="score-reason">评分依据：边缘服务器与用户设备协同的生成式推理，思路对端侧部署有直接价值，但测试床用 8 块 RTX 4090 模拟设备池，没有真实手机或终端；免训练的跨模型接力有新意。论文将发表于 IEEE ICWS 2026，不属于顶会名单。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.17378" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

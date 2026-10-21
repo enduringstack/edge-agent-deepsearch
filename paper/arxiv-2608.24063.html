@@ -7,9 +7,9 @@
 <h1>VisCache: Visual KV Cache Pruning for Efficient Vision Large Language Model Inference</h1>
 <div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-25 · Lyuke Wang; Zhuo Li; Guangxu Zhu / arXiv</div>
 <div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:多模态</span><span class="tag">方向:剪枝稀疏</span><span class="tag">应用:视频</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">视觉大模型的长上下文推理主要被视觉 KV 缓存拖垮，这篇做了一个免训练、从粗到细的视觉 KV 裁剪框架。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">两阶段协同：先用一个轻量视觉模型过滤时间冗余，只把语义信息量大的关键帧往下送；再用针对视觉大模型注意力动态设计的 PruneKV 做精细压缩，按抛物线形状分配逐层预算并用非对称更新有选择地裁 key。</span></div>
-<div class="score-reason">评分依据：多模态 KV 压缩直接决定端侧视频理解能否跑起来，迁移价值明确；免训练和逐层预算分配的组合实用。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">视觉大模型处理长视频时，视觉 KV 缓存又大又贵。VisCache 是免训练的即插即用方案，先筛关键帧、再分层裁剪视觉 KV 缓存。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">推理最高提速 2.35 倍并显著降低显存，只保留 19% 到 28% 的 KV 缓存仍保持有竞争力的效果，持续优于现有基线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用一个轻量视觉语言模型挑出语义信息多的关键帧，去掉时间冗余；再用 PruneKV 按抛物线形状逐层分配缓存预算，只裁剪 Key、对 Value 做融合，保住关键上下文。</span></div>
+<div class="score-reason">评分依据：多模态 KV 压缩直接决定端侧视频理解能否跑得动，迁移价值明确；免训练加逐层预算分配的组合实用。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.24063" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

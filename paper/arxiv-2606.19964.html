@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Low-Energy Reduced RISC-V Instruction Subset Processor for Tsetlin Machine Inference at the Edge</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-06-18 · Chanda Gupta; Sanidhya Bhatia; Shaurya Priyadarshi; Himani Panwar; Rishad Shafik; Sudip Roy / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:编译部署</span><span class="tag">方向:模型架构</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">为 Tsetlin 机这种纯位运算的机器学习方法专门裁一颗精简版 RISC-V 处理器，让它在边缘设备上跑得又快又省电。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先对 Tsetlin 机推理做指令使用情况统计，据此裁掉用不上的指令，再按裁剪后的指令集简化数据通路和控制通路，保留可编程性的同时降低功耗。</span></div>
-<div class="score-reason">评分依据：直接面向边缘 AI 部署设计专用处理器，省去对外部主机的依赖，端侧语境明确。领域专用指令集裁剪是成熟做法，这篇是针对 Tsetlin 机的工程落地，贡献中等。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-18 · Chanda Gupta; Sanidhya Bhatia; Shaurya Priyadarshi; Himani Panwar; Rishad Shafik; Sudip Roy / ISVLSI 2026</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:编译部署</span><span class="tag">硬件:FPGA</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Tsetlin 机是只用位运算和有限状态自动机的逻辑型机器学习方法，适合边缘设备；这篇为它定制了一颗精简指令集的 RISC-V 处理器，不再依赖外部主机和微码编程。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 FPGA 上，精简指令集使 LUT 减少 28.4%、触发器减少 12.6%、DSP 用量降为 0；结合推理算法优化，执行时间平均降低 96.55%（最多 99.28%），能耗平均降低 96.63%；Tsetlin 机在 CIFAR-2 上准确率 88.18%，同条件二值网络为 60.0%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从 RISC-V 指令集中删去 Tsetlin 机推理用不到的乘除等指令，并配套设计流程和推理算法优化，让模型直接以普通程序形式在这颗专用小核上运行。</span></div>
+<div class="score-reason">评分依据：面向边缘的低功耗专用推理处理器，有 FPGA 实测，端侧语境明确，但 Tsetlin 机本身应用面较窄。论文被 IEEE ISVLSI 2026 接收，可编程的领域专用处理器思路实用，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.19964" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

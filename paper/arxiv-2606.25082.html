@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Energy Efficient Scheduling of AI/ML Workloads on Multi Instance GPUs with Dynamic Repartitioning</h1>
-<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-23 · Ellie Lipe; Neel Karia; Connor Espenshade; Clifford Stein; Asser Tantawi; Olivier Tardieu / arXiv</div>
-<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:云端serving</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用强化学习动态切分多实例 GPU，并安排任务排队顺序，让数据中心跑 AI 负载更省电。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把问题拆成两层：给定一种多实例 GPU 切分配置，需要一个好实现的调度算法来决定从队列里取哪个任务、放到哪个切片上跑；而负载波动时这套切分配置本身可能不再合适、需要重新划分。作者用仿真加强化学习同时处理这两层，做成一个面向单块多实例 GPU、允许抢占的动态重划分调度框架。</span></div>
-<div class="score-reason">评分依据：面向数据中心 GPU 的能效调度，与端侧设备部署只有宽泛关联；把切分配置和任务调度放进同一个强化学习框架是合理的系统设计。</div>
+<div class="meta"><span class="score">6</span> <span class="tier company">公司项目</span>  2026-06-23 · Ellie Lipe; Neel Karia; Connor Espenshade; Clifford Stein; Asser Tantawi; Olivier Tardieu / CCGrid 2025</div>
+<div class="tags"><span class="vendor-tag">IBM</span><span class="tag">方向:调度服务</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">数据中心 AI 负载能耗攀升，NVIDIA 多实例 GPU（MIG）可以切分 GPU 来提升能效，但如何选任务、放到哪个切片、何时重新切分是难题。本文用仿真和强化学习做动态重切分调度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">基于真实数据中心昼夜负载轨迹，按能耗与超时的综合目标，动态重切分比每天两次重切分好 26%，比静态切分好 31%，比不切分好 68%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先比较四种调度算法选出较优者，再用强化学习在一天内按队列状况动态决定 MIG 切分配置，形成可预测的自动重配置策略。</span></div>
+<div class="score-reason">评分依据：面向数据中心 GPU 能效调度，与端侧设备只有宽泛关联；调度与切分联合优化属合理的工程整合。论文发表于 CCGrid 2025，PDF 首页作者 5、6 署名 IBM 沃森研究中心。 作者机构依据：arXiv PDF 首页署名 IBM（PDF 首页作者 5、6 署名 IBM TJ Watson Research Center（us.ibm.com 邮箱），作者 1–4 署名哥伦比亚大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.25082" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

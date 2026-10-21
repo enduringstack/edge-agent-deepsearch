@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TileMix: Tile-Centric Mixed-Precision Attention for LLM Inference Acceleration</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-25 · Hanzhi Zhang, Qiao Zhang, Qinglei Cao, Heng Fan, Yan Huang, Kewei Sha, Yunhe Feng / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效注意力</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">以计算块为单位做混合精度注意力，让不同块按需要用不同精度，从而加速大模型推理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把注意力计算切成 tile，按每个 tile 的数值特性分配不同精度，避免整层统一精度带来的浪费或掉点。</span></div>
-<div class="score-reason">评分依据：混合精度注意力对端侧受限算力有直接迁移价值；以 tile 为粒度分配精度的设计有针对性。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-25 · Hanzhi Zhang, Qiao Zhang, Qinglei Cao, Heng Fan, Yan Huang, Kewei Sha, Yunhe Feng / arXiv</div>
+<div class="tags"><span class="tag">方向:高效注意力</span><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">硬件:GPU</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">TileMix 是一个长上下文预填充用的注意力内核：把注意力矩阵切成与硬件对齐的小块，逐块决定用 FP16 还是 INT8 计算，在速度和长文本精度之间可调。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">A100 上 LLaMA 3.2 3B 预填充，4k 长度时 75% INT8 配置吞吐约 31.8K tokens/s，FlashAttention 为 14.3K；同时在 LongEval、LV-Eval 上找回了统一 INT8 丢掉的长文本精度。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用紧凑位图记录每组分块的精度路由，FP16 与 INT8 两条路径共享同一个在线 softmax 状态，不需训练，支持 GQA、变长批和 INT8 KV cache。</span></div>
+<div class="score-reason">评分依据：实验只在 A100 上做，但混合精度注意力和 INT8 KV cache 思路可迁移到端侧 NPU/GPU；把精度变成空间维度上的可执行决策有一定新意。</div>
 <div class="source"><a href="https://huggingface.co/papers/2608.17336" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

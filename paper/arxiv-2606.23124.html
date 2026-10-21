@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PRIDE: Privileged Information-enhanced Distillation for Empathetic Dialogue Generation</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-22 · Jiaqiang Wu; Zhouan Zhu; Shangfei Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把大模型的共情对话能力蒸馏进小模型，好让它能在资源受限的环境里跑。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">利用只在训练时拿得到、推理时没有的「特权信息」——比如专家心理学标注或未来事件摘要——把教师模型的共情推理迁移给小模型，这样部署时并不需要额外输入；其中一个关键部件是共情推理提示，引导教师显式地把共情过程拆解开来讲。</span></div>
-<div class="score-reason">评分依据：动机明确是大模型算力开销限制了资源受限环境下的部署，蒸馏出的小模型推理时不依赖额外输入，对端侧对话场景有直接迁移价值，但未做设备实测，相关度按可迁移技术栈计；引入特权信息做共情蒸馏的思路有一定新意。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-22 · Jiaqiang Wu; Zhouan Zhu; Shangfei Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">共情对话需要大模型细腻的理解能力，但大模型难以部署到资源受限环境，普通蒸馏又传不下共情所依赖的隐含线索。PRIDE 在训练阶段引入只有训练时才有的“特权信息”（如心理学专家标注、后续事件摘要）来做蒸馏。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 MEDIC 数据集上，Qwen2.5-VL 3B 学生的情绪识别准确率 69.19%，超过教师的 67.29%；与现有共情对话方法对比时，基于 Qwen 的版本准确率 48.81%、困惑度 7.92，均优于所有对比方法；Gemma3 1B 学生只需 2.8 GB 显存（减少 88.0%），速度 142.5 token/s（提速 6.06 倍）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">让教师按“理解感受、分析情境”逐步分解共情推理，学生用多源注意力融合特权信息，并用反向 KL 散度加最大均值差异的双重对齐损失，在 logit 和特征两个层面迁移知识；推理时学生不需要任何额外输入。</span></div>
+<div class="score-reason">评分依据：目标是把共情能力压进 1B–3B 小模型，并给出显存与速度数据，对端侧对话有迁移价值，但只在 GPU 上测，相关度中等；把特权信息学习引入共情蒸馏是新的组合。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.23124" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

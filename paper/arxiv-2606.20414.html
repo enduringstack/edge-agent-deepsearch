@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ExSpike: A General Full-Event Neuromorphic Architecture for Exploiting Irregular Sparsity with Event Compression</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-18 · Yuehai Chen; Farhad Merchant / arXiv</div>
-<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:稀疏注意力</span><span class="tag">硬件:神经形态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">脉冲网络理论上因为稀疏发放而省电，但不规则的稀疏很难真正换成硬件收益；这篇做了一套全事件驱动的神经形态架构来兑现它。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先用一组数据流优化保证每一层的输入都保持脉冲形式，让整网真正全事件驱动；再设计配套硬件架构并加一个支持脉冲自注意力的计算核；最后用相邻位置的事件压缩减少冗余累加。</span></div>
-<div class="score-reason">评分依据：脉冲网络硬件架构直指端侧低功耗推理，能耗是核心目标，相关度较高；但论文停留在架构设计与评估，未给出具体设备落地。把稀疏真正落到全事件驱动数据流并配事件压缩，比常见的半事件方案更彻底，贡献中等偏上。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-18 · Yuehai Chen; Farhad Merchant / FPL 2026</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:FPGA</span><span class="tag">硬件:神经形态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">脉冲神经网络理论上因为稀疏而省电，但硬件很难把不规则的稀疏真正变成速度和能耗收益；这篇设计了一个全事件驱动的神经形态加速器架构。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 FPGA 上，事件驱动卷积相比传统卷积平均降时延 88%、单层最多 97%；VGG11（CIFAR-10）准确率 93.89%，比 NEURAL 和 SConvNSys 高 0.44 和 2.41 个百分点；SpikingFormer-4-256 达 94.45%，与 FireFly-T 持平。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先做一组数据流优化，保证每一层的输入都保持为脉冲形式，从而实现纯事件驱动执行；再在硬件上只对活跃脉冲做计算，充分利用不规则稀疏。</span></div>
+<div class="score-reason">评分依据：面向低功耗神经形态推理的加速器，有 FPGA 实现，可用于端侧低功耗场景，相关度中等偏上。论文被 FPL 2026 接收，实现全事件驱动执行并兼容脉冲 Transformer，贡献中等偏上。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.20414" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>When Should a Robot Replan? Regret-Guided Update Scheduling in Time-Varying MDPs</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-15 · Negin Musavi; Gokul Puthumanaillam; Ruben Hernandez; William Schafer; Melkior Ornik / arXiv</div>
-<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:测试时自适应</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">机器人在变化的环境里要不断更新策略，但机载电量和算力限制了重算的次数；这篇研究什么时候该花这笔预算。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在转移概率漂移速率有界的时变马尔可夫决策过程里建模「跳过—更新」机制：只在选定的更新时刻做最大似然估计并重算有限时域策略，其余时间沿用旧策略，并分析跳过区间内动态遗憾的增长，由此导出在线的更新触发规则。</span></div>
-<div class="score-reason">评分依据：问题设定直接来自机载能耗与算力预算对重规划频率的限制，是端侧智能体的真实约束，但论文是理论分析，没有真机实验。把更新时机问题形式化并给出带遗憾界的触发规则，理论贡献中等。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-15 · Negin Musavi; Gokul Puthumanaillam; Ruben Hernandez; William Schafer; Melkior Ornik / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:能耗功耗</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">环境动态不断变化时，机器人要反复估计状态、重新规划，但机载算力和电量限制了能重规划多少次。这项工作回答“有限的重规划预算该花在什么时候”。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Crazyflie 四旋翼真机的密集障碍场景中，自适应调度成功率 0.73、平均碰撞 0.47 次，而均匀周期调度为 0.53 和 0.87 次；在火星车仿真里，动态遗憾也低于各类预算基线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把问题建模成转移概率随时间漂移的马尔可夫决策过程：在选定时刻重新估计转移模型并规划，其他时刻沿用旧策略并传播状态估计；推导出跳过更新期间遗憾增长的上界，据此设计在线按遗憾分配预算的更新规则。</span></div>
+<div class="score-reason">评分依据：直接针对机载算力和能耗预算下的重规划调度，并有四旋翼真机验证，但属于经典规划控制而非 AI 模型推理或智能体系统；有理论界和在线规则，贡献扎实。作者来自伊利诺伊大学厄巴纳-香槟分校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.16972" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

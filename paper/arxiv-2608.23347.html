@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Test-Time Adaptation for ECG Classification via SQI-Gated Self-Training and Beat-Rhythm Consistency</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-24 · Wenhan Jiang; Zhipeng Deng; Jiale Zhou; Haolin Wang; Yafei Ou; Yefeng Zheng / arXiv</div>
-<div class="tags"><span class="tag">方向:测试时自适应</span><span class="tag">应用:fault-detection</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">心电分类模型换了采集设备或人群就掉点，这篇在推理时只用无标注数据做自适应，并专门处理心电信号的噪声和节律结构。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先用信号质量指数做门控，把低质量片段挡在自适应之外以免模型被脏数据带偏；再在心拍和节律两个层级施加一致性约束，利用心电固有的层次语义稳定在线更新。</span></div>
-<div class="score-reason">评分依据：测试时自适应正是设备端模型面对分布漂移的关键手段，迁移价值明确；质量门控加双层一致性的设计针对性强。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-24 · Wenhan Jiang; Zhipeng Deng; Jiale Zhou; Haolin Wang; Yafei Ou; Yefeng Zheng / MICCAI 2026</div>
+<div class="tags"><span class="tag">方向:测试时自适应</span><span class="tag">应用:fault-detection</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">心电图分类模型换了采集设备或人群就掉点，BeatRhythm-TTA 让模型在推理时用无标签数据自我适应，并专门处理心电信号的噪声和心拍-节律结构。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以 PTB-XL 为源域、CPSC2018 和 Georgia 为目标域，在三种适应协议下多标签诊断的 Macro-F1 比最好的对比方法平均相对提升 2.70%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用信号质量指数筛掉低质量片段，避免有害更新；再强制心拍形态和节律动态双层一致，让模型在适应新采集条件时不跑偏。</span></div>
+<div class="score-reason">评分依据：测试时自适应是设备端模型应对分布漂移的手段之一，但论文未涉及设备端部署，相关度按中等偏低计；质量门控加双层一致性设计针对性强，已被 MICCAI 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.23347" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Accelerating GPU Inference of Large Language Models with Moderately Unstructured Sparse Weight Matrices</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-13 · Tao Lu; Haoyu Wang; Zonghui Wang; Keshen Xiang; Jiaheng Zhang; Wenzhi Chen / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">剪枝到五成左右的稀疏度是保质量的上限，可在这个稀疏度下，现有的稀疏矩阵乘内核反而比稠密的还慢。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">设计三层矩阵存储格式：稀疏张量核层让硬件稀疏单元能加速计算，槽填充层用并行差分距离做压缩并支持低成本的片上解码，轻量残差层保证计算结果正确；在此之上实现一个同时用上稀疏张量核与常规计算单元的内核。</span></div>
-<div class="score-reason">评分依据：把中等非结构化稀疏真正转化为硬件加速，这个问题在端侧同样存在，但论文针对的是数据中心 GPU，相关度较低。让五成稀疏度首次跑赢稠密内核是实打实的系统突破，贡献中等偏上。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-06-13 · Tao Lu; Haoyu Wang; Zonghui Wang; Keshen Xiang; Jiaheng Zhang; Wenzhi Chen / DAC 2026</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span><span class="tag">硬件:GPU</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">剪枝后约 50% 的非结构化稀疏是保住大模型质量的常见上限，但在这个稀疏度下，现有 GPU 稀疏矩阵乘法内核都跑不过稠密计算；这篇设计了新的存储格式和内核，让中等稀疏真正提速。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在配备 HBM 的现代 GPU 上首次让中等稀疏的矩阵乘法快过稠密计算：内核级比 SpInfer 最高快 1.64 倍，端到端比 FlashLLM 最高快 1.41 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">三层矩阵存储格式：一层交给稀疏张量核加速，一层用并行差分距离压缩并支持片上低开销解码，一层轻量残差层保证结果正确；内核同时调度稀疏张量核与 CUDA 核，并让片上计算与访存重叠。</span></div>
+<div class="score-reason">评分依据：面向数据中心 GPU 的稀疏推理内核，与端侧无直接关系，但中等稀疏加速的思路对端侧 GPU 有一定迁移价值，相关度中等。论文被 DAC 2026 接收，首次在中等稀疏度下超过稠密计算，贡献中等偏上。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.08786" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

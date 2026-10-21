@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Selective Agentic Recovery for UAV Autonomy with a Persistent Mission Runtime</h1>
 <div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-06-12 · Taewoo Park; Kyeonghyun Yoo; Seunghyun Yoo; Hwangnam Kim / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:端云协同</span><span class="tag">方向:规划推理</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">无人机飞到一半被挡住、原地打转或者任务指令不清楚时，让外部的大模型推理器来救场，但平时不叫它，省得拖慢飞行。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">任务主循环和安全关键的执行全部留在机上，外部智能体推理器只作为按需调用的恢复模块，从预先定义的恢复技能里选一个；返回的决策要在机上经过解析、校验、安全过滤并映射成本地执行器动作才允许影响飞行；另有一个学习出来的调用价值门控决定什么时候才值得叫它。</span></div>
-<div class="score-reason">评分依据：明确把时延敏感的任务闭环和安全执行留在无人机本体，只在卡住时才上云求助，是端云协同里终端承担关键闭环的典型形态。用学习出来的调用价值门控来管住远程推理的频率，设计务实，贡献中等偏上。</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:规划推理</span><span class="tag">方向:工具调用</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">无人机飞行中遇到通道被堵、原地打转或任务指令含糊时，需要外部大模型帮忙想办法，但每次调用都有时延和成本。这套运行时让任务闭环留在本地，只在真正值得时才向外部智能体求助。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Gazebo/PX4 的 400 次仿真对比中，困难/歧义场景的成功率从纯本地自主的 5.0% 提到 95.0%，比一次性调用和周期调用基线分别高 20.0 和 32.5 个百分点；相比人工调参的规则触发基线，远程调用次数少 16.7%、token 少 29.2%（常规场景少 87.5% 调用、91.2% token）。在 Crazyflie 微型四旋翼真机上做了 10 次堵路导航，纯本地 0/10 成功，本方法 10/10 成功、每次只调用 1 次、零安全事件。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">任务主循环、任务记忆、校验和执行都放在本地，外部推理器只能从预定义的恢复技能里选一个，返回结果要经过解析、校验和安全过滤才能变成本地执行器动作；再用一个学出来的“调用价值”门控估计这次求助能否带来足够的任务进展，决定是否调用。</span></div>
+<div class="score-reason">评分依据：智能体的任务记忆、调用决策、安全校验和执行闭环都在本地无人机系统一侧运行，并有 Crazyflie 真机演示，端侧相关度高；不过大规模对比只在仿真中完成，真机实验里运行时跑在地面笔记本上，调用价值门控的设计务实，贡献中等偏上。作者均来自高丽大学。智能体运行时在地面笔记本上、无人机只执行无线下发的指令，按“设备只执行外部下发命令”的判例记为非端侧Agent。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.14219" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

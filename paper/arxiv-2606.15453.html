@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A Spatio-Temporal Expert Prefetching Framework for Efficient MoE-based LLM Inference</h1>
 <div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-13 · Yingnan Zhao; Razvan Bunescu; Ahmed Louri; Avinash Karanth; Ke Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:高效推理</span><span class="tag">方向:能耗功耗</span><span class="tag">模型:Qwen</span><span class="tag">模型:DeepSeek</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">混合专家模型每个 token 只激活少数专家，但要用哪个专家是临时算出来的，等着把它从慢存储搬进来就成了主要开销。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先系统分析多种混合专家模型在不同应用下的专家选择行为，发现其时空规律，再据此做专家预取，提前把可能用到的专家搬到快存储里。</span></div>
-<div class="score-reason">评分依据：专家权重的搬运开销在内存受限的端侧设备上比在数据中心更致命，预取思路直接可迁移，但论文没有端侧实测。基于时空规律做预取是合理但常见的系统优化，贡献中等。</div>
+<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:高效推理</span><span class="tag">方向:能耗功耗</span><span class="tag">模型:DeepSeek</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">混合专家大模型推理时，每个 token 要用哪些专家要等路由结果出来才知道，临时加载专家成了主要的时延和能耗来源。ST-MoE 提前预测并预取下一步要用的专家。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在周期级硬件模拟器上，专家预测准确率 85%，相比 GPU、Adap-Gating 和 Pre-gated MoE 平均分别加速 2.5 倍、2.2 倍和 1.5 倍，能效平均分别提升 2.5 倍、1.8 倍和 2.0 倍，推理精度不变。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">分析发现同一应用领域里相邻层、相邻 token 选中的专家高度相关，于是用轻量的运行时预测器在不改原始路由的前提下预判专家，并配一套可重构硬件让专家加载和计算重叠执行。</span></div>
+<div class="score-reason">评分依据：专家预取对显存或内存受限设备上跑 MoE 模型有直接迁移价值，但结果来自模拟器、面向通用加速器，没有端侧真机；时空相关性预测加硬件协同设计有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.15453" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

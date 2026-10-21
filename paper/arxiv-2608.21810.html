@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MSM-Mem: A Universal Medical Structured Multimodal Memory Framework for Medical AI Agents</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-22 · Md Asaduzzaman Jabin; Khoa Le; Lin Zhao; Tianming Liu / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">现在的多模态医疗智能体是无状态的，每次问诊都从零开始，不会像医生那样越看越有经验，这篇给它加一套结构化的多模态记忆。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把异构的病史、多模态检查和既往诊断经验组织成结构化记忆，让智能体在交互中不断累积临床经验并适应同一病人的纵向上下文。</span></div>
-<div class="score-reason">评分依据：结构化多模态记忆对端侧长期个人助理有借鉴价值，但工作面向云端临床系统，相关度按中等计。</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-08-22 · Md Asaduzzaman Jabin; Khoa Le; Lin Zhao; Tianming Liu / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:MoE</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">MSM-Mem 给医疗多模态大模型智能体加上结构化记忆：把语义、病例经历和影像三类记忆随使用不断积累，让智能体像医生一样越用越会看片。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 MIMIC-CXR 整理数据集上，以 MoE-LLaVA 微调版为骨干，加上全部三类记忆后报告印象 F1 从 18.43% 提到 54.92%，EM 从 16.37% 提到 51.50%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把临床经验分成语义、情景和视觉三种记忆，推理时检索相关经验作为文字上下文注入，并在推理过程中根据新信息增量更新记忆。</span></div>
+<div class="score-reason">评分依据：属于医疗场景的智能体记忆，与端侧部署无关；三类记忆组合是较常规的设计。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.21810" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

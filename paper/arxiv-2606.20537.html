@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Execution-State Capsules: Graph-Bound Execution-State Checkpoint and Restore for Low-Latency, Small-Batch, On-Device Physical-AI Serving</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-06-18 · Liang Su / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:推理框架</span><span class="tag">方向:调度服务</span><span class="tag">硬件:GPU</span><span class="tag">硬件:Jetson</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">为端侧的物理 AI 服务做「整机状态存档」：不只缓存注意力的键值，而是把一次推理在某个边界上的完整可恢复状态整体快照下来，随时回滚或分叉。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把推理状态绑定到一张固定的计算图上，所有活跃状态都放在一组命名好的连续缓冲区里；因为状态是封闭集合，整个执行边界可以被整体快照、恢复、分叉或回滚，运行时在 CUDA 后端直接跑图计划，不走分页索引。</span></div>
-<div class="score-reason">评分依据：明确面向端侧小批量、低时延的物理 AI 服务场景，交互式智能体、语音系统和机器人策略频繁打断重入正是设备侧的真实痛点，相关度高。把「可恢复状态」从键值缓存扩展到整机状态是对现有服务系统的实质性重构，贡献较高。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-18 · Liang Su / arXiv</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">硬件:Jetson</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">主流大模型服务靠分页或前缀树键值缓存复用前缀，适合高并发；但端侧智能体、语音和机器人这类单路、频繁分支和重置的场景，需要把整段执行状态存下来再恢复。这篇提出执行状态胶囊。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 RTX 5090 上，胶囊恢复后的首字时延约 51–54 毫秒，而 vLLM 冷启动为 519–2057 毫秒；相对冷启动的加速从 2k token 时的 3.9 倍增长到 16k token 时的 27 倍；在 Jetson AGX Thor 上加速扩大到 9–76 倍，快照与恢复本身在亚毫秒级。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">FlashRT 运行时用捕获好的 CUDA Graph 在连续的静态缓冲区上执行，全部活跃状态是一组有名字的缓冲区，因此可以对键值缓存、循环状态、卷积状态等整体做快照、恢复、分叉和回滚，结果逐字节一致。</span></div>
+<div class="score-reason">评分依据：明确面向设备端、低时延、单路的智能体与机器人推理，并在 Jetson AGX Thor 和 DGX Spark 上复现，端侧语境确凿；但它是推理运行时机制，本身不包含智能体闭环，作者也说明多轮智能体服务和机器人上评测留待以后。把复用单位从键值缓存片段扩展到完整执行状态，思路新颖，贡献较高。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.20537" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

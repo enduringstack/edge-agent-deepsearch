@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Correlation-Aware Structured Pruning for Large Language Models</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-23 · Sicheng Xu; Hao Shi; Wei Zhang; Haoran Pang; Zhenyu Ming; Hao Wu; Zhongyi Huang; Xin Yao / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">结构化剪枝通常独立评估每个通道或注意力头的重要性，这篇指出这种独立性假设常被打破，改为显式建模单元之间的相关性。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把剪枝目标写成带基数约束的二次 0-1 规划来显式刻画重建误差里的跨单元依赖，因为该问题 NP 难，改用基于依赖感知边际代价的贪心交互算法选单元，并结合梯度策略进一步优化。</span></div>
-<div class="score-reason">评分依据：结构化剪枝直接决定端侧能装下多大模型，属可迁移技术栈；把单元相关性写进优化目标的建模较扎实。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-08-23 · Sicheng Xu; Hao Shi; Wei Zhang; Haoran Pang; Zhenyu Ming; Hao Wu; Zhongyi Huang; Xin Yao / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型结构化剪枝通常逐个评估通道或注意力头的重要性，默认剪枝误差可以简单相加，但单元之间其实强相关。CASP 把这种相关性显式写进剪枝目标。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">LLaMA2-7B 剪掉 50% 时 WikiText2 困惑度为 18.18，优于 LoRAP 的 22.95 和 LLM-Pruner 的 91.79；剪掉 20% 时七项常识推理平均分 0.5932（原模型 0.6135）；LLaMA2-13B 剪掉 50% 时困惑度仍为 9.83。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把剪枝建模成带基数约束的二次规划，显式刻画单元间对重建误差的相互影响；用基于依赖感知边际代价的贪心算法求解，并用梯度信息自适应分配各层稀疏度。</span></div>
+<div class="score-reason">评分依据：结构化剪枝直接决定端侧能装下多大的模型，属于可迁移技术栈；把单元相关性写进优化目标的建模扎实。公司归属依据 arXiv PDF 首页：通讯作者 Zhenyu Ming 等 4 位作者署名华为 2012 实验室中央研究院理论实验室。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页作者 Wei Zhang、Zhenyu Ming（通讯作者，huawei.com 邮箱）、Xin Yao、Gong Zhang 署名 Huawei 2012 Labs 中央研究院理论实验室，其余为清华大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.22131" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

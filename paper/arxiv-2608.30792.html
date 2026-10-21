@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Conjoint Audio-to-Spikes Encoding and Processing for Efficient Neuromorphic Speech Recognition</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-31 · Valentin M. Meunier; Amélie Gruel; Pierre Lewden; Adrien F. Vincent; Sylvain Saïghi / arXiv</div>
-<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:能耗功耗</span><span class="tag">应用:语音</span><span class="tag">硬件:FPGA</span><span class="tag">硬件:神经形态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">神经形态语音识别缺少原生脉冲数据集，这项工作把音频到脉冲的编码器和分类器放在一起联合优化，并做成可上 FPGA 的形式。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用一个不需要学习、可编程且面向硬件实现的高层编码器把音频转成脉冲，再用与硬件无关的脉冲活动量指标衡量整条流水线的效率，并同时优化编码器和分类器，让编码输出既高效又有信息量。</span></div>
-<div class="score-reason">评分依据：面向 FPGA 上的低功耗神经形态语音处理，属于端侧感知技术栈。编码器与分类器联合优化是合理但常见的思路，贡献中等。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-31 · Valentin M. Meunier; Amélie Gruel; Pierre Lewden; Adrien F. Vincent; Sylvain Saïghi / arXiv</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">应用:语音</span><span class="tag">硬件:FPGA</span><span class="tag">硬件:神经形态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">神经形态语音识别缺少原生脉冲数据，这篇工作用一个可编程、面向 FPGA 实现的编码器把音频转成脉冲，并与后端脉冲神经网络分类器联合优化。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">简单的前馈脉冲网络在脉冲编码的 Heidelberg Digits 上准确率 99.77%，超过该基准此前的神经形态最好成绩；联合优化编码和分类器后在 Google Speech Commands 上达到 93.95%；并首次完成 TIMIT 数据集的端到端脉冲编码与评测。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">编码器不可学习、参数可编程，便于在数字硬件上实现；用与硬件无关的脉冲活动量指标衡量效率，同时调编码器和分类器，使编码既信息充分又让后端更省能。</span></div>
+<div class="score-reason">评分依据：针对低功耗语音识别的脉冲编码与处理，面向 FPGA 实现，与端侧低功耗感知相关，但尚无完整的设备端功耗实测。编码与分类联合优化有一定价值。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.30792" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

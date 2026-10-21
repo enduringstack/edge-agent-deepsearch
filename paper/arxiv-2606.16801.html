@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>The Art of Mixology: Mixup-based Obfuscation for Privacy-Preserving Split Learning in Large Language Models</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-15 · Chen Chen; Xiang Gao; Xianshun Wang; Chengran Li; Shengyu Xia; Xueluan Gong; Linru Zhang; Qian Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:安全隐私</span><span class="tag">方向:端侧训练</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">资源有限的用户想训练大模型，可以把重的层交给服务器、原始数据留本地，但中间表示仍可能被反推出隐私。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在分割学习里同时加三道混淆：token 级混淆、表示级混淆和自适应梯度扰动，目标是保留有用的学习信号同时阻断向服务器的隐私泄露。</span></div>
-<div class="score-reason">评分依据：分割学习正是资源受限终端参与大模型训练的主要途径，隐私与开销的权衡是端云协同的核心问题，相关度较高。三级混淆的组合在已有隐私保护方案上做了扩展，贡献中等。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-15 · Chen Chen; Xiang Gao; Xianshun Wang; Chengran Li; Shengyu Xia; Xueluan Gong; Linru Zhang; Qian Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:端侧训练</span><span class="tag">方向:端云协同</span><span class="tag">模型:Llama</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">拆分学习让资源有限的用户把计算量大的层交给服务器、原始数据留在本地来微调大模型，但现有隐私保护方法要么掉精度、要么挡不住数据重建攻击、要么开销太大。MixGuard 用混合扰动来兼顾这几点。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Llama 3.2-1B 上，GSM8K 0.236、WebNLG BLEU 41.66、SAMSum 0.517、CodeAlpaca CodeBLEU 0.502，接近不拆分训练的 0.254、42.84、0.524、0.514；在 CoLA 上用 Qwen3-1.7B 时每样本计算 0.113 秒、通信 40 MB（无防护为 0.037 秒、8 MB）；对多种数据重建攻击的防护都强于现有拆分学习防御。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 token 层和表示层做混合式混淆，并对梯度做自适应扰动；先在公开数据上训练一个轻量校准模型来修正近似的目标表示，再在私有数据微调时使用它，既保留有用的学习信号又不把原始数据泄露给服务器。</span></div>
+<div class="score-reason">评分依据：针对资源受限客户端与服务器协同微调的隐私问题，与端侧训练相关但不涉及推理部署，实验也未在真实设备上进行；混合式混淆组合有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.16801" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

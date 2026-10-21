@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MosaicQuant: Inlier-Outlier Disaggregation for Unified 4-Bit LLM Quantization</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-14 · Yangjia Hu; Haodong Wang; Zicong Hong; Qianli Liu; Quanxin Shou; Jian Lin; Song Guo; Xiaowei Shen / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">4 比特量化省显存，但既要装下大量普通数值又要装下少数极端值，精度掉得厉害；这篇把两类值拆开分别处理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">不像混合精度那样把离群值提到高精度（那会破坏低位执行的统一性、带来额外转换和数据搬运），而是先把整个权重矩阵量化成稠密的 4 比特基底，再用一个稀疏的 4 比特残差分量去补偿被压坏的离群值，全程保持统一的 4 比特执行。</span></div>
-<div class="score-reason">评分依据：4 比特量化是端侧跑大模型的主流路径，保持统一低位执行对实际加速比尤其重要，可迁移性强，但论文没有端侧实测。用稀疏残差替代混合精度来保留执行统一性，思路清晰，贡献中等偏上。</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-06-14 · Yangjia Hu; Haodong Wang; Zicong Hong; Qianli Liu; Quanxin Shou; Jian Lin; Song Guo; Xiaowei Shen / arXiv</div>
+<div class="tags"><span class="vendor-tag">MetaX</span><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">硬件:GPU</span><span class="tag">模型:Llama</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">4 比特量化能大幅省显存、提速，但难以同时表示大量常规值和少数大幅值（离群值），精度掉得多；保留高精度离群值的混合精度方法又破坏了统一低比特执行，实际提速打折。MosaicQuant 用纯 4 比特方案解决这个矛盾。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LLaMA3 和 Qwen3 上保持接近 FP16 的精度，在 RTX 4090 上相比 W16A16 基线最多提速 1.24 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先把整个权重矩阵量化成稠密 4 比特主分量，再只对输出误差最集中的少数权重块补一个稀疏 4 比特残差；配套的 ZipperEngine 把稀疏块计算通过重叠流水线融合进稠密 4 比特矩阵乘内核，表示和执行都统一在低比特上。</span></div>
+<div class="score-reason">评分依据：统一 4 比特权重量化和融合内核对显存受限设备部署有直接迁移价值，但只在桌面 GPU 上测速，提速幅度不大；“稠密主分量+稀疏残差”的拆分有新意。PDF 首页作者 8 至 11 署名 MetaX Integrated Circuits（沐曦），其余作者来自港科大和 EPFL。 作者机构依据：arXiv PDF 首页署名 MetaX（PDF 首页作者 8 至 11（Xiaowei Shen、Xiangjun Huang、Dian Wang、Jian Yang）署名 MetaX Integrated Circuits Co., Ltd，邮箱为 metax-tech.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.15652" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

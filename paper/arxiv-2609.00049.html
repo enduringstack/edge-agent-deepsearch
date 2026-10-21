@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>REAL-Q: E2E LLM Quantization via Dynamic Gradient Descent</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-30 · Qian Zhang; Yaoming Li; Zhewen Tan; Yanshu Wang; Heng Lu; Kun Su; Zongwei Lv; Wenhan Yu / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">训练后量化是在严格资源约束下部署大模型的必经一步，但主流方法为了解析可解把全局损失近似得太狠；REAL-Q 直接对齐端到端损失。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">现有方法用单一闭式二阶解逐层量化，丢掉跨通道耦合、把输出行分组，还把海森矩阵在整层内冻结，无法随着逐列推进刷新，作者称之为信息错配；REAL-Q 改为瞄准端到端损失的对齐代理，并在每量化一列后用细粒度的块级梯度下降去精修。</span></div>
-<div class="score-reason">评分依据：训练后量化直接决定模型能否装进受限设备，方法可迁移，但论文没有设备端实测，端侧契合度中等。把逐层闭式解换成对齐端到端损失的动态优化，是对主流范式的实质改动。</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-08-30 · Qian Zhang; Yaoming Li; Zhewen Tan; Yanshu Wang; Heng Lu; Kun Su; Zongwei Lv; Wenhan Yu / arXiv</div>
+<div class="tags"><span class="vendor-tag">ZTE</span><span class="tag">方向:量化</span><span class="tag">模型:Llama</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">主流大模型训练后量化方法为了能解析求解，会近似全局损失并在整层固定同一个 Hessian；REAL-Q 改为对端到端损失的近似目标做逐块梯度下降，减少误差累积。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">W4A16 设置下，在 LLaMA-3.1（8B、70B）和 Qwen3（0.6B 到 32B）上，端到端 KL 散度比最强的全局引导量化方法最多降低约 49%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每量化完 128 列就对端到端对齐的代理损失做一次细粒度块级梯度修正，并用滑动窗口让层与层之间平滑过渡，避免误差沿网络传播。</span></div>
+<div class="score-reason">评分依据：训练后量化是把大模型装进资源受限设备的核心步骤，可直接迁移到端侧部署。改动的是量化求解方式而非新格式，贡献中等。作者机构依据 arXiv PDF 首页署名：作者 Yinjun Han、Ruikang Liu 来自 ZTE Corporation。 作者机构依据：arXiv PDF 首页署名 ZTE（PDF 首页作者 10、11（Yinjun Han、Ruikang Liu）署名 ZTE Corporation，其余作者来自北京大学和东北大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.00049" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Just Noticeable Difference Modeling for Token Compression in Vision-Language-Action Models</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-08-21 · Zhuoyuan Li; Rui Zhao; Jin Wang; Hanwei Zhu; Cong Zhang; Giuseppe Valenzise; Weisi Lin; Kin-Man Lam / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">视觉-语言-动作模型压缩 token 会直接影响机器人动作，这篇借「恰可察觉差异」的概念来判断一个 token 到底能压多狠。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">不再用视觉相似度、注意力分数这类间接的冗余线索，而是直接刻画「这个 token 变化多少才会让下游动作出现不可接受的偏差」，把人眼感知里的恰可察觉差异概念改造成面向机器响应的容忍度度量来指导压缩。</span></div>
-<div class="score-reason">评分依据：具身智能体的时延敏感闭环对 token 压缩很敏感，与端侧机器人部署直接相关；用下游动作容忍度取代冗余启发式是有价值的视角转换。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-21 · Zhuoyuan Li; Rui Zhao; Jin Wang; Hanwei Zhu; Cong Zhang; Giuseppe Valenzise; Weisi Lin; Kin-Man Lam / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:KV cache</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">机器人用的视觉-语言-动作模型需要压缩视觉 token 来降时延，但现有方法按“像不像、重不重要”挑 token。本文改为直接估计每个 token 能被改动多少而不影响机器人动作，以此决定压缩哪些。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LIBERO 上，60% 和 80% 的 KV 复用比例下，OpenVLA 平均成功率比 VLA-Cache 高 23.70 和 41.65 个百分点，OpenVLA-OFT 高 6.20 和 10.10 个百分点；87.5% 剪枝时比 VLA-Cache 剪枝基线高 11.65 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">借用“最小可察觉差异”的思想，训练一个轻量的逐 token 估计器，预测在策略动作不超出容差的前提下 token 最多能被扰动多少，再把这个分数接入陈旧 KV 复用和 token 剪枝。</span></div>
+<div class="score-reason">评分依据：VLA 推理加速对机器人端侧闭环控制有直接价值，但实验只在仿真基准上进行；以动作容差为压缩依据的思路有新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.21247" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

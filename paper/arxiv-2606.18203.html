@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>RubricsTree: Scalable and Evolving Open-Ended Evaluation of Personal Health Agents across Health Memory and Medical Skills</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-16 · Weizhi Zhang; Zechen Li; Hamid Palangi; Ben Graef; A. Ali Heydari; Simon A. Lee; Salman Rahman; Ray Luo / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">模型:Qwen</span><span class="tag">模型:GPT</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">个人健康智能体的开放式回答不好评：医生标注贵，大模型当裁判又不稳；这篇做了一套可核查的布尔评分细则树。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">从四千条真实用户提问里迭代提炼出一百多条原子化、临床可核查的布尔评分细则，并由医生带队的专家组反复校准；评测时由一个上下文感知的路由器只激活与该问题相关的那部分细则，保证吞吐。</span></div>
-<div class="score-reason">评分依据：个人健康智能体要读可穿戴传感器数据，和端侧健康场景相邻，但评测框架本身跑在云端，相关度较低。专家对齐的细则树加自适应路由在开放式评测里是比较完整的方案，贡献中等。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-06-16 · Weizhi Zhang; Zechen Li; Hamid Palangi; Ben Graef; A. Ali Heydari; Simon A. Lee; Salman Rahman; Ray Luo / arXiv</div>
+<div class="tags"><span class="vendor-tag">Google</span><span class="tag">方向:评测基准</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">个人健康智能体的开放式回答很难评：医生标注贵，大模型当裁判又不稳定；这篇做了一套医生校准过、可逐条核查的布尔评分细则树。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">上下文感知路由把单次评测时延从逐条判定的 64.2 秒降到 5.6 秒，路由准确率 80.61%；用它作为强化学习奖励训练 Qwen 0.6B/1.7B/4B，测试得分分别提升 66.7%、55.3%、40.3%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从 4000 条真实用户提问里迭代提炼出 100 多条原子化、临床可核查的布尔细则，由医生带队反复校准；评测时只激活与该问题相关的细则分支，兼顾准确与吞吐。</span></div>
+<div class="score-reason">评分依据：个人健康智能体要读可穿戴传感器数据，和端侧健康场景相邻，但评测框架本身跑在云端，相关度较低；用其奖励训练的小模型结果对端侧小模型有一定参考。专家对齐的细则树加自适应路由是比较完整的开放式评测方案，贡献中等。PDF 首页多数作者署名 Google Research。 作者机构依据：arXiv PDF 首页署名 Google（PDF 首页第 1 作者注明工作在 Google 实习期间完成，其余多数作者（含通讯作者 Ahmed A. Metwally）署名 Google Research）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.18203" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

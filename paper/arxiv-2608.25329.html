@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Learning What to Share and What to Personalize: Hierarchical Strategy Co-Evolution for Agent Memory</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-26 · Yupeng Han; Shuochen Liu; Kai Zhang; Ze Liu; Zhihong Pan; Xianquan Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">带记忆的智能体靠一份紧凑的用户画像维持长期对话，但留什么、压什么、丢什么的策略现在都是训练前定死的一套。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者指出最优的记忆决策其实因人而异且会随时间演化，于是提出分层的策略协同演化，让共享部分和个性化部分分开学习和更新。</span></div>
-<div class="score-reason">评分依据：紧凑用户画像正是设备端个性化助手需要的形态，思路可迁移，但论文没有设备端资源讨论，端侧相关性较弱。把记忆策略本身变成可演化对象是合理的改进。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-08-26 · Yupeng Han; Shuochen Liu; Kai Zhang; Ze Liu; Zhihong Pan; Xianquan Wang / EMNLP 2026</div>
+<div class="tags"><span class="tag">方向:记忆</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">带记忆的对话智能体靠一份紧凑的用户画像记住用户，但“记什么、压什么、丢什么”的策略通常是训练前定死的一套。HiPS 让这套记忆策略分成全体共享和因人而异两层，并随训练一起演化。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 12 个个性化记忆评测设置上全部最优：PersonaMem 32K/128K 准确率 73.49/62.01，而直接塞长上下文的基线在 128K 上跌到 20.74；为偏离常规的用户生成专属规则平均再提升 6.0%（20 个画像受益）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先从大量用户的对话轨迹里提炼通用记忆规则，再为行为特殊的用户蒸馏出“差异规则”；被广泛验证的个人规则会升级为全局规则，被反驳的全局规则会降级，所有调整都以任务结果为准。</span></div>
+<div class="score-reason">评分依据：紧凑的用户画像记忆正是端侧个人助手需要的形态，方法可直接迁移，但论文在 H800 上实验，没有讨论设备资源，端侧相关度中等。把记忆策略本身做成可分层演化的对象是有新意的改进，已被 EMNLP 2026 主会接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.25329" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

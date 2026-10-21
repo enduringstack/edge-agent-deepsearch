@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Trajectory-Level Speculative Decoding for Diffusion Language Models</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-27 · Tianxiang Pan; Baitao Gong; Mo Guang; Hongwei Yong; Tianpeng Jiang; Yaqian Li; Zheng Cao; Kaiwen Long / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">扩散式语言模型靠反复去噪并行出 token，但置信度一低就退化成一次只出一个；这篇把投机解码搬到去噪轨迹这一层。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用置信度分层的树搜索构造候选去噪轨迹，再用双向注意力掩码做分块并行验证；还引入跨块投机，利用扩散模型的双向结构做跨块前瞻；作者形式化了该方法何时是精确的，并指出轨迹漂移是提高并行度的根本代价。</span></div>
-<div class="score-reason">评分依据：扩散式语言模型是端侧低时延生成的候选路线，轨迹级投机对单请求场景收益明显，但论文没有设备端实测，端侧契合度中等。把投机对象从 token 序列换成去噪轨迹并给出精确性条件，是有实质的范式扩展。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-08-27 · Tianxiang Pan; Baitao Gong; Mo Guang; Hongwei Yong; Tianpeng Jiang; Yaqian Li; Zheng Cao; Kaiwen Long / arXiv</div>
+<div class="tags"><span class="vendor-tag">Li Auto</span><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">扩散语言模型可以一次并行生成多个 token，但置信度低时又会退化成一次只生成一个。这篇把投机解码推广到扩散模型的“去噪轨迹”上，让每一步能多确定几个 token。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Fast-dLLM 双缓存基础上，去噪迭代次数减少 30%–40%，每步生成 token 数从 2.6 提升到 4.3；相对原始扩散语言模型加速 7–14 倍，相对 Fast-dLLM 加速 1.3 倍，推理和代码基准上准确率变化小于 1%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用按置信度分层的树搜索构造草稿去噪轨迹，再用带双向注意力掩码的分块并行验证；并利用扩散模型的双向结构做跨块前瞻投机，同时从理论上刻画何时结果严格等价。</span></div>
+<div class="score-reason">评分依据：扩散语言模型的解码加速属于推理技术栈，对未来端侧部署扩散 LLM 有迁移价值，但实验未在端侧设备上进行；把投机解码扩展到去噪轨迹层面有新意。 作者机构依据：arXiv PDF 首页署名 Li Auto（PDF 首页全部 8 位作者署名 Li Auto Inc.（上海），通讯作者为 lixiang.com 邮箱）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.27514" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

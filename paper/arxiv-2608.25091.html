@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Auto-Policy, not Auto-Skill: Compiled Agent Skills for the Physical World</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-25 · Zhonghao Zhan; Hamed Haddadi / arXiv</div>
-<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:工具调用</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">智能体的 Skill 只描述「该怎么做」，却没有一层决定「哪些行为被允许变成真实动作」，这篇指出当技能能开门或转账时这个缺口很危险。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把这类风险命名为「借来的权限」：现有 Skill 格式不给接收方任何带类型的方式去拒绝跨智能体的权限声明，于是一个恶意或被滥用的技能只要附带权限声明就能驱动执行机构；论文据此提出 Edge Skillguard 这一带类型的策略层。</span></div>
-<div class="score-reason">评分依据：针对能驱动物理执行机构的智能体技能提出策略隔离层，与端侧智能体安全直接相关；把攻击面命名并给出类型化解法的框架清晰。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-08-25 · Zhonghao Zhan; Hamed Haddadi / Agent Skills Workshop 2026（ACM CAIS 2026）</div>
+<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:安全隐私</span><span class="tag">方向:工具调用</span><span class="tag">应用:IoT命令</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体技能（Skill）只描述「该怎么做」，却没规定「哪些动作被允许」，恶意技能可以冒用权限去开门、驱动设备。Edge Skillguard 在技能包里内置类型化的授权层，守住物理执行的边界。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在接入 148 个家居实体（门锁、灯、摄像头等）的边缘控制面测试床上，完整策略拦下 5 类攻击共 60/60 个冒用权限请求，60/60 个正常请求全部放行；只看租约的简化版只拦下 36/60；扩大 5 倍规模后仍保持 300/300，本地消息代理中位时延 273 微秒，跨主机 Tailscale 网络 p95 为 7.9 毫秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把调用策略和技能一起打包，对世界状态和传感器证据（如在场信息新鲜度、来源可信度、租约授权）做机器可校验的判定，不再依赖模型或其他智能体自称的权限；判定在本地执行，无需调用大模型。</span></div>
+<div class="score-reason">评分依据：授权判定和设备执行闭环在本地边缘控制面上实测运行，直接对应端侧智能体驱动物理设备的安全问题；首次命名「借用权限」攻击并给出类型化解法。论文发表于 ACM CAIS 2026 的智能体技能研讨会，不按顶会计。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.25091" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

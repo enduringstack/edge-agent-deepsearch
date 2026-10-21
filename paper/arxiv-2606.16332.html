@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SMEPilot: Characterizing and Optimizing LLM Inference with Scalable Matrix Extensions</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-06-15 · Feiyang Chen; Haibo Chen / arXiv</div>
-<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:高效推理</span><span class="tag">方向:KV cache</span><span class="tag">硬件:CPU</span><span class="tag">硬件:手机</span><span class="tag">模型:Llama</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">现在的 CPU 里集成了矩阵加速单元，但大模型推理的预填充、解码、注意力、键值缓存各有各的脾气，不能一刀切全丢给它。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先用屋顶线模型刻画带矩阵扩展的 CPU，再据此为每种算子形状选择只用 CPU 核、只用矩阵单元、还是两者协作；执行时按 tile 粒度切分矩阵计算，并把适合矩阵单元的阶段与适合向量运算的阶段在注意力里重叠起来。</span></div>
-<div class="score-reason">评分依据：Arm 可扩展矩阵扩展正是手机和笔记本 CPU 上的大模型推理加速路径，论文直面矩阵单元与 CPU 核争抢内存带宽这一端侧真实瓶颈，相关度高。按算子形状做协作式调度而不是无脑用加速单元，工程判断扎实，贡献中等偏上。</div>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-06-15 · Feiyang Chen; Haibo Chen / arXiv</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:高效推理</span><span class="tag">方向:编译部署</span><span class="tag">硬件:CPU</span><span class="tag">硬件:手机</span><span class="tag">硬件:Apple-Silicon</span><span class="tag">模型:Llama</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">新一代 Arm CPU 内置了可扩展矩阵扩展（SME）矩阵单元，但大模型推理的预填充、解码、注意力和 KV cache 各环节特性不同，矩阵单元并不总比普通 CPU 核快，还要抢内存带宽。SMEPilot 是一个按算子决定用谁算的推理引擎。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Apple M4 Pro、联发科天玑 9500 手机芯片和鲲鹏 920 服务器 CPU 上，跑 Llama-3.2-3B、Qwen3-4B、Qwen3-30B-A3B，端到端推理相比 llama.cpp 最多加速 3.94 倍；预填充阶段加速 1.13 到 5.42 倍，解码阶段最多 3.48 倍。批大小为 1 或 2 时与基线相当。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用屋顶线模型刻画 SME 与 CPU 核在不同算子形状下的优劣，再对每个算子选纯 CPU、纯 SME 或二者协同执行；按 tile 粒度在 SME 和 CPU 核间切分矩阵计算，在注意力里让适合矩阵单元和适合向量单元的阶段重叠，并保持打包后的张量布局避免反复重排。</span></div>
+<div class="score-reason">评分依据：直接在手机 SoC（天玑 9500）和 Apple M4 Pro 上实测大模型推理，抓住了端侧 CPU 新增矩阵单元该怎么用这个新问题，端侧相关度很高；基于屋顶线的算子级调度和协同执行有系统性贡献。作者来自上海交通大学 IPADS。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.16332" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

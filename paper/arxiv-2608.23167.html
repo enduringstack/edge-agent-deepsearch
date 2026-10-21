@@ -7,9 +7,9 @@
 <h1>Accelerating Diffusion Language Models via Structured Suffix Modeling</h1>
 <div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-24 · Zifeng Cheng; Keda Li; Zhiwei Jiang; Cong Wang; Fei Shen; Qing Gu / arXiv</div>
 <div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">扩散语言模型一步能并行解多个 token，但每步都要和所有后缀 token 交互，开销很大，这篇按后缀区域的结构差异分配保留数量。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把后缀分成局部、中部和尾部三个区域，按结构角色分别保留不同数量的 token，并把上一步的解码结果并入当前步的后缀表示，避免每步都用同样的初始化重来。</span></div>
-<div class="score-reason">评分依据：扩散语言模型的推理加速属于通用推理栈优化，对端侧有间接迁移价值；分区保留加结果回填属于渐进式改进。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">扩散语言模型一步能并行去噪多个词，但每步都要和全部后缀词交互，开销很大。这篇用分区保留后缀的办法给扩散语言模型推理提速。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 3 个扩散语言模型、多个基准上进一步加速且多数情况下效果更好；长序列推理中与其他加速技术叠加时，最高提速 72.81 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把后缀分成近处、中间、尾部三段，按结构作用保留不同数量的词；并把上一步的解码结果融入当前步的后缀表示，免训练，可与并行解码、KV 缓存叠加。</span></div>
+<div class="score-reason">评分依据：扩散语言模型推理加速属于通用推理栈优化，对端侧有间接迁移价值；分区保留加结果回填属于渐进式改进。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.23167" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

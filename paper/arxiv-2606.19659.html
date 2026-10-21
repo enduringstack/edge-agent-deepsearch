@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SAGE-OPD: Selective Agent-Guided Intervention for Multi-Turn On-Policy Distillation</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-17 · Yuhang Zhou; Lizhu Zhang; Yifan Wu; Mingyi Wang; Bo Peng; Jiayi Liu; Xiangjun Fan; Zhuokai Zhao / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:工具调用</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">多轮智能体做在线策略蒸馏时，老师在每一步都插手反而会帮倒忙；这篇只在确实需要时才让老师介入。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先观察环境反馈，再由老师判断学生这一轮的回答是否需要纠正，只在需要时给监督信号，避免过度惩罚语义正确的其他解法，也避免在偏离分布的历史上传递不可靠的老师监督；整套流程不需要额外的验证器。</span></div>
-<div class="score-reason">评分依据：蒸馏出更小的多轮智能体对端侧部署有迁移价值，但论文本身不涉及设备侧约束，相关度较低。选择性介入的设计针对多轮蒸馏的具体失效模式，贡献中等。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-06-17 · Yuhang Zhou; Lizhu Zhang; Yifan Wu; Mingyi Wang; Bo Peng; Jiayi Liu; Xiangjun Fan; Zhuokai Zhao / arXiv</div>
+<div class="tags"><span class="vendor-tag">Meta</span><span class="tag">方向:蒸馏</span><span class="tag">方向:规划推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让小模型跟着大模型学多轮智能体任务时，逐 token 的在线策略蒸馏很脆弱，会误罚合理的替代动作、强化重复动作；这篇改成按回合判断要不要让老师介入。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ALFWorld 未见任务上，相对标准在线策略蒸馏最多提升 13.3%；例如 Qwen3-1.7B 学生跟 Qwen3-8B 老师学，未见任务成功率从 61.94% 提到 70.15%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">SAGE-OPD 先观察环境反馈，再由老师判断学生每一回合的回答是可以跳过还是需要干预，只在需要的回合施加蒸馏信号，而不是对所有 token 一律对齐。</span></div>
+<div class="score-reason">评分依据：本身是训练方法，但目标是把多轮智能体能力蒸馏进 0.6B/1.7B 这类可上端的小模型，对端侧小模型智能体有间接价值，相关度中等。按回合选择性干预的蒸馏设计有新意，贡献中等偏上。PDF 首页全部作者署名 Meta AI。 作者机构依据：arXiv PDF 首页署名 Meta（PDF 首页全部 8 位作者署名 Meta AI）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.19659" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

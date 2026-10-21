@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>HFEMCNet: A Compact Hybrid Frequency Enriched Multi Channel Network for Automatic Modulation Classification</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-25 · Qamar Ijaz; Nayyer Aafaq / arXiv</div>
-<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span><span class="tag">应用:fault-detection</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">自动调制识别要在复杂信道下判断收到的无线信号用了哪种调制方式，这篇做了一个紧凑的频域增强多通道网络。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把原始 IQ 采样与经快速傅里叶变换得到的分层频谱特征结合成更丰富的信号表示，再交给卷积层提取空间特征，同时利用时空依赖与频域信息。</span></div>
-<div class="score-reason">评分依据：紧凑网络设计面向频谱监测等边缘部署场景，但论文未给出设备端部署证据，相关度按中等计；属于常规混合架构设计。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-08-25 · Qamar Ijaz; Nayyer Aafaq / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">无线电信号的自动调制识别模型 HFEMCNet，把原始 IQ 信号和 FFT 频谱特征一起输入一个紧凑的卷积加 LSTM 网络。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 RML2016.10a、RML2016.10b、RML2018.01a 上最高准确率分别为 94.14%、94.05%、98.89%，均高于对比模型；与 MCLDNN 相比参数量 33.9 万对 40.5 万，P99 尾时延 42.97 ms 对 57.95 ms，GPU 峰值显存 4578 MB 对 6544 MB，但吞吐较低（每秒 1859 对 2679 个样本）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">多路通道分别处理 I、Q 和组合序列及其 FFT 幅度，卷积层提取空间特征、LSTM 建模时序，并用下采样和高斯 dropout 控制模型规模与过拟合。</span></div>
+<div class="score-reason">评分依据：面向频谱监测的紧凑模型，宣称适合资源受限平台，但测试在 RTX 4090 上进行、没有设备端部署证据，相关度偏低；属于常规的混合架构设计。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.22139" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

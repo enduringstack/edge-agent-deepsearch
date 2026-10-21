@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Pruned Traffic Trees: Native Semantic Compression with a Protocol-Structured Model Family for Encrypted Traffic Classification</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-22 · Yuantu Luo; Jun Tao; Xiangyu Xu; Linxiao Yu; Kangying Li / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">加密流量分类模型太重，路由器和中间盒跑不动，这篇不压权重也不压通道，而是直接决定保留哪些协议字段和结构上下文。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把协议树图当作压缩单元，先用完整协议树图学结构化表示和字段显著性，再据此蒸出精简协议树图训练中号模型，最小的版本继承同样拓扑并通过结构对齐迁移和流级 logits 蒸馏收窄宽度。</span></div>
-<div class="score-reason">评分依据：目标部署平台是路由器等资源受限网络设备，与端侧压缩技术栈相通；用协议结构而非权重当压缩单位的切入点较新颖。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-22 · Yuantu Luo; Jun Tao; Xiangyu Xu; Linxiao Yu; Kangying Li / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span><span class="tag">硬件:CPU</span><span class="tag">应用:安全</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">PTT 是一套面向路由器、中间盒等资源受限网络设备的加密流量分类模型族，直接以协议字段结构为单位做压缩，保留真正有用的字段。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">完整版在 CSTNET-TLS1.3 和 CipherSpectrum 上 Macro-F1 为 0.9519 和 0.9416；轻量版保持 0.9325 和 0.9136，参数减少 80.3% 和 61.3%，有效计算量降低约 98.8%，CPU 推理加速 8.75 倍和 8.46 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先在完整协议树图上学习字段重要性，用 TopK 加闭包规则裁剪出精简协议图，再通过结构对齐迁移和逻辑蒸馏得到更窄的轻量模型。</span></div>
+<div class="score-reason">评分依据：目标是让模型在网络设备 CPU 上部署，属资源受限推理；以协议结构为压缩单位的思路有新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.21874" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

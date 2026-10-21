@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Efficient Block-Layer Parallel Inference for Vision-Language-Action on Hybrid Architectures</h1>
 <div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-06-19 · Haibo HU; Lianming Huang; Qiao Li; Nan Guan; Chun Jason Xue / arXiv</div>
-<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">方向:调度服务</span><span class="tag">硬件:CPU</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把自动驾驶的视觉-语言-动作大模型拆开，一部分放 GPU、一部分甩给车上闲着的 CPU。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">老车载平台原本是按模块化流水线配的算力，若干规划功能被统一的 VLA 模型吸收后，原来的 CPU 预算有一部分闲置，而视觉编码器和主推理路径仍把算力与显存压力集中在 GPU 上。方案是按块层粒度切分 VLA 骨干：视觉编码器和大模型前缀部分放在 GPU 上执行，大模型后缀部分通过跨帧的异步方式卸载到 CPU，形成可灵活调度资源的 CPU-GPU 混合推理框架。</span></div>
-<div class="score-reason">评分依据：直面车载平台真实的显存上限和异构算力分配问题，属典型的端侧部署约束，端侧契合度高；利用模块化流水线被统一模型取代后闲置的 CPU 预算做跨帧异步卸载，是贴合实际硬件现状的务实设计。</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">方向:调度服务</span><span class="tag">硬件:CPU</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">自动驾驶的视觉-语言-动作（VLA）大模型延迟高、吃显存，在现有车载平台上很难和整套自动驾驶软件一起跑。这项工作把模型按层拆开，一部分放到车上原本闲着的 CPU 上执行。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Bench2Drive 上，Orion 平均延迟从 521ms 降到 408.0ms（降 21.7%），MindDrive 从 443ms 降到 306.2ms（降 30.9%）；Orion 估算峰值显存从 45GB 降到 29GB，L2 误差和碰撞指标只变化 0.01。实车（Xeon CPU + 48GB 的 NVIDIA L20）与 Autoware.Universe 同跑时，原版 Orion 显存溢出跑不起来，混合版能以 530ms、1.89Hz 运行；MindDrive 混合版延迟从 546ms 降到 390ms，频率从 1.83Hz 提到 2.56Hz，显存从 21GB 降到 14GB。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以 Transformer 块为单位切分 VLA 骨干：视觉编码器和大模型前半段留在 GPU，后半段卸到 CPU，并让 CPU 处理上一帧的后半段、GPU 同时处理下一帧，形成跨帧异步流水线；切分点可以按车上其他模块的占用动态调整。</span></div>
+<div class="score-reason">评分依据：瞄准车载平台显存不够、CPU 闲置的真实部署约束，并做了与完整自动驾驶软件栈同跑的实车验证，端侧相关度高。CPU-GPU 分层卸载和流水线并行本身是常见思路，贡献在于针对驾驶 VLA 的切分与调度落地。作者来自香港城市大学和 MBZUAI。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.14586" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

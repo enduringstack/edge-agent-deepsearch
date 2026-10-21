@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>APT: Accelerating Diffusion Transformers via Attention Probability-Guided Pruning and Quantization</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-26 · Sungyeob Yoo; Seeyeon Kim; Joonyong Park; Seunghee Han; Joo-Young Kim / arXiv</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校顶会</span>  2026-08-26 · Sungyeob Yoo; Seeyeon Kim; Joonyong Park; Seunghee Han; Joo-Young Kim / ICCAD 2026</div>
 <div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:量化</span><span class="tag">方向:高效注意力</span><span class="tag">方向:多模态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">扩散 Transformer 做高分辨率生成时，自注意力的开销随分辨率四次方增长；APT 用注意力概率同时指导剪枝和量化。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把注意力概率当成统一的重要性度量，在算法层做细粒度剪枝并配合自适应精度缩放，再用软硬件协同设计的加速器把这两件事一起做掉。</span></div>
-<div class="score-reason">评分依据：高分辨率生成模型要进移动设备必须解决注意力成本，剪枝加量化的协同设计有迁移价值，但目标是专用加速器而非现有端侧芯片，端侧契合度中等。用同一个重要性度量统一两种压缩手段是合理设计。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">高分辨率图像/视频生成用的扩散 Transformer（DiT）里，自注意力计算量随分辨率急剧上涨。APT 是一款软硬件协同设计的 DiT 加速器，用注意力概率同时决定哪些元素可以剪掉、哪些可以用低精度算。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 PixArt-α、Stable Diffusion 3、FLUX 上，相对 NVIDIA A100 最高提速 8.16 倍、能效提升 14.98 倍；相对现有扩散模型加速器 EXION 最高提速 3.01 倍、能效提升 2.04 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">算法上用双阈值按注意力概率逐元素决定剪枝或分配高/低精度，并利用相邻去噪步注意力的相似性提前预测，保持与 FlashAttention 兼容；硬件上设计支持不规则稀疏和双精度计算的专用单元与分块数据流。</span></div>
+<div class="score-reason">评分依据：属于生成模型推理的剪枝+混合精度加速，思路可迁移到资源受限芯片，但对比对象是数据中心 A100，并非端侧场景。软硬件联合设计完整，已被 ICCAD 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.25380" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

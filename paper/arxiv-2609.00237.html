@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Learning What to Retain: Gated-Memory Routing for Efficient Collaboration in Multi-Agent LLM Systems</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-31 · Rakibul Hasan Rajib; Mengxin Zheng; Qian Lou / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span><span class="tag">方向:云端serving</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">多智能体系统里每步都把完整执行历史塞给下一个智能体，成本会被撑爆；这篇学一个门控来决定留什么。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">每次决策都同时看查询和一段学出来的执行记忆：记忆写入门只提交非冗余的推理步骤，检索门再给每个智能体一个紧凑且相关的子集。</span></div>
-<div class="score-reason">评分依据：上下文压缩对受限设备上的智能体有迁移价值，但工作面向云端多智能体编排，没有设备端约束，端侧相关性较弱。双门控的设计合理但属于上下文管理的常见思路。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-08-31 · Rakibul Hasan Rajib; Mengxin Zheng; Qian Lou / EMNLP 2026</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多智能体大模型系统每一步都要决定下一个角色和底座模型；只看问题不够准，把全部历史都塞进去又太贵。这篇工作学习一个精简的执行记忆来做路由。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在五个推理和代码生成基准上，平均准确率比最强基线高 2.44 分，同时 HumanEval 上的推理成本比该基线降低 31.9%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">可学习的写入门只把不冗余的推理步骤写进记忆，检索门为每个智能体挑出相关子集，路由器据此选择下一个角色和底座，自适应停止控制器在证据足够时提前结束。</span></div>
+<div class="score-reason">评分依据：属于云端多智能体编排的效率优化，没有设备端语境，端侧相关度低；精简记忆和提前停止的思路可迁移到资源受限的智能体运行时。代码已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.00237" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

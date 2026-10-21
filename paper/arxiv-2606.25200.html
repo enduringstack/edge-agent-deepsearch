@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A Hybrid CNN-LSTM Intrusion Detection Framework for Cybersecurity in Smart Renewable Energy Grids</h1>
-<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-23 · Sajib Debnath; Remon Das / arXiv</div>
-<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">应用:安全</span><span class="tag">应用:fault-detection</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用 CNN 加 LSTM 的混合模型，实时检测智能电网里针对物联网设备的网络入侵。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">CNN 负责抽空间特征、LSTM 负责建模时间序列，两者结合既能抓瞬时的流量异常，也能识别缓慢演进的低速攻击；训练前走了一条七步预处理流水线，包括缺失值填补、最小最大归一化、独热编码、SMOTE 类别平衡、互信息特征选择和因果时序序列构造。</span></div>
-<div class="score-reason">评分依据：场景是物联网传感器与 SCADA 构成的边缘侧电网，实时检测需求与端侧算力约束相关，但原文未做设备端部署或推理开销分析，相关度中等；CNN 加 LSTM 的组合属成熟做法。</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-06-23 · Sajib Debnath; Remon Das / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:量化</span><span class="tag">应用:安全</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">可再生能源智能电网接入大量物联网传感器和 SCADA，攻击面急剧扩大。本文提出混合 CNN-LSTM 入侵检测模型，同时捕捉瞬时流量异常和缓慢演进的低速攻击。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 NSL-KDD 上精确率 98.2%，高于 LSTM 的 96.4%、CNN 的 95.2%；GPU 上吞吐 27,800 条流/秒，CPU 上 FP32 单样本 0.082 ms，INT8 量化再提速 3.1 倍、精度仅损失 0.3%，可部署在内存小于 128 MB 的智能电子设备上。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">CNN 提取空间特征、LSTM 建模时序；训练前经过缺失值填补、归一化、独热编码、SMOTE 类别平衡、互信息特征选择、因果时序构造和分层划分七步预处理，消融显示 SMOTE 影响最大（去掉后 F1 降 3.7 个百分点）。</span></div>
+<div class="score-reason">评分依据：给出了 INT8 量化和小内存设备的可部署性数据，与边缘侧部署有一定关联，但核心是安全检测模型；CNN 加 LSTM 属常规组合。PDF 首页两位作者分别署名 AES 公司和 Dominion Energy。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.25200" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

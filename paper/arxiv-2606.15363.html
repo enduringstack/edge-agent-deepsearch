@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>APEX: Adaptive Principle EXtraction A Three-Layer Self-Evolution Framework for Production AI Agents</h1>
-<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-13 · Ya-Chuan Chen; Tien-Jen Lai; Hsiang-Wei Hu / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:规划推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">现有的智能体自改进方案只改提示框架一层；这篇同时演化提示框架、行为准则和工作流拓扑三层。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">三层协同演化：第一层按失败模式打补丁修提示框架，第二层从成功轨迹蒸馏出行为准则，第三层按结构适应度筛选工作流拓扑；实现在一个生产级智能体上。</span></div>
-<div class="score-reason">评分依据：承载系统自称面向边缘 AI 智能体，但论文没有给出任何设备端执行或资源约束的证据，相关度较低。三层演化是对已有单层自改进框架的扩展，贡献一般。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-13 · Ya-Chuan Chen; Tien-Jen Lai; Hsiang-Wei Hu / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:记忆</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让 AI 智能体根据运行经验自我改进时，现有方法只改提示词外壳。APEX 同时进化提示外壳、行为原则和工作流结构三层。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在管理 15 节点算力集群的生产智能体 Joe 上，用 18 天采集的 114 条真实任务轨迹，一次进化后健康分从 0.300 升到 0.570（提升 90%），提炼出 6 条可复用原则，选出的工作流结构得分 0.900（提升 20%）；整轮进化只需在本地 qwen2.5-coder:32b 上调用 4 次大模型、约 270 秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">第一层从失败轨迹聚类里找问题并修补提示外壳，第二层从成功轨迹里蒸馏行为原则，第三层按结构适应度在候选工作流拓扑中挑选，三条线并行进化。</span></div>
+<div class="score-reason">评分依据：研究对象是管理局域网算力集群的运维智能体，进化过程用本地 32B 模型，但智能体自身模型跑在哪里没有交代，评价指标也是自定义的健康分，端侧相关度低、贡献有限。PDF 首页三位作者均署名 Grace AI Technology（邮箱为个人邮箱）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.15363" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

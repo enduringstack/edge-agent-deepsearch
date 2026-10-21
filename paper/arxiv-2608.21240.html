@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SPICE: Speculative Prefetching with Low-Rank Expert Surrogates and Heterogeneous Orchestration for MoE Inference Acceleration</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-21 · Yongxiang Lyu; Ning Li; Bonian Jia / arXiv</div>
-<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:投机解码</span><span class="tag">方向:调度服务</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">MoE 模型的专家参数放不进显存，推理时延被专家从主机内存搬进 GPU 的 PCIe 传输拖住，这篇用投机预取来提前把专家搬好。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">训一个与目标 MoE 架构对齐的轻量草稿模型，用带置信度的自适应前瞻算法预取高置信专家；预测失手时切到代价感知的 CPU-GPU 协同：低置信的缺失用常驻共享专家加低秩代理近似，精确的残差计算异步卸载到 CPU。</span></div>
-<div class="score-reason">评分依据：显存放不下就靠预取和卸载，这套思路对端侧内存受限设备可直接迁移；草稿预取加低秩代理兜底的双路设计有创新。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-21 · Yongxiang Lyu; Ning Li; Bonian Jia / ASP-DAC 2027</div>
+<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">硬件:GPU</span><span class="tag">硬件:CPU</span><span class="tag">模型:DeepSeek</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">SPICE 解决显存放不下 MoE 大模型、只能把专家放在内存里时的加载等待问题：提前预测下一步要用的专家并预取，预测不准时再在 CPU 和 GPU 之间灵活分工。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 DeepSeek-V2-Lite 和 Qwen2-57B-A14B 上、多种 GPU 平台测试，单 token 输出时延最多加速 3.12 倍，质量损失很小。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用与目标模型结构对齐的轻量草稿模型和置信度自适应前瞻来预取高把握的专家；预测落空时，低置信的部分用常驻共享专家加低秩替身近似，精确的残差计算交给 CPU 与 GPU 并行执行。</span></div>
+<div class="score-reason">评分依据：显存受限下的 MoE 卸载推理与消费级/边缘 GPU 场景直接相关；投机预取结合低秩替身的组合有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.21240" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

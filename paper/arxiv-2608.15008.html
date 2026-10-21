@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Harness the Memory: A Holistic Evaluation of Memory Substrates in Memory Agents</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-19 · Wei-Chieh Huang, Weizhi Zhang, Yuchen Wu, Yankai Chen, Eric Hanchen Jiang, Wooseong Yang, Yiwei Yang, Henry Peng Zou, Hanrong Zhang, Ying Nian Wu, Haolun Wu, Kai-Wei Chang, Philip S. Yu, Xue Liu, Aylin Caliskan / HuggingFace Daily</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-19 · Wei-Chieh Huang, Weizhi Zhang, Yuchen Wu, Yankai Chen, Eric Hanchen Jiang, Wooseong Yang, Yiwei Yang, Henry Peng Zou, Hanrong Zhang, Ying Nian Wu, Haolun Wu, Kai-Wei Chang, Philip S. Yu, Xue Liu, Aylin Caliskan / arXiv</div>
 <div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">对智能体记忆系统做整体评测，比较不同「记忆底座」在同一套条件下的表现。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把记忆智能体的记忆载体拆成可比较的若干种底座，在统一设定下做全面评估。</span></div>
-<div class="score-reason">评分依据：记忆机制是端侧长期运行智能体的关键部件，评测结论可迁移，但工作本身无设备端约束；系统性比较有参考价值。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">这是一份对智能体“记忆存储介质”的系统评测：把稠密/稀疏索引、文本记录、图结构、分层存储、参数更新等多种记忆实现放在同一套框架下比较，看哪种场景该用哪种。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 3 个骨干模型、4 套基准上统一测量 26 项性能与效率指标；文献调研显示 52 个已有记忆系统中只有 21% 报告过任何效率指标、81% 只用 GPT 系列骨干。结论是没有一种介质始终最优，检索太多会损害序列决策任务。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用统一的评测外壳固定骨干模型和任务，只替换记忆介质，同时记录准确率、写入/检索开销和可扩展性，并用注意力探针解释检索深度对决策的影响。</span></div>
+<div class="score-reason">评分依据：研究的是智能体长期记忆的选型与效率，与端侧部署只有间接关系；评测设计全面、给出可操作的选型结论，贡献中等。</div>
 <div class="source"><a href="https://huggingface.co/papers/2608.15008" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

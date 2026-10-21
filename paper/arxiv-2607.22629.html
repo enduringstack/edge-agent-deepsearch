@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Masked Self-Distillation: Internalizing the Chain-of-Thought in Language Models</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-18 · Durgesh Kalwar; Vardhan Palod; Jaya Adithya Pavuluri; Subbarao Kambhampati / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">让模型把冗长的思考过程「背进参数里」，这样回答时只需要写很短的中间步骤，省下推理时间和显存。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把同一个模型复制成老师和学生，老师看到完整思考链，学生被训练成在看不到（被掩码的）那部分步骤时也能给出同样的答案，掩码比例可调。</span></div>
-<div class="score-reason">评分依据：缩短思维链直接减少推理时延和显存占用，对端侧小模型部署有迁移价值，但论文没有涉及设备端场景。自蒸馏内化思维链属于这一年常见的做法，创新度一般。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-18 · Durgesh Kalwar; Vardhan Palod; Jaya Adithya Pavuluri; Subbarao Kambhampati / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">推理大模型在给出答案前会写很长的思维链，拖慢时延、占内存、抬高服务成本；这篇把思维链里的计算内化进模型参数，让模型用短得多的推理过程给出答案。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 GSM8K 上，Qwen3 学生模型准确率达约 92%–93%，接近老师的 94%–95%，而输出 token 少约 8 倍；图着色任务上部分设置超过老师 4–5 个百分点，同时 token 少 1.5–2 倍；AIME-25 上约 55%，接近老师且 token 少约 1.3 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">掩码自蒸馏：老师看到完整的推理过程，学生看不到其中被掩盖的开头部分（或全部），被训练直接从问题推到后续步骤和答案，从而把被掩盖的推理吸收进参数。</span></div>
+<div class="score-reason">评分依据：减少推理 token 直接降低时延和内存，对资源受限设备上的推理模型有迁移价值，但实验没有端侧部署，相关度中等。用掩码自蒸馏内化思维链、可调节掩码比例来平衡精度与长度，思路较新，贡献中等偏上。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.22629" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Simthesizer: An Agent-Driven Simulation Framework for LLM Serving Systems</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-25 · Wonung Kim; Hyunmin Choi; Minsu Kim; Jaehong Cho; Yeongwook Kim; Jongse Park / arXiv</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-25 · Wonung Kim; Hyunmin Choi; Minsu Kim; Jaehong Cho; Yeongwook Kim; Jongse Park / arXiv</div>
 <div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">应用:代码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">大模型服务系统迭代太快，模拟器跟不上，每加一个新机制就要大改一遍，这篇让编码智能体来写和改模拟器。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先提供一套可组合的模拟器基础设施，把完整服务流程连同协调它的控制决策统一表达成一张动态图；再由一个受约束的编码智能体在这张图上生成和修改模拟逻辑。</span></div>
-<div class="score-reason">评分依据：面向数据中心服务系统的模拟器开发，与端侧只有宽泛关联；用智能体驱动模拟器演进的思路较新颖。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型服务系统演进太快，模拟器跟不上，每加一个新机制就要大改。Simthesizer 用编码智能体按自然语言需求去扩展同一个可组合的模拟器。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在同样的编码智能体和外壳下，基于 Simthesizer 的扩展与 vLLM 真实系统的平均吞吐误差为 2.51%，基于现有模拟器的为 6.03%；同等负载下模拟速度比 LLMServingSim2.0 快 284.96 倍、比 Vidur 快 23.19 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把完整服务流程（含控制决策）统一表达成动态图，再由带护栏的编码智能体把功能需求翻译到这套抽象上，并做保真度验证。</span></div>
+<div class="score-reason">评分依据：面向数据中心大模型服务系统的模拟器开发，与端侧只有宽泛关联；用智能体驱动模拟器演进的思路较新颖。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.24650" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

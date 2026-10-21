@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>HyQuant: Hybrid-Precision Quantization for LLM Attention</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-11 · Jiatong Ding, Bingxin Xing, Yu Zhang, Dian Ding, Xiaodong Yi, Xianbin Ouyang, Feihu Zhou, Kun Zhang, Zhenyu Guo, Hao Pan, Guangtao Xue, Yiming Zhang / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">方向:高效注意力</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">对大模型注意力做混合精度量化：大部分状态压到低比特，只把少量关键的竖线 token 和局部窗口留高精度。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">在多种任务、模型和数据集上，以很简单的设计保持接近无损的精度。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用轻量的竖线感知注意力模式信号挑出精度关键区域；预填充阶段用混合精度量化注意力算子保留竖线 token 和局部滑动窗口的全精度、量化其余上下文，解码阶段对 KV 缓存压缩用同样原则，并把 KV 反量化与注意力计算融合以提升内存和硬件效率。</span></div>
-<div class="score-reason">评分依据：注意力和 KV 缓存的低比特量化是端侧长上下文部署的关键，融合反量化对硬件效率有实际意义（相关性 7）。混合精度按注意力模式选区域的做法有针对性（贡献 6）。</div>
-<div class="source"><a href="https://huggingface.co/papers/2608.27875" target="_blank" rel="noopener">查看原文 →</a></div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-08-28 · Jiatong Ding; Bingxin Xing; Yu Zhang; Dian Ding; Xiaodong Yi; Xianbin Ouyang; Feihu Zhou; Kun Zhang / EMNLP 2026</div>
+<div class="tags"><span class="vendor-tag">Tencent</span><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">方向:高效注意力</span><span class="tag">应用:长上下文推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">注意力模块做极低比特量化时误差很大。HyQuant 让绝大部分注意力状态用低比特存算，只把少数关键的“竖线 token”和局部窗口保留高精度，兼顾精度和效率。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen3-8B、GLM-4-9B 等模型和 LongBench、GSM8K、MATH500 上保持接近全精度的准确率，H100 上解码注意力算子提速 1.32–3.58 倍（32K 前缀时约 3.58 倍），端到端解码提速 1.04–1.17 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用轻量的注意力模式信号在线识别竖线 token（前 5%）和滑动窗口：预填充阶段用混合精度量化注意力算子，解码阶段把同样原则用于 KV 缓存压缩，并把反量化融合进注意力计算。</span></div>
+<div class="score-reason">评分依据：注意力与 KV 缓存混合精度量化对端侧长上下文推理的显存和带宽瓶颈有直接迁移价值，但实验在 H100 上；设计简单有效，已被 EMNLP 2026 主会接收并开源。 作者机构依据：arXiv PDF 首页署名 Tencent（PDF 首页多位作者署名 Tencent Penglai Lab，其余作者来自厦门大学、上海交通大学和西安交通大学）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2608.27875" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A RAG-Enhanced Bi-Level Cognitive Orchestration Framework for LEO Satellite Networks</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-13 · Yuhong Jiang; Zhishu Shen; Tong Yin; Qiushi Zheng; Yichao Jin; Fidan Mehmeti; Jiong Jin / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:调度服务</span><span class="tag">方向:能耗功耗</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">低轨卫星拍的数据越来越多但下行带宽不够，星上处理又受算力、能源和断续链路的限制，资源被切得七零八落。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">双层认知编排：上层用大模型配合检索增强生成做战略层面的知识引导调度，下层处理具体的星间与星地资源分配，把网络控制按两种时间尺度解耦。</span></div>
-<div class="score-reason">评分依据：星上计算是算力、能耗和连接都极度受限的边缘场景，调度约束很具体，但工作重点是网络编排而非模型部署，相关度中等。双层解耦加检索增强的编排框架设计合理，贡献中等。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-13 · Yuhong Jiang; Zhishu Shen; Tong Yin; Qiushi Zheng; Yichao Jin; Fidan Mehmeti; Jiong Jin / arXiv</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:能耗功耗</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">低轨卫星网络里星上算力、能源和星间链路时好时坏，资源碎片化，传统静态路由和调度效果差。这项工作用大模型加知识库来指导卫星边缘计算的路由与任务卸载调度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在高保真 Walker-Delta 星座测试床的混合关键度负载下，相比最强的学习类基线，丢包率降低 30.7%、能效提升 30%、端到端时延降低 8.5%，在级联节点故障场景下仍保持稳定。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">分两层：上层由大模型读取实时网络状态的紧凑描述，并检索离线蒸馏出的专家知识库，推断多目标优化的偏好权重；下层用考虑保真度的遗传算法按这些权重算出可行、无冲突的联合路由和卸载方案。</span></div>
+<div class="score-reason">评分依据：大模型只是卫星网络调度的高层决策器，跑在何处、是否受资源约束没有展开，与端侧推理关系较远；把检索增强的大模型与遗传调度器分层结合有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.15076" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

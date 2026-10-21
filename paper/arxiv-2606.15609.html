@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FragFuse: Bypassing Access Control of Large Language Model Agents via Memory-Based Query Fragmentation and Fusion</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-14 · Zixin Rao; Wentian Zhu; Chan Aristella Lu; Zhaorun Chen; Wei Niu; Le Guan; Bo Li; Zhen Xiang / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:安全隐私</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">智能体的长期记忆开了一个新的攻击面：违规内容可以拆碎了分批存进记忆，之后再被拼回来，绕过访问控制。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">三步攻击：先用带掩码的黑盒试探找出哪些片段会触发拒答，再把这些片段以看似无害的形式注入记忆，最后通过记忆检索重新拼合出完整的违规内容，而最终的用户提问里并不出现它。</span></div>
-<div class="score-reason">评分依据：带长期记忆的个人智能体在端侧同样普遍，这类记忆通道攻击对端侧智能体的安全设计有参考价值，但论文不涉及设备约束，相关度较低。指出记忆引入的时间维度攻击通道是新的问题视角，贡献中等偏上。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-06-14 · Zixin Rao; Wentian Zhu; Chan Aristella Lu; Zhaorun Chen; Wei Niu; Le Guan; Bo Li; Zhen Xiang / USENIX Security 2026</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:记忆</span><span class="tag">应用:安全</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型智能体有了长期记忆后，攻击者可以把会被访问控制拦下的违禁内容拆成碎片分多次存进记忆，事后再让智能体检索拼回来。FragFuse 是第一个利用这条“记忆时间通道”绕过智能体访问控制的攻击。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 4 类智能体场景、3 种主流访问控制机制上，平均绕过成功率 86.3%，端到端有害任务成功率平均 41.1%，相比不设访问控制时正常任务成功率只下降 4.4%；现有的提示注入检测和困惑度检测都挡不住。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">分三步：先用带碎片遮罩的黑盒自适应查询找出会触发拒绝的关键片段，再借带标记的载体查询把碎片写进记忆，最后用一次后续攻击查询检索并拼接这些碎片；还用替代模型自动优化拼接指令和标记设计。</span></div>
+<div class="score-reason">评分依据：揭示的是智能体长期记忆带来的新攻击面，对任何带记忆的智能体（含端侧）都有警示意义，但本身与端侧部署无关；攻击思路新颖，已被 USENIX Security 2026 接收（安全四大，按同级顶会计）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.15609" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

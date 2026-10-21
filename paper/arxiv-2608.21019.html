@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Target-Aware Calibration Data Selection for Preserving Uncertainty in Quantized Language Models</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-21 · Zhen Yang; Sizai Hou; Kaiwen Zheng; Yaofang Liu; Liang He; Yixuan Chen; Kangning Cui / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:安全隐私</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">量化时挑什么校准数据，通常只盯准确率，这篇把「量化后模型的置信度和弃答行为还准不准」当成首要目标。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把校准数据选择形式化为分布保持风险和边界保持风险两个目标，并用混合失配论证说明为什么没有一套校准配方能适配所有部署目标；据此提出 DPQ，用全精度模型的预测来构造与目标场景对齐的校准集。</span></div>
-<div class="score-reason">评分依据：端侧模型量化后是否还敢于弃答、置信度可不可信，直接关系可用性，迁移价值明确；把不确定性保持写成优化目标的切入点较新。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-21 · Zhen Yang; Sizai Hou; Kaiwen Zheng; Yaofang Liu; Liang He; Yixuan Chen; Kangning Cui / EMNLP 2026 Findings</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型量化后答案常常不变，但置信度、犹豫程度和拒答行为会变。这篇论文研究如何挑选量化校准数据，让量化模型保住原模型的“不确定性”表现。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 8 个语言模型、9 个 NLP 基准、22 种对比方法上评测：哪种固定配方最好取决于要保住的目标，DPQ-r75 在 SQuAD2 可答性边界保持上领先，较温和的 DPQ-r50 和仅用置信度、仅用熵的变体更适合多选问答。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用全精度模型的预测挑出“高犹豫”样本，再和通用锚点样本按目标比例混合，作为量化前的校准集。</span></div>
+<div class="score-reason">评分依据：量化是端侧部署的核心技术，本文关注量化后置信度等行为的保持，可直接迁移；方法轻量、结论偏经验，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.21019" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Multi-Agent Transactive Memory</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-18 · To Eun Kim; Xuhong He; Dishank Jain; Ambuj Agrawal; Negar Arabzadeh; Fernando Diaz / arXiv</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-18 · To Eun Kim; Xuhong He; Dishank Jain; Ambuj Agrawal; Negar Arabzadeh; Fernando Diaz / arXiv</div>
 <div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">让一群智能体共用一个「经验检索库」：把别的智能体跑过的轨迹存起来，新智能体遇到类似任务时直接检索复用，不用从头摸索。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把检索增强生成从检索人写的资料，扩展到检索智能体自己产生的轨迹；轨迹里的可复用流程被组织成群体级别的存储和检索系统，供整个智能体群调用。</span></div>
-<div class="score-reason">评分依据：智能体经验复用属于 Agent 记忆方向，对端侧智能体减少重复推理有间接价值，但工作本身面向分布式云端部署，相关度较低。把群体轨迹当检索对象的视角比较新，贡献中等。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">各个智能体跑完任务后的执行轨迹通常用一次就丢，新智能体只能重新摸索；这篇把不同智能体产生的轨迹集中存起来，供其他智能体检索复用。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ALFWorld 上成功率从 47% 提到 55%，加重排序后达 64.3%（比不检索高 17.2 个百分点）；WebArena 上从 18% 提到 20%；每个成功任务的 token 消耗降低 11%–34%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">多智能体交互记忆（MATM）：生产者智能体把轨迹贡献到共享库，消费者智能体按当前状态检索相关轨迹指导执行，无需协调或联合训练，并比较了多种重排序器。</span></div>
+<div class="score-reason">评分依据：属于智能体记忆基础设施，面向去中心化的多智能体生态，没有设备端语境，相关度较低。把检索增强从人写文档扩展到智能体生成的轨迹，提出了群体级经验共享的设计模式，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.19911" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

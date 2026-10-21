@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Tropical: Enhancing SLO Attainment in Disaggregated LLM Serving via SLO-Aware Multiplexing</h1>
-<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-15 · Jinming Ma; Jiefei Chen; Xiuhong Li; Jiangfei Duan; Haojie Duanmu; Xingcheng Zhang; Chao Yang; Dahua Lin / arXiv</div>
-<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:云端serving</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">大模型服务要同时保住首字时延和逐字输出时延，把预填充和解码分开放或放一起各有各的毛病；这篇把两种模式混着用。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者分析出分离式部署里预填充对解码干扰小但排队久、合并式部署排队短但互相干扰，于是设计一套感知服务水平目标的复用机制，按需在两种模式间取长补短。</span></div>
-<div class="score-reason">评分依据：纯数据中心的服务质量优化，与端侧部署无直接关系，相关度低；属于推理服务技术栈，按相邻工作保留。对两种部署形态的根因分析清楚，复用设计合理，贡献中等。</div>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span>  2026-06-15 · Jinming Ma; Jiefei Chen; Xiuhong Li; Jiangfei Duan; Haojie Duanmu; Xingcheng Zhang; Chao Yang; Dahua Lin / arXiv</div>
+<div class="tags"><span class="vendor-tag">SenseTime</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型服务要同时满足首 token 时延和每 token 时延，预填充和解码放在同一个节点会互相干扰，分开放又会排队等待。Tropical 在两种架构之间取长补短。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在真实数据集上，与最好的非分离式和分离式系统相比，在 90% 服务目标达成率下最多多服务 2.09 倍请求；相比分离式系统 P90 首 token 时延改善 9 倍，P90 每 token 时延只下降 15%；相比非分离式系统 P90 每 token 时延改善 2.8 倍，首 token 时延持平。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">根因分析发现分离式部署干扰小但排队长、非分离式排队短但干扰大，于是设计按服务目标感知的复用策略，在排队时间和干扰之间动态平衡预填充与解码的放置。</span></div>
+<div class="score-reason">评分依据：纯数据中心大模型服务调度，与端侧关系很弱；对预填充/解码干扰的分析清楚，复用策略属服务系统工程优化。PDF 首页作者 Xingcheng Zhang 署名上海人工智能实验室和商汤研究院。 作者机构依据：arXiv PDF 首页署名 SenseTime（PDF 首页作者 Xingcheng Zhang 标注机构 1、6，即上海人工智能实验室与 Sensetime Research；其余作者来自上海 AI 实验室、复旦、北大、港中文、上交）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.16264" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

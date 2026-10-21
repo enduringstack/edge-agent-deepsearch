@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ED3R: Energy-Aware Distributed Disaster Detection Enabled by Cooperative Robotic Agents</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-16 · Lina Magoula; Nikolaos Koursioumpas; Nancy Alonistioti; Ramin Khalili / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:能耗功耗</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">野火侦测机器人既要有把握地认出火情，又要省电、还要快；这篇让机器人自己决定检测在本机跑还是交给远端。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">机器人与远端控制器分层协同：控制器决定机器人怎么走，机器人感知环境并自行决定检测在机载还是远端执行、以何种方式执行，共同目标是在满足置信度要求的前提下最小化能耗，另外还集成了避障等机制。</span></div>
-<div class="score-reason">评分依据：机器人自行决定机载还是远端执行推理，是端云协同卸载的典型形态，能耗是显式优化目标，可迁移性强，但论文偏理论框架。把检测位置选择纳入分层决策的建模比较完整，贡献中等。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-06-16 · Lina Magoula; Nikolaos Koursioumpas; Nancy Alonistioti; Ramin Khalili / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:端云协同</span><span class="tag">方向:能耗功耗</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">无人机找野火时既要有把握地认出火情，又要省电省时间；这篇让机器人和远端控制器分层配合，机器人自己决定检测在机上跑还是交给远端。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在仿真中任务成功率最高 97.18%；在最难的任务里比基线最多省电 36.4%、发现火情快 41%；平均能耗 21.44 kJ，比 ECD2R、IPPO、RBS 分别低 16.8%、9.7%、38.7%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">远端控制器负责决定飞行路径，机器人感知环境后自行选择机载完整模型、机载量化模型或远端检测，并用分布式神经回归模型预估各候选策略的后果，以满足置信度要求为前提最小化总能耗。</span></div>
+<div class="score-reason">评分依据：机器人在机载与远端之间动态卸载推理、并在完整模型与量化模型间切换，是端云协同的典型形态，但全部结果来自仿真。把运动、感知、计算和通信能耗放进同一决策框架比较完整，贡献中等。PDF 首页第 4 作者署名 Huawei Heisenberg Research Center（Munich），huawei.com 邮箱。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页第 4 作者 Ramin Khalili 署名 Huawei Heisenberg Research Center (Munich)，邮箱为 huawei.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.17739" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

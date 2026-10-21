@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Generation Quality-Latency Tradeoff-Aware Inference Offloading for Multimodal LLMs in Cloud-Edge Continuum</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-13 · Zhongxiao Wang; Yueshen Xu; Xinkui Zhao; Wei Shao; Rui Li / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:多模态</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">多模态大模型既可以放云端也可以放边缘，用户既想要生成质量又想要低时延；这篇研究怎么分配这两者。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把云边连续体里的多模态推理任务卸载建模成生成质量与响应时延的联合优化，难点在于这两个量在任务执行前都不好预测，论文针对预测与优化耦合的问题给出方案。</span></div>
-<div class="score-reason">评分依据：云边协同卸载是端侧多模态应用的核心部署模式，质量与时延的权衡是真实约束，相关度较高。卸载决策的建模属于该方向的常规工作，贡献中等。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-13 · Zhongxiao Wang; Yueshen Xu; Xinkui Zhao; Wei Shao; Rui Li / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:多模态</span><span class="tag">方向:调度服务</span><span class="tag">方向:评测基准</span><span class="tag">硬件:Jetson</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多模态大模型同时部署在云和边缘时，用户既要生成质量又要响应快，两者很难同时兼顾。QLMIO 为每个请求决定在云端还是边缘设备上执行，以平衡质量和时延。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">相比基线时延最多降低 58.14%，同时任务完成率与全部请求都交给云端服务器时持平；作者还用 RTX5090、RTX3090Ti 和 Jetson Orin Nano Super 三类设备搭了真实云边系统，采集了 MIOBench 卸载基准（在 Jetson Orin Nano Super 上直接跑 Qwen3-VL 2B 准确率只有 66.67%）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先分别预测每个多模态请求在不同设备上的生成质量和推理时延，再据此做兼顾两者的卸载决策；评测数据来自自建的真实云边多模态推理系统。</span></div>
+<div class="score-reason">评分依据：在包含 Jetson Orin Nano Super 的真实云边系统上研究多模态大模型卸载，并公开基准数据，端侧相关度较高；质量-时延联合预测再卸载的思路较常见，贡献中等。论文已投 IEEE TMC，尚未接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.15210" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

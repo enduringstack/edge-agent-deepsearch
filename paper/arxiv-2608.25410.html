@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Token-Oriented Semantic Communication with Pretrained Vision Transformers</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-26 · Jiwoong Im; Minwoo Kim; Jaeho Lee; Yo-Seb Jeon; Yongjune Kim / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在资源受限的边缘系统里做端云协同推理，直接传 token 嵌入既费带宽又不能跨模型通用；这篇改成按 token 相关性传压缩后的图像潜变量。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">框架由 token 级的任务相关性决定哪些压缩后的图像潜变量需要传输，实现 token 粒度的传输而不直接发送 token 嵌入；三个预训练组件模块化协同工作。</span></div>
-<div class="score-reason">评分依据：明确面向资源受限边缘系统的端云协同推理，通信量是端侧的真实瓶颈，端侧契合度较高。用 token 相关性驱动的潜变量传输回避了嵌入空间不通用的问题，属于合理设计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-26 · Jiwoong Im; Minwoo Kim; Jaeho Lee; Yo-Seb Jeon; Yongjune Kim / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">端侧设备和服务器协同推理时，直接传 Transformer 的 token 向量既费带宽、又和不同模型不兼容。这篇提出“按 token 挑选要传的压缩图像块”的语义通信框架，把端侧小 ViT、图像压缩模型和服务器大 ViT 拼起来用，无需端到端重训。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">ImageNet 上在 1.24 bpp 时分类准确率 85.83%，只比服务器无损上限低 0.98 个百分点；WebP 和 BPG 要分别用约 1.57 和 1.82 bpp 才能达到同样准确率。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用 ViT 图像块与学习型图像压缩潜变量一一对应的空间关系：端侧小 ViT 用选定若干层的注意力估计每个 token 的任务相关性，只传相关块的压缩潜变量；服务器用一个可学习的替代 token 补齐缺失块。</span></div>
+<div class="score-reason">评分依据：面向资源受限端侧的端云协同推理，直接针对上行带宽问题，相关度中等；模块化组合预训练模型、不需重训是实用的工程贡献。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.25410" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

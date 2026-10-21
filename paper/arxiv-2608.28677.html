@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Cognitively-Grounded On-Device Runtime Learning for Ground Robots in Unknown Physical Environments</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-08-25 · Yihao Cai; Yanbing Mao; Christian Lebiere / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:端侧训练</span><span class="tag">应用:机器人</span><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">让安全关键的地面机器人在完全陌生、没有地图也没有先验感知知识的环境里，全程只靠边缘 AI 设备自己边跑边学。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">框架由学习智能体、理性智能体和协调者三部分组成：学习智能体用专用回放缓冲、认知驱动的经验采样，把 actor-critic 强化学习和基于实例的学习按安全性加权混合出动作；理性智能体是不学习的模块，专管安全关键功能；协调者负责在两者之间调度。感知、学习和控制整条自治栈都跑在边缘 AI 设备上，不依赖无线通信。</span></div>
-<div class="score-reason">评分依据：整条自治栈在机器人边缘设备上运行并强调脱离无线依赖，属于明确的设备端 Agent 闭环，相关性高；认知学习与理性安全模块分工的架构有创新。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-08-25 · Yihao Cai; Yanbing Mao; Christian Lebiere / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">应用:机器人</span><span class="tag">硬件:Jetson</span><span class="tag">方向:记忆</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让四足机器人和越野车在没有地图、没有先验感知知识的陌生野外环境里，完全在机载边缘 AI 设备上边跑边学，同时保证不摔不撞。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在真实野外森林中四足机器人 20 个学习回合里，CogRun 失衡 0/20、碰撞 0/20、任务完成 19/20，而 Real-DRL、MPS、RLM 分别只完成 10/20、10/20、11/20 且多次失衡或碰撞；整套系统跑在 Jetson AGX Orin（30 W）上，安全控制 200 Hz、学习模块 20 Hz。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">学习模块把演员-评论家强化学习与基于实例的学习结合，用模仿人类记忆（频率、新近性）的方式抽样经验；另设不学习的理性模块专管安全动作，由协调器在两者间切换，安全模块在 CPU 上高频运行、学习模块在 GPU 上低频运行。</span></div>
+<div class="score-reason">评分依据：感知、学习、控制整套栈都在 Jetson AGX Orin 上实际运行并在真实野外验证，端侧相关性高；但核心是强化学习控制器的在线学习，没有规划、工具调用一类智能体闭环，按判例归为非端侧智能体。学习-安全双模块分工加类认知的经验抽样有创新。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.28677" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

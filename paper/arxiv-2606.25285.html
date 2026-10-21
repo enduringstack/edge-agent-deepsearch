@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>EPTS: Elastic Post-Training Sparsity for Efficient Large Language Model Compression</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-24 · Ke Xu; Jiaqi Wan; Wenhao Hu; Han Pu; Xiaoyun Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:编译部署</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一次优化就得到一个能在多种稀疏率下都好用的弹性模型，省掉逐个稀疏率重调的麻烦。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">针对现有训练后稀疏方法只能针对单一稀疏率优化、换个硬件就得整套重来的问题，设计多稀疏层次 LoRA 让低稀疏组的知识向高稀疏组继承，缓解参数重建时的互相争抢，再加一个多稀疏特征混合器，使一次性优化产出的单个弹性模型能覆盖多种稀疏配置。</span></div>
-<div class="score-reason">评分依据：直接针对资源受限设备部署场景，而且「一个模型适配多种硬件稀疏预算」正是端侧多机型分发的痛点，端侧契合度较高；把单稀疏范式推广到多稀疏弹性模型，比常规训练后剪枝更有新意。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-24 · Ke Xu; Jiaqi Wan; Wenhao Hu; Han Pu; Xiaoyun Wang / KDD 2026</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span><span class="tag">方向:编译部署</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">训练后稀疏化常用来压缩大模型以便部署到资源受限设备，但现有方法每换一个稀疏率就要重新优化一遍。EPTS 一次优化就得到一个能在多种稀疏率下都保持性能的“弹性”模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LLaMA-7B 上 70% 稀疏率时 WikiText2 困惑度为 16.94，而 SparseGPT 为 25.78、Wanda 为 82.19、RIA 为 91.23；OPT-125M 在高稀疏率下 SparseGPT、Wanda、RIA 困惑度分别崩到 223.53、331.00、353.96，EPTS 保持优势。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用多稀疏层级 LoRA（MS-HiLoRA）让高稀疏组从低稀疏组继承知识、减少参数重建的相互竞争；再用多稀疏特征混合器（MSFM）动态融合不同稀疏粒度的特征表示，增强对剪枝扰动的适应性。</span></div>
+<div class="score-reason">评分依据：“一个模型适配多种硬件稀疏预算”正是端侧多机型分发的痛点，属端侧技术栈，但没有设备实测，相关度中等；把单稀疏率推广到弹性多稀疏率有新意。论文被 KDD 2026 接收（不在顶会清单内），代码已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.25285" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

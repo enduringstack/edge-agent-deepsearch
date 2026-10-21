@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ScalePredictor: Instance-aware Scale Learning for Accurate Quantization of Vision Transformers</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-06-20 · Changjun Li; Runqing Jiang; Lian Xu; Ye Zhang; Qingyong Hu; Yulan Guo / arXiv</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-20 · Changjun Li; Runqing Jiang; Lian Xu; Ye Zhang; Qingyong Hu; Yulan Guo / arXiv</div>
 <div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">给视觉 Transformer 的训练后量化加一个按输入动态预测缩放系数的机制。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者先揭示一个隐藏关联：浅层激活的分布范围与深层的最优缩放系数之间存在相关性。据此设计缩放学习机制——用一个高效的范围提取方法在浅层抓取稳健的范围统计量，再把它送入一个受泰勒展开启发的多项式缩放投影，从而摆脱对所有样本一视同仁的静态量化范式。</span></div>
-<div class="score-reason">评分依据：直接针对视觉 Transformer 在边缘设备上算力需求过大的部署难题，训练后量化只需小校准集的特性也很适合端侧，端侧契合度较高；用浅层统计量预测深层缩放系数实现按样本动态量化，思路有新意且开销可控。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">视觉 Transformer 在边缘设备上算力开销大，常用的训练后量化对所有图片用同一套缩放系数，而不同图片的激活分布差异很大。ScalePredictor 根据每张图片的浅层激活统计，一次性预测所有层的量化缩放系数。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ImageNet 低比特设置下普遍提升已有方法，例如 W2/A3 下 I&amp;S-ViT 在 Swin-Small 上从 33.57% 提升到 44.15%，W3/A3 下 BRECQ 在 ViT-Small 上从 31.46% 提升到 40.17%；在 RTX 3090 上缩放计算额外开销仅 +0.6%（逐层动态最小/最大值方法为 +19%），端到端延迟开销 0.4%–0.8%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">作者发现浅层激活的分布范围与深层最优缩放系数强相关，于是在 Patch Embedding 处用分块最小/最大均值提取稳健范围，再用受泰勒展开启发的多项式映射同时生成各层缩放系数，避免每层运行时规约。</span></div>
+<div class="score-reason">评分依据：直接针对 ViT 在边缘设备上的量化部署，属端侧技术栈，但只在桌面 GPU 上测开销，相关度中等偏上；把动态量化的开销压到接近静态量化，有实用价值。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.21947" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

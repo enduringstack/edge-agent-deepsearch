@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SSDi8: Accurate and Efficient 8-bit Quantization for State Space Duality</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-22 · Hyunwoo Kim; Byoungchan Ko; Minseok Kang; Minwoo Kim; Dongjin Lee; Jaehoon Lee; Sungroh Yoon; Dahuin Jung / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Mamba-2 的状态空间对偶结构虽然高效，但内存和时延开销仍然不小，这篇给它做了第一个训练后 INT8 量化方案。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把逐元素乘法和矩阵乘法解耦重写，让量化后的激活能在模块之间复用，从而保持一条持续的 INT8 通路；再在代价划算的位置自适应量化随通道变化的激活来进一步降时延。</span></div>
-<div class="score-reason">评分依据：状态空间模型的低比特量化对端侧长序列部署有直接迁移价值；针对 SSD 结构重写以保持 INT8 通路是有针对性的创新。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-08-22 · Hyunwoo Kim; Byoungchan Ko; Minseok Kang; Minwoo Kim; Dongjin Lee; Jaehoon Lee; Sungroh Yoon; Dahuin Jung / ICLR 2026</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:模型架构</span><span class="tag">硬件:Jetson</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">SSDi8 是专为 Mamba-2 状态空间对偶结构设计的训练后量化方法，让整个计算路径都保持 INT8，同时精度接近 FP16。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">W4A8 和 W8A8 设置下精度与 FP16 相当，速度最多提升 1.4 倍；在 Jetson Orin NX 16G 上，序列长 256 时 W8A8 的 SSD 时延 41.30ms，Quamba2 为 51.03ms。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把逐元素乘法与矩阵乘法解耦，让量化后的激活能跨模块复用；在代价低的位置对随通道变化的激活自适应量化；利用不同维度上的离群值分布差异，并加入基于逐通道误差统计的修正项。</span></div>
+<div class="score-reason">评分依据：在 Jetson Orin NX 上实测部署，端侧相关度高；首个面向 Mamba-2 SSD 的持续 INT8 路径量化框架，已被 ICLR 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.21952" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

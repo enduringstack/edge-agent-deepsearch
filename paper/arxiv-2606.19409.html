@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>OpenRath: Session-Centered Runtime State for Agent Systems</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-23 · Fukang Wen, Zhijie Wang, Ruilin Xu / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:记忆</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">给多智能体多会话系统做一个统一的运行时状态抽象，让执行过程可检查、可回放。</span></div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-23 · Fukang Wen, Zhijie Wang, Ruilin Xu / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">方向:调度服务</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体系统的对话记录、工具副作用、记忆读写、沙箱位置和分支来源通常散落在各处，事后很难检查和复现。OpenRath 提出以“会话（Session）”为核心的编程模型，把这些运行时状态收进同一个可传递的值里。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">针对对话记录、工具副作用、记忆事件、工作区位置、分支来源和回放证据各自分开记录、难以检查复现的问题，提出一个类似 PyTorch 的编程模型，核心抽象是在智能体和工作流之间传递的会话值：它可分支、可检查、可回放、感知后端且可组合，记录对话片段、沙箱位置、血缘元数据、token 用量、待办工作和工具证据。由于这份状态就是程序执行时传递的那个值，分叉、合并和回放成为显式的运行时操作，而不必从外部轨迹事后重建。</span></div>
-<div class="score-reason">评分依据：智能体运行时的状态管理与可回放性对端侧 Agent 的可靠性同样重要，但原文无设备端部署内容，相关度按宽泛关联计；把运行时状态提升为一等值从而让回放成为原生操作，抽象设计较有章法。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">Session 是在智能体和工作流之间传递的一等运行时对象，记录对话片段、沙箱位置、血缘元数据、token 用量、待办任务和工具证据，因此分叉、合并、回放都变成显式的运行时操作；另定义 Sandbox、Tool、Agent、Memory、Workflow、Selector 等组件，Selector 把控制流变成运行时路由决策。</span></div>
+<div class="score-reason">评分依据：属于智能体运行时的状态管理与可回放设计，对端侧 Agent 的可调试性有参考价值，但没有任何设备端部署内容，相关度按宽泛关联计；把运行时状态做成一等值的思路清晰，但原文明确不提供定量对比，贡献中等。</div>
 <div class="source"><a href="https://huggingface.co/papers/2606.19409" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

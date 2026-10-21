@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>LUMEN: Coordinated Failure Recovery for Distributed LLM Serving</h1>
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-16 · Zhang Cao; Shujie Han; Juncheng Zhang; Yuanming Ren; Yongkun Li; Patrick P. C. Lee / arXiv</div>
-<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:云端serving</span><span class="tag">方向:KV cache</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">大模型服务集群里一台机器挂了，不光少了算力，它显存里的键值缓存也一起没了；这篇把故障恢复当成负载感知的协调问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在三个决策点统一协调：故障前把检查点放在哪、故障时被中断的请求分给谁、以及恢复期间的服务能力怎么安排，避免恢复中的机器在重新加载模型时整段空转。</span></div>
-<div class="score-reason">评分依据：面向多 GPU 服务集群的容错，与端侧部署无直接关系，相关度低；属于推理服务技术栈，按相邻工作保留。把三个决策点一起优化而不是各自为政，系统设计较完整，贡献中等。</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:KV cache</span><span class="tag">方向:调度服务</span><span class="tag">硬件:GPU</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型服务集群里一台机器挂掉，不光少了算力，它显存里的键值缓存也一起丢了；这篇把故障恢复当成考虑集群负载的协调问题来做。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">4 卡原型上服务 Qwen3-32B，相比从头重跑和固定邻居检查点两种方案，平均首字时延分别降 44.4% 和 7.1%，恢复时间分别缩短 50.0% 和 34.9%；8 卡原型服务 Qwen3-14B 时恢复时间缩短 64.1% 和 63.9%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在三个决策点统一协调：故障前按负载决定检查点放在哪、故障时把中断请求分给谁、重载模型期间用投机路径让恢复中的机器继续出力，而不是整段空转。</span></div>
+<div class="score-reason">评分依据：面向多 GPU 服务集群的容错，与端侧部署没有直接关系，相关度低，属于推理服务技术栈的相邻工作。把三个决策点一起优化，系统设计完整，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.17787" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

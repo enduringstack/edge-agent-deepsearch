@@ -7,9 +7,9 @@
 <h1>AutoPass: Evidence-Guided LLM Agents for Compiler Performance Tuning</h1>
 <div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-18 · Zepeng Li; Jie Ren; Zhanyong Tang; Jie Zheng; Zheng Wang / arXiv</div>
 <div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:工具调用</span><span class="tag">应用:代码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">让大模型智能体来调编译器优化选项：把编译器内部状态和真实运行时间开放给模型看，再由它决定开哪些优化。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">多智能体框架不再把编译器当黑盒，而是允许模型查询编译器内部优化状态、读中间表示；再用实测运行时间反馈迭代修正配置，全程不需要训练或微调。</span></div>
-<div class="score-reason">评分依据：编译器自动调优属于部署链路的上游，对端侧算子性能有间接帮助，但工作本身不涉及设备端场景，相关度较低。把编译器内部状态开放给模型的做法比纯黑盒自动调优有新意，贡献中等。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">让大模型帮编译器调性能很难，因为微架构效应复杂、运行时测量又有噪声；这篇让多个智能体读取编译器内部状态和中间表示，按实测证据调整优化选项。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LLVM 上，相对 -O3 的几何平均加速在 x86-64 服务器上为 1.043 倍、在嵌入式 ARM64 上为 1.117 倍，整体平均加速 1.259 倍，优于 PGO 和 OpenTuner 等方法。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">AutoPass 把编译器打开给大模型：智能体可查询编译器内部优化状态、分析中间表示来编排编译选项，再用实测运行时间诊断性能回退、迭代修改，全程无需训练或微调。</span></div>
+<div class="score-reason">评分依据：优化的是普通程序的编译性能而非 AI 推理，智能体本身也跑在云端，与端侧 AI 关系较弱；嵌入式 ARM64 上的加速对端侧软件优化有一定参考。把编译器内部证据引入大模型调优的思路有新意，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.20373" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

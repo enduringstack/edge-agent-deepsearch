@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Decoupling Inference from State Updates in Low-Latency Feature Engines via Probabilistic Thinning</h1>
-<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-15 · Augusto Peres; Iker Perez; Pedro Valdeira; Guilherme Jardim; Ana Sofia Gomes; Hugo Ferreira; Pedro Bizarro / arXiv</div>
-<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:高效推理</span><span class="tag">方向:云端serving</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">流式机器学习系统每来一个事件就要读改写一次持久化状态，这是时延和成本的大头；这篇把打分和写状态解耦。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">每个事件都照常打分，但只有信息量大的事件才触发持久化写入；整个过滤只依赖从磁盘支撑的键值存储里取到的近似统计量，不需要高频的内存控制面，也不需要跨 worker 协调，并给出了过滤率的理论界。</span></div>
-<div class="score-reason">评分依据：面向生产环境的流式特征系统，与端侧部署没有直接关系，相关度低；但推理与状态写入解耦的思路对持续感知的设备同样适用，按相邻工作保留。概率稀释加理论界的处理较完整，贡献中等。</div>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span>  2026-06-15 · Augusto Peres; Iker Perez; Pedro Valdeira; Guilherme Jardim; Ana Sofia Gomes; Hugo Ferreira; Pedro Bizarro / arXiv</div>
+<div class="tags"><span class="vendor-tag">Feedzai</span><span class="tag">方向:云端serving</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">流式机器学习系统里每来一个事件都要读改写持久化存储来更新聚合特征，状态更新成了时延和成本的大头。这项工作让每个事件照常打分，但只有信息量大的事件才写入持久状态。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在隔离单事件成本的对照实验中，存储 I/O 和序列化开销大幅下降，最多 90% 的事件被排除在持久化路径之外，下游效果保持甚至略有提升。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用概率稀疏化决定哪些事件触发持久化更新，只依赖从磁盘键值存储取出的近似统计量，不需要高频内存控制面或跨节点协调；并证明常见的时间窗聚合在方差感知的形式下仍然无偏。</span></div>
+<div class="score-reason">评分依据：属于云端流式特征工程与在线推理管线优化，与端侧关系很弱；概率稀疏化的理论分析扎实。PDF 首页作者均署名 Feedzai。 作者机构依据：arXiv PDF 首页署名 Feedzai（PDF 首页全部作者署名 Feedzai（里斯本、伦敦），邮箱为 feedzai.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.16981" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

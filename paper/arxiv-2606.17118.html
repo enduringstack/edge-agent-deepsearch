@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MODE: Modality-Decomposed Expert-Level Mixed-Precision Quantization for MoE Multimodal LLMs</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-15 · Yuanteng Chen; Nanxin Zeng; Peisong Wang; Zhilei Liu; Yuantian Shao; Shiqiang Lang; Tao Liu; Chuangyi Li / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:MoE</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">混合专家多模态大模型按专家分配不同量化位宽时，统计会被视觉 token 的数量压倒，导致对文本重要的专家被误判成不重要。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把专家被选中的频率按模态拆开统计，再过滤掉冗余的视觉 token，从而得到不被视觉数量优势扭曲的专家重要性，据此分配混合精度。</span></div>
-<div class="score-reason">评分依据：混合专家多模态模型的显存开销是端侧部署的主要障碍，训练后量化是直接可迁移的压缩路径，但论文的实验环境是 GPU，没有端侧实测。指出并修正专家重要性估计中的两类模态偏差，针对性强，贡献中等。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-15 · Yuanteng Chen; Nanxin Zeng; Peisong Wang; Zhilei Liu; Yuantian Shao; Shiqiang Lang; Tao Liu; Chuangyi Li / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:MoE</span><span class="tag">方向:多模态</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">混合专家多模态大模型很占显存，按专家分配不同比特数的量化在纯文本 MoE 上有效，但在多模态模型上掉点明显，因为视觉 token 数量太多，把真正对文本重要的专家掩盖了。MODE 按模态分开评估专家重要性。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 W3A16 设置下平均性能损失控制在 2.9% 以内，在极端 2 比特设置下优势更大；在 Qwen3-VL-30B-A3B、InternVL3.5-30B-A3B 等模型上验证。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把专家被选中的频率按文本和视觉分开统计，过滤冗余视觉 token 得到去噪后的视觉频率，再按模态评估量化敏感度作为补充信号，最后用整数线性规划在给定预算下为每个专家分配比特数。</span></div>
+<div class="score-reason">评分依据：MoE 多模态模型的低比特压缩对显存受限设备部署有迁移价值，但没有端侧实测；按模态拆分专家重要性的观察有新意。作者来自中科院自动化所等科研机构。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.17118" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

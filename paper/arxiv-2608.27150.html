@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ANTShapes Benchmarking Datasets for Event-Based Neuromorphic Object Classification</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-27 · M. Middleton; H. Kayan; B. Sen Bhattacharya; T. Ali; E. Baikas; M. Vousden; C. Perera; O. Rhodes / arXiv</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-27 · M. Middleton; H. Kayan; B. Sen Bhattacharya; T. Ali; E. Baikas; M. Vousden; C. Perera; O. Rhodes / arXiv</div>
 <div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:评测基准</span><span class="tag">硬件:神经形态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">事件相机加脉冲网络适合极端边缘和隐蔽感知场景，但缺少合适的基准数据集，这篇补上一组事件式物体分类数据集。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">针对传统同步帧相机流水线在体积、重量、功耗、时延和云端依赖上的问题，构建面向事件相机与神经形态设备的物体分类基准数据集 ANTShapes。</span></div>
-<div class="score-reason">评分依据：明确服务于极端边缘和离线感知部署，避免把敏感数据传云，端侧契合度较高。贡献是数据集建设，属于基础但常规的工作。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">事件相机配合脉冲神经网络做目标分类，可在极低功耗下离线运行，但缺少高质量数据集。这篇用 ANTShapes 仿真工具生成了四个难度不同的事件视觉数据集，并与常用脉冲数据集做基准对比。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">用卷积脉冲网络分类，标准版 ANTShapes 平均准确率 92.2%，平移、旋转、扭曲版分别为 89.1%、89.8%、83.5%；对照的 N-MNIST 为 97%，CIFAR10-DVS 仅 55.6%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用仿真工具生成带丰富标注的事件流数据（标准、平移、扭曲、旋转四种），在同一卷积脉冲网络上与 N-MNIST、CIFAR10-DVS、DVSGesture、POKER-DVS 对比，验证仿真数据可用。</span></div>
+<div class="score-reason">评分依据：面向极端边缘的神经形态视觉，为端侧低功耗感知提供数据基础；属于数据集与基准工作，方法贡献有限。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.27150" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

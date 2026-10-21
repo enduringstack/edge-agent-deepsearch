@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Pre-Compiled Pipeline Shards for Distributed LLM Inference on Intel AI PC Fleets</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-19 · Tate Berenbaum; Muthaiah Venkatachalam / arXiv</div>
-<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span><span class="tag">方向:投机解码</span><span class="tag">硬件:NPU</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把几台闲置的 Intel AI PC 通过普通网络串起来，合起来跑单机装不下的大模型。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">按层把模型切成流水线分片，每片预编译成 OpenVINO 图分给一台机器；关键技巧是往每个分片注入 beam_idx Gather 触发 IndirectKVCache 融合优化，把切分后的速度拉回与整模型持平，再叠加有状态模型上的投机解码和多用户并发。</span></div>
-<div class="score-reason">评分依据：直接做 PC 端侧集成 GPU/NPU 上的大模型部署，端侧相关性高；把编译优化丢失问题定位到具体算子融合并给出修法，工程贡献扎实。</div>
+<div class="meta"><span class="score">16</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-08-19 · Tate Berenbaum; Muthaiah Venkatachalam / arXiv</div>
+<div class="tags"><span class="vendor-tag">Intel</span><span class="tag">方向:编译部署</span><span class="tag">方向:投机解码</span><span class="tag">方向:量化</span><span class="tag">方向:调度服务</span><span class="tag">硬件:GPU</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">单台 Intel AI PC 只有 16GB 左右内存，装不下 70B 大模型。这篇工作把模型按层切成预编译好的 OpenVINO 分片，让几台闲置的 AI PC 通过普通网络串成流水线一起推理。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">两台机器跑 Llama 3.1 8B INT4、两路并发时系统吞吐 43.97 tokens/s，是同硬件单机单用户的 1.79 倍；4 台 Lunar Lake AI PC 跑 Llama 3.1 70B INT4 时单用户 5.42 tokens/s，投机解码带来 3.1 倍加速且输出与不加速逐 token 一致。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">三招：给每个分片注入 beam_idx Gather 以触发 OpenVINO GPU 的 IndirectKVCache 融合，让分片速度追平整模型；用 attention mask 屏蔽被拒草稿 token 来实现有状态模型上的投机解码；多个请求各带缓存在各级流水间交错执行。</span></div>
+<div class="score-reason">评分依据：明确在 Lunar Lake 等 Intel AI PC 的集成 GPU 上实测分布式推理，端侧相关度高；分片融合修复和基于掩码的 KV 回退都是可复用的工程创新，并开源全部日志与脚本。PDF 首页作者署名 Intel Corporation 与 Not Community Labs Inc.。 作者机构依据：arXiv PDF 首页署名 Intel（PDF 首页第一作者署名 Not Community Labs Inc.，第二作者 Muthaiah Venkatachalam 署名 Intel Corporation）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.19147" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

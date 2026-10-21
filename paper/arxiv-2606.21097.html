@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>GRAG: Generic Response-Augmented Generation Framework for Personalized Conversational Systems</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-19 · Junfeng Liu; Christopher T. Symons; Ranga Raju Vatsavai / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把「说什么」和「怎么说得像这个人」拆开训，让小模型也能做个性化对话。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者指出现有训练范式把个性化和内容接地当成一个整体学习问题，迫使模型同时解决说什么和如何以用户特有方式说，带来显著的计算与优化困难，结果往往是牺牲上下文接地来保人设、或者反过来。该框架改为用高能力通用大模型离线产出的通用回复作为语义和结构脚手架，去引导更小的任务专用模型做微调，从而解耦这两个互相竞争的目标。</span></div>
-<div class="score-reason">评分依据：问题设定直指资源受限与隐私敏感环境下部署个性化对话智能体的困难，解耦后由小模型承担在线推理，对端侧有迁移价值，但未做设备实测，相关度中等；用离线通用回复当脚手架的解耦思路清晰实用。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-19 · Junfeng Liu; Christopher T. Symons; Ranga Raju Vatsavai / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在算力受限或隐私敏感的环境里部署个性化对话模型时，小模型既要说对内容又要说得像用户，两个目标互相拖累。GRAG 用大模型离线生成的通用回复当“脚手架”，让小模型只专注注入个性。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多个个性化对话基准上，相比不使用辅助脚手架的最佳方法，ROUGE-2 最多提升 47%，BLEU 最多提升 36%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先由大容量通用大模型离线生成不带个性的通用回复，负责内容对齐；再以前融合和后融合两种结构把这份回复喂给小模型微调，小模型只需学习如何按用户画像改写。</span></div>
+<div class="score-reason">评分依据：动机直指资源受限环境下用小模型做个性化对话，推理由小模型承担，对端侧有迁移价值，但没有设备实测，相关度中等；解耦内容与个性的训练思路有新意但属蒸馏类组合。PDF 首页作者同时署名北卡州立大学与 Lirio 公司。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.21097" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

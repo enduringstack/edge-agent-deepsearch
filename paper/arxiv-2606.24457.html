@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Lite Any Stereo V2: Faster and Stronger Efficient Zero-Shot Stereo Matching</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-25 · Junpeng Jing, Ronglai Zuo, Zhelun Shen, Shangchen Zhou, Rolandos Alexandros Potamias, Stefanos Zafeiriou, Krystian Mikolajczyk, Jiankang Deng / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span><span class="tag">方向:编译部署</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一个超快的立体匹配模型系列，想在算力受限的平台上也能做零样本深度估计。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">架构上重新审视了实际部署条件下的高效立体设计，提出只用二维的代价聚合框架，并以真实推理延迟而不是理论乘加次数为优化目标；训练上用三阶段策略结合合成数据监督、自蒸馏和真实世界的知识蒸馏，并引入伪标签过滤和误差钳制操作来提升真实世界伪监督的可靠性。</span></div>
-<div class="score-reason">评分依据：明确针对现有立体匹配依赖大模型和重计算、难以部署到资源受限平台的问题，并按真实推理延迟而非理论算力来做架构优化，端侧契合度较高；挑战「高效模型零样本泛化必然弱」这一默认假设，架构与训练两方面都有实质设计。</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-25 · Junpeng Jing, Ronglai Zuo, Zhelun Shen, Shangchen Zhou, Rolandos Alexandros Potamias, Stefanos Zafeiriou, Krystian Mikolajczyk, Jiankang Deng / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span><span class="tag">硬件:Jetson</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">高精度立体匹配通常依赖大模型或基础模型先验，难以部署到资源受限平台，而轻量模型又被认为零样本泛化差。Lite Any Stereo V2（LAS2）是一系列超快的立体匹配模型，在保持低延迟的同时拿到强零样本精度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">LAS2-H 零样本整体表现超过迭代式方法 Fast-FoundationStereo，在 H200 和 Jetson Orin 上推理分别快 1.8 倍和 2.7 倍（Orin 上约 344 ms 对 918 ms）；LAS2-M 在四个真实场景基准上超过上一代 LAS，在 Orin 8G 上快 1.9 倍（约 101 ms）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">架构上只用 2D 代价聚合，并以真实推理延迟而非理论计算量为优化目标；训练上分三阶段：合成数据监督、自蒸馏、真实数据知识蒸馏，并用伪标签过滤和误差截断让合成到真实的迁移更平滑。</span></div>
+<div class="score-reason">评分依据：明确面向资源受限平台，并在 Jetson Orin 上给出实测延迟，端侧契合度高；按真实延迟设计架构加三阶段蒸馏的组合扎实，代码已开源。</div>
 <div class="source"><a href="https://huggingface.co/papers/2606.24457" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AHEAD: Adaptive Hindsight with Environment-Augmented Distillation for Agentic RL</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-25 · Xiaolong Jin; Dingmin Wang; Vijay Lingam; Varun Kumar / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:规划推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">多轮智能体强化学习通常只有整条轨迹一个奖励，分不清是哪一步决定了成败，这篇按步骤类型给不同的监督。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">指出一个关键不对称：常规步骤不需要额外指导，而关键错误步骤需要环境反馈本身给不了的纠正方向；因此教师在所有步骤上接收环境反馈，但只对不同类型的步骤匹配不同来源的监督信号做蒸馏。</span></div>
-<div class="score-reason">评分依据：智能体训练方法，对提升端侧小模型的多轮能力有间接价值，但无设备端约束，相关度按中等计；按步骤类型匹配监督的设计合理。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-08-25 · Xiaolong Jin; Dingmin Wang; Vijay Lingam; Varun Kumar / arXiv</div>
+<div class="tags"><span class="vendor-tag">Amazon</span><span class="tag">方向:蒸馏</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用强化学习训练多轮智能体时，整条轨迹只给一个奖励，分不清哪一步做错。AHEAD 按步骤类型匹配不同的监督信号来训练。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ALFWorld、WebShop 和搜索问答上、三种模型规模下均提升任务成功率；7B 模型相比 GRPO 在 ALFWorld 提升 13.3 个点、WebShop 提升 11.0 个点，达到同样成功率所需训练步数更少。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">教师模型在所有步骤上接收环境反馈作为稠密信号，只在出错的关键步骤额外获得大模型生成的纠错提示，对标准 GRPO 算法改动很小。</span></div>
+<div class="score-reason">评分依据：属于智能体训练方法，对提升小模型的多轮能力有间接价值，但没有设备端约束，相关度按中等偏低计；按步骤类型匹配监督的设计合理。公司归属依据 arXiv PDF 首页：全部作者署名 AWS AI Labs（第一作者为在 Amazon 实习期间完成）。 作者机构依据：arXiv PDF 首页署名 Amazon（PDF 首页 4 位作者均署名 AWS AI Labs，第一作者注明工作在 Amazon 实习期间完成）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.24114" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

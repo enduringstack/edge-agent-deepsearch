@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Cluster, Route, Escalate: Cascaded Framework for Cost-Aware LLM Serving</h1>
-<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-06-25 · Yasmin Moslem; Magdalena Kacmajor; Vasudevan Nedumpozhimana; Ammar Abbas; Solmaz Panahi; David Lynch; Zhuangzhuang Nie; Alexandros Agapitos / arXiv</div>
-<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用两级级联把请求分给便宜或贵的模型，在保证质量的前提下压低服务成本。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">第一级把进来的查询聚类，每个簇指派给性价比最高的模型，路由的成本预算由一个可解释超参数离线调定；第二级加质量评估级联，当第一级的输出被判为低质量时再升级到更强的模型重做。</span></div>
-<div class="score-reason">评分依据：面向生产环境的云端模型路由与成本控制，与端侧部署只有宽泛关联；聚类路由加质量回退是业界常见做法，属工程整合。</div>
+<div class="meta"><span class="score">6</span> <span class="tier company">公司项目</span>  2026-06-25 · Yasmin Moslem; Magdalena Kacmajor; Vasudevan Nedumpozhimana; Ammar Abbas; Solmaz Panahi; David Lynch; Zhuangzhuang Nie; Alexandros Agapitos / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">生产环境部署大模型时，单一模型要么对简单问题太贵、要么对难题不够用。本文提出两阶段级联方案：先按问题聚类分配最划算的模型，质量不达标再升级到更强的模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 TeleQnA 和 AIME 2024 上（模型池来自 Qwen 3、Qwen 3.5、Gemma 4），保留最强模型 97%–99% 的准确率；在 AIME 2024 上几乎保持最强模型准确率，同时每输出 token 时间降低 18%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">第一阶段用 K-means 对查询聚类，按“错误率 + λ×成本”为每个簇选模型，λ 离线调节；第二阶段用只依赖任务正确性标签训练的轻量质量评估器，判定输出低质时把查询升级给更强模型。</span></div>
+<div class="score-reason">评分依据：面向云端多模型路由与成本控制，与端侧部署只有宽泛关联；聚类路由加质量回退属业界常见做法。PDF 首页 14 位作者中 8 位署名华为研究院，其余来自都柏林圣三一学院 ADAPT 中心。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页作者 6–13 署名 Huawei Research，其余作者署名 ADAPT Centre, Trinity College Dublin）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.27457" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

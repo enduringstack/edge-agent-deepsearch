@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CST: Collaborative Selective Transmission for Communication-Efficient Multimodal Edge Inference</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-08-22 · Hai Chi; Junrui Zhang; Rui Ning; Chonggang Wang; Robert Gazda; Huanrui Yang; Hongyi Wu / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">多个边缘设备协同感知时，把辅助设备的高维特征全传过去太费带宽，这篇只传主设备还缺的那部分信息。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">做成主设备发起的查询—响应框架，借鉴部分信息分解和多视角冗余假设，学习针对每个辅助设备、随样本自适应的稀疏检索支撑集，并抑制检索那些主设备已经表示过的语义。</span></div>
-<div class="score-reason">评分依据：面向分布式边缘感知的通信开销优化，端侧协同相关性高；以「互补而非相关」为选择准则的建模较有新意。</div>
+<div class="meta"><span class="score">16</span> <span class="tier company">公司项目</span>  2026-08-22 · Hai Chi; Junrui Zhang; Rui Ning; Chonggang Wang; Robert Gazda; Huanrui Yang; Hongyi Wu / arXiv</div>
+<div class="tags"><span class="vendor-tag">InterDigital</span><span class="tag">方向:端云协同</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">硬件:Jetson</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多个边缘感知设备协同推理时，辅助设备要把高维特征传给主设备，带宽开销大、时延高。CST 让主设备只向辅助设备“点名要”自己缺少的那部分信息。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 3 个真实多模态感知基准上，辅助设备最多只传 14.18% 的特征值，任务效果仍为最好或接近最好；在 5 台 Jetson Orin Nano 组成的测试床、5-100 Mbps 带宽下，端到端推理比全部传输最多快 4.27 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">受部分信息分解启发，为每个样本、每个辅助设备学习稀疏的检索位置，避开主设备已覆盖或辅助设备之间重复的语义；推理时主设备只发索引，辅助设备只回传对应数值。</span></div>
+<div class="score-reason">评分依据：在 Jetson Orin Nano 多机真机上验证端到端时延，端侧相关度高；按“主设备缺什么才传什么”设计通信有新意。PDF 首页作者 4、5 署名 InterDigital。 作者机构依据：arXiv PDF 首页署名 InterDigital（PDF 首页作者 4、5（Chonggang Wang、Robert Gazda）署名 InterDigital, Conshohocken, PA, USA，使用 interdigital.com 邮箱）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.22115" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

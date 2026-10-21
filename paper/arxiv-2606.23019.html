@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ScalingAttention: Discovering Intrinsic Sparse Attention Topology for Video Diffusion Transformers</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-22 · Ruiliang Zhou; Xuecheng Wu; Kang He; Guangyun Han; Bin Liu; Qinqin Chen; Wende Xu; Qingjie Zhao / arXiv</div>
-<div class="tags"><span class="tag">方向:稀疏注意力</span><span class="tag">方向:高效推理</span><span class="tag">应用:视频</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">发现视频扩散 Transformer 每个注意力头都有一张稳定的稀疏图，据此免训练地加速生成。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">关键归纳偏置是：虽然单次激活依赖输入，但每个注意力头高权重区域会迅速收敛到一张稳定且与提示词无关的内在稀疏拓扑，这张图由权重编码、尺度无关且易于离线提取。方法因此把拓扑发现和稀疏度控制解耦：一个模块离线提取出稳健的块稀疏先验掩码以消除运行时搜索，另一个模块按扩散保真度需求自适应调节各头的稀疏率，并配合硬件对齐的协同设计来兑现实际加速。</span></div>
-<div class="score-reason">评分依据：稀疏注意力是降低生成模型算力与访存开销的通用手段，离线提取掩码、运行时零搜索的设计对算力紧张的设备尤其友好，但原文未做端侧部署，相关度按可迁移技术栈计；用「内在稀疏拓扑」统一解释并绕开动态剪枝的运行时开销，洞察较有分量。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-06-22 · Ruiliang Zhou; Xuecheng Wu; Kang He; Guangyun Han; Bin Liu; Qinqin Chen; Wende Xu; Qingjie Zhao / arXiv</div>
+<div class="tags"><span class="vendor-tag">Kuaishou; NVIDIA</span><span class="tag">方向:稀疏注意力</span><span class="tag">方向:高效注意力</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">视频扩散 Transformer 的 3D 全注意力计算量随长度平方增长。ScalingAttention 发现每个注意力头的高权重区域会很快收敛到与提示词无关的稳定稀疏结构，于是离线提取一次就能在推理时直接复用，无需训练。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Wan2.1 上端到端最高提速 1.90 倍，同时保真度优于现有稀疏注意力方法。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">WEST 从权重中离线提取块稀疏先验掩码，免去运行时搜索；FAST 根据扩散过程对保真度的需求逐头调节稀疏率；再配合按硬件对齐的位级块稀疏算子落地加速。</span></div>
+<div class="score-reason">评分依据：稀疏注意力是降低生成模型算力开销的通用技术，离线掩码对算力紧张的设备也友好，但原文只在数据中心 GPU 上做视频生成，相关度按宽泛关联计；“权重内在稀疏拓扑”的发现有新意。PDF 首页第一作者署名快手可灵 AI 研究院（kuaishou.com 邮箱），另有作者署名 NVIDIA。 作者机构依据：arXiv PDF 首页署名 Kuaishou, NVIDIA（PDF 首页作者 1、3、9 署名 KlingAI Research（通讯邮箱 kuaishou.com），作者 4、5、6 署名 NVIDIA）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.23019" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

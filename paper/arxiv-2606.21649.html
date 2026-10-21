@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>EvoEmbedding: Evolvable Representations for Long-Context Retrieval and Agentic Memory</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-19 · Chang Nie; Chaoyou Fu; Junlan Feng; Caifeng Shan / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:RAG</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">让文本嵌入不再孤立编码每段文字，而是随着上下文推进不断演化。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">模型在顺序处理输入的过程中维护一块持续更新的隐式记忆，并把它和原始内容一起用来生成会演化的嵌入，因此同一个查询在不同的上下文阶段会检索到不同的目标，超出静态语义搜索的范畴；为训练这一能力还构建了一个 18 万条的数据集，并引入记忆队列防止循环编码时表示坍缩，以及分段批处理技术来应对长度方差并加速训练。</span></div>
-<div class="score-reason">评分依据：面向长上下文检索与智能体记忆，属端侧 Agent 的相邻能力，但无设备端部署或算力约束内容，相关度按宽泛关联计；把状态跟踪引入嵌入模型是一个较少被尝试的方向。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-19 · Chang Nie; Chaoyou Fu; Junlan Feng; Caifeng Shan / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:RAG</span><span class="tag">应用:长上下文推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">普通嵌入模型把每段文本孤立编码，不理会上下文和时间顺序，在长对话和智能体记忆检索里容易取到过时内容。EvoEmbedding 让嵌入随上下文“演化”，同一个查询在不同语境下会检索到不同目标。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">4B 版本在长上下文检索基准上总体 Recall@10 达 80.5、NDCG@10 达 65.2，比次优的 KaLM-Embedding-Gemma3-12B 分别高 7.8 和 8.1 个百分点；在 LongMemEval 上，朴素 RAG 配合它达到 77.6% 准确率，超过 A-MEM 的 65.2% 和 LightMem 的 70.2%；接入 A-MEM 和 LightMem 分别再提升 19.2% 和 13.5%；训练提速 3.8 倍，可泛化到 128K 上下文（训练窗口的 10 倍）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">模型在顺序读取输入时维护一个持续更新的潜在记忆，把它与原文内容一起生成嵌入；配合 18 万样本的 EvoTrain-180K 数据集、防止表示坍缩的记忆队列和分段批处理训练，提供 0.8B、2B、4B 三档。</span></div>
+<div class="score-reason">评分依据：智能体长期记忆检索是端侧 Agent 的相邻能力，且 0.8B–4B 的模型规模对本地部署友好，但原文没有设备端测量，相关度按可迁移技术栈计；让嵌入携带状态是较少被尝试的方向，结果扎实。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.21649" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

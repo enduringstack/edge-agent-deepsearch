@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>GEAR: Generative Expansion and Real Anchoring for Two-Stage Distillation of Tabular Foundation Models</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-19 · Qi Qin; Jiajie Zhu; Dali Chen; Yuzhao Zhang; Jia-Xing Han; Peng Zhang; Ying Yan; Yifan Sun / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">硬件:CPU</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">表格基础模型靠上下文学习很强，但每次推理都要带上下文，时延和内存吃不消，这篇把它蒸馏成能在普通 CPU 上跑的小模型。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">两阶段蒸馏：第一阶段只用合成协变量当作向教师提问的位置，让学生学教师的软标签以扩大覆盖；第二阶段再用真实标签和折外教师预测把学生拉回目标分布，避免自标注泄漏；并推导了生成样本量与生成器保真度之间权衡的风险界。</span></div>
-<div class="score-reason">评分依据：明确以部署到普通 CPU 为目标做模型蒸馏，与端侧轻量部署相关；两阶段设计加风险界推导比常规蒸馏更严谨。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-08-19 · Qi Qin; Jiajie Zhu; Dali Chen; Yuzhao Zhang; Jia-Xing Han; Peng Zhang; Ying Yan; Yifan Sun / arXiv</div>
+<div class="tags"><span class="vendor-tag">Ant Group</span><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">GEAR 把需要上下文推理、又慢又占内存的表格基础模型，蒸馏成能在普通 CPU 上跑的小 MLP 或树模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">二分类任务上两阶段 MLP 比直接监督训练的 MLP 高 1.81-2.00 个 AUC 点，多分类高 1.19-1.35 个点；推理中位耗时降低 57-2866 倍，峰值预测内存降低 1.9-3.3 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">第一阶段用合成样本当作向教师提问的位置，让学生学教师的软标签；第二阶段用真实标签和交叉折叠的教师预测把学生拉回真实分布，避免自我标注泄漏。</span></div>
+<div class="score-reason">评分依据：目标是把大模型推理成本降到普通 CPU 可部署，属可迁移的蒸馏技术栈；方法是常见蒸馏的改进组合。PDF 首页机构 2 为 Ant Digital Technologies, Ant Group，第一作者注明在蚂蚁集团实习期间完成。 作者机构依据：arXiv PDF 首页署名 Ant Group（PDF 首页列出机构 2 为 Ant Digital Technologies, Ant Group，第一作者脚注注明全部工作在蚂蚁集团实习期间完成）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.18849" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

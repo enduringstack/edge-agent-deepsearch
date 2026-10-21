@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SAMpLE: A SystemC-AMS Machine LEarning-based Framework for Virtual Prototyping</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-26 · Andrei Mihai Albu; Sara Vinco / arXiv</div>
-<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:评测基准</span><span class="tag">硬件:MCU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">嵌入式系统的虚拟原型里越来越多地用机器学习模型来描述难以解析建模的行为，但集成方式一直是临时方案，没法复用。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">SAMpLE 是一个基于 SystemC-AMS 的开源框架，通过标准化的即插即用接口把机器学习模型作为一等公民的定时数据流组件接进仿真，并提供两种执行后端。</span></div>
-<div class="score-reason">评分依据：面向嵌入式系统的虚拟原型验证，属于端侧开发工具链，但与模型推理性能本身关系间接，端侧契合度中等。贡献是开源框架和接口标准化，创新度一般。</div>
+<div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-26 · Andrei Mihai Albu; Sara Vinco / arXiv</div>
+<div class="tags"><span class="tag">方向:编译部署</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">嵌入式系统的虚拟原型仿真里越来越多地用机器学习模型来代替难以解析建模的部件，但集成方式五花八门。SAMpLE 是一个开源 SystemC-AMS 框架，把机器学习模型变成可即插即用的仿真组件。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 UCI Appliances 等两个数据集上，仿真内预测与 Python 原版几乎一致，最大差异仅 ΔR²=0.003（XGB），所有离线运行都在 1.5 秒内完成。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">提供两种后端：原生 C++ 后端可在仿真中在线训练轻量模型，离线后端通过 ONNX 导入外部训练好的模型，免去用 C++ 重写；统一接口让不同模型在同一测试平台和数据流下比较。</span></div>
+<div class="score-reason">评分依据：面向嵌入式系统设计阶段的仿真工具，只是用 ONNX 跑小模型，与端侧 AI 推理部署关系较远；属于工程整合型贡献。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.25910" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

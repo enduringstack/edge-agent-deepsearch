@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Agentic AutoResearch forSpace Autonomy: An Auditable, LLM-Driven Research Agent for Aerospace Control Problems</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-18 · Amit Jain; Richard Linares / arXiv</div>
-<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:评测基准</span><span class="tag">方向:工具调用</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">让大模型自动跑完航天控制策略的研发循环：选结构、调参、做实验，并自带一层可信度检查，判断性能提升是真的还是随机种子的噪声。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">智能体读纯文字的问题描述和历史运行记录，提出新方案并执行实验；每份结果都要和该问题自身实测的随机种子噪声水平对比才算数。大模型只在地面做离线研究，真正上天部署的是它训练出来的策略。</span></div>
-<div class="score-reason">评分依据：产出的策略最终要部署到航天器上的受限算力里运行，和端侧部署链路相关，但大模型本身留在地面，相关度中等偏低。把种子噪声作为可信度门槛内建进自动研究循环比较务实，贡献中等。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-18 · Amit Jain; Richard Linares / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:工具调用</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">航天器制导控制越来越多用学习得到的策略，而开发这种策略本身就是反复调参做实验的研究过程；这篇让大模型自动跑这个研究循环，并内置一层可信度审核，防止把随机种子噪声当成改进。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在两个航天控制问题上，审核通过的策略分别比校准基线好 3.94 米（约 15 倍噪声标准差）和 8.07（约 5.2 倍噪声标准差）；在对接避撞问题上，无引导搜索找不到可行策略，而该方法得到的策略在所有种子上都避开禁区。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">智能体每轮读取问题描述和历史记录，只改一处训练脚本并执行记录；结果必须通过实测种子噪声、最优配置换种子复现、以及逐项剔除智能体改动三道检查才算数。大模型只在离线研发中使用，最终部署到航天器上的是训练出的策略。</span></div>
+<div class="score-reason">评分依据：大模型智能体只在离线研发阶段使用，航天器上部署的是普通控制策略，与端侧 AI 推理关系很弱，相关度低。把统计可信度审核内置到自动研究循环里的设计扎实，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.20394" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

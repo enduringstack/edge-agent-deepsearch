@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>S4oP: Operator-level Pruning of Structured State Space Models for Resource-Constrained Devices</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-06-16 · Marco Deano; Filippo Ziche; Nicola Bombieri / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">状态空间模型擅长长序列，但算力和内存开销让它在受限设备上跑不动；这篇按算子粒度把它逐步剪掉一部分。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">结构化掩码与微调交替进行，逐步剪掉模型算子，过程中同时盯着准确率和推理时延两个指标，整套流程放在统一的训练评测框架里。</span></div>
-<div class="score-reason">评分依据：明确面向时间与资源受限设备的部署，并把推理时延当成剪枝过程中的监控目标，端侧语境明确。作者称这是首个系统研究状态空间模型结构化算子剪枝的工作，方法本身是成熟剪枝范式的迁移，贡献中等。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-16 · Marco Deano; Filippo Ziche; Nicola Bombieri / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span><span class="tag">硬件:Jetson</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">状态空间模型擅长长序列，但算力和内存开销让它在资源受限设备上跑不动；这篇按算子粒度逐步剪掉 S4/S4D 模型的一部分。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Jetson Orin Nano 8GB 上实测：剪掉约 30% 的算子通常基本不掉精度，部分任务（如 IMDb）剪到 70% 仍接近原精度；较激进的剪枝可让推理时延降低 40%–60%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">结构化掩码与微调交替进行，逐步剪除通道级算子，过程中同时监控准确率和推理时延，并在统一的训练评测框架里系统比较不同剪枝率的效率与精度。</span></div>
+<div class="score-reason">评分依据：明确面向资源受限设备，并在 Jetson Orin Nano 上实测时延，端侧语境清楚。作者称这是首个系统研究状态空间模型结构化算子剪枝的工作，但方法本身是成熟剪枝范式的迁移，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.18096" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SinkPruner: Sink-Free Visual Token Pruning for Multimodal Large Language Models</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-09-01 · Shiyu Li; Zi-Yuan Hu; Shijia Huang; Yanyang Li; Yiwu Zhong; Liwei Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">多模态大模型处理长视觉序列很贵，常见做法是剪掉不重要的视觉 token，但高范数离群 token 常被误当成关键信息留下来。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">SinkPruner 是免训练的两段式剪枝：先用视觉净化器过滤高范数冗余、缓解注意力汇聚和注意力发散，再用文本引导的剪枝器做细粒度筛选。</span></div>
-<div class="score-reason">评分依据：视觉 token 剪枝是把多模态模型塞进端侧算力的常规手段，免训练特性便于直接落地，但论文未做设备端实测，端侧契合度中等。指出高范数离群 token 其实冗余是有价值的观察，方法仍在剪枝的常见路线内。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-01 · Shiyu Li; Zi-Yuan Hu; Shijia Huang; Yanyang Li; Yiwu Zhong; Liwei Wang / EMNLP 2026 Findings</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多模态大模型处理大量视觉 token 时计算很重；SinkPruner 发现特征范数异常大的“离群” token 其实高度冗余，据此做免训练的视觉 token 剪枝。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">削减 89% 视觉 token 时，LLaVA-1.5 保留原始性能的 96.5%，Qwen2.5-VL 保留 91.8%；在 12 个图文和 4 个视频基准上验证，其视觉净化模块还能提升其他剪枝方法。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用视觉净化器剔除高范数冗余 token，缓解注意力汇聚和注意力分散，再用文本引导的剪枝器保留与问题语义相关的 token，由粗到细两步完成。</span></div>
+<div class="score-reason">评分依据：视觉 token 剪枝能直接降低端侧多模态模型的计算和显存开销，免训练、易迁移。对高范数离群 token 的观察有新意，代码已开源。作者机构依据 arXiv PDF 首页署名：作者 3、4 来自 Weitu AI。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.01004" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

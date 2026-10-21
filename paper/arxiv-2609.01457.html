@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Just Talk Once: Communication-Efficient Split Federated LLM Fine-Tuning on Edge Devices</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-09-01 · Jiaxiang Geng; Xianhao Chen; Bing Luo / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:端侧训练</span><span class="tag">方向:端云协同</span><span class="tag">方向:能耗功耗</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在手机等边缘设备上微调大模型，大部分参数放服务器、少部分放设备，但每一步都要来回通信；这项工作把这条双向回路砍掉。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">利用现代大模型的权重共享特性，服务器端的隐藏激活可以直接用目标词嵌入来监督，损失在服务器侧就能算出来，不必把服务器输出回传给客户端；在此基础上再做一次性切分微调，客户端上传一次激活就能下线，服务器继续用缓存的表示优化。</span></div>
-<div class="score-reason">评分依据：直接面向手机等边缘设备的内存、算力、带宽和连通性约束做切分联邦微调，端侧契合度高。用权重共享把双向通信变成单向、再推到一次性上传，是对切分联邦学习范式的实质改动。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-01 · Jiaxiang Geng; Xianhao Chen; Bing Luo / MobiHoc 2026</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:端侧训练</span><span class="tag">方向:端云协同</span><span class="tag">硬件:手机</span><span class="tag">硬件:Snapdragon</span><span class="tag">硬件:Jetson</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">手机等边缘设备参与大模型拆分联邦微调时，需要和服务器一步一步来回传数据、全程在线；这篇工作让客户端只上传一次中间激活就可以离线。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 3 台华为 nova 9 Pro（骁龙 778G、8GB 内存）和 2 块 Jetson Orin Nano 组成的真实测试床上，MMLU 任务通信量减少 25% 到 66%、时延减少 34% 到 70%；WikiText-2 上通信最多减少 87%、时延最多减少 89%；一次性方案中客户端在线时间只占总时长的 11% 到 13%，传统 U 形方案为 95% 到 96%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用现代大模型输入嵌入与输出头的权重共享，直接在服务器端用目标词嵌入监督隐藏层，无需把服务器输出传回客户端（L 形拆分）；在此基础上客户端只上传一次激活，服务器在缓存的表示上继续优化。</span></div>
+<div class="score-reason">评分依据：在商用安卓手机和 Jetson 上实测端侧参与的大模型微调，端侧相关度高。用权重共享消除拆分学习的双向通信，思路巧妙且收益明显，代码已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.01457" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

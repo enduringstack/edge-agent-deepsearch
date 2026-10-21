@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PolyChirp: Multi-Species Birdsong Classification Using TinyML on Low-Power Acoustic Sensors</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-08-24 · Nathan Duboisset; Zhaolan Huang; Felix Bießmann; Roudy Dagher; Antoine Lavandier; Emmanuel Baccelli / arXiv</div>
-<div class="tags"><span class="tag">硬件:MCU</span><span class="tag">硬件:NPU</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在靠电池供电的低功耗声学传感器上做多物种鸟鸣识别，把之前只能做单物种二分类的 TinyML 推进到多分类。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">结合生物学领域知识、自动化数据集构建和神经架构优化，设计能利用新一代单片机内置 NPU 加速的小型多分类模型，并实测内存占用、时延和能耗。</span></div>
-<div class="score-reason">评分依据：直接在单片机 NPU 上部署并度量内存、时延与能耗，端侧相关性高；把 TinyML 从单类推到多类是实用推进，方法本身常规。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-24 · Nathan Duboisset; Zhaolan Huang; Felix Bießmann; Roudy Dagher; Antoine Lavandier; Emmanuel Baccelli / arXiv</div>
+<div class="tags"><span class="tag">硬件:MCU</span><span class="tag">硬件:NPU</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:高效推理</span><span class="tag">应用:语音</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">过去单片机上的鸟鸣监测只能识别一种鸟，PolyChirp 让低功耗声学传感器在单片机 NPU 上同时识别多种鸟类。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">可同时识别最多 10 种鸟（macro F2 最高 0.97），单物种检测持平或超过同协议重训的 TinyChirp；重新设计的前端让设备上的梅尔特征提取便宜 7 到 11 倍；在 nRF54 上 NPU 功耗约 9.8 mW（CPU 运行时约 4.9 mW），但推理快一到两个数量级，单次推理能耗远低于 CPU。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">结合鸟类学知识自动整理数据集，设计并搜索一批极小的多分类模型，利用新款单片机自带的 NPU 加速卷积和 FFT，同时缩短帧窗、减少梅尔频带以压低前端开销。</span></div>
+<div class="score-reason">评分依据：在 nRF54、Pico 2 等真实单片机上实测闪存、时延和能耗，端侧相关性高；把 TinyML 鸟鸣监测从单类推到 10 类并给出 NPU 与 CPU 的能耗对比，工程完整。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.23101" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

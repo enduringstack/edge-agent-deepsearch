@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Don't Solve, Just Compare: Tiny Advisors for Runtime Intervention in LLM Agents</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-08-21 · Yanze Jiang; Mingxuan Li; Yuhao Wang; Shengfang Zhai; Jiaheng Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">智能体跑长任务时的运行时纠偏，通常要再配一个同样强的求解器或评论员，代价很高；这篇只用一个极小的比较器判断哪条备选更好。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">提出只做比较的纠偏框架：一个很小的比较器只判断采样出来的若干备选是否会走向更好的结果，不需要自己会解题，也不需要生成针对任务的具体修改建议。</span></div>
-<div class="score-reason">评分依据：把纠偏能力从「会解题」降级为「会比较」，正好适合算力受限设备上的小模型辅助，迁移价值高；范式简化的思路有创新。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-21 · Yanze Jiang; Mingxuan Li; Yuhao Wang; Shengfang Zhai; Jiaheng Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">COTA 给大模型智能体配一个只有 0.5B 参数的小“顾问”：它不负责解题，只比较智能体当前打算做的动作和备选动作哪个更好，把更好的作为建议交回去重新规划。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以 Qwen3-8B 为执行者，WebShop 得分从 0.396 提到 0.563，ALFWorld 成功率从 82.8% 提到 90.3%，τ³-Retail 从 37.5% 提到 45.0%；在更强的 Qwen3.6-35B-A3B 和 DeepSeek-V4-Flash 上同样有提升，成本远低于搜索式方法 AgentRM。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用同一前缀下的反事实分支训练成对比较器，判断两个动作哪个后续更好；运行时只在比较器认为备选更优时给出非强制建议。</span></div>
+<div class="score-reason">评分依据：用很小的模型做智能体运行时纠错，对资源受限场景有迁移价值，但实验未涉及端侧设备；把干预角色从解题中拆出来的思路有新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.21027" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

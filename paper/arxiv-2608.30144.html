@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Rethinking Language's Role in Efficient VLA for Autonomous Vehicles: Toward Smarter, Trustworthy Driving</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-31 · Tongfei Guo; Lili Su / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">自动驾驶里用视觉语言动作模型能带来可解释性，但车上每一帧都要付推理代价；这篇系统梳理了语言到底该在推理时出现在哪一步。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">提出语言残留分类法，把方法分成只在训练时用语言监督、隐式非文本推理、按条件调用语言、每帧完整生成四档，再按时延、参数量、内存、算力和 token 五个部署维度给代表性方法逐一打标，在 nuScenes、NAVSIM、Bench2Drive 等开闭环基准上对比。</span></div>
-<div class="score-reason">评分依据：车载推理的时延和内存预算与端侧场景同构，按推理时语言用量分档的视角对任何端侧多模态部署都可直接迁移。内容是综述和分类法，没有新方法。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校顶会</span>  2026-08-31 · Tongfei Guo; Lili Su / EMNLP 2026</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">自动驾驶的视觉-语言-动作模型很依赖语言推理，但车端时延和内存都很紧；这篇综述换个角度梳理：语言该在推理时什么时候、以什么形式出现。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">综述本身没有新实验。文中归纳的代表性结果包括：DualDriveVLA 只在约 15% 的场景调用语言模块，在 NAVSIM v1 上 PDMS 达到 91.00，比一直开启 VLM 的方案快 1.9 倍；LaRA-VLA 报告时延降低 90%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">提出四级分类：只在训练时用语言、隐式非文本推理、按需调用语言、每帧完整生成语言；对每类代表方法按时延、参数量、内存、FLOPs、token 数五个部署维度标注，并对照 nuScenes、NAVSIM、Bench2Drive 等基准分析。</span></div>
+<div class="score-reason">评分依据：直接讨论车端部署约束下语言推理的开销与取舍，对车载端侧大模型有参考价值。作为综述，贡献主要在分类框架和部署维度的梳理，没有新方法。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.30144" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

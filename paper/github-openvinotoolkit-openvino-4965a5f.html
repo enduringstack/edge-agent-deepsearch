@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>openvinotoolkit/openvino: [CPU] Add optimized universal SelectiveSSM reference implementation (#37476)</h1>
-<div class="meta"><span class="score">12</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-08-25 · openvinotoolkit / GitHub</div>
-<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">硬件:CPU</span><span class="tag">方向:模型架构</span><span class="tag">方向:编译部署</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">OpenVINO 合入一份 CPU 端的通用 SelectiveSSM 优化参考实现，让状态空间模型在 CPU 上跑得更好。</span></div>
+<div class="meta"><span class="score">9</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-08-25 · openvinotoolkit / GitHub</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:模型架构</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">OpenVINO 在 CPU 插件里加入 SelectiveSSM 与分页版 PagedSelectiveSSM 算子的通用优化实现，让 Mamba 类状态空间模型能在 CPU 上直接推理。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">为选择性状态空间算子提供一份面向 CPU 的优化通用参考实现，本次改动涉及 29 个文件、新增 2874 行代码。</span></div>
-<div class="score-reason">评分依据：白名单开源项目的重大代码更新，OpenVINO 是 PC 与边缘 CPU 推理的主力运行时，状态空间算子优化对端侧长序列部署有直接意义。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用可移植的 C++ 实现 f32/f16/bf16 的递推计算并以 FP32 累加；按缓存大小把 head 维切成小块并行处理 batch、序列、head 和分块；支持分页状态缓存调度和读写块别名保护。</span></div>
+<div class="score-reason">评分依据：让状态空间模型能在 Intel CPU 上通过 OpenVINO 部署，属于端侧推理栈的算子补齐；单次提交、无性能数据，贡献分低。</div>
 <div class="source"><a href="https://github.com/openvinotoolkit/openvino/commit/4965a5f675955acdeaf06c9c232a596da98bcc7f" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Complementary Attention Head Pruning for Efficient Transformers</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-17 · Yaniv Livertovsky; Shahar Somin; Gonen Singer / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效注意力</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">给 Transformer 裁注意力头时，不再逐个头打分排序，而是把它们当成一张图，挑出一组互相不重复、覆盖面最广的头留下来。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用基于图的聚类加信息论距离度量，把功能相近的注意力头聚到一起，每簇只保留互补性最强的代表；整套流程是训练后处理，不需要预先指定稀疏率，也不依赖梯度打分或随机门控。</span></div>
-<div class="score-reason">评分依据：结构化剪枝直接减小参数量和计算量，是资源受限环境部署 Transformer 的常规手段，可迁移性强，但论文没有端侧实测。把头选择重述为图上的互补覆盖问题，比逐头重要性排序稳定，贡献中等。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-17 · Yaniv Livertovsky; Shahar Somin; Gonen Singer / IJCNN 2026</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Transformer 参数量大，难以放进资源受限的环境；这篇提出一种不依赖梯度排序的注意力头剪枝方法，在训练后直接挑出该保留的头。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 BERT-Large 和 BERT-Base 上，保留约 47% 注意力头时精度与未剪枝相差 1.3% 和 1% 以内；极端情况下只保留约 15.3% 和 18.1% 的头，精度损失也只有 3.5% 和 2.6%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把注意力头之间的互补关系建成图，用基于图的选择挑出一组彼此互补的头，并保留逐层的结构分布，避免其他方法在高稀疏度下的结构塌缩。</span></div>
+<div class="score-reason">评分依据：注意力头剪枝属于可迁移到端侧的压缩技术，但实验在服务器 GPU 上的 BERT 分类任务，没有端侧测量，相关度中等。论文被 IJCNN 2026 接收，图结构选头的思路有一定新意，整体属常见剪枝方向。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.19150" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

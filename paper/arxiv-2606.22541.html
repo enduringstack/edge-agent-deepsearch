@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ASAP: A Disaggregated and Asynchronous Inference System for MoE Prefill</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-21 · Weiwei Chen; Shuang Chen; Lele Li; Qiang Hu; Han Li; Xin Ye; Ming Yan; Zhibin Yu / arXiv</div>
-<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把 MoE 模型预填充阶段的注意力和专家计算拆开异步执行，去掉全局同步卡点。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">现代 MoE 服务系统常用注意力走数据并行、专家走专家并行的混合并行策略，但这要求两者之间频繁做全局同步；在线服务中请求到达速率和序列长度波动很大，天然造成数据并行组之间负载不均，同步停顿严重拖慢首 token 时延和吞吐。该系统把注意力和 MoE 两个阶段解耦成全异步执行流水线，靠一组专门的异步通信原语和跨请求调度与模型执行的四项协同优化来拆掉全局同步屏障。</span></div>
-<div class="score-reason">评分依据：面向云端 MoE 在线服务的并行与同步优化，与端侧部署只有宽泛关联；把同步停顿归因到混合并行的全局屏障并用异步流水线拆解，系统贡献扎实。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-06-21 · Weiwei Chen; Shuang Chen; Lele Li; Qiang Hu; Han Li; Xin Ye; Ming Yan; Zhibin Yu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:MoE</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">硬件:Ascend</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">MoE 大模型在线服务通常把注意力做数据并行、专家做专家并行，两者之间频繁的全局同步会因请求不均衡而大量空等。ASAP 专门加速 MoE 的预填充阶段，把注意力和 MoE 拆开并完全异步执行。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在华为 CloudMatrix384 超节点上，满足 SLO 的预填充吞吐比当前最好的同步服务方案提升 90%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把注意力阶段和 MoE 阶段解耦部署，配合一组异步通信原语，以及在请求调度和模型执行上的四项协同优化，拆掉全局同步屏障。</span></div>
+<div class="score-reason">评分依据：面向数据中心 MoE 在线服务，与端侧部署只有宽泛关联；针对混合并行同步停顿的异步化设计系统贡献扎实。PDF 首页全部作者署名华为。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页 8 位作者统一署名 Huawei）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.22541" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

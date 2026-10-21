@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>GraphMemix: Query-Aware Evidence Forests for Long-Term Multimodal Agent Memory</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-27 · Geng Li; Yuhao Wang; Dong Li; Jianye Hao; Yuxin Peng / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">多模态智能体的长期记忆要么靠昂贵的、与问题无关的离线摘要，要么靠简单的向量相似检索，前者浪费后者不准。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">GraphMemix 把记忆组织建模成与查询相关的证据森林构建这一组合优化问题，先做候选图构建，把多视角的种子记忆扩展开，再按查询挑出证据子结构。</span></div>
-<div class="score-reason">评分依据：记忆组织方式影响智能体的上下文开销，对受限设备有间接迁移价值，但论文不涉及设备端约束，端侧相关性较弱。把记忆检索写成组合优化问题是有新意的建模。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-27 · Geng Li; Yuhao Wang; Dong Li; Jianye Hao; Yuxin Peng / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">应用:RAG</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多模态智能体的长期记忆要么离线做与问题无关的昂贵摘要，要么靠向量相似度召回，常带来不完整或冗余的上下文。GraphMemix 把记忆组织成“针对当前问题的证据森林”。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">用 Qwen3-VL 时，四个长期多模态记忆基准的宏平均判分准确率从最强公开基线的 49.80% 提升到 61.55%（+11.75 个百分点）；另一组设置下宏平均达 67.42%，比 UniversalRAG 高 12.33 个百分点，同时在准确率与全生命周期成本之间取得新的最优权衡。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先从多视角种子记忆出发沿结构和语义关系扩展候选图，再把直接支持度与关系验证代价分开计分，最后在证据预算内联合选出一个森林结构的记忆上下文。</span></div>
+<div class="score-reason">评分依据：降低记忆全生命周期成本对端侧智能体有借鉴意义，但论文未涉及设备部署；把记忆组织建模为组合优化有新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.26983" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

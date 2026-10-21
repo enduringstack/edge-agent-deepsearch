@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Improving Argument Saliency Coverage in Small LLMs for Long Legal Opinion Summarization via Sequence-Level Distillation</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-30 · Mohamed Elaraby; Ahmed Elhady; Diane Litman / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">小模型做长篇法律意见书摘要时容易漏掉关键论点，这篇用序列级方法提升论点覆盖度。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">针对小模型在长文档摘要中论点显著性覆盖不足的问题，用序列级的训练目标来引导模型保留更多关键论点。</span></div>
-<div class="score-reason">评分依据：用的是小模型这一端侧常见形态，但工作本身不涉及设备端部署或资源约束，端侧相关性较弱。属于特定领域的摘要质量改进。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校顶会</span>  2026-08-30 · Mohamed Elaraby; Ahmed Elhady; Diane Litman / EMNLP 2026</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">应用:长上下文推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">小模型做长篇法律判决书摘要时容易漏掉关键论点，这篇研究用大模型生成的摘要做序列级蒸馏，提升 Qwen3 小模型的论点覆盖度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以 Qwen3-14B 为教师时，Qwen3-0.6B 学生的遗漏错误率从 55.87 降到 31.31，Qwen3-8B 从 30.01 降到 17.40；大部分提升只需约 10 篇训练摘要；在摘要监督之外再加推理链监督，ARC 分只再提高 0.001 到 0.011。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">让长上下文教师模型直接为判决书写摘要（可附带推理过程），再用这些输出对 0.6B 到 8B 的学生模型做监督微调，并与专家摘要微调、规划式推理基线对比。</span></div>
+<div class="score-reason">评分依据：研究对象是可在本地运行的小模型，但工作本身不涉及部署或资源约束，端侧相关性较弱。结论偏向特定领域的数据效率经验，方法较常规。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.29884" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

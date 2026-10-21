@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FedEHR-Agents: Federated Agentic Optimization for Automated EHR Modeling</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-28 · Jun Bai; Ruilin Wang; Yue Li / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:工具调用</span><span class="tag">方向:安全隐私</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">各家医院部署的临床智能体受限于本院数据和建模环境，跨院直接协作又卡在病人级数据的敏感性上。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">现有联邦学习方法大多以模型为中心，限制了协作范围；FedEHR-Agents 改成对智能体的优化过程做联邦化，让各院在不交换病人级数据的前提下共同改进电子病历建模工作流。</span></div>
-<div class="score-reason">评分依据：联邦化的动机是数据不出本地，与端侧隐私逻辑一致，但协作单位是医院机构而非受限设备，端侧相关性较弱。把联邦对象从模型换成智能体优化过程是有新意的角度。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-08-28 · Jun Bai; Ruilin Wang; Yue Li / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:记忆</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">医院里的临床建模智能体只能用本院数据，跨院协作又受隐私限制。FedEHR-Agents 让各医院的智能体共享“建模经验”而非模型参数，在联邦框架下共同提升自动化电子病历建模。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在真实多医院电子病历基准上，与只用本地智能体相比，AUPRC 在 48 小时死亡预测上从 0.218 升到 0.236、4 小时急性呼吸衰竭从 0.171 升到 0.194、住院超 7 天从 0.483 升到 0.532、脓毒症从 0.268 升到 0.316（相对提升 8.3%–17.9%）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每家医院部署一个自主建模智能体，靠历史记忆、任务评估和 TextGrad 提示优化积累本地经验；服务器按证据聚合各院可靠互补的经验，再蒸馏成全局元提示下发给各地继续优化。</span></div>
+<div class="score-reason">评分依据：智能体运行在医院服务器上，与端侧设备无关，只在联邦协作形式上沾边；把智能体经验作为联邦对象是有新意的思路。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.27856" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

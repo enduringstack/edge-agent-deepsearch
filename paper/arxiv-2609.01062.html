@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Space Generative AI with Solar Energy Harvesting</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-09-01 · Jierui Zhang; Jianhao Huang; Zhanwei Wang; Kaibin Huang / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:端云协同</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">卫星可以把生成式 AI 服务送到没有地面网络的偏远地区，但星上能量全靠太阳能采集，供给有限且随时间变化。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">论文给出一个太阳能供电的星上生成式 AI 框架：卫星接收用户提示、执行基于扩散的图像生成模型，并在严格的时间窗内把压缩后的结果下传，全过程受采集到的能量约束。</span></div>
-<div class="score-reason">评分依据：星上推理是极端能量受限场景，能量预算下的推理与传输联合调度对地面端侧同样适用，但载体特殊，端侧契合度中等。把能量采集模型和生成式推理放一起考虑是较少见的设定。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-09-01 · Jierui Zhang; Jianhao Huang; Zhanwei Wang; Kaibin Huang / arXiv</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">卫星可以在轨运行扩散模型为偏远地区生成图像，但电力来自随轨道变化的太阳能；这篇工作研究如何在有限能量下平衡生成步数和下行传输。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">原文以曲线而非具体数值报告结果：所提策略在能量紧张或充足时分别接近通信优先和计算优先的最优极端，在中等能量区间同时优于两种静态方案，端到端生成质量更稳健。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用轨道运动带来的可预测太阳能变化，先求出固定生成步数下的最大下行吞吐（等待时间与发射功率可分开优化），再给出选择扩散步数的闭式低复杂度策略。</span></div>
+<div class="score-reason">评分依据：讨论在能量严格受限的星上设备运行生成模型，属于资源受限推理的系统优化，但只有数值仿真。计算与通信联合优化的建模较完整。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.01062" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

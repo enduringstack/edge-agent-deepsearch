@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SMELT: Scaling Laws for Compute-Matched MoE Looped Transformers</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-09-02 · Shaowen Wang, Ge Zhang, Kairong Luo, Yuhao Wu, Shaofan Liu, Jiaheng Liu, Wenhao Huang, Shen Yan, Jian Li / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:MoE</span><span class="tag">方向:高效推理</span><span class="tag">方向:KV cache</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">循环 Transformer 靠反复过同一组层来增加有效深度，但以往都在固定模型大小下比较，把架构优势和多花的算力混在一起了；这篇在算力对齐条件下研究混合专家模型上的循环。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">论文报告：配方是把中间一半的层循环两次，在每 token 浮点运算、非嵌入总参数和 KV 缓存三项预算上都与不循环的基线对齐；扩到 540 亿非嵌入参数的四个规模后，其损失随算力下降更快，在算力最优前沿上省下 6.8% 到 18.0% 的训练浮点运算，优势在下游基准上超出验证损失的预测，代码任务上最明显，并随样本长度和上下文样例数增加而增大。</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">通过一系列消融确定「把中间一半层循环两次」的配方，并为每种架构分别拟合 Chinchilla 式的扩展律；机理分析显示第二次访问会削弱注意力汇聚、把注意力质量重新导向与内容相关的 token。</span></div>
-<div class="score-reason">评分依据：层循环意味着在参数量不变的前提下换取更多有效深度，对内存受限的端侧部署有迁移价值；在三项预算对齐条件下做扩展律对比的方法比较严谨。</div>
-<div class="source"><a href="https://huggingface.co/papers/2609.01343" target="_blank" rel="noopener">查看原文 →</a></div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-09-01 · Shaowen Wang; Ge Zhang; Kairong Luo; Yuhao Wu; Shaofan Liu; Jiaheng Liu; Wenhao Huang; Shen Yan / arXiv</div>
+<div class="tags"><span class="vendor-tag">ByteDance</span><span class="tag">方向:模型架构</span><span class="tag">方向:MoE</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">循环 Transformer 通过重复使用同一组层来加深网络，但以往比较常常忽略多花的算力；SMELT 在严格对齐算力、参数和 KV cache 的条件下研究 MoE 模型的循环方案。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在每 token FLOPs、非嵌入参数量和 KV cache 都对齐的前提下，最大扩展到 540 亿非嵌入参数，SMELT 在计算最优前沿上节省 6.8% 到 18.0% 的训练算力，下游代码任务提升最大。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把 MoE Transformer 中间一半的层循环执行两次，同时调整配置使其与不循环的基线预算一致，并为两种架构分别拟合 Chinchilla 式扩展律。</span></div>
+<div class="score-reason">评分依据：主要是训练阶段的架构与扩展律研究，与端侧部署关系较远；层复用在不增参数的前提下提升效果，对小参数模型有一定启发。作者机构依据 arXiv PDF 首页署名：首页列出 ByteDance Seed，通讯作者之一使用 bytedance.com 邮箱。 作者机构依据：arXiv PDF 首页署名 ByteDance（PDF 首页机构列表含 ByteDance Seed，通讯作者 Shen Yan 使用 bytedance.com 邮箱；其余机构为清华大学、M-A-P、TokenWave.AI）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2609.01343" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

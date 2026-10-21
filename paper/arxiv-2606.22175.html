@@ -7,9 +7,9 @@
 <h1>StickyInvoc: Rethinking Task Models for High-throughput Workflows in the LLM Era</h1>
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-20 · Thanh Son Phung; Douglas Thain / arXiv</div>
 <div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">改造高通量工作流的任务模型，免得每个大模型推理任务都要重新搬一遍几个 G 的权重。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">传统任务模型要求每个任务从零创建计算状态、结束即销毁，对大模型推理意味着反复把数 GB 的模型参数从可靠存储搬到计算节点的本地盘、CPU 内存再到显存；叠加大模型推理本身的高启动开销、动辄上千任务的规模以及高通量资源异构可抢占的特性，构成严重性能壁垒。方案是让两种新任务模型形成共生关系：「黏性」任务创建可持久保留的状态供后续复用。</span></div>
-<div class="score-reason">评分依据：面向高性能计算集群上的高通量大模型工作流，与端侧部署只有宽泛关联；把权重搬运开销归因到任务模型本身并提出持久化状态的解法，系统设计思路清晰。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">在高性能计算集群上跑成千上万个大模型推理任务时，传统任务模型每个任务都要从头加载几 GB 的模型权重再销毁，开销巨大。StickyInvoc 让模型状态在计算节点上常驻，被后续任务反复复用。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">一个包含 15 万次推理的声明核验工作流，在 20 块 GPU 的稳定测试床上提速 3.6 倍；逐步扩展到 186 块空闲 GPU 后只用 784 秒完成。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">“粘性”任务按用户模板在节点上创建持久状态但不做实际计算，随后的“调用”任务继承这份状态执行推理，退出时不销毁，从而把模型加载成本摊薄到多次调用上。</span></div>
+<div class="score-reason">评分依据：面向 HPC 集群上的高通量大模型工作流，与端侧部署只有宽泛关联；把加载开销归因到任务模型本身并给出状态常驻方案，工程思路清晰。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.22175" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

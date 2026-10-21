@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SpecPrefetch: Parameter-Efficient Expert Prefetching for Sparse MoE Foundation Models</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-24 · Jinwei Kong; Runqi Meng; Fanyi Wang; Wentao Qiu; Haotian Hu; Yongjian Zhou; Zhenhua Ge / arXiv</div>
-<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:端云协同</span><span class="tag">方向:高效推理</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在显存装不下全部专家时，提前预取下一层可能用到的 MoE 专家，减少等待。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用一个共享的轻量适配器去预测下一层可能被选中的专家，但这个预测只用来触发异步传输，真正执行哪些专家仍由原来冻结的路由器决定；预测和执行分离之后，猜错只影响传输效率、不会改变模型输出，另有一个窗口感知的调度器配合安排传输。</span></div>
-<div class="score-reason">评分依据：专家 offload 与预取正是显存受限设备跑 MoE 的关键瓶颈，对端侧和边缘加速器有直接迁移价值，但原文未做设备实测，相关度中上；把传输预测和执行路由解耦，使预测错误不污染输出，设计上比直接改路由更稳妥。</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-24 · Jinwei Kong; Runqi Meng; Fanyi Wang; Wentao Qiu; Haotian Hu; Yongjian Zhou; Zhenhua Ge / arXiv</div>
+<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">硬件:手机</span><span class="tag">硬件:Snapdragon</span><span class="tag">模型:Qwen</span><span class="tag">模型:DeepSeek</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">显存装不下 MoE 模型的全部专家时，只能把暂时不用的专家放在内存或闪存里，用到再搬，搬运等待就成了瓶颈。SpecPrefetch 提前猜下一层要用哪些专家并异步预取，在骁龙 8 Elite 手机上做了实测。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen3-VL-30B-A3B 和 DeepSeek-VL2-Tiny 上，10 个模型-任务组合里有 9 个专家召回率最高；可训练参数只有 1.63M（DeepSeek-VL2-Tiny）和 12.95M（Qwen3-VL），约为 ProMoE 预测器的 5.0% 和 3.1%。在骁龙 8 Elite 手机上跑 4bit 的 DeepSeek-VL2-Tiny，比已做计算优化的卸载运行时解码吞吐提升 15%（中速 UFS）、20%（慢速 UFS）、17%（SD 卡）；冷缓存下从 3.29 提到 3.76 tokens/s（相对基线 1.14 倍）。最快的 NVMe 设置下基本没有额外收益（4.36 对 4.31 tokens/s）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每层挂一个很小的适配器，预测下一层可能被选中的专家，只用来提前发起异步搬运；真正执行哪些专家仍由原本冻结的路由器决定，所以猜错只浪费带宽、不改变模型输出。再按实测的计算与传输重叠窗口给预取定预算，避免搬得太多反而拥堵。</span></div>
+<div class="score-reason">评分依据：直接解决手机等存储受限设备运行大 MoE 模型时的专家加载瓶颈，并在骁龙 8 Elite 真机上验证，端侧相关度高。预测只管搬运、不碰路由的设计稳妥且参数开销很小，但专家预取本身已有不少前作，贡献属于中上。作者机构依据 arXiv PDF 首页：通讯作者等 6 人署名 StepX（v1 写作 StepOs）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.24787" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

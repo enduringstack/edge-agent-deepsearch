@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AIA: A 16nm Multicore SoC for Approximate Inference Acceleration Exploiting Non-normalized Knuth-Yao Sampling and Inter-Core Register Sharing</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-15 · Shirui Zhao; Nimish Shah; Wannes Meert; Marian Verhelst / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:模型架构</span><span class="tag">方向:编译部署</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">概率图模型的采样推理很难在 CPU 和 GPU 上并行，这篇做了一颗 16 纳米多核芯片专门跑它，目标是让边缘设备也能做概率推理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">一个 RISC-V 主机加 16 个定制 RISC-V 核组成的二维网格，每个核带一个非归一化的 Knuth-Yao 采样器和插值单元，并支持核间通过寄存器文件直接交换数据，配套还有定制的编译流程。</span></div>
-<div class="score-reason">评分依据：明确以让边缘设备具备推理与决策能力为目标，做到了流片级实现，但工作对象是概率图模型而非主流神经网络，相关度中等。定制采样器加核间寄存器直通的设计在体系结构层面有实质创新，贡献中等偏上。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-15 · Shirui Zhao; Nimish Shah; Wannes Meert; Marian Verhelst / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这是 AIA 近似推理加速器的会议版本：一块带 16 个定制 RISC-V 核的芯片，用来在边缘端高效运行概率图模型的采样推理，支撑推理与决策。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">0.9V 时生成 1277 MSample/s，0.7V 时能效 20 GSamples/s/W，比此前最好的马尔可夫随机场加速器最多快 2 倍、能效高 1.45 倍；还把贝叶斯网络基准映射上去验证了通用性。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">RISC-V 主控加 4×4 定制核网格，每个核含新的非归一化 Knuth-Yao 采样器和插值单元，核间通过寄存器文件直接交换数据；配套定制编译链完成空间映射和调度。</span></div>
+<div class="score-reason">评分依据：与同批的期刊长文是同一芯片，内容较少；边缘概率推理硬件有实测数据，但迁移到主流端侧模型的价值有限。作者均来自鲁汶大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.16148" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

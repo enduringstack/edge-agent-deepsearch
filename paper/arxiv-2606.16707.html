@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>User as Code: Executable Memory for Personalized Agents</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-15 · Bojie Li / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">应用:代码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">个性化助手记用户，现在基本是存一堆零散事实再按相似度捞回来；这篇主张把用户记忆写成一个能跑的小程序。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用带类型的 Python 对象保存用户状态，用普通 Python 函数表达约束用户状态的规则，于是「表示用户」和「对用户推理」在同一个解释器里完成，靠两阶段机制把对话内容编译进这份活的代码工程。</span></div>
-<div class="score-reason">评分依据：可执行记忆能把大量判断从模型推理转移到本地解释器执行，对端侧智能体省算力有参考价值，但论文没有涉及设备约束，相关度较低。把用户模型当成一个持续演进的软件工程来维护，范式上有新意，贡献中等偏上。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-15 · Bojie Li / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">个性化智能体需要长期记住用户是谁，现在的记忆多是文本、知识图谱或事实库，靠相似度检索，难以处理矛盾、汇总统计和执行规则。User as Code 把用户记忆写成可执行的代码。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LOCOMO 长期对话基准上召回率 78.8%，与全上下文上限和最强记忆系统持平；在“去年出过几次国”这类需要汇总的问题上，检索式记忆只有 6% 到 43%，本方法接近满分（99%）；还能在状态变化时主动发出安全提醒，例如新开的药与数月前记录的过敏冲突。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把智能体对用户的认识做成一个持续维护的软件项目：类型化的 Python 对象保存用户状态，普通 Python 函数编码规则；先把每条事实写进只追加、不丢弃的日志，再定期整理成类型化代码，回答问题时直接运行代码。</span></div>
+<div class="score-reason">评分依据：智能体长期记忆的表示方式对端侧个人助理有直接参考价值，但实验依赖云端大模型，没有设备侧部署；“记忆即代码”的思路新颖。PDF 首页作者署名 Pine AI。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.16707" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

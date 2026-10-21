@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Clustering-Based Collective Anomaly Detection in IoT Systems: A Graph Neural Network Approach</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-26 · Dalila Khettaf; Djamel Djenouri; Zeinab Rezaeifar; Youcef Djenouri / arXiv</div>
-<div class="tags"><span class="tag">应用:安全</span><span class="tag">方向:安全隐私</span><span class="tag">应用:fault-detection</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">物联网设备大量铺开后网络流量激增，攻击面也跟着变大；这篇用图神经网络检测物联网系统里的集体异常。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">现有异常检测大多只针对点异常，集体异常研究不足；作者用基于聚类的方法配合图神经网络来识别跨设备的集体异常模式。</span></div>
-<div class="score-reason">评分依据：部署场景是物联网设备网络，属于端侧安全的应用层，但论文不讨论设备端推理开销，端侧契合度中等。聚类加图神经网络是该任务上的常见组合。</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-08-26 · Dalila Khettaf; Djamel Djenouri; Zeinab Rezaeifar; Youcef Djenouri / arXiv</div>
+<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">应用:安全</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">物联网网络中的“集体异常”是一组节点一起表现异常，比单点异常更难发现；UGCAD 用图神经网络在无标签的情况下检测这类异常。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 CICIoT2023 和 ToN-IoT 数据集上，部分流量图的准确率和 F1 均超过 99%；异常占比 20% 时准确率 0.94、F1 0.79、召回率 0.9，优于传统和现有聚类式检测方法。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用变分图自编码器学习流量图的节点表示，再据此聚类，把判定为正常的簇合并修正后，对剩余节点计算异常分数，找出成组的异常。</span></div>
+<div class="score-reason">评分依据：研究对象是物联网网络流量的安全分析，模型并不运行在设备端，与端侧 AI 推理关系很弱。图表示加聚类的组合属常规方法。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.22166" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

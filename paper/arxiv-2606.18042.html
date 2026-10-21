@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Latency Prediction for LLM Inference on NPU Systems</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-06-16 · Juhyun Park; Seungwoo Jeong; Jingyu Lee; Kyungyong Lee / arXiv</div>
-<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:调度服务</span><span class="tag">方向:评测基准</span><span class="tag">硬件:NPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">NPU 已经成为跑大模型的加速器，但没人知道怎么预测它的推理时延；这篇在不了解微架构和编译器的前提下把时延估出来。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">针对商用 NPU 微架构不公开、编译器优化不可预测、以及分桶导致时延非线性这三个难点，对每个桶只做两次端到端实测，再把结果组合起来预测任意配置的时延。</span></div>
-<div class="score-reason">评分依据：NPU 是端侧推理的主力加速器，时延预测直接决定部署配置怎么选，端侧语境明确。在完全黑盒的前提下用极少量实测还原非线性时延曲线，方法实用，贡献中等偏上。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-16 · Juhyun Park; Seungwoo Jeong; Jingyu Lee; Kyungyong Lee / arXiv</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:调度服务</span><span class="tag">方向:云端serving</span><span class="tag">硬件:NPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型部署要在并行方式、批处理和调度策略的海量组合里选配置，但在 NPU 上一直没有可用的时延预测方法；这篇在不知道芯片微架构和编译器细节的前提下把时延估出来。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Inferentia2 与 TPU v4/v5e/v6e 等多家 NPU、Llama-3.2-1B/Mistral-7B/Qwen3-14B 等模型上，平均预测误差 2.15%（中位数 1.69%），89.9% 的情况误差在 5% 以内；直接套用 GPU 上的方法误差最高达 493%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">针对商用 NPU 微架构不公开、编译器优化不可预测、以及按序列长度分桶导致时延突变三个难点，对每个桶只做两次端到端实测，再组合推算任意配置的时延。</span></div>
+<div class="score-reason">评分依据：评测对象是 Inferentia2、TPU 这类数据中心 NPU，不是手机或 PC 端的 NPU，相关度中等；黑盒时延建模思路可迁移到端侧 NPU 的部署选型。用极少量实测还原非线性时延曲线，方法实用，贡献中等偏上。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.18042" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

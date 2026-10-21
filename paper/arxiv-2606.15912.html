@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>On-Policy Distillation with Curriculum Turn-level Guidance for Multi-turn Agents</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-14 · Gengsheng Li; Mao Zheng; Mingyang Song; Ruiqi Liu; Tianyu Yang; Jie Sun; Qiyong Zhong; Haiyun Guo / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:工具调用</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把大模型多轮智能体的能力蒸馏给小模型时，学生早期走偏后老师就帮不上忙了；这篇让老师先手把手带，再逐步撒手。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在每次推演里混合老师生成和学生生成的轮次，老师介入的概率按课程表逐渐衰减到零：早期靠强引导把轨迹拉回老师熟悉的分布，后期完全交给学生。</span></div>
-<div class="score-reason">评分依据：论文的出发点就是大模型推理成本高、需要换成小模型，这对端侧智能体部署有直接迁移价值，但没有涉及设备约束，相关度中等偏低。课程式衰减的教师介入针对多轮蒸馏的失效模式，贡献中等。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-06-14 · Gengsheng Li; Mao Zheng; Mingyang Song; Ruiqi Liu; Tianyu Yang; Jie Sun; Qiyong Zhong; Haiyun Guo / arXiv</div>
+<div class="tags"><span class="vendor-tag">Tencent</span><span class="tag">方向:蒸馏</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">会规划、调用工具、与环境交互的多轮智能体通常依赖大模型，推理成本高。把能力蒸馏给小模型时，学生的小错误会在多轮中累积，导致轨迹偏离老师熟悉的状态，老师的指导反而最不可靠。Guided-OPD 解决这个问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ALFWorld、ScienceWorld 和 WebShop 上，用 Qwen3-30B-A3B 当老师蒸馏 Qwen3 小模型，相比原始在线策略蒸馏平均得分相对提升 21.1%、成功率相对提升 25.5%，学生越小收益越大。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每条轨迹里混合老师和学生生成的回合，老师介入概率按课程逐步衰减到零：前期强引导让轨迹贴近老师分布，后期逐步撤掉，回到推理时纯学生自己决策的状态。</span></div>
+<div class="score-reason">评分依据：让小模型也能当多轮工具调用智能体，是端侧跑智能体的前置条件，可直接迁移，但本身是训练方法、没有设备实验；回合级课程引导简单有效。PDF 首页作者 2、3 署名腾讯大语言模型部门，第一作者来自中科院自动化所。 作者机构依据：arXiv PDF 首页署名 Tencent（PDF 首页作者 2 Mao Zheng、作者 3 Mingyang Song 署名 Large Language Model Department, Tencent（与第一作者同为共同一作））。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.15912" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

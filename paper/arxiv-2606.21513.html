@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Privacy-Preserving Federated Temporal Graph Learning with Digital Twin--Guided Adaptive Deception for Cyber-Resilient IoMT</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-19 · Syed Zeeshan Haider; Anwar Shah; Muneeb Arif; Hamza Iftikhar; Waqas Ali / arXiv</div>
+<div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span>  2026-06-19 · Syed Zeeshan Haider; Anwar Shah; Muneeb Arif; Hamza Iftikhar; Waqas Ali / arXiv</div>
 <div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span><span class="tag">应用:安全</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用联邦时序图网络加强化学习，给医疗物联网设备做隐私保护的入侵防御。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">四个机制组合：一个基于时序图卷积的分类器做流级威胁识别，带全局平均池化和学习出的异常门；基于 LSTM 的数字孪生为每台设备生成异常分数，通过学习出的 sigmoid 耦合去调节分类器；联邦的优势演员-评论家智能体根据包含置信度、熵、异常幅度和流量构成的七维状态，在放行、隔离和蜜罐重定向三种动作间选择；再加一个把可疑流量转成威胁情报的蜜罐层。联邦聚合用指数滑动平均后的各客户端验证损失做反比加权。</span></div>
-<div class="score-reason">评分依据：场景是运行在严格时延与隐私法规下的资源受限医疗物联网设备，联邦训练避免原始数据外传，与端侧相关，相关度中等；属多个已有组件的堆叠整合，缺少针对设备算力的实测。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">同一团队针对医疗物联网安全的另一版方案：用联邦时序图卷积网络加优势演员-评论家（A2C）智能体，在保护隐私的前提下检测攻击并把可疑流量导入蜜罐。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 CICDDoS 2019 和 TON-IoT 上测试准确率为 99.48% 和 99.61%，加权 F1 为 0.9948 和 0.9961，分别在 25 和 10 轮联邦训练内收敛，比 Fed-Inforce-Fusion 高 0.21 个百分点；所有类别 F1 不低于 0.9237。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以时序图卷积网络做流量分类，LSTM 数字孪生给出设备级异常分数门控分类结果；联邦 A2C 智能体根据置信度、熵、异常幅度等七维状态决定放行、隔离或导入蜜罐，联邦聚合按验证损失加权并配合余弦退火学习率。</span></div>
+<div class="score-reason">评分依据：面向资源受限的医疗与工业物联网，但没有设备端算力或部署实测，与端侧 AI 只有宽泛关联；与同组上一篇只是编码器和强化学习算法不同，属组件整合。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.21513" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

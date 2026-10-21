@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Dual-Layer Agentic Memory with Fast Write Routing and Slow Consolidation</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-23 · Wenzhi Li; Dong Nie; Rui Lan; Tongtong Lyu; Peiyao Wang; Lingzi Hong; Weihang Pan; Binbin Lin / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">智能体的外部记忆一直只增不减，检索会越来越差也越来越贵，这篇把治理重心从「怎么检索」挪到「要不要写」。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">借鉴互补学习系统理论，把新信息先分成不写、写新条目、更新已有三类，交给一个小模型到大模型的级联路由来判断，尽量少花路由开销又过滤冗余；之后再定期把高价值的外部记忆固化回模型参数里。</span></div>
-<div class="score-reason">评分依据：记忆膨胀是端侧长期运行智能体的核心瓶颈，方法可直接迁移；把治理放到写入阶段并配参数化固化的设计有创新。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-08-23 · Wenzhi Li; Dong Nie; Rui Lan; Tongtong Lyu; Peiyao Wang; Lingzi Hong; Weihang Pan; Binbin Lin / arXiv</div>
+<div class="tags"><span class="vendor-tag">Xiaohongshu</span><span class="tag">方向:记忆</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这套双层智能体记忆不再让外部记忆无限增长：写入时先判断信息该不写、新写还是更新，之后再定期把高价值的外部记忆通过微调“内化”进模型参数。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">1.7B/8B 两级模型级联最多裁掉 68% 的冗余外部记忆，只有不到 50% 的输入需要升级到大模型判断，同时保留穷举保存基线 98% 以上的下游问答精确匹配率。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">受神经科学互补学习系统启发，用小模型到大模型的级联按成本做写入路由，过滤冗余记忆；再周期性地用监督微调把精选的外部记忆写回模型参数。</span></div>
+<div class="score-reason">评分依据：用小模型先做路由可降低记忆管理开销，对资源受限的智能体有参考价值，但未涉及端侧设备；外化与内化统一管理的思路有新意。PDF 首页 4 位作者署名 Xiaohongshu。 作者机构依据：arXiv PDF 首页署名 Xiaohongshu（PDF 首页作者 Tongtong Lyu、Rui Lan、Boyuan Pan、Yao Hu 署名 Xiaohongshu；通讯作者来自浙江大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.22215" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

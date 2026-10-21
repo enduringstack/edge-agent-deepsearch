@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Concordia: JIT-Compiled Persistent-Kernel Checkpointing for Fault-Tolerant LLM Inference</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-22 · Yuhang Gan; Yiwei Yang; Yuyi Li; Xiangyu Gao; Yichen Wang; Rain Jiang; Xiaoning Ding; Andi Quinn / arXiv</div>
-<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">方向:KV cache</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">给长时间运行的大模型推理做 GPU 上的检查点，GPU 出故障时不用整个服务重启。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者主张这类负载的容错需要一个常驻 GPU 的执行上下文：检查点钩子必须在设备同步点运行、能观察到框架和库真正执行的二进制内核，并且恢复时不把主机 CPU 放在关键路径上。实现方式是用一个常驻设备的持久内核作底座，拦截 GPU 模块加载并支持 PTX 和 SASS 级插桩，使钩子能插到框架和库边界之下；对每个注册的状态区域再即时编译出专门的增量检查点逻辑。</span></div>
-<div class="score-reason">评分依据：面向数据中心 GPU 集群的推理容错，与端侧设备部署只有宽泛关联；把检查点下沉到持久内核和 PTX/SASS 插桩层，系统设计有相当深度。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-06-22 · Yuhang Gan; Yiwei Yang; Yuyi Li; Xiangyu Gao; Yichen Wang; Rain Jiang; Xiaoning Ding; Andi Quinn / arXiv</div>
+<div class="tags"><span class="vendor-tag">ByteDance</span><span class="tag">方向:云端serving</span><span class="tag">方向:KV cache</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长时间运行的大模型智能体把 KV 缓存、调度器等宝贵状态放在 GPU 上，一旦 GPU 或通信故障往往要整套重启。Concordia 用常驻 GPU 的持久内核做检查点和恢复，不需要改动每个框架组件。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 RTX PRO 6000 Blackwell 上，GPU 端增量检查点比 CPU 端页面扫描快 85–219 倍（256 MB 区域端到端 0.08–0.56 ms）；双 GPU 恢复原型约 1.5 秒恢复服务，无需重启 NCCL 和重新加载模型；常驻执行器只占 0.53% 的 SM。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">拦截 GPU 模块加载，在 PTX/SASS 层插入检查点和暂停钩子；为每块登记的状态区域即时编译专用的增量检查点处理器并热替换进持久内核；持久内核从无锁环形队列取任务，检测脏页并把增量记录追加到 CXL 内存或主机 DRAM 日志。</span></div>
+<div class="score-reason">评分依据：面向数据中心 GPU 推理的容错，与端侧设备只有宽泛关联；把检查点下沉到持久内核和二进制插桩层，系统设计有深度。PDF 首页 9 位作者中 3 位署名字节跳动，以加州大学圣克鲁兹分校为主。 作者机构依据：arXiv PDF 首页署名 ByteDance（PDF 首页作者 5、6、7 署名 ByteDance（bytedance.com 邮箱），其余作者来自 UC Santa Cruz、UC Davis、华盛顿大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.23521" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

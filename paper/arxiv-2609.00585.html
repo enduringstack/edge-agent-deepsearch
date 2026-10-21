@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Real-Time Neuromorphic Spectrum Intelligence Simulator</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-01 · Navaneetha Krishnan Kamalakannan / arXiv</div>
-<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:安全隐私</span><span class="tag">硬件:神经形态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这是一个实时神经形态频谱智能仿真器，用来研究脉冲网络和忆阻器式智能体在能量受限且有对抗的动态频谱接入场景下的行为。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把泄漏积分发放神经元动力学、忆阻突触模型、摩擦电和射频能量采集的物理模型，以及干扰和拜占庭行为的对手模型耦合在一起；作者形式化了仿真器、证明有界性、给出平均场对手阈值并提供可复现的基准工具，代码模块化且按种子确定性复现。</span></div>
-<div class="score-reason">评分依据：面向能量采集供电的神经形态边缘节点，能耗和对抗鲁棒性都是端侧真实约束，但产出是仿真器而非真实设备结果，端侧契合度中等。工具建设加理论分析，贡献偏基础设施。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-01 · Navaneetha Krishnan Kamalakannan / NeurIPS 2025 Workshop (ML4PS)</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:神经形态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">RT-NuSIS 是一个模拟器，用来研究由脉冲神经网络和忆阻器启发的智能体在能量受限、存在干扰攻击时如何做动态频谱接入。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">论文主要给出数学建模和有界性证明；实验显示框架在最多 30% 对抗节点的情况下仍保持稳健，并能输出每次推理能耗、时延和鲁棒性等指标。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把漏积分发放神经元、忆阻突触模型、摩擦电和射频能量采集模型以及干扰、拜占庭攻击模型组合在一个可复现、按随机种子确定的事件驱动模拟框架中。</span></div>
+<div class="score-reason">评分依据：面向能量受限边缘节点的神经形态决策研究工具，与端侧低功耗推理相邻，但只是模拟器、没有真实硬件。主要贡献是可复现的基准框架，已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.00585" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

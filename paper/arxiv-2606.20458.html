@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Slow Brain, Fast Planner: Latency-Resilient VLM-Augmented Urban Navigation</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-18 · Zhenghao &quot;Mark'' Peng; Honglin He; Quanyi Li; Yukai Ma; Bolei Zhou / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:规划推理</span><span class="tag">方向:端云协同</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">人行道导航机器人的规划器能一口气生成很多条候选轨迹，却常常挑错；这篇让视觉语言模型来帮它挑，但不让慢模型拖垮实时控制。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">视觉语言模型不直接输出动作，只从规划器给的候选集里选一个序号，再和规划器原本的输出融合；由于模型一次查询要 1 到 3 秒，而控制回路要 5 到 20 赫兹，系统用异步方式解耦两者的节奏。</span></div>
-<div class="score-reason">评分依据：处理的是慢速大模型与实时控制回路的时延错配，这正是端侧智能体落地的核心矛盾，属于直接可迁移工作，但论文没有明确说模型跑在机器人本体上。用「选序号」替代端到端动作生成的接口设计务实有效，贡献中等偏上。</div>
+<div class="meta"><span class="score">13</span> <span class="tier company">公司项目</span>  2026-06-18 · Zhenghao &quot;Mark'' Peng; Honglin He; Quanyi Li; Yukai Ma; Bolei Zhou / arXiv</div>
+<div class="tags"><span class="vendor-tag">Amazon</span><span class="tag">方向:端云协同</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">人行道配送机器人的学习型规划器能实时生成很多候选轨迹，但难场景下常挑错；云端视觉语言模型挑得准却要 1–3 秒，跟不上 5–20Hz 的控制循环。这篇把慢大脑和快规划器融合起来，容忍云端时延。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在约 2000 个真实困难场景中，视觉语言模型挑轨迹比规划器自选的平均位移误差降低 30%（1.64 米降到 1.16 米）；仿真中云端时延达 5 秒时仍保持 80% 以上成功率；校园实地部署经 4G 调用云端模型，人工接管降到每百米 0.87 次，比只用本地规划器少 75%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">机器人本地规划器按 5–20Hz 持续生成候选轨迹，同时以 1Hz 不等待地向云端视觉语言模型发查询；每个控制周期把最新到达的云端打分与本地打分融合，旧的云端结果也能作为可用信号，而不是让机器人停下来等。</span></div>
+<div class="score-reason">评分依据：真实机器人上的端云协同：时延敏感的控制闭环留在本地，云端大模型只提供语义判断，并做了校园实地部署；但本地部分是轨迹规划与控制，不含智能体式的规划、记忆或工具调用，因此不算端侧智能体。时延容忍的融合层设计实用，贡献中等偏上。PDF 首页第 1 作者署名 Amazon FAR。 作者机构依据：arXiv PDF 首页署名 Amazon（PDF 首页第 1 作者 Zhenghao Peng 署名 Amazon FAR，其余作者来自 UCLA、浙江大学等）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.20458" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

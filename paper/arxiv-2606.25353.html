@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Cache-Resident LLM Inference in GB-Scale Last-Level Caches</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-24 · Wanning Zhang; Tongzhou Gu; Marco Canini; Ceyu Xu; Jian Weng / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span><span class="tag">方向:高效推理</span><span class="tag">硬件:CPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">利用服务器 CPU 上新出现的 GB 级末级缓存，把模型权重常驻片上来跑大模型推理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">提出一种缓存常驻的执行模型：把以权重为中心的算子和注意力及 KV 缓存管理分到各自的资源域，让可复用权重留在缓存里，同时让 KV 容量的扩展不受流水线深度牵制；并把同步粒度从算子边界放宽到真正的子算子依赖，减少缓存常驻状态下的协调开销。</span></div>
-<div class="score-reason">评分依据：面向多路服务器 CPU 集群的推理执行模型，不属于端侧部署，相关度按宽泛关联计；把权重常驻与 KV 扩展解耦、并细化同步粒度，是有分量的系统设计。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-24 · Wanning Zhang; Tongzhou Gu; Marco Canini; Ceyu Xu; Jian Weng / arXiv</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:高效推理</span><span class="tag">方向:KV cache</span><span class="tag">硬件:CPU</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">3D 堆叠缓存让服务器 CPU 拥有 GB 级末级缓存，理论上可以把模型权重常驻片上。本文提出缓存常驻的推理执行模型，让普通 CPU 也能高效跑大模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多路 CPU 集群上部署 Llama-3.2-3B 和 Llama-2-7B，每输出 token 时间比同等配置的 llama.cpp 快 2.04–11.51 倍；经验证的分析模型显示在不同模型规模、上下文长度和批大小下最高可达 13.9 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把以权重为中心的算子与注意力和 KV 缓存管理分到不同资源域，让权重常驻缓存、KV 容量独立扩展；把同步从算子边界放宽到真实的子算子依赖；配合局部性感知的放置和专用静态运行时。</span></div>
+<div class="score-reason">评分依据：CPU 推理和以缓存为中心的执行组织对大缓存的桌面与边缘 CPU 有借鉴意义，但实验在多路服务器 CPU 上，相关度中等偏低；把执行围绕缓存常驻重新组织是有分量的系统设计。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.25353" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

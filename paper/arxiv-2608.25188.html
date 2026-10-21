@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Transforms for LLM Quantization: The Great Inversion and Format Co-Design</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-25 · Ehsan Jokar / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">现在做 4 比特量化的流水线开头几乎都先做一次线性变换让离群值分布得更好再取整，这篇专门梳理这一「变换阶段」背后的原理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">提出并形式化「大反转」原理：允许自由分配比特的编码奖励能量集中，而实际矩阵指令执行的分组共享尺度量化反而奖励组内平坦；由此把经典变换编码理论与当代 4 比特量化实践对接起来，并讨论与数据格式的协同设计。</span></div>
-<div class="score-reason">评分依据：低比特量化是端侧部署的核心技术，这篇给变换阶段提供了理论组织，迁移价值明确；把经典变换编码与现代量化对接的理论贡献扎实。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-25 · Ehsan Jokar / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这是一篇关于 4 比特大模型量化中「旋转/变换」环节的综述，指出经典变换编码理论和如今部署格式下的最优做法方向正好相反。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">综述截至 2026 年 6 月的 200 篇工作，按结构、是否依赖数据、搜索得到还是构造得到、运行时开销对 43 种变换方法分类，并给出按部署场景的首选指南；理论部分为综述性证明，无实验对比数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">形式化「大反转」原理：可灵活分配比特的编码偏好能量集中，而分组共享缩放的部署格式偏好组内摊平；再分析 FP4、MXFP4、NVFP4 等数字格式如何改变这一取舍。</span></div>
+<div class="score-reason">评分依据：低比特量化是端侧部署的核心技术，这篇给变换阶段提供了理论组织和选型指南，迁移价值明确；作为综述，理论梳理扎实但无新方法实验。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.25188" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

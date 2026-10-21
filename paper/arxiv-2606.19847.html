@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AtomMem: Building Simple and Effective Memory System for LLM Agents via Atomic Facts</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-18 · Yanyu Yao; Shangze Li; Zhi Zheng; Hui Zheng; Qi Liu; Tong Xu; Enhong Chen / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把多轮对话里的内容拆成一条条「原子事实」存起来当长期记忆，再按事件和时间组织，避免记忆越写越乱。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">一个事实抽取器从长篇交互里挑出高价值的原子事实作记忆单元，再把它们组织成分层的事件结构和时间画像；检索时激活一张联想记忆图来串联相关事实。</span></div>
-<div class="score-reason">评分依据：原子事实这种高密度记忆表示对内存受限的端侧智能体有迁移价值，但工作本身没有涉及设备约束，相关度较低。事实抽取加分层事件组织的设计比较完整，贡献中等。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-18 · Yanyu Yao; Shangze Li; Zhi Zheng; Hui Zheng; Qi Liu; Tong Xu; Enhong Chen / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:RAG</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型上下文窗口有限，跨多次会话的长期记忆往往构建得粗糙、更新不稳定；这篇把对话拆成高价值的原子事实来存，并组织成事件和用户画像。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LoCoMo 上，多跳和时序任务的评分分别比最强基线 LightMem 高 5.5% 和 31.1%，多跳 F1 从 20.97 提到 37.03；总 token 消耗比 Mem0 少约 61.4%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用微调过的 Qwen3-14B 作为事实抽取器，从长对话中挑出高价值原子事实，再组织成层级事件结构和随时间演化的用户画像；检索时激活联想记忆图把零散记忆串起来。</span></div>
+<div class="score-reason">评分依据：智能体长期记忆是端侧助手的关键组件，可迁移性强，但系统依赖云端大模型、没有端侧部署，相关度中等。原子事实加事件层级的组织方式较完整，并显著降低 token 消耗，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.19847" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

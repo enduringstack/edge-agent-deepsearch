@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>RaMem: Contextual Reinstatement for Long-term Agentic Memory</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-22 · Wei Yang; Bryce Kan; Shixuan Li; Li Li; Yuehan Qin; Jiate Li; Paul Bogdan; Jesse Thomason / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">让智能体检索出来的记忆片段带上原本的情境，才能判断它对当前问题算不算有效证据。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">针对「情境坍缩」问题——经验被压成可复用片段后，不同场合的记忆只要涉及相同实体或用户状态就显得同样相关——设计四个协同阶段：证据锚定把每条记忆绑回它原本的情景条件，特别是事件时间、提及时间、会话跨度和参与者；召回条件归纳再推导出当前查询隐含要求的证据条件，据此判断记忆是否真的可用。</span></div>
-<div class="score-reason">评分依据：长期记忆的有效性判定是端侧长期运行智能体的共性问题，有一定迁移价值，但原文无设备端约束与部署，相关度按宽泛关联计；把情境坍缩现象点明并给出可验证的证据条件框架，属记忆治理方向的扎实改进。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-22 · Wei Yang; Bryce Kan; Shixuan Li; Li Li; Yuehan Qin; Jiate Li; Paul Bogdan; Jesse Thomason / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:RAG</span><span class="tag">模型:Qwen</span><span class="tag">模型:GPT</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体的长期记忆被压缩成可复用片段后，来自不同情境的记忆看起来同样相关，模型难以判断哪条才是当前问题的有效证据（作者称为“情境坍缩”）。RaMem 给每条记忆恢复原始情境，让检索结果可以被验证。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LoCoMo 等长期记忆基准上，平均 F1 在 GPT-4o 上从 39.06 提升到 51.66、GPT-4.1-mini 从 43.24 到 54.23、Qwen3-8B 从 33.45 到 44.55、Qwen2.5-3B 从 17.98 到 24.65；GPT-4.1-mini 上记忆检索 Recall@10 从 0.7221 提升到 0.7890。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">分四步：把每条记忆锚定到事件时间、提及时间、会话范围和参与者；从查询推出所需的证据条件；按条件优先检索情境匹配的记忆、同时保留内容相关的候选兜底；生成回答时保留所选记忆的结构化情境。</span></div>
+<div class="score-reason">评分依据：长期记忆有效性是长期运行的端侧智能体的共性问题，且在 3B、8B 小模型上同样有效，有迁移价值，但没有设备端约束或部署，相关度中等；对情境坍缩的定义和证据条件框架有一定新意，并已开源代码。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.22844" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

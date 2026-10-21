@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MemSlides: A Hierarchical Memory Driven Agent Framework for Personalized Slide Generation with Multi-turn Local Revision</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-15 · Ye Jin; Yangyang Xu; Jun Zhu; Yibo Yang / arXiv</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-15 · Ye Jin; Yangyang Xu; Jun Zhu; Yibo Yang / arXiv</div>
 <div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">做个性化演示文稿的智能体要记住用户一贯的偏好、还要记住这轮新提的要求，并且只改该改的那一页。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把长期记忆与工作记忆分开，长期记忆再拆成用户画像记忆和工具记忆：画像记忆负责首轮个性化，工作记忆承载本轮的偏好与约束，工具记忆存可复用的执行经验；配合页级的局部修订，只重做受影响的最小区域。</span></div>
-<div class="score-reason">评分依据：分层记忆与局部重做能显著减少重复生成，对算力有限的端侧智能体有迁移价值，但论文没有涉及设备约束，相关度较低。记忆分层加局部修订的组合设计清晰，贡献中等。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">做个性化幻灯片时，智能体要记住用户长期偏好，在多轮修改中保留新提的要求，还要能可靠地局部编辑。MemSlides 为此设计了分层记忆。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">十种用户画像下，注入用户画像记忆后整体对齐分平均提高 2.42 分（内容 3.30、结构 2.30、视觉 3.17、具体性 2.43）；跨模型平均，比 DeepPresenter 在内容、结构、视觉、具体性上分别高 1.37、0.53、1.66、1.19 分。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把长期记忆和工作记忆分开，长期记忆再分成用户画像记忆和工具记忆：画像记忆负责首轮个性化，工作记忆在多轮修改中携带当前偏好，工具记忆保存可复用的编辑经验；修改时只改受影响的最小区域，不重做整份。</span></div>
+<div class="score-reason">评分依据：云端大模型驱动的办公智能体记忆设计，与端侧关系很弱；分层记忆拆分清楚，但评估以模型打分为主。作者来自北邮、清华和上交。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.17162" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

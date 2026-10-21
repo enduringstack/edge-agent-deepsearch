@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SwiftCache: Efficient LLM Serving for Multi-turn Conversations with Heterogeneous KV Cache Sharing</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-15 · Jianmin Hu; Minxian Xu; Sa Wang; Chong Ma; Min Shen; Kejiang Ye; Lin Qu; Chengzhong Xu / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:调度服务</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">多轮对话的键值缓存越积越多，显存放不下就得挪到内存或固态盘，重新加载越来越慢，还限制了能聊多少轮。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">让同一台服务器里键值缓存需求低的模型把闲置显存和高速互联带宽让给需求高的模型存前缀缓存，实现跨模型的协同推理。</span></div>
-<div class="score-reason">评分依据：面向服务器内多模型共享显存，与设备端部署没有直接关系，相关度较低；但多轮对话的缓存膨胀在端侧同样是硬约束，按相邻工作保留。跨模型借用闲置显存的思路有一定新意，贡献中等。</div>
+<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-06-15 · Jianmin Hu; Minxian Xu; Sa Wang; Chong Ma; Min Shen; Kejiang Ye; Lin Qu; Chengzhong Xu / arXiv</div>
+<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多轮对话越聊越长，历史 KV cache 放不下 GPU 显存只能卸到内存或硬盘，重新加载越来越慢，对话轮数也受限。SwiftCache 让同一台服务器上的多个模型互相借用空闲显存。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在真实负载上，相比 vLLM 和 SGLang，P99 首 token 时延最多降低 69%，最大上下文长度最多扩展 3.98 倍，对同机其他模型的干扰很小。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">KV cache 需求低的模型把空闲显存捐出来存放需求高的模型的前缀缓存，通过 NVLink 跨模型共享，避开慢速 PCIe；同时本地显存只保留当前计算层的 KV cache，以支持更长上下文。</span></div>
+<div class="score-reason">评分依据：依赖多 GPU 服务器和 NVLink 的云端服务优化，与端侧关系较弱，多轮 KV 复用思路有一定参考性；跨模型借用显存的设计有新意。PDF 首页作者 4、5、7 署名阿里巴巴集团。 作者机构依据：arXiv PDF 首页署名 Alibaba（PDF 首页作者 4 Chong Ma、作者 5 Min Shen、作者 7 Lin Qu 署名 Alibaba Group, Hangzhou；其余作者来自中科院深圳先进院、南方科大等）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.16135" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

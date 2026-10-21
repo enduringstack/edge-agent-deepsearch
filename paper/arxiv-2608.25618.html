@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AWM: Answerable Working Memory for Long-Document VQA Agents</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-26 · Dongzhuoran Zhou; Yuqicheng Zhu; Yule Liu; Zhen Yang; Rui Lu; Yuxiao Dong; Jie Tang; Evgeny Kharlamov / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">长文档视觉问答智能体会翻页、看图、往工作记忆里写发现再综合答案，但现在只检查最终答案对不对，记忆质量是个盲区。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者指出智能体可能翻到了正确页面、答案也对，但留在记忆里的内容太笼统或不完整，一旦页面不可再访问就撑不住回答；AWM 据此提出以可回答性为标准来评估和构建工作记忆。</span></div>
-<div class="score-reason">评分依据：记忆是否足以脱离原始材料回答，对离线或弱连接的端侧场景更关键，但论文不讨论设备端约束，端侧相关性较弱。指出并度量记忆质量盲区是有价值的补位。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-08-26 · Dongzhuoran Zhou; Yuqicheng Zhu; Yule Liu; Zhen Yang; Rui Lu; Yuxiao Dong; Jie Tang; Evgeny Kharlamov / EMNLP 2026 Findings</div>
+<div class="tags"><span class="vendor-tag">Bosch</span><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长文档视觉问答智能体会边翻页边把发现写进工作记忆，但现有评测只看最终答案对不对。这篇发现很多“答对了”的智能体留下的记忆其实空洞，于是提出“仅凭记忆能否答题”的诊断，并把它变成强化学习奖励。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">MMLongBench-Doc 上即使给了正确证据页，仍有 42.5% 的正确答案无法只靠记忆复现；AWM-GRPO 准确率 53.9，比 RAG Top-3 基线高 8.1 个点（LongDocURL 上高 11.9 个点），比只奖励答案的 GRPO 高 2.3 个点，并把“答对但记忆缺失”的比例降低 2.7 个点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 GRPO 奖励中加入“终止时的工作记忆能否独立支撑答案”这一信号，同时保证最终答案正确仍是首要目标，使答对且记忆可用的轨迹获得更高优势。</span></div>
+<div class="score-reason">评分依据：关注智能体工作记忆质量，思路对任何带记忆的智能体有借鉴意义，但实验在云端 VLM 上，与端侧无直接关系；诊断指标有新意。 作者机构依据：arXiv PDF 首页署名 Bosch（PDF 首页作者 1、2、8 同时署名 Bosch Center for AI）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.25618" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

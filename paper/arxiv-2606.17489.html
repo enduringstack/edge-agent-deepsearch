@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Online LLM Selection via Constrained Bandits with Time-Varying Demand</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-16 · Yin Huang; Qingsong Liu; Jie Xu / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:调度服务</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">边缘云系统里有一堆大模型可选，精度、时延、成本各不相同，而且事先并不知道各自表现；这篇用带约束的在线学习边跑边挑。</span></div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-16 · Yin Huang; Qingsong Liu; Jie Xu / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:调度服务</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">边缘云推理系统里同时有多个大模型可选，精度、时延、成本各不相同且事先未知；这篇用带约束的在线学习边服务边挑模型。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把选模型建模成带约束的随机老虎机问题：既要满足预算这类硬约束，也要兼顾时延这类软性服务要求，同时适应随时间变化的任务需求。</span></div>
-<div class="score-reason">评分依据：直接针对边缘云协同推理里的在线模型选择，时延与成本约束是端侧落地的核心取舍，可迁移性强，但论文是理论建模，没有真实边缘部署。把硬预算与软时延约束一起纳入在线学习的建模比较完整，贡献中等。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把选模型建模成带约束的随机老虎机：预算是硬约束、时延达标率是软约束，算法 COPAC-UCB 用置信上界估计加需求预测来平衡收益与长期约束，并给出次线性遗憾与约束违反的理论保证。</span></div>
+<div class="score-reason">评分依据：面向边缘云协同推理里的在线模型选择，时延与成本取舍对端侧落地有参考价值，但实验只用合成负载、没有真实边缘部署。把硬预算与软时延约束同时纳入在线学习并给出理论保证，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.17489" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CritICL: Inference-Time Weak-to-Strong Generalization from Small Language Model Failure Modes</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-27 · Yufan Wu; Yinghui He; Zhengyi Hu; Lang Wei; Ruichen Li; Qifan Yang; Ting Zhu / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:蒸馏</span><span class="tag">方向:规划推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">推理时提升效果通常靠反复生成或外部验证，代价很高；CritICL 换个思路，把小模型犯的错当成提示材料喂给大模型。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者观察到同一模型家族内不同规模的失败模式有结构化规律，于是把弱模型的失败模式提炼成基于批评的上下文示例；动态版按输入预测特定失败模式并检索对应批评，静态版则用一份全局失败模式画像。</span></div>
-<div class="score-reason">评分依据：避免重复生成和外部验证器意味着更低的推理开销，对算力受限场景有迁移价值，但论文没有端侧实验，端侧契合度中等。把小模型的失败当资源而不是噪声，思路上有点意思。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-27 · Yufan Wu; Yinghui He; Zhengyi Hu; Lang Wei; Ruichen Li; Qifan Yang; Ting Zhu / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">推理时扩展（多次生成、外部验证）能提升大模型推理，但很费算力。CritICL 发现同一家族里小模型犯的错有规律可循，于是把小模型的典型错误整理成“批改示例”放进上下文，让大模型少走弯路。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">两个变体最多分别提升 12.9% 和 13.4%；Qwen2.5-32B-Instruct 上静态版 Pass@1 达 49.8%，比最强的测试时扩展基线（Consistency@7）高 0.3 个点且无需重复推理；在 AMC23、AIME 等难题上提升 4–6 个点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">动态版按输入预测可能的错误类型并检索对应批改，静态版使用全局错误画像提供稳定指导，两者都以上下文示例的形式注入推理，只需一次生成。</span></div>
+<div class="score-reason">评分依据：用一次生成换取接近多次采样的效果，能降低推理成本，但没有面向设备的实验，端侧相关度较低；利用小模型错误做弱到强指导的思路有新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.27455" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Memristive-Friendly Hadamard Reservoir Computing: Structured, Multiplier-Free Recurrences at Scale</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-28 · Andrea Ceni; Gianluca Milano; Carlo Ricciardi; Claudio Gallicchio / arXiv</div>
-<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:CIM</span><span class="tag">硬件:神经形态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">储备池计算适合忆阻器硬件，但仍要一个稠密的递归矩阵，物理实现很贵；这项工作用结构化正交算子把它换掉。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用符号对角阵、一个置换和快速沃尔什-哈达玛变换组合出结构化正交算子，无需乘法器、参数量为 O(N)、每步运算量 O(N log N)，且从不显式展开成矩阵；理论分析给出严格的回声状态条件和设计时可预测的噪声响应。</span></div>
-<div class="score-reason">评分依据：面向忆阻器等新型端侧计算介质，免乘法器和线性参数量对硬件实现有直接价值，但离实际设备部署仍有距离。把稠密递归换成结构化正交算子有理论支撑，属于中等贡献。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-28 · Andrea Ceni; Gianluca Milano; Carlo Ricciardi; Claudio Gallicchio / arXiv</div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">硬件:CIM</span><span class="tag">硬件:神经形态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">储备池计算只训练读出层、循环层固定，很适合神经形态和忆阻器硬件，但稠密循环矩阵在物理上实现代价高。这篇用无需乘法的结构化正交算子（符号对角、置换、快速 Walsh-Hadamard 变换）替换稠密矩阵。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 20 个分类和 7 个回归基准、储备池规模最大 8192 上，与稠密正交储备池效果相当并优于环形储备池；在 Apple M3 Pro CPU、NVIDIA T4、A100 三个平台上，循环一步最快比稠密乘法快 50 倍，内存小 10⁴ 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">算子只需 O(N) 参数、每步 O(N log N) 运算且从不显式生成矩阵；在标准与忆阻友好的回声状态网络中实例化，每个单元只接一个二值输入，并从数学上给出回声状态条件与噪声响应。</span></div>
+<div class="score-reason">评分依据：面向忆阻器等低功耗硬件的循环网络结构，内存和计算节省显著，属于端侧低功耗计算的相邻方向；算子设计与理论分析扎实。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.28295" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

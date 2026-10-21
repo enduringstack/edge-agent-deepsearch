@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Power-Performance Characterization of TinyML Systems</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-21 · Yujie Zhang; Dhananjaya Wijerathne; Zhaoying Li; Tulika Mitra / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">硬件:MCU</span><span class="tag">方向:能耗功耗</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">系统测量 TinyML 在单片机上的性能和功耗，重点看模型、软件库、操作系统和硬件这几层抽象各自吃掉多少代价。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在多种单片机、神经网络模型、软件库和操作系统组合上做性能与功耗刻画，并提出一个估计各抽象层代价的模型，据此给出减少这些代价的建议。</span></div>
-<div class="score-reason">评分依据：直接刻画 MCU 上 TinyML 的功耗与性能，对端侧选型有实用价值；属于测量与建模类工作，方法创新有限。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-21 · Yujie Zhang; Dhananjaya Wijerathne; Zhaoying Li; Tulika Mitra / ICCD 2022</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:编译部署</span><span class="tag">方向:评测基准</span><span class="tag">硬件:MCU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这是一份针对微控制器上 TinyML 的性能与功耗实测：覆盖不同神经网络、软件库、操作系统和硬件架构，量化每层软件抽象带来的代价。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Mbed OS 上运行相比裸机，延迟变化不大，但 SRAM 和 Flash 占用分别增加约 98% 和 196%，能耗多出 65%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在多款 MCU 上逐层替换模型、推理库（如 CMSIS-NN、TFLM）、操作系统和硬件组合进行测量，并建立模型估算各抽象层的成本，给出降低开销的建议。</span></div>
+<div class="score-reason">评分依据：在微控制器真机上系统测量推理性能和功耗，端侧相关度高；属于特性分析工作，且为 2022 年 ICCD 已发表论文的公开版本，贡献中等偏低。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.21646" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

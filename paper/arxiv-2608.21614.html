@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SAEM: Stage-Aware Expert Management for Memory-Efficient MoE Inference in Chain-of-Thought Reasoning</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-21 · Yujie Zhang; Bin Gao; Tulika Mitra / arXiv</div>
-<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:规划推理</span><span class="tag">方向:高效推理</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">思维链推理一步步生成会拉长时延，MoE 的专家权重又装不下显存，这篇发现推理的不同阶段专家激活有规律，据此管理专家驻留。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">运行时检测推理阶段边界，利用同一阶段内专家激活的连贯性来指导专家放置，配合阶段感知缓存、按专家对齐重排 token，以及部分专家直接在 CPU 就地执行，减少数据搬运和 kernel 碎片。</span></div>
-<div class="score-reason">评分依据：内存受限下的 MoE 专家管理对端侧部署有直接迁移价值；发现并利用思维链阶段级激活规律是有针对性的观察。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校顶会</span>  2026-08-21 · Yujie Zhang; Bin Gao; Tulika Mitra / DAC 2026</div>
+<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span><span class="tag">硬件:GPU</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">SAEM 是面向链式思维推理的 MoE 推理运行时：发现推理过程会分成若干阶段、同一阶段内用到的专家很稳定，据此在显存不够时更聪明地缓存和放置专家。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在数学和科学推理负载上、显存受限条件下，吞吐平均比最强的缓存与卸载基线高 1.33 倍；校准数据与负载匹配时提升到 1.54 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">检测推理阶段边界，按阶段级激活规律做专家缓存，同时把选中同一专家的 token 重新打包，并让部分专家直接在 CPU 上原地计算，减少数据搬运和内核碎片。</span></div>
+<div class="score-reason">评分依据：显存受限的 MoE 推理与边缘和消费级 GPU 部署相关；利用推理阶段规律指导专家放置有新意，会议版已被 DAC 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.21614" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

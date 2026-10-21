@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A-MADiff: Attention-Guided Multi-Agent DRL with Diffusion Policies for Memory-Aware Task Orchestration in Mobile AIGC Networks</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-29 · Chongzhi Wu; Zhengtao Li; Jiawen Kang; Jinbo Wen; Xiaohuan Li; Maomao Zhang; Ekram Hossain / arXiv</div>
-<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:端云协同</span><span class="tag">方向:高效推理</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">移动端 AIGC 服务把生成模型放在边缘服务商那里，但生成任务会一直占着显存直到跑完，导致边缘节点直接爆显存而不只是变慢。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者用注意力引导的多智能体深度强化学习配合扩散策略，做感知显存的任务编排，把显存占用而不仅是时延纳入调度目标。</span></div>
-<div class="score-reason">评分依据：面向边缘侧生成式服务的显存耗尽问题，是端边部署的真实故障模式而非单纯时延优化，端侧契合度较高。多智能体强化学习加扩散策略的组合较新，但仍属调度优化。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-29 · Chongzhi Wu; Zhengtao Li; Jiawen Kang; Jinbo Wen; Xiaohuan Li; Maomao Zhang; Ekram Hossain / arXiv</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:端云协同</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">移动 AIGC 网络把生成式模型部署在边缘服务节点上，生成任务会一直占着 GPU 显存，显存不够时任务直接失败。A-MADiff 用多智能体强化学习在边缘节点之间调度这些任务。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">仿真中累计奖励比 MADiff 高 29.4%、比 MASAC 高 38.1%，并取得最高有效成功率和最低显存溢出率。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把调度建模为分散式部分可观测马尔可夫决策过程：每个边缘节点一个调度智能体，用扩散模型作执行器生成多模态动作偏好，用注意力引导的集中式评论家估计各智能体价值，集中训练、分散执行。</span></div>
+<div class="score-reason">评分依据：关注边缘服务节点的显存可行性调度，与端侧部署场景相关，但结果全部来自仿真，且“智能体”指强化学习调度器；方法是已有组件的组合。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.29255" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

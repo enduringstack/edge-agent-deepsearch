@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FLINT: Efficiently Leveraging High Bandwidth Flash for Capacity-Scalable LLM Inference Acceleration</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-08-25 · Geraldo F. Oliveira; Arash Tavakkol; Xiangyu Zhu; Ahmet Caner Yüzügüler; Vamanan Arulchelvan; Lukas Cavigelli; Renzo Andri; Mohammad Sadrosadati / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:推理框架</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">推理越来越受限于加速器内存容量而不是算力，这篇把高带宽闪存当成存放模型权重的容量层，并解决它的读延迟和管理开销。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">针对现有方案的三个问题设计闪存基底：不再用粗粒度静态预取来掩盖微秒级 NAND 读延迟，把刷新等闪存管理任务移出加速器可见的关键路径，并针对负载行为专门优化闪存管理机制。</span></div>
-<div class="score-reason">评分依据：单加速器和小节点的容量瓶颈与端侧「模型大于内存」问题同源，迁移价值明确；把闪存管理专门化的设计有实质创新。</div>
+<div class="meta"><span class="score">12</span> <span class="tier company">公司项目</span>  2026-08-25 · Geraldo F. Oliveira; Arash Tavakkol; Xiangyu Zhu; Ahmet Caner Yüzügüler; Vamanan Arulchelvan; Lukas Cavigelli; Renzo Andri; Mohammad Sadrosadati / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:高效推理</span><span class="tag">方向:推理框架</span><span class="tag">方向:MoE</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型推理越来越受限于加速器内存容量。FLINT 把新兴的 3D 堆叠高带宽闪存（HBF）作为 HBM 旁边的大容量权重层，专门优化闪存访问和管理。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">解码吞吐分别是配 SSD 的 GPU 系统、纯 HBM GPU 系统、已有 HBM+HBF 混合系统的 1205 倍、2.2 倍和 6.2 倍，能耗分别降低 408 倍、1.1 倍和 6.8 倍；只读地址映射表每个堆栈仅 1.8 MB。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用硬件突发缓冲控制器合并并流水化闪存读取；把闪存刷新移出推理关键路径；用只读的精简映射表替代 SSD 级闪存转换层。</span></div>
+<div class="score-reason">评分依据：单加速器和小节点的「模型大于内存」问题与端侧同源，迁移价值明确，但目标是 GPU 推理系统；把闪存管理按推理负载专门化的设计有实质创新。公司归属依据 arXiv PDF 首页：多数作者署名华为瑞士和华为技术有限公司。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页作者署名 Huawei Technologies Switzerland AG 和 Huawei Technologies Co., Ltd.，另有 ETH Zürich、华中科技大学作者）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.25062" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

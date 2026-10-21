@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ECG-LDC: A Hardware-Efficient Low-Dimensional Computing Framework for ECG Arrhythmia Classification</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-06-13 · Anh Tran; Khanh Tran; Cuong Do / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:编译部署</span><span class="tag">方向:模型架构</span><span class="tag">硬件:FPGA</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">可穿戴设备做连续心电监测，深度网络参数多、乘加密集，低成本边缘平台跑不动；这篇改用低维计算。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">软硬件协同设计：双编码器配独立的数值码本与特征码本，分别编码心拍波形形态和心拍间期的时间特征，从而同时捕捉拍内与拍间的动态；框架覆盖预处理、训练和配套硬件加速器。</span></div>
-<div class="score-reason">评分依据：明确面向可穿戴设备上的实时心电分类，以低成本边缘平台的算力和能耗为设计约束，端侧语境明确。把低维计算范式适配到心电任务并配硬件加速器，工程完整，算法新意中等。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-13 · Anh Tran; Khanh Tran; Cuong Do / arXiv</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:模型架构</span><span class="tag">硬件:FPGA</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">可穿戴设备要连续做心电监测，分类器必须同时准、省电、能塞进廉价硬件；这篇用低维计算替代深度网络做心律失常分类，并做了硬件加速器原型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Pynq-Z2 FPGA 原型上准确率 97.18%，模型内存仅 3.86kB；比最先进的 TinyML 分类器低约 1.8% 精度，但内存用量减少 11570 倍；在 FPGA 五类心律失常分类器中精度最高，LUT 用量最多少 2.4 倍且不占用 DSP。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">双编码器结构分别用数值码本和特征码本编码单拍波形形态和 RR 间期时序特征，全部用二进制表示和 XOR/XNOR 运算完成推理，便于做成低成本硬件。</span></div>
+<div class="score-reason">评分依据：面向可穿戴设备的超低资源推理，有 FPGA 原型实测，端侧语境明确。把低维计算用于心电分类并做软硬件协同设计，方法较新颖但应用面较窄，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.09680" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

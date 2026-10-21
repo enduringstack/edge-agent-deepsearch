@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SPINE: A Fault Injection Profiler for Quantized Neural Networks under Accumulated Faults</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-17 · Nathan Guimarães; Ian Kersz; Leonardo R. Gobatto; Fabio Benevenuti; Michael G. Jordan; Antonio Carlos S. Beck; Fernanda L. Kastensmidt; Jose Rodrigo Azambuja / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">硬件:CPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">量化模型部署到边缘后，权重会被辐射引起的比特翻转持续侵蚀；这篇做了个工具直接在目标二进制上注入累积故障，看它什么时候开始出错。</span></div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-17 · Nathan Guimarães; Ian Kersz; Leonardo R. Gobatto; Fabio Benevenuti; Michael G. Jordan; Antonio Carlos S. Beck; Fernanda L. Kastensmidt; Jose Rodrigo Azambuja / SBCCI 2026</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:安全隐私</span><span class="tag">硬件:MCU</span><span class="tag">应用:fault-detection</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">卫星等边缘设备上跑的量化神经网络，权重会持续受到辐射导致的比特翻转；这篇做了一个在真实单片机上累积注入故障的分析工具，找出哪些层、哪些比特最脆弱。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">基于 GDB 驱动的剖析框架，直接往边缘 CPU 上运行的目标二进制里注入累积的权重比特翻转，按层生成故障画像，全程不需要重新训练模型，也不用改代码。</span></div>
-<div class="score-reason">评分依据：面向边缘 CPU 上的量化模型可靠性，考虑真实内存布局和成本功耗约束，端侧语境明确，但工作本身是分析工具而非部署优化。直接在目标二进制上注入累积故障、无需重训的做法比较实用，贡献中等。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 GDB 直接在目标单片机的可执行文件上对权重累积注入比特翻转，直到出现误判为止，生成逐层故障画像；在 Arm Cortex-M3（PSoC 5LP）上评测 8 比特、4 比特未打包和 4 比特打包三种量化布局。</span></div>
+<div class="score-reason">评分依据：在真实 Cortex-M3 单片机上评估量化模型的可靠性，端侧语境明确，但关注的是抗辐射可靠性而非推理效率，相关度中等偏上。发现打包存储会削弱容错、靠近输入的层最脆弱，有工程参考价值，贡献中等偏低。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.19526" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CogGuard: Cognitive and Operational Profiling for Proactive Warning in Edge Intelligent Services</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-13 · Zhi Yao; Weihao Chen; Zhiqing Tang; Hanshuai Cui; Qianli Ma; Weijia Jia; Wei Zhao / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:安全隐私</span><span class="tag">方向:调度服务</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">边缘智能服务要在严格的时延和隐私约束下，提前判断用户能不能顺利完成手上的任务并给出预警。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把基于大模型的画像构建放到离线侧，和在线的预警判断解耦；画像抽象做成跨场景可复用的形式，并针对输入序列长度差异大导致的异构边缘集群同步开销做了处理。</span></div>
-<div class="score-reason">评分依据：面向边缘智能服务的部署，时延、隐私和异构边缘集群的同步开销都是具体的端侧约束，相关度较高。离线画像加在线判断的解耦是常见工程手法，场景抽象有一定价值，贡献中等。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-13 · Zhi Yao; Weihao Chen; Zhiqing Tang; Hanshuai Cui; Qianli Ma; Weijia Jia; Wei Zhao / ICWS 2026</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:调度服务</span><span class="tag">方向:端侧训练</span><span class="tag">硬件:DGX</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">教育辅导、运维等边缘智能服务需要提前预警“这个人能不能完成接下来的任务”，既要用长期属性也要用近期行为。CogGuard 用大模型离线建画像、小模型在线打分。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在教育和运维数据集上，画像构建时间最多减少 48%，分布式微调时间减少 19%，百分制预警任务的平均绝对误差分别为 13.4 和 5.9；在最大的教育场景中预测误差比最强基线低 15.4%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把离线的大模型画像构建和在线的小模型打分拆开，共用“静态+动态画像到分数”的流水线；画像构建时对共享前缀复用 KV cache 减少重复编码，在异构边缘集群（含 DGX Spark）上做按序列长度分配的分布式微调并加对比正则，缓解负载不均。</span></div>
+<div class="score-reason">评分依据：在线打分用小模型、在含 DGX Spark 的异构边缘集群上微调，带有边缘部署成分，但面向的是具体业务预警而非通用推理优化；方法多为已有技术的组合。论文已被 ICWS 2026 接收，不属于顶会名单。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.15199" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Coordinated Scheduling for MoE LLM Serving</h1>
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-13 · Yifan Sun; Zhexiang Zhang; Jiantong Jiang; Gholamreza Haffari; Minxian Xu; Feng Liu; Rajkumar Buyya; Adel N. Toosi / arXiv</div>
-<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:调度服务</span><span class="tag">方向:云端serving</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">混合专家模型服务里，前端按请求数派活、后端按专家激活次数平衡负载，两边各算各的，热点就压不下去。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把前后端的调度合成一套跨层协同：前端的数据并行引擎调度器实时读取后端压力信号（键值缓存占用、剩余预填充量、队列压力、专家压力），把请求从高压引擎上引开。</span></div>
-<div class="score-reason">评分依据：面向数据中心的混合专家模型服务调度，与端侧部署无直接关系，相关度低；属于推理服务技术栈，按相邻工作保留。跨层信号打通的调度设计合理，贡献中等。</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:MoE</span><span class="tag">方向:调度服务</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">混合专家大模型在线服务时，请求负载和稀疏的专家路由会互相影响，造成数据并行引擎之间负载不均、个别专家过热。Gimbal 把前端请求调度和后端专家均衡放在一起协调。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">与 vLLM 相比，平均首 token 时延降低 42.9%、平均每 token 输出时延降低 33.3%，高负载下请求吞吐提升 3.0%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">前端调度器按 KV cache 占用、剩余预填充量、队列压力和专家压力等在线信号把请求从过载引擎上引开，引擎内部用带老化的预填充感知排队减少队头阻塞；后端按“来源引擎到专家”的路由统计，用混合整数规划引导的启发式放置专家，兼顾负载、通信和迁移稳定性。</span></div>
+<div class="score-reason">评分依据：纯数据中心多卡 MoE 服务调度，与端侧部署关系很弱；跨层协同调度的思路清楚，属于服务系统的工程优化。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.15177" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

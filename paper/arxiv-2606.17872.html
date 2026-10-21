@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AnchorKV: Safety-Aware KV Cache Compression via Soft Penalty with a Refusal Anchor</h1>
 <div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-16 · Ning Ni; Yingjie Lao / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:安全隐私</span><span class="tag">方向:能耗功耗</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">压缩键值缓存能省显存，但激进地丢 token 会把模型的安全对齐一起丢掉；这篇在保留分数里加一项安全偏置。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作为现有键值缓存压缩方案的即插即用改动，把 token 的保留分数向远离「与有害提示相关的键空间方向」偏置，相当于给压缩策略挂一个拒答锚点。</span></div>
-<div class="score-reason">评分依据：论文开篇就把设备端部署和显存、能耗列为压缩的动机，键值缓存压缩本身也是端侧长上下文的刚需，可迁移性强，但没有端侧实测。把安全对齐纳入缓存淘汰策略的角度此前少有人做，贡献中等。</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:安全隐私</span><span class="tag">应用:长上下文推理</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">压缩键值缓存能省显存，但激进丢 token 会把模型的安全对齐一起丢掉；这篇在缓存保留打分里加一项安全偏置，让压缩后的模型仍会拒绝有害请求。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Llama-3.1-8B-Instruct 上，把越狱攻击成功率从 0.68 降到 0.13（相对降 81%），LongBench 16 项平均分只从 47.64 降到 46.57（约 1 分）；作为对比，FastKV 压缩本身相对不压缩要掉 1.6 分。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">离线用有害与无害提示的均值差，在键投影空间里构造一个拒答锚点方向；压缩时对靠近该方向的 token 做软惩罚，惩罚为 0 时与原压缩器完全一致，可即插即用到 FastKV 等方案上。</span></div>
+<div class="score-reason">评分依据：论文把设备端部署和显存、能耗列为缓存压缩的动机，键值缓存压缩也是端侧长上下文的刚需，但实验在 GPU 上进行、没有端侧实测。把安全对齐纳入缓存淘汰策略的角度少见，贡献中等偏上。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.17872" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

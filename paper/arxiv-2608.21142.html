@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>COEC: Calibrated Orthogonal-Equivalence Compensation for Structured Pruning of Large Language Models</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-21 · Peiqi Yu; Nam Ling; Wei Wang; Wei Jiang / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">结构化剪枝砍掉权重列之后会产生输出误差，现有免训练补偿只在输出侧加偏置或做一次正交旋转，这篇在输入输出两侧同时做旋转补偿。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">对保留权重交替施加左右两侧正交旋转，右旋转在缩减的 Stiefel 流形上优化，奇异值用广义交叉验证逐层选择正则强度来重新缩放，并对校准数据做温和化处理。</span></div>
-<div class="score-reason">评分依据：免训练剪枝补偿对端侧「压完就用」的部署方式很实用，迁移价值明确；双侧正交等价补偿的数学设计有新意。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-08-21 · Peiqi Yu; Nam Ling; Wei Wang; Wei Jiang / arXiv</div>
+<div class="tags"><span class="vendor-tag">Futurewei</span><span class="tag">方向:剪枝稀疏</span><span class="tag">模型:Llama</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">COEC 是大模型结构化剪枝后的免训练补偿方法：删掉权重列后，用左右两侧的正交旋转和奇异值重缩放去修复剩余权重，挽回精度损失。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">30% 结构化稀疏下，叠加在 Wanda-sp 上把 Qwen2.5-32B 困惑度从 13.90 降到 9.64；相对 FLAP 的偏置补偿，把 Llama-3.1-8B 困惑度从 11.89 降到 10.86，零样本准确率在多数设置下也更好。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在约化 Stiefel 流形上优化右侧旋转，用广义交叉验证为每层选正则强度，并对校准 Gram 矩阵做调温、对相邻注意力投影加对齐约束；只用少量校准数据的二阶统计，无需反向传播。</span></div>
+<div class="score-reason">评分依据：结构化剪枝直接减少端侧推理的计算和内存，属于可迁移技术栈；在已有补偿方法上做了更完整的双侧修正，贡献中等。PDF 首页作者 3、4 署名 Futurewei Technologies。 作者机构依据：arXiv PDF 首页署名 Futurewei（PDF 首页作者 3、4（Wei Wang、Wei Jiang）署名 Futurewei Technologies, Inc., USA；作者 1、2 来自圣克拉拉大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.21142" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

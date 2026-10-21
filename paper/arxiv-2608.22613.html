@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>NOVA: Technology-Architecture Co-Design of Near-Memory Processing for Attention-SSM-MoE Hybrid LLM Inference</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-23 · In-Jun Jung; Jaeha Min; Joo-Young Kim / arXiv</div>
-<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:MoE</span><span class="tag">方向:高效推理</span><span class="tag">硬件:CIM</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">为注意力、状态空间和 MoE 混合的大模型设计近存计算系统，同时解决 DRAM 工艺见顶和现有近存架构算力谱太窄两个问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">工艺上用 4F² 垂直沟道晶体管 DRAM 单元配 peri-over-cell 结构来提容量；架构上重新设计近存单元以覆盖从访存瓶颈的 SSM 层到计算密集的 GQA 层、以及专家间差异很大的算术强度范围。</span></div>
-<div class="score-reason">评分依据：近存计算是缓解访存墙的重要路线，对端侧内存受限设备有迁移价值；工艺与架构协同设计的完整度较高。</div>
+<div class="meta"><span class="score">13</span> <span class="tier school">学校顶会</span>  2026-08-23 · In-Jun Jung; Jaeha Min; Joo-Young Kim / MICRO 2026</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:MoE</span><span class="tag">方向:模型架构</span><span class="tag">硬件:CIM</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">混合注意力、状态空间模型和 MoE 交织的新一代大模型，对近存计算硬件同时提出了内存容量和算力形态两道难题。NOVA 从 DRAM 工艺和体系结构两头一起改。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Nemotron3-Nano、Nemotron3-Super、Falcon-H1R、Qwen3 等模型上，相比 GPU 基线平均吞吐提升 4.5 倍、端到端时延降低 69.8%、能效提升 5 倍，面积开销仅 3.9%，内存容量不受损；新存储单元在同面积下密度约为传统 DRAM 的 2 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">工艺上用 4F² 垂直沟道晶体管 DRAM 加外围电路叠在存储阵列上方的结构提密度；架构上把外围电路层改造成计算层，形成两级近存计算，分别处理低中、中高算术强度的算子并并行执行。</span></div>
+<div class="score-reason">评分依据：近存计算缓解访存墙的思路对内存受限的端侧设备有迁移价值，但评测对象是对标 GPU 的大模型推理系统，相关度按中等计；工艺与架构协同设计完整，已被 MICRO 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.22613" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Thinking at the Right Size: Amortized Distillation Across Post-Trained LLMs</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-08-24 · Yan Zhou; Sara Kangaslahti; Jonathan Geuter; Nihal V. Nayak; Marco Fumero; Francesco Locatello; David Alvarez-Melis / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">实际部署需要同一个模型家族有指令版、推理版、聊天版，每种还要多个尺寸来适配不同时延和内存预算，逐个训练成本太高。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在已有的 Boomerang 蒸馏只沿尺寸轴插值的基础上，把蒸馏同时沿「后训练变体」和「尺寸」两个轴摊销，从一对教师—学生构造出中间尺寸和不同变体的模型而不需要逐个重训。</span></div>
-<div class="score-reason">评分依据：按时延和内存预算造不同尺寸模型正是端侧部署的常见诉求，迁移价值明确；把摊销推广到后训练变体这一轴是实用扩展。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-24 · Yan Zhou; Sara Kangaslahti; Jonathan Geuter; Nihal V. Nayak; Marco Fumero; Francesco Locatello; David Alvarez-Melis / EMNLP 2026 Findings</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">厂商要为指令版、推理版、对话版等不同后训练变体，各自准备多个尺寸的模型来适配不同时延和内存预算，逐个蒸馏成本太高。ADAPT 一次蒸馏就能产出「变体 × 尺寸」的整套模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以 Qwen3-4B-Instruct-2507 为教师、2.7B 学生为起点，并在 Qwen3-14B、Olmo-3-7B、Llama-3.1-8B 上复现；原文结果以曲线图呈现、未给出具体数值，结论是同等算力下优于回旋镖蒸馏和层剪枝（ShortGPT、LLM-Streamline）基线，按题目难度自适应选尺寸可得到更优的精度-算力曲线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用「预训练对齐 + 监督微调」两阶段蒸馏出可插值的后训练学生模型；再把基座模型蒸馏带来的权重变化迁移到其他后训练变体上，免去对每个变体单独蒸馏。</span></div>
+<div class="score-reason">评分依据：按时延和内存预算提供连续尺寸的模型正是端侧部署的常见诉求，迁移价值明确；把摊销蒸馏从尺寸轴扩展到后训练变体轴是实用扩展。论文为 EMNLP 2026 Findings，不按顶会计。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.22854" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

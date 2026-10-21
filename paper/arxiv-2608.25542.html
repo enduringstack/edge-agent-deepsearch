@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Reflection Steering: Disentangling Reflection from Reasoning in Activation Space for Token-Efficient Inference</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-26 · Jiarui Hu; Zhiyuan Wen; Xiaoyun Liu; Jiaxing Shen; Yu Yang / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span><span class="tag">方向:能耗功耗</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">推理模型经常反复自我检查，很多时候只是在复核已经确定的结论，白白烧 token 还拖慢时延；这篇把反思从推理里拆出来单独控制。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">免训练框架：在每一层对比反思态和非反思态的隐藏状态，用主成分分析给反思方向去噪，再把它和推理与长度信号正交化，从而单独调节与反思相关的计算量。</span></div>
-<div class="score-reason">评分依据：省 token 就是省端侧时延和电量，免训练也便于直接用在已部署模型上，但论文没有设备端实测，端侧契合度中等。把反思方向从推理和长度信号里解耦出来，比直接加均值差方向更稳。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-26 · Jiarui Hu; Zhiyuan Wen; Xiaoyun Liu; Jiaxing Shen; Yu Yang / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">推理模型经常反复检查已经得出的结果，白白多花 token 和时间。Reflection Steering 不用训练，直接在模型内部激活上削弱这种“多余反思”。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在两个公开基准、三个 Qwen 系列开源模型的 6 组设置上，推理 token 平均减少 16.9%；Qwen3-30B-A3B 做 MATH-500 时 token 减少 21.8%，准确率只变化 -0.1 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">逐层对比反思和非反思时的隐藏状态，用 PCA 去噪得到“反思方向”，再与一般推理方向正交化；只在校准后表现稳定的层上做有界的投影去除，并提供一个强度参数在部署时调节省 token 与准确率。</span></div>
+<div class="score-reason">评分依据：减少推理 token 直接降低时延和能耗，对端侧跑推理模型可迁移，但论文没有设备实验。免训练、可调强度的激活干预方法较实用。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.25542" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

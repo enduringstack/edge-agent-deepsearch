@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>C2FL: Clustered Continual Federated Learning under Spatial and Temporal Drift</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-06-16 · Davide Domini; Gianluca Aguzzi; Lorenzo Pellegrini; Mirko Viroli; Lukas Esterle / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:端侧训练</span><span class="tag">方向:安全隐私</span><span class="tag">硬件:手机</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">车辆、无人机、手机群感知这类移动节点，附近看到的现象相似、远处则完全不同，而且会随移动不断漂移；这篇让节点自动按空间聚类并持续学习。</span></div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-16 · Davide Domini; Gianluca Aguzzi; Lorenzo Pellegrini; Mirko Viroli; Lukas Esterle / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:端侧训练</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">车辆、无人机、手机群感知这类移动节点，近处看到的数据相似、远处截然不同，而且会随移动不断漂移；这篇让节点自动按空间分组做联邦学习，并防止换区域后忘掉旧知识。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">完全分布式的联邦学习方案，节点在本地数据上学习，按空间相似性自然形成簇，并针对移动带来的时间漂移做持续学习，避免本地模型逐渐过时。</span></div>
-<div class="score-reason">评分依据：面向手机群感知、车载和无人机监测这类真实的分布式设备场景，数据因隐私不能集中，属于端侧训练的典型设定，但论文没有真机部署数据。把空间聚类与时间漂移放在一起处理是对联邦学习的合理扩展，贡献中等。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">完全去中心化的联邦学习：节点按数据分布相似性自组织成簇，簇内协同训练；每个节点再用经验回放加上按停留时长调节的自适应平均，逐步吸收所在区域的共识模型，同时保留去过区域的能力。</span></div>
+<div class="score-reason">评分依据：面向手机群感知、车载和无人机等分布式设备上的本地学习，属于端侧训练场景，但只在合成实验中评测、结果仅以曲线给出。把空间聚类与时间漂移放在一起处理，是对联邦学习的合理扩展，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.18003" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

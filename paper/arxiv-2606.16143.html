@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AIA: A Customized Multi-core RISC-V SoC for Discrete Sampling Workloads in 16 nm</h1>
 <div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-06-15 · Shirui Zhao; Nimish Shah; Wannes Meert; Marian Verhelst / arXiv</div>
-<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:编译部署</span><span class="tag">方向:模型架构</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">同一套概率推理加速器的芯片实现版：用英特尔 16 纳米工艺流片，面向给边缘设备补上推理与决策能力。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">RISC-V 主机负责片间数据通信，16 个为离散采样负载定制的 RISC-V 核组成二维网格做并行马尔可夫链蒙特卡洛计算。</span></div>
-<div class="score-reason">评分依据：同样面向边缘设备的概率推理加速，有真实流片，但与同组另一篇内容高度重叠，相关度与增量都中等。作为芯片实现记录有价值，独立创新有限，贡献中等。</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:编译部署</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">概率模型推理常用的马尔可夫链蒙特卡洛采样计算量大、难并行，在 CPU/GPU 上效率低。AIA 是用 Intel 16 纳米工艺流片的多核 RISC-V 芯片，专门给边缘设备做这类近似推理。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">芯片面积 4 平方毫米，峰值采样率 1277 MSamples/s（0.9V），能效 20 GSamples/s/W（0.7V），比此前最好的概率推理专用芯片速度最多快 6 倍、能效最多高 5 倍；相比基线设计平均吞吐 2 倍、能效 1.45 倍，在贝叶斯网络负载上比 CPU 平均快 60 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">16 个定制 RISC-V 核排成二维网格，每个核带非归一化 Knuth-Yao 采样器和对数/指数等非线性函数插值单元，相邻核可直接访问彼此寄存器以减少数据搬运；再配专用编译链把采样算法在各核上做空间映射和调度。</span></div>
+<div class="score-reason">评分依据：面向边缘设备的概率推理专用芯片并有流片实测，属于端侧 AI 硬件，但负载是概率图模型采样而非主流神经网络，迁移面较窄；硬件采样器与核间直连设计扎实。芯片只是用 Intel 工艺制造，作者均来自鲁汶大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.16143" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

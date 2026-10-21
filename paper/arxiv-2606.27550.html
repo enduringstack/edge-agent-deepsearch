@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>EntMTP: Accelerating LLM Inference with Entropy Guided Multi Token Prediction</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-25 · Carrie Chen / arXiv</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-06-25 · Carrie Chen / arXiv</div>
 <div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">根据文本的不确定程度动态调整多 token 预测的投机深度，加快大模型生成。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">免训练的调度器：先准备一组针对任务的帕累托最优注意力树拓扑，再根据对局部生成熵的在线估计在这些拓扑之间切换——低熵好猜的片段放长投机深度，高熵难猜的片段保守一些，从而让期望接收 token 吞吐最大化。</span></div>
-<div class="score-reason">评分依据：投机解码是端侧与边缘推理普遍采用的加速手段，有直接迁移价值，但原文未涉及设备端部署，相关度按可迁移技术栈计；在已有多 token 预测头上加一层熵驱动的动态调度，属合理但常见的改进。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">现有多 token 预测（MTP）做自投机解码时，整段生成都用固定的树形注意力结构，推测深度不随内容难易变化。EntMTP 根据局部生成熵动态切换推测树，无需训练。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 HumanEval、ShareGPT、GSM8K 和 LitBench 上，相对 Hydra 稳定提速 1.15 倍，相对 Medusa 峰值提速 1.36 倍，生成质量不受影响。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">预先为任务准备一组帕累托最优的推测树，运行时持续估计局部生成熵：低熵区用更深的推测树多步起草，高熵区换保守的浅树，从而最大化期望接受 token 数。</span></div>
+<div class="score-reason">评分依据：投机解码是端侧与边缘推理常用的加速手段，方法无需训练、易于迁移，但原文没有设备端测量，相关度按可迁移技术栈计；在已有 MTP 头上加熵驱动调度属增量改进。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.27550" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

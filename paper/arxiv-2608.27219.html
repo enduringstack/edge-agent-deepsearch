@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>BALMS: Benchmarking Agentic LLMs for Longitudinal Mental Health Sensing</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-27 · Yu Yvonne Wu; Arvind Pillai; Yuliang Chen; Yuwei Zhang; Sudarshan Regmi; Tess Z. Griffin; Michael V. Heinz; Lisa A. Marsch / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:规划推理</span><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">可穿戴设备能持续采集行为和生理信号，BALMS 是第一个系统检验大模型智能体能否据此做长期心理健康推断的基准。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">基准覆盖 3 个真实世界纵向数据集和 2 类任务族，一类是闭式的幸福感分数预测，一类是需要自动评分的理由生成；考察的是智能体能不能在长期信号上推理并给出有证据支撑的解释，而不是像现有个人健康智能体那样只做短期检索式查询。</span></div>
-<div class="score-reason">评分依据：数据来自可穿戴设备的长期传感信号，属于端侧感知的下游应用，但论文没有涉及设备端推理或部署约束，端侧契合度中等。把个人健康智能体从检索式问答推进到长期推理加解释，是有价值的基准补位。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校顶会</span>  2026-08-27 · Yu Yvonne Wu; Arvind Pillai; Yuliang Chen; Yuwei Zhang; Sudarshan Regmi; Tess Z. Griffin; Michael V. Heinz; Lisa A. Marsch / EMNLP 2026</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">模型:DeepSeek</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">可穿戴设备能长期记录行为和生理信号，但现有健康智能体多只回答“上周最多走了多少步”这种短期查询。BALMS 是首个评测大模型智能体能否基于长期可穿戴数据预测心理健康评分并给出有据理由的基准。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">覆盖 3 个真实长期数据集、3 种智能体范式、5 个开源与闭源大模型：零样本智能体很少能超过“直接取均值”的简单基线；DeepSeek 和 Claude 加思维链后误差最多降低 41.4%，GLOBEM 数据集上提升仅约 9%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">设置“预测健康评分”和“生成有据理由（由大模型评审打分）”两类任务，系统比较不同智能体范式和骨干模型在长期时序推理上的表现。</span></div>
+<div class="score-reason">评分依据：数据来自可穿戴设备，但智能体在云端大模型上运行，端侧相关度低；作为首个长期心理健康感知智能体基准有一定价值，已被 EMNLP 2026 主会接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.27219" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MLLMCLIP: Feature-Level Distillation of MLLM for Robust Vision-Language Representations</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-26 · Jongsuk Kim; Qiyu Wu; Zhuoyuan Mao; Hiromi Wakaki; Junmo Kim; Yuki Mitsufuji / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">CLIP 零样本识别很强但不会处理属性和关系的组合，常见补法是用大模型加文生图造难负样本，代价很高；这篇改成直接蒸馏。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把生成式多模态大模型当教师，把知识直接蒸馏进判别式的 CLIP 学生，完全不用合成数据；为跨越两种范式的架构差异，引入基于注意力的逐层 token 选择和基于 CKA 的蒸馏损失。</span></div>
-<div class="score-reason">评分依据：把大模型能力蒸馏进 CLIP 这类小型判别模型，对端侧视觉部署有迁移价值，但论文本身不涉及设备端约束，端侧契合度中等。跨范式异构蒸馏的设计有一定新意。</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-08-26 · Jongsuk Kim; Qiyu Wu; Zhuoyuan Mao; Hiromi Wakaki; Junmo Kim; Yuki Mitsufuji / EMNLP 2026</div>
+<div class="tags"><span class="vendor-tag">Sony</span><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">CLIP 这类视觉-语言模型擅长零样本识别，却常搞不清“红色的杯子在蓝色盒子左边”这类属性和关系组合。MLLMCLIP 直接把多模态大模型的理解能力蒸馏进 CLIP，不再依赖昂贵的合成难负样本流水线。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 11 个组合性基准上平均分最高 40.4（InternVL3.5-2B 作老师），高于原版 CLIP 的 37.1 和此前最好的 TripletCLIP 的 38.3；在 26 个组合性、分类和检索基准上整体优于以往的 CLIP 增强方法。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以生成式多模态大模型为老师、判别式 CLIP 为学生，逐层用注意力挑选老师中最有用的 token，再用基于 CKA 相似度的损失对齐两者的特征。</span></div>
+<div class="score-reason">评分依据：得到的仍是 CLIP 规模的小型视觉-语言编码器，对端侧视觉理解有间接价值，但论文未讨论部署；异构特征蒸馏省掉合成数据是合理的改进，已被 EMNLP 2026 主会接收。 作者机构依据：arXiv PDF 首页署名 Sony（PDF 首页 6 位作者中 5 位署名 Sony Group Corporation，通讯作者为 sony.com 邮箱；第一作者的工作在 Sony 实习期间完成）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.25575" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

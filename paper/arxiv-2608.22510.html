@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ClawProBench: Trace-Aware Evaluation of AI Agents with Runtime Coverage and Frozen Workplace-Style Holdouts</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-08-23 · YuanHang Xiao / arXiv</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-23 · YuanHang Xiao / arXiv</div>
 <div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:工具调用</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一个面向 AI 智能体的评测，用执行轨迹覆盖率和冻结的工作场景来判断智能体到底做到了哪一步。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把评测从最终答案改成看运行时轨迹覆盖，并冻结工作场景状态保证可复现比较。</span></div>
-<div class="score-reason">评分依据：智能体评测方法对端侧助理的能力衡量有参考，但与设备端部署无直接关系；轨迹覆盖的评测角度有一定新意。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体评测大多只看最终答案，ClawProBench 改为把「模型 + 运行时配置」整体当评测对象，在 OpenClaw 智能体运行时上按执行轨迹打分。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">共评测 68 种配置（完整集）和 37 种配置（冻结留出集）；最高的安全门控轨迹均分为 0.7671；原生运行时任务明显弱于工作区任务（0.5238 对 0.6415）；留出集上任一次通过率远高于连续三次通过率（0.6638 对 0.2890），两套榜单排名相关性很弱（Spearman 0.1300）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">构建 102 个场景的完整集和 68 个场景的冻结留出集，从执行轨迹出发，用安全门控公式综合正确性、过程质量和效率给分，并保留失败证据供审计。</span></div>
+<div class="score-reason">评分依据：评测的是 OpenClaw 这类有状态智能体运行时，对端侧助理的能力衡量有参考，但不涉及设备端部署；把运行时配置当评测单位、按轨迹打分的角度有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.22510" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A Neuromorphic Reinforcement Learning Framework for Efficient Pathfinding in Robotic Mobile Fulfillment Systems</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-06-18 · Junzhe Xu; Zecui Zeng; Lusong Li; Yuetong Fang; Renjing Xu / arXiv</div>
-<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:编译部署</span><span class="tag">硬件:神经形态</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把强化学习训出来的仓储机器人寻路策略，整条搬到神经形态芯片上跑，靠稀疏事件触发计算来省电。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先用允许碰撞的训练策略把普通全精度网络训好，再转换成脉冲网络并部署到神经形态芯片；芯片只在稀疏事件触发时才计算，从而把超低功耗和实时决策同时拿下。</span></div>
-<div class="score-reason">评分依据：明确把训练好的策略部署到神经形态芯片上做机器人实时寻路，是确凿的端侧低功耗部署工作。从全精度网络到芯片的完整转换流水线有一定系统性，贡献中等偏上。</div>
+<div class="meta"><span class="score">13</span> <span class="tier company">公司项目</span>  2026-06-18 · Junzhe Xu; Zecui Zeng; Lusong Li; Yuetong Fang; Renjing Xu / arXiv</div>
+<div class="tags"><span class="vendor-tag">JD</span><span class="tag">方向:SNN</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:蒸馏</span><span class="tag">硬件:神经形态</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">仓储机器人集群寻路既要实时又要省电；这篇把训练好的强化学习寻路策略转换成脉冲神经网络，部署到神经形态芯片上运行。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Speck 神经形态芯片上，相比 RTX 4090 上运行原始网络，能耗最多降低 11281 倍；单次决策时延从 0.13–0.14 毫秒降到 0.061–0.079 毫秒，决策质量与原策略相当。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用允许碰撞的策略采样让训练轨迹更密集，再用硬标签知识蒸馏把深度 Q 网络转换成脉冲网络，解决转换前后输出分布不匹配的问题，最后在真实芯片上部署。</span></div>
+<div class="score-reason">评分依据：在真实神经形态芯片上部署控制策略并实测能耗与时延，端侧语境明确；但它是纯强化学习控制器，不含规划、记忆或工具闭环，因此不算端侧智能体。转换与蒸馏流程完整，能效结果突出，贡献中等偏上。PDF 首页多位作者署名 JD Explore Academy。 作者机构依据：arXiv PDF 首页署名 JD（PDF 首页作者 Junzhe Xu、Zecui Zeng、Lusong Li 署名 JD Explore Academy, Beijing）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.20031" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

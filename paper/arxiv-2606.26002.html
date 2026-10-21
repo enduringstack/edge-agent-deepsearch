@@ -7,9 +7,9 @@
 <h1>Hierarchical Reinforcement Learning for Neural Network Compression (HiReLC): Pruning and Quantization</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-24 · Kamar Hibatallah Baghdadi; Kawther Guoual Belhamidi; Sara Belhadj; Aissa Boulmerka; Nadir Farhi / arXiv</div>
 <div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用分层强化学习自动搜索神经网络的量化位宽和结构化剪枝配置。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把压缩搜索拆成两层：低层智能体按网络块各自为政，在位宽、剪枝保留率、量化类型和粒度构成的多离散动作空间里挑配置；高层智能体则用基于 Fisher 信息敏感度的集成投票来统筹全局预算。为了压低策略评估的开销，还用一个轻量 MLP 代理模型做奖励塑形并与压缩后微调交替进行，代理只用于塑形、不替代最终评估。</span></div>
-<div class="score-reason">评分依据：联合量化与剪枝是端侧模型压缩的核心手段，框架与架构无关因而有迁移价值，但原文未做设备端部署验证，相关度按可迁移技术栈计；用分层 RL 加代理模型做自动搜索属于已有范式的组合。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">联合做量化和结构化剪枝时，每层的位宽、保留比例、量化方式组合起来搜索空间巨大。HiReLC 用分层强化学习自动搜索这些压缩配置。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在视觉 Transformer 和 CNN 基准上实现 5.99–6.72 倍参数存储压缩，其中一个设置精度反升 3.83%，其他设置精度下降 0.55%–5.62%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">底层智能体按块独立选择每个卷积核的位宽、剪枝保留率、量化类型和粒度，高层智能体根据 Fisher 信息敏感度投票分配全局预算；用轻量 MLP 代理模型做奖励塑形，并交替进行强化学习搜索和压缩后微调。</span></div>
+<div class="score-reason">评分依据：联合量化与剪枝是端侧模型压缩的核心手段，框架与架构无关有迁移价值，但没有设备端部署验证，相关度中等；分层强化学习加代理模型属已有工具的组合。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.26002" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

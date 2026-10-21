@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Conflict-Aware Federated Fine-Tuning of Large Language Models with Mixture-of-Experts</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-06-14 · Yijun Lu; Zihan Fang; Pengpeng Qiao; Zheng Lin; Jing Yang; Yuxin Zhang; Por Lip Yee; Zhe Chen / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:MoE</span><span class="tag">方向:安全隐私</span><span class="tag">方向:端侧训练</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">联邦学习里各客户端数据分布不同，同一个编号的专家被迫往互相矛盾的方向优化，聚合时就互相抵消。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用重要性感知的加权方案优先采纳可靠的本地更新，再用梯度共识投影压制互相冲突的更新，从而稳定混合专家模型在联邦环境下的微调。</span></div>
-<div class="score-reason">评分依据：联邦微调是数据不出端的典型路径，稀疏激活也有助于降低客户端算力负担，但论文没有讨论设备侧资源约束，相关度中等。针对专家冲突的加权加投影方案有针对性，贡献中等。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-06-14 · Yijun Lu; Zihan Fang; Pengpeng Qiao; Zheng Lin; Jing Yang; Yuxin Zhang; Por Lip Yee; Zhe Chen / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:MoE</span><span class="tag">方向:端侧训练</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用联邦学习微调混合专家大模型时，各客户端数据分布不同，同一个专家在不同客户端被往相反方向训练，聚合时互相抵消。FC-MoE 专门处理这种专家冲突。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以 Switch Transformer 为骨干、Dirichlet α=0.1 的非独立同分布设置下，AGNews 测试准确率 0.8359（FedAvg 为 0.7740），MMLU 测试准确率 0.3764（FedAvg 为 0.3008），收敛也更快。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按更新可靠性给各客户端的专家更新加权，用梯度共识投影压掉与整体方向冲突的分量，再把被过滤掉的领域特有残差重新锚定回本地模型，保住客户端的个性化能力。</span></div>
+<div class="score-reason">评分依据：联邦微调与端侧训练沾边，但实验在 RTX 4090 上模拟客户端，用的是较老的 Switch Transformer，与端侧推理部署关系较远；加权加投影的聚合改进属常见思路。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.15625" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

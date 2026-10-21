@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PeakBench: Benchmarking Resource-Aware Tool Invocation in LLM Agents</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-25 · Zhi-Kai Chen; Xu-Xiang Zhong; Song-Yan Li; De-Chuan Zhan; Han-Jia Ye / arXiv</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-25 · Zhi-Kai Chen; Xu-Xiang Zhong; Song-Yan Li; De-Chuan Zhan; Han-Jia Ye / arXiv</div>
 <div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:调度服务</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">智能体并行调用多个工具能降时延，但资源用量容易爆，这篇专门评测「会不会在资源约束下安排并行」。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">构建可执行的多工具工作流基准，带有基于真实执行的依赖标注和实测资源画像，并解决失败归因这一核心评测难题，从而区分串行慢和无视资源并行导致的资源溢出两类失效。</span></div>
-<div class="score-reason">评分依据：资源感知的工具调度正是端侧设备算力和内存受限时最关键的能力，相关性较高；补上现有基准缺失的调度维度有实际价值。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体并行调用多个工具能降时延，但不看资源就并行容易把内存等资源撑爆。PeakBench 是专门评测「资源感知的工具调度」的基准。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">基于约 1.2K 个 MCP 兼容工具构建 300 个可执行工作流（易 150、中 100、难 50），人工抽检约 94% 样本与最优结构一致；评测 8 个前沿 API 模型发现规划正确并不等于执行安全高效，提供资源信息（RASC）后多数模型调度时延下降、资源越界减少。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">为工作流标注基于实际执行的依赖关系和实测资源画像，把评测拆成逻辑规划和物理调度两部分，各自有独立指标，便于定位失败原因。</span></div>
+<div class="score-reason">评分依据：资源受限下的工具调度是端侧设备运行智能体的关键能力，相关性较高，但评测在模拟的机器资源配置上进行；补上现有基准缺失的调度维度有实际价值。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.24509" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>When Pruning Meets Interpretability: Preserving Sparse Autoencoder Robustness in LLMs</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-26 · Suchit Gupte; Xueru Zhang; Mohammad Mahdi Khalili / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:安全隐私</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">稀疏自编码器被广泛用来解释大模型内部表示，但模型被剪枝压缩后它还靠不靠谱，一直没人系统研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">作者从理论上说明，对固定的稀疏自编码器而言剪枝的影响由扰动能量这一协方差加权范数决定；这一视角暴露了幅值剪枝的关键缺陷：它忽略激活几何，会扭曲已学到的表示空间并削弱稀疏自编码器的功能。</span></div>
-<div class="score-reason">评分依据：剪枝是端侧压缩的常用手段，指出它会破坏可解释性工具的可靠性，对部署后的调试与审计有间接价值，端侧契合度中等。用扰动能量给出理论刻画，分析比较清楚。</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-26 · Suchit Gupte; Xueru Zhang; Mohammad Mahdi Khalili / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">稀疏自编码器常被用来解释大模型内部表示，但模型被剪枝压缩后它还可靠吗？这篇系统研究了剪枝对稀疏自编码器的影响，并据此给出按层分配稀疏度的策略。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">gemma-2-2b 在 50% 平均稀疏度下，按层分配稀疏度使困惑度从 212 降到 148（Wanda）、从 141 降到 98（SparseGPT）；同时发现中间层对剪枝最敏感。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">理论上证明剪枝对固定稀疏自编码器的影响由“扰动能量”（协方差加权范数）决定，解释了为何 Wanda、SparseGPT 这类激活感知剪枝比幅值剪枝更稳；据此给浅层分配低稀疏度、深层分配高稀疏度。</span></div>
+<div class="score-reason">评分依据：关注剪枝后模型可解释性工具是否失效，与端侧压缩部署有间接关系；按层稀疏分配属于初步结果。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.25941" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

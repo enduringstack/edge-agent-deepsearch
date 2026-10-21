@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SharQ: Bridging Activation Sparsity and FP4 Quantization for LLM Inference</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-25 · Haoqian Meng; Yilun Luo; Yafei Zhao; Wenyuan Liu; Huaqing Zheng; Xindian Ma; Peng Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把激活稀疏和 FP4 低精度结合起来压缩大模型推理时的激活值。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">免训练方案，在线把激活拆成稀疏和稠密两路：先按输入自适应生成 N:M 掩码抽出由离群值主导的稀疏骨干并量化成 FP4，再相对这个已量化骨干定义稠密残差；稀疏 FP4 GEMM 算骨干，稠密 FP4 GEMM 补偿掩码损失和稀疏路量化误差，两路共享同一份 FP4 权重、只是缩放视图不同。</span></div>
-<div class="score-reason">评分依据：低比特加稀疏是端侧与边缘加速器的通用技术栈，有直接迁移价值，但原文针对的是支持 FP4 与 N:M 的现代加速器、未涉及端侧部署，相关度按可迁移工作计；把稀疏化损失和量化误差放进同一个残差补偿里，设计上比简单叠加两种压缩更讲究。</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-06-25 · Haoqian Meng; Yilun Luo; Yafei Zhao; Wenyuan Liu; Huaqing Zheng; Xindian Ma; Peng Zhang / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span><span class="tag">硬件:GPU</span><span class="tag">模型:Qwen</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">新一代加速器同时支持 FP4 低比特和 N:M 半结构化稀疏，但大模型激活里的离群值让两者很难叠加使用。SharQ 是一种无需训练的推理方法，把激活拆成稀疏主干和稠密残差，同时吃到稀疏和 FP4 的收益。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Llama-3.1-8B、Qwen2.5-7B、Qwen3-30B-A3B 和 Qwen3-VL-8B 上，找回了 NVFP4 与 FP16 之间 43%–63% 的精度差距，并适用于 NVFP4、HiF4、MXFP4 格式；在 RTX 5090 上延迟比 FP16 降低 2.2–2.4 倍、吞吐比 FP8 高 1.2–1.4 倍，配合 SageAttention 让 Wan2.2-T2V-A14B 视频生成最高提速 1.58 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">对每个激活张量在线生成输入自适应的 N:M 掩码，抽出离群值主导的稀疏主干并量化为 FP4；稠密残差相对“量化后的”稀疏主干计算，由稠密 FP4 矩阵乘补偿掩码丢失和量化误差；两条路径共享同一份 FP4 权重，并用融合算子吸收掩码生成、残差构造和层归一化。</span></div>
+<div class="score-reason">评分依据：低比特加稀疏是边缘加速器的通用技术栈，且在消费级 RTX 5090 上实测，有直接迁移价值，但没有移动端或 NPU 部署，相关度中等；稀疏-稠密分解让两种压缩互相补偿的思路新颖，无需校准且已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.26587" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

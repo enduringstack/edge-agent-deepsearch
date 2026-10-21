@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Federated Temporal Attention Intelligence for Cyber-Resilient IoMT: Lightweight Digital Twins and PPO-Driven Honeypot Deception</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-06-19 · Syed Zeeshan Haider; Anwar Shah; Muneeb Arif; Hamza Iftikhar; Waqas Ali / arXiv</div>
+<div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span>  2026-06-19 · Syed Zeeshan Haider; Anwar Shah; Muneeb Arif; Hamza Iftikhar; Waqas Ali / arXiv</div>
 <div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span><span class="tag">应用:安全</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用轻量数字孪生加联邦强化学习，给医疗物联网做威胁识别和蜜罐诱骗。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">四个互补机制：一个建在 GRU 骨干上、带学习出的时序自注意力的时序注意力编码器做流级威胁分类；轻量的 LSTM 数字孪生只在正常类流量上训练，为每台设备产出异常分数并通过学习出的 sigmoid 耦合去调节分类器；联邦的近端策略优化智能体根据七维状态在放行、隔离和蜜罐重定向之间选择；智能蜜罐层则把被重定向的可疑流量转化成可操作的威胁情报。</span></div>
-<div class="score-reason">评分依据：面向资源受限医疗设备在严格时延与隐私约束下的防御，轻量数字孪生与联邦训练均指向端侧，相关度中等；与同组另一篇方案高度同构，主要差别在编码器与强化学习算法的选型，增量贡献有限。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">医疗物联网设备算力有限、时延要求严、数据又受隐私法规约束，难以部署传统入侵防御。本文提出把轻量数字孪生、联邦强化学习和蜜罐诱骗组合起来的隐私保护防御框架 LDT-FRL。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 CICDDoS 2019 和 TON-IoT 上测试准确率分别为 99.66% 和 99.95%，宏 F1 为 0.9913 和 0.9995，收敛速度比 DTFL-CD 基线快 81%，在极不均衡的中间人攻击类上 F1 达到 1.000。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用带时间自注意力的 GRU 编码器做流量分类，每台设备的 LSTM 数字孪生给出异常分数并门控分类器；联邦 PPO 智能体在放行、隔离、导向蜜罐三种动作中选择，联邦聚合按各客户端验证损失加权以应对非独立同分布数据。</span></div>
+<div class="score-reason">评分依据：场景是资源受限的医疗物联网，但工作重心是安全检测算法，未做设备端部署或推理开销测量，与端侧 AI 只有宽泛关联；属多个已有组件的堆叠，与同组另一篇高度同构。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.21422" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

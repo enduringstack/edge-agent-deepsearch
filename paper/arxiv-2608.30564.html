@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Q-Strata: Hierarchical Bit Allocation for Mixed-Precision Quantization of Mixture-of-Experts LLMs</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-08-31 · Deokjae Lee; Sihun Chu; Hyun Oh Song / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:MoE</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">混合精度量化要给每个线性层分配比特数，MoE 模型每个块里有一堆专家，搜索空间大到没法穷举；Q-Strata 把它拆成两级。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">内层用廉价代理为每个块缓存一条不同预算下的帕累托前沿候选，外层只需为每个块设定一个预算、并用组装后量化模型上的模型级目标来评估，从而把搜索从逐层选比特缩减成逐块选预算。</span></div>
-<div class="score-reason">评分依据：MoE 加混合精度量化是把大模型塞进受限内存的常见组合，对端侧部署有迁移价值，但实验面向通用推理，端侧契合度中等。双层分配是搜索空间压缩的合理设计，属于常见优化路线。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-08-31 · Deokjae Lee; Sihun Chu; Hyun Oh Song / EMNLP 2026</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:MoE</span><span class="tag">模型:Mistral</span><span class="tag">模型:Qwen</span><span class="tag">模型:DeepSeek</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">MoE 大模型每个专家都有自己的线性层，混合精度量化要给每层选位宽，搜索空间爆炸；Q-Strata 用两级分配把问题缩小，并直接优化整模型的量化损失。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">Mixtral-8x7B 在平均 2.0 bit 时 WikiText2 困惑度 6.90，低于 MxMoE 的 8.03 和均匀 GPTQ 的 11.37（BF16 为 3.88）；1.75 bit 时为 12.14，MxMoE 为 25.20；在 Qwen1.5-MoE 和 DeepSeek-V2-Lite 上同样领先。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">内层用廉价代理指标为每个 MoE 块缓存一条“预算-质量”帕累托前沿，外层只需给每个块定一个预算，并在组装好的量化模型上直接评估整体目标，捕捉块与块之间的耦合。</span></div>
+<div class="score-reason">评分依据：极低比特 MoE 量化直接关系到大 MoE 模型能否装进内存受限的设备。两级分配方法设计扎实，但仍属于混合精度量化的改进型工作；代码已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.30564" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

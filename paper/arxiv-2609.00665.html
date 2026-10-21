@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Triple-Bottom-Line Sustainability of Language Models for Edge AI: A Comparison Between SLMs and Quantized LLMs</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-09-01 · Jainil Dharmil Shah / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:量化</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">端侧选模型时大家往往只盯一个指标，这篇问的是：原生小模型和量化压缩后的大模型，哪个才是更可持续的端侧选择。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">提出一个可复现的整体可持续性评分，按三重底线组织：经济支柱看能力和系统效率，环境支柱看能耗，再加上准确率、时延、内存、能耗和安全五个维度一起权衡。</span></div>
-<div class="score-reason">评分依据：问题就是端侧模型选型，把准确率、时延、内存、能耗和安全五项一起纳入评估，正对端侧部署的真实决策，端侧契合度很高。贡献是评分框架，方法创新度一般。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-09-01 · Jainil Dharmil Shah / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:评测基准</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:安全隐私</span><span class="tag">模型:Qwen</span><span class="tag">模型:Phi</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">边缘部署选模型时，到底用原生小模型，还是把大模型量化后再用？这篇研究用一个同时考虑能力、效率、能耗和安全的综合可持续分来比较。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 30 个配置中，Qwen3-30B-A3B 的 GGUF Q4 版综合分 93.38 排第一，Mistral-Small-24B GGUF Q4 为 92.40，最好的原生小模型 Phi-4-mini BF16 为 89.49；GGUF Q4 平均几乎不损能力（0.524 对 0.525），吞吐从 22.74 提到 95.50 tokens/s，能耗从 12.10 降到 5.28 J/token。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">五个 BF16 小模型和五个大模型的 BF16、INT8、NF4、GPTQ 4bit、GGUF Q4 版本，统一测五个零样本基准、时延、吞吐、峰值显存、能耗和有害提示攻击成功率，再按经济、环境、社会三支柱合成总分。</span></div>
+<div class="score-reason">评分依据：问题直接针对边缘模型选型，但所有测量都在 A100 80GB 上完成，没有真实边缘设备，结论对端侧的外推有限。属于评测型工作，贡献在综合评分框架。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.00665" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

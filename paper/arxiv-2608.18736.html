@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FedLNS: Leverage LayerNorm Signature Modeling to Mitigate Adversarial Manipulation in Federated LLMs</h1>
 <div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-08-19 · Kai Li; Jong-Ik Park; Carlee Joe-Wong; Wei Ni; Falko Dressler / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">联邦训练语言模型时，服务器没法直接检查客户端的训练过程，这篇提出一种在服务器端识别恶意客户端更新的轻量筛查方法。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把每个客户端更新表示成归一化层可训练参数的变化「签名」，再跟一个带历史记忆的跨客户端参考做比对来筛可疑更新；签名在服务器端从回传模型里提取，不需要额外通信。</span></div>
-<div class="score-reason">评分依据：联邦学习安全属于端侧协同训练的相邻技术栈，但工作本身没有设备端部署证据，相关度按中等计；方法是签名筛查的常规思路。</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">FedLNS 是联邦训练语言模型时的服务器端防投毒方法：靠观察每个客户端上传更新里归一化层参数的变化，筛掉被恶意篡改的更新。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">200 个客户端、40% 恶意的设定下，IID 数据时相对最强基线把测试困惑度降低 11.59%（GPT/WikiText 从 1449.72 到 1281.63）、3.88%（BERT）和 4.98%（LLaMA/StackOverflow 从 228.52 到 217.14），非 IID 下同样优于 6 个基线。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把归一化层参数变化当成客户端的“签名”，与跨客户端、带历史的稳健参考比对，可疑的就剔除，剩下的照常聚合；不需额外通信、原始数据或单独训练的检测器。</span></div>
+<div class="score-reason">评分依据：联邦学习涉及分散设备，但本文在服务器端做筛选、模型从头训练，端侧相关度低；用归一化层做轻量签名有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.18736" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

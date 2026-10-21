@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TEE-X: TEE-aware Acceleration Framework for Large Vision Models at the Edge</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-08-24 · Kurt M Wilson; Mohaiminul Al Nahian; Abeer Matar A. Almalky; Sadat Shahriyar; Souvik Kundu; Zhishan Guo; Abdullah Al Arafat; Adnan Siraj Rakin / arXiv</div>
-<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:高效推理</span><span class="tag">方向:编译部署</span><span class="tag">方向:多模态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">把大视觉模型放进可信执行环境能防模型被窃取和篡改，但 TEE 内存小、延迟高，这篇专门解决边缘场景下的这两个问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">围绕 TEE 的内存约束和额外时延，为 Vision Transformer 一类大视觉模型设计感知 TEE 的加速框架，把执行从白盒威胁模型推向黑盒一侧。</span></div>
-<div class="score-reason">评分依据：面向时延敏感的边缘视觉应用做 TEE 内加速，端侧相关性高；属于安全执行与推理优化的结合，方法创新中等。</div>
+<div class="meta"><span class="score">14</span> <span class="tier company">公司项目</span>  2026-08-24 · Kurt M Wilson; Mohaiminul Al Nahian; Abeer Matar A. Almalky; Sadat Shahriyar; Souvik Kundu; Zhishan Guo; Abdullah Al Arafat; Adnan Siraj Rakin / arXiv</div>
+<div class="tags"><span class="vendor-tag">Intel</span><span class="tag">方向:安全隐私</span><span class="tag">方向:高效推理</span><span class="tag">方向:编译部署</span><span class="tag">硬件:Jetson</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把视觉 Transformer 整个放进可信执行环境（TEE）里跑，既能保护模型机密又容易慢得不可用。TEE-X 让边缘设备在 TEE 内跑 ViT 也能接近 GPU 的速度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 NVIDIA Jetson AGX Xavier 的 Arm TrustZone（OP-TEE）上，DeiT-Small（CIFAR-10）模型从 82.66 MB 压到 1.75 MB（约 47 倍），准确率从 97.29% 降到 94.64%，平均推理 957 ms，略快于 GPU 基线的 1022 ms，TEE 内峰值内存仅 10.13 MB；较保守的设置下准确率损失低于 1%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按各层敏感度分配计算预算，把权重分解成低秩变换模块，只在 TEE 内存储变换后的小权重；再用 Arm Neon SIMD 指令做向量化乘加，弥补 TEE 里没有 GPU 的差距。</span></div>
+<div class="score-reason">评分依据：真机在 Jetson AGX Xavier 的 TrustZone 上部署并给出时延、内存和精度，端侧相关性高；敏感度感知分解加 TEE 向量化的组合有实用价值。公司归属依据 arXiv HTML/PDF 首页：第 5 作者 Souvik Kundu 署名 Intel。 作者机构依据：arXiv PDF 首页署名 Intel（PDF 首页第 5 作者 Souvik Kundu 署名 Intel，其余作者为北卡州立、宾汉姆顿、佛罗里达国际大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.22716" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

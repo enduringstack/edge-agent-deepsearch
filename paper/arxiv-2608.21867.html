@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MemGuard: Persisting Verifier Signals for LLM-Agent Memory Governance</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-22 · Haoyu Wang; Guangyuan Dong; He Liang; Zijing Zhang; Jiachen Luo; Chuang Liu; Chao Xue; Hao Tang / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:安全隐私</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">智能体的可复用记忆要在几百轮交互后还靠谱才有用，这篇把校验器的打分从一次性过滤变成跟着记忆走的生命周期元数据。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">指出两种失效：一是失败轨迹、侥幸成功和误导性观察因为「看起来相关」被写进记忆；二是长期记忆库里重复、过期和互相冲突的记录靠检索修不好。做法是把多准则的打分校验转成奖励、置信度、标签和不确定性等持久化字段，用于后续的准入和治理。</span></div>
-<div class="score-reason">评分依据：记忆准入与漂移治理是端侧长期运行智能体的核心工程问题，迁移价值明确；把校验信号持久化的设计有新意。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-08-22 · Haoyu Wang; Guangyuan Dong; He Liang; Zijing Zhang; Jiachen Luo; Chuang Liu; Chao Xue; Hao Tang / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">MemGuard 解决智能体长期记忆被错误经验污染、越用越乱的问题：把验证器给出的打分长期保存在每条记忆上，在写入、检索、冲突处理和归档时反复使用。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Terminal-Bench 2.0、SWE-Bench Verified、WebArena、Mind2Web 和 4 个骨干模型共 16 种组合中全部拿到最高成功率和最少步数；相对最强基线 ReasoningBank，WebArena 成功率最多高 7.9 个百分点，Mind2Web 步成功率高 5.6 个百分点，终端和软件工程任务高 2.4-3.5 个百分点。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把多维度验证结果转成奖励、置信度、标签和不确定性等描述符附在候选记忆上，激活前筛选，之后在检索排序、冲突消解、摘要和归档时继续使用。</span></div>
+<div class="score-reason">评分依据：属于智能体记忆治理，与端侧部署没有直接关系；把验证信号作为记忆生命周期元数据的做法有新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.21867" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>
