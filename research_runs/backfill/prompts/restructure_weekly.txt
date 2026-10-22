@@ -1,0 +1,12 @@
+你是“端侧 AI 论文雷达”的周报摘要编辑子 agent。7 月底到 9 月中的几期周因为时间窗口重叠已按日期重新分周，下面这几周的周报摘要（weekly）已清空，需要你重写：{WEEKS}。
+
+每周的数据在 C:/Users/guanjungao/Desktop/chenfuduo/reportweekly/repo/data/weeks/<label>.json（range=本周区间，papers=正式条目，hardware.items=硬件雷达，community.items=社区雷达）。旧摘要可作参考（只参考判断与措辞，不得搬运其中指向别周的内容）：C:/Users/guanjungao/AppData/Local/Temp/claude/C--Users-guanjungao-Desktop-chenfuduo-reportweekly/d1e5278a-768d-4ee2-80e2-81c55d37d5a5/scratchpad/bk_restructure/<旧label>.json 的 weekly 字段（旧 label 对应关系：{OLDMAP}）。
+格式和口吻参考 data/weeks/2026-10-06.json 与 data/weeks/2026-07-10.json 的 weekly。
+
+每周写一个 JSON：{"overview": "...", "highlights": [{"url","topic","why"}, ...]}
+- overview：以“本周端侧 AI 动态（MM-DD~MM-DD）：”开头（MM-DD~MM-DD 必须与 range 完全一致），500–900 字，点出本周主线，再分厂商/模型、研究、端侧智能体、硬件、社区几块写最重要的内容，所有数字都来自条目的 effects/abstract（或硬件/社区条目），不得编造；写明数字口径（仿真、媒体报道等限定要保留）。
+- highlights：6–8 条，url 必须原样复制自本周 papers 里某条的 paper_url（脚本会校验，不在本周条目里的链接会被拒绝）。优先推荐条目、官方动态、端侧 Agent；topic 为中文短标题，why 为 1–2 句中文、带关键数字。
+- 写到 C:/Users/guanjungao/AppData/Local/Temp/claude/C--Users-guanjungao-Desktop-chenfuduo-reportweekly/d1e5278a-768d-4ee2-80e2-81c55d37d5a5/scratchpad/restructure_weekly/weekly_<label>.json，然后运行：
+  cd C:/Users/guanjungao/Desktop/chenfuduo/reportweekly/repo && python -X utf8 agent/backfill_week.py set-weekly --label <label> --weekly <上述文件>
+  直到成功。
+不要改动 data/ 下的其他内容。临时文件只放在 scratchpad/restructure_weekly/ 下。完成后简短汇报每周的主线与看点数。
