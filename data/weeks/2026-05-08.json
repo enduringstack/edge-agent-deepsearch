@@ -9255,6 +9255,42 @@
       "recommendation_reason": "",
       "arxiv_date_basis": "submitted",
       "arxiv_revision_note": ""
+    },
+    {
+      "id": "arxiv-2605.15336",
+      "title": "HoloMotion-1 Technical Report",
+      "title_zh": "人形机器人运动基础模型 HoloMotion-1",
+      "abstract": "地平线发布的人形机器人全身运动跟踪基础模型，用大量从网络视频重建的人体动作加动捕数据训练，目标是不针对具体任务微调就能让真机跟随各种动作，并能在机器人本体上实时运行。",
+      "effects": "在多个评测集的宏平均上，关键点位置误差 124.57 毫米，对比 Sonic 的 227.95、GMT 的 484.05；跟踪成功率 97.55%，Sonic 为 95.58%、GMT 为 92.54%。模型总参数约 4 亿、每个控制步只激活约 700 万，在机器人自带的嵌入式计算模块上以约 200–300 Hz 推理，嵌入式场景下时延约降低 4 倍；训练吞吐比滑窗 PPO 基线高约 22 倍。直接迁移到宇树 G1（29 自由度）真机，无需任务专门微调。",
+      "mechanism": "用稀疏激活的混合专家 Transformer（1024 个细粒度专家加 1 个共享专家、每个令牌选 2 个）做控制策略，推理时用键值缓存只算新帧，保证实时；训练时按整段动作序列而非滑动窗口优化，以适应长动作和视频重建数据中的噪声。",
+      "paper_url": "https://arxiv.org/abs/2605.15336",
+      "date": "2026-05-14",
+      "score": 14,
+      "score_relevance": 7,
+      "score_contribution": 7,
+      "score_reason": "控制策略直接跑在人形机器人自带的嵌入式计算模块上并给出 200–300 Hz 实测频率，属于机器人端侧部署（相关度 7，纯运动控制而非智能体闭环，故未给更高）。把稀疏混合专家和键值缓存推理搬到全身控制策略上，并在真机零微调迁移，方法与规模都有新意（贡献 7）。作者机构依据：arXiv 论文首页全部 10 位作者署名 Horizon Robotics，通讯邮箱为 horizon.auto 域名。",
+      "source_tier": "公司项目",
+      "open_source": true,
+      "tags": [
+        "方向:MoE",
+        "方向:KV cache",
+        "方向:模型架构",
+        "应用:机器人"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Maiyue Chen; Kaihui Wang; Bo Zhang; Xihan Ma; Zhiyuan Yang; Yi Ren; Qijun Huang; Zihao Zhu; Yucheng Wang; Zhizhong Su",
+      "vendors": "Horizon Robotics",
+      "affiliation_evidence_url": "https://arxiv.org/pdf/2605.15336",
+      "candidate_source": "",
+      "candidate_ref": "",
+      "venue": "arXiv",
+      "recommendation": "推荐",
+      "recommendation_reason": "少见的把 4 亿参数混合专家控制模型真正放到人形机器人本体上实时跑的工作：每步只激活约 700 万参数、板载 200–300 Hz，跟踪成功率 97.55% 超过 Sonic，代码和模型已开源，做机器人端侧部署的团队可直接参考。",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": ""
     }
   ],
   "weekly": {
