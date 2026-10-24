@@ -7,9 +7,9 @@
 <h1>How Tolan builds voice-first AI with GPT-5.1</h1>
 <div class="meta"><span class="score">5</span> <span class="tier">官方动态</span>  2026-01-07 · OpenAI / OpenAI</div>
 <div class="tags"><span class="vendor-tag">OpenAI</span><span class="tag">方向:记忆</span><span class="tag">应用:语音</span><span class="tag">模型:GPT</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">OpenAI 介绍创业公司 Tolan 如何用 GPT-5.1 做语音优先的 AI 陪伴应用，重点是对话要快、要记得住用户。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">每轮对话实时重建上下文，并用记忆驱动的角色人格让对话更自然，模型推理在云端。</span></div>
-<div class="score-reason">评分依据：语音 Agent 的低延迟和记忆设计对端侧有参考意义，但推理完全依赖云端 GPT-5.1，属于宽泛相关；内容为客户案例，方法细节有限。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">OpenAI 客户案例：创业公司 Tolan 如何用 GPT-5.1 做语音优先的 AI 陪伴应用，重点是回应要快、角色要稳、要记得住用户。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">换用 GPT-5.1 和 Responses API 后，开口时延缩短 0.7 秒以上；记忆召回失误下降 30%，次日留存提升 20% 以上；记忆向量检索耗时低于 50 毫秒。应用月活超过 20 万。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每轮对话都从零重建上下文（近期消息摘要、角色卡、向量检索出的记忆、语气指引和实时应用信号），不依赖缓存提示；记忆用 text-embedding-3-large 嵌入存进 Turbopuffer，每晚压缩去重并消解矛盾。模型推理在云端。</span></div>
+<div class="score-reason">评分依据：语音智能体的低时延和记忆设计对端侧有参考意义，但推理完全依赖云端 GPT-5.1，属于宽泛相关；内容为客户案例，效果数字由客户自报。</div>
 <div class="source"><a href="https://openai.com/index/tolan" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

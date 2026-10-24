@@ -7,9 +7,9 @@
 <h1>The New Compiler Stack: A Survey on the Synergy of LLMs and Compilers</h1>
 <div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-01-05 · Shuoming Zhang; Jiacheng Zhao; Qiuchu Yu; Chunwei Xia; Zheng Wang; Xiaobing Feng; Huimin Cui / CCF Transactions on High Performance Computing</div>
 <div class="tags"><span class="tag">方向:编译部署</span><span class="tag">应用:代码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一篇关于“大模型 + 编译器”的综述，梳理大模型如何参与代码翻译、优化选择和编译器生成。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">按设计理念（选择器、翻译器、生成器）、大模型方法、代码抽象层级和任务类型四个维度建立分类体系，总结收益与挑战。</span></div>
-<div class="score-reason">评分依据：编译器是端侧部署的关键环节，但本文讨论的是用大模型辅助编译，而非为端侧推理编译，相关度较低；综述性质，贡献偏整理。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">一篇关于“大模型 + 编译器”的综述，梳理大模型如何参与代码翻译、编译优化选择、GPU 内核生成和编译器本身的生成。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">综述汇总的代表性进展：神经编译在 ExeBench 上的计算正确率从 91.72% 提升到 99% 以上；GPU 内核生成方面 CUDA-L1 在 250 个任务中 249 个正确，平均比 torch eager 快 3.12 倍；LLVM IR 代码体积优化相对 -Oz 的缩减从 3.01% 提高到 8.46%（Compiler-R1）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按设计理念（选择器、翻译器、生成器）、大模型方法、代码抽象层级和任务类型四个维度建立分类体系，并对比各方向的评测基准与最新进展。</span></div>
+<div class="score-reason">评分依据：编译器是部署的关键环节，GPU 内核生成也和推理效率有关，但本文讨论的是用大模型辅助编译而非为端侧推理编译，相关度较低；综述性质，数字均引自他人工作。作者来自中科院计算所和利兹大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2601.02045" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

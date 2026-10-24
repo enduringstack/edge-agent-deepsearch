@@ -9,7 +9,7 @@
 <div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:工具调用</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">微软 Cosmos DB 团队的教程：用官方 MCP Go SDK 写一个 MCP 服务器，把数据库操作暴露成大模型可调用的工具。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">结合 Azure Go SDK 与 MCP Go SDK（v1.2.0），讲解工具、服务器等 MCP 基本概念，并演示把查询、读写等数据库操作注册为工具。</span></div>
-<div class="score-reason">评分依据：MCP 是 Agent 工具调用的通用协议，运行位置不限，但本文面向云数据库，端侧相关度低；属于入门教程，没有新方法。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">结合 Azure Cosmos DB Go SDK 与 MCP Go SDK，用 AddTool 把查询、读写等数据库操作注册为工具，通过可流式 HTTP 处理器对外提供服务，并用本地模拟器写集成测试。</span></div>
+<div class="score-reason">评分依据：MCP 是智能体工具调用的通用协议，运行位置不限，但本文面向云数据库，端侧相关度低。属于入门教程，原文只有示例代码、没有任何量化结果。</div>
 <div class="source"><a href="https://devblogs.microsoft.com/cosmosdb/build-ai-tooling-in-go-with-the-mcp-sdk-connecting-ai-apps-to-databases/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

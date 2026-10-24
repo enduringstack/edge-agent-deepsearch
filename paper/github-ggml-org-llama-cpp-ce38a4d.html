@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">llama.cpp 的高通 Hexagon 后端此前只能在安卓上用，这次合入的改动让它能在骁龙 Windows 笔记本（Windows on Snapdragon）上把大模型计算卸载到 Hexagon NPU。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">重构了 Hexagon 驱动层，改为运行时动态加载 CDSP 驱动接口，补齐 Windows 下 NPU 算子库的 .cat/.inf 签名打包流程，并附上 PowerShell 构建、跑分和命令行脚本；同时修复了 gpt-oss 需要更大前瞻窗口时的权重复用逻辑。</span></div>
-<div class="score-reason">评分依据：这是端侧推理引擎直接打通 PC 端 NPU 的改动，llama.cpp 用户可在骁龙 Windows 笔记本上用 Hexagon NPU 跑本地大模型，端侧相关度高；属于工程移植与驱动整合，原文未给性能数字。</div>
+<div class="score-reason">评分依据：这是端侧推理引擎直接打通 PC 端 NPU 的改动，llama.cpp 用户可在骁龙 Windows 笔记本上用 Hexagon NPU 跑本地大模型，端侧相关度高；属于工程移植与驱动整合。提交说明和 PR 只列功能与已知问题（多会话偶发不稳定），没有性能数字，因此效果写未报告。</div>
 <div class="source"><a href="https://github.com/ggml-org/llama.cpp/commit/ce38a4db478b90542874cd4af5cb48b3a0fcf311" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

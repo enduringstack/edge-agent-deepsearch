@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">苹果开源的机器学习框架 MLX 发布 0.30.5 小版本，主要是修复和调优：修正 iPhone 上 NAX 相关的判断条件和溢出问题，调整 Metal 矩阵乘的分块策略，同时改进 CUDA 后端在不同硬件上的兼容性。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">在 Metal 后端重新调优 split-k 矩阵乘的派发条件与分块大小；修复 iPhone 上的 NAX 判断条件和 NAX 溢出；CUDA 后端在没有 CPU/GPU 一致性或不支持托管内存的硬件上回退到其他实现，并针对 B200、H100 调整 CUDA Graph 大小；另修正因果掩码对齐和 ALiBi 斜率计算。</span></div>
-<div class="score-reason">评分依据：MLX 是在苹果芯片的 Mac 和 iPhone 上跑模型的主力框架，本版有 iPhone 与 Metal 后端的修复和调优，与端侧推理直接相关。改动均为小修小补，没有新功能，贡献较低。</div>
+<div class="score-reason">评分依据：MLX 是在苹果芯片的 Mac 和 iPhone 上跑模型的主力框架，本版有 iPhone 与 Metal 后端的修复和调优，与端侧推理直接相关。改动均为小修小补，没有新功能，贡献较低。发布说明只列出改动清单，没有给出任何性能或评测数字，因此效果写未报告。</div>
 <div class="source"><a href="https://github.com/ml-explore/mlx/releases/tag/v0.30.5" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

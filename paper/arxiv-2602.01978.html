@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-02-02 · Roel Koopman; Sebastian Otte; Sander Bohté / arXiv</div>
 <div class="tags"><span class="tag">方向:SNN</span><span class="tag">硬件:神经形态</span><span class="tag">方向:端侧训练</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">脉冲神经网络很省电，但在细时间粒度下很难训练，也不好映射到神经形态芯片上。这篇提出一种带内部递归记忆的新脉冲神经元 SpikingGamma，可以在线、精确地学习时间模式。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">神经元内部用递归记忆结构保存时间信息，配合 sigma-delta 脉冲编码，使误差可以直接反传而不需要替代梯度，且对时间分辨率不敏感。</span></div>
-<div class="score-reason">评分依据：脉冲网络是端侧低功耗推理的相邻方向，论文明确面向神经形态硬件映射，但没有真机部署结果；免替代梯度的在线训练思路有一定新意。</div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在线训练下，DVS Gesture 用 2000 帧达到 92.30%（两层全连接）和 95.08%（4 层卷积），高于 FPTT 的 91.28%（峰值）；SHD 用 250 帧达到 92.81%，远高于 OTTT/OSTL/OTPE 的 70.6%～75.4% 和 DECOLLE 的 62.01%，接近离线 BPTT 训练的 SE-adLIF（93.79%）；SSC 达到 75.63%。帧数增加时精度保持稳定、内存基本恒定，而 FPTT、ES-D-RTRL 明显退化或崩溃。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">神经元内部用一组“桶”式递归记忆保存时间信息，配合 sigma-delta 脉冲编码，使误差可以直接反传而不需要替代梯度，训练成本与时间分辨率无关，便于按芯片真实时序做细粒度仿真训练。</span></div>
+<div class="score-reason">评分依据：脉冲网络是端侧低功耗推理的相邻方向，论文明确面向神经形态硬件映射，但没有真机部署结果（相关度 4）；免替代梯度、内存不随时间步增长的在线训练有一定新意（贡献 6）。作者来自荷兰 CWI 和吕贝克大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.01978" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-01-24 · Yoonsang Kim; Yalong Yang; Arie E. Kaufman / IEEE VRW 2026</div>
 <div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">一个戴在头上的 AR 助手，把用户每次提问连同时间、地点、活动一起记成“记忆”，下次遇到相似场景时主动把相关信息显示出来。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用多模态大模型生成场景描述和记忆，用 CLIP 向量检索相似记忆，在时空活动匹配时主动在 AR 里展示。</span></div>
-<div class="score-reason">评分依据：原型跑在 Meta Quest 3 头显上，但记忆生成和大模型调用都卸载到远程服务器（GPT-4o、Gemini），头显只是入口，不算端侧智能体（相关度 4）。主动式空间记忆的交互设计有新意，但只做了初步用户反馈（贡献 5）。</div>
+<div class="field"><span class="label">有什么结果</span><span class="text">场景和活动识别的 F1 都是 0.82，遇到运动模糊或弱光时分别降到 0.57 和 0.30；9 名参与者在 2 到 4 天里用了 25 次、共 435 分钟，产生 196 条记忆，用户反馈以定性评价为主。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">头显画面先由 GPT-4o 转成场景文字描述，再用 CLIP 做向量检索匹配相似的“时空活动”记忆，识别置信度低时改用 Gemini 2.0 Flash 兜底，匹配上就在 AR 里主动显示最新信息。</span></div>
+<div class="score-reason">评分依据：原型跑在 Meta Quest 3 头显上，但记忆生成和大模型调用都在远程服务器（GPT-4o、Gemini），头显只是入口，不算端侧智能体（相关度 4）。主动式空间记忆的交互设计有新意，但只做了 9 人的初步试用（贡献 5）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2601.17622" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

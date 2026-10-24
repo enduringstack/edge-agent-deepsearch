@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">9</span> <span class="tier">官方动态</span>  2026-01-07 · Qualcomm / Qualcomm</div>
 <div class="tags"><span class="vendor-tag">Qualcomm</span><span class="tag">方向:端云协同</span><span class="tag">硬件:NPU</span><span class="tag">应用:机器人</span><span class="tag">方向:编译部署</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">高通开发者博客讲解多传感器 IoT 系统怎么搭、怎么扩：传感器、数据汇聚、AI 推理和联网组成一套可复用的栈。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用 Qualcomm Sensing Hub 统一低功耗传感接入，在 Dragonwing 平台本地跑 1B–3B 小模型、异常检测和视觉 SLAM，大模型按时延与功耗需要卸载到云端。</span></div>
-<div class="score-reason">评分依据：直接面向嵌入式端侧推理和端云卸载的工程指南，可迁移性好；属于方法汇总，没有新技术。</div>
+<div class="field"><span class="label">有什么结果</span><span class="text">没有实测结果，只给出平台规格：开发板本地可跑 1B–3B 参数的小模型，7B、14B 等更大模型放云端；中端 QCS6490 最多接 5 路摄像头，高端 IQ9 最多 16 路，单系统可从 5 个扩到 15 个以上传感器。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 Qualcomm Sensing Hub 统一低功耗传感接入，上层叠加 ROS；在 Dragonwing 平台本地跑小模型、异常检测和视觉 SLAM，由 Hexagon NPU 和传感器 DSP 承担常驻负载，大模型按时延与功耗需要卸载到云端。</span></div>
+<div class="score-reason">评分依据：直接面向嵌入式端侧推理和端云卸载的工程指南，可迁移性好；属于方法汇总，没有新技术和评测数据。</div>
 <div class="source"><a href="https://www.qualcomm.com/developer/blog/2026/01/multi-sensor-iot-architecture-inside-stack-how-to-scale" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

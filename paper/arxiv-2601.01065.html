@@ -7,9 +7,9 @@
 <h1>Tiny Machine Learning for Real-Time Aquaculture Monitoring: A Case Study in Morocco</h1>
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-01-03 · Achraf Hsain; Yahya Zaki; Othman Abaakil; Hibat-allah Bekkar; Yousra Chtouki / IEEE GCAIoT 2024</div>
 <div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">应用:fault-detection</span><span class="tag">硬件:MCU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">水产养殖靠人工巡检水质既慢又费人。这篇探讨用低功耗边缘设备加 TinyML 实时监测 pH、温度、溶解氧、氨氮等指标并自动告警。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">水产养殖靠人工巡检水质既慢又费人。这篇以摩洛哥 Azrou 国家鱼类养殖中心为案例，提出用低功耗边缘设备加 TinyML 实时监测 pH、温度、溶解氧、氨氮等指标并自动告警。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在边缘设备上接入多种水质传感器，用 TinyML 模型做异常检测和告警，并讨论传感器选型、算法设计和硬件约束。</span></div>
-<div class="score-reason">评分依据：属于 TinyML 在边缘设备上的落地场景，端侧相关；但主要是可行性探讨，没有给出量化实验结果，贡献有限。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 Arduino 采集多种水质传感器数据，部署此前在鱼菜共生数据上预训练的 CNN 预测模型，每小时预测一次关键指标；预测值超出最优范围时通知工作人员并驱动执行器，同时保留一键停机。</span></div>
+<div class="score-reason">评分依据：属于 TinyML 在边缘设备上的落地场景，端侧相关；但这是方案设计论文，实物原型尚未部署，CNN 优于 LSTM/GRU 的结论只以图表形式引自作者早前工作，正文没有量化结果，故效果写未报告。</div>
 <div class="source"><a href="https://arxiv.org/abs/2601.01065" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

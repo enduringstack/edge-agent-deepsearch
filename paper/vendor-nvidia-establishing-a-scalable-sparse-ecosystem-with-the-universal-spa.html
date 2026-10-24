@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">NVIDIA 提出“通用稀疏张量”（UST），把张量的稀疏性和它在内存中的存储格式解耦，让开发者用一套描述语言定义各种稀疏格式，不必为每种格式手写代码。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">用一种领域描述语言把张量的逻辑维度映射到物理存储层级，每层可设为稠密、压缩、单例或区间等类型，从而统一表达 CSR、CSC、COO、DIA、BSR 以及三维的 CSF 等格式，也能自定义新格式；运行时根据所选格式分派到优化库或自动生成代码，并可与 SciPy、CuPy、PyTorch 的稀疏张量互通。</span></div>
-<div class="score-reason">评分依据：稀疏计算能省存储、算力和功耗，对资源受限设备上的稀疏推理有迁移价值，但本文面向通用 GPU 科学计算。统一稀疏格式的抽象有一定新意，贡献中等。</div>
+<div class="score-reason">评分依据：稀疏计算能省存储、算力和功耗，对资源受限设备上的稀疏推理有迁移价值，但本文面向通用 GPU 科学计算。统一稀疏格式的抽象有一定新意，贡献中等。原文是教程或开发指引，只描述搭建步骤，没有报告量化结果，因此效果写未报告。</div>
 <div class="source"><a href="https://developer.nvidia.com/blog/establishing-a-scalable-sparse-ecosystem-with-the-universal-sparse-tensor/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

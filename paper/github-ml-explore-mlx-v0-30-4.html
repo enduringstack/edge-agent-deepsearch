@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">苹果机器学习框架 MLX 的新版本，重点提升长上下文注意力速度，并继续补强 CUDA 后端。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">在 Metal 后端重写了向量化的融合分组查询注意力内核，加快长上下文推理；CUDA 后端加入多项大模型推理提速、稠密 MoE 支持，并改善对 4090、5090 等消费级显卡的适配。</span></div>
-<div class="score-reason">评分依据：MLX 是 Apple Silicon 电脑上本地跑大模型的主流框架，长上下文注意力提速直接惠及本地推理；本次为常规版本迭代，原文未给量化提速数字。</div>
+<div class="score-reason">评分依据：MLX 是 Apple Silicon 电脑上本地跑大模型的主流框架，长上下文注意力提速直接惠及本地推理；本次为常规版本迭代。发布说明和对应的注意力内核改动只写“明显更快”，并针对 M3 Ultra、M4 Max、M5 调了分块大小，没有给出提速数字。</div>
 <div class="source"><a href="https://github.com/ml-explore/mlx/releases/tag/v0.30.4" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

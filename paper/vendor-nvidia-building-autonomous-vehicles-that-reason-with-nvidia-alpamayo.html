@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Building Autonomous Vehicles That Reason with NVIDIA Alpamayo</h1>
 <div class="meta"><span class="score">10</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-01-05 · NVIDIA / NVIDIA</div>
-<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:多模态</span><span class="tag">方向:蒸馏</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">NVIDIA 介绍 Alpamayo：一套面向会推理的自动驾驶的开放模型、仿真工具和数据集，核心是 100 亿参数的推理型视觉-语言-动作模型 Alpamayo 1。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">Alpamayo 1 在输出轨迹预测的同时给出推理过程，并配合大规模多地域驾驶数据集和闭环仿真进行评测，开发者可再蒸馏到车端小模型。</span></div>
-<div class="score-reason">评分依据：模型面向汽车，但 10B 规模主要作为教师模型，需蒸馏后才上车，且属于视觉-语言-动作模型而非智能体闭环；开放推理型 VLA 有一定新意。</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:多模态</span><span class="tag">方向:蒸馏</span><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">NVIDIA 技术博客介绍 Alpamayo：一套面向会推理的自动驾驶的开放模型、数据集和闭环仿真工具，核心是 100 亿参数、能边出轨迹边写推理过程的视觉-语言-动作模型 Alpamayo 1。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">配套驾驶数据集共 1727 小时、31 万多段 20 秒片段，覆盖 25 个国家和 2500 多个城市；AlpaSim 首批带约 900 个重建场景。NVIDIA 称把 AlpaSim 仿真轨迹纳入评估后，真实道路关键指标的方差最多降低 83%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">Alpamayo 1 以多路摄像头视频为输入，同时输出预测轨迹和文字推理；AlpaSim 把渲染、交通、控制和驾驶模型拆成独立微服务并做流水线并行，提高闭环评测吞吐。</span></div>
+<div class="score-reason">评分依据：面向汽车，但 10B 模型主要作为教师模型，需要蒸馏后才能上车，且属于视觉-语言-动作模型而非智能体闭环，端侧相关度中等；开放推理型 VLA 加数据集加闭环仿真的组合有一定新意。</div>
 <div class="source"><a href="https://developer.nvidia.com/blog/building-autonomous-vehicles-that-reason-with-nvidia-alpamayo/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

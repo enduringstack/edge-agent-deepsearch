@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-01-29 · Junhao He; Feiran You; Hongyang Du / arXiv</div>
 <div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:端云协同</span><span class="tag">硬件:Jetson</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">StarSD 让一个草稿模型同时为多台机器上的多个目标模型做投机解码，避免每个目标模型都配一个草稿模型而浪费算力和显存。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">用 EAGLE-2 作后端在 MT-Bench 上测：单机 EAGLE 吞吐 94.3 token/s；StarSD 一个草稿模型服务 1 到 6 个目标模型时，系统吞吐从 79.9 升到 288.7 token/s，草稿端利用率从 33% 升到 99.6%（4 张 RTX 4090 加 3 张 A100、跨两台服务器）。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">采用星形拓扑把起草和验证解耦，草稿计算在多个验证节点间共享，并分析一个草稿模型何时能被多个验证者充分利用；实验覆盖 A100 集群以及 Jetson 与 PC 的混合部署。</span></div>
-<div class="score-reason">评分依据：主要面向多加速器集群，但也在 Jetson 与 PC 的异构混合部署上做了实验，对端边协同投机解码有参考价值；一对多共享草稿的设计较实用。</div>
+<div class="score-reason">评分依据：主要面向多加速器集群，也演示了 Jetson 与 PC 的异构混合部署，但量化结果来自服务器 GPU，对端边协同投机解码有参考价值（相关度 5）；一对多共享草稿的设计较实用（贡献 5）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2601.21622" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

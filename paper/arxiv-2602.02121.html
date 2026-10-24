@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TriCloudEdge: A multi-layer Cloud Continuum</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-02-02 · George Violettas; Lefteris Mamatas / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">硬件:MCU</span><span class="tag">方向:联邦学习</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">TriCloudEdge 是一个三层“云-边-端”连续体架构：最底层用廉价单片机做轻量 AI 任务，中间边缘节点做本地智能，云端负责大规模分析、联邦学习和身份管理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在三层之间对比了 WebSocket/MQTT/HTTP 多协议组合与统一的 Zenoh 协议传数据的资源与通信取舍，并在 ESP32 一类单片机上测试人脸检测等 AI 模型调整的计算负担。</span></div>
-<div class="score-reason">评分依据：最底层在 ESP32 单片机上实际运行 AI 任务，端侧语境明确；但整体是云边端架构与通信协议的工程整合，创新有限。第一作者署名 SYSGO GmbH。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-02-02 · George Violettas; Lefteris Mamatas / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">硬件:MCU</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">TriCloudEdge 是一个三层“云-边-端”连续体架构：最底层用几美元的 ESP32 单片机做人脸检测，中间 ESP32-S3 边缘节点做本地人脸识别，识别不了的再交给 AWS 云端分析。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 ESP32-CAM 上开启双核流水线并行后，连续处理 3000 张图的总耗时从 289.8 分钟降到 226.7 分钟（减少 21.8%），吞吐从 0.172 提升到 0.220 张/秒，CPU 平均利用率从 49.9% 提到 69.2%；单张人脸检测约 4.45 秒、边缘识别约 1.09 秒；并行后 Zenoh 吞吐提升 66.8%，WebSocket 只提升 4.1%，单图往返 11.55 秒对 13.61 秒；加入云端后时延平均增加约 25%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在单片机上把 SD 卡读图解码与 AI 推理拆到两个核心上流水执行，并用 1KB 分块协议传图；对比 WebSocket/MQTT/HTTP 多协议组合与统一的 Zenoh 协议在三层之间传数据的时延、吞吐和实现复杂度。</span></div>
+<div class="score-reason">评分依据：最底层在 ESP32 单片机上实际运行人脸检测并给出真机耗时，端侧语境明确（相关度 7）；但整体是云边端架构与通信协议的工程整合，创新有限（贡献 4）。论文附 GitHub 代码仓；PDF 首页脚注第一作者署名 SYSGO GmbH。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.02121" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

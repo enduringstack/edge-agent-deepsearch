@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Ontology-to-tools compilation for executable semantic constraint enforcement in LLM agents</h1>
 <div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-02-03 · Xiaochi Zhou; Patrick Bulter; Changxuan Yang; Simon D. Rihm; Thitikarn Angkanaporn; Jethro Akroyd; Sebastian Mosbach; Markus Kraft / arXiv</div>
-<div class="tags"><span class="tag">方向:工具调用</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">让大模型智能体在操作知识图谱时自动遵守领域本体约束。做法是把本体规范编译成智能体必须调用的工具。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在 The World Avatar 平台中把本体规格编译成可执行的工具接口，通过 MCP 交给智能体调用，在生成过程中就强制语义约束，而不是事后校验；以金属有机多面体合成文献抽取为例演示。</span></div>
-<div class="score-reason">评分依据：涉及智能体工具调用，但运行在云端科研平台，与端侧无关；属于原理验证，没有量化结果。</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">模型:GPT</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">让大模型智能体在搭建科研知识图谱时自动遵守领域本体约束。做法是把本体规范直接编译成智能体必须调用的工具。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在金属有机多面体合成文献抽取基准上，整体 micro-F1 为 0.826（精确率 0.844、召回率 0.808），合成步骤 F1 达 0.843，反应化学品精确率 1.000 但召回率只有 0.582；去掉约束反馈后合成步骤 F1 从 0.843 跌到 0.572，去掉外部工具后构建单元 F1 从 0.771 跌到 0。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 The World Avatar 平台里把本体规格自动编译成 MCP 工具接口，智能体只能通过这些工具创建和修改图谱实例，工具在生成过程中实时返回缺字段、单位、步骤顺序等约束反馈，而不是事后校验；底层调用 GPT-4.1/GPT-4o/GPT-5 等云端模型。</span></div>
+<div class="score-reason">评分依据：涉及智能体工具调用和约束反馈，但运行在云端科研平台，与端侧无关（相关度 2）；把本体编译为 MCP 工具的思路有一定新意，但属原理验证（贡献 4）。作者主要来自剑桥大学、CARES 等科研机构，代码称将在 GitHub 公开。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.03439" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

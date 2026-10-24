@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">5</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-01-28 · NVIDIA / NVIDIA</div>
 <div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:调度服务</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">NVIDIA Run:ai v2.24 推出按时间算账的公平调度，解决 Kubernetes 集群里大任务被源源不断的小任务饿死、拿不到超额 GPU 的问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">原文没有实测指标，只用一个 100 张 GPU 的集群示例说明：不开时间公平调度时，LLM 团队需要 60 张 GPU 的后训练任务被视觉团队持续占用的超额资源卡住；开启后该任务能被调度，两队资源随时间轮流均衡。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">基于开源 KAI Scheduler，记录各队列一段时间内的历史 GPU 用量，用得少的队列在分配超额资源时权重更高，从而在几天到几周尺度上按比例分配，同时保留保底配额和优先级。</span></div>
-<div class="score-reason">评分依据：纯数据中心 GPU 集群调度，与端侧推理和端侧智能体基本无关；属于调度策略的工程改进。</div>
+<div class="score-reason">评分依据：纯数据中心 GPU 集群调度，与端侧推理和端侧智能体基本无关；属于调度策略的工程改进，原文只有示例场景，没有实测数据。</div>
 <div class="source"><a href="https://developer.nvidia.com/blog/ensuring-balanced-gpu-allocation-in-kubernetes-clusters-with-time-based-fairshare/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

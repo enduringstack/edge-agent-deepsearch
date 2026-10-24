@@ -7,9 +7,9 @@
 <h1>Inside OpenAI’s in-house data agent</h1>
 <div class="meta"><span class="score">6</span> <span class="tier">官方动态</span>  2026-01-29 · OpenAI / OpenAI</div>
 <div class="tags"><span class="vendor-tag">OpenAI</span><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">应用:代码</span><span class="tag">模型:GPT</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">OpenAI 介绍内部自建的数据分析智能体：结合 GPT-5、Codex 和记忆能力，在海量数据集上推理，几分钟内给出可靠的分析结论。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">让模型调用 Codex 写代码查询和分析数据，并借助记忆积累对数据和业务的理解，减少重复摸索。</span></div>
-<div class="score-reason">评分依据：这是运行在云端的企业内部数据智能体，与端侧无直接关系；在记忆加代码工具的智能体设计上有一定参考。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">OpenAI 介绍内部自建的数据分析智能体：员工用自然语言提问，它在公司庞大的数据平台上自己找表、写 SQL、做分析，几分钟内给出结论。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">原文没有给出准确率或提效对比数字；只交代了它服务的平台规模：3500 多名内部用户、超过 600PB 数据、7 万个数据集。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">由 GPT-5 驱动，叠加六层上下文：表的使用记录、人工注释、用 Codex 读代码补全表含义、公司内部知识、跨会话记忆和运行时查询；问题不清楚时先追问，没回应就按合理默认值继续。</span></div>
+<div class="score-reason">评分依据：这是运行在云端的企业内部数据智能体，与端侧无直接关系；多层上下文加记忆的智能体设计有一定参考，但原文没有效果评测数字。</div>
 <div class="source"><a href="https://openai.com/index/inside-our-in-house-data-agent" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

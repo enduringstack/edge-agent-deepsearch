@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-01-13 · Anastasiia Butko; Artem Marisov; David I. Santiago; Irfan Siddiqi / arXiv</div>
 <div class="tags"><span class="tag">方向:编译部署</span><span class="tag">硬件:FPGA</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">超导量子比特的状态判读容易出错又耗时，多数只能离线完成；这篇把一个多层神经网络部署到 AMD Xilinx VCK190 的 AI Engine 上实现实时判读。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 AMD VCK190 上以 1250 MHz 运行时，神经网络判读内核时延 81.6 纳秒（同类 QubicML 方案报告 54 纳秒）；只占 0.25% 的 AI Engine 计算单元，估算功耗 0.593 瓦。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">利用 FPGA 内置的 AI Engine 专用加速单元跑神经网络，在线完成多比特状态判别，支持电路中途测量，同时节省 FPGA 逻辑资源。</span></div>
-<div class="score-reason">评分依据：属于神经网络在 FPGA 加速器上的实时推理部署，与端侧 AI 只是宽泛相关；应用场景是量子实验控制。</div>
+<div class="score-reason">评分依据：属于神经网络在 FPGA 内置 AI 加速单元上的实时推理部署，低时延、低功耗的嵌入式推理思路可参考，但应用场景是量子实验控制，与端侧 AI 只是宽泛相关；结果来自 AMD Vitis 仿真工具。PDF 首页作者 2 署名 System View Inc，主导单位为劳伦斯伯克利国家实验室。</div>
 <div class="source"><a href="https://arxiv.org/abs/2601.08213" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

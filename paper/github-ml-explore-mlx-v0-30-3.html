@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">苹果的 MLX 框架发布 0.30.3 补丁版，让 Mac 的 Metal 后端也能直接跑 nvfp4 和 mxfp8 两种新的低比特量化格式。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">在 CPU 和 Metal 上实现 nvfp4/mxfp8 量化算子并新增量化线性层，CUDA 上支持两个量化矩阵直接相乘；其余是 fp8 转换接口、分布式配置和发布流程修复。</span></div>
-<div class="score-reason">评分依据：MLX 是 Apple Silicon 上本地跑大模型的主力框架，新量化格式能直接降低本地推理的内存占用；但属于格式支持的跟进，没有新的方法。</div>
+<div class="score-reason">评分依据：MLX 是 Apple Silicon 上本地跑大模型的主力框架，新量化格式能直接降低本地推理的内存占用；但属于格式支持的跟进，发布说明只列改动、没有给出速度或内存数字。</div>
 <div class="source"><a href="https://github.com/ml-explore/mlx/releases/tag/v0.30.3" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

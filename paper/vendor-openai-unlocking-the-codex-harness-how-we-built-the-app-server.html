@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">OpenAI 工程博客：讲解 Codex 网页版、命令行、IDE 插件和桌面应用背后共用的智能体外壳，以及把它对外开放的 Codex App Server 协议，方便第三方把 Codex 嵌进自己的产品。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">App Server 是一个长驻进程，为每个会话起一个 Codex core 线程，通过双向 JSON-RPC 与客户端通信；协议把交互拆成条目、轮次、会话三层原语，支持流式进度、工具调用和差异展示，需要用户批准时由服务端反向发起请求并暂停当前轮次。</span></div>
-<div class="score-reason">评分依据：它清楚拆解了一个可在本机运行的智能体外壳（会话持久化、工具执行、沙箱、审批）该如何与界面解耦，对设计端侧智能体运行时有参考价值；但模型推理在云端，属于工程设计分享。</div>
+<div class="score-reason">评分依据：它清楚拆解了一个可在本机运行的智能体外壳（会话持久化、工具执行、沙箱、审批）该如何与界面解耦，对设计端侧智能体运行时有参考价值；但模型推理在云端，属于工程设计分享。原文是工程架构分享，没有给出性能或采用量等量化结果，因此效果写未报告。</div>
 <div class="source"><a href="https://openai.com/index/unlocking-the-codex-harness" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

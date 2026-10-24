@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-01-09 · Ruizhe Zhang; Xinke Jiang; Zhibang Yang; Zhixin Zhang; Jiaran Gao; Yuzhen Xiao; Tao Feng; Yue Fang / arXiv</div>
 <div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">中心化多智能体系统里，负责调度的中枢智能体在长任务中容易上下文膨胀、错误累积。StackPlanner 给它加上显式的任务记忆管理和可复用的协作经验记忆。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">用 Qwen2.5-3B 做中枢时，在 2WikiMultiHopQA、MuSiQue、GAIA、FRAMES 上 F1 分别为 32.92、16.48、7.71、16.23，高于或持平最强基线 ARPO（29.55、13.38、7.71、13.49）；换 Qwen2.5-7B 后为 38.34、22.01、9.45、19.44。同时去掉任务记忆和经验记忆，F1 在四个数据集上分别下降 15.80、9.05、5.24、9.90 个点。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">把高层协调和子任务执行拆开，用类似栈的方式主动管理任务级记忆；再通过结构化经验记忆加强化学习，让中枢智能体学会检索和复用过去的协作经验。</span></div>
-<div class="score-reason">评分依据：属于 Agent 记忆与规划运行时的方法研究，可迁移到资源受限 Agent，但实验在云端深度搜索基准上进行，与端侧无直接关系。</div>
+<div class="score-reason">评分依据：属于智能体记忆与规划运行时的方法研究，3B/7B 小模型做中枢的设定对资源受限智能体有参考价值，但实验在云端深度搜索基准上进行，与端侧无直接关系；把记忆管理做成可训练动作有一定新意。PDF 首页作者署名为北京大学等高校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2601.05890" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

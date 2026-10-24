@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Efficient Deep Learning for Medical Imaging: Bridging the Gap Between High-Performance AI and Clinical Deployment</h1>
 <div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-01-31 · Cuong Manh Nguyen; Truong-Son Hy / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span><span class="tag">方向:模型架构</span></div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:蒸馏</span><span class="tag">方向:模型架构</span><span class="tag">硬件:NPU</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">一篇综述，梳理医疗影像里有哪些轻量高效的深度学习模型和压缩方法，帮助把模型从云端搬到医院本地或设备上运行。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把高效模型分成卷积网络、轻量 Transformer 和线性复杂度模型三类，再系统归纳剪枝、量化、知识蒸馏和低秩分解在医疗场景下保持诊断效果的情况。</span></div>
-<div class="score-reason">评分依据：内容覆盖端侧部署常用的压缩方法，但只是医疗领域综述，没有新方法或实测；适合作为入门索引。</div>
+<div class="field"><span class="label">有什么结果</span><span class="text">综述本身没有新实验，但汇编了原论文报告的端侧数据：在 iPhone 12 NPU（CoreML）上 MobileOne-S0 推理 0.79 ms、EfficientFormerV2-S0 0.9 ms（只比纯卷积慢 14%）、MobileViT-XS 7.3 ms（约慢 8 倍）；Ultralight VM-UNet 只有 0.049M 参数，但缺少任何端侧时延实测。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把高效模型分成轻量卷积网络、卷积-Transformer 混合和 Mamba 类线性复杂度模型三类，再系统归纳剪枝、量化、知识蒸馏和低秩分解在医疗场景下保持诊断效果的情况，并指出状态空间模型缺少移动端推理框架支持的问题。</span></div>
+<div class="score-reason">评分依据：覆盖端侧部署常用的轻量架构和压缩方法，还整理了 iPhone NPU 时延对比，可作入门索引；但只是医疗领域综述，没有新方法和自有实验。作者均来自 University of Alabama at Birmingham。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.00910" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

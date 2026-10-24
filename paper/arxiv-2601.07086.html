@@ -7,9 +7,9 @@
 <h1>XBTorch: A Unified Framework for Modeling and Co-Design of Crossbar-Based Deep Learning Accelerators</h1>
 <div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-01-11 · Osama Yousuf; Andreu L. Glasmann; Martin Lueker-Boden; Sina Najmaei; Gina C. Adam / arXiv</div>
 <div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:编译部署</span><span class="tag">硬件:CIM</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">基于新型存储器件的交叉阵列存内计算加速器缺少好用的仿真工具。XBTorch 是接入 PyTorch 的仿真框架，可在器件层建模并做硬件感知训练与推理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在 PyTorch 中提供交叉阵列与器件特性建模接口，以铁电晶体管为示例，也支持阻变存储器和自定义器件模型，可研究跨层协同设计和推理时容错。</span></div>
-<div class="score-reason">评分依据：为端侧低功耗存内计算加速器研究提供开源仿真工具，属于端侧硬件技术栈；但本身是建模框架，摘要没有给出效果数字。作者机构依据 PDF 首页：Osama Yousuf、Martin Lueker-Boden 署名 Western Digital Research。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">基于新型存储器件的交叉阵列存内计算加速器缺少好用的仿真工具。XBTorch 是接入 PyTorch 的仿真框架，可在器件层建模并做硬件感知训练、推理和容错研究。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在模拟的 2500×2500 交叉阵列上，即使 20% 器件卡死，用层集成平均（多份冗余映射取平均）后 MNIST 多层感知机的推理准确率仍可达到约 80%，与无卡死故障时相差不到 5%；还用 TriLM 三值语言模型评估了 ADC/DAC 位宽对 ARC、BoolQ 等任务准确率的影响。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 PyTorch 中提供交叉阵列与器件特性建模接口，以铁电晶体管为示例，也支持阻变存储器和自定义器件模型；可模拟读写噪声、器件卡死和 ADC/DAC 精度，并内置低秩梯度分解训练和容错映射等算法。</span></div>
+<div class="score-reason">评分依据：为端侧低功耗存内计算加速器研究提供开源仿真工具，属于端侧硬件技术栈；但本身是建模框架，案例实验以 MNIST 小网络为主。作者机构依据 PDF 首页：Osama Yousuf、Martin Lueker-Boden 署名 Western Digital Research。</div>
 <div class="source"><a href="https://arxiv.org/abs/2601.07086" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

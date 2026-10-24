@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FedBGS: A Blockchain Approach to Segment Gossip Learning in Decentralized Systems</h1>
-<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-02-01 · Fabio Turazza; Marcello Pietri; Marco Picone; Marco Mamei / ICDCS 2025 Workshops</div>
+<div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-02-01 · Fabio Turazza; Marcello Pietri; Marco Picone; Marco Mamei / ICDCS 2025 Workshops</div>
 <div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">FedBGS 是一个完全去中心化的联邦学习框架，用区块链加分段 Gossip 学习取代中心服务器，避免服务器单点故障。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">各边缘节点在本地训练，把模型分段通过 Gossip 方式互相传递，并借助区块链和联邦分析做记录与校验，以兼顾隐私、安全和非独立同分布数据。</span></div>
-<div class="score-reason">评分依据：与边缘设备上的分布式训练相关，但重点是区块链和安全架构，没有量化结果；论文为 ICDCS 2025 研讨会已发表稿。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">FedBGS 是一个完全去中心化的联邦学习框架，用区块链加分段 Gossip 学习取代中心服务器，避免服务器单点故障和对中心方的信任问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">精度只以曲线图给出（MNIST 系列和 CIFAR-10，狄利克雷参数 1.0/0.5/0.1 下各节点精度基本不随数据异构度下降），没有具体数值；文中给出的量化数据是以太坊链上开销：两份智能合约部署各约 142 万和 157 万 gas，每个客户端注册约 10 万 gas、保存哈希约 5 万 gas，每轮读取分段边界约 3.5 万 gas。实验在一块 RTX 4080 笔记本 GPU 上本地模拟完成。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用联邦分析对参与者自动聚类，再把模型切成多段，通过 Gossip 方式在节点间互相传递；区块链与 IPFS 负责登记、分段分配、更新校验和惩罚，并配合本地差分隐私保护数据。</span></div>
+<div class="score-reason">评分依据：与边缘节点上的分布式训练有关，但重点是区块链和去中心化安全架构，不涉及端侧推理部署，精度结果只有曲线图。论文为 ICDCS 2025 研讨会已发表稿，作者来自意大利摩德纳-雷焦艾米利亚大学，代码在 GitHub 公开。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.01185" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

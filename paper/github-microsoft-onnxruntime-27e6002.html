@@ -9,7 +9,7 @@
 <div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">ONNX Runtime 给插件式执行后端（plugin EP）新增了一组内核信息接口，让第三方硬件后端的算子实现能拿到算子元数据和所属后端实例。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">新增 KernelInfo_GetOperatorDomain/GetOperatorType/GetOperatorSinceVersion/GetEp 四个 C API，并扩展示例插件后端，演示在内核里读取后端配置；本次改动涉及 25 个文件、新增 558 行。</span></div>
-<div class="score-reason">评分依据：ONNX Runtime 是端侧常用推理引擎，插件后端接口方便 NPU 等硬件厂商接入，属于端侧推理栈的可迁移基础设施；但这只是一次接口补充提交，没有性能数据，贡献有限。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">新增 KernelInfo_GetOperatorDomain/GetOperatorType/GetOperatorSinceVersion/GetEp 四个 C API，并扩展示例插件后端，演示在算子内核里读取后端配置；这次提交改动 25 个文件，新增 558 行、删除 136 行。</span></div>
+<div class="score-reason">评分依据：ONNX Runtime 是端侧常用推理引擎，插件后端接口方便 NPU 等硬件厂商接入，属于端侧推理栈的可迁移基础设施。这是一次接口补充提交，提交说明里没有性能或兼容性测试数字，所以效果写未报告，贡献有限。</div>
 <div class="source"><a href="https://github.com/microsoft/onnxruntime/commit/27e6002da1cf1bb652e3b9cb584741c3c9d198ac" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

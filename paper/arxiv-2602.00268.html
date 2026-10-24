@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-01-30 · Ariel Shaulov; Eitan Shaar; Amit Edenzon; Lior Wolf / arXiv</div>
 <div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">应用:视频</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">自回归长视频生成越往后越容易漂移走样；TokenTrim 在推理时找出已经“坏掉”的潜在 token 并在后续生成前把它们剔除。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 VBench 上，叠加到 Rolling Forcing 时总分从 75.12% 提到 79.67%（+4.55%），叠加到 Self Forcing 时从 75.93% 提到 81.84%（+5.91%），而对比方法 FlowMo 只提高 0.12%；生成 128 段 30 秒视频平均只增加约 8% 的运行时间；人工评测中时间漂移一项的偏好率为 43.3%，基线为 13.2%（Self Forcing）。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">把与上一批生成结果表示差异过大的潜在 token 视为不稳定，直接从自回归条件上下文中移除，不改模型结构和训练。</span></div>
-<div class="score-reason">评分依据：目的是改善生成质量而非推理效率，与端侧部署关系弱；推理时剔除 token 的做法简单有效。</div>
+<div class="score-reason">评分依据：目的是改善长视频生成质量而非推理效率，与端侧部署关系弱，只在“推理时剪掉缓存 token”这一技术上有可迁移性；方法免训练、额外开销约 8%，简单有效。作者来自巴伊兰大学、特拉维夫大学及独立研究者，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.00268" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

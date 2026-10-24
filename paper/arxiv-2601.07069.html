@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span>  2026-01-11 · Justin London / arXiv</div>
 <div class="tags"><span class="tag">方向:SNN</span><span class="tag">硬件:FPGA</span><span class="tag">硬件:神经形态</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">介绍神经形态计算、脉冲神经网络和忆阻器的基础，并把神经形态思路用到 FPGA 上的数字信号滤波器设计中。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以经典 FIR 滤波器为基准，神经形态 FIR 的均方误差为 0.5209、占用 335 个单元（经典 FIR 为 173 个）；神经形态 IIR 均方误差 0.1533，略高于经典 IIR 的 0.1374，但单元数从 192 个降到 163 个。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">在 Vivado 中用 Verilog 分别实现带和不带神经形态计算的 FIR 与 IIR 滤波器并对比，定性讨论低时延、片上学习和功耗优势以及数值精度损失。</span></div>
-<div class="score-reason">评分依据：涉及 FPGA 上的脉冲神经网络低功耗计算，与端侧低功耗方向相邻，但主要是综述加简单滤波器实现，没有量化结果。</div>
+<div class="score-reason">评分依据：涉及 FPGA 上的脉冲神经网络低功耗计算，与端侧低功耗方向相邻，但主要是概念综述加简单滤波器仿真，只给出误差和资源占用，没有功耗实测；作者为北达科他大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2601.07069" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-01-26 · Siyan Zhao; Zhihui Xie; Mengchen Liu; Jing Huang; Guan Pang; Feiyu Chen; Aditya Grover / arXiv</div>
 <div class="tags"><span class="vendor-tag">Meta</span><span class="tag">方向:蒸馏</span><span class="tag">方向:规划推理</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">让同一个大模型既当老师又当学生做在线蒸馏：老师看得到标准解题过程，学生只看题目，从而不需要额外的大老师模型。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">首版论文在 AIME24/25、HMMT25、AMO-Bench 四项数学题上，Qwen3-8B 平均分从 50.0 提到 52.2（GRPO 为 51.3），Qwen3-4B 从 48.3 提到 50.6（GRPO 49.6），Qwen3-1.7B 与 GRPO 持平；每题只采 1 条约 2k token 的轨迹，GRPO 需 8 条、每条 16k，作者称 token 效率高 4 到 8 倍。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">老师策略以已验证的推理过程为条件，学生策略只看问题，在学生自己采样的轨迹上逐 token 最小化两者分布差异。</span></div>
-<div class="score-reason">评分依据：推理能力蒸馏方法，对训练小模型有间接价值，与端侧部署无直接关系（相关度 3）。自蒸馏替代外部教师的思路简洁有效（贡献 6）。机构依据：PDF 首页多名作者署名 Meta Superintelligence Labs。 作者机构依据：arXiv PDF 首页署名 Meta（PDF 首页作者 Mengchen Liu、Jing Huang、Guan Pang、Feiyu Chen 署名 Meta Superintelligence Labs）。</div>
+<div class="score-reason">评分依据：推理能力蒸馏方法，对训练小模型有间接价值，与端侧部署无直接关系（相关度 3）。自蒸馏替代外部教师、训练开销显著低于强化学习（贡献 6）。机构依据：arXiv PDF 首页作者 Mengchen Liu、Jing Huang、Guan Pang、Feiyu Chen 署名 Meta Superintelligence Labs。 作者机构依据：arXiv PDF 首页署名 Meta（PDF 首页作者 3 至 6（Mengchen Liu、Jing Huang、Guan Pang、Feiyu Chen）署名 Meta Superintelligence Labs，一作和末位作者为 UCLA）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2601.18734" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

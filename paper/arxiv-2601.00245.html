@@ -7,9 +7,9 @@
 <h1>Modern Neuromorphic AI: From Intra-Token to Inter-Token Processing</h1>
 <div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-01-01 · Osvaldo Simeone / arXiv</div>
 <div class="tags"><span class="tag">方向:SNN</span><span class="tag">硬件:神经形态</span><span class="tag">方向:高效注意力</span><span class="tag">方向:模型架构</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一篇综述，从“词元内处理”和“词元间处理”的角度梳理神经形态 AI、状态空间模型和 Transformer 之间的联系。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把脉冲神经网络归为词元内处理，把状态空间动态和稀疏注意力归为词元间处理，并回顾代理梯度到局部学习规则等训练方法。</span></div>
-<div class="score-reason">评分依据：神经形态和稀疏、低比特计算与低功耗端侧硬件相关，但是综述，没有新实验。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">一篇综述，从“词元内处理”和“词元间处理”两个角度，梳理神经形态 AI、状态空间模型和 Transformer 之间的联系。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">综述汇总了已有工作的能效数据：在 Intel Loihi 神经形态芯片上、精度相近时，关键词唤醒比 GPU 能效高 109 倍，CIFAR-10 分类高 100 倍，图像分割高 2 倍；词元间处理方面，基于 RWKV 的脉冲语言模型理论能效提升 32.2 倍，基于状态空间的脉冲网络在 Long Range Arena 上提升 36 倍（按运算量估算）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把脉冲神经网络归为词元内处理，把状态空间动态和稀疏注意力归为词元间处理，提出统一的神经形态处理单元模型，并回顾从代理梯度到基于强化学习的局部学习规则等训练方法。</span></div>
+<div class="score-reason">评分依据：神经形态和稀疏、低比特计算与低功耗端侧硬件相关；本文是综述，效果数字均引自他人工作，部分为理论估算，作者署名为 Northeastern University London。</div>
 <div class="source"><a href="https://arxiv.org/abs/2601.00245" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

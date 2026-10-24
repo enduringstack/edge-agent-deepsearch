@@ -7,9 +7,9 @@
 <h1>Machine Learning for Energy-Performance-aware Scheduling</h1>
 <div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span>  2026-01-30 · Zheyuan Hu; Yifei Shi / arXiv</div>
 <div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:调度服务</span><span class="tag">硬件:CPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">嵌入式异构多核芯片的调度参数很难手调；这项工作用贝叶斯优化自动搜索在能耗和时延之间折中的调度配置。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">嵌入式大小核异构芯片的调度参数（开几个核、各簇频率、调度算法和时间片）很难手调；这项工作在自建模拟器里用贝叶斯优化自动搜索兼顾能耗和时延的调度配置。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在自建的大中小核模拟器上（平衡负载、到达率 1.0），Matérn 5/2 核的贝叶斯优化找到的配置目标值为 -19.65，优于 RBF 核的 -19.63 和随机搜索基线的 -19.57，并在前约 20 次试验内收敛；负载升到 2.5 时优化器自动打开全部 4+4+4 个核。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">用高斯过程建模调度参数与能耗、周转时间的关系，近似出两者的帕累托前沿，并比较不同核函数、做敏感性分析解释哪些硬件参数影响最大。</span></div>
-<div class="score-reason">评分依据：面向大小核嵌入式处理器的通用任务调度，实验在模拟器中完成，与 AI 推理负载关系较弱；属于贝叶斯优化的常规应用。</div>
+<div class="score-reason">评分依据：面向大小核嵌入式处理器的通用任务调度，任务是随机生成的普通线程而非 AI 推理负载，且只在模拟器中评测，端侧 AI 相关度低；属于贝叶斯优化的常规应用。作者来自剑桥大学，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2601.23134" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

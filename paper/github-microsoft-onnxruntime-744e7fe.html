@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">ONNX Runtime 开始支持 2 比特整数（INT2/UINT2）张量类型，这是为极低比特量化模型铺路的第一步。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">新增把 4 个 2 比特数打包进 1 个字节的数据类型，并在类型系统、C API 枚举和 ONNX 协议映射中注册；具体的 CPU 算子（类型转换、量化反量化等）留到后续提交。</span></div>
-<div class="score-reason">评分依据：2 比特权重是端侧压缩大模型的重要方向，ONNX Runtime 又是端侧常用运行时，所以相关度中等偏上；本次只是类型基础设施，尚无可用算子，贡献有限。</div>
+<div class="score-reason">评分依据：2 比特权重是端侧压缩大模型的重要方向，ONNX Runtime 又是端侧常用运行时，所以相关度中等偏上；本次只是类型基础设施，尚无可用算子，提交说明也没有给出性能数字，贡献有限。</div>
 <div class="source"><a href="https://github.com/microsoft/onnxruntime/commit/744e7fe19b2481fce7b912a0ee8f9ea086d1ceb6" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

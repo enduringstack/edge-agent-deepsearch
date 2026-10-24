@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">英伟达 AI 红队给出的实操建议：在开发者电脑上运行的编程智能体拥有和用户一样的权限，一旦被恶意仓库、配置文件或 MCP 返回内容做提示注入，就可能被劫持，需要在操作系统层面做沙箱隔离。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">必选措施包括：禁止访问未知网络、禁止写工作区以外的文件、禁止改写智能体配置文件；推荐措施包括把整个 IDE 及钩子、技能、工具调用都放进沙箱，用微型虚拟机隔离内核，敏感动作逐次人工批准，以及用密钥注入代替环境变量暴露凭据。</span></div>
-<div class="score-reason">评分依据：讨论的是在个人电脑上执行命令和工具的编程智能体的安全边界，对 PC 端智能体落地有直接参考；但原文没有说明模型在本地运行，属于安全实践总结而非新方法。</div>
+<div class="score-reason">评分依据：讨论的是在个人电脑上执行命令和工具的编程智能体的安全边界，对 PC 端智能体落地有直接参考；但原文没有说明模型在本地运行，属于安全实践总结而非新方法。原文是安全实践或案例分析，没有量化评测结果，因此效果写未报告。</div>
 <div class="source"><a href="https://developer.nvidia.com/blog/practical-security-guidance-for-sandboxing-agentic-workflows-and-managing-execution-risk/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

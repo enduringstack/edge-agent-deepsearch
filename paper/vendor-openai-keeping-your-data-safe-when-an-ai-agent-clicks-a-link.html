@@ -9,7 +9,7 @@
 <div class="tags"><span class="vendor-tag">OpenAI</span><span class="tag">方向:安全隐私</span><span class="tag">方向:工具调用</span><span class="tag">应用:安全</span><span class="tag">模型:GPT</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">OpenAI 讲解智能体代替用户打开网页链接时，如何防止通过网址把用户数据偷偷带出去，以及如何防范网页里的提示注入。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在智能体访问链接的环节内置防护措施，阻止把敏感信息拼进网址外传，并对网页内容中的注入指令做防范。</span></div>
-<div class="score-reason">评分依据：针对智能体工具调用（浏览）的安全设计，思路对端侧智能体同样适用，但产品本身运行在云端；属于工程安全实践分享。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用一个不接触任何用户数据的独立网页爬虫索引记录公开网址；智能体要自动打开链接时，只有该网址曾被索引公开见过才放行，否则提示换网站或弹出警告让用户确认，以防网址里夹带对话中的私密信息。</span></div>
+<div class="score-reason">评分依据：针对智能体工具调用（浏览）的安全设计，思路对端侧智能体同样适用，但产品本身运行在云端；属于工程安全实践分享，原文没有拦截率等量化结果。</div>
 <div class="source"><a href="https://openai.com/index/ai-agent-link-safety" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

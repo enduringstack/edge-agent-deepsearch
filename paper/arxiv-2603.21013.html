@@ -7,9 +7,9 @@
 <h1>A Framework for Low-Latency, LLM-driven Multimodal Interaction on the Pepper Robot</h1>
 <div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-01-09 · Erich Studerus; Vivienne Jia Zhong; Stephan Vonschallen / HRI 2026</div>
 <div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:工具调用</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span><span class="tag">应用:语音</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">为 Pepper 社交机器人做的开源安卓框架：机器人平板上本地跑智能体运行时，让大模型当规划器，通过函数调用指挥机器人导航、转头看、操作平板。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">给 Pepper 社交机器人做的开源安卓框架：整套智能体运行时直接跑在机器人胸前的平板上，让大模型当规划器，通过函数调用指挥机器人走动、转头看、操作平板，同时解决以往“语音转文字-大模型-文字转语音”级联方案反应慢的问题。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用端到端语音到语音模型替代“语音转文字-大模型-文字转语音”级联以降低时延；平板上的 TurnManager 状态机和 ToolRegistry 负责注册、校验和执行工具调用，并把视觉、触摸、人脸识别和系统状态等事件反馈给模型。</span></div>
-<div class="score-reason">评分依据：智能体的工具执行、状态管理和多模态感知闭环都运行在 Pepper 机器人自带的安卓平板上，人脸识别也在机器人本地完成，只有大模型推理调用云端接口，属于端侧 Agent；作为开源平台工程整合完整，但论文没有量化评测。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 OpenAI/Gemini/Grok 等端到端语音对语音模型替代三段式级联来降低时延并保留语气；平板上的 TurnManager 状态机管理听、想、说三种状态，ToolRegistry 负责注册、校验和执行导航、注视、拍照分析、网页搜索、小游戏等工具，触摸、人脸识别和系统状态以事件形式回灌给模型；同一套代码也能编译成普通安卓手机版本，脱离机器人开发。</span></div>
+<div class="score-reason">评分依据：工具执行、对话状态机和多模态感知事件都在 Pepper 机器人自带的安卓平板上本地运行，人脸识别也在机器人头部计算机本地完成，只有大模型推理调用云端，属于端侧 Agent，相关度 8；贡献主要是完整开源的工程整合，论文是 4 页软件介绍，没有给出时延或用户研究等量化评测（仅引用他人报告的 3.84-8.96 秒级联时延作背景），因此效果写未报告，贡献 5。作者均来自瑞士西北应用科学与艺术大学，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.21013" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

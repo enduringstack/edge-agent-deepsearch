@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">OpenVINO 的一次大范围代码清理：去掉图变换模块里的全局命名空间引用，解决合并编译时的名字冲突。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">把 using namespace 改成按需的具体声明和命名空间别名，改动集中在图优化和算子转换代码及其测试，属于机械式重构。</span></div>
-<div class="score-reason">评分依据：OpenVINO 是英特尔端侧推理工具链，但这次改动只影响编译方式，不改变推理能力或性能，读者一般无需关注。</div>
+<div class="score-reason">评分依据：OpenVINO 是英特尔端侧推理工具链，但这次改动只影响编译方式，不改变推理能力或性能，提交本身也没有性能数字，读者一般无需关注。</div>
 <div class="source"><a href="https://github.com/openvinotoolkit/openvino/commit/7859e2613fd48dc39deaed7439aade19e48a0187" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

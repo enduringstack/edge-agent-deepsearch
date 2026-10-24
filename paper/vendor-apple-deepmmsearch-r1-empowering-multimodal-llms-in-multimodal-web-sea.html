@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">8</span> <span class="tier">官方动态</span>  2026-01-12 · Apple / Apple</div>
 <div class="tags"><span class="vendor-tag">Apple</span><span class="tag">方向:工具调用</span><span class="tag">方向:多模态</span><span class="tag">应用:RAG</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">苹果提出 DeepMMSearch-R1，一个会按需多轮上网搜索的多模态大模型，能同时调用图片搜索和文字搜索，还会裁剪图片局部去搜。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">论文中 DeepMMSearch-R1-7B（强化学习后）平均成绩比检索增强流程高 21.13 分、比靠提示词调用搜索的智能体基线高 8.89 分，与 OpenAI o3 相当；按局部裁剪图片去搜索在六个数据集上平均再提升 1.75 分。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">先用监督微调冷启动，再用在线强化学习训练模型自己决定何时搜、搜什么；训练数据是用真实搜索工具构造的多跳图文问答集 DeepMMSearchVQA。</span></div>
-<div class="score-reason">评分依据：属于多模态智能体的工具调用能力研究，运行在云端，与端侧无直接关系；训练流程较常见。</div>
+<div class="score-reason">评分依据：属于多模态智能体的工具调用能力研究，搜索与推理都在云端完成，与端侧无直接关系；训练流程（监督微调加 GRPO 强化学习）较常见，裁剪图片再搜索的思路有一定新意。</div>
 <div class="source"><a href="https://machinelearning.apple.com/research/r1" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

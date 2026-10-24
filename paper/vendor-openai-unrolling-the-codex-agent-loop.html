@@ -9,7 +9,7 @@
 <div class="tags"><span class="vendor-tag">OpenAI</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">应用:代码</span><span class="tag">模型:GPT</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">OpenAI 技术长文拆解 Codex 编码智能体的主循环：Codex CLI 如何编排模型、工具和提示词，并优化性能。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">Codex CLI 在用户终端里循环执行“组装提示词、通过 Responses API 调用云端模型、执行模型请求的工具、把结果回填上下文”，并围绕提示词结构和性能做优化。</span></div>
-<div class="score-reason">评分依据：命令行一侧的工具执行发生在本机，但推理完全依赖云端模型，按判例属于云端智能体在本地执行命令，不算端侧 Agent；对设计本地智能体运行时有直接参考价值。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">Codex CLI 在用户终端里循环执行“组装提示词、通过 Responses API 调用云端模型、执行模型请求的工具、把结果回填上下文”；刻意让每次新提示词以旧提示词为精确前缀以命中提示缓存，使采样成本从随对话平方增长降为线性，上下文超阈值时再调用专门接口压缩对话。</span></div>
+<div class="score-reason">评分依据：命令行一侧的工具执行发生在本机，但推理完全依赖云端模型，按判例属于云端智能体在本地执行命令，不算端侧 Agent；对设计本地智能体运行时（前缀缓存、上下文压缩）有直接参考价值。原文是架构讲解，没有给出时延或缓存命中率数字。</div>
 <div class="source"><a href="https://openai.com/index/unrolling-the-codex-agent-loop" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-02-02 · Mingwei Hong; Zheng Lin; Zehang Lin; Lin Li; Miao Yang; Xia Du; Zihan Fang; Zhaolu Kang / arXiv</div>
 <div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:调度服务</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">多服务器联邦学习中，各边缘服务器覆盖的客户端重叠，抢同一批客户端会造成带宽冲突和训练失败。这篇用去中心化强化学习来做冲突感知的客户端选择。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">每个服务器用隐马尔可夫模型根据历史选择序列预测冲突概率，再结合兼顾公平的奖励，用强化学习决定选哪些客户端，以降低时延和资源争用。</span></div>
-<div class="score-reason">评分依据：属于边缘服务器侧的联邦学习调度，与端侧推理部署关系较远；方法是强化学习加冲突预测的常规组合。</div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 CIFAR-10、两台服务器、40 个客户端的仿真中，RL-CRP 收敛精度为 IID 下 67.68%、非 IID 下 61.32%，均为所有对比方法最高；冲突次数少于 ENSAC 和 FedAvg，奖励收敛也明显快于 ENSAC。去掉公平性奖励后冲突最少但精度明显下降。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每个服务器用分类隐马尔可夫模型根据稀疏的历史选择序列预测冲突概率，再结合兼顾公平的奖励，用强化学习决定选哪些客户端，以降低训练时延和资源争用。</span></div>
+<div class="score-reason">评分依据：属于边缘服务器侧的联邦学习调度，与端侧推理部署关系较远，且只有仿真实验（相关度 3）；方法是强化学习加冲突预测的常规组合（贡献 4）。作者来自厦门理工学院、香港大学、北京大学等高校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.02458" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>
