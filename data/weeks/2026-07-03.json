@@ -3797,10 +3797,46 @@
       "recommendation_reason": "",
       "arxiv_date_basis": "submitted",
       "arxiv_revision_note": ""
+    },
+    {
+      "id": "arxiv-2607.06403",
+      "title": "From Foundation to Application: Improving VLA Models in Practice",
+      "title_zh": "",
+      "abstract": "LingBot-VLA 2.0 的技术报告：针对机器人视觉-语言-动作模型“实验室里好用、落到真实机器人上不好用”的问题，从数据覆盖、动作空间和时序推理三方面升级上一代模型，并开源代码和权重。",
+      "effects": "在 GM-100 双臂操作基准的 9 个任务（通用设定）上，Agilex Cobot Magic 平台进度分/成功率为 66.2/34.4，比 LingBot-VLA-1.0 高 8.0/4.4 个点；Galaxea R1 Pro 平台为 34.6/15.6。另在两个长程移动操作任务上展示了跨构型能力。",
+      "mechanism": "整理约 6 万小时预训练数据（5 万小时、覆盖 20 种机器人构型的轨迹加 1 万小时第一视角人类视频），把头部、腰部、移动底盘和灵巧手纳入统一动作空间；模型采用 MoE 结构，并把预测未来作为辅助任务，用视频表征模型和深度估计模型分别蒸馏语义先验和几何线索。",
+      "paper_url": "https://arxiv.org/abs/2607.06403",
+      "date": "2026-07-07",
+      "score": 8,
+      "score_relevance": 3,
+      "score_contribution": 5,
+      "score_reason": "通用机器人动作模型的数据与训练升级，论文没有讨论机载部署、推理时延或端侧效率，端侧相关度低（相关度 3）。数据规模和全身动作空间扩展扎实，但方法以工程整合为主（贡献 5）。PDF 首页只列作者姓名、未写机构（项目主页为 robbyant.com），因此不按公司项目处理。",
+      "source_tier": "学校预印本",
+      "open_source": true,
+      "tags": [
+        "应用:机器人",
+        "方向:多模态",
+        "方向:MoE",
+        "方向:蒸馏"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Wei Wu; Fangjing Wang; Fan Lu; He Sun; Shi Liu; Yunnan Wang; Yibin Yan; Yong Wang; Kecheng Zheng",
+      "vendors": "",
+      "affiliation_evidence_url": "",
+      "candidate_source": "",
+      "candidate_ref": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": ""
     }
   ],
   "weekly": {
-    "overview": "本周端侧 AI 动态（07-03~07-09）：主线是手机和 PC 上跑大模型的系统瓶颈。厂商侧，英伟达发布 Nemotron-Labs-Diffusion，同一个模型可在自回归、扩散和自投机三种解码模式间切换，批大小为 1 时自投机在 DGX Spark 上加速 1.8 倍。苹果 MLX 发布 0.32.0，新增小批量量化矩阵向量内核，iOS 上默认启用 Metal 后端。研究侧，一项在 OnePlus 15、小米 15/14 上对比 5 个框架的实测发现，NPU 预填充可达 1463.7 token/s，解码却是 CPU 更快，框架间差距最高 10 倍，调度不当最多浪费 40% 能耗；Voltron 让多台手机和平板协同推理，准确率比单机能跑的最强模型平均高 10.2%；VBQ 可变位宽量化让 9B 模型在 M4 Max 上解码快 4.68 倍、峰值内存从 17GB 降到 3.8GB；Jetson 实测则提醒，小型视觉语言模型主干做 INT4 省显存，但每 token 生成反而慢 10.4%~56.3%。端侧智能体方面，一套仓储机器人多智能体系统把规划、巡检、找物全部跑在机载 AMD Ryzen AI 迷你主机上，包裹识别准确率从 76.7% 提到 91.5%；TokenWall 用本地 Qwen3-4B 为长期运行的个人智能体做语义审计，攻击成功率降到 12.5%。硬件侧，苹果在 ICML 2026 集中发表端侧推理论文：SpecMD 只用约 0.6GB 缓存就让 MoE 专家命中率超过 88%，EpiCache 把长对话 KV 压缩 4~6 倍；谷歌发布 LiteRT.js，浏览器可经实验性 WebNN 调用 NPU；TrendForce 预计三季度 DRAM 合约价再涨 13%~18%。社区里，Gemma 官方账号宣布 Gemma 4 可在 React Native 应用中离线运行；有开发者在 Galaxy S23 上跑通语音检测到语音合成的完整语音智能体，常驻约 1.5GB（作者自测）。",
+    "overview": "本周端侧 AI 动态（07-03~07-09）：主线是手机和 PC 上跑大模型的系统瓶颈。厂商侧，英伟达发布 Nemotron-Labs-Diffusion，同一个模型可在自回归、扩散和自投机三种解码模式间切换，批大小为 1 时自投机在 DGX Spark 上加速 1.8 倍。苹果 MLX 发布 0.32.0，新增小批量量化矩阵向量内核，iOS 上默认启用 Metal 后端。研究侧，一项在 OnePlus 15、小米 15/14 上对比 5 个框架的实测发现，NPU 预填充可达 1463.7 token/s，解码却是 CPU 更快，框架间差距最高 10 倍，调度不当最多浪费 40% 能耗；Voltron 让多台手机和平板协同推理，准确率比单机能跑的最强模型平均高 10.2%；VBQ 可变位宽量化让 9B 模型在 M4 Max 上解码快 4.68 倍、峰值内存从 17GB 降到 3.8GB；Jetson 实测则提醒，小型视觉语言模型主干做 INT4 省显存，但每 token 生成反而慢 10.4%~56.3%。端侧智能体方面，一套仓储机器人多智能体系统把规划、巡检、找物全部跑在机载 AMD Ryzen AI 迷你主机上，包裹识别准确率从 76.7% 提到 91.5%；TokenWall 用本地 Qwen3-4B 为长期运行的个人智能体做语义审计，攻击成功率降到 12.5%。硬件侧，苹果在 ICML 2026 集中发表端侧推理论文：SpecMD 只用约 0.6GB 缓存就让 MoE 专家命中率超过 88%，EpiCache 把长对话 KV 压缩 4~6 倍；谷歌发布 LiteRT.js，浏览器可经实验性 WebNN 调用 NPU；TrendForce 预计三季度 DRAM 合约价再涨 13%~18%。社区里，Gemma 官方账号宣布 Gemma 4 可在 React Native 应用中离线运行；有开发者在 Galaxy S23 上跑通语音检测到语音合成的完整语音智能体，常驻约 1.5GB（作者自测）。 另据媒体报道（尚无合规一手来源，仅供参考）：07-08 谷歌 LiteRT-LM v0.14.0 发布，CLI 与 Python 可直接在 Android 上运行，C/Swift API 支持流式工具调用，新增 NPU/GPU 音频加速。",
     "highlights": [
       {
         "url": "https://arxiv.org/abs/2607.05475",

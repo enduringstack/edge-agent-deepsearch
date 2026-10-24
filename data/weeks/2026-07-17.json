@@ -5678,10 +5678,47 @@
       "affiliation_evidence_url": "",
       "title_zh": "",
       "recommendation_reason": ""
+    },
+    {
+      "id": "vendor-honor-honor-waic-2026",
+      "title": "从数字屏幕到物理世界：全球首款机器人手机启动预约 开启多模态具身交互新时代",
+      "title_zh": "",
+      "abstract": "荣耀在 WAIC 2026 正式发布 6 月 MWC 预告的 Agentic OS 技术框架，把 MagicOS 升级为“伙伴型多模态智能体操作系统”，并让首款机器人手机 Robot Phone 开启全渠道预约。",
+      "effects": "未报告",
+      "mechanism": "官方把 Agentic OS 定义为以“意图”和“任务”为中心重构的操作系统：硬件、内核、模型、框架、交互、生态六层整体重构，调度对象从进程、线程变成意图与任务，内核管理的资源从内存、算力扩展到模型和智能体；整体采用“一主多专、三端协同”架构，由随身主智能体协调多终端、生态垂域服务和云端大模型；模型侧除自研终端大模型外，与阿里千问共创面向手机场景的终端大模型方案；Robot Phone 演示订蛋糕、打车、订 KTV 等跨应用连续任务，并通过 OpenClaw 开放平台让开发者用自然语言驱动四自由度云台。",
+      "paper_url": "https://www.honor.com/cn/news/honor-waic-2026/",
+      "date": "2026-07-18",
+      "score": 11,
+      "score_relevance": 7,
+      "score_contribution": 4,
+      "score_reason": "手机厂商公布了系统级智能体操作系统的完整分层框架，并在量产机型上演示跨应用多步任务，直接关系到手机端智能体的系统形态（相关度 7）。但官方没有说明哪些模型和闭环在本机运行，也没有任何任务成功率或时延数字，以架构理念为主（贡献 4）。",
+      "source_tier": "官方动态",
+      "open_source": false,
+      "tags": [
+        "方向:端云协同",
+        "方向:规划推理",
+        "方向:工具调用",
+        "硬件:手机",
+        "应用:机器人"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Honor",
+      "vendors": "Honor",
+      "affiliation_evidence_url": "",
+      "candidate_source": "",
+      "candidate_ref": "",
+      "venue": "Honor",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": ""
     }
   ],
   "weekly": {
-    "overview": "本周端侧 AI 动态（07-17~07-23）：WAIC 2026 与三星 Unpacked 同周，主线是手机和 PC 的本地推理栈集体提速。厂商侧，三星 7 月 22 日发布 Galaxy Z Fold8 系列与基于 Android XR、Gemini 的智能眼镜，高通确认手机、手表、眼镜分别用骁龙 8 Elite Gen 5 for Galaxy、Wear Elite 和 AR1 Gen 1，但未说明哪些 AI 功能在端侧运行。开源侧，阿里 MNN 3.6.1 新增 Hexagon NPU 后端，Qwen3-0.6B 在骁龙 8 Elite 上预填充 2667 token/s，是 CPU 的 7.9 倍；面壁 MiniCPM-Robot 的 0.9B 模型在宇树 Go2 机载算力上本地运行，端到端约 180 毫秒。研究侧，BaseRT 用上 M5 GPU 里的神经加速器，M5 Pro 上提示处理最高比 llama.cpp 快 6.4 倍；微软 VibeVoice-ASR-BitNet 把语音识别从 4.62GB 压到 1.58GB，CPU 上实时运行；索尼在 Xperia 1 VI 上把 NPU 峰值电流从 3.12A 降到 1.94A、时延只多 3.76%。端侧智能体方面，HiMe 让健康智能体的记忆、工具调用和主动提醒用本地开源模型跑在用户自己的机器上，Qwen3.6-27B 分析得分 0.91，高于 GPT-5-mini 的 0.76；AdaHome 用本地 Llama 3.2-3B 做智能家居规划与偏好记忆，直接指令准确率 86.7%。硬件方面，WAIC 上后摩 M50 存算一体芯片官方口径单芯片 10W、160 TOPS，联想整机 30W 离线跑 122B 模型 50 tokens/s；高通徐晧称手机 NPU 当前跑 2B~3B 模型；十余家 AI 眼镜亮相，价格 799~4599 元。社区里有安卓全离线语音智能体演示：FunctionGemma 270M 做工具路由，Galaxy S23 Ultra 纯 CPU 下说完话到首个语音输出 908 毫秒（开发者自测）。",
+    "overview": "本周端侧 AI 动态（07-17~07-23）：WAIC 2026 与三星 Unpacked 同周，主线是手机和 PC 的本地推理栈集体提速。厂商侧，三星 7 月 22 日发布 Galaxy Z Fold8 系列与基于 Android XR、Gemini 的智能眼镜，高通确认手机、手表、眼镜分别用骁龙 8 Elite Gen 5 for Galaxy、Wear Elite 和 AR1 Gen 1，但未说明哪些 AI 功能在端侧运行。开源侧，阿里 MNN 3.6.1 新增 Hexagon NPU 后端，Qwen3-0.6B 在骁龙 8 Elite 上预填充 2667 token/s，是 CPU 的 7.9 倍；面壁 MiniCPM-Robot 的 0.9B 模型在宇树 Go2 机载算力上本地运行，端到端约 180 毫秒。研究侧，BaseRT 用上 M5 GPU 里的神经加速器，M5 Pro 上提示处理最高比 llama.cpp 快 6.4 倍；微软 VibeVoice-ASR-BitNet 把语音识别从 4.62GB 压到 1.58GB，CPU 上实时运行；索尼在 Xperia 1 VI 上把 NPU 峰值电流从 3.12A 降到 1.94A、时延只多 3.76%。端侧智能体方面，HiMe 让健康智能体的记忆、工具调用和主动提醒用本地开源模型跑在用户自己的机器上，Qwen3.6-27B 分析得分 0.91，高于 GPT-5-mini 的 0.76；AdaHome 用本地 Llama 3.2-3B 做智能家居规划与偏好记忆，直接指令准确率 86.7%。硬件方面，WAIC 上后摩 M50 存算一体芯片官方口径单芯片 10W、160 TOPS，联想整机 30W 离线跑 122B 模型 50 tokens/s；高通徐晧称手机 NPU 当前跑 2B~3B 模型；十余家 AI 眼镜亮相，价格 799~4599 元。社区里有安卓全离线语音智能体演示：FunctionGemma 270M 做工具路由，Galaxy S23 Ultra 纯 CPU 下说完话到首个语音输出 908 毫秒（开发者自测）。 另据媒体报道（尚无合规一手来源，仅供参考）：07-20 MLX-VLM 作者推出开源 Mac 应用 Nativ，基于 MLX 在本地运行开源前沿模型，覆盖语言、视觉、语音与视频，并为编码智能体提供本地接口（据 Hacker News）；07-22 三星 Unpacked 上的新折叠屏首发基于 Gemma 4 的 Gemini Nano 4 端侧模型（Android 开发者博客 07-22 确认，正式周报的三星条目未写到这一点）；07-22 初创公司 Acrab 发布 5nm 边缘 AI 终端 SoC GΞLIX 1，650 TOPS、256-bit LPDDR5X，宣称可本地运行 100B 模型（厂商口径，据 IT之家报道）；07-23 面壁智能宣布 MiniCPM 系列端侧模型为三星 Galaxy AI 提供能力，搭载于 Galaxy Z Fold8 / Fold8 Ultra，是国产端侧大模型首次进入国际头部手机厂商的全球旗舰（据 IT之家报道）；07-23 AMD Advancing AI 2026 发布 Ryzen AI Max PRO 400 系列，最高 192GB 统一内存、可本地运行约 300B 参数模型，并推出面向机器人和工业的 Ryzen AI Embedded X100（CPU+GPU+NPU）；Ryzen AI Halo 开发平台 07-06 已开售。",
     "highlights": [
       {
         "url": "https://github.com/alibaba/MNN/releases/tag/3.6.1",
