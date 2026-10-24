@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">6</span> <span class="tier">官方动态</span>  2026-03-30 · Apple / Apple</div>
 <div class="tags"><span class="vendor-tag">Apple</span><span class="tag">方向:规划推理</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">苹果分析了常见策略梯度算法在训练推理型语言模型时为何会让策略熵持续下降、探索变少，并提出两种显式控制熵的方法。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">论文（arXiv 2603.11682）在 Qwen3-8B 的 AppWorld 任务上：GRPO 训练中策略熵下降 57%，ADAPO 在 Test Normal 上达到 0.78（DAPO 为 0.73）、REPO-R 达到 0.73（GRPO 为 0.67）；改用 FP16 后纯在线 RLOO 在 Qwen3-32B 上拿到 Test Normal 79%、Test Challenge 71%，为投稿时该榜最好成绩。AIME 上各方法差距很小。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">REPO 系列通过修改优势函数控制熵，ADAPO 采用自适应的非对称裁剪；文中还指出数值精度等经验因素会影响熵的变化。</span></div>
-<div class="score-reason">评分依据：属于云端大模型的强化学习训练方法，与端侧推理部署无直接关系；对需要在新环境持续学习的 Agent 训练有一定参考。</div>
+<div class="score-reason">评分依据：属于云端大模型的强化学习训练方法，与端侧推理部署无直接关系；对需要在新环境持续学习的 Agent 训练有一定参考，且指出数值精度会显著影响熵变化，这一点有工程价值。</div>
 <div class="source"><a href="https://machinelearning.apple.com/research/entropy-preserving-reinforcement-learning" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

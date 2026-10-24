@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>TTQ: Activation-Aware Test-Time Quantization to Accelerate LLM Inference On The Fly</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-03-11 · Toshiaki Koike-Akino; Jing Liu; Ye Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:测试时自适应</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">激活感知量化依赖校准数据，换了下游任务容易失准。TTQ 在推理时针对每个提示即时做激活感知量化，边压缩边加速。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">推理时用高效的在线校准，根据当前提示的激活统计即时量化权重，并可配合低秩分解，从而不受离线校准集领域偏移的影响。</span></div>
-<div class="score-reason">评分依据：测试时自适应量化可直接迁移到端侧大模型推理；把 AWQ 搬到在线逐提示执行的思路有一定新意，摘要未给出具体加速数字。公司归属依据 arXiv HTML 署名：全部作者为 Mitsubishi Electric Research Laboratories (MERL)。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-03-11 · Toshiaki Koike-Akino; Jing Liu; Ye Wang / ICLR 2026 Workshop</div>
+<div class="tags"><span class="vendor-tag">Mitsubishi Electric</span><span class="tag">方向:量化</span><span class="tag">方向:测试时自适应</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">AWQ 这类激活感知量化要先用校准数据离线算好，换个下游任务就可能失准。TTQ 改成在推理时针对每条输入即时做量化，不需要任何离线校准。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 OPT、Qwen3、Gemma3 多个模型的困惑度测试中，TTQ 都优于用 2^17 个校准 token 的 AWQ；例如 Qwen3-1.7B 3 比特时平均困惑度 26.4，AWQ 为 28.2~30.0。可承受约 2 倍大的分组尺寸，量化参数内存减半。附录在 RTX4090 上测 Qwen3-32B 查询投影层，带低秩补偿的 TTQ 相比 FP16 最高加速 4.9 倍（AWQ 为 6.7 倍）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">推理时用当前输入的激活范数算出缩放系数，当场把权重按 AWQ 的方式缩放后量化，计算开销相对矩阵乘几乎可以忽略；另可先抽出少量低秩分量保留为高精度，只量化剩余部分，以减轻低比特下的精度损失。</span></div>
+<div class="score-reason">评分依据：逐输入在线量化思路可迁移到端侧大模型推理，摆脱对校准集的依赖有一定新意；但速度只在服务器和桌面 GPU 上测了单个投影层，未涉及手机或 NPU。公司归属依据 arXiv PDF 首页：三位作者均署名 Mitsubishi Electric Research Laboratories (MERL)。 作者机构依据：arXiv PDF 首页署名 Mitsubishi Electric（PDF 首页三位作者均署名 Mitsubishi Electric Research Laboratories (MERL)）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.19296" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-03-28 · Huamin Chen; Xunzhuo Liu; Bowei He; Xue Liu / arXiv</div>
 <div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:工具调用</span><span class="tag">方向:安全隐私</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">一份立场论文：把原本用于大模型请求路由的 Semantic Router 策略语言，扩展到多步 Agent 编排和基础设施部署，用一份声明式配置统一管住三层。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">立场论文，没有系统实验。文中给出的数字仅有：编译出的策略闸门单次执行耗时不到 1 毫秒；并举例估算，若 2530 亿参数模型每 token 成本约为 40 亿参数模型的 60 倍、60% 请求足够简单，则按复杂度分流可省下这部分请求约一半的推理开销。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">策略语言刻意设计为非图灵完备，编译器可以从同一份源文件生成推理路由规则、LangGraph/OpenClaw 编排节点、Kubernetes 配置和 MCP/A2A 协议闸门，并保证路由无遗漏、分支无冲突、可审计。</span></div>
-<div class="score-reason">评分依据：关注云端推理网关和 Agent 编排的策略管理，与端侧关系很弱；思路在 Agent 运行时治理上有参考价值，但没有实验数据。</div>
+<div class="score-reason">评分依据：关注云端推理网关和 Agent 编排的策略管理，与端侧关系很弱；思路在 Agent 运行时治理上有参考价值，但没有实测评估，成本数字是示意性估算。作者署名为 vLLM Semantic Router 项目、MBZUAI、麦吉尔大学和 Mila，未出现公司机构。</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.27299" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

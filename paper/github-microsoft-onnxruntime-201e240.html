@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">ONNX Runtime 为“CUDA 插件执行后端”做准备，把一批 CPU/CUDA 共用的算子辅助代码从源文件挪进头文件。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">用 SHARED_PROVIDER 条件编译把 Slice、Split、ScatterND、Tile、Pad 等算子的校验与准备函数改成头文件内联，使独立编译的 CUDA 插件库不必链接 CPU 后端的目标文件。</span></div>
-<div class="score-reason">评分依据：这是面向 NVIDIA GPU 的后端插件化重构，主要服务服务器和桌面独显场景，与端侧部署关系较弱；属于代码结构调整，无新功能。</div>
+<div class="score-reason">评分依据：这是面向 NVIDIA GPU 的后端插件化重构，主要服务服务器和桌面独显场景，与端侧部署关系较弱；属于代码结构调整，提交说明明确表示行为不变，没有性能测试数据。</div>
 <div class="source"><a href="https://github.com/microsoft/onnxruntime/commit/201e240762abccbaca2560d544fbad2d87333b30" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">谷歌端侧推理运行时 LiteRT 为三星 Exynos NPU 委托补充了一批算子，让更多模型能整段下放到 Exynos 手机 NPU 上执行。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">在三星编译器插件里新增批量矩阵乘、卷积、全连接、拼接、Gather、GELU、HardSwish 等算子构建器；同一批合入还让外部权重张量走只读内存映射，便于 XNNPACK 优化。</span></div>
-<div class="score-reason">评分依据：直接扩展手机 NPU 的算子覆盖，算子缺失导致的 CPU 回退是端侧部署常见痛点，因此端侧相关度较高；内容是常规的后端算子补齐。</div>
+<div class="score-reason">评分依据：直接扩展手机 NPU 的算子覆盖，算子缺失导致的 CPU 回退是端侧部署常见痛点，因此端侧相关度较高；内容是常规的后端算子补齐（提交署名为三星工程师）。提交说明只描述代码改动，没有给出性能或精度数据，因此效果写未报告。</div>
 <div class="source"><a href="https://github.com/google-ai-edge/LiteRT/commit/88e4fb19fc00f23a759eb0c9975d17191781bf5d" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

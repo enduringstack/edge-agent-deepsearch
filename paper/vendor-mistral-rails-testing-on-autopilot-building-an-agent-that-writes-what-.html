@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">4</span> <span class="tier">官方动态</span>  2026-03-11 · Mistral / Mistral</div>
 <div class="tags"><span class="vendor-tag">Mistral</span><span class="tag">方向:工具调用</span><span class="tag">应用:代码</span><span class="tag">模型:Mistral</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">Mistral 应用团队做了一个自动给 Ruby on Rails 项目补 RSpec 测试的编码智能体，放进 CI 流水线里无人值守地并行运行。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在一个含 275 个源文件的 Rails 仓库上，自我修正后生成的测试 100% 通过、平均行覆盖率 100%、RuboCop 违规为 0；大模型评审分从 0.49 提到 0.74（仅靠 AGENTS.md 就从 0.68 提到 0.74）；首次运行时只有约三分之一的测试能通过。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">基于 Mistral 开源编码助手 Vibe，用仓库级 AGENTS.md 写死八步执行计划，按文件类型挑选专用技能，并调用 Rubocop 和 SimpleCov 等工具真跑测试来验证风格与覆盖率，结束前强制自查是否漏测公共方法。</span></div>
-<div class="score-reason">评分依据：这是运行在 CI 服务器上的编码智能体工程实践，与端侧无关；方法属于常见的上下文工程和工具校验组合。</div>
+<div class="score-reason">评分依据：这是运行在 CI 服务器上的编码智能体工程实践，与端侧无关；方法属于常见的上下文工程和工具校验组合，但给出了较完整的实测数字。</div>
 <div class="source"><a href="https://mistral.ai/news/rails-testing-on-autopilot-building-an-agent-that-writes-what-developers-wont/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

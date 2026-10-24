@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">7</span> <span class="tier">官方动态</span>  2026-04-02 · Apple / Apple</div>
 <div class="tags"><span class="vendor-tag">Apple</span><span class="tag">方向:规划推理</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">苹果提出 P-GRPO，用于让模型在偏好差异很大的用户群体上做个性化对齐，避免训练只迎合占多数的偏好。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">论文（arXiv 2603.10009）在 MovieLens-1M 四选一推荐上，Qwen3-8B 用 P-GRPO 准确率 65.77%，标准 GRPO 为 63.79%；KGRec 评论生成 ROUGE-1 从 0.434 升到 0.465；训练后 MMLU 变化在 ±0.06 个百分点（Qwen3-8B）到 -0.60 个百分点（Gemma-2B）之间。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">不再用同一批生成样本做优势归一化，而是对照各偏好群体自己的历史奖励来归一化，从而保留少数偏好的对比信号。</span></div>
-<div class="score-reason">评分依据：个性化是端侧助手的核心诉求，但本文只涉及训练阶段的对齐方法，不涉及设备端训练或推理。</div>
+<div class="score-reason">评分依据：个性化是端侧助手的核心诉求，实验也用到 Gemma-2B、Qwen3-1.7B 这类小模型，但本文只涉及训练阶段的对齐方法，不涉及设备端训练或推理。</div>
 <div class="source"><a href="https://machinelearning.apple.com/research/personalized-group" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Adaptive Domain Models: Bayesian Evolution, Warm Rotation, and Principled Training for Geometric and Neuromorphic AI</h1>
 <div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-03-18 · Houston Haynes / arXiv</div>
-<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出一类“自适应领域模型”，在语言模型流水线里提供领域专用预测与约束检查，并声称与几何、神经形态 AI 相关。</span></div>
+<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:端侧训练</span><span class="tag">硬件:神经形态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">提出一类“自适应领域模型”，在大模型流水线里提供带误差界的领域专用预测和约束检查，目标是让领域模型能在本地硬件上训练和持续更新。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用物理量纲和几何支撑限制可行运算，用指定概率模型表达不确定性，提出“热旋转”把候选参数绑定到其数值证据，并用贝叶斯蒸馏作为先验来源。</span></div>
-<div class="score-reason">评分依据：内容偏数学与领域建模理论，与端侧部署、推理优化或 Agent 运行时关系很弱，仅泛泛提及神经形态与高效推理（相关度 3）；表述抽象、缺乏实证，贡献难以判断（贡献 3）。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用物理量纲和几何结构限制模型可做的运算，用概率模型表达不确定性；训练上用前向方向导数代替反向传播以省内存，并提出“热轮换”把候选参数与其数值证据绑定后再无缝替换线上模型，以及用贝叶斯蒸馏从通用大模型提取先验。</span></div>
+<div class="score-reason">评分依据：内容偏数学与编译理论，只泛泛涉及本地硬件训练和神经形态计算，与端侧推理部署关系较弱；文中只有推导和示例，实验部分仅给出计划，没有任何量化结果，因此效果写未报告。作者机构依据：arXiv PDF 首页唯一作者署名 Braidpoint（美国北卡罗来纳州阿什维尔）。（首页另署名小型公司 Braidpoint，不计为公司项目）</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.18104" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

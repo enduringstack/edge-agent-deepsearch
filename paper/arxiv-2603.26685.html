@@ -7,9 +7,9 @@
 <h1>Contextual Graph Representations for Task-Driven 3D Perception and Planning</h1>
 <div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-03-12 · Christopher Agia / arXiv</div>
 <div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:评测基准</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">三维场景图里对象和关系太多，拖慢机器人任务规划，难以在资源受限条件下部署。这篇本科论文研究如何只保留与任务相关的部分。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">检验现有具身 AI 环境是否适合场景图规划研究，搭建经典规划器的对比基准，并用图神经网络学习规划域的关系结构，加快规划。</span></div>
-<div class="score-reason">评分依据：与资源受限下的机器人规划效率有间接关系，但属于 2021 年的本科毕业论文，无部署实验，贡献有限。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">三维场景图里物体和关系太多，机器人做任务规划时搜索空间暴涨，难以在资源有限的机器上实时运行。这篇 2021 年的本科毕业论文研究怎样只挑出与任务相关的物体来加快规划。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Blocks 规划测试中，用图神经网络挑选相关物体（PLOI）的平均规划时间为 0.468 秒，随机挑选为 20.5 秒，快约两个数量级；作者提出的 GAT-Regr 一次预测即可完成 80% 任务，而 PLOI 一次预测只完成一半，多数题目规划时间在 200~300 毫秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先评估现有具身 AI 环境能否用于场景图规划研究，搭建经典规划器对比基准；再训练图注意力网络给物体打重要性分，只把高分物体交给规划器，并用回归规划器生成的最小物体集合作为监督。</span></div>
+<div class="score-reason">评分依据：让机器人规划在资源有限时更快，与端侧具身智能有间接关系，但只有离线基准实验，没有设备部署；作为 2021 年本科论文，贡献偏综述与初步探索。作者来自多伦多大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.26685" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

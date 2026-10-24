@@ -7,9 +7,9 @@
 <h1>KV Cache Optimization Strategies for Scalable and Efficient LLM Inference</h1>
 <div class="meta"><span class="score">6</span> <span class="tier company">公司项目</span>  2026-03-20 · Yichun Xu; Navjot K. Khaira; Tejinder Singh / arXiv</div>
 <div class="tags"><span class="vendor-tag">Dell</span><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">方向:云端serving</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">上下文越长，KV cache 越吃显存和带宽。这篇综述把近年的 KV cache 优化方法分成五类，并告诉工程师在不同部署场景下怎么选。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">按缓存淘汰、缓存压缩、混合存储、新型注意力和组合策略五个方向整理方法，再映射到长上下文、高吞吐数据中心、边缘设备、多轮对话等七类部署场景给出选型建议。</span></div>
-<div class="score-reason">评分依据：KV cache 是端侧推理的核心瓶颈之一，文中也覆盖边缘设备场景；但作为综述没有新方法或新实验。 作者机构依据：arXiv PDF 首页署名 Dell（PDF 首页全部作者署名 Dell Technologies）。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">上下文越长，KV cache 越吃显存和带宽。这篇 Dell 的综述把近年的 KV cache 优化方法分成五类，并告诉工程师在不同部署场景下怎么选。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">综述汇编的已有工作数据：H2O 吞吐最高提升 29 倍，SnapKV 显存效率提升 8.2 倍、生成加速 3.6 倍，KIVI 峰值显存降 2.6 倍、吞吐提升 2.35～3.47 倍，KVQuant 3 比特量化困惑度上升不到 0.1，Kimi Linear 在百万 token 上下文下 KV 减少 75%、吞吐提升 6 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按缓存淘汰、缓存压缩、混合存储、新型注意力和组合策略五个方向整理方法，汇总各自的显存、加速和精度代价，再映射到长上下文、高吞吐服务、边缘/内存受限设备、多轮对话等八类场景给出选型建议。</span></div>
+<div class="score-reason">评分依据：KV cache 是端侧推理的核心瓶颈之一，文中专门有边缘和内存受限设备场景；但作为综述没有新方法或新实验，数字均来自已有工作。作者机构依据：arXiv PDF 首页全部作者署名 Dell Technologies，邮箱为 dell.com。 作者机构依据：arXiv PDF 首页署名 Dell（PDF 首页三位作者均署名 Dell Technologies，邮箱为 Dell.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.20397" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

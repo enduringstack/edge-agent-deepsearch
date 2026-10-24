@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Improving instruction hierarchy in frontier LLMs</h1>
-<div class="meta"><span class="score">7</span> <span class="tier">官方动态</span>  2026-03-10 · OpenAI / OpenAI</div>
+<div class="meta"><span class="score">7</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-03-10 · OpenAI / OpenAI</div>
 <div class="tags"><span class="vendor-tag">OpenAI</span><span class="tag">方向:安全隐私</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">OpenAI 提出 IH-Challenge，用来训练模型在冲突指令中优先听从可信来源，提升指令层级遵循和抗提示注入能力。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">通过专门构造的指令层级训练任务，让模型学会区分系统、开发者、用户和工具返回内容的优先级；原文正文本次无法访问，细节未能展开。</span></div>
-<div class="score-reason">评分依据：属于模型安全训练，对所有会调用工具的智能体都有意义，但与端侧部署没有直接关系。</div>
+<div class="field"><span class="label">有什么结果</span><span class="text">用 IH-Challenge 训练出的 GPT-5 Mini-R 相比 GPT-5 Mini：TensorTrust（开发者-用户）从 0.76 升到 0.91，系统与用户冲突从 0.84 升到 0.95，IH-Challenge 过度拒答从 0.79 升到 1.00；GPQA Diamond 保持 0.83，但对 o1 的聊天胜率从 0.71 降到 0.66。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">构造一批“高权限指令 vs 低权限指令冲突”的强化学习任务，每个任务都能用简单脚本客观判分、没有靠一律拒答拿高分的捷径，用它训练模型学会按系统、开发者、用户、工具的优先级听话。</span></div>
+<div class="score-reason">评分依据：属于模型安全训练，对所有会调用工具的智能体都有意义，但与端侧部署没有直接关系；训练数据集已在 Hugging Face 公开。</div>
 <div class="source"><a href="https://openai.com/index/instruction-hierarchy-challenge" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

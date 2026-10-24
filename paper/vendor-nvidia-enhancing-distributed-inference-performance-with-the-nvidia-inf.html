@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">NIXL 是英伟达开源的推理数据搬运库，用一套接口在显存、内存和各类存储之间搬运 KV cache 和模型权重，服务于分布式大模型推理。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">通过协调进程和传输代理完成内存注册、元数据交换和基于描述符的零拷贝非阻塞传输，底层可接 RDMA、GPU 发起的网络传输、GPUDirect Storage、NVMe 和云对象存储，并配有 NIXLBench、KVBench 两个测试工具。</span></div>
-<div class="score-reason">评分依据：面向数据中心的预填充与解码分离部署和 KV cache 传输，属于云端 serving；KV cache 分层存储的思路对端侧只有间接参考价值。</div>
+<div class="score-reason">评分依据：面向数据中心的预填充与解码分离部署和 KV cache 传输，属于云端 serving；KV cache 分层存储的思路对端侧只有间接参考价值。文章只介绍架构和测试工具，没有带宽或时延数据。</div>
 <div class="source"><a href="https://developer.nvidia.com/blog/enhancing-distributed-inference-performance-with-the-nvidia-inference-transfer-library/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

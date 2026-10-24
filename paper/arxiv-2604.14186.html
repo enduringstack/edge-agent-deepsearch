@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>HARNESS: Lightweight Distilled Arabic Speech Foundation Models</h1>
-<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-03-31 · Vrunda N. Sukhadia; Shammur Absar Chowdhury / arXiv</div>
-<div class="tags"><span class="vendor-tag">Amazon</span><span class="tag">方向:蒸馏</span><span class="tag">应用:语音</span></div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-03-31 · Vrunda N. Sukhadia; Shammur Absar Chowdhury / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">应用:语音</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">大型自监督语音模型效果好但太大，难以在资源受限环境部署。HArnESS 是一个以阿拉伯语为中心的语音基础模型家族，并通过蒸馏得到多种轻量学生模型。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">冻结编码器做下游评测：大教师模型 HArnESS-L 在 MGB2 上词错率 15.5，HuBERT-L 和 XLS-R 均为 22.6；阿拉伯方言识别（ADI5）准确率 84.98%，HuBERT-L 为 64.14%、XLS-R 为 42.35%。结构压缩 79.4% 的学生模型词错率 20.2，压缩 93.7% 的版本词错率 23.2、方言识别 69.77%，仍高于 HuBERT-L。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">先训练阿拉伯语—英语双语大教师模型，再迭代自蒸馏，分别从减层、减宽、减注意力头三个方向压缩出学生模型，并试验用 PCA 压缩教师监督信号。</span></div>
-<div class="score-reason">评分依据：面向资源受限部署做语音模型蒸馏，属于端侧可迁移技术，但没有设备端测速或功耗数据；方法是较常规的蒸馏组合。PDF 首页第 1 作者署名 Amazon India。 作者机构依据：arXiv PDF 首页署名 Amazon（PDF 首页第 1 作者 Vrunda N. Sukhadia 署名 Amazon India）。</div>
+<div class="score-reason">评分依据：面向资源受限部署做语音模型蒸馏，属于端侧可迁移技术，但没有设备端测速或功耗数据；方法是较常规的蒸馏组合。第一作者署名 Amazon India，但论文注明工作在卡塔尔计算研究所（QCRI）完成、邮箱为个人邮箱，因此不算亚马逊的项目。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.14186" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

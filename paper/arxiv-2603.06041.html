@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Edge Intelligence-Driven LegalEdge Contracts for EV Charging Stations: A Fedrated Learning with Deep Q-Networks Approach</h1>
 <div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span>  2026-03-06 · Rahim Rahmani; Arman Chianeh / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">应用:IoT命令</span></div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:量化</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">LegalEdge 想让电动车充电站在本地学习定价和调度策略，同时用区块链智能合约做透明结算。各充电站用联邦学习共同训练强化学习模型，不上传原始数据。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">每个充电站作为边缘节点本地训练 DQN 策略，通过联邦学习聚合全局策略；动态定价和激励规则写进部署在区块链上的智能合约执行。</span></div>
-<div class="score-reason">评分依据：属于边缘联邦学习的应用系统，和端侧 AI 推理部署关系较弱；摘要只说有“显著提升”而没有给出可核对的数字，方法也是联邦学习、DQN 和区块链的常规组合。</div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Ganache 测试链上的多客户端仿真中，24 个小时时段内系统效率从 55% 升到 90% 以上（传统 FedAvg 约 65%），约第 20 轮联邦训练收敛；智能合约调用平均时延 0.12 秒，合约完整性得分平均 0.98。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每个充电站作为边缘节点本地训练 DQN 策略，用 Flower 联邦学习聚合全局策略，并做 int8 量化感知训练便于端上推理；动态定价和激励规则写进部署在以太坊测试链上的智能合约执行。</span></div>
+<div class="score-reason">评分依据：属于边缘联邦学习的应用系统，和端侧 AI 推理部署关系较弱；实验只在仿真和测试链上进行，方法是联邦学习、DQN 和区块链的常规组合。</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.06041" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

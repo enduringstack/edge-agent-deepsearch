@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span>  2026-04-02 · Tina. J. Jat; T. Ghosh; Karthik Suresh / arXiv</div>
 <div class="tags"><span class="tag">应用:RAG</span><span class="tag">方向:安全隐私</span><span class="tag">模型:Llama</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">为电子离子对撞机（EIC）实验做的科研文献问答系统：把相关 arXiv 论文建成本地知识库，用本地部署的 LLaMA 模型回答专业问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">检索 20 个片段的中位时延约 0.11 秒，块大小和相似度算法对时延影响不大；本地 LLaMA 3.2 生成答案中位时延 10–20 秒（离群 50–60 秒），LLaMA 3.3 时延高一个数量级；块大小 180 字符时多数问题忠实度超过 90%、答案相关性大多在 0.9 以上，但答案正确性普遍偏低。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">把 EIC 相关论文切块入库并做多样性检索，取前 20 个片段拼进提示词，交给本地部署的 LLaMA 3.2 / 3.3 生成答案，并追踪引用来源。</span></div>
-<div class="score-reason">评分依据：强调本地部署以保护未发表数据，和私有化推理有一点关系，但没有资源受限设备的量化实验，属于常规 RAG 应用搭建。</div>
+<div class="score-reason">评分依据：强调本地部署以保护未发表数据，和私有化推理有一点关系，但没有资源受限设备的实验，属于常规 RAG 应用搭建。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.02259" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

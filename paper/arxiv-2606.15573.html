@@ -7,9 +7,9 @@
 <h1>QoS-Aware Token Scheduling and Private Data Valuation for Multi-Modal Agentic Networks</h1>
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-04-02 · Yao Du; Jing Liu; Pengfei Xu; Zehua Wang; Victor C. M. Leung; Cyril Leung; Victoria Lemieux / ICME 2026</div>
 <div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:安全隐私</span><span class="tag">方向:多模态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在去中心化、资源紧张的智能体网络里，怎样公平地给用户分配推理 token、同时保护个人数据隐私？这篇提出带差分隐私的数据估值和 token 调度方案。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多个用户共享一个资源有限的去中心化智能体网络时，怎样按各人贡献的数据公平分配推理 token 配额，同时不让上传的图文数据泄露隐私。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把多模态数据嵌入共享语义空间后发布满足差分隐私的原型，再按各用户的有效贡献分配 token，使分配对数据异质性和资源稀缺保持稳健。</span></div>
-<div class="score-reason">评分依据：关注去中心化、资源受限的 Agent 系统资源分配，和端侧有一点联系，但只有仿真、没有真实设备；隐私估值加公平调度的组合有一定新意。论文被 IEEE ICME 2026 接收。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先用 CLIP 把图文数据映射到同一语义空间、按簇求平均得到原型，加差分隐私噪声后再上传边缘服务器做数据估值（新簇的前 50 条算新颖数据，噪声数据不计分）；再用令牌桶按估值给各智能体分配推理 token。</span></div>
+<div class="score-reason">评分依据：讨论的是边缘侧智能体网络里推理配额的公平分配与数据隐私，只在 COCO 上做计算机仿真，没有真实设备，也不涉及推理本身的加速，端侧相关度较低；差分隐私数据估值加令牌桶调度的组合有一定新意。原文的公平性（Jain 指数、Gini 系数）、数据估值和重建攻击结果只以曲线图给出，正文没有具体数值，因此效果写未报告。论文被 IEEE ICME 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2606.15573" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

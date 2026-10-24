@@ -7,9 +7,9 @@
 <h1>OpenClaw AI Agent Memory Loss? Extend Your Agent's Memory Easily with Tablestore Skill Plugin</h1>
 <div class="meta"><span class="score">6</span> <span class="tier">官方动态</span>  2026-03-26 · Qwen / Qwen</div>
 <div class="tags"><span class="vendor-tag">Qwen</span><span class="tag">方向:记忆</span><span class="tag">应用:RAG</span><span class="tag">模型:Qwen</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">针对开源智能体 OpenClaw 用本地 memory.md 文件记忆在生产环境不够用的问题，阿里云用表格存储 Tablestore 插件给它接上可共享、可向量检索的长期记忆。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">开源智能体 OpenClaw 默认用本地 memory.md 文件做记忆，在生产环境不够用；阿里云用表格存储 Tablestore 插件给它接上可共享、可向量检索的长期记忆。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用 qwen-plus 从对话中抽取要记住的信息，经 text-embedding-v3 转成向量存进云端 Tablestore，检索时向量相似度与 BM25 关键词混合召回，再自动注入智能体上下文。</span></div>
-<div class="score-reason">评分依据：属于智能体记忆运行时，但方案恰恰是把原本在本地的记忆搬到云端，判为非端侧智能体；技术上是现有组件的组合。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 qwen-plus 从对话中抽取要记住的信息，经 text-embedding-v3 转成向量存进云端 Tablestore；检索时把向量相似度与 BM25 关键词混合召回，再自动注入智能体上下文。</span></div>
+<div class="score-reason">评分依据：属于智能体记忆运行时，但方案恰恰是把原本在本地的记忆搬到云端，判为非端侧智能体；技术上是现有组件的组合，原文没有召回率或时延数据。</div>
 <div class="source"><a href="https://www.alibabacloud.com/blog/602977" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

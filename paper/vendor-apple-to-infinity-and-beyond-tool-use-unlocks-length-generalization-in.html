@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>To Infinity and Beyond: Tool-Use Unlocks Length Generalization in State Space Models</h1>
-<div class="meta"><span class="score">12</span> <span class="tier">官方动态</span>  2026-03-27 · Apple / Apple</div>
+<div class="meta"><span class="score">14</span> <span class="tier">官方动态</span>  2026-03-27 · Apple / Apple</div>
 <div class="tags"><span class="vendor-tag">Apple</span><span class="tag">方向:模型架构</span><span class="tag">方向:工具调用</span><span class="tag">方向:高效注意力</span><span class="tag">应用:长上下文推理</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">苹果从理论上证明状态空间模型（SSM）单靠固定大小的记忆无法准确完成真正的长文本生成，但配上外部工具后就能突破这一限制。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">只用 5 位数加法轨迹训练的 Mamba 和 LSTM 能完全正确地做 1000 位加法，Transformer 无法外推；n×1 位乘法上 Mamba 从 10 位外推到 1000 位准确率 100%，Pythia 只到 20 位（79%）；逻辑图任务 Mamba 在 1000 规模仍有 98%，Pythia 仅 5%。代码修复任务中 Transformer 在小代码库上通过率超 90%，但代码库变大后 Mamba 更稳。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">让 SSM 在生成过程中交互式调用外部工具，并配合与问题相关的训练数据，使其在算术、推理和编程任务上可以泛化到任意长度。</span></div>
-<div class="score-reason">评分依据：SSM 的固定内存、线性复杂度天然适合端侧长上下文，本文给出了“小内存模型+工具调用”做 Agent 的理论依据；但论文本身不涉及设备部署。</div>
+<div class="score-reason">评分依据：SSM 的固定内存、线性复杂度天然适合端侧长上下文，本文给出了“小内存模型+工具调用”做 Agent 的理论和实验依据，论文已被 ICLR 2026 接收；但本身不涉及设备部署，端侧相关度中等。</div>
 <div class="source"><a href="https://machinelearning.apple.com/research/to-infinity" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

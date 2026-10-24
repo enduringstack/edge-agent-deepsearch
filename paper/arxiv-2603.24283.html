@@ -7,9 +7,9 @@
 <h1>Bridging Biological Hearing and Neuromorphic Computing: End-to-End Time-Domain Audio Signal Processing with Reservoir Computing</h1>
 <div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-03-25 · Rinku Sebastian; Simon O'Keefe; Martin Trefzer / arXiv</div>
 <div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">应用:语音</span><span class="tag">硬件:神经形态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用储备池计算在时域里直接提取语音 MFCC 特征，省掉传统的频域变换，面向嵌入式实时语音处理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用卷积运算替代 MFCC 计算中的频域转换，再用容易训练的储备池计算机做分类，组成端到端的时域音频处理流程。</span></div>
-<div class="score-reason">评分依据：目标是嵌入式和类脑硬件上的低功耗语音前端，与端侧语音相邻；但摘要未给出设备实测数字，方法属于特征提取层面的简化。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">用储备池计算在时域里直接提取语音 MFCC 特征，省掉傅里叶变换等频域步骤，面向嵌入式和类脑硬件上的低功耗语音识别。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">TI-46 数字识别：时域 MFCC 方案准确率 91.82%（用标准 MFCC 输入为 92.9%），高于 Liquid-SNN 的 77.7%、略低于 LSM 的 94.0%；Audio-MNIST 上为 84.81%（标准 MFCC 输入 93.08%），CNN 为 96.4%。整套方案只用 35 加 400 个神经元的两个储备池。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">第一个储备池用卷积式时域运算模仿 MFCC 计算、替代频域转换，第二个容易训练的储备池做分类，组成端到端的时域音频处理流程。</span></div>
+<div class="score-reason">评分依据：目标是嵌入式和类脑硬件上的低功耗语音前端，与端侧语音相邻；但只有数据集精度，没有设备实测功耗或时延，且精度低于常规 CNN，方法属特征提取层面的简化。</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.24283" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

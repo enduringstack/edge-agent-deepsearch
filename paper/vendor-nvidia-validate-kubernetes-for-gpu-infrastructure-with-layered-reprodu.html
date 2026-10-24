@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">3</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-03-12 · NVIDIA / NVIDIA</div>
 <div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">英伟达开源 AI Cluster Runtime 的早期版本，把经过验证的 GPU 集群 Kubernetes 配置打包成锁定版本的配方，方便复现和升级。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">一份完全特化的配方（Blackwell + EKS + Ubuntu + 训练 + Kubeflow）包含 16 个组件、最多 268 个配置值；同一底座下训练与推理两种意图相差 5 个组件、41 个配置值；未报告性能数据。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">配方由基础、环境、意图、硬件几层叠加组成，具体层覆盖通用层；aicr 命令行可以给集群拍快照、生成配方、按 Kubernetes AI 一致性标准做校验并打包部署。</span></div>
-<div class="score-reason">评分依据：这是数据中心 GPU 集群运维工具，与端侧几乎无关；属于工程化配置管理。</div>
+<div class="score-reason">评分依据：这是数据中心 GPU 集群运维工具，与端侧几乎无关；属于工程化配置管理，数字只是配方规模。</div>
 <div class="source"><a href="https://developer.nvidia.com/blog/validate-kubernetes-for-gpu-infrastructure-with-layered-reproducible-recipes/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

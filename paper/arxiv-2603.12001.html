@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Decentralized Orchestration Architecture for Fluid Computing: A Secure Distributed AI Use Case</h1>
-<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-03-12 · Diego Cajaraville-Aboy; Ana Fernández-Vilas; Rebeca P. Díaz-Redondo; Manuel Fernández-Veiga; Pablo Picallo-López / arXiv</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-03-12 · Diego Cajaraville-Aboy; Ana Fernández-Vilas; Rebeca P. Díaz-Redondo; Manuel Fernández-Veiga; Pablo Picallo-López / Computer Networks 2026</div>
 <div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">为跨多个管理域的“流体计算”环境设计去中心化编排架构，并以抗拜占庭攻击的去中心化联邦学习作为示例。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">各管理域保留自治、协同完成租户的意图式部署请求；示例中用基于 SDN 的多域异常检测 FU-HST 配合鲁棒聚合，识别联邦学习中的恶意节点，并通过仿真评估。</span></div>
-<div class="score-reason">评分依据：讨论终端-边缘-云连续体上的分布式 AI 编排，与端侧部署有间接关系；以仿真为主，偏网络编排与安全，端侧推理技术含量有限。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">AI 和物联网应用常常横跨终端、边缘和云，而且分属不同运营方。这篇论文设计了一套去中心化的多域编排架构，让各家域各管各的、又能协同完成租户的部署请求，并拿去中心化联邦学习的防投毒当示例。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">仿真中，单域 20 节点、3 个恶意节点时，开启 FU-HST 后最终准确率与不处理基本持平（如 0.859 对 0.853）；双域 40 节点遭 IPM-100 攻击时，不处理的准确率崩到 0.101，开启后恢复到 0.677，接近理想过滤的 0.721。检测开销为每轮 0.0106~0.0313 秒，不到联邦学习总耗时的 0.05%；告警流量只有几 KB，约占通信量的 0.01%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每个管理域保留自己的编排器，按租户意图分阶段做放置规划、作业调度和运行时管理，并把域内控制服务开放给应用。示例中各域用基于 SDN 的流式异常检测 FU-HST 识别恶意节点、下发封禁，配合鲁棒聚合抵御拜占庭攻击。</span></div>
+<div class="score-reason">评分依据：讨论终端-边缘-云连续体上分布式 AI 的编排与安全，和端侧部署只有间接关系；全部结果来自仿真，重点在网络编排和联邦学习防投毒，没有端侧推理优化。作者均来自西班牙维戈大学，已被期刊 Computer Networks 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.12001" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

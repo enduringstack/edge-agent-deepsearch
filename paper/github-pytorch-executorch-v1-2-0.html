@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">15</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-04-01 · pytorch / GitHub</div>
 <div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span><span class="tag">方向:量化</span><span class="tag">应用:语音</span><span class="tag">硬件:MCU</span><span class="tag">硬件:NPU</span><span class="tag">硬件:DSP</span><span class="tag">模型:Qwen</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">PyTorch 官方端侧推理框架 ExecuTorch 发布 v1.2.0，把实时语音模型、单片机和更多手机/嵌入式加速器纳入端侧部署范围。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">发布说明给出的量化数字不多：核心运行时代码体积减小约 10–15 KB（视工具链而定）；NXP Neutron 后端新增 14 个算子；Qwen3.5 提供 0.8B/2B/4B 三个尺寸的导出。各后端提速只给了定性描述，没有给出测速数据。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">新增 Voxtral Realtime 流式语音、Qwen3.5（0.8B/2B/4B）、Parakeet、Silero VAD 等模型导出；Cortex-M 成为一等目标并接入 CMSIS-NN；Metal 后端支持 4 位量化，Vulkan 支持 int8；高通 QNN 新增面向硬件的量化器、CDSP 直连模式和长上下文 attention sink；Arm Ethos-U 支持大模型；编译期优化缩小二进制，并支持 LoRA 端侧个性化。</span></div>
-<div class="score-reason">评分依据：版本内容几乎全部服务端侧部署：覆盖单片机、手机 NPU/DSP、Apple GPU 和嵌入式 NPU，是端侧推理主力框架的一次大版本；主要是工程整合，没有单点算法创新。</div>
+<div class="score-reason">评分依据：版本内容几乎全部服务端侧部署：覆盖单片机、手机 NPU/DSP、Apple GPU 和嵌入式 NPU，是端侧推理主力框架的一次大版本；主要是工程整合，没有单点算法创新，发布说明也没有给出系统的性能对比。</div>
 <div class="source"><a href="https://github.com/pytorch/executorch/releases/tag/v1.2.0" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

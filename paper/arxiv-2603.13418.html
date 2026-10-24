@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>GPrune-LLM: Generalization-Aware Structured Pruning for Large Language Models</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-03-12 · Xiaoyun Liu; Divya Saxena; Jiannong Cao; Yuqing Zhao; Yiying Dong; Penghui Ruan / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">大模型结构化剪枝依赖单一校准集，容易带偏、泛化变差。GPrune-LLM 让剪枝打分更公平，提升剪完后在不同任务上的表现。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先发现不同神经元对校准数据分布的敏感度差异很大，于是把神经元分到行为一致的局部空间内排名，在校准信号不可靠处换用别的打分来源，并在全局预算下学习每个模块的稀疏度。</span></div>
-<div class="score-reason">评分依据：结构化剪枝是端侧压缩大模型的常用手段，可直接迁移；改进点集中在打分偏差，属于剪枝方向的常规推进，摘要未给出具体数字。</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:高效推理</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型结构化剪枝通常只拿一份校准数据来判断哪些神经元重要，结果偏向这份数据、换任务就掉点。GPrune-LLM 改进打分方式，让剪完的模型在不同任务上更稳。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LLaMA2-7B 和 Vicuna1.5-7B 上，18 组设置中有 16 组平均准确率超过所基于的剪枝方法；只保留 50% 参数时，给 Wanda-sp 和 FLAP 分别带来 5.65 和 4.88 个点的平均准确率提升（LLaMA2-7B），并把 Wanda-sp 的 WikiText2 困惑度从 262.32 降到 60.80。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先测量每个神经元在不同校准数据上排名漂移多大，把行为相近的神经元分组、组内再排名；对校准信号不可靠的组换用其他打分来源；最后在总预算下学习每个模块该剪多少。</span></div>
+<div class="score-reason">评分依据：结构化剪枝是在端侧压缩大模型的常用手段，方法可直接迁移；创新集中在缓解校准偏差，属于剪枝方向的稳步改进，实验只报精度和困惑度，没有端侧时延数据。作者来自香港理工大学和印度理工学院焦特布尔分校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.13418" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

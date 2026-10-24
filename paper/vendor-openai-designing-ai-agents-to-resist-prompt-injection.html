@@ -9,7 +9,7 @@
 <div class="tags"><span class="vendor-tag">OpenAI</span><span class="tag">方向:安全隐私</span><span class="tag">方向:工具调用</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">OpenAI 讲解 ChatGPT 在智能体工作流里如何防御提示注入和社会工程攻击。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">官方介绍的思路是限制高风险动作、保护敏感数据，从系统设计层面降低被注入指令带偏的后果；原文正文本次无法访问，细节未能展开。</span></div>
-<div class="score-reason">评分依据：针对的是云端 ChatGPT 智能体，但防提示注入的设计原则同样适用于在手机和电脑上调用工具的端侧智能体，因此给中低相关度。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把提示注入当作社会工程问题来处理：不指望百分之百识别恶意输入，而是用“来源—危险动作”分析限制后果；例如 Safe Url 机制在智能体要把对话中的信息发给第三方时，先让用户确认或直接拦截。</span></div>
+<div class="score-reason">评分依据：针对的是云端 ChatGPT 智能体，但限制危险动作、外发前确认的设计原则同样适用于在手机和电脑上调用工具的端侧智能体，因此给中低相关度。文中唯一数字是外部研究者报告的一个邮件注入案例在测试中有 50% 成功率，属于攻击案例而非防御效果，防御效果没有量化。</div>
 <div class="source"><a href="https://openai.com/index/designing-agents-to-resist-prompt-injection" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

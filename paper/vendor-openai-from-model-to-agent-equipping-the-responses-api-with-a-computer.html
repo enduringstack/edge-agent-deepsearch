@@ -9,7 +9,7 @@
 <div class="tags"><span class="vendor-tag">OpenAI</span><span class="tag">方向:工具调用</span><span class="tag">方向:云端serving</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">OpenAI 介绍如何在 Responses API 上搭出智能体运行时：给模型配上 shell 工具和托管容器，让智能体带着文件、工具和状态安全地大规模运行。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把 shell 工具与托管容器结合，为每个智能体提供隔离的计算环境来执行命令、读写文件并保留状态；原文正文本次无法访问，细节未能展开。</span></div>
-<div class="score-reason">评分依据：这是云端托管的智能体沙箱运行时，执行环境不在用户设备上；对理解智能体运行时设计有参考价值，但与端侧关系弱。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">模型只负责提出 shell 命令，由 Responses API 转发到托管容器执行并把输出流式回传；容器提供文件系统、SQLite 和经出口代理管控的网络，并支持技能包加载、并发命令、输出截断和服务端上下文压缩。</span></div>
+<div class="score-reason">评分依据：这是云端托管的智能体沙箱运行时，执行环境不在用户设备上；对理解智能体运行时设计有参考价值，但与端侧关系弱。原文是架构介绍，没有给出效果数据。</div>
 <div class="source"><a href="https://openai.com/index/equip-responses-api-computer-environment" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

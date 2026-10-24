@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Loosely-Structured Software: Engineering Context, Structure, and Evolution Entropy in Runtime-Rewired Multi-Agent Systems</h1>
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-03-16 · Weihao Zhang; Yitong Zhou; Huanyu Qu; Hongyi Li / arXiv</div>
-<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这篇文章讨论基于大模型的多智能体系统越做越大后出现的上下文压力、协作出错和系统漂移问题，提出一种叫“松散结构软件”的工程方法论。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">借鉴面向对象编程经验，从视图/上下文工程、结构工程、演化工程三层组织智能体系统，并给出一组设计模式来稳定运行时的动态交互。</span></div>
-<div class="score-reason">评分依据：关注 Agent 运行时的软件工程，与端侧无直接关系；以概念框架为主，只有基础实验验证。</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:记忆</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">讨论基于大模型的多智能体系统越做越大后出现的上下文膨胀、协作出错和系统漂移问题，提出一套叫“松散结构软件”的工程方法论。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 RepoBench-R（Python 子集）跨文件代码检索上，加入“语义透镜”后 Hit@5 从 0.70 升到 0.78，再加索引生成器达到 0.84，但 Top1 准确率始终只有 0.10–0.12；执行 Agent 的平均输入从 1543 个 token 降到 1395 个，代价是总 token 数因多出的编排调用而上升。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">借鉴面向对象编程的经验，把智能体系统分成视图/上下文工程、结构工程、演化工程三层，并给出一组设计模式，例如用专门的“透镜”Agent 替执行 Agent 挑选上下文、用索引把检索负担从执行 Agent 挪走。</span></div>
+<div class="score-reason">评分依据：关注 Agent 运行时的软件工程与上下文管理，与端侧部署没有直接关系，相关度低；以概念框架为主，只在代码检索基准上做了小规模验证。</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.15690" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

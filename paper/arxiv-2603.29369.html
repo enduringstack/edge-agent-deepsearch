@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-03-31 · Enlai Li; Zhe Lin; Sharad Sinha; Wei Zhang / arXiv</div>
 <div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:量化</span><span class="tag">方向:编译部署</span><span class="tag">硬件:FPGA</span><span class="tag">硬件:CPU</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">在 AMD Versal ACAP（CPU+FPGA+AI 引擎的异构芯片）上自动切分深度强化学习训练任务，并解决低精度训练带来的奖励误差。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 AMD Versal（VEK280）上，相比只用可编程逻辑的 FIXAR 方案最高加速 4.17 倍（小网络时仅 0.98 倍），相比只用 AI 引擎的方案加速 1.61–3.82 倍；混合精度训练的平均奖励误差为 1.12%–4.81%，各模型都能收敛。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">先分析不同 DRL 算法在 CPU、FPGA、AI 引擎上的瓶颈，再用设计空间探索和整数线性规划把每个算子分配到最合适的计算单元，并按硬件协调 FP32、FP16、BF16 等精度。</span></div>
-<div class="score-reason">评分依据：Versal 属嵌入式/边缘异构平台，面向 DRL 训练而非大模型推理，对端侧训练有一定参考，相关度 4。软硬协同的自动切分方法有一定新意，贡献 5。</div>
+<div class="score-reason">评分依据：Versal 属嵌入式/边缘异构平台，面向 DRL 训练而非大模型推理，对端侧训练有一定参考，相关度 4。CPU、FPGA、AI 引擎之间的自动切分和精度协调有一定新意，贡献 5。作者来自港科大、中山大学和印度理工果阿分校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.29369" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

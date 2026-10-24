@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">谷歌端侧推理运行时 LiteRT 发布 2.1.3 版，重点是让联发科手机 NPU 能在更多安卓版本上直接用起来，并补了 GPU 与构建方面的问题。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">允许把联发科 NPU 运行库直接打包进应用安装包，从而不再只支持安卓 15、扩展到所有适用的安卓版本；同时新增多线程并行创建 CompiledModel（实验性）、博通 VideoCore GPU 基础支持，修复 Windows 下 Python 的 GPU 支持和 CPU 缓冲区从第二次推理起未与 GPU 同步的问题，CMake 可同时构建新旧两套 API。</span></div>
-<div class="score-reason">评分依据：版本内容直接服务手机端部署：联发科 NPU 过去只能在安卓 15 上用，现在可随应用打包覆盖更多机型，属于端侧落地的实际门槛松动；改动本身是常规工程整合，没有算法创新。</div>
+<div class="score-reason">评分依据：版本内容直接服务手机端部署：联发科 NPU 过去只能在安卓 15 上用，现在可随应用打包覆盖更多机型，属于端侧落地的实际门槛松动；改动本身是常规工程整合，没有算法创新。原文是版本发布说明，只列功能与修复，没有给出性能数字。</div>
 <div class="source"><a href="https://github.com/google-ai-edge/LiteRT/releases/tag/v2.1.3" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -7,9 +7,9 @@
 <h1>Building a Zero-Trust Architecture for Confidential AI Factories</h1>
 <div class="meta"><span class="score">6</span> <span class="tier">官方动态</span>  2026-03-23 · NVIDIA / NVIDIA</div>
 <div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:安全隐私</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">NVIDIA 介绍一套面向企业私有 AI 集群的零信任架构，让企业在自己机房跑开源或私有模型（包括智能体任务）时，管理员和宿主系统也看不到数据和模型权重。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">NVIDIA 介绍一套面向企业私有 AI 集群的零信任架构：企业在自己机房跑开源或私有模型（包括智能体任务）时，管理员和宿主系统也看不到数据和模型权重。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用 CPU 可信执行环境加机密 GPU 让数据和模型在运行中保持加密；Kubernetes 容器跑在 Kata 轻量虚拟机里，硬件远程证明通过后密钥服务才放行解密密钥，镜像和模型直接拉进加密内存。</span></div>
-<div class="score-reason">评分依据：讨论的是数据中心机密推理的安全架构，与手机、PC 等终端无直接关系；把现有机密计算组件串成完整方案，偏工程整合。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 CPU 可信执行环境加机密计算 GPU，让数据和模型在运行中保持加密；Kubernetes 容器跑在 Kata 轻量虚拟机里，硬件远程证明通过后密钥服务才放行解密密钥，镜像和模型直接拉进加密内存。</span></div>
+<div class="score-reason">评分依据：讨论的是数据中心机密推理的安全架构，与手机、PC 等终端没有直接关系；把现有机密计算组件串成完整方案，偏工程整合，原文没有性能开销等数字。</div>
 <div class="source"><a href="https://developer.nvidia.com/blog/building-a-zero-trust-architecture-for-confidential-ai-factories/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

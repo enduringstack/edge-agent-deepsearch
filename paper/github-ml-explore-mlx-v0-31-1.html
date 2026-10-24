@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">苹果 MLX 框架发布 0.31.1 补丁版，主要扩充 CUDA 后端的量化矩阵向量乘，并为 M5 Pro/Max 芯片做了初步调优。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">CUDA 端新增量化 GEMV 内核，4 比特量化改用 fp16 累加，QMV 支持 3/5/6 比特量化与批处理；另加入 Hadamard 变换、分段矩阵乘、混合分片，以及针对 M5 Pro/Max 的参数调优。</span></div>
-<div class="score-reason">评分依据：MLX 是 Mac 本地跑大模型的主流框架，低比特量化内核和新 Apple 芯片调优直接影响本地推理速度；本版多为增量补丁，创新有限。</div>
+<div class="score-reason">评分依据：MLX 是 Mac 本地跑大模型的主流框架，低比特量化内核和新 Apple 芯片调优直接影响本地推理速度；本版多为增量补丁，创新有限。发布说明只列出 28 项改动，没有给出任何速度或精度数字。</div>
 <div class="source"><a href="https://github.com/ml-explore/mlx/releases/tag/v0.31.1" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

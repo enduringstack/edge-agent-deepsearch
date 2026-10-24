@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">英伟达开源 OpenShell 运行时，让 OpenClaw、Claude Code、Codex 这类长期自主运行的智能体在隔离沙箱里工作，可直接部署在个人 RTX 电脑或 DGX Spark 上，并配合 NemoClaw 一键装好本地模型。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">安全控制放在智能体进程之外：沙箱隔离执行，策略引擎在文件、网络、进程层面按二进制、目标、方法、路径逐个审批动作，隐私路由器默认把敏感上下文留给本机开放模型，只有策略允许时才转给云端大模型；无需改代码，一条命令即可把现有智能体放进沙箱。</span></div>
-<div class="score-reason">评分依据：智能体本体、沙箱和默认推理都可以完整运行在用户自己的 RTX 电脑或 DGX Spark 上，是 PC 端智能体的运行时基础设施；把护栏移出智能体进程、并按策略做本地与云端模型路由，设计上有新意，且以 Apache 2.0 开源。</div>
+<div class="score-reason">评分依据：智能体本体、沙箱和默认推理都可以完整运行在用户自己的 RTX 电脑或 DGX Spark 上，是 PC 端智能体的运行时基础设施；把护栏移出智能体进程、并按策略做本地与云端模型路由，设计上有新意，且以 Apache 2.0 开源。原文讲架构设计，没有给出性能或安全评测数字。</div>
 <div class="source"><a href="https://developer.nvidia.com/blog/run-autonomous-self-evolving-agents-more-safely-with-nvidia-openshell/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

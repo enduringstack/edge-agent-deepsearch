@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span>  2026-03-20 · Bernardo Magri; Benjamin Marsh; Paul Gebheim / AICrypt 2026</div>
 <div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:云端serving</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">云端推理既要保护用户输入、又要保护模型权重，全同态加密能做到但太慢。这篇立场论文主张让加密方案和模型架构相互迁就、协同设计。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">一方面针对推理电路的静态结构专门优化同态加密方案和编译器，另一方面约束模型架构以减少同态计算中最昂贵的操作，并列出两侧的具体优化目标。</span></div>
-<div class="score-reason">评分依据：面向云端隐私推理，与端侧部署关系较弱；是议程性观点文章，没有实验结果。</div>
+<div class="field"><span class="label">有什么结果</span><span class="text">作为概念验证，作者在有界输入范围内推导了 softmax 的近似，误差低于 0.5%；在只计 softmax 本身的微基准里，同态计算比同一 CPU 上未做向量化的明文 Rust 实现还快（不含加解密、打包和自举等开销）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">一方面利用推理电路结构固定、张量形状已知的特点，专门优化同态加密方案和编译器；另一方面在神经架构搜索中加入乘法深度、旋转次数等加密代价约束，并用低次多项式替代 ReLU、GeLU 等非线性。</span></div>
+<div class="score-reason">评分依据：面向云端隐私推理，与端侧部署关系较弱；是议程性观点文章，只有一个 softmax 近似的小实验。被 AICrypt 2026 研讨会接收，不计顶会。作者机构依据：arXiv 论文首页第 2、3 位作者署名 Sei Labs。（首页另署名小型公司 Sei Labs，不计为公司项目）</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.20504" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

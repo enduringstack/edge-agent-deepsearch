@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Modernising Reinforcement Learning-Based Navigation for Embodied Semantic Scene Graph Generation</h1>
-<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-03-26 · Roman Küble; Marco Hüller; Mrunmai Phatak; Rainer Lienhart; Jörg Hähner / arXiv</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-03-26 · Roman Küble; Marco Hüller; Mrunmai Phatak; Rainer Lienhart; Jörg Hähner / arXiv</div>
 <div class="tags"><span class="tag">应用:机器人</span><span class="tag">方向:规划推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">改进具身智能体为构建语义场景图而做的强化学习导航策略，让它在有限动作预算内收集更有用的观测。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">替换策略优化方法，重新设计离散动作集，对比单头策略和按动作分量分解的多头策略，并评估课程学习和基于深度的碰撞监督。</span></div>
-<div class="score-reason">评分依据：具身导航智能体，但在仿真中评估、没有设备端执行证据；属于对已有模块的现代化改造。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">改进具身智能体为构建语义场景图而做的强化学习导航策略，让它在有限步数内看到更多有用物体。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 AI2-THOR 留出场景上，只换成 PPO 就把节点召回率从基线 0.48 提到 0.58（约 21%）；改用 504 个细粒度动作并拆成多头策略后召回率达到 0.93，移动成功率从 0.14 提到 0.56 左右。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把原来的 REINFORCE 换成 PPO，重新设计离散动作集，对比单头策略和按动作分量拆开的多头策略，并评估课程学习和基于深度图的碰撞监督。</span></div>
+<div class="score-reason">评分依据：具身导航智能体，但全部在仿真中用理想化感知评估，没有设备端执行证据；属于对已有导航模块的现代化改造。作者来自德国奥格斯堡大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.25415" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

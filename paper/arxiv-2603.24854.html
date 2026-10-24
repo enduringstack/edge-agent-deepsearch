@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Characterization of Off-wafer Pulse Communication in BrainScaleS Neuromorphic System</h1>
-<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-03-25 · Bernhard Vogginger; Vasilis Thanasoulis; Johannes Partzsch; Christian Mayr / arXiv</div>
+<div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span>  2026-03-25 · Bernhard Vogginger; Vasilis Thanasoulis; Johannes Partzsch; Christian Mayr / arXiv</div>
 <div class="tags"><span class="tag">方向:SNN</span><span class="tag">硬件:神经形态</span><span class="tag">硬件:FPGA</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">系统测量 BrainScaleS 晶圆级类脑芯片与主机之间脉冲通信的吞吐、延迟、抖动和丢包，并分析这些失真对神经网络的影响。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">围绕基于 Kintex7 FPGA 的片外通信链路做逐项表征，再用脉冲活动变化剧烈的基准网络观察丢包和抖动对结果的影响。</span></div>
-<div class="score-reason">评分依据：类脑硬件基础设施测量，和端侧低功耗推理属于远相邻；工作以表征为主，方法上新意有限。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">实测 BrainScaleS 晶圆级类脑芯片和主机之间收发脉冲的链路，量清楚吞吐、延迟、抖动和丢包，并看这些失真会不会影响网络运行结果。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">单条链路上行吞吐在每秒 2500 万事件（约 600 Mbit/s）饱和，下行上限每秒 1780 万事件，常规脉冲序列传输延迟 230 纳秒、抖动低于 0.04 毫秒（生物时间）；8 个芯片并行时上行可达每秒 2 亿事件。500 个神经元的基准网络中，每芯片不超过 15 个神经元时丢包低于 1%，到 40 个时升到 12.9%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">围绕基于 Kintex7 FPGA 的片外通信模块，用规则和泊松脉冲序列逐项压测单链路和多链路，再拿脉冲活动剧烈波动的基准网络观察丢包和抖动的实际影响。</span></div>
+<div class="score-reason">评分依据：研究对象是类脑硬件平台的主机通信链路，与端侧低功耗推理只算远相邻；工作以测量表征为主，数据扎实但方法新意有限。作者均来自德累斯顿工业大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.24854" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Plan mode is now available in Gemini CLI</h1>
-<div class="meta"><span class="score">13</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-03-11 · Google / Google</div>
+<div class="meta"><span class="score">8</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-03-11 · Google / Google</div>
 <div class="tags"><span class="vendor-tag">Google</span><span class="tag">方向:规划推理</span><span class="tag">方向:工具调用</span><span class="tag">应用:代码</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">谷歌给终端编码 Agent Gemini CLI 加入“计划模式”：先只读地研究代码库、理清依赖并提出方案，确认后再动手改代码。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">计划模式把 Agent 限制在 read_file、grep_search、glob 等只读工具和只读 MCP 工具上，可调用 codebase_investigator 等子智能体，并新增 ask_user 工具在规划中途向用户澄清需求。</span></div>
-<div class="score-reason">评分依据：Gemini CLI 在用户电脑的终端里运行，规划、子智能体调度和本地文件检索都在本机完成，只有模型推理走云端，属于编排在设备端的 PC Agent；“先只读规划再执行”的模式是工程上的稳妥改进。</div>
+<div class="score-reason">评分依据：Gemini CLI 在用户电脑终端里运行，但规划阶段调用的是云端 Gemini 3.1 Pro，本质是云端模型驱动的编码 Agent，按同类编码 CLI 的一贯口径不算端侧 Agent；“先只读规划、再动手修改”的模式对设计本地工具调用的 Agent 有参考价值。原文是功能介绍，没有给出任何效果数据。</div>
 <div class="source"><a href="https://developers.googleblog.com/plan-mode-now-available-in-gemini-cli/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

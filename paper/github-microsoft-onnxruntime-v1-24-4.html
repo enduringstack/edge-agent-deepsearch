@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">微软 ONNX Runtime 发布 1.24.4 补丁版，修复若干核心与插件执行后端的问题，并更新高通 QNN 后端。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">高通 QNN 后端把 rpcmem 库的加载推迟到推理时，从而支持在 x64 机器上离线编译并使用 memhandle 输入输出，同时回退一处会在后端销毁时导致段错误的日志改动；另修复容器环境 GPU 发现、插件后端空指针和融合节点 ID 冲突等问题，Python 最低版本升到 3.11。</span></div>
-<div class="score-reason">评分依据：补丁版里与端侧有关的是高通 QNN 后端的离线编译和稳定性修复，对骁龙 NPU 部署有直接用处，但整体是小修小补，贡献有限。</div>
+<div class="score-reason">评分依据：补丁版里与端侧有关的是高通 QNN 后端的离线编译和稳定性修复，对骁龙 NPU 部署有直接用处，但整体是小修小补，贡献有限。原文是补丁版发布说明，没有性能或量化测试数字。</div>
 <div class="source"><a href="https://github.com/microsoft/onnxruntime/releases/tag/v1.24.4" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

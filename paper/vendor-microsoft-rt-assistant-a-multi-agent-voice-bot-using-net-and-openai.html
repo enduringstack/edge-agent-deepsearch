@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">8</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-03-17 · Microsoft / Microsoft</div>
 <div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:工具调用</span><span class="tag">方向:端云协同</span><span class="tag">应用:语音</span><span class="tag">应用:RAG</span><span class="tag">模型:GPT</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">微软 .NET 博客的客座文章介绍 RT.Assistant：一个用 .NET 写的跨平台语音多智能体助手，用来帮用户比较手机套餐，答案来自逻辑推理而不是向量检索。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">作者实测 Claude Sonnet 4.5 和 GPT-5.1 生成的 Prolog 查询约 99% 语法正确（出错时靠重试循环修正），GPT-5.1 的结果更简洁对题，GPT Codex 时延过高不适合实时语音；应用代码约 90% 跨 iOS/Android/macOS/Windows 共享；若改用 WebSocket 传未压缩 24kHz PCM 音频，带宽约为 WebRTC 默认 OPUS 编码的 10 倍。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">语音经 WebRTC 接入 OpenAI Realtime API；自研 RTFlow 框架在类型化异步总线上挂语音、代码生成、查询、应用四个 Agent，由确定性状态机约束大模型行为；用户问题被翻译成 Prolog 查询，在嵌入 .NET MAUI 应用（iOS/Android/macOS/Windows）里的 Prolog 知识库上执行。</span></div>
-<div class="score-reason">评分依据：多 Agent 编排和 Prolog 知识库确实跑在手机/电脑客户端上，但语音理解和大模型推理都依赖云端 OpenAI/Anthropic 接口，原文也没说明有本地模型，因此按云端模型驱动的 Agent 处理；用逻辑程序代替向量检索来减少幻觉的做法有参考价值。</div>
+<div class="score-reason">评分依据：多 Agent 编排和 Prolog 知识库确实跑在手机/电脑客户端上，但语音理解和代码生成都依赖云端 OpenAI/Anthropic 接口，原文没有本地模型，因此不算端侧 Agent；用逻辑程序代替向量检索、让大模型只负责把问题翻译成可执行查询的做法，对减少幻觉有参考价值。</div>
 <div class="source"><a href="https://devblogs.microsoft.com/dotnet/rt-assistant-a-realtime-multiagent-voice-bot-using-dotnet-and-open-ai-api/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

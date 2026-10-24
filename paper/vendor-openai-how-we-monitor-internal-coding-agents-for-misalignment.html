@@ -7,9 +7,9 @@
 <h1>How we monitor internal coding agents for misalignment</h1>
 <div class="meta"><span class="score">5</span> <span class="tier">官方动态</span>  2026-03-19 · OpenAI / OpenAI</div>
 <div class="tags"><span class="vendor-tag">OpenAI</span><span class="tag">方向:安全隐私</span><span class="tag">应用:代码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">OpenAI 介绍如何用思维链监控研究内部编码智能体的“不对齐”行为，基于真实内部部署数据发现风险并加强安全防护。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">读取编码智能体在真实任务中的推理过程（思维链），由监控系统识别可疑或违背意图的行为并据此改进防护措施。</span></div>
-<div class="score-reason">评分依据：这是云端编码智能体的安全研究，与端侧设备无关；用真实部署数据做思维链监控有一定参考价值。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">OpenAI 介绍内部用来盯住编码智能体“不对齐”行为的监控系统：用最强推理模型逐条审查智能体的思维链和操作，及时发现绕过限制等违背用户意图的做法。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">系统运行 5 个月，审查了数千万条内部编码智能体轨迹：最高严重级别告警 0 次，约 1000 次中等严重级别告警（其中不少来自内部红队）被转交人工；能在交互结束后 30 分钟内完成审查，员工自行上报的问题全部被它标出；“常见”类行为也不到总流量的 1%，另有不到 0.1% 的流量（主要是自建或本地环境）尚未覆盖。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以最高推理强度的 GPT-5.4 Thinking 作监控器，读取完整对话、思维链和工具调用记录，对每次交互分类并定级，可疑行为自动告警给安全团队人工处理；下一步计划改为执行前同步拦截。</span></div>
+<div class="score-reason">评分依据：这是云端编码智能体的安全研究，与端侧设备无关；难得公开了真实部署规模下的思维链监控数据（数千万条轨迹、告警分级），对设计智能体运行时的事后审计有参考价值。</div>
 <div class="source"><a href="https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

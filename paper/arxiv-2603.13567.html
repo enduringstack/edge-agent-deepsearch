@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>End-to-End O-RAN Testbed for Edge-AI-Enabled 5G/6G Connected Industrial Robotics</h1>
 <div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-03-13 · Sasa Talosi; Vladimir Vincan; Srdjan Sobot; Goran Martic; Vladimir Morosev; Vukan Ninkovic; Dragisa Miskovic; Dejan Vukobratovic / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">搭建了一个基于 O-RAN 的 5G/6G 端到端试验平台，让工业机器人的感知和控制模型放到网络边缘服务器上跑。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用开放接口组网，把计算量大的机器人感知模型以边缘 AI 即服务的方式部署在网络边缘，以自主焊接场景为例，比较不同数据采集、边缘处理和实时流传输方案的取舍。</span></div>
-<div class="score-reason">评分依据：涉及机器人与边缘服务器的协同推理，但模型运行在网络边缘而非机器人本体，摘要也没有给出量化结果；贡献是试验平台搭建。</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">应用:机器人</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">搭建了一个基于 O-RAN 的 5G/6G 端到端试验平台，把工业机器人的视觉感知模型放到网络边缘服务器上跑，以自动焊接为示范场景。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">目前只给了初步网络测试：20 MHz 带宽下，随 TDD 上下行时隙配比不同，下行吞吐 43–116 Mbps（2x2 MIMO）、上行 13–40 Mbps（单天线）；终端到核心网用户面的时延在 16–32 ms 间周期波动。作为对照，场景需求分析给出 5 FPS 原始点云上行需 1.2 Gbps，压缩后也要 120–240 Mbps，现有上行能力还不够。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 srsRAN、Open5GS、FlexRIC 等开源组件搭出拆分式 5G 基站和核心网，机器人侧控制服务器经 5G 模组把 3D 相机数据（原始、经典压缩或语义编码）推流到边缘服务器，由那里的 AI 模型做位姿估计并回传焊接轨迹。</span></div>
+<div class="score-reason">评分依据：涉及机器人与边缘服务器的协同推理，但模型跑在网络边缘服务器（RTX 4070 工作站）而不是机器人本体，相关度中等；贡献主要是试验平台搭建，端到端焊接评测尚留待后续工作。</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.13567" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>
