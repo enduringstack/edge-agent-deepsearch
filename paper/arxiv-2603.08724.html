@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PhD Thesis Summary: Methods for Reliability Assessment and Enhancement of Deep Neural Network Hardware Accelerators</h1>
-<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-02-17 · Mahdi Taheri / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">应用:fault-detection</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一篇博士论文总结：研究怎样低成本地评估和提升深度学习硬件加速器的可靠性，也就是芯片出现位翻转等硬件故障时模型还能不能算对。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先做系统文献综述找出空白，再开发解析式的可靠性评估工具，分析量化位宽、近似计算与容错之间的取舍，并提出零额外开销的容错乘法器设计 AdAM，达到接近传统冗余方案的容错能力而硬件成本更低。</span></div>
-<div class="score-reason">评分依据：主题是神经网络加速器的硬件可靠性，与端侧部署只是间接相关，相关度给 3。内容是已有工作的汇总，没有新的实验结论，贡献给 3。</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-02-17 · Mahdi Taheri / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">应用:fault-detection</span><span class="tag">硬件:FPGA</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一篇博士论文的成果总结：研究怎样低成本地评估和提升神经网络硬件加速器的可靠性，也就是芯片出现位翻转等瞬时故障时模型还能不能算对。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">自研乘法器 AdAM 的容错能力接近三模冗余（TMR），但面积只有精确乘法器的约 1/2.74，功耗延迟积低 39%；TMR 本身要多花约 200% 面积。激活值保护方案让 AlexNet 在故障下的可靠性最坏情况提升 51.79% 以上，额外查找表开销不到 10%。配套综述梳理了 2017–2022 年 139 篇论文，发现只有约 10% 用解析或混合方法评估可靠性。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先做系统性文献综述找出空白，再开发解析式可靠性评估工具；分析量化位宽、近似计算和容错之间的取舍，例如利用量化省下的存储位把最高位存三份；最后在对数近似乘法器里借用加法器闲置资源重复计算高位，检测并清零出错位，做到几乎不加硬件开销的容错。</span></div>
+<div class="score-reason">评分依据：主题是神经网络加速器的硬件故障可靠性，与端侧部署只是间接相关（涉及量化和近似计算对资源受限加速器的影响），相关度给 3。内容是作者已发表工作的汇总，没有新的实验，贡献给 3；作者署名为塔林理工大学，无公司归属。</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.08724" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

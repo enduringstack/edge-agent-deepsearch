@@ -8,7 +8,7 @@
 <div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-02-14 · Chongyang Li; Tianqian Zhang; Shouyin Liu / arXiv</div>
 <div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:高效推理</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">把语义通信用到真实的多用户 MIMO-OFDM 下行链路时，用户间干扰严重。这篇设计了一套“发端重、收端轻”的非对称神经网络方案。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 3GPP UMi 信道仿真中，最低信噪比下重建图像 PSNR 约 18.6 dB，而传统 BPG+5G LDPC 方案解码失败（记为 0 dB）；DJSCC 基线 PSNR 封顶约 20.5 dB，本方法最简变体就高约 3.5 dB；CIFAR-10 分类在 7 dB 下达 72.3%，DJSCC 约 59.8%；接收端解码器仅 0.11M 参数、0.42 MB 内存，比 DJSCC 解码器（7.44M 参数、28.4 MB）少约 98.5%。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">发端按信道状态和信噪比自适应提取语义特征并做神经预编码抑制干扰；收端用轻量解码器加导频引导注意力，隐式完成信道均衡。</span></div>
 <div class="score-reason">评分依据：提到接收端轻量、适合边缘设备，但核心是 6G 通信物理层设计，仅在 3GPP 信道仿真中评测，与端侧 AI 技术栈关系弱。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.13557" target="_blank" rel="noopener">查看原文 →</a></div>

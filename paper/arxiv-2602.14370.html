@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-02-16 · Neil F. Johnson; Frank Y. Huo / arXiv</div>
 <div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:高效注意力</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">越来越多手机能离线跑类 ChatGPT 模型，缺少云端安全监控。这篇从注意力机制出发，推导出对话何时会从“好”突然翻到“坏”的临界点公式。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在多组日常提示的对话实验中，公式对是否出现有害翻转的判断在 18 个非对照案例中命中 16 个（89%），总猜“立即翻转”的朴素基线只有 13 个（72%）；对翻转时机类别（立即或延迟）的预测在 16 个非边界案例中对了 15 个（94%）。论文没有在手机等设备上做部署实验。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">把输出按语义粗粒化，分析对话上下文与不同输出“吸引盆”之间的点积注意力竞争，得到临界轮数 n* 的公式，并给出可在本地实现的轻量控制器示意。</span></div>
-<div class="score-reason">评分依据：动机是端侧离线大模型的安全，但工作是理论建模，没有设备部署实验，端侧相关度低。</div>
+<div class="score-reason">评分依据：动机是手机等设备离线运行大模型缺乏安全监控，但工作是理论建模加对话实验验证，没有设备部署，端侧相关度低；用注意力竞争解释有害翻转的思路有新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.14370" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

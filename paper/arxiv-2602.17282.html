@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-02-19 · Boris Sedlak; Víctor Casamayor Pujol; Schahram Dustdar / arXiv</div>
 <div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:能耗功耗</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">边缘设备上同时跑多个流处理服务时，资源会被互相抢占。这个演示展示一个平台：开发者可以多维度调整服务参数，再接入扩缩容智能体自动优化。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">演示中扩缩容智能体运行 300 秒（约 30 次调参干预）后，同一设备上 3 个共置流处理服务的全局 SLO 达成率从 56% 提升到 98%，之后沿最优参数前沿保持稳定。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">平台暴露每个服务的可调参数（如模型大小、输入张量尺寸），扩缩容智能体通过探索动作空间、用回归分析学习参数与服务指标的关系，再推断最优配置，并可视化其内部模型。</span></div>
-<div class="score-reason">评分依据：场景是边缘设备上的多服务资源调度，与端侧部署相关；但智能体是基于回归的自动扩缩容控制器，没有规划、记忆或工具调用闭环，且只是演示论文。作者来自庞培法布拉大学与维也纳工业大学。</div>
+<div class="score-reason">评分依据：场景是边缘设备上多个流处理服务的资源调度，与端侧部署相关；但智能体是基于回归的自动扩缩容控制器，没有规划、记忆或工具调用闭环，且只是演示论文。作者来自庞培法布拉大学与维也纳工业大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.17282" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -9,7 +9,7 @@
 <div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:编译部署</span><span class="tag">硬件:NPU</span><span class="tag">模型:Phi</span><span class="tag">应用:OCR</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">微软演示如何在 Electron 桌面应用里调用 Windows 本地 AI：用 JavaScript 直接调用系统内置的 Phi Silica 模型做文本生成、摘要、改写、图像描述和文字识别。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">提供实验性 Node.js 插件 @microsoft/windows-ai-electron，把 Windows AI API 投影给 JavaScript；配合 winapp CLI 初始化工程并声明 systemAIModels 权限，示例只能在带 NPU 的 Copilot+ PC 上运行。</span></div>
-<div class="score-reason">评分依据：明确是在 Copilot+ PC 的 NPU 上跑本地模型，属于 PC 端侧推理落地，但只是开发集成教程而非智能体闭环；工程整合为主，贡献偏低。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">提供实验性 Node.js 插件 @microsoft/windows-ai-electron，把 Windows AI API 投影给 JavaScript；配合 winapp CLI 初始化工程并声明 systemAIModels 权限，示例只能在带 NPU 的 Copilot+ PC 上运行。示例库还演示了通过本机智能体注册表发现并调用 MCP 服务器。</span></div>
+<div class="score-reason">评分依据：明确是在 Copilot+ PC 的 NPU 上跑本地模型，属于 PC 端侧推理落地，但只是开发集成教程而非智能体闭环；工程整合为主，贡献偏低。教程只演示用法，没有给出时延、功耗等量化结果，因此效果写未报告。</div>
 <div class="source"><a href="https://devblogs.microsoft.com/ifdef-windows/use-windows-on-device-ai-in-your-electron-app/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

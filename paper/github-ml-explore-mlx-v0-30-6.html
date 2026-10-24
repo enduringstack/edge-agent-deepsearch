@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>v0.30.6</h1>
-<div class="meta"><span class="score">7</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-02-06 · ml-explore / GitHub</div>
-<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">硬件:Apple-Silicon</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">苹果 MLX 机器学习框架发布 0.30.6 小版本，主要提升 macOS 26.3 及以上多台 Mac 之间 JACCL 通信的带宽，并修复若干内核问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">更新 JACCL 分布式通信实现以提高多机带宽；修复 M2 以下芯片上两段式注意力计算、小 N 时量化矩阵向量乘、WSL 上统一内存等问题。</span></div>
-<div class="score-reason">评分依据：MLX 是在 Apple Silicon 上本地跑模型的主流框架，但这一版是补丁更新，改动集中在多机通信和缺陷修复，端侧相关度中等。贡献以修补为主。</div>
+<div class="meta"><span class="score">8</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-02-06 · ml-explore / GitHub</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:高效推理</span><span class="tag">硬件:Apple-Silicon</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">苹果 MLX 机器学习框架发布 0.30.6 小版本，重点是让 macOS 26.3 及以上多台 Mac 互联跑大模型时的 JACCL 通信带宽大幅提高，并修复若干内核问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">发布说明链接的实测（4 台 M3 Ultra、2048 token 提示、生成 128 token）：Devstral2 123B（4bit）预填充从 135 提到 303 token/s（+124%），GLM 4.7 358B（6bit）从 309 提到 719 token/s（+133%）；逐 token 生成只提升 1%–7%。批大小 8 时 MoE 模型 4 机加速比从 1.6 倍升到 2.6 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">JACCL 改用大缓冲区修正带宽，并新增可连接任意多台 Mac 的环形拓扑；同时修复 M2 以下芯片两段式注意力、小 N 量化矩阵向量乘、WSL 统一内存等问题。</span></div>
+<div class="score-reason">评分依据：MLX 是在 Apple Silicon 上本地跑模型的主流框架，本版把多台 Mac 组成的本地集群跑百亿到千亿级模型的预填充速度提高一倍以上，对本地大模型部署有参考价值，但不是单设备端侧场景。改动以通信实现优化和缺陷修复为主。</div>
 <div class="source"><a href="https://github.com/ml-explore/mlx/releases/tag/v0.30.6" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

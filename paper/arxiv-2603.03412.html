@@ -7,9 +7,9 @@
 <h1>PRIVATEEDIT: A Privacy-Preserving Pipeline for Face-Centric Generative Image Editing</h1>
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-03-03 · Dipesh Tamboli; Vineet Punyamoorty; Atharv Pawar; Vaneet Aggarwal / IEEE Transactions on Artificial Intelligence</div>
 <div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:端云协同</span><span class="tag">方向:多模态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用第三方生成模型修人像照片时得上传人脸，PRIVATEEDIT 在本地先把身份敏感区域分割遮住，只把不含身份信息的部分交给云端编辑。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在设备端做人脸分割和可调强度的遮罩，再调用不需改动的第三方生成模型编辑其余区域，用户可自行权衡隐私和画质。</span></div>
-<div class="score-reason">评分依据：本地分割遮罩是一种端云分工的隐私保护思路，但核心生成仍在云端，论文以系统设计和规范性讨论为主，缺少端侧性能数据。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">用第三方生成模型修人像照片时得上传人脸。PrivateEdit 在本地先把脸部区域遮住，只把不含身份信息的部分交给云端编辑，回来后再把原脸贴回去。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 CelebA 上做“专业证件照”编辑：面部 FID 为 226.5，优于直接上传原图给 GPT 的 517.1；身份余弦相似度 0.766，原图直传只有 0.389；CLIP 指令对齐 0.289，与直传的 0.304 接近。遮挡后大模型推断瞳色的准确率从 0.91 降到 0.05，胡须识别 F1 从 0.88 降到 0.36。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在设备端做人脸检测分割并按可调比例遮罩，把遮罩后的图交给无需改动的第三方生成模型编辑，再在本地用泊松融合把原始面部重新嵌回，用户可通过遮罩比例自己权衡隐私和画质。</span></div>
+<div class="score-reason">评分依据：本地遮罩加云端生成是一种端云分工的隐私保护思路，但端侧只做分割和融合，核心生成仍在云端，论文也没有端侧时延或功耗数据。已被 IEEE Transactions on Artificial Intelligence 接收，不在顶会顶刊名单内；作者均来自高校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.03412" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

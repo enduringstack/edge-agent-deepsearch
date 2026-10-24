@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">微软给出一套完全在本机运行的“深度研究”Agent 实战方案：用 Microsoft Agent Framework 编排多步研究流程，模型通过 Foundry Local 在自己电脑上推理，数据和推理都不出本机。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">研究 Agent 带网页搜索工具，每轮总结并找出知识缺口，迭代控制器判断继续深挖还是生成报告，最终报告 Agent 汇总成带引用的结构化报告；模型示例为 Foundry Local 上的 qwen2.5-1.5b-instruct CPU 版，并配合红队安全评测、可视化调试界面和 OpenTelemetry 性能追踪。</span></div>
-<div class="score-reason">评分依据：Agent 的规划循环、工具调用和模型推理都在本地 PC 上完成，是典型的 PC 端侧 Agent。内容以官方教程和开源示例为主，属于工程整合而非新方法。</div>
+<div class="score-reason">评分依据：Agent 的规划循环、工具调用和模型推理都在本地 PC 上完成，是典型的 PC 端侧 Agent。内容以官方教程和开源示例为主，属于工程整合而非新方法；文中只介绍如何采集时延等指标，没有公布实测数字。</div>
 <div class="source"><a href="https://devblogs.microsoft.com/agent-framework/from-local-models-to-agent-workflows-building-a-deep-research-solution-with-microsoft-agent-framework-on-microsoft-foundry-local/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

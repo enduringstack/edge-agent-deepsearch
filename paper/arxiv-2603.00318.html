@@ -7,9 +7,9 @@
 <h1>AESP: A Human-Sovereign Economic Protocol for AI Agents with Privacy-Preserving Settlement</h1>
 <div class="meta"><span class="score">4</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-02-27 · Jian Sheng Wang / arXiv</div>
 <div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:工具调用</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">AI 智能体替人花钱时如何既让它自主交易、又让人始终掌控资产，这项工作提出了一套分层经济协议。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">AI 智能体替人花钱时，如何既让它自主交易、又让人始终掌控资产？这篇提出一套分层经济协议 AESP，原则是“智能体有经济能力，但没有经济主权”。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">八项检查的确定性策略引擎、分级人工审核、双签承诺与托管、按上下文隔离的隐私派生密钥，并通过 MCP 和 A2A 与智能体框架互通。</span></div>
-<div class="score-reason">评分依据：智能体支付治理协议，与端侧部署无关（相关度 1）；协议设计以工程整合为主，只给出评测方案没有实验结果（贡献 3）。公司归属来自 arXiv HTML 首页作者机构。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">交易前先过一个含 8 项检查（单笔限额、时间窗、地址/链/方法白名单、首次付款审核、最低余额、预算）的确定性策略引擎，不通过的交给人分级审批；双方智能体用 EIP-712 双签承诺并可托管，每笔交易用按上下文隔离派生的临时地址保护隐私，并通过 MCP 和 A2A 与智能体框架互通。</span></div>
+<div class="score-reason">评分依据：智能体支付治理协议，与端侧部署无关；协议设计以工程整合为主，开源 TypeScript SDK 含 10 个模块、208 个测试，但论文只给出评测方案和假设，没有实验结果，所以效果写未报告。作者署名机构为 Yeah LLC，不在本雷达跟踪的公司范围内。</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.00318" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

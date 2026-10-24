@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">阿里开源网关 Higress 2.2.0 支持 Kubernetes 新版 Gateway API 及其 AI 推理扩展，让网关能识别大模型调用流量并做智能路由，同时为 Ingress Nginx 退役后的迁移提供方案。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">网关监听 InferencePool 等资源，识别到推理流量后通过 gRPC 调用标准 Endpoint Picker，按推理节点的任务队列、KV Cache 命中率和 LoRA 适配器选择最合适的节点。</span></div>
-<div class="score-reason">评分依据：属于云端推理服务的流量治理，端侧相关度低；按 KV Cache 命中率路由的思路与推理优化相关。</div>
+<div class="score-reason">评分依据：属于云端推理服务的流量治理，端侧相关度低；按 KV Cache 命中率路由的思路与推理优化相关。（效果字段为“未报告”：文章只介绍功能与原理，没有性能数据。）</div>
 <div class="source"><a href="https://www.alibabacloud.com/blog/higress-has-supported-the-new-gateway-api-and-its-ai-inference-extension_602891" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-02-24 · Xinxin Wang; Lixian Yan; Shuhan Liu; Luke Upton; Zhuoqi Cai; Yiming Tan; Shengman Li; Koustav Jana / arXiv</div>
 <div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">硬件:CIM</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">AI 加速器的成本和能耗越来越多被片上存储占据。这篇工作做了一个同时支持 SRAM 和增益单元存储（GCRAM）的开源存储编译器，帮助设计者探索混合片上存储方案。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">2T Si-Si 和 2T OS-Si 增益单元的面积分别只有 6T SRAM 单元的 69% 和 35%；含外围电路后，Si-Si 增益单元存储在容量超过 1 Kb 时比 SRAM 更小，OS-Si 在所有容量下最小；增益单元的漏电功耗比 SRAM 低几个数量级，但工作频率较低，OS-Si 数据保持时间可达毫秒级。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">OpenGCRAM 编译器可针对商用 CMOS 工艺生成宏单元设计和版图，并给出面积、时延和功耗，用户据此在给定性能指标下挑选最优的异构存储配置。</span></div>
-<div class="score-reason">评分依据：片上存储是端侧 AI 芯片能效的关键，这个工具对端侧加速器设计有参考价值，但论文不针对具体端侧模型或设备。属于工具链类贡献。</div>
+<div class="score-reason">评分依据：片上存储是端侧 AI 芯片能效的关键，这个工具对端侧加速器设计有参考价值，评测负载也包含 Llama-3.2-1B 等推理任务，但论文不针对具体端侧模型或设备，属于工具链类贡献。作者来自斯坦福大学和加州大学，无公司署名；代码承诺随正式版发布。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.21278" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -7,9 +7,9 @@
 <h1>Develop Native Multimodal Agents with Qwen3.5 VLM Using NVIDIA GPU-Accelerated Endpoints</h1>
 <div class="meta"><span class="score">4</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-02-27 · NVIDIA / NVIDIA</div>
 <div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:云端serving</span><span class="tag">方向:MoE</span><span class="tag">方向:多模态</span><span class="tag">模型:Qwen</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">英伟达介绍如何通过其云端 GPU 接口试用和部署阿里新开源的 Qwen3.5 原生多模态智能体模型，以及用 NIM 和 NeMo 做生产部署与微调。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">Qwen3.5 首个模型采用 MoE 与 Gated Delta Networks 混合架构，总参数 397B、每 token 激活 17B（512 个专家，每 token 用 10 个路由专家加 1 个共享专家），上下文 256K 可扩展到 1M；在 build.nvidia.com 上由 Blackwell GPU 提供免费调用接口。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">英伟达介绍如何通过其云端 GPU 接口试用阿里新开源的 Qwen3.5 原生多模态智能体模型，并用 NIM 容器和 NeMo 做生产部署与微调。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">文中只给模型规格，没有基准或吞吐数据：总参数 397B、每 token 激活 17B（激活率 4.28%），512 个专家中每 token 用 10 个路由专家加 1 个共享专家，60 层，上下文 256K 可扩展到 1M，支持 200 多种语言。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">Qwen3.5 采用 MoE 与 Gated Delta Networks 混合架构，能理解和操作界面；build.nvidia.com 上由 Blackwell GPU 提供免费调用接口，也可打包成 NIM 微服务部署，用 NeMo Automodel 做监督微调或 LoRA。</span></div>
 <div class="score-reason">评分依据：内容是超大模型的云端托管与调用教程，端侧相关度低；混合线性注意力与高稀疏度 MoE 的架构信息对关注高效模型设计的读者有一定参考。</div>
 <div class="source"><a href="https://developer.nvidia.com/blog/develop-native-multimodal-agents-with-qwen3-5-vlm-using-nvidia-gpu-accelerated-endpoints/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

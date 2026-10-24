@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-02-10 · Sieun Hyeon; Jusang Oh; Sunghwan Steve Cho; Jaeyoung Do / ACL 2026 Findings</div>
 <div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">MATA 是一个表格问答的多智能体框架，用多条推理路径加小模型工具来提高答案可靠性，同时减少昂贵的大模型调用。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在较难的 TableBench 上比最强基线 SynTQA 的精确匹配高 40.1%、模糊匹配高 21.9%、F1 高 33.1%；置信度检查让裁判 Agent 调用在两个基准上分别减少 95.8% 和 60.6%，调度器再省 14.6% 和 7.6% 的大模型调用（10 个模型平均）。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">让模型按不同推理风格生成候选答案，再用小语言模型做的工具来修正或挑选最佳答案，并用一个调度算法尽量少调用大模型。</span></div>
-<div class="score-reason">评分依据：原文强调在资源受限、隐私敏感环境下用小开源模型完成多智能体推理，减少大模型调用对端侧有借鉴意义；但没有设备实测，属于常见的多路推理加工具编排。</div>
+<div class="score-reason">评分依据：原文强调在资源受限、隐私敏感环境下用小开源模型完成多智能体推理，大幅减少大模型调用对端侧有借鉴意义；但没有设备实测，属于多路推理加工具编排的组合。被 ACL 2026 Findings 接收，作者来自首尔大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.09642" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

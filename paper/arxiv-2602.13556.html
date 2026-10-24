@@ -8,7 +8,7 @@
 <div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-02-14 · Silvija Kokalj-Filipovic; Yagna Kaasaragadda / arXiv</div>
 <div class="tags"><span class="tag">方向:多模态</span><span class="tag">应用:语音</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">Discernment 是一个“语义通信”系统：不传原始信号，而是用离散空间的生成模型传递射频和音频信号的含义，适合物联网场景。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 AudioMNIST 语音上，只收到 11% 的令牌时分类准确率仅降 0.02%，只收到 3% 时仍有 98.93%（降 1.07%）；在 Torchsig 的 6 种射频波形上，离散扩散版本在令牌丢失率不超过 80% 时分类准确率仍与原始数据一致（100%）。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">根据信道擦除模式，在自回归生成和扩散生成两种算法之间动态切换来重建信号含义。</span></div>
 <div class="score-reason">评分依据：强调低模型复杂度、面向物联网部署，但本质是通信系统研究，与端侧 AI 推理部署关联弱。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.13556" target="_blank" rel="noopener">查看原文 →</a></div>

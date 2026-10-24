@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">阿里 MNN 推理引擎发布 3.4.0 大版本，重点把手机等端侧设备上的大模型推理补齐：安卓 Vulkan 后端能跑 LLM，苹果 Metal 后端加上 Flash Attention 和投机解码，高通 QNN 后端支持 Qwen3 和视觉语言模型。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">在 CPU 与 Metal 后端实现 Flash Attention，CPU 端对 KV Cache 做 8bit 非对称量化并支持 Prefix KV Cache，用统一的 attention_mode 选项控制；Vulkan 引入协作矩阵（CoopMat）指令加速矩阵乘，Metal 支持 Eagle3 与 Lookahead 投机解码并提供 Qwen3 的 Eagle3 权重；QNN 后端新增 Python 直接导出和 OmniQuant 量化。</span></div>
-<div class="score-reason">评分依据：MNN 是面向手机和嵌入式的推理引擎，这一版的改动全部落在安卓 GPU、苹果 GPU 和高通 NPU 等端侧后端上，端侧相关度很高。贡献在于把长文本省内存、投机解码、NPU 量化导出等成熟技术工程化集成进一个移动端框架，属于扎实的工程整合。</div>
+<div class="score-reason">评分依据：MNN 是面向手机和嵌入式的推理引擎，这一版的改动全部落在安卓 GPU、苹果 GPU 和高通 NPU 等端侧后端上，端侧相关度很高。贡献在于把 Flash Attention、KV Cache 量化、投机解码、NPU 量化导出等成熟技术集成进移动端框架；发布说明只有“大幅加速”“显著降低内存”等定性描述，没有给出具体数字。</div>
 <div class="source"><a href="https://github.com/alibaba/MNN/releases/tag/3.4.0" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

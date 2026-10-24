@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A Dual-Stream Physics-Augmented Unsupervised Architecture for Runtime Embedded Vehicle Health Monitoring</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-02-11 · Enzo Nicolas Spotorno; Antonio Augusto Medeiros Frohlich / arXiv（投稿 IEEE ISIE 2026）</div>
-<div class="tags"><span class="tag">应用:fault-detection</span><span class="tag">硬件:MCU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一种可在车辆 ECU 上实时运行的健康监测架构，能分辨“路面冲击”和“重载爬坡”这类表面正常却很伤传动系统的工况。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">双流设计：一路用无监督学习检测表面异常，另一路用宏观物理代理量估算累计负载，合成多维健康向量。</span></div>
-<div class="score-reason">评分依据：在 RISC-V 嵌入式平台上验证，属于嵌入式边缘推理应用；但摘要未给具体开销数字，模型本身较简单。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-02-11 · Enzo Nicolas Spotorno; Antonio Augusto Medeiros Frohlich / arXiv</div>
+<div class="tags"><span class="tag">应用:fault-detection</span><span class="tag">硬件:CPU</span><span class="tag">方向:能耗功耗</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一种能在车辆 ECU 上实时运行的车辆健康监测架构，专门补上“重载爬坡这类信号平稳、却很伤传动系统”的工况被无监督异常检测漏掉的盲区。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 CARLA 仿真的 19.3 万个窗口上，单纯 LSTM 自编码器的异常分与横向应力相关（r=0.435），与传动系统负载几乎无关（r=0.032）；在 StarFive JH7110（RISC-V 四核 U74）开发板上实测，双流整体每次推理约 6.35 微秒、0.68 微焦，物理代理量只增加约 1.3% 的时间和能耗。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">双流设计：一路用 LSTM 自编码器检测颠簸、坑洼等表面异常，另一路用 10 Hz 惯导/GNSS 数据计算悬架、横向、传动和制动四个宏观物理负载代理量，两路取最大值合成多维健康向量。</span></div>
+<div class="score-reason">评分依据：在 RISC-V 嵌入式开发板上实测了时延和能耗，属于资源受限设备上的实时推理应用，端侧相关度中等偏上；但模型本身是常见的 LSTM 自编码器加物理量拼接，且数据来自仿真，贡献有限。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.10432" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

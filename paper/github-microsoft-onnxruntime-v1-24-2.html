@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">微软 ONNX Runtime 1.24 的补丁版本，修复若干 bug 和一处越界读取安全漏洞，同时更新了高通 QNN、WebGPU、OpenVINO 等执行后端。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">高通 QNN 后端对 HTP v81 及以上启用 64 位 UDMA 模式；OpenVINO 后端在共享上下文间复用权重文件以降低常驻内存；修复 MLAS 查表 GEMM（MatMulNBitsLutGemm）的精度和不稳定问题，并修好 Windows ARM64 的 Python 与 DirectML 打包。</span></div>
-<div class="score-reason">评分依据：跨平台推理引擎的维护版本，QNN、OpenVINO 和 Windows ARM64 的修复直接影响手机与 AI PC 上的本地推理；以修补为主，没有新的方法贡献。</div>
+<div class="score-reason">评分依据：跨平台推理引擎的维护版本，QNN、OpenVINO 和 Windows ARM64 的修复直接影响手机与 AI PC 上的本地推理；以修补为主，没有新的方法贡献。（效果字段为“未报告”：发布说明只列修复项，没有给出性能数字。）</div>
 <div class="source"><a href="https://github.com/microsoft/onnxruntime/releases/tag/v1.24.2" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

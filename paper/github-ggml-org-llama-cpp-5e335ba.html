@@ -7,9 +7,9 @@
 <h1>ggml-org/llama.cpp: webui: Improvements for Models Selector UI (#20066)</h1>
 <div class="meta"><span class="score">5</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-03-05 · ggml-org / GitHub</div>
 <div class="tags"><span class="tag">方向:推理框架</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">llama.cpp 自带网页聊天界面的一次改版，主要改进了模型选择器的交互和展示。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">llama.cpp 自带网页聊天界面的一次改版，主要改进模型选择器的交互和展示。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在 llama-server 的网页前端里重做模型选择组件，增加模型能力徽标、模型名展示和相关设置项，改动集中在界面代码。</span></div>
-<div class="score-reason">评分依据：llama.cpp 是端侧推理的核心项目，但这次只改了服务端网页界面，不涉及推理内核或部署能力，端侧技术价值有限；属于常规界面迭代。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">改动集中在 llama-server 的网页前端：服务端离线时禁用模型选择器；恢复历史对话时，只有在非路由模式或该模型已加载的情况下才自动切回原模型；图标组件支持自定义尺寸，并整理常量引用，同时重新打包前端产物。</span></div>
+<div class="score-reason">评分依据：llama.cpp 是端侧推理的核心项目，但这次只改了服务端网页界面，不涉及推理内核或部署能力，端侧技术价值有限；属于常规界面迭代。提交只是界面代码改动，没有性能或评测数字，所以效果写未报告。</div>
 <div class="source"><a href="https://github.com/ggml-org/llama.cpp/commit/5e335ba1134b501444b7e538c99b7549045c5109" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

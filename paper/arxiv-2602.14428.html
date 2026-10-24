@@ -8,7 +8,7 @@
 <div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-02-16 · Wang Xing; Wei Song; Siyu Lin; Chen Wu; Man Wang / arXiv</div>
 <div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:规划推理</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">时间知识图谱推理模型很重、部署贵。这篇用传统大模型教师加大语言模型辅助教师，一起蒸馏出轻量学生模型。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 YAGO 和 WIKI 两个时间知识图谱上，学生模型在多数指标上优于常规蒸馏（BKD、FitNet、RKD），但幅度很小：如 TADistMult 在 WIKI 上 MRR 46.03（BKD 为 45.89）、Hits@3 49.16（BKD 为 48.87）；TTransE 在 WIKI 上平均排名 MR 从 2383.67 降到 1985.63。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">大语言模型提供背景知识和时间信号作为额外监督，与时间模型教师分阶段对齐，联合优化监督和蒸馏目标，推理时不增加学生开销。</span></div>
 <div class="score-reason">评分依据：模型压缩用于知识图谱推理，与端侧部署仅有间接关系。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.14428" target="_blank" rel="noopener">查看原文 →</a></div>

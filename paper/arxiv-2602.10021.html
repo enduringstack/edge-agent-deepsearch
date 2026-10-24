@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-02-10 · Wenxuan Xie; Yujia Wang; Xin Tan; Chaochao Lu; Xia Hu; Xuhong Wang / arXiv</div>
 <div class="tags"><span class="tag">方向:高效推理</span><span class="tag">应用:长上下文推理</span><span class="tag">应用:RAG</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">DRIFT 把“提取知识”和“推理”拆给两个模型：小模型把长文档压成少量隐式事实 token，大模型只负责推理，以此扩展有效上下文。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以 Mistral-7B 为推理模型、Qwen2.5-3B 为知识模型时，在 32 倍压缩下把 LongBench v2 准确率从 20.87% 提到 29.22%；处理 256k token 文档时平均提速 7 倍，压缩到 64 倍、128 倍时仍有竞争力。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">轻量知识模型按问题动态把文档块压缩成稠密的隐式事实 token，再投影到推理模型的嵌入空间，替代冗长原文。</span></div>
-<div class="score-reason">评分依据：上下文压缩可减少推理时的缓存和计算开销，对端侧长上下文有迁移价值；双模型解耦思路有一定新意，但没有设备侧评测。</div>
+<div class="score-reason">评分依据：上下文压缩可减少推理时的缓存和计算开销，对端侧长上下文有迁移价值；双模型解耦思路有一定新意，但没有设备侧评测。作者来自上海人工智能实验室和复旦大学等科研机构。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.10021" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

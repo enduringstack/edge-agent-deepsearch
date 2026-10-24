@@ -8,7 +8,7 @@
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-02-14 · Rahul Singh; Seyran Saeedi; Zheng Zhang / arXiv</div>
 <div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:量化</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">二值神经网络常用于边缘设备，但验证它对输入扰动是否鲁棒是组合爆炸问题。这篇把鲁棒性验证转成伊辛模型/量子启发求解器能处理的优化问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在二值化 MNIST 的四种规模网络上，自由能机（FEM）求解器在全部实例中满足所有约束（最大实例约 103 万条约束），Gurobi 和模拟退火在大实例上各差少量约束；在一个代表性实例上，富士通数字退火机 0.366 秒解完、满足全部 1273 条约束，比 64 核 Xeon 上的 Gurobi（61.4 秒）快约 168 倍、比模拟退火快约 10 倍，而 D-Wave 量子退火机只满足 356 条。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">先把验证问题写成带约束的二次布尔优化，再转成无约束二次布尔优化（QUBO），交给伊辛机、量子退火等求解。</span></div>
 <div class="score-reason">评分依据：研究对象是边缘常用的二值网络，但工作重心是形式化验证与伊辛计算，与端侧推理部署关系较弱。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.13536" target="_blank" rel="noopener">查看原文 →</a></div>

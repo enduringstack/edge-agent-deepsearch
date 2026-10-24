@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-02-26 · Marc Neu; Isabel Haide; Torben Ferber; Jürgen Becker / arXiv</div>
 <div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">硬件:FPGA</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">对撞机实验的一级触发器开始用图神经网络，传感器数据稀疏、对时延要求极高。这篇在 FPGA 上做了一个低时延的稀疏数据压缩预处理模块，喂给机器学习加速器。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Belle II 电磁量能器的 GNN 一级触发器中，相比朴素方案把后续 GNN 推理的计算量降低 324 倍，额外时延低于 60 ns；在 AMD Ultrascale XCVU190 上，输出端口增多时可达频率从目标 500 MHz 降到 277 MHz。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">把大量传感器前端的先入先出接口数据重排到少量接口，用分层稀疏压缩流水线去掉动态稀疏性；用 Chisel 实现为开源硬件生成器，并在 Belle II 电磁量能器的 GNN 触发器中演示。</span></div>
-<div class="score-reason">评分依据：FPGA 上低时延机器学习推理的数据预处理，与边缘推理硬件相邻，但面向粒子物理专用场景。</div>
+<div class="score-reason">评分依据：FPGA 上低时延机器学习推理的数据预处理，与边缘推理硬件相邻，但面向粒子物理专用场景。作者来自卡尔斯鲁厄理工学院，无公司署名；硬件生成器已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.23281" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

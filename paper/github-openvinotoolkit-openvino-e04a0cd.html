@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">OpenVINO 英特尔 NPU 插件的一次配置属性重构，理清哪些设置交给编译器、哪些留在插件内部处理。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">新增在不需要编译器配置时关闭编译器属性的路径，重命名按编译器取配置的接口，编译器返回空属性列表时不再退回旧模式，并且不再把编译器不支持的属性下发给它，同时补充导入路径的测试。</span></div>
-<div class="score-reason">评分依据：改动集中在英特尔 PC 端 NPU 插件，与端侧 NPU 部署链路直接相关；但只是内部配置重构，对使用者几乎没有可见新能力。</div>
+<div class="score-reason">评分依据：改动集中在英特尔 PC 端 NPU 插件，与端侧 NPU 部署链路直接相关；但只是内部配置重构，对使用者几乎没有可见新能力。提交说明只列了代码改动，没有性能或效果数字，因此效果写未报告。</div>
 <div class="source"><a href="https://github.com/openvinotoolkit/openvino/commit/e04a0cdb75183d561e99d9481407a7b8be3d120f" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

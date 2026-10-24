@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Benchmarking Compound AI Applications for Hardware-Software Co-Design</h1>
 <div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-03-04 · Paramuth Samuthrsindh; Angel Cervantes; Varun Gohil; Gohar Irfan Chaudhry; Christina Delimitrou; Adam Belay / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span><span class="tag">方向:工具调用</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">由大模型、传统模型、外部工具和数据源组合而成的“复合 AI 应用”正成为数据中心主要负载，这篇给出一套跨软硬件栈的基准测试套件。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用基准套件分析应用、服务软件到硬件各层配置对性能、成本和资源消耗的影响，总结软硬件协同设计原则。</span></div>
-<div class="score-reason">评分依据：面向数据中心的复合 AI 负载基准，端侧相关度低；贡献在基准与设计经验总结。</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:KV cache</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">由大模型、传统模型、外部工具和数据源组合而成的“复合 AI 应用”正成为数据中心的主要负载，这篇给出一套跨软硬件栈分析它们的基准测试套件。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">用 Gemma-3-27B 跑三类应用：RAG 有 92% 的时间 CPU 才是瓶颈，视频问答和 OpenEvolve 则分别有 62% 和 82% 的时间以 GPU 为主；把视频问答中多模态模型 GPU 限在 1125 MHz、语音识别 GPU 限在 300 MHz，能耗比满频降低约 30%；调整提示顺序让 KV 缓存命中率提高 16%–24%，端到端时延最多降 8%、能耗降 12%；按视频固定路由让多模态缓存命中率从 13% 升到 67%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">搭建视频问答、OpenEvolve 程序演化和 RAG 三类复合 AI 应用基准，在不同 GPU、并行度和频率配置下测量性能、能耗和功率，并尝试把稳定内容放在提示前部、按数据固定路由等缓存优化，总结软硬件协同设计原则。</span></div>
+<div class="score-reason">评分依据：面向数据中心的复合 AI 负载基准，端侧相关度低；但 CPU 侧检索瓶颈、按组件调频省电和提示前缀缓存的结论，对资源受限设备上的 Agent 流水线也有参考。作者均来自 MIT CSAIL。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.09593" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

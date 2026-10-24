@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-02-24 · Enrico Ballini; Luca Muscarnera; Alessio Fumagalli; Anna Scotti; Francesco Regazzoni / arXiv</div>
 <div class="tags"><span class="tag">方向:剪枝稀疏</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">提出一种全连接网络剪枝方法：剪掉一个权重的同时调整相邻偏置来补偿，从而更准确地判断哪些权重可以去掉。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 MNIST 两种全连接网络上，不重训即可剪掉约 50% 的权重而测试损失基本不变；剪枝后再微调，去掉 80%–90% 的权重损失仍几乎不变，且在各剪枝比例下损失都低于幅值、梯度乘幅值和随机剪枝等对比方法。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">对每个权重计算在相邻偏置做最优扰动补偿后的输出变化作为重要性分数，用自动微分高效求得，剪枝后直接应用对应的偏置扰动。</span></div>
-<div class="score-reason">评分依据：剪枝属于模型压缩技术栈，但只针对全连接网络、没有部署或大模型实验，相关度低；“剪枝加偏置补偿”是对已有思路的小改进。</div>
+<div class="score-reason">评分依据：剪枝属于模型压缩技术栈，但只针对小型全连接网络、没有部署或大模型实验，相关度低；“剪枝加偏置补偿”是对已有思路的小改进。作者来自米兰理工大学，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.20467" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">7</span> <span class="tier">官方动态</span>  2026-02-12 · Apple / Apple</div>
 <div class="tags"><span class="vendor-tag">Apple</span><span class="tag">方向:规划推理</span><span class="tag">方向:评测基准</span><span class="tag">应用:长上下文推理</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">苹果研究发现，推理大模型“想了多长”本身就是一个简单好用的置信度信号，可用来判断答案靠不靠谱、减少幻觉带来的风险。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen2.5-32B 底座和 4 个由它后训练出的 32B 推理模型上，用推理长度判断答案对错的 AUROC 与让模型口头报置信度的方法相差都在 2–3 分以内；在 OpenThinker2-32B 的 10 个数据集上，只统计 50 个高熵“分叉”词元的出现次数就能达到与推理长度相当的 AUROC。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">在多种模型、数据集和提示下，把推理过程长度当作零样本置信度估计，与让模型自己报置信度的方法对比；在控制题目难度和 GRPO 训练带来的长度偏差后效果依然存在，并发现高熵的“分叉”词元起关键作用。</span></div>
-<div class="score-reason">评分依据：研究对象是云端推理大模型的不确定性估计，与端侧部署无直接关系，不过它几乎零成本，可供 Agent 做自检或提前停止。论文发表在 ICML 2026 研讨会，结论简单但有启发性。</div>
+<div class="score-reason">评分依据：研究对象是推理大模型的不确定性估计，与端侧部署无直接关系，不过它几乎零成本，可供 Agent 做自检或提前停止。论文被 ICML 2026 不确定性研讨会接收，结论简单但有启发性。</div>
 <div class="source"><a href="https://machinelearning.apple.com/research/trace-length" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

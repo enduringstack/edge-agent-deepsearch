@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Evaluating Memory Structure in LLM Agents</h1>
-<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-02-11 · Alina Shutova; Alexandra Olenina; Ivan Vinogradov; Anton Sinitsin / arXiv</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-02-11 · Alina Shutova; Alexandra Olenina; Ivan Vinogradov; Anton Sinitsin / arXiv</div>
 <div class="tags"><span class="vendor-tag">Yandex</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">StructMemEval 是一个检验大模型智能体能否“有条理地组织记忆”的基准，比如维护账本、待办清单、树形结构，而不只是记住事实。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">收集一组人类需要靠结构化笔记才能解决的任务，比较简单检索增强模型和带记忆框架的智能体在提示与不提示记忆结构时的表现。</span></div>
-<div class="score-reason">评分依据：针对 Agent 长期记忆组织的评测，对端侧个人助理的记忆设计有参考，但与设备无关。PDF 首页脚注显示四位作者均署名 Yandex。 作者机构依据：arXiv PDF 首页署名 Yandex（PDF 首页脚注 † 标注 Yandex，四位作者均带该标记）。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">StructMemEval 是一个检验大模型智能体能否“有条理地组织长期记忆”的基准，比如自己维护账本、状态表、树形关系，而不只是记住零散事实。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">据 2026 年 10 月更新的论文版本，在 51 道难题的主测试集上（统一用 gemini-3.1-pro），纯检索方案总分仅 0.06，Mem0 为 0.30，Mem-agent 为 0.59（状态追踪 0.84、树结构 0.98），但记账计数类任务最高也只有 0.16；换用 deepseek-v4-flash 等较小模型时 Mem-agent 总分降到 0.38 左右，且模型在不提示记忆结构时往往不会主动把记忆组织好。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">收集人类需要靠结构化笔记才能解决的任务（交易账本、状态追踪、树形关系、推荐计数等），把记忆组织能力与其他能力解耦，对比纯检索、改进检索和带记忆框架的智能体在有无“记忆结构提示”下的表现。</span></div>
+<div class="score-reason">评分依据：针对智能体长期记忆组织方式的评测，对端侧个人助理的记忆设计有参考，但与设备无关，端侧相关度低；把“会不会组织记忆”单独拿出来考，基准设计有一定新意。作者机构依据：arXiv PDF 首页脚注 † 标注 Yandex，四位作者均带该标记。 作者机构依据：arXiv PDF 首页署名 Yandex（PDF 首页脚注 † 为 Yandex，四位作者均带 † 标记）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.11243" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

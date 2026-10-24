@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Anatomy of Agentic Memory: Taxonomy and Empirical Analysis of Evaluation and System Limitations</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-02-22 · Dongming Jiang; Yi Li; Songtao Wei; Jinxin Yang; Ayushi Kishore; Alysa Zhao; Dingyi Kang; Xu Hu / arXiv</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-02-22 · Dongming Jiang; Yi Li; Songtao Wei; Jinxin Yang; Ayushi Kishore; Alysa Zhao; Dingyi Kang; Xu Hu / arXiv</div>
 <div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">这是一篇关于大模型 Agent 记忆系统的综述，梳理记忆结构的分类，并指出现有评测和系统实现上的主要问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LoCoMo 上实测：MemoryOS 每轮用户时延达 32.4 秒，SimpleMem、LOCOMO 等轻量方案低于 1.1 秒，MemSkill 仅 0.31 秒，全上下文基线 1.73 秒；把主干从 gpt-4o-mini 换成 Qwen-2.5-3B 后，Nemori 答题分从 0.781 降到 0.447，格式错误率从 17.9% 升到 30.4%。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">按四类记忆结构给记忆增强生成系统分类，再从基准饱和、指标与评委敏感性、主干模型依赖、记忆维护带来的时延与吞吐开销等角度做实证分析。</span></div>
-<div class="score-reason">评分依据：Agent 记忆的运行开销对端侧 Agent 有参考价值，但本文是综述且不涉及设备端；贡献主要是分类与问题梳理。</div>
+<div class="score-reason">评分依据：Agent 记忆的运行开销对端侧 Agent 有直接参考价值（小模型主干下效果明显下滑、部分记忆系统时延不可接受），但本文本身不涉及设备端部署；贡献主要是分类梳理加一组对比实测。作者来自德州大学达拉斯分校、加州大学戴维斯分校和德州农工大学，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.19320" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

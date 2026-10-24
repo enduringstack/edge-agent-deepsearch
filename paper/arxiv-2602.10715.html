@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Locomo-Plus: Beyond-Factual Cognitive Memory Evaluation Framework for LLM Agents</h1>
 <div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-02-11 · Yifei Li; Weidong Guo; Lingling Zhang; Rongman Xu; Muye Huang; Hui Liu; Lijiao Xu; Yu Xu / arXiv</div>
-<div class="tags"><span class="vendor-tag">Tencent</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LoCoMo-Plus 是一个考察对话智能体“认知记忆”的基准：看模型能否记住用户的状态、目标和价值观等隐含约束，并在之后的对话中用上。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">构造线索与触发之间语义不直接相关的长对话场景，并用“约束一致性”代替字符串匹配，统一评估各类模型、检索方法和记忆系统。</span></div>
-<div class="score-reason">评分依据：Agent 长期记忆评测，对个人助理类端侧 Agent 有参考，但与设备无关。PDF 首页多位作者署名 Tencent。 作者机构依据：arXiv PDF 首页署名 Tencent（PDF 首页作者 Weidong Guo、Hui Liu、Lijiao Xu、Yu Xu 署名 Tencent）。</div>
+<div class="tags"><span class="vendor-tag">Tencent</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">LoCoMo-Plus 是一个考察对话智能体“认知记忆”的基准：看模型能否记住用户之前透露的状态、目标、价值观等隐含约束，并在很久之后语义不直接相关的提问中正确用上。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">所有被测方法从原 LoCoMo 到 LoCoMo-Plus 都大幅下滑：gemini-2.5-pro 平均分从 71.78 跌到 26.06，GPT-4o 从 62.99 跌到 21.05；Mem0、SeCom、A-Mem 三个记忆系统在 LoCoMo-Plus 上只有 15.8、14.9、17.2 分，检索增强方法为 12.3~15.6 分；所用 LLM 评审与两名人工标注的一致度为 0.80 和 0.82。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">构造“线索”和“触发提问”之间语义脱节的长对话样本，评测时不告诉模型任务类型，并用“回答是否满足先前隐含约束”的一致性判断取代字符串匹配，统一评估开源/闭源模型、检索方法和记忆系统。</span></div>
+<div class="score-reason">评分依据：关注智能体长期记忆评测，对个人助理类端侧智能体的记忆设计有参考，但实验与设备无关，端侧相关度低；揭示了现有记忆评测的提示泄题和长度偏差，基准设计有一定新意。作者机构依据：arXiv PDF 首页作者 Weidong Guo、Hui Liu、Lijiao Xu、Yu Xu 署名 Tencent。 作者机构依据：arXiv PDF 首页署名 Tencent（PDF 首页作者 2、6、7、8（Weidong Guo、Hui Liu、Lijiao Xu、Yu Xu）署名 Tencent，其余作者署名西安交通大学）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.10715" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

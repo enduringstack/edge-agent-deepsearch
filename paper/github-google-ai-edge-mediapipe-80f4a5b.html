@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">MediaPipe 一次没有说明的内部代码同步，主要整理各平台任务库的构建与运行入口，并公开了安卓端大模型推理接口的 Java 源码。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">提交把 LlmInference、LlmInferenceSession、LlmTaskRunner 等安卓端大模型推理类的源码放进仓库，同时调整 C++/iOS 任务运行器的创建方式、删掉旧的日志模块，并批量更新安卓示例的构建文件。</span></div>
-<div class="score-reason">评分依据：MediaPipe 是手机端推理框架，这次提交涉及安卓端大模型推理接口，属于端侧推理栈；但它是无说明的常规代码同步，以构建和接口整理为主，贡献有限。</div>
+<div class="score-reason">评分依据：MediaPipe 是手机端推理框架，这次提交涉及安卓端大模型推理接口，属于端侧推理栈；但它是无说明的常规代码同步，以构建和接口整理为主，贡献有限。提交页只有代码改动（183 个文件），没有任何性能或效果数据，因此效果写未报告。</div>
 <div class="source"><a href="https://github.com/google-ai-edge/mediapipe/commit/80f4a5bb1cf4d0cb33c07d16bf1c773c2f19b1dc" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

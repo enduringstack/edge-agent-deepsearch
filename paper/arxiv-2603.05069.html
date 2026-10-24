@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Jagarin: A Three-Layer Architecture for Hibernating Personal Duty Agents on Mobile</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-03-05 · Ravi Kiran Kadaboina / arXiv</div>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-03-05 · Ravi Kiran Kadaboina / arXiv</div>
 <div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:记忆</span><span class="tag">方向:安全隐私</span><span class="tag">硬件:手机</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">手机上的个人 AI 助理如果一直后台运行会耗电、也会被系统限制，只被动等用户提问又会错过截止事项。Jagarin 让助理平时“休眠”，由手机端的打分引擎在系统唤醒时决定要不要提醒用户或升级处理。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">三层结构：手机端 DAWN 在 Android 周期唤醒时综合事项时间窗、用户参与度、延误代价等信号决定保持沉默、提醒或升级；ARIA 把机构邮件转成加密的事项记录推送到设备；只有用户点击时才临时调用云端智能体，且只发送结构化事项。</span></div>
-<div class="score-reason">评分依据：判断该不该行动、事项状态和行为信号都留在 Android 手机上运行，云端模型只在用户主动升级时介入，是典型的端侧智能体运行时设计；但本文只给出架构和原型，量化评测放在配套论文中。</div>
+<div class="field"><span class="label">有什么结果</span><span class="text">最新版在 Android 模拟器上实测提醒送达：授予精确闹钟权限时，即使应用处于受限待机桶加深度休眠，提醒也在预定时间后 35 毫秒内送达；未授权时约晚 4 分钟，当天闹钟配额用尽时被推迟约 23 小时。配套论文中的用户响应预测模型在 342 名用户、340 万条通知数据上测试 AUC 为 0.69，规则基线为 0.62。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">三层结构：手机端 DAWN 在 Android 周期唤醒时综合事项的最佳处理时间窗、用户此刻响应概率、拖延代价和跨事项合并处理等信号，决定保持沉默、提醒还是升级；ARIA 把机构邮件转成加密到设备公钥的事项记录推送到手机；只有用户点击时才临时调用云端智能体，且只发送结构化事项。</span></div>
+<div class="score-reason">评分依据：判断该不该行动、事项状态和行为信号都留在 Android 手机上运行，云端模型只在用户主动升级时介入，是典型的端侧智能体运行时设计；不过本文只在模拟器上测了提醒送达，耗电和真实用户效果都没有测，核心算法评测在配套论文中。作者为独立研究者，声明与雇主无关。</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.05069" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

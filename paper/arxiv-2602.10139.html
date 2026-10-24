@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-02-08 · Lepeng Zhao; Zhenhua Zou; Shuo Li; Zhuotao Liu / arXiv</div>
 <div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:端云协同</span><span class="tag">硬件:手机</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">给手机 GUI 智能体加一层隐私保护：敏感信息对云端智能体“可用但不可见”，任务照样能完成。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 PrivScreen 上，Qwen2.5-VL-7B 任务准确率保持 89% 不变，隐私泄露率从 97.14% 降到 19.52%；在 AndroidLab 截图模式下 GPT-4o 成功率 40.58%（不加保护为 44.20%，整屏遮挡和 DualTAP 分别为 34.78%、33.33%）。隐私层每张图额外耗时约 1.77 秒（OCR 在 CPU、实体识别在 RTX 4090 上）。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">本地先用 PII 识别模型找出手机号、地址等敏感内容，替换成保留类型的占位符，再通过安全交互代理把云端智能体的操作映射回真实界面，必要时在本地对原值做受限计算。</span></div>
-<div class="score-reason">评分依据：创新点在手机与云端 GUI 智能体之间的本地隐私层，而非 GUI 操作本身；智能体推理仍在云端，实验在安卓模拟器和 RTX 4090 上完成，故相关度中等。</div>
+<div class="score-reason">评分依据：创新点在手机与云端 GUI 智能体之间的本地隐私层，而非 GUI 操作本身；智能体推理仍在云端，实验在 Pixel 7 Pro 安卓模拟器和 RTX 4090 上完成，故相关度中等。作者均来自清华大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.10139" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

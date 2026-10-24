@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">腾讯 ncnn 移动端推理框架给 Vulkan GPU 后端的大量算子层加上“打包形状提示”，统一处理数据打包布局下的张量形状。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">在卷积、矩阵乘、激活、归一化等 50 多个 Vulkan 算子实现里引入打包形状提示，替换原先各层分散的形状推断代码，整体删掉的代码比新增的多约 900 行。</span></div>
-<div class="score-reason">评分依据：ncnn 是手机端常用推理框架，这次改动涉及移动 GPU 的 Vulkan 后端，属于端侧推理栈；但属于内部代码整理，原文没有性能数据。</div>
+<div class="score-reason">评分依据：ncnn 是手机端常用推理框架，这次改动涉及移动 GPU 的 Vulkan 后端，属于端侧推理栈；但属于内部代码整理（56 个文件，净删约 900 行），提交没有给出任何性能数据，因此效果写未报告。</div>
 <div class="source"><a href="https://github.com/Tencent/ncnn/commit/b1a08ae9eda827d6efad13e10b9519a615d804b8" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

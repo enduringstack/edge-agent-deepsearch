@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Kill it with FIRE: On Leveraging Latent Space Directions for Runtime Backdoor Mitigation in Deep Neural Networks</h1>
-<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-02-11 · Enrico Ahlers; Daniel Passon; Yannic Noller; Lars Grunske / arXiv</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-02-11 · Enrico Ahlers; Daniel Passon; Yannic Noller; Lars Grunske / arXiv</div>
 <div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">应用:安全</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">FIRE 在模型已部署后的推理阶段消除后门攻击：不重训模型，而是在中间特征上把触发器的影响“反向抵消”。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">假设触发器会在层间隐空间造成稳定的方向性偏移，找到这些后门方向后把中毒样本的特征沿反方向移动来中和触发器。</span></div>
-<div class="score-reason">评分依据：面向已部署模型的推理时安全修复，计算开销低，对端侧模型安全有一定参考，但实验只在图像基准上，未涉及设备。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">FIRE 在模型已经部署后的推理阶段消除后门攻击：不重训、不改权重，而是在中间层特征上把触发器带来的偏移“反向抵消”掉。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 21 组攻击/数据集/网络配置的流式场景中，FIRE 在第 1 个中毒样本时已有 9/21 组优于扩散净化方法 ZIP，到第 10 个中毒样本时 21/21 组全部优于 ZIP；单张 A100 上初始化约 200~250 毫秒后，每个样本处理约 11~27 毫秒，而 ZIP 需要约 1.4~1.6 秒，快约两个数量级。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">假设触发器会在某些层间隐空间造成稳定、与标签无关的方向性偏移；用少量干净样本的特征中心和不断到来的中毒样本在线估计这个后门方向，再把中毒样本的特征沿反方向移动，取最早改变预测结果的那一层输出。</span></div>
+<div class="score-reason">评分依据：面向已部署模型的轻量推理时安全修复，对端侧视觉模型安全有参考，但实验只在 A100 上的图像基准完成，未涉及设备，端侧相关度低；在线估计后门方向并直接修特征的思路有新意，贡献中等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.10780" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

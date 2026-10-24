@@ -7,9 +7,9 @@
 <h1>UltraLIF: Fully Differentiable Spiking Neural Networks via Ultradiscretization and Max-Plus Algebra</h1>
 <div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-02-10 · Jose Marie Antonio Miñoza / arXiv</div>
 <div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:能耗功耗</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">UltraLIF 借助热带几何里的“超离散化”让脉冲神经网络完全可微，不再依赖经验性的代理梯度来训练。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用带可学习温度的 log-sum-exp 作为软最大值，温度趋于零时收敛到硬阈值；从 LIF 方程和扩散方程分别推出两种神经元模型，可直接用标准反向传播训练。</span></div>
-<div class="score-reason">评分依据：SNN 是低功耗端侧推理的相邻方向，这项训练方法理论创新较强；但未在神经形态硬件上部署验证。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">UltraLIF 借助热带几何里的“超离散化”让脉冲神经网络全程可微，不再依赖经验性的代理梯度来训练。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 6 个基准的单时间步设置下全部优于代理梯度基线：SHD 语音 51.24% 对 40.02%（+11.22 个百分点），DVS-Gesture 60.23% 对 52.27%（+7.96），N-MNIST 94.14% 对 90.23%（+3.91），CIFAR-10 43.27% 对 40.26%（+3.01）；加稀疏惩罚后 CIFAR-10 脉冲率降低 48% 且准确率略升，T=30 时能耗降 50%；但时间步增至 10 以上时基线常反超。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用带可学习温度的 log-sum-exp 作为软最大值近似阈值放电，温度趋于零时收敛到硬阈值；分别从 LIF 方程和扩散方程推出时间型与空间型两种神经元，前向和反向使用同一套平滑动态，可直接用标准反向传播训练。</span></div>
+<div class="score-reason">评分依据：脉冲神经网络是低功耗端侧推理的相邻方向，但本文只在 GPU 上做训练和精度评测，未部署到神经形态硬件，端侧相关度中等偏低；用超离散化取代代理梯度并给出收敛与梯度界的理论分析，创新度较高。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.11206" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

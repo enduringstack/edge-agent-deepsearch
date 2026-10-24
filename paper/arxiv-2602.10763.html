@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Amortized Inference of Neuron Parameters on Analog Neuromorphic Hardware</h1>
-<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-02-11 · Jakob Kaiser; Eric Müller; Johannes Schemmel / arXiv</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-02-11 · Jakob Kaiser; Eric Müller; Johannes Schemmel / NICE 2026</div>
 <div class="tags"><span class="tag">硬件:神经形态</span><span class="tag">方向:SNN</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用基于模拟的推断方法，为模拟神经形态芯片 BrainScaleS-2 上的神经元电路自动标定参数。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">训练一个摊销式神经密度估计器近似七个神经元参数的后验分布，先用二分类器筛掉不感兴趣的参数区域；比较了手工统计量和可学习摘要网络两种方案。</span></div>
-<div class="score-reason">评分依据：与神经形态硬件的标定相关，但不涉及 AI 模型的推理部署，端侧价值有限。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">用基于模拟的贝叶斯推断，为模拟神经形态芯片 BrainScaleS-2 上的神经元电路自动反推出能复现目标放电行为的参数。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">先用二分类器筛掉不放电或放电过多的参数区域，使训练集中放电频率处于 1~40 kHz 的样本比例从约 2% 提高到约 38%（漏筛率控制在 5% 以下）；在 60 万个芯片实测样本上训练后，后验预测能恢复目标的放电频率和平均放电间隔，加入可学习摘要网络后后验更集中，膜电位轨迹也更贴近目标。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在芯片上随机采样 7 个神经元参数并记录膜电位，训练一个摊销式神经密度估计器（BayesFlow 耦合流）近似参数后验；对比了手工电生理特征和卷积+循环摘要网络两种特征提取方式。</span></div>
+<div class="score-reason">评分依据：研究的是神经形态硬件的电路参数标定，不涉及 AI 模型在设备上的推理部署，端侧相关度低；方法是现有模拟推断工具在新硬件上的应用，贡献一般。论文已被 NICE 2026（神经启发计算元件会议）接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.10763" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

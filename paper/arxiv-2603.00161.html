@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-02-26 · S. Kalaycioglu; C. Hong; M. Zhu; H. Xie / arXiv</div>
 <div class="tags"><span class="tag">硬件:手机</span><span class="tag">方向:多模态</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">面向缺医少设备地区的眼部初筛工具：用普通手机摄像头做红眼程度、眨眼频率、瞳孔反射、巩膜颜色和病灶侵入等五项检查，并跟踪长期变化。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">全部用确定性的传统视觉算法（颜色空间统计、MediaPipe 人脸网格眼部纵横比、虹膜标志点标定等），以 React/FastAPI 网页应用形式实现，不依赖云端 AI 推理。</span></div>
-<div class="score-reason">评分依据：手机端轻量视觉应用，有端侧落地意义（相关度 4）。主要是现成算法的系统集成，没有新的模型或推理优化，也未给出量化评测（贡献 3）。</div>
+<div class="field"><span class="label">有什么结果</span><span class="text">小样本试点：发红评分与医生分级的 Spearman 相关系数 0.86（40 张图）；眨眼频率平均绝对误差 2.1 次/分钟，弱光下优于固定阈值基线（2.4 对 4.7）；瞳孔反射时延误差 42 毫秒；黄疸二分类 AUC 0.79；病灶侵入测量平均误差 0.31 毫米（25 例，对比裂隙灯）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">全部用确定性的传统视觉算法（LAB 颜色空间统计、MediaPipe 人脸网格算眼部纵横比、虹膜标志点做毫米级标定等），以 React/FastAPI 网页应用形式在普通手机上运行，不依赖云端 AI 推理。</span></div>
+<div class="score-reason">评分依据：手机端轻量视觉应用，有端侧落地意义；主要是现成算法（MediaPipe、颜色空间统计）的系统集成，没有新的模型或推理优化，且试点样本量很小（20 到 40 例）。作者含多伦多都会大学、约克大学和几家小型初创公司，不在规范公司清单内，公司归属留空。</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.00161" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

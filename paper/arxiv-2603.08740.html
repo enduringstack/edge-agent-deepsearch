@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Architectural Design and Performance Analysis of FPGA based AI Accelerators: A Comprehensive Review</h1>
 <div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-02-25 · Soumita Chatterjee; Sudip Ghosh; Tamal Ghosh; Hafizur Rahaman / arXiv</div>
-<div class="tags"><span class="tag">硬件:FPGA</span><span class="tag">方向:量化</span><span class="tag">方向:编译部署</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一篇关于基于 FPGA 的深度学习加速器的综述，梳理硬件层优化手段和代表性设计。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">归纳循环流水、并行、量化和存储层次优化等技术，总结现有 FPGA 神经网络加速器并讨论挑战。</span></div>
-<div class="score-reason">评分依据：FPGA 加速器与边缘部署有关（相关度 4）。综述性质，无新方法（贡献 2）。</div>
+<div class="tags"><span class="tag">硬件:FPGA</span><span class="tag">方向:量化</span><span class="tag">方向:编译部署</span><span class="tag">方向:SNN</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一篇 FPGA 深度学习加速器综述：按 CNN、脉冲神经网络、RNN/LSTM、图神经网络四类模型，梳理用 FPGA 做推理加速时的硬件设计和优化手段，并汇总各代表性设计的性能。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">综述汇编的已有工作数据：CNN 类如 DLA 在 Arria 10 上跑 AlexNet 达 1382 GOPS、OpenCL 加速器跑 VGG-16 达 1790 GOPS（16 位浮点）；LSTM 类如 ESE 在 XCKU060 上 282 GOPS、比 CPU 快 43 倍，DeltaRNN 比 i7-8700K 快 63.8 倍；SNN 类如 FireFly 在 XCZU3EG 上 1382.4 GOPS；GNN 类如 FP-GNN 比 Xeon 8260 快 665 倍。本文自身没有新的实验。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先对比 GPU、ASIC、NPU、TPU 与 FPGA 的取舍，再按计算层（循环流水、并行展开、量化）、存储层（片上缓存、数据复用、存储层次）和多层联合优化归纳设计手法，用四张表横向对比吞吐、精度、频率、资源占用和加速比，最后总结挑战与方向。</span></div>
+<div class="score-reason">评分依据：FPGA 是边缘与嵌入式推理的常用硬件，文中量化、存储层次等优化思路可直接迁移到端侧加速器设计，但没有涉及大模型或 Agent（相关度 4）。属综述，表格汇编的是已有工作的公开数字，没有新方法或新实验（贡献 2）；作者均来自印度工程科学与技术学院（IIEST Shibpur）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2603.08740" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -9,7 +9,7 @@
 <div class="tags"><span class="tag">方向:记忆</span><span class="tag">应用:RAG</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">上下文溢出、历史被摘要后，智能体会“忘了自己是谁”。这篇提出把智能体身份拆到多个独立“锚点”上，让部分记忆损坏时身份仍能延续。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把身份文件和记忆日志分开存放，并用混合 RAG 与递归检索的路由，按问题类型自动选择记忆访问方式；论文给出多锚点容错的路线图。</span></div>
-<div class="score-reason">评分依据：智能体长期记忆架构，与端侧记忆运行时有间接关联；以概念框架和开源实现为主，缺少量化实验。机构依据为 PDF 首页唯一作者署名 ThinkCreate.AI。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">开源实现 soul.py 把身份文件和记忆日志分开存放，并用一次快速分类调用，把聚焦型问题路由到向量检索、把需要全局综合的问题路由到递归摘要检索；论文再给出程序性记忆、显著性标记等多锚点扩展的路线图。</span></div>
+<div class="score-reason">评分依据：智能体长期记忆架构，与端侧记忆运行时有间接关联；文中“九成查询走向量检索”“路由准确率 0.95”等数字作者自述是基于非正式观察的假设，并非实测，所以效果写未报告。作者署名为 ThinkCreate.AI 与个人实验室，不在本雷达跟踪的公司范围内。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.09588" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

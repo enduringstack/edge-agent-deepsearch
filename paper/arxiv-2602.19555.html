@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-02-23 · Xiaochong Jiang; Shiqi Yang; Wenting Yang; Yichen Liu; Cheng Ji / ICLR 2026 Workshop</div>
 <div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:工具调用</span><span class="tag">方向:记忆</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">这篇系统梳理了大模型 Agent 在运行时的供应链攻击，包括检索到的数据和调用的工具被投毒，并提出零信任运行时架构的方向。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">本文没有自己的实验，以下是综述汇编的已有工作数据：图像隐藏指令注入可达 98% 的操控成功率；只投毒 0.1% 的外部语料就能让定向查询攻击成功率达到 70%（PoisonedRAG）；AgentPoison 后门攻击成功率超过 80%；仅凭查询向记忆库注入恶意记录的 MINJA 平均成功率 76.8%。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">把威胁分为数据供应链（临时上下文注入、持久记忆投毒）和工具供应链（发现、实现、调用三个阶段）两类，指出可自我传播的“病毒式 Agent 循环”，主张把上下文当作不可信控制流、用密码学来源约束工具执行。</span></div>
-<div class="score-reason">评分依据：Agent 运行时安全对端侧 Agent 有参考意义，但本文是不涉及设备的综述，相关度低；“病毒式 Agent 循环”的归纳有一定启发。</div>
+<div class="score-reason">评分依据：Agent 运行时安全对端侧 Agent 有参考意义，但本文是不涉及设备的综述，相关度低；“病毒式 Agent 循环”的归纳有一定启发。作者署名为独立研究者及纽约大学、加州大学圣地亚哥分校等高校邮箱，无公司署名；发表于 ICLR 2026 研讨会，不算主会。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.19555" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -7,9 +7,9 @@
 <h1>Give Your Agents Domain Expertise with Agent Skills in Microsoft Agent Framework</h1>
 <div class="meta"><span class="score">8</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-03-02 · Microsoft / Microsoft</div>
 <div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:工具调用</span><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">微软 Agent Framework 支持加载 Agent Skills 技能包：一个 SKILL.md 加上可选脚本、参考资料和模板，智能体在运行时按需发现和加载，不必改动核心指令就能获得领域能力。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">采用渐进式披露：系统提示里每个技能只放约 100 token 的名称和描述，任务匹配时才调用 load_skill 读取完整说明（建议少于 5000 token），需要时再读取附带资源，让上下文保持精简。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">微软 Agent Framework 支持加载 Agent Skills 技能包：一个 SKILL.md 加上可选脚本、参考资料和模板，智能体在运行时按需发现和加载，不必改动核心指令就能获得领域能力，.NET 和 Python 都已支持。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">原文给出的是上下文开销设计值：每个技能在系统提示里只占约 100 个 token 的名称和描述，完整说明建议控制在 5000 token 以内；没有实测效果数据。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">采用渐进式披露：先只公布技能名称和描述，任务匹配时才调用 load_skill 读取完整说明，需要时再读取附带资源，让上下文保持精简；技能目录最多向下搜索两层。</span></div>
 <div class="score-reason">评分依据：属于 Agent 运行时的技能与上下文管理机制，按需加载、压缩上下文的做法可直接迁移到上下文窗口有限的端侧小模型 Agent；本身是框架功能更新，没有设备端实测。</div>
 <div class="source"><a href="https://devblogs.microsoft.com/agent-framework/give-your-agents-domain-expertise-with-agent-skills-in-microsoft-agent-framework/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

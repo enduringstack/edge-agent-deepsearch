@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-02-20 · Rwik Rana; Jesse Quattrociocchi; Dongmyeong Lee; Christian Ellis; Amanda Adkins; Adam Uccello; Garrett Warnell; Joydeep Biswas / arXiv</div>
 <div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">从卫星图和自然语言任务要求直接生成长距离导航的代价地图，让机器人路线规划能理解“避开某类地物、优先走某条路”这类临时规则。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在训练分布外且含新类别（棒球场）的地图上，路径偏好违背度 RRPI 为 1881.5，明显低于固定类别分割基线的 3103.8（DINO-UNet）和 2949.7（SegFormer）；在 4 张人工标注路线图上，生成路线与人画路线的平均 Hausdorff 距离都最小（如 0.016，对比基线的 0.258 和 0.089）。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">拆成解读-定位-合成三步：大模型先抽出实体和偏好排序，开放词汇分割在高分辨率卫星图里找到这些实体，再由大模型根据偏好和掩码写出可执行的代价地图代码交给规划器。</span></div>
-<div class="score-reason">评分依据：属于大模型驱动的全局路径规划，离线处理卫星图，没有端侧部署或推理优化内容，相关度低；多个基础模型模块化组合生成代价函数的思路有一定新意。</div>
+<div class="score-reason">评分依据：属于大模型驱动的全局路径规划，离线处理卫星图，没有端侧部署或推理优化内容，相关度低；多个基础模型模块化组合生成代价函数的思路有一定新意。作者来自德州大学奥斯汀分校和美国陆军研究实验室，无公司署名。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.18606" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

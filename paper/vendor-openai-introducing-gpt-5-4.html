@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Introducing GPT-5.4</h1>
-<div class="meta"><span class="score">4</span> <span class="tier">官方动态</span>  2026-03-05 · OpenAI / OpenAI</div>
+<div class="meta"><span class="score">6</span> <span class="tier">官方动态</span>  2026-03-05 · OpenAI / OpenAI</div>
 <div class="tags"><span class="vendor-tag">OpenAI</span><span class="tag">方向:云端serving</span><span class="tag">方向:工具调用</span><span class="tag">模型:GPT</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">OpenAI 发布 GPT-5.4，定位为面向专业工作的最强前沿模型，主打编程、电脑操作、工具搜索和 100 万 token 上下文。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">官方摘要只说明模型具备电脑操作与工具搜索能力并支持 100 万 token 上下文，同日发布 GPT-5.4 Thinking 系统卡；正文无法抓取，未见更多技术细节。</span></div>
-<div class="score-reason">评分依据：云端前沿模型发布，与端侧部署无关；电脑操作和工具搜索能力与桌面 Agent 方向相关，但可核对的信息仅限官方摘要。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">OpenAI 发布 GPT-5.4，定位为面向专业工作的前沿模型，首次在通用模型里内置电脑操作能力，并支持 100 万 token 上下文和工具搜索。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">OSWorld-Verified 电脑操作成功率 75.0%（GPT-5.2 为 47.3%，人类 72.4%）；GDPval 中 83.0% 的对比达到或超过专业人士（GPT-5.2 为 70.9%）；SWE-Bench Pro 57.7%，BrowseComp 82.7%；在 MCP Atlas 的 250 个任务上，工具搜索让总 token 用量减少 47% 且准确率不变。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">模型可以写 Playwright 代码或根据截图发出鼠标键盘指令来操作电脑；工具搜索只给模型一个轻量工具清单，需要时再查出具体工具定义追加到对话里，避免成千上万 token 的工具说明占满上下文。</span></div>
+<div class="score-reason">评分依据：云端前沿模型发布，与端侧部署无关；但“按需检索工具定义”减少上下文开销的做法，对上下文有限的端侧 Agent 运行时有直接参考，电脑操作能力也与桌面 Agent 方向相关。</div>
 <div class="source"><a href="https://openai.com/index/introducing-gpt-5-4" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

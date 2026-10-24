@@ -8,7 +8,7 @@
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-02-14 · Nobutaka Ono / arXiv</div>
 <div class="tags"><span class="tag">方向:高效推理</span><span class="tag">硬件:MCU</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">在资源受限设备上，连做 PCA 降维的乘法都嫌贵。这篇提出一种快速“挑元素”的降维方法：直接选出输入中的一部分维度，完全不用乘法。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 MNIST 的 6 万张训练图上做元素选择：笔记本 Intel Core i7-7500 + MATLAB 环境下，逐个重算目标的朴素实现收敛约需 1800 秒，用推导出的快速交换公式降到约 22 秒，再向量化后约 8 秒，提速超过 200 倍；选出的降维本身不需要任何乘法（对比 PCA 把 1000 维降到 100 维需 10 万次乘法）。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">用线性回归的最小均方误差评价选出的元素子集，并用矩阵求逆引理推出“交换一个选中与未选中元素”时目标的快速更新公式，做局部交换搜索。</span></div>
 <div class="score-reason">评分依据：免乘法降维对低算力设备有一定意义，但实验只在 MNIST 上，离实际端侧 AI 部署较远。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.13532" target="_blank" rel="noopener">查看原文 →</a></div>

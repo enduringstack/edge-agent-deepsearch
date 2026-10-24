@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-02-10 · Yasmin Moslem; Aman Kassahun Wassie; Amanuel Gizachew Abebe / AfricaNLP 2026 Workshop</div>
 <div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:量化</span><span class="tag">方向:蒸馏</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">面向非洲语言的轻量翻译模型 AfriNLLB，覆盖斯瓦希里语、豪萨语、约鲁巴语等 15 个语言对，目标是在资源有限的环境里也能跑得动翻译。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">以 NLLB-200 600M 为底座，做逐层迭代剪枝和量化，再用大教师模型蒸馏微调，并提供 CTranslate2 推理版本。</span></div>
-<div class="score-reason">评分依据：面向资源受限场景压缩翻译模型，剪枝、量化加蒸馏可直接迁移到端侧部署，但没有真机测试；方法是常见压缩组合，贡献主要在语种覆盖和数据开放。</div>
+<div class="field"><span class="label">有什么结果</span><span class="text">剪掉 4 层解码器得到的 548M 模型比 NLLB-200 600M 原模型平均快 23%，再做 float16 量化后快 57%，经微调和蒸馏后大部分翻译质量得以恢复（测速用 CTranslate2，在 A40 GPU 上）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以 NLLB-200 600M 为底座，逐层评估每层对翻译质量的贡献并一次剪掉影响最小的一层，再用 NLLB-200 3.3B 做教师进行序列级蒸馏微调，最后量化并提供 CTranslate2 推理版本。</span></div>
+<div class="score-reason">评分依据：面向资源受限场景压缩翻译模型，剪枝、量化加蒸馏可直接迁移到端侧部署，但只在服务器 GPU 上测速、没有真机测试；方法是常见压缩组合，贡献主要在语种覆盖和数据开放。论文被 AfricaNLP 2026 研讨会接收，作者来自都柏林圣三一学院 ADAPT 中心等学术机构。</div>
 <div class="source"><a href="https://arxiv.org/abs/2602.09373" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

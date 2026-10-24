@@ -9,7 +9,7 @@
 <div class="tags"><span class="vendor-tag">Apple</span><span class="tag">方向:编译部署</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">depyf 是一个帮研究者看懂 PyTorch 2 编译器到底做了什么的工具，把编译器生成的字节码还原成可读的 Python 源码。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把 PyTorch 编译器生成的字节码反编译成等价源码，并把内存里的代码对象和磁盘上的源文件对应起来，这样可以用调试器逐行跟进；使用时只需套两个上下文管理器。</span></div>
-<div class="score-reason">评分依据：属于模型编译加速的开发调试工具，对理解和调优编译部署流程有帮助，但面向通用训练推理，与端侧关系间接；工具价值大于方法创新。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把 PyTorch 编译器生成的字节码反编译成等价源码，并把内存里的代码对象和磁盘上的源文件对应起来，这样可以用调试器逐行跟进；使用时只需套两个上下文管理器，不需要改动原有代码。</span></div>
+<div class="score-reason">评分依据：属于模型编译加速的开发调试工具，对理解和调优编译部署流程有帮助，但面向通用训练推理，与端侧关系间接；工具价值大于方法创新。这是一篇工具类论文，官方页面只介绍功能、没有给出量化评测，因此效果写未报告。</div>
 <div class="source"><a href="https://machinelearning.apple.com/research/depyf-open" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>
