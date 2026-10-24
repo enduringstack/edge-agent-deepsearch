@@ -35,8 +35,8 @@ arXiv 自身搜索只匹配标题和摘要，不直接按作者 affiliation 过�
 | MediaTek | `neuropilot.mediatek.com`、`neuropilot-developer.mediatek.com`、`mediatek.com/technology/ai` | `"MediaTek NeuroPilot"`、`"MediaTek edge AI"`、`site:mediatek.com` | `MediaTek`（论文少，主要靠官方门户） | `neuropilot.mediatek.com`、`mediatek.com/technology/ai` |
 | Xiaomi | `mimo.xiaomi.com`（MiMo 模型博客）、`mi.com/global/brand/ai/xiaomi-hyperai`（HyperAI） | `"Xiaomi MiMo"`、`"Xiaomi HyperAI"`、`"HyperVL"`、`site:mimo.xiaomi.com` | `Xiaomi`、`HyperAI Team, Xiaomi Corporation`、`Xiaomi AI Lab`、`小米` | `mimo.xiaomi.com/blog`（HyperVL 等端侧多模态论文挂此） |
 | OPPO | `oppo.com`（AndesGPT 产品）、OPPO 开发者社区、`coloros.com` AI 板块 | `"OPPO AndesGPT"`、`"OPPO AI Center"`、`"ColorOS AI"`、`"安第斯大模型"` | `OPPO`、`OPPO Research Institute`、`OPPO AI Lab` | `oppo.com` AndesGPT、OPPO 开发者平台 |
-| vivo | `developers.vivo.com/product/ai/bluelm`（蓝心大模型文档）、`vivo.com` | `"vivo BlueLM"`、`"蓝心大模型"`、`site:developers.vivo.com` | `vivo`、`vivo AI Lab`、`vivo AI 全球研究院` | `github.com/vivo-ai-lab/BlueLM`、`developers.vivo.com` BlueLM |
-| Honor | `honor.com`（MagicOS AI、YOYO 智能体） | `"Honor MagicOS AI"`、`"Honor YOYO"`、`"荣耀端侧大模型"` | `Honor`、`荣耀`（论文极少，主要靠官方发布） | `honor.com` MagicOS、YOYO 智能体 |
+| vivo | `developers.vivo.com/product/ai/bluelm`（蓝心大模型文档）、`vivo.com`、**中文新闻 `vivo.com.cn/brand/news/`**（OriginOS / 蓝心发布会稿都在这里，正文带日期） | `"vivo BlueLM"`、`"蓝心大模型"`、`site:developers.vivo.com` | `vivo`、`vivo AI Lab`、`vivo AI 全球研究院` | `github.com/vivo-ai-lab/BlueLM`、`developers.vivo.com` BlueLM |
+| Honor | `honor.com`（MagicOS AI、YOYO 智能体）、**中文新闻中心 `honor.com/cn/news/`**（MagicOS、Magic 系列、WAIC 发布稿首发在中文站，英文 `global/news` 常常没有） | `"Honor MagicOS AI"`、`"Honor YOYO"`、`"荣耀端侧大模型"` | `Honor`、`荣耀`（论文极少，主要靠官方发布） | `honor.com` MagicOS、YOYO 智能体 |
 
 > 设备厂商研究产出偏工程和官方发布，arXiv affiliation 命中率低于模型厂商。优先抓官方博客和产品发布，再补 affiliation 论文。
 
@@ -122,6 +122,14 @@ arXiv 自身搜索只匹配标题和摘要，不直接按作者 affiliation 过�
 - `aihub.qualcomm.com/sitemap.xml` 有 18187 条 URL 但**完全没有 `<lastmod>`**，做不了时间发现
 - `developers.vivo.com/sitemap.xml` 返回的是 Vue SPA 外壳 HTML 而非 XML，极易误判成「有 sitemap」
 - `news.samsung.com/global/feed` 50 条但只回溯到 2026-08，属「只给最近 N 条」型
+
+**2026-10 漏检对账新增入口**（6–9 月共 4 次对账发现，均为白名单域名却没扫到）：
+
+- **中国手机厂商的系统发布在中文站**：荣耀 `honor.com/cn/news/<slug>/`（MagicOS 11、Magic9、WAIC Agentic OS）、vivo `vivo.com.cn/brand/news/detail?id=…`（OriginOS 7 / 蓝心）。只扫英文 `global/news` 会全部漏掉
+- **高通 OnQ 博客和新闻稿正文是 JS 渲染**：读 `<文章URL>.model.json` 才拿得到正文与 `"pagePublishDate"`
+- **常规入口之外的大厂博客**：`developer.meta.com/blog`（Muse Glimmer 等本地模型）、`blogs.nvidia.com` 的 RTX AI Garage 系列与 `developer.nvidia.com/blog`、`alibabacloud.com/blog`（Qwen 开源公告，常比微信首发晚 2–3 天）
+- **附加来源（2026-10-25 加入官方域名白名单，不在 24 家必查里）**：AMD `newsroom.amd.com`、Liquid AI `liquid.ai/blog`、Qwen 官网 `qwen.ai/blog`
+- **仍然进不了正式周报的**：`oppo.com`、华为官网的发布页常常没有正文日期；这类事件只能写进周报摘要“另据媒体报道”
 
 **06-05~06-11 回填新增实测**：
 

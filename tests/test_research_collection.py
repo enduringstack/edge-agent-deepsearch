@@ -563,6 +563,11 @@ class GitHubReleaseCollectionTests(unittest.TestCase):
             self.assertTrue(module.is_required_github_project(f"https://github.com/{repo}"))
         self.assertFalse(module.is_required_github_project("https://github.com/OpenBMB/AgentCPM"))
 
+    def test_litert_lm_is_audited_separately_from_litert(self):
+        module = importlib.import_module("research_collection")
+        self.assertTrue(module.is_required_github_project("https://github.com/google-ai-edge/LiteRT-LM"))
+        self.assertTrue(module.is_required_github_project("https://github.com/google-ai-edge/litert"))
+
     def test_limioryn_chinese_release_summary_is_kept_as_direct_edge_agent(self):
         paper = build_run_week.convert_github({
             "repo": "YINGLINGH/limioryn",
@@ -1061,6 +1066,22 @@ class OfficialSourceCoverageTests(unittest.TestCase):
         for url in urls:
             with self.subTest(url=url):
                 self.assertTrue(research_run.is_official_source_url(url))
+
+    def test_recall_audit_vendor_domains_are_official_sources(self):
+        # 2026-10 recall audits: AMD, Liquid AI and qwen.ai had dated first-hand
+        # pages that the old allowlist refused.
+        urls = [
+            "https://newsroom.amd.com/news/aai-2026-ryzen-ai-embedded-x100/",
+            "https://www.amd.com/en/newsroom/example",
+            "https://www.liquid.ai/blog/lfm2-5-2-6b",
+            "https://qwen.ai/blog?id=qwen-robotsuite",
+            "https://www.honor.com/cn/news/magic-os-launch/",
+            "https://www.vivo.com.cn/brand/news/detail?id=1389&type=0",
+        ]
+        for url in urls:
+            with self.subTest(url=url):
+                self.assertTrue(research_run.is_official_source_url(url))
+        self.assertFalse(research_run.is_official_source_url("https://amd.com.example.net/news"))
 
     def test_publish_cli_refuses_a_run_without_collection_manifest(self):
         with tempfile.TemporaryDirectory() as tmpdir:

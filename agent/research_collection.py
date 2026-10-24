@@ -60,6 +60,7 @@ REQUIRED_GITHUB_PROJECTS = frozenset({
     "Tencent/ncnn",
     "google-ai-edge/mediapipe",
     "google-ai-edge/litert",
+    "google-ai-edge/LiteRT-LM",
     "apple/coremltools",
     "ml-explore/mlx",
     "openvinotoolkit/openvino",

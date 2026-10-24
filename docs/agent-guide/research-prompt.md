@@ -74,7 +74,7 @@ DeepSeek / Moonshot / Zhipu / Minimax / 百川 等**模型实验室经常先发�
 
 # 检索式参考
 
-- **大厂官方优先检索式**：`(site:apple.com OR site:google.com OR site:microsoft.com OR site:openai.com OR site:anthropic.com OR site:meta.com OR site:samsung.com OR site:huawei.com OR site:qualcomm.com OR site:mediatek.com OR site:mi.com OR site:oppo.com OR site:vivo.com OR site:honor.com OR site:mistral.ai OR site:qwenlm.github.io) AND ("on-device" OR "edge" OR "mobile" OR "NPU" OR "local") AND ("agent" OR "assistant")`
+- **大厂官方优先检索式**：`(site:apple.com OR site:google.com OR site:microsoft.com OR site:openai.com OR site:anthropic.com OR site:meta.com OR site:samsung.com OR site:huawei.com OR site:qualcomm.com OR site:mediatek.com OR site:mi.com OR site:oppo.com OR site:vivo.com OR site:honor.com OR site:mistral.ai OR site:qwenlm.github.io OR site:qwen.ai OR site:amd.com OR site:liquid.ai) AND ("on-device" OR "edge" OR "mobile" OR "NPU" OR "local") AND ("agent" OR "assistant")`
 - **基础检索式**：`("mobile agent" OR "edge agent" OR "embedded agent" OR "agentic AI") AND ("on-device" OR "edge computing" OR "resource-constrained")`
 - **技术深化检索式**：`("LLM" OR "VLM") AND ("mobile" OR "edge") AND ("quantization" OR "pruning" OR "distillation" OR "efficient inference") AND ("agent" OR "autonomous")`
 - **厂商特定**：`("Apple Intelligence" OR "Gemini Nano" OR "Phi-3" OR "Llama 3.2" OR "MiniCPM" OR "Qwen2.5") AND ("on-device" OR "edge" OR "mobile")`

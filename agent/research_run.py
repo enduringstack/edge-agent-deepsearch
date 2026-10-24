@@ -101,6 +101,7 @@ OFFICIAL_SOURCE_DOMAINS = (
     "honor.com",
     "alibabacloud.com",
     "qwenlm.github.io",
+    "qwen.ai",
     "mistral.ai",
     "nvidia.com",
     "blogs.nvidia.com",
@@ -116,6 +117,8 @@ OFFICIAL_SOURCE_DOMAINS = (
     "minimaxi.com",
     "stepfun.com",
     "minimax.io",
+    "amd.com",
+    "liquid.ai",
 )
 
 AFFILIATION_EVIDENCE_DOMAINS = (
