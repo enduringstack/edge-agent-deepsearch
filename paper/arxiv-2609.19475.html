@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>FASA: Feedback-Aware Sampling Adaptation for Efficient Diffusion-Based VLA Models</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-09-16 · Yuchen Han; Jianhan Wu; Xiaoyang Qu; Lingwei Kong; Shiyi Li; Jianzong Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:测试时自适应</span><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">FASA 让基于扩散的 VLA 模型按实时反馈动态调整采样步数，从而能在边缘平台上实时运行。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">免训练的运行时框架：一个交互驱动的范围调节器按视觉和夹爪力反馈调整全局采样步预算，一个本体感觉感知的步长调节器在预算内挑出最该保留的那一步。</span></div>
-<div class="score-reason">评分依据：扩散策略的迭代采样是边缘实时化的主要障碍，用实时反馈当控制信号而不是静态调度，思路比固定剪枝更贴合机器人负载波动。</div>
+<div class="meta"><span class="score">13</span> <span class="tier company">公司项目</span>  2026-09-16 · Yuchen Han; Jianhan Wu; Xiaoyang Qu; Lingwei Kong; Shiyi Li; Jianzong Wang / NAS 2026</div>
+<div class="tags"><span class="vendor-tag">Ping An</span><span class="tag">方向:测试时自适应</span><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">FASA 让基于扩散的 VLA 模型根据实时视觉和夹爪力反馈动态调整去噪采样步数，减少资源受限平台上的推理开销。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 3D Diffuser Actor、Diffusion Policy、RDT 上实现并在 Evo-1 上部署无力觉版本：RLBench 提速 1.40 倍，ManiSkill3 最高 1.45 倍，LIBERO 1.23 倍，成功率与原模型相当；测试平台为 RTX 4070 笔记本 GPU（8GB）和 RTX 3090。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">免训练的运行时模块：交互驱动的范围调节器融合视觉特征变化和夹爪力反馈，缩放全局采样步预算；本体感觉感知的步长调节器根据关节运动量在预算内挑出最合适的步数。</span></div>
+<div class="score-reason">评分依据：扩散策略的迭代采样是机器人实时化的主要障碍，用实时反馈当控制信号比静态剪枝更贴合负载波动；实验在笔记本级 GPU 上完成，论文发表于 NAS 2026（不在顶会列表内）。 作者机构依据：arXiv PDF 首页署名 Ping An（PDF 首页 6 位作者中 5 位署名平安科技（深圳）Ping An Technology，通讯作者亦来自平安科技）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.19475" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

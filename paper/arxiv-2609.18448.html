@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>From Pixels to Semantics: Edge AI for UAV-Based Critical Infrastructure Inspection</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-09-16 · Reza Farahani; Naser Hossein Motlagh; Zoha Azimi; Christian Timmerer; Lorenzo Carnevale; Sasu Tarkoma; Schahram Dustdar / arXiv</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">方向:编译部署</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一篇面向无人机基础设施巡检的文章，讨论如何从边缘目标检测走向边缘原生的语义巡检。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">梳理现有无人机巡检架构从云端离线处理到边缘 YOLO 检测的演进，并分析用轻量视觉语言模型做结构语义理解时的系统挑战。</span></div>
-<div class="score-reason">评分依据：综述性质，结论偏方向判断，但把“边缘上从检测升级到语义理解”的系统约束整理得比较清楚。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-09-16 · Reza Farahani; Naser Hossein Motlagh; Zoha Azimi; Christian Timmerer; Lorenzo Carnevale; Sasu Tarkoma; Schahram Dustdar / arXiv</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:Jetson</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一篇面向无人机基础设施巡检的文章，讨论巡检如何从边缘目标检测走向在机载设备上做语义理解，并在 Jetson 上做了可行性测试。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Jetson Orin（16GB）上，YOLO26M 单帧推理约 0.14 秒，SmolVLM-256 约 2.8 秒；处理 10 秒 30fps 视频（300 帧）时 YOLO26M 约 42 秒、只耗无人机电池 0.03%，SmolVLM-256 连续推理约 14 分钟、耗电约 0.6%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">梳理从云端离线处理到边缘 YOLO 检测再到边缘视觉语言模型的三类巡检架构及其系统挑战，用 COCO-Bridge 数据集微调 YOLO26M 做缺陷定位、SmolVLM-256 做语义描述，并用 tegrastats 记录功耗与资源占用。</span></div>
+<div class="score-reason">评分依据：文章以方向梳理为主，但给出了无人机级硬件上检测与视觉语言模型的实测时延和电池占用，能直观看出机载语义理解的代价。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.18448" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

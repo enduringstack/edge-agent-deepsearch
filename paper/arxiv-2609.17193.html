@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>End-to-End Latency-Minimizing and Load-Balanced Request Scheduling for Edge LLM Inference in Agentic AI Services</h1>
-<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-09-15 · Zhen Li; Jun Cai; Haoran Gao; An Li; Tan Li / arXiv</div>
-<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:KV cache</span><span class="tag">方向:端云协同</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">研究智能体服务把大模型放到多台边缘服务器时，每个请求该派给哪台机器，目标是端到端时延最低且负载均衡。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先建一个跨时隙的推理模型，把传输、预填充、逐轮解码和 KV 缓存增长都算进去，用 KV 缓存的内存时间乘积衡量服务器负载；再用 Lyapunov 优化把长期负载均衡约束转化掉，配合奖励重分配和序列化回报预测解决「结果要等请求跑完才知道」的延迟反馈问题。</span></div>
-<div class="score-reason">评分依据：面向边缘服务器集群的大模型推理调度，KV 缓存驱动的负载刻画对端侧协同部署有直接价值（相关性 8）。把 Lyapunov 优化和延迟奖励结合是有针对性的设计（贡献 6）。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-09-15 · Zhen Li; Jun Cai; Haoran Gao; An Li; Tan Li / arXiv</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:KV cache</span><span class="tag">方向:端云协同</span><span class="tag">方向:高效推理</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究智能体服务把大模型分散部署在多台边缘服务器时，每个请求该派给哪台机器，目标是端到端时延最低、同时各服务器负载均衡。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">仿真中多台搭载 RTX 3080/3090/4090、运行 Llama-3.2-1B 的边缘服务器上，LYREO 收敛时平均端到端时延约 2.4 秒，Ly-PPO 约 3.9 秒、普通 PPO 约 5.2 秒；用户数从 20 增至 60 时平均比 Ly-PPO 低约 33%。去掉负载均衡约束虽能把平均时延降 23.2%，但 P99 时延高出 79.9%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先建一个跨时隙的推理模型，把传输、预填充、逐轮解码和 KV 缓存增长都算进去，用 KV 缓存的“占用量乘以占用时长”衡量服务器负载；再用 Lyapunov 优化把长期负载均衡约束转成逐时隙目标，并用奖励重分配和序列回报预测解决“结果要等请求跑完才知道”的延迟反馈问题。</span></div>
+<div class="score-reason">评分依据：面向边缘服务器集群的大模型请求调度，KV 缓存驱动的负载刻画对端边协同部署有参考价值，但结果全部来自仿真且部署在边缘服务器而非终端（相关性 6）。Lyapunov 优化结合延迟奖励重分配是有针对性的设计（贡献 5）；作者来自康考迪亚大学和香港恒生大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.17193" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

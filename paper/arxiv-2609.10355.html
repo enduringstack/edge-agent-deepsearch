@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Why Is Video Still So Expensive? A Survey of Inference-Efficiency Mechanisms in Video and Audiovisual LLMs</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-09 · Killian Steunou; Yannis Tevissen; Mounîm A. El Yacoubi / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">应用:视频</span><span class="tag">方向:剪枝稀疏</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一篇视频大模型推理效率的综述，只收那些报告了参数量、计算量、时延、内存或 token 数具体下降幅度的方法。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">按流水线阶段组织方法，分析抽帧、模态编码、连接层的 token 缩减以及大模型预填充与解码各环节的瓶颈；在共享主干和输入协议的前提下汇总文献报告的精度成本对照，并把它们与跨论文的异构证据区分开。</span></div>
-<div class="score-reason">评分依据：视频大模型的计算和内存开销正是它上不了手机和资源受限设备的原因，综述按阶段梳理很实用（相关性 6）。是综述性工作（贡献 4）。</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:KV cache</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一篇视频大模型推理效率的综述，只收录明确报告了参数量、计算量、时延、内存或 token 数下降幅度的方法，回答视频大模型为什么依然这么贵。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">综述汇编的已有工作数据：像素重排、池化、时间压缩、音频引导剪枝等多类方法在只保留约 25% 视觉 token 时报告接近基线的精度，但降到 10% 时方法选择差异明显；固定大模型预算下，token 缩减可多容纳 10 到 20 倍的帧数。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按“抽帧与输入构造、视觉编码、连接层表示压缩、大模型执行与 KV 缓存”四个阶段归类方法，在共享主干和输入协议时汇总精度与成本对比，并与跨论文的异构数据区分开，最后提出统一的精度-计算量评测协议。</span></div>
+<div class="score-reason">评分依据：视频大模型的计算和内存开销正是它上不了手机等资源受限设备的原因，按流水线阶段梳理压缩手段对端侧多模态部署很实用（相关性 6）。是综述性工作（贡献 4）；作者来自巴黎综合理工学院 Télécom SudParis 与初创公司 Moments Lab。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.10355" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

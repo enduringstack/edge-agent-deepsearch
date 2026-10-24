@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PAANI : On Device Visual Evidence Fusion and Explainable Guidance for River Robot Simulation</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-09-17 · Savio Cardoz; Santhiya Rajan / arXiv</div>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-17 · Savio Cardoz; Santhiya Rajan / arXiv</div>
 <div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:编译部署</span><span class="tag">方向:多模态</span><span class="tag">硬件:MCU</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">PAANI 把河道巡检机器人的感知到导引整条链路放在 Arduino UNO Q 这种极受限的板子上，并让每条建议都能说明依据。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">项目自训的 YOLO11n 检测器加定制的 MobileNetV3 Small 语义分割器，按时间戳对齐做证据融合；有界跟踪提供目标持续性，走廊策略把水面标签、被接受的检测、紧急程度和掩码不确定度合起来判断，最终建议会把支撑证据和策略理由一并输出。</span></div>
-<div class="score-reason">评分依据：在 Arduino 级别的硬件上跑视觉融合并保留可解释链路，是资源极限场景下的扎实工程实现。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">PAANI 把河道巡检机器人从视觉感知到导航建议的整条链路放在 Arduino UNO Q 这种受限开发板上运行，并让每条建议都能说明依据。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">所选 FP32 ONNX 模型共 14.817 MB；检测器 mAP@0.5 为 0.7388（导出的 ONNX 版本 0.7367），分割 mIoU 为 0.9750；在 UNO Q 上 5 分钟录制中，整条流水线时延中位数 467.8 毫秒、p95 为 580.3 毫秒（配置节奏 0.5 Hz）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">项目自训的 YOLO11n 检测器加定制 MobileNetV3 Small 语义分割器，按时间戳对齐做证据融合；有界跟踪保证目标持续性，走廊策略综合水面标签、检测结果、紧急程度和掩码不确定度给出建议，并通过 ROS 2 接到单独的 Gazebo 船只仿真测试台。</span></div>
+<div class="score-reason">评分依据：在 Arduino 级硬件上跑视觉融合并保留可解释链路，是资源极限场景下扎实的工程实现；但避障控制只在 Gazebo 仿真中验证。两位作者注明以个人身份完成，署名单位（ACL Digital、Multiverse Computing、PSG 理工学院）仅作身份标识。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.22353" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

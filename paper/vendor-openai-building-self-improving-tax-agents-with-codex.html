@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Building self-improving tax agents with Codex</h1>
 <div class="meta"><span class="score">4</span> <span class="tier">官方动态</span>  2026-05-27 · OpenAI / OpenAI</div>
-<div class="tags"><span class="vendor-tag">OpenAI</span><span class="tag">方向:工具调用</span><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">OpenAI 的客户案例，讲如何用 Codex 搭建能自我改进的税务智能体。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">让智能体在处理税务任务的过程中积累反馈并回写到自身的提示与工具配置，形成迭代改进的循环。</span></div>
-<div class="score-reason">评分依据：云端垂直领域智能体案例，与端侧部署无关，仅自我改进这一智能体机制有通用参考价值，相关度很低。贡献上是应用实践。</div>
+<div class="tags"><span class="vendor-tag">OpenAI</span><span class="tag">方向:工具调用</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">OpenAI 与 Thrive Holdings 合作的案例：为会计事务所网络 Crete 打造报税智能体 Tax AI，并用 Codex 把会计师的修正自动变成评测和代码改进，让智能体持续自我改进。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">试点季处理了 7000 份税表，为会计师节省约三分之一报税时间，草稿准确率最高 97%，吞吐量提升约 50%；上线时只有四分之一的税表达到 75% 字段正确率，6 周后升到 86%。出租房产模块用约 6 周达到 90% 的精确率和召回率；一名资深会计的报税工时从上一年 180 小时降到 15 小时。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">产品记录从原始单据、字段抽取到最终申报和人工修正的完整轨迹，把反复出现的修正归类成针对性评测集；Codex 在限定的代码与评测环境里排查根因、修改抽取和映射逻辑、跑回归评测后提交待人工审查的改动，含糊的情况退回工程师处理。</span></div>
+<div class="score-reason">评分依据：云端垂直领域智能体的落地案例，与端侧部署无关，只有“用生产轨迹驱动智能体自我改进”的机制有通用参考价值，相关度很低。贡献是应用实践，数字来自客户试点。</div>
 <div class="source"><a href="https://openai.com/index/building-self-improving-tax-agents-with-codex" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

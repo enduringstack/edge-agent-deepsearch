@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>A-JIT: Agentic Just-In-Time Software Construction</h1>
-<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-09-09 · Mark Marron; Earl T. Barr / arXiv</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-09 · Mark Marron; Earl T. Barr / arXiv</div>
 <div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">应用:代码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出一种软件形态：应用里内嵌一个智能体，边观察运行轨迹边现场生成缺失的功能，而不是交付固定的二进制。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">提出一种软件形态：应用里内嵌一个 AI 智能体，边观察用户使用和运行轨迹，边现场补写缺失功能，而不是交付一成不变的程序。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">应用被定义为代码、运行时框架和内嵌 AI 智能体的组合；智能体持续观察系统使用情况和实时执行轨迹，像即时编译器把机器码特化到实际执行路径那样，把软件逻辑、工作流和工具接口特化到具体用户的需求上。</span></div>
-<div class="score-reason">评分依据：是智能体运行时的范式设想，对端侧应用形态有一定启发但没有设备端内容（相关性 3）。属愿景性论文，无实验（贡献 4）。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">借用即时编译的思路：开发者在 Bosque 语言里用“代码空洞”标出未完成的函数，运行到这里时智能体结合类型约束和输入输出样例生成结果，攒够样例后再合成完整实现，并可按用户轨迹生成新的工作流。</span></div>
+<div class="score-reason">评分依据：讨论的是智能体运行时如何改写应用本身，对端侧应用形态有启发但没有设备端内容（相关性 3）。属愿景性技术报告，原文只有示例代码、没有实验数据，故效果未报告（贡献 4）；作者来自肯塔基大学和伦敦大学学院。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.10248" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

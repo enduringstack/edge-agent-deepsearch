@@ -7,9 +7,9 @@
 <h1>alibaba/MNN: [NPU:Refactor] Isolate QNN, HiAI, and NeuroPilot behind configurable plugins while preserving legacy behavior and runtime fallbacks</h1>
 <div class="meta"><span class="score">15</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-09-22 · alibaba / GitHub</div>
 <div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span><span class="tag">硬件:NPU</span><span class="tag">硬件:手机</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">阿里的端侧推理引擎 MNN 重构 NPU 后端，把高通 QNN、华为 HiAI 和联发科 NeuroPilot 三家的接入方式改成可配置插件。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">阿里的端侧推理引擎 MNN 重构 NPU 后端，把高通 QNN、华为 HiAI 和联发科 NeuroPilot 三家的接入方式拆成可单独构建、显式加载的插件。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">本次提交改动 73 个文件、新增 8566 行，新增 MNN_QNN_OFFLINE_CONTEXT 和 MNN_NPU_BACKENDS_SHARED 两个构建选项，并通过 MNNQnnPlugin.hpp、MNNHiAIPlugin.hpp 等独立头文件暴露配置与会话管理接口，同时保留原有行为和运行时回退。</span></div>
-<div class="score-reason">评分依据：安卓端要同时吃到三家芯片的 NPU，插件化和运行时回退是绕不开的工程问题；这次重构直接决定一个 App 能不能一套包适配多家 SoC。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">本次提交改动 73 个文件、新增 8566 行，新增 MNN_QNN_OFFLINE_CONTEXT 和 MNN_NPU_BACKENDS_SHARED 两个构建选项，把三家 NPU 后端各自编成独立动态库，通过 MNNQnnPlugin.hpp、MNNHiAIPlugin.hpp 等头文件暴露配置、诊断和会话接口；QNN 改用独立的后端编号 16，HiAI 运行库改为 dlopen 动态加载，原有构建方式和运行时回退保持不变。</span></div>
+<div class="score-reason">评分依据：安卓端要同时用上三家芯片的 NPU，插件化加运行时回退是绕不开的工程问题，这次重构直接决定一个 App 能否一套包适配多家 SoC。提交只有代码与文档改动，没有附性能测试数据。</div>
 <div class="source"><a href="https://github.com/alibaba/MNN/commit/19c1ad15ed7a0028bf71e4f1930d22ca41ed5c36" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -7,9 +7,9 @@
 <h1>From Migration to Calibration: Preserving Agent Capabilities across Models, Jurisdictions, and Scale</h1>
 <div class="meta"><span class="score">5</span> <span class="tier company">公司项目</span>  2026-09-28 · Yaxiao Liu; Pengbo Liu; Yiwen Liu; Yihua Guan; Jiaxing Song / arXiv</div>
 <div class="tags"><span class="vendor-tag">PwC</span><span class="tag">方向:评测基准</span><span class="tag">方向:工具调用</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">智能体换模型、换基础设施、迁到新的司法辖区或扩大规模后，原有能力可能悄悄失效。这篇提出一套“校准”方法论：先定标准、诊断差距、修改后再按同一标准复验，确保迁移后的智能体依然合格。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">定义基础能力、技术环境和用户情境三类标准，在固定预算内循环执行“诊断差距—生成并应用修改—复验”；修改可以是换工具或框架、补充示例与任务描述，或用目标环境中验证过的轨迹训练策略、控制器或小型技能模型。所有必测项、真实端到端部署路径和硬性条件都通过才算合格，汇总分数提高不能掩盖硬性失败。</span></div>
-<div class="score-reason">评分依据：讨论智能体迁移和部署后的能力保持，与智能体工程化相关，但不涉及端侧设备，相关度 2。目前只是方法论提案，作者明确说明没有验证性实验结果，贡献 3。机构依据：论文首页作者 1–4 署名普华永道中国 AI 中心（PwC China AI Center）。 作者机构依据：arXiv PDF 首页署名 PwC（论文首页作者 1–4 署名 PwC China AI Center，一作邮箱为 cn.pwc.com）。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体换模型、换基础设施、迁到新的司法辖区或扩大规模后，原有能力可能悄悄失效。这篇提出一套「校准」方法论：先按目标环境定标准、诊断差距、修改后再按同一标准复验，确保迁移后的智能体依然合格。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">只有初步试点汇总，不是验证性结果：在一个工业意图路由智能体从 glm-5.3 换到 qwen3.8-max 的 100 题测试中，意图正确率原系统 75/100、直接换模型 79/100、加失败重试 78/100、加外部规则集 79/100；而另一份 FinQA 报告中同样把 GLM 换成 Qwen，执行正确率反而从 64/100 降到 60/100。作者明确说明这些数据不能证明校准方法有效。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">定义基础能力与可达性、专业精度、用户情境三类标准，用版本化映射区分要保留、转换、新增或淘汰的要求；在固定预算内循环执行「诊断差距—修改配置或单独训练控制器与技能模型—复验」，基础执行模型保持冻结，所有硬性门槛都通过才算合格，汇总分数提高不能掩盖硬性失败。</span></div>
+<div class="score-reason">评分依据：讨论智能体迁移和部署后的能力保持，与智能体工程化相关，但不涉及端侧设备。目前只是方法论提案，试点数据未经核对，作者明确说明没有验证性实验结果。 作者机构依据：arXiv PDF 首页署名 PwC（PDF 首页作者 1–4 及作者 6 署名 PwC China AI Center，一作邮箱为 cn.pwc.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.35149" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

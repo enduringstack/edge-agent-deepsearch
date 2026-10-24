@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ONNX Runtime WebGPU Plugin EP v0.4.0</h1>
-<div class="meta"><span class="score">12</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-09-22 · microsoft / GitHub</div>
-<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">ONNX Runtime 的 WebGPU 执行提供器插件发布 v0.4.0，内容是 kernel 性能优化、扩大算子覆盖和可靠性修复。</span></div>
+<div class="meta"><span class="score">10</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-09-22 · microsoft / GitHub</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ONNX Runtime 的 WebGPU 执行提供器插件发布 v0.4.0，内容是 kernel 性能优化、扩大算子与模型覆盖和可靠性修复。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用 subgroup shuffle 优化 MatMulNBits 的宽 tile 执行，把融合激活参数以 uniform 形式传给 Conv 和 MatMul 并额外融合多个算子，新增若干模型专用 kernel，并修复越界访问和着色器编译问题。</span></div>
-<div class="score-reason">评分依据：WebGPU 执行提供器决定了模型能不能在浏览器和本地 GPU 上跑起来，MatMulNBits 优化直接关系到低比特权重的本地推理速度；本次是常规迭代更新。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 subgroup shuffle 优化低比特权重矩阵乘 MatMulNBits 的宽 tile 执行，给卷积多融合八种激活；新增 PagedAttention 元数据和 GPT-OSS 支持、int8 KV cache 分块量化，补上 Qwen-3.5 与 DeepSeek Engram 的专用算子，并开始提供 Linux AArch64 安装包，同时修复越界读取和着色器编译问题。</span></div>
+<div class="score-reason">评分依据：WebGPU 执行提供器决定模型能否在浏览器和本地 GPU 上跑，低比特矩阵乘和 int8 KV cache 量化直接关系本地推理速度与显存占用；本次是常规迭代，发布说明只列改动，没有给出性能数字。</div>
 <div class="source"><a href="https://github.com/microsoft/onnxruntime/releases/tag/plugin-ep-webgpu/v0.4.0" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

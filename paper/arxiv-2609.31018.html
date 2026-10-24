@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Predictive Rolling-Horizon Optimization for Commitment-Aware Model-Parallel Inference under Spatio-Temporal Edge Dynamics</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-09-25 · Minghui Liwang; Chenxi Xu; Wei Gong; Li Li; Wenbo Zhu; Xinlei Yi; Yuhan Su; Xianbin Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:调度服务</span><span class="tag">方向:高效推理</span><span class="tag">方向:安全隐私</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">边缘上做模型并行推理，调度时不能只看当下资源，PROMISE 把未来的资源争抢和已经许诺的完成时间一起算进去。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">联合建模随机任务产生、移动导致的通信波动、隐私感知的模型切分和负载相关的边缘算力，把「承诺完成时间」当成内生决策；用自适应时域预测未来任务到达和计算量并嵌入确定性等价的滚动推演，只提交第一阶段决策，观察到新状态后再重算。</span></div>
-<div class="score-reason">评分依据：面向边缘设备上的模型并行推理调度，考虑移动性和隐私切分，和端云协同场景直接相关；验证只有数值仿真，没有真实设备。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-09-25 · Minghui Liwang; Chenxi Xu; Wei Gong; Li Li; Wenbo Zhu; Xinlei Yi; Yuhan Su; Xianbin Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:调度服务</span><span class="tag">方向:高效推理</span><span class="tag">方向:安全隐私</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">边缘设备上做模型并行推理，调度时不能只看当下资源。PROMISE 把未来的资源争抢和已经许诺的完成时间一起算进去，做滚动式预测调度。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">数值仿真中，PROMISE 在不同设备规模和负载下都保持较高的任务完成率和目标值，优于随机分配、只看当下收益等五种对比方法（结果以曲线给出，无汇总数字）。在 2 台树莓派 4B 加 2 台树莓派 3B 的实测平台上，四个模型转成 ONNX 后精度最大偏差 3.44%；单台树莓派上 ResNet18 用 2 个进程加速 1.71 倍，4 个进程只到 2.10 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">联合建模随机任务产生、移动导致的通信波动、考虑隐私的模型切分和随负载变化的边缘算力，把「承诺完成时间」当成调度决策的一部分；在自适应时域内预测未来任务到达和计算量，代入确定性等价的状态推演评估当前分配，只执行第一阶段决策，拿到新状态后再重算。</span></div>
+<div class="score-reason">评分依据：面向边缘设备的模型并行推理调度，考虑移动性和隐私切分，并在树莓派集群上做了可行性验证，与端云协同场景直接相关；调度方法本身的优势只在数值仿真中体现。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.31018" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -7,9 +7,9 @@
 <h1>NVIDIA CUDA 13.3 Enhances GPU Development with Tile Programming in C++, Compiler Autotuning, and Python Updates</h1>
 <div class="meta"><span class="score">5</span> <span class="tier">官方动态</span>  2026-05-26 · NVIDIA / NVIDIA</div>
 <div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:编译部署</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">CUDA 13.3 发布，主要带来 C++ 的分块编程、编译器自动调优和 Python 侧更新。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在工具链层面同时引入数据块编程抽象、编译期自动调参，以及 Python 接口的更新，统一打包进新版本的开发套件。</span></div>
-<div class="score-reason">评分依据：通用 GPU 开发工具链版本更新，与端侧部署无直接关系，仅编译与算子开发这一层相邻，相关度低。贡献上是常规版本迭代。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">CUDA 13.3 发布，主要带来 C++ 分块编程（新增支持 Hopper）、CompileIQ 编译器自动调优、CUDA Python 1.0，以及编译器和数学库的一批更新。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">官方给出的数字：CompileIQ 在已优化的 Triton 注意力和 CUTLASS 矩阵乘核上最高提速 15%；新的 Numba CUDA MLIR 即时编译比 Numba-CUDA 平均快约 1.4 倍、单核最高约 2 倍，主机端启动开销降低约 2 到 3.5 倍、标量参数多的核最高约 17 倍；cub::DeviceFind::FindIf 比 CCCL 3.2 最高快 7 倍；cuSPARSE 的 SpMV 描述符创建提速 2.5 倍；cuSOLVER 对称特征值求解在 B200 上中大型矩阵的求解时间通常缩短约 20%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在工具链层面同时引入块级编程抽象、编译期自动调参、基于 MLIR 的 Numba 兼容内核生成器，以及 C++23 支持、CCCL 3.3 新算法和数学库优化，统一打包进新版本开发套件。</span></div>
+<div class="score-reason">评分依据：通用 GPU 开发工具链版本更新，数字都来自数据中心 GPU 场景，与端侧部署无直接关系，仅编译和算子开发这一层相邻，相关度低。贡献上是常规版本迭代。</div>
 <div class="source"><a href="https://developer.nvidia.com/blog/nvidia-cuda-13-3-enhances-gpu-development-with-tile-programming-in-c-compiler-autotuning-and-python-updates/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

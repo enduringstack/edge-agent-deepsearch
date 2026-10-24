@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Q-DEQ: Discrete Solving and Quantization for Deep Equilibrium Models in Time Series Forecasting under Edge Deployment Coding Constraints</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-09-21 · Ruotong Yang; Hongdong Zhu; Qi Gao; Yin Ma; Hai Wei; Kai Wen / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:模型架构</span><span class="tag">方向:编译部署</span><span class="tag">硬件:CIM</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Q-DEQ 面向边缘部署的时间序列预测，把深度平衡模型的求解过程改写成离散优化，好让参数存储和位宽都压下来。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把每步更新的方向系数做二进制编码，转成 QUBO 问题交给模拟退火或相干伊辛机求解；定点求解完成后再做一遍前向，对共享层的权重和激活施加 W8A8 伪量化。</span></div>
-<div class="score-reason">评分依据：思路新颖但落点较窄，主要价值是给边缘侧参数预算紧张的时序预测提供一种低位宽方案。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-09-21 · Ruotong Yang; Hongdong Zhu; Qi Gao; Yin Ma; Hai Wei; Kai Wen / arXiv</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Q-DEQ 面向边缘部署的时间序列预测，用共享一层的深度平衡模型减少参数，并把求解过程改写成离散优化，再叠加 8 比特量化压缩存储。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以 iTransformer 为骨干在五个多变量时序数据集上，MSE 相对显式多层基线变化 -1.16% 到 +2.90%（两个数据集更低）；参数共享使参数量减少 1.80–3.82 倍，叠加 W8A8 后静态权重存储减少 4.3–12.8 倍；CPU 模拟退火和 Kaiwu 相干伊辛机两种求解后端给出的预测结果基本一致。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把每步更新的方向系数做二进制编码，变成 QUBO 问题交给模拟退火或相干伊辛机求解；定点求解完成后再前向一遍，对共享层的权重和激活施加 W8A8 伪量化。</span></div>
+<div class="score-reason">评分依据：思路新颖但落点较窄，主要价值是给参数预算紧张的边缘时序预测提供一种低位宽方案；论文首页及全文未列出作者机构。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.24042" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

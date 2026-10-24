@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>WaveFront Decoding: Parallelized Self-Speculative Decoding for Looped Language Models</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-09-19 · Hyeongju Ha; Jae-Joon Kim / arXiv</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-19 · Hyeongju Ha; Jae-Joon Kim / arXiv</div>
 <div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">循环式语言模型靠反复调用同一个权重块来加深度，代价是每个 token 要串行走 T 次；WaveFront 用免训练的自投机解码把这部分并行化。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">利用两个特性：中间层的循环输出本身就是不错的草稿，权重共享让不同位置、不同深度的状态可以放进同一次批量调用；据此把混合深度的状态排成对角波前，边起草新位置边推进旧位置。</span></div>
-<div class="score-reason">评分依据：针对循环式架构的解码加速，免训练且不改权重，属于通用推理优化里比较巧的一类。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">循环式语言模型靠反复调用同一个权重块来加深度，每个 token 要串行走很多次；WaveFront 用免训练的自投机解码把这部分并行化。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Spec-Bench 六类任务上，Ouro-2.6B 比自回归解码快 2.42 倍，Huginn-3.5B 快 3.54 倍，均优于先起草后验证的方案；加上跨循环 KV 共享后 Huginn-3.5B 加速提升到 4.81 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用两点：中间循环的输出本身就是不错的草稿；权重共享让不同位置、不同深度的状态能放进同一次批量调用。于是把混合深度的状态排成对角“波前”，边在浅层起草新位置、边把旧位置推进到全深度验证，被拒的草稿用全深度结果纠正。</span></div>
+<div class="score-reason">评分依据：针对参数高效的循环式架构做解码加速，免训练且开源，思路巧妙；循环式小模型对内存受限的端侧有吸引力，但论文未在端侧设备上测试。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.23033" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

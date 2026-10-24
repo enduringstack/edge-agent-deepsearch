@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>EAServe: Encode-Aware Disaggregated Serving for Multimodal Large Language Models</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-09-25 · Kunxiong Zhu; Zhihao Shu; Hangyu Zheng; Minghai Qin; Miao Yin; Gagan Agrawal; Wei Niu / arXiv</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-09-25 · Kunxiong Zhu; Zhihao Shu; Hangyu Zheng; Minghai Qin; Miao Yin; Gagan Agrawal; Wei Niu / PACT 2026</div>
 <div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">方向:多模态</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">多模态大模型的服务多出一个「编码」阶段，EAServe 把编码阶段当成整条流水线的控制点来分配 GPU 资源。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">运行时做负载自适应微批、限速地把部分预填卸载到同驻的预填 worker，并动态划分 SM 保证共驻时性能可预测；配置层用分阶段容量画像剪掉不均衡的分配方案，联合搜索 GPU 分配、编码批大小和卸载比例。</span></div>
-<div class="score-reason">评分依据：多模态服务的三阶段资源分配属于云端 serving，对端侧意义有限，但编码阶段是瓶颈这一观察对端云协同的多模态拆分有参考价值。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">多模态大模型的服务比纯文本多出一个「编码」阶段（把图像、视频、音频转成向量），EAServe 把编码阶段当成整条流水线的控制点来分配 GPU 资源。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在覆盖图像、视频、音频的三种多模态模型上，相同时延约束下有效吞吐最高比 NVIDIA Dynamo 高 4.3 倍、比 vLLM 高 1.7 倍，各阶段 GPU 利用率更均衡，且比基线搜索方法更快找到接近最优的配置。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">运行时做按负载自适应的微批、限速地把部分预填卸载到同卡的预填进程，并动态划分 SM 保证共驻时性能可预测；配置层先用分阶段容量画像剪掉不均衡的分配方案，再用贝叶斯优化联合搜索 GPU 分配、编码批大小和卸载比例。</span></div>
+<div class="score-reason">评分依据：多模态服务的三阶段资源分配属于云端 serving，对端侧意义有限，但「编码阶段是瓶颈」的观察对端云协同拆分多模态推理有参考价值。已被 PACT 2026 接收，不属于顶会名单；除高校作者外有一位作者署名 Western Digital。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.31551" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

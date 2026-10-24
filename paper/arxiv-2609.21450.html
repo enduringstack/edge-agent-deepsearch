@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Understanding LLM Quantization through Activation-Guided Compensation and Orthogonal Residuals</h1>
 <div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-09-18 · Yamato Narita; Issei Sato / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">系统分析 W4A4 权重激活量化的误差到底由什么构成，把它精确拆成激活引导的权重补偿项和一个正交残差。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">给出局部量化误差的精确分解，并用持续存在的通道离群值和常规激活量来界定残差上界，据此说明哪部分误差能靠权重补偿解决、哪部分必须靠变换设计。</span></div>
-<div class="score-reason">评分依据：把量化里“缩放”“旋转”“权重优化”几类手段的分工讲清楚了，理论性强，对做低比特端侧部署的人有指导价值。</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效推理</span><span class="tag">模型:Llama</span><span class="tag">模型:Mistral</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">从理论上拆解 W4A4 权重激活量化的误差构成，说清权重优化、通道缩放、正交旋转三类常见手段各自能解决哪部分误差。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">无需反向传播的配置在 8 个 Llama 和 Mistral 模型上与需梯度训练的 SpinQuant 相当：Llama3-8B 和 Mistral-7B-v0.3 平均准确率只差 0.26 和 0.17 个百分点；Llama3-8B（W4A4KV4）上把 QuaRot 的 WikiText-2 困惑度从 7.45 降到 7.20。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把局部量化误差精确分解为“激活引导的权重补偿项”和“正交残差”，前者可由权重优化消除、后者只能靠变换设计；再用持续存在的离群通道给残差定上界，推导出随机 Hadamard 旋转、符号选择和 L2 通道缩放的实用规则。</span></div>
+<div class="score-reason">评分依据：把量化里缩放、旋转、权重优化的分工讲清楚并给出免训练的配置方法，对做低比特端侧部署的人有指导价值，但论文未涉及设备实测。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.21450" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

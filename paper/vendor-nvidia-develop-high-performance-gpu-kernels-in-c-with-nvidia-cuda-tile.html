@@ -7,9 +7,9 @@
 <h1>Develop High-Performance GPU Kernels in C++ with NVIDIA CUDA Tile</h1>
 <div class="meta"><span class="score">8</span> <span class="tier">官方动态</span>  2026-05-26 · NVIDIA / NVIDIA</div>
 <div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:编译部署</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">英伟达推出 CUDA Tile 编程模型，让开发者用 C++ 以数据块为单位编写高性能 GPU 计算核。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">英伟达介绍 CUDA Tile C++ 编程模型，让开发者用 C++ 以数据块为单位编写 GPU 计算核，不必再手写线程级代码。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把线程级的手工索引换成以数据块为单位的抽象，由编译器负责把块级操作映射到底层硬件单元。</span></div>
-<div class="score-reason">评分依据：算子编写抽象层的变化属于推理部署技术栈，思路对端侧算子库开发有参考意义，但对象是数据中心 GPU，相关度低。贡献在于编程模型层面的抽象升级。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用张量视图、分块加载/存储和块级矩阵乘等抽象替代逐线程索引，由编译器负责并行、异步和数据搬运；文中用向量加和矩阵乘两个示例演示写法，要求 Ampere 及更新的 GPU 和 CUDA 13.3。</span></div>
+<div class="score-reason">评分依据：原文是编程教程，只验证了示例结果正确，没有给出任何加速比或算力利用率，所以效果写未报告。算子编写抽象属于推理部署技术栈，但对象是独立 GPU，与端侧设备距离较远，相关度低；贡献在于编程模型层面的抽象升级。</div>
 <div class="source"><a href="https://developer.nvidia.com/blog/develop-high-performance-gpu-kernels-in-cpp-with-nvidia-cuda-tile/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

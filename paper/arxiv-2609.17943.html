@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ASPIRE: Asynchronous Batched Self-Speculative Decoding for Long-Context LLM Inference</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-09-16 · Amir Ziashahabi; Hossein Entezari Zarch; Lei Gao; Murali Annavaram; Salman Avestimehr / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">应用:长上下文推理</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">ASPIRE 让一批请求各自按自己的节奏做自投机解码，而不是整批共用一个起草—验证的节拍。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">三个部件：一次混合前向让起草中的请求和验证中的请求共存于同一批；轻量在线调度器按每条请求的接受率估计和批感知代价决定起草长度；从而去掉全局的起草—验证阶段。</span></div>
-<div class="score-reason">评分依据：长上下文解码受限于 KV cache 反复读取，按请求自适应起草长度是合理优化，虽然主要面向服务端批量场景。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-16 · Amir Ziashahabi; Hossein Entezari Zarch; Lei Gao; Murali Annavaram; Salman Avestimehr / COLM 2026</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:稀疏注意力</span><span class="tag">应用:长上下文推理</span><span class="tag">方向:调度服务</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ASPIRE 让一批长上下文请求各自按自己的节奏做自投机解码，不再整批共用同一个起草—验证节拍。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen3-1.7B、Qwen3-8B、DS-LLaMA-8B 三个模型和 AIME、CodeElo、LongBench 等五个基准上，解码吞吐比自回归快 1.70–4.58 倍，平均加速比最强的自投机基线（MagicDec、Vegas）高约 27%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">三件事：一次混合前向让起草中和验证中的请求共处同一批；轻量在线调度器按每条请求的接受率估计和批感知代价决定何时验证；起草阶段在一个指定层做全注意力，持续刷新稀疏上下文以减少过时。</span></div>
+<div class="score-reason">评分依据：长上下文解码受限于反复读取 KV cache，按请求自适应起草是合理优化，但主要面向服务端批量场景；论文已被 COLM 2026 接收（不在顶会列表内）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.17943" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

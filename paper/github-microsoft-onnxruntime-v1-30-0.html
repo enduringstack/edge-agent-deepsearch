@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ONNX Runtime v1.30.0</h1>
-<div class="meta"><span class="score">14</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-09-10 · microsoft / GitHub</div>
-<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:KV cache</span><span class="tag">方向:量化</span><span class="tag">方向:编译部署</span><span class="tag">硬件:CPU</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">ONNX Runtime 发布 1.30.0，重点加强生成式推理，同时改进 CPU、GPU 和 WebGPU 三条路径。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">新增按通道 scale 的 INT4 分页 KV 缓存、分页 XQA 的投机解码、WebGPU 的 PagedAttention 与 INT8 KV 缓存分块量化；CPU 侧加了 AVX-512、Arm64 NEON 和 SVE 的融合线性注意力核，并新增 Go 语言绑定。</span></div>
-<div class="score-reason">评分依据：ONNX Runtime 是端侧部署的主流运行时，本次改动集中在 KV 缓存量化和 Arm64 等端侧后端（相关性 8）。属版本迭代式的工程整合（贡献 6）。</div>
+<div class="meta"><span class="score">12</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-09-10 · microsoft / GitHub</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:KV cache</span><span class="tag">方向:量化</span><span class="tag">方向:投机解码</span><span class="tag">硬件:CPU</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ONNX Runtime 发布 1.30.0，重点加强生成式推理，同时改进 CPU、GPU 和 WebGPU 三条执行路径，并新增 Go 语言绑定。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">版本说明称本版有 57 位贡献者参与；所列优化均未给出性能数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">CUDA 侧新增按通道 scale 的 INT4 分页 KV 缓存和分页 XQA 投机解码；WebGPU 改进 PagedAttention 并加入 INT8 KV 缓存分块量化；CPU 侧加了 AVX-512、Arm64 NEON 和 SVE 的融合线性注意力核，并加固模型加载和输入校验。</span></div>
+<div class="score-reason">评分依据：ONNX Runtime 是端侧部署常用运行时，本次 Arm64 线性注意力核、WebGPU KV 缓存量化可直接用于端侧，但不少改动面向 CUDA 服务端（相关性 7）。属版本迭代式工程整合（贡献 5）。</div>
 <div class="source"><a href="https://github.com/microsoft/onnxruntime/releases/tag/v1.30.0" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

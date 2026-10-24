@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>google-ai-edge/litert: Relocate TFLite operator fuzzing tests to LiteRT.</h1>
 <div class="meta"><span class="score">10</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-09-15 · google-ai-edge / GitHub</div>
-<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LiteRT 把 TFLite 的算子模糊测试整体搬进自己的仓库。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把 14 个算子模糊测试和相关工具移到 litert/test/fuzzing 目录，改用 LiteRT 的新路径和公开 TFLite API 头文件，并删掉原目录，为接入形状与类型推断校验做准备。</span></div>
-<div class="score-reason">评分依据：LiteRT 是安卓端侧推理的主力运行时，测试基建内迁是它独立于 TFLite 的必要一步（相关性 8）。属仓库整理类改动，方法创新很低（贡献 2）。</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">LiteRT 把原先放在 TFLite 里的算子模糊测试整体搬进自己的仓库，为后续在模型加载时做形状和类型校验打基础。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">提交迁移了 14 个算子模糊测试及配套工具，新增约 8083 行；属测试基建改动，未报告性能数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把模糊测试工具和 14 个算子测试移到 litert/test/fuzzing 目录，改用 LiteRT 新路径和公开 TFLite API 头文件，并删除旧目录。</span></div>
+<div class="score-reason">评分依据：LiteRT 是安卓端侧推理的主力运行时，测试基建内迁是它摆脱 TFLite、接入加载期校验的必要一步（相关性 8）。属仓库整理类改动，方法创新很低（贡献 2）。</div>
 <div class="source"><a href="https://github.com/google-ai-edge/LiteRT/commit/ee6669b8ac8baa35060414a6cb0f5038cf7d5fe9" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

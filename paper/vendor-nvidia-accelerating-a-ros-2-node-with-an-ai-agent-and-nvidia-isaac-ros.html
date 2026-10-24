@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Accelerating a ROS 2 Node with an AI Agent and NVIDIA Isaac ROS</h1>
-<div class="meta"><span class="score">12</span> <span class="tier">官方动态</span>  2026-09-22 · NVIDIA / NVIDIA</div>
+<div class="meta"><span class="score">11</span> <span class="tier">官方动态</span>  2026-09-22 · NVIDIA / NVIDIA</div>
 <div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:编译部署</span><span class="tag">方向:高效推理</span><span class="tag">方向:工具调用</span><span class="tag">应用:机器人</span><span class="tag">硬件:Jetson</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">这篇教程讲怎么把 CUDA 加速的 ROS 2 节点迁到 NVIDIA 的 CUDA 缓冲后端，让节点之间零拷贝共享 GPU 显存，并用一个 AI 编码智能体把迁移自动做掉。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这篇教程讲怎么把 CUDA 加速的 ROS 2 节点迁到 NVIDIA 贡献的 CUDA 缓冲后端，让节点之间零拷贝共享 GPU 显存，并用一个 AI 编码智能体按专用技能把迁移自动做掉。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用 ROS 2 Lyrical 的 rosidl::Buffer 抽象加 NVIDIA 贡献的 CUDA 缓冲后端，当发布方和订阅方同主机、同 CUDA 设备、同 Linux 用户且中间件受支持时，数据不做序列化也不经主机拷贝，否则回退到 CPU 传输；一个专门的迁移技能让智能体追踪内存分配、改代码并验证后端协商结果。</span></div>
-<div class="score-reason">评分依据：NVIDIA 官方博客明确给出在 Jetson AGX Thor 上部署这套智能体驱动的 ROS 2 流程，属于机器人边缘平台的部署优化；智能体在开发阶段做代码迁移，不是设备端运行的智能体。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">借助 ROS 2 Lyrical 的 rosidl::Buffer 抽象和 CUDA 缓冲后端，发布方和订阅方同主机、同 CUDA 设备、同 Linux 用户且中间件受支持时，数据不做序列化也不经主机拷贝，否则自动回退 CPU 路径；示例把 Depth Anything 3 的 TensorRT 节点改为直接把推理结果写进 CUDA 缓冲消息，再用 Nsight Systems 检查边界处没有整块数据的主机与显存拷贝。</span></div>
+<div class="score-reason">评分依据：NVIDIA 官方博客明确说迁移后的工作负载可部署到 Jetson AGX Thor，属于机器人边缘平台的数据通路优化；智能体只在开发阶段做代码迁移，不是设备端运行的智能体。文章只给验证方法，没有给出延迟或吞吐数字。</div>
 <div class="source"><a href="https://developer.nvidia.com/blog/accelerating-a-ros-2-node-with-an-ai-agent-and-nvidia-isaac-ros/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

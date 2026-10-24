@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Co-VLA: Consensus-based Federated Training for Vision-Language-Action Models</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-17 · Haolong Li; Guner Dilsad Er; Michael Muehlebach; Joerg Stueckler / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:端侧训练</span><span class="tag">应用:机器人</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Co-VLA 用 ADMM 共识优化做视觉—语言—动作模型的联邦训练，应对各机器人客户端数据分布不一致的问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">同一套共识优化算法同时支持全模型训练和参数高效微调，适配器支持固定秩和自适应秩两种。</span></div>
-<div class="score-reason">评分依据：机器人数据天然分散、集中化代价高，联邦训练是合理方向；方法本身是把成熟的共识优化迁移到 VLA 上。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-09-17 · Haolong Li; Guner Dilsad Er; Michael Muehlebach; Joerg Stueckler / arXiv</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Co-VLA 用 ADMM 共识优化做视觉—语言—动作模型的联邦训练，让分散在不同机器人上的数据不出本地也能合训一个模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">LIBERO 四个任务组上从头训练 SmolVLA，Co-VLA 成功率为 0.80/0.91/0.92/0.71，接近集中训练的 0.81/0.95/0.94/0.70，优于 FedAvg 的 0.76/0.89/0.91/0.63；LoRA 微调时 Co-VLA 为 0.75/0.81/0.87/0.51，明显高于 FedAvg LoRA 的 0.61/0.67/0.79/0.52。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把联邦训练写成共识问题，用同步 ADMM 让各客户端在本地数据上训练、再与全局模型对齐；同一套算法同时支持全模型训练和 LoRA、自适应秩 SoRA 微调，直接耦合各端的低秩因子而不是简单平均。</span></div>
+<div class="score-reason">评分依据：机器人数据天然分散，联邦训练方向合理，但这是训练算法，实验在 GPU 集群上模拟 10 个客户端，没有涉及端侧推理部署，相关性偏低。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.19923" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

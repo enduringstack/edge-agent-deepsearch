@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>From Inference Engine to Inference Control Plane: Connecting vLLM, llm-d, and the Evolution of Efficient Distributed LLM Serving</h1>
-<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-09-19 · Twinkll Sisodia / arXiv</div>
+<div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span>  2026-09-19 · Twinkll Sisodia / arXiv</div>
 <div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">方向:推理框架</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一篇综述性文章，梳理大模型推理如何从单引擎优化演进成分布式控制问题，并把 vLLM 和 llm-d 放在互补的两层来看。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把模型服务引擎（PagedAttention、连续批处理、算子、量化、并行）和推理控制面（在哪跑、何时跑、按什么策略跑）分开讨论，综合已发表结果做归纳。</span></div>
-<div class="score-reason">评分依据：属于云端推理服务的综述，端侧相关性有限，但对理解端云协同的分层结构有一定帮助。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">一篇综述性文章，梳理大模型推理如何从单引擎优化演变成分布式控制问题，把 vLLM（执行引擎）和 llm-d（推理控制面）当作互补的两层来看。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">综述汇编的已有工作数据（本文不做新实验）：PagedAttention 吞吐提升 2–4 倍；DistServe 在 90% 以上请求满足时延约束下多服务 7.4 倍请求；llm-d 前缀感知路由在 4 张 AMD MI300X 上输出吞吐约 3 倍、首 token 快 2 倍；vLLM 结合 Mooncake 在智能体轨迹上缓存命中率从 1.7% 升到 92.2%、吞吐 3.8 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把服务引擎（PagedAttention、连续批处理、算子、量化、并行）与控制面（在哪跑、何时跑、按什么策略跑）分开讨论，提出按可行执行计划而非仅按端点做选择的推理执行规划器，并给出瓶颈迁移分类和基于 SLO 有效吞吐的评估框架。</span></div>
+<div class="score-reason">评分依据：属于云端分布式推理服务的综述，端侧相关性很低；效果数字均来自被引用的已有工作。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.23130" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SpecQuant: Speculative Decoding with Multi-Parent Quantization for Adaptive LLM Inference</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-09-18 · Harish KB; Jagadeeswaran M; Pradheep P; Yuvanesh S; Sivakumar T / arXiv</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">SpecQuant 把投机解码和多套量化权重结合起来，在消费级硬件上做自适应推理，且完全免训练。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">从同一个基座模型导出 INT4、FP8、FP16 多个量化变体共享权重，再按预测的问题复杂度动态路由：简单事实类走轻量变体，复杂推理或长上下文走高精度变体。</span></div>
-<div class="score-reason">评分依据：免训练、不需要额外草稿模型，路线对本地部署很友好，属于已有技术的实用组合。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-18 · Harish KB; Jagadeeswaran M; Pradheep P; Yuvanesh S; Sivakumar T / ICPC2T 2026</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">SpecQuant 把投机解码和同一模型的多套量化版本结合起来，在消费级硬件上按问题难度自适应选择精度，且不需要训练。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen2.5 模型上，MMLU 单题耗时 4.07→3.01 秒（快 35.2%），AlpacaEval 6.42→4.50 秒（快 42.6%），GSM8K 8.83→6.43 秒（快 37.3%），平均提速约 38.4%，准确率下降不到 2%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从同一基座模型导出共享权重的 INT4、FP8、FP16 变体，按预测的问题复杂度路由：简单事实类走低精度，复杂推理或长上下文走高精度；共享权重保证投机解码的接受率，不需要单独的草稿模型。</span></div>
+<div class="score-reason">评分依据：免训练、不需要额外草稿模型，路线对本地部署友好，但属于已有技术的组合，实验规模小，论文未说明测试硬件；发表于 ICPC2T 2026。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.21704" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

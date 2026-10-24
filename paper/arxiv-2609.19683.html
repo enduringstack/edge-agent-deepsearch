@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>MiX: Micro-Inverted-Scaling for End-to-End Low-Bit Vision-Language Model Acceleration</h1>
-<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-09-17 · Yuan Liao; Jae-sun Seo / arXiv</div>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-09-17 · Yuan Liao; Jae-sun Seo / MICRO 2026</div>
 <div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">硬件:NPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">MiX 提出一种新的低比特数值格式，解决视觉语言模型在边缘设备上做端到端量化时的“微缩放塌陷”问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把微缩放的思路反过来：不再让多个尾数共用一个指数，而是让每个元素保留私有指数、共用一个尾数，从而避免单个巨大离群值劫持共享指数把周围元素压成零。</span></div>
-<div class="score-reason">评分依据：边缘加速器受面积和功耗限制，必须端到端量化，而多模态 token 的动态范围差异正是最难的一关；这个格式设计直击要害。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">MiX 提出一种新的低比特数值格式和配套加速器，解决视觉语言模型在边缘设备上端到端量化时的“微缩放塌陷”问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">4.5 比特 MiX 在多模态基准上精度持平或优于 NVFP4；加速器的运算单元面积效率比 NVFP4 方案高 25%，与最先进的 Focus 加速器相比提速 2.3–4.5 倍、能耗降低 1.4–2.9 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把微缩放格式反过来：不是多个尾数共用一个指数，而是每个元素保留私有指数、共用一个尾数，避免单个巨大离群值劫持共享指数把周围元素压成零；再配合自适应的双格式推理框架，把共享尾数提出来后用移位器代替乘法器。</span></div>
+<div class="score-reason">评分依据：边缘加速器受面积和功耗约束必须端到端量化，多模态 token 的动态范围差异正是最难的一关，这个格式从数值表示层面直击要害；论文已被 MICRO 2026 接收并开源代码。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.19683" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

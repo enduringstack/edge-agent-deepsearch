@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>openvinotoolkit/openvino: [GGUF FE] Runtime extension mechanism for adding architectures (#37892)</h1>
-<div class="meta"><span class="score">14</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-09-15 · openvinotoolkit / GitHub</div>
-<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span><span class="tag">方向:模型架构</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">OpenVINO 给 GGUF 前端加了运行时架构扩展机制，应用不用重新编译核心库就能支持新的模型架构。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">让内置架构和外部架构共用同一套 builder 定义、注册表和转换流水线，靠形状与类型推断挡住非法图，原生支持的架构标识扩到 23 个。</span></div>
-<div class="score-reason">评分依据：OpenVINO 是边缘推理的常用运行时，GGUF 前端可插拔架构直接降低端侧接新模型的成本（相关性 8）。是扩展机制类工程改动（贡献 6）。</div>
+<div class="meta"><span class="score">12</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-09-15 · openvinotoolkit / GitHub</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span><span class="tag">方向:模型架构</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">OpenVINO 给 GGUF 前端加了运行时架构扩展机制，应用不用重新编译 OpenVINO 就能支持新的 GGUF 模型架构。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">本次提交新晋 13 个经过与 llama.cpp 参考比对的架构，原生目录达到 23 个已验证、7 个实验性架构标识；未报告推理性能数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">内置架构和外部扩展库共用同一套架构定义、注册表和转换流水线，靠 OpenVINO 的形状与类型推断挡住非法图；同时按 llama.cpp CPU 结果修正了 RoPE、QK 归一化、滑窗、MoE 路由等解码器行为。</span></div>
+<div class="score-reason">评分依据：OpenVINO 是英特尔 PC 与边缘设备的常用推理运行时，GGUF 架构可插拔直接降低端侧接入新模型的成本（相关性 7）。是扩展机制类工程改动（贡献 5）。</div>
 <div class="source"><a href="https://github.com/openvinotoolkit/openvino/commit/d70556622b926b480faccfa96c7dd1d214d49dba" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

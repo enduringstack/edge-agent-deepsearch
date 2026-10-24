@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Predictive Suppression Layers for Communication-Efficient Spiking Neural Networks</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-09-18 · Aidin Attar; Michele Rossi / arXiv</div>
-<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:神经形态</span><span class="tag">应用:IoT命令</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">脉冲神经网络会把产生的每个脉冲都发出去，这在众核神经形态硬件或无线 IoT 上是很贵的通信开销；这篇用预测编码只发“意外”的脉冲。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">给层加一个共享的预测块，衍生出两种变体：误差单元传输带符号的脉冲残差，预测抑制则按残差幅度门控，只转发不可预测的活动。</span></div>
-<div class="score-reason">评分依据：把通信而不是计算当成脉冲网络的主要成本，这个切入点对无线 IoT 和众核神经形态芯片都对题。</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-09-18 · Aidin Attar; Michele Rossi / NeuroPHY 2026（EWSN 2026 研讨会）</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:神经形态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">脉冲神经网络会把产生的每个脉冲都传给下一层，在众核神经形态芯片或无线 IoT 上通信很贵；这篇用预测编码只传“出乎意料”的脉冲。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">N-MNIST 上预测抑制层准确率 97.6%，高于基线 94.1%，层间通信量从 3006 降到 821；SHD 语音数据集上准确率 71.7%（基线 62.1%），通信量从 3094 降到 747，约为三分之一；当通信成本超过本地计算约 2.1 倍时，总成本低于基线（成本为活动量估算，非硬件实测能耗）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">给每层加一个共享预测块，衍生两种变体：误差单元直接传带符号的脉冲残差；预测抑制按残差幅度做门控，只转发不可预测的活动。</span></div>
+<div class="score-reason">评分依据：把通信而不是计算当作脉冲网络的主要成本，切入点对无线 IoT 和众核神经形态芯片都对题；目前只是小数据集上的算法验证，发表于 EWSN 2026 附属研讨会。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.21583" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

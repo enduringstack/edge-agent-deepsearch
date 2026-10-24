@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>StageGuard: Learning Stage Transitions for Long-Horizon Robot Tasks via Agentic Distillation</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-09-17 · Jinbang Huang; Yuanzhao Hu; Zhiyuan Li; Ran Qi; Yixin Xiao; Yangzheng Wu; Tengyue Ba; Zhanguang Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:规划推理</span><span class="tag">应用:机器人</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">StageGuard 用智能体式蒸馏训练一个小模型来判断长程机器人任务里当前技能该不该结束、要不要进入下一段。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把教师模型的推理过程和示范轨迹结合，生成关于子任务完成标准的结构化解释，再蒸馏成能实时监控的小模型，避免云端部署和长推理带来的时延。</span></div>
-<div class="score-reason">评分依据：明确把云端大模型的时延当成问题并蒸馏出本地可跑的判断器，属于端侧机器人控制里合理的一步。</div>
+<div class="meta"><span class="score">14</span> <span class="tier company">公司项目</span>  2026-09-17 · Jinbang Huang; Yuanzhao Hu; Zhiyuan Li; Ran Qi; Yixin Xiao; Yangzheng Wu; Tengyue Ba; Zhanguang Zhang / arXiv</div>
+<div class="tags"><span class="vendor-tag">Huawei</span><span class="tag">方向:端侧agent</span><span class="tag">方向:蒸馏</span><span class="tag">方向:规划推理</span><span class="tag">应用:机器人</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">StageGuard 把云端大模型判断“当前子任务完成没有、该不该切到下一步”的能力蒸馏进一个小视觉语言模型，让机器人在本地实时监控长程任务的阶段切换。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">学生模型 Qwen3.5-0.8B 在 LIBERO 和 BEHAVIOR-1K 上的阶段切换完成率达 96.23% 和 90.18%，推理频率 1.03/1.74 Hz；接入分层控制后闭环成功率 0.53，高于端到端策略的 0.30（真值切换上限 0.63）；真机上单臂系统 18/20、Piper 机械臂 16/20 成功，监控模型与本地 VLA 并行以 2.2 Hz 运行且不阻塞控制循环。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 Qwen3.5-397B 教师模型结合示范轨迹生成子任务完成标准和切换理由的结构化解释，再让学生模型学着生成简短的自我解释并做监督微调，最终作为分层规划中的执行监控器决定何时切换技能。</span></div>
+<div class="score-reason">评分依据：分层规划里的阶段切换是长程任务能否走完的关键，论文明确把云端部署和长推理的时延当作问题，把监控决策蒸馏到小模型并在两台真机上闭环验证。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页作者 1、5、6、8、9 署名 Huawei Noah's Ark Lab，通讯邮箱为 huawei.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.20791" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Harness-Zero: Harness Distillation via Agent-as-Harness</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-09-22 · Haoran Ye, Yuxing Lu, Haonan Dong, Zhaochen Su, Guojie Song / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">智能体外挂的「框架」能显著提升表现，但换个部署环境就用不上了。Harness-Zero 把最优框架带来的行为蒸馏进模型权重里。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">因为最优框架和目标框架的动作空间与可见信息不同，优化框架的指导不能直接当监督信号；于是引入一个「框架智能体」，在最优框架指导下把学生的回答先纠正到目标框架的动作空间里再执行，由此把框架指导变成训练示范，微调后模型就内化了框架带来的行为。</span></div>
-<div class="score-reason">评分依据：把外部框架能力收进模型权重，对端侧这种不方便挂重型框架的环境有潜在价值；论文本身没有设备语境和量化结果。</div>
+<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-09-22 · Haoran Ye, Yuxing Lu, Haonan Dong, Zhaochen Su, Guojie Song / arXiv</div>
+<div class="tags"><span class="vendor-tag">Google</span><span class="tag">方向:蒸馏</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能体外挂的「框架」（工具、提示、记忆等外部系统）能显著提升表现，但换个部署环境就用不上了。Harness-Zero 把最优框架带来的行为蒸馏进模型权重，部署时只用一个极简框架。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以 Qwen3.5-9B 为学生模型，在表格办公、多应用工具调用和化学逆合成三个领域，去掉专用框架后宏平均任务成功率从 23.3% 提到 44.3%，超过原模型挂着专用框架时的 41.7%；28 种框架诱导的行为模式平均恢复 82.3%。不训练时，在前沿模型上「智能体当框架」也优于「代码当框架」（81.1% 对 78.1%）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">最优框架和目标框架的动作空间与可见信息不同，框架指导不能直接当监督信号；于是让一个「框架智能体」在最优框架指导下，先把学生模型的回答纠正到目标框架的动作空间里再执行，由此把框架指导变成训练示范，再用 LoRA 微调把这些行为内化进权重。</span></div>
+<div class="score-reason">评分依据：把重型外部框架的能力收进 9B 级小模型权重，对不方便挂重型框架的端侧智能体有迁移价值，但论文本身没有设备语境，训练和评测都在云端 GPU 上完成。 作者机构依据：arXiv PDF 首页署名 Google（PDF 首页作者 2 同时署名北京大学未来技术学院与 Google）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2609.24974" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

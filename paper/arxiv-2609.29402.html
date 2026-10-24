@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Resource-Aware Model Selection for Scalable Indoor Localization on HPC Platforms</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-09-24 · Fukuharu Tanaka; Hamada Rizk; Moustafa Youssef; Hirozumi Yamaguchi / arXiv</div>
-<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:高效推理</span><span class="tag">方向:剪枝稀疏</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">大规模室内定位会训出成百上千个局部模型，每次查询都要从中挑一个来跑，穷举太贵。这篇把定位问题变成模型选择问题并做剪枝。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把局部自编码器模型组织成楼宇—楼层—区域的层级结构，再用两种轻量执行剪枝：分层候选剪枝做由粗到细的模型选择，轨迹感知剪枝利用用户移动的时间局部性把推理限制在空间上合理的邻近模型。</span></div>
-<div class="score-reason">评分依据：模型选择与执行剪枝的思路对端侧多模型调度有迁移价值，但论文的目标平台是高性能与分布式计算，不是受限设备。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-09-24 · Fukuharu Tanaka; Hamada Rizk; Moustafa Youssef; Hirozumi Yamaguchi / SBAC-PAD 2026</div>
+<div class="tags"><span class="tag">方向:调度服务</span><span class="tag">方向:高效推理</span><span class="tag">方向:剪枝稀疏</span><span class="tag">硬件:GPU</span><span class="tag">硬件:CPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大规模室内定位会为每栋楼、每层、每个区域训出成百上千个局部模型，每次查询都要从中挑模型来跑，穷举太贵。这篇把定位变成模型选择问题，并用两种剪枝减少要执行的模型数。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 UJIIndoorLoc 真实 WiFi 指纹数据集上，相比穷举全部 735 个区域模型，分层候选剪枝只需评估 67 个，轨迹感知剪枝进一步降到 10 个，模型执行次数减少 98.6%；分层剪枝平均定位误差 4.04 米；在富岳超算 16 个 CPU 节点上单次推理延迟低至 1.07 毫秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把局部自编码器模型组织成楼宇—楼层—区域的层级结构，分层候选剪枝由粗到细地选模型，轨迹感知剪枝利用用户移动的时间局部性，只在空间上合理的相邻区域模型里推理，同时减少显存驻留和模型反复加载。</span></div>
+<div class="score-reason">评分依据：按需挑选少量模型执行的思路对端侧多模型调度有迁移价值，但目标平台是高性能与分布式计算，不是受限设备。已被 SBAC-PAD 2026 接收，不属于顶会名单。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.29402" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Bringing AI agents to Chrome Enterprise security management</h1>
-<div class="meta"><span class="score">7</span> <span class="tier">官方动态</span>  2026-05-28 · Google / Google</div>
+<div class="meta"><span class="score">7</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-05-28 · Google / Google</div>
 <div class="tags"><span class="vendor-tag">Google</span><span class="tag">方向:工具调用</span><span class="tag">方向:安全隐私</span><span class="tag">应用:安全</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">谷歌把 Chrome 企业版的管理和安全操作开放成智能体可以调用的工具，让管理员用自然语言完成策略配置。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">谷歌开源了一个连接 Chrome 企业版管理接口的 MCP 服务器，让 IT 和安全管理员用自然语言让智能体完成浏览器策略配置、数据防泄漏规则创建和告警排查。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">开源一个连接 Chrome 企业版接口的 MCP 服务器，把环境诊断、启用连接器、创建数据防泄漏规则等操作暴露成工具，智能体在 Gemini 命令行等客户端里按自然语言指令调用，并自动处理策略表达式语法与校验。</span></div>
-<div class="score-reason">评分依据：与设备端推理无关，但它是 MCP 工具协议在真实管理场景的一手落地样例，对端侧智能体的工具层设计有参考价值，相关度低。贡献是工程落地，不涉及新方法。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">MCP 服务器把环境健康检查、启用连接器、创建数据防泄漏规则、查询告警等操作封装成工具，在 Gemini CLI、Claude Code、VS Code 等客户端里按自然语言调用；智能体生成的规则需要管理员人工确认后才启用。</span></div>
+<div class="score-reason">评分依据：原文是产品介绍，没有给出任何耗时、准确率或规模数字，所以效果写未报告。它与设备端推理无关，模型运行位置原文未说明，只作为 MCP 工具协议在企业管理场景落地的参考，相关度低；贡献是工程落地。</div>
 <div class="source"><a href="https://blog.google/security/bringing-ai-agents-to-chrome-enterprise-security-management/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

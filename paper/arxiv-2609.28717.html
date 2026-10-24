@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>HeteroReason: Heterogeneous FPGA-GPU Acceleration for Disaggregated Speculative Reasoning</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-09-23 · Zehuan Zhang; Quan Deng; Zibo Ren; Hao Mark Chen; Guoyu Li; Xuchun Hu; Jose G. F. Coutinho; Ce Guo / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span><span class="tag">硬件:FPGA</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">投机式推理要同时跑草稿模型、过程奖励模型和目标模型，全放 GPU 上资源很浪费。HeteroReason 把草稿模型挪到 FPGA 上。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">算法层引入带回溯的工作流，让系统能从低质量状态恢复并探索其他推理路径；系统层把草稿模型卸载到 FPGA、过程奖励模型和目标模型留在 GPU，做预填与解码分离，并用影子同步让 GPU 侧的精修与 FPGA 侧的令牌更新重叠以隐藏同步开销。</span></div>
-<div class="score-reason">评分依据：FPGA 与 GPU 的异构协同推理对边缘异构硬件有直接迁移价值，投机解码也是端侧常用手段；论文摘要没有给出性能数字。</div>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-23 · Zehuan Zhang; Quan Deng; Zibo Ren; Hao Mark Chen; Guoyu Li; Xuchun Hu; Jose G. F. Coutinho; Ce Guo / arXiv</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">方向:规划推理</span><span class="tag">硬件:FPGA</span><span class="tag">硬件:GPU</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">投机式推理要同时跑草稿模型、过程奖励模型和目标模型，全放 GPU 上资源很浪费。HeteroReason 把草稿模型挪到 FPGA 上，和 GPU 组成异构推理系统。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以 Qwen2.5 系列（0.5B 草稿、7B 过程奖励、1.5B/7B 目标）在 MATH500、GSM8K 等四个数学数据集上评测，相比纯 GPU 基线平均准确率提升 4.2%，延迟加速 1.01 到 1.42 倍，能效提升 1.25 到 1.57 倍；平台为 AMD U280/V80 FPGA 加 RTX 3090，系统数字由经板上实测校准的模拟器得出。作者还测得把草稿模型换到 Jetson Orin Nano 会让整体变慢。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">算法层引入带回溯的推理流程，让系统能从低质量中间步骤退回并探索其他路径；系统层把草稿模型放到 FPGA、过程奖励模型和目标模型留在 GPU，做预填与解码分离，用影子同步让 GPU 侧精修和 FPGA 侧令牌更新重叠，并提前一步投机执行，把串行流程改成并行流水线。</span></div>
+<div class="score-reason">评分依据：FPGA 与 GPU 的异构协同和投机解码都与端侧异构硬件有关，但实验平台是数据中心 FPGA 加桌面 GPU，作者自己也测得边缘 GPU 跑草稿模型更慢。软硬协同设计有一定新意，代码已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.28717" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

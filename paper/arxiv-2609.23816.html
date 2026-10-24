@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SPLASH: Co-Designing Sparse Attention with High-Bandwidth Flash for Efficient Long-Context Inference</h1>
-<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-09-20 · Aditya Anirudh Jonnalagadda; Agasthi Haputhanthri; Pranav Dangi; Rohan Juneja; Wenshuo Yue; Aritra Bagchi; Bin Gao; Tulika Mitra / arXiv</div>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-09-20 · Aditya Anirudh Jonnalagadda; Agasthi Haputhanthri; Pranav Dangi; Rohan Juneja; Wenshuo Yue; Aritra Bagchi; Bin Gao; Tulika Mitra / arXiv</div>
 <div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:稀疏注意力</span><span class="tag">方向:云端serving</span><span class="tag">应用:长上下文推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">SPLASH 探讨用高带宽闪存配合 HBM 来承载长上下文的 KV cache，并与稀疏注意力协同设计。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把 HBM 和高带宽闪存当成一层逻辑内存：闪存提供 TB 级容量、读带宽接近 HBM，稀疏注意力则保证每步只需读取少量 KV，从而绕开写入寿命限制。</span></div>
-<div class="score-reason">评分依据：面向数据中心长上下文服务的存储层协同设计，对端侧的直接价值在于它给出了“容量换带宽”的一般思路。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">SPLASH 研究用高带宽闪存配合 HBM 来存放长上下文的 KV cache，并让稀疏注意力配合闪存的物理特性来设计。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 100 毫秒/token 的时延目标下，单 GPU 解码吞吐比对比基线高 3.5–11.4 倍，长上下文基准上的精度与稠密注意力相差不到 4%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把 HBM 和高带宽闪存虚拟化成一层逻辑内存存放 KV cache：闪存提供 TB 级容量、读带宽接近 HBM，稀疏注意力只读少量 KV 以避开带宽瓶颈，并按闪存页粒度和数千个并行闪存平面调整稀疏选择。</span></div>
+<div class="score-reason">评分依据：面向数据中心长上下文服务的存储层协同设计，算法与架构协同的思路新颖；对端侧的启发在于“按存储物理粒度设计稀疏注意力”，直接相关性较低。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.23816" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

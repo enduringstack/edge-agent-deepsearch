@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>DVA-Neurons: Design and Verification of Adaptive LIF Neurons: From Single-Neuron Dynamics to Multi-Neuron Spiking Networks</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-09-19 · Thanh Pham; Riadul Islam / arXiv</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-09-19 · Thanh Pham; Riadul Islam / arXiv</div>
 <div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:神经形态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">做自适应 LIF 脉冲神经元的电路设计与验证，从单个神经元一路做到多神经元脉冲网络的物理实现。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">提出带两级突触滤波的二阶神经元以获得更丰富的时序动态，并实现了一个全连接的六神经元脉冲网络，解决突触权重分布与神经元间脉冲路由问题。</span></div>
-<div class="score-reason">评分依据：脉冲网络是端侧超低功耗推理的相邻路线，这篇偏硬件实现，属于基础建设性工作。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">设计并验证自适应 LIF 脉冲神经元电路，从单个神经元一路做到 6 个神经元的全连接脉冲网络。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 14 纳米工艺、1 GHz 下综合：自适应机制让二阶神经元放电从 36 次降到 25 次（抑制 31%），网络中突触后放电从 26 次降到 18 次；二阶神经元面积和功耗分别是一阶基线的 1.77 倍和 1.52 倍，6 神经元网络约为 5.7 倍面积、5.3 倍功耗，接近线性扩展。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">提出带两级突触滤波的二阶神经元以获得更丰富的时序动态，实现权重可配置的 6 神经元全连接网络，并用 Cocotb Python 测试平台逐周期观测所有内部状态做验证，记录了 7 类验证缺陷。</span></div>
+<div class="score-reason">评分依据：脉冲网络是端侧超低功耗推理的相邻路线，这篇偏电路实现与验证方法，规模很小，属于基础建设性工作。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.22775" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

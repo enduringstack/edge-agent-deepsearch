@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>VC-Attention: Value Smoothing and Softmax Casting for Low-bit Attention</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-09-17 · Xingyang Li, Dongyun Zou, Shining Zhang, Jiacheng Chen, Haocheng Xi, Lvmin Zhang, Jun-Yan Zhu, Song Han, Zhekai Zhang, Yujun Lin, Muyang Li / HuggingFace Daily</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:高效注意力</span><span class="tag">方向:多模态</span><span class="tag">应用:视频</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">VC-Attention 给扩散 Transformer 的视频生成做免训练低比特注意力，同时解决精度和速度两个瓶颈。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">精度上用 V-Smooth：先用轻量在线聚类重排值 token 让同一硬件块里的 token 一起量化更好，并且只量化减去块均值后的残差，再用在线 softmax 已有的行和把均值加回去；速度上用 ExpCast-FP8 把对数域分数一次乘加直接映射成 E4M3 概率编码，省掉 FP32 指数运算。</span></div>
-<div class="score-reason">评分依据：指出值向量的离群点没有固定通道或时空结构、是输出误差的主要来源，这个观察对所有做低比特注意力的人都有用。</div>
+<div class="meta"><span class="score">11</span> <span class="tier company">公司项目</span>  2026-09-17 · Xingyang Li, Dongyun Zou, Shining Zhang, Jiacheng Chen, Haocheng Xi, Lvmin Zhang, Jun-Yan Zhu, Song Han, Zhekai Zhang, Yujun Lin, Muyang Li / arXiv</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:量化</span><span class="tag">方向:高效注意力</span><span class="tag">应用:视频</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">VC-Attention 给视频生成扩散 Transformer 做免训练的低比特注意力内核，同时解决量化精度和 softmax 拖慢速度两个问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Wan2.2、LongCat-Video、HunyuanVideo-1.5、MiniMax-H3 上画质优于其他低比特方案；注意力内核比 BF16 FlashAttention-4 快 1.46–1.59 倍（B200/H200 等数据中心卡）和 2.3–3.6 倍（RTX 5090 等工作站卡），整段视频生成端到端快 1.13–1.19 倍和 1.36–1.70 倍；在 MiniMax-H3 上比 SageAttention2 快 5.5 倍且 PSNR 更高。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">精度上先用轻量在线聚类重排值 token，让同一硬件块里的 token 一起量化，只量化减去块均值后的残差，再借在线 softmax 已有的行和把均值补回；速度上用一次乘加把对数域分数直接映射成 FP8（E4M3）概率编码，省掉 FP32 指数运算和格式转换。</span></div>
+<div class="score-reason">评分依据：指出值向量离群点没有固定通道或时空结构、是低比特注意力误差的主要来源，这个观察对所有做低比特注意力的人都有用；但实验全部在数据中心和工作站 GPU 上，端侧相关性中等。作者主体来自初创公司 Nunchux AI 及 MIT、CMU 等高校。 作者机构依据：arXiv PDF 首页署名 NVIDIA（PDF 首页作者 Song Han 署名 MIT 与 NVIDIA）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2609.15810" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

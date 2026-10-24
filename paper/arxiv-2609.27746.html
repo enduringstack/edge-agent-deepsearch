@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>The KV Cache Working Set: Online Capacity Planning for LLM Inference Systems</h1>
-<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-09-23 · Luchang Li; Shuaishuai Wang; Zhao Ruan; Dongfang Li; Bozhao Gong / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">前缀缓存能省掉重复预填，但到底要留多大缓存才够？KVSET 在线估算达到目标命中率所需的最小 KV cache 容量。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用 Mattson 栈算法一次性估出多种缓存容量下的命中率：对每个 KV 页计算 LRU 栈距离并与各候选容量的页数比较，直接判断该页在每种容量下是否命中，免去逐容量单独模拟的计算和内存开销。</span></div>
-<div class="score-reason">评分依据：缓存工作集估算对端侧有限内存下的前缀缓存配置有迁移价值，但论文面向的是服务端大模型服务系统。</div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-23 · Luchang Li; Shuaishuai Wang; Zhao Ruan; Dongfang Li; Bozhao Gong / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">前缀缓存能省掉重复预填，但到底要留多大 KV cache 才够？KVSET 在线估算达到目标命中率所需的最小缓存容量。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在内部编码智能体服务的 1 万条请求轨迹上（H20 GPU、SGLang 加 Mooncake、W4A8 量化的 GLM-5.2），预测的各容量命中率与实际部署测量基本吻合；对 2.4 万条请求做在线分析，要保住 95% 请求的理论命中率约需 1 TiB 缓存，99% 约需 5 TiB，而 99.9% 时所需容量随请求持续增长、不收敛。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 Mattson 栈算法加 Fenwick 树一次性算出每个 KV 页的 LRU 栈距离，与各候选容量比较即可判断该页在每种容量下是否命中，免去逐个容量单独模拟；再按达到目标命中率所需前缀页的最大 LRU 深度给出最小容量。</span></div>
+<div class="score-reason">评分依据：缓存工作集估算对端侧有限内存下的前缀缓存配置有迁移价值，但论文面向服务端大模型服务。方法是经典缓存分析的直接应用，代码已开源；作者均署名金山云。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.27746" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

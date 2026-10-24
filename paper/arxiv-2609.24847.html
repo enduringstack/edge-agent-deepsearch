@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SPECTRA: Adaptive Execution of Speculative Decoding on a Runtime-Reconfigurable Tiled Architecture</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-09-21 · Gabriele Tombesi; William Baisi; Je Yang; Elisavet Lydia Alvanaki; Kevin Lee; Michael Lippe; Biruk Seyoum; Luca P. Carloni / arXiv</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">硬件:NPU</span><span class="tag">方向:编译部署</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">针对端侧算力和内存受限的场景，提出一种运行时可重构的分块架构 SPECTRA，让投机解码的起草和验证两个阶段都能吃满硬件。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">每个计算块内部可以在脉动阵列（跑矩阵乘）和向量通道（跑矩阵向量乘）之间切换，块之间再按投机长度和接受率动态选择并行度。</span></div>
-<div class="score-reason">评分依据：投机解码在端侧的真正难点是验证阶段的算术强度会随接受率漂移，这篇直接从硬件架构上解决，对端侧加速器设计有参考价值。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校顶会</span>  2026-09-21 · Gabriele Tombesi; William Baisi; Je Yang; Elisavet Lydia Alvanaki; Kevin Lee; Michael Lippe; Biruk Seyoum; Luca P. Carloni / ICCAD 2026</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:高效推理</span><span class="tag">硬件:FPGA</span><span class="tag">模型:SmolLM</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">SPECTRA 是一种运行时可重构的分块硬件架构，让端侧 LLM 的投机解码在起草和验证两个阶段都能吃满硬件。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 20 块 FPGA 原型上，用 Pythia、SmolLM2、GPT-2 系列评测：块内重构比最好的固定数据通路最高快 2.09 倍，系统级自适应并行再比最好的静态映射提升 1.25 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每个计算块可在脉动阵列（跑矩阵乘）和向量通道（跑矩阵向量乘）之间切换；块之间按投机长度和接受率，逐个内核动态选择使用的块数、内核切分和通信方式。</span></div>
+<div class="score-reason">评分依据：投机解码在端侧的难点是验证阶段的算术强度随接受率漂移，这篇从硬件架构上正面解决并做了 FPGA 原型；论文已被 ICCAD 2026 接收。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.24847" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AI Evaluation Should Measure Verification Cost, Not Correctness Alone</h1>
-<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-08-09 · Viviana Crescitelli; Generoso Immediato; Fabio Persia; Stefania Costantini / arXiv</div>
-<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:安全隐私</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">主张评估生成式 AI 时不能只看答案对错，还应衡量人在实际时间和资源预算内发现错误需要付出多少验证成本。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把“验证成本错误”定义为在给定部署预算内，规定比例的验证者无法识别的错误输入输出对，并用代码生成和多模态文档理解案例说明普通准确率会掩盖这一风险。</span></div>
-<div class="score-reason">评分依据：对资源受限场景的可靠性评估有概念参考，但没有提出成熟指标、端侧实验或推理优化，相关性较弱。</div>
+<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span>  2026-08-09 · Viviana Crescitelli; Generoso Immediato; Fabio Persia; Stefania Costantini / arXiv</div>
+<div class="tags"><span class="vendor-tag">Hitachi</span><span class="tag">方向:评测基准</span><span class="tag">方向:安全隐私</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一篇立场文章，主张评测生成式 AI 不能只看答案对不对，还要看人在实际时间和精力预算内能不能发现它的错误，也就是“验证成本”。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">本文没有自己的实验，只引用已有工作数据说明问题：号称“无幻觉”的商用 RAG 法律工具仍有 17%~33% 的回答出现幻觉；有经验的开源开发者在允许用 AI 辅助时完成真实任务反而慢了 19%，事后却自认为快了 20%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">定义“验证成本错误”：在给定部署预算内，规定比例的验证者识别不出的错误输入输出对；并给出验证感知的评测流程，记录预算内正确识别概率、实际耗费的预算，以及发现错误所需时间、反例复杂度、验证长度等辅助指标，用代码生成和多模态文档理解举例说明高准确率会掩盖验证负担。</span></div>
+<div class="score-reason">评分依据：对资源受限部署场景下如何评估可靠性有概念参考，但属于立场文章，没有成熟指标、端侧实验或推理优化，相关度低；文中数字均为引用他人研究。arXiv 首页显示第一作者来自 Hitachi, Ltd.、通讯作者来自 Hitachi Rail，另两位作者来自意大利拉奎拉大学。 作者机构依据：arXiv PDF 首页署名 Hitachi（PDF 首页作者 1 署名 Hitachi, Ltd.（hitachi.com 邮箱），通讯作者 2 署名 Hitachi Rail）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.08709" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -7,9 +7,9 @@
 <h1>Extract More Kernel Performance with NVIDIA CompileIQ Auto-Tuning</h1>
 <div class="meta"><span class="score">7</span> <span class="tier">官方动态</span>  2026-05-26 · NVIDIA / NVIDIA</div>
 <div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:编译部署</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">英伟达介绍 CompileIQ 自动调优功能，让编译器自己搜索参数组合来提升 GPU 计算核性能。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">由编译器在候选的编译参数空间里自动搜索并挑选表现最好的配置，省去开发者手工试参数的过程。</span></div>
-<div class="score-reason">评分依据：编译器自动调优是部署技术栈的一环，对端侧算子调优有方法上的迁移价值，但本文完全面向数据中心 GPU，相关度低。贡献属于成熟编译技术的产品化。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">英伟达介绍随 CUDA 13.3 发布的 CompileIQ，它用进化搜索自动调整 GPU 编译器的内部参数，为特定计算核找出更快的编译配置。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">文中引用 Meta 的结果：在 TritonBench 和 Helion 计算核上最高提升 15%（未给出 GPU 型号和基线）。文中归约核示例从 0.777 毫秒降到 0.770 毫秒，约 1% 加速，10 代、种群 15 的搜索耗时约 9.5 分钟。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">开发者提供一个“编译、跑分、打分”的目标函数，CompileIQ 用遗传算法在 PTXAS/NVCC 未公开的寄存器分配、指令调度等参数里搜索，输出可直接加载的编译配置文件，也支持在运行时间、编译时间和功耗之间做多目标搜索。</span></div>
+<div class="score-reason">评分依据：编译器自动调优是部署技术栈的一环，思路可迁移到端侧算子调优，但本文完全面向数据中心 GPU，相关度低。贡献属于成熟搜索调优技术的产品化，实测收益在已优化的核上为个位数到 15%。</div>
 <div class="source"><a href="https://developer.nvidia.com/blog/extract-more-kernel-performance-with-nvidia-compileiq-auto-tuning/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

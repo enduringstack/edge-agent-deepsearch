@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Token Latency Fairness: Performance Isolation for Multi-Tenant LLM Serving</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-09-16 · Dev Bali; Soujanya Ponnapalli; Yichuan Wang; Natacha Crooks; Scott Shenker; Matei Zaharia / arXiv</div>
-<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">FairInference 给多租户大模型服务提出 δ-token 公平性保证：单独运行时 d 时间生成的 token，在多租户下也要在 d+δ 内生成。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">不同于只均衡长期吞吐的排队和批处理公平方案，它直接对 token 级时延做隔离保证。</span></div>
-<div class="score-reason">评分依据：云端多租户服务的时延隔离问题，对端侧直接价值有限，但同一台设备上多应用共享 NPU 时会遇到类似问题。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-09-16 · Dev Bali; Soujanya Ponnapalli; Yichuan Wang; Natacha Crooks; Scott Shenker; Matei Zaharia / arXiv</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">方向:KV cache</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">FairInference 给多租户大模型服务提出“δ-token 公平”：某个正常客户端的每个 token，在多租户下最多只比独占时晚 δ 时间生成。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 SGLang 上实现；表 1 中一个高负载客户端会让其他客户端首 token 时延变慢 66 倍（SGLang）、28 倍（VTC）、32 倍（DLPM），FairInference 保持在独占水平；宏基准中正常客户端 p99 首 token 时延为 1.07–1.36 秒，而 VTC、DLPM、SGLang 分别为 171、273、512 秒，同时吞吐高于静态分区。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">调度器为每个 token 设定截止时间，同时为共享 GPU 计算带来的延迟设上界，并按恢复时间决定每个客户端需要在显存里保留多少不可驱逐的 KV cache。</span></div>
+<div class="score-reason">评分依据：这是云端多租户服务的时延隔离问题，对端侧直接价值有限，只有同一设备上多应用共享加速器时才会遇到类似问题。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.18112" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

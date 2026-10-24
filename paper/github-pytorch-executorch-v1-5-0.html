@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>v1.5.0</h1>
-<div class="meta"><span class="score">16</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-09-16 · pytorch / GitHub</div>
+<div class="meta"><span class="score">15</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-09-16 · pytorch / GitHub</div>
 <div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span><span class="tag">方向:量化</span><span class="tag">方向:KV cache</span><span class="tag">硬件:NPU</span><span class="tag">硬件:MCU</span><span class="tag">硬件:Apple-Silicon</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Meta 的端侧部署运行时 ExecuTorch 发布 v1.5.0，把原来的 Python 包扩成一套 C++ SDK，并明显加强了手机与嵌入式后端的覆盖。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Meta 的端侧部署运行时 ExecuTorch 发布 v1.5.0，把 Python 包扩成可链接的 C++ SDK，并加强了手机 NPU、Arm 微控制器和本地 LLM 服务的支持。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">发布说明列出：为 CUDA、Core ML、MLX、OpenVINO 和高通 delegate 提供可链接库并打包 TorchAO 算子；LLM 服务支持多方法导出、批量请求调度、可中断取消和图外 KV cache 布局；AOTI CUDA 后端新增 ROCm 与打包 W4 执行；Arm 与 Cortex-M 侧补齐显式布局下降、更多 Ethos-U 目标和 Vulkan 量化执行。</span></div>
-<div class="score-reason">评分依据：ExecuTorch 是端侧部署最主流的运行时之一，这一版同时动了手机 NPU delegate、Cortex-M 微控制器和本地 LLM 服务三条线，对端侧落地影响面很大。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">发布说明列出：为 CUDA、Core ML、MLX、OpenVINO 和高通 delegate 提供可链接库并打包 TorchAO 算子；LLM 服务支持多方法导出、批量请求调度、可中断取消和图外 KV cache 布局；高通后端加入 LLM 量化感知蒸馏和 Gemma 4 支持；Arm 侧新增 Cortex-M 显式布局下降、Ethos-U65 支持与 Ethos-U85 KV cache 导出。</span></div>
+<div class="score-reason">评分依据：ExecuTorch 是端侧部署最主流的运行时之一，这一版同时推进手机 NPU delegate、Cortex-M/Ethos-U 微控制器和本地 LLM 服务三条线；发布说明只有功能清单，没有性能数字，因此效果写未报告。</div>
 <div class="source"><a href="https://github.com/pytorch/executorch/releases/tag/v1.5.0" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -7,9 +7,9 @@
 <h1>Limioryn 0.39.0 — Initial Public Preview</h1>
 <div class="meta"><span class="score">16</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-08-07 · YINGLINGH / GitHub</div>
 <div class="tags"><span class="tag">方向:端侧agent</span><span class="tag">方向:端云协同</span><span class="tag">方向:工具调用</span><span class="tag">方向:安全隐私</span><span class="tag">硬件:MCU</span><span class="tag">硬件:CPU</span><span class="tag">应用:IoT命令</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Limioryn 首个公开预览版把云端智能体与 ESP32、STM32 和 Linux 单板机连接起来，并为真实设备行动提供约束执行与故障恢复。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Limioryn 是一个把智能体和真实硬件连起来的开源框架，首个公开预览版提供 ESP32-S3、STM32 和 Linux 单板机的参考接入，让智能体能安全地驱动继电器、传感器等物理设备。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">云端负责高层任务，设备端在受约束权限下执行动作，并通过设备确认、状态对账和故障恢复维持端云闭环。</span></div>
-<div class="score-reason">评分依据：关键行动、确认和恢复明确落在 MCU 与单板机侧，符合端云协同设备智能体；但首个预览版尚缺量化性能数据。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">设备动作按“已接收→执行中→已执行→待确认”的生命周期逐步追踪，证据不足时标为未知并触发状态对账、观测或人工决定；默认走本地规则，配合能力白名单、输入范围检查、共享执行器冲突检查和人工确认来约束执行，云端智能体只能通过同一套设备契约调用设备能力。</span></div>
+<div class="score-reason">评分依据：关键的动作执行、确认、状态对账和故障恢复落在 MCU 与单板机侧，属于端云协同的设备智能体，端侧相关度高；它把物理执行的确认与恢复做成框架级约束，思路有新意。原文是预览版发布说明，没有给出时延、测试规模等量化结果。</div>
 <div class="source"><a href="https://github.com/YINGLINGH/limioryn/releases/tag/v0.39.0" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

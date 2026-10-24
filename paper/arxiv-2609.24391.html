@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>NAVIR: Neuromorphic Audio-Visual Speech Recognition for Robust Human-Robot Interaction on Edge Hardware</h1>
-<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-09-21 · Leonidas Delimpasis; Panagiota Moraiti; Antonis Porichis; Panos Chatzakos; Michail Karamousadakis / arXiv</div>
-<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:多模态</span><span class="tag">方向:编译部署</span><span class="tag">硬件:神经形态</span><span class="tag">应用:语音</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">NAVIR 做的是工业噪声环境下的音视频联合语音识别，并且要跑在只支持二维卷积的 BrainChip Akida 神经形态芯片上。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把空间和时间编码拆成三个 AkidaNet 模块（逐帧视觉编码器、时序视频编码器、频谱音频编码器），用轻量预测头融合后做受限集束搜索解码；训练用 CTC 加噪声增强，再做量化微调。</span></div>
-<div class="score-reason">评分依据：为了迁就神经形态芯片只支持顺序二维卷积这一硬限制而重构整个模型结构，是端侧硬件约束反推算法设计的典型案例。</div>
+<div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-09-21 · Leonidas Delimpasis; Panagiota Moraiti; Antonis Porichis; Panos Chatzakos; Michail Karamousadakis / arXiv</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:多模态</span><span class="tag">方向:编译部署</span><span class="tag">硬件:神经形态</span><span class="tag">应用:语音</span><span class="tag">应用:机器人</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">NAVIR 做工业噪声环境下的音视频联合语音识别，整套模型跑在只支持二维卷积的 BrainChip Akida 神经形态芯片上，用于人机语音交互。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">GRID 基准噪声条件下，量化后的音视频模型在未见说话人划分上词错率 14.0%、重叠说话人划分 3.3%，纯音频基线分别为 22.5% 和 11.8%；工业指令语料上命令准确率 98.6%（词错率 1.5%）；板上实测唇读模型单次推理能耗约为树莓派 CPU 的五分之一、比笔记本 GPU 低 100 倍以上，速度每秒 14.5 次。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把时空编码拆成三个 AkidaNet 模块（逐帧视觉编码器、时序视频编码器、频谱音频编码器），由轻量预测头融合后用受限集束搜索解码；训练用 CTC 加噪声增强，再做量化感知微调以适配芯片。</span></div>
+<div class="score-reason">评分依据：为迁就神经形态芯片只支持顺序二维卷积这一硬限制而重构整个模型，并给出真实芯片上的能耗与速度测量，是硬件约束反推算法设计的典型案例。作者单位为希腊小公司 Plaixus、Tech Hive Labs 和埃塞克斯大学，不属于大厂项目。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.24391" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

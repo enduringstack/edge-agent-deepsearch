@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>rMuscle: Robotic Muscle Memory for Efficient Vision-Language-Action Model Inference</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-09-16 · Kaijun Zhou; Zhiyang Li; Le Chen; Jinyu Gu / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:高效推理</span><span class="tag">应用:机器人</span><span class="tag">方向:多模态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">rMuscle 观察到工厂里机器人反复做同样的动作，于是把视觉—语言—动作模型推理中可复用的内部状态缓存下来当“肌肉记忆”。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">先刻画具身负载的特征，发现重复执行之间的相似性不只体现在观测和动作轨迹上，也体现在模型内部状态上，再据此在 VLA 推理的不同阶段分别做复用。</span></div>
-<div class="score-reason">评分依据：VLA 推理时延直接决定机器人动作是否流畅，用任务重复性做状态复用是很贴合工厂场景的优化。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-09-16 · Kaijun Zhou; Zhiyang Li; Le Chen; Jinyu Gu / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:多模态</span><span class="tag">应用:机器人</span><span class="tag">硬件:Jetson</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">rMuscle 发现工厂机器人反复执行同样的任务时，VLA 模型内部状态也高度相似，于是把这些可复用的中间结果缓存成“肌肉记忆”来加速推理。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 RTX 4090 和 Jetson Thor 上，于 LIBERO、RoboTwin 和真机操作任务中，端到端比当前最好的 VLA 推理引擎快 1.29–1.42 倍，真机成功率保持不变。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">双阶段缓存：上下文缓存复用视觉 token 的输出以减少计算，动作缓存复用去噪阶段的神经元激活模式以减少权重读取；配合在线重算、滑动窗口检索和相邻去噪步共享掩码，压低缓存占用和访问开销。</span></div>
+<div class="score-reason">评分依据：在 Jetson Thor 机载平台上实测加速，且利用工厂任务重复性这一具身负载特征，思路贴合实际；但它加速的是 VLA 动作模型，本身不含规划或工具闭环。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.19104" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

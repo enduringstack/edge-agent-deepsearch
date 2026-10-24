@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>v0.4.1</h1>
 <div class="meta"><span class="score">15</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-09-14 · ggml-org / GitHub</div>
-<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span><span class="tag">方向:MoE</span><span class="tag">硬件:CPU</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">本地推理引擎 llama.cpp 发布 0.4.1，新增几个模型架构支持，并把底层 ggml 升级到 v0.24.0。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">新增 Maple 20B-A1B 三值 MoE、腾讯 Hy 4 预览和 Spark2.5 架构支持；重构 JSON schema 与聊天解析，服务端改用单监控线程管理子进程；ggml 升级扩大了 Vulkan、SYCL、Hexagon、OpenCL 的覆盖。</span></div>
-<div class="score-reason">评分依据：llama.cpp 是端侧本地推理的事实标准，这次同时扩了模型架构和 Hexagon、Vulkan 等端侧后端覆盖（相关性 9）。属常规版本迭代，单项创新有限但工程面很广（贡献 6）。</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span><span class="tag">方向:MoE</span><span class="tag">方向:投机解码</span><span class="tag">硬件:CPU</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">本地推理引擎 llama.cpp 发布 0.4.1，新增几种模型架构支持，并把底层 ggml 升级到 v0.24.0，扩大了多种端侧后端的覆盖。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">版本说明列出新增 3 种模型架构（Maple 20B-A1B 三值 MoE、腾讯 Hy 4 预览版、Spark2.5），ggml 从 v0.23.0 升到 v0.24.0；未给出性能数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">新增三值 MoE 等架构支持，修复多模态输入后的投机解码；重构 JSON schema 处理与聊天解析，服务端改为单个监控线程管理子进程；ggml 新版加了精度控制接口，并重点补强 Vulkan、SYCL、Hexagon、OpenCL 后端。</span></div>
+<div class="score-reason">评分依据：llama.cpp 是本地推理的事实标准，这次同时扩了模型架构和 Hexagon、Vulkan 等端侧后端（相关性 9）。属常规版本迭代，单项创新有限但覆盖面广（贡献 6）。</div>
 <div class="source"><a href="https://github.com/ggml-org/llama.cpp/releases/tag/v0.4.1" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Scout: Open-World Species Recognition on the Edge</h1>
-<div class="meta"><span class="score">13</span> <span class="tier school">学校预印本</span>  2026-09-19 · Mohammad Mehdi Rastikerdar; Hui Guan; Deepak Ganesan / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span><span class="tag">方向:能耗功耗</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Scout 让边缘相机在算力、能耗和带宽都很紧的条件下具备开放世界识别能力，办法是偶尔问一次云端视觉语言模型。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">只给部署地点和空白背景帧，系统间歇性调用云端 VLM 识别新物种，再把结果变成站点专属的持续识别能力写进本地小模型。</span></div>
-<div class="score-reason">评分依据：典型的端云协同设计：云端只负责教，日常识别完全在边缘完成，对带宽受限的野外部署很实用。</div>
+<div class="meta"><span class="score">15</span> <span class="tier school">学校预印本</span>  2026-09-19 · Mohammad Mehdi Rastikerdar; Hui Guan; Deepak Ganesan / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:蒸馏</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:多模态</span><span class="tag">硬件:Jetson</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Scout 让野外相机陷阱在算力、能耗、带宽都很紧的边缘设备上也能识别部署前没见过的新物种：偶尔请云端视觉语言模型认出新物种，再教会本地小模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Jetson Orin Nano 上覆盖三个地区 30 个相机陷阱部署：整体准确率与预先给定物种清单的模型只差 0.1–2.5%；对初始类别外的新物种准确率 53.7–59.1%，接近全部上传云端的 56.5–65.1%，部署能耗却低 59–71%；同等能耗下准确率比边缘基线高 5.6–7.6%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">只需部署地点和空白背景帧，系统间歇调用云端 VLM 识别新物种，自动为每个新物种构造站点相关的训练数据，并挑选资源合适的边缘模型更新，无需人工标注或预设物种清单。</span></div>
+<div class="score-reason">评分依据：典型的端云协同设计：云端只负责“教”，日常识别完全在 Jetson Orin Nano 上完成，用真实部署数据量化了准确率与能耗的取舍，对带宽受限的野外场景很实用。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.22897" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

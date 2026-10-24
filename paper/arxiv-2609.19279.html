@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Radio-Frequency Convolutional Neural Networks</h1>
 <div class="meta"><span class="score">16</span> <span class="tier school">学校预印本</span>  2026-09-16 · Zhihui Gao; Shi-Yuan Ma; Yiran Chen; Dirk Englund; Tingjun Chen / arXiv</div>
-<div class="tags"><span class="tag">方向:模型架构</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:高效推理</span><span class="tag">硬件:CIM</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出射频卷积神经网络，把手机、可穿戴和无人机里本来就有的射频混频器直接当成卷积计算单元用。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">利用混频器在时域相乘、在频域天然完成卷积这一性质，把多通道卷积映射到不同频率音上，由无源混频器一次性完成。</span></div>
-<div class="score-reason">评分依据：不新增任何加速器硬件，而是复用设备已有的通信电路做推理，对尺寸重量功耗都吃紧的端侧设备是很有想象力的路线。</div>
+<div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:高效推理</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">提出射频卷积神经网络，把手机、可穿戴、无人机里本来就有的射频混频器直接当成卷积计算单元，不用再加专门的 AI 加速器。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">实验跑通最多 2640 万参数、9 层的深度 CNN，覆盖无线信号分类、图像分类和可控图像生成；端侧只在数据准备和读出上耗能，最低 0.72 fJ/次乘加，比外加数字处理器低两个数量级；DeepSig 十类调制识别准确率 92.9%（全精度 97.2%），SVHN 93.3%（全精度 94.7%）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">混频器在时域相乘等价于在频域做卷积，把多通道卷积映射到不同频率音上由无源混频器一次完成；权重通过无线方式送达，模拟硬件与通信共用。</span></div>
+<div class="score-reason">评分依据：不新增任何加速器硬件，而是复用设备已有的通信电路做推理，对尺寸、重量、功耗都吃紧的端侧设备是全新的路线；目前是实验室射频平台验证，尚未进入手机等量产设备。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.19279" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

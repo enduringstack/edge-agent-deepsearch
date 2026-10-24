@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>microsoft/onnxruntime: [CUDA] Add 2-bit MatMulNBits support (#32693)</h1>
-<div class="meta"><span class="score">11</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-09-21 · microsoft / GitHub</div>
-<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:推理框架</span><span class="tag">硬件:GPU</span><span class="tag">方向:编译部署</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">ONNX Runtime 给 MatMulNBits 算子加上 CUDA 的 2 比特权重支持，把量化位宽进一步往下压。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">本次提交改动 21 个文件、新增 1459 行，新增专用的 2 比特反量化内核和融合的 GEMV/批量内核，覆盖 fp16、fp32、bf16 三种输入类型，权重与零点按 2 比特布局打包；校验要求分块大小在 16 到 256 之间，并明确拒绝 g_idx 重排等尚未支持的特性。</span></div>
-<div class="score-reason">评分依据：2 比特权重是把大模型塞进小内存的极限手段之一，工业级运行时把它做进主线算子，说明这条路线开始进入可用阶段。</div>
+<div class="meta"><span class="score">9</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-09-21 · microsoft / GitHub</div>
+<div class="tags"><span class="tag">方向:量化</span><span class="tag">方向:推理框架</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ONNX Runtime 给 MatMulNBits 量化矩阵乘算子补上 CUDA 端的 2 比特权重执行路径，让原生三值权重模型能在 GPU 上正确运行。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">提交没有给出速度或精度对比，只报告在 CUDA 13.0 / A100 上 24 项相关测试全部通过，并核对了导出的 Bonsai 模型图中 401 个 MatMulNBits 节点均为 2 比特、分块大小 128。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">新增 2 比特反量化内核和专用的 GEMV/批量内核，支持 fp16、fp32、bf16 输入，权重与零点按位宽打包；分块大小限定在 16 到 256，与 CPU 端 MLAS 一致，并明确拒绝 g_idx 等不支持的输入。</span></div>
+<div class="score-reason">评分依据：2 比特权重是把大模型塞进小内存的极限手段之一，主流运行时把它做进主线算子有参考价值；但这次只覆盖 CUDA 数据中心 GPU，端侧相关性中等。</div>
 <div class="source"><a href="https://github.com/microsoft/onnxruntime/commit/34d838fbcd51903c3754d0b4cf8e2478cd4c585a" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

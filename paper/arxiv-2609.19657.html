@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>PrefixBench-H100: Characterizing Prefix Reuse and Time-to-First-Token in H100 LLM Serving</h1>
-<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-09-17 · Omkar Shewale; Deepak Kumar; Divakar Kumar Yadav / arXiv</div>
+<div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span>  2026-09-17 · Omkar Shewale; Deepak Kumar; Divakar Kumar Yadav / arXiv</div>
 <div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span><span class="tag">方向:评测基准</span><span class="tag">硬件:H100</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">PrefixBench-H100 在单卡 H100 上系统刻画前缀复用到底什么时候真能提升服务性能、什么时候被调度和内存压力吃掉。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把受控的合成轨迹和对话式、检索式两类真实负载结合起来，在两个主流推理运行时上对比前缀复用带来的首 token 时间变化。</span></div>
-<div class="score-reason">评分依据：面向数据中心的前缀复用测量，对端侧的价值在于它把“缓存粒度、并发和内存压力如何抵消复用收益”讲清楚了。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">PrefixBench-H100 在单张 H100 上系统测量大模型服务里的前缀复用什么时候真能降低首 token 时延、什么时候被调度和内存压力抵消。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">8192 token 共享前缀时两种运行时约 92% 输入命中缓存，首 token 时延降低 5–6.5 倍（vLLM 345→53 毫秒，TensorRT-LLM 306→58 毫秒）；并发 32 的突发到达下 TensorRT-LLM 的 p50 首 token 时延比 vLLM 低 2.4 倍，16 QPS 固定速率下又变成 vLLM 的 p95 领先 9.2 倍，差异来自调度层而非缓存。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用受控合成轨迹加对话式、检索式两类真实负载，在 vLLM 和 TensorRT-LLM 上改变前缀长度、后缀多样性、到达模式、并发、输出长度和缓存配置，对比开关前缀复用的效果。</span></div>
+<div class="score-reason">评分依据：面向数据中心的前缀复用测量，结论“差异主要出在调度层而非缓存本身”有参考价值，但与端侧关系较远。</div>
 <div class="source"><a href="https://arxiv.org/abs/2609.19657" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>
