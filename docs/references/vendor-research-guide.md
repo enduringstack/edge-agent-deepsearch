@@ -128,7 +128,7 @@ arXiv 自身搜索只匹配标题和摘要，不直接按作者 affiliation 过�
 - **中国手机厂商的系统发布在中文站**：荣耀 `honor.com/cn/news/<slug>/`（MagicOS 11、Magic9、WAIC Agentic OS）、vivo `vivo.com.cn/brand/news/detail?id=…`（OriginOS 7 / 蓝心）。只扫英文 `global/news` 会全部漏掉
 - **高通 OnQ 博客和新闻稿正文是 JS 渲染**：读 `<文章URL>.model.json` 才拿得到正文与 `"pagePublishDate"`
 - **常规入口之外的大厂博客**：`developer.meta.com/blog`（Muse Glimmer 等本地模型）、`blogs.nvidia.com` 的 RTX AI Garage 系列与 `developer.nvidia.com/blog`、`alibabacloud.com/blog`（Qwen 开源公告，常比微信首发晚 2–3 天）
-- **附加来源（2026-10-25 加入官方域名白名单，不在 24 家必查里）**：AMD `newsroom.amd.com`、Liquid AI `liquid.ai/blog`、Qwen 官网 `qwen.ai/blog`
+- **附加来源（2026-10-24 加入官方域名白名单，不在 24 家必查里）**：AMD `newsroom.amd.com`、Liquid AI `liquid.ai/blog`、Qwen 官网 `qwen.ai/blog`
 - **仍然进不了正式周报的**：`oppo.com`、华为官网的发布页常常没有正文日期；这类事件只能写进周报摘要“另据媒体报道”
 
 **06-05~06-11 回填新增实测**：

@@ -1,27 +1,12 @@
-{
- "overview": "本周端侧 AI 动态（10-13~10-19）：主线是“智能体手机与本地智能体 PC 同时进入量产”。手机侧，阶跃终端发布首款大模型原生智能体手机 STEPX Neo 先行版（Step AOS 1.0，3999 元起，10-16 首销），OPPO 与 Manus 合作把智能体模式接入 ColorOS 17、首发 Find X10，官方写明本地文件和照片任务由端侧模型处理、上云前需用户确认；研究侧的真机数字也密集出现：LG U+ 已服务数百万用户的 1.2B 通话智能体模型在 Galaxy S25 Ultra 的 NPU 上把单通电话耗电从 7.79mAh 降到 1.79mAh，Tandem 让 GUI 智能体在骁龙 8 Elite 的 NPU 上单步时延降 30%、待机功耗从 0.76W 降到 0.22W，OPPO 的 PEAM 在 Find X9 Pro 上 0.57 毫秒完成个性化网络配置决策。PC 侧，NVIDIA RTX Spark 笔记本开售，GitHub Copilot、OpenClaw 等智能体应用一键接入本地模型，配套的 Nemotron 3.5 Bolt 74B-A9B 用 2 比特压进 24GB；Meta 发布为本地智能体设计的 Muse Glimmer 30B，4 比特后单张 RTX 5090 可跑，工具调用 MCPAtlas 75.5 分；Apple ML Research 用 MLX 把 4 台 M5 Ultra 连成集群，本地跑 816B 的 Muse Spark Open 达 36.73 tok/s。框架层，Google 发布可一份 C++ 代码跑 CPU/GPU/NPU/WebGPU 的 LiteRT Tensor API，llama.cpp v0.7.0 为卸载到主机内存的 MoE 专家加 GPU 缓存、解码最高快约 2.2 倍。生态与记忆层方面，豆包手机助手开放第三方应用屏幕自动化权限、阿里腾讯系应用明确拒绝，腾讯混元开源记忆模型与本地记忆管理应用 Hy Memory 2.0。",
+{"overview": "本周端侧 AI 动态（10-20~10-26，部分周，数据截至 10-24，10-26 后追加）：主线是“本地智能体从手机延伸到 PC、机器人与卫星”。PC 侧最集中：Perplexity 的 Computer 在 Mac 上新增完全本地模式，规划与推理全部离线完成；NVIDIA 在 GTC 柏林让桌面智能体 Underdog 在 RTX Spark 笔记本上全本地运行，llama.cpp 的 MTP 投机解码让本地智能体任务最高快 1.4 倍，Recursive 开源 39.8B 总参、约 2.5B 激活的本地编码模型 Flint。手机侧，微软亚洲研究院的 HAFS（NSDI 2027）让 Galaxy S25 上的本地智能体与视频流协同调度，响应快 31%；SAKURA 在骁龙 8 Elite Gen 5 手机上把私密图像编辑时延降 3.27 倍；OPPO Find X10 发布 ColorOS 17 智能体模式。机器人与卫星侧，CovNav 让机器人背着笔记本本地跑 Qwen3-8B 完成导航规划，SLoSa 把带验证的任务规划器以 INT4 部署到 Jetson AGX Orin，OrbitWeaver 在两颗低轨卫星上连续 72 小时断电续跑视觉语言推理。硬件与框架层，Google 宣布开放 RISC-V 端侧 NPU 标准 Coral NPU 架构完成并开源编译器 v1.0，Synaptics 同日发布首颗 SR200 xMCU；ncnn 补齐 Vulkan int8 推理与 GPU 常驻 KV 缓存；MacPaw 在 4 台 Mac 上复测发现，服务器上有效的投机解码在 Apple Silicon 上全部没有净收益。模型侧，讯飞开源端侧智能体模型 Spark-X2.6-4B，Gradium 开源 31M 参数的端侧 TTS Phonon。另据媒体报道（尚无合规一手来源，仅供参考）：荣耀称 Magic9 的 YOYO 智能体综合任务准确率 91.8%、可稳定完成上百步长任务；奇瑞发布中央计算芯片紫微 C100，整车双 NPU 算力 2400TOPS；小鹏第二代 VLA 在人形机器人 IRON 本体上每 0.2 秒重新推理一次；腾讯微信视觉团队开源 2B/4B 统一视觉感知小模型 WeVisOne-VL；蚂蚁百灵开源含 0.5B TTS 与 asr-tiny 的 Ming-3.0 语音系列。",
  "highlights": [
-  {"url": "https://www.ithome.com/1/012/556.htm", "topic": "阶跃 STEPX Neo：模型厂造的智能体原生手机开售",
-   "why": "继 7 月发布后，阶跃终端本周推出 STEPX Neo 先行版并量产开售：底层 Step AOS 1.0 集成长期记忆、任务调度和安全机制，常驻低功耗音频感知芯片，开发工具 Step Studio 支持 MCP 与 A2A 协议，是模型公司亲自下场做手机端智能体的标志性产品（阶跃终端官网为无日期产品页，此处引用媒体报道）。"},
-  {"url": "https://www.oppo.com/en/newsroom/press/oppo-manus/", "topic": "OPPO × Manus：ColorOS 17 智能体模式",
-   "why": "主流手机厂商第一次把第三方通用智能体做成系统级模式：本地文件、照片等任务由端侧模型处理，需要上云时先征得用户同意，给出了手机端智能体“端侧优先、云端按需”的分工样板，首发 Find X10 系列。"},
-  {"url": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-laptops-software-updates/", "topic": "RTX Spark 开售：智能体应用一键跑本地模型",
-   "why": "RTX Spark 笔记本最高 128GB 统一内存、1 PFLOPS AI 算力，GitHub Copilot、Hermes、OpenClaw 等智能体应用可一键配置本地模型并带安全沙箱和本地/云端路由；专为本地智能体设计的 Nemotron 3.5 Bolt 74B-A9B 用 2 比特量化压进 24GB。"},
-  {"url": "https://arxiv.org/abs/2610.19382", "topic": "LG U+ ixi-sLM：服务数百万用户的手机端通话智能体",
-   "why": "1.2B 韩语模型压到 803MiB、质量达云端前沿模型的 94%，在 Galaxy S25 Ultra 与 iPhone 17 Pro 的 NPU 上本地完成通话摘要和代接电话，单通电话延迟从 45 秒降到 10 秒、耗电降到 CPU 的 23%，是少见的已大规模商用的端侧智能体模型。"},
-  {"url": "https://arxiv.org/abs/2610.26660", "topic": "Tandem：手机 NPU 上的 GUI 智能体运行时",
-   "why": "专为混合线性注意力智能体模型设计，在 OnePlus 13T（骁龙 8 Elite）上相比 llama.cpp 最快 NPU 配置单步时延降 30%、能耗降 33%，模型常驻待机功耗从 0.76W 降到 0.22W，把“智能体常驻手机”的功耗代价讲清楚了。"},
-  {"url": "https://arxiv.org/abs/2610.24628", "topic": "Meta Muse Glimmer 30B：为本地智能体设计的开放模型",
-   "why": "把多步推理、工具调用和失败恢复做进一个可在单张 RTX 5090 上运行的 30B 模型，分别为 32GB 和 24GB 显存准备量化配置；MCPAtlas 75.5、GAIA2 43.3，明显领先同尺寸的 Gemma4-31B 与 Qwen3.6-27B。"},
-  {"url": "https://machinelearning.apple.com/research/mlx-distributed-inference", "topic": "Apple：4 台 Mac 本地跑 816B 模型",
-   "why": "MLX 通过 Thunderbolt 5 RDMA 做多机张量并行：单台 M5 Ultra 跑 Qwen 3.8 27B 解码 19.69 tok/s，4 台提升到 50.89 tok/s；单机放不下的 816B Muse Spark Open（约 493GB）4 台合跑 36.73 tok/s，给出本地超大模型部署的官方规模参考。"},
-  {"url": "https://developers.googleblog.com/native-model-authoring-for-edge-with-litert-tensor-api/", "topic": "LiteRT Tensor API：一份 C++ 代码跑遍端侧硬件",
-   "why": "开发者可以像写 MLX 一样逐算子手写模型，同一份代码在 CPU、GPU、NPU 和 WebGPU 上运行；SAM 2 在 MacBook Pro 上比 MLX 快约 1.5 倍，编码代理把网页版从不到 10 帧优化到 30 帧以上。"},
-  {"url": "https://arxiv.org/abs/2610.21436", "topic": "三星 HyCo：手机 NPU 起草的端云投机解码",
-   "why": "在 Galaxy S26 Ultra 的 Hexagon NPU 上实测：让手机跑服务器模型的多 token 预测头负责草稿深度，服务器每 token GPU 时间减少 38.6%，交付速度是只用小模型起草的 1.9 倍，为“手机分担云端推理”给出可量化收益。"},
-  {"url": "https://www.ithome.com/1/013/163.htm", "topic": "豆包手机助手开放跨应用自动化权限",
-   "why": "手机 GUI 智能体跨应用操作的生态规则开始成形：豆包陆续开放第三方应用屏幕自动化操作权限，开发者可声明拒绝，阿里、腾讯系应用已明确拒绝，直接决定系统级手机智能体能做什么（据媒体报道）。"},
-  {"url": "https://www.ithome.com/1/014/108.htm", "topic": "腾讯混元 Hy Memory 2.0：智能体记忆走向本地管理",
-   "why": "开源记忆专用模型 Hy-Memory-30B-A3B、记忆框架与本地记忆管理应用 MemHub（命令行与 Mac 客户端），让智能体长期记忆可以沉淀在用户本机，为端侧智能体的记忆层提供开源参考（据媒体报道）。"}
- ]
-}
+  {"url": "https://9to5mac.com/2026/10/20/perplexitys-computer-can-now-run-entirely-on-your-mac-even-offline/", "topic": "Perplexity Computer 在 Mac 上完全本地运行", "why": "主流 AI 产品第一次把电脑操作智能体的规划与推理整条闭环放到 PC 本机离线执行，文件只在用户批准后才上云，是 PC 端侧智能体最直接的产品级落地。"},
+  {"url": "https://blogs.nvidia.com/blog/local-ai-gtc-rtx-dgx-spark-station-sync/", "topic": "GTC 柏林：RTX Spark 本地智能体与推理加速", "why": "桌面智能体 Underdog 在 RTX Spark 笔记本上全本地运行；llama.cpp 的 MTP 投机解码让本地智能体任务最高快 1.4 倍，DGX Spark 最多 8 台组成 1TB 统一内存集群，本地智能体的算力上限被“多台桌面机互连”抬高。"},
+  {"url": "https://arxiv.org/abs/2607.22854", "topic": "HAFS：手机本地智能体与视频流协同调度", "why": "微软亚洲研究院在 Galaxy S25、MacBook、Jetson 上实测多设备本地智能体互相请求上下文的网络调度：视频质量提升 1.5 倍、智能体响应快 31%，Galaxy S25 首 token 比本机 GPU 快 6.4~12.8 倍（NSDI 2027）。"},
+  {"url": "https://www.ithome.com/1/016/403.htm", "topic": "讯飞开源端侧智能体模型 Spark-X2.6-4B", "why": "国内模型厂本周最重要的端侧模型开源：4B 端侧智能体模型配端云协同路由，路由准确率从 81.2% 提到 96.1%，同场发布 Agent OS。HF 与讯飞官网暂不在白名单，先记入本周判断。"},
+  {"url": "https://developers.googleblog.com/unifying-edge-ai-how-coral-npus-open-standard-brings-portable-energy-viable-intelligence-from-model-to-silicon/", "topic": "Coral NPU：开放 RISC-V 端侧 NPU 架构完成", "why": "矩阵单元每周期 256 次乘加、可配到 1 TOPS，平均推理功耗目标约 10 mW，完整 RTL 与编译器 v1.0 开源，Synaptics 同日发布首颗 SR200 xMCU——MCU 级设备第一次有了可移植的开放 AI 加速器路线。"},
+  {"url": "https://arxiv.org/abs/2610.31479", "topic": "Apple Silicon 推理优化复测：服务器经验不能照搬", "why": "在 4 台 Mac 上，KV 裁剪最高带来 1.75 倍吞吐（RTX 4090 上只有 1.02 倍），而所有被测投机解码在 Apple 上都降低了吞吐——端侧选型必须在目标设备上实测。"},
+  {"url": "https://arxiv.org/abs/2610.27677", "topic": "CovNav：机器人本地跑大模型做导航规划", "why": "TurtleBot 4 背着 RTX 3080 笔记本本地运行 FP8 量化的 Qwen3-8B，只有 12.4% 的查询触发慢思考，机载平均时延约 680 毫秒，不依赖云端完成导航规划闭环。"},
+  {"url": "https://arxiv.org/abs/2610.29183", "topic": "OrbitWeaver：卫星上的视觉语言推理断电续跑", "why": "针对低轨卫星载荷频繁断电重启，对 VLM 推理做分阶段检查点，端到端最高加速 4.07 倍，并在两颗在轨卫星上连续部署 72 小时。"},
+  {"url": "https://www.ithome.com/1/016/108.htm", "topic": "豆包手机助手限制金融类应用自动化操作", "why": "系统级手机 GUI 智能体的安全边界继续收紧：豆包手机助手更新拒绝操作清单，主动不对银行、支付、信贷类应用做屏幕自动化，跨应用操作的生态规则在逐步成形。"}
+ ]}

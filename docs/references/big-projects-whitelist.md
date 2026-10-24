@@ -26,7 +26,7 @@
 - MiniCPM-V (面壁/OpenBMB) — `github.com/OpenBMB/MiniCPM-V`（端侧多模态大模型；约 2.7 万星）
 - VoxCPM (面壁/OpenBMB) — `github.com/OpenBMB/VoxCPM`（端侧语音合成；约 4 万星）
 
-> 2026-10-25 加入 LiteRT-LM：它是独立仓，白名单原来只有 `litert`，7–9 月 v0.14~v0.17 的重要版本（多 token 预测、Android 原生 CLI、NPU 音频加速）全部漏收，只能写进周报摘要。
+> 2026-10-24 加入 LiteRT-LM：它是独立仓，白名单原来只有 `litert`，7–9 月 v0.14~v0.17 的重要版本（多 token 预测、Android 原生 CLI、NPU 音频加速）全部漏收，只能写进周报摘要。
 
 > 2026-10-21 加入 OpenBMB 三仓：面壁是 24 家规范厂商之一，但官网新闻只链到微信公众号（不在白名单），端侧模型实际只在 GitHub/HF 发布，按旧规则永远进不了正式周报（1–5 月月度对账发现 VoxCPM 2、MiniCPM-V 4.6 等全部漏收）。AgentCPM（约 800 星）未达大项目标准，不加。
 

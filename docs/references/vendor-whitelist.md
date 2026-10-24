@@ -70,4 +70,4 @@ Baichuan: `baichuan-ai.com`
 AMD: `amd.com`（含 `newsroom.amd.com`）
 Liquid AI: `liquid.ai`（`liquid.ai/blog`）
 
-> 2026-10-25 加入 `qwen.ai`、`amd.com`、`liquid.ai`：6–9 月漏检对账里 Qwen 机器人套件、AMD Advancing AI / IFA、Liquid LFM2.5 系列都有带日期的一手页面，却因域名不在白名单只能写进周报摘要。AMD、Liquid AI 不在 24 家必查厂商（`REQUIRED_VENDOR_SOURCES`）里，采集时作为附加来源，有就收。
+> 2026-10-24 加入 `qwen.ai`、`amd.com`、`liquid.ai`：6–9 月漏检对账里 Qwen 机器人套件、AMD Advancing AI / IFA、Liquid LFM2.5 系列都有带日期的一手页面，却因域名不在白名单只能写进周报摘要。AMD、Liquid AI 不在 24 家必查厂商（`REQUIRED_VENDOR_SOURCES`）里，采集时作为附加来源，有就收。
