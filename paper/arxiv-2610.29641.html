@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Recursive Code Evolution for Task-Oriented Semantic Communications</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Recursive Code Evolution for Task-Oriented Semantic Communications</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-10-21 · Yan Gong; Zheng Chu; Wei Koong Chai; Hari Mohan Pandey; Jingrui Hou; Miao Zhang; Yuanjian Li; Pei Xiao / arXiv</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">语义通信系统的编码器、信道适配器和损失函数通常在训练前就定死了。ComRSI 让大模型智能体反复改写这套通信程序本身来自我改进。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 CIFAR-100 的十代演化中接受了 8 次改动，得到的方案在 AWGN 信道上每张图只用 32 个复数符号就达到 74.3% 测试准确率，而初始设计用 256 个符号只有 67.2%；十次重复搜索中平均最终得分为 0.7587，高于无递归智能体的 0.7376 和 0.7089。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">固定的智能体修改编码器、信道适配器、解码器、损失和训练策略代码，受保护的评估器在给定预算和资源约束下筛选候选，被接受的代码和文字反馈用于下一轮提议，候选权重每次从头训练。</span></div>
+<div class="score-reason">评分依据：语义通信与边缘推理相关，但智能体只用于离线搜索通信程序，与端侧部署关系较远。递归式代码自我改进有一定新意，统计显著性有限。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.29641" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

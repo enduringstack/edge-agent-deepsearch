@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LEAF: LUT-aware Efficient Attention on FPGAs</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>LEAF: LUT-aware Efficient Attention on FPGAs</h1>
+<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-10-19 · Arianna Cox; Chang Sun; Lauri Laatu; Benedikt Maier; Aadeesh Sharma; Leo Rozanov; Wayne Luk; Maria Spiropulu / ML4PS 2026 Workshop</div>
+<div class="tags"><span class="tag">方向:高效注意力</span><span class="tag">方向:编译部署</span><span class="tag">硬件:FPGA</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在 FPGA 上跑 Transformer 并做到纳秒级延迟很难，因为注意力计算太贵。LEAF 是首个面向查找表（LUT）训练的 FPGA Transformer，用于粒子物理实验这类亚微秒实时系统。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在喷注标记基准上，准确率比此前最好的亚微秒 Transformer 高 1.8 个百分点，同时少用 2.9 倍查找表；最省资源的版本用 2.8 万个查找表、35 纳秒达到 80.4% 分类准确率。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把 Q/K/V 投影和输出前馈层改成可直接映射为查找表的 FPGA 原生层，并在训练时就考虑查找表约束；注意力里常数矩阵乘法查表实现，其余部分保留算术形式。</span></div>
+<div class="score-reason">评分依据：属于极端资源受限硬件上的 Transformer 推理部署，可迁移到超低延迟边缘场景；查找表感知的注意力设计有新意，但应用面偏专用。被 ML4PS 2026 研讨会接收。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.27078" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

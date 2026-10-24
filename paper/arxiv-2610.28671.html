@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Accelerating CPU Speculative Decoding via Unified Graph Execution and Transactional KV Isolation</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Accelerating CPU Speculative Decoding via Unified Graph Execution and Transactional KV Isolation</h1>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-10-17 · Zhangdie Yuan / arXiv</div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:KV cache</span><span class="tag">方向:推理框架</span><span class="tag">硬件:CPU</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在 CPU 上跑投机解码时，草稿模型和目标模型来回切换、KV 缓存回滚时反复分配内存，开销很大。SubTernary 是专门消除这些开销的 CPU 执行框架。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">比 llama.cpp 的投机解码快 1.35 倍、比普通自回归解码快 3.99 倍，回滚延迟保持常数级；消融显示系统运行时贡献了 35.0% 的吞吐提升，三值 SIMD 内核再贡献 6.0%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把两个模型编译进同一块内存区并共用常驻线程池，投机 token 写到固定暂存区，回滚时只需重置指针、不重新分配内存；另外加了一个 AVX2 三值低比特计算内核作为示例。</span></div>
+<div class="score-reason">评分依据：CPU 上的投机解码与 KV 回滚优化可直接迁移到 PC 和端侧 CPU 推理，但实验在服务器级 Xeon 虚拟机上完成。属于扎实的工程优化，方法新意中等。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.28671" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

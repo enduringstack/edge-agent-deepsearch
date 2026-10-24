@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Exploring Post-Training Alignment of Small Language Models for Biomedical Data-to-Text Generation: A Case Study of Medication Leaflet</h1>
-<div class="meta"><span class="score">10</span> <span class="tier company">公司项目</span>  2026-07-15 · Xi Yang; Guodong Liu; Chuqin Li; Fan Wu; Ergin Soysal; Min Jiang; Xing He; Jiang Bian / arXiv</div>
-<div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:评测基准</span><span class="tag">模型:Qwen</span><span class="tag">模型:GPT</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Translating complex biomedical data into patient-friendly narratives is central to modern biomedical informatics.</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted；affiliation 命中 Alibaba（作者/摘要关键词匹配，待 OpenReview/Scholar 核实）</div>
+<div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span>  2026-10-21 · Xi Yang; Guodong Liu; Chuqin Li; Fan Wu; Ergin Soysal; Min Jiang; Xing He; Jiang Bian / arXiv</div>
+<div class="tags"><span class="tag">方向:评测基准</span><span class="tag">模型:Qwen</span><span class="tag">模型:GPT</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">比较四种后训练对齐方法（SFT、DPO、ORPO、GRPO）对小语言模型生成药品说明书类医疗文本的影响，看小模型能否在这类任务上替代大模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">ORPO 在本领域语义相似度最高（0.9752）；GRPO 在新构建的 FDALeaflets 跨法规数据集上达 0.9407，超过 GPT-5 的 0.9295；但用大模型当评委时，GPT-5 的幻觉和充分性得分更好。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 Qwen-2.5 小模型分别做四种对齐训练，并基于 OpenFDA 药品标签构建 FDALeaflets 数据集做零样本泛化测试。</span></div>
+<div class="score-reason">评分依据：小模型对齐研究，与端侧部署只有“小模型更易部署”的间接关系，没有设备实验（相关度 2）；属于对齐方法的领域对比（3）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.13430" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

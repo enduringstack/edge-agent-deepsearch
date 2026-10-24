@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RISK-KV: Quality-Aware Selective KV Cache Reconstruction for Distributed LLM Inference</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>RISK-KV: Quality-Aware Selective KV Cache Reconstruction for Distributed LLM Inference</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-10-21 · Wang Yuekai / arXiv</div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">分布式大模型推理中，请求迁移或中断恢复需要历史 KV 缓存，整份保存太占空间、重算又太慢。RISK-KV 只保存部分层的 KV，缺的层用回归预测重建。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 3 个语言模型上，代表性配置可省掉 18.2% 到 33.3% 的历史 KV，困惑度变化小于 0.5%；在 512 token 历史的本地请求恢复实验中，比完整重放快 1.51 到 3.31 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用目标层前后两层的真实 KV 状态，通过跨层岭回归预测缺失层的注意力投影输入，再并入原模型的 KV 投影矩阵以减少存储；用实际重建带来的负对数似然变化衡量风险，并搜索可安全重建的层组。</span></div>
+<div class="score-reason">评分依据：面向分布式服务的 KV 缓存压缩与恢复，可迁移到资源受限设备的状态保存，但不涉及端侧部署。方法属常规思路的组合，作者为单人。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.29544" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

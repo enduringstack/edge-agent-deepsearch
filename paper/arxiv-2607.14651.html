@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MemPoison: Uncovering Persistent Memory Threats and Structural Blind Spots in LLM Agents</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>MemPoison: Uncovering Persistent Memory Threats and Structural Blind Spots in LLM Agents</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-10-18 · Jifeng Gao; Kang Xia; Yi Zhang; Xiaobin Hong; Mingkai Lin; Xingshen Wei; Wenzhong Li; Sanglu Lu / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">MemPoison 是一个专门评测智能体长期记忆被“投毒”的基准：攻击内容通过正常交互写入记忆，之后在检索时悄悄扭曲智能体行为。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">包含 1227 个人工核验案例，覆盖 4 类攻击、3 种注入渠道和 3 种记忆底座，测试 7 个开源和 3 个闭源模型家族；写入时的一致性检查能明显压住直接单条篡改，但对多条组合篡改和条件触发的潜伏篡改基本无效。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把记忆投毒分为单条直接篡改、多条组合篡改和上下文触发的潜伏篡改三级，并用机制化影响分解分析写入时防御的结构性盲区。</span></div>
+<div class="score-reason">评分依据：智能体记忆安全是端侧个人智能体同样要面对的问题，但论文未涉及设备部署（相关度 3）；三级分类和盲区分析有新意（5）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2607.14651" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>
