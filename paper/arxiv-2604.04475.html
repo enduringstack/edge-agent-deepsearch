@@ -7,9 +7,9 @@
 <h1>Discrete Prototypical Memories for Federated Time Series Foundation Models</h1>
 <div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-04-06 · Liwei Deng; Qingxiang Liu; Xinhe Niu; Shengchao Chen; Sheng Sun; Yuankai Wu; Guodong Long; Yuxuan Liang / arXiv</div>
 <div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:记忆</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用大模型做联邦学习的时间序列基础模型时，时间序列和文本语义对不齐，统一的连续参数空间也不适合各领域反复出现的离散模式。FeDPM 用离散的原型记忆来解决这两个问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">各客户端学习本地的离散原型记忆，再在跨领域间对齐这些记忆形成统一的离散表示，并用领域专属的记忆更新机制平衡共享知识和个性化知识。</span></div>
-<div class="score-reason">评分依据：联邦学习让数据留在本地，与端侧有间接联系，但主要是时间序列建模方法，没有部署层面的内容。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">用大模型做联邦学习的时间序列基础模型时，时间序列和文本语义对不齐，统一的连续参数空间也不适合各领域反复出现的离散模式。FeDPM 用离散的原型记忆来解决。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">与最强基线 FFTS 相比，预测 MAE 平均降低 4.92%，同时传输参数量减少 97.03%；只用 5% 和 10% 训练数据的少样本设置下，MAE 分别再降 7.29% 和 6.42%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">各客户端只学习并上传本地的离散原型记忆，服务器在跨领域间对齐这些记忆形成统一的离散表示，并用领域专属的记忆更新机制平衡共享知识和个性化知识。</span></div>
+<div class="score-reason">评分依据：联邦学习让数据留在本地，且大幅压缩了通信量，与端侧有间接联系，但主要是时间序列建模方法，没有设备部署内容。作者来自悉尼科技大学、港科大（广州）等高校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.04475" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

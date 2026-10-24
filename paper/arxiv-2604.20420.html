@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Scalable AI Inference: Performance Analysis and Optimization of AI Model Serving</h1>
 <div class="meta"><span class="score">4</span> <span class="tier school">学校预印本</span>  2026-04-22 · Hung Cuong Pham; Fatih Gedikli / arXiv</div>
-<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">实测一个基于 BentoML 的模型服务系统在不同流量模式下的时延和吞吐，并逐层做优化。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用 RoBERTa 情感分类模型，按伽马分布和指数分布模拟平稳、突发和高强度流量，找出瓶颈后在运行时、服务和部署层面优化，并在单节点 K3s 集群上测试故障下的稳定性。</span></div>
-<div class="score-reason">评分依据：纯云端服务部署的工程性能测评，与端侧关系很弱；属于常规工程实践总结。</div>
+<div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:量化</span><span class="tag">方向:推理框架</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">实测一个基于 BentoML 的模型服务系统在不同流量模式下的时延和吞吐，并从模型、服务、部署三层逐一优化。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">把 RoBERTa 从 FP32 转成 FP16 后模型从 498.7 MB 降到 249.4 MB；基线单样本时延 2.18 秒，优化后各版本降到毫秒级，FP16 ONNX 最快；吞吐从基线最高 7.37 样本/秒提升到 FP16 版本近 2000 样本/秒，准确率不变。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用伽马分布和指数分布模拟平稳、突发和高强度流量找瓶颈，再做 ONNX 导出、半精度和图优化、自适应批处理等调整，并在单节点 K3s 集群上测试故障后的自动恢复。</span></div>
+<div class="score-reason">评分依据：纯云端服务部署的工程性能测评，半精度和 ONNX 是常规手段，与端侧关系很弱；属于工程实践总结。作者来自鲁尔西应用技术大学，合作方 graphworks.ai 为小型企业，公司归属留空。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.20420" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

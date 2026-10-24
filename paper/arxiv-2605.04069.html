@@ -10,6 +10,6 @@
 <div class="field"><span class="label">这是什么</span><span class="text">LAWS 是一种“自带误差证明”的推理缓存架构：在实际部署中不断积累经过认证的专家函数，命中时直接用它代替完整模型计算。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">基于概率语言前缀树把输入空间分区，每个区域训练一个带一致误差上界的专家函数；理论上证明它同时推广了混合专家和 KV 前缀缓存，并给出命中率单调性、专家库增长速度、车队协同学习和空中更新带宽等定理。</span></div>
-<div class="score-reason">评分依据：讨论了推理缓存在边缘部署和机器人上的应用，可迁移到端侧，但全文是理论推导，没有实验验证。</div>
+<div class="score-reason">评分依据：讨论了推理缓存在边缘部署和机器人上的应用，可迁移到端侧（相关度 4）；全文是定理推导，文中“90% 命中率约省 10 倍能耗”只是按公式代入的理论估算，没有任何实验验证，因此效果记为未报告（贡献 5）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2605.04069" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

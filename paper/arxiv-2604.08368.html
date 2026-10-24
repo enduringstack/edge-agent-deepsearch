@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SOLAR: Communication-Efficient Model Adaptation via Subspace-Oriented Latent Adapter Reparametrization</h1>
 <div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-04-09 · Seyed Mahmoud Sajjadi Mohammadabadi; Xiaolong Ma; Lei Yang; Feng Yan; Junshan Zhang / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:编译部署</span><span class="tag">模型:Llama</span><span class="tag">模型:GPT</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">LoRA 等适配器虽然参数少，但在资源受限或分布式场景里传输和存储仍是负担。SOLAR 把适配器重新表示成基础模型奇异向量的组合，进一步压缩体积。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">利用基础模型与微调更新在主方向上的相似性，用基础模型奇异向量加受控随机扰动构造基底，把每个适配器更新表示为少量系数，并给出重建误差上界。</span></div>
-<div class="score-reason">评分依据：适配器压缩可降低把个性化模型下发到边缘设备的传输与存储成本，与端侧部署间接相关。方法与现有 PEFT 兼容，创新中等。</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:端云协同</span><span class="tag">模型:Llama</span><span class="tag">模型:GPT</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">LoRA 这类适配器虽然参数少，但要在联邦学习或边缘设备之间频繁下发和存储大量适配器时，体积仍是负担。SOLAR 是一种训练后压缩方法，把已训好的适配器改写成更紧凑的表示，进一步缩小需要传输和保存的参数量。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">适配器参数量最多减少 98% 且基本保持原 LoRA 精度：LLaMA-3 系列 13B 模型上适配器从 819K 参数降到 51K 而精度不降（该组最多减少 94%）；GPT-2 Medium 在 E2E NLG 上从 393K 降到 30K；ViT-B 上 LoRA 适配器从约 74KB 压到 8KB（减少 89%）；系数从 32 比特量化到 4 比特时准确率下降不到 2%；压缩一次只需约 15 秒，而对应 LoRA 训练用了 2081 秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">利用“微调更新的主方向和基础模型权重的主方向高度重合”这一现象：用基础模型的奇异向量加上由随机种子控制的小扰动生成一组基，再挑出最重要的少量基系数来重建适配器；传输时只需发系数、索引和一个随机种子，基矩阵在接收端按种子重新生成，并给出重建误差上界。</span></div>
+<div class="score-reason">评分依据：压缩适配器能降低把个性化模型下发到边缘设备、在联邦学习中同步更新的通信和存储成本，与端侧部署间接相关，但实验在 RTX 4090/A100 上进行，没有设备端测试。方法是训练后即插即用、兼容 LoRA/AdaLoRA 等现有方案，创新属中等；作者来自内华达大学里诺分校、阿贡国家实验室等高校和研究机构，代码已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.08368" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

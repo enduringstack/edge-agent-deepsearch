@@ -7,9 +7,9 @@
 <h1>Learning Inference Concurrency in DynamicGate MLP Structural and Mathematical Justification</h1>
 <div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-04-15 · Yongil Choi / arXiv</div>
 <div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:模型架构</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">讨论一种叫 DynamicGate MLP 的网络能否“边推理边学习”，为设备上的在线自适应提供理论依据。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">讨论一种叫 DynamicGate MLP 的网络能否“边推理边学习”，为设备上的在线自适应提供理论依据和初步实验。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在分布漂移的在线自适应实验中，未自适应的普通 MLP 漂移后准确率只有 36.42%；同时更新门控和未激活权重（模式 D）时，软路由 MoE 达到最高的 84.60%，Top-1 MoE 以约 0.25 的相对计算量达到 83.66%；DG-Anneal 达到 83.61%，干净数据准确率只掉 5.83 个百分点；硬门控 DynamicGate 计算量约 0.30、最稳定，但准确率停在 74%–76%。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">把路由（门控）参数和表示参数分开，只在线更新门控或未激活子空间的权重，并数学证明每一步输出都对应一个合法的模型快照。</span></div>
-<div class="score-reason">评分依据：只有理论推导、没有实验，与端侧在线学习间接相关（相关度 3）；属对已有结构的形式化分析（贡献 3）。</div>
+<div class="score-reason">评分依据：与端侧在线学习间接相关（相关度 3）；主要是对已有门控结构的形式化证明，配一组小规模漂移实验，且最好成绩来自 MoE 基线而非所提结构（贡献 3）。作者署名为小型公司 Sorynorydotcom Co., Ltd. AI Open Research Lab。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.13546" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

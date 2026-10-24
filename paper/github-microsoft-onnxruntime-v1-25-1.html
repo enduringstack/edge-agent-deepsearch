@@ -7,9 +7,9 @@
 <h1>ONNX Runtime v1.25.1</h1>
 <div class="meta"><span class="score">9</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-04-27 · microsoft / GitHub</div>
 <div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:高效注意力</span><span class="tag">方向:MoE</span><span class="tag">硬件:GPU</span><span class="tag">模型:Qwen</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">ONNX Runtime 1.25.1 小版本，主要是为 Qwen3.5 补齐线性注意力等算子，并让 Qwen3.5 能在 WebGPU 后端上运行。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ONNX Runtime 1.25.1 小版本，主要为 Qwen3.5 补齐线性注意力等算子，并让 Qwen3.5 能在 WebGPU 后端上运行。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">新增 LinearAttention、CausalConvState、RotaryEmbedding、RMSNorm 算子；WebGPU 后端支持 Qwen3.5，并把 QMoE 单 token 解码路径的多个操作融合，减少 GPU 调度次数。</span></div>
-<div class="score-reason">评分依据：WebGPU 后端可在 PC/浏览器本地 GPU 上跑 Qwen3.5，MoE 解码融合也直接关系端侧推理效率（相关度 6）；属于常规算子补齐和优化（贡献 3）。</div>
+<div class="score-reason">评分依据：WebGPU 后端可在 PC/浏览器本地 GPU 上跑 Qwen3.5，MoE 解码融合也直接关系端侧推理效率（相关度 6）；属于常规算子补齐和优化，发布说明没有给出性能数字（贡献 3）。</div>
 <div class="source"><a href="https://github.com/microsoft/onnxruntime/releases/tag/v1.25.1" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

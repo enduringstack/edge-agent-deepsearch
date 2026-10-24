@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-04-17 · Tiancheng Zhang; Shaoyuan Huang; Mingyuan Wang; Yunfeng Zhao; Xiaofei Wang; Wenyu Wang / arXiv</div>
 <div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:评测基准</span><span class="tag">方向:调度服务</span><span class="tag">方向:MoE</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">云端大模型服务平台的真实负载长什么样？FineServe 从一个全球商用多模型 API 市场采集了细粒度请求数据，分析不同模型和任务的到达规律与 token 长度，并提供可配置的负载生成器。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">按模型架构（稠密/MoE）、规模和任务意图拆分请求，分析到达突发性和输入输出长度关系（如输出长度在输入约 1.5K–2K token 时达到峰值后回落），再把这些分布组合成面向多模型服务压测的负载生成器。</span></div>
-<div class="score-reason">评分依据：纯云端多模型服务负载数据集，与端侧部署关系很弱，只对调度与容量规划研究有参考价值。真实商用细粒度负载数据较稀缺，数据集与生成器开源，贡献中等。</div>
+<div class="field"><span class="label">有什么结果</span><span class="text">数据覆盖 4 个月、57 个模型（10 个模型家族）共 14.8 亿条请求；即使突发最弱的模型组，最忙的 5% 秒也承载了约 9.5% 的请求，10B 以下稠密模型在部分时段可达 15–18%；10B 以下稠密模型的输出长度在输入约 1.5K–2K token 时达峰，之后到长输入区间中位输出长度下降超过 60%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按模型架构（稠密/MoE）、规模和任务意图拆分请求，用分布漂移、突发度和毫秒级到达计数建模到达规律，用对数正态分布拟合输入长度，再把这些分布组合成既能回放真实轨迹、也能参数化合成的多模型压测负载生成器。</span></div>
+<div class="score-reason">评分依据：纯云端多模型服务负载数据集，与端侧部署关系很弱，只对调度与容量规划研究有参考价值。真实商用细粒度负载数据较稀缺，数据集与生成器开源，贡献中等。PDF 首页作者来自天津大学和小型云服务公司 PPIO Cloud（派欧云），未填公司归属。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.19349" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

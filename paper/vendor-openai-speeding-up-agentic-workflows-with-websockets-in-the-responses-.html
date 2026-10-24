@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Speeding up agentic workflows with WebSockets in the Responses API</h1>
-<div class="meta"><span class="score">7</span> <span class="tier">官方动态</span>  2026-04-22 · OpenAI / OpenAI</div>
-<div class="tags"><span class="vendor-tag">OpenAI</span><span class="tag">方向:云端serving</span><span class="tag">方向:工具调用</span><span class="tag">应用:代码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">OpenAI 工程团队拆解 Codex 智能体循环的时延来源，介绍如何用 WebSocket 长连接和连接级缓存降低 Responses API 的调用开销。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">官方描述为：把智能体多轮调用改走 WebSocket 长连接，并在连接范围内缓存状态，减少每次请求重复传输和处理的开销，从而降低模型响应时延。</span></div>
-<div class="score-reason">评分依据：优化发生在云端 API 服务侧，与端侧部署无直接关系；减少智能体多轮调用重复开销的思路可借鉴，但官方页面无法访问，细节有限。</div>
+<div class="meta"><span class="score">10</span> <span class="tier">官方动态</span>  2026-04-22 · OpenAI / OpenAI</div>
+<div class="tags"><span class="vendor-tag">OpenAI</span><span class="tag">方向:端云协同</span><span class="tag">方向:工具调用</span><span class="tag">方向:KV cache</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">OpenAI 工程团队拆解 Codex 智能体循环的时延来源：推理变快后，API 服务开销成了瓶颈，于是给 Responses API 加上 WebSocket 长连接模式。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">智能体循环端到端快 40%；前期缓存等优化让首 token 时间缩短近 45%；GPT-5.3-Codex-Spark 达到 1000 token/s 目标、峰值 4000 token/s。外部集成方 Vercel 时延降最多 40%，Cline 多文件流程快 39%，Cursor 中 OpenAI 模型快最多 30%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 WebSocket 连接内缓存上一轮响应状态、已渲染 token 和工具定义，后续请求只处理新增输入；安全分类器只检查增量内容，并把计费等后处理与下一轮请求重叠执行。</span></div>
+<div class="score-reason">评分依据：优化发生在云端 API 侧，但它揭示了智能体多轮工具调用中“推理之外的开销”占比，以及工具在用户本机执行、状态在连接内复用的设计，对端云协同智能体有参考价值；方法本身是缓存加长连接的工程组合。</div>
 <div class="source"><a href="https://openai.com/index/speeding-up-agentic-workflows-with-websockets" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

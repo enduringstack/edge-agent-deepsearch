@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">6</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-04-27 · OpenAI / OpenAI</div>
 <div class="tags"><span class="vendor-tag">OpenAI</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">应用:代码</span><span class="tag">模型:GPT</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">OpenAI 开源 Symphony 规范，用来编排 Codex 编码智能体，把需求跟踪系统变成一直在线的智能体流水线，减少工程师来回切换。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">以问题跟踪系统里的任务为驱动，按规范调度多个 Codex 智能体持续领取和处理工单。</span></div>
-<div class="score-reason">评分依据：编排对象是云端编码智能体，与设备端无关；常驻式智能体编排规范对 Agent 运行时设计有一定参考意义。</div>
+<div class="field"><span class="label">有什么结果</span><span class="text">OpenAI 部分团队使用后前三周合并的 PR 数量增加 500%；此前工程师同时最多舒适管理 3 到 5 个 Codex 会话；截至 4 月 23 日仓库获得超过 1.5 万个 GitHub 星标。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每个未完成的 Linear 工单对应一个独立工作区和智能体，编排器持续盯着任务看板，智能体崩溃或卡住就重启；基于 Codex 应用服务器的 JSON-RPC 接口，参考实现用 Elixir 编写。</span></div>
+<div class="score-reason">评分依据：编排对象是跑在开发机和云端的编码智能体，与设备端无关（相关度 2）；常驻式智能体编排规范对智能体运行时设计有参考意义（贡献 4）。</div>
 <div class="source"><a href="https://openai.com/index/open-source-codex-orchestration-symphony" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

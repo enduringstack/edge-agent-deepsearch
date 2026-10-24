@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-04-16 · Ali Bagheri Nejad; Mahdi Aliyari-Shoorehdeli; Abolfazl Hasanzadeh / arXiv</div>
 <div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">应用:fault-detection</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">燃气轮机振动故障检测里，大模型准但跑不动、小模型又缺时间上下文；这篇用知识蒸馏把看过长时间窗的教师能力传给紧凑的学生模型。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 CWRU 轴承数据上，基线故障检测模型准确率停在 90% 以下，看长时间窗的教师模型 50 个 epoch 内超过 99%（约高 10 个百分点）；与基线结构和输入完全相同的学生模型蒸馏后达到与教师相当的准确率。在 MGT-40 燃气轮机工业数据上只以特征可分性图示说明优于常规预训练模型，没有给出数字。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">教师模型使用包含过去和未来的长时间窗作为特权信息训练，再把潜在特征蒸馏给只看短窗的学生，并先在 CWRU 等公开数据预训练再迁移到目标设备数据。</span></div>
-<div class="score-reason">评分依据：目标是在资源受限工业硬件上部署，但没有真机实测（相关度 3）；特权蒸馏加迁移学习属常见组合（贡献 4）。摘要只称精度优于常规预训练架构，未给出具体数字。</div>
+<div class="score-reason">评分依据：目标是在资源受限工业硬件上部署，但没有真机实测（相关度 3）；特权蒸馏加迁移学习属常见组合（贡献 4）。第三作者署名为伊朗小型企业 MECO，未计入公司项目。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.14766" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Agentic Federated Learning: The Future of Distributed Training Orchestration</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-04-06 · Rafael O. Jarczewski; Gabriel U. Talasso; Leandro Villas; Allan M. de Souza / arXiv</div>
-<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span><span class="tag">方向:规划推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">联邦学习在现实中受客户端设备差异和系统波动影响，静态的调度规则难以适应。这篇立场论文提出让语言模型 Agent 来自主编排联邦学习的全过程。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">服务器端 Agent 根据上下文推理来挑选参与客户端、减轻选择偏差；客户端 Agent 在本地管理隐私预算，并按硬件条件调整模型复杂度；文章同时讨论了幻觉与安全风险和研究路线。</span></div>
-<div class="score-reason">评分依据：设想中的客户端 Agent 会在终端设备上做隐私和模型规模决策，与端侧有关联，但只是概念框架，没有实现或设备实验，因此不算端侧 Agent。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-04-06 · Rafael O. Jarczewski; Gabriel U. Talasso; Leandro Villas; Allan M. de Souza / ICLR 2026 Workshop</div>
+<div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:安全隐私</span><span class="tag">方向:规划推理</span><span class="tag">模型:Qwen</span><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">联邦学习在现实中受客户端设备差异和系统波动影响，静态调度规则难以适应。这篇立场论文提出让语言模型智能体自主编排联邦学习全过程。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">概念验证：在 Flower 模拟的 25 个客户端、50 轮、强非独立同分布 CIFAR-10 上，用 Ollama 跑 Qwen3 8B、Llama3.2 3B、Llama3.1 8B 决定每轮选多少客户端，精度约 37%-39%，与 PoC、随机、Oort 等基线相当，每次选择耗时 0.18-4.71 秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">服务器端智能体根据上下文推理挑选参与客户端、减轻选择偏差；客户端智能体在本地管理隐私预算，并按硬件条件调整模型复杂度；文章同时讨论幻觉、安全风险和研究路线。</span></div>
+<div class="score-reason">评分依据：设想中的客户端智能体会在终端上做隐私和模型规模决策，与端侧有关联，但实验只是服务器上的模拟，没有设备端运行，因此不算端侧 Agent。发表于 ICLR 2026 研讨会，不算顶会正会。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.04895" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

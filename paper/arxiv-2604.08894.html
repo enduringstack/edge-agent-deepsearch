@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-04-10 · Zecheng Hao; Shenghao Xie; Kang Chen; Wenxuan Liu; Zhaofei Yu; Tiejun Huang / ACM MM 2026</div>
 <div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:能耗功耗</span><span class="tag">方向:高效注意力</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">Ge²mS-T 是一种脉冲视觉 Transformer 架构，想同时解决脉冲网络在内存占用、学习能力和能耗上的三难问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">ImageNet-1K 上不到 1500 万参数、能耗低于 3 mJ 即达 79.82% 准确率；Small 版只用 Spikformer-8-768 的 8.06% 参数和 5.40% 能耗就取得更高精度，Base 版比 SEW ResNet-152 高 8.93 个点而能耗仅其 14.90%（能耗按理论公式估算，非真机实测）。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">在时间、空间和网络结构三个维度做分组计算：用分组指数编码的脉冲神经元实现无损转换，并用分组脉冲自注意力以多尺度 token 分组和免乘法运算降低计算量。</span></div>
-<div class="score-reason">评分依据：脉冲网络面向低功耗类脑硬件，属于端侧低功耗相邻方向；摘要未给出具体能耗数字，也没有真实硬件部署。已被 ACM MM 2026 接收（不在本周报顶会清单内）。</div>
+<div class="score-reason">评分依据：脉冲网络面向低功耗类脑硬件，属于端侧低功耗相邻方向；能耗为按突触操作数折算的理论值，没有真实硬件部署。已被 ACM MM 2026 接收（口头报告，不在本周报顶会清单内）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.08894" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

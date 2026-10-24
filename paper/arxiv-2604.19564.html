@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-04-21 · Yanshuo Wang; Yuan Xu; Xuesong Li; Jie Hong; Yizhou Wang; Chang Wen Chen; Wentao Zhu / arXiv</div>
 <div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:多模态</span><span class="tag">应用:视频</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">第一视角助手（如智能眼镜）要理解每个用户的习惯才能个性化服务。EgoSelf 用图结构的交互记忆积累用户历史，并预测用户接下来可能的行为。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">从过去的第一视角观察中构建事件与实体的图记忆，记录时间和语义关系，从中提炼用户画像；再把个性化建模成根据历史预测未来交互的任务。</span></div>
-<div class="score-reason">评分依据：属于助手类 Agent 的长期记忆设计，可迁移到可穿戴端侧助手，但论文没有设备端运行证据。图记忆与习惯学习结合有一定新意。</div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 EgoLifeQA 基准上平均得分 40.6，高于 Gemini 的 36.9、GPT-4o 的 36.2 和 EgoGPT 的 36.0；需要回溯 24 小时以上历史的问题上得分 38.8，高于 EgoGPT+EgoRAG 的 35.4。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从过去的第一视角视频中抽取事件与实体节点，用时间和语义关系连成图记忆并提炼用户画像；再把个性化建模成根据历史预测未来交互的任务，用图检索加画像回答问题。</span></div>
+<div class="score-reason">评分依据：属于助手类智能体的长期记忆设计，可迁移到可穿戴端侧助手，但实验依赖 GPT-4o、Gemini 等云端模型，没有设备端运行证据。图记忆与习惯学习结合有一定新意，代码已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.19564" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

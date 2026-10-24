@@ -7,9 +7,9 @@
 <h1>Networking-Aware Energy Efficiency in Agentic AI Inference: A Survey</h1>
 <div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-04-09 · Xiaojing Chen; Haiqi Yu; Wei Ni; Dusit Niyato; Ruichen Zhang; Xin Wang; Shunqing Zhang; Shugong Xu / arXiv</div>
 <div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:端云协同</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一篇综述：Agent 化的 AI 要反复推理、持续收发数据，能耗瓶颈不只在计算还在通信。文章给出一套把感知-推理-行动全过程计算与通信能耗都算进来的分析框架。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">按模型精简、计算控制、输入与注意力优化、硬件感知推理四类梳理节能方法，并讨论模型参数、无线传输和边缘资源的跨层联合设计。</span></div>
-<div class="score-reason">评分依据：综述直接面向移动边缘计算中 Agent 推理的能耗问题，对端侧 Agent 系统设计有参考价值，但不提供新方法和实测。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">一篇综述：Agent 化的 AI 要反复推理、不停和云端、边缘节点及其他 Agent 收发数据，能耗瓶颈不只在算，也在通信。文章提出一个把“感知-推理-行动”全过程的计算和通信能耗都算进去的分析框架，并梳理相应的节能手段。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告新的实验结果。综述汇编的已有工作数据包括：MobileLLM 的 350M 8 比特模型每个 token 约 0.035 焦耳，而 7B LLaMA-2 约 0.7 焦耳；3/4 比特量化比 FP16 最多省 79% 能耗，但 GSM8K 等复杂推理准确率下降 20%–30%；SwapMoE 内存减少 67%、时延减少 50%；端云按 token 协同的方案以 25%–31% 的成本接近大模型质量。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把节能方法分成模型精简（量化、剪枝、蒸馏、稀疏 MoE）、计算控制（控制输出长度、提前退出、跳层、调度）、输入与注意力优化（token 剪枝、稀疏注意力、KV cache 复用）和硬件感知推理（精度调度、DVFS 调频、内存与 I/O 优化）四类，再讨论无线传输、移动性、拆分推理、卸载和缓存等端-边-云跨层联合设计。</span></div>
+<div class="score-reason">评分依据：综述直接讨论移动边缘场景下 Agent 推理的计算与通信能耗，覆盖量化、KV cache、DVFS、端云拆分等端侧技术栈，可作入门索引；作为综述没有提出新方法，也没有自己的实测数据，effects 中的数字均来自被引用的已有工作。作者均来自上海大学、南洋理工大学、复旦大学等高校。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.07857" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

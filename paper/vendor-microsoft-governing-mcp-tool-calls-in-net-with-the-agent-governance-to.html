@@ -7,9 +7,9 @@
 <h1>Governing MCP tool calls in .NET with the Agent Governance Toolkit</h1>
 <div class="meta"><span class="score">7</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-04-29 · Microsoft / Microsoft</div>
 <div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:工具调用</span><span class="tag">方向:安全隐私</span><span class="tag">应用:安全</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">微软演示如何用开源的 Agent Governance Toolkit 给 .NET 里的 MCP 工具调用加一道治理层：执行前审查调用、扫描可疑工具定义、清洗工具返回内容。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">McpGateway 在执行前评估每次工具调用，McpSecurityScanner 检查可疑工具定义，McpResponseSanitizer 去除工具输出中的提示注入、凭据和外传链接，GovernanceKernel 用 YAML 策略、审计事件和 OpenTelemetry 串起来；无需外部服务，可在本地运行。</span></div>
-<div class="score-reason">评分依据：工具调用安全治理可直接用于本地运行的 Agent，但文章本身不涉及设备端部署（相关度 3）；把工具调用前后的防护做成可组合组件，工程价值较好（贡献 4）。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">微软演示用开源的 Agent Governance Toolkit 给 .NET 里的 MCP 工具调用加一道治理层：执行前审查调用、扫描可疑工具定义、清洗工具返回内容。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在本地样例负载测试中，治理评估延迟通常不到 1 毫秒；风险评分可设阈值拦截可疑工具（示例阈值为 30）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">McpGateway 在执行前评估每次工具调用，McpSecurityScanner 检查可疑工具定义，McpResponseSanitizer 去除工具输出中的提示注入、凭据和外传链接，GovernanceKernel 用 YAML 策略、审计事件和 OpenTelemetry 串起来，无需外部服务。</span></div>
+<div class="score-reason">评分依据：工具调用安全治理可直接用于本地运行的智能体，但文章本身不涉及设备端部署（相关度 3）；把工具调用前后的防护做成可组合组件，工程价值较好（贡献 4）。</div>
 <div class="source"><a href="https://devblogs.microsoft.com/dotnet/governing-mcp-tool-calls-in-dotnet-with-the-agent-governance-toolkit/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

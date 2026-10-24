@@ -7,9 +7,9 @@
 <h1>Scaling Managed Agents: Decoupling the brain from the hands</h1>
 <div class="meta"><span class="score">8</span> <span class="tier">官方动态</span>  2026-04-08 · Anthropic / Anthropic</div>
 <div class="tags"><span class="vendor-tag">Anthropic</span><span class="tag">方向:工具调用</span><span class="tag">方向:记忆</span><span class="tag">方向:安全隐私</span><span class="tag">方向:云端serving</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Anthropic 介绍其托管长任务智能体服务 Managed Agents 的架构：把模型循环、执行环境和会话记录拆开，各自可以独立替换和故障恢复。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">像操作系统虚拟化硬件一样，把智能体拆成三层：只追加的会话事件日志、调用模型并分发工具调用的循环（harness）、运行代码的沙箱；沙箱被当作普通工具调用，挂了就重建，harness 崩溃后从会话日志恢复，凭证不放进沙箱以防提示注入窃取。</span></div>
-<div class="score-reason">评分依据：这是云端托管智能体的运行时设计，与端侧无关；但会话日志、执行沙箱与推理循环解耦、凭证隔离的思路可迁移到端侧智能体运行时。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">Anthropic 介绍托管长任务智能体服务 Managed Agents 的架构：把模型循环、执行沙箱和会话记录拆开，各自能独立替换和故障恢复。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">把模型循环从容器里拆出来后，首个 token 时延的中位数下降约 60%，p95 下降超过 90%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">像操作系统虚拟化硬件一样把智能体拆成三层：只追加的会话事件日志、调用模型并分发工具调用的循环（harness）、运行代码的沙箱；沙箱通过统一的 execute 接口当作工具调用，挂了就重建，harness 崩溃后从会话日志恢复；Git 令牌和 MCP 凭证经代理和保险库注入，不进沙箱。</span></div>
+<div class="score-reason">评分依据：这是云端托管智能体的运行时设计，与端侧部署无直接关系；但会话日志、执行沙箱与推理循环解耦、凭证隔离的思路可迁移到端侧智能体运行时，并给出了时延改善数据。</div>
 <div class="source"><a href="https://www.anthropic.com/engineering/managed-agents" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

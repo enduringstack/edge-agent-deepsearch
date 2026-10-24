@@ -8,7 +8,7 @@
 <div class="meta"><span class="score">11</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-04-15 · ml-explore / GitHub</div>
 <div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:高效推理</span><span class="tag">硬件:Apple-Silicon</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">苹果 MLX 框架把多台 Mac 之间的分布式通信库 JACCL 重构成可独立编译的库，用于通过雷雳 5 直连多台 Mac 做张量并行推理和训练。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">本次提交新增约 2279 行、删除 414 行代码；库说明称借助雷雳 RDMA，通信延迟比传统基于 TCP 的方案低一个数量级，但提交本身没有给出实测基准数字。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">利用 macOS 26.2 引入的雷雳 RDMA（库说明称延迟比传统 TCP 低一个数量级），提供全连接网格和环形两种拓扑，实现 all_sum、all_gather 等集合通信和点对点收发，并补了 TCP 后端与基准示例。</span></div>
 <div class="score-reason">评分依据：面向个人电脑集群的本地大模型推理通信层，与 PC 端侧推理直接相关；属于通信库重构，亮点是把雷雳 RDMA 用于多台 Mac 互联。</div>
 <div class="source"><a href="https://github.com/ml-explore/mlx/commit/4400504ad5041efbc171b350559a6c9adf8abd0c" target="_blank" rel="noopener">查看原文 →</a></div>

@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Selective Correlation Based Knowledge Distillation for Ground Reaction Force Estimation</h1>
 <div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-04-27 · Eun Som Jeon; Jisoo Lee; Huisu Lim; Omik M. Save; Hyunglae Lee; Pavan Turaga / arXiv</div>
-<div class="tags"><span class="tag">方向:蒸馏</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">用鞋垫传感器估计地面反作用力可以替代昂贵测力台，但深度模型太大不适合便携设备实时运行；这篇用选择性相关知识蒸馏得到小模型。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在提取师生模型相关性图时只选取考虑时间特性的关键特征做知识迁移，让紧凑学生模型学到教师模型的时序关联。</span></div>
-<div class="score-reason">评分依据：目标是让可穿戴设备能跑实时步态分析的小模型，与端侧相关，但没有真机部署测量；蒸馏方法属常见路线的改进。</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">硬件:CPU</span><span class="tag">硬件:Apple-Silicon</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用鞋垫传感器估计走路时的地面反作用力，可以替代昂贵的实验室测力台，但精度高的深度模型太大，难以在便携设备上实时跑；这篇用改进的知识蒸馏把大模型压成小模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">学生模型约 0.25M 参数，比教师模型（1.00M~1.58M）小 15.9~25.1 倍；以 I3D 教师、200 帧窗口为例，蒸馏后学生模型的 RMSE 从直接训练的 6.253 降到 5.784，优于普通 KD（6.293）和 DIST（6.098）等基线。在 Apple M2 笔记本 CPU 上单样本推理 4.93 毫秒，教师模型为 10.83~17.76 毫秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">提取师生模型之间的相关性图时，只挑选考虑了时间特性的关键特征来迁移知识，同时对齐中间层特征和压缩表示，让小模型学到大模型的时序关联。</span></div>
+<div class="score-reason">评分依据：目标是让可穿戴设备上能实时做步态分析，并在笔记本 CPU 上测了推理时延，但没有在可穿戴或手机硬件上实测，端侧相关度中等；蒸馏方法是在现有相关性蒸馏上的改进。作者来自首尔科技大学和亚利桑那州立大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2605.00888" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

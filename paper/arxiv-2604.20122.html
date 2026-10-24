@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Adaptive Conformal Anomaly Detection with Time Series Foundation Models for Signal Monitoring</h1>
 <div class="meta"><span class="score">6</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-04-22 · Natalia Martinez Gil; Fearghal O'Donncha; Wesley M. Gifford; Nianjun Zhou; Dhaval C. Patel; Roman Vaculin / arXiv</div>
-<div class="tags"><span class="vendor-tag">IBM</span><span class="tag">应用:fault-detection</span></div>
+<div class="tags"><span class="vendor-tag">IBM</span><span class="tag">方向:测试时自适应</span><span class="tag">应用:fault-detection</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">直接用现成的时间序列基础模型做信号监控的异常检测，不需要再微调，输出的异常分可以直接读成误报率。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">拿基础模型的预测结果，用加权分位数的保形预测给出上下界，并根据过往预测自适应学习权重，在数据分布漂移时仍能稳定控制误报率。</span></div>
-<div class="score-reason">评分依据：方法声称适合在资源受限环境快速部署，但核心是统计校准而非推理优化，与端侧 AI 部署关系较弱；属于已有保形预测思路的工程整合。公司归属依据 PDF 首页作者署名 IBM Research（ibm.com 邮箱）。 作者机构依据：arXiv PDF 首页署名 IBM（PDF 首页作者署名 IBM Research，通讯邮箱为 ibm.com）。</div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 7 个单变量基准上，配合 TiRex 时 PA-F1 达 0.925、配合 Chronos 时为 0.912，高于同一模型下的保形基线（0.878/0.863）和高斯基线（约 0.71），也高于半监督的 CNN（0.858）；校准误差约 0.025，明显低于各基线。单块 V100 上每样本每特征约 0.025 秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">拿基础模型对未来 15 步的预测，用加权分位数保形预测给出上下界，并根据过往预测在线学习权重，在数据分布漂移时仍能稳定控制误报率。</span></div>
+<div class="score-reason">评分依据：方法声称适合在资源受限环境快速部署，但核心是统计校准而非推理优化，实验也在 V100 上完成，与端侧 AI 部署关系较弱；属于已有保形预测思路的改进。代码已开源。 作者机构依据：arXiv PDF 首页署名 IBM（PDF 首页作者署名 IBM Research，通讯邮箱为 ibm.com）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.20122" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

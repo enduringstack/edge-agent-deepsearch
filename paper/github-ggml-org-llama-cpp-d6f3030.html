@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>ggml-org/llama.cpp: ggml: backend-agnostic tensor parallelism (experimental) (#19378)</h1>
 <div class="meta"><span class="score">9</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-04-09 · ggml-org / GitHub</div>
-<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:高效推理</span><span class="tag">硬件:GPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">llama.cpp 合入实验性的张量并行功能，让一个模型的权重和 KV cache 可以按张量切分到多块 GPU 上同时计算，而不只是按层串行切分。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在 ggml 里新增一个与具体后端无关的“元后端”，把张量按维度切到多设备并做 AllReduce，可选 NCCL/RCCL 通信；命令行新增 tensor 切分模式，已支持 GPT-OSS、Qwen3 MoE、Qwen3.5 和 Gemma 4 等模型。</span></div>
-<div class="score-reason">评分依据：llama.cpp 是端侧推理的主力引擎，但这次改动面向多 GPU 工作站和服务器的并行推理，与手机等单设备场景关系有限。后端无关的张量并行设计在工程上有一定新意，仍为实验功能。</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:高效推理</span><span class="tag">硬件:GPU</span><span class="tag">模型:Llama</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">llama.cpp 合入实验性的张量并行：一个模型的权重和 KV cache 可以按张量切到多块 GPU 上同时算，而不只是按层串行切分。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 2 张 RTX 4090 上，张量切分相对按层切分的生成速度：Llama 8B F16 提升 1.60 倍、Gemma 4 31B Q8_0 提升 1.53 倍；4 张 RTX 4090 上 Llama 8B F16 达 2.40 倍、Llama 70B Q4_K_M 达 2.27 倍，64K 上下文时最高 2.70 倍。但短上下文的提示词处理普遍变慢到 0.25-0.6 倍，MoE 模型生成也可能变慢。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 ggml 里加一个与具体后端无关的“元后端”，把多块普通后端包装成一个设备，从计算图推断张量怎么切，只在需要处做 AllReduce 同步（推荐 NCCL）；命令行用 --split-mode tensor 开启，要求开 FlashAttention 且不能量化 KV cache。</span></div>
+<div class="score-reason">评分依据：llama.cpp 是端侧推理主力引擎，但这次改动面向多 GPU 工作站，与手机等单设备场景关系有限；后端无关的张量并行设计有工程新意，仍是实验功能且有显存泄漏等已知问题。</div>
 <div class="source"><a href="https://github.com/ggml-org/llama.cpp/commit/d6f3030047f85a98b009189e76f441fe818ea44d" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

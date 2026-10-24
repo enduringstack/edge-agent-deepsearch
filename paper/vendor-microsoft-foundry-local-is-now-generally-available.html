@@ -7,9 +7,9 @@
 <h1>Foundry Local is now Generally Available</h1>
 <div class="meta"><span class="score">14</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-04-09 · Microsoft / Microsoft</div>
 <div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:推理框架</span><span class="tag">方向:编译部署</span><span class="tag">方向:工具调用</span><span class="tag">应用:语音</span><span class="tag">硬件:NPU</span><span class="tag">硬件:Apple-Silicon</span><span class="tag">模型:Phi</span><span class="tag">模型:Qwen</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">微软的本地 AI 运行时 Foundry Local 正式发布，开发者可以把聊天和语音模型直接打包进应用，完全在用户设备上运行，不依赖云端。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">微软的本地 AI 运行时 Foundry Local 正式发布：开发者可以把聊天、语音转写和工具调用能力直接打包进应用，完全在用户设备上运行。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">SDK（C#、Python、JS、Rust）构建时自动打包 Foundry Local Core 和 ONNX Runtime，负责模型下载、载入、推理和卸载；首次运行按设备硬件下载优化过的模型，Windows 上经 Windows ML 自动选 GPU/NPU/CPU，macOS 上走 Apple Silicon 的 Metal；接口兼容 OpenAI 格式，同一套 SDK 支持语音转写、工具调用和聊天。</span></div>
-<div class="score-reason">评分依据：这是面向 Windows、macOS 和 Linux 设备的端侧推理运行时正式版，直接服务本地大模型应用部署，端侧相关度高。它提供推理和工具调用接口，但本身不包含在设备端运行的智能体闭环，判为非端侧 Agent；以工程整合为主。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">C#、Python、JS、Rust 四种 SDK 在构建时自动打包 Foundry Local Core 和 ONNX Runtime，负责模型下载、载入、推理和卸载；首次运行按设备硬件拉取优化过的模型，Windows 上经 Windows ML 自动选 GPU/NPU/CPU，macOS 上走 Apple Silicon；接口兼容 OpenAI 格式，支持 Qwen、Phi、Whisper、GPT OSS 等模型。</span></div>
+<div class="score-reason">评分依据：面向 Windows、macOS 和 Linux 设备的端侧推理运行时正式版，直接服务本地大模型应用部署，端侧相关度高；它提供推理和工具调用接口，但本身不包含运行在设备上的智能体闭环，判为非端侧 Agent。博文没有给出包体大小或性能数字，以工程整合为主。</div>
 <div class="source"><a href="https://devblogs.microsoft.com/foundry/foundry-local-ga/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

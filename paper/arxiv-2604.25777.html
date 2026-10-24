@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SpecFed: Accelerating Federated LLM Inference with Speculative Decoding and Compressed Transmission</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-04-28 · Ce Zheng; Xinghan Wang; Jiahong Ning; Yuxuan Shi; Ning Huang; Tingting Yang / ISIT 2026</div>
-<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:联邦学习</span><span class="tag">方向:端云协同</span></div>
+<div class="tags"><span class="tag">方向:投机解码</span><span class="tag">方向:联邦学习</span><span class="tag">方向:端云协同</span><span class="tag">模型:Llama</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">多台边缘节点联合推理大模型（对各自预测加权平均）时，通信是主要瓶颈；SpecFed 用投机解码加压缩传输来提速。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">引入投机解码让各节点并行验证草稿 token，只传输 top-K 概率并在服务器端用两种策略重建分布，同时给出重建误差、聚合偏差和接受率偏差的理论界。</span></div>
-<div class="score-reason">评分依据：投机解码与压缩通信对边缘分布式推理有迁移价值，被 ISIT 2026 接收；摘要只定性说明效果，主要贡献在理论分析。</div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 A800 GPU 上模拟两个工作节点（LLaMA-7B 与 LLaMA-13B）加服务器端 LLaMA-68M 草稿模型，WMT14 数据集上即使每个草稿 token 只上传 1% 的词表概率（3.2 万词表取前 320 个），聚合偏差和接受率偏差仍很小且在理论界之内；论文没有给出端到端吞吐数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">服务器用小模型起草，各节点并行验证草稿 token，只上传 top-K 概率，服务器用重归一化或残差质量再分配两种策略重建分布，并给出重建误差、聚合偏差和接受率偏差的理论界。</span></div>
+<div class="score-reason">评分依据：投机解码与压缩通信对边缘分布式推理有迁移价值（相关度 5）；主要贡献在理论分析，实验只验证了分布误差（贡献 5）。被 ISIT 2026 接收，作者来自鹏城实验室和大连海事大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.25777" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

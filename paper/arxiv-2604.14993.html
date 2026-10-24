@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Serving Chain-structured Jobs with Large Memory Footprints with Application to Large Foundation Model Serving</h1>
-<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-04-16 · Tingyang Sun; Ting He; I-Hong Hou / arXiv</div>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-04-16 · Tingyang Sun; Ting He; I-Hong Hou / arXiv</div>
 <div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">方向:KV cache</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">大模型用流水线并行分到多台服务器上时，怎么放模型块、怎么分配缓存才能让请求最快完成；这篇把它抽象成一个新的调度问题来求解。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">仿真中平均响应时间比现有分布式大模型 serving 资源分配方法降低 8%–83%；在 3 张 A100 切成 9 个 MIG 实例、用 Azure 推理轨迹跑 1000 个 Llama-2-7B 请求的 PETALS 实验中，平均响应时间比原版 PETALS 降低 76.8%，比 BPRR 降低 63.1%。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">把问题建模为“服务器链组合”（块放置加缓存分配），证明 NP 难后给出有性能保证的可扩展近似算法，并配合负载均衡。</span></div>
-<div class="score-reason">评分依据：属云端分布式大模型 serving（相关度 2）；问题抽象和理论保证有一定新意（贡献 5）。摘要只称响应时间显著降低，未给出具体数字。</div>
+<div class="score-reason">评分依据：属云端/分布式大模型 serving（相关度 2）；问题抽象、NP 难证明和带保证的近似算法有一定新意，并在改造后的 PETALS 上实测（贡献 5）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.14993" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

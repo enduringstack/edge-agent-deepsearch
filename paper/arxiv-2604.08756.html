@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Artifacts as Memory Beyond the Agent Boundary</h1>
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-04-09 · John D. Martin; Fraser Mince; Esra'a Saleh; Amy Pajak / arXiv</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:规划推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">从认知科学“环境也能当记忆”的观点出发，论文在强化学习里形式化地证明：某些环境观察（称为痕迹）能减少智能体需要记住的历史信息。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">给出环境充当智能体记忆的数学框架，证明痕迹类观察可降低表示历史所需的信息量，并用观察空间路径的实验验证学到好策略所需的内部记忆减少。</span></div>
-<div class="score-reason">评分依据：属于 Agent 记忆的理论研究，和端侧部署关系很远，只在“减少内部记忆开销”的思路上有启发。理论视角新颖但离工程较远。</div>
+<div class="tags"><span class="tag">方向:记忆</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">借用认知科学里“环境本身也能当记忆”的观点，论文在强化学习框架下给出数学定义并证明：某些能透露过去信息的环境观察（称为“痕迹”）可以减少智能体内部需要记住的历史信息量。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在网格导航仿真中（每组 30 个随机种子），能看到最短路径的线性 Q 学习智能体只用 16 个权重就超过了看不到路径时 64 个权重的表现；看不到路径时，少于 256 个权重的线性智能体无法到达终点；看到随机路径时 256 个权重即胜过无路径的 400 个权重；智能体自己留下、会逐渐消退的足迹在 256 个权重时也出现显著的记忆外化效果（0.05 显著性水平）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">定义“痕迹”为能推断过去的观察，证明含痕迹的历史可以删去观察而不损失对状态的信息；再用“达到同样表现所需内部参数量”衡量记忆外化，在有/无路径的导航环境中对比不同容量的线性 Q 学习和 DQN 智能体。</span></div>
+<div class="score-reason">评分依据：属于智能体记忆的强化学习理论研究，只在简单仿真中验证，和端侧推理部署关系很远，仅“用环境信息替代部分内部记忆、减少模型容量”的思路有启发。理论视角新颖但离工程较远；作者来自 Openmind Research Institute、阿尔伯塔大学、Mila 等，第 2、3、4 作者署名 Cohere Labs Community（Cohere 的开放研究社区，非公司研究部门），故不计公司项目。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.08756" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

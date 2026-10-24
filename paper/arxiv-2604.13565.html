@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-04-15 · Yunkai Dang; Minxin Dai; Yuekun Yang; Zhangnan Li; Wenbin Li; Feng Miao; Yang Gao / arXiv</div>
 <div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">超高分辨率遥感图喂给视觉语言模型时视觉 token 爆炸，UHR-BAT 在固定 token 预算下挑出与问题相关的区域 token。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 XLRS-Bench 上整体加权准确率比 GeoLLaVA-8K 高 0.7%，比 GeoChat 高 22.8%，比 GPT-4o 和 Claude 3.7 Sonnet 分别高 21.0% 和 8.9%，比 LLaVA-OneVision-72B 高 2.9%；在 MME-RealWorld-RS 上平均分比 GeoLLaVA-8K 高 4.92%，比 GPT-4o 高 5.91%。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">用文本引导的多尺度重要性估计给视觉 token 打分，再按区域做保留与合并，压缩冗余 token。</span></div>
-<div class="score-reason">评分依据：视觉 token 压缩对端侧多模态推理有一定借鉴，但场景是遥感、没有涉及设备（相关度 3）；查询引导加区域合并有一定新意（贡献 5）。摘要只称达到最优，未给出具体数字。</div>
+<div class="score-reason">评分依据：视觉 token 压缩对端侧多模态推理有一定借鉴，但场景是遥感、没有涉及设备（相关度 3）；查询引导打分加区域保留合并有一定新意（贡献 5）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.13565" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

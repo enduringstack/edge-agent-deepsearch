@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Edge AI Deployment Beyond Models: A BSP-Aware Systems Framework for Industrial Embedded Platforms</h1>
 <div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-04-20 · Pitchai Muthu M / arXiv</div>
-<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">硬件:Jetson</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一份工业白皮书，主张工业边缘 AI 部署要从板级支持包和系统层面整体规划，而不是最后才把模型打包上板。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">提出硬件、板级支持包/系统适配、运行时与加速、推理应用、运维验证五层框架，并结合 Android、NXP、Jetson、ONNX Runtime、TensorRT 文档讨论。</span></div>
-<div class="score-reason">评分依据：直接讨论嵌入式边缘 AI 部署实践，端侧相关性中等偏上，但属于经验框架，没有实验。PDF 首页作者署名 Advantech。</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">硬件:Jetson</span><span class="tag">硬件:NPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一份工业白皮书，主张在工业嵌入式平台上部署边缘 AI 时，要从板级支持包（BSP）、驱动和硬件接口开始整体规划，而不是模型做完才去“打包上板”。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">作者自己未做实测；以下为综述汇编的已有工作数据：Cidon 等人发现不同手机型号上有 14–17% 的图像分类结果不一致，根源在图像压缩格式和 ISP 处理；FLEdge 指出可靠性要求高的场景里嵌入式硬件可服役 5 年以上。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">提出硬件、BSP/操作系统适配、运行时与加速、推理应用、运维与验证五层框架，结合 Android、NXP i.MX、NVIDIA Jetson、ONNX Runtime、TensorRT 的官方文档，把底层平台工作和可复现性、可诊断性、持续吞吐、现场可靠性这些部署指标对应起来。</span></div>
+<div class="score-reason">评分依据：直接讨论工业嵌入式设备上的边缘 AI 部署工程，端侧相关性中等偏上；但它是经验框架类白皮书，原文明确说明不提供新的实验数据，所列数字全部引自已有文献，贡献偏低。PDF 首页作者署名 Advantech Industrial Computing India（研华），不在大厂名单内，公司归属留空。</div>
 <div class="source"><a href="https://arxiv.org/abs/2605.26119" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

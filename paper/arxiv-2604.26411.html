@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Unifying Runtime Monitoring Approaches for Safety-Critical Machine Learning: Application to Vision-Based Landing</h1>
-<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-04-29 · Mathieu Dario; Florent Chenevier; Kévin Delmas; Joris Guerin; Jérémie Guiochet / arXiv</div>
-<div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">应用:安全</span></div>
+<div class="meta"><span class="score">6</span> <span class="tier company">公司项目</span> <span class="open-badge">开源</span> 2026-04-29 · Mathieu Dario; Florent Chenevier; Kévin Delmas; Joris Guerin; Jérémie Guiochet / arXiv</div>
+<div class="tags"><span class="vendor-tag">Thales</span><span class="tag">方向:安全隐私</span><span class="tag">应用:安全</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">把安全关键场景下机器学习的运行时监控方法统一成三类（运行条件、分布外输入、模型异常行为），并在飞机视觉着陆的跑道检测上做实验。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">按监控对象划分为 ODD、OOD、OMS 三类监控器，用统一的安全指标评估和比较，辅助设计互补的监控组合。</span></div>
-<div class="score-reason">评分依据：关注已部署视觉模型的运行时安全监控，与端侧推理效率关系弱。PDF 首页作者 Mathieu Dario 与 Florent Chenevier 署名 Thales。</div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 2212 张合成跑道图上，YOLOv5-n 检测精度 0.869、召回率 0.781，约 20% 的图像会导致模型出错；三类监控器组合后的安全收益接近各自之和，但可用性代价仍不足以直接用于安全关键系统。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按监控对象划分为 ODD、OOD、OMS 三类监控器：ODD 用飞机位置和姿态核对着陆锥，OOD 用亮度、饱和度等图像统计量，OMS 用模型中间层特征的盒抽象，再用统一的安全收益、残余风险和可用性代价指标比较。</span></div>
+<div class="score-reason">评分依据：关注已部署在机载嵌入式系统中的视觉模型的运行时安全监控，与端侧推理效率关系弱（相关度 2）；统一分类框架和配套评估指标有一定价值（贡献 4）。 作者机构依据：arXiv PDF 首页署名 Thales（首页作者 1 Mathieu Dario 与作者 2 Florent Chenevier 署名 Thales, Toulouse, France）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.26411" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

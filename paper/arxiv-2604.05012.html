@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Comparative Characterization of KV Cache Management Strategies for LLM Inference</h1>
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-04-06 · Oteo Mamo; Olga Kogiou; Hyunjin Yi; Weikuan Yu / arXiv</div>
-<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span><span class="tag">硬件:GPU</span></div>
+<div class="tags"><span class="tag">方向:KV cache</span><span class="tag">方向:评测基准</span><span class="tag">方向:云端serving</span><span class="tag">硬件:H100</span><span class="tag">模型:Llama</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">对比测评 vLLM、InfiniGen、H2O 三种 KV cache 管理框架，看它们在不同请求量、模型规模和稀疏度下的内存与性能取舍。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在统一实验条件下，系统改变请求速率、模型大小和稀疏率，测量延迟、吞吐和显存占用，总结每种框架最适合的使用条件。</span></div>
-<div class="score-reason">评分依据：KV cache 管理是端侧和云端推理共同的瓶颈，测评结论可帮助选型；但属于已有框架的对比实验，实验以服务器 GPU 为主。</div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 4 张 H100 上测 Llama-3.1-8B/70B 和 GPT-OSS-20B：H2O 显存最省，最多降 70%，单位显存吞吐约为 vLLM 的 3 倍，但事实保持率只有 70%-78%，比 vLLM 低 17%-27%；InfiniGen 精度只掉 1%-4%，但批大小 96 时时延是 vLLM 的 14 倍，长输出慢 17 倍；显存充足时 vLLM 吞吐和时延最好。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在统一条件下系统改变请求速率、批大小、上下文长度、模型规模和稀疏预算，测量首 token 时延、吞吐、显存/内存占用和 6 个推理基准上的精度，总结每种框架适用的条件。</span></div>
+<div class="score-reason">评分依据：KV cache 管理是端侧和云端推理共同的瓶颈，测评结论可帮助选型；但属于已有框架的对比实验，全部在服务器 GPU 上完成。作者来自佛罗里达州立大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.05012" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

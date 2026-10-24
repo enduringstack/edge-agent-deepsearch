@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Joint Task Offloading, Inference Optimization and UAV Trajectory Planning for Generative AI Empowered Intelligent Transportation Digital Twin</h1>
 <div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-04-09 · Xiaohuan Li; Junchuan Fan; Bingqi Zhang; Rong Yu; Xumin Huang; Qian Chen / arXiv</div>
-<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">智能交通数字孪生里，无人机要在空中跑扩散模型把路侧传感数据加工成高质量数据。论文联合优化任务卸载、推理步数和无人机航迹，在保真度和时延之间找平衡。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把问题建模成异构多智能体马尔可夫决策过程，提出按顺序更新的异构多智能体 TD3 算法（SU-HATD3）求近似最优解。</span></div>
-<div class="score-reason">评分依据：涉及无人机上的生成式模型推理与卸载决策，属于边缘推理资源分配问题，但只有数值仿真。方法是多智能体强化学习的常规改进。</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:调度服务</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">智能交通数字孪生里，无人机要在空中跑扩散模型，把路侧传感数据加工成高质量数据。论文联合优化任务卸载、推理步数和无人机航迹，在保真度和时延之间找平衡。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">数值仿真（5 架无人机、40 个路侧传感器）中，SU-HATD3 的系统效用比 MADDPG、MATD3、HADDPG 分别高 39%、12.56%、11.8%；平均保真度 97、平均时延 43 秒，基线分别为 80-93 和 47-56 秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把问题建模成异构多智能体马尔可夫决策过程，提出按顺序更新的异构多智能体 TD3 算法（SU-HATD3）求近似最优的卸载、推理步数和飞行轨迹。</span></div>
+<div class="score-reason">评分依据：涉及无人机上的生成式模型推理与卸载决策，属于边缘推理资源分配问题，但只有数值仿真；方法是多智能体强化学习的常规改进。作者来自桂林电子科技大学、广东工业大学等。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.07687" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

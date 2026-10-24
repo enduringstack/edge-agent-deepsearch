@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-04-10 · Yushi Feng; Junye Du; Qifan Wang; Zizhan Ma; Qian Niu; Yutaka Matsuo; Long Feng; Lequan Yu / arXiv</div>
 <div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:评测基准</span><span class="tag">应用:安全</span><span class="tag">硬件:手机</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">CORA 给手机 GUI 智能体加一道“执行前安全闸”，在动作真正执行前判断风险，并给出可由用户设定的统计安全保证。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在自建 Phone-Harm 基准上任务达成率 79.80%、干预 F1 85.29%，比最强零样本把关基线（VLM 当评审，44.21%）高 40 多个点；混合场景下达成率 89.69%，比 UI-TARS-1.5 高 12.41 个点，执行有害动作比例降到 2.19%；给 AutoGLM 套上 CORA 后成功率从 30.0% 升到 40.0%。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">训练一个守护模型估计每步动作的风险，用保形风险控制校准“执行/放弃”阈值，被拒动作交给诊断模型建议确认、反思或中止；另用目标锁定防视觉注入攻击，并发布手机有害操作基准 Phone-Harm。</span></div>
-<div class="score-reason">评分依据：虽属手机 GUI 智能体，但核心贡献是带统计保证的动作安全机制，超出了 GUI 操作本身；智能体由云端视觉语言模型驱动，非端侧运行。</div>
+<div class="score-reason">评分依据：虽属手机 GUI 智能体，但核心贡献是带统计保证的动作安全闸，超出了 GUI 操作本身；智能体由视觉语言模型驱动，论文没有在手机本地运行闭环，不算端侧智能体。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.09155" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

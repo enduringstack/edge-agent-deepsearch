@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Multi-Agent Orchestration for High-Throughput Materials Screening on a Leadership-Class System</h1>
 <div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-04-09 · Thang Duc Pham; Harikrishna Tummalapalli; Fakhrul Hasan Bhuiyan; Álvaro Vázquez Mayagoitia; Christine Simpson; Riccardo Balin; Venkatram Vishwanath; Murat Keçeli / arXiv</div>
-<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">方向:调度服务</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">在超算上用多智能体框架编排大规模材料筛选：一个规划 Agent 拆任务，一群执行 Agent 并行调用模拟工具，解决单 Agent 串行调用工具跑不满超算的问题。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">规划-执行两层结构，执行 Agent 统一通过 MCP 服务器调用 Parsl 工作流引擎；用开源 gpt-oss-120b 在 Aurora 超算上筛选 MOF 材料数据库。</span></div>
-<div class="score-reason">评分依据：完全是超算上的科研 Agent 编排，与端侧部署无关，只在 Agent 工具调用运行时层面有参考。方法是常见的规划-执行多 Agent 组合。</div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">方向:调度服务</span><span class="tag">模型:GPT</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">在超算上用多智能体框架编排大规模材料筛选：一个规划智能体拆任务，一群执行智能体并行调用模拟工具，解决单智能体串行调用工具跑不满超算的问题。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Aurora 超算上，弱扩展从 1 到 256 节点工作流总时长稳定在 5500-8000 秒；5591 种 MOF（11182 次模拟）的强扩展从 8 到 256 节点，效率降到 64.9%；智能体编排开销约 60-90 秒，25 次实验中 4 次失败，成功率 84%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">规划-执行两层结构，执行智能体统一通过 MCP 服务器调用 Parsl 工作流引擎；用开源 gpt-oss-120b 在 Aurora 上筛选 CoRE MOF 数据库中适合空气取水的材料。</span></div>
+<div class="score-reason">评分依据：完全是超算上的科研智能体编排，与端侧部署无关，只在智能体工具调用运行时层面有参考；方法是常见的规划-执行多智能体组合。作者来自阿贡国家实验室。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.07681" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents</h1>
 <div class="meta"><span class="score">9</span> <span class="tier school">学校顶会</span> <span class="open-badge">开源</span> 2026-04-09 · Xinshun Feng; Xinhao Song; Lijun Li; Gongshen Liu; Jing Shao / ACL 2026</div>
-<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">自进化 Agent 通常依赖大模型或多智能体框架，难放到资源受限环境，且只在任务结束才拿到奖励。SEARL 把工具和经验组织成图结构记忆，与策略一起联合优化。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">构建融合规划与执行的结构化工具记忆，作为一种状态抽象帮助在相似情境下复用工具，并利用不同轨迹之间的关联把稀疏的结果奖励变密。</span></div>
-<div class="score-reason">评分依据：论文以资源受限部署为动机，研究 Agent 工具记忆与强化学习的结合，对小模型 Agent 有迁移价值，但没有设备实测。被 ACL 2026 接收，方法有一定新意。</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span><span class="tag">方向:规划推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">想让小模型 Agent 在做题过程中自己攒工具、越用越强，又不想依赖大模型或多智能体框架。SEARL 把 Agent 自己写出的工具和它们之间的调用依赖存成一张“工具图”记忆，并和策略模型一起用强化学习训练。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">基于 Qwen3-4B，在 3 个数学和 4 个多跳问答基准上平均排名 1.43，优于 GRPO（2.43）、DAPO（3.00）、ARPO（3.57）。Bamboogle 准确率 0.304（DAPO 0.248、GRPO 0.160），2Wiki 0.360（DAPO 0.350），AIME24 0.333（与 ARPO 持平，GRPO 为 0.133）；GSM8K 0.862、MATH500 0.682，略低于 GRPO 的 0.887、0.736。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">Agent 先把任务拆成子任务并为每步生成小工具，执行成功的工具登记进图里（工具为节点、执行依赖为边），相似工具会合并；训练时除最终答对的奖励外，还按规划、工具执行等步骤给奖励，并以记忆中的工具为锚把不同轨迹的相同步骤分组算优势，让稀疏奖励变密。</span></div>
+<div class="score-reason">评分依据：论文以资源受限部署为动机，让 4B 小模型通过工具记忆获得自进化能力，对端侧小模型 Agent 的工具与记忆设计有借鉴意义，但训练和评测都在 H200 服务器上，没有设备端实测。工具图记忆与策略联合训练有一定新意，已被 ACL 2026 接收；作者来自上海人工智能实验室和上海交通大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.07791" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

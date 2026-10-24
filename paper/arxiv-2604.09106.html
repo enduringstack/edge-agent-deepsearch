@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-04-10 · Mengxin Fu; Yuezun Li / arXiv</div>
 <div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">应用:安全</span><span class="tag">硬件:CPU</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">提出一种基于深度森林的扩散生成图片检测器 DAF，参数少、算力低、不用 GPU 也能部署。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">仅用一颗 Intel i7-12700 CPU 训练和测试，在两种训练设置下平均准确率分别为 99.2% 和 98.9%、AUC 均达 100%，优于 CNNDet、与 DIRE 等深度网络方法相当；在同等条件下比另一森林方法 ForensicsForest 在 LSUN-B 上准确率高 6.3 个点。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">在深度森林框架上动态组装多个森林模块，弥补传统森林模型在特征学习和大规模训练上的不足，替代笨重的深度网络检测器。</span></div>
-<div class="score-reason">评分依据：轻量、无需 GPU 的检测器对资源受限场景有一定意义，但属于图像取证任务，与端侧 AI 推理技术栈关系较弱。</div>
+<div class="score-reason">评分依据：轻量、全 CPU 即可运行的检测器对资源受限场景有一定意义，但属于图像取证任务，与端侧 AI 推理技术栈关系较弱；把深度森林改成可分批训练有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.09106" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

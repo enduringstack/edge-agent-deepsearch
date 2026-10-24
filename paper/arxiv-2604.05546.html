@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Efficient Inference for Large Vision-Language Models: Bottlenecks, Techniques, and Prospects</h1>
-<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-04-07 · Jun Zhang; Yicheng Ji; Feiyang Ren; Yihang Li; Bowen Zeng; Zonghao Chen; Ke Chen; Lidan Shou / ACL 2026 Findings</div>
-<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">方向:KV cache</span><span class="tag">方向:评测基准</span></div>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-04-07 · Jun Zhang; Yicheng Ji; Feiyang Ren; Yihang Li; Bowen Zeng; Zonghao Chen; Ke Chen; Lidan Shou / ACL 2026 Findings</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">方向:KV cache</span><span class="tag">方向:投机解码</span><span class="tag">模型:Qwen</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">一篇关于大型视觉语言模型高效推理的综述，按编码、预填充、解码三个阶段梳理视觉 token 过多带来的瓶颈和对应优化技术。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把优化手段归为压缩信息密度、处理长上下文注意力、突破内存墙三条主线，分析上游决策如何影响下游瓶颈，并给出四个未来方向。</span></div>
-<div class="score-reason">评分依据：视觉语言模型推理效率是端侧多模态部署的核心问题，综述便于快速了解全景；但没有新方法。</div>
+<div class="field"><span class="label">有什么结果</span><span class="text">作者附带的初步实验：在 Qwen2.5-VL-7B 上做混合 KV 压缩，保留 20% 缓存时 KV 显存从 1.73GB 降到 0.40GB，解码时延从 58.94 降到 42.08 毫秒/token，视频问答得分 2.93 对 2.88；放宽投机解码校验后加速比从 1.40/0.97/1.26 倍提到 2.61/2.11/1.80 倍，输出质量保留 81.4%-97.6%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把优化手段归为压缩信息密度、处理长上下文注意力、突破内存墙三条主线，分析上游决策如何影响下游瓶颈，并用小实验支撑四个未来方向。</span></div>
+<div class="score-reason">评分依据：视觉语言模型推理效率是端侧多模态部署的核心问题，综述便于快速了解全景，附带的压缩与投机解码小实验有参考价值；实验在服务器 GPU 上完成。被 ACL 2026 Findings 接收，不算顶会正会。作者来自浙江大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.05546" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

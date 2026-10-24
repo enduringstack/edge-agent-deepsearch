@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-04-12 · Yizhe Zhang; Jianping Li; Liangliang Yin; Zhen Dong; Bisheng Yang / arXiv</div>
 <div class="tags"><span class="tag">应用:机器人</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">AWARE 让窄视场激光雷达无人机通过主动偏航转动扩大观测范围，在人机协同飞行中保持定位稳定。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">仿真场景平均绝对位姿误差 3.41 米，比最好的静态 MPC 基线（4.72 米）降低 27.8%，比被动定速旋转扫描好 84.9%；真机飞行中各场景 RMSE 为 0.0091–0.051 米；在 Intel N305 边缘处理器上决策环路平均 46.90 毫秒，95% 迭代在 81.02 毫秒内完成。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">用可微模型预测控制选择信息增益最大的朝向，再由轻量强化学习策略在线调整控制代价权重，并用安全走廊保证飞行安全。</span></div>
-<div class="score-reason">评分依据：无人机机载算力受限只是背景，工作重点是控制与状态估计而不是 AI 推理部署；其中的强化学习策略只是调参器，不构成端侧智能体闭环。</div>
+<div class="score-reason">评分依据：无人机机载算力受限只是背景，工作重点是控制与状态估计而不是 AI 推理部署（相关度 3）；其中的强化学习策略只是调 MPC 权重的调参器，不构成端侧智能体闭环。主动偏航提升激光雷达可观性有一定新意，并有真机验证（贡献 5）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.10598" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -7,9 +7,9 @@
 <h1>When AI Agents Take Over Phones: How to Monitor on Mobile Devices</h1>
 <div class="meta"><span class="score">7</span> <span class="tier">官方动态</span>  2026-04-08 · Qwen / Qwen</div>
 <div class="tags"><span class="vendor-tag">Qwen</span><span class="tag">方向:安全隐私</span><span class="tag">硬件:手机</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">手机 AI 助理开始替用户操作 App 后，App 的转化率、用户路径和推荐数据会被“非人类操作”污染。阿里云这篇文章讲怎么在安卓端识别这类由 AI 智能体发起的操作。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">手机 AI 助理开始替用户操作 App 后，转化率和用户路径数据会被“非人类操作”污染。阿里云这篇文章讲怎样在安卓端识别由 AI 智能体发起的操作。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">文中先拆解手机智能体“截屏、云端推理、下发操作指令”的工作方式，再从无障碍服务、事件注入和 ADB 输入三类信号入手，借助阿里云 RUM 统计注入事件占比来判断是否为非人类操作。</span></div>
-<div class="score-reason">评分依据：内容直接关于手机智能体生态，但讲的是 App 侧的检测与监控，文中智能体的推理在云端，不涉及端侧推理或端侧 Agent 本身；方法是现有监控能力的应用，未给量化结果。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先拆解手机智能体“截屏上传、云端推理、下发操作指令”的工作方式，再从无障碍服务、事件注入和 ADB 输入三类信号做本地检测，借助阿里云 RUM 统计注入事件占比（例如超过 50% 视为可疑）来判断是否为非人类操作。</span></div>
+<div class="score-reason">评分依据：内容直接关于手机智能体生态，但讲的是 App 侧的检测与监控，文中智能体的推理在云端，不涉及端侧推理或端侧 Agent 本身；方法是现有监控能力的应用，只给了查询阈值示例，没有实测检出率等结果。</div>
 <div class="source"><a href="https://www.alibabacloud.com/blog/when-ai-agents-take-over-phones-how-to-monitor-on-mobile-devices_603012" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

@@ -8,8 +8,8 @@
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-04-15 · Emanuel Teixeira Martins; Rodrigo Moreira; Larissa Ferreira Rodrigues Moreira; Rodolfo S. Villaça; Augusto Neto; Flávio de Oliveira Silva / ISCC 2026</div>
 <div class="tags"><span class="tag">方向:联邦学习</span><span class="tag">方向:蒸馏</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">灾害图像识别中，不同结构的 CNN 难以一起做联邦学习，这篇改为交换类别概率而不是模型权重，实现异步协作。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 AIDER 灾害图像数据集上，EfficientNet+MobileNetV2+ResNet 三模型概率集成准确率 98.22%，与联邦训练的 ResNet/EfficientNet（98.13%）相当；每个模型的通信量约 15 万字节，而联邦训练 ResNet 需传输约 2.56 亿字节，差距超过三个数量级。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">各节点异步上传类别概率向量，汇总后做概率集成，并通过反馈蒸馏回各本地模型，允许网络结构各不相同。</span></div>
-<div class="score-reason">评分依据：面向资源受限场景的联邦协作，与端侧有间接关系（相关度 3）；概率集成替代权重聚合属已有思路（贡献 4）。摘要只称通信量降低数个数量级，未给出具体数字；会议为 IEEE ISCC 2026，非顶会。</div>
+<div class="score-reason">评分依据：面向资源受限边缘节点的联邦协作，与端侧有间接关系（相关度 3）；概率集成替代权重聚合属已有思路（贡献 4）。会议为 IEEE ISCC 2026，非顶会。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.14450" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

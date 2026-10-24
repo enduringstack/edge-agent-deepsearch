@@ -7,9 +7,9 @@
 <h1>QAROO: AI-Driven Online Task Offloading for Energy-Efficient and Sustainable MEC Networks</h1>
 <div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span>  2026-04-28 · Yongtao Yao; Yao Yang; Haorui Shi; Canglu Zhu; Miaojiang Chen; Ahmed Farouk / arXiv</div>
 <div class="tags"><span class="tag">方向:端云协同</span><span class="tag">应用:IoT命令</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">面向无线供能移动边缘计算网络的在线任务卸载方法，用带注意力的量子强化学习决定任务在本地算还是卸载到边缘服务器。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在强化学习框架中加入循环网络建模时间变化、用不确定性引导的量化提升探索效率，并把注意力机制引入量子神经网络增强特征表达。</span></div>
-<div class="score-reason">评分依据：讨论的是通用计算任务的边缘卸载决策，并非 AI 模型的端侧推理部署，与本周报主题只有边缘计算层面的弱关联；方法组合较常见且只有仿真。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">面向无线供能移动边缘计算网络的在线任务卸载方法，用带注意力的量子神经网络加强化学习决定每台设备的任务本地算还是卸载到边缘服务器。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">仿真中 30 台设备场景下，RNN+不确定性量化组合的平均归一化计算速率达 0.998，高于 RNN+原有量化的 0.997；RNN 方案收敛后损失 0.002，约为 DNN 方案（0.004 到 0.006）的一半，每个信道的平均决策时间约 0.013 秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在经典 DROO 框架上用两层 GRU 建模信道时间变化，用不确定性引导的量化生成多样候选动作，并在 8 量子比特变分电路后接多头注意力增强特征表达。</span></div>
+<div class="score-reason">评分依据：讨论的是通用计算任务的边缘卸载决策，并非 AI 模型的端侧推理部署，与本周报只有边缘计算层面的弱关联（相关度 2）；方法组合较常见且只有仿真（贡献 3）。通讯作者邮箱为广西大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.25740" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

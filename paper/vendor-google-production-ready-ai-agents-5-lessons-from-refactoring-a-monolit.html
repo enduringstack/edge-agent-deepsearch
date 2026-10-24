@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Production-Ready AI Agents: 5 Lessons from Refactoring a Monolith</h1>
-<div class="meta"><span class="score">3</span> <span class="tier">官方动态</span>  2026-04-21 · Google / Google</div>
-<div class="tags"><span class="vendor-tag">Google</span><span class="tag">方向:规划推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Google 工程师复盘如何把一个脆弱的单体销售调研 Agent 改造成可上线的生产系统，总结 5 条经验。</span></div>
+<div class="meta"><span class="score">3</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-04-21 · Google / Google</div>
+<div class="tags"><span class="vendor-tag">Google</span><span class="tag">方向:工具调用</span><span class="tag">应用:RAG</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">Google 工程师复盘如何把一个脆弱的单体销售调研智能体改造成可上线的生产系统，总结 5 条经验。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把线性单体循环拆成由编排器调度的多个子 Agent，并逐一处理限流、死循环、硬编码数据和静默失败等问题。</span></div>
-<div class="score-reason">评分依据：云端 Agent 的工程实践分享，与端侧无关，属于常见工程经验总结。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 ADK 把线性单体循环拆成由编排器顺序调度的 5 个子智能体，用 Pydantic 结构化输出替代提示里的格式说明，用爬虫加向量混合检索替代写死的 12 个案例，再接入 OpenTelemetry 追踪和退避重试。</span></div>
+<div class="score-reason">评分依据：云端智能体的工程实践分享，与端侧无关，属于常见工程经验总结。文章只描述改造前后做法，没有给出时延、成本或成功率对比，所以效果写未报告。</div>
 <div class="source"><a href="https://developers.googleblog.com/production-ready-ai-agents-5-lessons-from-refactoring-a-monolith/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

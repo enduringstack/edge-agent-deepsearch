@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>CIR: Lightweight Container Image for Cross-Platform Deployment</h1>
-<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-04-12 · Fengzhi Li; Xiaohui Peng; Qingru Xu; Qisong Shi; Tuo Zhou; Yongxuan Dai; Yifan Wang; Ninghui Sun / arXiv</div>
-<div class="tags"><span class="tag">方向:编译部署</span></div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-04-12 · Fengzhi Li; Xiaohui Peng; Qingru Xu; Qisong Shi; Tuo Zhou; Yongxuan Dai; Yifan Wang; Ninghui Sun / arXiv</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">硬件:Jetson</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">CIR 是一种新的容器镜像格式，让 Python、R 机器学习应用只打一个跨平台镜像，到云、边缘等目标平台再按需构建依赖。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">同一个 CIR 镜像可部署到多种平台，镜像体积比打包全部依赖的传统镜像小 95%；构建时间缩短 76–86%，网络流量减少 44–50%，部署速度比拉取预构建镜像快 40–60%，优于 Docker、Buildah、Apptainer；在 Jetson Orin NX 边缘设备上构建 YOLO11 项目仅需 26.4 秒。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">镜像里只记录应用直接依赖的标识，平台相关的构建推迟到部署阶段由懒构建器完成，从而减少存储和网络开销。</span></div>
-<div class="score-reason">评分依据：解决边缘与云之间机器学习应用的跨平台部署问题，与模型推理优化关系较远。属于工程方案改进。</div>
+<div class="score-reason">评分依据：解决边缘设备与云之间机器学习应用的跨平台部署问题，实验包含 Jetson Orin NX 边缘设备，但与模型推理优化本身关系较远；“延后构建”的镜像格式是有实用价值的工程改进。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.10411" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

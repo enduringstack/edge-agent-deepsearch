@@ -9,7 +9,7 @@
 <div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:量化</span><span class="tag">硬件:Apple-Silicon</span><span class="tag">硬件:GPU</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">苹果开源数组计算框架 MLX 发布 0.31.2 版，扩大 CUDA 上量化矩阵乘的支持，并允许多个线程各自独立地调用 MLX。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">为 CUDA 后端补齐 fp/int4 量化矩阵乘、流水线化和回退实现，新增 CUDA FFT；每个线程拥有自己的默认流和命令编码器以支持多线程；Metal 端为小批量量化矩阵乘加入 split-K 优化。</span></div>
-<div class="score-reason">评分依据：MLX 是 Apple Silicon 本地跑大模型的主力框架，量化矩阵乘和多线程改进对本地推理有用；但本版重点在 CUDA 后端和工程修复，属于常规迭代。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">为 CUDA 后端补齐 fp/int4 及 3/5/6 比特量化矩阵乘、流水线化和回退实现，新增 CUDA FFT；每个线程拥有自己的默认流和命令编码器以支持多线程；Metal 端为小批量量化矩阵乘加入 split-K 优化。</span></div>
+<div class="score-reason">评分依据：MLX 是 Apple Silicon 本地跑大模型的主力框架，量化矩阵乘和多线程改进对本地推理有用；但本版重点在 CUDA 后端和工程修复，发布说明没有性能数字，所以效果写未报告。</div>
 <div class="source"><a href="https://github.com/ml-explore/mlx/releases/tag/v0.31.2" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

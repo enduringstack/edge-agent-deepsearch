@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AutoAdapt: Automated domain adaptation for large language models</h1>
-<div class="meta"><span class="score">8</span> <span class="tier">官方动态</span>  2026-04-22 · Microsoft / Microsoft</div>
-<div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:规划推理</span><span class="tag">应用:RAG</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">微软研究院提出 AutoAdapt：自动帮大模型做领域适配，在时延、隐私、成本等部署约束下选出该用 RAG 还是微调，以及怎么调参。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">用“适配配置图”刻画所有合法的适配流程组合，由规划 Agent 按任务和约束选择并排列步骤，再用预算感知的 AutoRefine 循环在限定开销内调优超参数。</span></div>
-<div class="score-reason">评分依据：考虑了硬件、时延和隐私约束，思路可迁移到资源受限部署，但本身针对云端大模型适配；把领域适配当成约束规划问题来自动化有一定新意。</div>
+<div class="meta"><span class="score">8</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-04-22 · Microsoft / Microsoft</div>
+<div class="tags"><span class="vendor-tag">Microsoft</span><span class="tag">方向:规划推理</span><span class="tag">应用:RAG</span><span class="tag">方向:云端serving</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">微软研究院提出 AutoAdapt：自动帮大模型做领域适配，在时延、硬件、隐私、成本等部署约束下选出该用 RAG 还是微调，以及怎么调参。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在推理、问答、代码、分类和云故障诊断等任务上，成功率和归一化性能分均优于对比基线；带来的额外开销约为 30 分钟时间和 4 美元成本。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用“适配配置图”刻画所有合法的适配流程组合，由规划智能体按任务和约束选择并排列步骤，再用预算感知的 AutoRefine 循环在限定开销内挑选下一组实验、调优超参数。</span></div>
+<div class="score-reason">评分依据：考虑了硬件、时延和隐私约束，思路可迁移到资源受限部署的选型，但本身针对云端大模型适配；把领域适配当成约束规划问题来自动化有一定新意，框架已开源。</div>
 <div class="source"><a href="https://www.microsoft.com/en-us/research/blog/autoadapt-automated-domain-adaptation-for-large-language-models/" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

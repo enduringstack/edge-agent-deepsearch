@@ -7,9 +7,9 @@
 <h1>Mesh Memory Protocol: Semantic Infrastructure for Multi-Agent LLM Systems</h1>
 <div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-04-21 · Hongwei Xu / arXiv</div>
 <div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:工具调用</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">多个大模型 Agent 跨天、跨会话协作时，需要互相共享和取舍对方的“想法”。Mesh Memory Protocol 定义了 Agent 之间共享记忆的语义层协议。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">每条记忆用固定 7 字段结构表示；接收方按自身角色逐字段评估取舍；用内容哈希记录来源血缘以识别回声；只存储接收方自己理解后的版本而非原始消息。</span></div>
-<div class="score-reason">评分依据：关注 Agent 记忆与多智能体协作的运行时协议，与端侧 Agent 记忆有关联，但示例中 Agent 依赖云端大模型，没有设备端闭环证据。协议设计有一定新意，但只有三个生产部署的描述，缺少量化评测。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">多个大模型智能体跨天、跨会话协作时，需要互相共享和取舍对方的“想法”。Mesh Memory Protocol 定义了智能体之间共享记忆的语义层协议。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在一次 14 轮训练数据生成任务中，三个角色分工的 Claude 智能体共产出 3833 条原始样本，经自动关卡保留 2998 条（78.2%），各轮数量与预注册目标偏差在 ±5% 内，修复后各轮平均通过率 98.5%；作者说明这是部署报告而非基准评测。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">每条记忆用固定 7 字段结构表示；接收方按自身角色逐字段评估取舍；用内容哈希记录来源血缘以识别回声；只存储接收方自己理解后的版本而非原始消息，会话重启后据此恢复上下文。</span></div>
+<div class="score-reason">评分依据：关注智能体记忆与多智能体协作的运行时协议，参考部署里有 iOS 音乐应用作为网格节点，但各智能体都依赖云端大模型，没有设备端智能体闭环证据。协议设计有一定新意，但只有单个初创团队的部署报告。作者署名 SYM.BOT 小型初创公司，公司归属留空。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.19540" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

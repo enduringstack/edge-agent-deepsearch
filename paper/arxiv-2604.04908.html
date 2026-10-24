@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>HI-MoE: Hierarchical Instance-Conditioned Mixture-of-Experts for Object Detection</h1>
 <div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-04-06 · Vadim Vashkelis; Natalia Trukhina / arXiv</div>
-<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:模型架构</span><span class="tag">方向:多模态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">MoE 在视觉中大多按整张图或图块路由，和目标检测“以物体为单位”的特点不匹配。HI-MoE 为 DETR 类检测器设计了先选场景专家、再给每个物体查询分配专家的两级路由。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">轻量的场景路由器先选出与场景相符的一组专家，实例路由器再把每个物体查询分给其中少数几个专家，保持稀疏计算。</span></div>
-<div class="score-reason">评分依据：条件计算能节省推理开销，但论文关注检测精度，没有效率或部署评估，与端侧关联较弱；目前为初稿性质。</div>
+<div class="tags"><span class="tag">方向:MoE</span><span class="tag">方向:模型架构</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">MoE 在视觉中大多按整张图或图块路由，和目标检测“以物体为单位”的特点不匹配。HI-MoE 给 DETR 类检测器设计了先选场景专家、再给每个物体查询分配专家的两级路由。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">COCO 验证集上 AP 53.0，比稠密的 DINO 基线高 1.7，小目标 AP 从 32.1 升到 35.4，只多约 200 万参数，计算量 282 对 280 GFLOPs；每个查询激活 2 个专家时 V100 时延 32 毫秒。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">轻量场景路由器先选出与场景相符的一组专家，实例路由器再把每个物体查询分给其中少数几个专家，保持稀疏计算。</span></div>
+<div class="score-reason">评分依据：条件计算有助于控制推理开销，但论文关注检测精度，只在 V100 上报了时延，没有端侧部署评估，与端侧关联较弱；目前是初稿性质。作者署名为独立研究机构，未出现大厂。</div>
 <div class="source"><a href="https://arxiv.org/abs/2604.04908" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>
