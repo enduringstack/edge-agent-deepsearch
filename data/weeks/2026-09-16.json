@@ -2971,10 +2971,47 @@
       "detail": null,
       "updated_at": "2026-09-23T00:51:19.540266+00:00",
       "affiliation_evidence_url": ""
+    },
+    {
+      "id": "vendor-vivo-vivo-ai-7-4",
+      "title": "vivo AI战略再进阶 原系统7与蓝河操作系统4全面升级",
+      "title_zh": "vivo 原系统 7 与蓝心 Harness",
+      "abstract": "vivo 开发者大会发布原系统 7 和新一代蓝心大模型矩阵：端侧的 BlueLM-Nano 负责实时感知和个人记忆，系统级蓝心 Harness 把 6000 多项原子技能变成智能体可调用的工具，复杂跨应用任务再交给云端模型。",
+      "effects": "官方称蓝心 Harness 把 6000 多项原子技能转成智能体工具、支持超过万种任务；面向手机长程复杂任务的端侧蓝心 30B MoE 仍在预研。系统侧给出导出 10 分钟 4K 60 帧视频提速 16% 等数字，智能体本身没有成功率或时延数据。",
+      "mechanism": "模型分三层：端到端语音模型 BlueLM-RealTime、跑在手机上的 BlueLM-Nano（融合屏幕、图像、视频、文本和文件做实时感知与个人记忆）、处理跨设备跨应用复杂任务的云端模型；蓝心 Harness 与系统内核深度集成，把感知、记忆、规划和执行串成闭环，由新版蓝心小 V Pro 拆解任务并跨应用、跨设备执行。",
+      "paper_url": "https://www.vivo.com.cn/brand/news/detail?id=1389&type=0",
+      "date": "2026-09-16",
+      "score": 13,
+      "score_relevance": 8,
+      "score_contribution": 5,
+      "score_reason": "官方明确端侧模型在手机上承担感知和个人记忆，智能体调度框架集成在系统内核里，复杂任务才上云，属于端云协同的手机智能体（相关度 8）。以系统集成和能力规模为主，没有公布智能体效果数字，30B 端侧 MoE 还在预研（贡献 5）。",
+      "source_tier": "官方动态",
+      "open_source": false,
+      "tags": [
+        "方向:端侧agent",
+        "方向:端云协同",
+        "方向:记忆",
+        "方向:工具调用",
+        "硬件:手机"
+      ],
+      "edge_agent_scope": "手机",
+      "edge_agent_evidence": "官方新闻稿说明端侧模型 BlueLM-Nano 在手机上做实时感知和个人记忆，蓝心 Harness 与系统内核集成、在手机上串起感知、记忆、规划和执行并调用 6000 多项原子技能，只有复杂跨应用任务交给云端模型。",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "vivo",
+      "vendors": "vivo",
+      "affiliation_evidence_url": "",
+      "candidate_source": "",
+      "candidate_ref": "",
+      "venue": "vivo",
+      "recommendation": "推荐",
+      "recommendation_reason": "手机厂商少有地把端云分工讲清楚：记忆和感知由端侧 BlueLM-Nano 在本机完成，调度框架进系统内核并把 6000 多项系统能力变成智能体工具，是观察手机系统级智能体落地形态的一手样本。",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": ""
     }
   ],
   "weekly": {
-    "overview": "本周端侧 AI 动态（09-16~09-21）：主线是端侧智能体拿到第一份官方基准成绩，AI 优先笔记本同时落地。厂商与模型：9 月 16 日 NVIDIA 公布 TensorRT Edge-LLM 在单块 Jetson AGX Thor 上跑完 MLPerf 边缘智能体基准，Qwen3.6-27B 稳定 52.33 token/s，1007 轮负载比 llama.cpp 参考实现快 6.4 倍。9 月 21 日谷歌发布内置 Gemini 的 Googlebook，把助手做进笔记本交互层；联发科同日推出 3nm 的天玑 CX C10 Max，NPU 算力最高 55 TOPS。运行时：ExecuTorch v1.5.0 扩成 C++ SDK 并加强手机与嵌入式后端，OpenVINO 2026.4.0 扩大 NPU 可跑的生成式模型。端侧智能体：一项离线设备端助手研究实测工具路由，检索器对字面请求 164 条选对 162 条，改写请求只对 85 条；MCP-GRANITE 用 9 个本地模型跑了 8748 次试验，评测 MCP 工具拆多细最合适；LEAP-NBV 把下一最佳视角规划整体放到 Jetson Xavier NX 上，3.6 FPS、每帧 2.6 焦耳。研究集中攻内存墙：TierKV 在三款手机 SoC 上把预填吞吐提升最多 17.6 倍、常驻 KV 减少 12.5%–34%；Edge0 从固态硬盘流式加载专家，在 24GB 显存的机器上让 350 亿参数 MoE 跑到每秒 20 token、峰值活跃内存 3GiB。硬件：Microchip 9 月 21 日完成收购边缘 AI 芯片商 Hailo；Axelera Europa AIPU 开始出货，厂商称每瓦 token 最高为部分 GPU 方案的 6 倍。社区：Cactus Needle 3 只有 8–29MB，主打手机与可穿戴上的工具调用；MacStories 评测 M5 Ultra Mac Studio，称生成速度比 M3 Ultra 平均快约 70%（评测者口径）。",
+    "overview": "本周端侧 AI 动态（09-16~09-21）：主线是端侧智能体拿到第一份官方基准成绩，AI 优先笔记本同时落地。厂商与模型：9 月 16 日 NVIDIA 公布 TensorRT Edge-LLM 在单块 Jetson AGX Thor 上跑完 MLPerf 边缘智能体基准，Qwen3.6-27B 稳定 52.33 token/s，1007 轮负载比 llama.cpp 参考实现快 6.4 倍。9 月 21 日谷歌发布内置 Gemini 的 Googlebook，把助手做进笔记本交互层；联发科同日推出 3nm 的天玑 CX C10 Max，NPU 算力最高 55 TOPS。运行时：ExecuTorch v1.5.0 扩成 C++ SDK 并加强手机与嵌入式后端，OpenVINO 2026.4.0 扩大 NPU 可跑的生成式模型。端侧智能体：一项离线设备端助手研究实测工具路由，检索器对字面请求 164 条选对 162 条，改写请求只对 85 条；MCP-GRANITE 用 9 个本地模型跑了 8748 次试验，评测 MCP 工具拆多细最合适；LEAP-NBV 把下一最佳视角规划整体放到 Jetson Xavier NX 上，3.6 FPS、每帧 2.6 焦耳。研究集中攻内存墙：TierKV 在三款手机 SoC 上把预填吞吐提升最多 17.6 倍、常驻 KV 减少 12.5%–34%；Edge0 从固态硬盘流式加载专家，在 24GB 显存的机器上让 350 亿参数 MoE 跑到每秒 20 token、峰值活跃内存 3GiB。硬件：Microchip 9 月 21 日完成收购边缘 AI 芯片商 Hailo；Axelera Europa AIPU 开始出货，厂商称每瓦 token 最高为部分 GPU 方案的 6 倍。社区：Cactus Needle 3 只有 8–29MB，主打手机与可穿戴上的工具调用；MacStories 评测 M5 Ultra Mac Studio，称生成速度比 M3 Ultra 平均快约 70%（评测者口径）。 另据媒体报道（尚无合规一手来源，仅供参考）：09-16 努比亚发布“第二代豆包手机”NaviX Ultra，号称“全球首款 AI 智能体手机”，由中兴与字节跳动联合研发，豆包手机助手一句话跨应用执行任务，侧边 AI 键带指纹鉴权，5999 元起（据 IT之家报道）；09-16 华为“小艺 Work”开启内测，手机、平板、电脑跨端下发任务，可在本地电脑或云电脑上自主拆解并执行办公、编程和设计任务，09-21 起小艺 Claw 入口升级为小艺 Work（据 IT之家报道与华为小艺官网）；09-17 OPPO 开发者大会发布 ColorOS 17，端侧大模型 On-Device Compute 首发线性注意力架构、原生支持 128K 上下文，内存占用比上代降 48%、能耗优化 55%，同时推出 Persona X 记忆引擎和 Agent Matrix 智能体框架，小布一句话可调用 200 项支付宝服务（据 OPPO 官网新闻稿，页面无日期）。",
     "highlights": [
       {
         "url": "https://developer.nvidia.com/blog/tensorrt-edge-llm-completes-the-mlperf-edge-agentic-benchmark-6-4x-faster-on-jetson-agx-thor/",

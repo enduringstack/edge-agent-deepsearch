@@ -5718,10 +5718,49 @@
       "recommendation_reason": "",
       "detail": null,
       "updated_at": "2026-08-17T02:41:43.357916+00:00"
+    },
+    {
+      "id": "vendor-meta-muse-glimmer-an-open-weight-model-built-for-local-agents",
+      "title": "Muse Glimmer: an open-weight model built for local agents",
+      "title_zh": "Meta 本地智能体模型 Muse Glimmer",
+      "abstract": "Meta 超级智能实验室发布 300 亿参数的开放权重模型 Muse Glimmer，专门为常驻在个人 Mac 或单张消费级显卡上的本地智能体设计，采用 Apache 2.0 许可，无需 API 密钥、请求不离开本机。",
+      "effects": "官方称约 4 比特量化后语言模型部分小于 20GB，可放进 24–32GB 显存/内存，并为 KV cache、视觉编码器和投机解码草稿模型留出余量；默认上下文 128K。官方基准表称其在工具编排、智能体搜索、智能体编程、指令遵循和长上下文记忆上领先，但正文未列出具体分数。",
+      "mechanism": "针对工具调用循环做训练：长序列多次调用时保持参数格式稳定，工具失败时自行诊断并重试；带独立视觉编码器可读截图和文档；随模型附带轻量草稿模型做块式投机解码；提供 GGUF 与 ExecuTorch 量化版本，可经 llama.cpp、Ollama、LM Studio 在本机运行或用 ExecuTorch 部署到手机和边缘设备，并以 OpenClaw 作为本地智能体参考外壳。",
+      "paper_url": "https://developer.meta.com/ai/resources/blog/build-with-muse-glimmer/",
+      "date": "2026-08-12",
+      "score": 16,
+      "score_relevance": 9,
+      "score_contribution": 7,
+      "score_reason": "官方明确以本机常驻智能体为目标，并在 OpenClaw 中演示本地模型自主规划、多工具调用和拒绝破坏性操作，属于 PC 端侧智能体（相关度 9）。开放权重加 Apache 2.0、附带草稿模型和多种端侧量化包，工程完整度高，但正文缺少可核对的基准数字（贡献 7）。",
+      "source_tier": "官方动态",
+      "open_source": true,
+      "tags": [
+        "方向:端侧agent",
+        "方向:工具调用",
+        "方向:量化",
+        "方向:投机解码",
+        "方向:多模态",
+        "硬件:GPU",
+        "硬件:Apple-Silicon"
+      ],
+      "edge_agent_scope": "PC",
+      "edge_agent_evidence": "模型经量化后在单张 24–32GB 消费级显卡或 Mac 上本地运行，OpenClaw 智能体外壳指向本机模型端点，规划、多步工具调用（抓取天气与新闻、定时推送）和高危操作确认都在本机闭环完成，官方称无请求离开本机。",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Meta",
+      "vendors": "Meta",
+      "affiliation_evidence_url": "",
+      "candidate_source": "",
+      "candidate_ref": "",
+      "venue": "Meta",
+      "recommendation": "推荐",
+      "recommendation_reason": "Meta 首个以“常驻本地智能体”为设计目标的开放权重模型，Apache 2.0 许可、量化后小于 20GB、附带草稿模型和 ExecuTorch 包，是本周 PC 端智能体最值得试的底座之一。",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": ""
     }
   ],
   "weekly": {
-    "overview": "本周端侧 AI 动态（08-07~08-13）：主线是本地智能体从模型演示走向可组合的产品与运行时。厂商与模型：NVIDIA 8 月 11 日发布开放权重的 Nemotron 3.5 Lightning（30B MoE）和开源路由库 NeMo Switchyard，面向 RTX PC、Jetson 和 DGX 本地运行长期智能体任务，官方称输出速度最高提升 4 倍、任务完成时间缩短 30%，路由后成本约为单用 Opus 4.8 的三分之一。8 月 12 日荣耀 Robot Phone 把四自由度机械云台、YOYO 多模态感知和跨应用多步执行装进手机，但官方未公布任务成功率或端侧时延；谷歌 Pixel 11 用 Tensor G6 在本地运行新一代 Gemini Nano，Pixel Watch 5 的部分核心操作可离线完成并主动给出可确认的建议。运行时方面，ExecuTorch 1.4、ONNX Runtime 1.29 和 LiteRT 2.2 先后发版，覆盖 Cortex-M、高通 QNN、联发科与 Intel NPU、WebGPU，LiteRT 新 GPU 路径让解码约快 5%。端侧智能体研究：Activity Frames 在一名用户 51 个活跃日、128,756 帧屏幕记录上，用 68 毫秒把单日记录压缩 86 倍，问答准确率 98.4%；Limioryn 把智能体行动延伸到 ESP32、STM32 和 Linux 单板机。手机智能体的短板也很清楚：Android 提示注入实验里 MobileRun 搭配 Gemma4:31B 的攻击成功率达 0.822，SPIEval 最佳模型在 250 项手机个人信息任务上只有 57.3%。硬件：谷歌称 Tensor G6 的 TPU 算力提升 50%，搭配新 Gemini Nano 的端侧任务最高快 3.5 倍。社区：DGX Spark 成为本地智能体实测热点，有用户报告单台跑 Nemotron 3.5 Lightning 约 78.5 tok/s，加草稿模型后约 90.7 tok/s（社区实测口径）。",
+    "overview": "本周端侧 AI 动态（08-07~08-13）：主线是本地智能体从模型演示走向可组合的产品与运行时。厂商与模型：NVIDIA 8 月 11 日发布开放权重的 Nemotron 3.5 Lightning（30B MoE）和开源路由库 NeMo Switchyard，面向 RTX PC、Jetson 和 DGX 本地运行长期智能体任务，官方称输出速度最高提升 4 倍、任务完成时间缩短 30%，路由后成本约为单用 Opus 4.8 的三分之一。8 月 12 日荣耀 Robot Phone 把四自由度机械云台、YOYO 多模态感知和跨应用多步执行装进手机，但官方未公布任务成功率或端侧时延；谷歌 Pixel 11 用 Tensor G6 在本地运行新一代 Gemini Nano，Pixel Watch 5 的部分核心操作可离线完成并主动给出可确认的建议。运行时方面，ExecuTorch 1.4、ONNX Runtime 1.29 和 LiteRT 2.2 先后发版，覆盖 Cortex-M、高通 QNN、联发科与 Intel NPU、WebGPU，LiteRT 新 GPU 路径让解码约快 5%。端侧智能体研究：Activity Frames 在一名用户 51 个活跃日、128,756 帧屏幕记录上，用 68 毫秒把单日记录压缩 86 倍，问答准确率 98.4%；Limioryn 把智能体行动延伸到 ESP32、STM32 和 Linux 单板机。手机智能体的短板也很清楚：Android 提示注入实验里 MobileRun 搭配 Gemma4:31B 的攻击成功率达 0.822，SPIEval 最佳模型在 250 项手机个人信息任务上只有 57.3%。硬件：谷歌称 Tensor G6 的 TPU 算力提升 50%，搭配新 Gemini Nano 的端侧任务最高快 3.5 倍。社区：DGX Spark 成为本地智能体实测热点，有用户报告单台跑 Nemotron 3.5 Lightning 约 78.5 tok/s，加草稿模型后约 90.7 tok/s（社区实测口径）。 另据媒体报道（尚无合规一手来源，仅供参考）：08-08 Chrome 与 Edge 更新文档，下载设备端 AI 模型需预留约 20GB 磁盘空间（据 IT之家报道）；08-10 Cactus 发布 4500 万参数的工具调用模型 Needle 2，单个 14MB 二进制、约 28MB 内存跑完整会话，面向手机、可穿戴和智能家居，Show HN 537 分（据 MarkTechPost 报道）；08-10 微软 PowerToys 0.101 预览版为“高级粘贴”接入 Phi Silica 端侧模型，在带 NPU 的 Copilot+ PC 上本地免费运行，无需配置第三方 API（据 IT之家报道）；08-04~08-18 谷歌 LiteRT-LM 连发 v0.15、v0.16、v0.16.1，集成 Apple Foundation 框架、提供首个 C API 预编译库并加入实验性 YNNPACK 加速（据 GitHub release）；08-11 FastFlowLM 1.0 发布并并入 AMD ROCm 体系，让 Ryzen AI（XDNA2）NPU 本地运行大模型，新增 SmolVLA 支持（据 Phoronix 报道）；08-11 蚂蚁百灵开源 Ling-3.0-tiny（总参 79 亿、激活 13 亿的 MoE），支持在 DGX Spark、Mac mini 本地部署（据 IT之家报道）；08-12 llama.cpp 团队与 Hugging Face 推出约 1MB 的桌面应用 Llama（llama.app），按硬件自动选量化与上下文、一键本地运行开源模型并提供 OpenAI/Anthropic 兼容接口，HN 364 分（据 Hacker News）；08-12 Liquid AI 发布 31 亿参数端侧视觉语言模型 LFM2.5-VL-3B，支持屏幕理解、目标定位、OCR 与工具调用，内存占用低于 3.3GB（据 MarkTechPost 报道）；08-13 小米发布澎湃 OS 4 与基于 MiMo 大模型的超级小爱 2.0，新增可编排复杂任务、跨应用跨设备执行的“专家模式”，08-14 起小米 17 系列、REDMI K90 开始内测（据 IT之家报道）；08-13 地平线“星空”舱驾融合整车智能体芯片经博泰车联方案获头部新能源车企定点，单芯片承载智驾与座舱大模型（据 IT之家报道）。",
     "highlights": [
       {
         "url": "https://www.honor.com/global/news/honor-robot-phone-launch/",

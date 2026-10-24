@@ -4098,10 +4098,46 @@
       "recommendation_reason": "",
       "detail": null,
       "updated_at": "2026-09-22T13:48:59.819527+00:00"
+    },
+    {
+      "id": "arxiv-2609.00111",
+      "title": "Qwen-Drive-1.0: An Initial Step towards a Vision-Language Foundation Model for Autonomous Driving",
+      "title_zh": "",
+      "abstract": "千问团队与华中科技大学推出面向自动驾驶的视觉语言基座模型 Qwen-Drive-1.0：不改动预训练视觉语言模型的结构，在同一个 4B 模型里同时做 3D 感知、驾驶场景问答和运动规划，权重与代码开源。",
+      "effects": "3D 感知在 nuScenes 上 43.95 mAP、地图分割 60.99 mIoU，在 OpenScene 上 43.45 mAP、71.27 mIoU；驾驶场景理解明显超过通用的 Qwen3.5-4B，同时基本保留通用视觉语言能力；运动规划在 NAVSIM 上 PDMS 90.7，在 Waymo 端到端测试集上 RFS 7.91，并在 AlpaSim 闭环中展示了潜力。",
+      "mechanism": "以 Qwen3.5-4B 为共享主干，外挂一个鸟瞰图感知头同时做 3D 检测、占用预测和地图分割，再挂一个用流匹配生成未来轨迹的规划专家；分四个阶段训练（感知头预训练、感知与问答联合训练、规划专家预训练、强化学习），并把驾驶数据和通用图文数据混合以减少遗忘。",
+      "paper_url": "https://arxiv.org/abs/2609.00111",
+      "date": "2026-08-31",
+      "score": 11,
+      "score_relevance": 5,
+      "score_contribution": 6,
+      "score_reason": "4B 规模、统一感知与规划，论文明确以座舱与驾驶共用一块车载算力为部署动机，对车端大模型有直接参考，但没有给出车载芯片上的时延或内存实测（相关度 5）。不改主干、外挂可检查的 3D 感知头和规划专家的做法较新，评测覆盖开环、伪闭环和闭环（贡献 6）。作者机构依据：arXiv PDF 首页署名 Qwen Team（Alibaba 通义千问团队）与华中科技大学。",
+      "source_tier": "公司项目",
+      "open_source": true,
+      "tags": [
+        "方向:多模态",
+        "方向:规划推理",
+        "方向:模型架构",
+        "模型:Qwen"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Xin Zhou; Zongchuang Zhao; Zhibo Yang; Mingsheng Li; Humen Zhong; Shuai Bai; Du Chu; Ruizhe Chen; Zhaohai Li; Jun Tang; Qiuyue Wang; Mingkun Yang; Jiazhao Zhang; Dayiheng Liu; Dingkang Liang; Xiang Bai",
+      "vendors": "Alibaba",
+      "affiliation_evidence_url": "https://arxiv.org/pdf/2609.00111",
+      "candidate_source": "",
+      "candidate_ref": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": ""
     }
   ],
   "weekly": {
-    "overview": "本周端侧 AI 动态（08-26~09-01）：主线是打地基，不是出新品。厂商侧最实的一条是 NVIDIA 与联发科把合作推进到本地 AI 计算，共同做面向消费级 PC 和边缘系统的 Spark 系列芯片；Anthropic 则开放模型硬件标准，把智能体操作物理设备的接口统一起来。研究侧值得看的是真机工作：mzCache 在安卓上治理多任务内存压力，首个 token 等待缩短 2.1 到 5.5 倍；单片机上的前向自适应让整数量化视觉模型在 ESP32-S3 现场纠偏，只多花 8.3 毫焦。安全侧连出两条坏消息：激光探测能从端侧加速器直接读出权重和激活，量化还可能被埋进只在压缩后才激活的后门。能耗侧则有反直觉结论，INT4 会因为把推理链拉长而净增能耗。社区层同样围着本地推理转。",
+    "overview": "本周端侧 AI 动态（08-26~09-01）：主线是打地基，不是出新品。厂商侧最实的一条是 NVIDIA 与联发科把合作推进到本地 AI 计算，共同做面向消费级 PC 和边缘系统的 Spark 系列芯片；Anthropic 则开放模型硬件标准，把智能体操作物理设备的接口统一起来。研究侧值得看的是真机工作：mzCache 在安卓上治理多任务内存压力，首个 token 等待缩短 2.1 到 5.5 倍；单片机上的前向自适应让整数量化视觉模型在 ESP32-S3 现场纠偏，只多花 8.3 毫焦。安全侧连出两条坏消息：激光探测能从端侧加速器直接读出权重和激活，量化还可能被埋进只在压缩后才激活的后门。能耗侧则有反直觉结论，INT4 会因为把推理链拉长而净增能耗。社区层同样围着本地推理转。 另据媒体报道（尚无合规一手来源，仅供参考）：08-27 小鹏第三颗图灵 AI 芯片点亮，第二代 VLA 新版本首推 Master Agent，车端 VLA 与 VLM 驾舱融合，端侧大模型可一句话调度智驾、底盘、座舱等垂直 Agent（据 IT之家报道）；08-30 开源 AI 助手 OpenClaw 发布 2.0（v2026.8.1），简化安装并原生接入本地模型，累计 933 位贡献者、1.6 万个 PR（据 IT之家报道）；09-01 科大讯飞开源星火 X2.5-4B / 1.7B 端侧通用模型，原生支持约 100 万 token 上下文，1.7B 智能家居指令执行正确率 90.3%，兼容 llama.cpp 与 Ollama（据 IT之家报道）；09-01 努比亚 NaviX Ultra“AI 智能体手机”获入网许可、9 月上市，内置豆包手机助手并改为通过应用开放的 MCP 接口操作，而非读屏模拟点击（据 IT之家报道）。",
     "highlights": [
       {
         "url": "https://www.mediatek.com/press-room/nvidia-and-mediatek-deepen-long-standing-partnership-to-build-ai-edge-to-cloud-computing-platforms",

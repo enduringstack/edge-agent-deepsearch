@@ -4535,10 +4535,47 @@
       "recommendation_reason": "",
       "detail": null,
       "updated_at": "2026-09-23T00:48:33.427879+00:00"
+    },
+    {
+      "id": "vendor-nvidia-nvidia-pair-virtual-inference-router-expands-available-compu",
+      "title": "NVIDIA PAIR Virtual Inference Router Expands Available Compute on Your Local Network",
+      "title_zh": "英伟达个人 AI 路由器 PAIR",
+      "abstract": "英伟达开源测试版工具 PAIR：把家里或办公室局域网内的多台电脑当成一个本地推理池，智能体发出的每个推理请求自动交给当时最空闲、装有对应模型的那台机器，不用上云。",
+      "effects": "官方演示：Hermes Desktop 用 Ollama 跑 Qwen 3.6 35B A3B、带 5 个子智能体，单台 RTX Spark 笔记本平均 18 分钟完成，PAIR 把请求分到 RTX Spark 笔记本、DGX Spark 和 RTX 5090 三台机器后平均 8 分 48 秒；官方注明这是特定配置下的演示，不代表线性扩展。",
+      "mechanism": "用 mDNS 发现局域网内节点（也可手动加 IP），配对确认后节点间走自动签发证书的 mTLS 加密；PAIR 接管 Ollama 或 LM Studio 的默认端口，智能体无需改配置，每个请求按节点在线状态、引擎是否启用、是否有同一模型、当前任务量和 GPU 利用率挑一台机器从头跑到尾；它不合并显存，也不把单个请求拆到多台机器。",
+      "paper_url": "https://developer.nvidia.com/blog/nvidia-pair-virtual-inference-router-expands-available-compute-on-your-local-network/",
+      "date": "2026-09-03",
+      "score": 13,
+      "score_relevance": 8,
+      "score_contribution": 5,
+      "score_reason": "专门解决多台个人设备之间的本地推理调度，支持 RTX 显卡、DGX Spark 和 Apple M4 以上的 Mac，并给出多子智能体任务的本机实测（相关度 8）。按请求整体路由、不拆模型，属于实用的工程整合而非新算法（贡献 5）。",
+      "source_tier": "官方动态",
+      "open_source": true,
+      "tags": [
+        "方向:调度服务",
+        "方向:推理框架",
+        "硬件:GPU",
+        "硬件:DGX",
+        "硬件:Apple-Silicon"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Seth Schneider",
+      "vendors": "NVIDIA",
+      "affiliation_evidence_url": "",
+      "candidate_source": "",
+      "candidate_ref": "",
+      "venue": "NVIDIA",
+      "recommendation": "推荐",
+      "recommendation_reason": "多数家庭和小团队手里有好几台能跑模型的机器却各用各的，PAIR 把它们变成一个本地推理池，官方演示里 5 个子智能体的任务从 18 分钟缩到 8 分 48 秒，而且开源、跨 Windows、Linux 和 macOS。",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": ""
     }
   ],
   "weekly": {
-    "overview": "本周端侧 AI 动态（09-02~09-08）：主线是「Agent 还在云上，推理正在往端上挪」。厂商侧，Meta 9 月 8 日发布面向大众的个人智能体 Muse，官方稿明确写它跑在云端专属虚拟机里、手机只是入口；谷歌 9 月 2 日更新 Gemini 3.8 Flash，卖点仍是同等价格下更强的 agent 能力，两条都说明最热的 Agent 产品还没下沉到设备。真正的端侧进展集中在推理栈：EStream 用统一专家图加闪存分页，第一次把 MoE 预填充完整跑在手机 NPU 上；LeanStream 用「先投机再修正」把端侧大模型的内存占用压到原来的五分之一到七分之一；Deep Microcompression 甚至在 2KB SRAM 的单片机上跑通了标准 CNN。开源侧，MNN 合入一大批手机 ARM CPU 上的 flash attention 优化，ONNX Runtime 给 WebGPU 加了 int8 分块 KV 缓存量化并给出显存与吞吐的完整折中。学术侧还有一条值得留意的线：多篇工作开始实测「端侧小模型到底能不能当 agent 用」，结论普遍偏冷。",
+    "overview": "本周端侧 AI 动态（09-02~09-08）：主线是「Agent 还在云上，推理正在往端上挪」。厂商侧，Meta 9 月 8 日发布面向大众的个人智能体 Muse，官方稿明确写它跑在云端专属虚拟机里、手机只是入口；谷歌 9 月 2 日更新 Gemini 3.8 Flash，卖点仍是同等价格下更强的 agent 能力，两条都说明最热的 Agent 产品还没下沉到设备。真正的端侧进展集中在推理栈：EStream 用统一专家图加闪存分页，第一次把 MoE 预填充完整跑在手机 NPU 上；LeanStream 用「先投机再修正」把端侧大模型的内存占用压到原来的五分之一到七分之一；Deep Microcompression 甚至在 2KB SRAM 的单片机上跑通了标准 CNN。开源侧，MNN 合入一大批手机 ARM CPU 上的 flash attention 优化，ONNX Runtime 给 WebGPU 加了 int8 分块 KV 缓存量化并给出显存与吞吐的完整折中。学术侧还有一条值得留意的线：多篇工作开始实测「端侧小模型到底能不能当 agent 用」，结论普遍偏冷。 另据媒体报道（尚无合规一手来源，仅供参考）：09-02 OPPO 联合 OpenKG 与浙大、同济、东南大学发布首个端侧 AI 记忆评测基准 MobileMem，累计历史上下文达百万 token，覆盖跨应用跨模态的长期事件检索、关联推理和个性化演化，技术白皮书已公开，数据集与工具将陆续开源（据 OPPO 官网新闻稿，页面无日期）；09-02 小米澎湃 HyperOS 4 超级小爱“专家模式”上线，支持复杂任务自主规划、一次完成多应用操作和人车家联动，并能记住周期性任务主动提醒；未说明是否在端侧运行（据 IT之家报道）；09-03 英伟达宣布以 129.303 亿美元收购 Hugging Face，承诺平台继续对所有模型、云和芯片厂商开放，预计 2027 年上半年完成（据 NVIDIA 官方博客与 SEC 8-K 文件）；09-04 AMD 在 IFA 2026 开幕主题演讲提出“Personal AI”，发布可本地运行 1T 参数模型的 Threadripper Halo Station 工作站（据 IT之家报道）；09-04 韩媒报道三星电子与 Arm 启动下一代端侧 AI SoC 联合研发，Arm 提供 AI 加速器架构和核心设计，三星 System LSI 负责 SoC 设计、2nm GAA 代工量产（据 Greened.kr 报道，双方未官宣）；09-06 微软 Windows 与设备副总裁 Mark Linton 在 IFA 2026 提出“无计量智能”，称日常使用的模型不必上云，Windows 要成为让模型和智能体在 PC 本地运行的平台，而不是继续堆 Copilot 按钮（据 Windows Latest 报道）。",
     "highlights": [
       {
         "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",

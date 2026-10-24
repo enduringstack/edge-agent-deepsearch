@@ -2715,10 +2715,47 @@
       "recommendation_reason": "",
       "arxiv_date_basis": "submitted",
       "arxiv_revision_note": ""
+    },
+    {
+      "id": "vendor-alibaba-alibaba-unveils-qwen3-8-27b-and-releases-weights-of-qwen3-8-fl",
+      "title": "Alibaba Unveils Qwen3.8-27B and Releases Weights of Qwen3.8 Flagship Model",
+      "title_zh": "",
+      "abstract": "阿里开源 Qwen3.8 系列的 270 亿参数稠密多模态模型 Qwen3.8-27B，官方称可在消费级硬件上运行、量化后可上笔记本；同时放出旗舰 Qwen3.8-2.4T-A95B 的权重。",
+      "effects": "官方称 Qwen3.8-27B 在编程、专业办公、研究和长程智能体任务上与约 10 倍规模的 MoE 模型 Qwen3.7-plus 相当；原生 262K 上下文、可扩展到 100 万 token；发布两天内进入 Hugging Face 最受欢迎模型前 5。旗舰版总参数 2.4 万亿、激活 950 亿，在 Arena AI CodeArena 和 Artificial Analysis 智能体指数上均列全球第三。",
+      "mechanism": "Qwen3.8-27B 是原生视觉语言的稠密模型，支持图像与视频理解和可调的思考深度，面向多步任务的可靠完成；以 Apache 2.0 许可在 Hugging Face 和 ModelScope 发布，便于本地量化部署。",
+      "paper_url": "https://www.alibabacloud.com/blog/alibaba-unveils-qwen3-8-27b-and-releases-weights-of-qwen3-8-flagship-model_603463",
+      "date": "2026-08-17",
+      "score": 11,
+      "score_relevance": 5,
+      "score_contribution": 6,
+      "score_reason": "27B 稠密模型官方定位为消费级硬件和量化后笔记本可跑，是本地部署社区的主力底座之一，但官方没有给出任何端侧设备上的速度或内存数字（相关度 5）。以 27B 对标约 10 倍规模的 MoE 模型并开源，模型能力贡献明确，属常规模型迭代（贡献 6）。",
+      "source_tier": "官方动态",
+      "open_source": true,
+      "tags": [
+        "方向:多模态",
+        "应用:长上下文推理",
+        "方向:规划推理",
+        "模型:Qwen",
+        "硬件:GPU"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Alibaba",
+      "vendors": "Alibaba",
+      "affiliation_evidence_url": "",
+      "candidate_source": "",
+      "candidate_ref": "",
+      "venue": "Alibaba",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": ""
     }
   ],
   "weekly": {
-    "overview": "本周端侧 AI 动态（08-14~08-18）：本期只有 5 天，是把分周对齐到 08-19 起各周的过渡周。主线是端侧智能体开始在消费级硬件上“边用边学”，同时边缘设备跑大 MoE 的工程路线越来越清楚。厂商与模型：三星研究院发布面向可穿戴生理信号的 xMAE 与 HiMAE 健康基础模型，HiMAE 在智能手表级 CPU 上单次输出低于 1 毫秒；llama.cpp 合入 Kimi-K3 的转换、推理和带类型工具调用解析。端侧智能体：LOCAL 在一张 24GB 的 RTX 3090 级显卡上让本地智能体一边服务一边用私有交互数据微调，前台排队 p95 比 FIFO 低 3.1 倍，期间完成 34 次适配器提交；P2Skill 让设备端小模型先识别隐私、决定哪些内容可以发往云端，隐私保护条件下推理质量达到既有方法的 1.69 倍和 3.66 倍；tinyDSM 把技能发育、知识图谱和强化学习放进树莓派 Pico 微控制器，除定位外只占 9kB 内存。研究：S2-MoE 集成进 llama.cpp 后在 Jetson Orin 上相对普通解码提速 1.3–5.3 倍；EgoGazeLite 在 iPhone 15 Pro 上每帧 21.6 毫秒预测注视点，替代眼动仪裁剪视觉 token；EcoVLA 在 Jetson AGX Orin 加边缘服务器上把 VLA 能效提升 58%–236%。硬件：高通旗下 Modular 于 8 月 18 日以 Apache 2.0 开源 Mojo 语言与编译器，新硬件集成未提及 Hexagon NPU；ETHEREAL 事件相机 GNN 芯片实测每事件 25.6 微秒、1.6 微焦；FreeToken 在 8GB 的 RTX 4060 笔记本上跑 Qwen3.6-35B 达 39.3 tok/s。A20 Pro 和 SM8975 跑分均为媒体转述的爆料，未经官方证实。社区：讨论焦点从“能不能装下”转向“好不好用”——全离线 Android 智能体卡在工具调用可靠性、多步规划和耗电。",
+    "overview": "本周端侧 AI 动态（08-14~08-18）：本期只有 5 天，是把分周对齐到 08-19 起各周的过渡周。主线是端侧智能体开始在消费级硬件上“边用边学”，同时边缘设备跑大 MoE 的工程路线越来越清楚。厂商与模型：三星研究院发布面向可穿戴生理信号的 xMAE 与 HiMAE 健康基础模型，HiMAE 在智能手表级 CPU 上单次输出低于 1 毫秒；llama.cpp 合入 Kimi-K3 的转换、推理和带类型工具调用解析。端侧智能体：LOCAL 在一张 24GB 的 RTX 3090 级显卡上让本地智能体一边服务一边用私有交互数据微调，前台排队 p95 比 FIFO 低 3.1 倍，期间完成 34 次适配器提交；P2Skill 让设备端小模型先识别隐私、决定哪些内容可以发往云端，隐私保护条件下推理质量达到既有方法的 1.69 倍和 3.66 倍；tinyDSM 把技能发育、知识图谱和强化学习放进树莓派 Pico 微控制器，除定位外只占 9kB 内存。研究：S2-MoE 集成进 llama.cpp 后在 Jetson Orin 上相对普通解码提速 1.3–5.3 倍；EgoGazeLite 在 iPhone 15 Pro 上每帧 21.6 毫秒预测注视点，替代眼动仪裁剪视觉 token；EcoVLA 在 Jetson AGX Orin 加边缘服务器上把 VLA 能效提升 58%–236%。硬件：高通旗下 Modular 于 8 月 18 日以 Apache 2.0 开源 Mojo 语言与编译器，新硬件集成未提及 Hexagon NPU；ETHEREAL 事件相机 GNN 芯片实测每事件 25.6 微秒、1.6 微焦；FreeToken 在 8GB 的 RTX 4060 笔记本上跑 Qwen3.6-35B 达 39.3 tok/s。A20 Pro 和 SM8975 跑分均为媒体转述的爆料，未经官方证实。社区：讨论焦点从“能不能装下”转向“好不好用”——全离线 Android 智能体卡在工具调用可靠性、多步规划和耗电。 另据媒体报道（尚无合规一手来源，仅供参考）：08-14 荣耀宣布 YOYO Claw 接入智谱 GLM-5.3 升级“虾虾大脑”，官方称编程能力较上一代提升 50%，YOYO Claw 还可连接其他设备上的 OpenClaw（据 IT之家报道）；08-16 联发科宣布天玑汽车座舱平台 C-X1 与最新天玑旗舰手机芯片完成阿里 Qwen3.8-27B 的 Day-0 适配，手机与车机均可本地运行该模型（据 IT之家报道）；08-17 华为推送 HarmonyOS 7.0.0.102，端侧 AI 机型可在设置中查看本地大模型的版本、参数与服务场景（小艺帮接、通话摘要、润色、图库搜索等本地处理），系统首次向用户透明展示端侧模型（据 IT之家报道）。",
     "highlights": [
       {
         "url": "https://arxiv.org/abs/2608.15241",
