@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Edge-Deployable LLM Fine-Tuning on a Single GPU for Telecom Network Troubleshooting</h1>
-<div class="meta"><span class="score">7</span> <span class="tier company">公司项目</span>  2026-05-06 · Chenhua Shi; Bhavika Jalli; John Zou; Gregor Macdonald; Wanlu Lei; Mridul Jain; Joji Philip / arXiv</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-05-06 · Chenhua Shi; Bhavika Jalli; John Zou; Gregor Macdonald; Wanlu Lei; Mridul Jain; Joji Philip / arXiv</div>
 <div class="tags"><span class="vendor-tag">Ericsson</span><span class="tag">方向:端侧训练</span><span class="tag">方向:KV cache</span><span class="tag">硬件:GPU</span><span class="tag">应用:fault-detection</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">电信基站边缘站点要在本地做网络故障排查，但只能放一张 GPU。这篇是爱立信在单张边缘级 GPU 上微调大模型的性能剖析研究。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">在 RTX A6000 上用 Unsloth 框架，系统扫描最大序列长度、显存占用率、LoRA 秩和生成数量对训练稳定性与资源效率的影响，并比较推理型与非推理型模型在监督微调和强化微调中的差异。</span></div>
-<div class="score-reason">评分依据：面向边缘站点的单卡大模型微调，与资源受限部署相关，但设备是服务器级 GPU，结论以配置经验为主。PDF 首页作者署名 Ericsson。 作者机构依据：arXiv PDF 首页署名 Ericsson（PDF 首页全部作者署名 Ericsson）。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">电信基站边缘站点要在本地做网络故障排查，却只能放一张 GPU。这篇是爱立信在单张边缘级 GPU 上微调大模型的性能剖析研究。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 48GB 的 RTX A6000 上，4 比特 Qwen2.5-7B 序列长度到 60k 就出现非法显存访问错误，50k 序列加 0.7 显存占用率是安全工作点，输入 5k token 时训练 3 小时内完成；Llama-3.1-8B 可跑 60k 序列且训练快约 7 倍（29 对 229 分钟）。微调后 DeepSeek-R1-Qwen3-8B 的答案相关度 0.96、事实依据度 0.78，明显高于 Qwen2.5-7B 的 0.85 和 0.22。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 Unsloth 框架系统扫描最大序列长度、显存占用率、LoRA 秩和生成数量对显存与稳定性的影响，先监督微调再用 GRPO 强化微调，并提出用 AutoTokenizer 做监督微调、用 Unsloth 做强化微调和推理的混合分词器方案，整理成八步部署流程。</span></div>
+<div class="score-reason">评分依据：面向基站边缘站点的单卡大模型本地微调与推理，与资源受限部署直接相关，但设备是工作站级 GPU（相关度 5）；结论以配置经验为主（贡献 3）。 作者机构依据：arXiv PDF 首页署名 Ericsson（PDF 首页全部作者署名 Affiliation: Ericsson）。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.02523" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

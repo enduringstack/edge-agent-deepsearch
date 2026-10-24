@@ -7,9 +7,9 @@
 <h1>microsoft/onnxruntime: [MLAS] Add an NHWC implementation of convolution to avoid transposes (#26834)</h1>
 <div class="meta"><span class="score">10</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-05-14 · microsoft / GitHub</div>
 <div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:高效推理</span><span class="tag">硬件:CPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">ONNX Runtime 的 CPU 数学库新增 NHWC 数据布局的卷积实现，避免在卷积前后插入转置操作，目前只在启用 Arm KleidiAI 时生效。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">CPU 执行器在输入为 NHWC 时标记通道在后，新增融合的 NHWC 卷积算子并在 KleidiAI 路径里实现，图优化阶段据此去掉多余的转置。</span></div>
-<div class="score-reason">评分依据：由 Arm 工程师贡献，直接针对 Arm CPU 上的卷积推理去掉布局转换开销，对手机和嵌入式设备的视觉模型有迁移价值；但提交里没有给出性能数字，属于常规算子优化。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">ONNX Runtime 的 CPU 数学库新增 NHWC 数据布局的卷积实现，省掉卷积前后插入的转置操作，目前只在启用 Arm KleidiAI 时生效。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">对应 PR 讨论中作者贴出的 MobileNet 单线程测试：平均推理时延从 6.66 毫秒降到 5.64 毫秒，吞吐从每秒 150 次提高到 177 次（约 18%）。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">CPU 执行器在输入为 NHWC 时标记通道在后，新增融合的 NHWC 卷积算子并在 KleidiAI 路径里实现，图优化阶段据此去掉多余的转置；目前只支持普通卷积，深度可分离卷积后续跟进。</span></div>
+<div class="score-reason">评分依据：由 Arm 工程师贡献（提交署名为 arm.com 邮箱），直接针对 Arm CPU 上的卷积推理去掉布局转换开销，对手机和嵌入式设备的视觉模型有迁移价值；PR 里给出了 MobileNet 约 18% 的提速，但属于常规算子优化。</div>
 <div class="source"><a href="https://github.com/microsoft/onnxruntime/commit/a8ba94a147eea82b49409fadcf183a9be45e60f0" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

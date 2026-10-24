@@ -7,9 +7,9 @@
 <h1>Skills as Verifiable Artifacts: A Trust Schema and a Biconditional Correctness Criterion for Human-in-the-Loop Agent Runtimes</h1>
 <div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-05-01 · Alfredo Metere / arXiv</div>
 <div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:工具调用</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">作者主张 Agent 加载的“技能包”应默认视为不可信代码，提出一套技能信任等级和人工确认闸门设计，让人工审批只在未验证技能做不可逆操作时触发。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">给每个技能清单加验证等级字段，能力闸门按等级决定是否需要人工确认；提出一个双条件正确性判据来检验验证流程，并从开源实现中总结出十条运行时规范。</span></div>
-<div class="score-reason">评分依据：属于 Agent 运行时的安全与工具调用治理，与设备端 Agent 的技能加载同样适用；但这是规范与理论性工作，没有端侧实现或量化评测。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">作者主张智能体加载的“技能包”应默认视为不可信代码，提出一套技能信任等级和人工确认闸门设计，让人工审批只在未验证技能做不可逆操作时才触发。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">5 月 15 日修订版补充的实验：27000 次对抗集成运行中，双条件判据在干净运行上零误报、在四类注入故障上零漏报；用 10 个模型家族生成的 9724 条载荷（4816 条对抗）测试，未加防护的直通基线拦截率 0%，开源运行时召回 76.3%、误报 0%，加上行为监控的完整部署召回 80.2%、误报 0.6%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">给每个技能清单加验证等级字段，能力闸门按等级决定是否需要人工确认；用“语料实际改动 = 审计日志里批准并执行的调用”这一双条件判据检验运行结果，并从开源参考实现 enclawed 中总结出十条运行时规范。</span></div>
+<div class="score-reason">评分依据：属于智能体运行时的工具/技能安全治理，对在个人设备上加载第三方技能的智能体同样适用，但没有端侧实现（相关度 4）；信任模式与可检验判据有一定新意，并给出了对抗测试结果（贡献 5）。作者署名为小型公司 Enclawed, LLC，不计入公司项目。</div>
 <div class="source"><a href="https://arxiv.org/abs/2605.00424" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

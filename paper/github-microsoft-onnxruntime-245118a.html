@@ -7,9 +7,9 @@
 <h1>microsoft/onnxruntime: [CUDA Plugin EP] Add NuGet packaging pipeline (#28378)</h1>
 <div class="meta"><span class="score">5</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-05-07 · microsoft / GitHub</div>
 <div class="tags"><span class="tag">方向:推理框架</span><span class="tag">硬件:GPU</span><span class="tag">方向:编译部署</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">ONNX Runtime 为 CUDA 插件执行提供器新增 NuGet 打包流水线，让 C#/.NET 程序也能通过 NuGet 直接使用 CUDA 插件 EP。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">ONNX Runtime 为 CUDA 插件执行后端新增 NuGet 打包流水线，让 C#/.NET 程序也能通过 NuGet 直接使用这个 CUDA 插件。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">新建 Microsoft.ML.OnnxRuntime.EP.Cuda 包和打包脚本，覆盖 win-x64、linux-x64、linux-arm64 三个平台，并在 GPU 机器上用一个乘法小模型做 CI 验证。</span></div>
-<div class="score-reason">评分依据：属于推理框架的发布打包工程，面向 Windows/Linux 上的 NVIDIA GPU，和端侧只有间接关系；没有新的推理优化，贡献分低。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">新建 Microsoft.ML.OnnxRuntime.EP.Cuda 包和打包脚本，覆盖 win-x64、linux-x64、linux-arm64 三个平台，并在 GPU 机器上用一个乘法小模型做 CI 验证（23 个文件、新增 1195 行）。</span></div>
+<div class="score-reason">评分依据：属于推理框架的发布打包工程，面向 Windows/Linux 上的 NVIDIA GPU，和端侧只有间接关系（相关度 3）；没有新的推理优化，提交说明也没有性能数字，因此效果写未报告（贡献 2）。</div>
 <div class="source"><a href="https://github.com/microsoft/onnxruntime/commit/245118a84d442c9cf722c426c5b865cd7e71f996" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

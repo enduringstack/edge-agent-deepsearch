@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Cognitive Agent Compilation for Explicit Problem Solver Modeling</h1>
-<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-05-07 · Hyeongdon Moon; Carolyn Rosé; John Stamper / AIED 2026（Blue Sky）</div>
-<div class="tags"><span class="tag">方向:规划推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">教育场景需要能说清“它假设学生会什么”的可控解题模型，而大模型太泛难以约束。这篇提出“认知智能体编译”：用强大的教师大模型把解题知识编译成一个显式、可编辑的目标智能体。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把知识表示、解题策略、校验与更新规则三部分拆开，由教师大模型生成，在小语言模型上做了早期原型，用来暴露显式控制与可扩展泛化之间的取舍。</span></div>
-<div class="score-reason">评分依据：属于教育应用中的智能体建模，用到小模型但不涉及端侧部署或推理优化；目前只是概念验证，贡献有限。</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-05-07 · Hyeongdon Moon; Carolyn Rosé; John Stamper / AIED 2026（Blue Sky）</div>
+<div class="tags"><span class="tag">方向:规划推理</span><span class="tag">方向:记忆</span><span class="tag">模型:Qwen</span><span class="tag">模型:Gemma</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">教育场景需要能说清“它假设学生会什么”的可控解题模型，这篇提出“认知智能体编译”：用强大的教师大模型把解题知识编译成一个显式、可编辑的目标智能体。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 OLI 生物学题库上，智能体逐题编译解出 27 道题，累计 188 条陈述性记忆，平均每题 3.1 轮编译（标准差 2.5）；第 28 题迭代 150 轮仍未答对，实验终止。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把知识表示、解题策略、校验与更新规则三部分拆开：2B 参数小模型按目标和工作记忆检索知识库并选择动作，本地运行的 4 比特量化 Gemma-3-27B 作为教师，根据失败轨迹通过 MCP 工具向知识库追加知识。</span></div>
+<div class="score-reason">评分依据：属于教育应用中的智能体建模，用到本地小模型和量化教师模型，但不涉及端侧部署或推理优化（相关度 2）；目前只是概念验证（贡献 4）。作者署名为卡内基梅隆大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2605.07040" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

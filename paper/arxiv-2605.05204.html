@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>D-OPSD: On-Policy Self-Distillation for Continuously Tuning Step-Distilled Diffusion Models</h1>
-<div class="meta"><span class="score">9</span> <span class="tier company">公司项目</span>  2026-05-07 · Dengyang Jiang, Xin Jin, Dongyang Liu, Zanyi Wang, Mingzhe Zheng, Ruoyi Du, Xiangpeng Yang, Qilong Wu, Zhen Li, Peng Gao, Harry Yang, Steven Hoi / arXiv</div>
+<div class="meta"><span class="score">8</span> <span class="tier company">公司项目</span>  2026-05-07 · Dengyang Jiang, Xin Jin, Dongyang Liu, Zanyi Wang, Mingzhe Zheng, Ruoyi Du, Xiangpeng Yang, Qilong Wu, Zhen Li, Peng Gao, Harry Yang, Steven Hoi / arXiv</div>
 <div class="tags"><span class="vendor-tag">Alibaba</span><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">Z-Image-Turbo 这类少步数图像生成模型一做常规微调就会丢掉少步出图能力，D-OPSD 提出一种能持续学习新概念、新风格又不破坏少步推理的训练方式。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">让模型同时当老师和学生：学生只看文本条件，老师额外看到目标图像的多模态特征，在学生自己生成的轨迹上最小化两者预测分布的差距，实现在线自蒸馏。</span></div>
-<div class="score-reason">评分依据：关注保持少步扩散模型的高效推理能力，与部署效率间接相关，但不涉及端侧；利用编码器上下文能力做在线自蒸馏有新意。作者含阿里巴巴 Z-Image 团队。 作者机构依据：arXiv PDF 首页署名 Alibaba（HTML/PDF 首页多位作者（含通讯作者）署名 Z-Image Team, Alibaba Group）。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">Z-Image-Turbo、FLUX.2-klein 这类少步数图像生成模型一做常规微调就会丢掉少步出图能力，D-OPSD 提出一种能持续学习新概念、新风格又不破坏少步推理的训练方式。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">Z-Image-Turbo 全量微调设置下，FID 从基座的 48.69 降到 40.49，而常规监督微调升到 82.20、GenEval 从 0.75 跌到 0.16，D-OPSD 仍保持 0.72；LoRA 定制设置下质量分 3.80，高于基座的 3.51 和常规微调的 2.42。代价是每次迭代约 4 倍计算量、2 倍训练时间。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">让同一个模型同时当老师和学生：学生只看文本条件，老师额外看到目标图像的多模态特征，在学生自己少步生成的轨迹上最小化两者预测差距，实现在线自蒸馏，推理时只保留学生路径。</span></div>
+<div class="score-reason">评分依据：目标是保住少步扩散模型的高效推理能力，与部署效率间接相关，但不涉及端侧（相关度 2）；利用编码器上下文能力做在线自蒸馏有新意（贡献 6）。 作者机构依据：arXiv PDF 首页署名 Alibaba（PDF 首页多位作者署名 Z-Image Team, Alibaba Group）。</div>
 <div class="source"><a href="https://huggingface.co/papers/2605.05204" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

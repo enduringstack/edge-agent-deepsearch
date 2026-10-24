@@ -7,9 +7,9 @@
 <h1>Position: LLM Serving Needs Mathematical Optimization and Algorithmic Foundations, Not Just Heuristics</h1>
 <div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span>  2026-05-02 · Zijie Zhou / arXiv</div>
 <div class="tags"><span class="tag">方向:云端serving</span><span class="tag">方向:调度服务</span><span class="tag">方向:KV cache</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一篇立场论文：认为 LLM 推理服务的请求路由、调度和 KV cache 淘汰仍在用经典启发式，应该转向有理论保证的数学优化和算法设计。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">梳理 vLLM、SGLang 等系统沿用的最短队列、先来先服务、LRU 等策略，指出它们忽略了 KV cache 动态增长、预填充与解码不对称、输出长度未知等特点，并呼吁建立数学模型。</span></div>
-<div class="score-reason">评分依据：讨论的是数据中心 LLM serving 的算法基础，与端侧只有宽泛联系。属于观点文章，没有新系统或实验数字。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">一篇立场论文：认为 LLM 推理服务的请求路由、调度和 KV cache 淘汰还在用经典启发式，应该转向有理论保证的数学优化和算法设计。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">立场文章本身没有新实验；文中引用的已有工作数据（综述汇编的已有工作数据）：DeepSeek LPLB 用 GPU 上的线性规划求解器做 MoE 负载均衡，节点内每次求解约 100 微秒，落在 30–100 微秒的解码步预算附近；按期望代价淘汰的缓存算法在真实 LLM 负载上 FLOPs 改善 4.3 倍、时延改善 1.8 倍，代价差距大时成本最多降 50 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">梳理 vLLM、SGLang 等系统沿用的最短队列、先来先服务、LRU 等策略，指出它们忽略了 KV cache 动态增长、预填充与解码不对称、输出长度未知等特点，并用 MoE 负载均衡、数据并行路由、单机调度、代价感知缓存四个例子说明数学建模的收益。</span></div>
+<div class="score-reason">评分依据：讨论的是数据中心 LLM serving 的算法基础，与端侧只有宽泛联系（相关度 2）；属于观点文章，没有新系统（贡献 3）。作者署名为香港科技大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2605.01280" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

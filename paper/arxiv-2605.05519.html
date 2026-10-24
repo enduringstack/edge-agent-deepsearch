@@ -7,9 +7,9 @@
 <h1>OpenG2G: A Simulation Platform for AI Datacenter-Grid Runtime Coordination</h1>
 <div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-05-06 · Jae-Won Chung; Zhirui Liang; Yanyong Mao; Jiasi Chen; Mosharaf Chowdhury; Vladimir Dvorkin / arXiv</div>
 <div class="tags"><span class="tag">方向:能耗功耗</span><span class="tag">方向:云端serving</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">AI 数据中心耗电激增给电网带来压力，OpenG2G 是一个让数据中心按电网信号实时调节负载的协同仿真平台。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">数据中心后端用生产级 AI 服务的实测数据驱动，电网后端接高保真电网仿真器，中间提供通用控制器接口，可比较经典、优化和学习类控制策略。</span></div>
-<div class="score-reason">评分依据：关注 AI 数据中心与电网协同，仅与云端部署宽泛相关；作为开源仿真平台有工程价值。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">AI 数据中心耗电激增给电网带来压力，OpenG2G 是一个让数据中心按电网信号实时调节推理负载的协同仿真平台。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 IEEE 13、34、123 节点三种配电网的 50 个测试场景中，在线反馈优化控制器把电压越限积分分别降低 94.7%、82.0%、83.7%（如 13 节点从 19.52 降到 1.04）；把吞吐权重从 0.01 调到 0.0001，越限再降 21 倍，但平均吞吐下降 44%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">数据中心后端用生产级 LLM 推理服务的实测功耗和时延数据驱动，电网后端接高保真电网仿真器，中间通过调节批大小的通用控制器接口，比较下垂控制、在线优化和强化学习三类策略。</span></div>
+<div class="score-reason">评分依据：关注 AI 数据中心与电网协同，只与云端推理部署宽泛相关（相关度 1）；作为开源仿真平台有工程价值（贡献 5）。作者署名为密歇根大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2605.05519" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

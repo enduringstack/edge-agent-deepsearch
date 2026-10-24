@@ -9,7 +9,7 @@
 <div class="tags"><span class="vendor-tag">Qualcomm</span><span class="tag">硬件:MCU</span><span class="tag">硬件:CPU</span><span class="tag">应用:机器人</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">高通开发者博客介绍 Arduino UNO Q 开发板：一块板上同时有跑 Linux 的处理器和跑实时控制的单片机，定位入门级机器人和边缘 AI 原型开发。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">处理器端是高通 Dragonwing QRB2210（Arm CPU + Adreno 702 GPU）运行 Debian Linux 负责 AI 推理和视觉，单片机端是 STM32U585 跑 Zephyr 负责传感和电机；两边通过 RPC 桥接，并用 Arduino App Lab 统一开发部署。</span></div>
-<div class="score-reason">评分依据：属于端侧 AI 硬件平台介绍，对在低成本开发板上做视觉和机器人原型有参考价值；但文中没有模型部署实测数据，贡献偏产品科普。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">处理器端是高通 Dragonwing QRB2210（Arm CPU + Adreno 702 GPU，2GB 或 4GB 内存）运行 Debian Linux，负责 AI 推理和视觉；单片机端是 STM32U585，在 Zephyr 上跑 Arduino 程序负责传感和电机；两边通过远程过程调用桥接，并用 Arduino App Lab 统一开发部署。</span></div>
+<div class="score-reason">评分依据：属于端侧 AI 硬件平台介绍，对在低成本开发板上做视觉和机器人原型有参考价值（相关度 5）；正文只有硬件规格，没有任何模型推理速度或功耗实测，内容偏产品科普（贡献 2），因此效果写未报告。</div>
 <div class="source"><a href="https://www.qualcomm.com/developer/blog/2026/05/the-arduino-uno-q-board--unpack-the-dual-brain-power-for-next-ge" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

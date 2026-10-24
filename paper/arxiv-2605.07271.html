@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Understanding Performance Collapse in Layer-Pruned Large Language Models via Decision Representation Transitions</h1>
 <div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-05-08 · Boyu Shi; Chang Liu; ChuanBao Gao; Xu Yang; Xin Geng / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:模型架构</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">大模型做层剪枝时常常突然“崩掉”。这项工作从“决策表征”的角度解释原因：网络前半段有一个还给不出答案的“沉默阶段”，剪掉这部分会直接导致崩溃。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:模型架构</span><span class="tag">模型:Llama</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型做层剪枝时常常在某个比例后突然“崩掉”。这项工作从“决策表征”角度解释原因：网络前段有一个还给不出答案的“沉默阶段”，剪到这里就会直接崩溃。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Llama3-8B、Llama2-7B、Qwen3-4B 上，决策转折点分别在第 18、19、30 层；转折层位置与可承受的最大剪枝比例强负相关（相关系数 -0.96）；Llama3-8B 剪掉 50% 后，隐藏表征仍对齐原模型第 24 层，决策表征却只对齐到第 9 层；剪到 40.6% 以上时，监督微调也无法恢复决策转折。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">在选择题任务上引入决策裕度和选项频率两个指标，并用迭代剪枝逐层观察决策动态，发现网络被一个突变点分为沉默阶段和决定阶段，剪决定阶段影响很小。</span></div>
-<div class="score-reason">评分依据：层剪枝是端侧压缩大模型的常用手段，本文为选择剪哪些层提供依据；属于分析性工作，没有提出新的部署方案或量化收益。</div>
+<div class="score-reason">评分依据：层剪枝是端侧压缩大模型的常用手段，本文为判断能剪多少层提供了可量化的依据；但属于分析性工作，没有提出新的部署方案或实测加速。作者来自东南大学。</div>
 <div class="source"><a href="https://arxiv.org/abs/2605.07271" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

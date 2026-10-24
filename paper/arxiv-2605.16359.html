@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>How Many Visual Tokens Do Multimodal Language Models Need? Scaling Visual Token Pruning with F^3A</h1>
 <div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-05-09 · YiJie Huang; Yiqun Zhang; Zhuoyue Jia; Xiaocui Yang; Junzhao Huang; Zihan Wang; Shi Feng; Daling Wang / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">多模态大模型把大量图像 token 喂给语言模型，推理成本很高。这篇研究到底需要多少视觉 token，并提出免训练的视觉 token 剪枝方法 F^3A。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:多模态</span><span class="tag">方向:高效推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">多模态大模型要把大量图像 token 喂给语言模型，推理成本很高。这篇研究到底需要保留多少视觉 token，并提出一种免训练的视觉 token 剪枝方法 F³A。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Qwen3-VL 2B 到 235B 共 10 个模型、11 个多模态基准上，只保留 20% 视觉 token 时平均保住全量 token 93.86% 的性能，所有模型和保留比例下都优于 FastV、VisionZip、DivPrune、CDPruner；要达到全量 97% 的性能平均只需 39.9% 的 token，最强基线需要 50.1%。在 Qwen3-VL-8B 单卡上，20% 保留率时端到端时延从 354.7 ms 降到 274.3 ms，提速 1.29 倍。</span></div>
 <div class="field"><span class="label">怎么做到</span><span class="text">在图像 token 进入语言模型之前，先根据问题生成轻量线索，用冻结的稀疏感知头把线索对应到图像网格，再按粗定位、局部细化、保覆盖竞争和补回漏掉区域的顺序分配固定的 token 预算，不需要训练也不多跑一次大模型。</span></div>
-<div class="score-reason">评分依据：视觉 token 剪枝能直接降低多模态模型推理开销，对端侧 VLM 有迁移价值，但论文没有端侧设备实验，摘要也未给出具体数字。把剪枝看成按问题搜证据的思路有一定新意，但仍属常见的免训练剪枝方向。</div>
+<div class="score-reason">评分依据：视觉 token 剪枝能直接降低多模态模型的预填充和 KV cache 开销，对端侧 VLM 有迁移价值，但实验都在服务器 GPU（H200）上进行，没有端侧设备测试，相关度 5。把剪枝看成按问题搜证据的思路有一定新意、跨规模评测扎实，但仍属常见的免训练剪枝方向，贡献 5。代码已开源。</div>
 <div class="source"><a href="https://arxiv.org/abs/2605.16359" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

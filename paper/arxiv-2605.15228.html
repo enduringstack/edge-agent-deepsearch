@@ -7,9 +7,9 @@
 <h1>Verifiable Agentic Infrastructure: Proof-Derived Authorization for Sovereign AI Systems</h1>
 <div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-05-13 · Jun He; Deying Yu / arXiv</div>
 <div class="tags"><span class="tag">方向:安全隐私</span><span class="tag">方向:工具调用</span><span class="tag">应用:安全</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">自主 AI Agent 可能生成语法合法但语义危险的操作，传统“有凭证就放行”的授权方式不再安全。本文提出用可验证的证明对象来决定 Agent 能否执行高风险操作。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">Agent 提交意图后，用“合理性证明”编码动作依据，多方独立评估达成共识后派生一次性执行身份，并用只可追加的证据链记录整个授权生命周期。</span></div>
-<div class="score-reason">评分依据：属于云端 Agent 执行治理和授权基础设施，与端侧无关，相关度 2；主要是架构与模型定义，没有量化评测，贡献 4。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">自主 AI Agent 可能生成语法合法但语义危险的操作，传统“有凭证就放行”的授权方式不再安全。本文提出用可验证的证明对象来决定 Agent 能否执行删除实例、改生产配置这类高风险云端操作。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在模拟多区域云环境中跑 10,000 次合成 Agent 操作（其中 2,400 次为不安全或对抗变体）：不安全操作全部被拦截或升级审批，而仅做策略预检的基线放过了 14%；每次授权可改动的资源从常驻凭证的平均 450 个压到 1 个；审计回放成功率 99.9%（标准审计日志 23.0%）；端到端决策时延平均 58.3 ms、p99 为 171.3 ms。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">Agent 先提交意图，系统生成编码动作依据、上下文和权限边界的“合理性证明”，由 7 个独立评估函数（策略、依赖状态、风险、仿真、人工升级）达成共识后，派生只对单个资源、限时有效的一次性执行身份，并用只可追加的证据链记录整个授权过程；原型约 4,500 行 Go，基于 AWS STS、Lambda 和 QLDB 实现。</span></div>
+<div class="score-reason">评分依据：属于云端 Agent 执行治理和授权基础设施，与端侧无关，相关度 2。有原型和合成负载上的量化验证，但评测是受控模拟环境、机制本身是现有授权与审计手段的组合，贡献 4。作者署名为 OpenKedge.io（小型初创公司），未计入公司归属。</div>
 <div class="source"><a href="https://arxiv.org/abs/2605.15228" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

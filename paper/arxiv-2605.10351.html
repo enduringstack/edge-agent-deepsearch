@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Foundations of Reliable Inference: Reliability-Efficiency Co-Design</h1>
-<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-05-11 · Jiayi Huang / arXiv</div>
-<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:端云协同</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">一篇博士论文，研究怎样让模型既给出可信的不确定性估计，又不付出过高的计算代价。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">从可靠性和效率两个角度搭建统一框架：一方面用校准约束改进贝叶斯学习，另一方面压缩不确定性估计的计算开销，其中包含边云协同的推理对齐工作。</span></div>
-<div class="score-reason">评分依据：关注推理时的可靠性与计算效率折中，和端侧部署只是间接相关；作为学位论文主要是整合作者已有工作。</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-05-11 · Jiayi Huang / arXiv</div>
+<div class="tags"><span class="tag">方向:端云协同</span><span class="tag">方向:蒸馏</span><span class="tag">方向:高效推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">一篇博士论文，研究怎样让模型既给出可信的不确定性估计，又不付出过高的计算代价，其中两章专门讨论如何让端侧小模型在云端大模型帮助下保持可靠。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">论文的端云级联实验（TeleQnA 问答）显示：在目标满足率 0.75 时，所提的保形对齐级联方法比基于置信度的转交方法少转交约 60% 的输入给云端，代价是预测集合大小增加约 20%，并保有可证明的可靠性；其余章节结果多以曲线呈现。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从可靠性和效率两个角度搭建统一框架：一是给贝叶斯学习加校准约束、分布外置信度压制和选择性校准；二是用云端大模型的校准信息蒸馏端侧小模型，并把“何时转交云端”建模成多重假设检验，让端侧处理的结果达到与云端相同的条件覆盖保证。</span></div>
+<div class="score-reason">评分依据：关注推理时的可靠性与计算效率折中，其中端云模型级联与小模型校准蒸馏和端侧部署直接相关；作为学位论文主要是整合作者已发表的工作。作者来自伦敦国王学院。</div>
 <div class="source"><a href="https://arxiv.org/abs/2605.10351" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

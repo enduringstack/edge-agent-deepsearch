@@ -7,9 +7,9 @@
 <h1>DecodingTrust-Agent Platform (DTap): A Controllable and Interactive Red-Teaming Platform for AI Agents</h1>
 <div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span>  2026-05-06 · Zhaorun Chen; Xun Liu; Haibo Tong; Chengquan Guo; Yuzhou Nie; Jiawei Zhang; Mintong Kang; Chejian Xu / arXiv</div>
 <div class="tags"><span class="tag">方向:评测基准</span><span class="tag">方向:安全隐私</span><span class="tag">方向:工具调用</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">评估 AI Agent 的安全性缺少可控、可复现的真实环境，DTap 提供了一个覆盖 14 个领域、50 多个仿真环境的交互式红队测试平台。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">仿真 Google Workspace、PayPal、Slack 等常用系统，并训练一个自主红队 Agent，自动探索提示、工具、技能、环境等多种注入途径，生成带可验证判定器的攻击数据集，用来批量评测主流 Agent。</span></div>
-<div class="score-reason">评分依据：面向云端通用 Agent 的安全评测平台，与端侧关系较弱；平台规模大、自动红队有贡献。作者含 Virtue AI 公司成员。</div>
+<div class="field"><span class="label">这是什么</span><span class="text">评估 AI 智能体的安全性缺少可控、可复现的真实环境，DTap 提供了一个覆盖 14 个领域、50 多个仿真环境的交互式红队测试平台。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 DTap-Bench 上评测 8 种智能体：Google ADK（Gemini-3-Pro）间接注入攻击成功率最高，达 55.7%，同时良性任务成功率最高（87.0%）；OpenClaw（DeepSeek-V4-Pro）和 OpenAI Agents SDK（GPT-5.2）直接攻击成功率最高，分别为 59.6% 和 58.8%；同用 GPT-5.2 时，把框架从 OpenAI Agents SDK 换成 OpenClaw，直接攻击成功率从 58.8% 降到 38.6%，间接从 46.7% 降到 35.6%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">仿真 Google Workspace、PayPal、Slack 等常用系统，并训练一个自主红队智能体 DTap-Red，自动探索提示、工具、技能、环境等注入途径，生成带可验证判定器的攻击数据集，用来批量评测主流智能体框架和模型。</span></div>
+<div class="score-reason">评分依据：面向云端通用智能体的安全评测平台，与端侧关系较弱（相关度 2）；平台规模大，并揭示“框架设计比模型对齐更决定安全性”，有一定贡献（贡献 6）。作者署名含芝加哥大学、斯坦福、伯克利等高校及初创公司 Virtue AI，不计入公司项目。</div>
 <div class="source"><a href="https://arxiv.org/abs/2605.04808" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

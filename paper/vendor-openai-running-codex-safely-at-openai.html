@@ -9,7 +9,7 @@
 <div class="tags"><span class="vendor-tag">OpenAI</span><span class="tag">方向:安全隐私</span><span class="tag">应用:代码</span><span class="tag">方向:工具调用</span></div>
 <div class="field"><span class="label">这是什么</span><span class="text">OpenAI 介绍公司内部如何安全地使用 Codex 编程智能体：靠沙箱隔离、操作审批、网络策略和面向智能体的遥测日志，让编程 Agent 在合规前提下推广使用。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把智能体能执行的命令关进沙箱，高风险操作要人工批准，联网受策略限制，并记录智能体行为日志用于审计。</span></div>
-<div class="score-reason">评分依据：讲的是编程智能体的安全运行与治理实践，和端侧推理部署关系较远，只对本地运行 Agent 的权限隔离有参考价值；属于工程经验分享，没有新算法。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把智能体能执行的命令关进沙箱，越界操作交给自动审批子智能体判断风险，网络只放行白名单域名，凭据存放在系统密钥环，并通过 OpenTelemetry 导出提示、审批、工具执行等日志供安全分诊智能体审计。</span></div>
+<div class="score-reason">评分依据：讲的是编程智能体的安全运行与治理实践，和端侧推理部署关系较远，只对本地运行 Agent 的权限隔离有参考价值；属于工程经验分享，没有新算法和量化结果。</div>
 <div class="source"><a href="https://openai.com/index/running-codex-safely" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

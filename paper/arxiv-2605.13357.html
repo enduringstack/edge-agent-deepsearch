@@ -6,10 +6,10 @@
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>AI Harness Engineering: A Runtime Substrate for Foundation-Model Software Agents</h1>
 <div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-05-13 · Hailin Zhong; Shengxin Zhu / arXiv</div>
-<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:记忆</span><span class="tag">应用:代码</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">提出“AI 驾驭工程”概念：认为软件工程 Agent 靠不靠谱不只看模型，还取决于包裹它的运行时支撑层（harness）。</span></div>
+<div class="tags"><span class="tag">方向:工具调用</span><span class="tag">方向:记忆</span><span class="tag">方向:评测基准</span><span class="tag">应用:代码</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">提出“AI 驾驭工程”的说法：编程 Agent 在真实项目里靠不靠谱，不只取决于模型本身，还取决于包在模型外面的运行时支撑层（harness）怎么给它提供上下文、工具和验证手段。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">把 harness 拆成任务说明、上下文选择、工具访问、项目记忆、权限、验证等 11 项职责，按 H0 到 H3 四级逐步开放给 Agent，并用基于运行轨迹的审计包来评估。</span></div>
-<div class="score-reason">评分依据：讨论的是编程 Agent 运行时的系统设计框架，对 Agent 运行时有概念参考，但与设备端无关，且只有一个受控示例，没有量化结果。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">把 harness 拆成任务说明、上下文选择、工具访问、项目记忆、任务状态、权限、验证等 11 项职责，按 H0 到 H3 四个等级逐步开放给 Agent，再把每次运行的轨迹打包成可审计的证据包来评估。</span></div>
+<div class="score-reason">评分依据：讨论的是编程 Agent 运行时的系统设计框架，对 Agent 运行时设计有概念参考，但与设备端部署无关，相关度 3。论文只在一个小型登录修复任务上每个等级各跑一次，用来展示四级证据包的结构差异，没有给出任何量化对比，因此效果记为未报告；框架化梳理有一定价值，贡献 4。</div>
 <div class="source"><a href="https://arxiv.org/abs/2605.13357" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

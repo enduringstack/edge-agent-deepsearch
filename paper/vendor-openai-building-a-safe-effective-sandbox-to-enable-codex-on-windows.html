@@ -7,9 +7,9 @@
 <h1>Building a safe, effective sandbox to enable Codex on Windows</h1>
 <div class="meta"><span class="score">13</span> <span class="tier">官方动态</span>  2026-05-13 · OpenAI / OpenAI</div>
 <div class="tags"><span class="vendor-tag">OpenAI</span><span class="tag">方向:安全隐私</span><span class="tag">方向:工具调用</span><span class="tag">应用:代码</span><span class="tag">硬件:CPU</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">OpenAI 介绍如何为编程智能体 Codex 在 Windows 电脑上构建一个安全可用的沙箱，让它在本机执行命令时受到文件访问和网络的限制。</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">OpenAI 讲解如何为编程智能体 Codex 在 Windows 电脑上自建沙箱：让它在用户本机执行命令时只能写工作目录、默认不能联网，又不必每条命令都等人批准。</span></div>
 <div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">官方摘要称沙箱通过受控的文件访问范围和网络限制来约束 Codex 在本机上的操作，具体实现细节以原文为准。</span></div>
-<div class="score-reason">评分依据：Codex 的命令执行、文件读写等行动闭环运行在用户的 Windows 电脑上，沙箱正是这一端侧执行环节的安全基础；规划所用模型仍在云端，贡献按中等给分。</div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先试过 AppContainer、Windows Sandbox 和完整性级别标记都不合适；最终方案在安装时创建两个专用本地账户和合成身份，用写受限令牌加访问控制表限定可写目录，再用 Windows 防火墙封住离线账户的出网流量，由单独的命令执行程序以沙箱账户身份启动每条命令及其子进程。</span></div>
+<div class="score-reason">评分依据：Codex 的命令执行、文件读写等行动环节运行在用户的 Windows 电脑上，沙箱正是这一本机执行环节的安全基础；但规划所用模型在云端，属于单机执行云端智能体下发的命令，因此判为非端侧 Agent。原文是工程设计复盘，没有量化指标。</div>
 <div class="source"><a href="https://openai.com/index/building-codex-windows-sandbox" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>
