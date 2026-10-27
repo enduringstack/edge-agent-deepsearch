@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RobustNCL: Robustifying Neuromorphic Continual Learning under Transient Faults with Lightweight Detect-and-Cure Strategy</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>RobustNCL: Robustifying Neuromorphic Continual Learning under Transient Faults with Lightweight Detect-and-Cure Strategy</h1>
+<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-10-22 · Rachmad Vidya Wicaksana Putra; Shuochen Zhou; Muhammad Shafique / arXiv</div>
+<div class="tags"><span class="tag">方向:SNN</span><span class="tag">方向:端侧训练</span><span class="tag">硬件:神经形态</span><span class="tag">应用:fault-detection</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">神经形态持续学习在硬件上会受到粒子撞击引发的瞬时存储错误影响，这项工作给它加了一个轻量的检测和修复机制。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在较高故障率（如记忆回放 5×10⁻⁴）下，最佳变体的精度与无故障模型相差不到 0.5%，在 Split MNIST、Fashion-MNIST、CIFAR-10、CIFAR-100 上都明显好于不做防护，时延和能耗开销可忽略。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">从片外 DRAM 读取权重时检测异常特征，一旦发现就用零值、最小/最大值或原始分布中最可能的值替换，修复值存放在抗辐射存储中。</span></div>
+<div class="score-reason">评分依据：面向低功耗神经形态硬件的可靠性问题，属于端侧技术栈中的相邻方向；方法简单但首次系统研究该场景。纽约大学阿布扎比分校的学术工作。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.31954" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

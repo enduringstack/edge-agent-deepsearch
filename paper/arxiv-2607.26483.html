@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Reconstructing Backpropagation from Forward Fluctuations in Noise-modulated Neural Networks</h1>
-<div class="meta"><span class="score">12</span> <span class="tier school">学校预印本</span>  2026-07-29 · Shuhei Ikemoto / arXiv</div>
-<div class="tags"><span class="tag">方向:端侧agent</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">噪声调制神经网络（NNN）只在有噪声时才学习和推理，把噪声当作计算资源而非干扰，作者针对此展开。</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：auto-converted（乙方案首版）；affiliation/精修大白话/精调分数待后续补</div>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-10-23 · Shuhei Ikemoto / arXiv</div>
+<div class="tags"><span class="tag">方向:端侧训练</span><span class="tag">方向:SNN</span><span class="tag">硬件:神经形态</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">提出一种“靠噪声学习”的神经网络训练规则：不需要反向通路，只用前向传播时的统计量就能重建反向传播梯度，目标是让学习过程也能直接做进数字电路或神经形态芯片里。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">梯度估计在实验中近乎无偏；配合逐权重的本地 Adam 更新，在简单回归任务上达到与标准反向传播相同的最终精度。v2 新增了对噪声强度、集成规模、层内相关性的敏感性分析，以及更深网络和多分类任务的扩展实验。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用相邻层输入输出的协方差去估计每个权重矩阵（权重镜像），再结合单元内部的局部差分估计，沿计算图递归传播输出误差；均匀噪声下这些局部运算退化成多项式和比较器，便于硬件实现。</span></div>
+<div class="score-reason">评分依据：属于片上学习和神经形态硬件方向的基础研究，只在简单任务上验证，离端侧 AI 部署较远，因此相关度给 3；用前向统计重建反向传播的思路有新意，但规模尚小。作者为日本高校单人署名，未涉及公司。</div>
 <div class="source"><a href="https://arxiv.org/abs/2607.26483" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>
