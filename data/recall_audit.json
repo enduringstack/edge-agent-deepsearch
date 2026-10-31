@@ -4,7 +4,7 @@
   "end": "2026-10-31"
  },
  "method": "独立检索，未读本项目周报/run/data。中文：IT之家 10-27~10-30 逐日归档全量抓取（共约 1100 条标题，按关键词筛后逐篇打开正文核对日期）；量子位首页（WebFetch，取到 10-27~10-30 文章）；36氪 RSS 只返回最近 30 条（10-29~10-30，多为财经快讯），机器之心首页没有日期、正文要订阅，按“受限”处理；新智元未查。英文：9to5Google、9to5Mac、Android Authority、Tom's Hardware、The Register、Phoronix、MarkTechPost、The Verge 的 RSS 均覆盖窗口，重点条目逐篇打开；The Verge 正文无法抓取（只用 RSS 标题）。Hacker News：Algolia search 按 created_at_i 限定 10-27~10-30（UTC），取 150 分以上全部帖子，并对 on-device/local/llama.cpp/MLX/NPU/Gemma/Qwen/phone/edge/ollama 等关键词补搜。Hugging Face：按 author 查约 37 家机构窗口内新建模型（LiquidAI、amd、ggml-org、nvidia、ibm-granite、inclusionAI、microsoft 等有命中），并查 likes7d 热榜。GitHub：查 llama.cpp、LiteRT-LM、ExecuTorch、MLX、Ollama、MLC、MNN、ONNX Runtime GenAI、ncnn、RyzenAI-SW 的窗口内 release。Reddit r/LocalLLaMA：周榜 RSS 一次取到 50 条（未被限流），帖子正文无法 WebFetch。剔除：Qwenputer（10-22 发布，10-29 才上 HN）、Ollama Mac 本地 TTS（10-24 宣布）、tinyworldformer（10-22 建仓）、SoMark OXR（仓库 10-24 前已发布），都不在窗口内；Mistral Large 4 开放权重、Gemini 4 Carbon、Genie 4、GPT-6.1 Terra 等云端模型没有端侧版本，不列。AMD 在 HF 上 10-30 批量上传 Ryzen AI 1.9.0 NPU 模型，但 RyzenAI-SW 还没有 1.9 正式 release，未列。（本期为部分周，只列 10-27 起的事件，11-02 后追加。） 10-31 增量补采：（只补 10-30 晚至 10-31 及前半周遗漏）：IT之家 10-30（279 条）与 10-31（144 条）逐日归档全量标题，相关条目逐篇打开正文核对日期；量子位 RSS（10-30~10-31 共 10 篇，无新的端侧条目）；9to5Google、9to5Mac、Android Authority、Tom's Hardware、The Verge、The Register、Phoronix、MarkTechPost、Ars Technica、TechCrunch、Engadget、Wccftech 的 RSS 覆盖 10-30~10-31；HN Algolia 按 created_at_i 限定 10-30~10-31 UTC，取 80 分以上全部帖子，并对 on-device/local/llama.cpp/MLX/NPU/Gemma/Qwen/ollama/phone/edge/GGUF 等补搜；Hugging Face 按约 37 家机构查 10-29 后新建模型；GitHub 查 RyzenAI-SW、llama.cpp、MLX、Ollama、ExecuTorch、ONNX Runtime GenAI、LiteRT、MLC、MiniCPM、ncnn 的 release（RyzenAI-SW v1.9.0 已于 10-31 正式发布，补列；llama.cpp 只有 bNNNNN CI 构建，不列）；Reddit r/LocalLLaMA 日榜 RSS 正常取到，周榜 RSS 返回空（受限）。36氪 RSS 与机器之心 RSS 返回 0 条（受限），新智元未查；WebSearch 对腾讯全球数字生态大会的端侧发布没有搜到一手报道，只用了 IT之家的腾讯地图稿。剔除：Google Project Suncatcher 卫星 TPU 跑 Gemma 4（数据中心级算力上天，不算端侧）、Anthropic Claude 接入 CarPlay（10-29，云端应用）、联发科第二家 AI ASIC 客户（数据中心）、Ming-3.0-TTS、surya-ocr-2.5、Audio8-TTS（模型发布于 10-27 之前）、Windows 11 新搜索的内联操作（没有 AI 相关内容）、Pixel Take a Message 进 Transit 模式（APK 拆包，信息太少）。前半周漏项补了 Vercel agent-desktop 1.0（10-28）。",
- "summary": "独立子 agent 列出 38 件本周（10-27~10-31，部分周）端侧大事：已收录 10 件，补收 4 件（国行 Apple 智能 10-31 经官方新闻稿补进正式周报；华为 Mate 90 小艺升级、联想天禧 AI 4.5 AIPC 端、AMD Ryzen AI 1.9.0 补入本周判断），24 件有理由不收（只有媒体报道的写入本周判断“另据媒体报道”段）。",
+ "summary": "独立子 agent 列出 38 件本周（10-27~10-31，部分周）端侧大事：已收录 10 件，补收 4 件（国行 Apple 智能与 AMD Ryzen AI 1.9.0 在白名单扩充后补进正式周报；华为 Mate 90 小艺升级、联想天禧 AI 4.5 AIPC 端补入本周判断），24 件有理由不收（只有媒体报道的写入本周判断“另据媒体报道”段）。",
  "items": [
   {
    "headline": "苹果发布 M6 芯片版 14 英寸 MacBook Pro 与 24 英寸 iMac，主打设备端 AI 提速",
@@ -256,9 +256,9 @@
    "source": "GitHub Release / Hugging Face（amd 组织）",
    "date": "2026-10-31",
    "status": "补收",
-   "place": "本周判断",
-   "match": "https://github.com/amd/RyzenAI-SW/releases/tag/v1.9.0",
-   "reason": "amd/RyzenAI-SW 不在开源大项目白名单，GitHub 官方 release 写入本周判断（PC 侧）。"
+   "place": "正式周报",
+   "match": "github-amd-ryzenai-sw-v1-9-0",
+   "reason": "amd/RyzenAI-SW 10-31 经用户同意加入开源大项目白名单后，1.9.0 发布补收进正式周报。"
   },
   {
    "headline": "微软开源 4B 计算机操作智能体模型 Mage-VL-Cowork，GUI 操作加 Shell/Python 执行，OSWorld-Verified 得 66.0%",

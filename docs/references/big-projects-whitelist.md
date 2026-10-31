@@ -7,7 +7,7 @@
 > - release notes 必须从官方 release 页取，不许用二手解读。
 > - github MCP 配置见 `docs/references/mcp-setup.md`（项目级 `.mcp.json`，需 `GITHUB_PERSONAL_ACCESS_TOKEN`）。
 
-## 端侧/边缘推理引擎与端侧模型（17）
+## 端侧/边缘推理引擎与端侧模型（18）
 - llama.cpp — `github.com/ggml-org/llama.cpp`（GGUF 标准，CPU/Metal/CUDA/Vulkan）
 - ExecuTorch (Meta) — `github.com/pytorch/executorch`（PyTorch 边缘部署）
 - MLC-LLM — `github.com/mlc-ai/mlc-llm`（TVM 编译，跨平台含 WebGPU）
@@ -22,9 +22,12 @@
 - OpenVINO (Intel) — `github.com/openvinotoolkit/openvino`（边缘推理）
 - PowerInfer (SJTU) — `github.com/Tiiny-AI/PowerInfer`（CPU+GPU 混合端侧大模型。原 `PowerInfer/PowerInfer` 组织路径已 404，项目迁至 Tiiny-AI）
 - RKLLM (Rockchip) — `github.com/airockchip/rknn-llm`（瑞芯微 RK3588/RK3576 NPU 端侧 LLM 运行时）
+- Ryzen AI Software (AMD) — `github.com/amd/RyzenAI-SW`（AMD 锐龙 AI PC 的 NPU 推理工具链与运行时；约 900 星）
 - MiniCPM (面壁/OpenBMB) — `github.com/OpenBMB/MiniCPM`（端侧大模型；约 1.2 万星）
 - MiniCPM-V (面壁/OpenBMB) — `github.com/OpenBMB/MiniCPM-V`（端侧多模态大模型；约 2.7 万星）
 - VoxCPM (面壁/OpenBMB) — `github.com/OpenBMB/VoxCPM`（端侧语音合成；约 4 万星）
+
+> 2026-10-31 加入 amd/RyzenAI-SW：AMD 锐龙 AI PC 的 NPU 推理栈只在这个仓发布版本（1.9.0 取消 NPU 上大模型的 4K/16K 上下文上限），amd.com 没有对应的带日期稿件。星数不到 1000，但它是厂商官方运行时，与 RKLLM 同类，用户同意加入。
 
 > 2026-10-24 加入 LiteRT-LM：它是独立仓，白名单原来只有 `litert`，7–9 月 v0.14~v0.17 的重要版本（多 token 预测、Android 原生 CLI、NPU 音频加速）全部漏收，只能写进周报摘要。
 

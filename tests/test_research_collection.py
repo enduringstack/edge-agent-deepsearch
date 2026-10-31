@@ -568,6 +568,10 @@ class GitHubReleaseCollectionTests(unittest.TestCase):
         self.assertTrue(module.is_required_github_project("https://github.com/google-ai-edge/LiteRT-LM"))
         self.assertTrue(module.is_required_github_project("https://github.com/google-ai-edge/litert"))
 
+    def test_amd_ryzen_ai_runtime_is_whitelisted(self):
+        module = importlib.import_module("research_collection")
+        self.assertTrue(module.is_required_github_project("https://github.com/amd/RyzenAI-SW"))
+
     def test_limioryn_chinese_release_summary_is_kept_as_direct_edge_agent(self):
         paper = build_run_week.convert_github({
             "repo": "YINGLINGH/limioryn",

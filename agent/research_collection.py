@@ -66,6 +66,7 @@ REQUIRED_GITHUB_PROJECTS = frozenset({
     "openvinotoolkit/openvino",
     "Tiiny-AI/PowerInfer",
     "airockchip/rknn-llm",
+    "amd/RyzenAI-SW",
     "HKUDS/nanobot",
     "microsoft/Orchard",
     "YINGLINGH/limioryn",
