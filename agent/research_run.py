@@ -121,6 +121,21 @@ OFFICIAL_SOURCE_DOMAINS = (
     "minimax.io",
     "amd.com",
     "liquid.ai",
+    # Edge-AI startups (2026-10-31, user request): dated first-hand news/blog pages.
+    "prismml.com",
+    "perplexity.ai",
+    "cactuscompute.com",
+    "deepgrove.ai",
+    "ornith.ai",
+    "deep-reinforce.com",
+    "om-ai.com",
+    "galbot.com",
+    "memtensor.com",
+    "memtensor.com.cn",
+    "deepx.ai",
+    "hailo.ai",
+    "cixtech.com",
+    "acrab.ai",
 )
 
 AFFILIATION_EVIDENCE_DOMAINS = (

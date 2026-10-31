@@ -572,6 +572,13 @@ class GitHubReleaseCollectionTests(unittest.TestCase):
         module = importlib.import_module("research_collection")
         self.assertTrue(module.is_required_github_project("https://github.com/amd/RyzenAI-SW"))
 
+    def test_startup_and_accelerator_runtimes_are_whitelisted(self):
+        module = importlib.import_module("research_collection")
+        for repo in ("qualcomm/GenieX", "hailo-ai/hailort", "DEEPX-AI/dx-all-suite",
+                     "cactus-compute/cactus", "MemTensor/MemOS"):
+            self.assertTrue(module.is_required_github_project(f"https://github.com/{repo}"))
+        self.assertFalse(module.is_required_github_project("https://github.com/cactus-compute/needle"))
+
     def test_limioryn_chinese_release_summary_is_kept_as_direct_edge_agent(self):
         paper = build_run_week.convert_github({
             "repo": "YINGLINGH/limioryn",
@@ -1086,6 +1093,23 @@ class OfficialSourceCoverageTests(unittest.TestCase):
             with self.subTest(url=url):
                 self.assertTrue(research_run.is_official_source_url(url))
         self.assertFalse(research_run.is_official_source_url("https://amd.com.example.net/news"))
+
+    def test_edge_ai_startup_domains_are_official_sources(self):
+        urls = [
+            "https://prismml.com/news/bonsai-image",
+            "https://www.perplexity.ai/hub/blog/example",
+            "https://research.perplexity.ai/articles/example",
+            "https://cactuscompute.com/blog/needle-2",
+            "https://deepx.ai/company/news/example/",
+            "https://hailo.ai/company-overview/newsroom/news/example/",
+            "https://www.memtensor.com.cn/h-col-246.html",
+            "https://www.cixtech.com/news/",
+            "https://acrab.ai/news.html",
+        ]
+        for url in urls:
+            with self.subTest(url=url):
+                self.assertTrue(research_run.is_official_source_url(url))
+        self.assertFalse(research_run.is_official_source_url("https://deepreinforce.ai/"))
 
     def test_publish_cli_refuses_a_run_without_collection_manifest(self):
         with tempfile.TemporaryDirectory() as tmpdir:

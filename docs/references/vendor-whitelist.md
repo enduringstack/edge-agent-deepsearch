@@ -70,4 +70,21 @@ Baichuan: `baichuan-ai.com`
 AMD: `amd.com`（含 `newsroom.amd.com`）
 Liquid AI: `liquid.ai`（`liquid.ai/blog`）
 
+端侧 AI 初创（2026-10-31 加入，附加来源，不在 24 家必查里）：
+- PrismML: `prismml.com`（`/news`、`/blog`，JSON-LD `datePublished`）
+- Perplexity: `perplexity.ai`（`www.perplexity.ai/hub/blog`、`research.perplexity.ai`，`publishedAt` / `<time>`）
+- Cactus Compute: `cactuscompute.com`（`/blog`，`article:published_time`）
+- DeepGrove: `deepgrove.ai`（`/research`，纯前端页面，日期只在 JS 包里，要能核到具体日才收）
+- DeepReinforce（现 Ornith AI）: `ornith.ai`、`deep-reinforce.com`（标题里多只有月份，核不到具体日期就不收；旧域名 deepreinforce.ai 是停放页，不收）
+- Om AI 联汇: `om-ai.com`（新闻由前端接口拉取，境外访问常超时，暂未核到带日期页面）
+- 银河通用 Galbot: `galbot.com`（`/news` 列表页带日期，正文多在微信）
+- 记忆张量 MemTensor: `memtensor.com`、`memtensor.com.cn`（“公司动态”列表页带日期）
+- DEEPX: `deepx.ai`（`/company/news/`，WordPress JSON-LD / RSS；RSS 混有韩文公告，按 News/Press 分类过滤）
+- Hailo: `hailo.ai`（newsroom 与 `/blog`，JSON-LD / RSS）
+- 此芯科技 Cix: `cixtech.com`（`/news/`，正文带日期）
+- Acrab: `acrab.ai`（`/news.html` 列表正文带日期，没有单独文章页）
+- Nexa AI 已被高通收购，`nexa.ai` 整站跳转到高通 AI Hub，按 Qualcomm 处理，不单列。
+
+> 2026-10-31 加入端侧 AI 初创：往期漏检对账里 PrismML（Bonsai）、Perplexity（本地智能体）、Cactus（Needle）、DeepGrove、DeepReinforce、Om AI、DEEPX 等多次因域名不在白名单只能写进周报摘要；用户要求把初创公司加入官方来源白名单和公司归属名单。逐家核实了带日期的发布入口（见上）。
+
 > 2026-10-24 加入 `qwen.ai`、`amd.com`、`liquid.ai`：6–9 月漏检对账里 Qwen 机器人套件、AMD Advancing AI / IFA、Liquid LFM2.5 系列都有带日期的一手页面，却因域名不在白名单只能写进周报摘要。AMD、Liquid AI 不在 24 家必查厂商（`REQUIRED_VENDOR_SOURCES`）里，采集时作为附加来源，有就收。

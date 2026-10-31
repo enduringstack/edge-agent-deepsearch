@@ -7,7 +7,7 @@
 > - release notes 必须从官方 release 页取，不许用二手解读。
 > - github MCP 配置见 `docs/references/mcp-setup.md`（项目级 `.mcp.json`，需 `GITHUB_PERSONAL_ACCESS_TOKEN`）。
 
-## 端侧/边缘推理引擎与端侧模型（18）
+## 端侧/边缘推理引擎与端侧模型（22）
 - llama.cpp — `github.com/ggml-org/llama.cpp`（GGUF 标准，CPU/Metal/CUDA/Vulkan）
 - ExecuTorch (Meta) — `github.com/pytorch/executorch`（PyTorch 边缘部署）
 - MLC-LLM — `github.com/mlc-ai/mlc-llm`（TVM 编译，跨平台含 WebGPU）
@@ -23,9 +23,15 @@
 - PowerInfer (SJTU) — `github.com/Tiiny-AI/PowerInfer`（CPU+GPU 混合端侧大模型。原 `PowerInfer/PowerInfer` 组织路径已 404，项目迁至 Tiiny-AI）
 - RKLLM (Rockchip) — `github.com/airockchip/rknn-llm`（瑞芯微 RK3588/RK3576 NPU 端侧 LLM 运行时）
 - Ryzen AI Software (AMD) — `github.com/amd/RyzenAI-SW`（AMD 锐龙 AI PC 的 NPU 推理工具链与运行时；约 900 星）
+- GenieX (Qualcomm，原 Nexa SDK) — `github.com/qualcomm/GenieX`（骁龙 Hexagon NPU 上跑 GGUF 等模型的端侧运行时；约 8500 星）
+- HailoRT (Hailo) — `github.com/hailo-ai/hailort`（Hailo 边缘 AI 加速器运行时）
+- DX-All-Suite (DEEPX) — `github.com/DEEPX-AI/dx-all-suite`（DEEPX NPU 的编译器与运行时套件）
+- Cactus (Cactus Compute) — `github.com/cactus-compute/cactus`（手机端侧推理引擎；约 6200 星）
 - MiniCPM (面壁/OpenBMB) — `github.com/OpenBMB/MiniCPM`（端侧大模型；约 1.2 万星）
 - MiniCPM-V (面壁/OpenBMB) — `github.com/OpenBMB/MiniCPM-V`（端侧多模态大模型；约 2.7 万星）
 - VoxCPM (面壁/OpenBMB) — `github.com/OpenBMB/VoxCPM`（端侧语音合成；约 4 万星）
+
+> 2026-10-31 加入初创与芯片厂的端侧运行时：qualcomm/GenieX（Nexa AI 被高通收购后 nexa-sdk 迁入此仓）、hailo-ai/hailort、DEEPX-AI/dx-all-suite、cactus-compute/cactus、MemTensor/MemOS，按用户“初创公司也加入白名单”的要求。HailoRT 与 DX-All-Suite 星数不高，但都是厂商官方运行时，与 RKLLM、RyzenAI-SW 同类。未加：PrismML 的 llama.cpp fork（自动构建 tag）、needle 与 Bonsai-demo（不用 Releases）、om-ai-lab 各仓（Releases 停在 2025 年初）。
 
 > 2026-10-31 加入 amd/RyzenAI-SW：AMD 锐龙 AI PC 的 NPU 推理栈只在这个仓发布版本（1.9.0 取消 NPU 上大模型的 4K/16K 上下文上限），amd.com 没有对应的带日期稿件。星数不到 1000，但它是厂商官方运行时，与 RKLLM 同类，用户同意加入。
 
@@ -35,6 +41,7 @@
 
 ## Agent 应用
 - nanobot (HKUDS) — `github.com/HKUDS/nanobot`（轻量开源 AI agent，工具/聊天/工作流；港大 HKUDS 实验室）
+- MemOS (MemTensor) — `github.com/MemTensor/MemOS`（智能体记忆操作系统；约 1.2 万星。属于相邻 Agent 平台，是否端侧按每次发布内容判断）
 - Orchard (Microsoft Research) — `github.com/microsoft/Orchard`（Agent 训练与 Kubernetes 环境基础设施；属于相邻 Agent 平台，不是端侧 Agent）
 - Limioryn — `github.com/YINGLINGH/limioryn`（本周新仓快速获得 100+ stars；面向 ESP32/STM32/Linux SBC 的端云 Agent 框架，提供 Capability 工具、设备执行、ACK、对账与恢复闭环）
 

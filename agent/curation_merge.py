@@ -35,6 +35,9 @@ COMPANIES = {
     "Changan Automobile", "ZTE", "Volkswagen", "Honda", "Cohere", "Scania", "PwC",
     "Lenovo", "LG", "Red Hat", "Hewlett Packard Enterprise", "AT&T", "Zoom", "Li Auto",
     "Rockwell Automation", "Qihoo 360", "Hitachi", "China Telecom", "Ping An", "Toyota", "Cisco", "Houmo AI", "Infineon", "NTT", "Snowflake", "Siemens", "Airbus", "Preferred Networks", "PayPal", "NIO", "BMW", "Fujitsu", "GlobalFoundries", "Sony", "Naver", "EcoFlow", "Dell", "Thales", "Yahoo", "NXP", "SoftBank", "Horizon Robotics", "SenseTime", "ServiceNow", "STMicroelectronics", "Palo Alto Networks", "Snap", "Orange", "Mitsubishi Electric", "Tata Consultancy Services", "Bilibili", "GE HealthCare", "Sophgo", "Sakana AI", "XPeng", "JPMorgan Chase", "Shanda", "LinkedIn", "SAP", "Leapmotor", "Axelera AI", "Infinigence-AI", "Infinigence AI", "Weibo", "MetaX", "Feedzai", "Futurewei", "InterDigital", "LG Uplus", "Netflix", "Bosch", "Scale AI", "Carl Zeiss", "BrainChip", "AgiBot", "Liquid AI",
+    # Edge-AI startups added 2026-10-31 at the user's request.
+    "PrismML", "Perplexity", "Cactus Compute", "DeepGrove", "DeepReinforce", "Ornith AI", "Nexa AI",
+    "Om AI", "Galbot", "MemTensor", "DEEPX", "Hailo", "Cix Technology", "Acrab",
 }
 EDGE_SCOPES = ("手机", "PC", "其他端侧")
 EDITABLE = ("abstract", "effects", "mechanism", "score_reason", "tags", "edge_agent_scope", "edge_agent_evidence")
