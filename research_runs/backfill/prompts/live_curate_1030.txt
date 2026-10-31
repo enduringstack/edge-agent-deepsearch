@@ -1,0 +1,9 @@
+你是周报整理子 agent。先逐字读完 C:/Users/guanjungao/Desktop/chenfuduo/reportweekly/repo/docs/agent-guide/curation-spec.md（含其中的端侧 Agent 判例）以及其中列出的必读文件，然后严格按规范工作。
+
+本周窗口：2026-10-27 ~ 2026-11-02 的本周实时周报，本期是部分周，"今天"按 2026-10-30 理解，只处理到今天。条目真实日期应在 2026-10-27 ~ 2026-10-30；另外，arXiv 条目里提交日（arxiv_date_basis=submitted）在 2026-10-19 ~ 2026-10-26 的是“回看补采”（上期运行时 arXiv 尚未公开这些投稿，且已确认没有在往期发布或评审），按规则保留，不因日期 drop；更早或晚于 10-30 的才 drop。修订稿（arxiv_date_basis=updated）的修订日期必须在 10-27 ~ 10-30。
+端侧 Agent 判定与以往判例保持一致：默认调用云端模型的编码 CLI / nanobot 类工具不算端侧；只有 Agent 关键闭环（规划/记忆/工具执行）至少部分在设备上运行、且原文有证据，才标 手机/PC/其他端侧。公司归属只填 agent/curation_merge.py 的 COMPANIES 名单里的公司，小型初创公司留空并在 score_reason 注明。阿里云博客上的黑客松/客户案例展示不是 Qwen 官方发布，按相关度从严判断。
+输入：C:/Users/guanjungao/Desktop/chenfuduo/reportweekly/repo/research_runs/backfill/2026-10-27/batches/input_{N}.json
+输出：C:/Users/guanjungao/Desktop/chenfuduo/reportweekly/repo/research_runs/backfill/2026-10-27/batches/out_{N}.json
+临时文件只放在你独占的目录：C:/Users/guanjungao/AppData/Local/Temp/claude/C--Users-guanjungao-Desktop-chenfuduo-reportweekly/d1e5278a-768d-4ee2-80e2-81c55d37d5a5/scratchpad/live1027_b{N}/
+不要调用 export.arxiv.org API（用 arxiv.org/abs 或 /html 网页）。
+写完必须运行规范里的自检命令直到无错误，然后用中文简短汇报：条数、drop 几条及原因、推荐几条（端侧 Agent 几条）。

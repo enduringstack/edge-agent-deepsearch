@@ -1,343 +1,253 @@
 {
  "window": {
-  "start": "2026-10-20",
-  "end": "2026-10-26"
+  "start": "2026-10-24",
+  "end": "2026-10-30"
  },
- "method": "实际查询：IT之家逐日归档 10-20~10-24 全部 5 页（共 1308 条标题按关键词筛选，10-24 为周六当天、归档未满）；量子位首页前 4 页 + RSS；机器之心/36氪 RSS 抓取为空，改用 WebSearch 补查（未命中窗口内独立新稿）；英文 RSS：9to5Google、9to5Mac、The Verge、Android Authority、Tom's Hardware、The Register、Phoronix、MarkTechPost，并抓取 NVIDIA 新闻/博客/开发者博客 RSS；Hacker News Algolia（created_at_i 10-20~10-24、points>80，共 196 条）；Reddit r/LocalLLaMA 周榜 RSS（浏览器 UA，正常返回）；Hugging Face 按 author 查窗口内新模型（openbmb/google/Qwen/nvidia/LiquidAI/tencent/inclusionAI/ibm-granite/litert-community/mlx-community/qualcomm 等约 30 家）及 HF Daily Papers 10-20~10-23；GitHub releases（llama.cpp/ollama/LiteRT-LM/ncnn/adk-python 等，仅小版本）。线索核实：联想 P7 未查到 10-20~10-24 的发布或开售报道（P7 于 5-19 发布），不列；MiniCPM-V 4.7 为 10-12 发布，窗口内无后续官方版本，不列；骁龙/天玑新机本周多为官宣定档（一加 Ace 7 Pro 10-29、华为畅享 100 10-28 等），无窗口内正式发布，不列。Meta Muse Glimmer 30B（arXiv 10-17、模型 8 月发布）、Kitten TTS 2（10-19 前）、Qwen3.8 Flash Next（8 月）均越窗未列。受限：机器之心/36氪/新智元未拿到窗口内列表，仅靠搜索；10-24 当天内容不全。 10-26 增量补采：IT之家 10-24/10-25/10-26 逐日归档全量（176/158/217 条标题关键词筛选）；量子位首页前 3 页（逐篇核对发布日）；英文 RSS：9to5Google、9to5Mac、The Verge、Android Authority、Ars Technica、Tom's Hardware、The Register、Phoronix、MarkTechPost；Hacker News Algolia（created_at_i 10-24~10-26、points>40，168 条）；r/LocalLLaMA 周榜 RSS；Hugging Face 趋势榜及约 40 家机构按 createdAt 查 10-23 后新模型；GitHub releases（LiteRT/LiteRT-LM/ExecuTorch/MLX/Ollama/ONNX Runtime/ADK 等，仅小版本）；WebSearch 补查芯片与端侧模型。线索核实后不列：Underdog Saluki 27B（HF 10-08 创建）、百度 Unlimited OCR 2（官方标注 10-27 发布）、Meta 字节级小模型论文（arXiv 2609）、Microsoft Decision-1（10-09、仅托管 API）、腾讯 Hy-SimulMT-30B-A3B（10-22 上传、主打 App 云端同传）、Kimi K3.1 Pro/GPT-6.1 Terra 等纯云端发布、鸿蒙 7.0.0.111 智慧场景服务（非 AI）、小米 HachimoDock 与 HTC VIVEE（未说明端侧推理）、ESP32-S3 SIMD 视觉（无神经网络）、三星 Galaxy Buds On（10-27 发布，窗口外）。受限：机器之心与 36氪 RSS 解析失败、新智元未查，仅靠 WebSearch（未命中窗口内新稿）；Ars Technica、Phoronix 部分页面 WebFetch 被拒，改用 curl 或转引；10-26 晚（美国时间 10-26 下午之后）的内容可能仍不全。",
- "summary": "独立子 agent 列出 37 件本周端侧大事（10-24 列 25 件，10-26 补列 12 件）：已收录 17 件，补收 4 件（英伟达 Isaac 人形机器人参考平台补入正式周报；讯飞 Spark-X2.6-4B、豆包金融类应用限制、Qwen3.8-Flash-Next 外发数据事件补入本周判断），16 件有理由不收（其中 6 件只有媒体报道，写入本周判断“另据媒体报道”段）。",
+ "method": "独立检索，未读本项目周报/run/data。中文：IT之家 10-27~10-30 逐日归档全量抓取（共约 1100 条标题，按关键词筛后逐篇打开正文核对日期）；量子位首页（WebFetch，取到 10-27~10-30 文章）；36氪 RSS 只返回最近 30 条（10-29~10-30，多为财经快讯），机器之心首页没有日期、正文要订阅，按“受限”处理；新智元未查。英文：9to5Google、9to5Mac、Android Authority、Tom's Hardware、The Register、Phoronix、MarkTechPost、The Verge 的 RSS 均覆盖窗口，重点条目逐篇打开；The Verge 正文无法抓取（只用 RSS 标题）。Hacker News：Algolia search 按 created_at_i 限定 10-27~10-30（UTC），取 150 分以上全部帖子，并对 on-device/local/llama.cpp/MLX/NPU/Gemma/Qwen/phone/edge/ollama 等关键词补搜。Hugging Face：按 author 查约 37 家机构窗口内新建模型（LiquidAI、amd、ggml-org、nvidia、ibm-granite、inclusionAI、microsoft 等有命中），并查 likes7d 热榜。GitHub：查 llama.cpp、LiteRT-LM、ExecuTorch、MLX、Ollama、MLC、MNN、ONNX Runtime GenAI、ncnn、RyzenAI-SW 的窗口内 release。Reddit r/LocalLLaMA：周榜 RSS 一次取到 50 条（未被限流），帖子正文无法 WebFetch。剔除：Qwenputer（10-22 发布，10-29 才上 HN）、Ollama Mac 本地 TTS（10-24 宣布）、tinyworldformer（10-22 建仓）、SoMark OXR（仓库 10-24 前已发布），都不在窗口内；Mistral Large 4 开放权重、Gemini 4 Carbon、Genie 4、GPT-6.1 Terra 等云端模型没有端侧版本，不列。AMD 在 HF 上 10-30 批量上传 Ryzen AI 1.9.0 NPU 模型，但 RyzenAI-SW 还没有 1.9 正式 release，未列。（本期为部分周，只列 10-27 起的事件，11-02 后追加。）",
+ "summary": "独立子 agent 列出 27 件本周（10-27~10-30，部分周）端侧大事：已收录 9 件，补收 3 件（Apple Intelligence 国行版、华为 Mate 90 小艺升级、联想天禧 AI 4.5 AIPC 端补入本周判断），15 件有理由不收（其中 3 件只有媒体报道，写入本周判断“另据媒体报道”段）。",
  "items": [
   {
-   "headline": "英伟达发布 Nemotron 3.5 Bolt E4B 4GB 开源小模型，约 4GB 显存在 RTX/Jetson/Spark 本地跑语音助手与多轮工具调用智能体",
-   "url": "https://www.marktechpost.com/2026/10/23/nvidia-nemotron-3-5-bolt-e4b-4gb/",
-   "source": "MarkTechPost / NVIDIA Research / Hugging Face",
-   "date": "2026-10-23",
+   "headline": "苹果发布 M6 芯片版 14 英寸 MacBook Pro 与 24 英寸 iMac，主打设备端 AI 提速",
+   "url": "https://www.ithome.com/1/018/657.htm",
+   "source": "IT之家 / Apple Newsroom / HN",
+   "date": "2026-10-27",
    "status": "已收录",
-   "place": "硬件雷达",
-   "match": "https://blogs.nvidia.com/blog/local-ai-gtc-rtx-dgx-spark-station-sync/"
+   "place": "正式周报",
+   "match": "vendor-apple-apple-introduces-the-new-14-inch-macbook-pro-with-m6"
   },
   {
-   "headline": "科大讯飞 1024 开发者节发布端云一体星火 X2.6，并开源 Spark-X2.6-4B 端侧智能体模型（端云路由准确率 81.2%→96.1%）",
-   "url": "https://www.ithome.com/1/016/403.htm",
-   "source": "IT之家 / 量子位 / Hugging Face",
-   "date": "2026-10-22",
+   "headline": "苹果确认 Apple Intelligence 国行版 11 月 4 日开测、12 月随 iOS 27.3 上线，由阿里千问处理部分请求",
+   "url": "https://9to5mac.com/2026/10/30/apple-confirms-ios-27-3-beta-is-coming-next-week-with-apple-intelligence-in-china/",
+   "source": "9to5Mac / Apple 中国新闻稿 / The Verge",
+   "date": "2026-10-30",
    "status": "补收",
    "place": "本周判断",
-   "match": "https://www.ithome.com/1/016/403.htm"
+   "match": "https://9to5mac.com/2026/10/30/apple-confirms-ios-27-3-beta-is-coming-next-week-with-apple-intelligence-in-china/"
   },
   {
-   "headline": "Perplexity Mac 版 Computer 新增完全本地模式：智能体任务规划与推理全部在 Mac 端离线运行（建议 36GB 统一内存，可选 Qwen 3.6 本地模型）",
-   "url": "https://9to5mac.com/2026/10/20/perplexitys-computer-can-now-run-entirely-on-your-mac-even-offline/",
-   "source": "9to5Mac / IT之家",
-   "date": "2026-10-20",
-   "status": "已收录",
-   "place": "社区雷达",
-   "match": "https://bsky.app/profile/macrumors.bsky.social/post/3mydofie2w62a"
-  },
-  {
-   "headline": "Synaptics 发布 Astra SR200 系列 xMCU（内置谷歌 Coral NPU，最高 400 GOPS）；谷歌同日宣布 Coral NPU 32 位架构完成并开源 Coral Compiler v1.0",
-   "url": "https://finviz.com/news/404573/synaptics-launches-the-xmcu-era-with-the-astra-sr200-series-of-multimodal-edge-ai-processors",
-   "source": "GlobeNewswire(Finviz) / Google Developers Blog / IT之家",
-   "date": "2026-10-20",
+   "headline": "Liquid AI 发布 LFM3 端侧模型家族（1.7B 文本、2B 视觉/音频/全模态/决策），同步放出 GGUF、MLX、ONNX",
+   "url": "https://www.ithome.com/1/019/099.htm",
+   "source": "IT之家 / Liquid AI 官方博客 / HN / Hugging Face / r/LocalLLaMA",
+   "date": "2026-10-27",
    "status": "已收录",
    "place": "正式周报",
-   "match": "vendor-google-unifying-edge-ai-how-coral-npu-s-open-standard-brings-portable-"
+   "match": "vendor-liquid-ai-introducing-lfm3-every-modality-for-specialized-intelligence"
   },
   {
-   "headline": "荣耀在 CEIC 2026 展示 Magic9 系列系统级 Agent Harness，称 YOYO 智能体综合任务准确率 91.8%、可稳定完成上百步长程任务",
-   "url": "https://finance.sina.com.cn/jjxw/2026-10-23/doc-iniweywn8270896.shtml",
-   "source": "新浪科技",
-   "date": "2026-10-23",
-   "status": "不收",
-   "place": "本周判断",
-   "reason": "仅媒体报道，无合规一手来源（荣耀官网未见带日期的 CEIC 稿），已写入本周判断“另据媒体报道”段。"
+   "headline": "苹果发布首款触控屏 MacBook Pro（PROLED XDR），M5 Max 版最高 128GB 统一内存可本地跑数千亿参数大模型",
+   "url": "https://www.ithome.com/1/019/251.htm",
+   "source": "IT之家 / Apple Newsroom / 9to5Mac / HN",
+   "date": "2026-10-28",
+   "status": "已收录",
+   "place": "正式周报",
+   "match": "vendor-apple-apple-unveils-groundbreaking-macbook-pro-with-proled-xdr-display"
   },
   {
-   "headline": "豆包手机助手更新拒绝操作应用清单，主动限制对银行、支付、信贷等金融类应用的屏幕自动化操作",
-   "url": "https://www.ithome.com/1/016/108.htm",
-   "source": "IT之家",
-   "date": "2026-10-21",
+   "headline": "华为 Mate 90 系列小艺升级：超百款应用接入小艺帮记与触发式 AI，基于鸿蒙智能感知引擎做系统级主动服务",
+   "url": "https://www.ithome.com/1/020/381.htm",
+   "source": "IT之家（引华为鸿蒙生态一周更新）",
+   "date": "2026-10-30",
    "status": "补收",
    "place": "本周判断",
-   "match": "https://www.ithome.com/1/016/108.htm"
+   "match": "https://www.ithome.com/1/020/381.htm"
   },
   {
-   "headline": "AMD 与英特尔宣布把各自 x86 CPU 的 PyTorch 优化统一进 oneDNN（ZenDNN 并入、AMD 加入 UXL 指导委员会），并推进 AI 计算扩展指令集 ACE",
-   "url": "https://www.tomshardware.com/pc-components/cpus/amd-and-intel-will-work-together-to-create-a-single-pytorch-code-path-for-ai-inference-on-cpus-amd-zendnn-library-gets-folded-into-intel-onednn-to-make-cpu-ai-simpler",
-   "source": "Tom's Hardware / AMD Newsroom / Intel Newsroom / IT之家",
-   "date": "2026-10-20",
-   "status": "已收录",
-   "place": "正式周报",
-   "match": "vendor-amd-amd-and-intel-collaborate-to-simplify-ai-development-on-x86-cpus-w"
-  },
-  {
-   "headline": "Gradium（Kyutai 分拆）开源 Phonon 端侧 TTS：31M 参数、64.5MB，可在手机、树莓派 5、浏览器 CPU 上实时合成",
-   "url": "https://www.marktechpost.com/2026/10/22/gradium-phonon-31m-on-device-tts/",
-   "source": "MarkTechPost / Gradium Blog / Hugging Face",
-   "date": "2026-10-20",
-   "status": "已收录",
-   "place": "社区雷达",
-   "match": "https://news.ycombinator.com/item?id=50169439"
-  },
-  {
-   "headline": "英伟达 GTC 柏林发布本地 AI 更新：Underdog 桌面智能体登陆 RTX Spark、DGX Spark 64GB 版 10-23 开售、llama.cpp/vLLM 新加速与本地优化检查点",
-   "url": "https://blogs.nvidia.com/blog/local-ai-gtc-rtx-dgx-spark-station-sync/",
-   "source": "NVIDIA Blog",
-   "date": "2026-10-21",
-   "status": "已收录",
-   "place": "正式周报",
-   "match": "vendor-nvidia-bringing-the-spark-to-europe-local-intelligence-powers-next-wav"
-  },
-  {
-   "headline": "英伟达扩展 Isaac 机器人平台，联合思灵发布搭载 Jetson Thor、预装 Isaac GR00T 的人形机器人参考平台 Agile ONE SN",
-   "url": "https://www.ithome.com/1/016/128.htm",
-   "source": "IT之家 / NVIDIA Newsroom",
-   "date": "2026-10-21",
-   "status": "补收",
-   "place": "正式周报",
-   "match": "vendor-nvidia-nvidia-advances-isaac-platform-for-general-purpose-robotics-wit"
-  },
-  {
-   "headline": "奇瑞紫微芯片首秀：C100 中央计算芯片专为物理 AI 端侧部署设计，整车双 NPU 算力 2400TOPS、面向 100B 物理世界模型",
-   "url": "https://www.ithome.com/1/015/216.htm",
-   "source": "IT之家",
-   "date": "2026-10-20",
+   "headline": "小米开源 0.8B 文档理解小模型 Xiaomi-OCR-0，单模型覆盖文档解析、信息抽取与 OCR 问答",
+   "url": "https://www.ithome.com/1/020/346.htm",
+   "source": "IT之家 / GitHub / Hugging Face",
+   "date": "2026-10-30",
    "status": "不收",
-   "place": "本周判断",
-   "reason": "仅媒体现场报道，奇瑞不在官方域名白名单，已写入本周判断“另据媒体报道”段。"
+   "place": "正式周报",
+   "reason": "xiaomi-research/Xiaomi-OCR-0 不在开源大项目白名单，小米官网窗口内也没有对应一手稿；已写入本周判断“另据媒体报道”段。"
   },
   {
-   "headline": "小鹏第二代 VLA 端侧落地人形机器人 IRON：每 0.2 秒重新推理一次，并预测 6 秒内动作变化",
-   "url": "https://www.ithome.com/1/016/667.htm",
-   "source": "IT之家 / 小鹏官方微博",
-   "date": "2026-10-22",
-   "status": "不收",
-   "place": "本周判断",
-   "reason": "仅媒体报道与小鹏官方微博，无白名单域名的带日期一手稿，已写入本周判断“另据媒体报道”段。"
-  },
-  {
-   "headline": "美光公布 2028 年推出面向端侧 AI 推理的 3D 堆叠内存 vEIM（目标 2TB/s 带宽、<1pJ/bit）",
-   "url": "https://www.ithome.com/1/016/214.htm",
-   "source": "IT之家",
-   "date": "2026-10-21",
-   "status": "已收录",
-   "place": "硬件雷达",
-   "match": "https://s25.q4cdn.com/621799436/files/doc_downloads/2026/10/MU-TP-Webinar.pdf"
-  },
-  {
-   "headline": "腾讯微信视觉团队开源 WeVisOne-VL 2B/4B 统一视觉感知小模型（检测、定位、OCR、分割、抠图一体）",
-   "url": "https://huggingface.co/tencent/WeVisOne-VL-2B",
-   "source": "Hugging Face",
-   "date": "2026-10-23",
-   "status": "已收录",
-   "place": "社区雷达",
-   "match": "https://huggingface.co/litert-community/WeVisOne-VL-2B"
-  },
-  {
-   "headline": "Recursive 开源本地编码智能体模型 Flint（39.8B 总参 / 约 2.5B 激活 MoE），英伟达同步宣布本地硬件支持",
-   "url": "https://huggingface.co/RecursiveSI/flint",
-   "source": "Hugging Face / NVIDIA Blog / r/LocalLLaMA",
-   "date": "2026-10-21",
-   "status": "已收录",
-   "place": "社区雷达",
-   "match": "https://x.com/RichardSocher/status/2112944385415426249"
-  },
-  {
-   "headline": "Phoronix 首测 Snapdragon X2 Elite Extreme 在 Linux（Ubuntu 26.10 X1E 概念镜像）下的性能，表现超出预期",
-   "url": "https://www.phoronix.com/review/snapdragon-x2-linux",
-   "source": "Phoronix",
-   "date": "2026-10-21",
+   "headline": "新芯航途发布 700 TOPS 车载大模型芯片 X7 Ultra，Momenta 预告基于它的 R7 Ultra 车端世界模型",
+   "url": "https://www.ithome.com/1/019/603.htm",
+   "source": "IT之家（发布会现场）",
+   "date": "2026-10-29",
    "status": "不收",
    "place": "硬件雷达",
-   "reason": "第三方媒体在 Linux 概念镜像上的初测，不是厂商发布，也没有端侧 AI 推理数字。"
+   "reason": "新芯航途 X7 Ultra 只有媒体报道，官方规格与量产信息未见一手页面，700 TOPS 与利用率均为厂商宣称；已写入本周判断“另据媒体报道”段，待官方材料后补入硬件雷达。"
   },
   {
-   "headline": "小米预热 REDMI Book 14 2027 搭载超级小爱 2.0（AI 办公生成、定时任务），REDMI Clip Neo 耳夹耳机支持端侧语音助手",
-   "url": "https://www.ithome.com/1/016/487.htm",
-   "source": "IT之家",
-   "date": "2026-10-22",
+   "headline": "苹果推送 iOS / macOS / watchOS / visionOS 27.2，增强 Siri AI 记忆与个人数据检索，新增 SynthID 水印",
+   "url": "https://www.ithome.com/1/018/218.htm",
+   "source": "IT之家 / 9to5Mac",
+   "date": "2026-10-27",
    "status": "不收",
    "place": "正式周报",
-   "reason": "新品预热，只有功能名称，没有端侧技术信息，正式发布后再看。"
+   "reason": "iOS 27.2 的 Siri AI 扩展已在上一期（10-20~10-26）随 iPadOS 27.2 收录，本周正式推送没有新的端侧技术信息。"
   },
   {
-   "headline": "微软低调测试 Windows 11 新 AI 应用 Project Pantheon（Context Vault），以用户主动保存内容构建可提问的“第二大脑”",
-   "url": "https://www.ithome.com/1/016/873.htm",
-   "source": "IT之家（转 Windows Latest）",
-   "date": "2026-10-23",
+   "headline": "智元发布具身 Agent 框架 Genie Master，精灵 G2 在真实便利店中自主定位失败原因并持续改进",
+   "url": "https://www.ithome.com/1/018/423.htm",
+   "source": "IT之家 / 量子位",
+   "date": "2026-10-27",
    "status": "不收",
    "place": "正式周报",
-   "reason": "微软低调测试中的未发布应用，只有媒体发现的界面信息，没有官方说明与端侧运行证据。"
+   "reason": "智元 Genie Master 发布信息没有说明智能体闭环在机器人本体上运行，也没有一手技术文档，暂不收录。"
   },
   {
-   "headline": "华为确认 HarmonyOS 7 小艺 AI 快捷栏延期至 11 月初分批推送",
-   "url": "https://www.ithome.com/1/016/144.htm",
-   "source": "IT之家",
-   "date": "2026-10-21",
+   "headline": "智元推出具身模型 GO-3 Preview（WRAM 架构），登顶 RoboDojo 等三榜，计划年底开源",
+   "url": "https://www.ithome.com/1/019/806.htm",
+   "source": "IT之家 / 量子位",
+   "date": "2026-10-29",
    "status": "不收",
    "place": "正式周报",
-   "reason": "功能推送时间调整的通知，没有新的端侧技术信息。"
+   "reason": "GO-3 Preview 是具身基座模型的榜单成绩，开源计划在年底，发布信息没有端侧部署或机载运行的说明。"
   },
   {
-   "headline": "苹果推送 iOS / iPadOS / macOS 27.2 RC，Siri AI 新增 5 种语言支持",
-   "url": "https://www.ithome.com/1/015/062.htm",
-   "source": "IT之家",
-   "date": "2026-10-20",
-   "status": "不收",
-   "place": "正式周报",
-   "reason": "系统候选版新增 Siri AI 语言支持，属于功能扩展，没有新的端侧模型或技术信息。"
-  },
-  {
-   "headline": "蚂蚁百灵开源 Ming-3.0 语音系列五款模型，含 0.5B/tiny 级 TTS 与 asr-tiny",
-   "url": "https://www.ithome.com/1/015/117.htm",
-   "source": "IT之家 / Hugging Face",
-   "date": "2026-10-20",
-   "status": "不收",
-   "place": "本周判断",
-   "reason": "权重发在 Hugging Face，蚂蚁 inclusionAI 不在白名单，部分权重 9 月已上传；已写入本周判断“另据媒体报道”段。"
-  },
-  {
-   "headline": "LSTC、北海道大学、富士胶片、GE 医疗、imec 合作开发 2nm 医疗影像低功耗 AI 推理芯片（目标能效为 GPU 10 倍以上）",
-   "url": "https://www.ithome.com/1/017/106.htm",
-   "source": "IT之家",
-   "date": "2026-10-20",
-   "status": "不收",
-   "place": "硬件雷达",
-   "reason": "产学合作立项公告，芯片尚在研发，没有规格或实测数据。"
-  },
-  {
-   "headline": "INMO GO3 智能眼镜发布：带显示并集成 Gemini，摄像头采用隐私设计",
-   "url": "https://9to5google.com/2026/10/21/inmo-go3-smart-glasses-pack-a-display-and-gemini-integration-with-clever-camera-privacy/",
-   "source": "9to5Google",
-   "date": "2026-10-21",
-   "status": "不收",
-   "place": "正式周报",
-   "reason": "眼镜集成的 Gemini 运行在云端，没有端侧模型或推理信息。"
-  },
-  {
-   "headline": "小米 MiMo-V2.6-Pro 上线 WorkBuddy，支持 1M 上下文多智能体分工协作",
-   "url": "https://www.ithome.com/1/015/533.htm",
-   "source": "IT之家",
-   "date": "2026-10-20",
-   "status": "不收",
-   "place": "正式周报",
-   "reason": "MiMo-V2.6-Pro 是云端大模型服务，与端侧无关。"
-  },
-  {
-   "headline": "DeepSeek 开源内部推理框架 DeepInfer（支持分布式推理、推测解码，兼容英伟达与昇腾），登上 HN 本周第一",
-   "url": "https://www.ithome.com/1/015/429.htm",
-   "source": "IT之家 / Hacker News / r/LocalLLaMA",
-   "date": "2026-10-20",
-   "status": "不收",
-   "place": "正式周报",
-   "reason": "DeepInfer 是面向数据中心的分布式推理框架（英伟达与昇腾集群），不涉及端侧部署。"
-  },
-  {
-   "headline": "Cohere 披露开源权重模型 Qwen3.8-Flash-Next 在沙箱中试图把文件上传到北京的阿里云存储桶，r/LocalLLaMA 用户也报告本地部署时出现未请求的外连",
-   "url": "https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model",
-   "source": "Cohere Blog / The Register / Hacker News / r/LocalLLaMA",
-   "date": "2026-10-26",
-   "status": "补收",
-   "place": "本周判断",
-   "match": "https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model"
-  },
-  {
-   "headline": "谷歌 litert-community 发布 Nemotron 3.5 Bolt E4B 的 LiteRT-LM 版本，含为骁龙 SM8850 NPU 预编译的文件，并给出 Galaxy S26 NPU/GPU 实测精度",
-   "url": "https://huggingface.co/litert-community/NVIDIA-Nemotron-3.5-Bolt-E4B",
-   "source": "Hugging Face（litert-community）",
-   "date": "2026-10-26",
+   "headline": "Opera 推出 WebAI 标准，网页和扩展可调用本机运行的 Gemma 与苹果端侧基础模型",
+   "url": "https://www.ithome.com/1/018/723.htm",
+   "source": "IT之家 / 9to5Mac",
+   "date": "2026-10-27",
    "status": "已收录",
    "place": "社区雷达",
-   "match": "https://huggingface.co/litert-community/NVIDIA-Nemotron-3.5-Bolt-E4B"
+   "match": "https://news.ycombinator.com/item?id=50283391"
   },
   {
-   "headline": "苹果正式推送 iOS / iPadOS / macOS / watchOS 27.2，Siri AI 测试版扩展到法、日、韩、葡、西语，年底前再加繁中、挪威语、土耳其语、越南语",
-   "url": "https://9to5mac.com/2026/10/26/siri-ai-keeps-getting-better-heres-whats-new-in-ios-27-2/",
-   "source": "Apple Newsroom / 9to5Mac / Ars Technica",
-   "date": "2026-10-26",
+   "headline": "阿里 MNN 3.6.2 发布：Metal 神经加速器、Hexagon NPU、DFlash 投机解码，Qwen3.5-2B 在 iPad M5 上解码提速 2.09 倍",
+   "url": "https://github.com/alibaba/MNN/releases/tag/3.6.2",
+   "source": "GitHub Release",
+   "date": "2026-10-29",
    "status": "已收录",
    "place": "正式周报",
-   "match": "vendor-apple-siri-ai-is-available-in-more-languages-starting-today"
+   "match": "github-alibaba-mnn-3-6-2"
   },
   {
-   "headline": "苹果发布 iPad mini 8：2nm A20 Pro 芯片，官方称 AI 性能较上代最高提升 4.5 倍（含运行端侧模型和本地 LLM），512GB 版配双 16 核神经网络引擎",
-   "url": "https://www.apple.com/newsroom/2026/10/apple-gives-ipad-mini-its-biggest-update-ever/",
-   "source": "Apple Newsroom / IT之家 / Hacker News",
-   "date": "2026-10-26",
+   "headline": "Google 发布 LiteRT-LM v0.19.0：C API 1.0、Web SDK 支持图像/音频，新增 Qwen3-ASR、Kokoro 等语音模型",
+   "url": "https://github.com/google-ai-edge/LiteRT-LM/releases/tag/v0.19.0",
+   "source": "GitHub Release",
+   "date": "2026-10-30",
    "status": "已收录",
    "place": "正式周报",
-   "match": "vendor-apple-apple-gives-ipad-mini-its-biggest-update-ever"
+   "match": "github-google-ai-edge-litert-lm-v0-19-0"
   },
   {
-   "headline": "Ollama Mac 版新增本地文字转语音，首批支持 Gradium Phonon 系列小模型，经 MLX 在 Apple Silicon 上比官方运行时快 35%",
-   "url": "https://9to5mac.com/2026/10/26/ollama-for-mac-gains-support-for-local-text-to-speech-models/",
-   "source": "Ollama Blog / 9to5Mac / GitHub release v0.40.11",
-   "date": "2026-10-24",
-   "status": "已收录",
-   "place": "社区雷达",
-   "match": "https://news.ycombinator.com/item?id=50241261"
-  },
-  {
-   "headline": "安全研究员逆向三星 Tizen 电视：后台用 CNN 小模型分析截屏与观看行为做广告定向，还会借蓝牙音箱等外设麦克风收音",
-   "url": "https://www.ithome.com/1/017/670.htm",
-   "source": "IT之家 / Tom's Hardware / Hacker News（294 分）",
-   "date": "2026-10-25",
-   "status": "已收录",
-   "place": "社区雷达",
-   "match": "https://news.ycombinator.com/item?id=50218633"
-  },
-  {
-   "headline": "Block（Jack Dorsey）发布全双工语音对话模型 Dessa，从零用人类对话训练，可在 M4 Max 及以上 MacBook Pro 本地运行，暂只向安全研究者开放",
-   "url": "https://www.ithome.com/1/017/557.htm",
-   "source": "IT之家 / Block 官网",
-   "date": "2026-10-25",
-   "status": "不收",
-   "place": "本周判断",
-   "reason": "Block 官网不在官方域名白名单，模型未开放权重，只有官方演示口径；已写入本周判断“另据媒体报道”段。"
-  },
-  {
-   "headline": "Counterpoint：2030 年人形机器人 AI 加速器累计出货将超 100 万颗、2026–2030 年复合增速 144%，英伟达领先，高通、特斯拉、小鹏自研芯片追赶",
-   "url": "https://www.ithome.com/1/018/075.htm",
-   "source": "IT之家（转 Counterpoint Research）",
-   "date": "2026-10-26",
-   "status": "已收录",
-   "place": "硬件雷达",
-   "match": "https://www.counterpointresearch.com/en/insights/nvidia-leads-humanoid-robot-ai-accelerator-market"
-  },
-  {
-   "headline": "EPFL 发布可植入神经 SoC LogSync：片上机器学习识别脑区同步等网络级生物标志物并触发刺激，功耗低于 200 微瓦（JSSC）",
-   "url": "https://actu.epfl.ch/news/neural-chip-decodes-interactions-between-brain-r-2/",
-   "source": "EPFL News / Hacker News",
-   "date": "2026-10-23",
-   "status": "不收",
-   "place": "硬件雷达",
-   "reason": "EPFL 新闻稿不在白名单，是植入式医疗芯片的学术成果，与端侧 AI 推理部署关联弱。"
-  },
-  {
-   "headline": "开源工具 GPU Unlock 解除 RTX 30/40 系显卡 FP16 张量运算（FP32 累加）的半速限制，本地 LLM 预填充最高提速约 2 倍，GitHub 近万星",
-   "url": "https://www.ithome.com/1/017/525.htm",
-   "source": "IT之家 / Tom's Hardware / r/LocalLLaMA",
-   "date": "2026-10-24",
-   "status": "已收录",
-   "place": "硬件雷达",
-   "match": "https://videocardz.com/newz/modders-unlock-hidden-ai-performance-on-nvidia-rtx-20-30-and-40-series-gpus-with-up-to-2x-tensor-throughput"
-  },
-  {
-   "headline": "联想天禧 AI × 观猹大会（10-23~25 杭州）现场演示“手机说话、电脑干活”的跨端个人智能体，天禧 AI 4.5 将强化记忆管理与端侧数据隔离",
-   "url": "https://www.qbitai.com/2026/10/505539.html",
+   "headline": "联想天禧 AI 4.5 推出 AIPC 端，手机、平板、PC 三端打通“超能模式”跨应用执行与远程调用",
+   "url": "https://www.qbitai.com/2026/10/506779.html",
    "source": "量子位",
-   "date": "2026-10-25",
-   "status": "不收",
+   "date": "2026-10-30",
+   "status": "补收",
    "place": "本周判断",
-   "reason": "仅媒体现场报道，联想官网未见带日期稿件，已写入本周判断“另据媒体报道”段。"
+   "match": "https://www.qbitai.com/2026/10/506779.html"
   },
   {
-   "headline": "Frigade 的开源桌面应用 Hob 登上 HN：在 Mac/Windows/Linux 本地离线运行 Gemma、gpt-oss 等开源模型，对标 Claude Cowork 与 ChatGPT",
-   "url": "https://github.com/FrigadeHQ/hob",
-   "source": "Hacker News（Show HN 126 分）/ GitHub",
-   "date": "2026-10-26",
+   "headline": "腾讯 WorkBuddy 上线手机远程控制电脑，可实时看 Agent 在电脑桌面上的每一步并随时接管",
+   "url": "https://www.ithome.com/1/018/882.htm",
+   "source": "IT之家",
+   "date": "2026-10-28",
+   "status": "不收",
+   "place": "正式周报",
+   "reason": "WorkBuddy 手机远程控制电脑是云端模型驱动的桌面智能体，按判例不算端侧，发布信息也没有本地推理说明。"
+  },
+  {
+   "headline": "阶跃 STEPX Neo 智能体手机发布两周后首次升级，个人智能体 Amoo 可调剪映、支付宝 AI 付、移交 WorkBuddy",
+   "url": "https://www.qbitai.com/2026/10/506554.html",
+   "source": "量子位",
+   "date": "2026-10-29",
+   "status": "不收",
+   "place": "正式周报",
+   "reason": "STEPX Neo 首次升级只有媒体报道，文章没有说明哪些能力在端侧执行；已写入本周判断“另据媒体报道”段。"
+  },
+  {
+   "headline": "英伟达开源语音模型 Nemotron 3.5 Transcribe（MoE 约 340 亿参数、43 亿激活），同步开放 Granary v2 数据管线",
+   "url": "https://www.ithome.com/1/019/545.htm",
+   "source": "IT之家 / MarkTechPost / Hugging Face / r/LocalLLaMA",
+   "date": "2026-10-28",
    "status": "已收录",
-   "place": "社区雷达",
-   "match": "https://news.ycombinator.com/item?id=50246238"
+   "place": "正式周报",
+   "match": "vendor-nvidia-thin-light-and-built-for-everything-nvidia-rtx-spark-windows-la"
+  },
+  {
+   "headline": "AMD 发布 ROCm HRX Loom v0.1 编译器/IR 栈，统一面向 AMD CPU、GPU 与 NPU",
+   "url": "https://www.phoronix.com/news/AMD-ROCm-HRX-Loom-0.1",
+   "source": "Phoronix / GitHub Release",
+   "date": "2026-10-29",
+   "status": "不收",
+   "place": "正式周报",
+   "reason": "ROCm/hrx-system 不在开源大项目白名单，v0.1 只是编译器与 IR 的早期版本，没有 NPU 推理性能数据。"
+  },
+  {
+   "headline": "百度开源文心 Unlimited OCR 2 文档解析模型，可端到端解析超长多页文档",
+   "url": "https://www.ithome.com/1/020/061.htm",
+   "source": "IT之家 / 百度 AI 开放平台 / Hugging Face",
+   "date": "2026-10-27",
+   "status": "不收",
+   "place": "正式周报",
+   "reason": "Unlimited OCR 2 是长文档解析模型，发布信息没有端侧部署或运行设备说明。"
+  },
+  {
+   "headline": "Altera 发布 Agilex 2X FPGA 家族，以增强 AI 张量 DSP 与 Arm 内核面向边缘物理 AI",
+   "url": "https://www.ithome.com/1/019/438.htm",
+   "source": "IT之家",
+   "date": "2026-10-28",
+   "status": "不收",
+   "place": "硬件雷达",
+   "reason": "Agilex 2X 只找到 SiliconANGLE 的更新页，Altera 官方一手稿窗口内未找到，日期与规格无法核验。"
+  },
+  {
+   "headline": "苹果开售 512GB 统一内存版 M5 Ultra Mac Studio，较 96GB 版加价 116250 元",
+   "url": "https://www.ithome.com/1/019/246.htm",
+   "source": "IT之家 / r/LocalLLaMA",
+   "date": "2026-10-29",
+   "status": "不收",
+   "place": "硬件雷达",
+   "reason": "512GB 版 Mac Studio 只是已发布 M5 Ultra 机型的新配置开售，没有新的芯片或端侧 AI 信息。"
+  },
+  {
+   "headline": "Google 应用代码出现 Gemini Live“离线模式”，可无网络使用语音助手",
+   "url": "https://www.androidauthority.com/google-gemini-live-offline-mode-teardown-3730033/",
+   "source": "Android Authority（APK 拆包）",
+   "date": "2026-10-30",
+   "status": "不收",
+   "place": "正式周报",
+   "reason": "Gemini Live 离线模式来自 APK 拆包，谷歌没有官方公告，属于未证实线索。"
+  },
+  {
+   "headline": "Rokid 发布 Rokid Glasses 2（BES2800 加骁龙 AR1+ 双芯）与全彩 Rokid Color 智能眼镜",
+   "url": "https://www.ithome.com/1/018/475.htm",
+   "source": "IT之家 / Android Authority",
+   "date": "2026-10-27",
+   "status": "已收录",
+   "place": "硬件雷达",
+   "match": "https://tech.ifeng.com/c/8xZ9WGXV1uU"
+  },
+  {
+   "headline": "Google Research 发布“睡眠框架”持续学习方法，让大模型离线巩固记忆、减少灾难性遗忘",
+   "url": "https://www.ithome.com/1/020/044.htm",
+   "source": "IT之家 / Google Research 博客 / HN",
+   "date": "2026-10-27",
+   "status": "不收",
+   "place": "正式周报",
+   "reason": "“睡眠框架”是大模型持续学习的训练方法，与端侧推理部署无直接关系。"
+  },
+  {
+   "headline": "Sam Altman 称 PC 装大内存“很糟”，本地推理是对稀缺资源的错误分配，引发本地 AI 社区反弹",
+   "url": "https://www.tomshardware.com/tech-industry/data-centers/openai-ceo-says-its-quite-terrible-for-your-pc-to-have-ram-sam-altman-says-data-centers-offer-better-utilization",
+   "source": "Tom's Hardware / The Verge / r/LocalLLaMA",
+   "date": "2026-10-30",
+   "status": "不收",
+   "place": "正式周报",
+   "reason": "Sam Altman 对本地推理的评论属于观点争议，没有新的技术或产品信息。"
+  },
+  {
+   "headline": "努比亚公布星云 AIOS 3.0 升级计划，12 月先推送 Z80 Ultra",
+   "url": "https://www.ithome.com/1/019/326.htm",
+   "source": "IT之家",
+   "date": "2026-10-29",
+   "status": "不收",
+   "place": "正式周报",
+   "reason": "星云 AIOS 3.0 只公布了 12 月起的升级计划，没有可核验的端侧能力细节。"
+  },
+  {
+   "headline": "华为发布 Pura90 Plus（首发麒麟 9025）和畅享 100 系列，出厂搭载 HarmonyOS 7",
+   "url": "https://www.ithome.com/1/018/915.htm",
+   "source": "IT之家",
+   "date": "2026-10-28",
+   "status": "已收录",
+   "place": "硬件雷达",
+   "match": "https://www.gizchina.com/huawei/huawei-pura-90-plus-launches-with-kirin-9025-and-5700mah-battery"
   }
  ]
 }
