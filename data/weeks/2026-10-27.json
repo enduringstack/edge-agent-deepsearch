@@ -7,6 +7,41 @@
   },
   "papers": [
     {
+      "id": "vendor-google-agentic-and-flexible-a-next-era-of-android-development",
+      "run_id": "run-20261030-210435",
+      "title": "Agentic and Flexible: A next era of Android development",
+      "title_zh": "ML Kit 端侧智能体 API：Gemini Nano 4 在手机上跑规划闭环",
+      "abstract": "Google 在 Android Dev Summit 发布基于 Gemini Nano 4 的 ML Kit 端侧智能体 API（alpha）：App 只需定义工具，智能体在设备上完成规划、调用工具和多轮会话管理；Android 统一工具调用层 AppFunctions 同步进入 beta。",
+      "effects": "官方没有给出时延或准确率数字；文档说明推理与规划循环完全在设备上执行、提示数据不离开设备，默认最多 10 轮以限制耗电；首批支持 Nano 4 的机型为 Pixel 11 全系与三星 Galaxy Z Flip8/Fold8/Fold8 Ultra。",
+      "mechanism": "AgentRunner 建在 ML Kit Prompt API 之上，自动执行“观察-推理-调用工具-评估”循环，AgentSession 保存多轮历史并内置防护；App 用带类型的 Kotlin 函数暴露工具，AppFunctions、Android MCP 让系统或其他智能体调用 App 能力，A2UI 把智能体回复渲染成原生 Compose 界面。",
+      "paper_url": "https://developer.android.com/blog/posts/build-it-your-way-a-next-era-of-android-development",
+      "date": "2026-10-28",
+      "score": 17,
+      "score_relevance": 10,
+      "score_contribution": 7,
+      "score_reason": "Android 官方第一套端侧智能体运行框架，规划闭环在设备上的 Gemini Nano 4 中运行，直接对应手机端侧 Agent；目前为 alpha、机型有限、没有效果数字，贡献按平台能力而非实测打分。developer.android.com 于 2026-10-30 加入官方域名白名单后补收。",
+      "source_tier": "官方动态",
+      "open_source": false,
+      "tags": [
+        "方向:端侧agent",
+        "方向:推理框架",
+        "硬件:手机"
+      ],
+      "edge_agent_scope": "手机",
+      "edge_agent_evidence": "原文：“Build on-device agents with Gemini Nano 4 via the new agentic APIs in ML Kit … auto-executes functions for you, saves conversation history, manages the orchestration loop”；ML Kit 文档写明推理与规划循环完全在设备上执行。",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Google",
+      "vendors": "Google",
+      "venue": "Google",
+      "recommendation": "推荐",
+      "recommendation_reason": "安卓开发者第一次能用官方接口在手机本地跑完整的智能体循环，工具由 App 提供、数据不出设备，配合 AppFunctions 进入 beta，手机系统级与 App 内智能体的开发接口基本成形；目前只覆盖少数旗舰机。",
+      "detail": null,
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
+    },
+    {
       "id": "vendor-nvidia-nvidia-rtx-spark-powers-neural-rendering-and-ai-characters-in-g",
       "run_id": "run-20261030-210435",
       "title": "NVIDIA RTX Spark Powers Neural Rendering and AI Characters in Games",
@@ -40,7 +75,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "在 4GB 显存预算内跑带多轮工具调用的游戏角色智能体，并与渲染、本地语音模型共享一张 GPU，是 PC 端侧智能体最贴近大众用户的落地形态之一。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-nvidia-build-specialized-agents-on-a-stack-you-control-with-nvidia-nem",
@@ -78,7 +113,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "把模型、框架、工具、受管运行时四层拆清楚，并给出可在 DGX Spark 和 RTX 电脑上自托管、带策略管控的完整蓝图，想在本机搭可控智能体的团队可以直接参考其分层和 OpenShell 权限设计。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-nvidia-thin-light-and-built-for-everything-nvidia-rtx-spark-windows-la",
@@ -115,7 +150,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "把“后台常驻本地智能体和前台应用抢 GPU”当成系统问题给出了产品级开关，并配上可在 128GB 统一内存笔记本上本地跑的新语音模型和 LFM3，是 Windows 本地智能体的一个具体落地信号。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-liquid-ai-introducing-lfm3-every-modality-for-specialized-intelligence",
@@ -153,7 +188,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "首个在真实 Mac 智能体任务上胜过更大模型的 2B 以下模型（成功率 64% 对 48%、少用 58% token），并公开了跨手机、笔记本和 NPU 的硬件在环设计与端侧速度、内存数据，做本地智能体选型时值得直接对照。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-google-smaller-apps-and-faster-gpu-inference-with-litert-in-google-pla",
@@ -189,7 +224,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "安卓端侧部署的底座级变化：GPU 推理快约 1.4 倍、应用小约 8 MB，旧 GPU 委托和 NNAPI 将被淘汰，做安卓端侧模型的团队都需要规划迁移。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-nvidia-run-ai-models-for-edge-application-development-with-just-a-few-",
@@ -226,7 +261,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "给做车载和机器人的开发者一条从开发机到 Jetson Thor 的统一推理路径，几条命令就能跑起本地模型和 API，投机解码实测把生成速度从每秒约 73 个词元提到 127 个。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-nvidia-3-ways-to-boost-moe-inference-on-nvidia-dgx-spark",
@@ -263,7 +298,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "少见的单用户本地大 MoE 推理完整调优记录：从带宽瓶颈分析到三步优化把解码吞吐提升 185%，并点出 FP8 输出层与投机解码组合时会悄悄退化的坑，做本地部署的人可直接照搬。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-qualcomm-how-to-write-fast-aarch64-sve-sme-kernels-with-ripple-and-llv",
@@ -299,7 +334,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-apple-apple-unveils-groundbreaking-macbook-pro-with-proled-xdr-display",
@@ -334,7 +369,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "苹果首次在官方新闻稿里把“完全在本机运行数千亿参数大模型”和“用本地大模型跑编程智能体”写成笔记本卖点，配合 128GB 统一内存，是评估高端 PC 本地智能体可行性的重要参照。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-apple-apple-introduces-the-new-14-inch-macbook-pro-with-m6",
@@ -369,7 +404,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-apple-apple-unveils-new-imac-with-m6-delivering-a-major-boost-in-perfo",
@@ -404,7 +439,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "官方直接用 LM Studio 本地推理做基准，给出比 M4 快 5 倍、比 M1 快 12 倍的提示词处理数据，可作为桌面端本地大模型和智能体应用性能的参考基线。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-qwen-agent-as-a-service-the-service-architecture-powering-personal-age",
@@ -440,7 +475,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-google-we-ve-received-our-first-response-from-the-project-suncatcher-p",
@@ -474,7 +509,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-qwen-lumen-an-ai-neonatal-specialist-that-works-when-the-network-doesn",
@@ -511,7 +546,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-apple-apple-creator-studio-adds-powerful-new-ai-features-and-even-more",
@@ -546,7 +581,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-google-fast-reliable-a2ui-with-swappable-inference-formats",
@@ -580,7 +615,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-samsung-building-isac-in-practice-from-raw-radio-signals-to-ai-driven-",
@@ -614,7 +649,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-nvidia-things-that-go-beep-in-the-night-agentic-ai-joins-the-search-fo",
@@ -649,7 +684,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-samsung-faster-and-secure-how-code-mate-is-transforming-semiconductor-",
@@ -684,7 +719,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-qwen-qu-n-the-ai-memory-that-knows-exactly-what-to-forget",
@@ -719,7 +754,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-nvidia-fine-tuning-nvidia-nemotron-to-know-local-rules-not-just-local-",
@@ -752,7 +787,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-mistral-le-chonk-built-for-coders-trusted-by-defenders-",
@@ -788,7 +823,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-samsung-part-2-zhbm-next-generation-memory-for-the-data-movement-era",
@@ -823,7 +858,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-google-gemini-4-carbon-our-next-frontier-model",
@@ -858,7 +893,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-microsoft-introducing-the-microsoft-copilot-harness-in-foundry-agent-s",
@@ -892,7 +927,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-qualcomm-same-day-upstream-linux-support-now-posted-for-snapdragon-8-e",
@@ -928,7 +963,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-google-building-conversational-commerce-with-multi-agent-swarms-on-gcp",
@@ -962,7 +997,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-google-we-re-announcing-genie-4-our-new-world-model-for-real-time-inte",
@@ -997,7 +1032,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-microsoft-from-synthetic-enterprise-data-evaluations-to-real-microsoft",
@@ -1031,7 +1066,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-google-build-generative-ui-apps-with-a2ui-copilotkit-agents",
@@ -1064,7 +1099,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-openai-how-we-detect-frontier-model-misalignment",
@@ -1097,7 +1132,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-google-hill-climbing-agent-quality-with-agents-cli-evaluation",
@@ -1130,7 +1165,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-amd-amd-and-meta-advance-strategic-partnership-to-power-meta-s-superin",
@@ -1165,7 +1200,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-anthropic-how-ai-agents-shape-experts-judgment-calls",
@@ -1199,7 +1234,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-nvidia-memory-enforced-gpu-sharing-in-kubernetes-with-nvidia-cuda-13-4",
@@ -1234,7 +1269,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-meta-muse-is-now-available-in-singapore-the-world-s-first-personal-ai-",
@@ -1268,7 +1303,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-nvidia-build-a-validated-kubernetes-runtime-for-nvidia-dynamo",
@@ -1303,7 +1338,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-nvidia-into-the-omniverse-how-developers-turn-ideas-into-simulations-w",
@@ -1339,7 +1374,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-samsung-part-1-the-evolution-of-ai-and-ai-chips-and-the-hbm-that-power",
@@ -1373,7 +1408,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-qualcomm-anduril-and-qualcomm-unveil-bluechip-to-rebuild-american-comp",
@@ -1407,7 +1442,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-mediatek-mediatek-on-redefining-ai-through-cost-and-efficiency",
@@ -1440,7 +1475,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "vendor-amd-amd-expands-ai-and-cloud-infrastructure-collaboration-with-oracle",
@@ -1474,7 +1509,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "github-alibaba-mnn-3-6-2",
@@ -1514,7 +1549,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "一次版本同时覆盖苹果 GPU 神经加速器、高通 Hexagon NPU 和 RISC-V 芯片，并给出 Qwen3.5-2B 在 iPad Pro M5 上投机解码提速 2.09 倍的真机数字，适合直接拿来评估手机和平板上跑 2B 级模型的性能上限。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "github-ggml-org-llama-cpp-v0-8-0",
@@ -1554,7 +1589,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "本地推理引擎第一次把兼容 OpenAI 实时协议的语音对话、TTS 和 2B 级全模态模型 LFM3 一起打通，想在笔记本或手机上做离线语音助手的团队可以直接试。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "github-google-ai-edge-litert-lm-v0-19-0",
@@ -1591,7 +1626,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "github-microsoft-onnxruntime-c574f2d",
@@ -1627,7 +1662,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "github-openvinotoolkit-openvino-5c93944",
@@ -1663,7 +1698,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "github-microsoft-onnxruntime-plugin-ep-webgpu-v0-5-0",
@@ -1700,7 +1735,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "github-alibaba-mnn-17236ad",
@@ -1735,7 +1770,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "github-pytorch-executorch-10b7426",
@@ -1770,7 +1805,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "github-google-ai-edge-mediapipe-v1-2-0",
@@ -1805,7 +1840,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "github-mlc-ai-mlc-llm-95d7fd6",
@@ -1840,7 +1875,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "github-microsoft-onnxruntime-v1-30-1",
@@ -1874,7 +1909,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "github-hkuds-nanobot-v0-4-0",
@@ -1908,7 +1943,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.40039",
@@ -1947,7 +1982,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "用一加 13T、QCS8550、RK3588 三块真实 NPU 拆解视觉语言模型推理，发现 softmax 而非矩阵乘才是瓶颈、线性注意力在 NPU 上反而不快，做手机端多模态部署的工程师可以直接拿来校正优化方向。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39287",
@@ -1984,7 +2019,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "把语言理解、空间推理和连续飞控塞进 10 亿参数模型、在 Jetson Orin NX 上机载 10 Hz 闭环运行，并在真实四旋翼上零样本拿到 48% 导航成功率，是小型多模态模型上机器人端的扎实案例。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.37833",
@@ -2021,7 +2056,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "高通给出一条不靠堆参数也能做好端侧语音识别的路线：26.8M 参数的小模型词错率就优于同级 Moonshine，还能省下约三成访存能耗，对做可穿戴设备语音交互的团队很实用。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.38126",
@@ -2057,7 +2092,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "提醒所有做“本地小模型 + 云端大模型”助手的人：即使答案不泄密，投机解码被拒的草稿也会把私人内容发给云端；ADLER 在受控泄露下让 0.5B 本地模型的数学准确率从 0.41 翻倍到 0.83。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.35985",
@@ -2094,7 +2129,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "指出大模型外挂记忆表量化时“常用的给高精度”反而更差，改由门控值决定读几位，不重训就把查表内存压到约 1/7.8 且几乎不丢长尾知识，对内存受限的端侧部署很有参考价值。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39343",
@@ -2128,7 +2163,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36896",
@@ -2162,7 +2197,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.37935",
@@ -2198,7 +2233,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39337",
@@ -2231,7 +2266,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.37336",
@@ -2265,7 +2300,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36713",
@@ -2301,7 +2336,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36986",
@@ -2336,7 +2371,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.37642",
@@ -2371,7 +2406,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.40325",
@@ -2405,7 +2440,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39006",
@@ -2440,7 +2475,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.38573",
@@ -2476,7 +2511,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.38355",
@@ -2512,7 +2547,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36901",
@@ -2547,7 +2582,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2506.19846",
@@ -2584,7 +2619,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.33966",
@@ -2619,7 +2654,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36967",
@@ -2653,7 +2688,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39790",
@@ -2686,7 +2721,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39276",
@@ -2720,7 +2755,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.38902",
@@ -2755,7 +2790,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.38391",
@@ -2790,7 +2825,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36507",
@@ -2824,7 +2859,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.35966",
@@ -2859,7 +2894,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39876",
@@ -2893,7 +2928,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36339",
@@ -2928,7 +2963,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.37989",
@@ -2963,7 +2998,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.35982",
@@ -2997,7 +3032,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.37906",
@@ -3032,7 +3067,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39800",
@@ -3065,7 +3100,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.40000",
@@ -3101,7 +3136,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "少见地从存储器件层面回答手机怎么装下 200B 级智能体团队：用自研铁电 NOR 闪存挂到 LPDDR6 总线上当主存，仿真显示接近无限内存的理想性能、比 UFS 卸载快最多 28 倍，对手机端大模型硬件路线很有参考价值。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.38739",
@@ -3138,7 +3173,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "少见地把 6570 万参数的流式语音识别模型真正塞进无加速器的 ESP32-P4 单片机并做到实时（1.28 秒音频 0.90 秒处理完），词错率只比原模型高约 0.4 个点，代码、固件和权重都已开源，可直接作为 MCU 端语音交互的参考实现。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39216",
@@ -3177,7 +3212,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "直击“单张显卡加大内存跑 MoE 模型”这一本地部署的核心矛盾：把预填充和生成分开预测、调度和执行后，预填充吞吐最高提升 10.3 倍、生成最高 6.1 倍，对 PC 端本地大模型推理引擎很有参考价值。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.38233",
@@ -3213,7 +3248,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "机器人端侧部署的完整实例：把原本要 90 分钟算出的避障可达性地图，用 INT8 量化的 3D U-Net 在 Jetson Orin 上压到 115 毫秒、与真值相关 0.99，可直接参考其标签生成与量化部署流程。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.37442",
@@ -3251,7 +3286,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "抓住了边缘设备跑混合专家模型的真瓶颈——专家权重搬运，在 Jetson AGX Orin 等设备上同内存预算下吞吐最高提升 2.1 倍，适合想在本地跑 MoE 模型的工程师参考。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36968",
@@ -3287,7 +3322,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "少见的把图像目标导航完整搬上无人机机载 Jetson Orin NX 的工作，90 次真机飞行 86 次成功、仿真到真机零样本迁移，对做机载视觉导航的团队有直接参考价值。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36999",
@@ -3322,7 +3357,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36950",
@@ -3358,7 +3393,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "把图像压缩里的“学习型变换编码”搬到 KV 缓存上，在 Qwen3.5-2B 上做到 55 倍以上压缩只掉不到 2 分，对需要在本地保存和复用长提示词缓存的设备很有参考价值。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.37104",
@@ -3394,7 +3429,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36340",
@@ -3432,7 +3467,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "用 Jetson Orin NX 实测揭示 INT8 量化并不总是更快更省电，变慢多半来自 TensorRT 引擎里的格式转换层，对在边缘设备上挑精度、挑模型的工程师很实用。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.35957",
@@ -3468,7 +3503,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "把端云协同推测解码的通信量从“整份词表分布”降到“几个编号和概率”，且输出与大模型严格一致；对网络差的手机、车机等终端起草加云端验证方案很实用，还给出了何时值得启用的带宽临界点公式。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.32749",
@@ -3504,7 +3539,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.38661",
@@ -3539,7 +3574,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.35955",
@@ -3576,7 +3611,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39268",
@@ -3612,7 +3647,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39380",
@@ -3648,7 +3683,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.34241",
@@ -3686,7 +3721,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "少见的把“本地小模型能否真正接手编码智能体工作”做成可核验实验的报告：4 比特 Qwen3-Coder 30B-A3B 在第一套任务上通过 14/15，换到固定产物约定的第二套任务（在 32GB M1 Pro 上本地运行）却是 0/45，冷前缀首字时延近 70 秒，给想在笔记本上落地编码助手的人提供了很实在的避坑数据。",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2510.27434",
@@ -3721,7 +3756,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36499",
@@ -3755,7 +3790,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.38074",
@@ -3791,7 +3826,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.37056",
@@ -3827,7 +3862,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.37909",
@@ -3862,7 +3897,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36411",
@@ -3899,7 +3934,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36153",
@@ -3934,7 +3969,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39508",
@@ -3969,7 +4004,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39853",
@@ -4003,7 +4038,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.40305",
@@ -4038,7 +4073,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39775",
@@ -4073,7 +4108,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.38329",
@@ -4109,7 +4144,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.38149",
@@ -4145,7 +4180,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.37224",
@@ -4181,7 +4216,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39601",
@@ -4215,7 +4250,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.40545",
@@ -4249,7 +4284,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.38209",
@@ -4284,7 +4319,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36466",
@@ -4319,7 +4354,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.37110",
@@ -4354,7 +4389,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.37443",
@@ -4387,7 +4422,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36825",
@@ -4421,7 +4456,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.37126",
@@ -4456,7 +4491,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.37230",
@@ -4492,7 +4527,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36918",
@@ -4527,7 +4562,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36288",
@@ -4563,7 +4598,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36243",
@@ -4598,7 +4633,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36308",
@@ -4634,7 +4669,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.40370",
@@ -4668,7 +4703,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.40349",
@@ -4702,7 +4737,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.38196",
@@ -4737,7 +4772,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.38332",
@@ -4771,7 +4806,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.38793",
@@ -4806,7 +4841,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.37810",
@@ -4841,7 +4876,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2412.05126",
@@ -4876,7 +4911,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.37161",
@@ -4911,7 +4946,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36298",
@@ -4946,7 +4981,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39234",
@@ -4980,7 +5015,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39621",
@@ -5016,7 +5051,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39385",
@@ -5050,7 +5085,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.37310",
@@ -5085,7 +5120,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.35961",
@@ -5119,7 +5154,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39547",
@@ -5153,7 +5188,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.40292",
@@ -5187,7 +5222,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39570",
@@ -5221,7 +5256,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.40483",
@@ -5254,7 +5289,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.38411",
@@ -5288,7 +5323,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.38651",
@@ -5322,7 +5357,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.36379",
@@ -5358,7 +5393,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     },
     {
       "id": "arxiv-2610.39796",
@@ -5392,7 +5427,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T01:18:17.281347+00:00"
+      "updated_at": "2026-10-31T01:40:07.119502+00:00"
     }
   ],
   "weekly": {
@@ -5401,7 +5436,7 @@
       {
         "url": "https://developer.android.com/blog/posts/build-it-your-way-a-next-era-of-android-development",
         "topic": "ML Kit 端侧智能体 API（Gemini Nano 4）",
-        "why": "Android 第一套官方端侧智能体运行框架：AgentRunner 在设备上完成“观察-推理-调用工具”循环（默认最多 10 轮），提示数据不离开设备，AppFunctions 作为统一工具层进入 beta。目前只有 Pixel 11 与三星 Z Flip8/Fold8 等少数机型支持 Nano 4。developer.android.com 暂不在官方域名白名单，先记入本周判断。"
+        "why": "Android 第一套官方端侧智能体运行框架：AgentRunner 在设备上完成“观察-推理-调用工具”循环（默认最多 10 轮），提示数据不离开设备，AppFunctions 作为统一工具层进入 beta。目前只有 Pixel 11 与三星 Z Flip8/Fold8 等少数机型支持 Nano 4。"
       },
       {
         "url": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-laptops-updates-models-agents-games/",

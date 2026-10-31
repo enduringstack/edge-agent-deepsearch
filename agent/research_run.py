@@ -78,6 +78,7 @@ OFFICIAL_SOURCE_DOMAINS = (
     "blog.google",
     "googleblog.com",
     "android-developers.googleblog.com",
+    "developer.android.com",
     "ai.google.dev",
     "microsoft.com",
     "azure.microsoft.com",
