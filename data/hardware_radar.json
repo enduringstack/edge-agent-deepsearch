@@ -1,7 +1,7 @@
 {
   "window": {
-    "start": "2026-10-24",
-    "end": "2026-10-30"
+    "start": "2026-10-25",
+    "end": "2026-10-31"
   },
   "items": [
     {
@@ -55,6 +55,62 @@
           ]
         }
       ]
+    },
+    {
+      "date": "2026-10-30",
+      "vendor": "Apple（第三方跑分：Geekbench，媒体报道）",
+      "category": "移动SoC",
+      "title": "The new OLED iPad mini runs Geekbench, here are the results",
+      "title_zh": "A20 Pro 版 iPad mini 跑分：12GB 内存",
+      "url": "https://www.gsmarena.com/the_new_oled_ipad_mini_runs_geekbench_here_are_the_results-news-75276.php",
+      "source_type": "媒体",
+      "summary_zh": "10-26 发布、11-6 开售的 OLED iPad mini 出现在 Geekbench 7 上，型号 iPad19,2，单核 3879、多核 9870，内存 12GB。Apple 规格页显示，128/256GB 版的 A20 Pro 为 5 核 CPU + 16 核 Neural Engine，512GB 版为 6 核 CPU + 双 16 核 Neural Engine，同一款芯片按存储档位区分 NPU 规模。",
+      "whats_new_zh": [
+        "Geekbench 7：5 核版单核 3879、多核 9870（第三方跑分）；IT之家另报 6 核版单核 3993、多核 11365",
+        "比上一代 iPad mini 单核高 47%、多核高 39%；比满血 A20 Pro 的 iPhone 18 Pro Max（4024/11424）单核低约 4%、多核低约 14%（GSMArena 计算）",
+        "内存 12GB，由 Xcode 27.2 确认，Apple 规格页未写（Notebookcheck）",
+        "规格页：512GB 版 A20 Pro 为双 16 核 Neural Engine，128/256GB 版为单 16 核（官方）"
+      ],
+      "key_specs": {
+        "cpu": "128/256GB 版 5 核（2 超大核 + 3 能效核），512GB 版 6 核（2+4）；性能核 4.93GHz（Geekbench）",
+        "gpu": "7 核，带神经网络加速器与硬件光追（官方）",
+        "npu": "128/256GB 版 16 核 Neural Engine，512GB 版双 16 核 Neural Engine（官方）",
+        "memory": "12GB（Xcode 27.2 / Geekbench 读数，官方未列）"
+      },
+      "edge_ai_impact_zh": "小尺寸平板也配上了 12GB 内存和最多双 16 核的 NPU。按存储档位切分 Neural Engine，说明 Apple 开始把端侧 AI 算力当作分档卖点；双 Neural Engine 的实际收益，要看端侧模型推理实测。",
+      "evidence_urls": [
+        "https://www.notebookcheck.net/Apple-iPad-mini-2026-in-Geekbench-Single-core-performance-ahead-of-the-iPad-Pro.1438037.0.html",
+        "https://browser.geekbench.com/v7/cpu/752071",
+        "https://www.apple.com/ipad-mini/specs/",
+        "https://www.ithome.com/1/020/063.htm"
+      ],
+      "confidence": "medium",
+      "deep_dive_zh": [
+        {
+          "heading": "按存储档位切分 NPU",
+          "points": [
+            "同为 A20 Pro，512GB 版多一个能效核，Neural Engine 翻倍为双 16 核；128/256GB 版只有单 16 核（Apple 规格页）",
+            "GSMArena 判断 5 核版是屏蔽了一个能效核的降档芯片；双 Neural Engine 版是否为同一裸片，尚无拆解证据",
+            "同一款 iPad 按存储档位区分 Neural Engine 规模，选购时需要留意"
+          ]
+        },
+        {
+          "heading": "跑分口径",
+          "points": [
+            "Geekbench 7 只测 CPU，本次没有 GPU/Metal 或 Neural Engine 成绩",
+            "Notebookcheck 提醒，单次跑分不代表持续负载和发热表现",
+            "多核成绩比 M5 iPad Pro 13 低约 53%，比 M4 iPad Air 13 低约 29%"
+          ]
+        },
+        {
+          "heading": "与国行 Apple 智能的关系",
+          "points": [
+            "10-31 公布的国行 Apple 智能首批只支持 iPhone，iPad 要等审批，这台 A20 Pro iPad mini 在国行暂时用不上",
+            "规格页注明 Siri AI 在 iPadOS 27 上仍是 beta，部分服务端功能有每日用量上限"
+          ]
+        }
+      ],
+      "model_capacity_zh": "官方未披露 NPU 算力和内存带宽。12GB 内存扣除系统占用后能留给端侧模型的空间，大致与 12GB 内存的手机相当（推算，未实测）；双 Neural Engine 版本能否让大模型 prefill 速度翻倍，要等 Core ML/MLX 实测。"
     },
     {
       "date": "2026-10-28",
@@ -1767,6 +1823,60 @@
       ]
     },
     {
+      "date": "2026-10-30",
+      "vendor": "CXMT 长鑫科技（媒体报道：IT之家、快科技）",
+      "category": "存储与内存",
+      "title": "长鑫科技：基于 4F² 架构的第六代技术平台 DRAM 完成工程样片验证",
+      "title_zh": "长鑫 4F² 第六代 DRAM 平台完成工程样片验证",
+      "url": "https://www.ithome.com/1/020/599.htm",
+      "source_type": "媒体",
+      "summary_zh": "据 IT之家、快科技报道，长鑫科技在 10-30 的第三季度业绩交流会上披露：基于 4F² 垂直沟道架构的第六代技术平台 DRAM 已完成工程样片验证，目前量产的最先进平台仍是第五代。公司预计年底前送样首款 4F² DDR5 RDIMM，4F² 的首个目标市场是服务器。美光 CTO 此前表示美光将留在 6F² 路线并转向 3D DRAM；长鑫回应称，各家的架构选择取决于技术积累和成本曲线。",
+      "whats_new_zh": [
+        "第六代（4F²）平台从 10-10 宣布“技术突破”推进到“工程样片验证完成”（媒体转述业绩交流会）",
+        "第五代平台的单片晶圆芯片产出比第四代至少多 50%，已推出 245-ball、496-ball 封装的 LPDDR5X（媒体）",
+        "年底前送样首款 4F² DDR5 RDIMM；何时量产取决于客户验证进度和市场需求（媒体）",
+        "4F² 方案把逻辑晶圆与存储晶圆堆叠键合，采用自研 VSG 垂直环栅晶体管（媒体）"
+      ],
+      "key_specs": {
+        "process": "第六代平台，4F² 垂直沟道 + 逻辑/存储晶圆堆叠键合；未披露工艺节点",
+        "memory": "首款产品为服务器用 DDR5 RDIMM；第五代平台已量产 LPDDR5X，并支持未来的 LPDDR6",
+        "other": "未披露容量、速率与良率；IT之家原文对 LPDDR6 是“已量产”还是“将量产”前后说法不一"
+      },
+      "edge_ai_impact_zh": "手机能跑多大的模型，主要受 DRAM 容量、带宽和价格限制。国产 DRAM 走了一条不同于美光的微缩路线，长期看会增加 LPDDR 的供给来源；但 4F² 先供服务器，短期内缓解不了手机内存紧张。",
+      "evidence_urls": [
+        "https://news.mydrivers.com/1/1162/1162160.htm",
+        "https://www.ithome.com/1/020/573.htm",
+        "https://finance.technews.tw/2026/10/14/changxin-memory-plans-to-launch-its-first-4f%c2%b2-server-ddr5-memory/"
+      ],
+      "confidence": "medium",
+      "deep_dive_zh": [
+        {
+          "heading": "4F² 是什么",
+          "points": [
+            "4F² 单元面积约为主流 6F² 的三分之二（10 月初媒体转引 Tom's Hardware 的分析），同样面积能放下更多存储单元",
+            "长鑫的做法是垂直环栅（VSG）晶体管 + 逻辑晶圆与存储晶圆堆叠键合，外围逻辑可以单独选用工艺",
+            "本次只确认工程样片的核心指标在真实晶圆上达到设计目标，没有给出任何密度、速率或良率数字"
+          ]
+        },
+        {
+          "heading": "与美光路线的分歧",
+          "points": [
+            "美光总裁兼首席技术与产品官 Scott DeBoer 本月表示，美光研究 4F² 约 20 年，认为没有可行的微缩路径，将留在 6F² 并发展 3D DRAM（快科技转述）",
+            "长鑫回应：位密度微缩是字线、位线和电容结构之间的系统权衡，不同架构在不同节点上的成本收益曲线不同",
+            "长鑫也承认前沿技术短期内难以转化为利润，4F² 着眼于中长期竞争力"
+          ]
+        },
+        {
+          "heading": "对移动内存的意义",
+          "points": [
+            "4F² 先做服务器 DDR5，移动 LPDDR 产品排在其后，时间未定",
+            "第五代平台已覆盖 LPDDR5X，并面向 LPDDR6；据 9 月媒体报道，长鑫 LPDDR6 已用于小米 18 Fold",
+            "长鑫同时表示，正在与多家头部客户商谈长期供货协议（IT之家 10-31）"
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-29",
       "vendor": "Peking University / Institute of Microelectronics, CAS / HKUST (Guangzhou)",
       "category": "存储与内存",
@@ -2091,6 +2201,63 @@
         }
       ],
       "model_capacity_zh": "Mixtral-8x7B（总参约 47B、激活约 13B）与 DeepSeek-MoE-16B；面向边缘服务器而非手机。"
+    },
+    {
+      "date": "2026-10-31",
+      "vendor": "Apple",
+      "category": "软件栈/工具链",
+      "title": "Apple 智能即将登陆中国",
+      "title_zh": "国行 Apple 智能定档：11-4 测试、12 月上线",
+      "url": "https://www.apple.com.cn/newsroom/2026/10/apple-intelligence-features-are-coming-to-users-in-china/",
+      "source_type": "官方",
+      "summary_zh": "Apple 中国新闻稿（电头 2026-10-31，美西时间 10-30 下午发出）宣布，首批 Apple 智能功能将随 iOS 27.3 面向中国大陆 iPhone 用户推出：11 月 4 日起进入 iOS 开发者测试版，12 月正式上线。功能基于 Apple 自研生成式模型，并与阿里合作，在 Siri、写作工具和视觉智能中接入千问。首批只支持 iPhone，iPad、Mac 等平台要等后续审批。",
+      "whats_new_zh": [
+        "时间表：11 月 4 日起进入 iOS 开发者测试版，12 月随 iOS 27.3 正式推送（官方）",
+        "支持机型：iPhone 15 Pro/Pro Max、iPhone 16 及后续机型、iPhone Air、iPhone Duo；官网机型表里最低的芯片是 A17 Pro，标准版 iPhone 15 及更早机型不支持（官方）",
+        "首批功能：信息/FaceTime/电话实时翻译、写作工具、清理、自然语言照片搜索、回忆视频、智绘表情、通知摘要与优先通知、录音/通话摘要、视觉智能、输入文字与 Siri 对话（官方）",
+        "千问接入 Siri、写作工具和视觉智能，支持文字与图像理解及内容生成；需登录千问账户或通过 Apple 登录（官方）",
+        "WWDC 2026 发布的 Siri AI 等新一代功能不在本次范围内（官方）"
+      ],
+      "key_specs": {
+        "npu": "官网支持机型表覆盖 A17 Pro / A18 / A18 Pro / A19 / A19 Pro / A20 Pro 的 Neural Engine；新闻稿未给 NPU 算力",
+        "memory": "官方未写内存门槛；媒体（快科技）称标准版 iPhone 15 及更早机型是因内存与存储要求被排除",
+        "other": "Siri 与设备语言须设为简体中文或英文；首批仅支持 iPhone"
+      },
+      "edge_ai_impact_zh": "中国大陆是 A17 Pro 及以上 iPhone 存量最大的市场之一。Apple 的端侧基础模型将首次在这里大规模运行，采用“本机自研模型 + 本地合作大模型”的混合结构。端侧与千问云端如何分流、数据怎么走，要等 11-4 测试版出来后实测。",
+      "evidence_urls": [
+        "https://www.apple.com.cn/apple-intelligence/",
+        "https://9to5mac.com/2026/10/30/apple-confirms-ios-27-3-beta-is-coming-next-week-with-apple-intelligence-in-china/",
+        "https://www.macrumors.com/2026/10/30/apple-says-ios-27-3-beta-coming-next-week/",
+        "https://news.mydrivers.com/1/1162/1162096.htm"
+      ],
+      "confidence": "high",
+      "deep_dive_zh": [
+        {
+          "heading": "端侧与云端分工",
+          "points": [
+            "官网 Apple 智能页称体验由 iPhone 内置的设备端处理能力驱动，并承诺“除你以外的任何人都无法访问你的数据，即使 Apple 也不例外”（官方宣传口径）",
+            "新闻稿没有提私密云计算（PCC），也没有说明千问请求在哪里执行、数据如何存储；要判断国行版有多少在端侧完成，缺的正是这部分信息",
+            "千问只为 Siri、写作工具和视觉智能补充外部知识与生成能力，用户主动登录后才会启用"
+          ]
+        },
+        {
+          "heading": "芯片门槛",
+          "points": [
+            "官网机型表中最低的芯片是 iPhone 15 Pro 的 A17 Pro，往上依次为 A18、A18 Pro、A19、A19 Pro、A20 Pro",
+            "同为 2023 年机型的标准版 iPhone 15 被排除，媒体归因于内存与存储要求（官方未写具体门槛）",
+            "首批只开放 iPhone；本周刚发布的 M6 Mac 和 A20 Pro iPad mini，国行版要等后续审批"
+          ]
+        },
+        {
+          "heading": "功能范围与缺席项",
+          "points": [
+            "首批是两年前在美国首发的基础功能，包括实时翻译（AirPods 面对面翻译需 AirPods 5、AirPods 4 降噪版、AirPods Pro 2 及后续机型或 AirPods Max 2）、写作工具、照片清理、通知摘要等",
+            "iOS 27.3 国行版不含 Siri AI 及 WWDC 2026 公布的新一代功能",
+            "新闻稿只点名阿里千问，此前传闻的百度没有出现"
+          ]
+        }
+      ],
+      "model_capacity_zh": "官方只说功能“基于 Apple 自研生成式模型”，没有披露中国版端侧模型的参数量、精度，也没说哪些请求在本机处理；新闻稿未提私密云计算。千问请求在哪里处理、数据如何流转，均未披露。"
     },
     {
       "date": "2026-10-30",
@@ -2859,6 +3026,58 @@
     },
     {
       "date": "2026-10-30",
+      "vendor": "OpenAI / Samsung（媒体报道）",
+      "category": "产业动态",
+      "title": "'Quite terrible': Sam Altman says PCs waste the world's limited DRAM supply",
+      "title_zh": "Altman：DRAM 应优先给数据中心，次日会见三星高管",
+      "url": "https://www.notebookcheck.net/Quite-terrible-Sam-Altman-says-PCs-waste-the-world-s-limited-DRAM-supply.1438393.0.html",
+      "source_type": "媒体",
+      "summary_zh": "OpenAI CEO Sam Altman 在 Cheeky Pint 播客中说，内存紧缺时让大量 DRAM 装在个人电脑里、只有约 5% 的时间在用，“相当糟糕”，放在云端才能把利用率做到最高。10-31 下午，他在韩国龙仁会见约 50 名三星集团高管，据彭博报道，双方将深化内存供应与 AI 基础设施合作。两条消息均为媒体转述，播客原话未逐字核对。",
+      "whats_new_zh": [
+        "Altman 原话（Notebookcheck 转引）：PC 里的内存 “being used 5% of the time”，供给受限时应追求云端利用率最大化",
+        "他反驳了“开源模型能在本地运行，所以不需要云数据中心”的说法（IT之家转述）",
+        "10-31 在龙仁会见约 50 名三星电子、金融、生物业务高管（三星声明，IT之家转引彭博）",
+        "背景：五家头部 AI 基础设施公司计划未来几年投入超过 3 万亿美元，其中内存约占数据中心支出的三分之一（彭博口径，IT之家转引）；三星 Q3 电话会预计内存紧张将持续到 2028 年"
+      ],
+      "key_specs": {
+        "memory": "“个人设备 DRAM 只有约 5% 时间在用”是 Altman 的口头说法，未给数据来源"
+      },
+      "edge_ai_impact_zh": "头部云端模型厂公开主张 DRAM 优先给数据中心，等于把端侧大内存说成资源浪费。在内存紧缺周期里，RTX Spark、M5 Max 这类 128GB 本地智能体机型要与数据中心争同一批产能，端侧 AI 的内存成本短期内难降。",
+      "evidence_urls": [
+        "https://www.ithome.com/1/020/483.htm",
+        "https://www.ithome.com/1/020/597.htm",
+        "https://www.tomshardware.com/tech-industry/data-centers/openai-ceo-says-its-quite-terrible-for-your-pc-to-have-ram-sam-altman-says-data-centers-offer-better-utilization",
+        "https://www.youtube.com/watch?v=iMsUcCYNKqY"
+      ],
+      "confidence": "medium",
+      "deep_dive_zh": [
+        {
+          "heading": "论点与反驳",
+          "points": [
+            "Altman 的逻辑是利用率：同样的 DRAM 放在云端可以多人共享，放在 PC 里大部分时间闲置",
+            "Notebookcheck 指出，PC 内存还要承担游戏、专业软件、多任务和操作系统，与云端 DRAM 不能一比一替换",
+            "媒体评论认为，这一立场与 OpenAI 以闭源云端模型订阅为主的商业模式一致"
+          ]
+        },
+        {
+          "heading": "内存供需",
+          "points": [
+            "本周 Counterpoint 统计 Q3 手机 SoC 出货同比下降 21%，TrendForce 预计笔记本 ODM 的 Q4 订单下降 10–15%，内存涨价是共同原因（见本周已收条目）",
+            "三星 Q3 电话会称，AI 基础设施和个人 AI 智能体都会推高内存需求，紧张局面将持续到 2028 年",
+            "据 IT之家，黄仁勋、苏姿丰自去年以来都已两次访韩，Altman 此行同样冲着内存供应"
+          ]
+        },
+        {
+          "heading": "可信度",
+          "points": [
+            "报道没有写明播客发布日期，IT之家（10-31 刊发）称为“昨日”，即 10-30 前后",
+            "引语来自 Notebookcheck 的英文转引和 IT之家的中文翻译，原视频未逐字核对，因此 confidence=medium"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-10-30",
       "vendor": "MediaTek（媒体报道：IT之家）",
       "category": "产业动态",
       "title": "不是字节跳动：联发科拿下第二家 AI 芯片大客户，2028 年量产",
@@ -3009,7 +3228,7 @@
       "model_capacity_zh": "实测 <4B 参数扩散/自回归图像模型在旗舰手机上的部署；具体每个模型的延迟/内存见论文表格。"
     }
   ],
-  "overview": "Mac 换代与端侧推理栈下沉周（10-27~11-02，部分周，数据截至 10-30）。Apple 10-27 把 M6 放进 14 英寸 MacBook Pro 与 iMac：双 16 核 Neural Engine 比 M5 快 1.9 倍、大模型首 token 快 1.3 倍；次日的触屏 OLED MacBook Pro 仍用 M5 Max，但官方首次写明可在本机跑数千亿参数大模型和编程智能体（最高 128GB、614GB/s）。安卓侧，Google 把 LiteRT 放进 Play 服务、GPU 推理约快 1.4 倍，ML Kit 推出基于 Gemini Nano 4 的端侧智能体 API，规划循环完全在设备上运行；高通 GenieX 0.10 让 llama.cpp 在 IQ9 上切分到两颗 Hexagon NPU，Ripple 用开源 LLVM 写出的 SME 内核与手写版相差不到 5%。NVIDIA RTX Spark 笔记本开售（最高 128GB 统一内存、1 PFLOPS FP4），新增前台应用与后台智能体之间的 GPU 分配。低功耗与内存侧，TetraMem 12nm 多值 RRAM 存算 SoC 流片（片上 64M INT4 参数、免外部 DRAM），Ceva 新一代 NeuPro 硬件支持分页 KV 缓存与 FP4；论文侧 NORmal 用铁电 NOR 挂在 LPDDR6 总线上当手机主存，仿真比 UFS 卸载快 8.9–28 倍，MobiCom 2026 集中发表 LeanStream、NPUGen 等手机闪存流式推理与 NPU 复用工作。产业面，Counterpoint 统计 Q3 全球手机 SoC 出货同比 -21%，内存涨价仍在压制终端。",
+  "overview": "Mac 换代与端侧推理栈下沉周（10-27~11-02，部分周，数据截至 10-31）。Apple 10-27 把 M6 放进 14 英寸 MacBook Pro 与 iMac：双 16 核 Neural Engine 比 M5 快 1.9 倍、大模型首 token 快 1.3 倍；次日的触屏 OLED MacBook Pro 仍用 M5 Max，但官方首次写明可在本机跑数千亿参数大模型和编程智能体（最高 128GB、614GB/s）。安卓侧，Google 把 LiteRT 放进 Play 服务、GPU 推理约快 1.4 倍，ML Kit 推出基于 Gemini Nano 4 的端侧智能体 API，规划循环完全在设备上运行；高通 GenieX 0.10 让 llama.cpp 在 IQ9 上切分到两颗 Hexagon NPU，Ripple 用开源 LLVM 写出的 SME 内核与手写版相差不到 5%。NVIDIA RTX Spark 笔记本开售（最高 128GB 统一内存、1 PFLOPS FP4），新增前台应用与后台智能体之间的 GPU 分配。低功耗与内存侧，TetraMem 12nm 多值 RRAM 存算 SoC 流片（片上 64M INT4 参数、免外部 DRAM），Ceva 新一代 NeuPro 硬件支持分页 KV 缓存与 FP4；论文侧 NORmal 用铁电 NOR 挂在 LPDDR6 总线上当手机主存，仿真比 UFS 卸载快 8.9–28 倍，MobiCom 2026 集中发表 LeanStream、NPUGen 等手机闪存流式推理与 NPU 复用工作。产业面，Counterpoint 统计 Q3 全球手机 SoC 出货同比 -21%，内存涨价仍在压制终端；Altman 公开主张 DRAM 优先供给数据中心，长鑫 4F² 第六代 DRAM 平台完成工程样片验证。周末 Apple 中国官网宣布国行 Apple 智能 11-4 开测、12 月随 iOS 27.3 上线，首批机型芯片门槛为 A17 Pro。",
   "takeaways_zh": [
     "Mac 继续把“本机跑大模型和编程智能体”写进官方卖点：M6 主攻首 token 和 Neural Engine，M5 Max 机型则靠 128GB 内存撑起数千亿参数模型，桌面端侧的上限由内存容量决定。",
     "安卓端侧推理栈正在系统化：LiteRT 进 Play 服务、ML Kit 端侧智能体 API、GenieX 多 NPU 切分同周出现，开发者不再需要自带推理运行时，手机智能体的门槛从模型移到了系统接口。",

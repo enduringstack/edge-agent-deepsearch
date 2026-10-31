@@ -43,7 +43,7 @@ NeurIPS / ICML / ICLR / MobiSys / SenSys / ASPLOS / CVPR / ICCV / ACL / EMNLP / 
 
 非论文条目只允许大厂官方技术博客或官方产品发布。候选 URL 必须命中以下官方域名或其子域名，不能使用新闻、社媒、GitHub release、论坛或二手解读。
 
-Apple: `apple.com`, `developer.apple.com`, `machinelearning.apple.com`
+Apple: `apple.com`, `developer.apple.com`, `machinelearning.apple.com`, `apple.com.cn`（Apple 中国大陆官网 newsroom，正文 JSON-LD `datePublished`；2026-10-31 加入）
 Google: `google.com`, `blog.google`, `googleblog.com`, `android-developers.googleblog.com`, `ai.google.dev`, `developer.android.com`（Android 官方博客 `developer.android.com/blog/posts/`，页头 `<time datetime>` 带日期；Android Dev Summit 的 ML Kit / AppFunctions 发布稿在这里）
 Microsoft: `microsoft.com`, `azure.microsoft.com`, `techcommunity.microsoft.com`, `blogs.windows.com`（Windows 官方博客：Windows AI、Windows ML、Copilot+ PC、开发者平台发布都在这里）
 OpenAI: `openai.com`

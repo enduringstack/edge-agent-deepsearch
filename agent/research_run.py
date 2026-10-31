@@ -72,6 +72,7 @@ DIRECT_EDGE_AGENT_TAG = "方向:端侧agent"
 # source_tier=官方动态 时 paper_url 必须命中以下官方域名。
 OFFICIAL_SOURCE_DOMAINS = (
     "apple.com",
+    "apple.com.cn",
     "developer.apple.com",
     "machinelearning.apple.com",
     "google.com",

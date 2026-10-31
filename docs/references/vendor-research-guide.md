@@ -28,7 +28,7 @@ arXiv 自身搜索只匹配标题和摘要，不直接按作者 affiliation 过�
 
 | 厂商 | 官方动态来源 | websearch 关键词 | arXiv affiliation | GitHub / 重要页面 |
 |---|---|---|---|---|
-| Apple | `machinelearning.apple.com`（ML 研究博客）、`developer.apple.com`（Apple Intelligence / CoreAI 文档） | `"Apple Intelligence" on-device`、`site:machinelearning.apple.com`、`CoreAI`、`Apple Foundation Models` | `Apple` / `Apple Inc`（论文极少，主要靠官方博客） | `machinelearning.apple.com`、`developer.apple.com/machine-learning` |
+| Apple | `machinelearning.apple.com`（ML 研究博客）、`developer.apple.com`（Apple Intelligence / CoreAI 文档）、`apple.com.cn/newsroom`（中国大陆新闻稿，国行 Apple 智能等只在这里发；2026-10-31 起在白名单） | `"Apple Intelligence" on-device`、`site:machinelearning.apple.com`、`CoreAI`、`Apple Foundation Models` | `Apple` / `Apple Inc`（论文极少，主要靠官方博客） | `machinelearning.apple.com`、`developer.apple.com/machine-learning` |
 | Samsung | `research.samsung.com/blog`、`research.samsung.com/artificial-intelligence`、`news.samsung.com` | `"Samsung Gauss"`、`"Galaxy AI" on-device`、`site:research.samsung.com` | `Samsung Research`、`Samsung AI Center (SAIC)`、`Samsung Electronics` | `research.samsung.com/blog`（AI 主题筛选） |
 | Huawei | `developer.huawei.com/consumer/cn/hiai/`（HiAI Foundation）、`huaweicloud.com` Pangu 产品页、`huawei.com` | `"Huawei Pangu"`、`"HiAI"`、`"HarmonyOS AI"`、`site:developer.huawei.com` | `Huawei`、`Huawei Noah's Ark Lab`、`HiSilicon`、`海思` | `developer.huawei.com` HiAI、`huaweicloud.com` Pangu |
 | Qualcomm | `aihub.qualcomm.com`（AI Hub 模型库）、`qualcomm.com/developer`、`developer.qualcomm.com`（技术博客） | `"Qualcomm AI Hub"`、`"Hexagon NPU"`、`site:aihub.qualcomm.com` | `Qualcomm AI Research`、`Qualcomm` | `github.com/qualcomm/ai-hub-models`、`aihub.qualcomm.com/models` |
