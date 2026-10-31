@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A First-Step Bias Restores Lost Diversity in Diffusion Model Distillation</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>A First-Step Bias Restores Lost Diversity in Diffusion Model Distillation</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-10-27 · Wenwu Tang; Dong Wang; Yun Cheng; Olga Saukh / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:多模态</span><span class="tag">应用:视频</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">把扩散模型蒸馏成几步生成后，不同随机噪声往往生成差不多的图，多样性丢失。这项工作发现多样性主要丢在第一步，于是只补第一步来找回多样性。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">对 4 步蒸馏的 FLUX.1-dev，只增加相当于原模型 0.00196% 的可训练参数、用 8000 组提示词与噪声训练，DINO 多样性提升 48.3%，画质保持有竞争力。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在学生模型第一步加一个对随机种子敏感的偏置适配器，让它的速度与教师模型第一段区间的割线速度对齐，学生其余权重和后续步骤都不动。</span></div>
+<div class="score-reason">评分依据：少步蒸馏是生成模型推理提速的常用手段，本文只修复蒸馏后的多样性问题，与端侧部署关系较远；改动极小却有效，贡献中等。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.37110" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

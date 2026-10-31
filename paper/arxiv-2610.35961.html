@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Knowledge distillation across teacher architectures for compact diabetic retinopathy grading</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Knowledge distillation across teacher architectures for compact diabetic retinopathy grading</h1>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-10-25 · Mossa Manisa; Habiba Jahan Priya; A. K. M. Fakhrul Hossain / arXiv</div>
+<div class="tags"><span class="tag">方向:蒸馏</span><span class="tag">方向:模型架构</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">糖尿病视网膜病变分级模型通常太大，难以在资源有限的设备上用。这项研究系统比较了用三种不同老师模型做知识蒸馏，把能力压进 MobileNetV3-Small 小模型的效果。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">以 Swin-T 为老师、温度 4 时单次最高二次加权 kappa 为 0.9093，三次平均 0.9024，高于不蒸馏的 0.8804；学生模型 152 万参数、5.94 MB，参数量比 Swin-T 少 18.07 倍，但作者也指出细小差异对随机种子敏感，需要外部验证。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 APTOS 2019 数据集上，对老师架构、蒸馏温度和硬标签权重做网格筛选，再对 6 组配置和无蒸馏基线做三种子重复实验，比较离线响应蒸馏的收益。</span></div>
+<div class="score-reason">评分依据：以资源受限部署为动机的医疗影像模型蒸馏，属于端侧可迁移的压缩技术，但没有设备端测量，相关度 4；方法是常规离线知识蒸馏的对照实验，贡献 3。作者来自孟加拉国沙贾拉勒科技大学，无公司归属。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.35961" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

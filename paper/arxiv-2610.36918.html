@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TrawMem: Reframing Agent Memory as Task-Oriented Role-Adaptive Workspaces</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>TrawMem: Reframing Agent Memory as Task-Oriented Role-Adaptive Workspaces</h1>
+<div class="meta"><span class="score">9</span> <span class="tier school">学校预印本</span>  2026-10-27 · Mingyu Zhang; Zixu Li; Zhiheng Fu; Zhiwei Chen; Jinhe Bi; Yupeng Hu / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">模型:Qwen</span><span class="tag">模型:DeepSeek</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型智能体的长期记忆通常只按“和当前问题像不像”来取，但同一条记忆在不同任务里作用不同。TrawMem 把记忆检索改成按任务需要的角色来组织一个工作区。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 LoCoMo 和 MemGallery 上，用四种开源/闭源底座模型，宏平均 F1 比代表性记忆系统高 2.23–3.14 分；LoCoMo 上用 Qwen3.5-9B 和 DeepSeek-V4-Flash 时，LLM 评审分比 SimpleMem 高 4.07 和 4.31 个百分点，同时上下文 token 分别少约 12.8% 和 5.1%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先把交互历史整理成若干条本地线索，再给候选记忆分配“直接支撑答案”“连接补充信息”等角色，联合挑选互补记忆组成任务工作区。</span></div>
+<div class="score-reason">评分依据：属于智能体记忆运行时，省上下文 token 的思路对资源受限设备有迁移价值，但实验未涉及端侧部署；方法是对现有记忆检索的有意义改进，属中等贡献。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.36918" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>v0.19.0</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>v0.19.0</h1>
+<div class="meta"><span class="score">12</span> <span class="tier oss">开源大项目</span> <span class="open-badge">开源</span> 2026-10-30 · google-ai-edge / GitHub</div>
+<div class="tags"><span class="tag">方向:推理框架</span><span class="tag">方向:多模态</span><span class="tag">应用:语音</span><span class="tag">硬件:GPU</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">谷歌端侧大模型运行时 LiteRT-LM 发布 v0.19.0，加快 GPU 上的约束解码，网页 SDK 默认走 GPU 并支持图像和音频输入，还新增多款语音识别与合成模型。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">在 GPU 上加速 logit 掩码以支持更快的约束解码（含多 token 预测解码）；网页端 @litert-lm/core 改为流式加载模型；新增 Qwen3-ASR、Kokoro、Qwen3-TTS 等语音模型；C API 升到 1.0.0，可能失败的函数统一返回状态码。</span></div>
+<div class="score-reason">评分依据：谷歌面向手机和浏览器的端侧大模型运行时，这次补上 GPU 约束解码与端侧语音模型，端侧相关度高；改动以功能补全为主，发布说明没有给出量化结果。</div>
+<div class="source"><a href="https://github.com/google-ai-edge/LiteRT-LM/releases/tag/v0.19.0" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>
