@@ -1,53 +1,53 @@
 {
  "window": {
-  "start": "2026-10-25",
-  "end": "2026-10-31"
+  "start": "2026-10-26",
+  "end": "2026-11-01"
  },
  "coverage": [
   {
    "source": "X",
    "status": "found",
-   "note": "从 Reddit/HN/Bluesky 帖子里抽取 x.com 状态链接，按 snowflake 时间筛进 10-27~10-30，再用 curl/8.4.0 未登录回核 article:published_time。收 Liquid AI 官方账号 10-27 发布 LFM3 的原帖；OpenBMB、xenova 等相关原帖同样核到窗口内，但内容与其他来源重复，没有另收。10-31 增量补采：从 10-30~10-31 的 Reddit/HN/Bluesky 帖子中抽取 x.com 状态链接并按 snowflake 筛时间，只有 6 条落入窗口（Anthropic 套餐改名、Suncatcher 卫星、CVE 等），均与端侧无关，没有新增；X 本身无法未登录检索，增量部分属受限。（本期为部分周：窗口按校验要求写 10-25~10-31，内容只收 10-27 起）"
+   "note": "从 Reddit/HN/Bluesky 帖子里抽取 x.com 状态链接，按 snowflake 时间筛进 10-27~10-30，再用 curl/8.4.0 未登录回核 article:published_time。收 Liquid AI 官方账号 10-27 发布 LFM3 的原帖；OpenBMB、xenova 等相关原帖同样核到窗口内，但内容与其他来源重复，没有另收。10-31 增量补采：从 10-30~10-31 的 Reddit/HN/Bluesky 帖子中抽取 x.com 状态链接并按 snowflake 筛时间，只有 6 条落入窗口（Anthropic 套餐改名、Suncatcher 卫星、CVE 等），均与端侧无关，没有新增；X 本身无法未登录检索，增量部分属受限。11-01 增量补采：从 10-31 起的 HN/Reddit/Bluesky/Mastodon 帖子中抽取 x.com 状态链接，按 snowflake 筛出 8 条并用 curl/8.4.0 回核 article:published_time，内容为 GLM 5.5 尺寸传闻、bootgpt 引导扇区模型作者原帖、opencode 语音输入宣传等，传闻不收、其余与端侧部署关系弱，没有新增。（本期为部分周：窗口按校验要求写 10-26~11-01，内容只收 10-27 起）"
   },
   {
    "source": "Bluesky",
    "status": "found",
-   "note": "用 api.bsky.app searchPosts（since 10-27、until 10-30）检索 on-device AI、local LLM、LFM3、llama.cpp、NPU、MiniCPM、MLX 等词。收 Unsloth 官方账号的本地模型控制浏览器帖；Apple M6 MacBook Pro 等硬件新闻转帖留给硬件雷达，OnDevice Kit 改收 Mastodon 同一作者的原帖。10-31 增量补采：searchPosts（since 10-30、until 10-31）检索 16 个词约 1000 帖，绝大多数是对 Altman“本地推理浪费 DRAM”的反应（已由 Reddit 条目承接）和 LFM3 转述，没有新的一手端侧内容，未新增。（本期为部分周：窗口按校验要求写 10-25~10-31，内容只收 10-27 起）"
+   "note": "用 api.bsky.app searchPosts（since 10-27、until 10-30）检索 on-device AI、local LLM、LFM3、llama.cpp、NPU、MiniCPM、MLX 等词。收 Unsloth 官方账号的本地模型控制浏览器帖；Apple M6 MacBook Pro 等硬件新闻转帖留给硬件雷达，OnDevice Kit 改收 Mastodon 同一作者的原帖。10-31 增量补采：searchPosts（since 10-30、until 10-31）检索 16 个词约 1000 帖，绝大多数是对 Altman“本地推理浪费 DRAM”的反应（已由 Reddit 条目承接）和 LFM3 转述，没有新的一手端侧内容，未新增。11-01 增量补采：searchPosts（since 10-31、until 11-01）检索 20 个词约 900 帖，绝大多数仍是对 Altman 本地推理言论的反应和 LFM3 个人测速，没有新的一手端侧内容，未新增。（本期为部分周：窗口按校验要求写 10-26~11-01，内容只收 10-27 起）"
   },
   {
    "source": "Reddit",
    "status": "found",
-   "note": "用 arctic-shift 翻页抓取 r/LocalLLaMA（362 帖）、r/LocalLLM（602 帖）在 10-27~10-30 的全部帖子，另抽查 r/androiddev、r/MachineLearning、r/JetsonNano。按设备语境筛选后收 5 条，一律记为“仅线索”。10-31 增量补采：arctic-shift 抓取 10-30~10-31 r/LocalLLaMA 126 帖、r/LocalLLM 198 帖，并查 r/androiddev、r/MachineLearning、r/JetsonNano。新增 5 条（Roll iPhone 神经网络引擎相册检索、Marco-Nano Pixel 10a、BigMoeOnEdge 手机跑分、LFM3-Omni 浏览器 WebGPU、Altman 本地推理争议），一律“仅线索”；多篇被版主移除、正文不可见的帖子没有收。（本期为部分周：窗口按校验要求写 10-25~10-31，内容只收 10-27 起）"
+   "note": "用 arctic-shift 翻页抓取 r/LocalLLaMA（362 帖）、r/LocalLLM（602 帖）在 10-27~10-30 的全部帖子，另抽查 r/androiddev、r/MachineLearning、r/JetsonNano。按设备语境筛选后收 5 条，一律记为“仅线索”。10-31 增量补采：arctic-shift 抓取 10-30~10-31 r/LocalLLaMA 126 帖、r/LocalLLM 198 帖，并查 r/androiddev、r/MachineLearning、r/JetsonNano。新增 5 条（Roll iPhone 神经网络引擎相册检索、Marco-Nano Pixel 10a、BigMoeOnEdge 手机跑分、LFM3-Omni 浏览器 WebGPU、Altman 本地推理争议），一律“仅线索”；多篇被版主移除、正文不可见的帖子没有收。11-01 增量补采：arctic-shift 抓取 10-31~11-01 r/LocalLLaMA、r/LocalLLM 各 100 帖并查 r/androiddev、r/MachineLearning、r/JetsonNano。新增 Betelgeuse（RTX 3060 + 16GB 内存跑百亿级 MoE，460+ 赞）和 RK3588S 跑 Qwen3.8-27B（原帖在 r/Qwen_AI）2 条，一律“仅线索”；NVIDIA Nemotron 3.5 Bolt E4B 转帖（HF 仓库 10-05 已建、早于窗口）、Opera WebAI 标准转述（与已收 Opera 条目同一件事）、被版主移除的帖子均未收。（本期为部分周：窗口按校验要求写 10-26~11-01，内容只收 10-27 起）"
   },
   {
    "source": "Hacker News",
    "status": "found",
-   "note": "用 hn.algolia search_by_date（created_at_i 1793059200~1793404800）检索 on-device、local LLM、llama.cpp、NPU、MLX、iPhone、Android、Raspberry Pi、LFM3、WebGPU 等 30 个词。收树莓派 Pico 跑世界模型、Draw Things Local Code、Opera 浏览器内置本地模型 3 条；LFM3 讨论帖（171 分）与 X 原帖重复，没有另收。10-31 增量补采：按 UTC 重算 created_at_i 1793318400~1793491200（10-30 00:00~11-01 00:00）检索 35 个词。新增 Cerebellum（机器人本地决策 + 云端审批）1 条；nesformer（把 NES CPU 编译进 Qwen 权重，261 分）与端侧部署无关、Altman 争议改收 Reddit、Suncatcher 卫星属在轨数据中心，均未收。（本期为部分周：窗口按校验要求写 10-25~10-31，内容只收 10-27 起）"
+   "note": "用 hn.algolia search_by_date（created_at_i 1793059200~1793404800）检索 on-device、local LLM、llama.cpp、NPU、MLX、iPhone、Android、Raspberry Pi、LFM3、WebGPU 等 30 个词。收树莓派 Pico 跑世界模型、Draw Things Local Code、Opera 浏览器内置本地模型 3 条；LFM3 讨论帖（171 分）与 X 原帖重复，没有另收。10-31 增量补采：按 UTC 重算 created_at_i 1793318400~1793491200（10-30 00:00~11-01 00:00）检索 35 个词。新增 Cerebellum（机器人本地决策 + 云端审批）1 条；nesformer（把 NES CPU 编译进 Qwen 权重，261 分）与端侧部署无关、Altman 争议改收 Reddit、Suncatcher 卫星属在轨数据中心，均未收。11-01 增量补采：按 UTC 重算 created_at_i>1793404800（10-31 00:00 起）检索 36 个词。Memdoor 五个 Qwen3.8-27B 协作解题（214 分）实测跑在 OpenRouter 云端、bootgpt 引导扇区语言模型（81 分）属趣味演示、InferSSD 为 10-30 低热度帖且与已收专家流式条目同类，均未收，没有新增。（本期为部分周：窗口按校验要求写 10-26~11-01，内容只收 10-27 起）"
   },
   {
    "source": "Mastodon",
    "status": "found",
-   "note": "翻查 mastodon.social 上 #localllm #ondeviceai #llamacpp #localai #edgeai #ollama #mlx #npu #LFM3 标签时间线，并按发帖时间筛选。收 OnDevice Kit（iPhone 本地 LLM 功能包）原帖；其余多为 LFM3 转述和教程。10-31 增量补采：重查 12 个标签时间线 10-30 起的帖子，多为 Altman 争议转发、OnDevice Kit 作者的同一产品演示和教程，没有新增。（本期为部分周：窗口按校验要求写 10-25~10-31，内容只收 10-27 起）"
+   "note": "翻查 mastodon.social 上 #localllm #ondeviceai #llamacpp #localai #edgeai #ollama #mlx #npu #LFM3 标签时间线，并按发帖时间筛选。收 OnDevice Kit（iPhone 本地 LLM 功能包）原帖；其余多为 LFM3 转述和教程。10-31 增量补采：重查 12 个标签时间线 10-30 起的帖子，多为 Altman 争议转发、OnDevice Kit 作者的同一产品演示和教程，没有新增。11-01 增量补采：重查 12 个标签时间线 10-31 起的帖子，新增 fornews 团队发布的 Apple 端侧模型与 Private Cloud Compute 新闻 RAG 对比报告 1 条（techhub.social）；其余多为 Altman 争议转发、InferSSD/LattePanda 新闻转述和教程。（本期为部分周：窗口按校验要求写 10-26~11-01，内容只收 10-27 起）"
   },
   {
    "source": "GitHub Discussions",
    "status": "found",
-   "note": "按 <relative-time> 解析 ggml-org/llama.cpp、ml-explore/mlx、google-ai-edge/LiteRT-LM、pytorch/executorch、ollama/ollama 的讨论列表（按创建时间排序）。llama.cpp 窗口内有 17 个讨论，收 3 条；其他仓库窗口内没有新的对题讨论。10-31 增量补采：重查 llama.cpp、mlx、LiteRT-LM、executorch、ollama、google-ai-edge/gallery、mlc-llm 讨论列表。llama.cpp 10-30 起有 5 个新讨论（SYCL 闪存注意力修复、22KB 客户端、ROCm 卸载等），信息量不足或偏服务器，没有新增；其余仓库无新讨论。（本期为部分周：窗口按校验要求写 10-25~10-31，内容只收 10-27 起）"
+   "note": "按 <relative-time> 解析 ggml-org/llama.cpp、ml-explore/mlx、google-ai-edge/LiteRT-LM、pytorch/executorch、ollama/ollama 的讨论列表（按创建时间排序）。llama.cpp 窗口内有 17 个讨论，收 3 条；其他仓库窗口内没有新的对题讨论。10-31 增量补采：重查 llama.cpp、mlx、LiteRT-LM、executorch、ollama、google-ai-edge/gallery、mlc-llm 讨论列表。llama.cpp 10-30 起有 5 个新讨论（SYCL 闪存注意力修复、22KB 客户端、ROCm 卸载等），信息量不足或偏服务器，没有新增；其余仓库无新讨论。11-01 增量补采：重查 llama.cpp、mlx、LiteRT、LiteRT-LM、executorch、ollama、google-ai-edge/gallery、mlc-llm 讨论列表。新增 mlx 讨论区的 iPhone 全端侧 Swift Agent 运行时、llama.cpp 讨论区的安卓小票识别 VLM 实测 2 条；llama.cpp 10-31 起的 RTX Spark 跑分、Termux Vulkan 脚本、无草稿模型投机解码 RFC、去审查模型发布信息量不足或偏离端侧，未收。（本期为部分周：窗口按校验要求写 10-26~11-01，内容只收 10-27 起）"
   },
   {
    "source": "Hugging Face",
    "status": "found",
-   "note": "用 HF models API 按 createdAt 查 LiquidAI、openbmb、litert-community、google、qualcomm、apple、nvidia、Qwen 等组织。LiquidAI 10-27 一次建了 LFM3/d1 的数十个 MLX/GGUF/ONNX 仓，有官方博客佐证但属同一发布；收 litert-community 的 LFM3-1.7B LiteRT-LM 转换仓，卡片里有 Galaxy S26 和 Pixel 8a 实测。10-31 增量补采：按 createdAt 重查各组织 10-30 起新建仓库。新增 litert-community/parakeet-ultra（Galaxy S26 NPU 语音识别实测）和 microsoft/Mage-VL-Cowork（4B 电脑操作模型）2 条；Spark-X2.6 的 LiteRT 转换（原模型 10-19 发布）、mlx-community 的 LFM3 量化版与已收内容重复，没有收。（本期为部分周：窗口按校验要求写 10-25~10-31，内容只收 10-27 起）"
+   "note": "用 HF models API 按 createdAt 查 LiquidAI、openbmb、litert-community、google、qualcomm、apple、nvidia、Qwen 等组织。LiquidAI 10-27 一次建了 LFM3/d1 的数十个 MLX/GGUF/ONNX 仓，有官方博客佐证但属同一发布；收 litert-community 的 LFM3-1.7B LiteRT-LM 转换仓，卡片里有 Galaxy S26 和 Pixel 8a 实测。10-31 增量补采：按 createdAt 重查各组织 10-30 起新建仓库。新增 litert-community/parakeet-ultra（Galaxy S26 NPU 语音识别实测）和 microsoft/Mage-VL-Cowork（4B 电脑操作模型）2 条；Spark-X2.6 的 LiteRT 转换（原模型 10-19 发布）、mlx-community 的 LFM3 量化版与已收内容重复，没有收。11-01 增量补采：按 createdAt 重查 30 余个组织 10-31 起新建的模型和 Space，只有 litert-community 的 Spark-X2.6 转换（原模型 10-19 发布）、已收的 parakeet-ultra 和 onnx-community 的小型转换仓，没有新增。（本期为部分周：窗口按校验要求写 10-26~11-01，内容只收 10-27 起）"
   },
   {
    "source": "YouTube / Bilibili",
    "status": "found",
-   "note": "YouTube 搜索结果页（本周过滤）加视频页 publishDate 回核，收 Android Developers 官方频道 2 场 Android Dev Summit 端侧 AI 讲座、OpenBMB 官方 MiniCPM-OCR iPhone/iPad 演示；Liquid AI 官方 LFM3 介绍视频（10-27）与 X 原帖重复，没有另收。Bilibili 搜索接口返回错误页，没有拿到结果，视为受限。10-31 增量补采：YouTube 本周过滤搜索加 publishDate 回核，新增 Android Developers 官方 Formula E 端侧 Agent 讲座 1 条；Snapdragon 官方 PC Agent 宣传片无实质信息、Google AI Edge Foresight 为 10-06 旧发布，没有收。Bilibili 搜索接口部分查询被限流，拿到的结果均为非官方 UP 主，视为受限。（本期为部分周：窗口按校验要求写 10-25~10-31，内容只收 10-27 起）"
+   "note": "YouTube 搜索结果页（本周过滤）加视频页 publishDate 回核，收 Android Developers 官方频道 2 场 Android Dev Summit 端侧 AI 讲座、OpenBMB 官方 MiniCPM-OCR iPhone/iPad 演示；Liquid AI 官方 LFM3 介绍视频（10-27）与 X 原帖重复，没有另收。Bilibili 搜索接口返回错误页，没有拿到结果，视为受限。10-31 增量补采：YouTube 本周过滤搜索加 publishDate 回核，新增 Android Developers 官方 Formula E 端侧 Agent 讲座 1 条；Snapdragon 官方 PC Agent 宣传片无实质信息、Google AI Edge Foresight 为 10-06 旧发布，没有收。Bilibili 搜索接口部分查询被限流，拿到的结果均为非官方 UP 主，视为受限。11-01 增量补采：YouTube 按上传日期过滤搜索 14 个词，结果均为个人频道的评测和教程，没有官方频道新视频，未新增；Bilibili 搜索接口这次可用，10-31 起的端侧相关视频均为非官方 UP 主教程或转载，未收。（本期为部分周：窗口按校验要求写 10-26~11-01，内容只收 10-27 起）"
   },
   {
    "source": "厂商论坛",
    "status": "found",
-   "note": "翻查 NVIDIA 开发者论坛 latest.json（按创建时间排序，共 8 页、240 个主题，覆盖 10-27 19:13 起），以及 Google AI 开发者论坛 discuss.ai.google.dev。收 Jetson 三款开发板上的 VLA 实测、用 EmbeddingGemma 2 在笔记本上本地搜索全量 HN 两条；DGX Spark 大模型调参帖偏桌面服务器，没有收。10-27 0:00~19:13 的 NVIDIA 论坛主题没有翻到。10-31 增量补采：NVIDIA 开发者论坛 latest.json 翻到 10-30 00:00 前（3 页），Google AI 开发者论坛翻到 10-30 前（2 页）。新增 Orin Nano 上 INT8 检测器比 FP16 更慢的实测 1 条；JetPack 5 停止维护公告、DGX Spark 调参帖属硬件/桌面服务器范畴，Google 论坛 10-30 起多为账号与 API 配额问题，没有收。（本期为部分周：窗口按校验要求写 10-25~10-31，内容只收 10-27 起）"
+   "note": "翻查 NVIDIA 开发者论坛 latest.json（按创建时间排序，共 8 页、240 个主题，覆盖 10-27 19:13 起），以及 Google AI 开发者论坛 discuss.ai.google.dev。收 Jetson 三款开发板上的 VLA 实测、用 EmbeddingGemma 2 在笔记本上本地搜索全量 HN 两条；DGX Spark 大模型调参帖偏桌面服务器，没有收。10-27 0:00~19:13 的 NVIDIA 论坛主题没有翻到。10-31 增量补采：NVIDIA 开发者论坛 latest.json 翻到 10-30 00:00 前（3 页），Google AI 开发者论坛翻到 10-30 前（2 页）。新增 Orin Nano 上 INT8 检测器比 FP16 更慢的实测 1 条；JetPack 5 停止维护公告、DGX Spark 调参帖属硬件/桌面服务器范畴，Google 论坛 10-30 起多为账号与 API 配额问题，没有收。11-01 增量补采：NVIDIA 开发者论坛 latest.json 翻到 10-31 00:00（4 页），Google AI 开发者论坛翻到 10-31。新增 RTX Spark（Windows ARM64）原生 vLLM 移植 1 条；DGX Spark 多机并发、RTX 5090 检索测试属桌面服务器，Google 论坛多为配额与账号问题，未收。（本期为部分周：窗口按校验要求写 10-26~11-01，内容只收 10-27 起）"
   }
  ],
  "items": [
@@ -234,6 +234,34 @@
    "evidence_url": "https://www.youtube.com/watch?v=nV63eqjPeEI"
   },
   {
+   "id": "swift-mlx-on-device-agent-iphone-webkit",
+   "source": "GitHub Discussions",
+   "author": "GabeTheCoder",
+   "url": "https://github.com/ml-explore/mlx/discussions/4811",
+   "published_at": "2026-10-31T18:48:05Z",
+   "title_zh": "MLX 社区展示：Swift 写的全端侧 Agent 运行时，iPhone 15 Pro 上用 Qwen 3.5 4B 离线操控网页",
+   "summary_zh": "开发者在 ml-explore/mlx 讨论区展示基于 MLX 的 Swift Agent 框架：模型和运行时都在设备上，演示视频里打开飞行模式后 iPhone 15 Pro 仍能用 Qwen 3.5 4B 完成网页任务。它直接用 iOS/macOS 原生 WebKit，不依赖 Chromium、Playwright 或 CDP；用分层的界面“视觉仿真”代替截图，只把关键控件交给小模型决策，并用自定义的运行时上下文协议（RCP）在沙箱里调用相机、WebKit 等系统能力。作者称在 A20 芯片上快 2–3 倍，但没有给出成功率和时延数字，也还没开源。",
+   "why_it_matters": "这是少见的“规划和执行都在 iPhone 上”的网页操作 Agent：用结构化界面表示替代截图，正是让 4B 级模型在手机上做 GUI 操作的关键；作者向社区提出的 Agent 循环 KV 缓存与内存上限问题，也是手机端 Agent 的共性难题。",
+   "device_scope": "手机",
+   "topic": "手机端 Agent / MLX Swift",
+   "verification": "仅线索",
+   "evidence_url": ""
+  },
+  {
+   "id": "ledgerlens-qwen2vl-2b-android-receipt-thermal",
+   "source": "GitHub Discussions",
+   "author": "iivek",
+   "url": "https://github.com/ggml-org/llama.cpp/discussions/31486",
+   "published_at": "2026-10-31T22:10:29Z",
+   "title_zh": "llama.cpp 讨论：蒸馏版 Qwen2-VL-2B 在安卓手机上离线识别小票，GPU 比 CPU 快 6 倍，过热时输出直接出错",
+   "summary_zh": "作者用 Qwen2.5-VL-7B 做教师，把 Qwen2-VL-2B 蒸馏成小票/发票结构化抽取模型（Q4_K_M + f16 视觉塔，共 2.3GB），用 llama.cpp 的 mtmd 跑在 React Native 应用里。作者自测：Nothing Phone (3)（骁龙 8s Gen 4）用 Adreno OpenCL 每张约 19 秒，纯 CPU 约 2 分钟；天玑 778G+ 纯 CPU 要 11.3 分钟，99% 时间耗在视觉塔预填充上；限制图像 token 数、只把视觉塔放 GPU 最有效。两个坑：OpenCL 库在 Adreno 6xx 上加载即崩溃，需要按机型屏蔽；长时间测试后 GPU 温度到 99.9°C，同一张图连续 8 次输出错误字段，降温后恢复正常。个人作品集项目。",
+   "why_it_matters": "给出了手机端多模态模型“慢在视觉编码、GPU 驱动按芯片碎片化”的实测拆解；过热导致的不只是降速而是答案出错，这一现象对手机端 Agent 的可靠性评估很有警示意义。",
+   "device_scope": "手机",
+   "topic": "手机端 VLM / llama.cpp mtmd",
+   "verification": "仅线索",
+   "evidence_url": "https://github.com/iivek/LedgerLens"
+  },
+  {
    "id": "geniex-gguf-snapdragon-hexagon-npu",
    "source": "Reddit",
    "author": "SkyFeistyLlama8",
@@ -402,6 +430,48 @@
    "evidence_url": "https://www.youtube.com/watch?v=iMsUcCYNKqY"
   },
   {
+   "id": "fornews-apple-pcc-vs-on-device-foundation-models-rag",
+   "source": "Mastodon",
+   "author": "ok_ia_ch (fornews)",
+   "url": "https://techhub.social/@ok_ia_ch/117536105305614073",
+   "published_at": "2026-10-31T14:57:18Z",
+   "title_zh": "fornews 实测：Apple 端侧 Foundation Models 与 Private Cloud Compute 做新闻 RAG，准确率相当但端侧覆盖不足",
+   "summary_zh": "新闻阅读应用 fornews 发布技术报告，在 MacBook Air M5（macOS 27.2）上用 2.7 万篇文章的个人语料，比较 Apple 端侧模型（8192 token 窗口，实测）与 Private Cloud Compute：30 个问题、5 种语言、120 个答案逐句盲评。逐句准确率相近（端侧 85%、PCC 88%），但 PCC 覆盖问题更全（35/40 对 21/40），连网络在内快 2.7 倍（5.0 秒对 13.5 秒）；不过 PCC 有 30% 调用被安全护栏拒答，战争与地缘政治类 16 题拒了 15 题。结论是暂时继续用端侧模型，靠检索与计算补差距。PCC 通过系统 fm 命令行调用，作者注明无法确认与应用内接口完全一致。",
+   "why_it_matters": "少有的同一任务下 Apple 端侧模型与其云端模型的对照数据，量化了“端侧窗口小、云端会拒答”的取舍；fornews 同时覆盖 iPhone，这些结论对 iOS 开发者选型同样适用。",
+   "device_scope": "PC",
+   "topic": "Apple Foundation Models / 端云对比",
+   "verification": "已回链原始材料",
+   "evidence_url": "https://ok-ia.ch/fornews/lire.html?f=pcc-rag-en.md"
+  },
+  {
+   "id": "betelgeuse-moe-expert-streaming-rtx3060-16gb",
+   "source": "Reddit",
+   "author": "zyxciss",
+   "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xk8s6z/betelgeuse_running_qwen_38_flash_next_at_22_toks/",
+   "published_at": "2026-10-31T12:20:02Z",
+   "title_zh": "Betelgeuse：12GB 显卡 + 16GB 内存的普通游戏 PC 跑 Qwen3.8-Flash-Next，约 22 tok/s 且输出与原版逐字节一致",
+   "summary_zh": "作者基于 llama.cpp 改出 Betelgeuse 引擎，在 RTX 3060 12GB、16GB 单通道 DDR4、普通 NVMe 的机器上运行 68GB 的 IQ2_XS 版 Qwen3.8-Flash-Next：稠密层常驻显存，约 5000 个专家槽位按层分配在显存里，被换出的专家进入内存“受害者缓存”，用 GPU 端门铃内核和单次 CUDA Graph 回放避免每层同步，每 token 的 SSD 读取从约 71MB 降到 12.4MB。作者自报热启动 22 tok/s（峰值 48），原版 llama.cpp 1.47、Strata 低内存模式 8.11，并称核对了 2.8 万条路由记录和 576 个生成 token 与原版完全一致。同日跟帖称 4-bit 版在双通道内存下 24 tok/s。已向 llama.cpp 提交 PR（#31469），数字未经独立复现。",
+   "why_it_matters": "本周 r/LocalLLaMA 热度最高的本地推理帖（460+ 赞）；它强调不剪专家、不改输出，回应了专家流式加载“靠牺牲精度换速度”的质疑，把百亿级 MoE 的门槛压到主流游戏 PC。",
+   "device_scope": "PC",
+   "topic": "MoE 专家流式加载 / 消费级显卡",
+   "verification": "仅线索",
+   "evidence_url": "https://github.com/Betelgeuse-AI/Betelgeuse"
+  },
+  {
+   "id": "vllm-native-rtx-spark-windows-arm64",
+   "source": "厂商论坛",
+   "author": "dev.parkjeonghwan",
+   "url": "https://forums.developer.nvidia.com/t/native-vllm-on-rtx-spark-windows-arm64-2x-faster-than-nvidias-llama-cpp-recipe/387530",
+   "published_at": "2026-10-31T13:14:04Z",
+   "title_zh": "NVIDIA 论坛：RTX Spark（Windows ARM64）上原生跑 vLLM，速度约为官方 llama.cpp 方案的 2 倍",
+   "summary_zh": "开发者在 NVIDIA 开发者论坛发布其为 RTX Spark Windows ARM64 PC 移植的原生 vLLM。作者自报 Qwen3.8-Flash-Next 在 SPEED-Bench 编程任务上 70.44 tok/s，NVIDIA 官方 llama.cpp 方案为 35.37；AA-AgentPerf 用时 734 秒对 1118 秒。支持 MTP 投机解码、CUDA Graph 和最多 16 个并发请求，GitHub 提供预编译包和安装脚本。项目为个人维护，数字未经官方或第三方复核。",
+   "why_it_matters": "Windows on ARM 的 AI PC 过去缺少主流推理栈；把服务端常用的 vLLM 搬到 RTX Spark 上并跑赢官方方案，说明这类新 PC 平台上本地 Agent 负载的软件优化空间仍很大。",
+   "device_scope": "PC",
+   "topic": "Windows ARM AI PC / vLLM",
+   "verification": "仅线索",
+   "evidence_url": "https://github.com/devjeonghwan/vllm-for-rtx-spark"
+  },
+  {
    "id": "zetic-vla-jetson-thor-orin-benchmark",
    "source": "厂商论坛",
    "author": "sj-ZETIC",
@@ -456,6 +526,20 @@
    "topic": "端云协同 / 机器人 Agent",
    "verification": "已回链原始材料",
    "evidence_url": "https://github.com/cerebellum-labs/cerebellum"
+  },
+  {
+   "id": "rk3588s-qwen38-27b-npu-custom-runtime",
+   "source": "Reddit",
+   "author": "Aibender100",
+   "url": "https://www.reddit.com/r/Qwen_AI/comments/1xkuyrg/i_got_a_qwen_27b_ai_model_running_on_an_rk3588s/",
+   "published_at": "2026-11-01T05:23:43Z",
+   "title_zh": "NanoPi M6（RK3588S）上用自研运行时跑稠密 Qwen3.8-27B：NPU 推理总时间减半，生成约 1.1 tok/s",
+   "summary_zh": "作者先把 Qwen3.8-27B 转成瑞芯微 RKLLM 格式跑在 32GB 内存的 NanoPi M6 上，随后自写 C++ 运行时 ANR，改用自定义 6-bit 权重并加入模型自带的 MTP 头做投机解码。由于 NPU 按 int8 计算，6-bit 权重加载后仍要展开，实测常驻 NPU 权重 24.6GB、进程总内存 29.9GB。作者自测（525 token 提示、生成 256 token、各 3 次）：预填充从 570 秒降到 203 秒，生成从 0.80 升到 1.08 tok/s，总时间减半，且与优化前逐 token 一致。运行时闭源，只与自己的旧版本对比。",
+   "why_it_matters": "展示了几百元级 ARM 开发板 NPU 跑 27B 稠密模型的真实上限：内存装得下，但带宽决定只有约 1 tok/s，预填充以分钟计；对评估边缘盒子能否承担大模型 Agent 很有参考价值。",
+   "device_scope": "其他端侧",
+   "topic": "RK3588 NPU / 大模型边缘部署",
+   "verification": "仅线索",
+   "evidence_url": ""
   },
   {
    "id": "nobodywho-decision-models-mobile-bindings",

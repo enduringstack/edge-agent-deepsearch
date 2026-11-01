@@ -1,7 +1,7 @@
 {
   "window": {
-    "start": "2026-10-25",
-    "end": "2026-10-31"
+    "start": "2026-10-26",
+    "end": "2026-11-01"
   },
   "items": [
     {
@@ -2009,6 +2009,59 @@
       "model_capacity_zh": "论文口径：约 1B 参数 VLA 全机载运行，10 Hz 闭环；精度/量化格式未在摘要披露。"
     },
     {
+      "date": "2026-10-31",
+      "vendor": "Meta / 傅利叶 Fourier（媒体报道：The Information，经 IT之家、Digital Today 转述）",
+      "category": "车载/机器人",
+      "title": "消息称 Meta 与中国企业傅利叶打造人形机器人原型，号称 Muse 模型的物理化身",
+      "title_zh": "爆料：Meta与傅利叶造Thor人形机器人Max",
+      "url": "https://www.ithome.com/1/020/636.htm",
+      "source_type": "媒体",
+      "summary_zh": "The Information 10-31（美国时间）报道、IT之家 11-01 转述：Meta 与上海傅利叶合作，三个月做出人形机器人原型 Max，以 NVIDIA Jetson Thor 为核心计算芯片，被 Meta 内部称为 Muse AI 智能体的“物理化身”。第二代 Max 2 已于 9 月启动研发。Meta 发言人称这是内部研究项目，没有销售计划，也没有定发布时间。",
+      "whats_new_zh": [
+        "原型 Max：身高约 1.5 米（约 5 英尺），重约 48.1 千克（106 磅），研发用时约三个月（媒体报道）",
+        "计算平台：NVIDIA Jetson Thor，具体型号与算力未披露（媒体报道）",
+        "感知：约 5 米外识别人声、3 米外读取手势，可保持眼神接触；胸部双扬声器，面部可模拟表情，五指手能拿起小瓶子和玩具（Digital Today 转述）",
+        "时间线：2026 年 8 月底在 Meta 内部机器人活动上首次实体演示；Max 2 于 9 月启动，计划重新设计躯干与手部，加投影仪和爬楼梯传感器（媒体报道）",
+        "Meta 机器人产品副总裁在傅利叶上海工厂驻留近两个月参与开发（媒体报道）"
+      ],
+      "key_specs": {
+        "npu": "NVIDIA Jetson Thor（具体型号、TOPS 未披露）",
+        "other": "身高约 1.5 m，重约 48.1 kg；声音识别距离约 5 m、手势识别约 3 m；五指灵巧手"
+      },
+      "edge_ai_impact_zh": "这是又一家模型厂把个人智能体装进实体机器人的信号：Meta 选择 Jetson Thor 而非自研芯片做机载算力，说明家用人形机器人短期仍依赖 NVIDIA 的端侧平台。真正值得追的是 Muse 有多少能力能在 Thor 上本地运行，目前完全未披露。",
+      "evidence_urls": [
+        "https://www.digitaltoday.co.kr/en/view/122209/meta-develops-humanoid-robot-prototype-with-chinese-firm-fourier-launches-second-generation-project",
+        "https://tech.ifeng.com/c/8xgpk0VhYHt"
+      ],
+      "confidence": "medium",
+      "deep_dive_zh": [
+        {
+          "heading": "机载算力与端云分工",
+          "points": [
+            "报道确认整机以 NVIDIA Jetson Thor 为核心芯片，但未给出 Thor 的具体型号（不同型号算力与内存差距很大）",
+            "Muse 在 Meta 的定位是个人 AI 智能体；Max 上哪些环节（语音、手势、表情、抓取）在本机处理、哪些交给云端 Muse，报道没有说明",
+            "5 米声音识别、3 米手势识别、眼神接触这类常驻交互，通常需要本地低时延感知，但是否全部在 Thor 上完成仍属未披露"
+          ]
+        },
+        {
+          "heading": "研发节奏与合作模式",
+          "points": [
+            "首代原型三个月完成，8 月底内部演示，9 月即启动第二代，迭代周期很短",
+            "整机制造依托傅利叶上海工厂，Meta 派机器人产品副总裁驻厂近两个月；Meta 负责智能体与产品定义",
+            "Meta 称项目仅用于内部研究、无销售计划，因此短期内不会有公开规格或量产时间表"
+          ]
+        },
+        {
+          "heading": "口径与可信度",
+          "points": [
+            "一手来源为付费媒体 The Information，本条依据 IT之家与韩国 Digital Today 的转述；Meta、傅利叶均未发布官方稿",
+            "身高、体重、感知距离等数字均出自媒体转述，未经厂商确认，置信度定为 medium"
+          ]
+        }
+      ],
+      "model_capacity_zh": "未披露。报道只说 Max 是 Muse 智能体的“物理化身”，没有说明 Muse 模型是在机载 Jetson Thor 上运行、还是由云端调用，也没有给出机载模型的参数量或精度。"
+    },
+    {
       "date": "2026-10-30",
       "vendor": "地平线（Horizon Robotics，媒体报道）",
       "category": "车载/机器人",
@@ -3025,6 +3078,57 @@
       ]
     },
     {
+      "date": "2026-11-01",
+      "vendor": "韩国产业通商资源部（韩联社报道，经 The Korea Times 刊发）",
+      "category": "产业动态",
+      "title": "Korea's monthly exports hit $115.3 bil. in Oct. on record chip sales",
+      "title_zh": "韩国10月芯片出口564亿美元，同比增259%",
+      "url": "https://www.koreatimes.co.kr/economy/20261101/koreas-monthly-exports-hit-1153-bil-in-oct-on-record-chip-sales",
+      "source_type": "媒体",
+      "summary_zh": "韩国产业通商资源部 11-01 公布 10 月进出口初步数据（韩联社报道）：总出口 1153 亿美元、同比增 93.7%，其中半导体出口 564 亿美元、同比增 259%，几乎占总出口一半。1–10 月累计出口首次突破 9000 亿美元，官方预计全年最早 11 月破 1 万亿美元。官方把增长归因于 AI 基础设施投资带动的全球芯片需求。",
+      "whats_new_zh": [
+        "10 月半导体出口 564 亿美元，同比 +259%（官方初步数据，媒体报道）",
+        "10 月总出口 1153 亿美元，同比 +93.7%；进口 727.8 亿美元，同比 +36%；贸易顺差 425 亿美元",
+        "按目的地：对华出口 269.8 亿美元（+133.6%，连续 5 个月超 200 亿美元），对美 249 亿美元（+185.8%），对东南亚 213.3 亿美元（+128%），对欧盟 81 亿美元（+56.4%）",
+        "1–10 月累计出口首次超过 9000 亿美元，官方预计全年出口最早 11 月突破 1 万亿美元",
+        "10 月 1–20 日芯片出口 275 亿美元、同比 +222.5%（关税厅中旬数据，MoneyToday 报道），整月增速进一步走高"
+      ],
+      "key_specs": {
+        "memory": "报道未拆分 DRAM / NAND / HBM，也未给出存储单价",
+        "other": "半导体出口 564 亿美元（+259%）占总出口 1153 亿美元的约 49%（按报道数字推算）"
+      },
+      "edge_ai_impact_zh": "韩国芯片出口一个月 564 亿美元、同比增 259%，说明存储涨价在 10 月仍在加速。对端侧 AI 来说，大内存机型的成本短期难降，厂商更可能靠量化、MoE 与闪存卸载来压缩本地模型的内存占用，而不是直接加内存。",
+      "evidence_urls": [
+        "https://www.mt.co.kr/en/economy/2026/10/21/2026102108331616913",
+        "https://finance.sina.com.cn/7x24/2026-11-01/doc-inixfers4111334.shtml"
+      ],
+      "confidence": "high",
+      "deep_dive_zh": [
+        {
+          "heading": "数字本身",
+          "points": [
+            "半导体单月出口 564 亿美元，按报道数字推算约占总出口的 49%；同比 +259% 主要反映单价，而不是出货量翻三倍",
+            "检索摘要称 9 月半导体出口约 603 亿美元，10 月为有记录以来第二高；Korea Times 页面本身未写 9 月数字，此为检索摘要口径",
+            "官方未拆分存储与逻辑芯片，也没有给出 DRAM、HBM 的单价，需等关税厅细分数据"
+          ]
+        },
+        {
+          "heading": "与本周内存线索的关系",
+          "points": [
+            "本周已收的三星 Q3 电话会称内存紧张持续到 2028 年，SK 海力士 Q3 营收破百万亿韩元；韩国出口数据从国家层面印证了同一轮存储涨价",
+            "对美出口 +185.8%、对华 +133.6%，报道把对美增长归因于计算机，把对华增长归因于无线设备等，但未给出分项金额"
+          ]
+        },
+        {
+          "heading": "对端侧硬件的传导",
+          "points": [
+            "存储厂收入暴涨的另一面是手机、PC 的内存成本上升；本周已收的 Counterpoint 数据显示 Q3 手机 SoC 出货同比 -21%",
+            "端侧大模型需要 16GB 以上的 LPDDR，内存单价居高不下会直接抬高“能跑本地智能体”机型的门槛价"
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-30",
       "vendor": "OpenAI / Samsung（媒体报道）",
       "category": "产业动态",
@@ -3228,7 +3332,7 @@
       "model_capacity_zh": "实测 <4B 参数扩散/自回归图像模型在旗舰手机上的部署；具体每个模型的延迟/内存见论文表格。"
     }
   ],
-  "overview": "Mac 换代与端侧推理栈下沉周（10-27~11-02，部分周，数据截至 10-31）。Apple 10-27 把 M6 放进 14 英寸 MacBook Pro 与 iMac：双 16 核 Neural Engine 比 M5 快 1.9 倍、大模型首 token 快 1.3 倍；次日的触屏 OLED MacBook Pro 仍用 M5 Max，但官方首次写明可在本机跑数千亿参数大模型和编程智能体（最高 128GB、614GB/s）。安卓侧，Google 把 LiteRT 放进 Play 服务、GPU 推理约快 1.4 倍，ML Kit 推出基于 Gemini Nano 4 的端侧智能体 API，规划循环完全在设备上运行；高通 GenieX 0.10 让 llama.cpp 在 IQ9 上切分到两颗 Hexagon NPU，Ripple 用开源 LLVM 写出的 SME 内核与手写版相差不到 5%。NVIDIA RTX Spark 笔记本开售（最高 128GB 统一内存、1 PFLOPS FP4），新增前台应用与后台智能体之间的 GPU 分配。低功耗与内存侧，TetraMem 12nm 多值 RRAM 存算 SoC 流片（片上 64M INT4 参数、免外部 DRAM），Ceva 新一代 NeuPro 硬件支持分页 KV 缓存与 FP4；论文侧 NORmal 用铁电 NOR 挂在 LPDDR6 总线上当手机主存，仿真比 UFS 卸载快 8.9–28 倍，MobiCom 2026 集中发表 LeanStream、NPUGen 等手机闪存流式推理与 NPU 复用工作。产业面，Counterpoint 统计 Q3 全球手机 SoC 出货同比 -21%，内存涨价仍在压制终端；Altman 公开主张 DRAM 优先供给数据中心，长鑫 4F² 第六代 DRAM 平台完成工程样片验证。周末 Apple 中国官网宣布国行 Apple 智能 11-4 开测、12 月随 iOS 27.3 上线，首批机型芯片门槛为 A17 Pro。",
+  "overview": "Mac 换代与端侧推理栈下沉周（10-27~11-02，部分周，数据截至 11-01）。Apple 10-27 把 M6 放进 14 英寸 MacBook Pro 与 iMac：双 16 核 Neural Engine 比 M5 快 1.9 倍、大模型首 token 快 1.3 倍；次日的触屏 OLED MacBook Pro 仍用 M5 Max，但官方首次写明可在本机跑数千亿参数大模型和编程智能体（最高 128GB、614GB/s）。安卓侧，Google 把 LiteRT 放进 Play 服务、GPU 推理约快 1.4 倍，ML Kit 推出基于 Gemini Nano 4 的端侧智能体 API，规划循环完全在设备上运行；高通 GenieX 0.10 让 llama.cpp 在 IQ9 上切分到两颗 Hexagon NPU，Ripple 用开源 LLVM 写出的 SME 内核与手写版相差不到 5%。NVIDIA RTX Spark 笔记本开售（最高 128GB 统一内存、1 PFLOPS FP4），新增前台应用与后台智能体之间的 GPU 分配。低功耗与内存侧，TetraMem 12nm 多值 RRAM 存算 SoC 流片（片上 64M INT4 参数、免外部 DRAM），Ceva 新一代 NeuPro 硬件支持分页 KV 缓存与 FP4；论文侧 NORmal 用铁电 NOR 挂在 LPDDR6 总线上当手机主存，仿真比 UFS 卸载快 8.9–28 倍，MobiCom 2026 集中发表 LeanStream、NPUGen 等手机闪存流式推理与 NPU 复用工作。产业面，Counterpoint 统计 Q3 全球手机 SoC 出货同比 -21%，内存涨价仍在压制终端；Altman 公开主张 DRAM 优先供给数据中心，长鑫 4F² 第六代 DRAM 平台完成工程样片验证。周末 Apple 中国官网宣布国行 Apple 智能 11-4 开测、12 月随 iOS 27.3 上线，首批机型芯片门槛为 A17 Pro。韩国 10 月半导体出口 564 亿美元、同比增 259%，存储涨价仍在加速；Meta 与傅利叶被曝以 Jetson Thor 做出人形机器人原型 Max（爆料，未官宣）。",
   "takeaways_zh": [
     "Mac 继续把“本机跑大模型和编程智能体”写进官方卖点：M6 主攻首 token 和 Neural Engine，M5 Max 机型则靠 128GB 内存撑起数千亿参数模型，桌面端侧的上限由内存容量决定。",
     "安卓端侧推理栈正在系统化：LiteRT 进 Play 服务、ML Kit 端侧智能体 API、GenieX 多 NPU 切分同周出现，开发者不再需要自带推理运行时，手机智能体的门槛从模型移到了系统接口。",

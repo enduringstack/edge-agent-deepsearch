@@ -389,6 +389,12 @@ class ResearchRunValidationTests(unittest.TestCase):
             self._catchup(2, published={"arxiv:2610.00001": "2026-09-29"})
         self.assertIn("already published", str(ctx.exception))
 
+    def test_catchup_ignores_the_current_partial_week_archive(self):
+        # Republishing a partial week mid-week: its archive label is after the
+        # 7-day cutoff, so its own catch-up papers are not "already published".
+        label = (TODAY - timedelta(days=4)).isoformat()
+        self.assertEqual(len(self._catchup(1, published={"arxiv:2610.00001": label})["papers"]), 1)
+
     def test_rejects_invalid_source_tier(self):
         path = write_json(run_payload(valid_paper(source_tier="厂商博客")))
 

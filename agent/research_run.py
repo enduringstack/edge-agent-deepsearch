@@ -514,7 +514,9 @@ def normalize_paper(raw: dict, today: date, seen_ids: set[str], vocab: dict[str,
         if not (is_arxiv_submission and paper_date >= catchup_start):
             raise ValidationError(f"{paper_id}: date {paper_date} outside window [{cutoff} .. {today}]")
         earlier = published_identities(exclude_label=cutoff.isoformat()).get(content_identity(raw_url))
-        if earlier:
+        # A week labelled on/after the cutoff is the current week itself (a partial
+        # week republished mid-week starts after the 7-day cutoff), not a past one.
+        if earlier and earlier < cutoff.isoformat():
             raise ValidationError(
                 f"{paper_id}: arXiv catch-up item {content_identity(raw_url)} was already published in week {earlier}"
             )
