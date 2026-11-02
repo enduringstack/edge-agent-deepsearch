@@ -214,6 +214,21 @@ class LinkLivenessStatusTests(unittest.TestCase):
                 self.assertTrue(research_run.is_link_alive("https://example.com/x"))
 
 
+class ArxivDateFetchTests(unittest.TestCase):
+    def test_reads_revision_date_from_entry_not_feed_header(self):
+        body = (
+            "<feed><updated>2026-11-02T11:29:32Z</updated><entry>"
+            "<id>http://arxiv.org/abs/2412.05126v3</id>"
+            "<updated>2026-10-27T18:40:35Z</updated><published>2024-12-06T15:34:58Z</published>"
+            "</entry></feed>"
+        ).encode()
+        resp = mock.MagicMock()
+        resp.__enter__.return_value.read.return_value = body
+        with mock.patch("research_run.urllib.request.urlopen", return_value=resp):
+            got = research_run.fetch_arxiv_dates("https://arxiv.org/abs/2412.05126")
+        self.assertEqual(got, (date(2024, 12, 6), date(2026, 10, 27)))
+
+
 class ResearchRunValidationTests(unittest.TestCase):
     def setUp(self):
         patcher = mock.patch("research_run.is_link_alive", return_value=True)

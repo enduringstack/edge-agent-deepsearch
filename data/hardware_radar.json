@@ -1,7 +1,7 @@
 {
   "window": {
-    "start": "2026-10-26",
-    "end": "2026-11-01"
+    "start": "2026-10-27",
+    "end": "2026-11-02"
   },
   "items": [
     {
@@ -1258,6 +1258,114 @@
       ]
     },
     {
+      "date": "2026-10-30",
+      "vendor": "Sivy Limited（杭州） / University of Cambridge",
+      "category": "低功耗/可穿戴/IoT",
+      "title": "From prediction error to sparse events: Biologically inspired signed-dyadic coding for Mandarin keyword spotting",
+      "title_zh": "预测编码脉冲唤醒词：SRAM 读取减三成多",
+      "url": "https://arxiv.org/abs/2610.41381",
+      "source_type": "论文",
+      "summary_zh": "论文提出预测带符号二进幂编码（PG）：每个输入通道保留本地预测，只有残差超过学习阈值时才发事件，事件只带符号和 2 的幂次幅度，接收端用定点移位和加法重建。在中文唤醒词任务上，INPUT-PG 准确率 90.00%，平均 SRAM 读取减少 33.87%、推理周期减少 32.77%。作者还在 Sky130 工艺上做了布局布线后的功耗评估。",
+      "whats_new_zh": [
+        "中文 5 类唤醒词：INPUT-PG 90.00%，直接输入 89.58%（720 条测试音频，整数实现）",
+        "平均 SRAM 读取 -33.87%、推理周期 -32.77%（720 条平均）",
+        "Sky130HD 布局布线后单条音频：常驻能耗 -39.49%（33,252.992μJ → 20,122.617μJ，不含权重加载），动态功耗 277.010mW vs 273.645mW（+1.23%）",
+        "模型约 10 万参数：Deep-SNN 109,841，LIF-TCN 99,284"
+      ],
+      "key_specs": {
+        "process": "Sky130HD（130nm 开源 PDK），典型角 25°C / 1.8V，10MHz 标称时钟",
+        "memory": "片上 SRAM 读取量为主要优化对象",
+        "power": "推理动态功耗约 277mW（布局布线后，单条音频）",
+        "other": "权重 9 位小数定点，膜电位累加 24 位小数，6 个二进幂指数档"
+      },
+      "edge_ai_impact_zh": "常开语音唤醒的能耗主要花在输入端反复读 SRAM 上，在输入端做预测编码可以直接省掉三成多访存和周期，对耳机、手表等常开语音前端有参考价值。",
+      "evidence_urls": [
+        "https://arxiv.org/html/2610.41381"
+      ],
+      "confidence": "medium",
+      "venue": "arXiv",
+      "affiliation": "Sivy Limited, Hangzhou; The Cavendish Laboratory, University of Cambridge",
+      "authors": "Zijian Zhou, Rui Liu, Rongxiang Nie",
+      "deep_dive_zh": [
+        {
+          "heading": "编码机制",
+          "points": [
+            "每个输入通道保留本地预测，只在残差超阈值时发事件，减少相关帧反复触发内存访问",
+            "事件只携带符号和有限的 2 的幂次幅度，接收端用移位和加法重建，不需要乘法"
+          ]
+        },
+        {
+          "heading": "硬件评估",
+          "points": [
+            "RTL 与整数软件评估在 8 / 64 / 232 帧前缀上逐位一致",
+            "Sky130HD 布局布线后，单条音频 SRAM 读取 -34.70%、周期 -33.76%、常驻能耗 -39.49%",
+            "动态功耗略升 1.23%，节能来自更少的周期和访存"
+          ]
+        },
+        {
+          "heading": "局限",
+          "points": [
+            "能耗只评估了一条固定音频，且不含权重加载",
+            "数据集为 101 名说话人、4,545 条音频、5 类关键词，规模较小；三种子训练下 INPUT-PG 平均 88.47%±3.70，与直接输入相当"
+          ]
+        }
+      ],
+      "model_capacity_zh": "约 10 万参数级脉冲网络（Deep-SNN 109,841 参数），面向常开唤醒词，不涉及大模型。"
+    },
+    {
+      "date": "2026-10-30",
+      "vendor": "Graz University of Technology / University of Trento",
+      "category": "低功耗/可穿戴/IoT",
+      "title": "On-device Detection of Wearer-induced NLOS on Chest-worn UWB Tags: Machine Learning, Link Indicators, or Both?",
+      "title_zh": "胸戴 UWB 标签端侧遮挡检测：能耗差 39.6 倍",
+      "url": "https://arxiv.org/abs/2610.41799",
+      "source_type": "论文",
+      "summary_zh": "人体佩戴 UWB 标签时，身体遮挡会造成非视距测距误差，检测必须在标签端完成。作者在 nRF52832 MCU + Qorvo DW1000 上比较 21 种端侧 ML、链路指标和混合分类器，数据集超过 150 万条测距样本。各方法平衡准确率最高 93.1%，但运行时间和能耗差异巨大：某个分类器多换来 11% 准确率，运行时间长 27.8 倍、能耗高 39.6 倍。作者提出按约束推荐分类器的工具 Libra。",
+      "whats_new_zh": [
+        "平台：nRF52832（64kB RAM / 512kB Flash）+ Qorvo DW1000（MDEK1001 开发套件）",
+        "21 种分类器，150 万+ 测距样本（姿态集 921,600、移动集 126,000）",
+        "平衡准确率最高 93.1%；姿态场景始终高于 89.1%，移动场景高于 85.8%",
+        "某分类器 +11% 准确率，代价是运行时间 ×27.8、能耗 ×39.6；3 特征 SVM 推理 15.9ms",
+        "混合分类器 LI_XGB 相比纯链路指标分类器没有额外能耗和时延"
+      ],
+      "key_specs": {
+        "cpu": "Nordic nRF52832",
+        "memory": "64kB RAM / 512kB Flash",
+        "other": "UWB 收发器 Qorvo DW1000；REMNet 659 参数（8.4kB RAM / 8.8kB Flash）"
+      },
+      "edge_ai_impact_zh": "在 MCU 级可穿戴上，选模型要先看能耗和时延，再看那几个点的准确率；轻量信号指标与小模型混合，常常比更大的模型更划算。",
+      "evidence_urls": [
+        "https://arxiv.org/html/2610.41799"
+      ],
+      "confidence": "medium",
+      "venue": "arXiv",
+      "affiliation": "Graz University of Technology; University of Trento",
+      "authors": "Markus Gallacher, Vu Anh Minh Le, Matteo Trobinger",
+      "deep_dive_zh": [
+        {
+          "heading": "问题",
+          "points": [
+            "人体遮挡造成的 NLOS 是可穿戴 UWB 的常态误差源，检测必须在标签端、在严格时延和能耗预算内完成"
+          ]
+        },
+        {
+          "heading": "结果",
+          "points": [
+            "准确率差异不大，但时延和能耗差几十倍；读取 CIR 的方法最贵",
+            "不读 CIR 的 XGB_PD,CL* 是开销最低的混合方案",
+            "最佳选择强依赖信道和 PHY 配置，ch5 移动场景部分分类器掉 4.4%"
+          ]
+        },
+        {
+          "heading": "产出",
+          "points": [
+            "推荐工具 Libra 与数据集将在论文录用后公开（尚未发布）"
+          ]
+        }
+      ],
+      "model_capacity_zh": "KB 级模型：REMNet 659 参数，XGBoost 约 6.7kB Flash（论文引用前人数据）。"
+    },
+    {
       "date": "2026-10-27",
       "vendor": "Rokid（乐奇）（媒体报道）",
       "category": "低功耗/可穿戴/IoT",
@@ -1651,6 +1759,57 @@
       ]
     },
     {
+      "date": "2026-11-02",
+      "vendor": "Raspberry Pi",
+      "category": "存储与内存",
+      "title": "Price rises for some 16GB Raspberry Pi products",
+      "title_zh": "树莓派 16GB 版因内存短缺涨价 80 美元",
+      "url": "https://www.raspberrypi.com/news/price-rises-for-some-16gb-raspberry-pi-products/",
+      "source_type": "官方",
+      "summary_zh": "树莓派 CEO Eben Upton 在官方博客宣布，因内存成本上涨、16GB DRAM 缺少替代货源以及其他元器件紧缺，部分 16GB 产品涨价。树莓派 5 16GB 上调 80 美元至 385 美元，Compute Module 5 的 16GB 版本上调 40 美元；16GB 的 Pi 500+ 维持原价。官方认为内存紧张是阶段性的，成本回落后会把价格降回来。",
+      "whats_new_zh": [
+        "树莓派 5 16GB：上调 80 美元，新价 385 美元（官方口径；原价按差额推算为 305 美元）",
+        "Compute Module 5 16GB 各型号：上调 40 美元，新价写在 CM5 产品简介里，博文未列",
+        "Pi 500+（16GB）维持原价；本次没有全线涨价",
+        "官方给出的原因：过去两年内存成本大涨（博文引用 TrendForce）、16GB DRAM 缺少备选货源、其他元器件也紧缺；正在认证替代料以增加货源弹性",
+        "官方建议用户改选低容量或上一代型号、优化内存占用，并提醒警惕高价倒卖"
+      ],
+      "key_specs": {
+        "memory": "16GB DRAM 版本受影响（博文未写内存类型与带宽）",
+        "other": "Pi 5 16GB 385 美元；CM5 16GB +40 美元"
+      },
+      "edge_ai_impact_zh": "DRAM 短缺已经从手机、PC 传导到最便宜的端侧开发板：恰恰是跑本地模型最需要的 16GB 档位涨得最多。端侧模型的内存占用直接变成了硬件成本，量化和内存优化的经济价值在上升。",
+      "evidence_urls": [
+        "https://www.ithome.com/1/021/240.htm"
+      ],
+      "confidence": "high",
+      "deep_dive_zh": [
+        {
+          "heading": "涨价范围",
+          "points": [
+            "只涉及 16GB 版本：Pi 5 16GB +80 美元至 385 美元，CM5 16GB +40 美元",
+            "16GB 的 Pi 500+ 不涨价；此前几轮也是只挑受内存成本影响最大的型号涨价，没有全线调价"
+          ]
+        },
+        {
+          "heading": "原因与供应",
+          "points": [
+            "官方明确说 16GB DRAM 缺少备选货源，这是 16GB 型号单独涨价的直接原因",
+            "过去两年内存成本大幅上涨，博文引用 TrendForce 报告",
+            "官方在认证替代料，并称内存紧张终究是阶段性的，成本回落后会回调价格，但没有给时间表"
+          ]
+        },
+        {
+          "heading": "对端侧开发者的含义",
+          "points": [
+            "Pi 5 16GB 是在单板机上本地跑小模型的常用配置，大内存档位涨价最多（+80 美元），小内存档位不受本次影响",
+            "官方给出的应对是选低容量型号或优化内存，对需要大内存跑本地模型的用户没有替代方案"
+          ]
+        }
+      ],
+      "model_capacity_zh": "推算（只按容量）：16GB 可放下约 14B 参数的 8bit 权重或约 28B 的 4bit 权重，扣除系统与 KV cache 后实际更小；decode 速度受板载内存带宽限制，博文未披露带宽，此处不估算。"
+    },
+    {
       "date": "2026-10-28",
       "vendor": "SK hynix",
       "category": "存储与内存",
@@ -1823,6 +1982,55 @@
       ]
     },
     {
+      "date": "2026-11-01",
+      "vendor": "CXMT 长鑫科技（媒体报道：IT之家）",
+      "category": "存储与内存",
+      "title": "长鑫科技：2026 年 LPDDR 系列产品实现 781.91 亿元收入，占营业收入比例 52.02%",
+      "title_zh": "长鑫交流会：LPDDR 占营收过半，LPDDR6 在规划中",
+      "url": "https://www.ithome.com/1/020/832.htm",
+      "source_type": "媒体",
+      "summary_zh": "据 IT之家 11-01 转述长鑫科技 2026 年三季报业绩交流会记录，2026 年上半年 LPDDR 系列收入 781.91 亿元、占营收 52.02%，DDR 系列 694.72 亿元、占 46.22%；前三季度 DDR 占比因 DDR5 放量继续上升。第五代工艺平台是目前量产的最先进平台，已推出 245Ball 和 496Ball 封装的 LPDDR5X，后续将在该平台上升级 DDR5、LPDDR6 等产品。公司预计四季度营收继续增长，DRAM 供不应求仍将延续。",
+      "whats_new_zh": [
+        "2026 年上半年 LPDDR 系列收入 781.91 亿元，占营收 52.02%；DDR 系列 694.72 亿元，占 46.22%（公司口径，经媒体转述；IT之家标题写作“2026 年”，正文为上半年数据）",
+        "前三季度 DDR 系列占比较上半年继续上升，原因是 2024 年底量产的 DDR5 销量增长",
+        "第五代工艺平台为当前量产最先进平台，已推出 245Ball、496Ball 封装 LPDDR5X；后续在该平台升级 DDR5、LPDDR6 等",
+        "第六代平台（4F² 垂直沟道）工程样片已完成验证——此点 10-30 已报道，本次为重复确认",
+        "四季度仍收到服务器客户强劲需求，预计四季度营收继续增长"
+      ],
+      "key_specs": {
+        "memory": "LPDDR5X（第五代工艺平台，245Ball / 496Ball 封装）；LPDDR6 在规划中",
+        "process": "第五代工艺平台量产；第六代 4F² 垂直沟道平台工程样片验证完成"
+      },
+      "edge_ai_impact_zh": "国产 LPDDR 已占长鑫收入一半以上，LPDDR6 进入路线图，给国产手机与 AI PC 的大内存配置多了一个供应来源；但公司同时强调服务器需求强、供不应求延续，端侧内存成本短期难降。",
+      "evidence_urls": [
+        "https://www.ithome.com/1/020/599.htm"
+      ],
+      "confidence": "medium",
+      "deep_dive_zh": [
+        {
+          "heading": "收入结构",
+          "points": [
+            "上半年 LPDDR 781.91 亿元（52.02%）略高于 DDR 694.72 亿元（46.22%），移动内存仍是长鑫第一大业务",
+            "前三季度 DDR 占比上升，原因是 DDR5 放量；季度金额本文未披露"
+          ]
+        },
+        {
+          "heading": "产品路线",
+          "points": [
+            "第五代平台已推出 245Ball 与 496Ball 封装的 LPDDR5X，后续升级到 LPDDR6",
+            "第六代 4F² 平台工程样片验证完成（与 10-30 报道一致，无新数字）"
+          ]
+        },
+        {
+          "heading": "供需判断",
+          "points": [
+            "公司称四季度服务器客户需求依旧强劲，DRAM 供不应求仍将延续",
+            "交流会记录原文未直接打开，以上均为 IT之家转述"
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-30",
       "vendor": "CXMT 长鑫科技（媒体报道：IT之家、快科技）",
       "category": "存储与内存",
@@ -1957,6 +2165,62 @@
       "model_capacity_zh": "论文按 4-bit 计算：3B–17B 激活参数每 token 需读 1.5–8.5GB；UFS 10.8GB/s 时 decode 上限 1.3–7.2 tok/s，满速 LPDDR6（153.6GB/s）时 18–102 tok/s（论文推算）。目标是 200B 级 MoE 规划模型常驻，但吞吐数字均来自仿真，非真机。"
     },
     {
+      "date": "2026-10-30",
+      "vendor": "Soochow University / Tongji University / D-Robotics（地瓜机器人） / CASIA",
+      "category": "车载/机器人",
+      "title": "RTPolicy: Real-Time (32.9 Hz) Multi-View Visuomotor Policy for Robotic Manipulation on Edge Devices",
+      "title_zh": "RTPolicy：地瓜 RDK 板上 32.9Hz 操作策略",
+      "url": "https://arxiv.org/abs/2610.41625",
+      "source_type": "论文",
+      "summary_zh": "RTPolicy 用多视角特征融合加视觉压缩，把多路相机信息压成少量 token，再交给流匹配动作生成器，降低视觉编码和动作生成的开销。论文在 RTX 4090、Jetson Orin NX 和地瓜机器人 RDK S600 / S100 上实测延迟：RDK S600 上 INT16 为 30.35ms（32.9Hz），INT8 为 18.59ms。RoboTwin 2.0 的 50 个任务平均成功率 52.26%，高于 π0 的 46.4%；真机双臂平台成功率 72.0%。",
+      "whats_new_zh": [
+        "RDK S600（4 核 BPU，560 TOPS，论文口径）：RTPolicy INT16 30.35ms（32.9Hz），INT8 18.59ms（53.8Hz）",
+        "同板对比 π0.5：S600 INT16 331.6ms（3.0Hz）、S100 INT16 1491.59ms（0.7Hz），RTPolicy 约快 10 倍",
+        "RoboTwin 2.0（50 任务）平均成功率 52.26%，π0 为 46.4%；真机双臂异步流式推理成功率 72.0%，π0.5 为 52.0%"
+      ],
+      "key_specs": {
+        "npu": "RDK S600：4 核 BPU，560 TOPS；RDK S100：80 TOPS BPU（论文口径）",
+        "other": "视觉主干为冻结的 DINOv3 ConvNeXt（Base）；GPU 端用 TensorRT；BPU 端 INT8/INT16"
+      },
+      "edge_ai_impact_zh": "这是少见的在国产机器人 BPU 板上与 π0.5 同板对比的实测：同样的板子上 VLA 只有 0.7–3Hz，而专门压缩视觉 token 的策略能到 6.7–32.9Hz。机器人端侧控制的瓶颈在视觉编码和动作生成的计算量，不只看 TOPS。",
+      "evidence_urls": [
+        "https://arxiv.org/html/2610.41625",
+        "https://d-robotics-ai-lab.github.io/RTPolicy.pro"
+      ],
+      "confidence": "high",
+      "venue": "arXiv",
+      "affiliation": "Soochow University; Shanghai Research Institute for Intelligent Autonomous Systems, Tongji University; D-Robotics; Institute of Automation, Chinese Academy of Sciences",
+      "authors": "Xianbao Hou, Zehao Ni, Yonghao He",
+      "deep_dive_zh": [
+        {
+          "heading": "方法",
+          "points": [
+            "多视角特征按视角感知融合并压缩成紧凑 token 表示，减少视觉 token 数",
+            "流匹配动作生成器以压缩后的视觉表示、机器人状态和流时间为条件，降低动作生成成本",
+            "视觉编码器 Small / Base / Large 相对 Large 分别提速 3.25× / 2.15× / 1.00×，主实验用 Base"
+          ]
+        },
+        {
+          "heading": "端侧实测（论文表 VII）",
+          "points": [
+            "S600 INT8：DP 16.40ms、VO-DP 79.97ms、π0.5 135.5ms、RTPolicy 18.59ms",
+            "S600 INT16：DP 19.76ms、VO-DP 181.47ms、π0.5 331.6ms、RTPolicy 30.35ms",
+            "Orin NX 上 VO-DP 与 π0.5 部分精度因太慢未测；RTPolicy FP16 143.2ms",
+            "RTPolicy 速度接近最轻的 DP 基线，但成功率高得多"
+          ]
+        },
+        {
+          "heading": "口径与疑点",
+          "points": [
+            "正文对 Orin NX 的 143.2ms 写成 FP32、表格列在 FP16 下；摘要报 INT16，正文又说 BPU 上跑 INT8，口径有出入",
+            "BPU 的量化工具链、功耗、内存占用均未披露",
+            "560 / 80 TOPS 为论文引用的峰值口径"
+          ]
+        }
+      ],
+      "model_capacity_zh": "论文未给出 RTPolicy 参数量；可比较的是同板延迟：在 560 TOPS 的 S600 上 π0.5 INT16 只有 3.0Hz，RTPolicy 达到 32.9Hz（论文实测）。"
+    },
+    {
       "date": "2026-10-29",
       "vendor": "Shanghai AI Laboratory",
       "category": "车载/机器人",
@@ -2060,6 +2324,60 @@
         }
       ],
       "model_capacity_zh": "未披露。报道只说 Max 是 Muse 智能体的“物理化身”，没有说明 Muse 模型是在机载 Jetson Thor 上运行、还是由云端调用，也没有给出机载模型的参数量或精度。"
+    },
+    {
+      "date": "2026-10-30",
+      "vendor": "KAIST",
+      "category": "车载/机器人",
+      "title": "SACQ: Structure-Aware Codebook Quantization for Ultra-Low-Bit Vision-Language-Action Models",
+      "title_zh": "SACQ：VLA 1.5bit 量化，内存降 4.83 倍",
+      "url": "https://arxiv.org/abs/2610.41408",
+      "source_type": "论文",
+      "summary_zh": "SACQ 是面向 VLA 的超低比特纯权重向量码本量化：按算子角色拟合码本、按最终动作误差分配混合比特，并做两阶段量化后修正。在 GR00T N1.7 上，语言/动作权重 1.5bit 时 LIBERO 四套任务平均成功率 93.85%（BF16 为 94.10%），模型内存从 5.677GB 降到 1.175GB。加上 INT8 激活后成功率 93.55%，在 RTX 4090 上比 BF16 快 1.51 倍。",
+      "whats_new_zh": [
+        "GR00T N1.7 内存：BF16 5.677GB → 1.5bit 1.175GB（-4.83×）",
+        "LIBERO 平均成功率（1.5bit）：SACQ 93.85%、AQLM 87.50%、GPTQ-Ternary 31.95%；BF16 94.10%",
+        "RTX 4090、batch 1、4 步去噪：BF16 21.28ms，W1.5A16 20.20ms（1.05×），W1.5A8 14.07ms（1.51×）"
+      ],
+      "key_specs": {
+        "memory": "模型权重 5.677GB → 1.175GB（1.5bit 语言/动作权重）",
+        "gpu": "速度在 NVIDIA RTX 4090 上测得，未在 Jetson 等机载平台测试",
+        "other": "纯权重向量码本量化；可选 INT8 激活与低精度注意力"
+      },
+      "edge_ai_impact_zh": "VLA 模型在 1.5bit 下几乎不掉成功率、内存缩到约 1.2GB，为把机器人基础模型放到小内存机载芯片上提供了量化路径；但纯权重量化几乎不提速，机载实时性仍要靠激活量化和专用内核。",
+      "evidence_urls": [
+        "https://arxiv.org/html/2610.41408"
+      ],
+      "confidence": "medium",
+      "venue": "arXiv",
+      "affiliation": "KAIST",
+      "authors": "Haesung Lee, Insu Han",
+      "deep_dive_zh": [
+        {
+          "heading": "方法",
+          "points": [
+            "按算子角色使用二次误差度量拟合码本，反映输入统计和下游敏感度",
+            "按逐层压缩导致的最终动作误差增量分配混合比特",
+            "两阶段修正：二阶误差补偿重分配码字索引，再按解码后的动作校准码本和行组尺度"
+          ]
+        },
+        {
+          "heading": "结果",
+          "points": [
+            "2bit 时 SACQ 94.25%，高于 TWLA 93.05%、AQLM 83.60%、GPTQ 64.35%",
+            "3bit 时 ActQuant 94.45% 略高于 SACQ 94.10%，超低比特才是 SACQ 的优势区",
+            "纯权重 1.5bit 只带来 1.05× 加速，主要收益是内存；要提速需配合 INT8 激活"
+          ]
+        },
+        {
+          "heading": "局限",
+          "points": [
+            "速度只在桌面 GPU 上测，机器人机载平台的实际收益未验证",
+            "只评测仿真基准（LIBERO、SimplER），没有真机"
+          ]
+        }
+      ],
+      "model_capacity_zh": "论文口径：GR00T N1.7 量化后约 1.2GB，可放进 4–8GB 级机载内存；未给出参数量，也未在边缘设备上实测速度。"
     },
     {
       "date": "2026-10-30",
@@ -2202,6 +2520,60 @@
           ]
         }
       ]
+    },
+    {
+      "date": "2026-10-30",
+      "vendor": "Texas A&M University",
+      "category": "数据中心(对端侧有参考)",
+      "title": "Understanding the Energy Cost of Quantized Agents on Shared GPUs",
+      "title_zh": "共享 GPU 上量化智能体的真实能耗",
+      "url": "https://arxiv.org/abs/2610.41672",
+      "source_type": "论文",
+      "summary_zh": "论文在 A100 40GB / 80GB 上用 vLLM 跑 Devstral Small 1.1（24B）和 Qwen3.5-9B 两个智能体，完成可独立验证结果的编码与数据分析任务，比较不同精度和并发上限下“每个验证完成的任务”耗多少能量。回放同样的调用时，W4A16 比 W8A8 省 10–25% 能量；但实际运行中 4bit 智能体会生成更多工作、完成更少，四并发时每个验证完成的能耗反而高约 49%。缓存紧张时情况反转，4bit 更省。",
+      "whats_new_zh": [
+        "回放同样调用：Devstral 80GB 四并发 W4A16 比 W8A8 省约 24.6%；Qwen3.5-9B 40GB 省 9.8–12.3%",
+        "实际运行每个验证完成的能耗（W4A16 对 W8A8）：Devstral 80GB N=4 +48.6%（132.6 vs 89.2 kJ），Qwen3.5-9B 40GB N=4 +49%（48.4 vs 32.6 kJ）",
+        "Qwen3.5-9B 的 W4A16 输出 token 多 30%，总能耗多 15%",
+        "Devstral 40GB 缓存紧张时：W4A16 每完成能耗降 54%（N=4）和 37%（N=16）；再给 W4A16 设缓存上限，N=16 时能耗升 34.4%"
+      ],
+      "key_specs": {
+        "gpu": "NVIDIA A100 PCIe 40GB / 80GB，90% 显存给推理服务",
+        "memory": "Devstral 80GB KV 容量：BF16 176,368 / W8A8 311,552 / W4A16 377,120 token",
+        "other": "vLLM 0.10.2 / 0.18.1；W8A8 用 SmoothQuant+GPTQ（CUTLASS INT8），W4A16 用 GPTQ g128（Marlin）"
+      },
+      "edge_ai_impact_zh": "对端侧智能体同样适用的结论：量化省的是每次调用，不一定省每个任务；评估端侧智能体的能效要用“每个验证完成的任务耗多少焦耳”，并同时考虑精度与 KV 缓存余量。",
+      "evidence_urls": [
+        "https://arxiv.org/html/2610.41672"
+      ],
+      "confidence": "high",
+      "venue": "arXiv",
+      "affiliation": "Texas A&M University",
+      "authors": "Stephen Abkin, Alex Flesher, Aldric Yang",
+      "deep_dive_zh": [
+        {
+          "heading": "为什么要看每个完成的能耗",
+          "points": [
+            "固定请求或孤立智能体的测量，只能说明同样调用省了多少能量",
+            "智能体会因量化改变行为：多生成、多走步、少完成，单次调用省下的能量可能被吃掉"
+          ]
+        },
+        {
+          "heading": "关键数字",
+          "points": [
+            "回放：W4A16 比 W8A8 省 10–25%（同样的调用）",
+            "实跑：四并发、缓存够用时 W4A16 每完成能耗高约 49%，Devstral 完成数少 16.7%",
+            "缓存紧张（40GB）时，4bit 释放的 KV 空间才转化为节能：每完成能耗降 37–54%"
+          ]
+        },
+        {
+          "heading": "对端侧的启示",
+          "points": [
+            "端侧设备内存小，类似 40GB 的“缓存紧张”场景更常见，量化释放内存的收益更明显",
+            "但量化导致的智能体行为变化（多生成、少完成）同样会出现在端侧，评估时要看每个完成任务的能耗，而不是每 token"
+          ]
+        }
+      ],
+      "model_capacity_zh": "实测模型：Devstral Small 1.1（24B，稠密）与 Qwen3.5-9B，上下文上限 80GB 卡 131,072、40GB 卡 65,536 token（论文口径）。"
     },
     {
       "date": "2026-10-27",
@@ -3282,6 +3654,61 @@
       "model_capacity_zh": "实验覆盖 1B–8B 稠密模型（Llama 3.2 1B、Llama 3 8B、Ministral 8B、Qwen3 8B），精度 W4A4KV4 与 W4/W4A4 g32；论文未报告端侧 tok/s。"
     },
     {
+      "date": "2026-10-30",
+      "vendor": "UZH & ETH Zurich（INI） / Imperial College London",
+      "category": "学术研究",
+      "title": "Input-dependent Neuromodulation Enhances Mixed-Signal Neuromorphic Hardware",
+      "title_zh": "混合信号神经形态芯片上的输入相关神经调制",
+      "url": "https://arxiv.org/abs/2610.41265",
+      "source_type": "论文",
+      "summary_zh": "作者在混合信号神经形态处理器 DYNAP-SE 上运行 60 个神经元的脉冲循环网络，用片外调制器读取芯片输入和活动，在单次试验内实时调整群体增益，让芯片的模拟电路在调制下计算。在 SHD 数据集“5 vs 9”口语数字二分类上，准确率从 71.4% 提到 88.6%，五个硬件网络实例平均提升 17.3±10.4 个百分点。",
+      "whats_new_zh": [
+        "DYNAP-SE（0.18μm，4 核 × 256 神经元，共 1024 神经元、64k 突触）上用 60 个神经元（48 兴奋 + 12 抑制）的储备池",
+        "准确率：基线 71.4% → 神经调制 88.6%；五个硬件实例平均 +17.3±10.4 个百分点",
+        "对照：只重训读出层 83.9%；恒定增益反而降 18.8±13.1 个百分点；用别的试验的增益轨迹降 14.1±11.4 个百分点",
+        "调制器是 128 隐藏单元的 MLP，和读出层一起在主机上运行"
+      ],
+      "key_specs": {
+        "process": "0.18μm 1P6M CMOS（DYNAP-SE）",
+        "npu": "混合信号神经形态处理器 DYNAP-SE，1024 神经元 / 64k 突触",
+        "power": "未披露",
+        "other": "片外调制器 MLP（128 隐藏单元）运行在主机上"
+      },
+      "edge_ai_impact_zh": "说明输入相关的门控思想在真实模拟神经形态硅片上也有效，小网络能借此补回参数量不足；但调制器还在片外，离超低功耗常开设备还差片上实现和功耗数据。",
+      "evidence_urls": [
+        "https://arxiv.org/html/2610.41265"
+      ],
+      "confidence": "medium",
+      "venue": "arXiv",
+      "affiliation": "Institute of Neuroinformatics, University of Zurich and ETH Zurich; Imperial College London; UCLA",
+      "authors": "Aashman Mehta, AbdelQader AlKilany, Dan F. M. Goodman",
+      "deep_dive_zh": [
+        {
+          "heading": "思路",
+          "points": [
+            "门控 / 神经调制能让参数固定的小网络按输入改变计算方式，对面积、内存、精度受限的边缘神经形态芯片尤其有用",
+            "芯片的模拟电路负责计算，调制器只按输入和网络活动调群体增益"
+          ]
+        },
+        {
+          "heading": "实测",
+          "points": [
+            "任务为 SHD 的“5 vs 9”二分类，700 个输入通道压缩到 96",
+            "213 次试验，五个储备池实例，p=0.021",
+            "增益必须与当前输入匹配：恒定增益或错配轨迹都会降低准确率"
+          ]
+        },
+        {
+          "heading": "局限",
+          "points": [
+            "调制器和读出层都在主机上跑，没有片上实现",
+            "没有功耗与能效数据",
+            "任务只是二分类，规模很小"
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-27",
       "vendor": "University College London",
       "category": "学术研究",
@@ -3332,7 +3759,7 @@
       "model_capacity_zh": "实测 <4B 参数扩散/自回归图像模型在旗舰手机上的部署；具体每个模型的延迟/内存见论文表格。"
     }
   ],
-  "overview": "Mac 换代与端侧推理栈下沉周（10-27~11-02，部分周，数据截至 11-01）。Apple 10-27 把 M6 放进 14 英寸 MacBook Pro 与 iMac：双 16 核 Neural Engine 比 M5 快 1.9 倍、大模型首 token 快 1.3 倍；次日的触屏 OLED MacBook Pro 仍用 M5 Max，但官方首次写明可在本机跑数千亿参数大模型和编程智能体（最高 128GB、614GB/s）。安卓侧，Google 把 LiteRT 放进 Play 服务、GPU 推理约快 1.4 倍，ML Kit 推出基于 Gemini Nano 4 的端侧智能体 API，规划循环完全在设备上运行；高通 GenieX 0.10 让 llama.cpp 在 IQ9 上切分到两颗 Hexagon NPU，Ripple 用开源 LLVM 写出的 SME 内核与手写版相差不到 5%。NVIDIA RTX Spark 笔记本开售（最高 128GB 统一内存、1 PFLOPS FP4），新增前台应用与后台智能体之间的 GPU 分配。低功耗与内存侧，TetraMem 12nm 多值 RRAM 存算 SoC 流片（片上 64M INT4 参数、免外部 DRAM），Ceva 新一代 NeuPro 硬件支持分页 KV 缓存与 FP4；论文侧 NORmal 用铁电 NOR 挂在 LPDDR6 总线上当手机主存，仿真比 UFS 卸载快 8.9–28 倍，MobiCom 2026 集中发表 LeanStream、NPUGen 等手机闪存流式推理与 NPU 复用工作。产业面，Counterpoint 统计 Q3 全球手机 SoC 出货同比 -21%，内存涨价仍在压制终端；Altman 公开主张 DRAM 优先供给数据中心，长鑫 4F² 第六代 DRAM 平台完成工程样片验证。周末 Apple 中国官网宣布国行 Apple 智能 11-4 开测、12 月随 iOS 27.3 上线，首批机型芯片门槛为 A17 Pro。韩国 10 月半导体出口 564 亿美元、同比增 259%，存储涨价仍在加速；Meta 与傅利叶被曝以 Jetson Thor 做出人形机器人原型 Max（爆料，未官宣）。",
+  "overview": "Mac 换代与端侧推理栈下沉周（10-27~11-02）。Apple 10-27 把 M6 放进 14 英寸 MacBook Pro 与 iMac：双 16 核 Neural Engine 比 M5 快 1.9 倍、大模型首 token 快 1.3 倍；次日的触屏 OLED MacBook Pro 仍用 M5 Max，但官方首次写明可在本机跑数千亿参数大模型和编程智能体（最高 128GB、614GB/s）。安卓侧，Google 把 LiteRT 放进 Play 服务、GPU 推理约快 1.4 倍，ML Kit 推出基于 Gemini Nano 4 的端侧智能体 API，规划循环完全在设备上运行；高通 GenieX 0.10 让 llama.cpp 在 IQ9 上切分到两颗 Hexagon NPU，Ripple 用开源 LLVM 写出的 SME 内核与手写版相差不到 5%。NVIDIA RTX Spark 笔记本开售（最高 128GB 统一内存、1 PFLOPS FP4），新增前台应用与后台智能体之间的 GPU 分配。低功耗与内存侧，TetraMem 12nm 多值 RRAM 存算 SoC 流片（片上 64M INT4 参数、免外部 DRAM），Ceva 新一代 NeuPro 硬件支持分页 KV 缓存与 FP4；论文侧 NORmal 用铁电 NOR 挂在 LPDDR6 总线上当手机主存，仿真比 UFS 卸载快 8.9–28 倍，MobiCom 2026 集中发表 LeanStream、NPUGen 等手机闪存流式推理与 NPU 复用工作。产业面，Counterpoint 统计 Q3 全球手机 SoC 出货同比 -21%，内存涨价仍在压制终端；Altman 公开主张 DRAM 优先供给数据中心，长鑫 4F² 第六代 DRAM 平台完成工程样片验证。周末 Apple 中国官网宣布国行 Apple 智能 11-4 开测、12 月随 iOS 27.3 上线，首批机型芯片门槛为 A17 Pro。韩国 10 月半导体出口 564 亿美元、同比增 259%，存储涨价仍在加速；Meta 与傅利叶被曝以 Jetson Thor 做出人形机器人原型 Max（爆料，未官宣）。周一补全：地瓜机器人等提出的 RTPolicy 在 RDK S600 上把多视角操作策略做到 32.9Hz（同板 π0.5 约 3Hz），KAIST 的 SACQ 把 GR00T 级 VLA 压到 1.5bit、内存降 4.83 倍；树莓派 5 等 16GB 产品因内存短缺涨价 80 美元，长鑫交流会称 LPDDR 已占营收过半。",
   "takeaways_zh": [
     "Mac 继续把“本机跑大模型和编程智能体”写进官方卖点：M6 主攻首 token 和 Neural Engine，M5 Max 机型则靠 128GB 内存撑起数千亿参数模型，桌面端侧的上限由内存容量决定。",
     "安卓端侧推理栈正在系统化：LiteRT 进 Play 服务、ML Kit 端侧智能体 API、GenieX 多 NPU 切分同周出现，开发者不再需要自带推理运行时，手机智能体的门槛从模型移到了系统接口。",

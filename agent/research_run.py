@@ -392,8 +392,15 @@ def fetch_arxiv_dates(url: str, timeout: int = 8) -> tuple[date | None, date | N
     except (urllib.error.URLError, TimeoutError, socket.timeout):
         return None, None
 
+    # The Atom feed carries its own <updated> (the query time) before the
+    # entry; only the <entry> block holds the paper's revision date.
+    entry = re.search(r"<entry>(.*?)</entry>", body, re.S)
+    if not entry:
+        return None, None
+    entry_body = entry.group(1)
+
     def parse_atom_date(field: str) -> date | None:
-        match = re.search(rf"<{field}>([^<]+)</{field}>", body)
+        match = re.search(rf"<{field}>([^<]+)</{field}>", entry_body)
         if not match:
             return None
         try:

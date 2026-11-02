@@ -39,7 +39,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "安卓开发者第一次能用官方接口在手机本地跑完整的智能体循环，工具由 App 提供、数据不出设备，配合 AppFunctions 进入 beta，手机系统级与 App 内智能体的开发接口基本成形；目前只覆盖少数旗舰机。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-nvidia-nvidia-rtx-spark-powers-neural-rendering-and-ai-characters-in-g",
@@ -75,7 +75,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "在 4GB 显存预算内跑带多轮工具调用的游戏角色智能体，并与渲染、本地语音模型共享一张 GPU，是 PC 端侧智能体最贴近大众用户的落地形态之一。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-nvidia-build-specialized-agents-on-a-stack-you-control-with-nvidia-nem",
@@ -113,7 +113,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "把模型、框架、工具、受管运行时四层拆清楚，并给出可在 DGX Spark 和 RTX 电脑上自托管、带策略管控的完整蓝图，想在本机搭可控智能体的团队可以直接参考其分层和 OpenShell 权限设计。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-nvidia-thin-light-and-built-for-everything-nvidia-rtx-spark-windows-la",
@@ -150,7 +150,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "把“后台常驻本地智能体和前台应用抢 GPU”当成系统问题给出了产品级开关，并配上可在 128GB 统一内存笔记本上本地跑的新语音模型和 LFM3，是 Windows 本地智能体的一个具体落地信号。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-liquid-ai-introducing-lfm3-every-modality-for-specialized-intelligence",
@@ -188,7 +188,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "首个在真实 Mac 智能体任务上胜过更大模型的 2B 以下模型（成功率 64% 对 48%、少用 58% token），并公开了跨手机、笔记本和 NPU 的硬件在环设计与端侧速度、内存数据，做本地智能体选型时值得直接对照。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-google-smaller-apps-and-faster-gpu-inference-with-litert-in-google-pla",
@@ -224,7 +224,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "安卓端侧部署的底座级变化：GPU 推理快约 1.4 倍、应用小约 8 MB，旧 GPU 委托和 NNAPI 将被淘汰，做安卓端侧模型的团队都需要规划迁移。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-nvidia-run-ai-models-for-edge-application-development-with-just-a-few-",
@@ -261,7 +261,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "给做车载和机器人的开发者一条从开发机到 Jetson Thor 的统一推理路径，几条命令就能跑起本地模型和 API，投机解码实测把生成速度从每秒约 73 个词元提到 127 个。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-nvidia-3-ways-to-boost-moe-inference-on-nvidia-dgx-spark",
@@ -298,7 +298,45 @@
       "recommendation": "推荐",
       "recommendation_reason": "少见的单用户本地大 MoE 推理完整调优记录：从带宽瓶颈分析到三步优化把解码吞吐提升 185%，并点出 FP8 输出层与投机解码组合时会悄悄退化的坑，做本地部署的人可直接照搬。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "vendor-cix-technology-flagos-day0-minicpm-ocr-jev-ai-",
+      "run_id": "run-20261031-094049",
+      "title": "此芯科技携手众智FlagOS，实现Day0适配MiniCPM-OCR & Jev，让文档“AI质检员”跑上端侧",
+      "title_zh": "",
+      "abstract": "此芯科技与众智 FlagOS 社区把面壁和 OpenBMB 新开源的文档识别模型 MiniCPM-OCR 1.0（1.3B）和文档质检模型 Jev（2B）首日适配到此芯 P1 芯片上，文档解析和质检完全离线运行，敏感文档不出设备。",
+      "effects": "在 P1 上 12 条样例、批大小为 1 的测试中，Jev 平均前向耗时从原生基线的 11.54 秒降到 4.63 秒，提速约 2.49 倍；MiniCPM-OCR 1.0 在 OCRBench v1 上与原生相比相对得分差异仅 -0.50%。适配版本已上架魔搭和 Hugging Face。",
+      "mechanism": "纯 CPU 推理：把任务绑定到 P1 的 8 个 Cortex-A720 大核，保留 BF16 精度并在线性层复用 oneDNN/ACL；OCR 模型合并等长图像块批处理、预分配 KV 缓存并用 Triton 内核原位写入；Jev 采用分块注意力与在线 Softmax，GDN 预填充与因果卷积用 CPU 融合算子并行。",
+      "paper_url": "https://www.cixtech.com/list_6/237.html",
+      "date": "2026-11-02",
+      "score": 12,
+      "score_relevance": 8,
+      "score_contribution": 4,
+      "score_reason": "端侧芯片厂商官方发布，给出 Arm PC 芯片上离线运行小型多模态文档模型的实测提速和精度对齐数据，端侧相关度高；内容以工程适配和常规算子优化为主，贡献中等，也不涉及智能体闭环。此芯科技为端侧芯片初创公司。",
+      "source_tier": "官方动态",
+      "open_source": true,
+      "tags": [
+        "方向:编译部署",
+        "方向:KV cache",
+        "方向:多模态",
+        "应用:OCR",
+        "硬件:CPU",
+        "模型:MiniCPM"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Cix Technology",
+      "vendors": "Cix Technology",
+      "venue": "Cix Technology",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-qualcomm-how-to-write-fast-aarch64-sve-sme-kernels-with-ripple-and-llv",
@@ -334,7 +372,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-apple-apple-unveils-groundbreaking-macbook-pro-with-proled-xdr-display",
@@ -369,7 +407,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "苹果首次在官方新闻稿里把“完全在本机运行数千亿参数大模型”和“用本地大模型跑编程智能体”写成笔记本卖点，配合 128GB 统一内存，是评估高端 PC 本地智能体可行性的重要参照。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-apple-apple-introduces-the-new-14-inch-macbook-pro-with-m6",
@@ -404,7 +442,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-apple-apple-unveils-new-imac-with-m6-delivering-a-major-boost-in-perfo",
@@ -439,7 +477,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "官方直接用 LM Studio 本地推理做基准，给出比 M4 快 5 倍、比 M1 快 12 倍的提示词处理数据，可作为桌面端本地大模型和智能体应用性能的参考基线。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-apple-apple-intelligence-features-are-coming-to-users-in-china",
@@ -475,7 +513,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "国行 iPhone 等了两年多的 Apple 智能终于定档 12 月随 iOS 27.3 推出，千问接入 Siri、写作工具和视觉智能，决定了中国大陆手机端 AI 的格局；值得关注后续哪些功能在本机运行。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-qwen-agent-as-a-service-the-service-architecture-powering-personal-age",
@@ -511,7 +549,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-google-we-ve-received-our-first-response-from-the-project-suncatcher-p",
@@ -545,7 +583,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-qwen-lumen-an-ai-neonatal-specialist-that-works-when-the-network-doesn",
@@ -582,7 +620,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-apple-apple-creator-studio-adds-powerful-new-ai-features-and-even-more",
@@ -617,7 +655,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-google-fast-reliable-a2ui-with-swappable-inference-formats",
@@ -651,7 +689,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-samsung-building-isac-in-practice-from-raw-radio-signals-to-ai-driven-",
@@ -685,7 +723,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-nvidia-things-that-go-beep-in-the-night-agentic-ai-joins-the-search-fo",
@@ -720,7 +758,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-samsung-faster-and-secure-how-code-mate-is-transforming-semiconductor-",
@@ -755,7 +793,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-qwen-qu-n-the-ai-memory-that-knows-exactly-what-to-forget",
@@ -790,7 +828,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-google-your-favorite-agents-are-now-integrated-in-android-studio",
@@ -824,7 +862,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-nvidia-fine-tuning-nvidia-nemotron-to-know-local-rules-not-just-local-",
@@ -857,7 +895,41 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "vendor-qwen-making-fast-mode-faster",
+      "run_id": "run-20261031-094049",
+      "title": "Making Fast Mode Faster",
+      "title_zh": "",
+      "abstract": "阿里云介绍旗下编程智能体产品 Qoder 在 Fast 模型档位上的外壳工程优化：从启动、上下文管理、工具调度到中断恢复，尽量减少智能体完成编程任务时的各种等待。",
+      "effects": "未报告",
+      "mechanism": "把 JavaScript 字节码生成挪到构建阶段并在后台预热 Bash 环境和 Git 上下文；工具结果合适时直接返回、免去额外摘要调用；保持请求前缀稳定以复用缓存，按需加载 MCP 工具定义；无依赖的工具调用流式并发执行，中断后按调用 ID 区分已完成和结果未知的操作再恢复。",
+      "paper_url": "https://www.alibabacloud.com/blog/603714",
+      "date": "2026-11-02",
+      "score": 6,
+      "score_relevance": 3,
+      "score_contribution": 3,
+      "score_reason": "文中智能体循环由本地 Qoder CLI 承载，但推理完全依赖云端模型，按以往判例不算端侧智能体；文章是阿里云产品技术博客，未提及使用 Qwen 模型，也不是 Qwen 官方发布。工具并发与中断恢复思路对本地智能体运行时有一定借鉴，但没有给出量化效果。",
+      "source_tier": "官方动态",
+      "open_source": false,
+      "tags": [
+        "方向:工具调用",
+        "应用:代码"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Qwen",
+      "vendors": "Qwen",
+      "venue": "Qwen",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-mistral-le-chonk-built-for-coders-trusted-by-defenders-",
@@ -893,7 +965,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-samsung-part-2-zhbm-next-generation-memory-for-the-data-movement-era",
@@ -928,7 +1000,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-google-gemini-4-carbon-our-next-frontier-model",
@@ -963,7 +1035,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-microsoft-introducing-the-microsoft-copilot-harness-in-foundry-agent-s",
@@ -997,7 +1069,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-qualcomm-same-day-upstream-linux-support-now-posted-for-snapdragon-8-e",
@@ -1033,7 +1105,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-google-building-conversational-commerce-with-multi-agent-swarms-on-gcp",
@@ -1067,7 +1139,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-google-we-re-announcing-genie-4-our-new-world-model-for-real-time-inte",
@@ -1102,7 +1174,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-cix-technology-p1-omarchy-linux-",
@@ -1136,7 +1208,40 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "vendor-qwen-qoder-cloud-agents-an-evaluation-loop-for-reliable-continuous-age",
+      "run_id": "run-20261031-094049",
+      "title": "Qoder Cloud Agents: An Evaluation Loop for Reliable, Continuous Agent Improvement",
+      "title_zh": "",
+      "abstract": "阿里云介绍 Qoder Cloud Agents 的持续评测框架：用来自业务的评测集、隔离的沙箱环境和分层评分器，反复检验和改进上线中的云端智能体。",
+      "effects": "未报告",
+      "mechanism": "推理决策与沙箱中的工具执行解耦，每个评测用例在独立会话和沙箱中运行，并支持自托管沙箱；评分同时看答案、执行过程和产物，客观题用代码判分、主观题用大模型判分、需要动手检查的交给另一个智能体验收，并保留改动前结果做回归对比。",
+      "paper_url": "https://www.alibabacloud.com/blog/603715",
+      "date": "2026-11-02",
+      "score": 5,
+      "score_relevance": 2,
+      "score_contribution": 3,
+      "score_reason": "内容是云端托管智能体的评测工程方法，与端侧部署关系很弱；文章是阿里云产品博客，未提及使用 Qwen 模型，也不是 Qwen 官方发布，仅作为智能体评测实践低分收录。",
+      "source_tier": "官方动态",
+      "open_source": false,
+      "tags": [
+        "方向:评测基准"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Qwen",
+      "vendors": "Qwen",
+      "venue": "Qwen",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-microsoft-from-synthetic-enterprise-data-evaluations-to-real-microsoft",
@@ -1170,7 +1275,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-google-build-generative-ui-apps-with-a2ui-copilotkit-agents",
@@ -1203,7 +1308,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-openai-how-we-detect-frontier-model-misalignment",
@@ -1236,7 +1341,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-google-hill-climbing-agent-quality-with-agents-cli-evaluation",
@@ -1269,7 +1374,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-amd-amd-and-meta-advance-strategic-partnership-to-power-meta-s-superin",
@@ -1304,7 +1409,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-anthropic-how-ai-agents-shape-experts-judgment-calls",
@@ -1338,7 +1443,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-nvidia-memory-enforced-gpu-sharing-in-kubernetes-with-nvidia-cuda-13-4",
@@ -1373,7 +1478,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-meta-muse-is-now-available-in-singapore-the-world-s-first-personal-ai-",
@@ -1407,7 +1512,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-nvidia-build-a-validated-kubernetes-runtime-for-nvidia-dynamo",
@@ -1442,7 +1547,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-nvidia-into-the-omniverse-how-developers-turn-ideas-into-simulations-w",
@@ -1478,7 +1583,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-samsung-part-1-the-evolution-of-ai-and-ai-chips-and-the-hbm-that-power",
@@ -1512,7 +1617,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-qualcomm-anduril-and-qualcomm-unveil-bluechip-to-rebuild-american-comp",
@@ -1546,7 +1651,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-mediatek-mediatek-on-redefining-ai-through-cost-and-efficiency",
@@ -1579,7 +1684,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "vendor-amd-amd-expands-ai-and-cloud-infrastructure-collaboration-with-oracle",
@@ -1613,7 +1718,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "github-amd-ryzenai-sw-v1-9-0",
@@ -1648,7 +1753,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "锐龙 AI PC 的 NPU 第一次能跑 16K 以上上下文的本地大模型，并新增 Gemma 4 端侧模型与 Qwen 动态 LoRA，是本周 PC 端侧推理栈最直接的更新。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "github-alibaba-mnn-3-6-2",
@@ -1688,7 +1793,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "一次版本同时覆盖苹果 GPU 神经加速器、高通 Hexagon NPU 和 RISC-V 芯片，并给出 Qwen3.5-2B 在 iPad Pro M5 上投机解码提速 2.09 倍的真机数字，适合直接拿来评估手机和平板上跑 2B 级模型的性能上限。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "github-qualcomm-geniex-v0-10-0",
@@ -1727,7 +1832,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "这是原 Nexa SDK 归入高通后的较大版本：Windows 骁龙电脑免证书即可调用 Hexagon NPU，IQ9 可双 NPU 切分模型，本地服务补上并行工具调用，适合在骁龙设备上搭本地智能体的开发者跟进。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "github-ggml-org-llama-cpp-v0-8-0",
@@ -1767,7 +1872,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "本地推理引擎第一次把兼容 OpenAI 实时协议的语音对话、TTS 和 2B 级全模态模型 LFM3 一起打通，想在笔记本或手机上做离线语音助手的团队可以直接试。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "github-hailo-ai-hailort-v5-5-0",
@@ -1804,7 +1909,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "github-google-ai-edge-litert-lm-v0-19-0",
@@ -1841,7 +1946,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "github-google-ai-edge-litert-lm-9d613ac",
@@ -1877,7 +1982,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "github-google-ai-edge-litert-lm-76e08ce",
@@ -1912,7 +2017,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "github-microsoft-onnxruntime-649f516",
@@ -1949,7 +2054,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "github-microsoft-onnxruntime-c574f2d",
@@ -1985,7 +2090,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "github-openvinotoolkit-openvino-5c93944",
@@ -2021,7 +2126,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "github-memtensor-memos-memos-local-plugin-v2-0-21",
@@ -2055,7 +2160,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "github-microsoft-onnxruntime-plugin-ep-webgpu-v0-5-0",
@@ -2092,7 +2197,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "github-alibaba-mnn-17236ad",
@@ -2127,7 +2232,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "github-pytorch-executorch-10b7426",
@@ -2162,7 +2267,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "github-openvinotoolkit-openvino-06c7572",
@@ -2197,7 +2302,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "github-google-ai-edge-mediapipe-v1-2-0",
@@ -2232,7 +2337,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "github-mlc-ai-mlc-llm-95d7fd6",
@@ -2267,7 +2372,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "github-microsoft-onnxruntime-v1-30-1",
@@ -2301,7 +2406,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "github-hkuds-nanobot-v0-4-0",
@@ -2335,7 +2440,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.40039",
@@ -2374,7 +2479,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "用一加 13T、QCS8550、RK3588 三块真实 NPU 拆解视觉语言模型推理，发现 softmax 而非矩阵乘才是瓶颈、线性注意力在 NPU 上反而不快，做手机端多模态部署的工程师可以直接拿来校正优化方向。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39287",
@@ -2411,7 +2516,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "把语言理解、空间推理和连续飞控塞进 10 亿参数模型、在 Jetson Orin NX 上机载 10 Hz 闭环运行，并在真实四旋翼上零样本拿到 48% 导航成功率，是小型多模态模型上机器人端的扎实案例。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.37833",
@@ -2448,7 +2553,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "高通给出一条不靠堆参数也能做好端侧语音识别的路线：26.8M 参数的小模型词错率就优于同级 Moonshine，还能省下约三成访存能耗，对做可穿戴设备语音交互的团队很实用。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.38126",
@@ -2484,7 +2589,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "提醒所有做“本地小模型 + 云端大模型”助手的人：即使答案不泄密，投机解码被拒的草稿也会把私人内容发给云端；ADLER 在受控泄露下让 0.5B 本地模型的数学准确率从 0.41 翻倍到 0.83。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.35985",
@@ -2521,7 +2626,42 @@
       "recommendation": "推荐",
       "recommendation_reason": "指出大模型外挂记忆表量化时“常用的给高精度”反而更差，改由门控值决定读几位，不重训就把查表内存压到约 1/7.8 且几乎不丢长尾知识，对内存受限的端侧部署很有参考价值。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.41822",
+      "run_id": "run-20261031-094049",
+      "title": "Trainable Vector Quantization for Large Language Models",
+      "title_zh": "",
+      "abstract": "向量量化能把大模型权重压到很低比特，但极限压缩后精度损失难以恢复，现有方法只能逐层最小化重建误差。TVQ 让向量量化后的模型也能用梯度下降继续训练。",
+      "effects": "在较小训练预算下达到低比特训练后量化的最好水平，例如把 LLaMA2-70B 量化到 2 比特，常用问答基准上准确率只下降 1%。",
+      "mechanism": "用直通估计把离散的码本索引变成可训练的潜在权重，在分块知识蒸馏框架下端到端优化，并给出多项加速训练的实用技巧，兼容现有向量量化方案。",
+      "paper_url": "https://arxiv.org/abs/2610.41822",
+      "date": "2026-10-30",
+      "score": 12,
+      "score_relevance": 6,
+      "score_contribution": 6,
+      "score_reason": "2 比特近无损的权重量化能显著降低大模型内存，直接服务于端侧部署，但论文未在设备上实测；可训练向量量化有一定新意。PDF 首页作者署名 Huawei Technologies Co. Ltd.（通讯作者 huawei.com 邮箱），论文发表于 ECML PKDD 2026 研究轨道。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页作者署名 Huawei Technologies Co. Ltd.，通讯作者 Ilia Zharikov 使用 huawei.com 邮箱）。",
+      "source_tier": "公司项目",
+      "open_source": false,
+      "tags": [
+        "方向:量化",
+        "方向:蒸馏",
+        "模型:Llama"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Anastasiia Prutianova; Alina Bogdanova; Mikhail Shutov; Dmitrii Poimanov; Anatoly Gorkov; Ilia Zharikov",
+      "vendors": "Huawei",
+      "venue": "ECML PKDD 2026",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39343",
@@ -2555,7 +2695,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36896",
@@ -2589,7 +2729,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.37935",
@@ -2625,7 +2765,77 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.41751",
+      "run_id": "run-20261031-094049",
+      "title": "Latent-Lens: Visual Perception in Small Language Models Through Latent Communication",
+      "title_zh": "",
+      "abstract": "把视觉大模型和只懂文字的小语言模型拼成多智能体系统时，两者通常只能靠文字交流，空间和细节信息会大量丢失。Latent-Lens 让它们直接用隐藏状态交流。",
+      "effects": "在 CLEVR 和 GQA 视觉问答上分别达到 81.0% 和 65.4%，同样 LoRA 预算下文字交流只有 58.3% 和 61.8%；Flickr8k 图像描述比同一基线高 16.5 分；只训练约 160 万参数（占合并模型 0.2%），并在 TinyLlama-1.1B、InternVL2-1B 上验证。",
+      "mechanism": "用一个领域编码器把视觉模型的隐藏状态投影到小模型的嵌入空间，再用 LoRA 形式的注意力解码器教小模型读懂这些视觉前缀，两侧原模型都保持冻结。",
+      "paper_url": "https://arxiv.org/abs/2610.41751",
+      "date": "2026-10-30",
+      "score": 11,
+      "score_relevance": 5,
+      "score_contribution": 6,
+      "score_reason": "让小语言模型低成本获得视觉能力，对端侧小模型组合部署有直接参考价值，但论文未在设备上测时延或内存；轻量隐空间编解码器是较新的做法。PDF 首页三位作者均署名 Microsoft Applied Sciences Group，论文已被 NeurIPS 2026 接收。 作者机构依据：arXiv PDF 首页署名 Microsoft（PDF 首页三位作者均署名 Microsoft Applied Sciences Group (ASG)）。",
+      "source_tier": "公司项目",
+      "open_source": false,
+      "tags": [
+        "方向:多模态",
+        "模型:Qwen"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Mo Shahdloo; Faegheh Sardari; Mathew Salvaris",
+      "vendors": "Microsoft",
+      "venue": "NeurIPS 2026",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.41177",
+      "run_id": "run-20261031-094049",
+      "title": "TraceSpec: Understanding and Improving Speculative Decoding for LLM Agents",
+      "title_zh": "",
+      "abstract": "智能体执行任务时会反复调用模型、历史不断变长，传统投机解码只看总体接受率，看不出哪些阶段最需要优化草稿模型。TraceSpec 把智能体轨迹分析和草稿模型训练结合起来。",
+      "effects": "在三种目标模型规模和两种温度下，回放吞吐比 DSpark 基础方案提升 12.5%~22.6%；Qwen3-4B 消融中自适应分配让平均接受长度比整轮监督提高 3.3%~10.0%；发布含 1 万训练状态、2500 测试状态的浏览与软件工程轨迹数据集。",
+      "mechanism": "对真实智能体执行做固定前缀回放，按轨迹状态估计各位置的接受率差距，把有限的草稿训练预算优先分配给接受率掉得最厉害的中间回合。",
+      "paper_url": "https://arxiv.org/abs/2610.41177",
+      "date": "2026-10-30",
+      "score": 11,
+      "score_relevance": 5,
+      "score_contribution": 6,
+      "score_reason": "投机解码属于推理加速技术栈，专门针对智能体多轮调用场景，对端侧 Agent 推理也有借鉴价值，但实验在服务器端；轨迹条件化的草稿训练有新意，代码开源。PDF 首页 7 位作者中 4 位署名 Huawei Technologies Co., Ltd.，通讯作者在中国人民大学。 作者机构依据：arXiv PDF 首页署名 Huawei（PDF 首页第 3、5、6、7 作者署名 Huawei Technologies Co., Ltd.（北京、杭州），其余作者来自中国人民大学）。",
+      "source_tier": "公司项目",
+      "open_source": true,
+      "tags": [
+        "方向:投机解码",
+        "方向:评测基准",
+        "应用:代码",
+        "模型:Qwen"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Jihao Zhao; Shuaishuai Zu; Pengfei Li; Biao Qin; Guanghuan Fang; Ben Feng; Baochuan Yang",
+      "vendors": "Huawei",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39337",
@@ -2658,7 +2868,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.37336",
@@ -2692,7 +2902,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36713",
@@ -2728,7 +2938,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36986",
@@ -2763,7 +2973,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.37642",
@@ -2798,7 +3008,42 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.41968",
+      "run_id": "run-20261031-094049",
+      "title": "Prune Gradually, Adapt Sparsely: Efficient Pruning of Large Language Models at Extreme Sparsity",
+      "title_zh": "",
+      "abstract": "大模型剪到 80%~90% 的极端稀疏度时质量会掉得很厉害，现有最好的方法又要占用和模型一样大的优化器状态。这篇工作提出 ETAPS，用更省资源的方式做极端稀疏剪枝。",
+      "effects": "在 125M 到 13B 共六个模型上，50%~90% 各稀疏度下困惑度都低于此前最好的 ELSA，最多降低 42%；90% 稀疏度下剪 LLaMA2-7B 只需一张 H200（ELSA 要四张），持久状态小 5.0 倍，GPU 时数少 49%。",
+      "mechanism": "分阶段逐步收紧全局稀疏度，每一步只训练一个小规模的稀疏增量来补偿损失，再用补偿后模型的端到端梯度指导下一步剪哪些权重，从而不需要模型大小的优化器状态。",
+      "paper_url": "https://arxiv.org/abs/2610.41968",
+      "date": "2026-10-30",
+      "score": 10,
+      "score_relevance": 5,
+      "score_contribution": 5,
+      "score_reason": "极端稀疏剪枝能直接减小模型存储与推理开销，属于端侧压缩技术栈，但论文只在服务器 GPU 上评测困惑度，未做端侧部署；方法是渐进剪枝加稀疏适配的组合，贡献中等。PDF 首页第 6 作者 Inderjit S. Dhillon 署名 Google。 作者机构依据：arXiv PDF 首页署名 Google（PDF 首页第 6 作者 Inderjit S. Dhillon 署名 Google，其余作者来自 University of Bath、Aalto University、UT Austin）。",
+      "source_tier": "公司项目",
+      "open_source": false,
+      "tags": [
+        "方向:剪枝稀疏",
+        "模型:Llama",
+        "硬件:GPU"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Jean Lucien Randrianantenaina; Hung Nguyen; Nasib Ullah; Jinbin Zhang; Nilesh Gupta; Inderjit S. Dhillon; Rohit Babbar",
+      "vendors": "Google",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.40325",
@@ -2832,7 +3077,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39006",
@@ -2867,7 +3112,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.38573",
@@ -2903,7 +3148,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.38355",
@@ -2939,7 +3184,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36901",
@@ -2974,7 +3219,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2506.19846",
@@ -3011,7 +3256,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T14:09:57.387609+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.33966",
@@ -3046,7 +3291,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36967",
@@ -3080,7 +3325,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39790",
@@ -3113,7 +3358,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39276",
@@ -3147,7 +3392,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.38902",
@@ -3182,7 +3427,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.38391",
@@ -3217,7 +3462,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36507",
@@ -3251,7 +3496,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.35966",
@@ -3286,7 +3531,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39876",
@@ -3320,7 +3565,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36339",
@@ -3355,7 +3600,44 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.00845",
+      "run_id": "run-20261031-094049",
+      "title": "Is Your AI Fast Enough to Run a Fusion Reactor?",
+      "title_zh": "",
+      "abstract": "核聚变装置的等离子体控制回路里嵌着小型机器学习模型，必须在微秒到毫秒级给出结果。这项工作把这些模型接到现代推理引擎上，系统比较不同 CPU 和 GPU 推理方案在实时控制中的延迟与确定性。",
+      "effects": "在 DIII-D 装置的实时控制站上，最小模型用单个 CPU 核在 99% 的控制周期内 3.6 微秒内响应，NVIDIA A100 为 28 微秒；论文还评估了多个模型同时运行时的互相干扰，并给出各推理框架的适用场景。",
+      "mechanism": "在 DIII-D 的两台实时 GPU 控制站上，分别用 Keras2c 与手写实现、OpenVINO、XLA 和 TVM 编译的实时函数以及 TensorRT 部署同一批约 3 千到 800 万参数的控制与诊断模型，在实时优先级下测量 p99 延迟、确定性和多模型共享 CPU 核或 GPU 时的资源竞争。",
+      "paper_url": "https://arxiv.org/abs/2610.00845",
+      "date": "2026-10-30",
+      "score": 7,
+      "score_relevance": 3,
+      "score_contribution": 4,
+      "score_reason": "关注硬实时控制场景下的推理引擎选择和延迟确定性，对资源受限、时延敏感的部署有参考价值，但运行平台是服务器级 CPU 和 A100，不是端侧设备，因此相关度偏低。 作者机构依据：arXiv PDF 首页署名 Google（PDF 首页作者 4 Andrew Rothstein 署名 Google DeepMind，其余作者来自普林斯顿大学和普林斯顿等离子体物理实验室）。",
+      "source_tier": "公司项目",
+      "open_source": false,
+      "tags": [
+        "方向:推理框架",
+        "方向:编译部署",
+        "方向:评测基准",
+        "硬件:CPU",
+        "硬件:GPU"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "updated",
+      "arxiv_revision_note": "v2（2026-10-30）为实质修订：v1 只是比较 10 个网络在 CPU 与 GPU 后端上延迟的短文；v2 新增 OpenVINO、XLA、TVM 编译与 TensorRT 的实时推理实现，在 DIII-D 两台实时控制站上补充 p99 延迟、确定性与资源竞争测量和多模型同时运行实验，给出单核 3.6 微秒、A100 28 微秒等新结果，并新增了作者。",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Nathaniel Chen; Cheolsik Byun; Sangkyeun Kim; Andrew Rothstein; Ricardo Shousha; Hiro Josep Farre Kaga; Peter Steiner; Azarakhsh Jalalvand",
+      "vendors": "Google",
+      "venue": "NeurIPS 2026 Workshop（Physical World Model）",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.37989",
@@ -3390,7 +3672,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.35982",
@@ -3424,7 +3706,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.37906",
@@ -3459,7 +3741,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39800",
@@ -3492,7 +3774,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.40000",
@@ -3528,7 +3810,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "少见地从存储器件层面回答手机怎么装下 200B 级智能体团队：用自研铁电 NOR 闪存挂到 LPDDR6 总线上当主存，仿真显示接近无限内存的理想性能、比 UFS 卸载快最多 28 倍，对手机端大模型硬件路线很有参考价值。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.38739",
@@ -3565,7 +3847,45 @@
       "recommendation": "推荐",
       "recommendation_reason": "少见地把 6570 万参数的流式语音识别模型真正塞进无加速器的 ESP32-P4 单片机并做到实时（1.28 秒音频 0.90 秒处理完），词错率只比原模型高约 0.4 个点，代码、固件和权重都已开源，可直接作为 MCU 端语音交互的参考实现。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.41625",
+      "run_id": "run-20261031-094049",
+      "title": "RTPolicy: Real-Time (32.9 Hz) Multi-View Visuomotor Policy for Robotic Manipulation on Edge Devices",
+      "title_zh": "边缘板卡实时多视角操作策略 RTPolicy",
+      "abstract": "机器人双臂操作需要多路摄像头输入，又要低延迟地不断修正动作。RTPolicy 是一个面向边缘板卡的多视角视觉动作策略，把多路画面压成少量视觉令牌，再用流匹配快速生成动作块，能在机器人本地实时运行。",
+      "effects": "RoboTwin 2.0 的 50 个任务上平均成功率 52.26%，高于排行榜最强基线 π0 的 46.4%；真实双臂平台异步流式推理下平均成功率 72.0%；INT16 下在地瓜 RDK S600 上单帧闭环 30.35 毫秒（32.9 Hz）、RDK S100 上 149.72 毫秒（6.7 Hz），在 Jetson Orin NX 上约 7 Hz。",
+      "mechanism": "冻结的 DINOv3 ConvNeXt 视觉骨干提取各视角特征，经视角感知融合和视觉压缩得到紧凑令牌表示；动作生成器以该表示和机器人状态为条件，用少步流匹配生成动作块；GPU 板卡用 TensorRT、BPU 板卡用 INT8/INT16 量化模型部署。",
+      "paper_url": "https://arxiv.org/abs/2610.41625",
+      "date": "2026-10-30",
+      "score": 14,
+      "score_relevance": 8,
+      "score_contribution": 6,
+      "score_reason": "在 RDK S600/S100 BPU 板卡和 Jetson Orin NX 上给出逐平台的端到端延迟实测，端侧部署证据扎实；但它是纯动作策略，没有规划、记忆或工具闭环，不算端侧智能体。作者大多署名地瓜机器人（D-Robotics），该公司不在公司归属名单内，故未填公司归属。",
+      "source_tier": "学校预印本",
+      "open_source": true,
+      "tags": [
+        "应用:机器人",
+        "方向:高效推理",
+        "方向:量化",
+        "方向:编译部署",
+        "硬件:NPU",
+        "硬件:Jetson"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Xianbao Hou; Zehao Ni; Yonghao He; Lingfeng Qian; Xin Shi; Hu Su; Wei Sui; Cong Yang",
+      "vendors": "",
+      "venue": "arXiv",
+      "recommendation": "推荐",
+      "recommendation_reason": "少见地把多视角视觉动作策略真正压到机器人边缘板卡上实时运行：RDK S600 上 INT16 达到 32.9 Hz，RoboTwin 2.0 成功率同时超过 π0，并公开了代码，对做机器人端侧部署的团队有直接参考价值。",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39216",
@@ -3604,7 +3924,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "直击“单张显卡加大内存跑 MoE 模型”这一本地部署的核心矛盾：把预填充和生成分开预测、调度和执行后，预填充吞吐最高提升 10.3 倍、生成最高 6.1 倍，对 PC 端本地大模型推理引擎很有参考价值。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.38233",
@@ -3640,7 +3960,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "机器人端侧部署的完整实例：把原本要 90 分钟算出的避障可达性地图，用 INT8 量化的 3D U-Net 在 Jetson Orin 上压到 115 毫秒、与真值相关 0.99，可直接参考其标签生成与量化部署流程。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.37442",
@@ -3678,7 +3998,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "抓住了边缘设备跑混合专家模型的真瓶颈——专家权重搬运，在 Jetson AGX Orin 等设备上同内存预算下吞吐最高提升 2.1 倍，适合想在本地跑 MoE 模型的工程师参考。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36968",
@@ -3714,7 +4034,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "少见的把图像目标导航完整搬上无人机机载 Jetson Orin NX 的工作，90 次真机飞行 86 次成功、仿真到真机零样本迁移，对做机载视觉导航的团队有直接参考价值。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36999",
@@ -3749,7 +4069,43 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.41381",
+      "run_id": "run-20261031-094049",
+      "title": "From prediction error to sparse events: Biologically inspired signed-dyadic coding for Mandarin keyword spotting",
+      "title_zh": "脉冲唤醒词识别的预测事件编码",
+      "abstract": "持续运行的脉冲网络语音唤醒词识别中，相邻音频帧高度相似，却会反复触发内存读取和计算，浪费功耗。这篇工作借鉴“预测编码”，只在输入偏离预测时才发事件。",
+      "effects": "中文唤醒词识别中，输入端采用该编码后准确率 90.00%，平均 SRAM 读取次数减少 33.87%，推理周期减少 32.77%；软件整数评估与 RTL 仿真结果逐项核对一致。",
+      "mechanism": "每个输入通道在本地保存一个预测值，只有残差超过学到的阈值才发送事件；事件只带正负号和 2 的幂次幅度，接收端用定点移位加法就能还原，并在加速器 RTL 中实现了对应的解码数据通路。",
+      "paper_url": "https://arxiv.org/abs/2610.41381",
+      "date": "2026-10-30",
+      "score": 13,
+      "score_relevance": 7,
+      "score_contribution": 6,
+      "score_reason": "直接面向低功耗常开语音唤醒硬件，给出了 RTL 级的内存访问和周期数据，属于端侧低功耗推理；把预测编码做成硬件友好的事件接口是较实用的创新。作者主要来自杭州初创公司 Sivy Limited（不在公司归属名单内）和剑桥大学，因此不标公司项目。",
+      "source_tier": "学校预印本",
+      "open_source": false,
+      "tags": [
+        "方向:SNN",
+        "方向:能耗功耗",
+        "应用:语音",
+        "硬件:神经形态"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Zijian Zhou; Rui Liu; Rongxiang Nie; Rui Ma; Ziyao Zhang; Xin Du",
+      "vendors": "",
+      "venue": "arXiv",
+      "recommendation": "推荐",
+      "recommendation_reason": "少见的把脉冲网络唤醒词识别做到加速器 RTL 级验证的工作：只在输入偏离预测时才发事件，SRAM 读取和推理周期都减少约三分之一，对常开语音的低功耗芯片设计有直接参考价值。",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36950",
@@ -3785,7 +4141,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "把图像压缩里的“学习型变换编码”搬到 KV 缓存上，在 Qwen3.5-2B 上做到 55 倍以上压缩只掉不到 2 分，对需要在本地保存和复用长提示词缓存的设备很有参考价值。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.37104",
@@ -3821,7 +4177,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36340",
@@ -3859,7 +4215,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "用 Jetson Orin NX 实测揭示 INT8 量化并不总是更快更省电，变慢多半来自 TensorRT 引擎里的格式转换层，对在边缘设备上挑精度、挑模型的工程师很实用。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.35957",
@@ -3895,7 +4251,43 @@
       "recommendation": "推荐",
       "recommendation_reason": "把端云协同推测解码的通信量从“整份词表分布”降到“几个编号和概率”，且输出与大模型严格一致；对网络差的手机、车机等终端起草加云端验证方案很实用，还给出了何时值得启用的带宽临界点公式。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.41408",
+      "run_id": "run-20261031-094049",
+      "title": "SACQ: Structure-Aware Codebook Quantization for Ultra-Low-Bit Vision-Language-Action Models",
+      "title_zh": "",
+      "abstract": "视觉-语言-动作（VLA）机器人模型太占内存，难以放到算力有限的机器人上，而直接套用大模型的低比特量化方法在 VLA 上会明显掉点。SACQ 专门为 VLA 设计了超低比特码本量化。",
+      "effects": "在 GR00T N1.7 上以每权重 1.5 比特量化语言和动作部分，LIBERO 四个套件平均成功率 93.85%，模型内存减少 4.83 倍；再加 INT8 激活和低精度注意力后成功率 93.55%，在 RTX 4090 上比 BF16 快 1.51 倍；SimplER 上 2 比特成功率 63.76%/52.27%，BF16 为 58.90%/53.45%。",
+      "mechanism": "按各投影层在下游运算中的角色定制误差度量来拟合码本，依据压缩每层对最终动作误差的影响分配比特数，最后用二阶误差补偿重分配码字并对着解码后的动作校准码本。",
+      "paper_url": "https://arxiv.org/abs/2610.41408",
+      "date": "2026-10-30",
+      "score": 12,
+      "score_relevance": 6,
+      "score_contribution": 6,
+      "score_reason": "直接针对机器人端 VLA 模型的内存瓶颈，压缩比和成功率都很可观，但只在仿真和桌面 GPU 上评测，作者也说明真机验证留待后续；面向动作误差的比特分配有新意。",
+      "source_tier": "学校预印本",
+      "open_source": true,
+      "tags": [
+        "方向:量化",
+        "方向:多模态",
+        "应用:机器人",
+        "硬件:GPU"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Haesung Lee; Insu Han",
+      "vendors": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.32749",
@@ -3931,7 +4323,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.38661",
@@ -3966,7 +4358,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.35955",
@@ -4003,7 +4395,148 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.41265",
+      "run_id": "run-20261031-094049",
+      "title": "Input-dependent Neuromodulation Enhances Mixed-Signal Neuromorphic Hardware",
+      "title_zh": "",
+      "abstract": "神经形态芯片资源很紧，网络规模和参数精度都受限。作者在混合信号神经形态处理器上演示了随输入动态变化的神经调制：根据当前输入实时调整芯片上脉冲循环网络的群体增益，让小网络表现更好。",
+      "effects": "在 DYNAP-SE 混合信号芯片上做二分类语音数字识别，加入神经调制后准确率提升 17.3±10.4 个百分点，结果来自 5 个硬件网络实例。",
+      "mechanism": "片外调制器读取片上网络的输入和活动，在单次试验内调整各神经元群体的增益，芯片模拟电路照常按硅片物理特性计算，并用芯片在环的方式训练。",
+      "paper_url": "https://arxiv.org/abs/2610.41265",
+      "date": "2026-10-30",
+      "score": 11,
+      "score_relevance": 6,
+      "score_contribution": 5,
+      "score_reason": "在真实的低功耗神经形态芯片上验证，属于边缘端超低功耗智能硬件方向，相关度较高；但任务规模很小、调制器仍在片外，偏概念验证，贡献按中等计。",
+      "source_tier": "学校预印本",
+      "open_source": false,
+      "tags": [
+        "方向:SNN",
+        "方向:能耗功耗",
+        "硬件:神经形态",
+        "应用:语音"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Aashman Mehta; AbdelQader AlKilany; Dan F. M. Goodman; Giacomo Indiveri; Melika Payvand",
+      "vendors": "",
+      "venue": "arXiv（投稿 IEEE ISCAS 2027）",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.41799",
+      "run_id": "run-20261031-094049",
+      "title": "On-device Detection of Wearer-induced NLOS on Chest-worn UWB Tags: Machine Learning, Link Indicators, or Both?",
+      "title_zh": "",
+      "abstract": "胸前佩戴的 UWB 定位标签会被人体遮挡，导致测距误差变大，而这种遮挡判断必须在标签上本地完成，受限于时延和电量。这篇工作系统比较了机器学习分类器和无线链路指标两类方法，并提出混合方案。",
+      "effects": "在 150 万条样本的数据集上比较 21 种分类器：准确率都不错，但时延和能耗差异巨大，有的方法只多一点准确率却耗能高达 39.6 倍；发布了数据集和按约束挑选分类器的推荐工具 Libra。",
+      "mechanism": "在 Qorvo MDEK1001（DW1000 收发器）标签上评估各分类器的运行时间和能耗，结合机器学习与链路指标的互补性设计混合分类器，再用推荐工具按用户的准确率、时延、能耗约束选最优方案。",
+      "paper_url": "https://arxiv.org/abs/2610.41799",
+      "date": "2026-10-30",
+      "score": 11,
+      "score_relevance": 6,
+      "score_contribution": 5,
+      "score_reason": "在 UWB 标签这类微控制器设备上评估机器学习分类器的时延与能耗，属于典型的端侧轻量推理，但任务是信号分类而非大模型或 Agent；系统性测评与公开数据集是主要贡献。",
+      "source_tier": "学校预印本",
+      "open_source": true,
+      "tags": [
+        "方向:能耗功耗",
+        "方向:评测基准",
+        "硬件:MCU"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Markus Gallacher; Vu Anh Minh Le; Matteo Trobinger; Davide Vecchia; Carlo Alberto Boano; Gian Pietro Picco",
+      "vendors": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.42053",
+      "run_id": "run-20261031-094049",
+      "title": "REA: A Routed Embodied Agent Runtime for Asynchronous Brain-Cerebellum Control",
+      "title_zh": "",
+      "abstract": "机器人既需要大模型做高层决策，又需要快速的动作策略做实时控制，两者异步配合很难。REA 是一个统一运行时，让“大脑”（基础模型）、“路由器”和多个快速执行策略协同工作，并保证正在执行的动作永远不用停下来等大脑。",
+      "effects": "在 LIBERO-Pro 的 60 个任务、3000 个测试回合上成功率 95.9%，超过策略池里最强的单一基线 Agents SDK + GPT-6（94.7%），控制步数减少 25%、控制时间减少 17%；RoboTwin 2.0 的 100 回合实验中，用 VLA 策略成功率 84%、VLA 加代码策略 86%，最强单一 VLA 基线 MEDex 为 80%。",
+      "mechanism": "路由器用“路由记忆”预先记下每个策略实测的成功率，直接派发任务而不必每次问大脑；只在策略执行结束的边界处触发判定门，请大脑判断是否成功；失败时按共享预算的升级阶梯有限次恢复。",
+      "paper_url": "https://arxiv.org/abs/2610.42053",
+      "date": "2026-10-30",
+      "score": 11,
+      "score_relevance": 5,
+      "score_contribution": 6,
+      "score_reason": "属于具身智能体的运行时与调度设计，路由记忆和快慢系统异步协作的思路对机器人端的智能体运行时有直接借鉴；但主要实验在仿真中完成，真机 Unitree G1 演示没有使用该路由器、大脑调用的是云端模型，因此不算端侧智能体，相关度按中等计。",
+      "source_tier": "学校预印本",
+      "open_source": false,
+      "tags": [
+        "方向:规划推理",
+        "方向:记忆",
+        "应用:机器人"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Pengfei Zhou; Yixing Ma; Zhengfeiyang Zhang; Haoyuan Chen; Zhenglin Wan; Hexin Wang; Wangbo Zhao; Yang You",
+      "vendors": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.42141",
+      "run_id": "run-20261031-094049",
+      "title": "RoboArchitect: Automating the Design of Robotic Agents with Persistent Memory",
+      "title_zh": "",
+      "abstract": "机器人用冻结的动作策略时，外面那层“控制代码外壳”决定何时调用策略、何时看视觉、何时直接控制机械臂，但这层外壳一直靠人手写。这篇工作让编码大模型根据机器人回放自动诊断失败并迭代改写外壳。",
+      "effects": "不更新任何模型权重，在多个仿真基准和策略上，未见场景平均成功率从 9.7% 提到 43.3%（4.5 倍），未见任务从 12.7% 提到 40.2%（3.2 倍）。",
+      "mechanism": "编码模型观察机器人执行轨迹、定位失败原因并改写控制外壳，外壳还会自己演化出持久记忆，把有效抓取深度等经验带到后续决策中。",
+      "paper_url": "https://arxiv.org/abs/2610.42141",
+      "date": "2026-10-30",
+      "score": 11,
+      "score_relevance": 4,
+      "score_contribution": 7,
+      "score_reason": "属于机器人智能体运行时与持久记忆设计，对具身端侧 Agent 有借鉴价值，但全部实验在 LIBERO、RoboCasa 等仿真基准上完成，外壳优化依赖编码大模型，未涉及设备端部署，相关度中等偏低；自动设计智能体外壳替代微调的思路较新。",
+      "source_tier": "学校预印本",
+      "open_source": false,
+      "tags": [
+        "方向:记忆",
+        "方向:规划推理",
+        "应用:机器人"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Shengguang Wu; Suning Huang; Cherie Ho; Ria Doshi; Hao Zhu; Serena Yeung-Levy",
+      "vendors": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39268",
@@ -4039,7 +4572,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39380",
@@ -4075,7 +4608,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.34241",
@@ -4113,7 +4646,7 @@
       "recommendation": "推荐",
       "recommendation_reason": "少见的把“本地小模型能否真正接手编码智能体工作”做成可核验实验的报告：4 比特 Qwen3-Coder 30B-A3B 在第一套任务上通过 14/15，换到固定产物约定的第二套任务（在 32GB M1 Pro 上本地运行）却是 0/45，冷前缀首字时延近 70 秒，给想在笔记本上落地编码助手的人提供了很实在的避坑数据。",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2510.27434",
@@ -4148,7 +4681,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T14:09:57.387609+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36499",
@@ -4182,7 +4715,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.38074",
@@ -4218,7 +4751,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.37056",
@@ -4254,7 +4787,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.37909",
@@ -4289,7 +4822,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36411",
@@ -4326,7 +4859,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36153",
@@ -4361,7 +4894,78 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.41236",
+      "run_id": "run-20261031-094049",
+      "title": "Experts Exhibit Structured Redundancy: Structure-Preserving Expert Pruning for Mixture-of-Experts Large Language Models",
+      "title_zh": "",
+      "abstract": "MoE 大模型每次只激活少数专家，但部署时仍要把所有专家都存下来，内存开销很大。这篇工作发现专家输出存在结构性冗余，据此提出更好的专家剪枝方法。",
+      "effects": "在 DeepSeek-V2-Lite 和 Qwen3-30B-A3B 上，保留 75% 和 50% 专家时，在多数基准上优于现有最好方法，通用任务和数学推理的平均成绩都最好。",
+      "mechanism": "把专家剪枝改写成“保持结构的专家子集选择”问题，用贪心算法优化，并提出两种准则：保持功能子空间的投影能量剪枝和保持输出分布形状的覆盖剪枝，同时用路由权重作为先验。",
+      "paper_url": "https://arxiv.org/abs/2610.41236",
+      "date": "2026-10-30",
+      "score": 10,
+      "score_relevance": 5,
+      "score_contribution": 5,
+      "score_reason": "MoE 专家剪枝能直接降低模型存储，对在内存受限设备上部署 MoE 有迁移价值，但论文未做端侧实测；从冗余结构出发的子集选择较有道理，属常规压缩方向的改进。",
+      "source_tier": "学校预印本",
+      "open_source": false,
+      "tags": [
+        "方向:MoE",
+        "方向:剪枝稀疏",
+        "模型:DeepSeek",
+        "模型:Qwen"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Tian Wang; Yongding Tao; Yihong Dong; Xiaoming Wu; Ying Guo; Ge Li",
+      "vendors": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.41825",
+      "run_id": "run-20261031-094049",
+      "title": "Where KV-Cache Error Lives in Looped Language Models: A Diagnostic Study of Ouro and Huginn",
+      "title_zh": "",
+      "abstract": "循环语言模型每个词元要把同一组层重复跑多遍、每遍各存一份 KV 缓存，缓存量成倍增加。这篇论文系统诊断量化 KV 缓存时误差落在键还是值上，以及误差在多轮循环里如何累积。",
+      "effects": "在 Ouro-1.4B（4 次循环）和 Huginn-0125（32 次循环）上，按单位误差算值承担了 94% 的对角 Fisher 敏感度，但实测 KL 主要由量化误差更大的键主导；共享权重误差的局部二阶放大系数在 32 次循环时从 INT8 的 1.65 到 INT4 的 4.09；逐单元分配器用 BF16 的 25%–48% 字节即可降低单步 KL，但在 Ouro-2.6B 上相对 Fisher 分配的优势未能复现，21 组预注册检验的 176 项标准中有 60 项未通过。",
+      "mechanism": "用模拟量化给不同循环、不同层的键和值注入误差，比较 Fisher 信息、局部二阶预测与实测 KL 三种预测器，并据此设计按单元分配比特的缓存格式，所有假设先登记再检验。",
+      "paper_url": "https://arxiv.org/abs/2610.41825",
+      "date": "2026-10-30",
+      "score": 10,
+      "score_relevance": 5,
+      "score_contribution": 5,
+      "score_reason": "KV 缓存量化是端侧长序列推理的关键技术，对循环结构小模型的误差分析可直接指导端侧缓存压缩；但只做了模拟量化和离线诊断，没有设备实测，且作者如实报告了多项负面结果，相关度和贡献都按中等计。",
+      "source_tier": "学校预印本",
+      "open_source": false,
+      "tags": [
+        "方向:KV cache",
+        "方向:量化",
+        "方向:模型架构"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Dezhen Lu; Runguo Li; Zixiang Ni; Yuchen Tang; Xingquan Kong; Jiaxing Yang; Jiarui Guo; Lingxiang Gao",
+      "vendors": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39508",
@@ -4396,7 +5000,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39853",
@@ -4430,7 +5034,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.40305",
@@ -4465,7 +5069,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39775",
@@ -4500,7 +5104,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.38329",
@@ -4536,7 +5140,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.38149",
@@ -4572,7 +5176,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.37224",
@@ -4608,7 +5212,183 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.41819",
+      "run_id": "run-20261031-094049",
+      "title": "ElTab: Elastically Looped Tabular Transformers",
+      "title_zh": "",
+      "abstract": "TabPFN 这类表格数据 Transformer 预测很准，但推理开销大，难以放到资源受限环境。ElTab 训练一个能按算力预算随时提前停止的循环式表格模型。",
+      "effects": "在 30 个 OpenML 分类数据集上，单个 ElTab 模型与六个固定深度的循环模型表现相当，训练成本减少一半以上；与 12 层 TabPFN 式基线相当，推理 FLOPs 少 25%。",
+      "mechanism": "用权重共享的循环 Transformer 减少参数，训练时在随机抽取的提前退出点加监督，使同一个模型在不同循环深度下都能给出可靠预测。",
+      "paper_url": "https://arxiv.org/abs/2610.41819",
+      "date": "2026-10-30",
+      "score": 9,
+      "score_relevance": 4,
+      "score_contribution": 5,
+      "score_reason": "弹性深度能让一个模型适配不同部署预算，思路可迁移到端侧，但对象是表格分类模型且未做设备实测；属于提前退出与权重共享的组合应用。",
+      "source_tier": "学校预印本",
+      "open_source": false,
+      "tags": [
+        "方向:高效推理",
+        "方向:模型架构"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Mieszko Komisarczyk; Saurabh Mathur; Maurice Kraus; Sriraam Natarajan; Kristian Kersting",
+      "vendors": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.42148",
+      "run_id": "run-20261031-094049",
+      "title": "Flide: Accelerating Decision Inference with Exact State Forking",
+      "title_zh": "",
+      "abstract": "智能体系统里的“决策模型”只需要在若干选项里打分，现有面向生成的推理引擎要么重复计算共享前缀，要么输出概率失真。Flide 是专为这类决策推理设计的精确推理引擎。",
+      "effects": "在单张 NVIDIA H200 上，回答查询比 vLLM 和 SGLang 最快 9.5 倍，同时与 float32 参考结果的总变差距离最小。",
+      "mechanism": "把一次决策请求的树状分支逻辑与物理执行解耦，压平成单条 token 流，用 ForkAttention 借助 GPU 上的索引在标准注意力和 Gated DeltaNet 循环层之间分叉，保证每个分支结果与单独前向完全一致，并支持从先前检查点续接不断增长的智能体历史。",
+      "paper_url": "https://arxiv.org/abs/2610.42148",
+      "date": "2026-10-30",
+      "score": 9,
+      "score_relevance": 3,
+      "score_contribution": 6,
+      "score_reason": "面向数据中心 GPU 的智能体决策推理引擎，与端侧部署关系较弱；精确分叉执行和对混合注意力结构的支持有新意，代码开源。",
+      "source_tier": "学校预印本",
+      "open_source": true,
+      "tags": [
+        "方向:推理框架",
+        "方向:高效推理",
+        "硬件:GPU"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Bobo Li; Jiajia Song; Hao Fei; Wynne Hsu; Mong Li Lee",
+      "vendors": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.41508",
+      "run_id": "run-20261031-094049",
+      "title": "HiState: Hierarchical Prefix Cache Management for Hybrid LLM Serving in Agentic Workloads",
+      "title_zh": "",
+      "abstract": "混合注意力大模型（全注意力层加循环线性层）做前缀缓存时，循环状态无法回退到更短的前缀，而智能体会频繁截断、回滚上下文，导致缓存经常失效。HiState 是专为这类智能体负载设计的分层前缀缓存管理系统。",
+      "effects": "基于 vLLM 实现，在单张 H100 上用 Qwen3.5-9B 跑两组公开编程智能体轨迹，p99 首字时延相比 vLLM-Marconi 最高快 5.73 倍、相比 SGLang-HiCache 最高快 5.44 倍。",
+      "mechanism": "利用“一次命中要读全部匹配的 KV、却只读一个循环检查点”的不对称性，把历史检查点放到 SSD、把显存优先留给 KV；再用自适应间隔控制检查点密度，并统一淘汰过期轨迹与稀疏化检查点。",
+      "paper_url": "https://arxiv.org/abs/2610.41508",
+      "date": "2026-10-30",
+      "score": 9,
+      "score_relevance": 3,
+      "score_contribution": 6,
+      "score_reason": "面向数据中心 GPU 的智能体推理服务优化，与端侧部署关系较远；不过混合注意力模型的状态缓存与分层存储思路对内存受限设备上的智能体推理有一定借鉴，贡献在于抓住了智能体上下文回滚这一新负载特征。",
+      "source_tier": "学校预印本",
+      "open_source": false,
+      "tags": [
+        "方向:KV cache",
+        "方向:云端serving",
+        "方向:调度服务",
+        "应用:代码"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Zaifeng Pan; Lucas Wang; Xinwei Qiang; Yanbo Zhou; Chang Chen; Zhengding Hu; Yue Guan; Yufei Ding",
+      "vendors": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.41056",
+      "run_id": "run-20261031-094049",
+      "title": "Accept Changes, Reject Attacks: Robust Memory Management for LLM Agents",
+      "title_zh": "",
+      "abstract": "大模型智能体靠长期记忆做事，但记忆管理器既可能留着已经过时的事实，也可能被人植入恶意内容，而这两种情况要求的写入决策恰好相反。这篇论文把两者统一为记忆鲁棒性问题，并给出评测指标和改进方法。",
+      "effects": "现有记忆系统和防御方法在作者的测试集上并不比未调优的管理器更鲁棒；用一次性合成数据微调后，在三个基座模型上各类得分都有提升，整体证据条件准确率（ECA）达到未调优管理器的两倍以上，但鲁棒性仍不完整。",
+      "mechanism": "提出证据条件准确率：不仅看答案对不对，还检查管理器选出的记录是否包含全部所需证据、是否已更新、是否没有被投毒；再围绕一段对话插入事实变化和攻击来合成训练集，对记忆管理器做监督微调。",
+      "paper_url": "https://arxiv.org/abs/2610.41056",
+      "date": "2026-10-29",
+      "score": 9,
+      "score_relevance": 4,
+      "score_contribution": 5,
+      "score_reason": "智能体长期记忆的安全写入是端侧个人智能体同样会面对的问题，方法可迁移；但实验不涉及设备部署，属于通用智能体记忆研究，相关度按中等偏下计。",
+      "source_tier": "学校预印本",
+      "open_source": false,
+      "tags": [
+        "方向:记忆",
+        "方向:安全隐私",
+        "方向:评测基准"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Runze Zhao; Dongruo Zhou; Sumit Kumar Jha; Nathaniel D. Bastian; Ankit Shah",
+      "vendors": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2603.10726",
+      "run_id": "run-20261031-094049",
+      "title": "CacheSolidarity: Preventing Prefix Caching Side Channels in Multi-Tenant LLM Serving Systems",
+      "title_zh": "",
+      "abstract": "多用户共享的大模型服务会复用相同前缀的 KV 缓存来提速，但缓存命中更快这一点会泄露别人问了什么。CacheSolidarity 在不关掉前缀缓存的前提下堵住这条计时侧信道。",
+      "effects": "与按用户隔离缓存的现有防御相比，缓存复用率最高提升 70%，推理时延降低 30%；在 A100 上跑 Llama-13B 的对比中，首字时延接近不设防的前缀缓存，同时优于基于语义校验的 SafeKV。",
+      "mechanism": "监控跨用户的前缀复用，只对被标记为可疑共享的前缀做选择性隔离；再用一个激活器根据全局计时分布判断泄露是否可被利用，不可利用时自动关闭隔离以减少开销。",
+      "paper_url": "https://arxiv.org/abs/2603.10726",
+      "date": "2026-10-29",
+      "score": 9,
+      "score_relevance": 3,
+      "score_contribution": 6,
+      "score_reason": "面向云端多租户推理服务的 KV 缓存安全，属于推理系统技术栈但与端侧关系较远，相关度 3；选择性隔离兼顾安全与性能，已被 Middleware 2026 接收，贡献 6。作者来自 IMDEA Software Institute，无公司归属。",
+      "source_tier": "学校预印本",
+      "open_source": false,
+      "tags": [
+        "方向:云端serving",
+        "方向:KV cache",
+        "方向:安全隐私",
+        "模型:Llama"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "updated",
+      "arxiv_revision_note": "v3（2026-10-29）相对 v2（2026-05-20）有实质修订：系统由 PrefixWall 更名为 CacheSolidarity；新增 SafeKV 语义校验基线的全面对比（按负载、模型、请求率、开销和安全性分节），评测模型扩展到 Llama3-70B 等，安全分析新增“选择性隔离的安全性”和“阈值激活的安全影响”两小节，并标注为 Middleware 2026 接收版。",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Panagiotis Georgios Pennas; Konstantinos Papaioannou; Marco Guarnieri; Thaleia Dimitra Doudali",
+      "vendors": "",
+      "venue": "Middleware 2026",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39601",
@@ -4642,7 +5422,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.40545",
@@ -4676,7 +5456,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.38209",
@@ -4711,7 +5491,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36466",
@@ -4746,7 +5526,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.37110",
@@ -4781,7 +5561,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.37443",
@@ -4814,7 +5594,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36825",
@@ -4848,7 +5628,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.37126",
@@ -4883,7 +5663,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.37230",
@@ -4919,7 +5699,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36918",
@@ -4954,7 +5734,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36288",
@@ -4990,7 +5770,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36243",
@@ -5025,7 +5805,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36308",
@@ -5061,7 +5841,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.40370",
@@ -5095,7 +5875,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.40349",
@@ -5129,7 +5909,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.38196",
@@ -5164,7 +5944,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.38332",
@@ -5198,7 +5978,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.38793",
@@ -5233,7 +6013,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.37810",
@@ -5268,7 +6048,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2412.05126",
@@ -5303,7 +6083,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-10-31T14:09:57.387609+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.37161",
@@ -5338,7 +6118,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36298",
@@ -5373,7 +6153,109 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.41172",
+      "run_id": "run-20261031-094049",
+      "title": "Context as Infrastructure: Knowledge Compilation for Retrieval in Agentic Systems with Harnesses",
+      "title_zh": "",
+      "abstract": "检索增强生成正在变成由智能体自己反复搜索、阅读、改写查询的循环，准确率上去了，但上下文被重复查询和无用段落塞满。这篇工作提出在入库阶段先做“知识编译”，只把最小够用的上下文交给模型。",
+      "effects": "以“论断-证据”为叶子的导航树在证据足够时把查询 token 减少 91%，不够时只多 1.9%，平均减少 38%；决策闸门把时延从 140 秒降到 30 秒；只用 BM25/grep 的检索外壳在 BrowseComp-Plus 上答对 85%、FRAMES 上 91%。",
+      "mechanism": "用大模型在入库时为文档补充导航层级、实体图、时间线、本体等结构化产物，再把检索循环拆成五个有纪律的环节，优先从编译好的结构里取证据，不够时才回到原文检索。",
+      "paper_url": "https://arxiv.org/abs/2610.41172",
+      "date": "2026-10-30",
+      "score": 7,
+      "score_relevance": 2,
+      "score_contribution": 5,
+      "score_reason": "面向云端 RAG 系统的上下文工程，与端侧部署关系弱；对智能体检索流程做了系统化整理并开源，属工程整合。作者主要来自 RAGFlow 开发方 InfiniFlow（初创公司，不在公司归属名单内），因此不标公司项目。",
+      "source_tier": "学校预印本",
+      "open_source": true,
+      "tags": [
+        "应用:RAG",
+        "方向:记忆"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Zhichang Yu; Baining Cao; Sbaaoui Idriss; Qi Wang; Gangqiang Xu; Ling Qin; Xiaoling Jin; An Liu",
+      "vendors": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.41482",
+      "run_id": "run-20261031-094049",
+      "title": "KEEPER: Learning Control-Sufficient Textual Memory for Long-Horizon LLM Agents",
+      "title_zh": "",
+      "abstract": "长任务智能体常用递归更新的文字记忆，但早先写错的内容会一路被带下去，只看任务成功率看不出记忆是否可靠。KEEPER 专门分析这种“记忆自我延续偏差”。",
+      "effects": "在比较的四种辅助训练目标中，预测奖励相关信息的目标在离线强化学习前后任务表现都最好，优于联合监督；摘要未给出具体分数。",
+      "mechanism": "在统一的递归记忆接口下，按信息含量和更新敏感度两个维度比较四种辅助监督目标，并对一条基线轨迹做逐条论断分析，追踪错误如何在纠正信号出现后仍被保留。",
+      "paper_url": "https://arxiv.org/abs/2610.41482",
+      "date": "2026-10-30",
+      "score": 7,
+      "score_relevance": 3,
+      "score_contribution": 4,
+      "score_reason": "研究智能体文字记忆的可靠性，属于 Agent 记忆的通用问题，与设备端部署无直接关系；以对比分析为主，方法创新有限。",
+      "source_tier": "学校预印本",
+      "open_source": false,
+      "tags": [
+        "方向:记忆",
+        "方向:评测基准"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Jinkyeong Choi; Chaebin Jeong; Junsung Jeon; Donghyeon Park",
+      "vendors": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.41401",
+      "run_id": "run-20261031-094049",
+      "title": "When Safety Checks Become Privacy Risks: A Privacy-Preserving Paradigm for LLM Agent Safety Auditing",
+      "title_zh": "",
+      "abstract": "智能体调用外部工具前常要交给第三方做安全审计，但把任务描述、调用参数和对话历史发给审计方本身就会泄露用户隐私。这篇工作提出在加密状态下完成审计的框架 SealCall。",
+      "effects": "在 1252 个公开二分类候选上，分组嵌套评估的平均 F1 为 0.840，所有测量场景下审计决策与明文一致；代表性配置每次加密打分耗时 0.176 秒。",
+      "mechanism": "把审计拆成三个域：可信端构造调用的表示，审计方只在 CKKS 同态加密下计算相似度，最终决策和工具执行由可信端绑定到已审计的调用上。",
+      "paper_url": "https://arxiv.org/abs/2610.41401",
+      "date": "2026-10-30",
+      "score": 7,
+      "score_relevance": 2,
+      "score_contribution": 5,
+      "score_reason": "面向云端智能体工具调用的隐私安全审计，与端侧部署关系较弱；把同态加密用于智能体调用前审计有一定新意。",
+      "source_tier": "学校预印本",
+      "open_source": false,
+      "tags": [
+        "方向:安全隐私",
+        "方向:工具调用"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Yixiang Luo; Ziheng Ma; Ke Chang; Jian Wang; Jiqiang Liu",
+      "vendors": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39234",
@@ -5407,7 +6289,111 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.40932",
+      "run_id": "run-20261031-094049",
+      "title": "HippocamFLEX: FPGA Prototyping of Hippocampus-Inspired Architecture for Context-Aware Sequence Prediction",
+      "title_zh": "",
+      "abstract": "HippocamFLEX 是一个在 FPGA 上实现的类海马体硬件架构，模仿大脑把经历按时间顺序存储和回放的方式，用于结合上下文的序列预测。",
+      "effects": "设计支持 16 个上下文中的 64 个事件，在 AMD Zynq UltraScale+ XCZU9EG 实体芯片上通过了上下文隔离、时序顺序和序列中途滑动窗口等功能测试；未给出速度或功耗数据。",
+      "mechanism": "用 SystemVerilog 把海马体三突触通路映射为三级流水线：齿状回和内嗅皮层级做超向量近邻匹配，CA3 级做上下文门控的循环序列预测并打多相时间标签，CA1 级把过去、当前和预测的事件整合输出。",
+      "paper_url": "https://arxiv.org/abs/2610.40932",
+      "date": "2026-10-29",
+      "score": 7,
+      "score_relevance": 3,
+      "score_contribution": 4,
+      "score_reason": "属于类脑硬件和片上记忆机制探索，与端侧智能硬件有一定关联，但只做了功能验证，没有面向 AI 推理任务的性能或能效结果，相关度偏低。",
+      "source_tier": "学校预印本",
+      "open_source": false,
+      "tags": [
+        "方向:记忆",
+        "硬件:FPGA",
+        "硬件:神经形态"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Bhuvanesh S. Kayarabettu; Hamed Poursiami; Keiland Cooper; Babak Shahbaba; Norbert Fortin; Maryam Parsa; Akhilesh Jaiswal",
+      "vendors": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.41072",
+      "run_id": "run-20261031-094049",
+      "title": "LanG 2.0: Energy-Efficient Agentic AI for Semi-Automated Security Operations at Scale",
+      "title_zh": "",
+      "abstract": "安全运营中心每天要从海量告警、日志和流量里找出隐藏威胁。LanG 2.0 是一个做威胁检测、证据关联和规则编写的智能体系统，重点验证在有结构化安全护栏的前提下，本地部署的小模型能否以更低能耗替代前沿大模型。",
+      "effects": "攻击链关联精度从上一代的 18.75% 提升到 51.81%，规则采纳率从最多 60.00% 提升到 98.33%；在未见过的网络上检测攻击的 F1 为 73.42% 且无误报，对比 Claude Opus 5.5 的 58.10%（误报 49.00%），能耗至少低 650 倍；微调小模型在告警分类和规则编写上与之统计持平、能耗低 5.6–59 倍；6.4 分钟处理 333 万条记录。",
+      "mechanism": "以实体为锚做跨工具事件关联，规则变更需人工审批，并用防篡改账本记录操作；把流量按各网络正常流量打分，再交给本地小模型完成分类与规则编写，同时逐个智能体操作统计能耗。",
+      "paper_url": "https://arxiv.org/abs/2610.41072",
+      "date": "2026-10-29",
+      "score": 7,
+      "score_relevance": 3,
+      "score_contribution": 4,
+      "score_reason": "用本地小模型替代云端大模型的思路与端侧智能体相通，但这里的本地指企业机房服务器，不是终端设备；贡献主要在安全护栏设计和能耗核算，属于应用系统工程。",
+      "source_tier": "学校预印本",
+      "open_source": false,
+      "tags": [
+        "方向:能耗功耗",
+        "方向:安全隐私",
+        "应用:安全"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Anes Abdennebi; Nadjia Kara; Laaziz Lahlou; Hakima Ould-Slimane",
+      "vendors": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.40848",
+      "run_id": "run-20261031-094049",
+      "title": "Predictive Maintenance at the Edge: An Embedded Anomaly Detection Pipeline Trained with Quantum Optimization",
+      "title_zh": "",
+      "abstract": "这是一个面向低成本单片机的轴承故障预测性维护流水线：从振动信号提取特征，用单类支持向量机做异常检测，推理时不需要浮点运算，训练中有两个环节尝试用量子优化算法。",
+      "effects": "在 Paderborn 轴承数据集上的小规模模拟器实验中，VQE 在使用 Adam 时有 36% 的运行找到最优特征组合；PCE 选出的支持向量优于随机，但加入经典局部搜索后两者持平；而经典基线（SMO 训练、权重取整的普通单类 SVM）不做任何搜索就达到相同效果。",
+      "mechanism": "特征选择用最小冗余最大相关准则，并交给变分量子本征求解器在计算时间限制下求解；单类 SVM 改造成无浮点的边缘推理形式，再用带 Pauli 关联编码的变分量子算法训练。",
+      "paper_url": "https://arxiv.org/abs/2610.40848",
+      "date": "2026-10-29",
+      "score": 7,
+      "score_relevance": 4,
+      "score_contribution": 3,
+      "score_reason": "目标是单片机上的无浮点推理，属于 TinyML 范畴；但量子训练只在模拟器上做了小规模测试，作者也承认经典基线即可取得同样效果，贡献有限。",
+      "source_tier": "学校预印本",
+      "open_source": false,
+      "tags": [
+        "硬件:MCU",
+        "应用:fault-detection"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Filipe Chagas Ferraz",
+      "vendors": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39621",
@@ -5443,7 +6429,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39385",
@@ -5477,7 +6463,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.37310",
@@ -5512,7 +6498,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.35961",
@@ -5546,7 +6532,42 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2610.41160",
+      "run_id": "run-20261031-094049",
+      "title": "ARK: Avoiding Routing Collisions for KV Cache Transfer in Disaggregated LLM Inference",
+      "title_zh": "",
+      "abstract": "大模型推理把预填充和解码拆到不同 GPU 池后，会产生持续数百毫秒到数秒的巨量 KV cache 传输，网络哈希冲突会让某条链路堵死。ARK 让发送端协调选路来避开冲突。",
+      "effects": "包级 RDMA 仿真中，中等负载下平均和 P95 流完成时间最多降低 27.3% 和 34.0%，平均首 token 时延最多降低 12.9%。",
+      "mechanism": "利用这些传输持续时间长的特点，发送端之间做轻量的一对多协调，挑选源端口使并发流的哈希落到不同脊交换机上，无需改交换机，也无需接收端重排序。",
+      "paper_url": "https://arxiv.org/abs/2610.41160",
+      "date": "2026-10-30",
+      "score": 6,
+      "score_relevance": 2,
+      "score_contribution": 4,
+      "score_reason": "面向数据中心分离式推理的网络优化，属云端 serving，与端侧无直接关系；方法简洁但只有仿真评估，贡献中等偏低。发表于 SIGCOMM 2026 的 NAIC 研讨会。",
+      "source_tier": "学校预印本",
+      "open_source": false,
+      "tags": [
+        "方向:云端serving",
+        "方向:KV cache",
+        "硬件:GPU"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "submitted",
+      "arxiv_revision_note": "",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Hung-Chun Lin; Ting-Wei Hsu; Chung-En Ho; Ahmed Saeed",
+      "vendors": "",
+      "venue": "SIGCOMM 2026 Workshop (NAIC)",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39547",
@@ -5580,7 +6601,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.40292",
@@ -5614,7 +6635,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39570",
@@ -5648,7 +6669,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.40483",
@@ -5681,7 +6702,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.38411",
@@ -5715,7 +6736,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.38651",
@@ -5749,7 +6770,7 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.36379",
@@ -5785,7 +6806,41 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
+    },
+    {
+      "id": "arxiv-2502.16525",
+      "run_id": "run-20261031-094049",
+      "title": "Lattice-Based Pruning of Recurrent Neural Networks via Poset Modeling: A Corrected Theory and a Matched-Sparsity Evaluation",
+      "title_zh": "",
+      "abstract": "这是一篇关于循环神经网络剪枝的理论修正稿：作者发现旧版“用偏序集和依赖格挑选关键神经元”的剪枝准则在数学上并不成立，于是重写了理论，并在等稀疏度条件下重新做了公平对比。",
+      "effects": "在 128 单元 LSTM、逐行与分块序列 MNIST 上（3 个随机种子、相同训练预算），旧版规则要么删光所有循环权重、要么与随机按列剪枝无异；新的序分数不比度数、PageRank 或范数更好；从初始化起强制无环结构，在 50% 和 90% 稀疏度下分别损失 2.1 和 10.5 个百分点。",
+      "mechanism": "把阈值化后的依赖图压缩成强连通分量，得到良定义的依赖序、分级序分数和无环剪枝规则，并证明在 Cohen-Grossberg 网络和 LSTM 上无环剪枝能让局部稳定性按模块分解。",
+      "paper_url": "https://arxiv.org/abs/2502.16525",
+      "date": "2026-10-30",
+      "score": 5,
+      "score_relevance": 2,
+      "score_contribution": 3,
+      "score_reason": "剪枝属于模型压缩技术，但本文聚焦 RNN 剪枝的理论修正，只在 MNIST 上做小规模实验，结论以负面结果为主，与端侧部署关系较弱。",
+      "source_tier": "学校预印本",
+      "open_source": false,
+      "tags": [
+        "方向:剪枝稀疏",
+        "方向:模型架构"
+      ],
+      "edge_agent_scope": "非端侧Agent",
+      "edge_agent_evidence": "",
+      "arxiv_date_basis": "updated",
+      "arxiv_revision_note": "v2（2026-10-30）为实质修订：作者指出 v1 的关键集准则在稠密循环层上不成立，撤回了 v1 的 Transformer 扩展，改用强连通分量构造新的依赖序与无环剪枝规则，并新增 LSTM 在等稀疏度、多随机种子下与度数、PageRank、范数及随机剪枝的对比实验，结论由“方法有效”改为“序结构需人为施加而非自然存在”。",
+      "insight_person": "",
+      "wiki_url": "",
+      "authors": "Rakesh Sengupta",
+      "vendors": "",
+      "venue": "arXiv",
+      "recommendation": "纳入",
+      "recommendation_reason": "",
+      "detail": null,
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     },
     {
       "id": "arxiv-2610.39796",
@@ -5819,11 +6874,11 @@
       "recommendation": "纳入",
       "recommendation_reason": "",
       "detail": null,
-      "updated_at": "2026-11-01T09:22:12.639740+00:00"
+      "updated_at": "2026-11-02T11:37:42.416980+00:00"
     }
   ],
   "weekly": {
-    "overview": "本周端侧 AI 动态（10-27~11-02，部分周，数据截至 11-01，11-02 后追加）：主线是“端侧智能体的系统接口成形”。手机侧，Google 在 Android Dev Summit 推出 ML Kit 端侧智能体 API（alpha）：基于 Gemini Nano 4，规划与推理循环完全在设备上运行，自动调用 App 定义的工具并保存多轮会话，AppFunctions 同步进入 beta；LiteRT 运行时进入 Play 服务，GPU 推理约快 1.4 倍、应用安装包小约 8MB。PC 侧，NVIDIA RTX Spark 笔记本开售（最高 128GB 统一内存、1 PFLOPS FP4），NVIDIA App 可在前台应用与后台本地智能体之间分配 GPU；游戏角色模型 Nemotron 3.5 Bolt 的多轮工具调用全部在 RTX 电脑本地运行，NemoClaw 智能体栈也可部署在 DGX Spark 与 RTX PC 上。10-31 Apple 中国官网宣布国行 Apple 智能 11-04 起随 iOS 开发者 Beta 开测、12 月随 iOS 27.3 正式推出：由 Apple 自研生成式模型驱动，Siri、写作工具和视觉智能可接入阿里千问，本次不含 Siri AI。Apple 把 M6 放进 14 英寸 MacBook Pro 与 iMac（Neural Engine 比 M5 快 1.9 倍、LM Studio 提示词处理比 M4 快 5 倍），触屏 MacBook Pro 则以 128GB 内存主打本机跑数千亿参数模型和编程智能体；AMD Ryzen AI 软件 1.9.0 正式版取消 NPU 上大模型的 4K/16K 上下文上限，新增 Gemma-4-E2B/E4B 支持。模型与框架层，Liquid AI 发布 LFM3 端侧模型家族：1.7B 文本模型 4 比特约 1GB，MacPaw 在真实 macOS 上 65 个日常任务成功率 64%（Qwen3.5-2B 为 48%），llama.cpp v0.8.0 当周支持；阿里 MNN 3.6.2 用 DFlash 投机解码让 Qwen3.5-2B 在 iPad Pro M5 上提速 2.09 倍；NVIDIA 开源嵌入式推理运行时 TensorRT Edge-LLM。论文侧，中南大学与微软亚洲研究院在骁龙 8 Elite 等三款边缘 NPU 上实测 VLM，发现 softmax 与发热降频才是瓶颈；北大的 NORmal 用铁电 NOR 挂在 LPDDR6 总线上当手机主存，仿真比 UFS 卸载快 8.9–28 倍；ESP32-P4 单片机实时跑 6570 万参数流式语音识别；高通发布面向手表眼镜的块循环语音识别模型。周末社区实测：开发者用 Swift + MLX 在 iPhone 15 Pro 上让 Qwen 3.5 4B 离线操控网页（飞行模式可用，未开源）；Betelgeuse 让 RTX 3060 12GB 游戏 PC 跑 Qwen3.8-Flash-Next 约 22 tok/s（作者自测，已向 llama.cpp 提交 PR）。另据媒体报道（尚无合规一手来源，仅供参考）：华为 Mate 90 系列小艺升级，百余款应用接入小艺帮记与触发式 AI；联想天禧 AI 4.5 推出 AIPC 端，手机、平板可远程调用 PC 跨应用执行任务；阶跃 STEPX Neo 智能体手机首次升级个人智能体 Amoo；小米开源 0.8B 文档理解模型 Xiaomi-OCR-0；新芯航途发布 700 TOPS 车载大模型芯片 X7 Ultra；理想 AI 眼镜 Livis 的个人 Agent 接入 Hermes；长鑫 4F² 第六代 DRAM 平台完成工程样片验证；Meta 被曝与傅利叶以 NVIDIA Jetson Thor 做出人形机器人原型 Max。",
+    "overview": "本周端侧 AI 动态（10-27~11-02）：主线是“端侧智能体的系统接口成形”。手机侧，Google 在 Android Dev Summit 推出 ML Kit 端侧智能体 API（alpha）：基于 Gemini Nano 4，规划与推理循环完全在设备上运行，自动调用 App 定义的工具并保存多轮会话，AppFunctions 同步进入 beta；LiteRT 运行时进入 Play 服务，GPU 推理约快 1.4 倍、应用安装包小约 8MB。PC 侧，NVIDIA RTX Spark 笔记本开售（最高 128GB 统一内存、1 PFLOPS FP4），NVIDIA App 可在前台应用与后台本地智能体之间分配 GPU；游戏角色模型 Nemotron 3.5 Bolt 的多轮工具调用全部在 RTX 电脑本地运行，NemoClaw 智能体栈也可部署在 DGX Spark 与 RTX PC 上。10-31 Apple 中国官网宣布国行 Apple 智能 11-04 起随 iOS 开发者 Beta 开测、12 月随 iOS 27.3 正式推出：由 Apple 自研生成式模型驱动，Siri、写作工具和视觉智能可接入阿里千问，本次不含 Siri AI。Apple 把 M6 放进 14 英寸 MacBook Pro 与 iMac（Neural Engine 比 M5 快 1.9 倍、LM Studio 提示词处理比 M4 快 5 倍），触屏 MacBook Pro 则以 128GB 内存主打本机跑数千亿参数模型和编程智能体；AMD Ryzen AI 软件 1.9.0 正式版取消 NPU 上大模型的 4K/16K 上下文上限，新增 Gemma-4-E2B/E4B 支持。模型与框架层，Liquid AI 发布 LFM3 端侧模型家族：1.7B 文本模型 4 比特约 1GB，MacPaw 在真实 macOS 上 65 个日常任务成功率 64%（Qwen3.5-2B 为 48%），llama.cpp v0.8.0 当周支持；阿里 MNN 3.6.2 用 DFlash 投机解码让 Qwen3.5-2B 在 iPad Pro M5 上提速 2.09 倍；NVIDIA 开源嵌入式推理运行时 TensorRT Edge-LLM。论文侧，中南大学与微软亚洲研究院在骁龙 8 Elite 等三款边缘 NPU 上实测 VLM，发现 softmax 与发热降频才是瓶颈；北大的 NORmal 用铁电 NOR 挂在 LPDDR6 总线上当手机主存，仿真比 UFS 卸载快 8.9–28 倍；ESP32-P4 单片机实时跑 6570 万参数流式语音识别；高通发布面向手表眼镜的块循环语音识别模型；苏州大学与地瓜机器人等的 RTPolicy 在 RDK S600 上把多视角机器人操作策略跑到 32.9Hz（同板 π0.5 约 3Hz），代码已开源。周末社区实测：开发者用 Swift + MLX 在 iPhone 15 Pro 上让 Qwen 3.5 4B 离线操控网页（飞行模式可用，未开源）；Betelgeuse 让 RTX 3060 12GB 游戏 PC 跑 Qwen3.8-Flash-Next 约 22 tok/s（作者自测，已向 llama.cpp 提交 PR）。周一补全：此芯科技在 P1 SoC 上用纯 CPU 离线运行面壁 MiniCPM-OCR 与 2B 质检模型 Jev，单样本提速约 2.49 倍；Liquid AI 的 LiteRT 版决策模型 d1-Omni-2B 在 Galaxy S26 NPU 上单次判断约 67 毫秒；树莓派 5 等 16GB 产品因内存短缺涨价 80 美元。另据媒体报道（尚无合规一手来源，仅供参考）：华为 Mate 90 系列小艺升级，百余款应用接入小艺帮记与触发式 AI；联想天禧 AI 4.5 推出 AIPC 端，手机、平板可远程调用 PC 跨应用执行任务；阶跃 STEPX Neo 智能体手机首次升级个人智能体 Amoo；小米开源 0.8B 文档理解模型 Xiaomi-OCR-0；新芯航途发布 700 TOPS 车载大模型芯片 X7 Ultra；理想 AI 眼镜 Livis 的个人 Agent 接入 Hermes；长鑫 4F² 第六代 DRAM 平台完成工程样片验证；Meta 被曝与傅利叶以 NVIDIA Jetson Thor 做出人形机器人原型 Max。",
     "highlights": [
       {
         "url": "https://developer.android.com/blog/posts/build-it-your-way-a-next-era-of-android-development",
@@ -5886,62 +6941,94 @@
     "items": [
       {
         "rank": 1,
-        "repo": "nightly-labs/openbot",
-        "url": "https://github.com/nightly-labs/openbot",
-        "total": "4,431★",
-        "week": "3,533",
-        "desc": "A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file…"
+        "repo": "wangzan101/Mika",
+        "url": "https://github.com/wangzan101/Mika",
+        "total": "4,770★",
+        "week": "4,770",
+        "desc": "An on-device AI agent for Android that operates apps and the web to get things done for you."
       },
       {
         "rank": 2,
-        "repo": "wangzan101/Mika",
-        "url": "https://github.com/wangzan101/Mika",
-        "total": "3,149★",
-        "week": "3,149",
-        "desc": "An on-device AI agent for Android that operates apps and the web to get things done for you."
+        "repo": "nightly-labs/openbot",
+        "url": "https://github.com/nightly-labs/openbot",
+        "total": "4,606★",
+        "week": "3,589",
+        "desc": "A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file…"
       },
       {
         "rank": 3,
         "repo": "trymirai/uzu",
         "url": "https://github.com/trymirai/uzu",
-        "total": "3,151★",
-        "week": "573",
+        "total": "3,181★",
+        "week": "590",
         "desc": "A high-performance inference engine for AI models"
       },
       {
         "rank": 4,
         "repo": "k2-fsa/sherpa-onnx",
         "url": "https://github.com/k2-fsa/sherpa-onnx",
-        "total": "15,655★",
-        "week": "176",
+        "total": "15,678★",
+        "week": "163",
         "desc": "Speech-to-text, text-to-speech, speaker diarization, speech enhancement, source separation, and VAD using next-gen Kaldi with onnxruntime…"
       },
       {
         "rank": 5,
         "repo": "carloslfu/slotstream",
         "url": "https://github.com/carloslfu/slotstream",
-        "total": "638★",
-        "week": "155",
+        "total": "642★",
+        "week": "158",
         "desc": "Run a 105 GB AI model on a Mac that can't hold it. Qwen3.8-Flash-Next 4-bit, streamed from SSD on 16–64 GB Apple Silicon Macs. Fully…"
       },
       {
         "rank": 6,
-        "repo": "watt-mind/pii-guard",
-        "url": "https://github.com/watt-mind/pii-guard",
-        "total": "7★",
-        "week": "7",
-        "desc": "Open-source privacy firewall for AI agents: masks personal data in text, tool calls and images before it reaches the LLM, and restores it…"
+        "repo": "osaurus-ai/osaurus",
+        "url": "https://github.com/osaurus-ai/osaurus",
+        "total": "8,103★",
+        "week": "34",
+        "desc": "Own your AI. The native macOS harness for AI agents -- any model, persistent memory, autonomous execution, cryptographic identity. Built…"
       },
       {
         "rank": 7,
-        "repo": "Cloak121210/Leafy",
-        "url": "https://github.com/Cloak121210/Leafy",
-        "total": "5★",
-        "week": "5",
-        "desc": "Leafy 🌿 — A PocketPal-style, 100% offline local AI inference app for Android. Features llama.cpp, Bitnet.cpp (1.58-bit), T-MAC (LUT), and…"
+        "repo": "thefahien/elpis-on-7900xtx",
+        "url": "https://github.com/thefahien/elpis-on-7900xtx",
+        "total": "9★",
+        "week": "9",
+        "desc": "Qwen3.8-27B EXL3 + DFlash2 speculative decoding on an AMD RX 7900 XTX (exllamav3-rocm): recipe, patches, benchmarks"
       },
       {
         "rank": 8,
+        "repo": "kotuke/lumilo",
+        "url": "https://github.com/kotuke/lumilo",
+        "total": "4★",
+        "week": "4",
+        "desc": "Menu-bar panel for local LLM engines on macOS: run Splash or llama.cpp, watch memory and speed, get models from Hugging Face"
+      },
+      {
+        "rank": 9,
+        "repo": "springmusk026/locus",
+        "url": "https://github.com/springmusk026/locus",
+        "total": "3★",
+        "week": "3",
+        "desc": "A local-first AI agent for Android: bring your own model (API key, ChatGPT plan, local server or on-device Gemma), with a Linux workspace…"
+      },
+      {
+        "rank": 10,
+        "repo": "Th0b1a5/ML-Pointer-Game",
+        "url": "https://github.com/Th0b1a5/ML-Pointer-Game",
+        "total": "3★",
+        "week": "3",
+        "desc": "Real-time PyTorch pointer game with hardware-accelerated Intel NPU inference via OpenVINO."
+      },
+      {
+        "rank": 11,
+        "repo": "PixelEzz/NoVram",
+        "url": "https://github.com/PixelEzz/NoVram",
+        "total": "3★",
+        "week": "3",
+        "desc": "Ultra-fast, zero-dependency CPU-only LLM runner & OpenAI micro-server. Run GGUF models on system RAM with speculative decoding (No VRAM /…"
+      },
+      {
+        "rank": 12,
         "repo": "SKrishna-7/localstrm",
         "url": "https://github.com/SKrishna-7/localstrm",
         "total": "3★",
@@ -5949,15 +7036,7 @@
         "desc": "An educational PyTorch LLM inference engine built from first principles to explore modern serving systems, PagedAttention, KV-cache…"
       },
       {
-        "rank": 9,
-        "repo": "thealiceiris/mac-organizer",
-        "url": "https://github.com/thealiceiris/mac-organizer",
-        "total": "2★",
-        "week": "2",
-        "desc": "Automatic, on-device file organizer for macOS: rule-based routing plus local-LLM smart sorting"
-      },
-      {
-        "rank": 10,
+        "rank": 13,
         "repo": "hypergames-ai/Persona-Drift-Lab",
         "url": "https://github.com/hypergames-ai/Persona-Drift-Lab",
         "total": "2★",
@@ -5965,7 +7044,23 @@
         "desc": "On-device Swift lab comparing persona drift in LLM agents: Identity defined by Traits vs Deeds vs Hyperreality, which comes out ahead?"
       },
       {
-        "rank": 11,
+        "rank": 14,
+        "repo": "DhanushNehru/goldfish-memory",
+        "url": "https://github.com/DhanushNehru/goldfish-memory",
+        "total": "2★",
+        "week": "2",
+        "desc": "On-device persistent memory for AI coding agents: local-first, no networking code, verified offline in CI. SQLite + local embeddings, one…"
+      },
+      {
+        "rank": 15,
+        "repo": "KalpitRathod/MobileAIFramework",
+        "url": "https://github.com/KalpitRathod/MobileAIFramework",
+        "total": "2★",
+        "week": "2",
+        "desc": "MobileAI Framework: Production-grade on-device AI runtime for Android. CPU Big-Core pinning, dynamic thermal governor, SQLite vector DB…"
+      },
+      {
+        "rank": 16,
         "repo": "keepdeploying/faster_flutter_ffi_ai",
         "url": "https://github.com/keepdeploying/faster_flutter_ffi_ai",
         "total": "2★",
@@ -5973,15 +7068,15 @@
         "desc": "Demo and the Measurement harness Flutter App for the talk \"Faster Flutter: Accessing On-Device AI with Dart FFI\". One Flutter app does the…"
       },
       {
-        "rank": 12,
-        "repo": "springmusk026/locus",
-        "url": "https://github.com/springmusk026/locus",
+        "rank": 17,
+        "repo": "QwenApp/SpecOPD",
+        "url": "https://github.com/QwenApp/SpecOPD",
         "total": "2★",
         "week": "2",
-        "desc": "A local-first AI agent for Android: bring your own model (API key, ChatGPT plan, local server or on-device Gemma), with a Linux workspace…"
+        "desc": "SpecOPD: Branch-parallel on-policy distillation for faster speculative decoding."
       },
       {
-        "rank": 13,
+        "rank": 18,
         "repo": "TheRealBrofessor/cortexzero-engine",
         "url": "https://github.com/TheRealBrofessor/cortexzero-engine",
         "total": "2★",
@@ -5989,116 +7084,132 @@
         "desc": "More capability. Same model. A tiny local LLM only routes; reviewed packs answer, check and act. Python reference implementation with full…"
       },
       {
-        "rank": 14,
-        "repo": "kotuke/lumilo",
-        "url": "https://github.com/kotuke/lumilo",
+        "rank": 19,
+        "repo": "j7ckson/estratto-engine",
+        "url": "https://github.com/j7ckson/estratto-engine",
         "total": "2★",
         "week": "2",
-        "desc": "Menu-bar panel for local LLM engines on macOS: run Splash or llama.cpp, watch memory and speed, get models from Hugging Face"
-      },
-      {
-        "rank": 15,
-        "repo": "ALL-PAY-C/HarnessForAndroid",
-        "url": "https://github.com/ALL-PAY-C/HarnessForAndroid",
-        "total": "1★",
-        "week": "1",
-        "desc": "Android client for DeepSeek Harness: on-device Node.js 22 runtime, plugin host, and Linux environment"
-      },
-      {
-        "rank": 16,
-        "repo": "KalpitRathod/MobileAIFramework",
-        "url": "https://github.com/KalpitRathod/MobileAIFramework",
-        "total": "1★",
-        "week": "1",
-        "desc": "MobileAI Framework: Production-grade on-device AI runtime for Android. CPU Big-Core pinning, dynamic thermal governor, SQLite vector DB…"
-      },
-      {
-        "rank": 17,
-        "repo": "saad-git-007/omnichat",
-        "url": "https://github.com/saad-git-007/omnichat",
-        "total": "1★",
-        "week": "1",
-        "desc": "Private on-device AI assistant for Android: LFM3-Omni-2B via llama.cpp on the Snapdragon NPU. Chat with text, photos, audio and documents…"
-      },
-      {
-        "rank": 18,
-        "repo": "juanknowit/TESS",
-        "url": "https://github.com/juanknowit/TESS",
-        "total": "1★",
-        "week": "1",
-        "desc": "A JARVIS-style voice assistant for macOS. Say \"Hey Tess\": on-device wake word, Claude, OpenAI or local Ollama as the brain, and skills for…"
-      },
-      {
-        "rank": 19,
-        "repo": "napatkitiprasanpong/MatePetTemi",
-        "url": "https://github.com/napatkitiprasanpong/MatePetTemi",
-        "total": "1★",
-        "week": "1",
-        "desc": "An offline AI companion for the temi robot. A VRM avatar on temi's screen chats using a small on-device LLM (SmolLM2 360M via llama.cpp)…"
+        "desc": "A local-first data management and analytics app for individuals and small teams. Import data, ask questions in plain language, and get…"
       },
       {
         "rank": 20,
-        "repo": "hakanfalc10/TinyML-ECG-Arrhythmia-Detector",
-        "url": "https://github.com/hakanfalc10/TinyML-ECG-Arrhythmia-Detector",
-        "total": "1★",
-        "week": "1",
-        "desc": "Real-time edge-AI arrhythmia classification using Butterworth DSP and embedded C++ inference on ESP32."
+        "repo": "whoAngeel/pokerhub",
+        "url": "https://github.com/whoAngeel/pokerhub",
+        "total": "2★",
+        "week": "2",
+        "desc": "is a modular, local-first multi-agent Texas Hold'em simulation engine for open-weight LLMs. Run LLMs (Gemma 4, Llama 3, Qwen, DeepSeek)…"
       }
     ]
   },
   "community": {
     "window": {
-      "start": "2026-10-26",
-      "end": "2026-11-01"
+      "start": "2026-10-27",
+      "end": "2026-11-02"
     },
     "coverage": [
       {
         "source": "X",
         "status": "found",
-        "note": "从 Reddit/HN/Bluesky 帖子里抽取 x.com 状态链接，按 snowflake 时间筛进 10-27~10-30，再用 curl/8.4.0 未登录回核 article:published_time。收 Liquid AI 官方账号 10-27 发布 LFM3 的原帖；OpenBMB、xenova 等相关原帖同样核到窗口内，但内容与其他来源重复，没有另收。10-31 增量补采：从 10-30~10-31 的 Reddit/HN/Bluesky 帖子中抽取 x.com 状态链接并按 snowflake 筛时间，只有 6 条落入窗口（Anthropic 套餐改名、Suncatcher 卫星、CVE 等），均与端侧无关，没有新增；X 本身无法未登录检索，增量部分属受限。11-01 增量补采：从 10-31 起的 HN/Reddit/Bluesky/Mastodon 帖子中抽取 x.com 状态链接，按 snowflake 筛出 8 条并用 curl/8.4.0 回核 article:published_time，内容为 GLM 5.5 尺寸传闻、bootgpt 引导扇区模型作者原帖、opencode 语音输入宣传等，传闻不收、其余与端侧部署关系弱，没有新增。（本期为部分周：窗口按校验要求写 10-26~11-01，内容只收 10-27 起）"
+        "note": "从 Reddit/HN/Bluesky 帖子里抽取 x.com 状态链接，按 snowflake 时间筛进 10-27~10-30，再用 curl/8.4.0 未登录回核 article:published_time。收 Liquid AI 官方账号 10-27 发布 LFM3 的原帖；OpenBMB、xenova 等相关原帖同样核到窗口内，但内容与其他来源重复，没有另收。10-31 增量补采：从 10-30~10-31 的 Reddit/HN/Bluesky 帖子中抽取 x.com 状态链接并按 snowflake 筛时间，只有 6 条落入窗口（Anthropic 套餐改名、Suncatcher 卫星、CVE 等），均与端侧无关，没有新增；X 本身无法未登录检索，增量部分属受限。11-01 增量补采：从 10-31 起的 HN/Reddit/Bluesky/Mastodon 帖子中抽取 x.com 状态链接，按 snowflake 筛出 8 条并用 curl/8.4.0 回核 article:published_time，内容为 GLM 5.5 尺寸传闻、bootgpt 引导扇区模型作者原帖、opencode 语音输入宣传等，传闻不收、其余与端侧部署关系弱，没有新增。11-02 增量补采：从 11-01 起的 HN/Reddit/Bluesky/Mastodon 帖子中抽取 x.com 状态链接，按 snowflake 筛出 6 条落在 11-01，并用 curl/8.4.0 回核 article:published_time，内容为 DeepSeek 超级 Agent、编程 Agent 决策守门 CLI、表征学习论文等，与端侧部署无关，没有新增。（11-02 补全后覆盖全窗口 10-27~11-02）"
       },
       {
         "source": "Bluesky",
         "status": "found",
-        "note": "用 api.bsky.app searchPosts（since 10-27、until 10-30）检索 on-device AI、local LLM、LFM3、llama.cpp、NPU、MiniCPM、MLX 等词。收 Unsloth 官方账号的本地模型控制浏览器帖；Apple M6 MacBook Pro 等硬件新闻转帖留给硬件雷达，OnDevice Kit 改收 Mastodon 同一作者的原帖。10-31 增量补采：searchPosts（since 10-30、until 10-31）检索 16 个词约 1000 帖，绝大多数是对 Altman“本地推理浪费 DRAM”的反应（已由 Reddit 条目承接）和 LFM3 转述，没有新的一手端侧内容，未新增。11-01 增量补采：searchPosts（since 10-31、until 11-01）检索 20 个词约 900 帖，绝大多数仍是对 Altman 本地推理言论的反应和 LFM3 个人测速，没有新的一手端侧内容，未新增。（本期为部分周：窗口按校验要求写 10-26~11-01，内容只收 10-27 起）"
+        "note": "用 api.bsky.app searchPosts（since 10-27、until 10-30）检索 on-device AI、local LLM、LFM3、llama.cpp、NPU、MiniCPM、MLX 等词。收 Unsloth 官方账号的本地模型控制浏览器帖；Apple M6 MacBook Pro 等硬件新闻转帖留给硬件雷达，OnDevice Kit 改收 Mastodon 同一作者的原帖。10-31 增量补采：searchPosts（since 10-30、until 10-31）检索 16 个词约 1000 帖，绝大多数是对 Altman“本地推理浪费 DRAM”的反应（已由 Reddit 条目承接）和 LFM3 转述，没有新的一手端侧内容，未新增。11-01 增量补采：searchPosts（since 10-31、until 11-01）检索 20 个词约 900 帖，绝大多数仍是对 Altman 本地推理言论的反应和 LFM3 个人测速，没有新的一手端侧内容，未新增。11-02 增量补采：searchPosts（since 11-01、until 11-02）检索 22 个词约 1000 帖，绝大多数是对 Altman 本地推理言论的后续反应、LFM3 转述、Suncatcher 卫星新闻和同名无关词（如 snapdragon 花卉），没有新的一手端侧内容，未新增。（11-02 补全后覆盖全窗口 10-27~11-02）"
       },
       {
         "source": "Reddit",
         "status": "found",
-        "note": "用 arctic-shift 翻页抓取 r/LocalLLaMA（362 帖）、r/LocalLLM（602 帖）在 10-27~10-30 的全部帖子，另抽查 r/androiddev、r/MachineLearning、r/JetsonNano。按设备语境筛选后收 5 条，一律记为“仅线索”。10-31 增量补采：arctic-shift 抓取 10-30~10-31 r/LocalLLaMA 126 帖、r/LocalLLM 198 帖，并查 r/androiddev、r/MachineLearning、r/JetsonNano。新增 5 条（Roll iPhone 神经网络引擎相册检索、Marco-Nano Pixel 10a、BigMoeOnEdge 手机跑分、LFM3-Omni 浏览器 WebGPU、Altman 本地推理争议），一律“仅线索”；多篇被版主移除、正文不可见的帖子没有收。11-01 增量补采：arctic-shift 抓取 10-31~11-01 r/LocalLLaMA、r/LocalLLM 各 100 帖并查 r/androiddev、r/MachineLearning、r/JetsonNano。新增 Betelgeuse（RTX 3060 + 16GB 内存跑百亿级 MoE，460+ 赞）和 RK3588S 跑 Qwen3.8-27B（原帖在 r/Qwen_AI）2 条，一律“仅线索”；NVIDIA Nemotron 3.5 Bolt E4B 转帖（HF 仓库 10-05 已建、早于窗口）、Opera WebAI 标准转述（与已收 Opera 条目同一件事）、被版主移除的帖子均未收。（本期为部分周：窗口按校验要求写 10-26~11-01，内容只收 10-27 起）"
+        "note": "用 arctic-shift 翻页抓取 r/LocalLLaMA（362 帖）、r/LocalLLM（602 帖）在 10-27~10-30 的全部帖子，另抽查 r/androiddev、r/MachineLearning、r/JetsonNano。按设备语境筛选后收 5 条，一律记为“仅线索”。10-31 增量补采：arctic-shift 抓取 10-30~10-31 r/LocalLLaMA 126 帖、r/LocalLLM 198 帖，并查 r/androiddev、r/MachineLearning、r/JetsonNano。新增 5 条（Roll iPhone 神经网络引擎相册检索、Marco-Nano Pixel 10a、BigMoeOnEdge 手机跑分、LFM3-Omni 浏览器 WebGPU、Altman 本地推理争议），一律“仅线索”；多篇被版主移除、正文不可见的帖子没有收。11-01 增量补采：arctic-shift 抓取 10-31~11-01 r/LocalLLaMA、r/LocalLLM 各 100 帖并查 r/androiddev、r/MachineLearning、r/JetsonNano。新增 Betelgeuse（RTX 3060 + 16GB 内存跑百亿级 MoE，460+ 赞）和 RK3588S 跑 Qwen3.8-27B（原帖在 r/Qwen_AI）2 条，一律“仅线索”；NVIDIA Nemotron 3.5 Bolt E4B 转帖（HF 仓库 10-05 已建、早于窗口）、Opera WebAI 标准转述（与已收 Opera 条目同一件事）、被版主移除的帖子均未收。11-02 增量补采：arctic-shift 抓取 11-01 00:00 起的 r/LocalLLaMA（约 100 帖，翻到 11-01 03:00，更早部分已由上次补采覆盖）、r/LocalLLM（约 190 帖，补翻到 11-01 00:00）以及 r/androiddev、r/MachineLearning、r/JetsonNano、r/Qwen_AI、r/ollama。新增 5 条：SmolChat v17 安卓本地服务器、FireTheDJ 安卓端 Demucs 音轨分离、Strata 本地 Agent 前缀缓存补丁（270+ 赞）、Seeed Jetson AGX Orin MTP 人群监测 Agent、Xbox One S 跑 LFM3，一律“仅线索”。tandem.cpp（4090 跑 Qwen3.8-Flash-Next）与已收的 Betelgeuse 同类、llama2.c 跑在 iPod 上属趣味演示、Qwen3.8 破解 reCAPTCHA 帖缺少技术细节、Heretic 2.0 为去审查工具，均未收。（11-02 补全后覆盖全窗口 10-27~11-02）"
       },
       {
         "source": "Hacker News",
         "status": "found",
-        "note": "用 hn.algolia search_by_date（created_at_i 1793059200~1793404800）检索 on-device、local LLM、llama.cpp、NPU、MLX、iPhone、Android、Raspberry Pi、LFM3、WebGPU 等 30 个词。收树莓派 Pico 跑世界模型、Draw Things Local Code、Opera 浏览器内置本地模型 3 条；LFM3 讨论帖（171 分）与 X 原帖重复，没有另收。10-31 增量补采：按 UTC 重算 created_at_i 1793318400~1793491200（10-30 00:00~11-01 00:00）检索 35 个词。新增 Cerebellum（机器人本地决策 + 云端审批）1 条；nesformer（把 NES CPU 编译进 Qwen 权重，261 分）与端侧部署无关、Altman 争议改收 Reddit、Suncatcher 卫星属在轨数据中心，均未收。11-01 增量补采：按 UTC 重算 created_at_i>1793404800（10-31 00:00 起）检索 36 个词。Memdoor 五个 Qwen3.8-27B 协作解题（214 分）实测跑在 OpenRouter 云端、bootgpt 引导扇区语言模型（81 分）属趣味演示、InferSSD 为 10-30 低热度帖且与已收专家流式条目同类，均未收，没有新增。（本期为部分周：窗口按校验要求写 10-26~11-01，内容只收 10-27 起）"
+        "note": "用 hn.algolia search_by_date（created_at_i 1793059200~1793404800）检索 on-device、local LLM、llama.cpp、NPU、MLX、iPhone、Android、Raspberry Pi、LFM3、WebGPU 等 30 个词。收树莓派 Pico 跑世界模型、Draw Things Local Code、Opera 浏览器内置本地模型 3 条；LFM3 讨论帖（171 分）与 X 原帖重复，没有另收。10-31 增量补采：按 UTC 重算 created_at_i 1793318400~1793491200（10-30 00:00~11-01 00:00）检索 35 个词。新增 Cerebellum（机器人本地决策 + 云端审批）1 条；nesformer（把 NES CPU 编译进 Qwen 权重，261 分）与端侧部署无关、Altman 争议改收 Reddit、Suncatcher 卫星属在轨数据中心，均未收。11-01 增量补采：按 UTC 重算 created_at_i>1793404800（10-31 00:00 起）检索 36 个词。Memdoor 五个 Qwen3.8-27B 协作解题（214 分）实测跑在 OpenRouter 云端、bootgpt 引导扇区语言模型（81 分）属趣味演示、InferSSD 为 10-30 低热度帖且与已收专家流式条目同类，均未收，没有新增。11-02 增量补采：按 UTC 重算 created_at_i>1793491200（11-01 00:00 起）检索 40 个词。Corollary（Mac 上调用 Apple 端侧模型的 LaTeX 编辑器）、浏览器 WebGPU 朗读网页、离线维基问答等都是 1–3 分的低热度帖且信息量不足；NVIDIA DGX Spark 推理引擎 Flare 属桌面服务器；Elephant-Goldfish 是云端编程 Agent 插件，均未收，没有新增。（11-02 补全后覆盖全窗口 10-27~11-02）"
       },
       {
         "source": "Mastodon",
         "status": "found",
-        "note": "翻查 mastodon.social 上 #localllm #ondeviceai #llamacpp #localai #edgeai #ollama #mlx #npu #LFM3 标签时间线，并按发帖时间筛选。收 OnDevice Kit（iPhone 本地 LLM 功能包）原帖；其余多为 LFM3 转述和教程。10-31 增量补采：重查 12 个标签时间线 10-30 起的帖子，多为 Altman 争议转发、OnDevice Kit 作者的同一产品演示和教程，没有新增。11-01 增量补采：重查 12 个标签时间线 10-31 起的帖子，新增 fornews 团队发布的 Apple 端侧模型与 Private Cloud Compute 新闻 RAG 对比报告 1 条（techhub.social）；其余多为 Altman 争议转发、InferSSD/LattePanda 新闻转述和教程。（本期为部分周：窗口按校验要求写 10-26~11-01，内容只收 10-27 起）"
+        "note": "翻查 mastodon.social 上 #localllm #ondeviceai #llamacpp #localai #edgeai #ollama #mlx #npu #LFM3 标签时间线，并按发帖时间筛选。收 OnDevice Kit（iPhone 本地 LLM 功能包）原帖；其余多为 LFM3 转述和教程。10-31 增量补采：重查 12 个标签时间线 10-30 起的帖子，多为 Altman 争议转发、OnDevice Kit 作者的同一产品演示和教程，没有新增。11-01 增量补采：重查 12 个标签时间线 10-31 起的帖子，新增 fornews 团队发布的 Apple 端侧模型与 Private Cloud Compute 新闻 RAG 对比报告 1 条（techhub.social）；其余多为 Altman 争议转发、InferSSD/LattePanda 新闻转述和教程。11-02 增量补采：重查 14 个标签时间线 11-01 起的帖子，多为 Altman 争议转发、InferSSD/LattePanda 新闻转述、德语本地 AI 教程和 BrainChip 开发套件新闻，没有新的一手端侧内容，未新增。（11-02 补全后覆盖全窗口 10-27~11-02）"
       },
       {
         "source": "GitHub Discussions",
         "status": "found",
-        "note": "按 <relative-time> 解析 ggml-org/llama.cpp、ml-explore/mlx、google-ai-edge/LiteRT-LM、pytorch/executorch、ollama/ollama 的讨论列表（按创建时间排序）。llama.cpp 窗口内有 17 个讨论，收 3 条；其他仓库窗口内没有新的对题讨论。10-31 增量补采：重查 llama.cpp、mlx、LiteRT-LM、executorch、ollama、google-ai-edge/gallery、mlc-llm 讨论列表。llama.cpp 10-30 起有 5 个新讨论（SYCL 闪存注意力修复、22KB 客户端、ROCm 卸载等），信息量不足或偏服务器，没有新增；其余仓库无新讨论。11-01 增量补采：重查 llama.cpp、mlx、LiteRT、LiteRT-LM、executorch、ollama、google-ai-edge/gallery、mlc-llm 讨论列表。新增 mlx 讨论区的 iPhone 全端侧 Swift Agent 运行时、llama.cpp 讨论区的安卓小票识别 VLM 实测 2 条；llama.cpp 10-31 起的 RTX Spark 跑分、Termux Vulkan 脚本、无草稿模型投机解码 RFC、去审查模型发布信息量不足或偏离端侧，未收。（本期为部分周：窗口按校验要求写 10-26~11-01，内容只收 10-27 起）"
+        "note": "按 <relative-time> 解析 ggml-org/llama.cpp、ml-explore/mlx、google-ai-edge/LiteRT-LM、pytorch/executorch、ollama/ollama 的讨论列表（按创建时间排序）。llama.cpp 窗口内有 17 个讨论，收 3 条；其他仓库窗口内没有新的对题讨论。10-31 增量补采：重查 llama.cpp、mlx、LiteRT-LM、executorch、ollama、google-ai-edge/gallery、mlc-llm 讨论列表。llama.cpp 10-30 起有 5 个新讨论（SYCL 闪存注意力修复、22KB 客户端、ROCm 卸载等），信息量不足或偏服务器，没有新增；其余仓库无新讨论。11-01 增量补采：重查 llama.cpp、mlx、LiteRT、LiteRT-LM、executorch、ollama、google-ai-edge/gallery、mlc-llm 讨论列表。新增 mlx 讨论区的 iPhone 全端侧 Swift Agent 运行时、llama.cpp 讨论区的安卓小票识别 VLM 实测 2 条；llama.cpp 10-31 起的 RTX Spark 跑分、Termux Vulkan 脚本、无草稿模型投机解码 RFC、去审查模型发布信息量不足或偏离端侧，未收。11-02 增量补采：重查 llama.cpp、mlx、LiteRT、executorch、google-ai-edge/gallery、onnxruntime-genai 讨论列表（LiteRT-LM、ollama、mlc-llm 没有开放讨论区）。新增 llama.cpp 讨论区的骁龙 630 老手机低比特量化速度与能耗实测 1 条；llama-cli 工具调用的功能建议没有实质内容，未收；其余仓库 11-01 起没有新讨论。（11-02 补全后覆盖全窗口 10-27~11-02）"
       },
       {
         "source": "Hugging Face",
         "status": "found",
-        "note": "用 HF models API 按 createdAt 查 LiquidAI、openbmb、litert-community、google、qualcomm、apple、nvidia、Qwen 等组织。LiquidAI 10-27 一次建了 LFM3/d1 的数十个 MLX/GGUF/ONNX 仓，有官方博客佐证但属同一发布；收 litert-community 的 LFM3-1.7B LiteRT-LM 转换仓，卡片里有 Galaxy S26 和 Pixel 8a 实测。10-31 增量补采：按 createdAt 重查各组织 10-30 起新建仓库。新增 litert-community/parakeet-ultra（Galaxy S26 NPU 语音识别实测）和 microsoft/Mage-VL-Cowork（4B 电脑操作模型）2 条；Spark-X2.6 的 LiteRT 转换（原模型 10-19 发布）、mlx-community 的 LFM3 量化版与已收内容重复，没有收。11-01 增量补采：按 createdAt 重查 30 余个组织 10-31 起新建的模型和 Space，只有 litert-community 的 Spark-X2.6 转换（原模型 10-19 发布）、已收的 parakeet-ultra 和 onnx-community 的小型转换仓，没有新增。（本期为部分周：窗口按校验要求写 10-26~11-01，内容只收 10-27 起）"
+        "note": "用 HF models API 按 createdAt 查 LiquidAI、openbmb、litert-community、google、qualcomm、apple、nvidia、Qwen 等组织。LiquidAI 10-27 一次建了 LFM3/d1 的数十个 MLX/GGUF/ONNX 仓，有官方博客佐证但属同一发布；收 litert-community 的 LFM3-1.7B LiteRT-LM 转换仓，卡片里有 Galaxy S26 和 Pixel 8a 实测。10-31 增量补采：按 createdAt 重查各组织 10-30 起新建仓库。新增 litert-community/parakeet-ultra（Galaxy S26 NPU 语音识别实测）和 microsoft/Mage-VL-Cowork（4B 电脑操作模型）2 条；Spark-X2.6 的 LiteRT 转换（原模型 10-19 发布）、mlx-community 的 LFM3 量化版与已收内容重复，没有收。11-01 增量补采：按 createdAt 重查 30 余个组织 10-31 起新建的模型和 Space，只有 litert-community 的 Spark-X2.6 转换（原模型 10-19 发布）、已收的 parakeet-ultra 和 onnx-community 的小型转换仓，没有新增。11-02 增量补采：按 createdAt 重查 40 个组织 11-01 起新建的模型和 Space。新增 litert-community/d1-Omni-2B-LiteRT（Galaxy S26 NPU 决策模型实测）1 条，同日发布的 d1-2B-LiteRT 合并在该条说明；mlx-community 的各类量化转换、bartowski 的社区微调 GGUF 没有端侧实测，未收。（11-02 补全后覆盖全窗口 10-27~11-02）"
       },
       {
         "source": "YouTube / Bilibili",
         "status": "found",
-        "note": "YouTube 搜索结果页（本周过滤）加视频页 publishDate 回核，收 Android Developers 官方频道 2 场 Android Dev Summit 端侧 AI 讲座、OpenBMB 官方 MiniCPM-OCR iPhone/iPad 演示；Liquid AI 官方 LFM3 介绍视频（10-27）与 X 原帖重复，没有另收。Bilibili 搜索接口返回错误页，没有拿到结果，视为受限。10-31 增量补采：YouTube 本周过滤搜索加 publishDate 回核，新增 Android Developers 官方 Formula E 端侧 Agent 讲座 1 条；Snapdragon 官方 PC Agent 宣传片无实质信息、Google AI Edge Foresight 为 10-06 旧发布，没有收。Bilibili 搜索接口部分查询被限流，拿到的结果均为非官方 UP 主，视为受限。11-01 增量补采：YouTube 按上传日期过滤搜索 14 个词，结果均为个人频道的评测和教程，没有官方频道新视频，未新增；Bilibili 搜索接口这次可用，10-31 起的端侧相关视频均为非官方 UP 主教程或转载，未收。（本期为部分周：窗口按校验要求写 10-26~11-01，内容只收 10-27 起）"
+        "note": "YouTube 搜索结果页（本周过滤）加视频页 publishDate 回核，收 Android Developers 官方频道 2 场 Android Dev Summit 端侧 AI 讲座、OpenBMB 官方 MiniCPM-OCR iPhone/iPad 演示；Liquid AI 官方 LFM3 介绍视频（10-27）与 X 原帖重复，没有另收。Bilibili 搜索接口返回错误页，没有拿到结果，视为受限。10-31 增量补采：YouTube 本周过滤搜索加 publishDate 回核，新增 Android Developers 官方 Formula E 端侧 Agent 讲座 1 条；Snapdragon 官方 PC Agent 宣传片无实质信息、Google AI Edge Foresight 为 10-06 旧发布，没有收。Bilibili 搜索接口部分查询被限流，拿到的结果均为非官方 UP 主，视为受限。11-01 增量补采：YouTube 按上传日期过滤搜索 14 个词，结果均为个人频道的评测和教程，没有官方频道新视频，未新增；Bilibili 搜索接口这次可用，10-31 起的端侧相关视频均为非官方 UP 主教程或转载，未收。11-02 增量补采：YouTube 按上传日期过滤搜索 14 个词，结果都是个人频道的评测、教程和新闻汇总，没有官方频道新视频，未新增；Bilibili 搜索接口可用，11-01 起的端侧相关视频均为非官方 UP 主教程或转述，未收。（11-02 补全后覆盖全窗口 10-27~11-02）"
       },
       {
         "source": "厂商论坛",
         "status": "found",
-        "note": "翻查 NVIDIA 开发者论坛 latest.json（按创建时间排序，共 8 页、240 个主题，覆盖 10-27 19:13 起），以及 Google AI 开发者论坛 discuss.ai.google.dev。收 Jetson 三款开发板上的 VLA 实测、用 EmbeddingGemma 2 在笔记本上本地搜索全量 HN 两条；DGX Spark 大模型调参帖偏桌面服务器，没有收。10-27 0:00~19:13 的 NVIDIA 论坛主题没有翻到。10-31 增量补采：NVIDIA 开发者论坛 latest.json 翻到 10-30 00:00 前（3 页），Google AI 开发者论坛翻到 10-30 前（2 页）。新增 Orin Nano 上 INT8 检测器比 FP16 更慢的实测 1 条；JetPack 5 停止维护公告、DGX Spark 调参帖属硬件/桌面服务器范畴，Google 论坛 10-30 起多为账号与 API 配额问题，没有收。11-01 增量补采：NVIDIA 开发者论坛 latest.json 翻到 10-31 00:00（4 页），Google AI 开发者论坛翻到 10-31。新增 RTX Spark（Windows ARM64）原生 vLLM 移植 1 条；DGX Spark 多机并发、RTX 5090 检索测试属桌面服务器，Google 论坛多为配额与账号问题，未收。（本期为部分周：窗口按校验要求写 10-26~11-01，内容只收 10-27 起）"
+        "note": "翻查 NVIDIA 开发者论坛 latest.json（按创建时间排序，共 8 页、240 个主题，覆盖 10-27 19:13 起），以及 Google AI 开发者论坛 discuss.ai.google.dev。收 Jetson 三款开发板上的 VLA 实测、用 EmbeddingGemma 2 在笔记本上本地搜索全量 HN 两条；DGX Spark 大模型调参帖偏桌面服务器，没有收。10-27 0:00~19:13 的 NVIDIA 论坛主题没有翻到。10-31 增量补采：NVIDIA 开发者论坛 latest.json 翻到 10-30 00:00 前（3 页），Google AI 开发者论坛翻到 10-30 前（2 页）。新增 Orin Nano 上 INT8 检测器比 FP16 更慢的实测 1 条；JetPack 5 停止维护公告、DGX Spark 调参帖属硬件/桌面服务器范畴，Google 论坛 10-30 起多为账号与 API 配额问题，没有收。11-01 增量补采：NVIDIA 开发者论坛 latest.json 翻到 10-31 00:00（4 页），Google AI 开发者论坛翻到 10-31。新增 RTX Spark（Windows ARM64）原生 vLLM 移植 1 条；DGX Spark 多机并发、RTX 5090 检索测试属桌面服务器，Google 论坛多为配额与账号问题，未收。11-02 增量补采：NVIDIA 开发者论坛 latest.json 翻到 11-01 00:00（2 页），Google AI 开发者论坛翻到 11-01（3 页）。NVIDIA 论坛多为账号验证、L4T 驱动和启动问题，GB10 上的 Cosmos3-Nano 机器人测试属桌面服务器，Jetson 机器人课程是教程；Google 论坛多为配额、账号和 Antigravity 问题，均未收，没有新增。（11-02 补全后覆盖全窗口 10-27~11-02）"
       }
     ],
     "items": [
+      {
+        "id": "d1-omni-2b-litert-galaxy-s26-npu-decision",
+        "source": "Hugging Face",
+        "author": "litert-community",
+        "url": "https://huggingface.co/litert-community/d1-Omni-2B-LiteRT",
+        "published_at": "2026-11-02T08:46:54Z",
+        "title_zh": "Liquid AI 决策模型 d1-Omni-2B 转成 LiteRT：Galaxy S26 NPU 上一次判断约 67 毫秒",
+        "summary_zh": "litert-community 把 Liquid AI 基于 LFM3-Omni-2B 的决策模型 d1-Omni-2B 转成 LiteRT 格式（同日还发布了图文版 d1-2B-LiteRT）。决策模型不逐字生成文本，而是一次前向就对开发者预设的问题给出带概率的类型化答案（是否、选项、评分、数值、目标框等），输入可以是文字、图片和音频。模型卡写明：为骁龙 SM8850 预编译的决策图在 Galaxy S26 NPU 上单个问题一次调用 67.0 毫秒，Pixel 11 Pro GPU（float32）上为 733.6 毫秒；在 Mac 上与原模型 float32 参考实现逐题比对，答案一致。手机端只验证了模型图本身的调用，仓库没有现成的安卓宿主程序，应用需要自行实现输入预处理。",
+        "why_it_matters": "“先判断、再执行”是手机端 Agent 的路由与守门环节；多模态决策模型在 NPU 上几十毫秒完成一次判断，意图分类、工具选择这类决策就可以全部留在手机上做。",
+        "device_scope": "手机",
+        "topic": "端侧决策模型 / LiteRT NPU",
+        "verification": "已回链原始材料",
+        "evidence_url": "https://huggingface.co/LiquidAI/d1-Omni-2B"
+      },
+      {
+        "id": "smolchat-android-v17-openai-server",
+        "source": "Reddit",
+        "author": "shubham0204_dev",
+        "url": "https://www.reddit.com/r/androiddev/comments/1xlk8yw/update_on_smolchat_openai_server_support_for/",
+        "published_at": "2026-11-02T01:26:31Z",
+        "title_zh": "开源安卓应用 SmolChat v17：手机本地跑 GGUF 模型，锁屏时仍对局域网提供 OpenAI 兼容接口",
+        "summary_zh": "SmolChat 是基于 llama.cpp 的开源安卓应用，可在手机上本地运行任意 GGUF 模型。11-01 发布的 v17 新增：通过前台服务运行 OpenAI 兼容的 HTTP 服务器，手机锁屏后端口仍然可用；全局采样参数设置；应用内直接下载模型；同步上游 llama.cpp；修正 tok/s 统计（此前把预填充时间也算进了生成速度）。帖子没有给出性能数据。",
+        "why_it_matters": "手机从“本地聊天应用”变成“局域网里的本地模型服务端”，其他设备和 Agent 工具可以直接调用手机上的模型，是手机端推理的新用法。",
+        "device_scope": "手机",
+        "topic": "安卓本地推理应用",
+        "verification": "仅线索",
+        "evidence_url": "https://github.com/shubham0204/SmolChat-Android/releases/tag/v17"
+      },
+      {
+        "id": "firethedj-demucs-stem-separation-android",
+        "source": "Reddit",
+        "author": "SuryaVardhan1",
+        "url": "https://www.reddit.com/r/androiddev/comments/1xla59b/running_demucs_stem_separation_on_an_android/",
+        "published_at": "2026-11-01T18:15:00Z",
+        "title_zh": "开源 DJ 应用在安卓手机后台跑 Demucs 音轨分离：3.9 秒分块、内存不到 2GB，NNAPI 反而更慢",
+        "summary_zh": "开发者在开源 DJ 应用 FireTheDJ 里加入鼓、贝斯、人声等音轨分离：把 htdemucs 导出为 ONNX 时，STFT/iSTFT 留在模型外用 Kotlin 实现；整段推理会被系统低内存机制杀掉，改为 3.9 秒分块并关闭 ONNX Runtime 的内存池优化后才稳定。在中端机 Moto G64 上 NNAPI 反而更慢，4 线程 CPU 约 2 倍实时。调度上只分离下一段混音需要的窗口、按截止时间排序，来不及时退回均衡器，保证播放不中断。需要 6GB 内存以上的 64 位手机，代码采用 GPL-3.0。",
+        "why_it_matters": "这是一个非 LLM 但很典型的手机端 AI 实战：内存上限、NPU 委托不一定更快、按截止时间调度和失败兜底，这些经验同样适用于手机端 Agent 的后台推理。",
+        "device_scope": "手机",
+        "topic": "安卓端音频模型 / ONNX Runtime",
+        "verification": "仅线索",
+        "evidence_url": "https://github.com/suryablaze02-byte/FireTheDJ"
+      },
+      {
+        "id": "llama-cpp-cortex-a53-phone-lowbit-decode-energy",
+        "source": "GitHub Discussions",
+        "author": "FredWen-S",
+        "url": "https://github.com/ggml-org/llama.cpp/discussions/31507",
+        "published_at": "2026-11-01T16:54:24Z",
+        "title_zh": "llama.cpp 讨论：老款安卓手机（Cortex-A53、无点积指令）上 3–8 bit 量化的速度与能耗实测，Q3_K_M 反而更慢",
+        "summary_zh": "作者在骁龙 630（8 核 Cortex-A53，ARMv8.0）手机上，用 simpleperf 硬件计数器和电池能耗测试 Qwen2.5-1.5B 五种 GGUF 量化的解码。Q4_0 最快（6.31 tok/s）；Q3_K_M 权重比 Q4_K_M 小 19%，速度却慢约 5%（5.38 对 5.67）；Q8_0 最慢（4.56）。只有 Q8_0 受内存带宽限制，其余格式 82–85% 的周期耗在点积内核的解包上。能耗跟随耗时而非读取字节数，Q3_K_M、Q4_0、Q4_K_M 都约 0.60 焦/token。在这类核心上用 0.5B 草稿模型做投机解码，速度反而从 3.55 降到约 1.8 tok/s，因为解码受算力而非带宽限制。作者还提醒：8 核手机跑 8 线程时，单个线程被抢占造成的测量噪声会大于量化格式之间的差距。个人实测，附原始数据与脚本。",
+        "why_it_matters": "“比特越低越快”和“投机解码一定加速”在低端手机上都不成立；这份带硬件计数器和能耗的拆解，可以直接用来给老旧和入门安卓机选量化格式。",
+        "device_scope": "手机",
+        "topic": "手机端量化 / llama.cpp 能耗",
+        "verification": "仅线索",
+        "evidence_url": "https://github.com/FredWen-S/lowbit-decode-a53"
+      },
       {
         "id": "ledgerlens-qwen2vl-2b-android-receipt-thermal",
         "source": "GitHub Discussions",
@@ -6308,6 +7419,20 @@
         "topic": "端侧小模型发布",
         "verification": "已回链原始材料",
         "evidence_url": "https://www.liquid.ai/blog/lfm3"
+      },
+      {
+        "id": "strata-dsv41-kv-splice-agent-session-prefill",
+        "source": "Reddit",
+        "author": "HearMeOut-13",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xljdnj/sorry_sam_my_quite_terrible_home_dram_is_at_100/",
+        "published_at": "2026-11-02T00:44:53Z",
+        "title_zh": "回应 Altman：给 Strata 打补丁，游戏 PC 上本地 DeepSeek V4.1 编程 Agent 新会话起步约快 20 倍",
+        "summary_zh": "作者的游戏 PC（RX 9070 XT 16GB、64GB DDR4、PCIe 3.0 SSD）通过 Strata 把 DeepSeek V4.1 Flash（1.75 bpw）的专家分布在显存、内存和 SSD 上运行，生成约 7 tok/s，但每个 OpenCode 新会话都要重读约 3.7 万 token 的系统提示，首字前要等约 100 秒。补丁做了两件事：一是“KV 拼接”——Agent 每次会话会在系统提示里插入工作目录、日期等变动内容，导致前缀缓存失效，现在只重算变化的行；二是读提示阶段只调用已驻留在显存和内存里的专家，避免一次 1.2K token 的提示从 SSD 读 58GB。作者称新会话起步约快 20 倍；拼接属近似计算，驻留路由会轻微改变答案，目前只在 AMD HIP 上测试过，已向上游提 issue。帖子 270+ 赞。",
+        "why_it_matters": "本地跑编程 Agent 的瓶颈常常不在生成速度，而在每次会话重读超长系统提示；针对 Agent 提示结构复用缓存，是 PC 端本地 Agent 体验的直接改进，也是社区对“本地推理浪费内存”说法的回应。",
+        "device_scope": "PC",
+        "topic": "本地 Agent 前缀缓存 / MoE 卸载",
+        "verification": "仅线索",
+        "evidence_url": "https://github.com/PhialsBasement/Strata/tree/dsv41-kv-splice"
       },
       {
         "id": "fornews-apple-pcc-vs-on-device-foundation-models-rag",
@@ -6520,6 +7645,34 @@
         "evidence_url": ""
       },
       {
+        "id": "seeed-jetson-agx-orin-mtp-crowd-agent",
+        "source": "Reddit",
+        "author": "Hungry-Benefit6053",
+        "url": "https://www.reddit.com/r/JetsonNano/comments/1xlp735/mtp_on_vs_off_on_jetson_agx_orin_199x_decode_159x/",
+        "published_at": "2026-11-02T05:46:04Z",
+        "title_zh": "Jetson AGX Orin 全端侧人群监测 Agent：开启 MTP 后解码快 1.99 倍，整个任务只快 1.59 倍",
+        "summary_zh": "Seeed Studio 的 Jetson 产品工程师发布对比测试：YOLO11n + ByteTrack 跟踪区域内人数，5 人以上停留 1.5 秒时，本地 Qwen3.5-4B（Q4_K_M，llama.cpp）撰写评估、调用告警工具并保存报告，全程不连云。5 组配对测试（AGX Orin 32GB、JetPack 6.2.1、MAXN 模式）中，开启多 token 预测（MTP）投机解码后，报告解码从 25.46 升到 50.60 tok/s，但完整任务只从 7.42 秒降到 4.66 秒：解码只占任务约 70%，预填充和首次短输出调用几乎没有变快，模型加载还从 3.56 秒增加到 5.05 秒。作者注明是个人实测、不是厂商基准，搭建步骤写在 Seeed 官方 Wiki。",
+        "why_it_matters": "把“解码加速”和“Agent 端到端时延”分开量化：对感知触发、多轮短输出调用的边缘 Agent，预填充和首字时延才是主要瓶颈，选优化手段时不能只看 tok/s。",
+        "device_scope": "其他端侧",
+        "topic": "边缘 Agent / Jetson MTP 投机解码",
+        "verification": "仅线索",
+        "evidence_url": "https://wiki.seeedstudio.com/jetson/accelerate_llm_inference_mtp/"
+      },
+      {
+        "id": "pithos-xbox-one-s-lfm3-local-server",
+        "source": "Reddit",
+        "author": "WritHerAI",
+        "url": "https://www.reddit.com/r/LocalLLM/comments/1xl9va9/i_turned_my_old_xbox_one_s_into_a_local_ai_server/",
+        "published_at": "2026-11-01T18:04:02Z",
+        "title_zh": "2013 年的 Xbox One S 变成家庭本地 AI 服务器：自研 C 引擎加 D3D12 后端跑 LFM3-1.7B，29.5 tok/s",
+        "summary_zh": "作者用自写的 C 语言推理引擎 Pithos，在开发者模式的 Xbox One S 上运行 LFM3-1.7B（Q4_K_M），给家中手机和电脑提供 OpenAI 兼容接口（支持流式输出和工具调用）。主机的 Jaguar CPU 不支持 AVX2，作者补写了 128 位整数内核，但纯 CPU 只有 5.8 tok/s；把 UWP 包切换到游戏模式后可用 D3D12 和约 5GB 内存，前向计算移到 GPU、每个 token 的 GPU 提交从约 100 次合并为 1 次后，生成 29.5 tok/s、预填充 146 tok/s。需要开发者模式和 Windows PC 构建安装，上下文变长后速度下降。按约 1.1GB 权重和项目实测的 47–49 GB/s 显存带宽估算，这个速度在带宽上限之内。帖子热度很低。",
+        "why_it_matters": "说明旧游戏机这类闲置设备的 GPU 足以承担 2B 级小模型的家庭推理；把小模型放在常开设备上服务全屋，是手机和 PC 之外的另一种本地 Agent 部署形态。",
+        "device_scope": "其他端侧",
+        "topic": "旧设备本地推理 / D3D12",
+        "verification": "仅线索",
+        "evidence_url": "https://benmaster82.github.io/Pithos/xbox.html"
+      },
+      {
         "id": "rk3588s-qwen38-27b-npu-custom-runtime",
         "source": "Reddit",
         "author": "Aibender100",
@@ -6607,8 +7760,8 @@
   },
   "hardware": {
     "window": {
-      "start": "2026-10-26",
-      "end": "2026-11-01"
+      "start": "2026-10-27",
+      "end": "2026-11-02"
     },
     "items": [
       {
@@ -7865,6 +9018,114 @@
         ]
       },
       {
+        "date": "2026-10-30",
+        "vendor": "Sivy Limited（杭州） / University of Cambridge",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "From prediction error to sparse events: Biologically inspired signed-dyadic coding for Mandarin keyword spotting",
+        "title_zh": "预测编码脉冲唤醒词：SRAM 读取减三成多",
+        "url": "https://arxiv.org/abs/2610.41381",
+        "source_type": "论文",
+        "summary_zh": "论文提出预测带符号二进幂编码（PG）：每个输入通道保留本地预测，只有残差超过学习阈值时才发事件，事件只带符号和 2 的幂次幅度，接收端用定点移位和加法重建。在中文唤醒词任务上，INPUT-PG 准确率 90.00%，平均 SRAM 读取减少 33.87%、推理周期减少 32.77%。作者还在 Sky130 工艺上做了布局布线后的功耗评估。",
+        "whats_new_zh": [
+          "中文 5 类唤醒词：INPUT-PG 90.00%，直接输入 89.58%（720 条测试音频，整数实现）",
+          "平均 SRAM 读取 -33.87%、推理周期 -32.77%（720 条平均）",
+          "Sky130HD 布局布线后单条音频：常驻能耗 -39.49%（33,252.992μJ → 20,122.617μJ，不含权重加载），动态功耗 277.010mW vs 273.645mW（+1.23%）",
+          "模型约 10 万参数：Deep-SNN 109,841，LIF-TCN 99,284"
+        ],
+        "key_specs": {
+          "process": "Sky130HD（130nm 开源 PDK），典型角 25°C / 1.8V，10MHz 标称时钟",
+          "memory": "片上 SRAM 读取量为主要优化对象",
+          "power": "推理动态功耗约 277mW（布局布线后，单条音频）",
+          "other": "权重 9 位小数定点，膜电位累加 24 位小数，6 个二进幂指数档"
+        },
+        "edge_ai_impact_zh": "常开语音唤醒的能耗主要花在输入端反复读 SRAM 上，在输入端做预测编码可以直接省掉三成多访存和周期，对耳机、手表等常开语音前端有参考价值。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2610.41381"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv",
+        "affiliation": "Sivy Limited, Hangzhou; The Cavendish Laboratory, University of Cambridge",
+        "authors": "Zijian Zhou, Rui Liu, Rongxiang Nie",
+        "deep_dive_zh": [
+          {
+            "heading": "编码机制",
+            "points": [
+              "每个输入通道保留本地预测，只在残差超阈值时发事件，减少相关帧反复触发内存访问",
+              "事件只携带符号和有限的 2 的幂次幅度，接收端用移位和加法重建，不需要乘法"
+            ]
+          },
+          {
+            "heading": "硬件评估",
+            "points": [
+              "RTL 与整数软件评估在 8 / 64 / 232 帧前缀上逐位一致",
+              "Sky130HD 布局布线后，单条音频 SRAM 读取 -34.70%、周期 -33.76%、常驻能耗 -39.49%",
+              "动态功耗略升 1.23%，节能来自更少的周期和访存"
+            ]
+          },
+          {
+            "heading": "局限",
+            "points": [
+              "能耗只评估了一条固定音频，且不含权重加载",
+              "数据集为 101 名说话人、4,545 条音频、5 类关键词，规模较小；三种子训练下 INPUT-PG 平均 88.47%±3.70，与直接输入相当"
+            ]
+          }
+        ],
+        "model_capacity_zh": "约 10 万参数级脉冲网络（Deep-SNN 109,841 参数），面向常开唤醒词，不涉及大模型。"
+      },
+      {
+        "date": "2026-10-30",
+        "vendor": "Graz University of Technology / University of Trento",
+        "category": "低功耗/可穿戴/IoT",
+        "title": "On-device Detection of Wearer-induced NLOS on Chest-worn UWB Tags: Machine Learning, Link Indicators, or Both?",
+        "title_zh": "胸戴 UWB 标签端侧遮挡检测：能耗差 39.6 倍",
+        "url": "https://arxiv.org/abs/2610.41799",
+        "source_type": "论文",
+        "summary_zh": "人体佩戴 UWB 标签时，身体遮挡会造成非视距测距误差，检测必须在标签端完成。作者在 nRF52832 MCU + Qorvo DW1000 上比较 21 种端侧 ML、链路指标和混合分类器，数据集超过 150 万条测距样本。各方法平衡准确率最高 93.1%，但运行时间和能耗差异巨大：某个分类器多换来 11% 准确率，运行时间长 27.8 倍、能耗高 39.6 倍。作者提出按约束推荐分类器的工具 Libra。",
+        "whats_new_zh": [
+          "平台：nRF52832（64kB RAM / 512kB Flash）+ Qorvo DW1000（MDEK1001 开发套件）",
+          "21 种分类器，150 万+ 测距样本（姿态集 921,600、移动集 126,000）",
+          "平衡准确率最高 93.1%；姿态场景始终高于 89.1%，移动场景高于 85.8%",
+          "某分类器 +11% 准确率，代价是运行时间 ×27.8、能耗 ×39.6；3 特征 SVM 推理 15.9ms",
+          "混合分类器 LI_XGB 相比纯链路指标分类器没有额外能耗和时延"
+        ],
+        "key_specs": {
+          "cpu": "Nordic nRF52832",
+          "memory": "64kB RAM / 512kB Flash",
+          "other": "UWB 收发器 Qorvo DW1000；REMNet 659 参数（8.4kB RAM / 8.8kB Flash）"
+        },
+        "edge_ai_impact_zh": "在 MCU 级可穿戴上，选模型要先看能耗和时延，再看那几个点的准确率；轻量信号指标与小模型混合，常常比更大的模型更划算。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2610.41799"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv",
+        "affiliation": "Graz University of Technology; University of Trento",
+        "authors": "Markus Gallacher, Vu Anh Minh Le, Matteo Trobinger",
+        "deep_dive_zh": [
+          {
+            "heading": "问题",
+            "points": [
+              "人体遮挡造成的 NLOS 是可穿戴 UWB 的常态误差源，检测必须在标签端、在严格时延和能耗预算内完成"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "准确率差异不大，但时延和能耗差几十倍；读取 CIR 的方法最贵",
+              "不读 CIR 的 XGB_PD,CL* 是开销最低的混合方案",
+              "最佳选择强依赖信道和 PHY 配置，ch5 移动场景部分分类器掉 4.4%"
+            ]
+          },
+          {
+            "heading": "产出",
+            "points": [
+              "推荐工具 Libra 与数据集将在论文录用后公开（尚未发布）"
+            ]
+          }
+        ],
+        "model_capacity_zh": "KB 级模型：REMNet 659 参数，XGBoost 约 6.7kB Flash（论文引用前人数据）。"
+      },
+      {
         "date": "2026-10-27",
         "vendor": "Rokid（乐奇）（媒体报道）",
         "category": "低功耗/可穿戴/IoT",
@@ -8258,6 +9519,57 @@
         ]
       },
       {
+        "date": "2026-11-02",
+        "vendor": "Raspberry Pi",
+        "category": "存储与内存",
+        "title": "Price rises for some 16GB Raspberry Pi products",
+        "title_zh": "树莓派 16GB 版因内存短缺涨价 80 美元",
+        "url": "https://www.raspberrypi.com/news/price-rises-for-some-16gb-raspberry-pi-products/",
+        "source_type": "官方",
+        "summary_zh": "树莓派 CEO Eben Upton 在官方博客宣布，因内存成本上涨、16GB DRAM 缺少替代货源以及其他元器件紧缺，部分 16GB 产品涨价。树莓派 5 16GB 上调 80 美元至 385 美元，Compute Module 5 的 16GB 版本上调 40 美元；16GB 的 Pi 500+ 维持原价。官方认为内存紧张是阶段性的，成本回落后会把价格降回来。",
+        "whats_new_zh": [
+          "树莓派 5 16GB：上调 80 美元，新价 385 美元（官方口径；原价按差额推算为 305 美元）",
+          "Compute Module 5 16GB 各型号：上调 40 美元，新价写在 CM5 产品简介里，博文未列",
+          "Pi 500+（16GB）维持原价；本次没有全线涨价",
+          "官方给出的原因：过去两年内存成本大涨（博文引用 TrendForce）、16GB DRAM 缺少备选货源、其他元器件也紧缺；正在认证替代料以增加货源弹性",
+          "官方建议用户改选低容量或上一代型号、优化内存占用，并提醒警惕高价倒卖"
+        ],
+        "key_specs": {
+          "memory": "16GB DRAM 版本受影响（博文未写内存类型与带宽）",
+          "other": "Pi 5 16GB 385 美元；CM5 16GB +40 美元"
+        },
+        "edge_ai_impact_zh": "DRAM 短缺已经从手机、PC 传导到最便宜的端侧开发板：恰恰是跑本地模型最需要的 16GB 档位涨得最多。端侧模型的内存占用直接变成了硬件成本，量化和内存优化的经济价值在上升。",
+        "evidence_urls": [
+          "https://www.ithome.com/1/021/240.htm"
+        ],
+        "confidence": "high",
+        "deep_dive_zh": [
+          {
+            "heading": "涨价范围",
+            "points": [
+              "只涉及 16GB 版本：Pi 5 16GB +80 美元至 385 美元，CM5 16GB +40 美元",
+              "16GB 的 Pi 500+ 不涨价；此前几轮也是只挑受内存成本影响最大的型号涨价，没有全线调价"
+            ]
+          },
+          {
+            "heading": "原因与供应",
+            "points": [
+              "官方明确说 16GB DRAM 缺少备选货源，这是 16GB 型号单独涨价的直接原因",
+              "过去两年内存成本大幅上涨，博文引用 TrendForce 报告",
+              "官方在认证替代料，并称内存紧张终究是阶段性的，成本回落后会回调价格，但没有给时间表"
+            ]
+          },
+          {
+            "heading": "对端侧开发者的含义",
+            "points": [
+              "Pi 5 16GB 是在单板机上本地跑小模型的常用配置，大内存档位涨价最多（+80 美元），小内存档位不受本次影响",
+              "官方给出的应对是选低容量型号或优化内存，对需要大内存跑本地模型的用户没有替代方案"
+            ]
+          }
+        ],
+        "model_capacity_zh": "推算（只按容量）：16GB 可放下约 14B 参数的 8bit 权重或约 28B 的 4bit 权重，扣除系统与 KV cache 后实际更小；decode 速度受板载内存带宽限制，博文未披露带宽，此处不估算。"
+      },
+      {
         "date": "2026-10-28",
         "vendor": "SK hynix",
         "category": "存储与内存",
@@ -8430,6 +9742,55 @@
         ]
       },
       {
+        "date": "2026-11-01",
+        "vendor": "CXMT 长鑫科技（媒体报道：IT之家）",
+        "category": "存储与内存",
+        "title": "长鑫科技：2026 年 LPDDR 系列产品实现 781.91 亿元收入，占营业收入比例 52.02%",
+        "title_zh": "长鑫交流会：LPDDR 占营收过半，LPDDR6 在规划中",
+        "url": "https://www.ithome.com/1/020/832.htm",
+        "source_type": "媒体",
+        "summary_zh": "据 IT之家 11-01 转述长鑫科技 2026 年三季报业绩交流会记录，2026 年上半年 LPDDR 系列收入 781.91 亿元、占营收 52.02%，DDR 系列 694.72 亿元、占 46.22%；前三季度 DDR 占比因 DDR5 放量继续上升。第五代工艺平台是目前量产的最先进平台，已推出 245Ball 和 496Ball 封装的 LPDDR5X，后续将在该平台上升级 DDR5、LPDDR6 等产品。公司预计四季度营收继续增长，DRAM 供不应求仍将延续。",
+        "whats_new_zh": [
+          "2026 年上半年 LPDDR 系列收入 781.91 亿元，占营收 52.02%；DDR 系列 694.72 亿元，占 46.22%（公司口径，经媒体转述；IT之家标题写作“2026 年”，正文为上半年数据）",
+          "前三季度 DDR 系列占比较上半年继续上升，原因是 2024 年底量产的 DDR5 销量增长",
+          "第五代工艺平台为当前量产最先进平台，已推出 245Ball、496Ball 封装 LPDDR5X；后续在该平台升级 DDR5、LPDDR6 等",
+          "第六代平台（4F² 垂直沟道）工程样片已完成验证——此点 10-30 已报道，本次为重复确认",
+          "四季度仍收到服务器客户强劲需求，预计四季度营收继续增长"
+        ],
+        "key_specs": {
+          "memory": "LPDDR5X（第五代工艺平台，245Ball / 496Ball 封装）；LPDDR6 在规划中",
+          "process": "第五代工艺平台量产；第六代 4F² 垂直沟道平台工程样片验证完成"
+        },
+        "edge_ai_impact_zh": "国产 LPDDR 已占长鑫收入一半以上，LPDDR6 进入路线图，给国产手机与 AI PC 的大内存配置多了一个供应来源；但公司同时强调服务器需求强、供不应求延续，端侧内存成本短期难降。",
+        "evidence_urls": [
+          "https://www.ithome.com/1/020/599.htm"
+        ],
+        "confidence": "medium",
+        "deep_dive_zh": [
+          {
+            "heading": "收入结构",
+            "points": [
+              "上半年 LPDDR 781.91 亿元（52.02%）略高于 DDR 694.72 亿元（46.22%），移动内存仍是长鑫第一大业务",
+              "前三季度 DDR 占比上升，原因是 DDR5 放量；季度金额本文未披露"
+            ]
+          },
+          {
+            "heading": "产品路线",
+            "points": [
+              "第五代平台已推出 245Ball 与 496Ball 封装的 LPDDR5X，后续升级到 LPDDR6",
+              "第六代 4F² 平台工程样片验证完成（与 10-30 报道一致，无新数字）"
+            ]
+          },
+          {
+            "heading": "供需判断",
+            "points": [
+              "公司称四季度服务器客户需求依旧强劲，DRAM 供不应求仍将延续",
+              "交流会记录原文未直接打开，以上均为 IT之家转述"
+            ]
+          }
+        ]
+      },
+      {
         "date": "2026-10-30",
         "vendor": "CXMT 长鑫科技（媒体报道：IT之家、快科技）",
         "category": "存储与内存",
@@ -8564,6 +9925,62 @@
         "model_capacity_zh": "论文按 4-bit 计算：3B–17B 激活参数每 token 需读 1.5–8.5GB；UFS 10.8GB/s 时 decode 上限 1.3–7.2 tok/s，满速 LPDDR6（153.6GB/s）时 18–102 tok/s（论文推算）。目标是 200B 级 MoE 规划模型常驻，但吞吐数字均来自仿真，非真机。"
       },
       {
+        "date": "2026-10-30",
+        "vendor": "Soochow University / Tongji University / D-Robotics（地瓜机器人） / CASIA",
+        "category": "车载/机器人",
+        "title": "RTPolicy: Real-Time (32.9 Hz) Multi-View Visuomotor Policy for Robotic Manipulation on Edge Devices",
+        "title_zh": "RTPolicy：地瓜 RDK 板上 32.9Hz 操作策略",
+        "url": "https://arxiv.org/abs/2610.41625",
+        "source_type": "论文",
+        "summary_zh": "RTPolicy 用多视角特征融合加视觉压缩，把多路相机信息压成少量 token，再交给流匹配动作生成器，降低视觉编码和动作生成的开销。论文在 RTX 4090、Jetson Orin NX 和地瓜机器人 RDK S600 / S100 上实测延迟：RDK S600 上 INT16 为 30.35ms（32.9Hz），INT8 为 18.59ms。RoboTwin 2.0 的 50 个任务平均成功率 52.26%，高于 π0 的 46.4%；真机双臂平台成功率 72.0%。",
+        "whats_new_zh": [
+          "RDK S600（4 核 BPU，560 TOPS，论文口径）：RTPolicy INT16 30.35ms（32.9Hz），INT8 18.59ms（53.8Hz）",
+          "同板对比 π0.5：S600 INT16 331.6ms（3.0Hz）、S100 INT16 1491.59ms（0.7Hz），RTPolicy 约快 10 倍",
+          "RoboTwin 2.0（50 任务）平均成功率 52.26%，π0 为 46.4%；真机双臂异步流式推理成功率 72.0%，π0.5 为 52.0%"
+        ],
+        "key_specs": {
+          "npu": "RDK S600：4 核 BPU，560 TOPS；RDK S100：80 TOPS BPU（论文口径）",
+          "other": "视觉主干为冻结的 DINOv3 ConvNeXt（Base）；GPU 端用 TensorRT；BPU 端 INT8/INT16"
+        },
+        "edge_ai_impact_zh": "这是少见的在国产机器人 BPU 板上与 π0.5 同板对比的实测：同样的板子上 VLA 只有 0.7–3Hz，而专门压缩视觉 token 的策略能到 6.7–32.9Hz。机器人端侧控制的瓶颈在视觉编码和动作生成的计算量，不只看 TOPS。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2610.41625",
+          "https://d-robotics-ai-lab.github.io/RTPolicy.pro"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "Soochow University; Shanghai Research Institute for Intelligent Autonomous Systems, Tongji University; D-Robotics; Institute of Automation, Chinese Academy of Sciences",
+        "authors": "Xianbao Hou, Zehao Ni, Yonghao He",
+        "deep_dive_zh": [
+          {
+            "heading": "方法",
+            "points": [
+              "多视角特征按视角感知融合并压缩成紧凑 token 表示，减少视觉 token 数",
+              "流匹配动作生成器以压缩后的视觉表示、机器人状态和流时间为条件，降低动作生成成本",
+              "视觉编码器 Small / Base / Large 相对 Large 分别提速 3.25× / 2.15× / 1.00×，主实验用 Base"
+            ]
+          },
+          {
+            "heading": "端侧实测（论文表 VII）",
+            "points": [
+              "S600 INT8：DP 16.40ms、VO-DP 79.97ms、π0.5 135.5ms、RTPolicy 18.59ms",
+              "S600 INT16：DP 19.76ms、VO-DP 181.47ms、π0.5 331.6ms、RTPolicy 30.35ms",
+              "Orin NX 上 VO-DP 与 π0.5 部分精度因太慢未测；RTPolicy FP16 143.2ms",
+              "RTPolicy 速度接近最轻的 DP 基线，但成功率高得多"
+            ]
+          },
+          {
+            "heading": "口径与疑点",
+            "points": [
+              "正文对 Orin NX 的 143.2ms 写成 FP32、表格列在 FP16 下；摘要报 INT16，正文又说 BPU 上跑 INT8，口径有出入",
+              "BPU 的量化工具链、功耗、内存占用均未披露",
+              "560 / 80 TOPS 为论文引用的峰值口径"
+            ]
+          }
+        ],
+        "model_capacity_zh": "论文未给出 RTPolicy 参数量；可比较的是同板延迟：在 560 TOPS 的 S600 上 π0.5 INT16 只有 3.0Hz，RTPolicy 达到 32.9Hz（论文实测）。"
+      },
+      {
         "date": "2026-10-29",
         "vendor": "Shanghai AI Laboratory",
         "category": "车载/机器人",
@@ -8667,6 +10084,60 @@
           }
         ],
         "model_capacity_zh": "未披露。报道只说 Max 是 Muse 智能体的“物理化身”，没有说明 Muse 模型是在机载 Jetson Thor 上运行、还是由云端调用，也没有给出机载模型的参数量或精度。"
+      },
+      {
+        "date": "2026-10-30",
+        "vendor": "KAIST",
+        "category": "车载/机器人",
+        "title": "SACQ: Structure-Aware Codebook Quantization for Ultra-Low-Bit Vision-Language-Action Models",
+        "title_zh": "SACQ：VLA 1.5bit 量化，内存降 4.83 倍",
+        "url": "https://arxiv.org/abs/2610.41408",
+        "source_type": "论文",
+        "summary_zh": "SACQ 是面向 VLA 的超低比特纯权重向量码本量化：按算子角色拟合码本、按最终动作误差分配混合比特，并做两阶段量化后修正。在 GR00T N1.7 上，语言/动作权重 1.5bit 时 LIBERO 四套任务平均成功率 93.85%（BF16 为 94.10%），模型内存从 5.677GB 降到 1.175GB。加上 INT8 激活后成功率 93.55%，在 RTX 4090 上比 BF16 快 1.51 倍。",
+        "whats_new_zh": [
+          "GR00T N1.7 内存：BF16 5.677GB → 1.5bit 1.175GB（-4.83×）",
+          "LIBERO 平均成功率（1.5bit）：SACQ 93.85%、AQLM 87.50%、GPTQ-Ternary 31.95%；BF16 94.10%",
+          "RTX 4090、batch 1、4 步去噪：BF16 21.28ms，W1.5A16 20.20ms（1.05×），W1.5A8 14.07ms（1.51×）"
+        ],
+        "key_specs": {
+          "memory": "模型权重 5.677GB → 1.175GB（1.5bit 语言/动作权重）",
+          "gpu": "速度在 NVIDIA RTX 4090 上测得，未在 Jetson 等机载平台测试",
+          "other": "纯权重向量码本量化；可选 INT8 激活与低精度注意力"
+        },
+        "edge_ai_impact_zh": "VLA 模型在 1.5bit 下几乎不掉成功率、内存缩到约 1.2GB，为把机器人基础模型放到小内存机载芯片上提供了量化路径；但纯权重量化几乎不提速，机载实时性仍要靠激活量化和专用内核。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2610.41408"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv",
+        "affiliation": "KAIST",
+        "authors": "Haesung Lee, Insu Han",
+        "deep_dive_zh": [
+          {
+            "heading": "方法",
+            "points": [
+              "按算子角色使用二次误差度量拟合码本，反映输入统计和下游敏感度",
+              "按逐层压缩导致的最终动作误差增量分配混合比特",
+              "两阶段修正：二阶误差补偿重分配码字索引，再按解码后的动作校准码本和行组尺度"
+            ]
+          },
+          {
+            "heading": "结果",
+            "points": [
+              "2bit 时 SACQ 94.25%，高于 TWLA 93.05%、AQLM 83.60%、GPTQ 64.35%",
+              "3bit 时 ActQuant 94.45% 略高于 SACQ 94.10%，超低比特才是 SACQ 的优势区",
+              "纯权重 1.5bit 只带来 1.05× 加速，主要收益是内存；要提速需配合 INT8 激活"
+            ]
+          },
+          {
+            "heading": "局限",
+            "points": [
+              "速度只在桌面 GPU 上测，机器人机载平台的实际收益未验证",
+              "只评测仿真基准（LIBERO、SimplER），没有真机"
+            ]
+          }
+        ],
+        "model_capacity_zh": "论文口径：GR00T N1.7 量化后约 1.2GB，可放进 4–8GB 级机载内存；未给出参数量，也未在边缘设备上实测速度。"
       },
       {
         "date": "2026-10-30",
@@ -8809,6 +10280,60 @@
             ]
           }
         ]
+      },
+      {
+        "date": "2026-10-30",
+        "vendor": "Texas A&M University",
+        "category": "数据中心(对端侧有参考)",
+        "title": "Understanding the Energy Cost of Quantized Agents on Shared GPUs",
+        "title_zh": "共享 GPU 上量化智能体的真实能耗",
+        "url": "https://arxiv.org/abs/2610.41672",
+        "source_type": "论文",
+        "summary_zh": "论文在 A100 40GB / 80GB 上用 vLLM 跑 Devstral Small 1.1（24B）和 Qwen3.5-9B 两个智能体，完成可独立验证结果的编码与数据分析任务，比较不同精度和并发上限下“每个验证完成的任务”耗多少能量。回放同样的调用时，W4A16 比 W8A8 省 10–25% 能量；但实际运行中 4bit 智能体会生成更多工作、完成更少，四并发时每个验证完成的能耗反而高约 49%。缓存紧张时情况反转，4bit 更省。",
+        "whats_new_zh": [
+          "回放同样调用：Devstral 80GB 四并发 W4A16 比 W8A8 省约 24.6%；Qwen3.5-9B 40GB 省 9.8–12.3%",
+          "实际运行每个验证完成的能耗（W4A16 对 W8A8）：Devstral 80GB N=4 +48.6%（132.6 vs 89.2 kJ），Qwen3.5-9B 40GB N=4 +49%（48.4 vs 32.6 kJ）",
+          "Qwen3.5-9B 的 W4A16 输出 token 多 30%，总能耗多 15%",
+          "Devstral 40GB 缓存紧张时：W4A16 每完成能耗降 54%（N=4）和 37%（N=16）；再给 W4A16 设缓存上限，N=16 时能耗升 34.4%"
+        ],
+        "key_specs": {
+          "gpu": "NVIDIA A100 PCIe 40GB / 80GB，90% 显存给推理服务",
+          "memory": "Devstral 80GB KV 容量：BF16 176,368 / W8A8 311,552 / W4A16 377,120 token",
+          "other": "vLLM 0.10.2 / 0.18.1；W8A8 用 SmoothQuant+GPTQ（CUTLASS INT8），W4A16 用 GPTQ g128（Marlin）"
+        },
+        "edge_ai_impact_zh": "对端侧智能体同样适用的结论：量化省的是每次调用，不一定省每个任务；评估端侧智能体的能效要用“每个验证完成的任务耗多少焦耳”，并同时考虑精度与 KV 缓存余量。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2610.41672"
+        ],
+        "confidence": "high",
+        "venue": "arXiv",
+        "affiliation": "Texas A&M University",
+        "authors": "Stephen Abkin, Alex Flesher, Aldric Yang",
+        "deep_dive_zh": [
+          {
+            "heading": "为什么要看每个完成的能耗",
+            "points": [
+              "固定请求或孤立智能体的测量，只能说明同样调用省了多少能量",
+              "智能体会因量化改变行为：多生成、多走步、少完成，单次调用省下的能量可能被吃掉"
+            ]
+          },
+          {
+            "heading": "关键数字",
+            "points": [
+              "回放：W4A16 比 W8A8 省 10–25%（同样的调用）",
+              "实跑：四并发、缓存够用时 W4A16 每完成能耗高约 49%，Devstral 完成数少 16.7%",
+              "缓存紧张（40GB）时，4bit 释放的 KV 空间才转化为节能：每完成能耗降 37–54%"
+            ]
+          },
+          {
+            "heading": "对端侧的启示",
+            "points": [
+              "端侧设备内存小，类似 40GB 的“缓存紧张”场景更常见，量化释放内存的收益更明显",
+              "但量化导致的智能体行为变化（多生成、少完成）同样会出现在端侧，评估时要看每个完成任务的能耗，而不是每 token"
+            ]
+          }
+        ],
+        "model_capacity_zh": "实测模型：Devstral Small 1.1（24B，稠密）与 Qwen3.5-9B，上下文上限 80GB 卡 131,072、40GB 卡 65,536 token（论文口径）。"
       },
       {
         "date": "2026-10-27",
@@ -9889,6 +11414,61 @@
         "model_capacity_zh": "实验覆盖 1B–8B 稠密模型（Llama 3.2 1B、Llama 3 8B、Ministral 8B、Qwen3 8B），精度 W4A4KV4 与 W4/W4A4 g32；论文未报告端侧 tok/s。"
       },
       {
+        "date": "2026-10-30",
+        "vendor": "UZH & ETH Zurich（INI） / Imperial College London",
+        "category": "学术研究",
+        "title": "Input-dependent Neuromodulation Enhances Mixed-Signal Neuromorphic Hardware",
+        "title_zh": "混合信号神经形态芯片上的输入相关神经调制",
+        "url": "https://arxiv.org/abs/2610.41265",
+        "source_type": "论文",
+        "summary_zh": "作者在混合信号神经形态处理器 DYNAP-SE 上运行 60 个神经元的脉冲循环网络，用片外调制器读取芯片输入和活动，在单次试验内实时调整群体增益，让芯片的模拟电路在调制下计算。在 SHD 数据集“5 vs 9”口语数字二分类上，准确率从 71.4% 提到 88.6%，五个硬件网络实例平均提升 17.3±10.4 个百分点。",
+        "whats_new_zh": [
+          "DYNAP-SE（0.18μm，4 核 × 256 神经元，共 1024 神经元、64k 突触）上用 60 个神经元（48 兴奋 + 12 抑制）的储备池",
+          "准确率：基线 71.4% → 神经调制 88.6%；五个硬件实例平均 +17.3±10.4 个百分点",
+          "对照：只重训读出层 83.9%；恒定增益反而降 18.8±13.1 个百分点；用别的试验的增益轨迹降 14.1±11.4 个百分点",
+          "调制器是 128 隐藏单元的 MLP，和读出层一起在主机上运行"
+        ],
+        "key_specs": {
+          "process": "0.18μm 1P6M CMOS（DYNAP-SE）",
+          "npu": "混合信号神经形态处理器 DYNAP-SE，1024 神经元 / 64k 突触",
+          "power": "未披露",
+          "other": "片外调制器 MLP（128 隐藏单元）运行在主机上"
+        },
+        "edge_ai_impact_zh": "说明输入相关的门控思想在真实模拟神经形态硅片上也有效，小网络能借此补回参数量不足；但调制器还在片外，离超低功耗常开设备还差片上实现和功耗数据。",
+        "evidence_urls": [
+          "https://arxiv.org/html/2610.41265"
+        ],
+        "confidence": "medium",
+        "venue": "arXiv",
+        "affiliation": "Institute of Neuroinformatics, University of Zurich and ETH Zurich; Imperial College London; UCLA",
+        "authors": "Aashman Mehta, AbdelQader AlKilany, Dan F. M. Goodman",
+        "deep_dive_zh": [
+          {
+            "heading": "思路",
+            "points": [
+              "门控 / 神经调制能让参数固定的小网络按输入改变计算方式，对面积、内存、精度受限的边缘神经形态芯片尤其有用",
+              "芯片的模拟电路负责计算，调制器只按输入和网络活动调群体增益"
+            ]
+          },
+          {
+            "heading": "实测",
+            "points": [
+              "任务为 SHD 的“5 vs 9”二分类，700 个输入通道压缩到 96",
+              "213 次试验，五个储备池实例，p=0.021",
+              "增益必须与当前输入匹配：恒定增益或错配轨迹都会降低准确率"
+            ]
+          },
+          {
+            "heading": "局限",
+            "points": [
+              "调制器和读出层都在主机上跑，没有片上实现",
+              "没有功耗与能效数据",
+              "任务只是二分类，规模很小"
+            ]
+          }
+        ]
+      },
+      {
         "date": "2026-10-27",
         "vendor": "University College London",
         "category": "学术研究",
@@ -9939,7 +11519,7 @@
         "model_capacity_zh": "实测 <4B 参数扩散/自回归图像模型在旗舰手机上的部署；具体每个模型的延迟/内存见论文表格。"
       }
     ],
-    "overview": "Mac 换代与端侧推理栈下沉周（10-27~11-02，部分周，数据截至 11-01）。Apple 10-27 把 M6 放进 14 英寸 MacBook Pro 与 iMac：双 16 核 Neural Engine 比 M5 快 1.9 倍、大模型首 token 快 1.3 倍；次日的触屏 OLED MacBook Pro 仍用 M5 Max，但官方首次写明可在本机跑数千亿参数大模型和编程智能体（最高 128GB、614GB/s）。安卓侧，Google 把 LiteRT 放进 Play 服务、GPU 推理约快 1.4 倍，ML Kit 推出基于 Gemini Nano 4 的端侧智能体 API，规划循环完全在设备上运行；高通 GenieX 0.10 让 llama.cpp 在 IQ9 上切分到两颗 Hexagon NPU，Ripple 用开源 LLVM 写出的 SME 内核与手写版相差不到 5%。NVIDIA RTX Spark 笔记本开售（最高 128GB 统一内存、1 PFLOPS FP4），新增前台应用与后台智能体之间的 GPU 分配。低功耗与内存侧，TetraMem 12nm 多值 RRAM 存算 SoC 流片（片上 64M INT4 参数、免外部 DRAM），Ceva 新一代 NeuPro 硬件支持分页 KV 缓存与 FP4；论文侧 NORmal 用铁电 NOR 挂在 LPDDR6 总线上当手机主存，仿真比 UFS 卸载快 8.9–28 倍，MobiCom 2026 集中发表 LeanStream、NPUGen 等手机闪存流式推理与 NPU 复用工作。产业面，Counterpoint 统计 Q3 全球手机 SoC 出货同比 -21%，内存涨价仍在压制终端；Altman 公开主张 DRAM 优先供给数据中心，长鑫 4F² 第六代 DRAM 平台完成工程样片验证。周末 Apple 中国官网宣布国行 Apple 智能 11-4 开测、12 月随 iOS 27.3 上线，首批机型芯片门槛为 A17 Pro。韩国 10 月半导体出口 564 亿美元、同比增 259%，存储涨价仍在加速；Meta 与傅利叶被曝以 Jetson Thor 做出人形机器人原型 Max（爆料，未官宣）。",
+    "overview": "Mac 换代与端侧推理栈下沉周（10-27~11-02）。Apple 10-27 把 M6 放进 14 英寸 MacBook Pro 与 iMac：双 16 核 Neural Engine 比 M5 快 1.9 倍、大模型首 token 快 1.3 倍；次日的触屏 OLED MacBook Pro 仍用 M5 Max，但官方首次写明可在本机跑数千亿参数大模型和编程智能体（最高 128GB、614GB/s）。安卓侧，Google 把 LiteRT 放进 Play 服务、GPU 推理约快 1.4 倍，ML Kit 推出基于 Gemini Nano 4 的端侧智能体 API，规划循环完全在设备上运行；高通 GenieX 0.10 让 llama.cpp 在 IQ9 上切分到两颗 Hexagon NPU，Ripple 用开源 LLVM 写出的 SME 内核与手写版相差不到 5%。NVIDIA RTX Spark 笔记本开售（最高 128GB 统一内存、1 PFLOPS FP4），新增前台应用与后台智能体之间的 GPU 分配。低功耗与内存侧，TetraMem 12nm 多值 RRAM 存算 SoC 流片（片上 64M INT4 参数、免外部 DRAM），Ceva 新一代 NeuPro 硬件支持分页 KV 缓存与 FP4；论文侧 NORmal 用铁电 NOR 挂在 LPDDR6 总线上当手机主存，仿真比 UFS 卸载快 8.9–28 倍，MobiCom 2026 集中发表 LeanStream、NPUGen 等手机闪存流式推理与 NPU 复用工作。产业面，Counterpoint 统计 Q3 全球手机 SoC 出货同比 -21%，内存涨价仍在压制终端；Altman 公开主张 DRAM 优先供给数据中心，长鑫 4F² 第六代 DRAM 平台完成工程样片验证。周末 Apple 中国官网宣布国行 Apple 智能 11-4 开测、12 月随 iOS 27.3 上线，首批机型芯片门槛为 A17 Pro。韩国 10 月半导体出口 564 亿美元、同比增 259%，存储涨价仍在加速；Meta 与傅利叶被曝以 Jetson Thor 做出人形机器人原型 Max（爆料，未官宣）。周一补全：地瓜机器人等提出的 RTPolicy 在 RDK S600 上把多视角操作策略做到 32.9Hz（同板 π0.5 约 3Hz），KAIST 的 SACQ 把 GR00T 级 VLA 压到 1.5bit、内存降 4.83 倍；树莓派 5 等 16GB 产品因内存短缺涨价 80 美元，长鑫交流会称 LPDDR 已占营收过半。",
     "takeaways_zh": [
       "Mac 继续把“本机跑大模型和编程智能体”写进官方卖点：M6 主攻首 token 和 Neural Engine，M5 Max 机型则靠 128GB 内存撑起数千亿参数模型，桌面端侧的上限由内存容量决定。",
       "安卓端侧推理栈正在系统化：LiteRT 进 Play 服务、ML Kit 端侧智能体 API、GenieX 多 NPU 切分同周出现，开发者不再需要自带推理运行时，手机智能体的门槛从模型移到了系统接口。",
