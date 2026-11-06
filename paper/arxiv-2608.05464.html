@@ -5,11 +5,11 @@
 </style></head><body><main>
 <a class="back" href="../index.html">← 返回雷达</a>
 <h1>Effective pruning of task-trained recurrent neural networks using noisy fluctuations and connection rescaling</h1>
-<div class="meta"><span class="score">10</span> <span class="tier school">学校预印本</span>  2026-08-05 · Sanjith Senthil; Rishidev Chaudhuri / arXiv</div>
-<div class="tags"><span class="tag">方向:剪枝稀疏</span><span class="tag">方向:评测基准</span></div>
-<div class="field"><span class="label">这是什么</span><span class="text">网络连接的剪枝对大脑功能至关重要，但尽管其重要性，能展示…的生物可塑剪枝规则很少</span></div>
-<div class="field"><span class="label">有什么结果</span><span class="text">未报告</span></div>
-<div class="field"><span class="label">怎么做到</span><span class="text">未报告</span></div>
-<div class="score-reason">评分依据：属于剪枝稀疏、评测基准等端侧可迁移技术，但未明确端侧部署，因此相关度按中等计。</div>
+<div class="meta"><span class="score">6</span> <span class="tier school">学校预印本</span>  2026-11-04 · Sanjith Senthil; Rishidev Chaudhuri / arXiv</div>
+<div class="tags"><span class="tag">方向:剪枝稀疏</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">这是一篇计算神经科学背景的剪枝研究：检验一种“像大脑一样只看局部噪声波动”的无监督剪枝规则，能否在已训练好任务的循环神经网络上保住性能。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">噪声剪枝在任务训练过的循环网络上明显优于只看权重大小的剪枝，并超过使用二阶信息的非局部方法；按新经验值调整重缩放强度后的改进版又优于原版。原文未给出统一的压缩率或速度数字。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">按连接对噪声波动的重要性随机抽样保留连接，而不是按阈值硬删，再把保留下来的连接整体放大以维持平均强度；实验发现最优放大幅度低于理论预测，据此提出改进版本。</span></div>
+<div class="score-reason">评分依据：主要面向生物可解释的剪枝规则，只在小型循环网络上做任务性能验证，与端侧推理部署关系较远，仅作为剪枝方法参考；改进版重缩放规则有一定新意。</div>
 <div class="source"><a href="https://arxiv.org/abs/2608.05464" target="_blank" rel="noopener">查看原文 →</a></div>
 </main></body></html>

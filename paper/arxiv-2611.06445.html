@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SUMONE: A Simple and Efficient Summarizer for Plug-and-Play Agent Memory</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>SUMONE: A Simple and Efficient Summarizer for Plug-and-Play Agent Memory</h1>
+<div class="meta"><span class="score">11</span> <span class="tier school">学校预印本</span>  2026-11-04 · Jizhe Zhang; Ang Li; Chenheng Zhang; Yisen Wang / arXiv</div>
+<div class="tags"><span class="tag">方向:记忆</span><span class="tag">方向:高效推理</span><span class="tag">应用:长上下文推理</span><span class="tag">模型:Qwen</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">长时间运行的 Agent 历史越积越长，必须压缩上下文。SumOne 是一个可以直接插到现有 Agent 上的独立摘要模型，不依赖具体任务训练。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 DeepSearchQA 和 SWE-bench Verified 上，相比保留完整上下文，估计推理成本分别降低约 78% 和 75%，绝对得分只下降 0.04；同一模型无需再微调即可迁移到其他下游模型和 Agent 框架。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">以 Qwen3.5-2B 为摘要器：先给过期历史写摘要，再让一个冻结的重建模型根据摘要恢复被随机遮掉的原始轨迹片段，用恢复质量加长度惩罚作奖励，以 GRPO 训练，无需参考摘要或执行下游任务。</span></div>
+<div class="score-reason">评分依据：2B 规模的 Agent 记忆压缩器对端侧 Agent 的上下文预算有直接参考价值，但实验在云端 API 上进行（相关度 5）。用遮盖重建作为任务无关奖励训练摘要器思路较新（贡献 6）。作者来自北京大学，代码承诺接收后开源。</div>
+<div class="source"><a href="https://arxiv.org/abs/2611.06445" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

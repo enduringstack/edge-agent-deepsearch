@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EvoCache: Accelerating Browser Large Language Model Delivery with Public Cache Anchors</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>EvoCache: Accelerating Browser Large Language Model Delivery with Public Cache Anchors</h1>
+<div class="meta"><span class="score">14</span> <span class="tier school">学校预印本</span>  2026-11-03 · Zhiyu Wang; Rajkumar Buyya / WWW 2027</div>
+<div class="tags"><span class="tag">方向:编译部署</span><span class="tag">方向:安全隐私</span><span class="tag">方向:端云协同</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">大模型可以直接在浏览器里跑，但第一次用要下载几百 MB 到几 GB 的模型文件；同一个模型常被不同发布者重新打包，内容大量重复却因字节不同无法复用缓存。EvoCache 让浏览器用公共缓存“锚点”重建所需版本。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">审计 1000 个公开仓库发现最热门的 100 个模型中 61 个有多个发布者版本，98.1% 的重叠版本无法被整文件缓存复用；23 对跨发布者模型包流量中位数减少 77.3%；240 次真实浏览器端到端实验中网络流量减少 78.9%，页面就绪时间缩短 64.2%。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">浏览器预先存放与浏览历史无关的公共锚点模型文件，网站只声明目标版本，由浏览器自选锚点并做无损差分重建；缓存命中与否返回时间相同，防止跨站探测隐私。</span></div>
+<div class="score-reason">评分依据：直接解决浏览器本地大模型的首次下载瓶颈，并做了真实浏览器端到端实验（相关度 7）；用公共锚点做跨发布者无损重建、兼顾隐私，问题和方案都较新（贡献 7）。已被 ACM Web Conference 2027 接收，作者来自墨尔本大学。</div>
+<div class="source"><a href="https://arxiv.org/abs/2611.04638" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

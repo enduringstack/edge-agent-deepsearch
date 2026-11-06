@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Demystifying the Impact of Physical Non-Idealities on Kernel Performance</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Demystifying the Impact of Physical Non-Idealities on Kernel Performance</h1>
+<div class="meta"><span class="score">7</span> <span class="tier school">学校预印本</span>  2026-10-27 · Supun Kuruppu; Pranav Dangi; Wei Li; Zhenyu Bai; Tulika Mitra / arXiv</div>
+<div class="tags"><span class="tag">方向:高效推理</span><span class="tag">方向:能耗功耗</span><span class="tag">硬件:GPU</span><span class="tag">硬件:H100</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">研究芯片制造和功耗墙这类“物理不完美”如何让 GPU 内核性能偏离预期：以 NVIDIA H100 的分布式共享内存为例，发现屏蔽坏核后可用于集群执行的 SM 变少，内核要多跑几轮。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">提出的波次感知分簇策略让 Hopper 版 FlashAttention 4 吞吐比不分簇基线最高提升 5.30%；还发现在功耗墙限制下，减少数据搬运能腾出功耗余量提升频率，计算密集型内核也能受益；Tenstorrent Wormhole 加速器上同样观察到功耗限制吞吐扩展。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">实测分析坏核屏蔽对 SM 分簇数量的影响，据此在调度内核时按真实可用资源安排分簇，避免多出执行波次；同时测量功耗与频率的关系解释带宽优化的额外收益。</span></div>
+<div class="score-reason">评分依据：实验在数据中心 H100 和 Wormhole 加速器上，与端侧只有宽泛关联；“功耗墙下省数据搬运即可提速”的结论对功耗受限设备的内核优化有参考意义。作者均来自新加坡国立大学。</div>
+<div class="source"><a href="https://arxiv.org/abs/2610.37466" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

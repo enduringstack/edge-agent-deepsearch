@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rubric-Based Assessment of Student Reports Using Small Language Models</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>Rubric-Based Assessment of Student Reports Using Small Language Models</h1>
+<div class="meta"><span class="score">8</span> <span class="tier school">学校预印本</span> <span class="open-badge">开源</span> 2026-11-01 · Sandesh Kumar Kafle; Jan Vykopal; Valdemar Švábenský / SIGCSE TS 2027</div>
+<div class="tags"><span class="tag">方向:多模态</span><span class="tag">方向:评测基准</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">老师批改学生报告负担重，而调用外部大模型服务又贵又有隐私顾虑。这篇用本地部署的小语言模型和视觉语言模型，按评分细则自动给网络安全课程的学生报告打分。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 105 名学生的报告上，本地小模型纯文本评分准确率最高 97%，含图片的富文本评分最高 94%，可比肩甚至超过作为对照的 gpt-oss-120b 大模型。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">用 Ollama 在几种常见 NVIDIA 显卡配置上本地运行小模型，把评分细则拆成小任务逐项判断，图片交给视觉语言模型解读，整条流程开源。</span></div>
+<div class="score-reason">评分依据：在消费级显卡上本地运行小模型完成实际评分任务，属于本地部署的应用验证（相关度 5）；方法主要是现成模型加流程整合（贡献 3）。作者来自马萨里克大学，无公司署名；SIGCSE TS 2027 不属于本刊列出的顶会。</div>
+<div class="source"><a href="https://arxiv.org/abs/2611.01785" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

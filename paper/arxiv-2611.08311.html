@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LLM-Assisted Label Noise Correction for EEG-Based Sleep Stage Classification</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>LLM-Assisted Label Noise Correction for EEG-Based Sleep Stage Classification</h1>
+<div class="meta"><span class="score">5</span> <span class="tier school">学校预印本</span>  2026-11-05 · Elmira Salari; Shruti Kshirsagar / arXiv</div>
+<div class="tags"><span class="tag">模型:Llama</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">用脑电自动判断睡眠分期时，人工标注本身有不少错标。这篇在训练阶段请大模型帮忙筛掉可疑标签，再重新训练一个只有 130 万参数的小分类器。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">在 Sleep-EDF Expanded 数据集 20 折交叉验证中，总体准确率从 81.8% 提到 84.6%，Macro F1 从 75.6% 提到 77.4%，REM 期识别提升最明显。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">先训练 TinySleepNet 拿到每段的置信度，把低置信度片段连同频谱特征和前后文交给 LLaMA 3.1 按睡眠评分指南判定可靠或可疑，删除可疑片段后重训；推理时只用小模型。</span></div>
+<div class="score-reason">评分依据：大模型只用于离线清洗训练标签，推理侧是可放到可穿戴设备的小模型，但论文没有任何端侧部署或测量，与端侧推理栈关系很弱（相关度 2）；属标签清洗的常规思路在睡眠医学上的应用（贡献 3）。</div>
+<div class="source"><a href="https://arxiv.org/abs/2611.08311" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

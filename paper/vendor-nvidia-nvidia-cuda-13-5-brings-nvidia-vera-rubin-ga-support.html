@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NVIDIA CUDA 13.5 Brings NVIDIA Vera Rubin GA Support</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>NVIDIA CUDA 13.5 Brings NVIDIA Vera Rubin GA Support</h1>
+<div class="meta"><span class="score">5</span> <span class="tier">官方动态</span>  2026-11-04 · NVIDIA / NVIDIA</div>
+<div class="tags"><span class="vendor-tag">NVIDIA</span><span class="tag">方向:编译部署</span><span class="tag">方向:调度服务</span><span class="tag">硬件:GPU</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">CUDA 13.5 正式支持 Vera Rubin 架构，并把 Windows on Arm 支持扩展到 DGX Station for Windows，同时给 GPU 任务调度提供更细的分区控制。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">cuSPARSE 的 FP32/FP64 CSR 稀疏矩阵乘在数据中心 GPU 上快 1.65 到 2.27 倍，新 SpSV 求解算法比旧算法快 2.7 倍；cuBLAS 部分 FP64 对称更新在 B200 上最高快 1.5 倍。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">通过 locality domain 让应用选择统一的流处理器分区或包含全部流处理器的分区，配合多进程服务（MPS）的加权时间片调度，并更新各数学库、编译器和 CUDA Tile 工具。</span></div>
+<div class="score-reason">评分依据：这是数据中心 GPU 软件栈的常规版本更新，与端侧部署关系很弱；Windows on Arm 支持只覆盖 DGX Station 工作站，对 PC 端 AI 的意义有限。</div>
+<div class="source"><a href="https://developer.nvidia.com/blog/nvidia-cuda-13-5-brings-nvidia-vera-rubin-ga-support/" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>

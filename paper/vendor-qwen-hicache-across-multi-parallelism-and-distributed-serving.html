@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HiCache Across Multi‑Parallelism and Distributed Serving</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif;background:#f7f3ea;color:#202621} main{max-width:820px;margin:0 auto;padding:20px} a{color:#8d3d30} .back{display:inline-block;margin-bottom:12px;text-decoration:none} h1{font-size:21px;margin:0 0 8px;line-height:1.35} .meta{color:#627066;font-size:13px;margin-bottom:12px} .score{font-weight:700;color:#8d3d30;font-size:17px} .tier{display:inline-block;padding:2px 7px;border:1px solid #8d3d30;color:#8d3d30;font-size:11px;font-weight:700;border-radius:3px} .tier.oss{border-color:#2e7d32;color:#2e7d32} .tier.company{border-color:#5a6b8d;color:#5a6b8d} .tier.school{border-color:#8a6d3b;color:#8a6d3b} .open-badge{display:inline-block;padding:2px 7px;border:1px solid #2e7d32;color:#2e7d32;font-size:11px;font-weight:700;border-radius:3px} .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 14px} .vendor-tag{display:inline-block;padding:3px 10px 3px 8px;background:#fffdf7;border-left:3px solid #8d3d30;border-radius:0 4px 4px 0;font-size:12px;font-weight:600;color:#8d3d30} .tag{display:inline-block;padding:2px 9px;background:#eee7da;border-radius:11px;font-size:12px;color:#596258} .field{display:flex;margin-top:10px;gap:10px} .label{flex-shrink:0;width:78px;color:#627066;font-size:13px;font-weight:600} .text{color:#3f463f;font-size:14px;line-height:1.6} .score-reason{margin-top:12px;color:#4c554e;font-size:12px;line-height:1.5} .source{margin-top:18px} .source a{display:inline-block;padding:6px 14px;border:1px solid #8d3d30;border-radius:4px;text-decoration:none;font-size:13px}
+</style></head><body><main>
+<a class="back" href="../index.html">← 返回雷达</a>
+<h1>HiCache Across Multi‑Parallelism and Distributed Serving</h1>
+<div class="meta"><span class="score">8</span> <span class="tier">官方动态</span> <span class="open-badge">开源</span> 2026-11-04 · Qwen / Qwen</div>
+<div class="tags"><span class="vendor-tag">Qwen</span><span class="tag">方向:KV cache</span><span class="tag">方向:云端serving</span><span class="tag">方向:投机解码</span><span class="tag">应用:长上下文推理</span></div>
+<div class="field"><span class="label">这是什么</span><span class="text">介绍 SGLang 的 HiCache 怎样把前缀 KV 缓存从 GPU 显存扩展到主机内存和外部存储，并在各种并行方式和分离部署下都能复用。</span></div>
+<div class="field"><span class="label">有什么结果</span><span class="text">科大讯飞 Astron MaaS 团队用它服务 3 万到 20 万 token 输入的 GLM-5.1/5.2 编码请求，缓存命中率从约 30% 提到 95%，中位首 token 时延降到 3 秒以内。</span></div>
+<div class="field"><span class="label">怎么做到</span><span class="text">上下文并行时按页切分 KV，流水线并行和投机解码时恢复草稿模型状态，在不同并行配置间统一 KV 布局，并在预填充/解码分离时只传缺失的 KV；另提供跨卡一致性检查工具。</span></div>
+<div class="score-reason">评分依据：属于云端 serving 的分层 KV 缓存复用，端侧相关度低；把 KV 卸载到更便宜存储层的思路对内存紧张的端侧长上下文推理有借鉴，并给出了真实生产数据。</div>
+<div class="source"><a href="https://www.alibabacloud.com/blog/603726" target="_blank" rel="noopener">查看原文 →</a></div>
+</main></body></html>
